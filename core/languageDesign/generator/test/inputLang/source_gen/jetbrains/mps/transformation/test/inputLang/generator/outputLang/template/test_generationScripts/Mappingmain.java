@@ -4,10 +4,10 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import java.util.Collection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -22,20 +22,31 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer templateNode_417xrn_a0a0a2a4a3a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195172462490");
   private static SNodePointer templateNode_417xrn_a0a0a2a0e0d0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195172359599");
   private static SNodePointer reductionRule_417xrn_a0a2b = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1202780884290");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a0a0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168895642");
+  private static SNodePointer rootMappingRule_417xrn_b0b0a0a1c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168895642");
+
+  private final TemplateReductionRule[] rules;
+  private final TemplateCreateRootRule[] createRootRules;
+  private final TemplateRootMappingRule[] rootMappingRules;
 
   public Mappingmain() {
+    rules = new TemplateReductionRule[]{new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1()};
+    createRootRules = new TemplateCreateRootRule[]{};
+    rootMappingRules = new TemplateRootMappingRule[]{new Mappingmain.RootMappingRule0()};
   }
 
-  public Collection<TemplateReductionRule> getReductionRules() {
+  public SNodePointer getMappingNode() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195164863269");
+  }
+
+  public Iterable<TemplateReductionRule> getReductionRules() {
     return null;
   }
 
-  public Collection<TemplateCreateRootRule> getCreateRules() {
+  public Iterable<TemplateCreateRootRule> getCreateRules() {
     return null;
   }
 
-  public Collection<TemplateRootMappingRule> getRootRules() {
+  public Iterable<TemplateRootMappingRule> getRootRules() {
     return null;
   }
 
@@ -124,8 +135,12 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule0() {
     }
 
+    public SNodePointer getRuleNode() {
+      return new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168895642");
+    }
+
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1202243113773(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a0c, environment.getGenerator())))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202243113773(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a1c, environment.getGenerator())))) {
         return null;
       }
       return new TemplateOutputRoot_by_MappingRule().apply(environment, context);

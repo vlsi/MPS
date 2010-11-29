@@ -4,10 +4,10 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import java.util.Collection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -46,18 +46,29 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer templateNode_417xrn_a0a0a1a3a1a5a1a3a5a3e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681241");
   private static SNodePointer templateNode_417xrn_a0a0a1a4a1a5a1a3a5a3e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681245");
 
+  private final TemplateReductionRule[] rules;
+  private final TemplateCreateRootRule[] createRootRules;
+  private final TemplateRootMappingRule[] rootMappingRules;
+
   public Mappingmain() {
+    rules = new TemplateReductionRule[]{new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1(), new Mappingmain.ReductionRule2(), new Mappingmain.ReductionRule3(), new Mappingmain.ReductionRule4()};
+    createRootRules = new TemplateCreateRootRule[]{};
+    rootMappingRules = new TemplateRootMappingRule[]{new Mappingmain.RootMappingRule0()};
   }
 
-  public Collection<TemplateReductionRule> getReductionRules() {
+  public SNodePointer getMappingNode() {
+    return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209603916390");
+  }
+
+  public Iterable<TemplateReductionRule> getReductionRules() {
     return null;
   }
 
-  public Collection<TemplateCreateRootRule> getCreateRules() {
+  public Iterable<TemplateCreateRootRule> getCreateRules() {
     return null;
   }
 
-  public Collection<TemplateRootMappingRule> getRootRules() {
+  public Iterable<TemplateRootMappingRule> getRootRules() {
     return null;
   }
 
@@ -385,6 +396,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
   public class RootMappingRule0 implements TemplateRootMappingRule {
     public RootMappingRule0() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767");
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {

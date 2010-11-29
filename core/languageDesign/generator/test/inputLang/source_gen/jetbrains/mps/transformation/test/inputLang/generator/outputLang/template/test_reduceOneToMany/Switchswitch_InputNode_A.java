@@ -18,6 +18,14 @@ public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
   public Switchswitch_InputNode_A() {
   }
 
+  public SNodePointer getSwitchNode() {
+    return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
+  }
+
+  public SNodePointer getModifiesSwitch() {
+    return null;
+  }
+
   public Collection<TemplateReductionRule> getReductionRules() {
     return null;
   }

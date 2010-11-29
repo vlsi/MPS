@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.Collection;
 
@@ -23,6 +24,10 @@ import java.util.Collection;
  * Evgeny Gryaznov, 11/5/10
  */
 public interface TemplateSwitchMapping {
+
+  SNodePointer getSwitchNode();
+
+  SNodePointer getModifiesSwitch();
 
   Collection<TemplateReductionRule> getReductionRules();
 

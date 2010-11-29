@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.Collection;
 
 /**
@@ -22,9 +24,11 @@ import java.util.Collection;
  */
 public interface TemplateMappingConfiguration {
 
-  Collection<TemplateRootMappingRule> getRootRules();
+  SNodePointer getMappingNode();
 
-  Collection<TemplateCreateRootRule> getCreateRules();
+  Iterable<TemplateRootMappingRule> getRootRules();
 
-  Collection<TemplateReductionRule> getReductionRules();
+  Iterable<TemplateCreateRootRule> getCreateRules();
+
+  Iterable<TemplateReductionRule> getReductionRules();
 }

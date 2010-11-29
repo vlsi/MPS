@@ -17,13 +17,9 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FlattenIterable;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

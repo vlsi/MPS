@@ -68,7 +68,7 @@ public class GenerationPlan {
     return true;
   }
 
-  public List<SModelDescriptor> getTemplateModels() {
+  private List<SModelDescriptor> getTemplateModels() {
     List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
     for (Generator generatorModule : myGenerators) {
       List<SModelDescriptor> models = generatorModule.getOwnTemplateModels();

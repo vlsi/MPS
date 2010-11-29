@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.Collection;
 
@@ -23,6 +24,8 @@ import java.util.Collection;
  * Evgeny Gryaznov, 10/27/10
  */
 public interface TemplateCreateRootRule {
+
+  SNodePointer getRuleNode();
 
   Collection<SNode> apply(TemplateExecutionEnvironment environment);
 }
