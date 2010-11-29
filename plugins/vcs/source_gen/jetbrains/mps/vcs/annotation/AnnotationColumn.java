@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vcs.diff.changes.Change;
 import java.util.Set;
+import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -58,10 +59,17 @@ import java.awt.event.MouseEvent;
 import java.awt.Cursor;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspectAdapter;
 import javax.swing.JPopupMenu;
-import javax.swing.AbstractAction;
-import java.awt.event.ActionEvent;
+import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.ide.CopyPasteManager;
 import com.intellij.openapi.vcs.history.TextTransferrable;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import javax.swing.SwingUtilities;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
@@ -108,10 +116,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private Map<Change, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<Change, LineContent>());
   private Set<Integer> myCurrentPseudoLines = null;
   private final Object myCurrentPseudoLinesLock = new Object();
+  private ViewActionGroup myViewActionGroup;
   private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
   private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
+  private LeftEditorHighlighter myLeftEditorHighlighter;
 
-  public AnnotationColumn(SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
+  public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).<SNodeId>select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
@@ -149,15 +159,17 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }
     }
     for (LineAnnotationAspect aspect : Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects()))) {
-      ListSequence.fromList(myAspectSubcolumns).addElement(new AnnotationAspectSubcolumn(aspect));
+      ListSequence.fromList(myAspectSubcolumns).addElement(new AnnotationAspectSubcolumn(this, aspect));
     }
-    ListSequence.fromList(myAspectSubcolumns).addElement(new CommitNumberSubcolumn(myFileAnnotation));
+    ListSequence.fromList(myAspectSubcolumns).addElement(new CommitNumberSubcolumn(this, myFileAnnotation));
     for (VcsFileRevision revision : ListSequence.fromList(myFileAnnotation.getRevisions())) {
       String author = revision.getAuthor();
       if (!(MapSequence.fromMap(myAuthorsToColors).containsKey(author))) {
         MapSequence.fromMap(myAuthorsToColors).put(author, AnnotationColors.BG_COLORS[MapSequence.fromMap(myAuthorsToColors).count() % AnnotationColors.BG_COLORS.length]);
       }
     }
+    myViewActionGroup = new ViewActionGroup(myFileAnnotation, myAspectSubcolumns);
+    myLeftEditorHighlighter = leftEditorHighlighter;
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
     myVcs = vcs;
@@ -205,7 +217,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
     int x = 1;
     for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       MapSequence.fromMap(subcolumnToX).put(subcolumn, x);
-      x += subcolumn.getWidth();
+      if (subcolumn.isEnabled()) {
+        x += subcolumn.getWidth();
+      }
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -226,7 +240,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
               graphics.setColor(ANNOTATION_COLOR);
               for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
-                graphics.drawString(subcolumn.getTextForFileLine(fileLine), MapSequence.fromMap(subcolumnToX).get(subcolumn), graphics.getFontMetrics().getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
+                if (subcolumn.isEnabled()) {
+                  graphics.drawString(subcolumn.getTextForFileLine(fileLine), MapSequence.fromMap(subcolumnToX).get(subcolumn), graphics.getFontMetrics().getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
+                }
               }
 
             }
@@ -239,7 +255,10 @@ public class AnnotationColumn extends AbstractLeftColumn {
   public int getWidth() {
     return ListSequence.fromList(myAspectSubcolumns).<Integer>select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
       public Integer select(AnnotationAspectSubcolumn s) {
-        return s.getWidth();
+        return (s.isEnabled() ?
+          s.getWidth() :
+          0
+        );
       }
     }).reduceLeft(new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
@@ -438,18 +457,26 @@ __switch__:
 
   @Override
   public JPopupMenu getPopupMenu(MouseEvent event) {
-    JPopupMenu menu = new JPopupMenu();
+    List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
     final int fileLine = findFileLineByY(event.getY());
+    ListSequence.fromList(actions).addElement(new BaseAction("Close Annotations") {
+      protected void doExecute(AnActionEvent e) {
+        dispose();
+      }
+    });
+    ListSequence.fromList(actions).addElement(Separator.getInstance());
+    ListSequence.fromList(actions).addElement(myViewActionGroup);
     if (fileLine != -1) {
-      menu.add(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
-      menu.add(new AbstractAction("Copy revision number") {
-        public void actionPerformed(ActionEvent e) {
+      ListSequence.fromList(actions).addElement(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
+      ListSequence.fromList(actions).addElement(new BaseAction("Copy revision number") {
+        protected void doExecute(AnActionEvent e) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
           CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
         }
       });
     }
-    return menu;
+    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(ListSequence.fromList(actions).toGenericArray(AnAction.class));
+    return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, actionGroup).getComponent();
   }
 
   private int getFileLineWithMaxRevision(int a, int b) {
@@ -475,6 +502,14 @@ __switch__:
       return b;
     }
     return a;
+  }
+
+  public void invalidateLayout() {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        myLeftEditorHighlighter.relayout(false);
+      }
+    });
   }
 
   private static SNodeId check_5mnya_a0b0j0a(LineContent p) {
@@ -549,7 +584,7 @@ __switch__:
     }
   }
 
-  private class ShowDiffFromAnnotationAction extends AbstractAction {
+  private class ShowDiffFromAnnotationAction extends AnAction {
     private int myFileLine;
 
     public ShowDiffFromAnnotationAction(int fileLine) {
@@ -557,7 +592,7 @@ __switch__:
       myFileLine = fileLine;
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(AnActionEvent event) {
       final VcsRevisionNumber revisionNumber = myFileAnnotation.getLineRevisionNumber(myFileLine);
       if (revisionNumber != null) {
         final Project project = myVcs.getProject();

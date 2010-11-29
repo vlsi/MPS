@@ -18,11 +18,9 @@ package jetbrains.mps.nodeEditor.leftHighlighter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.AbstractAction;
 import javax.swing.JPopupMenu;
 import java.awt.Cursor;
 import java.awt.Graphics;
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 
 /**
@@ -62,31 +60,14 @@ public abstract class AbstractLeftColumn {
   public void mousePressed(MouseEvent e, final EditorComponent editorComponent) {
     if (e.isPopupTrigger()) {
       JPopupMenu menu = getPopupMenu(e);
-      if (isCloseable()) {
-        menu.insert(new AbstractAction("Close " + getName()) {
-          @Override
-          public void actionPerformed(ActionEvent e) {
-            editorComponent.getLeftEditorHighlighter().removeTextColumn(AbstractLeftColumn.this);
-            dispose();
-          }
-        }, 0);
-        if (menu.getSubElements().length != 1) {
-          menu.insert(new JPopupMenu.Separator(), 1);
-        }
-      }
-      if (menu.getSubElements().length > 0) {
-        LeftEditorHighlighter editorHighlighter = editorComponent.getLeftEditorHighlighter();
-        menu.show(editorHighlighter, e.getX(), e.getY());
+      if (menu != null) {
+        menu.show(editorComponent.getLeftEditorHighlighter(), e.getX(), e.getY());
       }
     }
   }
 
   public JPopupMenu getPopupMenu(MouseEvent event) {
-    return new JPopupMenu();
-  }
-
-  protected boolean isCloseable() {
-    return true;
+    return null;
   }
 
   public void dispose() {

@@ -21,8 +21,8 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
   private FileAnnotation myFileAnnotation;
   private Map<VcsRevisionNumber, Integer> myRevisionsToNumbers;
 
-  public CommitNumberSubcolumn(FileAnnotation fileAnnotation) {
-    super(null);
+  public CommitNumberSubcolumn(AnnotationColumn annotationColumn, FileAnnotation fileAnnotation) {
+    super(annotationColumn, null);
     myFileAnnotation = fileAnnotation;
   }
 
@@ -61,6 +61,11 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
   public void computeWidth(FontMetrics fontMetrics, Iterable<Integer> fileLines) {
     computeNumbers(fileLines);
     super.computeWidth(fontMetrics, fileLines);
+  }
+
+  @Override
+  public String getId() {
+    return "Commit number";
   }
 
   private static Date check_efout7_a0a0a0a0f0b(VcsFileRevision p) {

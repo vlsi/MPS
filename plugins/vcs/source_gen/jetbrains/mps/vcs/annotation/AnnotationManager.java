@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -53,9 +54,10 @@ public class AnnotationManager extends AbstractProjectComponent {
   }
 
   private boolean annotate(final EditorComponent editorComponent, boolean dryRun) {
+    final LeftEditorHighlighter leftEditorHighlighter = editorComponent.getLeftEditorHighlighter();
     if (MapSequence.fromMap(myEditorToColumn).containsKey(editorComponent)) {
       if (!(dryRun)) {
-        editorComponent.getLeftEditorHighlighter().removeTextColumn(MapSequence.fromMap(myEditorToColumn).get(editorComponent));
+        leftEditorHighlighter.removeTextColumn(MapSequence.fromMap(myEditorToColumn).get(editorComponent));
         MapSequence.fromMap(myEditorToColumn).removeKey(editorComponent);
       }
       return true;
@@ -116,8 +118,8 @@ public class AnnotationManager extends AbstractProjectComponent {
         if (myFileAnnotation != null) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              MapSequence.fromMap(myEditorToColumn).put(editorComponent, new AnnotationColumn(root, myFileAnnotation, vcs, file));
-              editorComponent.getLeftEditorHighlighter().addTextColumn(MapSequence.fromMap(myEditorToColumn).get(editorComponent));
+              MapSequence.fromMap(myEditorToColumn).put(editorComponent, new AnnotationColumn(leftEditorHighlighter, root, myFileAnnotation, vcs, file));
+              leftEditorHighlighter.addTextColumn(MapSequence.fromMap(myEditorToColumn).get(editorComponent));
             }
           });
         }
@@ -139,18 +141,27 @@ public class AnnotationManager extends AbstractProjectComponent {
   }
 
   public void removeColumn(AnnotationColumn column) {
-    MapSequence.fromMap(myEditorToColumn).removeKey(findEditorForColumn(column));
+    EditorComponent editorComponent = findEditorForColumn(column);
+    editorComponent.getLeftEditorHighlighter().removeTextColumn(column);
+    MapSequence.fromMap(myEditorToColumn).removeKey(editorComponent);
   }
 
   private EditorComponent findEditorForColumn(final AnnotationColumn column) {
-    return MapSequence.fromMap(myEditorToColumn).findFirst(new IWhereFilter<IMapping<EditorComponent, AnnotationColumn>>() {
+    return check_3wfzcf_a0a5(MapSequence.fromMap(myEditorToColumn).findFirst(new IWhereFilter<IMapping<EditorComponent, AnnotationColumn>>() {
       public boolean accept(IMapping<EditorComponent, AnnotationColumn> m) {
         return m.value() == column;
       }
-    }).key();
+    }));
   }
 
   public static AnnotationManager getInstance(Project project) {
     return project.getComponent(AnnotationManager.class);
+  }
+
+  private static EditorComponent check_3wfzcf_a0a5(IMapping<EditorComponent, AnnotationColumn> p) {
+    if (null == p) {
+      return null;
+    }
+    return p.key();
   }
 }
