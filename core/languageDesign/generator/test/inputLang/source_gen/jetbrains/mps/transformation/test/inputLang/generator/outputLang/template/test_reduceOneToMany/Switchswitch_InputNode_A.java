@@ -4,8 +4,9 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateUtil;
+import java.util.Collection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -15,7 +16,10 @@ import java.util.Collections;
 public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
   private static SNodePointer reductionRule_lzrtm3_a0a2a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310367");
 
+  private final Iterable<TemplateReductionRule> rules;
+
   public Switchswitch_InputNode_A() {
+    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switchswitch_InputNode_A.ReductionRule0());
   }
 
   public SNodePointer getSwitchNode() {
@@ -26,8 +30,8 @@ public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
     return null;
   }
 
-  public Collection<TemplateReductionRule> getReductionRules() {
-    return null;
+  public Iterable<TemplateReductionRule> getReductionRules() {
+    return rules;
   }
 
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {

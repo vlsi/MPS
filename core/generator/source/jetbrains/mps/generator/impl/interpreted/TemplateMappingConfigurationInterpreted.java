@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -49,7 +46,17 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   }
 
   @Override
+  public Iterable<TemplateDropRootRule> getDropRules() {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
   public Iterable<TemplateReductionRule> getReductionRules() {
     return null;
+  }
+
+  @Override
+  public Iterable<TemplateWeavingRule> getWeavingRules() {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 }

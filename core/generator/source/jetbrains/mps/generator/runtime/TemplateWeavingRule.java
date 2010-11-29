@@ -15,23 +15,12 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
-import java.util.Collection;
-
 /**
- * Evgeny Gryaznov, 11/5/10
+ * Evgeny Gryaznov, Nov 29, 2010
  */
-public interface TemplateSwitchMapping {
+public interface TemplateWeavingRule {
 
-  SNodePointer getSwitchNode();
-
-  SNodePointer getModifiesSwitch();
-
-  Iterable<TemplateReductionRule> getReductionRules();
-
-  Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
-
-  Collection<SNode> processNull(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+  SNodePointer getRuleNode();
 }

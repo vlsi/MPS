@@ -30,5 +30,9 @@ public interface TemplateMappingConfiguration {
 
   Iterable<TemplateCreateRootRule> getCreateRules();
 
+  Iterable<TemplateDropRootRule> getDropRules();
+
   Iterable<TemplateReductionRule> getReductionRules();
+
+  Iterable<TemplateWeavingRule> getWeavingRules();
 }

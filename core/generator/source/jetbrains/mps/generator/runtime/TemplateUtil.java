@@ -17,10 +17,8 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Evgeny Gryaznov, 10/28/10
@@ -73,4 +71,38 @@ public class TemplateUtil {
     }
     return result;
   }
+
+  public static <T> Iterable<T> asIterable(final T... objects) {
+    return new Iterable<T>() {
+      @Override
+      public Iterator<T> iterator() {
+        return new ArrayIterator<T>(objects);
+      }
+    };
+  }
+
+  private static class ArrayIterator<T> implements Iterator<T> {
+    private int idx = 0;
+    private Object array;
+    private int length;
+
+    private ArrayIterator(Object array) {
+      this.array = array;
+      this.length = Array.getLength(array);
+    }
+
+    public boolean hasNext() {
+      return idx < length;
+    }
+
+    @SuppressWarnings(value = "unchecked")
+    public T next() {
+      return (T) Array.get(array, idx++);
+    }
+
+    public void remove() {
+      throw new UnsupportedOperationException();
+    }
+  }
+
 }

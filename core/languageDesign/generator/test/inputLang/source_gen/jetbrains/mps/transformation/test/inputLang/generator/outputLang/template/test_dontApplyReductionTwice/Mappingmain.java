@@ -4,9 +4,13 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import java.util.Collections;
+import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import java.util.Collection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -17,14 +21,10 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer rootMappingRule_417xrn_b0b0a0a1a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)", "1209604563573");
 
-  private final TemplateReductionRule[] rules;
-  private final TemplateCreateRootRule[] createRootRules;
-  private final TemplateRootMappingRule[] rootMappingRules;
+  private final Iterable<TemplateRootMappingRule> rootRules;
 
   public Mappingmain() {
-    rules = new TemplateReductionRule[]{};
-    createRootRules = new TemplateCreateRootRule[]{};
-    rootMappingRules = new TemplateRootMappingRule[]{new Mappingmain.RootMappingRule0()};
+    rootRules = TemplateUtil.<TemplateRootMappingRule>asIterable(new Mappingmain.RootMappingRule0());
   }
 
   public SNodePointer getMappingNode() {
@@ -32,15 +32,23 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public Iterable<TemplateReductionRule> getReductionRules() {
-    return null;
+    return Collections.emptySet();
   }
 
   public Iterable<TemplateCreateRootRule> getCreateRules() {
-    return null;
+    return Collections.emptySet();
   }
 
   public Iterable<TemplateRootMappingRule> getRootRules() {
-    return null;
+    return rootRules;
+  }
+
+  public Iterable<TemplateWeavingRule> getWeavingRules() {
+    return Collections.emptySet();
+  }
+
+  public Iterable<TemplateDropRootRule> getDropRules() {
+    return Collections.emptySet();
   }
 
   public class RootMappingRule0 implements TemplateRootMappingRule {

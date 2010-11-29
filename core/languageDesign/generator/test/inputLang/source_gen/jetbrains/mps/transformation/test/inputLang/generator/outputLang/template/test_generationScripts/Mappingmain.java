@@ -7,14 +7,16 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import java.util.Collections;
+import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import java.util.Collection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.generator.runtime.TemplateUtil;
-import java.util.Collections;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170730024");
@@ -24,14 +26,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2b = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1202780884290");
   private static SNodePointer rootMappingRule_417xrn_b0b0a0a1c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168895642");
 
-  private final TemplateReductionRule[] rules;
-  private final TemplateCreateRootRule[] createRootRules;
-  private final TemplateRootMappingRule[] rootMappingRules;
+  private final Iterable<TemplateReductionRule> rules;
+  private final Iterable<TemplateCreateRootRule> createRules;
+  private final Iterable<TemplateRootMappingRule> rootRules;
 
   public Mappingmain() {
-    rules = new TemplateReductionRule[]{new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1()};
-    createRootRules = new TemplateCreateRootRule[]{};
-    rootMappingRules = new TemplateRootMappingRule[]{new Mappingmain.RootMappingRule0()};
+    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1());
+    createRules = TemplateUtil.asIterable();
+    rootRules = TemplateUtil.<TemplateRootMappingRule>asIterable(new Mappingmain.RootMappingRule0());
   }
 
   public SNodePointer getMappingNode() {
@@ -39,15 +41,23 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public Iterable<TemplateReductionRule> getReductionRules() {
-    return null;
+    return rules;
   }
 
   public Iterable<TemplateCreateRootRule> getCreateRules() {
-    return null;
+    return createRules;
   }
 
   public Iterable<TemplateRootMappingRule> getRootRules() {
-    return null;
+    return rootRules;
+  }
+
+  public Iterable<TemplateWeavingRule> getWeavingRules() {
+    return Collections.emptySet();
+  }
+
+  public Iterable<TemplateDropRootRule> getDropRules() {
+    return Collections.emptySet();
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
