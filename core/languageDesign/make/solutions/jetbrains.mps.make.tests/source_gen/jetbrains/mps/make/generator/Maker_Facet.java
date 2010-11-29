@@ -85,6 +85,18 @@ public class Maker_Facet implements IFacet {
       return name;
     }
 
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
     public <T> T createParameters(Class<T> cls) {
       return null;
     }

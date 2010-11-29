@@ -753,19 +753,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="5890305283801268225">
-          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5890305283801268226">
-            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5890305283801268227">
-              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5890305283801268221" resolveInfo="solutionDescriptor" />
-            </node>
-            <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5890305283801268228">
-              <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="glhg.~SolutionDescriptor%dsetExternallyVisible(boolean)%cvoid" resolveInfo="setExternallyVisible" />
-              <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="5890305283801268229">
-                <property name="value" nameId="yvor.1068580123138:3" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="5890305283801268230">
           <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="5890305283801268231">
             <property name="name" nameId="yvnu.1169194664001:0" value="fileName" />

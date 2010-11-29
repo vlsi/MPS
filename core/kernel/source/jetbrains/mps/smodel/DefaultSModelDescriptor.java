@@ -56,6 +56,18 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private IFile myModelFile;
   private boolean myIsChanged = false;
 
+  private final Object myFullLoadSync = new Object();
+
+  {
+    this.addModelCommandListener(new SModelCommandListener() {
+      public void eventsHappenedInCommand(List<SModelEvent> events) {
+        if (EventUtil.isChange(events)) {
+          myLastChange = System.currentTimeMillis();
+        }
+      }
+    });
+  }
+
   public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     this(manager, modelFile, modelReference, new DescriptorLoadResult(), true);
   }
@@ -72,64 +84,45 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateLastChange();
   }
 
-  {
-    this.addModelCommandListener(new SModelCommandListener() {
-      public void eventsHappenedInCommand(List<SModelEvent> events) {
-        if (EventUtil.isChange(events)) {
-          myLastChange = System.currentTimeMillis();
-        }
-      }
-    });
-  }
-
   protected ModelLoadResult initialLoad() {
-    //System.out.printf("initialLoad() called for model " + getLongName() + "\n");
-    ModelLoadingState state = ModelLoadingState.ROOTS_LOADED;
-    return load(state);
+    ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
+    if (StructureModificationProcessor.hasRefactoringsToPlay(result.getModel())) {
+      if (result.getState() != ModelLoadingState.FULLY_LOADED) {
+        result = load(ModelLoadingState.FULLY_LOADED);
+      }
+      updateOnLoad(result.getModel());
+    }
+    return result;
   }
 
   //updates model with loading state == ROOTS_LOADED
   public void enforceFullLoad() {
-    boolean loading = mySModel.isLoading();
-    if (loading) return;
+    synchronized (myFullLoadSync) {
+      if (mySModel.isLoading()) return;
+      if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return;
 
-    //System.out.printf("enforceFullLoad() called for model " + getLongName() + "\n");
-
-    BaseMPSModelRootManager manager = (BaseMPSModelRootManager) myModelRootManager;
-    SModel fullModel = manager.loadModel(this, ModelLoadingState.FULLY_LOADED).getModel();
-
-    try {
-      mySModel.setLoading(true);
+      SModel fullModel = load(ModelLoadingState.FULLY_LOADED).getModel();
       fullModel.setLoading(true);
-      new ModelLoader(mySModel, fullModel).update();
-      setLoadingState(ModelLoadingState.FULLY_LOADED);
-      updateOnLoad(mySModel, false);
-      fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
-    } finally {
-      mySModel.setLoading(loading);
+
+      try {
+        mySModel.setLoading(true);
+        new ModelLoader(mySModel, fullModel).update();
+        setLoadingState(ModelLoadingState.FULLY_LOADED);
+        fireModelStateChanged(ModelLoadingState.ROOTS_LOADED, ModelLoadingState.FULLY_LOADED);
+      } finally {
+        mySModel.setLoading(false);
+      }
     }
   }
 
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
-    BaseMPSModelRootManager manager = (BaseMPSModelRootManager) myModelRootManager;
-    ModelLoadResult result = manager.loadModel(this, loadingState);
-    SModel model = result.getModel();
-    updateOnLoad(model, loadingState != ModelLoadingState.FULLY_LOADED);
-    return result;
+    return ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
   }
 
-  private void updateOnLoad(SModel result, boolean quick) {
-    if (StructureModificationProcessor.updateModelOnLoad(result)) {
-      // do not mark as "changed" after playing "refactoring"
-//      IFile modelFile = getModelFile();
-//      if (modelFile != null && !modelFile.isReadOnly()) {
-//        SModelRepository.getInstance().markChanged(this, true);
-//      }
-    }
-    if (!quick) {
-      tryFixingVersion();
-    }
+  private void updateOnLoad(SModel result) {
+    StructureModificationProcessor.updateModelOnLoad(result);
+    tryFixingVersion();
     myStructureModificationHistory = null;
     updateDiskTimestamp();
   }

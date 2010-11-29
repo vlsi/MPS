@@ -271,7 +271,7 @@
     <nodeInfo nodeId="1206463270027" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="56" startPosition="45" endLine="57" endPosition="35" />
     <nodeInfo nodeId="1200503699300" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="39" startPosition="70" endLine="42" endPosition="5" />
     <nodeInfo nodeId="1204901463932" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="106" endLine="51" endPosition="9" />
-    <nodeInfo nodeId="3636996958059114128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="117" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="3636996958059114128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="124" endLine="47" endPosition="0" />
     <nodeInfo nodeId="1200425863012" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="9" endLine="52" endPosition="7" />
     <nodeInfo nodeId="1200425862976" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="42" startPosition="5" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1200425321275" fileName="InterfaceMethodImplementations_Finder.java" startLine="34" startPosition="43" endLine="35" endPosition="216" />
@@ -281,14 +281,14 @@
     <scopeInfo nodeId="1206463267275" fileName="InterfaceMethodImplementations_Finder.java" startLine="56" startPosition="45" endLine="57" endPosition="35" />
     <scopeInfo nodeId="1200503699300" fileName="InterfaceMethodImplementations_Finder.java" startLine="39" startPosition="70" endLine="42" endPosition="5" />
     <scopeInfo nodeId="1200425863014" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="106" endLine="51" endPosition="9" />
-    <scopeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="117" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="124" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1200425862979" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="9" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1200425863012" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="9" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1200425862976" fileName="InterfaceMethodImplementations_Finder.java" startLine="42" startPosition="5" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1200425662194" fileName="InterfaceMethodImplementations_Finder.java" startLine="38" startPosition="102" endLine="53" endPosition="5">
       <varInfo nodeId="1200503349565" varName="implementorsAndAncestorsList" />
     </scopeInfo>
-    <unitInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="90" endLine="47" endPosition="5" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
+    <unitInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="97" endLine="47" endPosition="5" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder$1" />
   </root>
   <root nodeId="1200502085335">
     <nodeInfo nodeId="1216397986864" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassAncestors_Finder.java" startLine="18" startPosition="54" endLine="19" endPosition="71" />

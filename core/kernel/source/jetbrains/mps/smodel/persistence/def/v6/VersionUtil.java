@@ -148,6 +148,20 @@ public class VersionUtil {
   }
 
   private ParseResult parse(String src, boolean hasmodel) {
+    ParseResult res = parseWithoutCheck(src, hasmodel);
+
+    // check integrity except concepts and attribute roles
+    if (hasmodel && !AttributesRolesUtil.isAttributeRole(res.text)) {
+      ImportElement elem = myImports.get(getSModelReference(res.modelID));
+      if (elem == null || res.version != myImports.get(getSModelReference(res.modelID)).getUsedVersion()) {
+        LOG.error("wrong version of " + src + ", model=" + getSModelReference(res.modelID) + ". Possible reason: merge conflict was not resolved.");
+      }
+    }
+
+    return res;
+  }
+
+  private static ParseResult parseWithoutCheck(String src, boolean hasmodel) {
     ParseResult res = new ParseResult();
     char[] chars = src.toCharArray();
     int i0 = -1, i1 = chars.length;
@@ -160,15 +174,6 @@ public class VersionUtil {
     res.text = src.substring(i0 + 1, i1);
     res.modelID = i0 > 0 ? Integer.parseInt(src.substring(0, i0)) : -1;
     res.version = i1 < chars.length-1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
-
-    // check integrity except concepts and attribute roles
-    if (hasmodel && !AttributesRolesUtil.isAttributeRole(res.text)) {
-      ImportElement elem = myImports.get(getSModelReference(res.modelID));
-      if (elem == null || res.version != myImports.get(getSModelReference(res.modelID)).getUsedVersion()) {
-        LOG.error("wrong version of " + src + ", model=" + getSModelReference(res.modelID) + ". Possible reason: merge conflict was not resolved.");
-      }
-    }
-
     return res;
   }
 
@@ -194,5 +199,9 @@ public class VersionUtil {
     } else {
       return new StaticReference(role, node, modelRef, SNodeId.fromString(target.text), resolveInfo);
     }
+  }
+
+  public static String readRoleSimple(String s) {
+    return parseWithoutCheck(s, true).text;
   }
 }

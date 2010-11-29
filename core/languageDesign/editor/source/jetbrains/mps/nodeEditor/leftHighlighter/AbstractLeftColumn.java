@@ -67,9 +67,12 @@ public abstract class AbstractLeftColumn {
           @Override
           public void actionPerformed(ActionEvent e) {
             editorComponent.getLeftEditorHighlighter().removeTextColumn(AbstractLeftColumn.this);
+            dispose();
           }
         }, 0);
-        menu.insert(new JPopupMenu.Separator(), 1);
+        if (menu.getSubElements().length != 1) {
+          menu.insert(new JPopupMenu.Separator(), 1);
+        }
       }
       if (menu.getSubElements().length > 0) {
         LeftEditorHighlighter editorHighlighter = editorComponent.getLeftEditorHighlighter();
@@ -84,6 +87,9 @@ public abstract class AbstractLeftColumn {
 
   protected boolean isCloseable() {
     return true;
+  }
+
+  public void dispose() {
   }
 
   public abstract String getName();

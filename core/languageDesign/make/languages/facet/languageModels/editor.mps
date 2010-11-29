@@ -6,6 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <import index="zyxi" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" />
   <import index="yvov" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
@@ -15,6 +16,7 @@
   <import index="8hmj" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="yvim" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="yvix" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="pxsv" modelUID="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)" version="-1" implicit="yes" />
   <roots>
     <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="6418371274763029525">
       <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="facet" />
@@ -51,6 +53,11 @@
     <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="3344436107830227903">
       <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="target" />
       <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="zyxi.3344436107830227888:1" resolveInfo="ForeignVarialblesExpression" />
+    </node>
+    <node type="yvnl.CellMenuComponent" typeId="yvnl.1166040637528:32" id="1675547159918502560">
+      <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="target" />
+      <property name="name" nameId="yvnu.1169194664001:0" value="TargetDeclaration_resourcesPolicy" />
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="zyxi.6418371274763029565:1" resolveInfo="TargetDeclaration" />
     </node>
   </roots>
   <root id="6418371274763029525">
@@ -343,6 +350,28 @@
             <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="6418371274763029584">
               <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
             </node>
+            <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="1675547159918562089">
+              <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="1675547159918562090">
+                <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
+              </node>
+              <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="1675547159918562093">
+                <property name="text" nameId="yvnl.1073389577007:32" value="resources policy:" />
+                <link role="styleClass" roleId="yvnl.1186406756722:32" targetNodeId="yvov.1186415544875" resolveInfo="KeyWord" />
+              </node>
+              <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Property" typeId="yvnl.1073389658414:32" id="1675547159918562095">
+                <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="zyxi.1675547159918562088:1" resolveInfo="resPol" />
+                <link role="styleClass" roleId="yvnl.1186406756722:32" targetNodeId="yvov.1198160792349" resolveInfo="StaticField" />
+                <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.EditableStyleClassItem" typeId="yvnl.1186414860679:32" id="1675547159918562570">
+                  <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
+                </node>
+                <node role="menuDescriptor" roleId="yvnl.1164826688380:32" type="yvnl.CellMenuDescriptor" typeId="yvnl.1164824717996:32" id="1675547159918562571">
+                  <node role="cellMenuPart" roleId="yvnl.1164824815888:32" type="yvnl.CellMenuPart_CellMenuComponent" typeId="yvnl.1166059625718:32" id="1675547159918562572">
+                    <link role="cellMenuComponent" roleId="yvnl.1166059677893:32" targetNodeId="1675547159918502560" resolveInfo="TargetDeclaration_resourcesPolicy" />
+                  </node>
+                </node>
+              </node>
+              <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="1675547159918562092" />
+            </node>
             <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="127305800529581549">
               <property name="text" nameId="yvnl.1073389577007:32" value="Dependencies:" />
               <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.EditableStyleClassItem" typeId="yvnl.1186414860679:32" id="127305800529581550">
@@ -615,6 +644,46 @@
         </node>
       </node>
       <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="3344436107830227907" />
+    </node>
+  </root>
+  <root id="1675547159918502560">
+    <node role="menuDescriptor" roleId="yvnl.1166041505377:32" type="yvnl.CellMenuDescriptor" typeId="yvnl.1164824717996:32" id="1675547159918502561">
+      <node role="cellMenuPart" roleId="yvnl.1164824815888:32" type="yvnl.CellMenuPart_Generic_Group" typeId="yvnl.1165420413719:32" id="1675547159918562575">
+        <node role="parametersFunction" roleId="yvnl.1165420413720:32" type="yvnl.CellMenuPart_AbstractGroup_Query" typeId="yvnl.1163613035599:32" id="1675547159918562576">
+          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="1675547159918562577">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="1675547159918599397">
+              <node role="expression" roleId="yvor.1068580123156:3" type="yvim.SEnumOperationInvocation" typeId="yvim.1240930118027:16" id="1675547159918599398">
+                <link role="enumDeclaration" roleId="yvim.1240930118028:16" targetNodeId="zyxi.1675547159918562083:1" resolveInfo="ResourcesPolicy" />
+                <node role="operation" roleId="yvim.1240930317927:16" type="yvim.SEnum_MembersOperation" typeId="yvim.1240930444980:16" id="1675547159918599400" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="handlerFunction" roleId="yvnl.1165420413721:32" type="yvnl.CellMenuPart_Generic_Group_Handler" typeId="yvnl.1165420626554:32" id="1675547159918562578">
+          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="1675547159918562579">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="1675547159918601439">
+              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="1675547159918601446">
+                <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601450">
+                  <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.CellMenuPart_AbstractGroup_parameterObject" typeId="yvnl.1163613549566:32" id="1675547159918601449" />
+                  <node role="operation" roleId="yvor.1197027833540:3" type="yvim.EnumMember_ValueOperation" typeId="yvim.1240171359678:16" id="1675547159918601454" />
+                </node>
+                <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1675547159918601441">
+                  <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.CellMenuPart_Abstract_editedNode" typeId="yvnl.1163613822479:32" id="1675547159918601440" />
+                  <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="1675547159918601445">
+                    <link role="property" roleId="yvim.1138056395725:16" targetNodeId="zyxi.1675547159918562088:1" resolveInfo="resourcesPolicy" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameterObjectType" roleId="yvnl.1165253890469:32" type="yvim.SEnumMemberType" typeId="yvim.1240170042401:16" id="1675547159918599432">
+          <link role="enum" roleId="yvim.1240170836027:16" targetNodeId="zyxi.1675547159918562083:1" resolveInfo="ResourcesPolicy" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableFeature" roleId="yvnl.1166040865497:32" type="yvnl.CellMenuComponentFeature_Property" typeId="yvnl.1166041748520:32" id="1675547159918599512">
+      <link role="relationDeclaration" roleId="yvnl.1166054297096:32" targetNodeId="zyxi.1675547159918562088:1" resolveInfo="resPol" />
     </node>
   </root>
 </model>

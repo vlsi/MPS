@@ -30,7 +30,6 @@ import java.util.Map.Entry;
 class SNodeIdeaUndoableAction implements UndoableAction {
   private boolean myIsGlobal;
   private DocumentReference[] myAffectedDocuments;
-  private Map<SNodePointer, Long> myChangedTimestamps = new HashMap<SNodePointer, Long>();
 
   private List<SNodeUndoableAction> myWrapped;
 
@@ -41,8 +40,6 @@ class SNodeIdeaUndoableAction implements UndoableAction {
     myIsGlobal = false;
     for (SNodeUndoableAction a : wrapped) {
       myIsGlobal |= a.isGlobal();
-      if (a.getRoot() == null) continue;
-      myChangedTimestamps.put(a.getRoot(), a.getModificationStamp());
     }
 
     if (!myIsGlobal) {
@@ -66,11 +63,6 @@ class SNodeIdeaUndoableAction implements UndoableAction {
         Collections.reverse(rev);
         for (SNodeUndoableAction a : rev) {
           a.undo();
-        }
-
-        MPSNodesVirtualFileSystem vfs = MPSNodesVirtualFileSystem.getInstance();
-        for (Entry<SNodePointer, Long> e : myChangedTimestamps.entrySet()) {
-          vfs.getFileFor(e.getKey()).setModificationStamp(e.getValue());
         }
       }
     });

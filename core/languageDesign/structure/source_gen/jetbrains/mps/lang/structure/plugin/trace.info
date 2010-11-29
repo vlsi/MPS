@@ -374,7 +374,7 @@
     <nodeInfo nodeId="4555902841936837930" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="162" startPosition="201" endLine="166" endPosition="8" />
     <nodeInfo nodeId="6388164970935847843" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="197" startPosition="195" endLine="201" endPosition="8" />
     <nodeInfo nodeId="6388164970935848136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="479" startPosition="197" endLine="483" endPosition="8" />
-    <nodeInfo nodeId="2165772098013669690" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="203" endLine="520" endPosition="0" />
+    <nodeInfo nodeId="2165772098013669690" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="210" endLine="520" endPosition="0" />
     <nodeInfo nodeId="6388164970935848215" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="544" startPosition="175" endLine="548" endPosition="11" />
     <nodeInfo nodeId="6388164970935848605" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="688" startPosition="194" endLine="692" endPosition="8" />
     <nodeInfo nodeId="2165772098013669644" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="515" startPosition="67" endLine="520" endPosition="10" />
@@ -477,7 +477,7 @@
       <varInfo nodeId="6388164970935847761" varName="scope" />
       <varInfo nodeId="6388164970935847755" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="2165772098013669690" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="203" endLine="520" endPosition="0" />
+    <scopeInfo nodeId="2165772098013669690" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="210" endLine="520" endPosition="0" />
     <scopeInfo nodeId="6388164970935848214" fileName="ConceptDeclaration_TabbedEditor.java" startLine="544" startPosition="175" endLine="548" endPosition="11" />
     <scopeInfo nodeId="6388164970935848267" fileName="ConceptDeclaration_TabbedEditor.java" startLine="557" startPosition="140" endLine="561" endPosition="15">
       <varInfo nodeId="6388164970935848269" varName="conceptToAdd" />
@@ -576,7 +576,7 @@
       <varInfo nodeId="6388164970935848429" varName="mapping" />
       <varInfo nodeId="6388164970935848302" varName="language" />
     </scopeInfo>
-    <unitInfo nodeId="2165772098013669690" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="176" endLine="520" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$1" />
+    <unitInfo nodeId="2165772098013669690" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="183" endLine="520" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$1" />
     <unitInfo nodeId="6388164970935848305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="47" endLine="579" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$2" />
     <unitInfo nodeId="2955040059201570638" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="59" endLine="594" endPosition="9" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$3" />
     <unitInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="47" endLine="606" endPosition="7" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$4" />

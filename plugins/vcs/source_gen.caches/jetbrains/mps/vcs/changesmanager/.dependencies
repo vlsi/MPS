@@ -260,6 +260,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ICollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
@@ -301,6 +302,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SModelUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.VCSUtils" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager._Adapters" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.DiffBuilder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
@@ -381,7 +383,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNodeListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessage" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner" />
-    <classNode extendsClassName="jetbrains.mps.util.CounterMap.CounterMapHandler" />
+    <classNode extendsClassName="jetbrains.mps.util.CounterMapHandler" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager" file="RootNodeFileStatusManager.java">
@@ -478,6 +480,11 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager._Adapters" file="_Adapters.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
 </dependenciesRoot>
 

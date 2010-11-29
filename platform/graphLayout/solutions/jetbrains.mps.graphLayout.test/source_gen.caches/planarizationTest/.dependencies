@@ -52,6 +52,17 @@
     <classNode dependClassName="jetbrains.mps.graphLayout.planarGraph.Face" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
   </dependency>
+  <dependency className="planarizationTest.ClusterEmbeddingProcessor_Test" file="ClusterEmbeddingProcessor_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.graphLayout.graph.ClusteredGraph" />
+    <classNode dependClassName="jetbrains.mps.graphLayout.graph.INode" />
+    <classNode dependClassName="jetbrains.mps.graphLayout.planarization.ClusterEmbeddingProcessor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="visualization.GraphIO" />
+    <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
   <dependency className="planarizationTest.PQPlanarityTest_Test" file="PQPlanarityTest_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
@@ -154,6 +165,7 @@
     <classNode dependClassName="jetbrains.mps.graphLayout.graph.Graph" />
     <classNode dependClassName="jetbrains.mps.graphLayout.planarGraph.EmbeddedGraph" />
     <classNode dependClassName="jetbrains.mps.graphLayout.planarization.TreeEmbeddingFinder" />
+    <classNode dependClassName="planarizationTest.CheckEmbeddedGraph" />
     <classNode dependClassName="sampleGraphs.SimpleDirectedGraphs" />
     <classNode dependClassName="visualization.GraphIO" />
     <classNode extendsClassName="junit.framework.TestCase" />

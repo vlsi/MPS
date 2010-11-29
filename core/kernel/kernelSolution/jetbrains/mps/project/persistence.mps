@@ -1107,12 +1107,6 @@
                   <node role="typeExpression" roleId="yvr6.1167795626698:3" type="yvr6.AttributeDeclaration" typeId="yvr6.1167697887602:3" id="842994667883030019">
                     <property name="attributeName" nameId="yvr6.1167698115100:3" value="uuid" />
                   </node>
-                  <node role="typeExpression" roleId="yvr6.1167795626698:3" type="yvr6.AttributeDeclaration" typeId="yvr6.1167697887602:3" id="842994667883030020">
-                    <property name="attributeName" nameId="yvr6.1167698115100:3" value="extenallyVisible" />
-                    <node role="type" roleId="yvr6.5496586556363185428:3" type="yvr6.BooleanSchemaType" typeId="yvr6.5496586556363185398:3" id="842994667883030021">
-                      <property name="defaultValue" nameId="yvr6.5496586556363449135:3" value="true" />
-                    </node>
-                  </node>
                   <node role="typeExpression" roleId="yvr6.1167795626698:3" type="yvr6.AttributeDeclaration" typeId="yvr6.1167697887602:3" id="842994667883030022">
                     <property name="attributeName" nameId="yvr6.1167698115100:3" value="dontLoadClasses" />
                     <node role="type" roleId="yvr6.5496586556363185428:3" type="yvr6.BooleanSchemaType" typeId="yvr6.5496586556363185398:3" id="842994667883030023" />
@@ -8946,20 +8940,6 @@
                         </node>
                       </node>
                       <node role="statement" roleId="yvor.1068581517665:3" type="yvor.Statement" typeId="yvor.1068580123157:3" id="842994667883032904" />
-                      <node role="statement" roleId="yvor.1068581517665:3" type="ut80.BuilderStatement" typeId="ut80.7057666463730155299:0" id="842994667883032905">
-                        <node role="body" roleId="ut80.4797501453849924252:0" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="842994667883032906" />
-                        <node role="builder" roleId="ut80.4797501453850567416:0" type="ut80.BeanPropertyBuilder" typeId="ut80.2679357232283750087:0" id="842994667883032907">
-                          <link role="setter" roleId="ut80.2679357232283750088:0" targetNodeId="glhg.~SolutionDescriptor%dsetExternallyVisible(boolean)%cvoid" resolveInfo="setExternallyVisible" />
-                          <node role="value" roleId="ut80.2679357232283750106:0" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="842994667883032908">
-                            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="842994667883032909">
-                              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="842994667883032868" resolveInfo="solutionElement" />
-                            </node>
-                            <node role="operation" roleId="yvor.1197027833540:3" type="tark.AccessAttributeOperation" typeId="tark.4991903842868445303:4" id="842994667883032910">
-                              <link role="attributeDeclaration" roleId="tark.4991903842868445309:4" targetNodeId="842994667883030020" resolveInfo="extenallyVisible" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
                       <node role="statement" roleId="yvor.1068581517665:3" type="ut80.BuilderStatement" typeId="ut80.7057666463730155299:0" id="842994667883032911">
                         <node role="body" roleId="ut80.4797501453849924252:0" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="842994667883032912" />
                         <node role="builder" roleId="ut80.4797501453850567416:0" type="ut80.BeanPropertyBuilder" typeId="ut80.2679357232283750087:0" id="842994667883032913">
@@ -9505,20 +9485,6 @@
                               <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="glhg.~ModuleDescriptor%dgetUUID()%cjava%dlang%dString" resolveInfo="getUUID" />
                             </node>
                           </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="statement" roleId="yvor.1068581517665:3" type="ut80.BuilderStatement" typeId="ut80.7057666463730155299:0" id="842994667883033096">
-                    <node role="body" roleId="ut80.4797501453849924252:0" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="842994667883033097" />
-                    <node role="builder" roleId="ut80.4797501453850567416:0" type="tark.AttributeBuilder" typeId="tark.7225751495667376018:4" id="842994667883033098">
-                      <link role="attributeDeclaration" roleId="tark.7225751495667376019:4" targetNodeId="842994667883030020" resolveInfo="extenallyVisible" />
-                      <node role="value" roleId="tark.7225751495667403566:4" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="842994667883033099">
-                        <node role="operand" roleId="yvor.1197027771414:3" type="yvor.ParameterReference" typeId="yvor.1068581242874:3" id="842994667883033100">
-                          <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="842994667883033236" resolveInfo="descriptor" />
-                        </node>
-                        <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="842994667883033101">
-                          <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="glhg.~SolutionDescriptor%disExternallyVisible()%cboolean" resolveInfo="isExternallyVisible" />
                         </node>
                       </node>
                     </node>

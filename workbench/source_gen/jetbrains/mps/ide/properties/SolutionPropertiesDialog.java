@@ -30,7 +30,6 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
 
   public JPanel createCheckboxPanel() {
     List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
-    list.add(new StandardComponents.CheckboxDescriptor(myProperties, SolutionProperties.EXTERNALLY_VISIBLE, "Externally visible"));
     list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.COMPILE_IN_MPS, "Compile in MPS"));
     if (InternalFlag.isInternalMode()) {
       list.add(new StandardComponents.CheckboxDescriptor(myProperties, ModuleProperties.ENABLE_JAVA_STUBS, "Stubs For Generated Code"));

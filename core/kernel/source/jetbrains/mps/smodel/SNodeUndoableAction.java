@@ -15,29 +15,19 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-
 public abstract class SNodeUndoableAction {
   private SNodePointer myRoot = null;
-  private Long myRootTimestamp = null;
 
   protected SNodeUndoableAction(SNode affectedNode) {
     SNode containingRoot = affectedNode.getContainingRoot();
 
-    if (containingRoot!=null){
+    if (containingRoot != null) {
       myRoot = new SNodePointer(containingRoot);
-      MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRoot);
-      myRootTimestamp = file.getModificationStamp();
     }
   }
 
   public SNodePointer getRoot() {
     return myRoot;
-  }
-
-  public Long getModificationStamp() {
-    return myRootTimestamp;
   }
 
   protected abstract void doUndo();

@@ -20,7 +20,6 @@ package jetbrains.mps.newTypesystem.differences;
  * User: Ilya.Lintsbakh
  * Date: Oct 14, 2010
  * Time: 1:42:37 PM
- * To change this template use File | Settings | File Templates.
  */
 public class StringDifference extends Difference {
   private String myString;

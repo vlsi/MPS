@@ -56,8 +56,8 @@ public class VersionUtil {
 
   private void processImportElement(ImportElement elem) {
     SModelReference modelRef = elem.getModelReference();
-    //int hash = (modelRef.hashCode() % HASH_SIZE + HASH_SIZE) % HASH_SIZE;
-    int hash = (modelRef.hashCode() >>> 1) % HASH_SIZE;
+    int hash = (modelRef.hashCode() % HASH_SIZE + HASH_SIZE) % HASH_SIZE;
+    //int hash = (modelRef.hashCode() >>> 1) % HASH_SIZE;
     while (myUsedIndexes.contains(hash))  hash = (hash + 1) % HASH_SIZE;
     myUsedIndexes.add(hash);
     myImportIndex.put(modelRef, Integer.toString(hash, HASH_BASE));
@@ -84,9 +84,7 @@ public class VersionUtil {
     }
     StringBuilder result = new StringBuilder();
     if (!(myModelRef.equals(ref)))  result.append(myImportIndex.get(ref)).append(MODEL_SEPARATOR_CHAR);
-    result.append(encode(text));
-    if (impElem.getUsedVersion() >= 0)  result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
-    return result.toString();
+    return result.append(encode(text)).toString();
   }
   @NotNull
   public String genConceptReferenceString(@Nullable SNode concept, @NotNull String fqName) {

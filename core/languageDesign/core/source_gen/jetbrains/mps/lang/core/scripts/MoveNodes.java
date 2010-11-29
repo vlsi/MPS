@@ -66,12 +66,12 @@ public class MoveNodes extends BaseGeneratedRefactoring {
         public boolean accept(LinkDeclaration it) {
           return SPropertyOperations.hasValue(SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
         }
-      }).select(new ISelector<LinkDeclaration, SNode>() {
+      }).<SNode>select(new ISelector<LinkDeclaration, SNode>() {
         public SNode select(LinkDeclaration it) {
           return SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
         }
       });
-      Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector<SNode, String>() {
+      Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).<String>select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SModelUtil.getGenuineLinkRole(it);
         }

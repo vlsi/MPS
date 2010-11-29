@@ -61,6 +61,7 @@ import java.util.List;
  */
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
+  private static final Color BACKGROUND_COLOR = new Color(0xF0F0F0);
 
   private static final int MIN_LEFT_TEXT_WIDTH = 0;
   private static final int MIN_ICON_RENDERERS_WIDTH = 14;
@@ -104,7 +105,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private int myHeight;
   
   public LeftEditorHighlighter(@NotNull EditorComponent editorComponent) {
-    setBackground(Color.white);
+    setBackground(BACKGROUND_COLOR);
     myEditorComponent = editorComponent;
     addMouseListener(new MouseAdapter() {
       @Override
@@ -192,6 +193,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       painter.dispose();
     }
+    for (AbstractLeftColumn column : myTextColumns) {
+      column.dispose();
+    }
     BookmarkManager bookmarkManager = getBookmarkManager();
     if (bookmarkManager != null) {
       bookmarkManager.removeBookmarkListener(myListener);
@@ -248,7 +252,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private void paintBackgroundAndFoldingLine(Graphics g, Rectangle clipBounds) {
     Graphics2D g2d = (Graphics2D) g;
     g.setColor(getBackground());
-    g.fillRect(clipBounds.x, clipBounds.y, clipBounds.width, clipBounds.height);
+    g.fillRect(clipBounds.x, clipBounds.y, Math.min(clipBounds.width, myFoldingLineX - clipBounds.x), clipBounds.height);
+    g.setColor(getEditorComponent().getBackground());
+    g.fillRect(Math.max(clipBounds.x, myFoldingLineX), clipBounds.y, clipBounds.width - Math.max(0, myFoldingLineX - clipBounds.x), clipBounds.height);
 
     // same as in EditorComponent.paint() method
     EditorCell deepestCell = myEditorComponent.getDeepestSelectedCell();
@@ -603,7 +609,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         } else {
           mousePressedInIconsArea(e);
         }
-        if (!e.isConsumed() && e.isPopupTrigger()) {
+        if (!e.isConsumed() && e.getButton() == MouseEvent.BUTTON3 && e.getID() == MouseEvent.MOUSE_PRESSED) {
           BaseGroup actionGroup = ActionUtils.getGroup(EditorLeftPanelMenu_ActionGroup.ID);
           ActionPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, actionGroup);
           popupMenu.getComponent().show(e.getComponent(), e.getX(), e.getY());
@@ -620,7 +626,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private void mousePressedInIconsArea(MouseEvent e) {
     EditorMessageIconRenderer iconRenderer = getIconRendererUnderMouse(e);
     if (iconRenderer != null) {
-      if (e.isPopupTrigger()) {
+      if (e.getButton() == MouseEvent.BUTTON3) {
         JPopupMenu popupMenu = iconRenderer.getPopupMenu();
         if (popupMenu != null && e.getID() == MouseEvent.MOUSE_PRESSED) {
           e.consume();

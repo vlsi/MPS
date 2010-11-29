@@ -111,6 +111,18 @@ public class GenerateSpecial_Facet implements IFacet {
       return name;
     }
 
+    public boolean requiresInput() {
+      return true;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
     }

@@ -102,7 +102,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
         expandPath(new TreePath(progressNode.getPath()));
 
-        paint(getGraphics());
+        if (getGraphics().getClipBounds() != null) paint(getGraphics());
       }
 
 

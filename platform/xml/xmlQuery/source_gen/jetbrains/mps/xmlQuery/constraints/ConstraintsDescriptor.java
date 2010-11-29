@@ -20,6 +20,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ElementBuilder_elementDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new XMLSAXAttributeReference_attribute_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new XMLSAXFieldReference_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new XMLSAXChildRule_rule_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

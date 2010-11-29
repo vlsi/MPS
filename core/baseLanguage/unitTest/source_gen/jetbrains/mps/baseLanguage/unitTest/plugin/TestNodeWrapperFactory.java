@@ -168,7 +168,7 @@ public enum TestNodeWrapperFactory {
   }
 
   public static Iterable<SNode> getWrappedConcepts() {
-    return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).select(new ISelector<TestNodeWrapperFactory, SNode>() {
+    return Sequence.fromIterable(Sequence.fromArray(TestNodeWrapperFactory.values())).<SNode>select(new ISelector<TestNodeWrapperFactory, SNode>() {
       public SNode select(TestNodeWrapperFactory it) {
         return it.getWrappedConcept();
       }
@@ -180,7 +180,7 @@ public enum TestNodeWrapperFactory {
       public boolean accept(TestNodeWrapperFactory it) {
         return it.isRoot();
       }
-    }).select(new ISelector<TestNodeWrapperFactory, SNode>() {
+    }).<SNode>select(new ISelector<TestNodeWrapperFactory, SNode>() {
       public SNode select(TestNodeWrapperFactory it) {
         return it.getWrappedConcept();
       }

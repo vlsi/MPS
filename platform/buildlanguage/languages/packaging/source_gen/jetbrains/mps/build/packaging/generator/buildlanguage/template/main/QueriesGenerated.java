@@ -186,7 +186,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1204022349926(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("pack." + SPropertyOperations.getString(_context.getNode(), "name").replace(File.separator, "_"), null);
+    return "pack." + SPropertyOperations.getString(_context.getNode(), "name").replace(File.separator, "_");
   }
 
   public static Object propertyMacro_GetPropertyValue_1210098113087(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -948,7 +948,7 @@ __switch__:
       public boolean accept(SNode blk) {
         return "core.baseLanguage".equals(SPropertyOperations.getString(blk, "name")) || "core.languageDesign".equals(SPropertyOperations.getString(blk, "name"));
       }
-    }).translate(new ITranslator2<SNode, SNode>() {
+    }).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode blk) {
         return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.Folder"), "entry", true);
       }

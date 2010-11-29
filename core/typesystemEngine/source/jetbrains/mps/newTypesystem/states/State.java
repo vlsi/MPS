@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -36,19 +35,18 @@ import java.util.Stack;
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
  * Time: 6:09:38 PM
- * To change this template use File | Settings | File Templates.
  */
 public class State {
-  private TypeCheckingContextNew myTypeCheckingContext;
+  private final TypeCheckingContextNew myTypeCheckingContext;
 
-  private Equations myEquations;
-  private Inequalities myInequalities;
-  private NodeMaps myNodeMaps;
-  private NonConcrete myNonConcrete;
+  private final Equations myEquations;
+  private final Inequalities myInequalities;
+  private final NodeMaps myNodeMaps;
+  private final NonConcrete myNonConcrete;
 
-  private VariableIdentifier myVariableIdentifier;
+  private final VariableIdentifier myVariableIdentifier;
 
-  private Stack<Difference> myDifferenceStack = new Stack<Difference>();
+  private final Stack<Difference> myDifferenceStack = new Stack<Difference>();
   private Difference myDifference = new HeadDifference();
 
   public State(TypeCheckingContextNew tcc) {
@@ -81,7 +79,7 @@ public class State {
   }
 
   public void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
-    myInequalities.addComparableEquation(subType, superType, isWeak, info); 
+    myInequalities.addComparableEquation(subType, superType, isWeak, info);
   }
 
   public NodeMaps getNodeMaps() {
@@ -216,13 +214,9 @@ public class State {
     return myEquations.getRepresentative(node);
   }
 
-  public Set<SNode> getEquivalents(SNode node) {
-    return myEquations.getEquivalents(myNodeMaps.getType(node));
-  }
-
   public SNode createNewRuntimeTypesVariable() {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
-    myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+      myTypeCheckingContext.getRuntimeTypesModel(), GlobalScope.getInstance(), false);
     typeVar.setName(myVariableIdentifier.getNewVarName());
 //  registerTypeVariable(typeVar);          todo ?
     return typeVar;

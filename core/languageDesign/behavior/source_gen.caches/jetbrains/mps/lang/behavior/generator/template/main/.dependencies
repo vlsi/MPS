@@ -14,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -27,6 +28,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorConstants" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
 </dependenciesRoot>
 

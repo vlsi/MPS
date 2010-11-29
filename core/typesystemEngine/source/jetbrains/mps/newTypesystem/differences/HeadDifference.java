@@ -20,7 +20,6 @@ package jetbrains.mps.newTypesystem.differences;
  * User: Ilya.Lintsbakh
  * Date: Oct 14, 2010
  * Time: 11:53:12 AM
- * To change this template use File | Settings | File Templates.
  */
 public class HeadDifference extends Difference {
 

@@ -41,27 +41,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class ModuleChooserDialog<T extends ModuleReference> extends BaseDialog {
-  private List<T> myModules = new ArrayList<T>();
-  private List<T> myNonProjectModules = new ArrayList<T>();
+class ModuleChooserDialog extends BaseDialog {
+  private List<ModuleReference> myModules = new ArrayList<ModuleReference>();
+  private List<ModuleReference> myNonProjectModules = new ArrayList<ModuleReference>();
   private SmartChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
   private boolean myIsMultipleSelection = false;
 
-  ModuleChooserDialog(Frame owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
+  ModuleChooserDialog(Frame owner, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose " + entityString);
     myIsMultipleSelection = multiSelection;
     doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
-  ModuleChooserDialog(Dialog owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
+  ModuleChooserDialog(Dialog owner, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose " + entityString);
     myIsMultipleSelection = multiSelection;
     doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
-  private void doInit(final List<T> options, List<T> nonProjectLanguages, final String entityString) {
+  private void doInit(final List<ModuleReference> options, List<ModuleReference> nonProjectLanguages, final String entityString) {
     setModal(true);
     myModules.addAll(options);
     if (nonProjectLanguages != null) {
@@ -120,14 +120,14 @@ class ModuleChooserDialog<T extends ModuleReference> extends BaseDialog {
     return myChooser.getPanel();
   }
 
-  public List<T> getResult() {
-    List<T> result = new ArrayList<T>();
+  public List<ModuleReference> getResult() {
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
     if (myIsCancelled) return result;
     List<Object> choosen = Collections.unmodifiableList(myChooser.getChosenElements());
     for (Object item : choosen) {
       if (item instanceof BaseModuleItem) {
         BaseModuleItem moduleItem = (BaseModuleItem) item;
-        result.add((T) moduleItem.getModuleReference());
+        result.add(moduleItem.getModuleReference());
       }
     }
     return result;

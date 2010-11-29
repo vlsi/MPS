@@ -210,7 +210,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ContinueStatement_1199470413669(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "loopLabelReference", true) == null) && ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, SNode>() {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "loopLabelReference", true) == null) && ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -2591,7 +2591,7 @@ __switch__:
       Calculable calculable = new Calculable() {
         public Object calculate() {
           List<SNode> labels = new ArrayList<SNode>();
-          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, SNode>() {
+          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).<SNode>translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(final SNode it) {
               return new Iterable<SNode>() {
                 public Iterator<SNode> iterator() {
@@ -2634,7 +2634,7 @@ __switch__:
               };
             }
           }));
-          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).translate(new ITranslator2<SNode, SNode>() {
+          ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SwitchStatement", false)).<SNode>translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(final SNode it) {
               return new Iterable<SNode>() {
                 public Iterator<SNode> iterator() {
@@ -2717,7 +2717,7 @@ __switch__:
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel");
       Calculable calculable = new Calculable() {
         public Object calculate() {
-          return ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, SNode>() {
+          return ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).<SNode>translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(final SNode it) {
               return new Iterable<SNode>() {
                 public Iterator<SNode> iterator() {

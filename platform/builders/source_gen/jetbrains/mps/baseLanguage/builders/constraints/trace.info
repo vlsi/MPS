@@ -120,7 +120,7 @@
     <nodeInfo nodeId="8969040284892333740" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="12" endLine="55" endPosition="36" />
     <nodeInfo nodeId="8969040284892333720" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="10" endLine="56" endPosition="5" />
     <nodeInfo nodeId="7782956297805865828" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="47" startPosition="11" endLine="50" endPosition="9" />
-    <nodeInfo nodeId="7782956297805865810" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="247" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="7782956297805865810" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="254" endLine="47" endPosition="0" />
     <nodeInfo nodeId="7782956297805865746" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="42" startPosition="0" endLine="51" endPosition="7" />
     <nodeInfo nodeId="8969040284892333192" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="36" startPosition="111" endLine="56" endPosition="5" />
     <scopeInfo nodeId="8969040284892333193" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="37" startPosition="118" endLine="38" endPosition="232" />
@@ -128,7 +128,7 @@
     <scopeInfo nodeId="7782956297805865829" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="48" startPosition="292" endLine="49" endPosition="152" />
     <scopeInfo nodeId="8969040284892333721" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="12" endLine="55" endPosition="36" />
     <scopeInfo nodeId="7782956297805865747" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="47" startPosition="11" endLine="50" endPosition="9" />
-    <scopeInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="247" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="254" endLine="47" endPosition="0" />
     <scopeInfo nodeId="7782956297805865746" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="42" startPosition="0" endLine="51" endPosition="7">
       <varInfo nodeId="7782956297805865750" varName="dcl" />
     </scopeInfo>
@@ -138,7 +138,7 @@
     <scopeInfo nodeId="7288041816793179322" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="35" startPosition="132" endLine="56" endPosition="5">
       <varInfo nodeId="7288041816793199841" varName="contextBuilder" />
     </scopeInfo>
-    <unitInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="217" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_declaration_ReferentConstraint$1" />
+    <unitInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="224" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_declaration_ReferentConstraint$1" />
   </root>
 </debugInfo>
 

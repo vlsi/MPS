@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
@@ -38,7 +38,7 @@ public interface IModelPersistence {
 
   XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state);
 
-  XMLSAXHandler<List<SNodeId>> getAnnotationReaderHandler();
+  XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler();
 
 
   SModelReference upgradeModelUID(SModelReference modelReference);

@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.*;
@@ -344,5 +345,10 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         methodDeclarationSignatureChanged(formalParam.getParent(), resolveTargets);
       }
     }
+  }
+
+  @Override
+  public void clear(SNode node, EditorComponent editor) {
+    clearCaches();
   }
 }

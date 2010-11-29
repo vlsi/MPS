@@ -16,22 +16,18 @@ public class LanguageChecksPlugin_CustomProjectPlugin extends BaseCustomProjectP
   }
 
   public void doInit(MPSProject project) {
-    /*
-      LanguageChecksPlugin_CustomProjectPlugin.this.myChecker = new LanguageChecker();
-      Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
-      if (highlighter != null) {
-        highlighter.addChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
-      }
-    */
+    LanguageChecksPlugin_CustomProjectPlugin.this.myChecker = new LanguageChecker();
+    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
+    if (highlighter != null) {
+      highlighter.addChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
+    }
   }
 
   public void doDispose(MPSProject project) {
-    /*
-      Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
-      if (highlighter != null) {
-        highlighter.removeChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
-        LanguageChecksPlugin_CustomProjectPlugin.this.myChecker.dispose();
-      }
-    */
+    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
+    if (highlighter != null) {
+      highlighter.removeChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myChecker);
+      LanguageChecksPlugin_CustomProjectPlugin.this.myChecker.dispose();
+    }
   }
 }

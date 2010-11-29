@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -123,13 +124,7 @@ public class ModelPersistence {
   }
   //--------read--------
 
-  public static DescriptorLoadResult loadDescriptor(IFile file) {
-    final DescriptorLoadResult result = new DescriptorLoadResult();
-    Map<String, String> metadata = loadMetadata(file);
-    if (metadata != null) {
-      result.setMetadata(metadata);
-    }
-
+  private static void doLoadDescriptor(final DescriptorLoadResult result, InputSource source) {
     DefaultHandler handler = new DefaultHandler() {
       public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (MODEL.equals(qName)) {
@@ -156,13 +151,25 @@ public class ModelPersistence {
     };
 
     try {
-      InputSource source = JDOMUtil.loadSource(file);
       SAXParser parser = JDOMUtil.createSAXParser();
       parser.parse(source, handler);
     } catch (SAXException ex) {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
     } catch (Throwable t) {
+    }
+  }
+
+  public static DescriptorLoadResult loadDescriptor(IFile file) {
+    final DescriptorLoadResult result = new DescriptorLoadResult();
+    Map<String, String> metadata = loadMetadata(file);
+    if (metadata != null) {
+      result.setMetadata(metadata);
+    }
+
+    try {
+      doLoadDescriptor(result, JDOMUtil.loadSource(file));
+    } catch (IOException ignored) {
     }
 
     return result;
@@ -220,9 +227,14 @@ public class ModelPersistence {
   }
 
   @Nullable
-  public static List<SNodeId> getLineNumberToNodeIdMap(int version, String content) {
+  public static List<LineContent> getLineToContentMap(String content) {
+    DescriptorLoadResult loadResult = new DescriptorLoadResult();
+    doLoadDescriptor(loadResult, new InputSource(new StringReader(content)));
+
+    int version = loadResult.getPersistenceVersion();
+
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
-      XMLSAXHandler<List<SNodeId>> handler = getModelPersistence(version).getAnnotationReaderHandler();
+      XMLSAXHandler<List<LineContent>> handler = getModelPersistence(version).getLineToContentMapReaderHandler();
       if (handler != null) {
         try {
           SAXParser parser = JDOMUtil.createSAXParser();

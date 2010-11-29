@@ -23,7 +23,7 @@
           <root url="file://$MODULE_DIR$/../core/debug/classes" />
           <root url="file://$MODULE_DIR$/../core/make-runtime/classes" />
           <root url="file://$MODULE_DIR$/../core/generator/classes" />
-          <root url="file://$MODULE_DIR$/../core/javaParser/classes" />
+          <root url="file://$MODULE_DIR$/../workbench/javaParser/classes" />
           <root url="file://$MODULE_DIR$/../core/kernel/xmlQuery/runtime/classes" />
           <root url="file://$MODULE_DIR$/../workbench/classes" />
           <root url="file://$MODULE_DIR$/../core/debug-api/classes" />

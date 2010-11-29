@@ -45,6 +45,19 @@ public class ForEach_Test extends Util_Test {
     }
   }
 
+  public void test_mps10737() throws Exception {
+    //  testing compilation only 
+    IFoo foo = new IFoo() {
+      public Iterable<? extends IBar> get() {
+        return null;
+      }
+    };
+    for (IBar bars : Sequence.fromIterable(foo.get())) {
+    }
+    for (IBar.Bar bars : Sequence.fromIterable(new IFoo.Foo().get())) {
+    }
+  }
+
   private void accept(int valid) {
   }
 

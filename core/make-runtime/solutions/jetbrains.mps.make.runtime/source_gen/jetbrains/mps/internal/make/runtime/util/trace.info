@@ -56,10 +56,10 @@
     <nodeInfo nodeId="5079576194953072011" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GraphAnalyzer.java" startLine="123" startPosition="26" endLine="126" endPosition="13" />
     <nodeInfo nodeId="8382282457890483556" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="GraphAnalyzer.java" startLine="128" startPosition="21" endLine="131" endPosition="9" />
     <nodeInfo nodeId="1936544640085949723" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="GraphAnalyzer.java" startLine="189" startPosition="0" endLine="192" endPosition="5" />
-    <nodeInfo nodeId="2611988743427260336" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="22" startPosition="112" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="6976901853022624210" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="31" startPosition="113" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="4141757805202322548" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="55" startPosition="105" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="5566937012378945042" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="64" startPosition="153" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="2611988743427260336" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="22" startPosition="138" endLine="26" endPosition="0" />
+    <nodeInfo nodeId="6976901853022624210" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="31" startPosition="139" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="4141757805202322548" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="55" startPosition="108" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="5566937012378945042" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="64" startPosition="156" endLine="68" endPosition="0" />
     <nodeInfo nodeId="5566937012378945105" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="94" startPosition="81" endLine="98" endPosition="0" />
     <nodeInfo nodeId="8382282457890483479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="110" startPosition="81" endLine="114" endPosition="0" />
     <nodeInfo nodeId="8382282457890483492" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="115" startPosition="82" endLine="119" endPosition="0" />
@@ -83,7 +83,7 @@
     <nodeInfo nodeId="8382282457890483475" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GraphAnalyzer.java" startLine="109" startPosition="81" endLine="114" endPosition="7" />
     <nodeInfo nodeId="8382282457890483458" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GraphAnalyzer.java" startLine="149" startPosition="293" endLine="154" endPosition="7" />
     <nodeInfo nodeId="2611988743427260360" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="205" startPosition="0" endLine="210" endPosition="0" />
-    <nodeInfo nodeId="1682545549094398067" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="72" startPosition="96" endLine="78" endPosition="0" />
+    <nodeInfo nodeId="1682545549094398067" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="GraphAnalyzer.java" startLine="72" startPosition="122" endLine="78" endPosition="0" />
     <nodeInfo nodeId="4141757805202317983" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GraphAnalyzer.java" startLine="82" startPosition="112" endLine="88" endPosition="16" />
     <nodeInfo nodeId="5566937012378945119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GraphAnalyzer.java" startLine="98" startPosition="7" endLine="104" endPosition="14" />
     <nodeInfo nodeId="1682545549094398060" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GraphAnalyzer.java" startLine="71" startPosition="73" endLine="78" endPosition="24" />
@@ -150,10 +150,10 @@
     <scopeInfo nodeId="1936544640085949723" fileName="GraphAnalyzer.java" startLine="189" startPosition="0" endLine="192" endPosition="5">
       <varInfo nodeId="1682545549094398075" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="22" startPosition="112" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="31" startPosition="113" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="4141757805202322548" fileName="GraphAnalyzer.java" startLine="55" startPosition="105" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="5566937012378945042" fileName="GraphAnalyzer.java" startLine="64" startPosition="153" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="22" startPosition="138" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="31" startPosition="139" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="4141757805202322548" fileName="GraphAnalyzer.java" startLine="55" startPosition="108" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5566937012378945042" fileName="GraphAnalyzer.java" startLine="64" startPosition="156" endLine="68" endPosition="0" />
     <scopeInfo nodeId="5566937012378945105" fileName="GraphAnalyzer.java" startLine="94" startPosition="81" endLine="98" endPosition="0" />
     <scopeInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="110" startPosition="81" endLine="114" endPosition="0" />
     <scopeInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="115" startPosition="82" endLine="119" endPosition="0" />
@@ -181,7 +181,7 @@
     <scopeInfo nodeId="5566937012378944758" fileName="GraphAnalyzer.java" startLine="62" startPosition="38" endLine="68" endPosition="7">
       <varInfo nodeId="5566937012378945026" varName="ws" />
     </scopeInfo>
-    <scopeInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="72" startPosition="96" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="72" startPosition="122" endLine="78" endPosition="0" />
     <scopeInfo nodeId="706015266664522389" fileName="GraphAnalyzer.java" startLine="71" startPosition="73" endLine="78" endPosition="24" />
     <scopeInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="121" startPosition="108" endLine="128" endPosition="0" />
     <scopeInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="138" startPosition="91" endLine="145" endPosition="0" />
@@ -235,10 +235,10 @@
     <scopeInfo nodeId="2105022298825483318" fileName="GraphAnalyzer.java" startLine="107" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="2105022298825483323" varName="ws" />
     </scopeInfo>
-    <unitInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="22" startPosition="70" endLine="26" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
-    <unitInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="31" startPosition="71" endLine="35" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
-    <unitInfo nodeId="4141757805202322548" fileName="GraphAnalyzer.java" startLine="55" startPosition="63" endLine="59" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
-    <unitInfo nodeId="5566937012378945042" fileName="GraphAnalyzer.java" startLine="64" startPosition="111" endLine="68" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
+    <unitInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="22" startPosition="96" endLine="26" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
+    <unitInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="31" startPosition="97" endLine="35" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
+    <unitInfo nodeId="4141757805202322548" fileName="GraphAnalyzer.java" startLine="55" startPosition="66" endLine="59" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
+    <unitInfo nodeId="5566937012378945042" fileName="GraphAnalyzer.java" startLine="64" startPosition="114" endLine="68" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
     <unitInfo nodeId="5566937012378945105" fileName="GraphAnalyzer.java" startLine="94" startPosition="43" endLine="98" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$5" />
     <unitInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="110" startPosition="43" endLine="114" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$7" />
     <unitInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="115" startPosition="40" endLine="119" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$8" />
@@ -249,7 +249,7 @@
     <unitInfo nodeId="8382282457890465343" fileName="GraphAnalyzer.java" startLine="174" startPosition="24" endLine="178" endPosition="9" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$15" />
     <unitInfo nodeId="4141757805202317986" fileName="GraphAnalyzer.java" startLine="83" startPosition="16" endLine="88" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$4" />
     <unitInfo nodeId="5566937012378945122" fileName="GraphAnalyzer.java" startLine="99" startPosition="23" endLine="104" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$6" />
-    <unitInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="72" startPosition="54" endLine="78" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
+    <unitInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="72" startPosition="80" endLine="78" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.ISelector$anonymous" />
     <unitInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="121" startPosition="24" endLine="128" endPosition="9" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$10" />
     <unitInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="138" startPosition="53" endLine="145" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$10" />
     <unitInfo nodeId="2611988743427260327" fileName="GraphAnalyzer.java" startLine="20" startPosition="133" endLine="28" endPosition="3" unitName="jetbrains.mps.internal.make.runtime.util.GraphAnalyzer$15" />

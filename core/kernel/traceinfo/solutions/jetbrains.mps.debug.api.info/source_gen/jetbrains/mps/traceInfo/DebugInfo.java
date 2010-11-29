@@ -89,7 +89,7 @@ public class DebugInfo {
 
   public List<SNode> getNodesForLine(String str, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
-    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
+    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<PositionInfo>translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
       public Iterable<PositionInfo> translate(DebugInfoRoot it) {
         return it.getPositions();
       }
@@ -105,7 +105,7 @@ public class DebugInfo {
 
   public SNode getNodeForLine(String file, int line, SModel model) {
     List<PositionInfo> resultList = ListSequence.fromList(new ArrayList<PositionInfo>());
-    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
+    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<PositionInfo>translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
       public Iterable<PositionInfo> translate(DebugInfoRoot it) {
         return it.getPositions();
       }
@@ -176,7 +176,7 @@ public class DebugInfo {
 
   public SNode getVarForLine(String file, int line, SModel model, String varName) {
     List<ScopePositionInfo> resultList = ListSequence.fromList(new ArrayList<ScopePositionInfo>());
-    for (ScopePositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, ScopePositionInfo>() {
+    for (ScopePositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<ScopePositionInfo>translate(new ITranslator2<DebugInfoRoot, ScopePositionInfo>() {
       public Iterable<ScopePositionInfo> translate(DebugInfoRoot it) {
         return it.getScopePositions();
       }
@@ -203,7 +203,7 @@ public class DebugInfo {
   }
 
   public PositionInfo getPositionForNode(String nodeId) {
-    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
+    for (PositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<PositionInfo>translate(new ITranslator2<DebugInfoRoot, PositionInfo>() {
       public Iterable<PositionInfo> translate(DebugInfoRoot it) {
         return it.getPositions();
       }
@@ -218,7 +218,7 @@ public class DebugInfo {
   public String getUnitNameForLine(String file, int line) {
     // TODO duplication! 
     List<UnitPositionInfo> resultList = ListSequence.fromList(new ArrayList<UnitPositionInfo>());
-    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
+    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
       public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
         return it.getUnitPositions();
       }
@@ -242,7 +242,7 @@ public class DebugInfo {
   public SNode getUnitNodeForLine(String file, int line, SModel model) {
     // TODO second duplication! 
     List<UnitPositionInfo> resultList = ListSequence.fromList(new ArrayList<UnitPositionInfo>());
-    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
+    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).<UnitPositionInfo>translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
       public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
         return it.getUnitPositions();
       }

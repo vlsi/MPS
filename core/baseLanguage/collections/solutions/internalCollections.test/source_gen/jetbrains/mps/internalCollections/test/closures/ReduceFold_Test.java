@@ -8,6 +8,10 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IRightCombinator;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ReduceFold_Test extends Util_Test {
   public void test_reduceLeft() throws Exception {
@@ -142,5 +146,19 @@ public class ReduceFold_Test extends Util_Test {
         return "foo";
       }
     }));
+  }
+
+  public void test_mps10786() throws Exception {
+    List<IntHolder> input = ListSequence.fromListAndArray(new ArrayList<IntHolder>(), new IntHolder(3), new IntHolder(5));
+    int res = ListSequence.fromList(input).<Integer>select(new ISelector<IntHolder, Integer>() {
+      public Integer select(IntHolder it) {
+        return it.getInt();
+      }
+    }).reduceLeft(new ILeftCombinator<Integer, Integer>() {
+      public Integer combine(Integer a, Integer b) {
+        return a + b;
+      }
+    }) + 1;
+    Assert.assertSame(9, res);
   }
 }

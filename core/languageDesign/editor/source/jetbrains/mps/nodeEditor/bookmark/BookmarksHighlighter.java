@@ -64,4 +64,9 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
   public void checkingIterationFinished() {
     myChanged = false;
   }
+
+  @Override
+  public void clear(SNode node, EditorComponent editor) {
+    myChanged = true;
+  }
 }

@@ -19,6 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSCore;
@@ -403,7 +405,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       return false;
     }
 
-    NodeHighlightManager highlightManager = editor.getHighlightManager();
+    final NodeHighlightManager highlightManager = editor.getHighlightManager();
     boolean anyMessageChanged = false;
     for (final IEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
@@ -416,8 +418,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           owners[0] = checker.getOwner(node, editor);
           EditorContext editorContext = editor.getEditorContext();
           if (editorContext != null) {
-            messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce, editorContext));
-            messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
+            try {
+              messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce, editorContext));
+              messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
+            } catch (IndexNotReadyException ex) {
+              highlightManager.clearForOwner(owners[0], false);
+              checker.clear(node, editor);
+              throw ex;
+            }
           }
         }
       };
@@ -470,13 +478,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     public void run() {
       if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
-
+      DumbService dumbService = DumbService.getInstance(myProject);
       CommandProcessor commandProcessor = CommandProcessor.getInstance();
       while (true) {
         try {
           while (true) {
             while (commandProcessor.getCurrentCommand() != null) {
               Thread.sleep(200);
+            }
+            while (dumbService.isDumb()) {
+              Thread.sleep(600);
             }
             long current = System.currentTimeMillis();
             long commandTime = myLastCommandTime;
@@ -489,7 +500,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             }
           }
 
-          doUpdate();
+          try {
+            doUpdate();
+          } catch (IndexNotReadyException ex) {
+            myCheckedOnceEditors.clear();
+            myCheckedOnceInspectors.clear();
+          }
           processPendingActions();
           if (myStopThread) {
             break;

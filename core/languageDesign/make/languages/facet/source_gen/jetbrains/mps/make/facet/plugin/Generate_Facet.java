@@ -45,6 +45,7 @@ public class Generate_Facet implements IFacet {
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_b());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_c());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_d());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_e());
   }
 
   public Iterable<ITarget> targets() {
@@ -92,6 +93,10 @@ public class Generate_Facet implements IFacet {
                 logger.error("no models");
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
+              if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).cleanMake() == null) {
+                logger.error("no cleanMake");
+                return new IResult.FAILURE(_output_fi61u2_a0a);
+              }
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0a);
           }
@@ -123,17 +128,29 @@ public class Generate_Facet implements IFacet {
       return name;
     }
 
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
     }
 
-    public static class Variables extends MultiTuple._3<Project, IOperationContext, Iterable<SModelDescriptor>> {
+    public static class Variables extends MultiTuple._4<Project, IOperationContext, Iterable<SModelDescriptor>, Boolean> {
       public Variables() {
         super();
       }
 
-      public Variables(Project project, IOperationContext operationContext, Iterable<SModelDescriptor> models) {
-        super(project, operationContext, models);
+      public Variables(Project project, IOperationContext operationContext, Iterable<SModelDescriptor> models, Boolean cleanMake) {
+        super(project, operationContext, models, cleanMake);
       }
 
       public Project project(Project value) {
@@ -148,6 +165,10 @@ public class Generate_Facet implements IFacet {
         return super._2(value);
       }
 
+      public Boolean cleanMake(Boolean value) {
+        return super._3(value);
+      }
+
       public Project project() {
         return super._0();
       }
@@ -160,15 +181,19 @@ public class Generate_Facet implements IFacet {
         return super._2();
       }
 
+      public Boolean cleanMake() {
+        return super._3();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_fi61u2_a.Variables assignFrom(Tuples._3<Project, IOperationContext, Iterable<SModelDescriptor>> from) {
+      public Generate_Facet.Target_fi61u2_a.Variables assignFrom(Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, Boolean> from) {
         return (Generate_Facet.Target_fi61u2_a.Variables) super.assign(from);
       }
     }
   }
 
   public static class Target_fi61u2_b implements ITarget {
-    private ITarget.Name name = new ITarget.Name("checkDumbMode");
+    private ITarget.Name name = new ITarget.Name("collectResources");
 
     public Target_fi61u2_b() {
     }
@@ -179,10 +204,7 @@ public class Generate_Facet implements IFacet {
           Iterable<IResource> _output_fi61u2_a0b = null;
           switch (0) {
             case 0:
-              if (DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()).isDumb()) {
-                DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
-                return new IResult.FAILURE(_output_fi61u2_a0b);
-              }
+              _output_fi61u2_a0b = Sequence.fromIterable(_output_fi61u2_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new MResource(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).models()))));
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0b);
           }
@@ -214,13 +236,25 @@ public class Generate_Facet implements IFacet {
       return name;
     }
 
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
   }
 
   public static class Target_fi61u2_c implements ITarget {
-    private ITarget.Name name = new ITarget.Name("configure");
+    private ITarget.Name name = new ITarget.Name("checkDumbMode");
 
     public Target_fi61u2_c() {
     }
@@ -231,6 +265,70 @@ public class Generate_Facet implements IFacet {
           Iterable<IResource> _output_fi61u2_a0c = null;
           switch (0) {
             case 0:
+              if (DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()).isDumb()) {
+                DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
+                return new IResult.FAILURE(_output_fi61u2_a0c);
+              }
+            default:
+              return new IResult.SUCCESS(_output_fi61u2_a0c);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return null;
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+  }
+
+  public static class Target_fi61u2_d implements ITarget {
+    private ITarget.Name name = new ITarget.Name("configure");
+
+    public Target_fi61u2_d() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          Iterable<IResource> _output_fi61u2_a0d = null;
+          switch (0) {
+            case 0:
               GenerationSettings settings = GenerationSettings.getInstance();
               GenerationStrategy strategy = null;
               if (settings.isIncremental()) {
@@ -239,14 +337,14 @@ public class Generate_Facet implements IFacet {
                   null
                 ));
               }
-              IGenerationTracer tracer = (pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient() ?
+              IGenerationTracer tracer = (pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient() ?
                 pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GenerationTracer.class) :
                 new NullGenerationTracer()
               );
-              pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions(GenerationOptions.getDefaults().saveTransientModels(pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient()).strictMode(settings.isStrictMode()).incremental(strategy).generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).tracing(settings.getPerformanceTracingLevel(), tracer).reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).rebuildAll(true));
-              return new IResult.SUCCESS(_output_fi61u2_a0c);
+              pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).generationOptions(GenerationOptions.getDefaults().saveTransientModels(pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient()).strictMode(settings.isStrictMode()).incremental(strategy).generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).tracing(settings.getPerformanceTracingLevel(), tracer).reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).rebuildAll(true));
+              return new IResult.SUCCESS(_output_fi61u2_a0d);
             default:
-              return new IResult.SUCCESS(_output_fi61u2_a0c);
+              return new IResult.SUCCESS(_output_fi61u2_a0d);
           }
         }
       };
@@ -260,22 +358,22 @@ public class Generate_Facet implements IFacet {
               GenerationSettings settings = GenerationSettings.getInstance();
               if (settings.isSaveTransientModels()) {
                 switch (cmonitor.<SaveTransient_Option>relayQuery(new SaveTransientModels_Query())) {
-                  case SAVE_fi61u2_a0a0c:
-                    pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient(true);
+                  case SAVE_fi61u2_a0a0d:
+                    pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient(true);
                     break;
-                  case DONT_SAVE_fi61u2_b0a0c:
-                    pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient(false);
+                  case DONT_SAVE_fi61u2_b0a0d:
+                    pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient(false);
                     break;
-                  case BUGGER_OFF_fi61u2_c0a0c:
+                  case BUGGER_OFF_fi61u2_c0a0d:
                     cmonitor.<rrr_Option>relayQuery(new WontAskAgain_Query());
-                    pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient(false);
+                    pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient(false);
                     settings.setSaveTransientModels(false);
                     break;
                   default:
                     return false;
                 }
               } else {
-                pool.parameters(Target_fi61u2_c.this.getName(), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient(false);
+                pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient(false);
               }
             default:
               return true;
@@ -289,7 +387,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters"), new ITarget.Name("checkDumbMode")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters"), new ITarget.Name("checkDumbMode"), new ITarget.Name("collectResources")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -302,6 +400,18 @@ public class Generate_Facet implements IFacet {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
     }
 
     public <T> T createParameters(Class<T> cls) {
@@ -342,22 +452,22 @@ public class Generate_Facet implements IFacet {
       }
 
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_fi61u2_c.Variables assignFrom(Tuples._3<Boolean, GenerationStrategy, GenerationOptions.OptionsBuilder> from) {
-        return (Generate_Facet.Target_fi61u2_c.Variables) super.assign(from);
+      public Generate_Facet.Target_fi61u2_d.Variables assignFrom(Tuples._3<Boolean, GenerationStrategy, GenerationOptions.OptionsBuilder> from) {
+        return (Generate_Facet.Target_fi61u2_d.Variables) super.assign(from);
       }
     }
   }
 
-  public static class Target_fi61u2_d implements ITarget {
+  public static class Target_fi61u2_e implements ITarget {
     private ITarget.Name name = new ITarget.Name("generate");
 
-    public Target_fi61u2_d() {
+    public Target_fi61u2_e() {
     }
 
     public IJob createJob() {
       return new IJob() {
         public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
-          final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0d = new Wrappers._T<Iterable<IResource>>(null);
+          final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0e = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
               MessagesViewTool mvt = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(MessagesViewTool.class);
@@ -366,14 +476,14 @@ public class Generate_Facet implements IFacet {
               }
               boolean generationOk;
               GeneratorManager gm = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GeneratorManager.class);
-              if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {
+              if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient())) {
                 pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GenerationTracer.class).discardTracing();
               }
               ProgressIndicator pind = new EmptyProgressIndicator();
 
               GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource.Data>() {
                 public Boolean invoke(GResource.Data data) {
-                  _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new GResource(data))));
+                  _output_fi61u2_a0e.value = Sequence.fromIterable(_output_fi61u2_a0e.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new GResource(data))));
                   return true;
                 }
               });
@@ -382,12 +492,12 @@ public class Generate_Facet implements IFacet {
                 public void clear() {
                   // XPEH BAM 
                 }
-              }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().create());
+              }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_d.Variables.class).generationOptions().create());
               if (!(generationOk)) {
-                return new IResult.FAILURE(_output_fi61u2_a0d.value);
+                return new IResult.FAILURE(_output_fi61u2_a0e.value);
               }
             default:
-              return new IResult.SUCCESS(_output_fi61u2_a0d.value);
+              return new IResult.SUCCESS(_output_fi61u2_a0e.value);
           }
         }
       };
@@ -415,6 +525,18 @@ public class Generate_Facet implements IFacet {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean requiresInput() {
+      return true;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
     }
 
     public <T> T createParameters(Class<T> cls) {

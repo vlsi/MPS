@@ -111,7 +111,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
       });
       BaseModuleModel baseSolutionModel = new BaseModuleModel(NewRuntimeModule_Action.this.project, "runtime module") {
         public ModuleReference[] find(IScope p0) {
-          return ListSequence.fromList(modules).select(new ISelector<IModule, ModuleReference>() {
+          return ListSequence.fromList(modules).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
               return it.getModuleReference();
             }

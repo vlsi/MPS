@@ -302,7 +302,6 @@ public class TestMakeOnRealProject {
     String fileName = descriptorFile.getName();
 
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
-    solutionDescriptor.setExternallyVisible(true);
     String name = fileName.substring(0, fileName.length() - 4);
     solutionDescriptor.setNamespace(name);
     solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());

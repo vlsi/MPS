@@ -47,7 +47,7 @@ public class GenUtil {
   }
 
   public static boolean isGeneratable(SModel model) {
-    if (ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")).translate(new ITranslator2<SNode, SNode>() {
+    if (ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "weavingMappingRule", true);
       }

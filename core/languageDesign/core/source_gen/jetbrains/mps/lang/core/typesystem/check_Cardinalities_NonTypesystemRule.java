@@ -26,48 +26,50 @@ public class check_Cardinalities_NonTypesystemRule extends AbstractNonTypesystem
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(node) != 0) {
-      return;
-    }
+    /*
+      if (BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(node) != 0) {
+        return;
+      }
 
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
-    for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
-      if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
-        if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
-          if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
-            // TODO this is a hack for constructor declarations 
-            if ("returnType".equals(SPropertyOperations.getString(link, "role")) && "ConstructorDeclaration".equals(SPropertyOperations.getString(concept, "name"))) {
-              continue;
+      SNode concept = SNodeOperations.getConceptDeclaration(node);
+      for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
+        if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
+          if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
+            if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
+              // TODO this is a hack for constructor declarations 
+              if ("returnType".equals(SPropertyOperations.getString(link, "role")) && "ConstructorDeclaration".equals(SPropertyOperations.getString(concept, "name"))) {
+                continue;
+              }
+
+              {
+                BaseQuickFixProvider intentionProvider = null;
+                MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295756869", intentionProvider, errorTarget);
+              }
             }
-
-            {
-              BaseQuickFixProvider intentionProvider = null;
-              MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8431998747026837711", intentionProvider, errorTarget);
+          } else {
+            if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
+              {
+                BaseQuickFixProvider intentionProvider = null;
+                MessageTarget errorTarget = new NodeMessageTarget();
+                errorTarget = new ReferenceMessageTarget(SPropertyOperations.getString(link, "role"));
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295756902", intentionProvider, errorTarget);
+              }
             }
           }
-        } else {
-          if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
+        } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(link)) {
+          if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
             {
               BaseQuickFixProvider intentionProvider = null;
+              intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUnnecessaryChildrenInSingleRole_QuickFix", false);
+              intentionProvider.putArgument("link", link);
               MessageTarget errorTarget = new NodeMessageTarget();
-              errorTarget = new ReferenceMessageTarget(SPropertyOperations.getString(link, "role"));
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253889223", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295756935", intentionProvider, errorTarget);
             }
-          }
-        }
-      } else if (LinkDeclaration_Behavior.call_isSingular_1213877254557(link)) {
-        if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-          {
-            BaseQuickFixProvider intentionProvider = null;
-            intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.core.typesystem.RemoveUnnecessaryChildrenInSingleRole_QuickFix", false);
-            intentionProvider.putArgument("link", link);
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "1556973682253889251", intentionProvider, errorTarget);
           }
         }
       }
-    }
+    */
   }
 
   public String getApplicableConceptFQName() {

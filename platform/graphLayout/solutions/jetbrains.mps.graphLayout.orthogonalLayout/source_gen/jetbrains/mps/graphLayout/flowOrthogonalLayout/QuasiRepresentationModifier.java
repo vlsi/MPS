@@ -21,6 +21,7 @@ import java.util.HashSet;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.graphLayout.planarGraph.Face;
+import jetbrains.mps.graphLayout.graph.GraphModificationEvent;
 
 public class QuasiRepresentationModifier {
   private Graph myGraph;
@@ -38,6 +39,7 @@ public class QuasiRepresentationModifier {
   }
 
   public void reduceToOrthogonalRepresentation() {
+    Graph graph = myEmbeddedGraph.getGraph();
     Map<Edge, Edge> edgeTransform = MapSequence.fromMap(new HashMap<Edge, Edge>());
     List<Node> initialNodes = ListSequence.fromList(new ArrayList<Node>());
     ListSequence.fromList(initialNodes).addSequence(ListSequence.fromList(myGraph.getNodes()));
@@ -119,8 +121,8 @@ public class QuasiRepresentationModifier {
             */
             face.makeStartsWith(dart);
 
-            oldEdge.removeFromGraph();
-            Edge newEdge = newNode.addEdgeTo(oldEdge.getOpposite(node));
+            graph.removeEdge(oldEdge);
+            Edge newEdge = graph.connect(newNode, oldEdge.getOpposite(node));
             ListSequence.fromList(newEdges).addElement(newEdge);
             MapSequence.fromMap(edgeTransform).put(newEdge, oldEdge);
             Dart lastFaceDart = ListSequence.fromList(face.getDarts()).last();
@@ -140,9 +142,9 @@ public class QuasiRepresentationModifier {
             MapSequence.fromMap(myAngles).put(backNewDart, MapSequence.fromMap(myAngles).get(backOldDart));
             MapSequence.fromMap(myBends).put(backNewDart, MapSequence.fromMap(myBends).get(backOldDart) - 1);
 
-            List<Edge> historyEdges = ListSequence.fromListAndArray(new ArrayList<Edge>(), nextEdge, newEdge);
-            myEmbeddedGraph.setEdgesHistory(oldEdge, historyEdges);
-
+            List<Edge> historyEdgesList = ListSequence.fromListAndArray(new ArrayList<Edge>(), nextEdge, newEdge);
+            GraphModificationEvent splitEvent = new GraphModificationEvent(GraphModificationEvent.Type.EDGE_SPLITTED, oldEdge, historyEdgesList);
+            myGraph.getModificationProcessor().fire(splitEvent);
             curEdge.value = nextEdge;
             curDart = myEmbeddedGraph.getSourceDart(curEdge.value, node);
             curNum++;
@@ -158,24 +160,7 @@ public class QuasiRepresentationModifier {
   }
 
   private List<Dart> getOrderedDarts(Node node) {
-    List<Dart> darts = myEmbeddedGraph.getDartWithSource(node);
-    List<Dart> sortedDarts = ListSequence.fromList(new LinkedList<Dart>());
-    Dart curDart = ListSequence.fromList(darts).first();
-    while (ListSequence.fromList(sortedDarts).count() != ListSequence.fromList(darts).count()) {
-      ListSequence.fromList(sortedDarts).addElement(curDart);
-      curDart = myEmbeddedGraph.getNextSourceDart(curDart);
-      /*
-        Face curFace = myEmbeddedGraph.getFace(curDart);
-        for (Dart dart : ListSequence.fromList(darts)) {
-          Dart opposite = myEmbeddedGraph.getOpposite(dart);
-          if (myEmbeddedGraph.getFace(opposite) == curFace) {
-            curDart = dart;
-            break;
-          }
-        }
-      */
-    }
-    darts = sortedDarts;
+    List<Dart> darts = myEmbeddedGraph.getOrderedDarts(node);
     boolean hasZeroAngles = false;
     for (Dart dart : ListSequence.fromList(darts)) {
       if (MapSequence.fromMap(myAngles).get(dart) == 0) {

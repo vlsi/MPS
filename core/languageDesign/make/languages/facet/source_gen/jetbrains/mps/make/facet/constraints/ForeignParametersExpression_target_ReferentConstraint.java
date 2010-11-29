@@ -29,7 +29,7 @@ public class ForeignParametersExpression_target_ReferentConstraint extends BaseN
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final SNode td = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
-    return ListSequence.fromList(SLinkOperations.getTargets(td, "dependency", true)).select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(td, "dependency", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode d) {
         return SLinkOperations.getTarget(d, "dependsOn", false);
       }

@@ -34,7 +34,6 @@ import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -48,7 +47,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
   }
 
   public BaseSNodeDescriptor[] find(final IScope scope) {
-    final List<BaseSNodeDescriptor> keys = new ArrayList<BaseSNodeDescriptor>();
+    final Set<BaseSNodeDescriptor> keys = new HashSet<BaseSNodeDescriptor>();
 
     final ID<Integer, List<BaseSNodeDescriptor>> indexName = myIndex.getName();
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
@@ -78,7 +77,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
 
       boolean needToLoad = false;
       for (BaseSNodeDescriptor snd : descriptors.get(0)) {
-        //System.out.printf(snd.getConceptFqName()+"\n");
         if (cm.hasGetter(snd.getConceptFqName(), INamedConcept.NAME)) {
           needToLoad = true;
           break;
@@ -101,15 +99,12 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
       }
     }
 
-    addJavaStubs(keys, scope);
+    //java stubs
+    for (IModule m : scope.getVisibleModules()) {
+      keys.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m));
+    }
 
     return keys.toArray(new BaseSNodeDescriptor[keys.size()]);
-  }
-
-  private void addJavaStubs(List<BaseSNodeDescriptor> result, IScope scope) {
-    for (IModule m : scope.getVisibleModules()) {
-      result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m));
-    }
   }
 
   public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {

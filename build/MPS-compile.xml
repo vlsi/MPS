@@ -59,7 +59,6 @@
     <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/make-runtime/classes" />
     <path path="core/runtime/classes" />
     <path path="core/typesystemEngine/classes" />

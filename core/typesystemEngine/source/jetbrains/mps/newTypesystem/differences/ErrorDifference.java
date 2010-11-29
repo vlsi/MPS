@@ -29,7 +29,6 @@ import java.util.Map;
  * User: Ilya.Lintsbakh
  * Date: Oct 14, 2010
  * Time: 12:41:21 PM
- * To change this template use File | Settings | File Templates.
  */
 public class ErrorDifference extends Difference {
   private SNode myNode;

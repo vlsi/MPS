@@ -107,7 +107,7 @@ public class TypeContextManager implements ApplicationComponent {
 
   @Override
   public void disposeComponent() {
-     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
   }
 
   public static TypeContextManager getInstance() {
@@ -166,17 +166,25 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext getContextForEditedRootNode(SNode node, ITypeContextOwner owner, boolean alwaysRegisterOwner) {
+    return getContextForEditedRootNode(node, owner, alwaysRegisterOwner, true);
+  }
+
+  public TypeCheckingContext getContextForEditedRootNode(SNode node, ITypeContextOwner owner, boolean alwaysRegisterOwner, boolean forceCreate) {
     if (node == null) return null;
     synchronized (myLock) {
       Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(node);
       if (contextWithOwners == null) {
-        TypeCheckingContext newTypeCheckingContext = createTypeCheckingContext(node);
-        addModelListener(node);
-        List<ITypeContextOwner> owners = new ArrayList<ITypeContextOwner>(1);
-        contextWithOwners = new Pair<TypeCheckingContext, List<ITypeContextOwner>>(newTypeCheckingContext, owners);
-        owners.add(owner);
-        myTypeCheckingContexts.put(node, contextWithOwners);
-        return newTypeCheckingContext;
+        if (forceCreate) {
+          TypeCheckingContext newTypeCheckingContext = createTypeCheckingContext(node);
+          addModelListener(node);
+          List<ITypeContextOwner> owners = new ArrayList<ITypeContextOwner>(1);
+          contextWithOwners = new Pair<TypeCheckingContext, List<ITypeContextOwner>>(newTypeCheckingContext, owners);
+          owners.add(owner);
+          myTypeCheckingContexts.put(node, contextWithOwners);
+          return newTypeCheckingContext;
+        } else {
+          return null;
+        }
       } else {
         TypeCheckingContext context = contextWithOwners.o1;
         if (alwaysRegisterOwner && !contextWithOwners.o2.contains(owner)) {
@@ -245,7 +253,10 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
-    final SNode root = node.getContainingRoot();
+    SNode root = node.getContainingRoot();
+    if (root == null) {
+      root = node.getTopmostAncestor();
+    }
     if (useNewTypeSystem) {
       return new TypeCheckingContextNew(root, myTypeChecker); //todo should be resolving
     }
@@ -262,7 +273,7 @@ public class TypeContextManager implements ApplicationComponent {
       myResolveStack.set(resolve);
     }
     if (!resolve.isEmpty()) {
-      context = getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
+      context = generationMode ? null : getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER, false);
       if (context == null || !context.isNonTypesystemComputation()) {
         //resolve mode
         context = createTypeCheckingContextForResolve(node);

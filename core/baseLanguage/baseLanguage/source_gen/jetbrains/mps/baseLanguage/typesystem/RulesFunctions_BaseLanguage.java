@@ -73,7 +73,7 @@ public class RulesFunctions_BaseLanguage {
   }
 
   public static Iterable<SNode> collectReturnStatements(SNode node) {
-    Iterable<SNode> returnStatements = ListSequence.fromList(SNodeOperations.getChildren(node)).translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> returnStatements = ListSequence.fromList(SNodeOperations.getChildren(node)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -197,6 +197,7 @@ __switch__:
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7790104442347402833", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
+        _info_12389875345.addRuleToSkip("jetbrains.mps.baseLanguage.typesystem.subtypesOfClassifierTypeWWildcards_InequationReplacementRule");
         typeCheckingContext.createLessThanInequation((SNode) instanceType, (SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a0a3().createNode(params, genericClassifier, typeCheckingContext), false, _info_12389875345);
       }
     }

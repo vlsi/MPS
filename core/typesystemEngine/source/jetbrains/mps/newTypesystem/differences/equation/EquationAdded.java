@@ -26,7 +26,6 @@ import java.awt.Color;
  * User: Ilya.Lintsbakh
  * Date: Sep 15, 2010
  * Time: 12:54:50 PM
- * To change this template use File | Settings | File Templates.
  */
 public class EquationAdded extends EquationDifference {
 
@@ -61,7 +60,6 @@ public class EquationAdded extends EquationDifference {
   public String getPresentation() {
     return "Equation added " + getShortPresentation();
   }
-
 
 
   @Override

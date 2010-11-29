@@ -199,6 +199,21 @@ public class LanguageChecker implements IEditorChecker {
     return result;
   }
 
+  public void clear(SNode node, EditorComponent component) {
+    if (node == null) {
+      return;
+    }
+    SNode containingRoot = node.getContainingRoot();
+    if (containingRoot == null) {
+      return;
+    }
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(containingRoot);
+    if (errorsComponent == null) {
+      return;
+    }
+    errorsComponent.clear();
+  }
+
   public static class Owner implements EditorMessageOwner {
     private LanguageErrorsComponent myComponent;
     private LanguageChecker myChecker;

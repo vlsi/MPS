@@ -69,7 +69,7 @@ import jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration;
     Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
     for (Classifier classifier : this.getClassifiers()) {
       SModelDescriptor descriptor = classifier.getModel().getModelDescriptor();
-      assert descriptor != null : "Model descriptor is null for classifier: " + classifier;
+      assert descriptor != null : "Model descriptor is null for classifier: " + classifier + "; model: "+classifier.getModel().toString();
       dependsOnModel.add(descriptor);
     }
     return dependsOnModel;

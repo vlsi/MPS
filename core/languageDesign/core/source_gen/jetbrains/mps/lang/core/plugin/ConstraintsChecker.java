@@ -7,12 +7,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import java.lang.reflect.Method;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.List;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.smodel.constraints.INodePropertyValidator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 
@@ -22,38 +25,59 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   public ConstraintsChecker() {
   }
 
-  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
-    ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
+  public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext) {
+    final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     if (SNodeOperations.getParent(node) != null) {
       component.addDependency(SNodeOperations.getParent(node));
     }
     if (SNodeOperations.getParent(node) != null && !(jetbrains.mps.smodel.SNodeOperations.isUnknown(SNodeOperations.getParent(node)))) {
-      SNode link = SNodeOperations.getContainingLinkDeclaration(node);
+      final SNode link = SNodeOperations.getContainingLinkDeclaration(node);
       if (link == null && !(node.isAttribute())) {
         component.addError(node, "Child in a role with unknown link", null);
         return;
       }
 
-      if (!(cm.canBeChild(node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link))) {
-        SNode rule = cm.getCanBeChildBlock(operationContext, node.getConceptFqName());
+      final Method cbcMethod = cm.getCanBeChildMethod(node.getConceptFqName(), operationContext);
+      cm.canBeChild(node, cbcMethod, operationContext, SNodeOperations.getParent(node), link);
+      boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return cm.canBeChild(node, cbcMethod, operationContext, SNodeOperations.getParent(node), link);
+        }
+      });
+      if (!(canBeChild)) {
+        SNode rule = cm.getCanBeChildBlock(operationContext, cbcMethod);
         component.addError(node, "Node isn't applicable in the context", rule);
       }
     }
 
-    if (node.isRoot() && !(cm.canBeRoot(operationContext, node.getConceptFqName(), SNodeOperations.getModel(node)))) {
-      SNode rule = cm.getCanBeRootBlock(operationContext, node.getConceptFqName());
-      component.addError(node, "Not rootable concept added as root", rule);
+    if (node.isRoot()) {
+      final Method method = cm.getCanBeRootMethod(node.getConceptFqName(), operationContext);
+      boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return cm.canBeRoot(operationContext, method, SNodeOperations.getModel(node), ((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))));
+        }
+      });
+      if (!(canBeRoot)) {
+        SNode rule = cm.getCanBeRootBlock(operationContext, method);
+        component.addError(node, "Not rootable concept added as root", rule);
+      }
     }
 
     for (SNode child : SNodeOperations.getChildren(node)) {
       component.addDependency(child);
-      SNode childConcept = SNodeOperations.getConceptDeclaration(child);
-      SNode childLink = SNodeOperations.getContainingLinkDeclaration(child);
+      final SNode childConcept = SNodeOperations.getConceptDeclaration(child);
+      final SNode childLink = SNodeOperations.getContainingLinkDeclaration(child);
       if (childLink == null) {
         continue;
       }
-      if (!(cm.canBeParent(node, childConcept, childLink, operationContext))) {
-        SNode rule = cm.getCanBeParentBlock(node, operationContext);
+      final Method method = cm.getCanBeParentMethod(node, operationContext);
+      boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return cm.canBeParent(method, node, childConcept, childLink, operationContext);
+        }
+      });
+      if (!(canBeParent)) {
+        SNode rule = cm.getCanBeParentBlock(operationContext, method);
         component.addError(node, "Node isn't applicable in the context", rule);
       }
       SNode rule = cm.canBeAncestorReturnBlock(node, childConcept, operationContext);
@@ -71,14 +95,20 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
     List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
     for (PropertyDeclaration p : ListSequence.fromList(props)) {
-      PropertySupport ps = PropertySupport.getPropertySupport(p);
-      String propertyName = p.getName();
+      final PropertySupport ps = PropertySupport.getPropertySupport(p);
+      final String propertyName = p.getName();
       if (propertyName == null) {
         LOG.error("Property declaration has a null name, declaration id: " + p.getNode().getSNodeId() + ", model: " + p.getModel().getSModelFqName());
         continue;
       }
-      String value = ps.fromInternalValue(node.getProperty(propertyName));
-      if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope(), false))) {
+      final String value = ps.fromInternalValue(node.getProperty(propertyName));
+      final INodePropertyValidator propertyValidator = ps.getValidator(node, propertyName);
+      boolean canSetValue = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return ps.canSetValue(propertyValidator, node, propertyName, value, operationContext.getScope());
+        }
+      });
+      if (!(canSetValue)) {
         // TODO this is a hack for anonymous classes 
         if ("name".equals(p.getName()) && "AnonymousClass".equals(SPropertyOperations.getString(concept, "name"))) {
           continue;

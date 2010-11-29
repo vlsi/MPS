@@ -91,6 +91,18 @@ public class Generator_Facet implements IFacet {
       return name;
     }
 
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return false;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
     }
@@ -167,6 +179,18 @@ public class Generator_Facet implements IFacet {
 
     public ITarget.Name getName() {
       return name;
+    }
+
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
     }
 
     public <T> T createParameters(Class<T> cls) {

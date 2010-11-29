@@ -57,7 +57,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
   public void goToNode() {
     Difference difference = (Difference) getUserObject();
     SNode source = difference.getSource();
-    if (source != null) {
+    if (source != null && source.isRegistered()) {
       getOperationContext().getComponent(MPSEditorOpener.class).editNode(source, getOperationContext());
     }
   }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.undo;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.components.ApplicationComponent;
@@ -52,7 +54,13 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
           final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
           assert file.isValid() : "invalid file returned by MPS VFS for following model root: " + root;
           for (final Project p : myProjectManager.getOpenProjects()) {
-            ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+              public void run() {
+                if (!p.isDisposed() && file.isValid()) {
+                  ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
+                }
+              }
+            }, ModalityState.NON_MODAL);
           }
         }
       }

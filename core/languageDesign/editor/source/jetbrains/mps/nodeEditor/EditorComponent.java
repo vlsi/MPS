@@ -105,7 +105,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final int SCROLL_GAP = 15;
 
   private final Object myAdditionalPaintersLock = new Object();
-  private TypeCheckingContext myTypeCheckingContext;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -796,7 +795,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
         myNode = node;
-        createTypeCheckingContext();
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
@@ -2139,18 +2137,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public TypeCheckingContext getTypeCheckingContext() {
-    return myTypeCheckingContext;
-  }
-
-  protected void createTypeCheckingContext() {
-    myTypeCheckingContext = TypeContextManager.getInstance().getContextForEditedRootNode(myNode, this, true);
+    return TypeContextManager.getInstance().getContextForEditedRootNode(myNode, this, true);
   }
 
   protected void disposeTypeCheckingContext() {
-    if (myTypeCheckingContext != null) {
-      TypeContextManager.getInstance().removeOwnerForRootNodeContext(myNode, this);
-      myTypeCheckingContext = null;
-    }
+    TypeContextManager.getInstance().removeOwnerForRootNodeContext(myNode, this);
   }
 
   public void sendKeyEvent(KeyEvent keyEvent) {
@@ -2175,11 +2166,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               if (sNode == null) {
                 return;
               }
+              TypeCheckingContext typeCheckingContext = getTypeCheckingContext();
+              typeCheckingContext.clear();
               Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
               if (highlighter != null) {
                 highlighter.resetCheckedState(EditorComponent.this);
+              } else {
+                typeCheckingContext.checkRoot();
               }
-              getTypeCheckingContext().checkRoot(true);
               rebuildEditorContent();
             }
           });

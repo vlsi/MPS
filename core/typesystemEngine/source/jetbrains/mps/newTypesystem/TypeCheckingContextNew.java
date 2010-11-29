@@ -17,11 +17,9 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
@@ -87,7 +85,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
       checked = true;
       checkRoot(true);
     }
- // myState.solveInequalities();
+    // myState.solveInequalities();
   }
 
   @Override
@@ -95,14 +93,15 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     return myState.typeOf(node, null);
   }
 
-                               /*
-  @Override
-  public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-    SNode left = myState.expand(leftOperandType);
-    SNode right = myState.expand(rightOperandType);
-    return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
-  }
-                                 */
+  /*
+@Override
+public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+SNode left = myState.expand(leftOperandType);
+SNode right = myState.expand(rightOperandType);
+return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
+}
+  */
+
   @Override
   public void checkRoot(final boolean refreshTypes) {
     if (refreshTypes) {
@@ -169,7 +168,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
     //super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
-  
+
     myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId, argument), argument, false);
   }
 
@@ -203,7 +202,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public SNode createNewRuntimeTypesVariable() {
     return myState.createNewRuntimeTypesVariable();
   }
-  
+
   @Override
   public void clear() {
     myState.clear(true);
@@ -258,7 +257,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void createComparableEquationStrong(SNode node1, SNode node2, EquationInfo equationInfo) {
-    myState.addComparable(node1, node2, false, equationInfo);  
+    myState.addComparable(node1, node2, false, equationInfo);
   }
 
   @Override

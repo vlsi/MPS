@@ -36,10 +36,10 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeMaps {
-  private Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
-  private Map<SNode, SNode> myTypesToNodes = new HashMap<SNode, SNode>();
-  private Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
-  private State myState;
+  private final Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myTypesToNodes = new HashMap<SNode, SNode>();
+  private final Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
+  private final State myState;
 
   public NodeMaps(State state) {
     myState = state;
@@ -66,10 +66,6 @@ public class NodeMaps {
 
   public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {
     myState.addDifference(new ErrorDifference(node, error, myNodesToErrors, info), false);
-  }
-
-  public Map<SNode, List<IErrorReporter>> getNodesToErrors() {
-    return myNodesToErrors;
   }
 
   public List<IErrorReporter> getNodeErrors(SNode node) {

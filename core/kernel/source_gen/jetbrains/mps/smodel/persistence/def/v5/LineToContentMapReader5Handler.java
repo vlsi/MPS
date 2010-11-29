@@ -4,38 +4,33 @@ package jetbrains.mps.smodel.persistence.def.v5;
 
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 import java.util.List;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
 import java.util.Stack;
 import org.xml.sax.Locator;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 
-public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>> {
+public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
 
   private LineToContentMapReader5Handler.modelElementHandler modelhandler = new LineToContentMapReader5Handler.modelElementHandler();
   private LineToContentMapReader5Handler.nodeElementHandler nodehandler = new LineToContentMapReader5Handler.nodeElementHandler();
   private LineToContentMapReader5Handler.propertyElementHandler propertyhandler = new LineToContentMapReader5Handler.propertyElementHandler();
   private LineToContentMapReader5Handler.linkElementHandler linkhandler = new LineToContentMapReader5Handler.linkElementHandler();
+  private LineToContentMapReader5Handler.nullElementHandler nullhandler = new LineToContentMapReader5Handler.nullElementHandler();
   private Stack<LineToContentMapReader5Handler.ElementHandler> myHandlersStack = new Stack<LineToContentMapReader5Handler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
-  private List<SNodeId> myResult;
-  private Deque<SNodeId> fieldnodeIdStack;
-  private List<SNodeId> fieldlineToIdMap;
-  private boolean fieldnodeEnded;
+  private List<LineContent> myResult;
+  private LineContentAccumulator fieldaccumulator;
 
   public LineToContentMapReader5Handler() {
   }
 
-  public List<SNodeId> getResult() {
+  public List<LineContent> getResult() {
     return myResult;
   }
 
@@ -63,7 +58,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
     if (current != null) {
       current.validate(childValue);
       if (myHandlersStack.empty()) {
-        myResult = (List<SNodeId>) childValue;
+        myResult = (List<LineContent>) childValue;
       } else {
         myHandlersStack.peek().handleChild(myValues.peek(), qName, childValue);
       }
@@ -92,7 +87,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
 
     Object result = current.createObject(attributes);
     if (myHandlersStack.empty()) {
-      myResult = (List<SNodeId>) result;
+      myResult = (List<LineContent>) result;
     }
 
     // handle attributes 
@@ -106,17 +101,8 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
   }
 
   public void globalHandleText(Object resultObject, String value) {
-    List<SNodeId> result = (List<SNodeId>) resultObject;
-    for (int i = 0; i < StringUtils.countMatches(value, "\n"); i++) {
-      int line = myLocator.getLineNumber() - 1;
-      while (line > ListSequence.fromList(fieldlineToIdMap).count()) {
-        ListSequence.fromList(fieldlineToIdMap).addElement(DequeSequence.fromDeque(fieldnodeIdStack).peekElement());
-        if (fieldnodeEnded) {
-          DequeSequence.fromDeque(fieldnodeIdStack).popElement();
-          fieldnodeEnded = false;
-        }
-      }
-    }
+    List<LineContent> result = (List<LineContent>) resultObject;
+    fieldaccumulator.processText(value, myLocator);
   }
 
   private class ElementHandler {
@@ -160,11 +146,76 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
     }
 
     @Override
-    protected List<SNodeId> createObject(Attributes attrs) {
-      fieldnodeIdStack = DequeSequence.fromDeque(new LinkedList<SNodeId>());
-      fieldlineToIdMap = ListSequence.fromList(new ArrayList<SNodeId>());
-      fieldnodeEnded = false;
-      return fieldlineToIdMap;
+    protected List<LineContent> createObject(Attributes attrs) {
+      fieldaccumulator = new LineContentAccumulator();
+      return fieldaccumulator.getLineToContentMap();
+    }
+
+    @Override
+    protected LineToContentMapReader5Handler.ElementHandler createChild(String tagName) throws SAXException {
+      if ("persistence".equals(tagName)) {
+        return nullhandler;
+      }
+      if ("maxImportIndex".equals(tagName)) {
+        return nullhandler;
+      }
+      if ("languageAspect".equals(tagName)) {
+        return nullhandler;
+      }
+      if ("language".equals(tagName)) {
+        return nullhandler;
+      }
+      if ("language-engaged-on-generation".equals(tagName)) {
+        return nullhandler;
+      }
+      if ("devkit".equals(tagName)) {
+        return nullhandler;
+      }
+      if ("import".equals(tagName)) {
+        return nullhandler;
+      }
+      if ("visible".equals(tagName)) {
+        return nullhandler;
+      }
+      if ("node".equals(tagName)) {
+        return nodehandler;
+      }
+      return super.createChild(tagName);
+    }
+
+    @Override
+    protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
+      List<LineContent> result = (List<LineContent>) resultObject;
+      if ("persistence".equals(tagName)) {
+        return;
+      }
+      if ("maxImportIndex".equals(tagName)) {
+        return;
+      }
+      if ("languageAspect".equals(tagName)) {
+        return;
+      }
+      if ("language".equals(tagName)) {
+        return;
+      }
+      if ("language-engaged-on-generation".equals(tagName)) {
+        return;
+      }
+      if ("devkit".equals(tagName)) {
+        return;
+      }
+      if ("import".equals(tagName)) {
+        return;
+      }
+      if ("visible".equals(tagName)) {
+        return;
+      }
+      if ("node".equals(tagName)) {
+        Object child = (Object) value;
+        fieldaccumulator.popNode(myLocator);
+        return;
+      }
+      super.handleChild(resultObject, tagName, value);
     }
   }
 
@@ -186,7 +237,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
         return;
       }
       if ("id".equals(name)) {
-        DequeSequence.fromDeque(fieldnodeIdStack).pushElement(SNodeId.fromString(value));
+        fieldaccumulator.pushNode(SNodeId.fromString(value), myLocator);
         return;
       }
       super.handleAttribute(resultObject, name, value);
@@ -212,20 +263,20 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
       if ("property".equals(tagName)) {
         String child = (String) value;
         if (child != null) {
-          // TODO handle property 
+          fieldaccumulator.saveProperty(child, myLocator);
         }
         return;
       }
       if ("link".equals(tagName)) {
         String child = (String) value;
         if (child != null) {
-          // TODO handle reference 
+          fieldaccumulator.saveProperty(child, myLocator);
         }
         return;
       }
       if ("node".equals(tagName)) {
         Object child = (Object) value;
-        fieldnodeEnded = true;
+        fieldaccumulator.popNode(myLocator);
         return;
       }
       super.handleChild(resultObject, tagName, value);
@@ -240,7 +291,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
 
     @Override
     protected String createObject(Attributes attrs) {
-      return attrs.getValue("name");
+      return VersionUtil.getRole(attrs.getValue("name"));
     }
 
     @Override
@@ -266,7 +317,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
 
     @Override
     protected String createObject(Attributes attrs) {
-      return attrs.getValue("role");
+      return VersionUtil.getRole(attrs.getValue("role"));
     }
 
     @Override
@@ -281,6 +332,13 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<SNodeId>>
         return;
       }
       super.handleAttribute(resultObject, name, value);
+    }
+  }
+
+  public class nullElementHandler extends LineToContentMapReader5Handler.ElementHandler {
+    private String[] requiredAttributes = new String[]{};
+
+    public nullElementHandler() {
     }
   }
 }

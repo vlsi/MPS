@@ -6,6 +6,7 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -16,6 +17,7 @@ import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
@@ -128,11 +130,15 @@ public class StubReloadManager implements ApplicationComponent {
       SModelDescriptor descriptor = LanguageAspect.STUBS.get(l);
       if (descriptor == null) continue;
 
-      IsInstanceCondition cond = new IsInstanceCondition(LibraryStubDescriptor.concept);
+      Condition<SNode> cond = new Condition<SNode>() {
+        public boolean met(SNode node) {
+          return node.getConceptFqName().equals(LibraryStubDescriptor.concept);
+        }
+      };
       Iterable<SNode> iterable = new ConditionalIterable<SNode>(descriptor.getSModel().roots(), cond);
 
       for (SNode node : iterable) {
-        Class descrClass = l.getClass(l.getModuleFqName() + "." + LanguageAspect.STUBS.getName() + "." + node.getName() + "_StubDescriptor");
+        Class descrClass = l.getClass(l.getModuleFqName() + "." + LanguageAspect.STUBS.getName() + "." + node.getPersistentProperty(INamedConcept.NAME) + "_StubDescriptor");
         if (descrClass == null) continue;
 
         try {

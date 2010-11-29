@@ -17,7 +17,6 @@ public class NewModuleUtil {
 
   public static Solution createNewSolution(final IFile solutionFile, MPSProject project) {
     final SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
-    solutionDescriptor.setExternallyVisible(true);
     String fileName = solutionFile.getName();
     solutionDescriptor.setNamespace(fileName.substring(0, fileName.length() - 4));
     solutionDescriptor.setUUID(UUID.randomUUID().toString());

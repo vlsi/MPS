@@ -5,9 +5,9 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.make.script.IOption;
 
 public enum SaveTransient_Option implements IOption {
-  SAVE_fi61u2_a0a0c("Save"),
-  DONT_SAVE_fi61u2_b0a0c("Don't save"),
-  BUGGER_OFF_fi61u2_c0a0c("Don't save and stop asking"),
+  SAVE_fi61u2_a0a0d("Save"),
+  DONT_SAVE_fi61u2_b0a0d("Don't save"),
+  BUGGER_OFF_fi61u2_c0a0d("Don't save and stop asking"),
   __VOID__("__VOID__");
 
   private String text;

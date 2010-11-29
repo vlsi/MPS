@@ -35,7 +35,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
 
   private SNode mySNode;
 
-  public EquationErrorReporterNew(SNode node, State state, String before,SNode left, String between, SNode right,
+  public EquationErrorReporterNew(SNode node, State state, String before, SNode left, String between, SNode right,
                                   String after, String ruleModel, String ruleId) {
     super(ruleModel, ruleId);
     myState = state;
@@ -47,7 +47,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
     mySNode = node;
   }
 
-  public EquationErrorReporterNew(SNode node, State state, String before,SNode left, String between, SNode right,
+  public EquationErrorReporterNew(SNode node, State state, String before, SNode left, String between, SNode right,
                                   String after, EquationInfo info) {
     this(node, state, before, left, between, right, after, info != null ? info.getRuleModel() : null,
       info != null ? info.getRuleId() : null);
@@ -63,7 +63,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
       rRepresentative = myState.getEquations().getRepresentative(myRight);
     }
     return myBefore + PresentationManager.toString(lRepresentative) +
-      myBetween + PresentationManager.toString(rRepresentative) + myAfter;        
+      myBetween + PresentationManager.toString(rRepresentative) + myAfter;
   }
 
   public MessageStatus getMessageStatus() {

@@ -22,10 +22,10 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.differences.TypeDifference;
 import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
-import jetbrains.mps.newTypesystem.differences.equation.EquationDifference;
 import jetbrains.mps.newTypesystem.differences.inequality.RelationDifference;
 import jetbrains.mps.newTypesystem.presentation.state.ShowTypeSystemState;
 import jetbrains.mps.newTypesystem.states.State;
@@ -46,32 +46,33 @@ import java.util.Set;
  * User: Ilya.Lintsbakh
  * Date: Oct 15, 2010
  * Time: 11:42:25 AM
- * To change this template use File | Settings | File Templates.
  */
 public class TypeSystemTraceTree extends MPSTree {
-  IOperationContext myOperationContext;
-  private Difference myDifference;
-  private Frame myFrame;
-  private TypeCheckingContextNew myTypeCheckingContextNew;
-  private ShowTypeSystemTrace myParent;
-  private SNode mySelectedNode;
-  private Set<SNode> myNodes;
+  private final IOperationContext myOperationContext;
+  private final Difference myDifference;
+  private final Frame myFrame;
+  private final TypeCheckingContextNew myTypeCheckingContextNew;
+  private final SNode mySelectedNode;
+  private final Set<SNode> myNodes;
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, ShowTypeSystemTrace parent, SNode node) {
+  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
     myDifference = tcc.getDifference();
     myFrame = frame;
-    myParent = parent;
+
     mySelectedNode = node;
     myNodes = new HashSet<SNode>();
     myNodes.add(node);
+    if (mySelectedNode != null) {
+      getEquivalentVars(myDifference);
+    }
     this.rebuildNow();
     expandAll();
   }
 
-  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, ShowTypeSystemTrace parent) {
-    this(operationContext,tcc, frame, parent, null);
+  public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame) {
+    this(operationContext, tcc, frame, null);
   }
 
 
@@ -124,32 +125,51 @@ public class TypeSystemTraceTree extends MPSTree {
     if (diff.getSource() == mySelectedNode) {
       return true;
     }
-    if (diff instanceof TypeDifference) {
-      TypeDifference td = (TypeDifference) diff;
-      if (myNodes.contains(td.getNode())) {
-        myNodes.add(td.getType());
-        return true;
-      }
-    }
-    if (diff instanceof EquationDifference) {
+    if (diff instanceof EquationAdded) {
       EquationAdded eq = (EquationAdded) diff;
-      if (myNodes.contains(eq.getChild())) {
-        myNodes.add(eq.getParent());
+      if (myNodes.contains(eq.getChild()) || myNodes.contains(eq.getParent())) {
         return true;
       }
     }
     if (diff instanceof RelationDifference) {
       RelationDifference d = (RelationDifference) diff;
       if (myNodes.contains(d.getSubType())) {
-        myNodes.add(d.getSuperType());
         return true;
       }
       if (myNodes.contains(d.getSuperType())) {
-        myNodes.add(d.getSubType());
         return true;
       }
     }
+
     return false;
+  }
+
+  private void getEquivalentVars(Difference diff) {
+    if (diff == null) {
+      return;
+    }
+    if (diff instanceof EquationAdded) {
+      EquationAdded eq = (EquationAdded) diff;
+      SNode child = eq.getChild();
+      SNode parent = eq.getParent();
+      if (myNodes.contains(child) && TypesUtil.isVariable(parent)) {
+        myNodes.add(parent);
+      }
+      if (myNodes.contains(parent) && TypesUtil.isVariable(child)) {
+        myNodes.add(child);
+      }
+    }
+    if (diff instanceof TypeDifference) {
+      TypeDifference typeDifference = (TypeDifference) diff;
+      if (mySelectedNode == typeDifference.getNode() && TypesUtil.isVariable(typeDifference.getType())) {
+        myNodes.add(typeDifference.getType());
+      }
+    }
+    if (diff.getChildren() != null) {
+      for (Difference childDiff : diff.getChildren()) {
+        getEquivalentVars(childDiff);
+      }
+    }
   }
 
   @Override

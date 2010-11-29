@@ -29,28 +29,26 @@ import jetbrains.mps.util.Pair;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
  * Time: 5:26:43 PM
- * To change this template use File | Settings | File Templates.
  */
 public class Inequalities {
-  private State myState;
+  private final State myState;
 
-  private RelationMapPair myWeakInequalities;
-  private RelationMapPair myStrongInequalities;
-  private RelationMapPair myWeakCheckInequalities;
-  private RelationMapPair myStrongCheckInequalities;
-  private RelationMapPair myWeakComparable;
-  private RelationMapPair myStrongComparable;
+  private final RelationMapPair myWeakInequalities;
+  private final RelationMapPair myStrongInequalities;
+  private final RelationMapPair myWeakCheckInequalities;
+  private final RelationMapPair myStrongCheckInequalities;
+  private final RelationMapPair myWeakComparable;
+  private final RelationMapPair myStrongComparable;
 
   private boolean solveOnlyConcrete;
 
-  private List<RelationMapPair> myInequalities;
+  private final List<RelationMapPair> myInequalities;
 
   public Inequalities(State state) {
     myState = state;
@@ -93,7 +91,7 @@ public class Inequalities {
       myState.popDifference();
       return;
     }
-    
+
     subType = myState.getEquations().expandNode(subType);
     superType = myState.getEquations().expandNode(superType);
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
@@ -108,7 +106,7 @@ public class Inequalities {
     }
   }
 
-  public void addComparableEquation(SNode left, SNode right, boolean isWeak,  EquationInfo info) {
+  public void addComparableEquation(SNode left, SNode right, boolean isWeak, EquationInfo info) {
     left = myState.getRepresentative(left);
     right = myState.getRepresentative(right);
     if (left == null || right == null || left == right) {
@@ -124,18 +122,18 @@ public class Inequalities {
     right = myState.expand(right);
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
     // if subType or superType
-    if (subTyping.isComparableByRules(left, right, info, isWeak)||
-        subTyping.isSubTypeByReplacementRules(left, right) ||
-        subTyping.isSubTypeByReplacementRules(right, left) ||
-        subTyping.isSubType(left, right, info, isWeak, true) ||
-        subTyping.isSubType(right, left, info, isWeak, true)) {
+    if (subTyping.isComparableByRules(left, right, info, isWeak) ||
+      subTyping.isSubTypeByReplacementRules(left, right) ||
+      subTyping.isSubTypeByReplacementRules(right, left) ||
+      subTyping.isSubType(left, right, info, isWeak, true) ||
+      subTyping.isSubType(right, left, info, isWeak, true)) {
       myState.addDifference(new StringDifference(left + " is comparable with " + right), false);
       return;
     }
     myState.getNodeMaps().reportComparableError(left, right, info, isWeak);
   }
 
-  public void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
+  void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
     RelationMapPair inequality;
     if (isWeak) {
       inequality = check ? myWeakCheckInequalities : myWeakInequalities;
@@ -147,7 +145,7 @@ public class Inequalities {
     }
   }
 
-  public void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
+  void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
     RelationMapPair comparable = isWeak ? myWeakComparable : myStrongComparable;
     if (!comparable.contains(subType, superType)) {
       myState.addDifference(new RelationAdded(subType, superType, comparable, info), false);
@@ -178,11 +176,5 @@ public class Inequalities {
       inequalityMapPair.clear();
     }
     solveOnlyConcrete = true;
-  }
-
-  private Set<SNode> getAllVariables() {
-    Set<SNode> result = myWeakInequalities.getVertices();
-    result.addAll(myStrongInequalities.getVertices());
-    return result;
   }
 }

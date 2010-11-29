@@ -17,9 +17,9 @@ package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
@@ -48,7 +48,7 @@ public class ModelPersistence7 extends ModelPersistence5 {
   }
 
   @Override
-  public XMLSAXHandler<List<SNodeId>> getAnnotationReaderHandler() {
+  public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader7Handler();
   }
 }
