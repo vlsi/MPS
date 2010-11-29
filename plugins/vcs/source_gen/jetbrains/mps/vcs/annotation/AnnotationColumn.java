@@ -120,6 +120,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
   private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
   private LeftEditorHighlighter myLeftEditorHighlighter;
+  private boolean myShowAdditionalInfo = false;
 
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).<SNodeId>select(new ISelector<SNode, SNodeId>() {
@@ -217,7 +218,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     int x = 1;
     for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       MapSequence.fromMap(subcolumnToX).put(subcolumn, x);
-      if (subcolumn.isEnabled()) {
+      if (subcolumn.isEnabled() || myShowAdditionalInfo) {
         x += subcolumn.getWidth();
       }
     }
@@ -240,7 +241,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
               graphics.setColor(ANNOTATION_COLOR);
               for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
-                if (subcolumn.isEnabled()) {
+                if (subcolumn.isEnabled() || myShowAdditionalInfo) {
                   graphics.drawString(subcolumn.getTextForFileLine(fileLine), MapSequence.fromMap(subcolumnToX).get(subcolumn), graphics.getFontMetrics().getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
                 }
               }
@@ -255,7 +256,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   public int getWidth() {
     return ListSequence.fromList(myAspectSubcolumns).<Integer>select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
       public Integer select(AnnotationAspectSubcolumn s) {
-        return (s.isEnabled() ?
+        return (s.isEnabled() || myShowAdditionalInfo ?
           s.getWidth() :
           0
         );
@@ -475,6 +476,9 @@ __switch__:
         }
       });
     }
+    ListSequence.fromList(actions).addElement(Separator.getInstance());
+    ListSequence.fromList(actions).addElement(new ShowAdditionalInfoAction(this));
+
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(ListSequence.fromList(actions).toGenericArray(AnAction.class));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, actionGroup).getComponent();
   }
@@ -510,6 +514,15 @@ __switch__:
         myLeftEditorHighlighter.relayout(false);
       }
     });
+  }
+
+  public boolean isShowAdditionalInfo() {
+    return myShowAdditionalInfo;
+  }
+
+  public void setShowAdditionalInfo(boolean showAdditionalInfo) {
+    myShowAdditionalInfo = showAdditionalInfo;
+    invalidateLayout();
   }
 
   private static SNodeId check_5mnya_a0b0j0a(LineContent p) {

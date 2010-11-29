@@ -104,6 +104,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationManager" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.CommitNumberSubcolumn" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.EditorUtils" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewAction" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation._Adapters" />
@@ -193,6 +194,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" file="ShowAdditionalInfoAction.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.annotation.ViewAction" file="ViewAction.java">
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
