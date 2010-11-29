@@ -10,7 +10,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_3893401255414132234(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -29,7 +29,7 @@ public class QueriesGenerated {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _context.getNode(), _context.getNode());
   }
 
-  public static TemplateMappingConfiguration[] getMappings() {
-    return new TemplateMappingConfiguration[]{new Mappingmain()};
+  public static TemplateModel getDescriptor() {
+    return new TemplateModelImpl();
   }
 }

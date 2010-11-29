@@ -5,14 +5,14 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1209604575152(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "dontApplyReductionTwice", "none");
   }
 
-  public static TemplateMappingConfiguration[] getMappings() {
-    return new TemplateMappingConfiguration[]{new Mappingmain()};
+  public static TemplateModel getDescriptor() {
+    return new TemplateModelImpl();
   }
 }

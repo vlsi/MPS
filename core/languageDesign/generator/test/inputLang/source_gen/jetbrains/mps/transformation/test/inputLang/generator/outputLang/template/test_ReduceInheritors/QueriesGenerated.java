@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1206461124351(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -31,7 +31,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
 
-  public static TemplateMappingConfiguration[] getMappings() {
-    return new TemplateMappingConfiguration[]{new Mappingmain()};
+  public static TemplateModel getDescriptor() {
+    return new TemplateModelImpl();
   }
 }

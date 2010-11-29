@@ -25,7 +25,7 @@
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -33,7 +33,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch_InputNode_A" file="Switchswitch_InputNode_A.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -49,6 +49,15 @@
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A_switch" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
+  </dependency>
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" file="TemplateModelImpl.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch_InputNode_A" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" file="TemplateOutputRoot.java">
     <classNode dependClassName="java.lang.Iterable" />

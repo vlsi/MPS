@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Mappingmain.java" startLine="174" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Mappingmain$CreateRootRule0" />
+  <unitInfo fileName="TemplateModelImpl.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl" />
   <unitInfo fileName="TemplateOutputRoot_By_RootRule.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateOutputRoot_By_RootRule" />
   <unitInfo fileName="Mappingmain.java" startLine="119" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Mappingmain$ReductionRule1" />
   <unitInfo fileName="Mappingmain.java" startLine="146" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Mappingmain$RootMappingRule0" />

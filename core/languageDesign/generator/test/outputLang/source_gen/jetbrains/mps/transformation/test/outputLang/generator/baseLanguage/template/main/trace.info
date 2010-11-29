@@ -2,6 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Mappingmain.java" startLine="173" startPosition="32" endLine="185" endPosition="9" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$1" />
   <unitInfo fileName="Templategen_static_method.java" startLine="366" startPosition="42" endLine="378" endPosition="19" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Templategen_static_method$1" />
+  <unitInfo fileName="TemplateModelImpl.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl" />
   <unitInfo fileName="Mappingmain.java" startLine="413" startPosition="0" endLine="433" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$PatternRule0" />
   <unitInfo fileName="Mappingmain.java" startLine="434" startPosition="0" endLine="454" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$PatternRule1" />
   <unitInfo fileName="Mappingmain.java" startLine="455" startPosition="0" endLine="475" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$PatternRule2" />

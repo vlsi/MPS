@@ -16,7 +16,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.generator.template.PatternRuleContext;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class QueriesGenerated {
@@ -172,8 +172,8 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static TemplateMappingConfiguration[] getMappings() {
-    return new TemplateMappingConfiguration[]{new Mappingmain()};
+  public static TemplateModel getDescriptor() {
+    return new TemplateModelImpl();
   }
 
   public static class Pattern_x583g4_a0a0a32 extends GeneratedMatchingPattern implements IMatchingPattern {

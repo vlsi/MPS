@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1202245164352(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -74,7 +74,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(outputRoot, "name", "created by post-processing script");
   }
 
-  public static TemplateMappingConfiguration[] getMappings() {
-    return new TemplateMappingConfiguration[]{new Mappingmain()};
+  public static TemplateModel getDescriptor() {
+    return new TemplateModelImpl();
   }
 }

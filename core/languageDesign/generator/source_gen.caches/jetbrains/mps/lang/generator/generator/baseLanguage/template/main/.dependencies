@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />

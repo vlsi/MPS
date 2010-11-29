@@ -23,14 +23,22 @@
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl" />
+  </dependency>
+  <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateModelImpl" file="TemplateModelImpl.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.Mappingmain" />
+    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors.TemplateOutputRoot" file="TemplateOutputRoot.java">
     <classNode dependClassName="java.lang.Iterable" />

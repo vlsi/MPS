@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TemplateModelImpl.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
   <unitInfo fileName="QueriesGenerated.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
   <unitInfo fileName="Switchswitch_InputNode_A.java" startLine="46" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch_InputNode_A$ReductionRule0" />
   <unitInfo fileName="Mappingmain.java" startLine="58" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$ReductionRule0" />
