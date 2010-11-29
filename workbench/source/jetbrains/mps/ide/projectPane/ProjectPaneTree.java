@@ -167,7 +167,7 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
   private class MyDumbModeListener implements DumbModeListener {
     public void enteredDumbMode() {
-
+      rebuildNow();
     }
 
     public void exitDumbMode() {
