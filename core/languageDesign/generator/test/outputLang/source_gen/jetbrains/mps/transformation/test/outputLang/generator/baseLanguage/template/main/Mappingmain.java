@@ -47,12 +47,20 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer templateNode_417xrn_a0a0a1a5a1a3a5a3e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681242");
   private static SNodePointer templateNode_417xrn_a0a0a1a3a1a5a1a3a5a3e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681241");
   private static SNodePointer templateNode_417xrn_a0a0a1a4a1a5a1a3a5a3e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "6010543442198681245");
+  private static SNodePointer patternRule_417xrn_a0a0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992608883");
+  private static SNodePointer patternRule_417xrn_a0a0g = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288275225");
+  private static SNodePointer patternRule_417xrn_a0a0h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288382558");
+  private static SNodePointer patternRule_417xrn_a0a0i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288486365");
+  private static SNodePointer patternRule_417xrn_a0a0j = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913701566");
+  private static SNodePointer patternRule_417xrn_a0a0k = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883030949");
+  private static SNodePointer patternRule_417xrn_a0a0l = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154465852759");
+  private static SNodePointer rootMappingRule_417xrn_a0a0m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767");
 
   private final Iterable<TemplateReductionRule> rules;
   private final Iterable<TemplateRootMappingRule> rootRules;
 
   public Mappingmain() {
-    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1(), new Mappingmain.ReductionRule2(), new Mappingmain.ReductionRule3(), new Mappingmain.ReductionRule4());
+    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1(), new Mappingmain.ReductionRule2(), new Mappingmain.ReductionRule3(), new Mappingmain.ReductionRule4(), new Mappingmain.PatternRule0(), new Mappingmain.PatternRule1(), new Mappingmain.PatternRule2(), new Mappingmain.PatternRule3(), new Mappingmain.PatternRule4(), new Mappingmain.PatternRule5(), new Mappingmain.PatternRule6());
     rootRules = TemplateUtil.<TemplateRootMappingRule>asIterable(new Mappingmain.RootMappingRule0());
   }
 
@@ -402,12 +410,159 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
 
+  public class PatternRule0 implements TemplateReductionRule {
+    public PatternRule0() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return patternRule_417xrn_a0a0f;
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
+    }
+
+    public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return null;
+    }
+  }
+
+  public class PatternRule1 implements TemplateReductionRule {
+    public PatternRule1() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return patternRule_417xrn_a0a0g;
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.baseLanguage.structure.AndExpression";
+    }
+
+    public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return null;
+    }
+  }
+
+  public class PatternRule2 implements TemplateReductionRule {
+    public PatternRule2() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return patternRule_417xrn_a0a0h;
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.baseLanguage.structure.NotExpression";
+    }
+
+    public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return null;
+    }
+  }
+
+  public class PatternRule3 implements TemplateReductionRule {
+    public PatternRule3() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return patternRule_417xrn_a0a0i;
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement";
+    }
+
+    public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return null;
+    }
+  }
+
+  public class PatternRule4 implements TemplateReductionRule {
+    public PatternRule4() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return patternRule_417xrn_a0a0j;
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef";
+    }
+
+    public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return null;
+    }
+  }
+
+  public class PatternRule5 implements TemplateReductionRule {
+    public PatternRule5() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return patternRule_417xrn_a0a0k;
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef";
+    }
+
+    public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return null;
+    }
+  }
+
+  public class PatternRule6 implements TemplateReductionRule {
+    public PatternRule6() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return patternRule_417xrn_a0a0l;
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef";
+    }
+
+    public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return null;
+    }
+  }
+
   public class RootMappingRule0 implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
 
     public SNodePointer getRuleNode() {
-      return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767");
+      return rootMappingRule_417xrn_a0a0m;
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {

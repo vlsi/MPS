@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.TemplateReductionRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -29,9 +32,17 @@ import java.util.Collection;
 public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
   private final SNode mySwitch;
+  private final Collection<TemplateReductionRule> rules;
 
   public TemplateSwitchMappingInterpreted(SNode aSwitch) {
     mySwitch = aSwitch;
+    rules = new ArrayList<TemplateReductionRule>();
+    for(SNode child : mySwitch.getChildrenIterable()) {
+      String conceptName = child.getConceptFqName();
+      if(conceptName.equals(Reduction_MappingRule.concept)) {
+        rules.add(new TemplateReductionRuleInterpreted(child));
+      }
+    }
   }
 
   @Override
@@ -51,8 +62,8 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   }
 
   @Override
-  public Collection<TemplateReductionRule> getReductionRules() {
-    return null;
+  public Iterable<TemplateReductionRule> getReductionRules() {
+    return rules;
   }
 
   @Override
