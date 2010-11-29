@@ -42,9 +42,18 @@ public abstract class PropertySupport {
     if (value == null && nullsAlwaysAllowed) return true;  // can always remove property
     if (value == null) value = "";
     if (!canSetValue(value)) return false;
-    INodePropertyValidator propertyValidator = ModelConstraintsManager.getInstance().getNodePropertyValidator(node, propertyName);
-    if (propertyValidator != null) {
-      return propertyValidator.checkPropertyValue(node, propertyName, value, scope);
+    INodePropertyValidator propertyValidator = getValidator(node, propertyName);
+    return canSetValue(propertyValidator, node, propertyName, value, scope);
+  }
+
+  public INodePropertyValidator getValidator(SNode node, String propertyName) {
+    return ModelConstraintsManager.getInstance().getNodePropertyValidator(node, propertyName);
+  }
+
+  public boolean canSetValue(INodePropertyValidator validator, SNode node, String propertyName, String value, IScope scope) {
+    if (value == null) value = "";
+    if (validator != null) {
+      return validator.checkPropertyValue(node, propertyName, value, scope);
     }
     return true;
   }

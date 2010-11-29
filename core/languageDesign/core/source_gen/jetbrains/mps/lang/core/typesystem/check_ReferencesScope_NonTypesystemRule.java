@@ -28,45 +28,47 @@ public class check_ReferencesScope_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    IOperationContext context = typeCheckingContext.getOperationContext();
-    if (context == null) {
-      return;
-    }
-    AbstractConceptDeclaration concept = ((ConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node)));
-    for (SReference ref : SNodeOperations.getReferences(node)) {
-      SNode target = SLinkOperations.getTargetNode(ref);
-      LinkDeclaration linkDeclaration = ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration(ref)));
-      // don't check unresolved and broken references, they should already have an error message 
-      if ((target == null) || linkDeclaration == null) {
-        continue;
+    /*
+      IOperationContext context = typeCheckingContext.getOperationContext();
+      if (context == null) {
+        return;
       }
-      SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, linkDeclaration, context);
-      if (sss.isError()) {
-        {
-          BaseQuickFixProvider intentionProvider = null;
-          MessageTarget errorTarget = new NodeMessageTarget();
-          errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752368615", intentionProvider, errorTarget);
+      AbstractConceptDeclaration concept = ((ConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node)));
+      for (SReference ref : SNodeOperations.getReferences(node)) {
+        SNode target = SLinkOperations.getTargetNode(ref);
+        LinkDeclaration linkDeclaration = ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration(ref)));
+        // don't check unresolved and broken references, they should already have an error message 
+        if ((target == null) || linkDeclaration == null) {
+          continue;
         }
-      } else if (!(sss.isDefault() || sss.getSearchScope().isInScope(target))) {
-        String name = target.getName();
-        {
-          BaseQuickFixProvider intentionProvider = null;
-          MessageTarget errorTarget = new NodeMessageTarget();
-          errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "reference" + ((name == null ?
-            "" :
-            " " + name
-          )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4942048232752376292", intentionProvider, errorTarget);
+        SearchScopeStatus sss = ModelConstraintsUtil.getSearchScope(SNodeOperations.getParent(node), node, concept, linkDeclaration, context);
+        if (sss.isError()) {
           {
-            SNode _foreign_34989546 = sss.getReferenceValidatorNode();
-            if (_foreign_34989546 != null) {
-              _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
+            BaseQuickFixProvider intentionProvider = null;
+            MessageTarget errorTarget = new NodeMessageTarget();
+            errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, sss.getMessage(), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295757728", intentionProvider, errorTarget);
+          }
+        } else if (!(sss.isDefault() || sss.getSearchScope().isInScope(target))) {
+          String name = target.getName();
+          {
+            BaseQuickFixProvider intentionProvider = null;
+            MessageTarget errorTarget = new NodeMessageTarget();
+            errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "reference" + ((name == null ?
+              "" :
+              " " + name
+            )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8536912951295757760", intentionProvider, errorTarget);
+            {
+              SNode _foreign_34989546 = sss.getReferenceValidatorNode();
+              if (_foreign_34989546 != null) {
+                _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
+              }
             }
           }
         }
       }
-    }
+    */
   }
 
   public String getApplicableConceptFQName() {

@@ -66,6 +66,9 @@ public class LanguageErrorsComponent {
   }
 
   public void addDependency(SNode currentNode, SNode dependency) {
+    if (dependency == null) {
+      return;
+    }
     Set<SNode> errorNodes = MapSequence.fromMap(myDependenciesToNodes).get(dependency);
     if (errorNodes == null) {
       errorNodes = SetSequence.fromSet(new HashSet<SNode>());

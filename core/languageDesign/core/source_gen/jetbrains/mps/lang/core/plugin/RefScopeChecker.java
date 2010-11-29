@@ -13,13 +13,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
   }
 
-  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext) {
+  public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext) {
     if (operationContext == null) {
       return;
     }
@@ -35,11 +36,13 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       component.addDependency(target);
       component.addDependency(linkDeclaration.getNode());
       String linkRole = SModelUtil_new.getGenuineLinkRole(linkDeclaration);
-      SNode linkTarget = SLinkOperations.getTarget(ld, "target", false);
-      INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsUtil.getSearchScopeProvider(concept, linkRole);
-      // todo start reading 
-      SearchScopeStatus searchScopeStatus = ModelConstraintsUtil.createSearchScope(scopeProvider, SNodeOperations.getModel(node), SNodeOperations.getParent(node), node, linkTarget, operationContext);
-      // todo end reading 
+      final SNode linkTarget = SLinkOperations.getTarget(ld, "target", false);
+      final INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsUtil.getSearchScopeProvider(concept, linkRole);
+      SearchScopeStatus searchScopeStatus = component.runCheckingAction(new _FunctionTypes._return_P0_E0<SearchScopeStatus>() {
+        public SearchScopeStatus invoke() {
+          return ModelConstraintsUtil.createSearchScope(scopeProvider, SNodeOperations.getModel(node), SNodeOperations.getParent(node), node, linkTarget, operationContext);
+        }
+      });
       if (searchScopeStatus.isError()) {
         component.addError(node, searchScopeStatus.getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       } else if (!(searchScopeStatus.isDefault() || searchScopeStatus.getSearchScope().isInScope(target))) {
