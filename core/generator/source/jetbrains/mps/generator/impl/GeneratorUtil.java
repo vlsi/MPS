@@ -214,15 +214,6 @@ public class GeneratorUtil {
     return null;
   }
 
-  static RuleConsequence getReductionConsequence(ReductionRule rule) {
-    if (rule instanceof Reduction_MappingRule) {
-      return ((Reduction_MappingRule) rule).getRuleConsequence();
-    } else if (rule instanceof PatternReduction_MappingRule) {
-      return ((PatternReduction_MappingRule) rule).getRuleConsequence();
-    }
-    return null;
-  }
-
   private static Expression[] getArguments(ITemplateCall templateCall) {
     final List<Expression> args = templateCall.getActualArguments();
     if (args == null || args.size() == 0) {
