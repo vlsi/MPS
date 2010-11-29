@@ -3,7 +3,6 @@ package jetbrains.mps.debug.runtime;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
@@ -141,7 +140,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
               if (bp instanceof JavaBreakpoint) {
                 JavaBreakpoint breakpoint = (JavaBreakpoint) bp;
                 if (mute) {
-                  requestManager.deleteRequest(breakpoint); // todo enabling and disabling breakpoints should be symmetrical
+                  requestManager.deleteRequests(breakpoint); // todo enabling and disabling breakpoints should be symmetrical
                 } else {
                   breakpoint.createOrWaitPrepare(getEventsProcessor());
                 }

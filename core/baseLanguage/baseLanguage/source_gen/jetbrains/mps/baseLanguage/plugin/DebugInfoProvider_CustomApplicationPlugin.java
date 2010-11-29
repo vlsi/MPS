@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.runtime.MPSBreakpoint;
+import jetbrains.mps.debug.breakpoints.MethodBreakpoint;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
@@ -28,6 +31,13 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement", creator);
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration", creator);
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", creator);
+    }
+    {
+      Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
+        public ILocationBreakpoint value(SNode debuggableNode, Project project) {
+          return new MethodBreakpoint(debuggableNode, SPropertyOperations.getString(debuggableNode, "name"), BaseMethodDeclaration_Behavior.call_jniSignature_8847328628797656446(debuggableNode), project);
+        }
+      };
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", creator);
     }
   }

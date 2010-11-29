@@ -24,4 +24,6 @@ public class Icons {
   public static final Icon RUNCONFIGURATION_REMOTE = new ImageIcon(Icons.class.getResource("ui/icons/db_runconfig_remote.png"));
   public static final Icon EXCEPTION_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_exception_breakpoint.png"));
   public static final Icon DISABLED_EXCEPTION_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_disabled_exception_breakpoint.png"));
+  public static final Icon METHOD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_method_breakpoint.png"));
+  public static final Icon DISABLED_METHOD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_disabled_method_breakpoint.png"));
 }

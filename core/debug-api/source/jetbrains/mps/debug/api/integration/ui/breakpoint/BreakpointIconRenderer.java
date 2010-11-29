@@ -45,19 +45,19 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
   }
 
   public static Icon getIconFor(@NotNull IBreakpoint breakpoint) {
+    return getIconFor(breakpoint, null);
+  }
+
+  private static Icon getIconFor(@NotNull IBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
+    if (session != null && session.isMute()) {
+      return Icons.MUTED_BREAKPOINT;
+    }
     IBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(breakpoint.getKind());
     if (provider != null) {
       Icon icon = provider.getIcon(breakpoint, null);
       if (icon != null) {
         return icon;
       }
-    }
-    return getDefaultIconFor(breakpoint, null);
-  }
-
-  private static Icon getDefaultIconFor(@NotNull IBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
-    if (session != null && session.isMute()) {
-      return Icons.MUTED_BREAKPOINT;
     }
     return breakpoint.isValid() ? (breakpoint.isEnabled() ? Icons.BREAKPOINT : Icons.DISABLED_BREAKPOINT) : Icons.INV_BREAKPOINT;
   }
@@ -69,7 +69,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
 
   @Override
   public Icon getIcon() {
-    return getDefaultIconFor(myBreakpoint, DebugActionsUtil.getDebugSession(DataManager.getInstance().getDataContext(myComponent)));
+    return getIconFor(myBreakpoint, DebugActionsUtil.getDebugSession(DataManager.getInstance().getDataContext(myComponent)));
   }
 
   @Override

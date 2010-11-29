@@ -20,7 +20,8 @@ import org.jetbrains.annotations.NonNls;
 
 public enum JavaBreakpointKind implements IBreakpointKind<JavaBreakpoint> {
   LINE_BREAKPOINT("Java Line Breakpoint"),
-  EXCEPTION_BREAKPOINT("Java Exception Breakpoint");
+  EXCEPTION_BREAKPOINT("Java Exception Breakpoint"),
+  METHOD_BREAKPOINT("Java Method Breakpoint");
   private static final String LANGUAGE_PREFIX = "JAVA_";
   private final String myPresentation;
 

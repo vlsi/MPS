@@ -8,6 +8,8 @@ public class JavaWatchablesCategory extends WatchablesCategory {
   public static final WatchablesCategory CALCULATED_VALUE = new WatchablesCategory("calculated value");
   public static final WatchablesCategory STATIC_CONTEXT = new JavaWatchablesCategory("static field", 0);
   public static final WatchablesCategory THROWN_EXCEPTION = new JavaWatchablesCategory("exception", 3);
+  public static final WatchablesCategory METHOD = new JavaWatchablesCategory("method", 4);
+  public static final WatchablesCategory RETURN_VALUE = new JavaWatchablesCategory("return value", 5);
 
   private final int myOrder;
 

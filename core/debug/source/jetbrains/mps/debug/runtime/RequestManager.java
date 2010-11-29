@@ -25,6 +25,7 @@ import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debug.breakpoints.MethodBreakpoint;
 import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent.AllDebugProcessesAction;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.Requestor;
@@ -84,7 +85,7 @@ public class RequestManager implements DebugProcessListener {
     reqSet.add(request);
   }
 
-  public void deleteRequest(Requestor requestor) {
+  public void deleteRequests(Requestor requestor) {
     DebuggerManagerThread.assertIsManagerThread();
 
     if (!myDebugEventsProcessor.isAttached()) {
@@ -128,11 +129,20 @@ public class RequestManager implements DebugProcessListener {
     return request;
   }
 
-  private void initRequest(JavaBreakpoint requestor, EventRequest req) {
-    int suspendPolicy = requestor.getSuspendPolicy();
-    if (suspendPolicy == EventRequest.SUSPEND_NONE) suspendPolicy = EventRequest.SUSPEND_ALL; // we suspend all, do smth and then resume
-    req.setSuspendPolicy(suspendPolicy);
-    registerRequestInternal(requestor, req);
+  public MethodEntryRequest createMethodEntryRequest(MethodBreakpoint requestor, ReferenceType type) {
+    DebuggerManagerThread.assertIsManagerThread();
+    MethodEntryRequest request = myEventRequestManager.createMethodEntryRequest();
+    request.addClassFilter(type);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  public MethodExitRequest createMethodExitRequest(MethodBreakpoint requestor, ReferenceType type) {
+    DebuggerManagerThread.assertIsManagerThread();
+    MethodExitRequest request = myEventRequestManager.createMethodExitRequest();
+    request.addClassFilter(type);
+    initRequest(requestor, request);
+    return request;
   }
 
   public ExceptionRequest createExceptionRequest(ExceptionBreakpoint requestor, ReferenceType reference) {
@@ -140,6 +150,13 @@ public class RequestManager implements DebugProcessListener {
     ExceptionRequest request = myEventRequestManager.createExceptionRequest(reference, true, true);
     initRequest(requestor, request);
     return request;
+  }
+
+  private void initRequest(JavaBreakpoint requestor, EventRequest req) {
+    int suspendPolicy = requestor.getSuspendPolicy();
+    if (suspendPolicy == EventRequest.SUSPEND_NONE) suspendPolicy = EventRequest.SUSPEND_ALL; // we suspend all, do smth and then resume
+    req.setSuspendPolicy(suspendPolicy);
+    registerRequestInternal(requestor, req);
   }
 
   void deleteStepRequests() {
@@ -288,7 +305,7 @@ public class RequestManager implements DebugProcessListener {
       @Override
       public void run(DebugVMEventsProcessor processor) {
         if (processor.isAttached()) {
-          processor.getRequestManager().deleteRequest(breakpoint);
+          processor.getRequestManager().deleteRequests(breakpoint);
         }
       }
     });

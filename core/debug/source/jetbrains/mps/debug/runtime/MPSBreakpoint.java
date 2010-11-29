@@ -83,18 +83,9 @@ public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint
   @Override
   //called when breakpoint is hit
   public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    final SuspendContext context = action.getSuspendContext();
-    if (!isValid()) {
-      context.getDebugProcess().getRequestManager().deleteRequest(this);
-      return false;
-    }
-    try {
-      final StackFrame stackFrame = context.getThread().frame(0);
-      if (stackFrame == null) {
-        // might be if the thread has been collected
-        return false;
-      }
-
+    boolean result = super.processLocatableEvent(action, event);
+    if (!result) return false;
+//    try {
       //todo conditions - later
       /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
         action.getSuspendContext(),
@@ -107,11 +98,10 @@ public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint
       }*/
       //todo here some expressions may be evaluated; later
       // runAction(evaluationContext, event);
-    } catch (IncompatibleThreadStateException ex) {
-      LOG.error(ex);
-      return false;
-    }
-
+//    } catch (IncompatibleThreadStateException ex) {
+//      LOG.error(ex);
+//      return false;
+//    }
     return true;
   }
 
@@ -119,6 +109,7 @@ public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint
     String className = myLocation.getTargetUnitName();
 
     if (className == null) {
+      // todo when this case does actually happen?
       String fileName = myLocation.getFileName();
       if (fileName.endsWith(".java")) {
         fileName = fileName.substring(0, fileName.length() - ".java".length());

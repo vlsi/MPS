@@ -16,20 +16,24 @@
 package jetbrains.mps.debug.breakpoints;
 
 import com.intellij.openapi.project.Project;
+import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.ReferenceType;
+import com.sun.jdi.StackFrame;
+import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
-import jetbrains.mps.debug.runtime.RequestManager;
+import jetbrains.mps.debug.runtime.*;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public abstract class JavaBreakpoint extends AbstractMPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private int mySuspendPolicy = EventRequest.SUSPEND_ALL;
+  private final Logger LOG = Logger.getLogger(JavaBreakpoint.class);
 
   protected JavaBreakpoint(Project project) {
     super(project);
@@ -104,5 +108,40 @@ public abstract class JavaBreakpoint extends AbstractMPSBreakpoint implements Cl
       removeFromRunningSessions();
       addToRunningSessions();
     }
+  }
+
+  @Override
+  //called when breakpoint is hit
+  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
+    final SuspendContext context = action.getSuspendContext();
+    if (!isValid()) {
+      context.getDebugProcess().getRequestManager().deleteRequests(this);
+      return false;
+    }
+    try {
+      final StackFrame stackFrame = context.getThread().frame(0);
+      if (stackFrame == null) {
+        // might be if the thread has been collected
+        return false;
+      }
+
+      //todo conditions - later
+      /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
+        action.getSuspendContext(),
+        frameProxy,
+        getThisObject(context, event)
+      );
+
+      if(!evaluateCondition(evaluationContext, event)) {
+        return false;
+      }*/
+      //todo here some expressions may be evaluated; later
+      // runAction(evaluationContext, event);
+    } catch (IncompatibleThreadStateException ex) {
+      LOG.error(ex);
+      return false;
+    }
+
+    return true;
   }
 }

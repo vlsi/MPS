@@ -1,20 +1,19 @@
 package jetbrains.mps.debug.runtime;
 
-import com.sun.jdi.LocalVariable;
-import com.sun.jdi.ObjectReference;
-import com.sun.jdi.ThreadReference;
-import com.sun.jdi.Value;
+import com.sun.jdi.*;
 import com.sun.jdi.event.Event;
 import com.sun.jdi.event.ExceptionEvent;
+import com.sun.jdi.event.MethodEntryEvent;
+import com.sun.jdi.event.MethodExitEvent;
 import jetbrains.mps.debug.api.AbstractDebugSession.ExecutionState;
 import jetbrains.mps.debug.api.AbstractUiState;
-import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
-import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaExceptionWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaMethodWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaReturnWatchable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -230,6 +229,15 @@ public class JavaUiState extends AbstractUiState {
         if (event instanceof ExceptionEvent) {
           ObjectReference exception = ((ExceptionEvent) event).exception();
           watchables.add(new JavaExceptionWatchable(exception, getStackFrame().getClassFqName(), getThread().getThread()));
+        } else if (event instanceof MethodEntryEvent) {
+          Method method = ((MethodEntryEvent) event).method();
+          watchables.add(new JavaMethodWatchable(method, true, getStackFrame().getClassFqName(), getThread().getThread()));
+        } else if (event instanceof MethodExitEvent) {
+          Method method = ((MethodExitEvent) event).method();
+          Value value = ((MethodExitEvent) event).returnValue();
+          watchables.add(new JavaMethodWatchable(method, false, getStackFrame().getClassFqName(), getThread().getThread()));
+          watchables.add(new JavaReturnWatchable(value, getStackFrame().getClassFqName(), getThread().getThread()));
+          // todo return value
         }
       }
     }
