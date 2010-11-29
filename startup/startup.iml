@@ -24,7 +24,6 @@
           <root url="file://$MODULE_DIR$/../core/make-runtime/classes" />
           <root url="file://$MODULE_DIR$/../core/generator/classes" />
           <root url="file://$MODULE_DIR$/../workbench/javaParser/classes" />
-          <root url="file://$MODULE_DIR$/../core/kernel/xmlQuery/runtime/classes" />
           <root url="file://$MODULE_DIR$/../workbench/classes" />
           <root url="file://$MODULE_DIR$/../core/debug-api/classes" />
           <root url="file://$MODULE_DIR$/../core/runtime/classes" />
@@ -33,7 +32,23 @@
           <root url="file://$MODULE_DIR$/../workbench/typesystemUi/classes" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../core/kernel/source" />
+          <root url="file://$MODULE_DIR$/../core/kernel/source_gen" />
+          <root url="file://$MODULE_DIR$/../core/debug-api/source" />
+          <root url="file://$MODULE_DIR$/../core/debug/source" />
+          <root url="file://$MODULE_DIR$/../core/generator/source" />
+          <root url="file://$MODULE_DIR$/../core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
+          <root url="file://$MODULE_DIR$/../core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
+          <root url="file://$MODULE_DIR$/../core/runtime/source" />
+          <root url="file://$MODULE_DIR$/../core/typesystemEngine/source" />
+          <root url="file://$MODULE_DIR$/../core/typesystemIntegration/source" />
+          <root url="file://$MODULE_DIR$/../MPSPlugin/source-api" />
+          <root url="file://$MODULE_DIR$/../workbench/source" />
+          <root url="file://$MODULE_DIR$/../workbench/source_gen" />
+          <root url="file://$MODULE_DIR$/../workbench/javaParser/source" />
+          <root url="file://$MODULE_DIR$/../workbench/typesystemUi/source" />
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="library" scope="RUNTIME" name="JDOM" level="project" />
