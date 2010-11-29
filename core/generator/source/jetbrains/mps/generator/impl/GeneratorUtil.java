@@ -147,7 +147,7 @@ public class GeneratorUtil {
   }
 
   @Nullable
-  static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ReductionContext reductionContext, TemplateGenerator generator)
+  public static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ReductionContext reductionContext, TemplateGenerator generator)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
 
     if (ruleConsequence == null) {
@@ -246,7 +246,7 @@ public class GeneratorUtil {
   }
 
   @NotNull
-  static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, RuleConsequence consequence, SNode newInputNode, ITemplateGenerator generator) {
+  public static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, RuleConsequence consequence, SNode newInputNode, ITemplateGenerator generator) {
     if (consequence instanceof ITemplateCall) {
       return createTemplateContext(inputNode, outerContext, reductionContext, (ITemplateCall) consequence, newInputNode, generator);
     }

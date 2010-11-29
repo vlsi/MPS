@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.impl.interpreted.TemplateReductionPatternRuleInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateReductionRuleInterpreted;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.lang.generator.structure.*;
