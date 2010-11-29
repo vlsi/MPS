@@ -13,8 +13,8 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
@@ -34,6 +34,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 
 public class Generate_Facet implements IFacet {
@@ -69,7 +70,7 @@ public class Generate_Facet implements IFacet {
   }
 
   public static class Target_fi61u2_a implements ITarget {
-    private ITarget.Name name = new ITarget.Name("checkParameters");
+    private ITarget.Name name = new ITarget.Name("collectResources");
 
     public Target_fi61u2_a() {
     }
@@ -80,25 +81,86 @@ public class Generate_Facet implements IFacet {
           Iterable<IResource> _output_fi61u2_a0a = null;
           switch (0) {
             case 0:
-              Logger logger = Logger.getLogger("jetbrains.mps.make.Generator");
-              if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).project() == null) {
-                logger.error("project is null");
-                return new IResult.FAILURE(_output_fi61u2_a0a);
-              }
-              if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext() == null) {
-                logger.error("operationContext is null");
-                return new IResult.FAILURE(_output_fi61u2_a0a);
-              }
-              if (Sequence.fromIterable(pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).models()).isEmpty()) {
-                logger.error("no models");
-                return new IResult.FAILURE(_output_fi61u2_a0a);
-              }
-              if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).cleanMake() == null) {
-                logger.error("no cleanMake");
-                return new IResult.FAILURE(_output_fi61u2_a0a);
-              }
+              _output_fi61u2_a0a = Sequence.fromIterable(_output_fi61u2_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new MResource(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).models()))));
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0a);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return null;
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+  }
+
+  public static class Target_fi61u2_b implements ITarget {
+    private ITarget.Name name = new ITarget.Name("checkParameters");
+
+    public Target_fi61u2_b() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          Iterable<IResource> _output_fi61u2_a0b = null;
+          switch (0) {
+            case 0:
+              Logger logger = Logger.getLogger("jetbrains.mps.make.Generator");
+              if (pool.parameters(Target_fi61u2_b.this.getName(), Generate_Facet.Target_fi61u2_b.Variables.class).project() == null) {
+                logger.error("project is null");
+                return new IResult.FAILURE(_output_fi61u2_a0b);
+              }
+              if (pool.parameters(Target_fi61u2_b.this.getName(), Generate_Facet.Target_fi61u2_b.Variables.class).operationContext() == null) {
+                logger.error("operationContext is null");
+                return new IResult.FAILURE(_output_fi61u2_a0b);
+              }
+              if (Sequence.fromIterable(pool.parameters(Target_fi61u2_b.this.getName(), Generate_Facet.Target_fi61u2_b.Variables.class).models()).isEmpty()) {
+                logger.error("no models");
+                return new IResult.FAILURE(_output_fi61u2_a0b);
+              }
+              if (pool.parameters(Target_fi61u2_b.this.getName(), Generate_Facet.Target_fi61u2_b.Variables.class).cleanMake() == null) {
+                logger.error("no cleanMake");
+                return new IResult.FAILURE(_output_fi61u2_a0b);
+              }
+            default:
+              return new IResult.SUCCESS(_output_fi61u2_a0b);
           }
         }
       };
@@ -186,70 +248,9 @@ public class Generate_Facet implements IFacet {
       }
 
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_fi61u2_a.Variables assignFrom(Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, Boolean> from) {
-        return (Generate_Facet.Target_fi61u2_a.Variables) super.assign(from);
+      public Generate_Facet.Target_fi61u2_b.Variables assignFrom(Tuples._4<Project, IOperationContext, Iterable<SModelDescriptor>, Boolean> from) {
+        return (Generate_Facet.Target_fi61u2_b.Variables) super.assign(from);
       }
-    }
-  }
-
-  public static class Target_fi61u2_b implements ITarget {
-    private ITarget.Name name = new ITarget.Name("collectResources");
-
-    public Target_fi61u2_b() {
-    }
-
-    public IJob createJob() {
-      return new IJob() {
-        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
-          Iterable<IResource> _output_fi61u2_a0b = null;
-          switch (0) {
-            case 0:
-              _output_fi61u2_a0b = Sequence.fromIterable(_output_fi61u2_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new MResource(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).models()))));
-            default:
-              return new IResult.SUCCESS(_output_fi61u2_a0b);
-          }
-        }
-      };
-    }
-
-    public IConfig createConfig() {
-      return null;
-    }
-
-    public Iterable<ITarget.Name> notAfter() {
-      return null;
-    }
-
-    public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters")});
-    }
-
-    public Iterable<ITarget.Name> notBefore() {
-      return null;
-    }
-
-    public Iterable<ITarget.Name> before() {
-      return null;
-    }
-
-    public ITarget.Name getName() {
-      return name;
-    }
-
-    public boolean requiresInput() {
-      return false;
-    }
-
-    public boolean producesOutput() {
-      return true;
-    }
-
-    public Class<? extends IResource> expectedResources() {
-      return null;
-    }
-
-    public <T> T createParameters(Class<T> cls) {
-      return null;
     }
   }
 
@@ -265,8 +266,8 @@ public class Generate_Facet implements IFacet {
           Iterable<IResource> _output_fi61u2_a0c = null;
           switch (0) {
             case 0:
-              if (DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()).isDumb()) {
-                DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
+              if (DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).project()).isDumb()) {
+                DumbService.getInstance(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).project()).showDumbModeNotification("Generation is not available until indices are built.");
                 return new IResult.FAILURE(_output_fi61u2_a0c);
               }
             default:
@@ -338,7 +339,7 @@ public class Generate_Facet implements IFacet {
                 ));
               }
               IGenerationTracer tracer = (pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient() ?
-                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GenerationTracer.class) :
+                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).project().getComponent(GenerationTracer.class) :
                 new NullGenerationTracer()
               );
               pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).generationOptions(GenerationOptions.getDefaults().saveTransientModels(pool.parameters(Target_fi61u2_d.this.getName(), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient()).strictMode(settings.isStrictMode()).incremental(strategy).generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).tracing(settings.getPerformanceTracingLevel(), tracer).reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).rebuildAll(true));
@@ -470,14 +471,14 @@ public class Generate_Facet implements IFacet {
           final Wrappers._T<Iterable<IResource>> _output_fi61u2_a0e = new Wrappers._T<Iterable<IResource>>(null);
           switch (0) {
             case 0:
-              MessagesViewTool mvt = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(MessagesViewTool.class);
+              MessagesViewTool mvt = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).project().getComponent(MessagesViewTool.class);
               if (mvt != null) {
                 mvt.openToolLater(false);
               }
               boolean generationOk;
-              GeneratorManager gm = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GeneratorManager.class);
+              GeneratorManager gm = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).project().getComponent(GeneratorManager.class);
               if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_d.Variables.class).saveTransient())) {
-                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GenerationTracer.class).discardTracing();
+                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).project().getComponent(GenerationTracer.class).discardTracing();
               }
               ProgressIndicator pind = new EmptyProgressIndicator();
 
@@ -487,7 +488,11 @@ public class Generate_Facet implements IFacet {
                   return true;
                 }
               });
-              generationOk = gm.generateModels(Sequence.fromIterable(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).models()).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pind, new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()) {
+              generationOk = gm.generateModels(Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
+                public Iterable<SModelDescriptor> translate(IResource in) {
+                  return ((MResource) in).models();
+                }
+              }).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).operationContext(), gh, pind, new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).project()) {
                 @Override
                 public void clear() {
                   // XPEH BAM 

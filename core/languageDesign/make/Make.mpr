@@ -7,6 +7,11 @@
   <component name="MPSFavoritesManager">
     <favorites_list name="Make actions">
       <favorite_root model_ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" node_pointer="1204991218714" />
+      <favorite_root model_ref="r:aa4df85a-48f0-4531-a9c6-bb42f911e10f(jetbrains.mps.make.facet.plugin)" />
+      <favorite_root model_ref="r:592314bc-6729-4503-84dc-fd04330640bd(jetbrains.mps.make.sandbox.sample)" />
+      <favorite_root model_ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" node_pointer="2841218117793440838" />
+    </favorites_list>
+    <favorites_list name="Unnamed">
       <favorite_root module_ref="cbfcab6a-ac80-4eb4-99de-c287e996dea7(jetbrains.mps.make.sandbox)" />
     </favorites_list>
   </component>
