@@ -17152,9 +17152,6 @@
                       <property name="value" nameId="tpee.1068580320021" value="0" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="6670547060642668666">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6670547060642668669">
-                        <property name="value" nameId="tpee.1068580320021" value="3" />
-                      </node>
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6670547060642668661">
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6670547060642668660">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6670547060642668261" resolveInfo="name" />
@@ -17162,6 +17159,9 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6670547060642668665">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~String%dlength()%cint" resolveInfo="length" />
                         </node>
+                      </node>
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8523338775943007015">
+                        <property name="value" nameId="tpee.1068580320021" value="2" />
                       </node>
                     </node>
                   </node>
