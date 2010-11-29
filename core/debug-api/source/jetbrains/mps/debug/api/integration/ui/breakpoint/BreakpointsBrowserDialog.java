@@ -149,27 +149,28 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       }
     };
     group.add(myShowNodeAction);
-    AnAction addBreakpointAction = new AnAction("Add", "Add Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.ADD) {
+
+
+    DefaultActionGroup addActionGroup = new DefaultActionGroup("Add Breakpoint", true){
       @Override
-      public void actionPerformed(AnActionEvent e) {
-        Set<IBreakpointKind> allKinds = BreakpointProvidersManager.getInstance().getAllKinds();
-        List<IBreakpointKind> kindsToShow = new ArrayList<IBreakpointKind>();
-        List<String> kindNames = new ArrayList<String>();
-        for (IBreakpointKind kind : allKinds) {
-          IBreakpointsProvider provider = BreakpointProvidersManager.getInstance().getProvider(kind);
-          if (provider == null) continue;
-          if (provider.canCreateFromUi(kind)) {
-            kindsToShow.add(kind);
-            kindNames.add(kind.getPresentation());
-          }
-        }
-        int index = Messages.showChooseDialog(myMainPanel, "Select the kind of breakpoint to add.", "Add Breakpoint", kindNames.toArray(new String[kindNames.size()]), kindNames.get(0), (Icon) null);
-        if (index >= 0) {
-          myBreakpointsManager.createFromUi(kindsToShow.get(index));
-        }
+      public void update(AnActionEvent e) {
+        super.update(e);
+        e.getPresentation().setIcon(jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.ADD);
       }
     };
-    group.add(addBreakpointAction);
+    for (final IBreakpointKind kind : myProvidersManager.getAllKinds()) {
+      IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+      if (provider != null && provider.canCreateFromUi(kind)) { // TODO can't we ask this from kind??
+        AnAction addBreakpoointAction = new AnAction(kind.getPresentation(), "Create " + kind.getPresentation(), null) {
+          @Override
+          public void actionPerformed(AnActionEvent e) {
+            myBreakpointsManager.createFromUi(kind);
+          }
+        };
+        addActionGroup.add(addBreakpoointAction);
+      }
+    }
+    group.add(addActionGroup);
     myDeleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.REMOVE) {
       @Override
       public void actionPerformed(AnActionEvent e) {
