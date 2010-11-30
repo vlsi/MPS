@@ -15,21 +15,23 @@
  */
 package jetbrains.mps.smodel;
 
+import gnu.trove.TLongObjectHashMap;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationHistory;
+import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.CompositeIterable;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.security.SecureRandom;
 import java.util.*;
-import java.util.Map.Entry;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SModel {
@@ -50,7 +52,7 @@ public class SModel {
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
 
-  private Map<SNodeId, SNode> myIdToNodeMap = new NodeIdMap();
+  private NodeIdMap myIdToNodeMap = new NodeIdMap();
 
   private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
 
@@ -193,7 +195,7 @@ public class SModel {
   }
 
   public void clearAdaptersAndUserObjects() {
-    for (SNode node : getAllNodesWithIds()) {
+    for (SNode node : myIdToNodeMap.values()) {
       node.clearAdapter();
       node.removeAllUserObjects();
     }
@@ -809,7 +811,7 @@ public class SModel {
     enforceFullLoad();
 
     boolean changed = false;
-    for (SNode node : getAllNodesWithIds()) {
+    for (SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
@@ -872,7 +874,7 @@ public class SModel {
     enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
-    for (SNode node : getAllNodesWithIds()) {
+    for (SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
         if (oldReference.equals(reference.getTargetSModelReference())) {
           reference.setTargetSModelReference(newModelReference);
@@ -951,71 +953,55 @@ public class SModel {
     return result;
   }
 
-  @Deprecated
-  @NotNull
-  public Collection<SNode> getAllNodesWithIds() {
-    checkNotDisposed();
-    if (myDisposed) return Collections.emptySet();
-
-    enforceFullLoad();
-    return Collections.unmodifiableCollection(myIdToNodeMap.values());
-  }
-
   @Nullable
   public SNode getNodeById(String idString) {
     SNodeId nodeId = SNodeId.fromString(idString);
     return getNodeById(nodeId);
   }
 
-  private static class NodeIdMap implements Map<SNodeId, SNode>{
-    private final HashMap<SNodeId, SNode> myHashMap = new HashMap<SNodeId, SNode>();
+  private static class NodeIdMap{
+    private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
+    private final HashMap<SNodeId, SNode> myOtherMap = new HashMap<SNodeId, SNode>();
 
     public int size() {
-      return myHashMap.size();
+      return myOtherMap.size() + myRegularMap.size();
     }
 
-    public boolean isEmpty() {
-      return myHashMap.isEmpty();
-    }
-
-    public SNode get(Object key) {
-      return myHashMap.get(key);
+    public SNode get(SNodeId key) {
+      if (key instanceof Regular) {
+        return myRegularMap.get(((Regular) key).getId());
+      }
+      return myOtherMap.get(key);
     }
 
     public SNode put(SNodeId key, SNode value) {
-      return myHashMap.put(key,value);
+      if (key instanceof Regular) {
+        return myRegularMap.put(((Regular) key).getId(), value);
+      }
+      return myOtherMap.put(key, value);
     }
 
-    public boolean containsKey(Object key) {
-      return myHashMap.containsKey(key);
+    public boolean containsKey(SNodeId key) {
+      if (key instanceof Regular) {
+        return myRegularMap.containsKey(((Regular) key).getId());
+      }
+
+      return myOtherMap.containsKey(key);
     }
 
-    public SNode remove(Object key) {
-      return myHashMap.remove(key);
+    public SNode remove(SNodeId key) {
+      if (key instanceof Regular) {
+        return myRegularMap.remove(((Regular) key).getId());
+      }
+
+      return myOtherMap.remove(key);
     }
 
-    public void putAll(Map<? extends SNodeId, ? extends SNode> m) {
-      myHashMap.putAll(m);
-    }
-
-    public void clear() {
-      myHashMap.clear();
-    }
-
-    public boolean containsValue(Object value) {
-      return myHashMap.containsValue(value);
-    }
-
-    public Set<SNodeId> keySet() {
-      return myHashMap.keySet();
-    }
-
-    public Collection<SNode> values() {
-      return myHashMap.values();
-    }
-
-    public Set<java.util.Map.Entry<SNodeId, SNode>> entrySet() {
-      return myHashMap.entrySet();
+    public Iterable<SNode> values() {
+      CompositeIterable<SNode> res = new CompositeIterable<SNode>();
+      res.add(myOtherMap.values());
+      res.add(((Iterable) Arrays.asList((myRegularMap.getValues()))));
+      return res;
     }
   }
 }
