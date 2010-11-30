@@ -48,18 +48,23 @@ public class TemplateModelInterpreted implements TemplateModel {
       if(conceptName.equals(TemplateSwitch.concept)) {
         mySwitches.add(new TemplateSwitchMappingInterpreted(root));
       } else if(conceptName.equals(MappingConfiguration.concept)) {
-        myMappings.add(new TemplateMappingConfigurationInterpreted(root));
+        myMappings.add(new TemplateMappingConfigurationInterpreted(this, root));
       }
     }
   }
 
   @Override
-  public Iterable<TemplateSwitchMapping> getSwitches() {
+  public Collection<TemplateSwitchMapping> getSwitches() {
     return mySwitches;
   }
 
   @Override
-  public Iterable<TemplateMappingConfiguration> getConfigurations() {
+  public Collection<TemplateMappingConfiguration> getConfigurations() {
     return myMappings;
+  }
+
+  @Override
+  public String getLongName() {
+    return myModel.getLongName();
   }
 }

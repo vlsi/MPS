@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -37,8 +41,28 @@ public class GenerationPartitioner {
   private List<CoherentSetData> myCoherentMappings;
   private Set<MappingPriorityRule> myConflictingRules;
 
-  public List<List<MappingConfiguration>> createMappingSets(List<Generator> generators) {
-    return doPartitioning(null, generators);
+  public List<List<TemplateMappingConfiguration>> createMappingSets(List<Generator> generators) {
+    return convertPlan(doPartitioning(null, generators));
+  }
+
+  private static List<List<TemplateMappingConfiguration>> convertPlan(List<List<MappingConfiguration>> plan) {
+    List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>();
+    Map<SModelDescriptor, TemplateModel> descriptor2model = new HashMap<SModelDescriptor, TemplateModel>();
+
+    for(List<MappingConfiguration> step : plan) {
+      List<TemplateMappingConfiguration> s = new ArrayList<TemplateMappingConfiguration>(step.size());
+      for(MappingConfiguration c : step) {
+        SModelDescriptor d = c.getModel().getModelDescriptor();
+        TemplateModel m = descriptor2model.get(d);
+        if(m == null) {
+          m = new TemplateModelInterpreted(c.getModel());
+          descriptor2model.put(d, m);
+        }
+        s.add(new TemplateMappingConfigurationInterpreted(m, c.getNode()));
+      }
+      result.add(s);
+    }
+    return result;
   }
 
   public List<List<MappingConfiguration>> createMappingSets(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {

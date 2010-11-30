@@ -1,6 +1,6 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.lang.generator.structure.MappingScript;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
@@ -109,10 +109,10 @@ public class NullGenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> preMappingScripts) {
+  public void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> preMappingScripts) {
   }
 
   @Override
-  public void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> postMappingScripts) {
+  public void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> postMappingScripts) {
   }
 }

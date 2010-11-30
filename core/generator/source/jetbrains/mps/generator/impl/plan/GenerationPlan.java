@@ -2,6 +2,10 @@ package jetbrains.mps.generator.impl.plan;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
+import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -20,7 +24,7 @@ import java.util.*;
 public class GenerationPlan {
   private List<Generator> myGenerators;
   private Set<Language> myLanguages = new HashSet<Language>();
-  private List<List<MappingConfiguration>> myPlan;
+  private List<List<TemplateMappingConfiguration>> myPlan;
   private Set<MappingPriorityRule> myConflictingPriorityRules;
   private final String myInputName;
   private TemplateSwitchGraph myTemplateSwitchGraph;
@@ -32,10 +36,10 @@ public class GenerationPlan {
       for (Generator generator : myGenerators) {
         myLanguages.add(generator.getSourceLanguage());
       }
-      GenerationPartitioner partitioner = (new GenerationPartitioner());
+      GenerationPartitioner partitioner = new GenerationPartitioner();
       myPlan = partitioner.createMappingSets(myGenerators);
       if (myPlan.isEmpty()) {
-        myPlan.add(new ArrayList<MappingConfiguration>());
+        myPlan.add(new ArrayList<TemplateMappingConfiguration>());
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
     } catch (Throwable t) {
@@ -47,7 +51,7 @@ public class GenerationPlan {
     return myPlan.size();
   }
 
-  public List<MappingConfiguration> getMappingConfigurations(int step) {
+  public List<TemplateMappingConfiguration> getMappingConfigurations(int step) {
     return myPlan.get(step);
   }
 
@@ -92,10 +96,10 @@ public class GenerationPlan {
     sb.append(myPlan.size());
     sb.append(" steps\n");
     int i = 0;
-    for(List<MappingConfiguration> step : myPlan) {
+    for(List<TemplateMappingConfiguration> step : myPlan) {
       sb.append("[" + (i++) + "]\n" );
       List<String> res = new ArrayList<String>(step.size());
-      for(MappingConfiguration mconfig : step) {
+      for(TemplateMappingConfiguration mconfig : step) {
         res.add(toString(mconfig));
       }
       Collections.sort(res);
@@ -107,8 +111,8 @@ public class GenerationPlan {
     return sb.toString();
   }
 
-  private static String toString(MappingConfiguration mappingConfig) {
-    SModel model = mappingConfig.getModel();
+  private static String toString(TemplateMappingConfiguration mappingConfig) {
+    TemplateModel model = mappingConfig.getModel();
     return model.getLongName() + "#" + mappingConfig.getName();
   }
 

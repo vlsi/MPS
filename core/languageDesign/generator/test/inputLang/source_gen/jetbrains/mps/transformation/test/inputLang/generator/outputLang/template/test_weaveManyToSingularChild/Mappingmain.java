@@ -4,14 +4,16 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.smodel.SNodePointer;
+import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
-import java.util.Collection;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -23,36 +25,54 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer rootMappingRule_417xrn_b0b0a1a1a = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
   private static SNodePointer weavingRule_417xrn_a0a0b = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738863683");
 
-  private final Iterable<TemplateRootMappingRule> rootRules;
-  private final Iterable<TemplateWeavingRule> weavings;
+  private final Collection<TemplateRootMappingRule> rootRules;
+  private final Collection<TemplateWeavingRule> weavings;
+  private final TemplateModel myModel;
 
-  public Mappingmain() {
-    rootRules = TemplateUtil.<TemplateRootMappingRule>asIterable(new Mappingmain.RootMappingRule0());
-    weavings = TemplateUtil.<TemplateWeavingRule>asIterable(new Mappingmain.WeavingRule0());
+  public Mappingmain(TemplateModel model) {
+    this.myModel = model;
+    rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mappingmain.RootMappingRule0());
+    weavings = TemplateUtil.<TemplateWeavingRule>asCollection(new Mappingmain.WeavingRule0());
+  }
+
+  public String getName() {
+    return null;
+  }
+
+  public TemplateModel getModel() {
+    return null;
   }
 
   public SNodePointer getMappingNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738629621");
   }
 
-  public Iterable<TemplateReductionRule> getReductionRules() {
+  public Collection<TemplateReductionRule> getReductionRules() {
     return Collections.emptySet();
   }
 
-  public Iterable<TemplateCreateRootRule> getCreateRules() {
+  public Collection<TemplateCreateRootRule> getCreateRules() {
     return Collections.emptySet();
   }
 
-  public Iterable<TemplateRootMappingRule> getRootRules() {
+  public Collection<TemplateRootMappingRule> getRootRules() {
     return rootRules;
   }
 
-  public Iterable<TemplateWeavingRule> getWeavingRules() {
+  public Collection<TemplateWeavingRule> getWeavingRules() {
     return weavings;
   }
 
-  public Iterable<TemplateDropRootRule> getDropRules() {
+  public Collection<TemplateDropRootRule> getDropRules() {
     return Collections.emptySet();
+  }
+
+  public Collection<TemplateMappingScript> getPostScripts() {
+    return null;
+  }
+
+  public Collection<TemplateMappingScript> getPreScripts() {
+    return null;
   }
 
   public class RootMappingRule0 implements TemplateRootMappingRule {

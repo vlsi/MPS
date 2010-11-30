@@ -21,10 +21,10 @@ import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.interpreted.TemplateMappingScriptInterpreted;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
-import jetbrains.mps.lang.generator.structure.MappingScript;
-import jetbrains.mps.lang.generator.structure.MappingScriptKind;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
@@ -334,7 +334,7 @@ public class GenerationSession {
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
-    List<MappingScript> preMappingScripts = ruleManager.getPreMappingScripts();
+    List<TemplateMappingScript> preMappingScripts = ruleManager.getPreMappingScripts();
     if (preMappingScripts.isEmpty()) {
       return currentInputModel;
     }
@@ -342,9 +342,9 @@ public class GenerationSession {
     // need to clone input model?
     boolean needToCloneInputModel = !myDiscardTransients;  // clone model if save transients (needed for tracing)
     if (!needToCloneInputModel) {
-      for (MappingScript preMappingScript : preMappingScripts) {
-        if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
-          if (preMappingScript.getModifiesModel()) {
+      for (TemplateMappingScript preMappingScript : preMappingScripts) {
+        if (preMappingScript.getKind() == TemplateMappingScript.PREPROCESS) {
+          if (preMappingScript.modifiesModel()) {
             needToCloneInputModel = true;
             break;
           }
@@ -371,16 +371,16 @@ public class GenerationSession {
     }
 
     boolean preProcessed = false;
-    for (MappingScript preMappingScript : preMappingScripts) {
-      if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
-        myLogger.warning(preMappingScript.getNode(), "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
+    for (TemplateMappingScript preMappingScript : preMappingScripts) {
+      if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
+        myLogger.warning(preMappingScript.getScriptNode().getNode(), "skip script " + preMappingScript.getLongName() + " - wrong script kind");
         continue;
       }
       if (myLogger.needsInfo()) {
-        myLogger.info(preMappingScript.getNode(), "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")");
+        myLogger.info(preMappingScript.getScriptNode().getNode(), "pre-process " + preMappingScript.getLongName());
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
-      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(preMappingScript, currentInputModel);
+      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(((TemplateMappingScriptInterpreted)preMappingScript).getNode(), currentInputModel);
       preProcessed = true;
     }
     if (needToCloneInputModel) {
@@ -398,7 +398,7 @@ public class GenerationSession {
   }
 
   private SModel postProcessModel(RuleManager ruleManager, SModel currentModel) throws GenerationFailureException {
-    List<MappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
+    List<TemplateMappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
     if (postMappingScripts.isEmpty()) {
       return currentModel;
     }
@@ -420,16 +420,16 @@ public class GenerationSession {
     }
 
     boolean postProcessed = false;
-    for (MappingScript postMappingScript : postMappingScripts) {
-      if (postMappingScript.getScriptKind() != MappingScriptKind.post_process_output_model) {
-        myLogger.warning(postMappingScript.getNode(), "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
+    for (TemplateMappingScript postMappingScript : postMappingScripts) {
+      if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
+        myLogger.warning(postMappingScript.getScriptNode().getNode(), "skip script " + postMappingScript.getLongName() + " - wrong script kind");
         continue;
       }
       if (myLogger.needsInfo()) {
-        myLogger.info(postMappingScript.getNode(), "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
+        myLogger.info(postMappingScript.getScriptNode().getNode(), "post-process " + postMappingScript.getLongName());
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel, myGenerationOptions, myDependenciesBuilder, ttrace);
-      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(postMappingScript, currentModel);
+      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(((TemplateMappingScriptInterpreted)postMappingScript).getNode(), currentModel);
       postProcessed = true;
     }
     if (needToCloneModel) {

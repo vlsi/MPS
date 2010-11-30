@@ -23,14 +23,15 @@ import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureE
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
+import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateDropRuleInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
-import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -154,9 +155,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // create all roots
     if (isPrimary) {
       ttrace.push("create root", false);
-      for (CreateRootRule rule : myRuleManager.getCreateRootRules()) {
+      for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
         checkMonitorCanceled();
-        applyCreateRootRule(rule);
+        applyCreateRootRule(((TemplateCreateRootRuleInterpreted) rule).getNode());
       }
       ttrace.pop();
     }
@@ -167,9 +168,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode root : myInputModel.roots()) {
       rootsToCopy.add(root);
     }
-    for (Root_MappingRule rule : myRuleManager.getRoot_MappingRules()) {
+    for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
-      applyRootMappingRule(rule, rootsToCopy);
+      applyRootMappingRule(((TemplateRootMappingRuleInterpreted)rule).getNode(), rootsToCopy);
     }
     ttrace.pop();
 
@@ -265,8 +266,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   protected void copyRootNodeFromInput(@NotNull SNode inputRootNode, @NotNull QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
     // check if can drop
-    for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
-      if (isApplicableDropRootRule(inputRootNode, dropRootRule, executionContext)) {
+    for (TemplateDropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
+      if (isApplicableDropRootRule(inputRootNode, ((TemplateDropRuleInterpreted)dropRootRule).getNode(), executionContext)) {
         return;
       }
     }
@@ -287,9 +288,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void applyWeaving_MappingRules() throws GenerationFailureException, GenerationCanceledException {
     WeavingProcessor wp = new WeavingProcessor(this);
-    for (Weaving_MappingRule rule : myRuleManager.getWeaving_MappingRules()) {
+    for (TemplateWeavingRule rule : myRuleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
-      wp.apply(rule);
+      wp.apply(((TemplateWeavingRuleInterpreted)rule).getNode());
     }
   }
 

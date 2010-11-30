@@ -16,8 +16,13 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, Nov 29, 2010
@@ -26,8 +31,47 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
 
   private final SNode myMappingConfiguration;
 
-  public TemplateMappingConfigurationInterpreted(SNode mappingConfiguration) {
+  private List<TemplateReductionRule> myReductionRules = new ArrayList<TemplateReductionRule>();
+  private List<TemplateCreateRootRule> myCreateRootRules = new ArrayList<TemplateCreateRootRule>();
+  private List<TemplateRootMappingRule> myRootMappingRules = new ArrayList<TemplateRootMappingRule>();
+  private List<TemplateWeavingRule> myWeaving_MappingRules = new ArrayList<TemplateWeavingRule>();
+  private List<TemplateDropRootRule> myDropRootRules = new ArrayList<TemplateDropRootRule>();
+  
+  private List<TemplateMappingScript> myPreScripts = new ArrayList<TemplateMappingScript>();
+  private List<TemplateMappingScript> myPostScripts = new ArrayList<TemplateMappingScript>();
+  private TemplateModel myModel;
+
+  public TemplateMappingConfigurationInterpreted(TemplateModel model, SNode mappingConfiguration) {
+    myModel = model;
     myMappingConfiguration = mappingConfiguration;
+
+    for (SNode child : mappingConfiguration.getChildrenIterable()) {
+      String conceptName = child.getConceptFqName();
+      if (conceptName.equals(Reduction_MappingRule.concept)) {
+        myReductionRules.add(new TemplateReductionRuleInterpreted(child));
+      } else if (conceptName.equals(Root_MappingRule.concept)) {
+        myRootMappingRules.add(new TemplateRootMappingRuleInterpreted(child));
+      } else if (conceptName.equals(PatternReduction_MappingRule.concept)) {
+        myReductionRules.add(new TemplateReductionPatternRuleInterpreted(child));
+      } else if (conceptName.equals(CreateRootRule.concept)) {
+        myCreateRootRules.add(new TemplateCreateRootRuleInterpreted(child));
+      } else if (conceptName.equals(Weaving_MappingRule.concept)) {
+        myWeaving_MappingRules.add(new TemplateWeavingRuleInterpreted(child));
+      } else if (conceptName.equals(DropRootRule.concept)) {
+        myDropRootRules.add(new TemplateDropRuleInterpreted(child));
+      } else if (conceptName.equals(MappingScriptReference.concept)) {
+        SNode mappingScript = child.getReferent(MappingScriptReference.MAPPING_SCRIPT);
+        if(mappingScript == null) {
+          continue;
+        }
+        if(child.getRole_().equals(MappingConfiguration.PRE_MAPPING_SCRIPT)) {
+          myPreScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
+        } else {
+          myPostScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
+        }
+      }
+    }
+
   }
 
   @Override
@@ -36,27 +80,47 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   }
 
   @Override
-  public Iterable<TemplateRootMappingRule> getRootRules() {
-    return null;
+  public String getName() {
+    return myMappingConfiguration.getName();
   }
 
   @Override
-  public Iterable<TemplateCreateRootRule> getCreateRules() {
-    return null;
+  public Collection<TemplateRootMappingRule> getRootRules() {
+    return myRootMappingRules;
   }
 
   @Override
-  public Iterable<TemplateDropRootRule> getDropRules() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  public Collection<TemplateCreateRootRule> getCreateRules() {
+    return myCreateRootRules;
   }
 
   @Override
-  public Iterable<TemplateReductionRule> getReductionRules() {
-    return null;
+  public Collection<TemplateDropRootRule> getDropRules() {
+    return myDropRootRules;
   }
 
   @Override
-  public Iterable<TemplateWeavingRule> getWeavingRules() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  public Collection<TemplateReductionRule> getReductionRules() {
+    return myReductionRules;
+  }
+
+  @Override
+  public Collection<TemplateWeavingRule> getWeavingRules() {
+    return myWeaving_MappingRules;
+  }
+
+  @Override
+  public Collection<TemplateMappingScript> getPreScripts() {
+    return myPreScripts;
+  }
+
+  @Override
+  public Collection<TemplateMappingScript> getPostScripts() {
+    return myPostScripts;
+  }
+
+  @Override
+  public TemplateModel getModel() {
+    return myModel;
   }
 }

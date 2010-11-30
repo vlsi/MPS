@@ -24,7 +24,16 @@ import jetbrains.mps.smodel.SNodePointer;
  */
 public interface TemplateMappingScript {
 
+  public static final int PREPROCESS = 1;
+  public static final int POSTPROCESS = 2;
+
   SNodePointer getScriptNode();
 
+  String getLongName();
+
+  int getKind();
+
   void apply(SModel model, ITemplateGenerator generator);
+
+  boolean modifiesModel();
 }

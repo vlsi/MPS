@@ -20,8 +20,8 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -43,7 +43,7 @@ public class PartitioningHelper {
 
     List<Generator> generators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, scope);
     GenerationPartitioner partitioner = new GenerationPartitioner();
-    List<List<MappingConfiguration>> mappingSets = partitioner.createMappingSets(generators);
+    List<List<TemplateMappingConfiguration>> mappingSets = partitioner.createMappingSets(generators);
 
     Map<MappingPriorityRule, GeneratorDescriptor> myRule2Generator = new HashMap<MappingPriorityRule, GeneratorDescriptor>();
     for (Generator generator : generators) {
@@ -86,7 +86,7 @@ public class PartitioningHelper {
     // show partitioning
     String text = "";
     int count = 1;
-    for (List<MappingConfiguration> mappingSet : mappingSets) {
+    for (List<TemplateMappingConfiguration> mappingSet : mappingSets) {
       text = text + " [ " + (count++) + " ]\n";
       List<String> strings = GenerationPartitioningUtil.toStrings(mappingSet);
       for (String string : strings) {

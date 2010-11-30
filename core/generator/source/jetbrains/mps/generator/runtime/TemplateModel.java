@@ -22,7 +22,9 @@ import java.util.Collection;
  */
 public interface TemplateModel {
 
-  Iterable<TemplateSwitchMapping> getSwitches();
+  String getLongName();
 
-  Iterable<TemplateMappingConfiguration> getConfigurations();
+  Collection<TemplateSwitchMapping> getSwitches();
+
+  Collection<TemplateMappingConfiguration> getConfigurations();
 }

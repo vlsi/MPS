@@ -601,6 +601,10 @@ public class QueriesGenerated {
     return "PatternRule" + index;
   }
 
+  public static Object propertyMacro_GetPropertyValue_7635689088545006189(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.getOriginalInputModel().getLongName();
+  }
+
   public static Object referenceMacro_GetReferent_1217272831785(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     // method parameter 
     return "_context";
@@ -999,11 +1003,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0fi(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0gi(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0gi(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0hi(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_4155486055398184252(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2133,7 +2137,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0rr(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0sr(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -2224,27 +2228,27 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "weavingMappingRule", true);
   }
 
-  public static Iterable sourceNodesQuery_330395710727740102(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7635689088544993757(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "reductionMappingRule", true);
   }
 
-  public static Iterable sourceNodesQuery_330395710727988779(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7635689088544993766(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "patternReductionRule", true);
   }
 
-  public static Iterable sourceNodesQuery_330395710727988764(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7635689088544983520(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "createRootRule", true);
   }
 
-  public static Iterable sourceNodesQuery_330395710727744136(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7635689088544983530(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "rootMappingRule", true);
   }
 
-  public static Iterable sourceNodesQuery_330395710727988750(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7635689088544983540(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "weavingMappingRule", true);
   }
 
-  public static Iterable sourceNodesQuery_330395710727988736(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7635689088544983550(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "dropRootRule", true);
   }
 
@@ -2297,11 +2301,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "reductionMappingRule", true);
   }
 
-  public static Iterable sourceNodesQuery_3076445114127792874(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7635689088545006218(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
   }
 
-  public static Iterable sourceNodesQuery_3076445114127792911(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7635689088545006230(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
   }
 
@@ -2436,13 +2440,6 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0fi(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
   private static boolean eq_x583g4_a0a0gi(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -2450,7 +2447,14 @@ public class QueriesGenerated {
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0rr(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0hi(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_x583g4_a0a0c0d0b0sr(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.impl.interpreted.TemplateReductionPatternRuleInterpreted;
-import jetbrains.mps.generator.impl.interpreted.TemplateReductionRuleInterpreted;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
-import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FlattenIterable;
 
 import java.util.ArrayList;
@@ -32,17 +29,17 @@ import java.util.List;
  */
 public class RuleManager {
 
-  private FlattenIterable<CreateRootRule> myCreateRootRules;
-  private FlattenIterable<Root_MappingRule> myRoot_MappingRules;
-  private FlattenIterable<Weaving_MappingRule> myWeaving_MappingRules;
-  private FlattenIterable<DropRootRule> myDropRootRules;
+  private FlattenIterable<TemplateCreateRootRule> myCreateRootRules;
+  private FlattenIterable<TemplateRootMappingRule> myRoot_MappingRules;
+  private FlattenIterable<TemplateWeavingRule> myWeaving_MappingRules;
+  private FlattenIterable<TemplateDropRootRule> myDropRootRules;
 
   private TemplateSwitchGraph myTemplateSwitchGraph;
 
-  private List<MappingScript> myPreScripts;
-  private List<MappingScript> myPostScripts;
+  private List<TemplateMappingScript> myPreScripts;
+  private List<TemplateMappingScript> myPostScripts;
 
-  private List<MappingConfiguration> myMappings;
+  private List<TemplateMappingConfiguration> myMappings;
 
   private final FastRuleFinder myRuleFinder;
 
@@ -54,66 +51,45 @@ public class RuleManager {
     myRuleFinder = initRules(myMappings);
   }
 
-  private void initialize(List<MappingConfiguration> list) {
-    myCreateRootRules = new FlattenIterable(new ArrayList<List<CreateRootRule>>(list.size()));
-    myRoot_MappingRules = new FlattenIterable(new ArrayList<List<Root_MappingRule>>(list.size()));
-    myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<Weaving_MappingRule>>(list.size()));
-    myDropRootRules = new FlattenIterable(new ArrayList<List<DropRootRule>>(list.size()));
+  private void initialize(List<TemplateMappingConfiguration> list) {
+    myCreateRootRules = new FlattenIterable(new ArrayList<List<TemplateCreateRootRule>>(list.size()));
+    myRoot_MappingRules = new FlattenIterable(new ArrayList<List<TemplateRootMappingRule>>(list.size()));
+    myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<TemplateWeavingRule>>(list.size()));
+    myDropRootRules = new FlattenIterable(new ArrayList<List<TemplateDropRootRule>>(list.size()));
 
-    for (MappingConfiguration mappingConfig : list) {
-      myCreateRootRules.add(mappingConfig.getCreateRootRules());
-      myRoot_MappingRules.add(mappingConfig.getRootMappingRules());
-      myWeaving_MappingRules.add(mappingConfig.getWeavingMappingRules());
-      myDropRootRules.add(mappingConfig.getDropRootRules());
+    for (TemplateMappingConfiguration mappingConfig : list) {
+      myCreateRootRules.add(mappingConfig.getCreateRules());
+      myRoot_MappingRules.add(mappingConfig.getRootRules());
+      myWeaving_MappingRules.add(mappingConfig.getWeavingRules());
+      myDropRootRules.add(mappingConfig.getDropRules());
     }
 
-    myPostScripts = new LinkedList<MappingScript>();
-    myPreScripts = new LinkedList<MappingScript>();
-    for (MappingConfiguration mappingConfigs : myMappings) {
-      List<MappingScriptReference> scriptRefs = mappingConfigs.getPostMappingScripts();
-      for (MappingScriptReference scriptRef : scriptRefs) {
-        myPostScripts.add(scriptRef.getMappingScript());
-      }
-      scriptRefs = mappingConfigs.getPreMappingScripts();
-      for (MappingScriptReference scriptRef : scriptRefs) {
-        myPreScripts.add(scriptRef.getMappingScript());
-      }
+    myPostScripts = new LinkedList<TemplateMappingScript>();
+    myPreScripts = new LinkedList<TemplateMappingScript>();
+    for (TemplateMappingConfiguration mappingConfigs : myMappings) {
+      myPostScripts.addAll(mappingConfigs.getPostScripts());
+      myPreScripts.addAll(mappingConfigs.getPreScripts());
     }
   }
 
-  private FastRuleFinder initRules(List<MappingConfiguration> configuration) {
-    int reductions = 0;
-    int patternReductions = 0;
-    for (MappingConfiguration c : configuration) {
-      reductions += c.getReductionMappingRulesCount();
-      patternReductions += c.getPatternReductionRulesCount();
-    }
-
-    List<TemplateReductionRule> rules = new ArrayList<TemplateReductionRule>(reductions + patternReductions);
-    for (MappingConfiguration c : configuration) {
-      SNode node = c.getNode();
-      for (SNode child : node.getChildrenIterable()) {
-        String role = child.getRole_();
-        if (role.equals(MappingConfiguration.REDUCTION_MAPPING_RULE)) {
-          rules.add(new TemplateReductionRuleInterpreted(child));
-        } else if (role.equals(MappingConfiguration.PATTERN_REDUCTION_RULE)) {
-          rules.add(new TemplateReductionPatternRuleInterpreted(child));
-        }
-      }
+  private FastRuleFinder initRules(List<TemplateMappingConfiguration> configuration) {
+    FlattenIterable<TemplateReductionRule> rules = new FlattenIterable<TemplateReductionRule>(new ArrayList<Iterable<TemplateReductionRule>>());
+    for (TemplateMappingConfiguration c : configuration) {
+      rules.add(c.getReductionRules());
     }
 
     return new FastRuleFinder(rules);
   }
 
-  public Iterable<CreateRootRule> getCreateRootRules() {
+  public Iterable<TemplateCreateRootRule> getCreateRootRules() {
     return myCreateRootRules;
   }
 
-  public Iterable<Root_MappingRule> getRoot_MappingRules() {
+  public Iterable<TemplateRootMappingRule> getRoot_MappingRules() {
     return myRoot_MappingRules;
   }
 
-  public FlattenIterable<Weaving_MappingRule> getWeaving_MappingRules() {
+  public FlattenIterable<TemplateWeavingRule> getWeaving_MappingRules() {
     return myWeaving_MappingRules;
   }
 
@@ -122,7 +98,7 @@ public class RuleManager {
     return myWeaving_MappingRules.iterator().hasNext();
   }
 
-  public FlattenIterable<DropRootRule> getDropRootRules() {
+  public FlattenIterable<TemplateDropRootRule> getDropRootRules() {
     return myDropRootRules;
   }
 
@@ -134,11 +110,11 @@ public class RuleManager {
     return myTemplateSwitchGraph.getRuleFinder(switch_);
   }
 
-  public List<MappingScript> getPreMappingScripts() {
+  public List<TemplateMappingScript> getPreMappingScripts() {
     return myPreScripts;
   }
 
-  public List<MappingScript> getPostMappingScripts() {
+  public List<TemplateMappingScript> getPostMappingScripts() {
     return myPostScripts;
   }
 }

@@ -73,10 +73,19 @@ public class TemplateUtil {
   }
 
   public static <T> Iterable<T> asIterable(final T... objects) {
-    return new Iterable<T>() {
+    return asCollection(objects);
+  }
+
+  public static <T> Collection<T> asCollection(final T... objects) {
+    return new AbstractCollection<T>() {
       @Override
       public Iterator<T> iterator() {
         return new ArrayIterator<T>(objects);
+      }
+
+      @Override
+      public int size() {
+        return objects.length;
       }
     };
   }

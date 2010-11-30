@@ -13,34 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.runtime;
+package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.runtime.TemplateDropRootRule;
+import jetbrains.mps.lang.generator.structure.DropRootRule;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
-import java.util.Collection;
-
 /**
- * Evgeny Gryaznov, 10/27/10
+ * Evgeny Gryaznov, Nov 30, 2010
  */
-public interface TemplateMappingConfiguration {
+public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
+  
+  private final SNode ruleNode;
 
-  SNodePointer getMappingNode();
+  public TemplateDropRuleInterpreted(SNode child) {
+    ruleNode = child;
+  }
 
-  String getName();
+  @Override
+  public SNodePointer getRuleNode() {
+    return new SNodePointer(ruleNode);
+  }
 
-  Collection<TemplateRootMappingRule> getRootRules();
-
-  Collection<TemplateCreateRootRule> getCreateRules();
-
-  Collection<TemplateDropRootRule> getDropRules();
-
-  Collection<TemplateReductionRule> getReductionRules();
-
-  Collection<TemplateWeavingRule> getWeavingRules();
-
-  Collection<TemplateMappingScript> getPreScripts();
-
-  Collection<TemplateMappingScript> getPostScripts();
-
-  TemplateModel getModel();
+  @Deprecated
+  public DropRootRule getNode() {
+    return (DropRootRule) ruleNode.getAdapter();
+  }
 }

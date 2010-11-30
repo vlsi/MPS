@@ -4,14 +4,16 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.smodel.SNodePointer;
+import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
-import java.util.Collection;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -28,38 +30,56 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer rootMappingRule_417xrn_b0b0a0a1c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168895642");
   private static SNodePointer createRootRule_417xrn_a0a0d = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195165196524");
 
-  private final Iterable<TemplateReductionRule> rules;
-  private final Iterable<TemplateCreateRootRule> createRules;
-  private final Iterable<TemplateRootMappingRule> rootRules;
+  private final Collection<TemplateReductionRule> rules;
+  private final Collection<TemplateCreateRootRule> createRules;
+  private final Collection<TemplateRootMappingRule> rootRules;
+  private final TemplateModel myModel;
 
-  public Mappingmain() {
-    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1());
-    createRules = TemplateUtil.<TemplateCreateRootRule>asIterable(new Mappingmain.CreateRootRule0());
-    rootRules = TemplateUtil.<TemplateRootMappingRule>asIterable(new Mappingmain.RootMappingRule0());
+  public Mappingmain(TemplateModel model) {
+    this.myModel = model;
+    rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1());
+    createRules = TemplateUtil.<TemplateCreateRootRule>asCollection(new Mappingmain.CreateRootRule0());
+    rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mappingmain.RootMappingRule0());
+  }
+
+  public String getName() {
+    return null;
+  }
+
+  public TemplateModel getModel() {
+    return null;
   }
 
   public SNodePointer getMappingNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195164863269");
   }
 
-  public Iterable<TemplateReductionRule> getReductionRules() {
+  public Collection<TemplateReductionRule> getReductionRules() {
     return rules;
   }
 
-  public Iterable<TemplateCreateRootRule> getCreateRules() {
+  public Collection<TemplateCreateRootRule> getCreateRules() {
     return createRules;
   }
 
-  public Iterable<TemplateRootMappingRule> getRootRules() {
+  public Collection<TemplateRootMappingRule> getRootRules() {
     return rootRules;
   }
 
-  public Iterable<TemplateWeavingRule> getWeavingRules() {
+  public Collection<TemplateWeavingRule> getWeavingRules() {
     return Collections.emptySet();
   }
 
-  public Iterable<TemplateDropRootRule> getDropRules() {
+  public Collection<TemplateDropRootRule> getDropRules() {
     return Collections.emptySet();
+  }
+
+  public Collection<TemplateMappingScript> getPostScripts() {
+    return null;
+  }
+
+  public Collection<TemplateMappingScript> getPreScripts() {
+    return null;
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
