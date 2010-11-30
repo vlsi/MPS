@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import java.awt.Color;
 
 public class HLineCellProvider extends AbstractCellProvider {
@@ -19,8 +20,8 @@ public class HLineCellProvider extends AbstractCellProvider {
 
   public EditorCell createEditorCell(EditorContext p0) {
     EditorCell_Basic result = new EditorCell_Basic(p0, this.myNode) {
-      public void paintContent(Graphics g) {
-        if (this.isSelectionPaintedOnAncestor()) {
+      public void paintContent(Graphics g, ParentSettings parentSettings) {
+        if (this.isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted()) {
           g.setColor(Color.WHITE);
         } else {
           g.setColor(Color.BLACK);

@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
@@ -16,7 +17,7 @@ public class EditorCell_VerticalLine extends EditorCell_Basic {
     super(context, node);
   }
 
-  public void paintContent(Graphics g) {
+  public void paintContent(Graphics g, ParentSettings parentSettings) {
     if (this.isSelected()) {
       g.setColor(Color.BLACK);
       EditorCell_Collection parent = this.getParent();
