@@ -28,11 +28,15 @@ import java.awt.event.MouseEvent;
  * Date: 12.10.2010
  * Time: 16:46:30
  */
-// todo look at com.intellij.openapi.editor.TextAnnotationGutterProvider
 public abstract class AbstractLeftColumn {
   private int myX = 0;
+  private LeftEditorHighlighter myLeftEditorHighlighter;
 
-  public abstract void paint(Graphics g, EditorComponent editorComponent);
+  protected AbstractLeftColumn(LeftEditorHighlighter leftEditorHighlighter) {
+    myLeftEditorHighlighter = leftEditorHighlighter;
+  }
+
+  public abstract void paint(Graphics g);
 
   public abstract int getWidth();
 
@@ -41,7 +45,7 @@ public abstract class AbstractLeftColumn {
   }
 
   // This method is only called from LeftEditorHighlighter
-  void setX(int x) {
+  final void setX(int x) {
     myX = x;
   }
 
@@ -51,17 +55,17 @@ public abstract class AbstractLeftColumn {
   }
 
   @Nullable
-  public Cursor getCursor(MouseEvent e, EditorComponent editorComponent) {
+  public Cursor getCursor(MouseEvent e) {
     return null;
   }
 
-  public abstract void relayout(EditorComponent editorComponent);
+  public abstract void relayout();
 
-  public void mousePressed(MouseEvent e, final EditorComponent editorComponent) {
+  public void mousePressed(MouseEvent e) {
     if (e.isPopupTrigger()) {
       JPopupMenu menu = getPopupMenu(e);
       if (menu != null) {
-        menu.show(editorComponent.getLeftEditorHighlighter(), e.getX(), e.getY());
+        menu.show(getLeftEditorHighlighter(), e.getX(), e.getY());
       }
     }
   }
@@ -74,4 +78,12 @@ public abstract class AbstractLeftColumn {
   }
 
   public abstract String getName();
+
+  public LeftEditorHighlighter getLeftEditorHighlighter() {
+    return myLeftEditorHighlighter;
+  }
+
+  public EditorComponent getEditorComponent() {
+    return myLeftEditorHighlighter.getEditorComponent();
+  }
 }

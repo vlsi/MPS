@@ -302,7 +302,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       if (clipBounds.x > column.getX() + column.getWidth()) {
         continue;
       }
-      column.paint(g, myEditorComponent);
+      column.paint(g);
       UIUtil.drawVDottedLine((Graphics2D) g, column.getX() + column.getWidth() - 1,
         (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
     }
@@ -529,7 +529,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     int offset = 0;
     for (AbstractLeftColumn column : myTextColumns) {
       column.setX(offset);
-      column.relayout(myEditorComponent);
+      column.relayout();
       offset += column.getWidth();
     }
     myTextColumnWidth = Math.max(MIN_LEFT_TEXT_WIDTH, offset);
@@ -660,7 +660,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     if (e.isConsumed()) return;
     AbstractLeftColumn column = getTextColumnByX(e.getX());
     if (column != null) {
-      column.mousePressed(e, myEditorComponent);
+      column.mousePressed(e);
       e.consume();
     }
   }
@@ -705,7 +705,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     myMouseIsInFoldingArea = false;
     AbstractLeftColumn textColumn = getTextColumnByX(e.getX());
     if (textColumn != null) {
-      setCursor(textColumn.getCursor(e, myEditorComponent));
+      setCursor(textColumn.getCursor(e));
     } else {
       setCursor(null);
     }

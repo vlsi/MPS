@@ -42,8 +42,8 @@ import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics2D;
 import jetbrains.mps.smodel.ModelAccess;
 import java.awt.FontMetrics;
@@ -126,6 +126,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private boolean myShowAdditionalInfo = false;
 
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
+    super(leftEditorHighlighter);
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).<SNodeId>select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getSNodeId();
@@ -149,7 +150,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     Map<SNodeId, Integer> nodeIdToFileLine = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
     for (int line = 0; line < ListSequence.fromList(myFileLineToContent).count(); line++) {
       SNode node = null;
-      SNodeId id = check_5mnya_a0b0j0a(ListSequence.fromList(myFileLineToContent).getElement(line));
+      SNodeId id = check_5mnya_a0b0k0a(ListSequence.fromList(myFileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
         node = model.getNodeById(id);
       }
@@ -203,11 +204,11 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
   }
 
-  private void assureCurrentPseudoLinesCalculated(EditorComponent component) {
+  private void assureCurrentPseudoLinesCalculated() {
     if (myCurrentPseudoLines == null) {
       myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
       for (LineContent lineContent : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
-        SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(component, lineContent)));
+        SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lineContent)));
       }
     }
   }
@@ -216,7 +217,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     return "Annotations";
   }
 
-  public void paint(final Graphics graphics, final EditorComponent component) {
+  public void paint(final Graphics graphics) {
     graphics.setFont(myFont);
     EditorComponent.turnOnAliasingIfPossible((Graphics2D) graphics);
     final Map<AnnotationAspectSubcolumn, Integer> subcolumnToX = MapSequence.fromMap(new HashMap<AnnotationAspectSubcolumn, Integer>());
@@ -230,7 +231,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         synchronized (myCurrentPseudoLinesLock) {
-          assureCurrentPseudoLinesCalculated(component);
+          assureCurrentPseudoLinesCalculated();
           for (int pseudoLine = 0; pseudoLine < ListSequence.fromList(myPseudoLinesY).count(); pseudoLine++) {
             int fileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
             if (!(SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine))) {
@@ -238,7 +239,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
                 String author = myAuthorAnnotationAspect.getValue(fileLine);
                 graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
                 int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
-                  component.getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
+                  getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
                   ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
                 );
                 graphics.fillRect(0, ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
@@ -285,30 +286,31 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   @Nullable
-  private EditorCell findCellForContent(EditorComponent component, @Nullable LineContent content) {
+  private EditorCell findCellForContent(@Nullable LineContent content) {
     if (content == null) {
       return null;
     }
-    SNode editedNode = component.getEditedNode();
+    EditorComponent editor = getEditorComponent();
+    SNode editedNode = editor.getEditedNode();
     SNode node = editedNode.getModel().getNodeById(content.getNodeId());
     if (node == null || !(node.isDescendantOf(editedNode, true))) {
       return null;
     }
 
     if (content instanceof NodeLineContent) {
-      return component.getBigValidCellForNode(node);
+      return editor.getBigValidCellForNode(node);
     } else if (content instanceof PropertyLineContent) {
-      return CellFinder.getCellForProperty(component, node, ((PropertyLineContent) content).getName());
+      return CellFinder.getCellForProperty(editor, node, ((PropertyLineContent) content).getName());
     } else if (content instanceof ReferenceLineContent) {
-      return CellFinder.getCellForReference(component, node, ((ReferenceLineContent) content).getRole());
+      return CellFinder.getCellForReference(editor, node, ((ReferenceLineContent) content).getRole());
     } else {
       return null;
     }
 
   }
 
-  private Iterable<Integer> getPseudoLinesForContent(EditorComponent component, @Nullable LineContent content) {
-    EditorCell cell = findCellForContent(component, content);
+  private Iterable<Integer> getPseudoLinesForContent(@Nullable LineContent content) {
+    EditorCell cell = findCellForContent(content);
     if (cell == null) {
       return Sequence.fromIterable(Collections.<Integer>emptyList());
     }
@@ -369,11 +371,12 @@ __switch__:
     }.invoke();
   }
 
-  public void relayout(final EditorComponent component) {
-    if (component == null || component.isDisposed() || component.getGraphics() == null) {
+  public void relayout() {
+    EditorComponent editor = getEditorComponent();
+    if (editor == null || editor.isDisposed() || editor.getGraphics() == null) {
       return;
     }
-    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(component.getRootCell())).where(new IWhereFilter<EditorCell>() {
+    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<EditorCell>() {
       public boolean accept(EditorCell cell) {
         return cell.getWidth() * cell.getHeight() != 0;
       }
@@ -397,14 +400,14 @@ __switch__:
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (int fileLine = 0; fileLine < ListSequence.fromList(myFileLineToContent).count(); fileLine++) {
-          for (int pseudoLine : Sequence.fromIterable(getPseudoLinesForContent(component, ListSequence.fromList(myFileLineToContent).getElement(fileLine)))) {
+          for (int pseudoLine : Sequence.fromIterable(getPseudoLinesForContent(ListSequence.fromList(myFileLineToContent).getElement(fileLine)))) {
             int currentFileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
             ListSequence.fromList(myPseudoLinesToFileLines).setElement(pseudoLine, getFileLineWithMaxRevision(currentFileLine, fileLine));
           }
         }
       }
     });
-    FontMetrics metrics = component.getGraphics().getFontMetrics(myFont);
+    FontMetrics metrics = editor.getGraphics().getFontMetrics(myFont);
     for (AnnotationAspectSubcolumn aspectSubcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       aspectSubcolumn.computeWidth(metrics, myPseudoLinesToFileLines);
     }
@@ -423,7 +426,7 @@ __switch__:
 
   @Nullable
   @Override
-  public Cursor getCursor(MouseEvent event, EditorComponent component) {
+  public Cursor getCursor(MouseEvent event) {
     return (findFileLineByY(event.getY()) == -1 ?
       null :
       new Cursor(Cursor.HAND_CURSOR)
@@ -431,13 +434,13 @@ __switch__:
   }
 
   @Override
-  public void mousePressed(MouseEvent event, EditorComponent component) {
+  public void mousePressed(MouseEvent event) {
     if (event.getButton() == MouseEvent.BUTTON1 && event.getID() == MouseEvent.MOUSE_RELEASED) {
       event.consume();
       int fileLine = findFileLineByY(event.getY());
       ((LineAnnotationAspectAdapter) myFileAnnotation.getAspects()[0]).doAction(fileLine);
     } else {
-      super.mousePressed(event, component);
+      super.mousePressed(event);
     }
   }
 
@@ -446,7 +449,7 @@ __switch__:
     myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
     ChangesManager.getInstance(getProject()).getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
-    AnnotationManager.getInstance(getProject()).removeColumn(this);
+    AnnotationManager.getInstance(getProject()).columnDisposed(getEditorComponent());
   }
 
   private int findPseudoLineByY(int y) {
@@ -480,7 +483,7 @@ __switch__:
     final int fileLine = findFileLineByY(event.getY());
     ListSequence.fromList(actions).addElement(new BaseAction("Close Annotations") {
       protected void doExecute(AnActionEvent e) {
-        dispose();
+        AnnotationManager.getInstance(getProject()).removeColumn(getEditorComponent());
       }
     });
     ListSequence.fromList(actions).addElement(Separator.getInstance());
@@ -552,7 +555,7 @@ __switch__:
     return myVcs.getProject();
   }
 
-  private static SNodeId check_5mnya_a0b0j0a(LineContent p) {
+  private static SNodeId check_5mnya_a0b0k0a(LineContent p) {
     if (null == p) {
       return null;
     }
@@ -592,7 +595,7 @@ __switch__:
     }
 
     public void onAnnotationChanged() {
-      AnnotationManager.getInstance(myVcs.getProject()).reannotate(AnnotationColumn.this);
+      AnnotationManager.getInstance(getProject()).reannotate(getEditorComponent());
     }
   }
 

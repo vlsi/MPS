@@ -33,8 +33,6 @@ import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class AnnotationManager extends AbstractProjectComponent {
   private ProjectLevelVcsManager myProjectLevelVcsManager;
@@ -129,39 +127,28 @@ public class AnnotationManager extends AbstractProjectComponent {
     return true;
   }
 
-  public void reannotate(AnnotationColumn column) {
-    final EditorComponent editorComponent = findEditorForColumn(column);
-    editorComponent.getLeftEditorHighlighter().removeTextColumn(column);
-    column.dispose();
+  public void reannotate(final EditorComponent editor) {
+    removeColumn(editor);
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        annotate(editorComponent);
+        annotate(editor);
       }
     });
   }
 
-  public void removeColumn(AnnotationColumn column) {
-    EditorComponent editorComponent = findEditorForColumn(column);
-    editorComponent.getLeftEditorHighlighter().removeTextColumn(column);
-    MapSequence.fromMap(myEditorToColumn).removeKey(editorComponent);
+  public void columnDisposed(EditorComponent editor) {
+    MapSequence.fromMap(myEditorToColumn).removeKey(editor);
   }
 
-  private EditorComponent findEditorForColumn(final AnnotationColumn column) {
-    return check_3wfzcf_a0a5(MapSequence.fromMap(myEditorToColumn).findFirst(new IWhereFilter<IMapping<EditorComponent, AnnotationColumn>>() {
-      public boolean accept(IMapping<EditorComponent, AnnotationColumn> m) {
-        return m.value() == column;
-      }
-    }));
+  public void removeColumn(EditorComponent editor) {
+    if (MapSequence.fromMap(myEditorToColumn).containsKey(editor)) {
+      AnnotationColumn column = MapSequence.fromMap(myEditorToColumn).get(editor);
+      editor.getLeftEditorHighlighter().removeTextColumn(column);
+      column.dispose();
+    }
   }
 
   public static AnnotationManager getInstance(Project project) {
     return project.getComponent(AnnotationManager.class);
-  }
-
-  private static EditorComponent check_3wfzcf_a0a5(IMapping<EditorComponent, AnnotationColumn> p) {
-    if (null == p) {
-      return null;
-    }
-    return p.key();
   }
 }
