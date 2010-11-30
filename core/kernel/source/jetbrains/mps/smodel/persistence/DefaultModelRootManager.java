@@ -24,6 +24,7 @@ import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ModelRefCreator;
@@ -60,7 +61,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     SModelReference dsmRef = dsm.getSModelReference();
 
     if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
-      SModel model = new SModel(dsmRef);
+      SModel model = new SModel(dsmRef, new RegularNodeIdMap());
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 

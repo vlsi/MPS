@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.persistence.def.v7;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
+import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Document;
@@ -48,7 +50,7 @@ public class ModelReader7 implements IModelReader {
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
-    SModel model = new SModel(modelReference);
+    SModel model = new SModel(modelReference,new RegularNodeIdMap());
     model.setPersistenceVersion(getVersion());
     myHelper = new VersionUtil(modelReference);
 

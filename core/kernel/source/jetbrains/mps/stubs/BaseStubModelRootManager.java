@@ -20,6 +20,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
@@ -99,7 +100,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   @NotNull
   public final SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
-    SModel model = new SModel(modelDescriptor.getSModelReference());
+    SModel model = new SModel(modelDescriptor.getSModelReference(), new ForeignNodeIdMap());
 
     model.setLoading(true);
     try {

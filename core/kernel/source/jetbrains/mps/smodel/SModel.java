@@ -62,7 +62,12 @@ public class SModel {
   private Throwable myDisposedStacktrace = null;
 
   public SModel(@NotNull SModelReference modelReference) {
+    this(modelReference,new UniversalOptimizedNodeIdMap());
+  }
+
+  public SModel(@NotNull SModelReference modelReference,INodeIdToNodeMap map) {
     myReference = modelReference;
+    myIdToNodeMap = map;
   }
 
   //---------common properties--------
@@ -432,7 +437,7 @@ public class SModel {
     resetIdCounter();
   }
 
-  protected UniversalOptimizedNodeIdMap createNodeIdMap() {
+  protected final INodeIdToNodeMap createNodeIdMap() {
     return new UniversalOptimizedNodeIdMap();
   }
 
