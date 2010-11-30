@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence.def.v7;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
@@ -27,7 +28,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 public class ModelWriter7 implements IModelWriter {
-  private VersionUtil myHelper;
+  private WriteHelper myHelper;
   private SModel myModel;
 
   protected int getModelPersistenceVersion() {
@@ -36,7 +37,7 @@ public class ModelWriter7 implements IModelWriter {
 
   public Document saveModel(SModel sourceModel) {
     myModel = sourceModel;
-    myHelper = new VersionUtil(sourceModel);
+    myHelper = new WriteHelper(sourceModel.getSModelReference());
 
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
@@ -67,19 +68,23 @@ public class ModelWriter7 implements IModelWriter {
 
     // imports
     for (ImportElement importElement : sourceModel.importedModels()) {
-      Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
-      importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
-      importElem.setAttribute(ModelPersistence.MODEL_UID, importElement.getModelReference().toString());
-      importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
-      rootElement.addContent(importElem);
+      SModelReference modelRef = importElement.getModelReference();
+      myHelper.addModelReference(modelRef);
+      Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
+      elem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
+      elem.setAttribute(ModelPersistence.MODEL_UID, modelRef.toString());
+      elem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
+      rootElement.addContent(elem);
     }
     for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
-      Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
-      importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
-      importElem.setAttribute(ModelPersistence.MODEL_UID, importElement.getModelReference().toString());
-      importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
-      importElem.setAttribute(ModelPersistence.IMPLICIT, "yes");
-      rootElement.addContent(importElem);
+      SModelReference modelRef = importElement.getModelReference();
+      myHelper.addModelReference(modelRef);
+      Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
+      elem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
+      elem.setAttribute(ModelPersistence.MODEL_UID, modelRef.toString());
+      elem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
+      elem.setAttribute(ModelPersistence.IMPLICIT, "yes");
+      rootElement.addContent(elem);
     }
 
     // roots

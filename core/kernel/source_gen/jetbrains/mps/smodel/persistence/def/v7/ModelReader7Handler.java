@@ -42,7 +42,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
   private SModel myResult;
   private ModelLoadingState fieldstate;
   private SModel fieldmodel;
-  private VersionUtil fieldhelper;
+  private ReadHelper fieldhelper;
 
   public ModelReader7Handler(ModelLoadingState state) {
     fieldstate = state;
@@ -162,7 +162,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
       fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")), new RegularNodeIdMap());
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.setLoading(true);
-      fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
+      fieldhelper = new ReadHelper(fieldmodel.getSModelReference());
       return fieldmodel;
     }
 
@@ -229,7 +229,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
       }
       if ("import".equals(tagName)) {
         String[] child = (String[]) value;
-        fieldhelper.addImport(fieldmodel, child[0], child[1], Integer.parseInt(child[2]), child[3] != null);
+        fieldhelper.addImportToModel(fieldmodel, child[0], child[1], Integer.parseInt(child[2]), child[3] != null);
         return;
       }
       if ("roots".equals(tagName)) {

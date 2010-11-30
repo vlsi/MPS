@@ -29,17 +29,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Oct 12, 2010
- * Time: 3:08:42 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelReader7 implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader7.class);
 
-  private VersionUtil myHelper;
+  private ReadHelper myHelper;
 
   @Override
   public int getVersion() {
@@ -52,7 +45,7 @@ public class ModelReader7 implements IModelReader {
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     SModel model = new SModel(modelReference,new RegularNodeIdMap());
     model.setPersistenceVersion(getVersion());
-    myHelper = new VersionUtil(modelReference);
+    myHelper = new ReadHelper(modelReference);
 
     model.setLoading(true);
 
@@ -79,7 +72,7 @@ public class ModelReader7 implements IModelReader {
       String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX);
       int usedModelVersion = Integer.parseInt(element.getAttributeValue(ModelPersistence.VERSION, "-1"));
       String importedModelUIDString = element.getAttributeValue(ModelPersistence.MODEL_UID);
-      myHelper.addImport(model, indexValue, importedModelUIDString, usedModelVersion, element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
+      myHelper.addImportToModel(model, indexValue, importedModelUIDString, usedModelVersion, element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
     }
 
     // roots
