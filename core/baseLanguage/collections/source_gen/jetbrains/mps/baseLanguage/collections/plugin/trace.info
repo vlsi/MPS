@@ -111,25 +111,28 @@
     <nodeInfo nodeId="8536718853245025621" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="30" startPosition="33" endLine="31" endPosition="57" />
     <nodeInfo nodeId="8536718853245025808" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="40" startPosition="13" endLine="41" endPosition="90" />
     <nodeInfo nodeId="8536718853245025819" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="42" startPosition="33" endLine="43" endPosition="57" />
-    <nodeInfo nodeId="8536718853245008407" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CollectionsLanguage.java" startLine="49" startPosition="51" endLine="50" endPosition="20" />
-    <nodeInfo nodeId="8536718853245025353" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="55" startPosition="29" endLine="56" endPosition="31" />
-    <nodeInfo nodeId="8536718853245025399" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="57" startPosition="14" endLine="58" endPosition="77" />
-    <nodeInfo nodeId="8536718853245025779" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="64" startPosition="46" endLine="65" endPosition="75" />
-    <nodeInfo nodeId="8536718853245025397" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="CollectionsLanguage.java" startLine="57" startPosition="12" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="8536718853245025712" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="CollectionsLanguage.java" startLine="63" startPosition="98" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="1341511683899743323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="50" startPosition="27" endLine="51" endPosition="233" />
+    <nodeInfo nodeId="1341511683899834173" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="CollectionsLanguage.java" startLine="51" startPosition="233" endLine="52" endPosition="77" />
+    <nodeInfo nodeId="8536718853245008407" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CollectionsLanguage.java" startLine="53" startPosition="5" endLine="54" endPosition="20" />
+    <nodeInfo nodeId="8536718853245025353" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="59" startPosition="29" endLine="60" endPosition="31" />
+    <nodeInfo nodeId="8536718853245025399" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="61" startPosition="14" endLine="62" endPosition="77" />
+    <nodeInfo nodeId="8536718853245025779" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CollectionsLanguage.java" startLine="68" startPosition="46" endLine="69" endPosition="75" />
+    <nodeInfo nodeId="8536718853245025397" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="CollectionsLanguage.java" startLine="61" startPosition="12" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="8536718853245025712" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="CollectionsLanguage.java" startLine="67" startPosition="98" endLine="70" endPosition="5" />
     <nodeInfo nodeId="8536718853245006661" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="CollectionsLanguage.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
     <nodeInfo nodeId="8536718853245025323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CollectionsLanguage.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <nodeInfo nodeId="8536718853245008402" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="CollectionsLanguage.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="1341511683899742886" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CollectionsLanguage.java" startLine="49" startPosition="51" endLine="53" endPosition="5" />
     <nodeInfo nodeId="8536718853245025587" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="CollectionsLanguage.java" startLine="27" startPosition="75" endLine="32" endPosition="9" />
     <nodeInfo nodeId="8536718853245025806" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="CollectionsLanguage.java" startLine="39" startPosition="70" endLine="44" endPosition="9" />
-    <nodeInfo nodeId="8536718853245025343" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CollectionsLanguage.java" startLine="54" startPosition="46" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="8536718853245025681" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="CollectionsLanguage.java" startLine="62" startPosition="0" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="8536718853245025343" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CollectionsLanguage.java" startLine="58" startPosition="46" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="8536718853245025681" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="CollectionsLanguage.java" startLine="66" startPosition="0" endLine="72" endPosition="0" />
     <nodeInfo nodeId="8536718853245025440" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="CollectionsLanguage.java" startLine="26" startPosition="46" endLine="33" endPosition="7" />
     <nodeInfo nodeId="8536718853245025801" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="CollectionsLanguage.java" startLine="38" startPosition="46" endLine="45" endPosition="7" />
-    <nodeInfo nodeId="8536718853245025339" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="CollectionsLanguage.java" startLine="53" startPosition="95" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="8536718853245025339" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="CollectionsLanguage.java" startLine="57" startPosition="95" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="8536718853245008402" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="CollectionsLanguage.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
     <nodeInfo nodeId="8536718853245025436" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="CollectionsLanguage.java" startLine="25" startPosition="27" endLine="34" endPosition="5" />
     <nodeInfo nodeId="8536718853245025796" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="CollectionsLanguage.java" startLine="37" startPosition="30" endLine="46" endPosition="5" />
-    <nodeInfo nodeId="8536718853245025330" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="CollectionsLanguage.java" startLine="52" startPosition="0" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="8536718853245025330" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="CollectionsLanguage.java" startLine="56" startPosition="0" endLine="66" endPosition="0" />
     <nodeInfo nodeId="8536718853245025419" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CollectionsLanguage.java" startLine="24" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="8536718853245025647" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CollectionsLanguage.java" startLine="36" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="8536718853245025326" fileName="CollectionsLanguage.java" startLine="21" startPosition="65" endLine="22" endPosition="45" />
@@ -143,32 +146,33 @@
       <varInfo nodeId="8536718853245025816" varName="thr" />
     </scopeInfo>
     <scopeInfo nodeId="8536718853245025818" fileName="CollectionsLanguage.java" startLine="42" startPosition="33" endLine="43" endPosition="57" />
-    <scopeInfo nodeId="8536718853245008405" fileName="CollectionsLanguage.java" startLine="49" startPosition="51" endLine="50" endPosition="20" />
-    <scopeInfo nodeId="8536718853245025345" fileName="CollectionsLanguage.java" startLine="55" startPosition="29" endLine="56" endPosition="31" />
-    <scopeInfo nodeId="8536718853245025398" fileName="CollectionsLanguage.java" startLine="57" startPosition="14" endLine="58" endPosition="77" />
-    <scopeInfo nodeId="8536718853245025714" fileName="CollectionsLanguage.java" startLine="64" startPosition="46" endLine="65" endPosition="75" />
+    <scopeInfo nodeId="8536718853245025345" fileName="CollectionsLanguage.java" startLine="59" startPosition="29" endLine="60" endPosition="31" />
+    <scopeInfo nodeId="8536718853245025398" fileName="CollectionsLanguage.java" startLine="61" startPosition="14" endLine="62" endPosition="77" />
+    <scopeInfo nodeId="8536718853245025714" fileName="CollectionsLanguage.java" startLine="68" startPosition="46" endLine="69" endPosition="75" />
     <scopeInfo nodeId="8536718853245006664" fileName="CollectionsLanguage.java" startLine="16" startPosition="37" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="8536718853245025684" fileName="CollectionsLanguage.java" startLine="63" startPosition="98" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="1341511683899742887" fileName="CollectionsLanguage.java" startLine="50" startPosition="27" endLine="52" endPosition="77" />
+    <scopeInfo nodeId="8536718853245025684" fileName="CollectionsLanguage.java" startLine="67" startPosition="98" endLine="70" endPosition="5" />
     <scopeInfo nodeId="8536718853245006661" fileName="CollectionsLanguage.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
     <scopeInfo nodeId="8536718853245025323" fileName="CollectionsLanguage.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="8536718853245008402" fileName="CollectionsLanguage.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="8536718853245025442" fileName="CollectionsLanguage.java" startLine="27" startPosition="75" endLine="32" endPosition="9" />
     <scopeInfo nodeId="8536718853245025805" fileName="CollectionsLanguage.java" startLine="39" startPosition="70" endLine="44" endPosition="9" />
-    <scopeInfo nodeId="8536718853245025341" fileName="CollectionsLanguage.java" startLine="54" startPosition="46" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="8536718853245025681" fileName="CollectionsLanguage.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="8536718853245008405" fileName="CollectionsLanguage.java" startLine="49" startPosition="51" endLine="54" endPosition="20" />
+    <scopeInfo nodeId="8536718853245025341" fileName="CollectionsLanguage.java" startLine="58" startPosition="46" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="8536718853245025681" fileName="CollectionsLanguage.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="8536718853245025708" varName="runme" />
     </scopeInfo>
     <scopeInfo nodeId="8536718853245025438" fileName="CollectionsLanguage.java" startLine="26" startPosition="46" endLine="33" endPosition="7" />
     <scopeInfo nodeId="8536718853245025798" fileName="CollectionsLanguage.java" startLine="38" startPosition="46" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="8536718853245025333" fileName="CollectionsLanguage.java" startLine="53" startPosition="95" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="8536718853245025333" fileName="CollectionsLanguage.java" startLine="57" startPosition="95" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="8536718853245008402" fileName="CollectionsLanguage.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="8536718853245025422" fileName="CollectionsLanguage.java" startLine="25" startPosition="27" endLine="34" endPosition="5" />
     <scopeInfo nodeId="8536718853245025650" fileName="CollectionsLanguage.java" startLine="37" startPosition="30" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="8536718853245025330" fileName="CollectionsLanguage.java" startLine="52" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="8536718853245025330" fileName="CollectionsLanguage.java" startLine="56" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="8536718853245025334" varName="runme" />
     </scopeInfo>
     <scopeInfo nodeId="8536718853245025419" fileName="CollectionsLanguage.java" startLine="24" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="8536718853245025647" fileName="CollectionsLanguage.java" startLine="36" startPosition="0" endLine="48" endPosition="0" />
-    <unitInfo nodeId="8536718853245006659" fileName="CollectionsLanguage.java" startLine="10" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage" />
+    <unitInfo nodeId="8536718853245006659" fileName="CollectionsLanguage.java" startLine="10" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage" />
   </root>
   <root nodeId="8536718853245008409">
     <nodeInfo nodeId="8536718853245025255" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="CustomContainersRegistry.java" startLine="22" startPosition="39" endLine="23" endPosition="88" />

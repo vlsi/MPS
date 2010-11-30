@@ -47,6 +47,10 @@ public class CollectionsLanguage {
   }
 
   public static CollectionsLanguage getInstance() {
+    if (INSTANCE == null) {
+      Logger.getLogger(CollectionsLanguage.class).fatal("ColelctionsLanguage.INSTANCE is null. Context ClassLoader:" + Thread.currentThread().getContextClassLoader(), new IllegalStateException("CollectionsLanguage not initialized"));
+      throw new IllegalStateException("CollectionsLanguage not initialized");
+    }
     return INSTANCE;
   }
 
