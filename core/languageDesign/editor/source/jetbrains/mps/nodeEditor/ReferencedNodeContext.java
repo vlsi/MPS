@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import org.apache.commons.lang.ObjectUtils;
 
 import java.util.Stack;
@@ -45,18 +44,18 @@ public class ReferencedNodeContext {
   }
 
   public static ReferencedNodeContext createNodeContext(SNode node) {
-    return saveAsUserObject(new ReferencedNodeContext(node));
+    return new ReferencedNodeContext(node);
   }
 
   public ReferencedNodeContext sameContextButAnotherNode(SNode newNode) {
-    return saveAsUserObject(new ReferencedNodeContext(newNode, this));
+    return new ReferencedNodeContext(newNode, this);
   }
 
   public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
     ReferencedNodeContext result = new ReferencedNodeContext(node, this);
     result.addContextRole(contextRole);
     result.addContextRefererNode(contextRefererNode);
-    return saveAsUserObject(result);
+    return result;
   }
 
   public boolean hasRoles() {
@@ -66,11 +65,11 @@ public class ReferencedNodeContext {
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
     ReferencedNodeContext result = new ReferencedNodeContext(getNode(), this);
     result.addAttribute(attribute);
-    return saveAsUserObject(result);
+    return result;
   }
 
   public ReferencedNodeContext contextWihtNoAttributes() {
-    return saveAsUserObject(new ReferencedNodeContext(getNode()));
+    return new ReferencedNodeContext(getNode());
   }
 
   public SNode getNode() {
@@ -96,16 +95,6 @@ public class ReferencedNodeContext {
       myAttributesStack = new Stack<SNode>();
     }
     myAttributesStack.push(attribute);
-  }
-
-  /**
-   * TODO: remove this method
-   * looks like it's necessary to store newly created ReferencedNodeContext as SNode's user object now
-   * because EditorComponent.myRefNodeContextsToBigCellsMap is instances of WeakHashMap
-   */
-  private static ReferencedNodeContext saveAsUserObject(ReferencedNodeContext context) {
-    context.getNode().putUserObject(context, context); //context must be collected only after its target node is collected
-    return context;
   }
 
   public int hashCode() {

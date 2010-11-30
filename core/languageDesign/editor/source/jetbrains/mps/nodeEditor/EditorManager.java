@@ -163,15 +163,15 @@ public class EditorManager {
     }
 
     EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-    EditorCell oldCell = nodeEditorComponent.getBigCellForRefContext(refContext.contextWihtNoAttributes());
     if (events != null) {
+      EditorCell oldCell = myMap.get(refContext);
+      myMap.putAll(findBigDescendantCellsAndTheirNodes(oldCell));
       boolean nodeChanged = isNodeChanged(events, nodeEditorComponent, oldCell);
 
       if (!nodeChanged) {
         if (myMap.containsKey(refContext)) {
-          EditorCell editorCell = myMap.get(refContext);
-          final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getNodesCellDependOn(editorCell);
-          final Set<SNodePointer> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(editorCell);
+          final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getNodesCellDependOn(oldCell);
+          final Set<SNodePointer> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(oldCell);
           if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
             //voodoo for editor incremental rebuild support:
             // add listen-nothing listener, fill it up,
@@ -184,14 +184,12 @@ public class EditorManager {
             NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
             //--voodoo
           }
-          return editorCell;
+          return oldCell;
         }
-      } else {
-        myMap.putAll(findBigDescendantCellsAndTheirNodes(oldCell));
       }
+      nodeEditorComponent.clearNodesCellDependsOn(oldCell, this);
     }
 
-    nodeEditorComponent.clearNodesCellDependsOn(oldCell, this);
 
     return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
   }
@@ -253,7 +251,7 @@ public class EditorManager {
       if (nodeCell != null) {
         ReferencedNodeContext refContextWithoutAttributes = refContext.contextWihtNoAttributes();
         nodeCell.putUserObject(BIG_CELL_CONTEXT, refContextWithoutAttributes);
-        editorComponent.registerAsBigCell(nodeCell, refContextWithoutAttributes, this);
+        editorComponent.registerAsBigCell(nodeCell, this);
         addNodeDependenciesToEditor(nodeCell, nodeAccessListener, context);
       }
       NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
