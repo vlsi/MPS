@@ -124,7 +124,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
-  private WeakHashMap<ReferencedNodeContext, WeakReference<EditorCell>> myRefNodeContextsToBigCellsMap = new WeakHashMap<ReferencedNodeContext, WeakReference<EditorCell>>();
 
   private WeakHashMap<EditorCell, Set<SNodePointer>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<EditorCell, Set<SNodePointer>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>>();
@@ -1158,7 +1157,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     removeOurListeners();
     myCellsToRefTargetsToDependOnMap.clear();
     myNodesToBigCellsMap.clear();
-    myRefNodeContextsToBigCellsMap.clear();
     myNodePropertiesAccessedCleanlyToDependentCellsMap.clear();
     myNodePropertiesAccessedDirtilyToDependentCellsMap.clear();
     myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.clear();
@@ -2442,17 +2440,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  void registerAsBigCell(EditorCell cell, ReferencedNodeContext refContext, EditorManager manager) {
+  void registerAsBigCell(EditorCell cell, EditorManager manager) {
     if (manager == EditorManager.getInstanceFromContext(myOperationContext)) {
-      myRefNodeContextsToBigCellsMap.put(refContext, new WeakReference<EditorCell>(cell));
       myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<EditorCell>(cell));
     }
-  }
-
-  EditorCell getBigCellForRefContext(ReferencedNodeContext refContext) {
-    WeakReference<EditorCell> weakReference = myRefNodeContextsToBigCellsMap.get(refContext);
-    if (weakReference == null) return null;
-    return weakReference.get();
   }
 
   @Nullable
