@@ -51,7 +51,7 @@ public class SModel {
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
 
-  private INodeIdToNodeMap myIdToNodeMap = new NodeIdMap();
+  private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
 
   private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
 
@@ -430,6 +430,10 @@ public class SModel {
 
   static {
     resetIdCounter();
+  }
+
+  protected NodeIdMap createNodeIdMap() {
+    return new NodeIdMap();
   }
 
   static void resetIdCounter() {
