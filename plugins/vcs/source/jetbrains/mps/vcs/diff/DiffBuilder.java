@@ -48,24 +48,25 @@ public class DiffBuilder {
   }
 
   private void collectChanges() {
-    Map<SNodeId, SNode> oldNodes = myOldModel.getNodeIdToNodeMap();
     Map<SNodeId, SNode> newNodes = myNewModel.getNodeIdToNodeMap();
 
     Set<SNodeId> intersect = new HashSet<SNodeId>();
     Map<SNodeId, SNode> onlyOld = new HashMap<SNodeId, SNode>();
     Map<SNodeId, SNode> onlyNew = new HashMap<SNodeId, SNode>();
 
-    for (Entry<SNodeId, SNode> entry : oldNodes.entrySet()) {
-      if (newNodes.containsKey(entry.getKey())) {
-        intersect.add(entry.getKey());
+    for (SNode node : myOldModel.nodes()) {
+      SNodeId id = node.getSNodeId();
+      if (myNewModel.getNodeById(id) != null) {
+        intersect.add(id);
       } else {
-        onlyOld.put(entry.getKey(), entry.getValue());
+        onlyOld.put(id, node);
       }
     }
 
-    for (Entry<SNodeId, SNode> entry : newNodes.entrySet()) {
-      if (!oldNodes.containsKey(entry.getKey())) {
-        onlyNew.put(entry.getKey(), entry.getValue());
+    for (SNode node : myNewModel.nodes()) {
+      SNodeId id = node.getSNodeId();
+      if (myOldModel.getNodeById(id) == null) {
+        onlyNew.put(id, node);
       }
     }
 
