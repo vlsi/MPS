@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.nodeidmap;
 
+import gnu.trove.THashMap;
 import gnu.trove.TLongObjectHashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -27,7 +28,7 @@ import java.util.HashMap;
 
 public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
-  private final HashMap<SNodeId, SNode> myOtherMap = new HashMap<SNodeId, SNode>();
+  private final THashMap<SNodeId, SNode> myOtherMap = new THashMap<SNodeId, SNode>();
 
   public int size() {
     return myOtherMap.size() + myRegularMap.size();
