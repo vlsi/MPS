@@ -48,8 +48,6 @@ public class DiffBuilder {
   }
 
   private void collectChanges() {
-    Map<SNodeId, SNode> newNodes = myNewModel.getNodeIdToNodeMap();
-
     Set<SNodeId> intersect = new HashSet<SNodeId>();
     Map<SNodeId, SNode> onlyOld = new HashMap<SNodeId, SNode>();
     Map<SNodeId, SNode> onlyNew = new HashMap<SNodeId, SNode>();
@@ -78,8 +76,8 @@ public class DiffBuilder {
     collectDeletedNodes(onlyOld);
     collectAddedNodes(onlyNew);
     collectMovedNodes(intersect);
-    collectPropertyChanges(newNodes);
-    collectReferenceChanges(newNodes);
+    collectPropertyChanges();
+    collectReferenceChanges();
     collectConceptChanges(intersect);
     makeChangeGroups();
   }
@@ -343,12 +341,10 @@ public class DiffBuilder {
     return n.getParent().getSNodeId();
   }
 
-  private void collectPropertyChanges(Map<SNodeId, SNode> allNew) {
-    for (SNodeId id : allNew.keySet()) {
-      SNode newNode = myNewModel.getNodeById(id);
+  private void collectPropertyChanges() {
+    for (SNode newNode : myNewModel.nodes()) {
+      SNodeId id = newNode.getSNodeId();
       SNode oldNode = myOldModel.getNodeById(id);
-
-      assert newNode != null;
 
       if (oldNode == null) {
         for (String prop : newNode.getProperties().keySet()) {
@@ -381,12 +377,10 @@ public class DiffBuilder {
     return o1.equals(o2);
   }
 
-  private void collectReferenceChanges(Map<SNodeId, SNode> allNew) {
-    for (SNodeId id : allNew.keySet()) {
-      SNode newNode = myNewModel.getNodeById(id);
+  private void collectReferenceChanges() {
+    for (SNode newNode : myNewModel.nodes()) {
+      SNodeId id = newNode.getSNodeId();
       SNode oldNode = myOldModel.getNodeById(id);
-
-      assert newNode != null;
 
       if (oldNode == null) {
         for (SReference ref : newNode.getReferences()) {
