@@ -89,7 +89,6 @@
   <unitInfo fileName="ElsifTransform_Intention.java" startLine="12" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ElsifTransform_Intention" />
   <unitInfo fileName="ReplaceForLoopWithWhileLoop_Intention.java" startLine="14" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceForLoopWithWhileLoop_Intention" />
   <unitInfo fileName="CreateReferenceOnClass_Intention.java" startLine="12" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateReferenceOnClass_Intention" />
-  <unitInfo fileName="UnwrapIfThenBlock_Intention.java" startLine="15" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention" />
   <unitInfo fileName="MakeMethodFinal_Intention.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodFinal_Intention" />
   <unitInfo fileName="AddFinalModifierToAny_Intention.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddFinalModifierToAny_Intention" />
   <unitInfo fileName="GenerateToString_Intention.java" startLine="398" startPosition="0" endLine="460" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateToString_Intention$QuotationClass_6enhg7_a0a0a6a7" />
@@ -99,6 +98,8 @@
   <unitInfo fileName="GenerateGettersAndSetters_Intention.java" startLine="154" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.GenerateGettersAndSetters_Intention$QuotationClass_43x4b2_a0a0a6a3a7" />
   <unitInfo fileName="AddFieldForUnUsedParameter_Intention.java" startLine="18" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddFieldForUnUsedParameter_Intention" />
   <unitInfo fileName="ReplaceBlockWithItsContent_Intention.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceBlockWithItsContent_Intention" />
+  <unitInfo fileName="UnwrapIfThenBlock_Intention.java" startLine="15" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention" />
+  <unitInfo fileName="UnwrapTryCatch_Intention.java" startLine="15" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapTryCatch_Intention" />
   <unitInfo fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="15" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddRemoveStaticMethodModifier_Intention" />
   <unitInfo fileName="ReplaceConditionalWithIf_Intention.java" startLine="15" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceConditionalWithIf_Intention" />
   <unitInfo fileName="ReplaceAssertWithIf_Intention.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ReplaceAssertWithIf_Intention" />
@@ -2502,6 +2503,47 @@
     </scopeInfo>
     <unitInfo nodeId="6670547060642540858" fileName="CreateMethodDeclarationUtil.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateMethodDeclarationUtil" />
   </root>
+  <root nodeId="7093209195843978568">
+    <nodeInfo nodeId="7093209195844143648" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnwrapTryCatch_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="36" />
+    <nodeInfo nodeId="5341655688653763826" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapTryCatch_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="57" />
+    <nodeInfo nodeId="5341655688653763841" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnwrapTryCatch_Intention.java" startLine="49" startPosition="110" endLine="50" endPosition="51" />
+    <nodeInfo nodeId="5341655688653764971" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnwrapTryCatch_Intention.java" startLine="52" startPosition="5" endLine="53" endPosition="17" />
+    <nodeInfo nodeId="5341655688653797865" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="UnwrapTryCatch_Intention.java" startLine="60" startPosition="6" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="7093209195844143720" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapTryCatch_Intention.java" startLine="62" startPosition="126" endLine="63" endPosition="142" />
+    <nodeInfo nodeId="7093209195844143727" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapTryCatch_Intention.java" startLine="63" startPosition="142" endLine="64" endPosition="223" />
+    <nodeInfo nodeId="7093209195844143736" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapTryCatch_Intention.java" startLine="64" startPosition="223" endLine="65" endPosition="119" />
+    <nodeInfo nodeId="7093209195844143753" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapTryCatch_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="125" />
+    <nodeInfo nodeId="7093209195844143761" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapTryCatch_Intention.java" startLine="68" startPosition="125" endLine="69" endPosition="27" />
+    <nodeInfo nodeId="7093209195844143775" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapTryCatch_Intention.java" startLine="72" startPosition="12" endLine="73" endPosition="121" />
+    <nodeInfo nodeId="7093209195844143781" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapTryCatch_Intention.java" startLine="73" startPosition="121" endLine="74" endPosition="69" />
+    <nodeInfo nodeId="5341655688653763835" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UnwrapTryCatch_Intention.java" startLine="48" startPosition="106" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="7093209195844143773" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="UnwrapTryCatch_Intention.java" startLine="72" startPosition="10" endLine="75" endPosition="5" />
+    <nodeInfo nodeId="5341655688653797843" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapTryCatch_Intention.java" startLine="56" startPosition="76" endLine="60" endPosition="6" />
+    <nodeInfo nodeId="5341655688653763832" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="UnwrapTryCatch_Intention.java" startLine="47" startPosition="57" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="7093209195844143751" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="UnwrapTryCatch_Intention.java" startLine="66" startPosition="113" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="7093209195844143743" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapTryCatch_Intention.java" startLine="65" startPosition="119" endLine="71" endPosition="9" />
+    <nodeInfo nodeId="7093209195844143718" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UnwrapTryCatch_Intention.java" startLine="61" startPosition="0" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="7093209195843978570" fileName="UnwrapTryCatch_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="36" />
+    <scopeInfo nodeId="5341655688653763840" fileName="UnwrapTryCatch_Intention.java" startLine="49" startPosition="110" endLine="50" endPosition="51" />
+    <scopeInfo nodeId="7093209195844143752" fileName="UnwrapTryCatch_Intention.java" startLine="67" startPosition="37" endLine="69" endPosition="27" />
+    <scopeInfo nodeId="7093209195844143774" fileName="UnwrapTryCatch_Intention.java" startLine="72" startPosition="12" endLine="74" endPosition="69">
+      <varInfo nodeId="7093209195844143776" varName="statement" />
+    </scopeInfo>
+    <scopeInfo nodeId="5341655688653763834" fileName="UnwrapTryCatch_Intention.java" startLine="48" startPosition="106" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="5341655688653763832" fileName="UnwrapTryCatch_Intention.java" startLine="47" startPosition="57" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="7093209195844143751" fileName="UnwrapTryCatch_Intention.java" startLine="66" startPosition="113" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="7093209195844143651" fileName="UnwrapTryCatch_Intention.java" startLine="46" startPosition="90" endLine="53" endPosition="17">
+      <varInfo nodeId="5341655688653763827" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7093209195844143719" fileName="UnwrapTryCatch_Intention.java" startLine="62" startPosition="126" endLine="71" endPosition="9">
+      <varInfo nodeId="7093209195844143721" varName="statementList" />
+      <varInfo nodeId="7093209195844143728" varName="index" />
+    </scopeInfo>
+    <scopeInfo nodeId="7093209195843978572" fileName="UnwrapTryCatch_Intention.java" startLine="56" startPosition="76" endLine="75" endPosition="5">
+      <varInfo nodeId="5341655688653797844" varName="body" />
+    </scopeInfo>
+    <unitInfo nodeId="7093209195844143751" fileName="UnwrapTryCatch_Intention.java" startLine="66" startPosition="94" endLine="71" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapTryCatch_Intention$1" />
+  </root>
   <root nodeId="7288587046701126243">
     <nodeInfo nodeId="7288587046701126633" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConvertToReturnStatement_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="41" />
     <nodeInfo nodeId="7288587046701126626" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConvertToReturnStatement_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="82" />
@@ -2624,38 +2666,41 @@
   </root>
   <root nodeId="917166302015890876">
     <nodeInfo nodeId="917166302015969900" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="34" />
-    <nodeInfo nodeId="917166302015969920" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="124" />
-    <nodeInfo nodeId="917166302015969929" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="47" startPosition="124" endLine="48" endPosition="147" />
-    <nodeInfo nodeId="917166302015969953" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="51" startPosition="76" endLine="52" endPosition="124" />
-    <nodeInfo nodeId="917166302016112064" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="53" startPosition="133" endLine="54" endPosition="149" />
-    <nodeInfo nodeId="917166302016112101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="54" startPosition="149" endLine="55" endPosition="158" />
-    <nodeInfo nodeId="917166302016112111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="55" startPosition="158" endLine="56" endPosition="119" />
-    <nodeInfo nodeId="917166302016112147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="58" startPosition="37" endLine="59" endPosition="125" />
-    <nodeInfo nodeId="917166302016112158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="59" startPosition="125" endLine="60" endPosition="27" />
-    <nodeInfo nodeId="917166302016080910" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="63" startPosition="12" endLine="64" endPosition="128" />
-    <nodeInfo nodeId="917166302016080918" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="64" startPosition="128" endLine="65" endPosition="119" />
-    <nodeInfo nodeId="917166302015969977" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="66" startPosition="5" endLine="67" endPosition="44" />
-    <nodeInfo nodeId="917166302016112164" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="63" startPosition="10" endLine="66" endPosition="5" />
-    <nodeInfo nodeId="917166302016112143" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="UnwrapIfThenBlock_Intention.java" startLine="57" startPosition="163" endLine="62" endPosition="0" />
-    <nodeInfo nodeId="917166302016112126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="56" startPosition="119" endLine="62" endPosition="9" />
-    <nodeInfo nodeId="917166302016112028" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="52" startPosition="124" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="5341655688653599566" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="57" />
+    <nodeInfo nodeId="5341655688653703422" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="49" startPosition="103" endLine="50" endPosition="51" />
+    <nodeInfo nodeId="2056667156075498317" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="52" startPosition="5" endLine="53" endPosition="17" />
+    <nodeInfo nodeId="917166302016112064" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="57" startPosition="126" endLine="58" endPosition="142" />
+    <nodeInfo nodeId="917166302016112101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="58" startPosition="142" endLine="59" endPosition="151" />
+    <nodeInfo nodeId="917166302016112111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="59" startPosition="151" endLine="60" endPosition="119" />
+    <nodeInfo nodeId="917166302016112147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="125" />
+    <nodeInfo nodeId="917166302016112158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="63" startPosition="125" endLine="64" endPosition="27" />
+    <nodeInfo nodeId="917166302016080910" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="67" startPosition="12" endLine="68" endPosition="121" />
+    <nodeInfo nodeId="917166302016080918" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="68" startPosition="121" endLine="69" endPosition="112" />
+    <nodeInfo nodeId="917166302015969977" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="70" startPosition="5" endLine="71" endPosition="37" />
+    <nodeInfo nodeId="5341655688653703416" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="48" startPosition="106" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="917166302016112164" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="67" startPosition="10" endLine="70" endPosition="5" />
+    <nodeInfo nodeId="5341655688653703412" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="47" startPosition="57" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="917166302016112143" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="UnwrapIfThenBlock_Intention.java" startLine="61" startPosition="156" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="917166302016112126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="60" startPosition="119" endLine="66" endPosition="9" />
+    <nodeInfo nodeId="917166302016112028" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="UnwrapIfThenBlock_Intention.java" startLine="56" startPosition="76" endLine="70" endPosition="5" />
     <scopeInfo nodeId="917166302015890878" fileName="UnwrapIfThenBlock_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="34" />
-    <scopeInfo nodeId="917166302015969903" fileName="UnwrapIfThenBlock_Intention.java" startLine="46" startPosition="90" endLine="48" endPosition="147">
-      <varInfo nodeId="917166302015969921" varName="ifStatement" />
-    </scopeInfo>
-    <scopeInfo nodeId="917166302016112144" fileName="UnwrapIfThenBlock_Intention.java" startLine="58" startPosition="37" endLine="60" endPosition="27" />
-    <scopeInfo nodeId="917166302016112165" fileName="UnwrapIfThenBlock_Intention.java" startLine="63" startPosition="12" endLine="65" endPosition="119">
+    <scopeInfo nodeId="5341655688653703421" fileName="UnwrapIfThenBlock_Intention.java" startLine="49" startPosition="103" endLine="50" endPosition="51" />
+    <scopeInfo nodeId="917166302016112144" fileName="UnwrapIfThenBlock_Intention.java" startLine="62" startPosition="37" endLine="64" endPosition="27" />
+    <scopeInfo nodeId="917166302016112165" fileName="UnwrapIfThenBlock_Intention.java" startLine="67" startPosition="12" endLine="69" endPosition="112">
       <varInfo nodeId="917166302016080911" varName="statement" />
     </scopeInfo>
-    <scopeInfo nodeId="917166302016112143" fileName="UnwrapIfThenBlock_Intention.java" startLine="57" startPosition="163" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="917166302016112035" fileName="UnwrapIfThenBlock_Intention.java" startLine="53" startPosition="133" endLine="62" endPosition="9">
+    <scopeInfo nodeId="5341655688653703415" fileName="UnwrapIfThenBlock_Intention.java" startLine="48" startPosition="106" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="5341655688653703412" fileName="UnwrapIfThenBlock_Intention.java" startLine="47" startPosition="57" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="917166302016112143" fileName="UnwrapIfThenBlock_Intention.java" startLine="61" startPosition="156" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="917166302015969903" fileName="UnwrapIfThenBlock_Intention.java" startLine="46" startPosition="90" endLine="53" endPosition="17">
+      <varInfo nodeId="5341655688653599567" varName="selectedNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="917166302016112035" fileName="UnwrapIfThenBlock_Intention.java" startLine="57" startPosition="126" endLine="66" endPosition="9">
       <varInfo nodeId="917166302016112065" varName="statementList" />
       <varInfo nodeId="917166302016112102" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="917166302015890880" fileName="UnwrapIfThenBlock_Intention.java" startLine="51" startPosition="76" endLine="67" endPosition="44">
-      <varInfo nodeId="917166302015969954" varName="ifStatement" />
-    </scopeInfo>
-    <unitInfo nodeId="917166302016112143" fileName="UnwrapIfThenBlock_Intention.java" startLine="57" startPosition="144" endLine="62" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention$1" />
+    <scopeInfo nodeId="917166302015890880" fileName="UnwrapIfThenBlock_Intention.java" startLine="56" startPosition="76" endLine="71" endPosition="37" />
+    <unitInfo nodeId="917166302016112143" fileName="UnwrapIfThenBlock_Intention.java" startLine="61" startPosition="137" endLine="66" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.UnwrapIfThenBlock_Intention$1" />
   </root>
   <root nodeId="985108658453262823">
     <nodeInfo nodeId="985108658453273048" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SurroundWithParenthesis_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="28" />
