@@ -25,7 +25,7 @@ import jetbrains.mps.util.CompositeIterable;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class NodeIdMap implements INodeIdToNodeMap {
+public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
   private final HashMap<SNodeId, SNode> myOtherMap = new HashMap<SNodeId, SNode>();
 

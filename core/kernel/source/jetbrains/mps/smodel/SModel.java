@@ -24,7 +24,7 @@ import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
-import jetbrains.mps.smodel.nodeidmap.NodeIdMap;
+import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -432,8 +432,8 @@ public class SModel {
     resetIdCounter();
   }
 
-  protected NodeIdMap createNodeIdMap() {
-    return new NodeIdMap();
+  protected UniversalOptimizedNodeIdMap createNodeIdMap() {
+    return new UniversalOptimizedNodeIdMap();
   }
 
   static void resetIdCounter() {
