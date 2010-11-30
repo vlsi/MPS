@@ -24,6 +24,7 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint;
+import jetbrains.mps.debug.breakpoints.FieldBreakpoint;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.breakpoints.MethodBreakpoint;
 import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent.AllDebugProcessesAction;
@@ -141,6 +142,20 @@ public class RequestManager implements DebugProcessListener {
     DebuggerManagerThread.assertIsManagerThread();
     MethodExitRequest request = myEventRequestManager.createMethodExitRequest();
     request.addClassFilter(type);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  public AccessWatchpointRequest createFieldAccessRequest(FieldBreakpoint requestor, Field field) {
+    DebuggerManagerThread.assertIsManagerThread();
+    AccessWatchpointRequest request = myEventRequestManager.createAccessWatchpointRequest(field);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  public ModificationWatchpointRequest createFieldModificationRequest(FieldBreakpoint requestor, Field field) {
+    DebuggerManagerThread.assertIsManagerThread();
+    ModificationWatchpointRequest request = myEventRequestManager.createModificationWatchpointRequest(field);
     initRequest(requestor, request);
     return request;
   }

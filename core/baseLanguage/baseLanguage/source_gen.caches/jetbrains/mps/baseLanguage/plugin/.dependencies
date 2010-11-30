@@ -205,6 +205,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.debug.breakpoints.FieldBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.breakpoints.MethodBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.MPSBreakpoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

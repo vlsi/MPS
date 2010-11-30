@@ -110,19 +110,14 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     return myLocation;
   }
 
-  public static class MethodBreakpointInfo extends BreakpointInfo {
+  public static class MethodBreakpointInfo extends JavaBreakpointInfo {
     public String myMethodName;
     public String myJniSignature;
 
     public MethodBreakpointInfo(MethodBreakpoint breakpoint) {
-      this(breakpoint.myLocation.getModelReference().toString(), breakpoint.myLocation.getNodePointer().getNodeId().toString(),
-        breakpoint.myCreationTime, breakpoint.myIsEnabled, breakpoint.getSuspendPolicy(), breakpoint.myMethodName, breakpoint.myJniSignature);
-    }
-
-    public MethodBreakpointInfo(String modelReference, String nodeId, long creationTime, boolean isEnabled, int suspendPolicy, String methodName, String jniSignature) {
-      super(modelReference, nodeId, creationTime, isEnabled, suspendPolicy);
-      myMethodName = methodName;
-      myJniSignature = jniSignature;
+      super(breakpoint, breakpoint.myLocation);
+      myMethodName = breakpoint.myMethodName;
+      myJniSignature = breakpoint.myJniSignature;
     }
 
     public MethodBreakpointInfo() {

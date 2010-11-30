@@ -15,5 +15,22 @@
  */
 package jetbrains.mps.debug.breakpoints;
 
-public class FieldWatchpoint {
+import jetbrains.mps.debug.api.BreakpointInfo;
+import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
+
+public class JavaBreakpointInfo extends BreakpointInfo {
+  public int mySuspendPolicy;
+
+  public JavaBreakpointInfo(JavaBreakpoint breakpoint, BreakpointLocation location) {
+    super(breakpoint, location);
+    mySuspendPolicy = breakpoint.getSuspendPolicy();
+  }
+
+  public JavaBreakpointInfo() {
+  }
+
+  public void initBreakpoint(JavaBreakpoint breakpoint) {
+    super.initBreakpoint(breakpoint);
+    breakpoint.setSuspendPolicy(mySuspendPolicy);
+  }
 }

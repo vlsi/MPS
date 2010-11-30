@@ -32,7 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 // todo rename to line breakpoint
-public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint{
+public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(MPSBreakpoint.class);
   private final BreakpointLocation myLocation;
 

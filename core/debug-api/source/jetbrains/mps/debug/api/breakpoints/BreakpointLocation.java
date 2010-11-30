@@ -31,6 +31,10 @@ public class BreakpointLocation {
     myNodePointer = nodePointer;
   }
 
+  public BreakpointLocation(SNode node) {
+    myNodePointer = new SNodePointer(node);
+  }
+
   public SNodePointer getNodePointer() {
     return myNodePointer;
   }

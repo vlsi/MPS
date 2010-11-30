@@ -95,17 +95,19 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
     public boolean myIsEnabled;
 
     public ExceptionBreakpointInfo(ExceptionBreakpoint breakpoint) {
-      this(breakpoint.myExceptionName, breakpoint.myCreationTime, breakpoint.isEnabled(), breakpoint.getSuspendPolicy());
-    }
-
-    public ExceptionBreakpointInfo(String exceptionName, long creationTime, boolean isEnabled, int suspendPolicy) {
-      myExceptionName = exceptionName;
-      myCreationTime = creationTime;
-      mySuspendPolicy = suspendPolicy;
-      myIsEnabled = isEnabled;
+      myExceptionName = breakpoint.myExceptionName;
+      myCreationTime = breakpoint.myCreationTime;
+      myIsEnabled = breakpoint.isEnabled();
+      mySuspendPolicy = breakpoint.getSuspendPolicy();
     }
 
     public ExceptionBreakpointInfo() {
+    }
+
+    public void initBreakpoint(ExceptionBreakpoint breakpoint) {
+      breakpoint.setEnabled(myIsEnabled);
+      breakpoint.setCreationTime(myCreationTime);
+      breakpoint.setSuspendPolicy(mySuspendPolicy);
     }
   }
 }
