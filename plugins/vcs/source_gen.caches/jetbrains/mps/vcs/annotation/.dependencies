@@ -50,6 +50,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Cursor" />
     <classNode dependClassName="java.awt.Font" />
+    <classNode dependClassName="java.awt.FontMetrics" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.Graphics2D" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
@@ -104,7 +105,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationManager" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.CommitNumberSubcolumn" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.EditorUtils" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.HighlightRevisionSubcolumn" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.VcsRevisionRange" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewAction" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation._Adapters" />
@@ -195,11 +198,37 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.annotation.HighlightRevisionSubcolumn" file="HighlightRevisionSubcolumn.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.VcsRevisionRange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.annotation.AnnotationAspectSubcolumn" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" file="ShowAdditionalInfoAction.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.annotation.VcsRevisionRange" file="VcsRevisionRange.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.vcs.actions.CompareWithSelectedRevisionAction" />
+    <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
+    <classNode dependClassName="com.intellij.openapi.vcs.history.ShortVcsRevisionNumber" />
+    <classNode dependClassName="com.intellij.openapi.vcs.history.VcsFileRevision" />
+    <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
+    <classNode dependClassName="com.intellij.util.Consumer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Date" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.vcs.annotation.AnnotationColumn" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseGroup" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.annotation.ViewAction" file="ViewAction.java">
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />

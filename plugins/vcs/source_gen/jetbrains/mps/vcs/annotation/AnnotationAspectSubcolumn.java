@@ -52,6 +52,10 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
     return myEnabled;
   }
 
+  public boolean isRightAligned() {
+    return false;
+  }
+
   public void setEnabled(boolean enabled) {
     VcsUtil.setAspectAvailability(getId(), enabled);
     myEnabled = enabled;

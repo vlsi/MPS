@@ -46,6 +46,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import jetbrains.mps.smodel.ModelAccess;
+import java.awt.FontMetrics;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -70,6 +71,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingUtilities;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
@@ -77,7 +79,6 @@ import com.intellij.openapi.vcs.annotate.AnnotationListener;
 import jetbrains.mps.vcs.changesmanager.ChangeListener;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.vcs.changes.BackgroundFromStartOption;
@@ -116,6 +117,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private Map<Change, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<Change, LineContent>());
   private Set<Integer> myCurrentPseudoLines = null;
   private final Object myCurrentPseudoLinesLock = new Object();
+  private VcsRevisionRange myRevisionRange;
   private ViewActionGroup myViewActionGroup;
   private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
   private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
@@ -170,11 +172,13 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }
     }
     myViewActionGroup = new ViewActionGroup(this, myAspectSubcolumns);
+    myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
+    ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myLeftEditorHighlighter = leftEditorHighlighter;
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
     myVcs = vcs;
-    final ChangesManager changesManager = ChangesManager.getInstance(myVcs.getProject());
+    final ChangesManager changesManager = ChangesManager.getInstance(getProject());
     changesManager.getCommandQueue().runTask(new Runnable() {
       public void run() {
         ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(model);
@@ -240,9 +244,20 @@ public class AnnotationColumn extends AbstractLeftColumn {
               }
 
               graphics.setColor(ANNOTATION_COLOR);
+              if (myRevisionRange.isFileLineHighlighted(fileLine)) {
+                graphics.setFont(myFont.deriveFont(Font.BOLD));
+              } else {
+                graphics.setFont(myFont);
+              }
               for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
                 if (subcolumn.isEnabled() || myShowAdditionalInfo) {
-                  graphics.drawString(subcolumn.getTextForFileLine(fileLine), MapSequence.fromMap(subcolumnToX).get(subcolumn), graphics.getFontMetrics().getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
+                  String text = subcolumn.getTextForFileLine(fileLine);
+                  int textX = MapSequence.fromMap(subcolumnToX).get(subcolumn);
+                  FontMetrics metrics = graphics.getFontMetrics();
+                  if (subcolumn.isRightAligned()) {
+                    textX += subcolumn.getWidth() - metrics.stringWidth(text);
+                  }
+                  graphics.drawString(text, textX, metrics.getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
                 }
               }
 
@@ -427,8 +442,8 @@ __switch__:
   public void dispose() {
     myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
-    ChangesManager.getInstance(myVcs.getProject()).getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
-    AnnotationManager.getInstance(myVcs.getProject()).removeColumn(this);
+    ChangesManager.getInstance(getProject()).getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
+    AnnotationManager.getInstance(getProject()).removeColumn(this);
   }
 
   private int findPseudoLineByY(int y) {
@@ -477,6 +492,7 @@ __switch__:
       });
     }
     ListSequence.fromList(actions).addElement(Separator.getInstance());
+    ListSequence.fromList(actions).addElement(myRevisionRange);
     ListSequence.fromList(actions).addElement(new ShowAdditionalInfoAction(this));
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(ListSequence.fromList(actions).toGenericArray(AnAction.class));
@@ -523,6 +539,14 @@ __switch__:
   public void setShowAdditionalInfo(boolean showAdditionalInfo) {
     myShowAdditionalInfo = showAdditionalInfo;
     invalidateLayout();
+  }
+
+  public List<VcsFileRevision> getRevisions() {
+    return myFileAnnotation.getRevisions();
+  }
+
+  public Project getProject() {
+    return myVcs.getProject();
   }
 
   private static SNodeId check_5mnya_a0b0j0a(LineContent p) {
@@ -608,7 +632,7 @@ __switch__:
     public void actionPerformed(AnActionEvent event) {
       final VcsRevisionNumber revisionNumber = myFileAnnotation.getLineRevisionNumber(myFileLine);
       if (revisionNumber != null) {
-        final Project project = myVcs.getProject();
+        final Project project = getProject();
         ProgressManager.getInstance().run(new Task.Backgroundable(project, "Loading revision " + revisionNumber.asString() + " contents", true, BackgroundFromStartOption.getInstance()) {
           public void run(@NotNull ProgressIndicator pi) {
             CommittedChangesProvider provider = myVcs.getCommittedChangesProvider();
