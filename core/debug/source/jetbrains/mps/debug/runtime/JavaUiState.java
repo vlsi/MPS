@@ -1,10 +1,7 @@
 package jetbrains.mps.debug.runtime;
 
 import com.sun.jdi.*;
-import com.sun.jdi.event.Event;
-import com.sun.jdi.event.ExceptionEvent;
-import com.sun.jdi.event.MethodEntryEvent;
-import com.sun.jdi.event.MethodExitEvent;
+import com.sun.jdi.event.*;
 import jetbrains.mps.debug.api.AbstractDebugSession.ExecutionState;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.programState.IThread;
@@ -14,6 +11,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaExceptionWatchable;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaMethodWatchable;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaReturnWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchpointWatchable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -237,7 +235,15 @@ public class JavaUiState extends AbstractUiState {
           Value value = ((MethodExitEvent) event).returnValue();
           watchables.add(new JavaMethodWatchable(method, false, getStackFrame().getClassFqName(), getThread().getThread()));
           watchables.add(new JavaReturnWatchable(value, getStackFrame().getClassFqName(), getThread().getThread()));
-          // todo return value
+        } else if (event instanceof AccessWatchpointEvent) {
+          Field field = ((AccessWatchpointEvent) event).field();
+          Value value = ((AccessWatchpointEvent) event).valueCurrent();
+          watchables.add(new JavaWatchpointWatchable(field, value, getStackFrame().getClassFqName(), getThread().getThread()));
+        } else if (event instanceof ModificationWatchpointEvent) {
+          Field field = ((ModificationWatchpointEvent) event).field();
+          Value currentValue = ((ModificationWatchpointEvent) event).valueCurrent();
+          Value valueToBe = ((ModificationWatchpointEvent) event).valueToBe();
+          watchables.add(new JavaWatchpointWatchable(field, currentValue, valueToBe, getStackFrame().getClassFqName(), getThread().getThread()));
         }
       }
     }
