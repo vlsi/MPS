@@ -106,6 +106,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private List<AnnotationAspectSubcolumn> myAspectSubcolumns = ListSequence.fromList(new ArrayList<AnnotationAspectSubcolumn>());
   private List<Integer> myPseudoLinesY;
   private List<Integer> myPseudoLinesToFileLines;
+  private int mySubcolumnInterval;
   private Map<String, Color> myAuthorsToColors = MapSequence.fromMap(new HashMap<String, Color>());
   private FileAnnotation myFileAnnotation;
   private Map<VcsRevisionNumber, VcsFileRevision> myRevisionNumberToRevision = MapSequence.fromMap(new HashMap<VcsRevisionNumber, VcsFileRevision>());
@@ -223,7 +224,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       MapSequence.fromMap(subcolumnToX).put(subcolumn, x);
       if (subcolumn.isEnabled() || myShowAdditionalInfo) {
-        x += subcolumn.getWidth();
+        x += subcolumn.getWidth() + mySubcolumnInterval;
       }
     }
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -278,9 +279,9 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }
     }).reduceLeft(new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer a, Integer b) {
-        return a + b;
+        return a + mySubcolumnInterval + b;
       }
-    }) + 1;
+    }) + 1 + mySubcolumnInterval / 2;
   }
 
   @Nullable
@@ -403,9 +404,11 @@ __switch__:
         }
       }
     });
+    FontMetrics metrics = component.getGraphics().getFontMetrics(myFont);
     for (AnnotationAspectSubcolumn aspectSubcolumn : ListSequence.fromList(myAspectSubcolumns)) {
-      aspectSubcolumn.computeWidth(component.getGraphics().getFontMetrics(myFont), myPseudoLinesToFileLines);
+      aspectSubcolumn.computeWidth(metrics, myPseudoLinesToFileLines);
     }
+    mySubcolumnInterval = metrics.stringWidth(" ");
   }
 
   @Override

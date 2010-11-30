@@ -36,7 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   public void computeWidth(final FontMetrics fontMetrics, Iterable<Integer> fileLines) {
     myWidth = Sequence.fromIterable(fileLines).foldLeft(0, new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer s, Integer fl) {
-        return Math.max(s, fontMetrics.stringWidth(getTextForFileLine(fl) + " "));
+        return Math.max(s, fontMetrics.stringWidth(getTextForFileLine(fl)));
       }
     });
   }

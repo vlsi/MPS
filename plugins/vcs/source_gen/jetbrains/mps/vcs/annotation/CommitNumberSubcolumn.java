@@ -68,6 +68,11 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
     return "Commit number";
   }
 
+  @Override
+  public boolean isRightAligned() {
+    return true;
+  }
+
   private static Date check_efout7_a0a0a0a0f0b(VcsFileRevision p) {
     if (null == p) {
       return null;
