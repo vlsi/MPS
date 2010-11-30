@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ParentSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.TableComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

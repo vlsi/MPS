@@ -443,7 +443,7 @@ public class ModelChangesManager {
             ListSequence.fromList(changeList.value).addElement(change);
           }
         }
-        final List<SetNodeChange> setNodeChanges = ListSequence.fromList(changeList.value).translate(new ITranslator2<Change, SetNodeChange>() {
+        final List<SetNodeChange> setNodeChanges = ListSequence.fromList(changeList.value).<SetNodeChange>translate(new ITranslator2<Change, SetNodeChange>() {
           public Iterable<SetNodeChange> translate(final Change ch) {
             return new Iterable<SetNodeChange>() {
               public Iterator<SetNodeChange> iterator() {
@@ -495,7 +495,7 @@ __switch__:
             });
           }
         });
-        changeList.value = ListSequence.fromList(changeList.value).select(new ISelector<Change, Change>() {
+        changeList.value = ListSequence.fromList(changeList.value).<Change>select(new ISelector<Change, Change>() {
           public Change select(Change ch) {
             Change newCh = ch;
             if (ch instanceof DeleteNodeChange) {

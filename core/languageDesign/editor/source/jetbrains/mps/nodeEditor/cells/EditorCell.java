@@ -70,7 +70,9 @@ public interface EditorCell extends Cloneable {
   void moveTo(int x, int y);
   
   void paint(Graphics g);
+  void paint(Graphics g, ParentSettings parentSettings);
   void paintSelection(Graphics g, Color c, boolean drawBorder);
+  void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings);
 
   void setSelected(boolean isSelected);
   boolean isSelected();

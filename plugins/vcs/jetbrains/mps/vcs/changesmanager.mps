@@ -15482,8 +15482,13 @@
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6371186153576896353" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6371186153576896354">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6371186153576917403">
-            <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6371186153576917404">
-              <property name="value" nameId="tpee.1068580123138" value="true" />
+            <node role="expression" roleId="tpee.1068581517676" type="tpee.OrExpression" typeId="tpee.1080223426719" id="2951287478108916217">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2951287478108916220">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8601487597690772758" resolveInfo="myEnabled" />
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2951287478108916213">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7429456937243134764" resolveInfo="myHighlighted" />
+              </node>
             </node>
           </node>
         </node>

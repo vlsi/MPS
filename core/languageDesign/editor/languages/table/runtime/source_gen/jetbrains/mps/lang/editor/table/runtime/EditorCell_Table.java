@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -73,8 +74,8 @@ public class EditorCell_Table extends EditorCell_Collection {
   }
 
   @Override
-  public void paint(Graphics graphics) {
-    super.paint(graphics);
+  public void paint(Graphics graphics, ParentSettings parentSettings) {
+    super.paint(graphics, parentSettings);
     graphics.setColor(Color.GRAY);
     List<Integer> positions = ListSequence.fromList(new ArrayList<Integer>());
     for (EditorCell row : getCells()) {

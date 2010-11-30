@@ -532,18 +532,19 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return !isFolded();
   }
 
-  public void paint(Graphics g) {
+  public void paint(Graphics g, ParentSettings parentSettings) {
     if (!g.getClipBounds().intersects(getBounds())) {
       return;
     }
-    if (!isSelectionPaintedOnAncestor()) {
-      paintBackground(g);
+    ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
+    if (!settings.isSelectionPainted()) {
+      settings = (paintBackground(g, settings));
     }
-    paintSelectionIfRequired(g);
-    paintContent(g);
+    paintSelectionIfRequired(g, parentSettings);
+    paintContent(g, parentSettings);
 
     for (EditorCell child : this) {
-      child.paint(g);
+      child.paint(g, settings);
     }
     paintDecorations(g);
   }
@@ -561,10 +562,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
   }
 
-  public void paintContent(Graphics g) {
+  public void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
-  public void paintSelection(Graphics g, Color c, boolean drawBorder) {
+  public void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings) {
     Rectangle clip = g.getClipBounds();
     Rectangle bound = getBounds();
 
@@ -579,12 +580,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
     int x0 = intersection.x;
     int y0 = intersection.y;
-    
+
     List<? extends EditorCell> selectionCells = myCellLayout instanceof CellLayoutExt ? ((CellLayoutExt) myCellLayout).getSelectionCells(this) : null;
     if (selectionCells != null) {
       gr.translate(1 - x0, 1 - y0);
       for (EditorCell cell : selectionCells) {
-        cell.paintSelection(gr, c, false);
+        cell.paintSelection(gr, c, false, parentSettings);
       }
     } else {
       List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
@@ -619,28 +620,26 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     g.drawImage(image, x0 - 1, y0 - 1, null);
   }
 
-  public void paintBackground(Graphics g) {
-    if (getCellBackgroundColor() != null) {
-      g.setColor(getCellBackgroundColor());
-      List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
-      for (Rectangle part : selection) {
-        g.fillRect(part.x, part.y, part.width, part.height);
+  public ParentSettings paintBackground(Graphics g, ParentSettings parentSettings) {
+    if (!parentSettings.isSkipBackground()) {
+      if (getCellBackgroundColor() != null) {
+        g.setColor(getCellBackgroundColor());
+        List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
+        for (Rectangle part : selection) {
+          g.fillRect(part.x, part.y, part.width, part.height);
+        }
       }
     }
+    boolean hasMessages = false;
 
     List<EditorMessage> messages = getMessages();
     for (EditorMessage message : messages) {
       if (message != null && message.isBackground()) {
         message.paint(g, getEditor(), this);
+        hasMessages = true;
       }
     }
-  }
-
-  /**
-   * looks like not used
-   */
-  public void paintSelectionAsIfNotCollection(Graphics g, Color c) {
-    super.paintSelection(g, c, true);
+    return ParentSettings.createBackgroundlessSetting(hasMessages).combineWith(parentSettings);
   }
 
   public TextBuilder renderText() {
