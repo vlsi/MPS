@@ -440,14 +440,6 @@ public class SModel {
     return new SNodeId.Regular(id);
   }
 
-  public Map<SNodeId, SNode> getNodeIdToNodeMap() {
-    checkNotDisposed();
-    if (myDisposed) return Collections.emptyMap();
-
-    enforceFullLoad();
-    return Collections.unmodifiableMap(myIdToNodeMap);
-  }
-
   @Nullable
   public SNode getNodeById(SNodeId nodeId) {
     checkNotDisposed();
