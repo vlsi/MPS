@@ -29,6 +29,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.security.SecureRandom;
 import java.util.*;
+import java.util.Map.Entry;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SModel {
@@ -49,7 +50,7 @@ public class SModel {
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
 
-  private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
+  private Map<SNodeId, SNode> myIdToNodeMap = new NodeIdMap();
 
   private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
 
@@ -972,5 +973,57 @@ public class SModel {
   public SNode getNodeById(String idString) {
     SNodeId nodeId = SNodeId.fromString(idString);
     return getNodeById(nodeId);
+  }
+
+  private static class NodeIdMap implements Map<SNodeId, SNode>{
+    private final HashMap<SNodeId, SNode> myHashMap = new HashMap<SNodeId, SNode>();
+
+    public int size() {
+      return myHashMap.size();
+    }
+
+    public boolean isEmpty() {
+      return myHashMap.isEmpty();
+    }
+
+    public SNode get(Object key) {
+      return myHashMap.get(key);
+    }
+
+    public SNode put(SNodeId key, SNode value) {
+      return myHashMap.put(key,value);
+    }
+
+    public boolean containsKey(Object key) {
+      return myHashMap.containsKey(key);
+    }
+
+    public SNode remove(Object key) {
+      return myHashMap.remove(key);
+    }
+
+    public void putAll(Map<? extends SNodeId, ? extends SNode> m) {
+      myHashMap.putAll(m);
+    }
+
+    public void clear() {
+      myHashMap.clear();
+    }
+
+    public boolean containsValue(Object value) {
+      return myHashMap.containsValue(value);
+    }
+
+    public Set<SNodeId> keySet() {
+      return myHashMap.keySet();
+    }
+
+    public Collection<SNode> values() {
+      return myHashMap.values();
+    }
+
+    public Set<java.util.Map.Entry<SNodeId, SNode>> entrySet() {
+      return myHashMap.entrySet();
+    }
   }
 }
