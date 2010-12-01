@@ -96,7 +96,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   public void toggleBreakpoint(EditorCell cell) {
-    EditorCell debuggableCell = findDebuggableCell(cell);
+    EditorCell debuggableCell = findDebuggableOrTraceableCell(cell);
     if (debuggableCell != null) {
       toggleBreakpoint(debuggableCell.getSNode(), true);
     }
