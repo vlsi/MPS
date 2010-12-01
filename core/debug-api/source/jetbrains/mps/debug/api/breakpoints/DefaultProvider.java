@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.debug.api.breakpoints;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.xmlb.XmlSerializer;
 import jetbrains.mps.debug.api.AbstractDebugSession;
@@ -31,7 +33,12 @@ import java.util.List;
 
 @Deprecated
 @ToRemove(version = 2.0)
-public class DefaultProvider implements IBreakpointsProvider<AbstractMPSBreakpoint, DefaultKind> {
+public class DefaultProvider implements IBreakpointsProvider<AbstractMPSBreakpoint, DefaultKind>, ApplicationComponent {
+  private final BreakpointProvidersManager myProvidersManager;
+
+  public DefaultProvider(BreakpointProvidersManager providersManager) {
+    myProvidersManager = providersManager;
+  }
   @NotNull
   @Override
   public List<DefaultKind> getAllKinds() {
@@ -66,5 +73,21 @@ public class DefaultProvider implements IBreakpointsProvider<AbstractMPSBreakpoi
   @Override
   public Icon getIcon(@NotNull AbstractMPSBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
     return null;
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "Default Breakpoints Provider";
+  }
+
+  @Override
+  public void initComponent() {
+    myProvidersManager.registerProvider(this);
+  }
+
+  @Override
+  public void disposeComponent() {
+    myProvidersManager.unregisterProvider(this);
   }
 }

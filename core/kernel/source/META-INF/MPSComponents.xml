@@ -233,6 +233,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.debug.api.breakpoints.DefaultProvider</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
     </component>
 
