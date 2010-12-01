@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.debug.runtime.java.programState.watchables;
 
-import com.sun.jdi.Field;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
