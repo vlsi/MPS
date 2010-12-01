@@ -6,94 +6,151 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.List;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.HackSNodeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.HackSNodeUtil;
-import jetbrains.mps.util.NameUtil;
 
 public class ModelLinkMap {
   private SModel myModel;
-  private Map<SNodePointer, List<ModelLinkMap.LinkLocator>> myPtrMap;
-  private Map<SModelReference, List<DynamicReference>> myDynRefMap;
+  private Map<SNodePointer, List<StaticReference>> myTargetMap = MapSequence.fromMap(new HashMap<SNodePointer, List<StaticReference>>());
+  private Map<SNodePointer, List<SNode>> myNodeTypeMap = MapSequence.fromMap(new HashMap<SNodePointer, List<SNode>>());
+  private Map<SNodePointer, List<SNode>> myNodeRoleMap = MapSequence.fromMap(new HashMap<SNodePointer, List<SNode>>());
+  private Map<SNodePointer, List<SReference>> myRefRoleMap = MapSequence.fromMap(new HashMap<SNodePointer, List<SReference>>());
+  private Map<SNodePointer, List<Pair<SNode, String>>> myPropNameMap = MapSequence.fromMap(new HashMap<SNodePointer, List<Pair<SNode, String>>>());
+  private Map<SModelReference, List<DynamicReference>> myDynRefMap = MapSequence.fromMap(new HashMap<SModelReference, List<DynamicReference>>());
 
   public ModelLinkMap(SModel model) {
     myModel = model;
-    myPtrMap = MapSequence.fromMap(new HashMap<SNodePointer, List<ModelLinkMap.LinkLocator>>());
-    myDynRefMap = MapSequence.fromMap(new HashMap<SModelReference, List<DynamicReference>>());
-  }
-
-  private void addLinkLocator(SNodePointer ptr, ModelLinkMap.LinkLocator locator) {
-    if (ptr == null) {
-      return;
-    }
-    List<ModelLinkMap.LinkLocator> list = MapSequence.fromMap(myPtrMap).get(ptr);
-    if (list == null) {
-      MapSequence.fromMap(myPtrMap).put(ptr, list = ListSequence.fromList(new ArrayList<ModelLinkMap.LinkLocator>()));
-    }
-    ListSequence.fromList(list).addElement(locator);
-  }
-
-  public void addTypeLocation(SNodePointer ptr, SNode node) {
-    addLinkLocator(ptr, new ModelLinkMap.NodeType(node));
   }
 
   public void addTargetLocation(SNodePointer ptr, StaticReference ref) {
-    addLinkLocator(ptr, new ModelLinkMap.ReferenceTarget(ref));
+    addValue(myTargetMap, ptr, ref);
   }
 
-  public void addRoleLocation(SNodePointer ptr, SReference ref) {
-    addLinkLocator(ptr, new ModelLinkMap.ReferenceRole(ref));
+  public void addTypeLocation(SNodePointer ptr, SNode node) {
+    addValue(myNodeTypeMap, ptr, node);
   }
 
   public void addRoleLocation(SNodePointer ptr, SNode node) {
-    addLinkLocator(ptr, new ModelLinkMap.NodeRole(node));
+    addValue(myNodeRoleMap, ptr, node);
+  }
+
+  public void addRoleLocation(SNodePointer ptr, SReference ref) {
+    addValue(myRefRoleMap, ptr, ref);
   }
 
   public void addNameLocation(SNodePointer ptr, SNode node, String name) {
-    addLinkLocator(ptr, new ModelLinkMap.PropertyName(node, name));
+    addValue(myPropNameMap, ptr, new Pair<SNode, String>(node, name));
   }
 
   public void addDynamicReference(SModelReference model, DynamicReference ref) {
-    List<DynamicReference> list = MapSequence.fromMap(myDynRefMap).get(model);
-    if (list == null) {
-      MapSequence.fromMap(myDynRefMap).put(model, list = ListSequence.fromList(new ArrayList<DynamicReference>()));
-    }
-    ListSequence.fromList(list).addElement(ref);
+    addValue(myDynRefMap, model, ref);
   }
 
-  public boolean updateNode(SNodePointer ptr, final SNodePointer newPtr, final String info) {
-    List<ModelLinkMap.LinkLocator> list = MapSequence.fromMap(myPtrMap).removeKey(ptr);
-    if (list == null) {
-      return false;
-    }
-    ListSequence.fromList(list).visitAll(new IVisitor<ModelLinkMap.LinkLocator>() {
-      public void visit(ModelLinkMap.LinkLocator it) {
-        it.update(newPtr, info);
+  public boolean moveNode(SNodePointer oldPtr, final SNodePointer newPtr) {
+    boolean res = false;
+    res |= move(myTargetMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<StaticReference>() {
+      public void invoke(StaticReference ref) {
+        ref.setTargetSModelReference(newPtr.getModelReference());
+        ref.setTargetNodeId(newPtr.getNodeId());
       }
     });
-    MapSequence.fromMap(myPtrMap).put(newPtr, list);
-    return true;
+    res |= move(myNodeTypeMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode node) {
+        String modelName = newPtr.getModelReference().getLongName();
+        String name = NameUtil.shortNameFromLongName(node.getConceptFqName());
+        HackSNodeUtil.setConceptFqName(node, NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
+      }
+    });
+    move(myNodeRoleMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode n) {
+        // do nothing 
+      }
+    });
+    move(myRefRoleMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SReference>() {
+      public void invoke(SReference r) {
+        // do nothing 
+      }
+    });
+    move(myPropNameMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {
+      public void invoke(Pair<SNode, String> p) {
+        // do nothing 
+      }
+    });
+    return res;
   }
 
   public boolean deleteNode(SNodePointer ptr) {
-    List<ModelLinkMap.LinkLocator> list = MapSequence.fromMap(myPtrMap).removeKey(ptr);
-    if (list == null) {
-      return false;
-    }
-    ListSequence.fromList(list).visitAll(new IVisitor<ModelLinkMap.LinkLocator>() {
-      public void visit(ModelLinkMap.LinkLocator it) {
-        it.update(null, null);
+    boolean res = false;
+    res |= delete(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode node) {
+        SNodeOperations.deleteNode(node);
       }
     });
-    return true;
+    res |= delete(myNodeRoleMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode node) {
+        SNodeOperations.deleteNode(node);
+      }
+    });
+    res |= delete(myRefRoleMap, ptr, new _FunctionTypes._void_P1_E0<SReference>() {
+      public void invoke(SReference ref) {
+        ref.getSourceNode().removeReference(ref);
+      }
+    });
+    res |= delete(myPropNameMap, ptr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {
+      public void invoke(Pair<SNode, String> prop) {
+        prop.o1.setProperty(prop.o2, null, false);
+      }
+    });
+    return res;
+  }
+
+  public boolean setName(SNodePointer ptr, final String name) {
+    boolean res = false;
+    res |= setProp(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode node) {
+        String modelName = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
+        HackSNodeUtil.setConceptFqName(node, NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
+      }
+    });
+    res |= setProp(myPropNameMap, ptr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {
+      public void invoke(Pair<SNode, String> prop) {
+        // todo: rename correspondent property attribute role 
+        String value = prop.o1.getPersistentProperty(prop.o2);
+        prop.o1.setProperty(prop.o2, null, false);
+        prop.o2 = name;
+        prop.o1.setProperty(name, value, false);
+      }
+    });
+    return res;
+  }
+
+  public boolean setRole(SNodePointer ptr, final String role) {
+    // todo: rename correspondent link attribute roles 
+    boolean res = false;
+    res |= setProp(myNodeRoleMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode node) {
+        node.setRoleInParent(role);
+      }
+    });
+    res |= setProp(myRefRoleMap, ptr, new _FunctionTypes._void_P1_E0<SReference>() {
+      public void invoke(SReference ref) {
+        ref.setRole(role);
+      }
+    });
+    return res;
   }
 
   public boolean updateModelReference(SModelReference model, SModelReference newModel) {
@@ -102,85 +159,54 @@ public class ModelLinkMap {
     return false;
   }
 
-  private static interface LinkLocator {
-    public void update(SNodePointer newRef, String info);
+  private static <K, T> void addValue(Map<K, List<T>> map, K key, T value) {
+    if (value == null) {
+      return;
+    }
+    List<T> list = MapSequence.fromMap(map).get(key);
+    if (list == null) {
+      MapSequence.fromMap(map).put(key, list = ListSequence.fromList(new ArrayList<T>()));
+    }
+    ListSequence.fromList(list).addElement(value);
   }
 
-  private static class ReferenceTarget implements ModelLinkMap.LinkLocator {
-    private StaticReference myReference;
-
-    public ReferenceTarget(StaticReference reference) {
-      myReference = reference;
+  private static <T> boolean move(Map<SNodePointer, List<T>> map, SNodePointer ptr, SNodePointer newPtr, final _FunctionTypes._void_P1_E0<? super T> f) {
+    List<T> list = map.remove(ptr);
+    if (list == null) {
+      return false;
     }
-
-    public void update(SNodePointer newRef, String info) {
-      myReference.setTargetSModelReference(newRef.getModelReference());
-      myReference.setTargetNodeId(newRef.getNodeId());
-      // resolve info? 
-    }
-
-    public void updateModel(SModelReference newModel) {
-      myReference.setTargetSModelReference(newModel);
-    }
+    ListSequence.fromList(list).visitAll(new IVisitor<T>() {
+      public void visit(T it) {
+        f.invoke(it);
+      }
+    });
+    MapSequence.fromMap(map).put(newPtr, list);
+    return true;
   }
 
-  private static class NodeType implements ModelLinkMap.LinkLocator {
-    private SNode myNode;
-
-    public NodeType(SNode node) {
-      myNode = node;
+  public static <T> boolean delete(Map<SNodePointer, List<T>> map, SNodePointer ptr, final _FunctionTypes._void_P1_E0<? super T> f) {
+    List<T> list = map.remove(ptr);
+    if (list == null) {
+      return false;
     }
-
-    public void update(SNodePointer newRef, String type) {
-      HackSNodeUtil.setConceptFqName(myNode, type);
-    }
-
-    public void updateModel(SModelReference newModel) {
-      HackSNodeUtil.setConceptFqName(myNode, NameUtil.conceptFQNameFromNamespaceAndShortName(newModel.getLongName(), NameUtil.shortNameFromLongName(myNode.getConceptFqName())));
-    }
+    ListSequence.fromList(list).visitAll(new IVisitor<T>() {
+      public void visit(T it) {
+        f.invoke(it);
+      }
+    });
+    return true;
   }
 
-  private static class ReferenceRole implements ModelLinkMap.LinkLocator {
-    private SReference myReference;
-
-    public ReferenceRole(SReference reference) {
-      myReference = reference;
+  public static <T> boolean setProp(Map<SNodePointer, List<T>> map, SNodePointer ptr, final _FunctionTypes._void_P1_E0<? super T> f) {
+    List<T> list = MapSequence.fromMap(map).get(ptr);
+    if (list == null) {
+      return false;
     }
-
-    public void update(SNodePointer newRef, String role) {
-      // todo: rename correspondent link attribute roles if exist 
-      myReference.setRole(role);
-    }
-  }
-
-  private static class NodeRole implements ModelLinkMap.LinkLocator {
-    private SNode myNode;
-
-    public NodeRole(SNode node) {
-      myNode = node;
-    }
-
-    public void update(SNodePointer newRef, String role) {
-      // todo: rename correspondent link attribute roles 
-      myNode.setRoleInParent(role);
-    }
-  }
-
-  private static class PropertyName implements ModelLinkMap.LinkLocator {
-    private SNode myNode;
-    private String myName;
-
-    public PropertyName(SNode node, String name) {
-      myNode = node;
-      myName = name;
-    }
-
-    public void update(SNodePointer newRef, String name) {
-      // todo: rename correspondent property attribute roles 
-      String value = myNode.getPersistentProperty(myName);
-      myNode.setProperty(myName, null, false);
-      myName = name;
-      myNode.setProperty(myName, value, false);
-    }
+    ListSequence.fromList(list).visitAll(new IVisitor<T>() {
+      public void visit(T it) {
+        f.invoke(it);
+      }
+    });
+    return true;
   }
 }
