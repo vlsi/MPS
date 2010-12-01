@@ -19,10 +19,14 @@ import com.intellij.util.containers.HashMap;
 import com.sun.jdi.*;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.request.*;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint;
+import jetbrains.mps.debug.breakpoints.FieldBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debug.breakpoints.MethodBreakpoint;
 import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent.AllDebugProcessesAction;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.Requestor;
@@ -32,13 +36,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 17.12.2009
- * Time: 16:44:31
- * To change this template use File | Settings | File Templates.
- */
 public class RequestManager implements DebugProcessListener {
   private static final Logger LOG = Logger.getLogger(RequestManager.class);
 
@@ -66,6 +63,7 @@ public class RequestManager implements DebugProcessListener {
     return request != null ? (Requestor) request.getProperty(REQUESTOR) : null;
   }
 
+  @NotNull
   public Set<EventRequest> findRequests(Requestor requestor) {
     DebuggerManagerThread.assertIsManagerThread();
     if (!myRequestorToBelongedRequests.containsKey(requestor)) {
@@ -88,7 +86,7 @@ public class RequestManager implements DebugProcessListener {
     reqSet.add(request);
   }
 
-  public void deleteRequest(Requestor requestor) {
+  public void deleteRequests(Requestor requestor) {
     DebuggerManagerThread.assertIsManagerThread();
 
     if (!myDebugEventsProcessor.isAttached()) {
@@ -114,11 +112,9 @@ public class RequestManager implements DebugProcessListener {
           }
         }
         myEventRequestManager.deleteEventRequest(request);
-      }
-      catch (InvalidRequestStateException ignored) {
+      } catch (InvalidRequestStateException ignored) {
         // request is already deleted
-      }
-      catch (InternalException e) {
+      } catch (InternalException e) {
         LOG.error(e);
       }
     }
@@ -129,10 +125,53 @@ public class RequestManager implements DebugProcessListener {
 
   public BreakpointRequest createBreakpointRequest(MPSBreakpoint requestor, Location location) {
     DebuggerManagerThread.assertIsManagerThread();
-    BreakpointRequest req = myEventRequestManager.createBreakpointRequest(location);
-    req.setSuspendPolicy(EventRequest.SUSPEND_ALL);
+    BreakpointRequest request = myEventRequestManager.createBreakpointRequest(location);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  public MethodEntryRequest createMethodEntryRequest(MethodBreakpoint requestor, ReferenceType type) {
+    DebuggerManagerThread.assertIsManagerThread();
+    MethodEntryRequest request = myEventRequestManager.createMethodEntryRequest();
+    request.addClassFilter(type);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  public MethodExitRequest createMethodExitRequest(MethodBreakpoint requestor, ReferenceType type) {
+    DebuggerManagerThread.assertIsManagerThread();
+    MethodExitRequest request = myEventRequestManager.createMethodExitRequest();
+    request.addClassFilter(type);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  public AccessWatchpointRequest createFieldAccessRequest(FieldBreakpoint requestor, Field field) {
+    DebuggerManagerThread.assertIsManagerThread();
+    AccessWatchpointRequest request = myEventRequestManager.createAccessWatchpointRequest(field);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  public ModificationWatchpointRequest createFieldModificationRequest(FieldBreakpoint requestor, Field field) {
+    DebuggerManagerThread.assertIsManagerThread();
+    ModificationWatchpointRequest request = myEventRequestManager.createModificationWatchpointRequest(field);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  public ExceptionRequest createExceptionRequest(ExceptionBreakpoint requestor, ReferenceType reference) {
+    DebuggerManagerThread.assertIsManagerThread();
+    ExceptionRequest request = myEventRequestManager.createExceptionRequest(reference, true, true);
+    initRequest(requestor, request);
+    return request;
+  }
+
+  private void initRequest(JavaBreakpoint requestor, EventRequest req) {
+    int suspendPolicy = requestor.getSuspendPolicy();
+    if (suspendPolicy == EventRequest.SUSPEND_NONE) suspendPolicy = EventRequest.SUSPEND_ALL; // we suspend all, do smth and then resume
+    req.setSuspendPolicy(suspendPolicy);
     registerRequestInternal(requestor, req);
-    return req;
   }
 
   void deleteStepRequests() {
@@ -216,17 +255,14 @@ public class RequestManager implements DebugProcessListener {
 
   @Override
   public void connectorIsReady() {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void paused(@NotNull SuspendContext suspendContext) {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
   public void resumed(@NotNull SuspendContext suspendContext) {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
@@ -243,9 +279,9 @@ public class RequestManager implements DebugProcessListener {
       @Override
       protected void action() throws Exception {
         BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
-        for (AbstractMPSBreakpoint breakpoint : breakpointManager.getAllBreakpoints()) {
-          if (breakpoint instanceof MPSBreakpoint) {
-            ((MPSBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
+        for (IBreakpoint breakpoint : breakpointManager.getAllIBreakpoints()) {
+          if (breakpoint instanceof JavaBreakpoint) {
+            ((JavaBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
           }
         }
       }
@@ -266,7 +302,7 @@ public class RequestManager implements DebugProcessListener {
     }
   }
 
-  public static void createClassPrepareRequests(final MPSBreakpoint breakpoint) {
+  public static void createClassPrepareRequests(final JavaBreakpoint breakpoint) {
     VMEventsProcessorManagerComponent
       .getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
@@ -278,13 +314,13 @@ public class RequestManager implements DebugProcessListener {
     });
   }
 
-  public static void removeClassPrepareRequests(final MPSBreakpoint breakpoint) {
+  public static void removeClassPrepareRequests(final JavaBreakpoint breakpoint) {
     VMEventsProcessorManagerComponent
       .getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
         if (processor.isAttached()) {
-          processor.getRequestManager().deleteRequest(breakpoint);
+          processor.getRequestManager().deleteRequests(breakpoint);
         }
       }
     });

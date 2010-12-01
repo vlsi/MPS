@@ -129,6 +129,7 @@ public class TextGenManager {
       if (TraceInfoManager.getInstance().isTraceableNode(node)) {
         myPositions.put(node, info);
         info.setConceptFqName(node.getConceptFqName());
+        info.setPropertyString(TraceInfoManager.getInstance().getPropertyString(node));
       }
       if (TraceInfoManager.getInstance().isScopeNode(node)) {
         ScopePositionInfo scopePositionInfo = new ScopePositionInfo();

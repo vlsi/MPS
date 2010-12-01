@@ -3,13 +3,13 @@ package jetbrains.mps.debug.runtime;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
@@ -134,15 +134,15 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
         @Override
         protected void action() throws Exception {
           if (myIsMute != mute) {
-            Set<AbstractMPSBreakpoint> breakpoints = myEventsProcessor.getBreakpointManager().getAllBreakpoints();
+            Set<IBreakpoint> breakpoints = myEventsProcessor.getBreakpointManager().getAllIBreakpoints();
             RequestManager requestManager = myEventsProcessor.getRequestManager();
-            for (AbstractMPSBreakpoint bp : breakpoints) {
-              if (bp instanceof MPSBreakpoint) {
-                MPSBreakpoint mpsBreakpoint = (MPSBreakpoint) bp;
+            for (IBreakpoint bp : breakpoints) {
+              if (bp instanceof JavaBreakpoint) {
+                JavaBreakpoint breakpoint = (JavaBreakpoint) bp;
                 if (mute) {
-                  requestManager.deleteRequest(mpsBreakpoint); // todo enabling and disabling breakpoints should be symmetrical
+                  requestManager.deleteRequests(breakpoint); // todo enabling and disabling breakpoints should be symmetrical
                 } else {
-                  mpsBreakpoint.createOrWaitPrepare(getEventsProcessor());
+                  breakpoint.createOrWaitPrepare(getEventsProcessor());
                 }
               }
             }

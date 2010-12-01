@@ -225,6 +225,14 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.debug.breakpoints.JavaBreakpointsProvider</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
     </component>
 
@@ -347,7 +355,7 @@
     <component>
       <implementation-class>jetbrains.mps.save.ModelsSaver</implementation-class>
     </component>
-    
+
     <component>
       <implementation-class>jetbrains.mps.ide.generator.GeneratorCacheComponent</implementation-class>
     </component>
@@ -477,7 +485,8 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointViewSettingsComponent</implementation-class>
+      <implementation-class>jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointViewSettingsComponent
+      </implementation-class>
       <skipForDummyProject/>
     </component>
 

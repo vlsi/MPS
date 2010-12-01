@@ -13,13 +13,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.04.2010
- * Time: 17:33:54
- * To change this template use File | Settings | File Templates.
- */
 public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private static final Logger LOG = Logger.getLogger(JavaStackFrame.class);
 
@@ -54,6 +47,10 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     }
   }
 
+  public String getClassFqName() {
+    return myClassFqName;
+  }
+
   @Override
   public Map<IWatchable, IValue> getWatchableValues() {
     try {
@@ -72,7 +69,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       }
       return result;
     } catch (AbsentInformationException ex) {
-      LOG.warning("AbsentInformationException", ex);
+      // doing nothing
       return Collections.emptyMap();
     }
   }
@@ -101,7 +98,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       LOG.warning("InvalidStackFrameException", ex); // TODO something should be done here. See, for instance, how idea deals with those exceptions
       return Collections.emptyList();
     } catch (AbsentInformationException ex) {
-      LOG.warning("AbsentInformationException", ex);
+      // doing nothing, variables are just not available for us
       return Collections.emptyList();
     }
   }

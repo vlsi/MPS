@@ -1,32 +1,25 @@
 package jetbrains.mps.debug.runtime;
 
-import com.sun.jdi.LocalVariable;
-import com.sun.jdi.ObjectReference;
-import com.sun.jdi.ThreadReference;
-import com.sun.jdi.Value;
+import com.sun.jdi.*;
+import com.sun.jdi.event.*;
 import jetbrains.mps.debug.api.AbstractDebugSession.ExecutionState;
 import jetbrains.mps.debug.api.AbstractUiState;
-import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
+import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaExceptionWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaMethodWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaReturnWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaWatchpointWatchable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.04.2010
- * Time: 17:12:37
- * To change this template use File | Settings | File Templates.
- */ // This class is immutable
+// This class is immutable
 public class JavaUiState extends AbstractUiState {
   private static Logger LOG = Logger.getLogger(JavaUiState.class);
 
@@ -34,8 +27,7 @@ public class JavaUiState extends AbstractUiState {
   private final SuspendContext myContext;
   @Nullable
   protected final IThread myThread;
-  @Nullable
-  protected final IStackFrame myStackFrame;
+  protected final int myStackFrameIndex;
   private final DebugSession myDebugSession;
 
   JavaUiState(@Nullable SuspendContext context, DebugSession debugSession) {
@@ -45,11 +37,11 @@ public class JavaUiState extends AbstractUiState {
 
     if (context == null) {
       myThread = null;
-      myStackFrame = null;
+      myStackFrameIndex = NO_FRAME;
     } else {
       myThread = findThread();
       LOG.assertLog(myThread != null);
-      myStackFrame = findStackFrame();
+      myStackFrameIndex = findStackFrameIndex();
     }
   }
 
@@ -61,24 +53,24 @@ public class JavaUiState extends AbstractUiState {
     if (thread == null) {
       myContext = null;
       myThread = null;
-      myStackFrame = null;
+      myStackFrameIndex = NO_FRAME;
     } else {
       myThread = thread;
       myContext = findContext(previousState);
       LOG.assertLog(myContext != null); // in case some botva is going on
-      myStackFrame = findStackFrame();
+      myStackFrameIndex = findStackFrameIndex();
     }
   }
 
   // This constructor is called when user selects some frame from ui
 
-  JavaUiState(@NotNull JavaUiState previousState, @Nullable JavaStackFrame frame, DebugSession debugSession) {
+  JavaUiState(@NotNull JavaUiState previousState, int frameIndex, DebugSession debugSession) {
     super(debugSession);
     myDebugSession = debugSession;
-    LOG.assertLog(frame == null || ObjectUtils.equals(frame.getThread(), previousState.myThread));
+    LOG.assertLog(frameIndex == NO_FRAME || (frameIndex >= 0 && frameIndex < previousState.myThread.getFramesCount()));
     myContext = previousState.myContext;
     myThread = previousState.myThread;
-    myStackFrame = frame;
+    myStackFrameIndex = frameIndex;
   }
 
   private SuspendContext findContext(@NotNull JavaUiState previousState) {
@@ -116,8 +108,9 @@ public class JavaUiState extends AbstractUiState {
     return new JavaThread(thread);
   }
 
-  protected JavaStackFrame findStackFrame() {
-    return (JavaStackFrame) super.findStackFrame();
+  protected int findStackFrameIndex() {
+    if (myThread == null) return NO_FRAME;
+    return super.findStackFrameIndex();
   }
 
   @Nullable
@@ -165,9 +158,9 @@ public class JavaUiState extends AbstractUiState {
     return new JavaUiState(this, (JavaThread) thread, myDebugSession);
   }
 
-  protected JavaUiState selectFrameInternal(@Nullable IStackFrame frame) {
-    if (myStackFrame != frame) {
-      return new JavaUiState(this, (JavaStackFrame) frame, myDebugSession);
+  protected JavaUiState selectFrameInternal(int frame) {
+    if (myStackFrameIndex != frame) {
+      return new JavaUiState(this, frame, myDebugSession);
     }
     return this;
   }
@@ -202,7 +195,9 @@ public class JavaUiState extends AbstractUiState {
 
   @Nullable
   public JavaStackFrame getStackFrame() {
-    return (JavaStackFrame) myStackFrame;
+    if (myStackFrameIndex == NO_FRAME) return null;
+    assert myThread != null; // if we have a frame then we have a thread
+    return (JavaStackFrame) myThread.getFrames().get(myStackFrameIndex);
   }
 
   private DebugVMEventsProcessor getEventsProcessor() {
@@ -220,5 +215,46 @@ public class JavaUiState extends AbstractUiState {
       return stackFrame.getStackFrame().getValue(variable);
     }
     return null;
+  }
+
+  @NotNull
+  private List<IWatchable> getAdditionalWatchables() {
+    List<IWatchable> watchables = new ArrayList<IWatchable>();
+    if (myContext != null) {
+      Iterator<Event> iterator = myContext.getEventSet().iterator();
+      while (iterator.hasNext()) {
+        Event event = iterator.next();
+        if (event instanceof ExceptionEvent) {
+          ObjectReference exception = ((ExceptionEvent) event).exception();
+          watchables.add(new JavaExceptionWatchable(exception, getStackFrame().getClassFqName(), getThread().getThread()));
+        } else if (event instanceof MethodEntryEvent) {
+          Method method = ((MethodEntryEvent) event).method();
+          watchables.add(new JavaMethodWatchable(method, true, getStackFrame().getClassFqName(), getThread().getThread()));
+        } else if (event instanceof MethodExitEvent) {
+          Method method = ((MethodExitEvent) event).method();
+          Value value = ((MethodExitEvent) event).returnValue();
+          watchables.add(new JavaMethodWatchable(method, false, getStackFrame().getClassFqName(), getThread().getThread()));
+          watchables.add(new JavaReturnWatchable(value, getStackFrame().getClassFqName(), getThread().getThread()));
+        } else if (event instanceof AccessWatchpointEvent) {
+          Field field = ((AccessWatchpointEvent) event).field();
+          Value value = ((AccessWatchpointEvent) event).valueCurrent();
+          watchables.add(new JavaWatchpointWatchable(field, value, getStackFrame().getClassFqName(), getThread().getThread()));
+        } else if (event instanceof ModificationWatchpointEvent) {
+          Field field = ((ModificationWatchpointEvent) event).field();
+          Value currentValue = ((ModificationWatchpointEvent) event).valueCurrent();
+          Value valueToBe = ((ModificationWatchpointEvent) event).valueToBe();
+          watchables.add(new JavaWatchpointWatchable(field, currentValue, valueToBe, getStackFrame().getClassFqName(), getThread().getThread()));
+        }
+      }
+    }
+    return watchables;
+  }
+
+  @NotNull
+  public List<IWatchable> getWatchables() {
+    List<IWatchable> watchables = new ArrayList<IWatchable>();
+    watchables.addAll(super.getWatchables());
+    watchables.addAll(getAdditionalWatchables());
+    return watchables;
   }
 }

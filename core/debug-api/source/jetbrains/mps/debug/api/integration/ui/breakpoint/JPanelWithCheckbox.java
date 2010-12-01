@@ -16,6 +16,7 @@
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 
 import javax.swing.*;
 import java.awt.Color;
@@ -26,7 +27,7 @@ import java.awt.Insets;
 public class JPanelWithCheckbox extends JPanel {
   private final JCheckBox myCheckBox;
 
-  public JPanelWithCheckbox(AbstractMPSBreakpoint breakpoint, boolean isSelected) {
+  public JPanelWithCheckbox(IBreakpoint breakpoint, boolean isSelected) {
     Color bg;
     if (isSelected) {
       bg = UIManager.getColor("Table.selectionBackground");

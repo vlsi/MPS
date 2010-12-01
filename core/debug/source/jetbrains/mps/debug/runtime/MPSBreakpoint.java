@@ -19,92 +19,38 @@ import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
-import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
-import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
+import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
+import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.12.2009
- * Time: 15:25:56
- * To change this template use File | Settings | File Templates.
- */
-public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
+// todo rename to line breakpoint
+public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(MPSBreakpoint.class);
+  private final BreakpointLocation myLocation;
 
   public MPSBreakpoint(SNodePointer nodePointer, Project project) {
-    super(nodePointer, project);
+    super(project);
+    myLocation = new BreakpointLocation(nodePointer);
   }
 
   public MPSBreakpoint(SNode node, Project project) {
-    super(node, project);
+    this(new SNodePointer(node), project);
   }
-
-//this should be called on every breakpoint when DebugEventsProcessor is attached
-
-  public void createClassPrepareRequest(DebugVMEventsProcessor debugProcess) {
-    DebuggerManagerThread.assertIsManagerThread();
-
-    // check is this breakpoint is enabled, vm reference is valid and there're no requests created yet
-    if (!myIsEnabled /*|| !debugProcess.isAttached() || debugProcess.getRequestManager().findRequests(this).isEmpty()*/) {
-      return;
-    }
-
-    if (!isValid()) {
-      return;
-    }
-    createOrWaitPrepare(debugProcess);
-    // updateUI();
-  }
-
-  protected void createOrWaitPrepare(final DebugVMEventsProcessor debugProcess) {
-
-    String className = getTargetUnitName();
-
-    if (className == null) {
-      String fileName = getFileName();
-      if (fileName.endsWith(".java")) {
-        fileName = fileName.substring(0, fileName.length() - ".java".length());
-      }
-      className = myNodePointer.getModelReference().getLongName() + "." + fileName;
-    }
-
-    //add requests for not prepared classes
-    debugProcess.getRequestManager().callbackOnPrepareClasses(this, className);
-    //and get all already prepared classes for a SNode
-    List<ReferenceType> list = debugProcess.getVirtualMachine().classesByName(className);
-    for (final ReferenceType refType : list) {
-      if (refType.isPrepared()) {
-        processClassPrepare(debugProcess, refType);
-      }
-    }
-  }
-
 
   @Override
-  //this is called when a class for this ClassPrepareRequestor is prepared
-  public void processClassPrepare(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
-    if (!myIsEnabled || !isValid()) {
-      return;
-    }
-    createRequestForPreparedClass(debugProcess, classType);
-  }
-
-
-  //this is called when a class for this BP is prepared
-
   protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, final ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
 
     try {
-      int lineIndex = getLineIndexInFile();
+      int lineIndex = myLocation.getLineIndexInFile();
       List<Location> locs = classType.locationsOfLine(lineIndex);
       if (locs.size() > 0) {
         for (final Location location : locs) {
@@ -114,7 +60,7 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
       } else {
         // there's no executable code in this class
         requestManager.setInvalid(this, "no executable code found");
-        String message = "No locations of type " + classType.name() + " found at line " + getLineIndexInFile();
+        String message = "No locations of type " + classType.name() + " found at line " + myLocation.getLineIndexInFile();
         LOG.warning(message);
       }
     } catch (ClassNotPreparedException ex) {
@@ -137,18 +83,9 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
   @Override
   //called when breakpoint is hit
   public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    final SuspendContext context = action.getSuspendContext();
-    if (!isValid()) {
-      context.getDebugProcess().getRequestManager().deleteRequest(this);
-      return false;
-    }
-    try {
-      final StackFrame stackFrame = context.getThread().frame(0);
-      if (stackFrame == null) {
-        // might be if the thread has been collected
-        return false;
-      }
-
+    boolean result = super.processLocatableEvent(action, event);
+    if (!result) return false;
+//    try {
       //todo conditions - later
       /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
         action.getSuspendContext(),
@@ -161,27 +98,45 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
       }*/
       //todo here some expressions may be evaluated; later
       // runAction(evaluationContext, event);
-    }
-    catch (IncompatibleThreadStateException ex) {
-      LOG.error(ex);
-      return false;
-    }
-
+//    } catch (IncompatibleThreadStateException ex) {
+//      LOG.error(ex);
+//      return false;
+//    }
     return true;
   }
 
+  protected String getClassNameToPrepare() {
+    String className = myLocation.getTargetUnitName();
+
+    if (className == null) {
+      // todo when this case does actually happen?
+      String fileName = myLocation.getFileName();
+      if (fileName.endsWith(".java")) {
+        fileName = fileName.substring(0, fileName.length() - ".java".length());
+      }
+      className = myLocation.getNodePointer().getModelReference().getLongName() + "." + fileName;
+    }
+    return className;
+  }
+
+  @NotNull
   @Override
-  public void removeFromRunningSessions() {
-    RequestManager.removeClassPrepareRequests(this);
+  public JavaBreakpointKind getKind() {
+    return JavaBreakpointKind.LINE_BREAKPOINT;
   }
 
   @Override
-  public void addToRunningSessions() {
-    RequestManager.createClassPrepareRequests(this);
+  public boolean isValid() {
+    return myLocation.getTargetCodePosition() != null;
   }
 
   @Override
-  public boolean supportsDisable() {
-    return true;
+  public String getPresentation() {
+    return myLocation.getPresentation();
+  }
+
+  @Override
+  public BreakpointLocation getLocation() {
+    return myLocation;
   }
 }
