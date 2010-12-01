@@ -20,12 +20,13 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.actions.goTo.index.BaseSNodeDescriptorIndex;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SReference;
 import java.util.ArrayList;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalSNodeId, List<GlobalSNodeId>> {
   public static final ID<GlobalSNodeId, List<GlobalSNodeId>> NAME = ID.create("jetbrains.mps.ClassifierSuccessorsIndexer");
@@ -43,7 +44,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
   }
 
   public int getVersion() {
-    return 2;
+    return 3;
   }
 
   public boolean dependsOnFileContent() {
@@ -86,27 +87,23 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
         public void run() {
           SModel sModel = BaseSNodeDescriptorIndex.doModelParsing(inputData);
           for (final SNode nextNode : sModel.nodes()) {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                if (SNodeOperations.isInstanceOf(nextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-                  SNode classNode = (SNode) nextNode;
-                  if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
-                    safeMap(SLinkOperations.getTarget(classNode, "superclass", true), classNode);
-                  }
-                  for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
-                    safeMap(implementedInterface, classNode);
-                  }
-                  if (SNodeOperations.isInstanceOf(classNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-                    safeMap(classNode.getReference(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier"), "role")), classNode);
-                  }
-                } else if (SNodeOperations.isInstanceOf(nextNode, "jetbrains.mps.baseLanguage.structure.Interface")) {
-                  SNode interfaceNode = SNodeOperations.cast(nextNode, "jetbrains.mps.baseLanguage.structure.Interface");
-                  for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
-                    safeMap(extendedInterface, interfaceNode);
-                  }
-                }
+            if (isInstanceOfClassConcept(nextNode)) {
+              SNode classNode = (SNode) nextNode;
+              if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
+                safeMap(SLinkOperations.getTarget(classNode, "superclass", true), classNode);
               }
-            });
+              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
+                safeMap(implementedInterface, classNode);
+              }
+              if (isInstanceOfAnonymousClassConcept(classNode)) {
+                safeMap(classNode.getReference(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", "classifier"), "role")), classNode);
+              }
+            } else if (isInstanceOfInterfaceConcept(nextNode)) {
+              SNode interfaceNode = (SNode) nextNode;
+              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
+                safeMap(extendedInterface, interfaceNode);
+              }
+            }
           }
         }
 
@@ -125,6 +122,20 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
             MapSequence.fromMap(result).put(key, successors);
           }
           ListSequence.fromList(successors).addElement(new GlobalSNodeId(node));
+        }
+
+        private boolean isInstanceOfClassConcept(SNode node) {
+          String conceptFQName = node.getConceptFqName();
+          return INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")).equals(conceptFQName);
+        }
+
+        private boolean isInstanceOfAnonymousClassConcept(SNode node) {
+          return INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass")).equals(node.getConceptFqName());
+        }
+
+        private boolean isInstanceOfInterfaceConcept(SNode node) {
+          String conceptFQName = node.getConceptFqName();
+          return INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation")).equals(conceptFQName);
         }
       });
       return result;
