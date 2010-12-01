@@ -333,13 +333,14 @@ public class TemplateProcessor {
         return null;
       }
 
+      final SNodePointer switchPtr = new SNodePointer(templateSwitch.getNode());
       SNode newInputNode = getNewInputNode(nodeMacro, templateContext);
       if (newInputNode == null) {
-        GeneratorMessage generatorMessage = templateSwitch.getNullInputMessage();
-        if (generatorMessage != null) {
-          GeneratorUtil.processGeneratorMessage(generatorMessage, templateContext.getInput(), nodeMacro.getNode(), null, myGenerator);
+        TemplateSwitchMapping tswitch = myGenerator.getSwitch(switchPtr);
+        if(tswitch != null) {
+          tswitch.processNull(new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, myGenerator.getOperationContext(), myGenerator.getGenerationTracer()), switchPtr, templateContext);
         }
-        return outputNodes; // skip template
+        return Collections.emptyList(); // skip template
       }
 
       boolean inputChanged = (newInputNode != templateContext.getInput());
@@ -348,7 +349,6 @@ public class TemplateProcessor {
       }
       generationTracer.pushSwitch(new SNodePointer(templateSwitch.getNode()));
       try {
-        final SNodePointer switchPtr = new SNodePointer(templateSwitch.getNode());
         final TemplateContext switchContext = templateContext.subContext(mappingName, newInputNode);
 
         Collection<SNode> collection = myGenerator.tryToReduce(switchContext, switchPtr, mappingName, myReductionContext);
@@ -505,26 +505,11 @@ public class TemplateProcessor {
   }
 
   private SNode getNewInputNode(NodeMacro nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext);
-//    if(myGenerator.isStrict() && node != null) {
-//      if(node.getModel() != myGenerator.getInputModel()) {
-//        myGenerator.showErrorMessage(nodeMacro.getNode(), "returned node should be from input model");
-//      }
-//    }
-    return node;
+    return InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext);
   }
 
   private List<SNode> getNewInputNodes(NodeMacro nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext);
-//    if(myGenerator.isStrict() && nodes != null) {
-//      for(SNode node : nodes) {
-//        if(node.getModel() != myGenerator.getInputModel()) {
-//          myGenerator.showErrorMessage(nodeMacro.getNode(), "returned nodes should be from input model");
-//          break;
-//        }
-//      }
-//    }
-    return nodes;
+    return InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext);
   }
 
   @Nullable

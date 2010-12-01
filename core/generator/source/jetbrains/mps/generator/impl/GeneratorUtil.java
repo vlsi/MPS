@@ -311,7 +311,7 @@ public class GeneratorUtil {
    */
   /*package*/
   @Nullable
-  static GeneratorMessageType processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
+  public static GeneratorMessageType processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
     GeneratorMessageType messageType = null;
     if (message != null) {
       messageType = message.getMessageType();

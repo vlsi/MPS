@@ -36,5 +36,5 @@ public interface TemplateSwitchMapping {
 
   Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException;
 
-  Collection<SNode> processNull(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+  void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context);
 }

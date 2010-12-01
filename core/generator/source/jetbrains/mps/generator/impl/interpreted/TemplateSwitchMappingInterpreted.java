@@ -19,6 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.impl.*;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.lang.generator.structure.GeneratorMessage;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.RuleConsequence;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
@@ -111,7 +112,11 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   }
 
   @Override
-  public Collection<SNode> processNull(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return null;
+  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
+
+    SNode generatorMessage = mySwitch.getChild(TemplateSwitch.NULL_INPUT_MESSAGE);
+    if (generatorMessage != null) {
+      GeneratorUtil.processGeneratorMessage((GeneratorMessage)generatorMessage.getAdapter(), context.getInput(), templateSwitch.getNode(), null, environment.getGenerator());
+    }
   }
 }

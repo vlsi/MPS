@@ -22,6 +22,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
   private static SNodePointer includeMacro_9iqmnb_a0a0a5a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480068639");
   private static SNodePointer includedTemplateNode_9iqmnb_a0a0a1a5a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251689");
   private static SNodePointer switchMacroRef_9iqmnb_a0a0a7a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310365");
+  private static SNodePointer templateSwitchNodeNoInput_9iqmnb_a0a0a1a7a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
 
   public Templatereduce_InputNode_A() {
   }
@@ -90,8 +91,8 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
     try {
       environment.getTracer().pushMacro(switchMacroRef_9iqmnb_a0a0a7a0);
       try {
-        environment.getTracer().pushSwitch(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366"));
-        tlist5 = environment.trySwitch(null, "", context);
+        environment.getTracer().pushSwitch(templateSwitchNodeNoInput_9iqmnb_a0a0a1a7a0);
+        tlist5 = environment.trySwitch(templateSwitchNodeNoInput_9iqmnb_a0a0a1a7a0, null, context);
 
       } finally {
         // TODO close switch node 
