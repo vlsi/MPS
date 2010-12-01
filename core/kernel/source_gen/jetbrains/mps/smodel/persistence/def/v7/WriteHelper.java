@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.StaticReference;
 public class WriteHelper {
   public static final char MODEL_SEPARATOR_CHAR = '.';
   public static final char VERSION_SEPARATOR_CHAR = ':';
+  public static final String DYNAMIC_REFERENCE_ID = "^";
   private static final int HASH_BASE = 10 + 26;
   private static final int HASH_SIZE = HASH_BASE * HASH_BASE * HASH_BASE * HASH_BASE;
   protected static Log log = LogFactory.getLog(WriteHelper.class);
@@ -139,7 +140,7 @@ public class WriteHelper {
   public String genTarget(@NotNull SReference ref) {
     String target = (ref instanceof StaticReference ?
       String.valueOf(ref.getTargetNodeId()) :
-      "^"
+      DYNAMIC_REFERENCE_ID
     );
     SModelReference targetModel = ref.getTargetSModelReference();
     return (targetModel == null ?
@@ -149,10 +150,10 @@ public class WriteHelper {
   }
 
   public static String encode(String s) {
-    return s.replaceAll("%", "%p").replaceAll(":", "%c").replaceAll(".", "%d");
+    return s.replace("%", "%p").replace(":", "%c").replace(".", "%d");
   }
 
   public static String decode(String s) {
-    return s.replaceAll("%d", ".").replaceAll("%c", ":").replaceAll("%p", "%");
+    return s.replace("%d", ".").replace("%c", ":").replace("%p", "%");
   }
 }

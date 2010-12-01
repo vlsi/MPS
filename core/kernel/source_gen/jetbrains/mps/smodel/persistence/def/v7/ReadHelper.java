@@ -71,7 +71,7 @@ public class ReadHelper {
       "" :
       src.substring(0, i0)
     ));
-    SNodeId nodeId = (text.equals("^") ?
+    SNodeId nodeId = (WriteHelper.DYNAMIC_REFERENCE_ID.equals(text) ?
       null :
       SNodeId.fromString(text)
     );
