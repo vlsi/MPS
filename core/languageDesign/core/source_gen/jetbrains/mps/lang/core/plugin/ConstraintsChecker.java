@@ -38,10 +38,9 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
 
       final Method cbcMethod = cm.getCanBeChildMethod(node.getConceptFqName(), operationContext);
-      cm.canBeChild(node, cbcMethod, operationContext, SNodeOperations.getParent(node), link);
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return cm.canBeChild(node, cbcMethod, operationContext, SNodeOperations.getParent(node), link);
+          return cm.canBeChild(SNodeOperations.getConceptDeclaration(node), cbcMethod, operationContext, SNodeOperations.getParent(node), link);
         }
       });
       if (!(canBeChild)) {
