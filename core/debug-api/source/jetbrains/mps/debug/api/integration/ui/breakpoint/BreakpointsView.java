@@ -57,7 +57,7 @@ public abstract class BreakpointsView implements DataProvider {
   }
 
   protected List<IBreakpoint> loadBreakpoints() {
-    Set<IBreakpoint> mpsBreakpoints = myBreakpointsManager.getAllBreakpoints();
+    Set<IBreakpoint> mpsBreakpoints = myBreakpointsManager.getAllIBreakpoints();
     final List<IBreakpoint> bpList = new ArrayList<IBreakpoint>(mpsBreakpoints);
 
     Collections.sort(bpList, new Comparator<IBreakpoint>() {

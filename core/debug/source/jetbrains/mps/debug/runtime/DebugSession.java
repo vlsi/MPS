@@ -134,7 +134,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
         @Override
         protected void action() throws Exception {
           if (myIsMute != mute) {
-            Set<IBreakpoint> breakpoints = myEventsProcessor.getBreakpointManager().getAllBreakpoints();
+            Set<IBreakpoint> breakpoints = myEventsProcessor.getBreakpointManager().getAllIBreakpoints();
             RequestManager requestManager = myEventsProcessor.getRequestManager();
             for (IBreakpoint bp : breakpoints) {
               if (bp instanceof JavaBreakpoint) {

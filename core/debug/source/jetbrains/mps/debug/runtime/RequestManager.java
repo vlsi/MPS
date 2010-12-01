@@ -279,7 +279,7 @@ public class RequestManager implements DebugProcessListener {
       @Override
       protected void action() throws Exception {
         BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
-        for (IBreakpoint breakpoint : breakpointManager.getAllBreakpoints()) {
+        for (IBreakpoint breakpoint : breakpointManager.getAllIBreakpoints()) {
           if (breakpoint instanceof JavaBreakpoint) {
             ((JavaBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
           }

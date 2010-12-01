@@ -11,8 +11,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.runtime.MPSBreakpoint;
 import jetbrains.mps.debug.breakpoints.MethodBreakpoint;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.debug.breakpoints.FieldBreakpoint;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {

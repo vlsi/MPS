@@ -18,7 +18,6 @@ package jetbrains.mps.debug.api;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -60,15 +59,33 @@ public class DebugInfoManager implements ApplicationComponent {
 
   @Deprecated
   public void addDebuggableConcept(String fqName) {
-    addConceptBreakpointCreator(fqName, null);
+    addDebuggableConcept(fqName, null);
   }
 
   public void addConceptBreakpointCreator(String fqName, Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
     myDebuggableConcepts.put(fqName, breakpointCreator);
   }
 
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public void addDebuggableConcept(String fqName, final Mapper2<SNode, Project, AbstractMPSBreakpoint> breakpointCreator) {
+    // legacy
+    myDebuggableConcepts.put(fqName, new Mapper2<SNode, Project, ILocationBreakpoint>() {
+      @Override
+      public ILocationBreakpoint value(SNode key1, Project key2) {
+        return (ILocationBreakpoint) breakpointCreator.value(key1, key2);
+      }
+    });
+  }
+
   public void removeConceptBreakpointCreator(String fqName) {
     myDebuggableConcepts.remove(fqName);
+  }
+
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public void removeDebuggableConcept(String fqName) {
+    removeConceptBreakpointCreator(fqName);
   }
 
   @Deprecated

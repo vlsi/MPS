@@ -2,93 +2,112 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointListener;
+import jetbrains.mps.debug.api.breakpoints.*;
+import jetbrains.mps.debug.api.breakpoints.AbstractBreakpoint;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.traceInfo.PositionInfo;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public abstract class AbstractMPSBreakpoint implements IBreakpoint {
+@Deprecated
+@ToRemove(version = 2.0)
+public abstract class AbstractMPSBreakpoint extends AbstractBreakpoint implements ILocationBreakpoint {
+  private static final Logger LOG = Logger.getLogger(AbstractMPSBreakpoint.class);
+  private final BreakpointLocation myLocation;
   protected final Project myProject;
-  protected boolean myIsEnabled = true;
-  protected long myCreationTime = -1;
-  private final List<IBreakpointListener> myListeners = new ArrayList<IBreakpointListener>();
 
-  protected AbstractMPSBreakpoint(Project project) {
+  protected AbstractMPSBreakpoint(SNodePointer node, Project project) {
+    super(project);
     myProject = project;
-  }
-
-  public boolean isEnabled() {
-    return myIsEnabled;
-  }
-
-  public void toggleEnabled() {
-    setEnabled(!myIsEnabled);
-  }
-
-  public void setCreationTime(long time) {
-    myCreationTime = time;
+    myLocation = new BreakpointLocation(node);
   }
 
   @Override
-  public void addBreakpointListener(@NotNull IBreakpointListener listener) {
-    myListeners.add(listener);
+  public String getPresentation() {
+    return myLocation.getPresentation();
   }
 
+  @NotNull
   @Override
-  public void removeBreakpointListener(IBreakpointListener listener) {
-    myListeners.remove(listener);
+  public IBreakpointKind getKind() {
+    return DefaultKind.getInstance();
   }
 
-  public long getCreationTime() {
-    return myCreationTime;
+  public SNodePointer getNodePointer() {
+    return myLocation.getNodePointer();
   }
 
-  public void setEnabled(final boolean enabled) {
-    boolean toggled = setEnabledInternal(enabled);
-    if (toggled) {
-      fireBreakpointToggled(enabled);
-    }
+  public SNode getSNode() {
+    return myLocation.getSNode();
   }
 
-  private boolean setEnabledInternal(boolean enabled) {
-    if (getKind().supportsDisable()) {
-      if (myIsEnabled != enabled) {
-        myIsEnabled = enabled;
-        if (myIsEnabled) {
-          enableInRunningSessions();
-        } else {
-          disableInRunningSessions();
-        }
-        return true;
-      }
-    }
+  public PositionInfo getTargetCodePosition() {
+    return myLocation.getTargetCodePosition();
+  }
+
+  public String getTargetUnitName() {
+    return myLocation.getTargetUnitName();
+  }
+
+  public boolean isValid() {
+    return myLocation.isValid();
+  }
+
+  public int getLineIndexInFile() {
+    return myLocation.getLineIndexInFile();
+  }
+
+  public String getFileName() {
+    return myLocation.getFileName();
+  }
+
+  public SModelReference getModelReference() {
+    return myLocation.getModelReference();
+  }
+
+  public boolean supportsDisable() {
     return false;
   }
 
-  public Project getProject() {
-    return myProject;
-  }
-
-  protected void disableInRunningSessions() {
-    removeFromRunningSessions();
-  }
-
-  protected void enableInRunningSessions() {
-    addToRunningSessions();
-  }
-
-  protected void fireBreakpointToggled(boolean enabled) {
-    for (IBreakpointListener listener : myListeners) {
-      listener.breakpointToggled(this, enabled);
-    }
-  }
-
   @Override
-  public boolean isValid() {
-    return true;
+  public BreakpointLocation getLocation() {
+    return myLocation;
+  }
+
+  public BreakpointInfo createBreakpointInfo() {
+    return new BreakpointInfo(this, myLocation);
+  }
+
+
+  public static AbstractMPSBreakpoint fromBreakpointInfo(final BreakpointInfo breakpointInfo, final Project project) {
+    AbstractMPSBreakpoint abstractMPSBreakpoint = ModelAccess.instance().runReadAction(new Computable<AbstractMPSBreakpoint>() {
+      @Override
+      public AbstractMPSBreakpoint compute() {
+        SNodePointer pointer = new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId);
+        return fromPointer(pointer, project);
+      }
+    });
+    if (abstractMPSBreakpoint != null) {
+      abstractMPSBreakpoint.setCreationTime(breakpointInfo.myCreationTime);
+    }
+    return abstractMPSBreakpoint;
+  }
+
+  public static AbstractMPSBreakpoint fromPointer(SNodePointer pointer, Project project) {
+    SNode node = pointer.getNode();
+    if (node == null) return null;
+    return fromNode(node, project);
+  }
+
+  public static AbstractMPSBreakpoint fromNode(@NotNull SNode node, Project project) {
+    try {
+      return (AbstractMPSBreakpoint) DebugInfoManager.getInstance().createBreakpoint(node, project);
+    } catch (ClassCastException e) {
+      LOG.warning("Class " + AbstractMPSBreakpoint.class.getName() + " is deprecated and soon will be removed. See MPS users guide for transition to the new debug api.");
+      return null;
+    }
   }
 }

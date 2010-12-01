@@ -422,9 +422,23 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     //todo do something later if necessary (like highlihgting a line, etc)
   }
 
-  public Set<IBreakpoint> getAllBreakpoints() {
+  public Set<IBreakpoint> getAllIBreakpoints() {
     synchronized (myBreakpoints) {
       return new HashSet<IBreakpoint>(myBreakpoints);
+    }
+  }
+
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public Set<AbstractMPSBreakpoint> getAllBreakpoints() {
+    synchronized (myBreakpoints) {
+      Set<AbstractMPSBreakpoint> result = new HashSet<AbstractMPSBreakpoint>();
+      for (IBreakpoint bp : myBreakpoints) {
+        if (bp instanceof AbstractMPSBreakpoint) {
+          result.add((AbstractMPSBreakpoint) bp);
+        }
+      }
+      return result;
     }
   }
 
@@ -450,9 +464,9 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
-  // TODO legacy method so the users code would compile -- remove
+  // TODO legacy method so the users code would compile -- remove after MPS2.0
   @Deprecated
-  public void notifyDebuggableConceptsAdded(){}
+  public static void notifyDebuggableConceptsAdded(){}
 
   private class MyBreakpointListener implements IBreakpointListener {
     @Override
