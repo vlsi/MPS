@@ -33,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.xmlQuery.runtime.BreakParseSAXException" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
