@@ -618,6 +618,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myRuleManager;
   }
 
+  public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
+    return myRuleManager.getSwitch(switch_);
+  }
+
   @Override
   public boolean areMappingsAvailable() {
     return myIsStrict ? myAreMappingsReady : true;

@@ -110,6 +110,10 @@ public class RuleManager {
     return myTemplateSwitchGraph.getRuleFinder(switch_);
   }
 
+  public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
+    return myTemplateSwitchGraph.getSwitch(switch_);
+  }
+
   public List<TemplateMappingScript> getPreMappingScripts() {
     return myPreScripts;
   }

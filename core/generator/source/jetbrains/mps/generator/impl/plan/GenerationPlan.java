@@ -5,7 +5,6 @@ import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;

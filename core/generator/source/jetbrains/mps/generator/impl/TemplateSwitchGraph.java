@@ -75,6 +75,11 @@ public class TemplateSwitchGraph {
     return bottom.finder;
   }
 
+  public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
+    Node node = mySwitchToNode.get(switch_);
+    return node != null ? node.mySwitch : null;
+  }
+
   private static class Node {
     final TemplateSwitchMapping mySwitch;
     Node myModified;
@@ -91,6 +96,7 @@ public class TemplateSwitchGraph {
         rules.add(sw.getReductionRules());
       }
 
+      this.myRules = null;
       this.finder = new FastRuleFinder(rules);
     }
   }
