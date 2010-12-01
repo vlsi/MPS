@@ -23,8 +23,10 @@ import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.util.CompositeIterable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
@@ -65,9 +67,9 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
   }
 
   public Iterable<SNode> values() {
-    CompositeIterable<SNode> res = new CompositeIterable<SNode>();
-    res.add(myOtherMap.values());
-    res.add(((Iterable) Arrays.asList((myRegularMap.getValues()))));
+    List<SNode> res = new ArrayList<SNode>();
+    res.addAll(myOtherMap.values());
+    res.addAll(((List) Arrays.asList(myRegularMap.getValues())));
     return res;
   }
 }

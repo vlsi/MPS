@@ -21,6 +21,9 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.util.CompositeIterable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //todo leave only Foreigns here
 public class ForeignNodeIdMap implements INodeIdToNodeMap {
   private final THashMap<String,SNode> myForeignMap = new THashMap<String, SNode>();
@@ -61,9 +64,9 @@ public class ForeignNodeIdMap implements INodeIdToNodeMap {
   }
 
   public Iterable<SNode> values() {
-    CompositeIterable<SNode> res = new CompositeIterable<SNode>();
-    res.add(myOtherMap.values());
-    res.add(myForeignMap.values());
+    List<SNode> res = new ArrayList<SNode>();
+    res.addAll(myOtherMap.values());
+    res.addAll(myForeignMap.values());
     return res;
   }
 }
