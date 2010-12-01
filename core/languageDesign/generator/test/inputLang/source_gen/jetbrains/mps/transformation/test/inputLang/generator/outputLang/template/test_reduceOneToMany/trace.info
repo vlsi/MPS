@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="TemplateModelImpl.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
   <unitInfo fileName="Switchswitch_InputNode_A.java" startLine="43" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch_InputNode_A$ReductionRule0" />
+  <unitInfo fileName="Switchbetter_switch3.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter_switch3" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
+  <unitInfo fileName="SwitchbetterSwitch.java" startLine="50" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch$ReductionRule0" />
   <unitInfo fileName="Mappingmain.java" startLine="78" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$ReductionRule0" />
   <unitInfo fileName="Mappingmain.java" startLine="105" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$RootMappingRule0" />
   <unitInfo fileName="Templatereduce_InputNode_A_switch.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A_switch" />
   <unitInfo fileName="Templatereduce_InputNode_A_included.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A_included" />
+  <unitInfo fileName="Switchbetter_switch2.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter_switch2" />
   <unitInfo fileName="TemplateOutputRoot.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" />
   <unitInfo fileName="Switchswitch_InputNode_A.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch_InputNode_A" />
+  <unitInfo fileName="SwitchbetterSwitch.java" startLine="20" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch" />
   <unitInfo fileName="Templatereduce_InputNode_A.java" startLine="18" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A" />
   <unitInfo fileName="Mappingmain.java" startLine="23" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
   <root nodeId="3893401255414084744">
@@ -18,12 +22,16 @@
     <scopeInfo nodeId="3893401255414129778" fileName="QueriesGenerated.java" startLine="20" startPosition="152" endLine="21" endPosition="100" />
   </root>
   <root nodeId="3893401255414086886">
-    <nodeInfo nodeId="3893401255414100160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="24" startPosition="155" endLine="25" endPosition="59" />
-    <scopeInfo nodeId="3893401255414086895" fileName="QueriesGenerated.java" startLine="24" startPosition="155" endLine="25" endPosition="59" />
+    <nodeInfo nodeId="3893401255414100160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="28" startPosition="155" endLine="29" endPosition="59" />
+    <scopeInfo nodeId="3893401255414086895" fileName="QueriesGenerated.java" startLine="28" startPosition="155" endLine="29" endPosition="59" />
   </root>
   <root nodeId="3893401255414100167">
-    <nodeInfo nodeId="3893401255414163870" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="28" startPosition="155" endLine="29" endPosition="105" />
-    <scopeInfo nodeId="3893401255414161784" fileName="QueriesGenerated.java" startLine="28" startPosition="155" endLine="29" endPosition="105" />
+    <nodeInfo nodeId="3893401255414163870" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="32" startPosition="155" endLine="33" endPosition="105" />
+    <scopeInfo nodeId="3893401255414161784" fileName="QueriesGenerated.java" startLine="32" startPosition="155" endLine="33" endPosition="105" />
+  </root>
+  <root nodeId="8371596541809066874">
+    <nodeInfo nodeId="8371596541809066881" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="24" startPosition="152" endLine="25" endPosition="17" />
+    <scopeInfo nodeId="8371596541809066880" fileName="QueriesGenerated.java" startLine="24" startPosition="152" endLine="25" endPosition="17" />
   </root>
 </debugInfo>
 

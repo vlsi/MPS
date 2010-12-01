@@ -14,7 +14,7 @@ public class TemplateModelImpl implements TemplateModel {
 
   public TemplateModelImpl() {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switchswitch_InputNode_A());
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switchswitch_InputNode_A(), new SwitchbetterSwitch(), new Switchbetter_switch2(), new Switchbetter_switch3());
   }
 
   public String getLongName() {

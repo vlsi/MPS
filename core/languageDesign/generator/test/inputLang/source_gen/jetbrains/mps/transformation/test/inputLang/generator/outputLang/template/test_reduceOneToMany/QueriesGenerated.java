@@ -21,6 +21,10 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceOneToMany", "none");
   }
 
+  public static boolean baseMappingRule_Condition_8371596541809066879(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return false;
+  }
+
   public static Iterable sourceNodesQuery_3893401255414086894(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getChildren(_context.getNode());
   }
