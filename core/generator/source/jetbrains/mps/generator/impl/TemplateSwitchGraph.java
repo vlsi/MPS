@@ -15,59 +15,59 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.impl.interpreted.TemplateReductionRuleInterpreted;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
-import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
-import jetbrains.mps.lang.generator.structure.TemplateSwitch;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.FlattenIterable;
 
 import java.util.*;
 
 public class TemplateSwitchGraph {
 
-  private Map<TemplateSwitch, Node> mySwitchToNode = new HashMap<TemplateSwitch, Node>();
+  private Map<SNodePointer, Node> mySwitchToNode = new HashMap<SNodePointer, Node>();
 
-  public TemplateSwitchGraph(List<SModelDescriptor> templateModels) {
-    for (SModelDescriptor templateModel : templateModels) {
-      for (SNode root : templateModel.getSModel().roots()) {
-        if (!(root.getAdapter() instanceof TemplateSwitch)) continue;
-
-        TemplateSwitch adapter = (TemplateSwitch) root.getAdapter();
-        mySwitchToNode.put(adapter, new Node(adapter));
+  public TemplateSwitchGraph(List<TemplateModel> templateModels) {
+    for (TemplateModel templateModel : templateModels) {
+      for (TemplateSwitchMapping root : templateModel.getSwitches()) {
+        mySwitchToNode.put(root.getSwitchNode(), new Node(root));
       }
     }
+
     for (Node node : mySwitchToNode.values()) {
-      TemplateSwitch modifiedSwitch = node.mySwitch.getModifiedSwitch();
-      if(modifiedSwitch != null) {
-        node.myModified = mySwitchToNode.get(modifiedSwitch);
+      SNodePointer modifiesSwitchPtr = node.mySwitch.getModifiesSwitch();
+      if (modifiesSwitchPtr != null) {
+        Node modifiedSwitch = mySwitchToNode.get(modifiesSwitchPtr);
+        if (modifiedSwitch != null) {
+          node.myModified = modifiedSwitch;
+        }
       }
-      if(node.myModified == null) {
-        node.myRules = new LinkedList<TemplateSwitch>();
+      if (node.myModified == null) {
+        node.myRules = new LinkedList<TemplateSwitchMapping>();
       }
     }
     for (Node node : mySwitchToNode.values()) {
       Node bottom = node;
       int i = 256;
-      while(bottom.myModified != null && --i > 0) {
+      while (bottom.myModified != null && --i > 0) {
         bottom = bottom.myModified;
       }
-      if(node != bottom) {
+      if (node != bottom) {
         node.myModified = bottom;
-        if(i == 0) {
+        if (i == 0) {
           throw new RuntimeException("Template switch loop in: " + node);     // TODO handle correctly
         }
       }
       bottom.myRules.add(node.mySwitch);
     }
     for (Node node : mySwitchToNode.values()) {
-      if(node.myModified == null) {
+      if (node.myModified == null) {
         node.createFinder();
       }
     }
   }
 
-  public FastRuleFinder getRuleFinder(TemplateSwitch baseSwitch) {
+  public FastRuleFinder getRuleFinder(SNodePointer baseSwitch) {
     Node bottom = mySwitchToNode.get(baseSwitch);
     while (bottom.myModified != null) {
       bottom = bottom.myModified;
@@ -76,27 +76,21 @@ public class TemplateSwitchGraph {
   }
 
   private static class Node {
-    final TemplateSwitch mySwitch;
+    final TemplateSwitchMapping mySwitch;
     Node myModified;
-    List<TemplateSwitch> myRules;
+    List<TemplateSwitchMapping> myRules;
     FastRuleFinder finder;
 
-    public Node(TemplateSwitch switch_) {
+    public Node(TemplateSwitchMapping switch_) {
       this.mySwitch = switch_;
     }
 
     private void createFinder() {
-      int count = 0;
-      for(TemplateSwitch sw : myRules) {
-        count += sw.getReductionMappingRulesCount();
+      FlattenIterable<TemplateReductionRule> rules = new FlattenIterable<TemplateReductionRule>(new ArrayList<Iterable<TemplateReductionRule>>());
+      for (TemplateSwitchMapping sw : myRules) {
+        rules.add(sw.getReductionRules());
       }
 
-      List<TemplateReductionRule> rules = new ArrayList<TemplateReductionRule>(count);
-      for(TemplateSwitch sw : myRules) {
-        for (Reduction_MappingRule reduction_mappingRule : sw.getReductionMappingRules()) {
-          rules.add(new TemplateReductionRuleInterpreted(reduction_mappingRule.getNode()));
-        }
-      }
       this.finder = new FastRuleFinder(rules);
     }
   }

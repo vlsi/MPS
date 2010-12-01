@@ -41,32 +41,25 @@ public class GenerationPartitioner {
   private List<CoherentSetData> myCoherentMappings;
   private Set<MappingPriorityRule> myConflictingRules;
 
-  public List<List<TemplateMappingConfiguration>> createMappingSets(List<Generator> generators) {
-    return convertPlan(doPartitioning(null, generators));
+  public List<List<TemplateMappingConfiguration>> createMappingSets(List<Generator> generators, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
+    return convertPlan(doPartitioning(null, generators), mappingsMap);
   }
 
-  private static List<List<TemplateMappingConfiguration>> convertPlan(List<List<MappingConfiguration>> plan) {
+  private static List<List<TemplateMappingConfiguration>> convertPlan(List<List<MappingConfiguration>> plan, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
     List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>();
-    Map<SModelDescriptor, TemplateModel> descriptor2model = new HashMap<SModelDescriptor, TemplateModel>();
 
     for(List<MappingConfiguration> step : plan) {
       List<TemplateMappingConfiguration> s = new ArrayList<TemplateMappingConfiguration>(step.size());
       for(MappingConfiguration c : step) {
-        SModelDescriptor d = c.getModel().getModelDescriptor();
-        TemplateModel m = descriptor2model.get(d);
-        if(m == null) {
-          m = new TemplateModelInterpreted(c.getModel());
-          descriptor2model.put(d, m);
+        TemplateMappingConfiguration configuration = mappingsMap.get(new SNodePointer(c.getNode()));
+        if(configuration == null) {
+          throw new IllegalStateException("unknown configuration found: " + c.getName());
         }
-        s.add(new TemplateMappingConfigurationInterpreted(m, c.getNode()));
+        s.add(configuration);
       }
       result.add(s);
     }
     return result;
-  }
-
-  public List<List<MappingConfiguration>> createMappingSets(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
-    return doPartitioning(descriptorWorkingCopy, generators);
   }
 
   private void reset() {
@@ -321,10 +314,6 @@ public class GenerationPartitioner {
     }
 
     return new ArrayList();
-  }
-
-  public boolean hasConflictingPriorityRules() {
-    return !myConflictingRules.isEmpty();
   }
 
   public Set<MappingPriorityRule> getConflictingPriorityRules() {

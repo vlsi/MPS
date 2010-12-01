@@ -33,6 +33,7 @@ import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -135,7 +136,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       GenerationDependencies dep = status.getDependencies();
       if(dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
         final StringBuilder sb = new StringBuilder("Not optimized:\n");
-        new GenerationFilter(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel()).getSignature(), new IncrementalReporter() {
+        new GenerationFilter(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel.getSModel(), GlobalScope.getInstance()).getSignature(), new IncrementalReporter() {
           @Override
           public void report(String message) {
             sb.append(message);

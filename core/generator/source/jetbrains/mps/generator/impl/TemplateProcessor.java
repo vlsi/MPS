@@ -346,7 +346,7 @@ public class TemplateProcessor {
       }
       generationTracer.pushSwitch(new SNodePointer(templateSwitch.getNode()));
       try {
-        Collection<SNode> collection = myGenerator.tryToReduce(templateContext.subContext(mappingName, newInputNode), templateSwitch, mappingName, myReductionContext);
+        Collection<SNode> collection = myGenerator.tryToReduce(templateContext.subContext(mappingName, newInputNode), new SNodePointer(templateSwitch.getNode()), mappingName, myReductionContext);
         if (collection == null) {
           // try the default case
           RuleConsequence defaultConsequence = templateSwitch.getDefaultConsequence();

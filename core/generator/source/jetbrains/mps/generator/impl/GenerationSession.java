@@ -29,6 +29,7 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.messages.NodeWithContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -88,7 +89,7 @@ public class GenerationSession {
 
     // create a plan
     ttrace.push("analyzing dependencies", false);
-    myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel());
+    myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel(), GlobalScope.getInstance());
     if (!checkGenerationPlan(myGenerationPlan)) {
       // throw new GenerationCanceledException();
     }
