@@ -19,9 +19,9 @@
     <scopeInfo nodeId="2566194812862974461" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="47" startPosition="208" endLine="48" endPosition="177" />
     <scopeInfo nodeId="2566194812862974481" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="50" startPosition="206" endLine="51" endPosition="175" />
     <scopeInfo nodeId="1270798772176197733" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="43" startPosition="119" endLine="45" endPosition="106" />
-    <scopeInfo nodeId="2566194812862974458" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="46" startPosition="9" endLine="49" endPosition="9" />
-    <scopeInfo nodeId="2566194812862974478" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="49" startPosition="9" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="1270798772176197730" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="42" startPosition="88" endLine="46" endPosition="9" />
+    <scopeInfo nodeId="2566194812862974458" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="46" startPosition="9" endLine="49" endPosition="9" />
+    <scopeInfo nodeId="2566194812862974478" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="49" startPosition="9" endLine="52" endPosition="9" />
+    <scopeInfo nodeId="1270798772176197730" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="42" startPosition="88" endLine="46" endPosition="9" />
     <scopeInfo nodeId="1270798772176197708" fileName="SplitTraceInfoAndDebugInfo_MigrationScript.java" startLine="40" startPosition="52" endLine="53" endPosition="0">
       <varInfo nodeId="1270798772176209958" varName="debugInfoProvider" />
     </scopeInfo>
