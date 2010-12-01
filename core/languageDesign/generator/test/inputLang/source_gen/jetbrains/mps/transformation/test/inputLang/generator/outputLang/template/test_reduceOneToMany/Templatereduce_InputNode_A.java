@@ -91,7 +91,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
       environment.getTracer().pushMacro(switchMacroRef_9iqmnb_a0a0a7a0);
       try {
         environment.getTracer().pushSwitch(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366"));
-        tlist5 = environment.processSwitch(null, context);
+        tlist5 = environment.trySwitch(null, "", context);
 
       } finally {
         // TODO close switch node 

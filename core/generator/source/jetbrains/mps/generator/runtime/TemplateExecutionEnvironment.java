@@ -17,6 +17,7 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
@@ -33,38 +34,38 @@ import java.util.Collection;
  */
 public interface TemplateExecutionEnvironment {
 
-  public IOperationContext getOperationContext();
+  IOperationContext getOperationContext();
 
-  public SModel getOutputModel();
+  SModel getOutputModel();
 
-  public TemplateGenerator getGenerator();
+  TemplateGenerator getGenerator();
 
-  public IGenerationTracer getTracer();
+  IGenerationTracer getTracer();
 
-  public ReductionContext getReductionContext();
+  ReductionContext getReductionContext();
 
-  public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
+  TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
-  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
+  Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
-  public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
+  Collection<SNode> trySwitch(SNodePointer _switch, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException;
 
-  public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel);
+  void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
-  public void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel);
+  void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel);
 
-  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context);
+  void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel);
 
-  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context);
+  void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context);
 
-  public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context);
+  void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context);
+
+  void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context);
 
   /*
    *  returns temporary node
    */
-  public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
+  SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
-  public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
-
-  public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context);
+  void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 }

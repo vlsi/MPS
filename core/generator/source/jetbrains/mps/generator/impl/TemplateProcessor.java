@@ -26,6 +26,8 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -346,39 +348,20 @@ public class TemplateProcessor {
       }
       generationTracer.pushSwitch(new SNodePointer(templateSwitch.getNode()));
       try {
-        Collection<SNode> collection = myGenerator.tryToReduce(templateContext.subContext(mappingName, newInputNode), new SNodePointer(templateSwitch.getNode()), mappingName, myReductionContext);
+        final SNodePointer switchPtr = new SNodePointer(templateSwitch.getNode());
+        final TemplateContext switchContext = templateContext.subContext(mappingName, newInputNode);
+
+        Collection<SNode> collection = myGenerator.tryToReduce(switchContext, switchPtr, mappingName, myReductionContext);
         if (collection == null) {
           // try the default case
-          RuleConsequence defaultConsequence = templateSwitch.getDefaultConsequence();
-          if(defaultConsequence == null) {
-            TemplateSwitch current = templateSwitch.getModifiedSwitch();
-            while(current != null && defaultConsequence == null) {
-              defaultConsequence = current.getDefaultConsequence();
-              current = current.getModifiedSwitch();
-            }
+          TemplateSwitchMapping tswitch = myGenerator.getSwitch(switchPtr);
+          if(tswitch != null) {
+            TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, myGenerator.getOperationContext(), myGenerator.getGenerationTracer());
+            collection = tswitch.applyDefault(environment, switchPtr, mappingName, switchContext);
           }
-          if (defaultConsequence != null) {
-            collection = new ArrayList<SNode>();
-            try {
-              List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(defaultConsequence, newInputNode, nodeMacro.getNode(), myReductionContext, myGenerator);
-              if (nodeAndMappingNamePairs == null) {
-                myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), defaultConsequence.getNode(), "error processing $SWITCH$/default");
-                return null;
-              }
 
-              for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-                SNode altTemplateNode = nodeAndMappingNamePair.o1;
-                String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-                List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(innerMappingName, altTemplateNode, templateContext.subContext(innerMappingName, newInputNode));
-                if (__outputNodes != null) {
-                  collection.addAll(__outputNodes);
-                }
-              }
-            } catch (AbandonRuleInputException e) {
-              // it's ok. just ignore
-            }
-          } else {
-            // no switch-case found for the inputNode - continue with templateNode under the $switch$
+          // no switch-case found for the inputNode - continue with templateNode under the $switch$
+          if(collection == null) {
             collection = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
           }
         }

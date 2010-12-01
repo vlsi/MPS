@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -31,7 +34,7 @@ public interface TemplateSwitchMapping {
 
   Iterable<TemplateReductionRule> getReductionRules();
 
-  Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+  Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException;
 
   Collection<SNode> processNull(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 }

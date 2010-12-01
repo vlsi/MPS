@@ -105,6 +105,26 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return outputNodes == null ? Collections.<SNode>emptyList() : outputNodes;
   }
 
+  public Collection<SNode> trySwitch(SNodePointer switch_, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
+    Collection<SNode> collection = generator.tryToReduce(context, switch_, mappingName, reductionContext);
+    if(collection != null) {
+      return collection;
+    }
+
+    // try the default case
+    TemplateSwitchMapping current = generator.getSwitch(switch_);
+    if(current != null) {
+      collection = current.applyDefault(this, switch_, mappingName, context);
+      if(collection != null) {
+        return collection;
+      }
+    }
+
+    // no switch-case found for the inputNode - continue with templateNode under the $switch$
+    return null;
+  }
+
+
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
     GeneratorMappings mappings = generator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNodeId, outputNode);
@@ -178,10 +198,5 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
     generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, reductionContext);
-  }
-
-  public Collection<SNode> processSwitch(TemplateSwitchMapping _switch, TemplateContext context) {
-    // TODO
-    return null;
   }
 }

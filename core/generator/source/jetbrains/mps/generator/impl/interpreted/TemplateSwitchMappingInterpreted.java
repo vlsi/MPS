@@ -15,15 +15,21 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.impl.*;
+import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
+import jetbrains.mps.lang.generator.structure.RuleConsequence;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, Nov 29, 2010
@@ -36,9 +42,9 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   public TemplateSwitchMappingInterpreted(SNode aSwitch) {
     mySwitch = aSwitch;
     rules = new ArrayList<TemplateReductionRule>();
-    for(SNode child : mySwitch.getChildrenIterable()) {
+    for (SNode child : mySwitch.getChildrenIterable()) {
       String conceptName = child.getConceptFqName();
-      if(conceptName.equals(Reduction_MappingRule.concept)) {
+      if (conceptName.equals(Reduction_MappingRule.concept)) {
         rules.add(new TemplateReductionRuleInterpreted(child));
       }
     }
@@ -66,8 +72,42 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   }
 
   @Override
-  public Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return null;
+  public Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
+    SNode defaultConsequence = mySwitch.getChild(TemplateSwitch.DEFAULT_CONSEQUENCE);
+    if (defaultConsequence == null) {
+      SNodePointer modifies = getModifiesSwitch();
+      if (modifies == null) {
+        return null;
+      }
+      TemplateSwitchMapping switchMapping = environment.getGenerator().getSwitch(modifies);
+      if (switchMapping == null) {
+        return null;
+      }
+      return switchMapping.applyDefault(environment, templateSwitch, mappingName, context);
+    }
+
+    List<SNode> collection = new ArrayList<SNode>();
+    try {
+      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence((RuleConsequence) defaultConsequence.getAdapter(), context.getInput(), templateSwitch.getNode(), environment.getReductionContext(), environment.getGenerator());
+      if (nodeAndMappingNamePairs == null) {
+        environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.getNode(), defaultConsequence, "error processing $SWITCH$/default");
+        return null;
+      }
+
+      for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
+        SNode altTemplateNode = nodeAndMappingNamePair.o1;
+        String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
+        try {
+          TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
+          collection.addAll(templateProcessor.processTemplateNode(innerMappingName, altTemplateNode, context));
+        } catch (TemplateProcessingFailureException e) {
+          environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.getNode(), "error processing template fragment");
+        }
+      }
+    } catch (AbandonRuleInputException e) {
+      // it's ok. just ignore
+    }
+    return collection;
   }
 
   @Override
