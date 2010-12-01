@@ -210,7 +210,7 @@
   <unitInfo fileName="EnumConstantDeclaration_Editor.java" startLine="259" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumConstantDeclaration_Editor$methodListHandler_u66lwb_b5a" />
   <unitInfo fileName="LocalVariableDeclaration_Editor.java" startLine="269" startPosition="0" endLine="306" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Editor$annotationListHandler_i0gfbw_d0" />
   <unitInfo fileName="IfStatement_Editor.java" startLine="270" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IfStatement_Editor$elsifClausesListHandler_eb7h0d_f0" />
-  <unitInfo fileName="FieldDeclaration_Editor.java" startLine="288" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_Editor$annotationListHandler_2sbeba_b0" />
+  <unitInfo fileName="FieldDeclaration_Editor.java" startLine="289" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_Editor$annotationListHandler_2sbeba_b0" />
   <unitInfo fileName="EnumConstantDeclaration_Editor.java" startLine="297" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumConstantDeclaration_Editor$annotationListHandler_u66lwb_b0" />
   <unitInfo fileName="SwitchStatement_Editor.java" startLine="335" startPosition="0" endLine="372" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.SwitchStatement_Editor$caseListHandler_nmr9ig_h0" />
   <unitInfo fileName="ConstructorDeclaration_Editor.java" startLine="350" startPosition="0" endLine="387" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ConstructorDeclaration_Editor$annotationListHandler_1x071y_b0" />
@@ -414,7 +414,7 @@
   <unitInfo fileName="LocalVariableDeclaration_Editor.java" startLine="32" startPosition="0" endLine="307" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Editor" />
   <unitInfo fileName="DoWhileStatement_Editor.java" startLine="24" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.DoWhileStatement_Editor" />
   <unitInfo fileName="ForeachStatement_Editor.java" startLine="23" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ForeachStatement_Editor" />
-  <unitInfo fileName="FieldDeclaration_Editor.java" startLine="31" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_Editor" />
+  <unitInfo fileName="FieldDeclaration_Editor.java" startLine="31" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.FieldDeclaration_Editor" />
   <unitInfo fileName="IfStatement_Editor.java" startLine="36" startPosition="0" endLine="333" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IfStatement_Editor" />
   <unitInfo fileName="EnumConstantDeclaration_Editor.java" startLine="33" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumConstantDeclaration_Editor" />
   <unitInfo fileName="SwitchStatement_Editor.java" startLine="31" startPosition="0" endLine="373" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.SwitchStatement_Editor" />
@@ -495,14 +495,14 @@
     <scopeInfo nodeId="1423582408682918031" fileName="StaticMethodDeclaration_Editor.java" startLine="269" startPosition="112" endLine="270" endPosition="101" />
   </root>
   <root nodeId="1075289941062">
-    <nodeInfo nodeId="1240250500572" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="62" />
-    <nodeInfo nodeId="8606350594693654669" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="63" />
-    <nodeInfo nodeId="1217351603905" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_Editor.java" startLine="280" startPosition="111" endLine="281" endPosition="59" />
-    <nodeInfo nodeId="1188210576822" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_Editor.java" startLine="284" startPosition="111" endLine="285" endPosition="72" />
-    <scopeInfo nodeId="1240250493812" fileName="FieldDeclaration_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="62" />
-    <scopeInfo nodeId="8606350594693654668" fileName="FieldDeclaration_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="63" />
-    <scopeInfo nodeId="1217351603904" fileName="FieldDeclaration_Editor.java" startLine="280" startPosition="111" endLine="281" endPosition="59" />
-    <scopeInfo nodeId="1188210576821" fileName="FieldDeclaration_Editor.java" startLine="284" startPosition="111" endLine="285" endPosition="72" />
+    <nodeInfo nodeId="1240250500572" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_Editor.java" startLine="273" startPosition="111" endLine="274" endPosition="62" />
+    <nodeInfo nodeId="8606350594693654669" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_Editor.java" startLine="277" startPosition="111" endLine="278" endPosition="63" />
+    <nodeInfo nodeId="1217351603905" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_Editor.java" startLine="281" startPosition="111" endLine="282" endPosition="59" />
+    <nodeInfo nodeId="1188210576822" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FieldDeclaration_Editor.java" startLine="285" startPosition="111" endLine="286" endPosition="72" />
+    <scopeInfo nodeId="1240250493812" fileName="FieldDeclaration_Editor.java" startLine="273" startPosition="111" endLine="274" endPosition="62" />
+    <scopeInfo nodeId="8606350594693654668" fileName="FieldDeclaration_Editor.java" startLine="277" startPosition="111" endLine="278" endPosition="63" />
+    <scopeInfo nodeId="1217351603904" fileName="FieldDeclaration_Editor.java" startLine="281" startPosition="111" endLine="282" endPosition="59" />
+    <scopeInfo nodeId="1188210576821" fileName="FieldDeclaration_Editor.java" startLine="285" startPosition="111" endLine="286" endPosition="72" />
   </root>
   <root nodeId="1075302295734">
     <nodeInfo nodeId="1188220825042" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterDeclaration_Editor.java" startLine="179" startPosition="112" endLine="180" endPosition="99" />

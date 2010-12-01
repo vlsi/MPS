@@ -149,6 +149,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
