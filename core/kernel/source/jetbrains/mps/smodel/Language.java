@@ -531,6 +531,36 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
+  @Override
+  public List<SModelDescriptor> getEditableUserModels() {
+    List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
+    for (LanguageAspect aspect : LanguageAspect.values()) {
+      SModelDescriptor model = aspect.get(this);
+      if (model != null) {
+        inputModels.add(model);
+      }
+    }
+
+    Set<SModelDescriptor> ownModels = new HashSet<SModelDescriptor>(getOwnModelDescriptors());
+    for (SModelDescriptor sm : getAccessoryModels()) {
+      if (!SModelStereotype.isUserModel(sm)) continue;
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
+
+      if (ownModels.contains(sm)) {
+        inputModels.add(((EditableSModelDescriptor) sm));
+      }
+    }
+
+    inputModels.addAll(getUtilModels());
+
+    // add it from all generators
+    List<Generator> list = getGenerators();
+    for (Generator generator : list) {
+      inputModels.addAll(generator.getGeneratorModels());
+    }
+    return inputModels;
+  }
+
   public List<SModelDescriptor> getAccessoryModels() {
     List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {

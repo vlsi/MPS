@@ -335,6 +335,12 @@ public class Generator extends AbstractModule {
     return descriptorChanged[0];
   }
 
+  @Override
+  public List<SModelDescriptor> getEditableUserModels() {
+    // forward to the language
+    return getSourceLanguage().getEditableUserModels();
+  }
+
   public List<SModelDescriptor> getGeneratorModels() {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> ownModels = this.getOwnModelDescriptors();

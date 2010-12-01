@@ -23,14 +23,13 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -112,6 +111,17 @@ public class Solution extends AbstractModule {
 
   public SolutionDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
+  }
+
+  @Override
+  public List<SModelDescriptor> getEditableUserModels() {
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    for (SModelDescriptor sm : getOwnModelDescriptors()) {
+      if (SModelStereotype.isUserModel(sm) && (sm instanceof EditableSModelDescriptor)) {
+        models.add(sm);
+      }
+    }
+    return models;
   }
 
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
