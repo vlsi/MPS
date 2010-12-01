@@ -170,7 +170,7 @@ public class LanguageChecker implements IEditorChecker {
     myMessagesChanged = false;
   }
 
-  public Set<EditorMessage> createMessages(SNode node, IOperationContext operationContext, List<SModelEvent> list, boolean b, EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(SNode node, IOperationContext operationContext, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     SNode root = node.getContainingRoot();
     LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(root);
@@ -186,6 +186,9 @@ public class LanguageChecker implements IEditorChecker {
     SModelDescriptor descriptor = SNodeOperations.getModel(root).getModelDescriptor();
     addModelListener(descriptor);
 
+    if (!(wasCheckedOnce)) {
+      errorsComponent.clear();
+    }
     boolean changed = errorsComponent.check(node, myRules, operationContext);
     myMessagesChanged = changed;
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
