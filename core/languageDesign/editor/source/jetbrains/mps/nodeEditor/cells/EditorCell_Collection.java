@@ -448,7 +448,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void fold(boolean programmaticaly) {
-    if (!canBeFolded()) return;
+    if (!canBePossiblyFolded()) return;
+    if (isFolded()) {
+      // updating editor's myFoldedCells set (sometimes this method is called from Memento) 
+      getEditor().setFolded(this, true);
+      return;
+    }
     setFolded(true);
 
     final EditorComponent editorComponent = getEditor();
@@ -490,10 +495,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
         return object == EditorCell_Collection.this;
       }
     }) != null;
-  }
-
-  private boolean canBeFolded() {
-    return !isFolded() && canBePossiblyFolded();
   }
 
   public boolean canBePossiblyFolded() {

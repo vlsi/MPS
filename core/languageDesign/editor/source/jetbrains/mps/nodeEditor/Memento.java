@@ -87,6 +87,9 @@ class Memento {
   }
 
   void restore(EditorComponent editor) {
+    editor.clearFoldedCells();
+    editor.clearBracesEnabledCells();
+
     // TODO: remove this variable and simply mark editor as "needsRelayout" from the top editor cell + relayout it on .. next paint?
     boolean needsRelayout = false;
     editor.flushEvents();

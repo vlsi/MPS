@@ -1059,6 +1059,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new HashSet<EditorCell>(myFoldedCells);
   }
 
+  void clearFoldedCells() {
+    myFoldedCells.clear();
+  }
+
   public void setBracesEnabled(EditorCell cell, boolean enabled) {
     if (enabled) {
       myBracesEnabledCells.add(cell);
@@ -1069,6 +1073,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public Set<EditorCell> getBracesEnabledCells() {
     return new HashSet<EditorCell>(myBracesEnabledCells);
+  }
+
+  void clearBracesEnabledCells() {
+    myBracesEnabledCells.clear();
   }
 
   public void flushEvents() {
@@ -2527,8 +2535,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (getEditorContext() != null) {
         memento = getEditorContext().createMemento();
       }
-      myFoldedCells.clear();
-      myBracesEnabledCells.clear();
       action.run();
       if (getEditorContext() != null) {
         getEditorContext().setMemento(memento);
