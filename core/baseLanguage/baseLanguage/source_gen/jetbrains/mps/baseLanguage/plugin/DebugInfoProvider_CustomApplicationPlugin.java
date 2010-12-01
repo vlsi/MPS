@@ -34,7 +34,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     {
       Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
         public ILocationBreakpoint value(SNode debuggableNode, Project project) {
-          return new MethodBreakpoint(debuggableNode, SPropertyOperations.getString(debuggableNode, "name"), BaseMethodDeclaration_Behavior.call_jniSignature_8847328628797656446(debuggableNode), project);
+          return new MethodBreakpoint(debuggableNode, project);
         }
       };
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", creator);
@@ -42,7 +42,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     {
       Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
         public ILocationBreakpoint value(SNode debuggableNode, Project project) {
-          return new FieldBreakpoint(debuggableNode, SPropertyOperations.getString(debuggableNode, "name"), project);
+          return new FieldBreakpoint(debuggableNode, project);
         }
       };
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration", creator);

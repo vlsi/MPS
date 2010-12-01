@@ -4,13 +4,11 @@ package jetbrains.mps.traceInfo;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
-import java.util.Set;
-import java.util.HashSet;
 import java.util.Map;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.LinkedHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
@@ -21,7 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 public class TraceInfoManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(TraceInfoManager.class);
 
-  private final Set<String> myTraceableConcepts = new HashSet<String>();
+  private final Map<String, Mapper<SNode, String>> myTraceableConcepts = new HashMap<String, Mapper<SNode, String>>();
   private final Map<String, Mapper<SNode, List<SNode>>> myScopeConceptsAndGetters = new HashMap<String, Mapper<SNode, List<SNode>>>();
   private final Map<String, Mapper<SNode, String>> myUnitConceptsToUnitNameGetters = new LinkedHashMap<String, Mapper<SNode, String>>();
 
@@ -29,7 +27,7 @@ public class TraceInfoManager implements ApplicationComponent {
   }
 
   public boolean isTraceableNode(SNode node) {
-    for (String concept : myTraceableConcepts) {
+    for (String concept : myTraceableConcepts.keySet()) {
       if (SNodeOperations.isInstanceOf(node, concept)) {
         return true;
       }
@@ -78,13 +76,30 @@ public class TraceInfoManager implements ApplicationComponent {
     return null;
   }
 
+  @Nullable
+  public String getPropertyString(SNode traceableNode) {
+    for (String concept : myTraceableConcepts.keySet()) {
+      if (SNodeOperations.isInstanceOf(traceableNode, concept)) {
+        Mapper<SNode, String> mapper = myTraceableConcepts.get(concept);
+        if (mapper == null) {
+          continue;
+        }
+        return mapper.value(traceableNode);
+      }
+    }
+    return null;
+  }
+
   public void addTraceableConcept(String fqName) {
-    myTraceableConcepts.add(fqName);
+    myTraceableConcepts.put(fqName, null);
+  }
+
+  public void addTraceableConcept(String fqName, Mapper<SNode, String> propertyGetter) {
+    myTraceableConcepts.put(fqName, propertyGetter);
   }
 
   public void removeTraceableConcept(String fqName) {
-    boolean result = myTraceableConcepts.remove(fqName);
-    LOG.assertLog(result, "No traceble concept named " + fqName);
+    myTraceableConcepts.remove(fqName);
   }
 
   public void addScopeConcept(String fqName, Mapper<SNode, List<SNode>> varsGetter) {

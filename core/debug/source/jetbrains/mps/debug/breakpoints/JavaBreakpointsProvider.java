@@ -28,8 +28,6 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
-import jetbrains.mps.debug.breakpoints.FieldBreakpoint.FieldBreakpointInfo;
-import jetbrains.mps.debug.breakpoints.MethodBreakpoint.MethodBreakpointInfo;
 import jetbrains.mps.debug.runtime.MPSBreakpoint;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
@@ -103,24 +101,24 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
         exceptionBreakpointInfo.initBreakpoint(exceptionBreakpoint);
         return exceptionBreakpoint;
       case METHOD_BREAKPOINT:
-        final MethodBreakpointInfo methodBreakpointInfo = XmlSerializer.deserialize(state, MethodBreakpointInfo.class);
+        final JavaBreakpointInfo methodBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
         MethodBreakpoint methodBreakpoint = ModelAccess.instance().runReadAction(new Computable<MethodBreakpoint>() {
           @Override
           public MethodBreakpoint compute() {
             SNodePointer pointer = new SNodePointer(methodBreakpointInfo.myModelReference, methodBreakpointInfo.myNodeId);
-            return new MethodBreakpoint(pointer.getNode(), methodBreakpointInfo.myMethodName, methodBreakpointInfo.myJniSignature, project);
+            return new MethodBreakpoint(pointer.getNode(), project);
           }
         });
         methodBreakpointInfo.initBreakpoint(methodBreakpoint);
         return methodBreakpoint;
       //todo duplication
       case FIELD_BREAKPOINT:
-        final FieldBreakpointInfo fieldBreakpointInfo = XmlSerializer.deserialize(state, FieldBreakpointInfo.class);
+        final JavaBreakpointInfo fieldBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
         FieldBreakpoint fieldBreakpoint = ModelAccess.instance().runReadAction(new Computable<FieldBreakpoint>() {
           @Override
           public FieldBreakpoint compute() {
             SNodePointer pointer = new SNodePointer(fieldBreakpointInfo.myModelReference, fieldBreakpointInfo.myNodeId);
-            return new FieldBreakpoint(pointer.getNode(), fieldBreakpointInfo.myFieldName, project);
+            return new FieldBreakpoint(pointer.getNode(), project);
           }
         });
         fieldBreakpointInfo.initBreakpoint(fieldBreakpoint);
@@ -138,9 +136,9 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
       case LINE_BREAKPOINT:
         return XmlSerializer.serialize(new JavaBreakpointInfo(breakpoint, ((ILocationBreakpoint) breakpoint).getLocation()));
       case METHOD_BREAKPOINT:
-        return XmlSerializer.serialize(new MethodBreakpointInfo((MethodBreakpoint) breakpoint));
+        return XmlSerializer.serialize(new JavaBreakpointInfo(breakpoint, ((ILocationBreakpoint) breakpoint).getLocation()));
       case FIELD_BREAKPOINT:
-        return XmlSerializer.serialize(new FieldBreakpointInfo((FieldBreakpoint) breakpoint));
+        return XmlSerializer.serialize(new JavaBreakpointInfo(breakpoint, ((ILocationBreakpoint) breakpoint).getLocation()));
     }
     return null;
   }

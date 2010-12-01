@@ -36,18 +36,16 @@ import org.jetbrains.annotations.NotNull;
 public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(MethodBreakpoint.class);
   private final BreakpointLocation myLocation;
-  private final String myMethodName;
-  private final String myJniSignature;
+  private String myMethodName = null;
+  private String myJniSignature = null;
 
-  public MethodBreakpoint(SNodePointer pointer, String name, String jniSignature, Project project) {
+  public MethodBreakpoint(SNodePointer pointer, Project project) {
     super(project);
     myLocation = new BreakpointLocation(pointer);
-    myMethodName = name;
-    myJniSignature = jniSignature;
   }
 
-  public MethodBreakpoint(SNode node, String name, String jniSignature, Project project) {
-    this(new SNodePointer(node), name, jniSignature, project);
+  public MethodBreakpoint(SNode node, Project project) {
+    this(new SNodePointer(node), project);
   }
 
   @Override
@@ -70,6 +68,8 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
 
+    if (!updateMethodNameAndSignature()) return;
+
     try {
       MethodEntryRequest methodEntryRequest = requestManager.createMethodEntryRequest(this, classType);
       MethodExitRequest methodExitRequest = requestManager.createMethodExitRequest(this, classType);
@@ -85,6 +85,22 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     } catch (Exception ex) {
       LOG.error(ex);
     }
+  }
+
+  private boolean updateMethodNameAndSignature() {
+    if (myMethodName != null && myJniSignature != null) return true;
+    String propertyString = myLocation.getTargetCodePosition().getPropertyString();
+    if (propertyString == null) {
+      return false;
+    }
+    // todo property string format should be described in one place
+    String[] split = propertyString.split("#");
+    if (split.length != 2){
+      return false;
+    }
+    myMethodName = split[0];
+    myJniSignature = split[1];
+    return myMethodName != null && myJniSignature != null;
   }
 
   @Override
@@ -110,17 +126,8 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     return myLocation;
   }
 
-  public static class MethodBreakpointInfo extends JavaBreakpointInfo {
-    public String myMethodName;
-    public String myJniSignature;
-
-    public MethodBreakpointInfo(MethodBreakpoint breakpoint) {
-      super(breakpoint, breakpoint.myLocation);
-      myMethodName = breakpoint.myMethodName;
-      myJniSignature = breakpoint.myJniSignature;
-    }
-
-    public MethodBreakpointInfo() {
-    }
+  @Override
+  public boolean isValid() {
+    return super.isValid() && updateMethodNameAndSignature();
   }
 }

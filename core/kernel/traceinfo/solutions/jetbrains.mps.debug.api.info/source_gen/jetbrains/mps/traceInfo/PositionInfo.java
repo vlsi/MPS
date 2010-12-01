@@ -15,10 +15,12 @@ public class PositionInfo implements Comparable<PositionInfo> {
   private static String END_POSITION = "endPosition";
   private static String NODE_ID = "nodeId";
   private static String CONCEPT_FQ_NAME = "conceptFqName";
+  private static String PROPERTY_STRING = "propertyString";
 
   private String myFileName;
   private String myNodeId;
   private String myConceptFqName;
+  private String myPropertyString;
   private int myStartLine;
   private int myStartPosition;
   private int myEndLine;
@@ -35,6 +37,7 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myStartPosition = element.getAttribute(PositionInfo.START_POSITION).getIntValue();
     this.myEndLine = element.getAttribute(PositionInfo.END_LINE).getIntValue();
     this.myEndPosition = element.getAttribute(PositionInfo.END_POSITION).getIntValue();
+    this.myPropertyString = element.getAttributeValue(PositionInfo.PROPERTY_STRING);
   }
 
   @Nullable
@@ -63,6 +66,10 @@ public class PositionInfo implements Comparable<PositionInfo> {
     return this.myEndPosition;
   }
 
+  public String getPropertyString() {
+    return myPropertyString;
+  }
+
   public void setFileName(String fileName) {
     this.myFileName = fileName;
   }
@@ -87,6 +94,10 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myEndPosition = endPosition;
   }
 
+  public void setPropertyString(String propertyString) {
+    this.myPropertyString = propertyString;
+  }
+
   public String getFileAndLine() {
     return this.myFileName + ":" + (this.myStartLine + 1);
   }
@@ -102,6 +113,9 @@ public class PositionInfo implements Comparable<PositionInfo> {
     if (myConceptFqName != null) {
       element.setAttribute(PositionInfo.CONCEPT_FQ_NAME, this.myConceptFqName);
     }
+    if (myPropertyString != null) {
+      element.setAttribute(PROPERTY_STRING, this.myPropertyString);
+    }
     element.setAttribute(PositionInfo.FILE_NAME, this.myFileName);
     element.setAttribute(PositionInfo.START_LINE, Integer.toString(this.myStartLine));
     element.setAttribute(PositionInfo.START_POSITION, Integer.toString(this.myStartPosition));
@@ -114,9 +128,9 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public int compareTo(PositionInfo p) {
-    if (eq_1myh1n_a0a0q(this.getLineDistance(), p.getLineDistance())) {
-      if (eq_1myh1n_a0a0a0q(this.myStartLine, p.myStartLine)) {
-        if (eq_1myh1n_a0a0a0a0q(this.myStartPosition, p.myStartPosition)) {
+    if (eq_1myh1n_a0a0s(this.getLineDistance(), p.getLineDistance())) {
+      if (eq_1myh1n_a0a0a0s(this.myStartLine, p.myStartLine)) {
+        if (eq_1myh1n_a0a0a0a0s(this.myStartPosition, p.myStartPosition)) {
           if (myNodeId == null) {
             return -1;
           }
@@ -136,7 +150,7 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public boolean isOccupyTheSameSpace(PositionInfo p) {
-    return (eq_1myh1n_a0a0a0a0r(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0r_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a71(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0r(myEndPosition, p.myEndPosition));
+    return (eq_1myh1n_a0a0a0a0t(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0t_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a91(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0t(myEndPosition, p.myEndPosition));
   }
 
   public void fillFrom(PositionInfo position) {
@@ -146,6 +160,8 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myStartPosition = position.myStartPosition;
     this.myEndLine = position.myEndLine;
     this.myEndPosition = position.myEndPosition;
+    this.myPropertyString = position.myPropertyString;
+    this.myConceptFqName = position.myConceptFqName;
   }
 
   @Nullable
@@ -178,49 +194,49 @@ public class PositionInfo implements Comparable<PositionInfo> {
     return p.getValue();
   }
 
-  private static boolean eq_1myh1n_a0a0q(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0s(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a0q(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a0s(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0q(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0s(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a0r(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a0t(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a0r_0(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a0t_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0a71(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0a91(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_1myh1n_a0a0a0r(Object a, Object b) {
+  private static boolean eq_1myh1n_a0a0a0t(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

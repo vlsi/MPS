@@ -31,12 +31,17 @@ import org.jetbrains.annotations.NotNull;
 public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(FieldBreakpoint.class);
   private final BreakpointLocation myLocation;
-  private final String myFieldName;
+  private String myFieldName;
 
-  public FieldBreakpoint(SNode node, String fieldName, Project project) {
+  public FieldBreakpoint(SNode node, Project project) {
     super(project);
     myLocation = new BreakpointLocation(node);
-    myFieldName = fieldName;
+  }
+
+  private boolean updateFieldName() {
+    if (myFieldName != null) return true;
+    myFieldName = myLocation.getTargetCodePosition().getPropertyString();
+    return myFieldName != null;
   }
 
   @Override
@@ -64,6 +69,8 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
   protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
 
+    if (!updateFieldName()) return;
+
     try {
       Field field = EvaluationUtils.findField((ClassType) classType, myFieldName);
       AccessWatchpointRequest fieldAccessRequest = requestManager.createFieldAccessRequest(this, field);
@@ -79,18 +86,6 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
       LOG.error(ex);
     } catch (Exception ex) {
       LOG.error(ex);
-    }
-  }
-
-  public static class FieldBreakpointInfo extends JavaBreakpointInfo {
-    public String myFieldName;
-
-    public FieldBreakpointInfo(FieldBreakpoint breakpoint) {
-      super(breakpoint, breakpoint.myLocation);
-      myFieldName = breakpoint.myFieldName;
-    }
-
-    public FieldBreakpointInfo() {
     }
   }
 }

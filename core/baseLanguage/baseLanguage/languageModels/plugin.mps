@@ -76,7 +76,7 @@
   <import index="x4f9" modelUID="f:java_stub#jetbrains.mps.traceInfo(jetbrains.mps.traceInfo@java_stub)" version="-1" />
   <import index="1nm2" modelUID="f:java_stub#jetbrains.mps.generator.traceInfo(jetbrains.mps.generator.traceInfo@java_stub)" version="-1" />
   <import index="ktqx" modelUID="f:java_stub#jetbrains.mps.debug.breakpoints(jetbrains.mps.debug.breakpoints@java_stub)" version="-1" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
+  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="24" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -7184,14 +7184,63 @@
     <node role="conceptsToDebug" roleId="tp4k.5124230653299370499" type="tp4k.DebuggableNodeItem" typeId="tp4k.5124230653299542673" id="5191407547578560720">
       <link role="declaration" roleId="tp4k.5124230653299542674" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
-    <node role="conceptsToDebug" roleId="tp4k.5124230653299370499" type="tp4k.DebuggableNodeItem" typeId="tp4k.5124230653299542673" id="5191407547578560723">
+    <node role="conceptsToDebug" roleId="tp4k.5124230653299370499" type="tp4k.DebuggableNodeItem" typeId="tp4k.5124230653299542673" id="2387409699445020030">
       <link role="declaration" roleId="tp4k.5124230653299542674" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+      <node role="propertyStringGetter" roleId="tp4k.2387409699444984663" type="tp4k.ConceptFunction_PropertyStringGetter" typeId="tp4k.2387409699444984664" id="2387409699445138559">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2387409699445138560">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2387409699445147318">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2387409699445147320">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4k.ConceptFunctionParameter_DebuggableNode" typeId="tp4k.6516056543316793311" id="2387409699445147319" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2387409699445147324">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
-    <node role="conceptsToDebug" roleId="tp4k.5124230653299370499" type="tp4k.DebuggableNodeItem" typeId="tp4k.5124230653299542673" id="5191407547578560725">
+    <node role="conceptsToDebug" roleId="tp4k.5124230653299370499" type="tp4k.DebuggableNodeItem" typeId="tp4k.5124230653299542673" id="2387409699445020032">
       <link role="declaration" roleId="tp4k.5124230653299542674" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
+      <node role="propertyStringGetter" roleId="tp4k.2387409699444984663" type="tp4k.ConceptFunction_PropertyStringGetter" typeId="tp4k.2387409699444984664" id="2387409699445147325">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2387409699445147326">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2387409699445147327">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2387409699445147329">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4k.ConceptFunctionParameter_DebuggableNode" typeId="tp4k.6516056543316793311" id="2387409699445147328" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2387409699445147333">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
-    <node role="conceptsToDebug" roleId="tp4k.5124230653299370499" type="tp4k.DebuggableNodeItem" typeId="tp4k.5124230653299542673" id="5191407547578560727">
+    <node role="conceptsToDebug" roleId="tp4k.5124230653299370499" type="tp4k.DebuggableNodeItem" typeId="tp4k.5124230653299542673" id="2387409699445020034">
       <link role="declaration" roleId="tp4k.5124230653299542674" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
+      <node role="propertyStringGetter" roleId="tp4k.2387409699444984663" type="tp4k.ConceptFunction_PropertyStringGetter" typeId="tp4k.2387409699444984664" id="2387409699445147334">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2387409699445147335">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2387409699445147336">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2387409699445147347">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2387409699445147351">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4k.ConceptFunctionParameter_DebuggableNode" typeId="tp4k.6516056543316793311" id="2387409699445147350" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2387409699445147355">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.8847328628797656446" resolveInfo="jniSignature" />
+                </node>
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2387409699445147343">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2387409699445147338">
+                  <node role="operand" roleId="tpee.1197027771414" type="tp4k.ConceptFunctionParameter_DebuggableNode" typeId="tp4k.6516056543316793311" id="2387409699445147337" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2387409699445147342">
+                    <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+                  </node>
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2387409699445147346">
+                  <property name="value" nameId="tpee.1070475926801" value="#" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="unitConcepts" roleId="tp4k.4089570349960659790" type="tp4k.UnitNodeItem" typeId="tp4k.4089570349960658154" id="4089570349960765075">
       <link role="unitConcept" roleId="tp4k.4089570349960658155" targetNodeId="tpee.1170345865475" resolveInfo="AnonymousClass" />
