@@ -53,14 +53,6 @@ public class NullableAnalyzerRules {
       }
       myApplicableMap.get(conceptName).add(rule);
     }
-    {
-      DataFlowConstructor rule = new RuleForLoop();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.ForStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
     myConceptRules.add(new RuleAfterDotExpression());
     myConceptRules.add(new RuleCreator());
     myConceptRules.add(new RuleFieldReference());
@@ -70,6 +62,7 @@ public class NullableAnalyzerRules {
     myConceptRules.add(new IfNullReturnAll());
     myConceptRules.add(new RuleTernaryOperation());
     myConceptRules.add(new IfNotNullAll());
+    myConceptRules.add(new ForLoopNotNull());
   }
 
   public void apply(SNode nodeToApply, Program program) {
