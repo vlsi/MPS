@@ -42,7 +42,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   private NodeTypesComponentNew myNodeTypesComponent;
   private TypeChecker myTypeChecker;
   private SubTyping mySubTyping;
-  private boolean checked = false;
+  private boolean myChecked = false;
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
@@ -82,8 +82,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public void checkRoot() {
-    if (!checked) {
-      checked = true;
+    if (!myChecked) {
+      myChecked = true;
       checkRoot(true);
     }
     // myState.solveInequalities();
