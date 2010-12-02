@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.unittest" uuid="e60b351d-8d80-4c13-8ad4-3e4759e2a3ea" extenallyVisible="true" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/core/baseLanguage/baseLanguage/tests_gen">
+<solution name="jetbrains.mps.baseLanguage.unittest" uuid="e60b351d-8d80-4c13-8ad4-3e4759e2a3ea" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/core/baseLanguage/baseLanguage/tests_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
@@ -9,5 +9,8 @@
     </stubModelEntry>
   </stubModelEntries>
   <sourcePath />
+  <usedLanguages>
+    <usedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</usedLanguage>
+  </usedLanguages>
 </solution>
 

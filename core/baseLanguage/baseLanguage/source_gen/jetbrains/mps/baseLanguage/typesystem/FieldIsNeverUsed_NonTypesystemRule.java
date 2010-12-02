@@ -12,52 +12,77 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public FieldIsNeverUsed_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode fieldDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-      if (SNodeOperations.isInstanceOf(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
-        final SNode member = SNodeOperations.cast(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
-        List<SNode> memberOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", false, new String[]{});
-        if (ListSequence.fromList(memberOperations).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "member", false) == member;
-          }
-        }).isEmpty()) {
-          {
-            BaseQuickFixProvider intentionProvider = null;
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(fieldDeclaration, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8706754199947716227", intentionProvider, errorTarget);
-          }
+  public void applyRule(final SNode field, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
+      return;
+    }
+    if (SNodeOperations.isInstanceOf(field, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
+      final SNode member = SNodeOperations.cast(field, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
+      List<SNode> memberOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", false, new String[]{});
+      Iterable<SNode> references = ListSequence.fromList(memberOperations).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, "member", false) == member;
+        }
+      });
+      if (Sequence.fromIterable(references).isEmpty()) {
+        {
+          BaseQuickFixProvider intentionProvider = null;
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7970711249077251955", intentionProvider, errorTarget);
         }
       } else {
-        List<SNode> localFieldRefs = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{});
-        if (ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "variableDeclaration", false) == fieldDeclaration;
+        for (SNode ref : references) {
+          if (CheckingUtil.isAssigned(ref)) {
+            return;
           }
-        }).isNotEmpty()) {
-          return;
         }
-        List<SNode> fieldReferenceOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
-        if (ListSequence.fromList(fieldReferenceOperations).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "fieldDeclaration", false) == fieldDeclaration;
+        {
+          BaseQuickFixProvider intentionProvider = null;
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Field is never assigned", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7970711249077252119", intentionProvider, errorTarget);
+        }
+      }
+    } else {
+      List<SNode> localFieldRefs = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{});
+      List<SNode> fieldReferenceOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
+      Iterable<SNode> fieldReferences = ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, "variableDeclaration", false) == field;
+        }
+      });
+      Sequence.fromIterable(fieldReferences).concat(ListSequence.fromList(fieldReferenceOperations).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, "fieldDeclaration", false) == field;
+        }
+      }));
+      if (Sequence.fromIterable(fieldReferences).isEmpty()) {
+        {
+          BaseQuickFixProvider intentionProvider = null;
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Private field " + SPropertyOperations.getString(field, "name") + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7970711249077252023", intentionProvider, errorTarget);
+        }
+      } else {
+        for (SNode ref : fieldReferences) {
+          if (CheckingUtil.isAssigned(ref)) {
+            return;
           }
-        }).isEmpty()) {
-          {
-            BaseQuickFixProvider intentionProvider = null;
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(fieldDeclaration, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8706754199947716162", intentionProvider, errorTarget);
-          }
+        }
+        {
+          BaseQuickFixProvider intentionProvider = null;
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Private field " + SPropertyOperations.getString(field, "name") + " is never assigned", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7970711249077252061", intentionProvider, errorTarget);
         }
       }
     }
