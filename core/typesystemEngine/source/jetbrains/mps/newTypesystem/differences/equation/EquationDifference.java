@@ -27,13 +27,8 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class EquationDifference extends Difference {
-  protected Equations myEquations;
   protected SNode myChild;
   protected SNode myParent;
-
-  public EquationDifference(Equations equations) {
-    myEquations = equations;
-  }
 
   @Override
   public String getShortPresentation() {

@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences.equation;
 
 import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -27,21 +28,20 @@ import jetbrains.mps.smodel.SNode;
  */
 public class EquationRemoved extends EquationDifference {
 
-  public EquationRemoved(SNode child, SNode parent, SNode source, Equations equations) {
-    super(equations);
+  public EquationRemoved(SNode child, SNode parent, SNode source) {
     myChild = child;
     myParent = parent;
     mySource = source;
   }
 
   @Override
-  public void rollBack() {
-    myEquations.add(myChild, myParent);
+  public void rollBack(State state) {
+    state.getEquations().add(myChild, myParent);
   }
 
   @Override
-  public void play() {
-    myEquations.remove(myChild);
+  public void play(State state) {
+    state.getEquations().remove(myChild);
   }
 
   @Override

@@ -28,6 +28,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -70,11 +72,11 @@ public class State {
     myInequalities.addInequality(subType, superType, isWeak, check, info);
   }
 
-  public void addRelation(SNode subType, SNode superType, boolean isWeak, boolean check, boolean comparable, EquationInfo info) {
-    if (!comparable) {
-      myInequalities.addInequality(subType, superType, isWeak, check, info);
+  public void addRelation(SNode subType, SNode superType, RelationMapKind kind, EquationInfo info) {
+    if (!kind.isComparable()) {
+      myInequalities.addInequality(subType, superType, kind.isWeak(), kind.isCheckOnly(), info);
     } else {
-      myInequalities.addComparableEquation(subType, superType, isWeak, info);
+      myInequalities.addComparableEquation(subType, superType, kind.isWeak(), info);
     }
   }
 
@@ -94,6 +96,14 @@ public class State {
     return myTypeCheckingContext;
   }
 
+  public Map<SNode, List<IErrorReporter>> getErrors() {
+    return myNodeMaps.getErrors();
+  }
+
+  public Map<SNode, SNode> getNodeToTypeMap() {
+    return myNodeMaps.getNodeToTypeMap();
+  }
+
   public void addDifference(Difference difference, boolean push) {
     if (difference == null) {
       return;
@@ -104,7 +114,7 @@ public class State {
     if (push || myDifferenceStack.empty()) {
       myDifferenceStack.push(difference);
     }
-    difference.play();
+    difference.play(this);
   }
 
   public void removeLastDifference(Difference difference) {
@@ -116,7 +126,7 @@ public class State {
     }
     myDifferenceStack.peek().removeChildDifference(difference);
 
-    difference.rollBack();
+    difference.rollBack(this);
   }
 
   public void popDifference() {
@@ -195,7 +205,7 @@ public class State {
   }
 
   public boolean applyDifferenceBefore(Difference diff, Object toCompare) {
-    diff.play();
+    diff.play(this);
     if (diff.equals(toCompare)) {
       return true;
     }
@@ -224,6 +234,6 @@ public class State {
 
   public void reset() {
     clear(false);
-    myDifference.playRecursively();
+    myDifference.playRecursively(this);
   }
 }

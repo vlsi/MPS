@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -31,17 +32,17 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class BecameConcrete extends Difference {
-  private Map<WhenConcreteEntry, Set<SNode>> myMap;
   private WhenConcreteEntry myEntry;
+  private boolean myIsShallow;
 
-  public BecameConcrete(Map<WhenConcreteEntry, Set<SNode>> map, WhenConcreteEntry entry) {
-    myMap = map;
+  public BecameConcrete(boolean isShallow, WhenConcreteEntry entry) {
+    myIsShallow = isShallow;
     myEntry = entry;
     myEquationInfo = new EquationInfo(null, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
   @Override
-  public void rollBack() {
+  public void rollBack(State state) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
@@ -51,7 +52,8 @@ public class BecameConcrete extends Difference {
   }
 
   @Override
-  public void play() {
-    myMap.remove(myEntry);
+  public void play(State state) {
+    state.getNonConcrete().removeWhenConcrete(myEntry, myIsShallow);
+    //todo it seems that from "var -> WC" it is not removed
   }
 }

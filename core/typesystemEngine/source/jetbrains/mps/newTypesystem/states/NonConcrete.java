@@ -82,4 +82,20 @@ public class NonConcrete {
     myShallow.clear();
     myDeep.clear();
   }
+
+  public void addDependency(WhenConcreteEntry entry, SNode node, boolean isShallow) {
+    NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
+    nonConcreteMapPair.addDependency(entry, node);
+  }
+
+  public void removeDependency(WhenConcreteEntry entry, SNode node, boolean isShallow) {
+    NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
+    nonConcreteMapPair.removeDependency(entry, node);
+  }
+
+  public void removeWhenConcrete(WhenConcreteEntry entry, boolean isShallow) {
+    NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
+    nonConcreteMapPair.removeWhenConcrete(entry);
+    //todo it seems that from "var -> WC" it is not removed
+  }
 }

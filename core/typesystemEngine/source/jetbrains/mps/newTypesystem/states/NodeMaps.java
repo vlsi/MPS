@@ -36,7 +36,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeMaps {
-  private final Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myNodesToTypes = new HashMap<SNode, SNode>();
   private final Map<SNode, SNode> myTypesToNodes = new HashMap<SNode, SNode>();
   private final Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
   private final State myState;
@@ -47,16 +47,16 @@ public class NodeMaps {
 
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
     myTypesToNodes.put(type, node);
-    myState.addDifference(new TypeDifference(node, type, myNodeToTypes, info), false);
+    myState.addDifference(new TypeDifference(node, type, info), false);
   }
 
   public void updateNodeToType(SNode node, SNode type, EquationInfo info) {
-    SNode oldType = myNodeToTypes.get(node);
-    myState.addDifference(new TypeExpanded(node, type, myNodeToTypes, info, oldType), false);
+    SNode oldType = myNodesToTypes.get(node);
+    myState.addDifference(new TypeExpanded(node, type, info, oldType), false);
   }
 
   public SNode typeOf(SNode node, EquationInfo info) {
-    SNode type = myNodeToTypes.get(node);
+    SNode type = myNodesToTypes.get(node);
     if (type == null) {
       type = myState.createNewRuntimeTypesVariable();
       addNodeToType(node, type, info);
@@ -65,7 +65,7 @@ public class NodeMaps {
   }
 
   public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {
-    myState.addDifference(new ErrorDifference(node, error, myNodesToErrors, info), false);
+    myState.addDifference(new ErrorDifference(node, error, info), false);
   }
 
   public List<IErrorReporter> getNodeErrors(SNode node) {
@@ -89,12 +89,12 @@ public class NodeMaps {
 
   public void clear() {
     myNodesToErrors.clear();
-    myNodeToTypes.clear();
+    myNodesToTypes.clear();
     myTypesToNodes.clear();
   }
 
   public SNode getType(SNode node) {
-    SNode type = myNodeToTypes.get(node);
+    SNode type = myNodesToTypes.get(node);
     return myState.getRepresentative(type);
   }
 
@@ -110,15 +110,15 @@ public class NodeMaps {
 
   public List<String> getTypeListPresentation() {
     List<String> result = new LinkedList<String>();
-    for (Map.Entry<SNode, SNode> entry : myNodeToTypes.entrySet()) {
+    for (Map.Entry<SNode, SNode> entry : myNodesToTypes.entrySet()) {
       result.add(entry.getKey() + " : " + entry.getValue() + " ---> " + myState.getRepresentative(entry.getValue()));
     }
     return result;
   }
 
   public void expandAll() {
-    for (SNode node : myNodeToTypes.keySet()) {
-      SNode var = myNodeToTypes.get(node);
+    for (SNode node : myNodesToTypes.keySet()) {
+      SNode var = myNodesToTypes.get(node);
       SNode type = myState.getEquations().expandNode(var);
       updateNodeToType(node, type, null);
     }
@@ -126,6 +126,14 @@ public class NodeMaps {
 
   public SNode getNode(SNode type) {
     return myTypesToNodes.get(type);
+  }
+
+  /*package*/ Map<SNode, List<IErrorReporter>> getErrors() {
+    return myNodesToErrors;
+  }
+
+  /*package*/ Map<SNode, SNode> getNodeToTypeMap() {
+    return myNodesToTypes;
   }
 
   public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {

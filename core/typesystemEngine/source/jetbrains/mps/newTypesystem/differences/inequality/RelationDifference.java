@@ -16,8 +16,11 @@
 package jetbrains.mps.newTypesystem.differences.inequality;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.states.RelationMapKind;
 import jetbrains.mps.newTypesystem.states.RelationMapPair;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,20 +30,16 @@ import jetbrains.mps.smodel.SNode;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class RelationDifference extends Difference {
-  protected RelationMapPair myMapPair;
   protected SNode mySubType;
   protected SNode mySuperType;
+  protected RelationMapKind myRelationMapKind;
 
-  public RelationDifference(SNode subType, SNode superType, RelationMapPair mapPair) {
+  public RelationDifference(SNode subType, SNode superType, EquationInfo info, RelationMapKind kind) {
     mySubType = subType;
     mySuperType = superType;
-    myMapPair = mapPair;
+    myRelationMapKind = kind;
+    myEquationInfo = info;
   }
-  /*
-  @Override
-  public Icon getIcon() {
-    return Icons.STRONG_SUBTYPE_ICON;
-  } */
 
   public SNode getSubType() {
     return mySubType;
@@ -48,5 +47,9 @@ public abstract class RelationDifference extends Difference {
 
   public SNode getSuperType() {
     return mySuperType;
+  }
+
+  protected RelationMapPair getRelationMap(State state) {
+    return state.getInequalities().getRelation(myRelationMapKind);
   }
 }

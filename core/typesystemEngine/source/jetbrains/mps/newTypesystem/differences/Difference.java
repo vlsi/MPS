@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences;
 
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -51,9 +52,9 @@ public abstract class Difference {
     myChildren.remove(child);
   }
 
-  public abstract void rollBack();
+  public abstract void rollBack(State state);
 
-  public abstract void play();
+  public abstract void play(State state);
 
   public String getPresentation() {
     return "";
@@ -79,11 +80,11 @@ public abstract class Difference {
     return myEquationInfo;
   }
 
-  public void playRecursively() {
-    play();
+  public void playRecursively(State state) {
+    play(state);
     if (myChildren != null) {
       for (Difference child : myChildren) {
-        child.playRecursively();
+        child.playRecursively(state);
       }
     }
   }

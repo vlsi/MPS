@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -30,24 +31,23 @@ import java.util.Map;
 public class TypeDifference extends Difference {
   protected SNode myNode;
   protected SNode myType;
-  protected Map<SNode, SNode> myMap;
 
-  public TypeDifference(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info) {
+  public TypeDifference(SNode node, SNode type, EquationInfo info) {
     myNode = node;
     myType = type;
-    myMap = map;
     mySource = node;
     myEquationInfo = info;
   }
 
   @Override
-  public void rollBack() {
-    myMap.remove(myNode);
+  //todo: it does not seem to update "type to node" map
+  public void rollBack(State state) {
+    state.getNodeToTypeMap().remove(myNode);
   }
 
   @Override
-  public void play() {
-    myMap.put(myNode, myType);
+  public void play(State state) {
+    state.getNodeToTypeMap().put(myNode, myType);
   }
 
   @Override

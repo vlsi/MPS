@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -31,15 +32,15 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class WhenConcreteAdded extends Difference {
-  private NonConcreteMapPair myMap;
   private SNode myNode;
   private WhenConcreteEntry myEntry;
+  private boolean myIsShallow;
 
-  public WhenConcreteAdded(WhenConcreteEntry entry, SNode node, SNode source, NonConcreteMapPair map) {
+  public WhenConcreteAdded(WhenConcreteEntry entry, SNode node, SNode source, boolean isShallow) {
     myNode = node;
     mySource = source;
     myEntry = entry;
-    myMap = map;
+    myIsShallow = isShallow;
     myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
@@ -54,12 +55,12 @@ public class WhenConcreteAdded extends Difference {
   }
 
   @Override
-  public void rollBack() {
+  public void rollBack(State state) {
 
   }
 
   @Override
-  public void play() {
+  public void play(State state) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 }

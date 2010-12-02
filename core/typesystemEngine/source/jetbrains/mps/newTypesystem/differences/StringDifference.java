@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
+import jetbrains.mps.newTypesystem.states.State;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -34,11 +36,11 @@ public class StringDifference extends Difference {
   }
 
   @Override
-  public void rollBack() {
+  public void rollBack(State state) {
   }
 
   @Override
-  public void play() {
+  public void play(State state) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 

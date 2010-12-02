@@ -58,7 +58,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     }
     Difference diff = getDifferenceStack().pop();
     System.out.println("Rolled back (" + diff.getPresentation() + ")");
-    diff.rollBack();
+    diff.rollBack(myState);
   }
 
   public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {

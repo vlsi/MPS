@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -31,14 +32,14 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class WhenConcreteDependencyRemoved extends Difference {
-  private NonConcreteMapPair myMap;
   private SNode myNode;
   private WhenConcreteEntry myEntry;
+  private boolean myIsShallow;
 
-  public WhenConcreteDependencyRemoved(WhenConcreteEntry entry, SNode node, NonConcreteMapPair map) {
+  public WhenConcreteDependencyRemoved(WhenConcreteEntry entry, SNode node, boolean isShallow) {
     myNode = node;
     myEntry = entry;
-    myMap = map;
+    myIsShallow = isShallow;
     myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
@@ -53,12 +54,12 @@ public class WhenConcreteDependencyRemoved extends Difference {
   }
 
   @Override
-  public void rollBack() {
-    myMap.addDependency(myEntry, myNode);
+  public void rollBack(State state) {
+    state.getNonConcrete().addDependency(myEntry, myNode, myIsShallow);
   }
 
   @Override
-  public void play() {
-    myMap.removeDependency(myEntry, myNode);
+  public void play(State state) {
+    state.getNonConcrete().removeDependency(myEntry, myNode, myIsShallow);
   }
 }

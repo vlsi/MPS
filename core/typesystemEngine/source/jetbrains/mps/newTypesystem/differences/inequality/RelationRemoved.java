@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.newTypesystem.differences.inequality;
 
-import jetbrains.mps.newTypesystem.states.RelationMapPair;
+import jetbrains.mps.newTypesystem.states.RelationMapKind;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -30,23 +31,23 @@ import java.awt.Color;
  */
 public class RelationRemoved extends RelationDifference {
 
-  public RelationRemoved(SNode subType, SNode superType, EquationInfo info, RelationMapPair mapPair) {
-    super(subType, superType, mapPair);
-    myEquationInfo = info;
+  public RelationRemoved(SNode subType, SNode superType, EquationInfo info, RelationMapKind kind) {
+    super(subType, superType, info, kind);
   }
 
   @Override
-  public void rollBack() {
-    myMapPair.add(mySubType, mySuperType, myEquationInfo);
+  public void rollBack(State state) {
+    getRelationMap(state).add(mySubType, mySuperType, myEquationInfo);
   }
 
   @Override
-  public void play() {
-    myMapPair.remove(mySubType, mySuperType);
+  public void play(State state) {
+    getRelationMap(state).remove(mySubType, mySuperType);
   }
 
   public String getPresentation() {
-    return myMapPair.getTitle() + " removed " + mySubType + myMapPair.getRelationSign() + mySuperType;
+    return myRelationMapKind.getTitle() + " removed "
+      + mySubType + myRelationMapKind.getRelationSign() + mySuperType;
   }
 
   public Color getColor() {

@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences;
 
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -33,12 +34,10 @@ import java.util.Map;
 public class ErrorDifference extends Difference {
   private SNode myNode;
   private IErrorReporter myError;
-  private Map<SNode, List<IErrorReporter>> myMap;
 
-  public ErrorDifference(SNode node, IErrorReporter error, Map<SNode, List<IErrorReporter>> map, EquationInfo info) {
+  public ErrorDifference(SNode node, IErrorReporter error, EquationInfo info) {
     myNode = node;
     myError = error;
-    myMap = map;
     mySource = myNode;
     myEquationInfo = info;
   }
@@ -49,16 +48,17 @@ public class ErrorDifference extends Difference {
   }
 
   @Override
-  public void rollBack() {
-    myMap.get(myNode).remove(myError);
+  public void rollBack(State state) {
+    state.getErrors().get(myNode).remove(myError);
   }
 
   @Override
-  public void play() {
-    List<IErrorReporter> errors = myMap.get(myNode);
+  public void play(State state) {
+    Map<SNode, List<IErrorReporter>> errorMap = state.getErrors();
+    List<IErrorReporter> errors = errorMap.get(myNode);
     if (errors == null) {
       errors = new LinkedList<IErrorReporter>();
-      myMap.put(myNode, errors);
+      errorMap.put(myNode, errors);
     }
     errors.add(myError);
   }

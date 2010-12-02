@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences.equation;
 
 import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -30,8 +31,7 @@ import java.awt.Color;
 public class EquationAdded extends EquationDifference {
 
 
-  public EquationAdded(SNode child, SNode parent, SNode source, Equations equations, EquationInfo info) {
-    super(equations);
+  public EquationAdded(SNode child, SNode parent, SNode source, EquationInfo info) {
     myChild = child;
     mySource = source;
     myParent = parent;
@@ -39,13 +39,13 @@ public class EquationAdded extends EquationDifference {
   }
 
   @Override
-  public void rollBack() {
-    myEquations.remove(myChild);
+  public void rollBack(State state) {
+    state.getEquations().remove(myChild);
   }
 
   @Override
-  public void play() {
-    myEquations.add(myChild, myParent);
+  public void play(State state) {
+    state.getEquations().add(myChild, myParent);
   }
 
   public SNode getChild() {

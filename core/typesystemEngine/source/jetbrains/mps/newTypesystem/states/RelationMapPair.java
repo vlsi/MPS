@@ -31,17 +31,13 @@ import java.util.*;
  */
 public class RelationMapPair {
   private final State myState;
-  private final boolean isWeak;
-  private final boolean isCheckOnly;
-  private final boolean isComparable;
+  private final RelationMapKind myKind;
   private final Map<SNode, Map<SNode, EquationInfo>> mySubToSuper = new HashMap<SNode, Map<SNode, EquationInfo>>();
   private final Map<SNode, Map<SNode, EquationInfo>> mySuperToSub = new HashMap<SNode, Map<SNode, EquationInfo>>();
 
-  public RelationMapPair(State state, boolean weak, boolean checkOnly, boolean comparable) {
+  public RelationMapPair(State state, RelationMapKind kind) {
     myState = state;
-    isWeak = weak;
-    isCheckOnly = checkOnly;
-    isComparable = comparable;
+    myKind = kind;
   }
 
   public boolean contains(SNode key, SNode value) {
@@ -87,11 +83,11 @@ public class RelationMapPair {
       Map<SNode, EquationInfo> map = pairMap.get(value);
       EquationInfo info = map.get(var);
       if (reversed) {
-        myState.addDifference(new RelationRemoved(var, value, info, this), false);
-        myState.addRelation(type, value, isWeak, isCheckOnly, isComparable, info);
+        myState.addDifference(new RelationRemoved(var, value, info, myKind), false);
+        myState.addRelation(type, value, myKind, info);
       } else {
-        myState.addDifference(new RelationRemoved(value, var, info, this), false);
-        myState.addRelation(value, type, isWeak, isCheckOnly, isComparable, info);
+        myState.addDifference(new RelationRemoved(value, var, info, myKind), false);
+        myState.addRelation(value, type, myKind, info);
       }
     }
   }
@@ -130,7 +126,7 @@ public class RelationMapPair {
   private void removeAndTrack(SNode subType, SNode superType) {
     EquationInfo info = mySubToSuper.get(subType).get(superType);
     remove(subType, superType);
-    myState.addDifference(new RelationRemoved(subType, superType, info, this), false);
+    myState.addDifference(new RelationRemoved(subType, superType, info, myKind), false);
   }
 
   public void check() {
@@ -144,8 +140,8 @@ public class RelationMapPair {
           continue;
         }
         EquationInfo info = map.get(superType);
-        if (!subTyping.isSubType(subType, superType, info, isWeak, isCheckOnly)) {
-          myState.getNodeMaps().reportSubTypeError(subType, superType, info, isWeak);
+        if (!subTyping.isSubType(subType, superType, info, isWeak(), isCheckOnly())) {
+          myState.getNodeMaps().reportSubTypeError(subType, superType, info, isWeak());
         }
       }
     }
@@ -205,10 +201,10 @@ public class RelationMapPair {
           EquationInfo info = map.get(node).get(concreteType);
           if (sub) {
             removeAndTrack(node, concreteType);
-            myState.addRelation(node, concreteType, isWeak, isCheckOnly, isComparable, info);
+            myState.addRelation(node, concreteType, myKind, info);
           } else {
             removeAndTrack(concreteType, node);
-            myState.addRelation(concreteType, node, isWeak, isCheckOnly, isComparable, info);
+            myState.addRelation(concreteType, node, myKind, info);
           }
         }
       }
@@ -217,30 +213,26 @@ public class RelationMapPair {
     return stateChanged;
   }
 
-  public String getRelationSign() {
-    if (isComparable) {
-      return isWeak ? " ~ " : " ~~ ";
-    } else {
-      return isWeak ? " <= " : " < ";
-    }
-  }
-
-  public String getTitle() {
-    if (isComparable) {
-      return "Comparable";
-    } else {
-      return isCheckOnly ? "Check only subTyping" : "SubTyping";
-    }
-  }
-
   public List<String> getListPresentation() {
     List<String> result = new LinkedList<String>();
     for (SNode key : mySubToSuper.keySet()) {
       for (SNode value : mySubToSuper.get(key).keySet()) {
-        result.add(key + getRelationSign() + value + (isCheckOnly ? " check only" : ""));
+        result.add(key + myKind.getRelationSign() + value + (isCheckOnly() ? " check only" : ""));
       }
     }
     return result;
+  }
+
+  public boolean isWeak() {
+    return myKind.isWeak();
+  }
+
+  public boolean isCheckOnly() {
+    return myKind.isCheckOnly();
+  }
+
+  public boolean isComparable() {
+    return myKind.isComparable();
   }
 
 }

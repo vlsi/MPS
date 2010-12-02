@@ -27,8 +27,10 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,31 +41,25 @@ import java.util.List;
 public class Inequalities {
   private final State myState;
 
-  private final RelationMapPair myWeakInequalities;
-  private final RelationMapPair myStrongInequalities;
-  private final RelationMapPair myWeakCheckInequalities;
-  private final RelationMapPair myStrongCheckInequalities;
-  private final RelationMapPair myWeakComparable;
-  private final RelationMapPair myStrongComparable;
+  private final Map<RelationMapKind, RelationMapPair> myRelations =
+    new HashMap<RelationMapKind, RelationMapPair>();
 
   private boolean solveOnlyConcrete;
 
-  private final List<RelationMapPair> myInequalities;
 
   public Inequalities(State state) {
     myState = state;
     solveOnlyConcrete = true;
-    myInequalities = new LinkedList<RelationMapPair>();
-    myInequalities.add(myWeakInequalities = new RelationMapPair(myState, true, false, false));
-    myInequalities.add(myWeakCheckInequalities = new RelationMapPair(myState, true, true, false));
-    myInequalities.add(myStrongInequalities = new RelationMapPair(myState, false, false, false));
-    myInequalities.add(myStrongCheckInequalities = new RelationMapPair(myState, false, true, false));
-    myInequalities.add(myWeakComparable = new RelationMapPair(myState, true, true, true));
-    myInequalities.add(myStrongComparable = new RelationMapPair(myState, false, true, true));
+    myRelations.put(RelationMapKind.WEAK, new RelationMapPair(myState, RelationMapKind.WEAK));
+    myRelations.put(RelationMapKind.WEAK_CHECK, new RelationMapPair(myState, RelationMapKind.WEAK_CHECK));
+    myRelations.put(RelationMapKind.STRONG, new RelationMapPair(myState, RelationMapKind.STRONG));
+    myRelations.put(RelationMapKind.STRONG_CHECK, new RelationMapPair(myState, RelationMapKind.STRONG_CHECK));
+    myRelations.put(RelationMapKind.WEAK_COMPARABLE, new RelationMapPair(myState, RelationMapKind.WEAK_COMPARABLE));
+    myRelations.put(RelationMapKind.STRONG_COMPARABLE, new RelationMapPair(myState, RelationMapKind.STRONG_COMPARABLE));
   }
 
   public void substitute(SNode var, SNode type) {
-    for (RelationMapPair inequalityMapPair : myInequalities) {
+    for (RelationMapPair inequalityMapPair : myRelations.values()) {
       inequalityMapPair.substitute(var, type);
     }
   }
@@ -134,47 +130,75 @@ public class Inequalities {
   }
 
   void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    RelationMapPair inequality;
+    RelationMapKind kind;
     if (isWeak) {
-      inequality = check ? myWeakCheckInequalities : myWeakInequalities;
+      kind = check ? RelationMapKind.WEAK_CHECK : RelationMapKind.WEAK;
     } else {
-      inequality = check ? myStrongCheckInequalities : myStrongInequalities;
+      kind = check ? RelationMapKind.STRONG_CHECK : RelationMapKind.STRONG;
     }
-    if (!inequality.contains(subType, superType)) {
-      myState.addDifference(new RelationAdded(subType, superType, inequality, info), false);
+    if (!getRelation(kind).contains(subType, superType)) {
+      myState.addDifference(new RelationAdded(subType, superType, kind, info), false);
     }
   }
 
   void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
-    RelationMapPair comparable = isWeak ? myWeakComparable : myStrongComparable;
-    if (!comparable.contains(subType, superType)) {
-      myState.addDifference(new RelationAdded(subType, superType, comparable, info), false);
+    RelationMapKind kind = isWeak ? RelationMapKind.WEAK_COMPARABLE : RelationMapKind.STRONG_COMPARABLE;
+    if (!getRelation(kind).contains(subType, superType)) {
+      myState.addDifference(new RelationAdded(subType, superType, kind, info), false);
     }
   }
 
   public void solveInequalities() {
     solveOnlyConcrete = false;
-    myWeakInequalities.solve();
-    myStrongInequalities.solve();
+    getWeakInequalities().solve();
+    getStrongInequalities().solve();
   }
 
   public List<String> getListPresentation() {
     List<String> result = new LinkedList<String>();
-    for (RelationMapPair inequalityMapPair : myInequalities) {
+    for (RelationMapPair inequalityMapPair : myRelations.values()) {
       result.addAll(inequalityMapPair.getListPresentation());
     }
     return result;
   }
 
   public void check() {
-    myWeakCheckInequalities.check();
-    myStrongCheckInequalities.check();
+    getWeakCheckInequalities().check();
+    getStrongCheckInequalities().check();
   }
 
   public void clear() {
-    for (RelationMapPair inequalityMapPair : myInequalities) {
+    for (RelationMapPair inequalityMapPair : myRelations.values()) {
       inequalityMapPair.clear();
     }
     solveOnlyConcrete = true;
+  }
+
+  public RelationMapPair getWeakInequalities() {
+    return myRelations.get(RelationMapKind.WEAK);
+  }
+
+  public RelationMapPair getStrongInequalities() {
+    return myRelations.get(RelationMapKind.STRONG);
+  }
+
+  public RelationMapPair getWeakCheckInequalities() {
+    return myRelations.get(RelationMapKind.WEAK_CHECK);
+  }
+
+  public RelationMapPair getStrongCheckInequalities() {
+    return myRelations.get(RelationMapKind.STRONG_CHECK);
+  }
+
+  public RelationMapPair getWeakComparable() {
+    return myRelations.get(RelationMapKind.WEAK_COMPARABLE);
+  }
+
+  public RelationMapPair getStrongComparable() {
+    return myRelations.get(RelationMapKind.STRONG_COMPARABLE);
+  }
+
+  public RelationMapPair getRelation(RelationMapKind kind) {
+    return myRelations.get(kind);
   }
 }

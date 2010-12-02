@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.newTypesystem.differences.inequality;
 
-import jetbrains.mps.newTypesystem.states.RelationMapPair;
+import jetbrains.mps.newTypesystem.states.RelationMapKind;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -29,18 +30,18 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class RelationAdded extends RelationDifference {
-  public RelationAdded(SNode subType, SNode superType, RelationMapPair mapPair, EquationInfo info) {
-    super(subType, superType, mapPair);
-    myEquationInfo = info;
+  public RelationAdded(SNode subType, SNode superType, RelationMapKind mapKind, EquationInfo info) {
+    super(subType, superType, info, mapKind);
   }
 
   @Override
-  public void rollBack() {
-    myMapPair.remove(mySubType, mySuperType);
+  public void rollBack(State state) {
+    getRelationMap(state).remove(mySubType, mySuperType);
   }
 
   public String getPresentation() {
-    return myMapPair.getTitle() + " added " + mySubType + myMapPair.getRelationSign() + mySuperType;
+    return myRelationMapKind.getTitle() + " added "
+      + mySubType + myRelationMapKind.getRelationSign() + mySuperType;
   }
 
   public Color getColor() {
@@ -48,7 +49,7 @@ public class RelationAdded extends RelationDifference {
   }
 
   @Override
-  public void play() {
-    myMapPair.add(mySubType, mySuperType, myEquationInfo);
+  public void play(State state) {
+    getRelationMap(state).add(mySubType, mySuperType, myEquationInfo);
   }
 }

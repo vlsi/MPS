@@ -33,20 +33,20 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class NonConcreteMapPair {
-  private boolean isShallow;
+  private boolean myIsShallow;
   private Map<WhenConcreteEntry, Set<SNode>> myDependencies;
   private Map<SNode, Set<WhenConcreteEntry>> myDependents;
   private State myState;
 
   public NonConcreteMapPair(boolean shallow, State state) {
-    isShallow = shallow;
+    myIsShallow = shallow;
     myState = state;
     myDependencies = new HashMap<WhenConcreteEntry, Set<SNode>>();
     myDependents = new HashMap<SNode, Set<WhenConcreteEntry>>();
   }
 
   private void addAndTrack(WhenConcreteEntry e, SNode var) {
-    myState.addDifference(new WhenConcreteDependencyAdded(e, var, this), false);
+    myState.addDifference(new WhenConcreteDependencyAdded(e, var, myIsShallow), false);
   }
 
   public void addDependency(WhenConcreteEntry e, SNode var) {
@@ -66,7 +66,7 @@ public class NonConcreteMapPair {
   }
 
   private void becameConcrete(WhenConcreteEntry entry) {
-    myState.addDifference(new BecameConcrete(myDependencies, entry), true);
+    myState.addDifference(new BecameConcrete(myIsShallow, entry), true);
     entry.run();
     myState.popDifference();
   }
@@ -79,14 +79,18 @@ public class NonConcreteMapPair {
   }
 
   private void removeAndTrack(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
-    myState.addDifference(new WhenConcreteDependencyRemoved(e, var, this), false);
+    myState.addDifference(new WhenConcreteDependencyRemoved(e, var, myIsShallow), false);
 
   }
 
   public void removeDependency(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
     myDependencies.get(e).remove(var);
     myDependents.get(var).remove(e);
+  }
 
+  public void removeWhenConcrete(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e) {
+    myDependencies.remove(e);
+    //todo it seems that from "var -> WC" it is not removed
   }
 
   public void addWhenConcrete(WhenConcreteEntry e, SNode node) {
@@ -94,7 +98,7 @@ public class NonConcreteMapPair {
     if (source == null) {
       source = node;
     }
-    myState.addDifference(new WhenConcreteAdded(e, node, source, this), true);
+    myState.addDifference(new WhenConcreteAdded(e, node, source, myIsShallow), true);
     List<SNode> variables = getChildAndReferentVariables(node);
     if (variables.isEmpty()) {
       becameConcrete(e);
@@ -128,7 +132,7 @@ public class NonConcreteMapPair {
       return Arrays.asList(node);
     }
     List<SNode> result = new ArrayList<SNode>();
-    if (isShallow) {
+    if (myIsShallow) {
       return result;
     }
     for (SNode referent : node.getReferents()) {
@@ -145,7 +149,7 @@ public class NonConcreteMapPair {
   public List<String> getListPresentation() {
     List<String> result = new LinkedList<String>();
     for (WhenConcreteEntry key : myDependencies.keySet()) {
-      result.add(key + " -:- " + myDependencies.get(key) + (isShallow ? " shallow" : " deep"));
+      result.add(key + " -:- " + myDependencies.get(key) + (myIsShallow ? " shallow" : " deep"));
     }
     return result;
   }

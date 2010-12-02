@@ -85,7 +85,7 @@ public class Equations {
       return;
     }
     SNode source = myState.getNodeMaps().getNode(elem);
-    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, source, this), false);
+    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, source), false);
   }
 
   public void remove(SNode elem) {
@@ -132,7 +132,7 @@ public class Equations {
 
   private void addAndTrack(SNode child, SNode parent, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(child);
-    myState.addDifference(new EquationAdded(child, parent, source, this, info), true);
+    myState.addDifference(new EquationAdded(child, parent, source, info), true);
   }
 
   public void add(SNode child, SNode parent) {

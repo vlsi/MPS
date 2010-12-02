@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.differences.equation;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
 import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -30,22 +31,22 @@ public class EquationSubstituted extends Difference {
   EquationAdded myAdded;
   EquationRemoved myRemoved;
 
-  public EquationSubstituted(SNode key, SNode prev, SNode cur, SNode source, Equations equations) {
-    myAdded = new EquationAdded(key, cur, source, equations, null);
-    myRemoved = new EquationRemoved(key, prev, source, equations);
+  public EquationSubstituted(SNode key, SNode prev, SNode cur, SNode source) {
+    myAdded = new EquationAdded(key, cur, source, null);
+    myRemoved = new EquationRemoved(key, prev, source);
     mySource = source;
   }
 
   @Override
-  public void rollBack() {
-    myAdded.rollBack();
-    myRemoved.rollBack();
+  public void rollBack(State state) {
+    myAdded.rollBack(state);
+    myRemoved.rollBack(state);
   }
 
   @Override
-  public void play() {
-    myRemoved.play();
-    myAdded.play();
+  public void play(State state) {
+    myRemoved.play(state);
+    myAdded.play(state);
   }
 
   @Override

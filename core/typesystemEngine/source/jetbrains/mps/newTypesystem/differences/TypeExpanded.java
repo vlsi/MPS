@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -30,8 +31,8 @@ import java.util.Map;
 public class TypeExpanded extends TypeDifference {
   private SNode myOldType;
 
-  public TypeExpanded(SNode node, SNode type, Map<SNode, SNode> map, EquationInfo info, SNode oldType) {
-    super(node, type, map, info);
+  public TypeExpanded(SNode node, SNode type, EquationInfo info, SNode oldType) {
+    super(node, type, info);
     myOldType = oldType;
   }
 
@@ -46,7 +47,7 @@ public class TypeExpanded extends TypeDifference {
   }
 
   @Override
-  public void rollBack() {
-    myMap.put(myNode, myOldType);
+  public void rollBack(State state) {
+    state.getNodeToTypeMap().put(myNode, myOldType);
   }
 }
