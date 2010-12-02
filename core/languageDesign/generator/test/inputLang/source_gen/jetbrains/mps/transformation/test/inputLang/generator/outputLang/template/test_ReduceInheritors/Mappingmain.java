@@ -104,7 +104,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(reductionRule_417xrn_a0a2a);
       try {
-        return apply(environment.getEnvironment(context.getInput(), this), context);
+        return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -113,7 +113,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     }
 
-    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460405394"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       try {
@@ -152,7 +152,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(reductionRule_417xrn_a0a2b);
       try {
-        return apply(environment.getEnvironment(context.getInput(), this), context);
+        return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -161,7 +161,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     }
 
-    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206461864723"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       try {
@@ -200,7 +200,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(reductionRule_417xrn_a0a2c);
       try {
-        return apply(environment.getEnvironment(context.getInput(), this), context);
+        return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -209,7 +209,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     }
 
-    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460444835"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
       try {

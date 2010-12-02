@@ -106,7 +106,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(reductionRule_417xrn_a0a2a);
       try {
-        return apply(environment.getEnvironment(context.getInput(), this), context);
+        return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -115,7 +115,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     }
 
-    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195172342079"));
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.baseMappingRule_Condition_1195172400866(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0e0, environment.getGenerator()))) {
@@ -172,7 +172,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
       environment.getTracer().pushRule(reductionRule_417xrn_a0a2b);
       try {
-        return apply(environment.getEnvironment(context.getInput(), this), context);
+        return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -181,7 +181,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     }
 
-    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1202781047034"));
       Collection<SNode> tlist1 = Collections.emptyList();
       return tlist1;

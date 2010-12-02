@@ -36,6 +36,6 @@ public class Switchbetter_switch3 implements TemplateSwitchMapping {
     throw new DismissTopMappingRuleException(GeneratorMessageType.info);
   }
 
-  public void processNull(TemplateExecutionEnvironment environment, SNodePointer pointer, TemplateContext context) {
+  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
   }
 }

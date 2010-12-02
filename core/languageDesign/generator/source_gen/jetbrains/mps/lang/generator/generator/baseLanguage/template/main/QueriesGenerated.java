@@ -536,6 +536,18 @@ public class QueriesGenerated {
     return "Switch" + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_3876694689067951568(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true), "messageText");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3876694689067952313(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true), "messageText");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3876694689067952360(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true), "messageText");
+  }
+
   public static Object propertyMacro_GetPropertyValue_6612261708901143234(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SNodeOperations.getParent(_context.getNode()).getConceptFqName();
   }
@@ -1032,11 +1044,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0ki(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0ni(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0li(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0oi(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_4155486055398184252(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1590,6 +1602,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_4723636356214946463(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3876694689067951584(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true) != null) && SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true), "messageType", "error", "info");
+  }
+
+  public static boolean ifMacro_Condition_3876694689067952329(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true) != null) && SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true), "messageType", "info", "info");
+  }
+
+  public static boolean ifMacro_Condition_3876694689067952369(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true) != null) && SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "nullInputMessage", true), "messageType", "warning", "info");
   }
 
   public static boolean ifMacro_Condition_8626372016104475454(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2222,7 +2246,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0fs(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0ls(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -2525,21 +2549,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0ki(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0ni(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0li(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0oi(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0fs(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0ls(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

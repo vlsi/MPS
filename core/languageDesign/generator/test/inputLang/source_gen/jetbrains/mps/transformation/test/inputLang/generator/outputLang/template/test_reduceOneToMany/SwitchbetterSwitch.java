@@ -45,7 +45,8 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
     return tlist1;
   }
 
-  public void processNull(TemplateExecutionEnvironment environment, SNodePointer pointer, TemplateContext context) {
+  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
+    environment.getGenerator().getLogger().info(context.getInput(), "Hmm, input is null");
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
@@ -71,7 +72,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
 
       environment.getTracer().pushRule(reductionRule_duaj4c_a0a2a);
       try {
-        return apply(environment.getEnvironment(context.getInput(), this), context);
+        return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -80,7 +81,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
 
     }
 
-    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066883"));
       Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
       return tlist1;

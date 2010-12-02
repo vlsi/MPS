@@ -43,7 +43,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     return null;
   }
 
-  public void processNull(TemplateExecutionEnvironment environment, SNodePointer pointer, TemplateContext context) {
+  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
@@ -69,7 +69,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
 
       environment.getTracer().pushRule(reductionRule_68cped_a0a2a);
       try {
-        return apply(environment.getEnvironment(context.getInput(), this), context);
+        return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -78,7 +78,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
 
     }
 
-    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090600"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.NullLiteral", false);
       try {
@@ -116,7 +116,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
 
       environment.getTracer().pushRule(reductionRule_68cped_a0a2b);
       try {
-        return apply(environment.getEnvironment(context.getInput(), this), context);
+        return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
@@ -125,7 +125,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
 
     }
 
-    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090622"));
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
       try {

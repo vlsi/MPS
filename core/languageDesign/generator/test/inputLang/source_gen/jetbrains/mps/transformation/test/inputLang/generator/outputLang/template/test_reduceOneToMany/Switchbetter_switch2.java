@@ -47,6 +47,6 @@ public class Switchbetter_switch2 implements TemplateSwitchMapping {
     return TemplateUtil.singletonList(tnode1);
   }
 
-  public void processNull(TemplateExecutionEnvironment environment, SNodePointer pointer, TemplateContext context) {
+  public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
   }
 }
