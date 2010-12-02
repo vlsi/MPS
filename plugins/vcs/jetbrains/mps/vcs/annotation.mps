@@ -77,25 +77,32 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="391337651435524407">
       <property name="name" nameId="tpck.1169194664001" value="AnnotationAspectSubcolumn" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="subcolumns" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6566909625908996008">
       <property name="name" nameId="tpck.1169194664001" value="CommitNumberSubcolumn" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="subcolumns" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4433480198085290549">
       <property name="name" nameId="tpck.1169194664001" value="ViewActionGroup" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="736151805632466469">
       <property name="name" nameId="tpck.1169194664001" value="ViewAction" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2610202811736147129">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ShowAdditionalInfoAction" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7744421503924576834">
       <property name="name" nameId="tpck.1169194664001" value="VcsRevisionRange" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2735498088651740382">
       <property name="name" nameId="tpck.1169194664001" value="HighlightRevisionSubcolumn" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="subcolumns" />
     </node>
   </roots>
   <root id="309173295241373953">
@@ -747,35 +754,42 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="391337651435638542">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="391337651435638543">
-            <property name="name" nameId="tpck.1169194664001" value="aspect" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="391337651435638552">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="391337651435638547">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="391337651435638546">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="653763136285346236" resolveInfo="fileAnnotation" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="391337651435638551">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tq4k.~FileAnnotation%dgetAspects()%ccom%dintellij%dopenapi%dvcs%dannotate%dLineAnnotationAspect[]" resolveInfo="getAspects" />
-              </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9101534317544078072">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9101534317544078074">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="9101534317544078073">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="391337651435638531" resolveInfo="myAspectSubcolumns" />
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AsSequenceOperation" typeId="tp2q.1240325842691" id="391337651435638556" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="391337651435638545">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="391337651435638557">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="391337651435638559">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="391337651435638558">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="391337651435638531" resolveInfo="myAspectSubcolumns" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="9101534317544078078">
+              <node role="argument" roleId="tp2q.1160666822012" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9101534317544078085">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9101534317544078080">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9101534317544078081">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="9101534317544078082">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="653763136285346236" resolveInfo="fileAnnotation" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9101534317544078083">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tq4k.~FileAnnotation%dgetAspects()%ccom%dintellij%dopenapi%dvcs%dannotate%dLineAnnotationAspect[]" resolveInfo="getAspects" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp2q.AsSequenceOperation" typeId="tp2q.1240325842691" id="9101534317544078084" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="391337651435638563">
-                  <node role="argument" roleId="tp2q.1160612519549" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="391337651435638565">
-                    <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="391337651435638567">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="391337651435533969" resolveInfo="AnnotationAspectSubcolumn" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4527744427438241895" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="391337651435638571">
-                        <link role="variable" roleId="tp2q.1153944258490" targetNodeId="391337651435638543" resolveInfo="aspect" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp2q.SelectOperation" typeId="tp2q.1202128969694" id="9101534317544078089">
+                  <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="9101534317544078090">
+                    <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="9101534317544078091">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9101534317544078094">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9101534317544078095">
+                          <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9101534317544078097">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="391337651435533969" resolveInfo="AnnotationAspectSubcolumn" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="9101534317544078098" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="9101534317544078100">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9101534317544078092" resolveInfo="a" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
+                    </node>
+                    <node role="parameter" roleId="tp2c.1199569906740" type="tp2q.SmartClosureParameterDeclaration" typeId="tp2q.1203518072036" id="9101534317544078092">
+                      <property name="name" nameId="tpck.1169194664001" value="a" />
+                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.WildCardType" typeId="tpee.1171903607971" id="9101534317544078093" />
                     </node>
                   </node>
                 </node>
@@ -3912,9 +3926,6 @@
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8595271971828756401" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8595271971828756402" />
       </node>
-      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8595271971828756405">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lcr.3501823384977732903" resolveInfo="ChangeListener" />
-      </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8595271971828756406">
         <property name="name" nameId="tpck.1169194664001" value="changeUpdateFinished" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8595271971828756407" />
@@ -3958,28 +3969,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8595271971828756414">
-        <property name="name" nameId="tpck.1169194664001" value="fileStatusChanged" />
-        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8595271971828756415" />
-        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8595271971828756416" />
-        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8595271971828756417">
-          <property name="name" nameId="tpck.1169194664001" value="newFileStatus" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8595271971828756418">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="iqie.~FileStatus" resolveInfo="FileStatus" />
-          </node>
-          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="8595271971828756419">
-            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~Nullable" resolveInfo="Nullable" />
-          </node>
-        </node>
-        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8595271971828756420">
-          <property name="name" nameId="tpck.1169194664001" value="model" />
-          <node role="type" roleId="tpee.5680397130376446158" type="tp25.SModelType" typeId="tp25.1143226024141" id="8595271971828756421" />
-          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="8595271971828756422">
-            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="qvoq.~NotNull" resolveInfo="NotNull" />
-          </node>
-        </node>
-        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8595271971828756423" />
       </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8595271971828756424">
         <property name="name" nameId="tpck.1169194664001" value="changeRemoved" />
@@ -4046,6 +4035,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9101534317544078070">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="lcr.9101534317544061396" resolveInfo="ChangeListener.ChangeAdapter" />
       </node>
     </node>
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5841940560826277241">

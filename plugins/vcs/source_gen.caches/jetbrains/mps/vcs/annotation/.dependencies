@@ -31,7 +31,6 @@
     <classNode dependClassName="com.intellij.openapi.vcs.CommittedChangesProvider" />
     <classNode dependClassName="com.intellij.openapi.vcs.FilePath" />
     <classNode dependClassName="com.intellij.openapi.vcs.FilePathImpl" />
-    <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.AnnotationColors" />
     <classNode dependClassName="com.intellij.openapi.vcs.annotate.FileAnnotation" />
@@ -111,6 +110,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewAction" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation.ViewActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.annotation._Adapters" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.Change" />
@@ -126,7 +126,7 @@
     <classNode extendsClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode extendsClassName="com.intellij.openapi.vcs.annotate.AnnotationListener" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn" />
-    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.ChangeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.annotation.AnnotationManager" file="AnnotationManager.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />

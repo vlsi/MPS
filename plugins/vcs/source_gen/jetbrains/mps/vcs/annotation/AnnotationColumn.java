@@ -77,7 +77,6 @@ import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
 import com.intellij.openapi.vcs.annotate.AnnotationListener;
 import jetbrains.mps.vcs.changesmanager.ChangeListener;
-import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -163,9 +162,11 @@ public class AnnotationColumn extends AbstractLeftColumn {
         MapSequence.fromMap(nodeIdToFileLine).put(id, line);
       }
     }
-    for (LineAnnotationAspect aspect : Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects()))) {
-      ListSequence.fromList(myAspectSubcolumns).addElement(new AnnotationAspectSubcolumn(this, aspect));
-    }
+    ListSequence.fromList(myAspectSubcolumns).addSequence(Sequence.fromIterable(Sequence.fromArray(fileAnnotation.getAspects())).<AnnotationAspectSubcolumn>select(new ISelector<LineAnnotationAspect, AnnotationAspectSubcolumn>() {
+      public AnnotationAspectSubcolumn select(LineAnnotationAspect a) {
+        return new AnnotationAspectSubcolumn(AnnotationColumn.this, a);
+      }
+    }));
     ListSequence.fromList(myAspectSubcolumns).addElement(new CommitNumberSubcolumn(this, myFileAnnotation));
     for (VcsFileRevision revision : ListSequence.fromList(myFileAnnotation.getRevisions())) {
       String author = revision.getAuthor();
@@ -599,7 +600,7 @@ __switch__:
     }
   }
 
-  private class MyChangeListener implements ChangeListener {
+  private class MyChangeListener extends ChangeListener.ChangeAdapter {
     public MyChangeListener() {
     }
 
@@ -613,9 +614,6 @@ __switch__:
       synchronized (myCurrentPseudoLinesLock) {
         myCurrentPseudoLines = null;
       }
-    }
-
-    public void fileStatusChanged(@Nullable FileStatus newFileStatus, @NotNull SModel model) {
     }
 
     public void changeRemoved(@NotNull Change change, @NotNull SModel model) {
