@@ -19,6 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.generator.impl.AbandonRuleInputException;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086883");
@@ -96,6 +97,18 @@ public class Mappingmain implements TemplateMappingConfiguration {
         return null;
       }
 
+      environment.getTracer().pushRule(reductionRule_417xrn_a0a2a);
+      try {
+        return apply(environment.getEnvironment(context.getInput(), this), context);
+      } catch (AbandonRuleInputException e) {
+        return Collections.emptyList();
+      } finally {
+        environment.getTracer().closeRule(reductionRule_417xrn_a0a2a);
+      }
+
+    }
+
+    private Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100169"));
       Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
       return tlist1;

@@ -3,6 +3,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Evgeny Gryaznov, May 17, 2010
@@ -10,6 +11,10 @@ import jetbrains.mps.smodel.SNode;
 public class PatternRuleContext extends BaseMappingRuleContext {
 
   public PatternRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+    super(inputNode, ruleNode, generator);
+  }
+
+  public PatternRuleContext(SNode inputNode, SNodePointer ruleNode, ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
   }
 

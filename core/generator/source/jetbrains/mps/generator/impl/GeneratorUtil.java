@@ -234,7 +234,7 @@ public class GeneratorUtil {
     return parameterDeclarations.toArray(new TemplateParameterDeclaration[parameterDeclarations.size()]);
   }
 
-  static BaseConcept getPatternVariable(TemplateArgumentPatternRef argument) {
+  public static BaseConcept getPatternVariable(TemplateArgumentPatternRef argument) {
     if (argument instanceof TemplateArgumentPatternVarRefExpression) {
       return ((TemplateArgumentPatternVarRefExpression) argument).getPatternVarDecl();
     } else if (argument instanceof TemplateArgumentLinkPatternRefExpression) {

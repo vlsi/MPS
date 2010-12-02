@@ -28,6 +28,14 @@ public class QueriesGenerated {
     return false;
   }
 
+  public static boolean baseMappingRule_Condition_8371596541809088659(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "inner", true), "jetbrains.mps.baseLanguage.structure.IntegerLiteral");
+  }
+
+  public static boolean baseMappingRule_Condition_8371596541809090605(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "inner", true), "jetbrains.mps.baseLanguage.structure.PlusExpression");
+  }
+
   public static Object propertyMacro_GetPropertyValue_2163819695913945867(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(((SNode) _context.getPatternVariable("PatternVar_aaa")), "name");
   }
@@ -113,7 +121,7 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_4146564171992608883(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a32();
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a52();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -125,22 +133,6 @@ public class QueriesGenerated {
   }
 
   public static GeneratedMatchingPattern patternRule_Condition_2681305894288275225(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a42();
-    if (!(pattern.match(_context.getNode()))) {
-      return null;
-    }
-    return pattern;
-  }
-
-  public static GeneratedMatchingPattern patternRule_Condition_2681305894288382558(final IOperationContext operationContext, final PatternRuleContext _context) {
-    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a52();
-    if (!(pattern.match(_context.getNode()))) {
-      return null;
-    }
-    return pattern;
-  }
-
-  public static GeneratedMatchingPattern patternRule_Condition_2681305894288486365(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a62();
     if (!(pattern.match(_context.getNode()))) {
       return null;
@@ -148,7 +140,7 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_2163819695913701566(final IOperationContext operationContext, final PatternRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_2681305894288382558(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a72();
     if (!(pattern.match(_context.getNode()))) {
       return null;
@@ -156,7 +148,7 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_5857536350883030949(final IOperationContext operationContext, final PatternRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_2681305894288486365(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a82();
     if (!(pattern.match(_context.getNode()))) {
       return null;
@@ -164,8 +156,32 @@ public class QueriesGenerated {
     return pattern;
   }
 
-  public static GeneratedMatchingPattern patternRule_Condition_933643154465852759(final IOperationContext operationContext, final PatternRuleContext _context) {
+  public static GeneratedMatchingPattern patternRule_Condition_2163819695913701566(final IOperationContext operationContext, final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a92();
+    if (!(pattern.match(_context.getNode()))) {
+      return null;
+    }
+    return pattern;
+  }
+
+  public static GeneratedMatchingPattern patternRule_Condition_5857536350883030949(final IOperationContext operationContext, final PatternRuleContext _context) {
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a03();
+    if (!(pattern.match(_context.getNode()))) {
+      return null;
+    }
+    return pattern;
+  }
+
+  public static GeneratedMatchingPattern patternRule_Condition_933643154465852759(final IOperationContext operationContext, final PatternRuleContext _context) {
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a13();
+    if (!(pattern.match(_context.getNode()))) {
+      return null;
+    }
+    return pattern;
+  }
+
+  public static GeneratedMatchingPattern patternRule_Condition_8371596541809088644(final IOperationContext operationContext, final PatternRuleContext _context) {
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a23();
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
@@ -176,75 +192,75 @@ public class QueriesGenerated {
     return new TemplateModelImpl();
   }
 
-  public static class Pattern_x583g4_a0a0a32 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a52 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_right;
     /*package*/ SNode PatternVar_xx;
     /*package*/ SNode PatternVar_yy;
 
-    public Pattern_x583g4_a0a0a32() {
+    public Pattern_x583g4_a0a0a52() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a32;
-        nodeToMatch_x583g4_a0a0a32 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ExpressionStatement".equals(nodeToMatch_x583g4_a0a0a32.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a52;
+        nodeToMatch_x583g4_a0a0a52 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ExpressionStatement".equals(nodeToMatch_x583g4_a0a0a52.getConceptFqName()))) {
           return false;
         }
         {
           String childRole_x583g4_ = "expression";
-          if (nodeToMatch_x583g4_a0a0a32.getChildCount(childRole_x583g4_) != 1) {
+          if (nodeToMatch_x583g4_a0a0a52.getChildCount(childRole_x583g4_) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0x = nodeToMatch_x583g4_a0a0a32.getChildren(childRole_x583g4_).get(0);
+            SNode childVar_x583g4_a0a0a0z = nodeToMatch_x583g4_a0a0a52.getChildren(childRole_x583g4_).get(0);
             {
-              SNode nodeToMatch_x583g4_a0a0a0x;
-              nodeToMatch_x583g4_a0a0a0x = childVar_x583g4_a0a0a0x;
-              if (!("jetbrains.mps.baseLanguage.structure.AssignmentExpression".equals(nodeToMatch_x583g4_a0a0a0x.getConceptFqName()))) {
+              SNode nodeToMatch_x583g4_a0a0a0z;
+              nodeToMatch_x583g4_a0a0a0z = childVar_x583g4_a0a0a0z;
+              if (!("jetbrains.mps.baseLanguage.structure.AssignmentExpression".equals(nodeToMatch_x583g4_a0a0a0z.getConceptFqName()))) {
                 return false;
               }
               {
                 String childRole_x583g4__0 = "lValue";
-                if (nodeToMatch_x583g4_a0a0a0x.getChildCount(childRole_x583g4__0) != 1) {
+                if (nodeToMatch_x583g4_a0a0a0z.getChildCount(childRole_x583g4__0) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a32 = nodeToMatch_x583g4_a0a0a0x.getChildren(childRole_x583g4__0).get(0);
-                  this.PatternVar_yy = childVar_x583g4_a0a0a0a32;
+                  SNode childVar_x583g4_a0a0a0a52 = nodeToMatch_x583g4_a0a0a0z.getChildren(childRole_x583g4__0).get(0);
+                  this.PatternVar_yy = childVar_x583g4_a0a0a0a52;
                 }
               }
               {
                 String childRole_x583g4__1 = "rValue";
-                if (nodeToMatch_x583g4_a0a0a0x.getChildCount(childRole_x583g4__1) != 1) {
+                if (nodeToMatch_x583g4_a0a0a0z.getChildCount(childRole_x583g4__1) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a32_0 = nodeToMatch_x583g4_a0a0a0x.getChildren(childRole_x583g4__1).get(0);
+                  SNode childVar_x583g4_a0a0a0a52_0 = nodeToMatch_x583g4_a0a0a0z.getChildren(childRole_x583g4__1).get(0);
                   {
-                    SNode nodeToMatch_x583g4_a0a0a0a32;
-                    nodeToMatch_x583g4_a0a0a0a32 = childVar_x583g4_a0a0a0a32_0;
-                    if (!("jetbrains.mps.baseLanguage.structure.MulExpression".equals(nodeToMatch_x583g4_a0a0a0a32.getConceptFqName()))) {
+                    SNode nodeToMatch_x583g4_a0a0a0a52;
+                    nodeToMatch_x583g4_a0a0a0a52 = childVar_x583g4_a0a0a0a52_0;
+                    if (!("jetbrains.mps.baseLanguage.structure.MulExpression".equals(nodeToMatch_x583g4_a0a0a0a52.getConceptFqName()))) {
                       return false;
                     }
                     {
                       String childRole_x583g4__2 = "leftExpression";
-                      if (nodeToMatch_x583g4_a0a0a0a32.getChildCount(childRole_x583g4__2) != 1) {
+                      if (nodeToMatch_x583g4_a0a0a0a52.getChildCount(childRole_x583g4__2) != 1) {
                         return false;
                       }
                       {
-                        SNode childVar_x583g4_a0a0a0a0x = nodeToMatch_x583g4_a0a0a0a32.getChildren(childRole_x583g4__2).get(0);
-                        this.PatternVar_xx = childVar_x583g4_a0a0a0a0x;
+                        SNode childVar_x583g4_a0a0a0a0z = nodeToMatch_x583g4_a0a0a0a52.getChildren(childRole_x583g4__2).get(0);
+                        this.PatternVar_xx = childVar_x583g4_a0a0a0a0z;
                       }
                     }
                     {
                       String childRole_x583g4__3 = "rightExpression";
-                      if (nodeToMatch_x583g4_a0a0a0a32.getChildCount(childRole_x583g4__3) != 1) {
+                      if (nodeToMatch_x583g4_a0a0a0a52.getChildCount(childRole_x583g4__3) != 1) {
                         return false;
                       }
                       {
-                        SNode childVar_x583g4_a0a0a0a0x_0 = nodeToMatch_x583g4_a0a0a0a32.getChildren(childRole_x583g4__3).get(0);
-                        this.PatternVar_right = childVar_x583g4_a0a0a0a0x_0;
+                        SNode childVar_x583g4_a0a0a0a0z_0 = nodeToMatch_x583g4_a0a0a0a52.getChildren(childRole_x583g4__3).get(0);
+                        this.PatternVar_right = childVar_x583g4_a0a0a0a0z_0;
                       }
                     }
                   }
@@ -286,38 +302,38 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a42 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a62 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_left;
     /*package*/ SNode PatternVar_right;
 
-    public Pattern_x583g4_a0a0a42() {
+    public Pattern_x583g4_a0a0a62() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a42;
-        nodeToMatch_x583g4_a0a0a42 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.AndExpression".equals(nodeToMatch_x583g4_a0a0a42.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a62;
+        nodeToMatch_x583g4_a0a0a62 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.AndExpression".equals(nodeToMatch_x583g4_a0a0a62.getConceptFqName()))) {
           return false;
         }
         {
           String childRole_x583g4__4 = "leftExpression";
-          if (nodeToMatch_x583g4_a0a0a42.getChildCount(childRole_x583g4__4) != 1) {
+          if (nodeToMatch_x583g4_a0a0a62.getChildCount(childRole_x583g4__4) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0y = nodeToMatch_x583g4_a0a0a42.getChildren(childRole_x583g4__4).get(0);
-            this.PatternVar_left = childVar_x583g4_a0a0a0y;
+            SNode childVar_x583g4_a0a0a0ab = nodeToMatch_x583g4_a0a0a62.getChildren(childRole_x583g4__4).get(0);
+            this.PatternVar_left = childVar_x583g4_a0a0a0ab;
           }
         }
         {
           String childRole_x583g4__5 = "rightExpression";
-          if (nodeToMatch_x583g4_a0a0a42.getChildCount(childRole_x583g4__5) != 1) {
+          if (nodeToMatch_x583g4_a0a0a62.getChildCount(childRole_x583g4__5) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0y_0 = nodeToMatch_x583g4_a0a0a42.getChildren(childRole_x583g4__5).get(0);
-            this.PatternVar_right = childVar_x583g4_a0a0a0y_0;
+            SNode childVar_x583g4_a0a0a0ab_0 = nodeToMatch_x583g4_a0a0a62.getChildren(childRole_x583g4__5).get(0);
+            this.PatternVar_right = childVar_x583g4_a0a0a0ab_0;
           }
         }
       }
@@ -349,51 +365,51 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a52 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a72 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_right;
     /*package*/ SNode PatternVar_left;
 
-    public Pattern_x583g4_a0a0a52() {
+    public Pattern_x583g4_a0a0a72() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a52;
-        nodeToMatch_x583g4_a0a0a52 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.NotExpression".equals(nodeToMatch_x583g4_a0a0a52.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a72;
+        nodeToMatch_x583g4_a0a0a72 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.NotExpression".equals(nodeToMatch_x583g4_a0a0a72.getConceptFqName()))) {
           return false;
         }
         {
           String childRole_x583g4__6 = "expression";
-          if (nodeToMatch_x583g4_a0a0a52.getChildCount(childRole_x583g4__6) != 1) {
+          if (nodeToMatch_x583g4_a0a0a72.getChildCount(childRole_x583g4__6) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0z = nodeToMatch_x583g4_a0a0a52.getChildren(childRole_x583g4__6).get(0);
+            SNode childVar_x583g4_a0a0a0bb = nodeToMatch_x583g4_a0a0a72.getChildren(childRole_x583g4__6).get(0);
             {
-              SNode nodeToMatch_x583g4_a0a0a0z;
-              nodeToMatch_x583g4_a0a0a0z = childVar_x583g4_a0a0a0z;
-              if (!("jetbrains.mps.baseLanguage.structure.EqualsExpression".equals(nodeToMatch_x583g4_a0a0a0z.getConceptFqName()))) {
+              SNode nodeToMatch_x583g4_a0a0a0bb;
+              nodeToMatch_x583g4_a0a0a0bb = childVar_x583g4_a0a0a0bb;
+              if (!("jetbrains.mps.baseLanguage.structure.EqualsExpression".equals(nodeToMatch_x583g4_a0a0a0bb.getConceptFqName()))) {
                 return false;
               }
               {
                 String childRole_x583g4__7 = "leftExpression";
-                if (nodeToMatch_x583g4_a0a0a0z.getChildCount(childRole_x583g4__7) != 1) {
+                if (nodeToMatch_x583g4_a0a0a0bb.getChildCount(childRole_x583g4__7) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a52 = nodeToMatch_x583g4_a0a0a0z.getChildren(childRole_x583g4__7).get(0);
-                  this.PatternVar_left = childVar_x583g4_a0a0a0a52;
+                  SNode childVar_x583g4_a0a0a0a72 = nodeToMatch_x583g4_a0a0a0bb.getChildren(childRole_x583g4__7).get(0);
+                  this.PatternVar_left = childVar_x583g4_a0a0a0a72;
                 }
               }
               {
                 String childRole_x583g4__8 = "rightExpression";
-                if (nodeToMatch_x583g4_a0a0a0z.getChildCount(childRole_x583g4__8) != 1) {
+                if (nodeToMatch_x583g4_a0a0a0bb.getChildCount(childRole_x583g4__8) != 1) {
                   return false;
                 }
                 {
-                  SNode childVar_x583g4_a0a0a0a52_0 = nodeToMatch_x583g4_a0a0a0z.getChildren(childRole_x583g4__8).get(0);
-                  this.PatternVar_right = childVar_x583g4_a0a0a0a52_0;
+                  SNode childVar_x583g4_a0a0a0a72_0 = nodeToMatch_x583g4_a0a0a0bb.getChildren(childRole_x583g4__8).get(0);
+                  this.PatternVar_right = childVar_x583g4_a0a0a0a72_0;
                 }
               }
             }
@@ -428,29 +444,29 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a62 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a82 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_myExpr;
     /*package*/ String PatternVar_jobName;
 
-    public Pattern_x583g4_a0a0a62() {
+    public Pattern_x583g4_a0a0a82() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a62;
-        nodeToMatch_x583g4_a0a0a62 = nodeToMatch;
-        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatement".equals(nodeToMatch_x583g4_a0a0a62.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a82;
+        nodeToMatch_x583g4_a0a0a82 = nodeToMatch;
+        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatement".equals(nodeToMatch_x583g4_a0a0a82.getConceptFqName()))) {
           return false;
         }
-        this.PatternVar_jobName = nodeToMatch_x583g4_a0a0a62.getProperty("name");
+        this.PatternVar_jobName = nodeToMatch_x583g4_a0a0a82.getProperty("name");
         {
           String childRole_x583g4__9 = "inner";
-          if (nodeToMatch_x583g4_a0a0a62.getChildCount(childRole_x583g4__9) != 1) {
+          if (nodeToMatch_x583g4_a0a0a82.getChildCount(childRole_x583g4__9) != 1) {
             return false;
           }
           {
-            SNode childVar_x583g4_a0a0a0ab = nodeToMatch_x583g4_a0a0a62.getChildren(childRole_x583g4__9).get(0);
-            this.PatternVar_myExpr = childVar_x583g4_a0a0a0ab;
+            SNode childVar_x583g4_a0a0a0cb = nodeToMatch_x583g4_a0a0a82.getChildren(childRole_x583g4__9).get(0);
+            this.PatternVar_myExpr = childVar_x583g4_a0a0a0cb;
           }
         }
       }
@@ -482,25 +498,25 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a72 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a92 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_aaa;
     /*package*/ String PatternVar_null;
 
-    public Pattern_x583g4_a0a0a72() {
+    public Pattern_x583g4_a0a0a92() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a72;
-        nodeToMatch_x583g4_a0a0a72 = nodeToMatch;
-        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a72.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a92;
+        nodeToMatch_x583g4_a0a0a92 = nodeToMatch;
+        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a92.getConceptFqName()))) {
           return false;
         }
-        if (!("22".equals(nodeToMatch_x583g4_a0a0a72.getProperty("ii")))) {
+        if (!("22".equals(nodeToMatch_x583g4_a0a0a92.getProperty("ii")))) {
           return false;
         }
-        this.PatternVar_null = nodeToMatch_x583g4_a0a0a72.getProperty("name");
-        this.PatternVar_aaa = nodeToMatch_x583g4_a0a0a72.getReferent("myStatement");
+        this.PatternVar_null = nodeToMatch_x583g4_a0a0a92.getProperty("name");
+        this.PatternVar_aaa = nodeToMatch_x583g4_a0a0a92.getReferent("myStatement");
       }
       return true;
     }
@@ -530,23 +546,23 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a82 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a03 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_ref;
 
-    public Pattern_x583g4_a0a0a82() {
+    public Pattern_x583g4_a0a0a03() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a82;
-        nodeToMatch_x583g4_a0a0a82 = nodeToMatch;
-        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a82.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a03;
+        nodeToMatch_x583g4_a0a0a03 = nodeToMatch;
+        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a03.getConceptFqName()))) {
           return false;
         }
-        if (!("0".equals(nodeToMatch_x583g4_a0a0a82.getProperty("ii")))) {
+        if (!("0".equals(nodeToMatch_x583g4_a0a0a03.getProperty("ii")))) {
           return false;
         }
-        this.PatternVar_ref = nodeToMatch_x583g4_a0a0a82.getReferent("myStatement");
+        this.PatternVar_ref = nodeToMatch_x583g4_a0a0a03.getReferent("myStatement");
       }
       return true;
     }
@@ -572,23 +588,65 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a92 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x583g4_a0a0a13 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_ref;
 
-    public Pattern_x583g4_a0a0a92() {
+    public Pattern_x583g4_a0a0a13() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_x583g4_a0a0a92;
-        nodeToMatch_x583g4_a0a0a92 = nodeToMatch;
-        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a92.getConceptFqName()))) {
+        SNode nodeToMatch_x583g4_a0a0a13;
+        nodeToMatch_x583g4_a0a0a13 = nodeToMatch;
+        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a13.getConceptFqName()))) {
           return false;
         }
-        if (!("12".equals(nodeToMatch_x583g4_a0a0a92.getProperty("ii")))) {
+        if (!("12".equals(nodeToMatch_x583g4_a0a0a13.getProperty("ii")))) {
           return false;
         }
-        this.PatternVar_ref = nodeToMatch_x583g4_a0a0a92.getReferent("myStatement");
+        this.PatternVar_ref = nodeToMatch_x583g4_a0a0a13.getReferent("myStatement");
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+        this.PatternVar_ref = (SNode) pattern.getFieldValue("PatternVar_ref");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_ref".equals(fieldName)) {
+        return this.PatternVar_ref;
+      }
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
+  public static class Pattern_x583g4_a0a0a23 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_ref;
+
+    public Pattern_x583g4_a0a0a23() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_x583g4_a0a0a23;
+        nodeToMatch_x583g4_a0a0a23 = nodeToMatch;
+        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a23.getConceptFqName()))) {
+          return false;
+        }
+        if (!("13".equals(nodeToMatch_x583g4_a0a0a23.getProperty("ii")))) {
+          return false;
+        }
+        this.PatternVar_ref = nodeToMatch_x583g4_a0a0a23.getReferent("myStatement");
       }
       return true;
     }
