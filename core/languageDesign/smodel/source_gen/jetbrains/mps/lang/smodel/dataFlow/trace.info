@@ -15,7 +15,7 @@
     <scopeInfo nodeId="7910522704535779644" fileName="SNodeOperation_DataFlow.java" startLine="18" startPosition="98" endLine="19" endPosition="50" />
     <scopeInfo nodeId="1210626400308" fileName="SNodeOperation_DataFlow.java" startLine="17" startPosition="95" endLine="20" endPosition="7" />
     <scopeInfo nodeId="1210626395133" fileName="SNodeOperation_DataFlow.java" startLine="16" startPosition="102" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="1210626400305" fileName="SNodeOperation_DataFlow.java" startLine="16" startPosition="102" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="1210626400305" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SNodeOperation_DataFlow.java" startLine="16" startPosition="102" endLine="21" endPosition="5" />
   </root>
   <root nodeId="1211992491528">
     <nodeInfo nodeId="1211992496031" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SNodeTypeCastExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" />

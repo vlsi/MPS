@@ -159,7 +159,7 @@
     <scopeInfo nodeId="1737294499102098757" fileName="AdapterElimination_MigrationScript.java" startLine="98" startPosition="53" endLine="102" endPosition="11">
       <varInfo nodeId="1737294499102098759" varName="targetModelFQName" />
     </scopeInfo>
-    <scopeInfo nodeId="1737294499102098756" fileName="AdapterElimination_MigrationScript.java" startLine="97" startPosition="59" endLine="103" endPosition="9">
+    <scopeInfo nodeId="1737294499102098756" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AdapterElimination_MigrationScript.java" startLine="97" startPosition="59" endLine="103" endPosition="9">
       <varInfo nodeId="1737294499102098780" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1737294499102100823" fileName="AdapterElimination_MigrationScript.java" startLine="127" startPosition="59" endLine="133" endPosition="48">

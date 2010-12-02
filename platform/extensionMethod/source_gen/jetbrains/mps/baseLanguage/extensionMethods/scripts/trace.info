@@ -30,7 +30,7 @@
     <scopeInfo nodeId="7517860079983491855" fileName="ConvertToLocalMethodCall_MigrationScript.java" startLine="60" startPosition="52" endLine="63" endPosition="187">
       <varInfo nodeId="7517860079983491857" varName="methodCall" />
     </scopeInfo>
-    <scopeInfo nodeId="7517860079983491946" fileName="ConvertToLocalMethodCall_MigrationScript.java" startLine="49" startPosition="53" endLine="54" endPosition="11">
+    <scopeInfo nodeId="7517860079983491946" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConvertToLocalMethodCall_MigrationScript.java" startLine="49" startPosition="53" endLine="54" endPosition="11">
       <varInfo nodeId="7517860079983491947" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="7517860079983491945" fileName="ConvertToLocalMethodCall_MigrationScript.java" startLine="49" startPosition="53" endLine="55" endPosition="128" />

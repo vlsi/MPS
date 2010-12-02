@@ -21,7 +21,7 @@
     <scopeInfo nodeId="1213104844366" fileName="IMemberOperation_member_ReferentConstraint.java" startLine="44" startPosition="193" endLine="45" endPosition="72" />
     <scopeInfo nodeId="1213104844364" fileName="IMemberOperation_member_ReferentConstraint.java" startLine="43" startPosition="142" endLine="46" endPosition="11" />
     <scopeInfo nodeId="1213104844356" fileName="IMemberOperation_member_ReferentConstraint.java" startLine="42" startPosition="44" endLine="47" endPosition="9" />
-    <scopeInfo nodeId="1213104844357" fileName="IMemberOperation_member_ReferentConstraint.java" startLine="42" startPosition="44" endLine="47" endPosition="9">
+    <scopeInfo nodeId="1213104844357" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IMemberOperation_member_ReferentConstraint.java" startLine="42" startPosition="44" endLine="47" endPosition="9">
       <varInfo nodeId="1213104844362" varName="member" />
     </scopeInfo>
     <scopeInfo nodeId="1213104844351" fileName="IMemberOperation_member_ReferentConstraint.java" startLine="39" startPosition="5" endLine="49" endPosition="7" />
@@ -40,10 +40,10 @@
     <nodeInfo nodeId="1216915305632" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="187" />
     <nodeInfo nodeId="1227876796076" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="35" startPosition="39" endLine="36" endPosition="228" />
     <nodeInfo nodeId="1216915363805" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="38" startPosition="24" endLine="39" endPosition="23" />
-    <nodeInfo nodeId="1227876796072" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="34" startPosition="86" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="1227876796072" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="34" startPosition="86" endLine="38" endPosition="0" />
     <nodeInfo nodeId="1216915319724" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="33" startPosition="187" endLine="38" endPosition="24" />
     <scopeInfo nodeId="1227876796075" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="35" startPosition="39" endLine="36" endPosition="228" />
-    <scopeInfo nodeId="1227876796072" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="34" startPosition="86" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1227876796072" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="34" startPosition="86" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1216915259775" fileName="DefaultClassifierType_classifier_ReferentConstraint.java" startLine="32" startPosition="132" endLine="39" endPosition="23">
       <varInfo nodeId="1216915305633" varName="classifiers" />
     </scopeInfo>

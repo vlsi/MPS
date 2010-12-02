@@ -19,7 +19,7 @@
     <scopeInfo nodeId="1213877255462" fileName="IClassifierPart_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1213877255450" fileName="IClassifierPart_Behavior.java" startLine="21" startPosition="108" endLine="22" endPosition="138" />
     <scopeInfo nodeId="1213877255444" fileName="IClassifierPart_Behavior.java" startLine="20" startPosition="63" endLine="23" endPosition="7" />
-    <scopeInfo nodeId="1213877255440" fileName="IClassifierPart_Behavior.java" startLine="19" startPosition="48" endLine="24" endPosition="5">
+    <scopeInfo nodeId="1213877255440" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifierPart_Behavior.java" startLine="19" startPosition="48" endLine="24" endPosition="5">
       <varInfo nodeId="1213877255457" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1213877255433" fileName="IClassifierPart_Behavior.java" startLine="18" startPosition="75" endLine="25" endPosition="18">
@@ -82,7 +82,7 @@
     <scopeInfo nodeId="1213877512826" fileName="ThisClassifierExpression_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="1218739994705" fileName="ThisClassifierExpression_Behavior.java" startLine="17" startPosition="75" endLine="18" endPosition="70" />
     <scopeInfo nodeId="1219068414659" fileName="ThisClassifierExpression_Behavior.java" startLine="25" startPosition="160" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1219068414652" fileName="ThisClassifierExpression_Behavior.java" startLine="24" startPosition="48" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="1219068414652" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ThisClassifierExpression_Behavior.java" startLine="24" startPosition="48" endLine="27" endPosition="5" />
     <scopeInfo nodeId="1213877512821" fileName="ThisClassifierExpression_Behavior.java" startLine="16" startPosition="72" endLine="20" endPosition="77" />
     <scopeInfo nodeId="1219068414645" fileName="ThisClassifierExpression_Behavior.java" startLine="23" startPosition="87" endLine="28" endPosition="18">
       <varInfo nodeId="1219068414647" varName="result" />
@@ -126,11 +126,11 @@
     <nodeInfo nodeId="1213877528135" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IClassifier_Behavior.java" startLine="71" startPosition="63" endLine="74" endPosition="7" />
     <nodeInfo nodeId="1213877528152" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifier_Behavior.java" startLine="75" startPosition="5" endLine="78" endPosition="5" />
     <nodeInfo nodeId="1213877527952" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IClassifier_Behavior.java" startLine="141" startPosition="141" endLine="144" endPosition="5" />
-    <nodeInfo nodeId="1221661952194" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IClassifier_Behavior.java" startLine="83" startPosition="85" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="1221661952194" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#()Ljetbrains/mps/smodel/SNode;" fileName="IClassifier_Behavior.java" startLine="83" startPosition="85" endLine="87" endPosition="0" />
     <nodeInfo nodeId="1213877527997" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifier_Behavior.java" startLine="38" startPosition="48" endLine="43" endPosition="5" />
     <nodeInfo nodeId="1213877528133" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifier_Behavior.java" startLine="70" startPosition="48" endLine="75" endPosition="5" />
     <nodeInfo nodeId="1213877528084" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IClassifier_Behavior.java" startLine="58" startPosition="7" endLine="64" endPosition="7" />
-    <nodeInfo nodeId="1221661897766" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IClassifier_Behavior.java" startLine="87" startPosition="0" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="1221661897766" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" fileName="IClassifier_Behavior.java" startLine="87" startPosition="0" endLine="97" endPosition="0" />
     <nodeInfo nodeId="1221661952188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IClassifier_Behavior.java" startLine="82" startPosition="163" endLine="97" endPosition="6" />
     <nodeInfo nodeId="1213877528029" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifier_Behavior.java" startLine="48" startPosition="48" endLine="65" endPosition="5" />
     <scopeInfo nodeId="1213877528169" fileName="IClassifier_Behavior.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
@@ -149,17 +149,17 @@
     </scopeInfo>
     <scopeInfo nodeId="1213877527998" fileName="IClassifier_Behavior.java" startLine="39" startPosition="154" endLine="42" endPosition="7" />
     <scopeInfo nodeId="1213877528134" fileName="IClassifier_Behavior.java" startLine="71" startPosition="63" endLine="74" endPosition="7" />
-    <scopeInfo nodeId="1213877528152" fileName="IClassifier_Behavior.java" startLine="75" startPosition="5" endLine="78" endPosition="5">
+    <scopeInfo nodeId="1213877528152" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifier_Behavior.java" startLine="75" startPosition="5" endLine="78" endPosition="5">
       <varInfo nodeId="1213877528164" varName="part" />
     </scopeInfo>
     <scopeInfo nodeId="1213877528085" fileName="IClassifier_Behavior.java" startLine="59" startPosition="159" endLine="63" endPosition="9">
       <varInfo nodeId="1213877528087" varName="contextClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="1221661952194" fileName="IClassifier_Behavior.java" startLine="83" startPosition="85" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1213877527997" fileName="IClassifier_Behavior.java" startLine="38" startPosition="48" endLine="43" endPosition="5">
+    <scopeInfo nodeId="1221661952194" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewMethod#()Ljetbrains/mps/smodel/SNode;" fileName="IClassifier_Behavior.java" startLine="83" startPosition="85" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1213877527997" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifier_Behavior.java" startLine="38" startPosition="48" endLine="43" endPosition="5">
       <varInfo nodeId="1213877528016" varName="part" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877528133" fileName="IClassifier_Behavior.java" startLine="70" startPosition="48" endLine="75" endPosition="5">
+    <scopeInfo nodeId="1213877528133" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifier_Behavior.java" startLine="70" startPosition="48" endLine="75" endPosition="5">
       <varInfo nodeId="1213877528150" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1213877527942" fileName="IClassifier_Behavior.java" startLine="140" startPosition="77" endLine="145" endPosition="196">
@@ -175,13 +175,13 @@
     <scopeInfo nodeId="1213877528126" fileName="IClassifier_Behavior.java" startLine="69" startPosition="78" endLine="79" endPosition="18">
       <varInfo nodeId="1213877528128" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1221661897766" fileName="IClassifier_Behavior.java" startLine="87" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="1221661897766" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodCall#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Ljetbrains/mps/smodel/SNode;" fileName="IClassifier_Behavior.java" startLine="87" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="1221661897773" varName="parameteres" />
       <varInfo nodeId="1221661897771" varName="methodDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1213877528030" fileName="IClassifier_Behavior.java" startLine="49" startPosition="87" endLine="64" endPosition="7" />
     <scopeInfo nodeId="1221661926915" fileName="IClassifier_Behavior.java" startLine="82" startPosition="163" endLine="97" endPosition="6" />
-    <scopeInfo nodeId="1213877528029" fileName="IClassifier_Behavior.java" startLine="48" startPosition="48" endLine="65" endPosition="5">
+    <scopeInfo nodeId="1213877528029" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IClassifier_Behavior.java" startLine="48" startPosition="48" endLine="65" endPosition="5">
       <varInfo nodeId="1213877528118" varName="member" />
     </scopeInfo>
     <scopeInfo nodeId="1213877528022" fileName="IClassifier_Behavior.java" startLine="47" startPosition="97" endLine="66" endPosition="18">

@@ -26,10 +26,10 @@
     <nodeInfo nodeId="6235310215814037940" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="54" startPosition="110" endLine="59" endPosition="13" />
     <nodeInfo nodeId="6235310215814037899" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="44" startPosition="220" endLine="51" endPosition="11" />
     <nodeInfo nodeId="6235310215814037937" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="53" startPosition="238" endLine="60" endPosition="11" />
-    <nodeInfo nodeId="6235310215814037988" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="64" startPosition="0" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="6235310215814037988" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="64" startPosition="0" endLine="71" endPosition="0" />
     <nodeInfo nodeId="6235310215814037896" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="43" startPosition="172" endLine="52" endPosition="9" />
     <nodeInfo nodeId="6235310215814037930" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="52" startPosition="9" endLine="61" endPosition="9" />
-    <nodeInfo nodeId="6235310215814037769" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="39" startPosition="38" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="6235310215814037769" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="39" startPosition="38" endLine="64" endPosition="0" />
     <nodeInfo nodeId="6235310215814022070" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="38" startPosition="132" endLine="71" endPosition="6" />
     <scopeInfo nodeId="6235310215814037911" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="47" startPosition="82" endLine="48" endPosition="65" />
     <scopeInfo nodeId="6235310215814037946" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="56" startPosition="82" endLine="57" endPosition="65" />
@@ -40,21 +40,21 @@
       <varInfo nodeId="6235310215814089102" varName="operand" />
     </scopeInfo>
     <scopeInfo nodeId="6235310215814037900" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="45" startPosition="225" endLine="50" endPosition="13" />
-    <scopeInfo nodeId="6235310215814037901" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="45" startPosition="225" endLine="50" endPosition="13" />
+    <scopeInfo nodeId="6235310215814037901" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="45" startPosition="225" endLine="50" endPosition="13" />
     <scopeInfo nodeId="6235310215814037939" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="54" startPosition="110" endLine="59" endPosition="13" />
     <scopeInfo nodeId="6235310215814037898" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="44" startPosition="220" endLine="51" endPosition="11" />
     <scopeInfo nodeId="6235310215814037936" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="53" startPosition="238" endLine="60" endPosition="11" />
-    <scopeInfo nodeId="6235310215814037937" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="53" startPosition="238" endLine="60" endPosition="11" />
-    <scopeInfo nodeId="6235310215814037988" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="6235310215814037937" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="53" startPosition="238" endLine="60" endPosition="11" />
+    <scopeInfo nodeId="6235310215814037988" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="6235310215814037991" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6235310215814037896" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="43" startPosition="172" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="6235310215814037930" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="52" startPosition="9" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="6235310215814037896" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="43" startPosition="172" endLine="52" endPosition="9" />
+    <scopeInfo nodeId="6235310215814037930" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="52" startPosition="9" endLine="61" endPosition="9" />
     <scopeInfo nodeId="6235310215814037777" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="41" startPosition="56" endLine="62" endPosition="79">
       <varInfo nodeId="6235310215814037884" varName="result" />
       <varInfo nodeId="6235310215814037890" varName="operand" />
     </scopeInfo>
-    <scopeInfo nodeId="6235310215814037769" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="39" startPosition="38" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6235310215814037769" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="39" startPosition="38" endLine="64" endPosition="0">
       <varInfo nodeId="6235310215814037773" varName="p0" />
     </scopeInfo>
     <scopeInfo nodeId="7997068947889524885" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="38" startPosition="132" endLine="74" endPosition="0" />
@@ -112,10 +112,10 @@
     <scopeInfo nodeId="7517860079983420405" fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="50" startPosition="100" endLine="51" endPosition="59" />
     <scopeInfo nodeId="7517860079983420428" fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="54" startPosition="152" endLine="55" endPosition="93" />
     <scopeInfo nodeId="7517860079983420403" fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="49" startPosition="152" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="7517860079983420425" fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="53" startPosition="7" endLine="56" endPosition="7">
+    <scopeInfo nodeId="7517860079983420425" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="53" startPosition="7" endLine="56" endPosition="7">
       <varInfo nodeId="7517860079983420426" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="7517860079983420400" fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="48" startPosition="32" endLine="53" endPosition="7">
+    <scopeInfo nodeId="7517860079983420400" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="48" startPosition="32" endLine="53" endPosition="7">
       <varInfo nodeId="7517860079983420401" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="7517860079983420399" fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="48" startPosition="32" endLine="57" endPosition="124" />

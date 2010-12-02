@@ -15,7 +15,7 @@
     <nodeInfo nodeId="8259962354560896645" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="PrintStatement_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
     <scopeInfo nodeId="8259962354560896648" fileName="PrintStatement_DataFlow.java" startLine="17" startPosition="128" endLine="18" endPosition="58" />
     <scopeInfo nodeId="8259962354560896644" fileName="PrintStatement_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="8259962354560896645" fileName="PrintStatement_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="8259962354560896645" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="PrintStatement_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
   </root>
 </debugInfo>
 

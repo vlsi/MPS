@@ -116,7 +116,7 @@
       <varInfo nodeId="1163603188410" varName="propertyName" />
       <varInfo nodeId="1163603121641" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="1163603926363" fileName="_PatternExpression_KeyMap.java" startLine="255" startPosition="153" endLine="258" endPosition="7">
+    <scopeInfo nodeId="1163603926363" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="_PatternExpression_KeyMap.java" startLine="255" startPosition="153" endLine="258" endPosition="7">
       <varInfo nodeId="1163603926365" varName="sibling" />
     </scopeInfo>
     <scopeInfo nodeId="1176736750313" fileName="_PatternExpression_KeyMap.java" startLine="305" startPosition="115" endLine="308" endPosition="15">

@@ -98,7 +98,7 @@
     <scopeInfo nodeId="1213877300710" fileName="SConceptType_Behavior.java" startLine="19" startPosition="26" endLine="20" endPosition="26" />
     <scopeInfo nodeId="1213877300714" fileName="SConceptType_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="79" />
     <scopeInfo nodeId="1213877300749" fileName="SConceptType_Behavior.java" startLine="30" startPosition="82" endLine="31" endPosition="80" />
-    <scopeInfo nodeId="1213877300745" fileName="SConceptType_Behavior.java" startLine="29" startPosition="146" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="1213877300745" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SConceptType_Behavior.java" startLine="29" startPosition="146" endLine="32" endPosition="7" />
     <scopeInfo nodeId="1213877300735" fileName="SConceptType_Behavior.java" startLine="28" startPosition="84" endLine="32" endPosition="7">
       <varInfo nodeId="1213877300737" varName="name" />
     </scopeInfo>
@@ -283,7 +283,7 @@
     <scopeInfo nodeId="1213877485044" fileName="StaticConceptMethodCall_Behavior.java" startLine="21" startPosition="142" endLine="25" endPosition="7">
       <varInfo nodeId="1213877485046" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877485037" fileName="StaticConceptMethodCall_Behavior.java" startLine="20" startPosition="48" endLine="26" endPosition="5">
+    <scopeInfo nodeId="1213877485037" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StaticConceptMethodCall_Behavior.java" startLine="20" startPosition="48" endLine="26" endPosition="5">
       <varInfo nodeId="1213877485042" varName="behavior" />
     </scopeInfo>
     <scopeInfo nodeId="1213877485030" fileName="StaticConceptMethodCall_Behavior.java" startLine="19" startPosition="124" endLine="27" endPosition="18">
@@ -297,14 +297,14 @@
     <nodeInfo nodeId="2906110183022538660" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="35" startPosition="96" endLine="36" endPosition="131" />
     <nodeInfo nodeId="2906110183022538662" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="36" startPosition="131" endLine="37" endPosition="204" />
     <nodeInfo nodeId="2906110183022538696" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="39" startPosition="39" endLine="40" endPosition="87" />
-    <nodeInfo nodeId="2906110183022538689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="38" startPosition="398" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="2906110183022538689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="38" startPosition="398" endLine="42" endPosition="0" />
     <nodeInfo nodeId="2906110183022538671" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="37" startPosition="204" endLine="42" endPosition="7" />
     <scopeInfo nodeId="1213877500234" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
     <scopeInfo nodeId="4024382256428849143" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="23" startPosition="83" endLine="24" endPosition="16" />
     <scopeInfo nodeId="4024382256428849152" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="27" startPosition="91" endLine="28" endPosition="139" />
     <scopeInfo nodeId="4024382256428849176" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="31" startPosition="84" endLine="32" endPosition="116" />
     <scopeInfo nodeId="2906110183022538690" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="39" startPosition="39" endLine="40" endPosition="87" />
-    <scopeInfo nodeId="2906110183022538689" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="38" startPosition="398" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2906110183022538689" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="38" startPosition="398" endLine="42" endPosition="0" />
     <scopeInfo nodeId="2906110183022538657" fileName="LinkAttributeAccessQualifier_Behavior.java" startLine="35" startPosition="96" endLine="42" endPosition="7">
       <varInfo nodeId="2906110183022538663" varName="attributeContainer" />
     </scopeInfo>
@@ -334,7 +334,7 @@
     <nodeInfo nodeId="1238680679491" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SNodeOperation_Behavior.java" startLine="34" startPosition="98" endLine="37" endPosition="5" />
     <nodeInfo nodeId="1223307503885" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SNodeOperation_Behavior.java" startLine="60" startPosition="58" endLine="63" endPosition="5" />
     <nodeInfo nodeId="1213877508881" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SNodeOperation_Behavior.java" startLine="65" startPosition="188" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="1227876801654" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SNodeOperation_Behavior.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="1227876801654" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeOperation_Behavior.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
     <nodeInfo nodeId="1213877508975" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SNodeOperation_Behavior.java" startLine="41" startPosition="101" endLine="46" endPosition="15" />
     <scopeInfo nodeId="1213877509007" fileName="SNodeOperation_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="1238680726849" fileName="SNodeOperation_Behavior.java" startLine="27" startPosition="112" endLine="28" endPosition="18" />
@@ -349,7 +349,7 @@
     <scopeInfo nodeId="1213877508995" fileName="SNodeOperation_Behavior.java" startLine="53" startPosition="86" endLine="55" endPosition="32">
       <varInfo nodeId="1213877508997" varName="variableExpectedName" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876801654" fileName="SNodeOperation_Behavior.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1227876801654" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SNodeOperation_Behavior.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1213877508922" fileName="SNodeOperation_Behavior.java" startLine="25" startPosition="90" endLine="30" endPosition="146">
       <varInfo nodeId="1213877508924" varName="leftExpression" />
     </scopeInfo>
@@ -389,22 +389,22 @@
     <nodeInfo nodeId="1223307168983" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SModelLanguageUtil.java" startLine="37" startPosition="109" endLine="38" endPosition="208" />
     <nodeInfo nodeId="1223307168994" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SModelLanguageUtil.java" startLine="39" startPosition="96" endLine="40" endPosition="136" />
     <nodeInfo nodeId="1223307209333" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SModelLanguageUtil.java" startLine="42" startPosition="5" endLine="43" endPosition="16" />
-    <nodeInfo nodeId="1220269142885" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="SModelLanguageUtil.java" startLine="9" startPosition="33" endLine="11" endPosition="3" />
+    <nodeInfo nodeId="1220269142885" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SModelLanguageUtil#()V" fileName="SModelLanguageUtil.java" startLine="9" startPosition="33" endLine="11" endPosition="3" />
     <nodeInfo nodeId="1220269142898" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelLanguageUtil.java" startLine="14" startPosition="79" endLine="17" endPosition="5" />
     <nodeInfo nodeId="1220269142931" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelLanguageUtil.java" startLine="23" startPosition="156" endLine="26" endPosition="5" />
     <nodeInfo nodeId="1223309683540" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelLanguageUtil.java" startLine="32" startPosition="157" endLine="35" endPosition="7" />
     <nodeInfo nodeId="1223307168992" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelLanguageUtil.java" startLine="38" startPosition="208" endLine="41" endPosition="7" />
     <nodeInfo nodeId="1223309651975" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelLanguageUtil.java" startLine="30" startPosition="52" endLine="36" endPosition="5" />
     <nodeInfo nodeId="1223307168981" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelLanguageUtil.java" startLine="36" startPosition="5" endLine="42" endPosition="5" />
-    <nodeInfo nodeId="1220269142889" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="SModelLanguageUtil.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
-    <nodeInfo nodeId="1220269142911" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="SModelLanguageUtil.java" startLine="20" startPosition="0" endLine="29" endPosition="0" />
-    <nodeInfo nodeId="1223307099330" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="SModelLanguageUtil.java" startLine="29" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="1220269142889" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDatatypeFromLeft_SPropertyAccess#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SModelLanguageUtil.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
+    <nodeInfo nodeId="1220269142911" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyDeclarationFromLeft_SPropertyAccess#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SModelLanguageUtil.java" startLine="20" startPosition="0" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="1223307099330" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SModelLanguageUtil.java" startLine="29" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1220269142888" fileName="SModelLanguageUtil.java" startLine="10" startPosition="32" endLine="10" endPosition="32" />
     <scopeInfo nodeId="1220269142899" fileName="SModelLanguageUtil.java" startLine="15" startPosition="29" endLine="16" endPosition="68" />
     <scopeInfo nodeId="1220269142932" fileName="SModelLanguageUtil.java" startLine="24" startPosition="102" endLine="25" endPosition="143" />
     <scopeInfo nodeId="1223309683541" fileName="SModelLanguageUtil.java" startLine="33" startPosition="103" endLine="34" endPosition="162" />
     <scopeInfo nodeId="1223307168993" fileName="SModelLanguageUtil.java" startLine="39" startPosition="96" endLine="40" endPosition="136" />
-    <scopeInfo nodeId="1220269142885" fileName="SModelLanguageUtil.java" startLine="9" startPosition="33" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="1220269142885" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SModelLanguageUtil#()V" fileName="SModelLanguageUtil.java" startLine="9" startPosition="33" endLine="11" endPosition="3" />
     <scopeInfo nodeId="1223309651976" fileName="SModelLanguageUtil.java" startLine="31" startPosition="105" endLine="35" endPosition="7">
       <varInfo nodeId="1223309729737" varName="operation" />
     </scopeInfo>
@@ -418,14 +418,14 @@
       <varInfo nodeId="1220269142916" varName="leftExpression" />
       <varInfo nodeId="1220269142925" varName="leftOp" />
     </scopeInfo>
-    <scopeInfo nodeId="1220269142889" fileName="SModelLanguageUtil.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1220269142889" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDatatypeFromLeft_SPropertyAccess#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SModelLanguageUtil.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1220269142909" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="1220269142911" fileName="SModelLanguageUtil.java" startLine="20" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1220269142911" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyDeclarationFromLeft_SPropertyAccess#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SModelLanguageUtil.java" startLine="20" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1220269142944" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1223307099333" fileName="SModelLanguageUtil.java" startLine="30" startPosition="52" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="1223307099330" fileName="SModelLanguageUtil.java" startLine="29" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1223307099330" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SModelLanguageUtil.java" startLine="29" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1223307126526" varName="expression" />
     </scopeInfo>
     <unitInfo nodeId="1220269142883" fileName="SModelLanguageUtil.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil" />
@@ -482,12 +482,12 @@
     <nodeInfo nodeId="5815925154349134246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="23" startPosition="77" endLine="24" endPosition="123" />
     <nodeInfo nodeId="2906110183022542880" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="27" startPosition="96" endLine="28" endPosition="219" />
     <nodeInfo nodeId="2906110183022543024" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="30" startPosition="39" endLine="34" endPosition="10" />
-    <nodeInfo nodeId="2906110183022538892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="29" startPosition="515" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="2906110183022538892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="29" startPosition="515" endLine="36" endPosition="0" />
     <nodeInfo nodeId="2906110183022538870" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="28" startPosition="219" endLine="36" endPosition="7" />
     <scopeInfo nodeId="5815925154349132187" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
     <scopeInfo nodeId="5815925154349134243" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="23" startPosition="77" endLine="24" endPosition="123" />
     <scopeInfo nodeId="2906110183022543023" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="30" startPosition="39" endLine="34" endPosition="10" />
-    <scopeInfo nodeId="2906110183022538892" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="29" startPosition="515" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="2906110183022538892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="29" startPosition="515" endLine="36" endPosition="0" />
     <scopeInfo nodeId="2906110183022538867" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="27" startPosition="96" endLine="36" endPosition="7">
       <varInfo nodeId="2906110183022542881" varName="acceptAggregations" />
     </scopeInfo>
