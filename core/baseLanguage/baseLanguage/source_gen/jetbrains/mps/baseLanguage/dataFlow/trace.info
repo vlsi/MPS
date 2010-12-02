@@ -926,22 +926,22 @@
   </root>
   <root nodeId="6371033132130083106">
     <nodeInfo nodeId="6371033132130114705" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForLoopNotNull.java" startLine="27" startPosition="151" endLine="28" endPosition="157" />
-    <nodeInfo nodeId="6371033132130114727" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForLoopNotNull.java" startLine="28" startPosition="157" endLine="29" endPosition="60" />
+    <nodeInfo nodeId="6371033132130114727" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForLoopNotNull.java" startLine="28" startPosition="157" endLine="29" endPosition="63" />
     <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForLoopNotNull.java" startLine="31" startPosition="9" endLine="32" endPosition="72" />
     <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForLoopNotNull.java" startLine="33" startPosition="47" endLine="34" endPosition="99" />
-    <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForLoopNotNull.java" startLine="34" startPosition="99" endLine="35" endPosition="67" />
-    <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForLoopNotNull.java" startLine="35" startPosition="67" endLine="36" endPosition="40" />
+    <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForLoopNotNull.java" startLine="34" startPosition="99" endLine="35" endPosition="70" />
+    <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForLoopNotNull.java" startLine="35" startPosition="70" endLine="36" endPosition="40" />
     <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForLoopNotNull.java" startLine="36" startPosition="40" endLine="37" endPosition="64" />
     <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ForLoopNotNull.java" startLine="32" startPosition="72" endLine="38" endPosition="11" />
-    <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ForLoopNotNull.java" startLine="30" startPosition="25" endLine="39" endPosition="9" />
-    <nodeInfo nodeId="6371033132130114733" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ForLoopNotNull.java" startLine="29" startPosition="60" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="6371033132130114742" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ForLoopNotNull.java" startLine="30" startPosition="28" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="6371033132130114733" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ForLoopNotNull.java" startLine="29" startPosition="63" endLine="40" endPosition="7" />
     <nodeInfo nodeId="6371033132130114695" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ForLoopNotNull.java" startLine="26" startPosition="53" endLine="41" endPosition="5" />
     <scopeInfo nodeId="6371033132130114742" fileName="ForLoopNotNull.java" startLine="33" startPosition="47" endLine="37" endPosition="64" />
     <scopeInfo nodeId="6371033132130114742" fileName="ForLoopNotNull.java" startLine="31" startPosition="9" endLine="38" endPosition="11" />
-    <scopeInfo nodeId="6371033132130114734" fileName="ForLoopNotNull.java" startLine="30" startPosition="25" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="6371033132130114734" fileName="ForLoopNotNull.java" startLine="30" startPosition="28" endLine="39" endPosition="9" />
     <scopeInfo nodeId="6371033132130114696" fileName="ForLoopNotNull.java" startLine="27" startPosition="151" endLine="40" endPosition="7">
-      <varInfo nodeId="6371033132130114728" varName="node" />
       <varInfo nodeId="6371033132130114706" varName="notEquals" />
+      <varInfo nodeId="6371033132130114728" varName="notNull" />
     </scopeInfo>
     <scopeInfo nodeId="6371033132130083109" fileName="ForLoopNotNull.java" startLine="26" startPosition="53" endLine="41" endPosition="5" />
   </root>

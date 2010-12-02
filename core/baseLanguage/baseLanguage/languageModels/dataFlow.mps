@@ -5318,7 +5318,7 @@
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6371033132130114727">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6371033132130114728">
-              <property name="name" nameId="tpck.1169194664001" value="node" />
+              <property name="name" nameId="tpck.1169194664001" value="notNull" />
               <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6371033132130114729" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6371033132130114730">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1265678854311176038" resolveInfo="getOtherThanNull" />

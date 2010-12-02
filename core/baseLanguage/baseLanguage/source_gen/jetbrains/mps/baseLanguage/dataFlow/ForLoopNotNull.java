@@ -26,13 +26,13 @@ public class ForLoopNotNull extends DataFlowConstructor {
   public void performActions(Program o, SNode node) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
       SNode notEquals = SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.NotEqualsExpression");
-      SNode node = NullableUtil.getOtherThanNull(notEquals);
-      if (node != null) {
+      SNode notNull = NullableUtil.getOtherThanNull(notEquals);
+      if (notNull != null) {
         {
           Object object = SLinkOperations.getTarget(node, "body", true);
           if (((Program) o).contains(object)) {
             int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "body", true));
-            Instruction instruction = new notNullInstruction(node);
+            Instruction instruction = new notNullInstruction(notNull);
             instruction.setSource(node);
             ((Program) (o)).insert(instruction, position, true);
           }
