@@ -94,6 +94,42 @@ public class Execute_Test extends MockTestCase {
   }
 
   @Test
+  public void test_inputResources() throws Exception {
+    final ITarget make = Mockups.target(context, "make");
+    final IResource resA = Mockups.resource(context, "resA");
+    final IResource resB = Mockups.resource(context, "resB");
+    final IResult result = Mockups.result(context, "result", true);
+    context.checking(new Expectations() {
+      {
+        atLeast(1).of(make).requiresInput();
+        will(returnValue(true));
+        exactly(1).of(make).createJob();
+        IJob makejob = new IJob() {
+          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pp) {
+            Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
+            return result;
+          }
+        };
+        will(returnValue(makejob));
+      }
+    });
+    Mockups.allowing(context, make);
+    Mockups.allowing(context, result);
+
+    TargetRange tr = new TargetRange();
+    tr.addTarget(make);
+
+    Script sc = new Script(tr, new ITarget.Name("make"));
+    sc.validate();
+    Assert.assertTrue(sc.isValid());
+
+    IResult r = sc.execute(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB));
+    Assert.assertNotNull(r);
+    Assert.assertTrue(r.isSucessful());
+    Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
+  }
+
+  @Test
   public void test_transpResources() throws Exception {
     final ITarget make = Mockups.target(context, "make");
     final ITarget nop = Mockups.target(context, "nop");

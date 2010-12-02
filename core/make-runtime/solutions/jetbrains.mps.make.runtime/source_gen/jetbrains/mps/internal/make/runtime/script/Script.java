@@ -12,14 +12,15 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.make.script.IMonitors;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.script.IJob;
+import java.util.Collections;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -34,15 +35,17 @@ public class Script implements IScript {
   private _FunctionTypes._void_P1_E0<? super IParametersPool> init;
   private IMonitors monitors;
 
-  public Script(TargetRange targetRange, ITarget.Name defaultTargetName, _FunctionTypes._void_P1_E0<? super IParametersPool> init, IMonitors mons) {
-    this(targetRange, defaultTargetName);
-    this.init = init;
-    this.monitors = mons;
-  }
-
   public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
     this.targetRange = targetRange;
     this.defaultTargetName = defaultTargetName;
+  }
+
+  public void setInit(_FunctionTypes._void_P1_E0<? super IParametersPool> init) {
+    this.init = init;
+  }
+
+  public void setMonitors(IMonitors mons) {
+    this.monitors = mons;
   }
 
   public void validate() {
@@ -82,7 +85,7 @@ public class Script implements IScript {
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
-  public IResult execute() {
+  public IResult execute(final Iterable<? extends IResource> scriptInput) {
     validate();
     if (!(isValid())) {
       LOG.error("attempt to execute invalid script");
@@ -120,15 +123,19 @@ public class Script implements IScript {
       public void invoke(IJobMonitor monit) {
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.info("Executing " + trg.getName());
-          Iterable<IResource> input = Sequence.fromIterable(targetRange.immediatePrecursors(trg.getName())).<IResult>select(new ISelector<ITarget, IResult>() {
-            public IResult select(ITarget t) {
-              return results.getResult(t.getName());
-            }
-          }).<IResource>translate(new ITranslator2<IResult, IResource>() {
-            public Iterable<IResource> translate(IResult r) {
-              return r.output();
-            }
-          }).distinct().toListSequence();
+          Iterable<ITarget> impre = targetRange.immediatePrecursors(trg.getName());
+          Iterable<IResource> input = (Iterable<IResource>) ((Sequence.fromIterable(impre).isEmpty() ?
+            scriptInput :
+            Sequence.fromIterable(impre).<IResult>select(new ISelector<ITarget, IResult>() {
+              public IResult select(ITarget t) {
+                return results.getResult(t.getName());
+              }
+            }).<IResource>translate(new ITranslator2<IResult, IResource>() {
+              public Iterable<IResource> translate(IResult r) {
+                return r.output();
+              }
+            }).distinct().toListSequence()
+          ));
           if (trg.requiresInput()) {
             if (Sequence.fromIterable(input).isEmpty()) {
               LOG.info("No input. Stopping");
@@ -161,6 +168,10 @@ public class Script implements IScript {
     return results;
   }
 
+  public IResult execute() {
+    return execute(Sequence.fromIterable(Collections.<IResource>emptyList()));
+  }
+
   public class ParametersPool implements IParametersPool {
     private Map<ITarget.Name, Object> cache = MapSequence.fromMap(new HashMap<ITarget.Name, Object>());
 
@@ -191,15 +202,16 @@ public class Script implements IScript {
 
   private static class SubsOutputResult implements IResult {
     private IResult result;
-    private Iterable<IResource> output;
+    private Iterable<? extends IResource> output;
 
-    public SubsOutputResult(IResult result, Iterable<IResource> output) {
+    public SubsOutputResult(IResult result, Iterable<? extends IResource> output) {
       this.result = result;
       this.output = output;
     }
 
+    @SuppressWarnings(value = {"unchecked"})
     public Iterable<IResource> output() {
-      return output;
+      return (Iterable<IResource>) output;
     }
 
     public boolean isSucessful() {

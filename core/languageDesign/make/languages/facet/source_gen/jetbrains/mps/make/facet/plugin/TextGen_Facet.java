@@ -81,7 +81,7 @@ public class TextGen_Facet implements IFacet {
                   TraceInfoCache tic = TraceInfoCache.getInstance();
                   GenerationDependenciesCache gdc = GenerationDependenciesCache.getInstance();
                   boolean res;
-                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_b.Variables.class).operationContext(), gr.data.status());
+                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gr.data.status());
                   if (!(res)) {
                     Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGenerator returned false");
                     return new IResult.FAILURE(_output_21gswx_a0a);
