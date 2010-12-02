@@ -1530,7 +1530,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     WeakReference<EditorCell> weakReference = myNodesToBigCellsMap.get(node);
     if (weakReference == null) return null;
     EditorCell result = weakReference.get();
-    if (result != null && result.getRootParent() != getRootCell()) {
+    if (result != null && (result.getRootParent() != getRootCell() || result.isUnderFolded())) {
       return null;
     }
     return result;
