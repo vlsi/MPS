@@ -13,59 +13,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.differences.equation;
 
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
+import jetbrains.mps.newTypesystem.differences.AbstractOperation;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:04:39 PM
+ * Date: Oct 8, 2010
+ * Time: 1:19:19 PM
+ * To change this template use File | Settings | File Templates.
  */
-public class TypeDifference extends Difference {
-  protected SNode myNode;
-  protected SNode myType;
+public class EquationSubstitutedOperation extends AbstractOperation {
+  EquationAddedOperation myAdded;
+  EquationRemovedOperation myRemoved;
 
-  public TypeDifference(SNode node, SNode type, EquationInfo info) {
-    myNode = node;
-    myType = type;
-    mySource = node;
-    myEquationInfo = info;
+  public EquationSubstitutedOperation(SNode key, SNode prev, SNode cur, SNode source) {
+    myAdded = new EquationAddedOperation(key, cur, source, null);
+    myRemoved = new EquationRemovedOperation(key, prev, source);
+    mySource = source;
   }
 
   @Override
-  //todo: it does not seem to update "type to node" map
   public void rollBack(State state) {
-    state.getNodeToTypeMap().remove(myNode);
+    myAdded.rollBack(state);
+    myRemoved.rollBack(state);
   }
 
   @Override
   public void play(State state) {
-    state.getNodeToTypeMap().put(myNode, myType);
+    myRemoved.play(state);
+    myAdded.play(state);
   }
 
   @Override
   public String getPresentation() {
-    return "Type added (" + myNode + " : " + myType + ")";
-  }
-
-  @Override
-  public Color getColor() {
-    return Colors.TYPE_ADDED;
-  }
-
-  public SNode getNode() {
-    return myNode;
-  }
-
-  public SNode getType() {
-    return myType;
+    return "Equation " + myRemoved.getShortPresentation() + " substituted with " +
+      myAdded.getShortPresentation();
   }
 }

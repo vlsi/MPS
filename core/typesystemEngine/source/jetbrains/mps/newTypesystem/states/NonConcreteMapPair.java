@@ -16,10 +16,7 @@
 package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.newTypesystem.differences.whenConcrete.BecameConcrete;
-import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteAdded;
-import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyAdded;
-import jetbrains.mps.newTypesystem.differences.whenConcrete.WhenConcreteDependencyRemoved;
+import jetbrains.mps.newTypesystem.differences.whenConcrete.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.hash.HashMap;
 
@@ -46,7 +43,7 @@ public class NonConcreteMapPair {
   }
 
   private void addAndTrack(WhenConcreteEntry e, SNode var) {
-    myState.addDifference(new WhenConcreteDependencyAdded(e, var, myIsShallow), false);
+    myState.executeOperation(new AddWCDependencyOperation(e, var, myIsShallow), false);
   }
 
   public void addDependency(WhenConcreteEntry e, SNode var) {
@@ -66,9 +63,9 @@ public class NonConcreteMapPair {
   }
 
   private void becameConcrete(WhenConcreteEntry entry) {
-    myState.addDifference(new BecameConcrete(myIsShallow, entry), true);
+    myState.executeOperation(new PlayWCBodyOperation(myIsShallow, entry), true);
     entry.run();
-    myState.popDifference();
+    myState.popOperation();
   }
 
   private void testConcrete(WhenConcreteEntry entity) {
@@ -79,7 +76,7 @@ public class NonConcreteMapPair {
   }
 
   private void removeAndTrack(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
-    myState.addDifference(new WhenConcreteDependencyRemoved(e, var, myIsShallow), false);
+    myState.executeOperation(new RemoveWCDependencyOperation(e, var, myIsShallow), false);
 
   }
 
@@ -98,7 +95,7 @@ public class NonConcreteMapPair {
     if (source == null) {
       source = node;
     }
-    myState.addDifference(new WhenConcreteAdded(e, node, source, myIsShallow), true);
+    myState.executeOperation(new AddWCEntryOperation(e, node, source, myIsShallow), true);
     List<SNode> variables = getChildAndReferentVariables(node);
     if (variables.isEmpty()) {
       becameConcrete(e);
@@ -106,7 +103,7 @@ public class NonConcreteMapPair {
     for (SNode var : variables) {
       addAndTrack(e, myState.getRepresentative(var));
     }
-    myState.popDifference();
+    myState.popOperation();
   }
 
   public void substitute(SNode oldVar, SNode type) {

@@ -20,8 +20,8 @@ import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.StringDifference;
-import jetbrains.mps.newTypesystem.differences.inequality.RelationAdded;
+import jetbrains.mps.newTypesystem.differences.AddRemarkOperation;
+import jetbrains.mps.newTypesystem.differences.inequality.RelationAddedOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -82,9 +82,9 @@ public class Inequalities {
       InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
 
       IsApplicable2Status status = inequalityReplacementRule.o2;
-      myState.addDifference(new StringDifference(subType + " is subtype of " + superType + " by replacement rule"), true);
+      myState.executeOperation(new AddRemarkOperation(subType + " is subtype of " + superType + " by replacement rule"), true);
       ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, info, myState.getTypeCheckingContext(), status);
-      myState.popDifference();
+      myState.popOperation();
       return;
     }
 
@@ -92,12 +92,12 @@ public class Inequalities {
     superType = myState.getEquations().expandNode(superType);
     SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
 
-    StringDifference difference = new StringDifference(subType + " is subtype of " + superType);
-    myState.addDifference(difference, true);
+    AddRemarkOperation difference = new AddRemarkOperation(subType + " is subtype of " + superType);
+    myState.executeOperation(difference, true);
     if (subTyping.isSubType(subType, superType, info, isWeak, false)) {
-      myState.popDifference();
+      myState.popOperation();
     } else {
-      myState.removeLastDifference(difference);
+      myState.removeLastOperation(difference);
       myState.getNodeMaps().reportSubTypeError(subType, superType, info, isWeak);
     }
   }
@@ -123,7 +123,7 @@ public class Inequalities {
       subTyping.isSubTypeByReplacementRules(right, left) ||
       subTyping.isSubType(left, right, info, isWeak, true) ||
       subTyping.isSubType(right, left, info, isWeak, true)) {
-      myState.addDifference(new StringDifference(left + " is comparable with " + right), false);
+      myState.executeOperation(new AddRemarkOperation(left + " is comparable with " + right), false);
       return;
     }
     myState.getNodeMaps().reportComparableError(left, right, info, isWeak);
@@ -137,14 +137,14 @@ public class Inequalities {
       kind = check ? RelationMapKind.STRONG_CHECK : RelationMapKind.STRONG;
     }
     if (!getRelation(kind).contains(subType, superType)) {
-      myState.addDifference(new RelationAdded(subType, superType, kind, info), false);
+      myState.executeOperation(new RelationAddedOperation(subType, superType, kind, info), false);
     }
   }
 
   void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
     RelationMapKind kind = isWeak ? RelationMapKind.WEAK_COMPARABLE : RelationMapKind.STRONG_COMPARABLE;
     if (!getRelation(kind).contains(subType, superType)) {
-      myState.addDifference(new RelationAdded(subType, superType, kind, info), false);
+      myState.executeOperation(new RelationAddedOperation(subType, superType, kind, info), false);
     }
   }
 

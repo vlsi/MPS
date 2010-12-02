@@ -17,7 +17,7 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.differences.AbstractOperation;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
@@ -57,7 +57,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     if (getDifferenceStack().isEmpty()) {
       return;
     }
-    Difference diff = getDifferenceStack().pop();
+    AbstractOperation diff = getDifferenceStack().pop();
     System.out.println("Rolled back (" + diff.getPresentation() + ")");
     diff.rollBack(myState);
   }
@@ -191,12 +191,12 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
     return mySubTyping;
   }
 
-  public Stack<Difference> getDifferenceStack() {
-    return myState.getDifferenceStack();
+  public Stack<AbstractOperation> getDifferenceStack() {
+    return myState.getOperationStack();
   }
 
-  public Difference getDifference() {
-    return myState.getDifference();
+  public AbstractOperation getDifference() {
+    return myState.getOperation();
   }
 
   @Override

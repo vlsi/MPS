@@ -13,30 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.differences.equation;
 
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.differences.AbstractOperation;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 11:53:12 AM
+ * Date: Oct 8, 2010
+ * Time: 1:17:32 PM
+ * To change this template use File | Settings | File Templates.
  */
-public class HeadDifference extends Difference {
+public abstract class AbstractEquationOperation extends AbstractOperation {
+  protected SNode myChild;
+  protected SNode myParent;
 
   @Override
-  public String getPresentation() {
-    return "Difference";
+  public String getShortPresentation() {
+    return myChild + " = " + myParent;
   }
 
-  @Override
-  public void rollBack(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
 
-  @Override
-  public void play(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
-  }
 }

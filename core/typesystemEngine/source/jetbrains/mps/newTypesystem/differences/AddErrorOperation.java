@@ -13,58 +13,59 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.equation;
+package jetbrains.mps.newTypesystem.differences;
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.states.Equations;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.awt.Color;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 12:54:50 PM
+ * Date: Oct 14, 2010
+ * Time: 12:41:21 PM
  */
-public class EquationAdded extends EquationDifference {
+public class AddErrorOperation extends AbstractOperation {
+  private SNode myNode;
+  private IErrorReporter myError;
 
-
-  public EquationAdded(SNode child, SNode parent, SNode source, EquationInfo info) {
-    myChild = child;
-    mySource = source;
-    myParent = parent;
+  public AddErrorOperation(SNode node, IErrorReporter error, EquationInfo info) {
+    myNode = node;
+    myError = error;
+    mySource = myNode;
     myEquationInfo = info;
   }
 
   @Override
+  public String getPresentation() {
+    return "Error : " + myError.reportError();
+  }
+
+  @Override
   public void rollBack(State state) {
-    state.getEquations().remove(myChild);
+    state.getErrors().get(myNode).remove(myError);
   }
 
   @Override
   public void play(State state) {
-    state.getEquations().add(myChild, myParent);
+    Map<SNode, List<IErrorReporter>> errorMap = state.getErrors();
+    List<IErrorReporter> errors = errorMap.get(myNode);
+    if (errors == null) {
+      errors = new LinkedList<IErrorReporter>();
+      errorMap.put(myNode, errors);
+    }
+    errors.add(myError);
   }
-
-  public SNode getChild() {
-    return myChild;
-  }
-
-  public SNode getParent() {
-    return myParent;
-  }
-
-  @Override
-  public String getPresentation() {
-    return "Equation added " + getShortPresentation();
-  }
-
 
   @Override
   public Color getColor() {
-    return Colors.EQUATION_ADDED;
+    return Colors.ERROR_ADDED;
   }
 }

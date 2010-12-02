@@ -15,40 +15,29 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.State;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Nov 17, 2010
- * Time: 2:46:01 PM
+ * Date: Oct 14, 2010
+ * Time: 11:53:12 AM
  */
-public class TypeExpanded extends TypeDifference {
-  private SNode myOldType;
-
-  public TypeExpanded(SNode node, SNode type, EquationInfo info, SNode oldType) {
-    super(node, type, info);
-    myOldType = oldType;
-  }
-
-  @Override
-  public Color getColor() {
-    return Colors.TYPE_EXPANDED;
-  }
+@Deprecated
+public class CheckAllOperation extends AbstractOperation {
 
   @Override
   public String getPresentation() {
-    return "Type expanded: " + myNode + " ------> " + myType;
+    return "Difference";
   }
 
   @Override
   public void rollBack(State state) {
-    state.getNodeToTypeMap().put(myNode, myOldType);
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public void play(State state) {
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 }

@@ -31,6 +31,6 @@ public class Colors {
   public static final Color WHEN_CONCRETE_ADDED = new Color(0x1111BB);
   public static final Color WHEN_CONCRETE_REMOVED = new Color(0x1177BB);
   public static final Color ERROR_ADDED = Color.RED;
-  public static final Color TYPE_ADDED = new Color(0x007700);
+  public static final Color TYPE_ASSIGNED = new Color(0x007700);
   public static final Color TYPE_EXPANDED = new Color(0x008704);
 }

@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
-import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.differences.AbstractOperation;
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
@@ -32,12 +31,12 @@ import java.awt.Color;
  * Time: 5:19:06 PM
  * To change this template use File | Settings | File Templates.
  */
-public class WhenConcreteDependencyRemoved extends Difference {
+public class RemoveWCDependencyOperation extends AbstractOperation {
   private SNode myNode;
   private WhenConcreteEntry myEntry;
   private boolean myIsShallow;
 
-  public WhenConcreteDependencyRemoved(WhenConcreteEntry entry, SNode node, boolean isShallow) {
+  public RemoveWCDependencyOperation(WhenConcreteEntry entry, SNode node, boolean isShallow) {
     myNode = node;
     myEntry = entry;
     myIsShallow = isShallow;

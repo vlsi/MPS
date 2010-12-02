@@ -30,8 +30,8 @@ import java.awt.Color;
  * Time: 6:13:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class RelationAdded extends RelationDifference {
-  public RelationAdded(SNode subType, SNode superType, RelationMapKind mapKind, EquationInfo info) {
+public class RelationAddedOperation extends AbstractRelationOperation {
+  public RelationAddedOperation(SNode subType, SNode superType, RelationMapKind mapKind, EquationInfo info) {
     super(subType, superType, info, mapKind);
   }
 

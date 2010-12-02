@@ -23,10 +23,11 @@ import jetbrains.mps.newTypesystem.states.State;
  * Date: Oct 14, 2010
  * Time: 1:42:37 PM
  */
-public class StringDifference extends Difference {
+@Deprecated
+public class AddRemarkOperation extends AbstractOperation {
   private String myString;
 
-  public StringDifference(String string) {
+  public AddRemarkOperation(String string) {
     myString = string;
   }
 

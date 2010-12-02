@@ -17,7 +17,7 @@ package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.inequality.RelationRemoved;
+import jetbrains.mps.newTypesystem.differences.inequality.RelationRemovedOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -83,10 +83,10 @@ public class RelationMapPair {
       Map<SNode, EquationInfo> map = pairMap.get(value);
       EquationInfo info = map.get(var);
       if (reversed) {
-        myState.addDifference(new RelationRemoved(var, value, info, myKind), false);
+        myState.executeOperation(new RelationRemovedOperation(var, value, info, myKind), false);
         myState.addRelation(type, value, myKind, info);
       } else {
-        myState.addDifference(new RelationRemoved(value, var, info, myKind), false);
+        myState.executeOperation(new RelationRemovedOperation(value, var, info, myKind), false);
         myState.addRelation(value, type, myKind, info);
       }
     }
@@ -126,7 +126,7 @@ public class RelationMapPair {
   private void removeAndTrack(SNode subType, SNode superType) {
     EquationInfo info = mySubToSuper.get(subType).get(superType);
     remove(subType, superType);
-    myState.addDifference(new RelationRemoved(subType, superType, info, myKind), false);
+    myState.executeOperation(new RelationRemovedOperation(subType, superType, info, myKind), false);
   }
 
   public void check() {

@@ -20,8 +20,8 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
-import jetbrains.mps.newTypesystem.differences.equation.EquationSubstituted;
+import jetbrains.mps.newTypesystem.differences.equation.EquationAddedOperation;
+import jetbrains.mps.newTypesystem.differences.equation.EquationSubstitutedOperation;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
@@ -85,7 +85,7 @@ public class Equations {
       return;
     }
     SNode source = myState.getNodeMaps().getNode(elem);
-    myState.addDifference(new EquationSubstituted(elem, myRepresentatives.get(elem), current, source), false);
+    myState.executeOperation(new EquationSubstitutedOperation(elem, myRepresentatives.get(elem), current, source), false);
   }
 
   public void remove(SNode elem) {
@@ -127,12 +127,12 @@ public class Equations {
     addAndTrack(child, parent, info);
     myState.getInequalities().substitute(child, parent);
     myState.getNonConcrete().substitute(child, parent);
-    myState.popDifference();
+    myState.popOperation();
   }
 
   private void addAndTrack(SNode child, SNode parent, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(child);
-    myState.addDifference(new EquationAdded(child, parent, source, info), true);
+    myState.executeOperation(new EquationAddedOperation(child, parent, source, info), true);
   }
 
   public void add(SNode child, SNode parent) {

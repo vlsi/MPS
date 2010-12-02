@@ -15,45 +15,54 @@
  */
 package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
-import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.differences.AbstractOperation;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.util.Map;
-import java.util.Set;
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 20, 2010
- * Time: 5:16:25 PM
+ * Date: Oct 15, 2010
+ * Time: 4:37:46 PM
  * To change this template use File | Settings | File Templates.
  */
-public class BecameConcrete extends Difference {
+public class AddWCEntryOperation extends AbstractOperation {
+  private SNode myNode;
   private WhenConcreteEntry myEntry;
   private boolean myIsShallow;
 
-  public BecameConcrete(boolean isShallow, WhenConcreteEntry entry) {
-    myIsShallow = isShallow;
+  // todo: looks more like a remark (no play, no rollback..)
+  // todo: make non-empty play and rollback
+  public AddWCEntryOperation(WhenConcreteEntry entry, SNode node, SNode source, boolean isShallow) {
+    myNode = node;
+    mySource = source;
     myEntry = entry;
-    myEquationInfo = new EquationInfo(null, " ", entry.getNodeModel(), entry.getNodeId());
-  }
-
-  @Override
-  public void rollBack(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    myIsShallow = isShallow;
+    myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
   @Override
   public String getPresentation() {
-    return "Became concrete";
+    return "When Concrete added " + myNode;
+  }
+
+  @Override
+  public Color getColor() {
+    return Colors.WHEN_CONCRETE_ADDED;
+  }
+
+  @Override
+  public void rollBack(State state) {
+
   }
 
   @Override
   public void play(State state) {
-    state.getNonConcrete().removeWhenConcrete(myEntry, myIsShallow);
-    //todo it seems that from "var -> WC" it is not removed
+    //To change body of implemented methods use File | Settings | File Templates.
   }
 }

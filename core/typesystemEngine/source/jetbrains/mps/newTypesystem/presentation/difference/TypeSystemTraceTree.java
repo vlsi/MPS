@@ -23,10 +23,10 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.differences.TypeDifference;
-import jetbrains.mps.newTypesystem.differences.equation.EquationAdded;
-import jetbrains.mps.newTypesystem.differences.inequality.RelationDifference;
+import jetbrains.mps.newTypesystem.differences.AbstractOperation;
+import jetbrains.mps.newTypesystem.differences.TypeAssignedOperation;
+import jetbrains.mps.newTypesystem.differences.equation.EquationAddedOperation;
+import jetbrains.mps.newTypesystem.differences.inequality.AbstractRelationOperation;
 import jetbrains.mps.newTypesystem.presentation.state.ShowTypeSystemState;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.IOperationContext;
@@ -49,7 +49,7 @@ import java.util.Set;
  */
 public class TypeSystemTraceTree extends MPSTree {
   private final IOperationContext myOperationContext;
-  private final Difference myDifference;
+  private final AbstractOperation myDifference;
   private final Frame myFrame;
   private final TypeCheckingContextNew myTypeCheckingContextNew;
   private final SNode mySelectedNode;
@@ -85,11 +85,11 @@ public class TypeSystemTraceTree extends MPSTree {
     return createNode(myDifference);
   }
 
-  private TypeSystemTraceTreeNode createNode(Difference diff) {
+  private TypeSystemTraceTreeNode createNode(AbstractOperation diff) {
 
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(diff, myOperationContext);
-    if (diff.getChildren() != null) {
-      for (Difference child : diff.getChildren()) {
+    if (diff.getConsequences() != null) {
+      for (AbstractOperation child : diff.getConsequences()) {
         TypeSystemTraceTreeNode node = createNode(child);
         result.add(node);
       }
@@ -107,32 +107,32 @@ public class TypeSystemTraceTree extends MPSTree {
     return root;
   }
 
-  private void createList(Difference diff, List<TypeSystemTraceTreeNode> result) {
+  private void createList(AbstractOperation diff, List<TypeSystemTraceTreeNode> result) {
     if (showNode(diff)) {
       result.add(new TypeSystemTraceTreeNode(diff, myOperationContext));
     }
-    if (diff.getChildren() != null) {
-      for (Difference child : diff.getChildren()) {
+    if (diff.getConsequences() != null) {
+      for (AbstractOperation child : diff.getConsequences()) {
         createList(child, result);
       }
     }
   }
 
-  private boolean showNode(Difference diff) {
+  private boolean showNode(AbstractOperation diff) {
     if (mySelectedNode == null) {
       return true;
     }
     if (diff.getSource() == mySelectedNode) {
       return true;
     }
-    if (diff instanceof EquationAdded) {
-      EquationAdded eq = (EquationAdded) diff;
+    if (diff instanceof EquationAddedOperation) {
+      EquationAddedOperation eq = (EquationAddedOperation) diff;
       if (myNodes.contains(eq.getChild()) || myNodes.contains(eq.getParent())) {
         return true;
       }
     }
-    if (diff instanceof RelationDifference) {
-      RelationDifference d = (RelationDifference) diff;
+    if (diff instanceof AbstractRelationOperation) {
+      AbstractRelationOperation d = (AbstractRelationOperation) diff;
       if (myNodes.contains(d.getSubType())) {
         return true;
       }
@@ -144,12 +144,12 @@ public class TypeSystemTraceTree extends MPSTree {
     return false;
   }
 
-  private void getEquivalentVars(Difference diff) {
+  private void getEquivalentVars(AbstractOperation diff) {
     if (diff == null) {
       return;
     }
-    if (diff instanceof EquationAdded) {
-      EquationAdded eq = (EquationAdded) diff;
+    if (diff instanceof EquationAddedOperation) {
+      EquationAddedOperation eq = (EquationAddedOperation) diff;
       SNode child = eq.getChild();
       SNode parent = eq.getParent();
       if (myNodes.contains(child) && TypesUtil.isVariable(parent)) {
@@ -159,14 +159,14 @@ public class TypeSystemTraceTree extends MPSTree {
         myNodes.add(child);
       }
     }
-    if (diff instanceof TypeDifference) {
-      TypeDifference typeDifference = (TypeDifference) diff;
+    if (diff instanceof TypeAssignedOperation) {
+      TypeAssignedOperation typeDifference = (TypeAssignedOperation) diff;
       if (mySelectedNode == typeDifference.getNode() && TypesUtil.isVariable(typeDifference.getType())) {
         myNodes.add(typeDifference.getType());
       }
     }
-    if (diff.getChildren() != null) {
-      for (Difference childDiff : diff.getChildren()) {
+    if (diff.getConsequences() != null) {
+      for (AbstractOperation childDiff : diff.getConsequences()) {
         getEquivalentVars(childDiff);
       }
     }
@@ -196,10 +196,10 @@ public class TypeSystemTraceTree extends MPSTree {
 
   private void showState(MPSTreeNode node) {
     State state = myTypeCheckingContextNew.getState();
-    Difference rootDifference = myTypeCheckingContextNew.getDifference();
+    AbstractOperation rootDifference = myTypeCheckingContextNew.getDifference();
     Object difference = node.getUserObject();
     state.clear(false);
-    state.applyDifferenceBefore(rootDifference, difference);
+    state.executeOperationsBeforeAnchor(rootDifference, difference);
     new ShowTypeSystemState(state, myOperationContext, myFrame);
     state.reset();
   }

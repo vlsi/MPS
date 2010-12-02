@@ -15,41 +15,43 @@
  */
 package jetbrains.mps.newTypesystem.differences.inequality;
 
-import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.RelationMapKind;
-import jetbrains.mps.newTypesystem.states.RelationMapPair;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
+import java.awt.Color;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 16, 2010
- * Time: 4:11:08 PM
+ * Date: Sep 23, 2010
+ * Time: 6:14:51 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class RelationDifference extends Difference {
-  protected SNode mySubType;
-  protected SNode mySuperType;
-  protected RelationMapKind myRelationMapKind;
+public class RelationRemovedOperation extends AbstractRelationOperation {
 
-  public RelationDifference(SNode subType, SNode superType, EquationInfo info, RelationMapKind kind) {
-    mySubType = subType;
-    mySuperType = superType;
-    myRelationMapKind = kind;
-    myEquationInfo = info;
+  public RelationRemovedOperation(SNode subType, SNode superType, EquationInfo info, RelationMapKind kind) {
+    super(subType, superType, info, kind);
   }
 
-  public SNode getSubType() {
-    return mySubType;
+  @Override
+  public void rollBack(State state) {
+    getRelationMap(state).add(mySubType, mySuperType, myEquationInfo);
   }
 
-  public SNode getSuperType() {
-    return mySuperType;
+  @Override
+  public void play(State state) {
+    getRelationMap(state).remove(mySubType, mySuperType);
   }
 
-  protected RelationMapPair getRelationMap(State state) {
-    return state.getInequalities().getRelation(myRelationMapKind);
+  public String getPresentation() {
+    return myRelationMapKind.getTitle() + " removed "
+      + mySubType + myRelationMapKind.getRelationSign() + mySuperType;
+  }
+
+  public Color getColor() {
+    return Colors.RELATION_REMOVED;
   }
 }

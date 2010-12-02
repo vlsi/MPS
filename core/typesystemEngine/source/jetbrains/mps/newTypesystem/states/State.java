@@ -20,9 +20,9 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
-import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.differences.HeadDifference;
-import jetbrains.mps.newTypesystem.differences.StringDifference;
+import jetbrains.mps.newTypesystem.differences.AbstractOperation;
+import jetbrains.mps.newTypesystem.differences.AddRemarkOperation;
+import jetbrains.mps.newTypesystem.differences.CheckAllOperation;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -48,8 +48,8 @@ public class State {
 
   private final VariableIdentifier myVariableIdentifier;
 
-  private final Stack<Difference> myDifferenceStack = new Stack<Difference>();
-  private Difference myDifference = new HeadDifference();
+  private final Stack<AbstractOperation> myOperationStack = new Stack<AbstractOperation>();
+  private AbstractOperation myOperation = new CheckAllOperation();
 
   public State(TypeCheckingContextNew tcc) {
     myTypeCheckingContext = tcc;
@@ -104,33 +104,33 @@ public class State {
     return myNodeMaps.getNodeToTypeMap();
   }
 
-  public void addDifference(Difference difference, boolean push) {
-    if (difference == null) {
+  public void executeOperation(AbstractOperation operation, boolean push) {
+    if (operation == null) {
       return;
     }
-    if (!myDifferenceStack.empty()) {
-      myDifferenceStack.peek().addChildDifference(difference);
+    if (!myOperationStack.empty()) {
+      myOperationStack.peek().addConsequence(operation);
     }
-    if (push || myDifferenceStack.empty()) {
-      myDifferenceStack.push(difference);
+    if (push || myOperationStack.empty()) {
+      myOperationStack.push(operation);
     }
-    difference.play(this);
+    operation.play(this);
   }
 
-  public void removeLastDifference(Difference difference) {
-    if (difference == null) {
+  public void removeLastOperation(AbstractOperation operation) {
+    if (operation == null) {
       return;
     }
-    if (myDifferenceStack.peek() == difference) {
-      myDifferenceStack.pop();
+    if (myOperationStack.peek() == operation) {
+      myOperationStack.pop();
     }
-    myDifferenceStack.peek().removeChildDifference(difference);
+    myOperationStack.peek().removeConsequence(operation);
 
-    difference.rollBack(this);
+    operation.rollBack(this);
   }
 
-  public void popDifference() {
-    myDifferenceStack.pop();
+  public void popOperation() {
+    myOperationStack.pop();
   }
 
   public boolean isConcrete(SNode node) {
@@ -160,22 +160,22 @@ public class State {
     myNonConcrete.clear();
     myVariableIdentifier.clear();
     if (clearDiff) {
-      myDifferenceStack.clear();
-      myDifference = new HeadDifference();
-      myDifferenceStack.push(myDifference);
+      myOperationStack.clear();
+      myOperation = new CheckAllOperation();
+      myOperationStack.push(myOperation);
     }
   }
 
   public void solveInequalities() {
-    addDifference(new StringDifference("Solving inequalities"), true);
+    executeOperation(new AddRemarkOperation("Solving inequalities"), true);
     myInequalities.solveInequalities();
-    popDifference();
+    popOperation();
   }
 
   public void checkInequalities() {
-    addDifference(new StringDifference("Checking inequalities"), true);
+    executeOperation(new AddRemarkOperation("Checking inequalities"), true);
     myInequalities.check();
-    popDifference();
+    popOperation();
   }
 
   public void checkWhenConcrete() {
@@ -186,12 +186,12 @@ public class State {
     return myEquations.expandNode(node);
   }
 
-  public Stack<Difference> getDifferenceStack() {
-    return myDifferenceStack;
+  public Stack<AbstractOperation> getOperationStack() {
+    return myOperationStack;
   }
 
-  public Difference getDifference() {
-    return myDifference;
+  public AbstractOperation getOperation() {
+    return myOperation;
   }
 
   public void addWhenConcrete(WhenConcreteEntry entity, SNode node, boolean shallow) {
@@ -199,21 +199,21 @@ public class State {
   }
 
   public void expandAll() {
-    addDifference(new StringDifference("Types Expansion"), true);
+    executeOperation(new AddRemarkOperation("Types Expansion"), true);
     myNodeMaps.expandAll();
-    popDifference();
+    popOperation();
   }
 
-  public boolean applyDifferenceBefore(Difference diff, Object toCompare) {
-    diff.play(this);
-    if (diff.equals(toCompare)) {
+  public boolean executeOperationsBeforeAnchor(AbstractOperation firstOp, Object anchor) {
+    firstOp.play(this);
+    if (firstOp.equals(anchor)) {
       return true;
     }
-    if (diff.getChildren() == null) {
+    if (firstOp.getConsequences() == null) {
       return false;
     }
-    for (Difference child : diff.getChildren()) {
-      if (applyDifferenceBefore(child, toCompare)) {
+    for (AbstractOperation child : firstOp.getConsequences()) {
+      if (executeOperationsBeforeAnchor(child, anchor)) {
         return true;
       }
     }
@@ -234,6 +234,6 @@ public class State {
 
   public void reset() {
     clear(false);
-    myDifference.playRecursively(this);
+    myOperation.playRecursively(this);
   }
 }

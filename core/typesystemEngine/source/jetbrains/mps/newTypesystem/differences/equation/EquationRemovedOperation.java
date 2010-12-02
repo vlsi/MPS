@@ -15,25 +15,44 @@
  */
 package jetbrains.mps.newTypesystem.differences.equation;
 
-import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Oct 8, 2010
- * Time: 1:17:32 PM
+ * Time: 1:17:49 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class EquationDifference extends Difference {
-  protected SNode myChild;
-  protected SNode myParent;
+public class EquationRemovedOperation extends AbstractEquationOperation {
 
-  @Override
-  public String getShortPresentation() {
-    return myChild + " = " + myParent;
+  public EquationRemovedOperation(SNode child, SNode parent, SNode source) {
+    myChild = child;
+    myParent = parent;
+    mySource = source;
   }
 
+  @Override
+  public void rollBack(State state) {
+    state.getEquations().add(myChild, myParent);
+  }
 
+  @Override
+  public void play(State state) {
+    state.getEquations().remove(myChild);
+  }
+
+  @Override
+  public String getPresentation() {
+    return "Equation removed " + getShortPresentation();
+  }
+
+  public SNode getChild() {
+    return myChild;
+  }
+
+  public SNode getParent() {
+    return myParent;
+  }
 }

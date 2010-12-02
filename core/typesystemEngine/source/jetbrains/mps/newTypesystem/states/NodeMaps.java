@@ -19,9 +19,9 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
-import jetbrains.mps.newTypesystem.differences.ErrorDifference;
-import jetbrains.mps.newTypesystem.differences.TypeDifference;
-import jetbrains.mps.newTypesystem.differences.TypeExpanded;
+import jetbrains.mps.newTypesystem.differences.AddErrorOperation;
+import jetbrains.mps.newTypesystem.differences.TypeAssignedOperation;
+import jetbrains.mps.newTypesystem.differences.TypeExpandedOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
@@ -47,12 +47,12 @@ public class NodeMaps {
 
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
     myTypesToNodes.put(type, node);
-    myState.addDifference(new TypeDifference(node, type, info), false);
+    myState.executeOperation(new TypeAssignedOperation(node, type, info), false);
   }
 
   public void updateNodeToType(SNode node, SNode type, EquationInfo info) {
     SNode oldType = myNodesToTypes.get(node);
-    myState.addDifference(new TypeExpanded(node, type, info, oldType), false);
+    myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType), false);
   }
 
   public SNode typeOf(SNode node, EquationInfo info) {
@@ -65,7 +65,7 @@ public class NodeMaps {
   }
 
   public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {
-    myState.addDifference(new ErrorDifference(node, error, info), false);
+    myState.executeOperation(new AddErrorOperation(node, error, info), false);
   }
 
   public List<IErrorReporter> getNodeErrors(SNode node) {

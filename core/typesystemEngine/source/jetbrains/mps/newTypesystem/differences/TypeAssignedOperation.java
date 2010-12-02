@@ -13,45 +13,58 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.equation;
+package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:19:19 PM
- * To change this template use File | Settings | File Templates.
+ * Date: Sep 15, 2010
+ * Time: 1:04:39 PM
  */
-public class EquationSubstituted extends Difference {
-  EquationAdded myAdded;
-  EquationRemoved myRemoved;
+public class TypeAssignedOperation extends AbstractOperation {
+  protected SNode myNode;
+  protected SNode myType;
 
-  public EquationSubstituted(SNode key, SNode prev, SNode cur, SNode source) {
-    myAdded = new EquationAdded(key, cur, source, null);
-    myRemoved = new EquationRemoved(key, prev, source);
-    mySource = source;
+  public TypeAssignedOperation(SNode node, SNode type, EquationInfo info) {
+    myNode = node;
+    myType = type;
+    mySource = node;
+    myEquationInfo = info;
   }
 
   @Override
+  //todo: it does not seem to update "type to node" map
   public void rollBack(State state) {
-    myAdded.rollBack(state);
-    myRemoved.rollBack(state);
+    state.getNodeToTypeMap().remove(myNode);
   }
 
   @Override
   public void play(State state) {
-    myRemoved.play(state);
-    myAdded.play(state);
+    state.getNodeToTypeMap().put(myNode, myType);
   }
 
   @Override
   public String getPresentation() {
-    return "Equation " + myRemoved.getShortPresentation() + " substituted with " +
-      myAdded.getShortPresentation();
+    return "Type assigned (" + myNode + " : " + myType + ")";
+  }
+
+  @Override
+  public Color getColor() {
+    return Colors.TYPE_ASSIGNED;
+  }
+
+  public SNode getNode() {
+    return myNode;
+  }
+
+  public SNode getType() {
+    return myType;
   }
 }

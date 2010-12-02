@@ -15,38 +15,37 @@
  */
 package jetbrains.mps.newTypesystem.differences.equation;
 
-import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:17:49 PM
- * To change this template use File | Settings | File Templates.
+ * Date: Sep 15, 2010
+ * Time: 12:54:50 PM
  */
-public class EquationRemoved extends EquationDifference {
+public class EquationAddedOperation extends AbstractEquationOperation {
 
-  public EquationRemoved(SNode child, SNode parent, SNode source) {
+
+  public EquationAddedOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
     myChild = child;
-    myParent = parent;
     mySource = source;
+    myParent = parent;
+    myEquationInfo = info;
   }
 
   @Override
   public void rollBack(State state) {
-    state.getEquations().add(myChild, myParent);
-  }
-
-  @Override
-  public void play(State state) {
     state.getEquations().remove(myChild);
   }
 
   @Override
-  public String getPresentation() {
-    return "Equation removed " + getShortPresentation();
+  public void play(State state) {
+    state.getEquations().add(myChild, myParent);
   }
 
   public SNode getChild() {
@@ -55,5 +54,16 @@ public class EquationRemoved extends EquationDifference {
 
   public SNode getParent() {
     return myParent;
+  }
+
+  @Override
+  public String getPresentation() {
+    return "Equation added " + getShortPresentation();
+  }
+
+
+  @Override
+  public Color getColor() {
+    return Colors.EQUATION_ADDED;
   }
 }

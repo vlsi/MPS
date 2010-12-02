@@ -15,57 +15,39 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.awt.Color;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 12:41:21 PM
+ * Date: Nov 17, 2010
+ * Time: 2:46:01 PM
  */
-public class ErrorDifference extends Difference {
-  private SNode myNode;
-  private IErrorReporter myError;
+public class TypeExpandedOperation extends TypeAssignedOperation {
+  private SNode myOldType;
 
-  public ErrorDifference(SNode node, IErrorReporter error, EquationInfo info) {
-    myNode = node;
-    myError = error;
-    mySource = myNode;
-    myEquationInfo = info;
-  }
-
-  @Override
-  public String getPresentation() {
-    return "Error : " + myError.reportError();
-  }
-
-  @Override
-  public void rollBack(State state) {
-    state.getErrors().get(myNode).remove(myError);
-  }
-
-  @Override
-  public void play(State state) {
-    Map<SNode, List<IErrorReporter>> errorMap = state.getErrors();
-    List<IErrorReporter> errors = errorMap.get(myNode);
-    if (errors == null) {
-      errors = new LinkedList<IErrorReporter>();
-      errorMap.put(myNode, errors);
-    }
-    errors.add(myError);
+  public TypeExpandedOperation(SNode node, SNode type, EquationInfo info, SNode oldType) {
+    super(node, type, info);
+    myOldType = oldType;
   }
 
   @Override
   public Color getColor() {
-    return Colors.ERROR_ADDED;
+    return Colors.TYPE_EXPANDED;
+  }
+
+  @Override
+  public String getPresentation() {
+    return "Type expanded: " + myNode + " ------> " + myType;
+  }
+
+  @Override
+  public void rollBack(State state) {
+    state.getNodeToTypeMap().put(myNode, myOldType);
   }
 }

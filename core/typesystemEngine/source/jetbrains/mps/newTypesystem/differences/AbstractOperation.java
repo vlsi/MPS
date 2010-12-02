@@ -32,24 +32,24 @@ import java.util.List;
  * Time: 6:11:49 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class Difference {
-  protected List<Difference> myChildren;
+public abstract class AbstractOperation {
+  protected List<AbstractOperation> myConsequences;
   protected SNode mySource = null;
   protected EquationInfo myEquationInfo = null;
 
-  public void addChildDifference(Difference diff) {
-    if (myChildren == null) {
-      myChildren = new LinkedList<Difference>();
+  public void addConsequence(AbstractOperation op) {
+    if (myConsequences == null) {
+      myConsequences = new LinkedList<AbstractOperation>();
     }
-    myChildren.add(diff);
+    myConsequences.add(op);
   }
 
-  public List<Difference> getChildren() {
-    return myChildren;
+  public List<AbstractOperation> getConsequences() {
+    return myConsequences;
   }
 
-  public void removeChildDifference(Difference child) {
-    myChildren.remove(child);
+  public void removeConsequence(AbstractOperation op) {
+    myConsequences.remove(op);
   }
 
   public abstract void rollBack(State state);
@@ -64,10 +64,12 @@ public abstract class Difference {
     return "";
   }
 
+  // todo remove to presentation
   public Color getColor() {
     return Color.BLACK;
   }
 
+  // todo remove to presentation
   public Icon getIcon() {
     return Icons.DEFAULT_ICON;
   }
@@ -82,8 +84,8 @@ public abstract class Difference {
 
   public void playRecursively(State state) {
     play(state);
-    if (myChildren != null) {
-      for (Difference child : myChildren) {
+    if (myConsequences != null) {
+      for (AbstractOperation child : myConsequences) {
         child.playRecursively(state);
       }
     }

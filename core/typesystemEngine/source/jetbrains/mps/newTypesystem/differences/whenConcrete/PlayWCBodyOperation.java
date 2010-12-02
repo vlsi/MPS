@@ -15,53 +15,41 @@
  */
 package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
-import jetbrains.mps.newTypesystem.differences.Difference;
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
+import jetbrains.mps.newTypesystem.differences.AbstractOperation;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 15, 2010
- * Time: 4:37:46 PM
+ * Date: Oct 20, 2010
+ * Time: 5:16:25 PM
  * To change this template use File | Settings | File Templates.
  */
-public class WhenConcreteAdded extends Difference {
-  private SNode myNode;
+public class PlayWCBodyOperation extends AbstractOperation {
   private WhenConcreteEntry myEntry;
   private boolean myIsShallow;
 
-  public WhenConcreteAdded(WhenConcreteEntry entry, SNode node, SNode source, boolean isShallow) {
-    myNode = node;
-    mySource = source;
-    myEntry = entry;
+  public PlayWCBodyOperation(boolean isShallow, WhenConcreteEntry entry) {
     myIsShallow = isShallow;
-    myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());
-  }
-
-  @Override
-  public String getPresentation() {
-    return "When Concrete added " + myNode;
-  }
-
-  @Override
-  public Color getColor() {
-    return Colors.WHEN_CONCRETE_ADDED;
+    myEntry = entry;
+    myEquationInfo = new EquationInfo(null, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
   @Override
   public void rollBack(State state) {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
 
+  @Override
+  public String getPresentation() {
+    return "Became concrete";
   }
 
   @Override
   public void play(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    state.getNonConcrete().removeWhenConcrete(myEntry, myIsShallow);
+    //todo it seems that from "var -> WC" it is not removed
   }
 }
