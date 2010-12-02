@@ -35,6 +35,7 @@ import java.util.Stack;
  * Time: 4:32:55 PM
  */
 public class TypeCheckingContextNew extends TypeCheckingContext {
+  public static final String USE_NEW_TYPESYSTEM = "useNewTypeSystem";
 
   private State myState;
   private SNode myRootNode;
