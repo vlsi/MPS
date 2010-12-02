@@ -63,8 +63,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     myCacheGenerator = new CacheGenerator() {
       public void generateCache(GenerationStatus status, StreamHandler handler) {
         String hashName = generateHashFileName(status);
-        if(hashName != null) {
-          handler.saveStream(hashName, "", true);
+        if (hashName != null) {
+          handler.saveStream(hashName, status.getInputModel().getSModelReference().toString(), true);
         }
       }
     };
