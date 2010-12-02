@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.differences.equation;
 
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.Equations;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
@@ -64,6 +65,6 @@ public class EquationAdded extends EquationDifference {
 
   @Override
   public Color getColor() {
-    return new Color(0x670365);
+    return Colors.EQUATION_ADDED;
   }
 }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.differences;
 
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -57,7 +58,7 @@ public class TypeDifference extends Difference {
 
   @Override
   public Color getColor() {
-    return new Color(0x007700);
+    return Colors.TYPE_ADDED;
   }
 
   public SNode getNode() {

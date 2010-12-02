@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences;
 
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -65,6 +66,6 @@ public class ErrorDifference extends Difference {
 
   @Override
   public Color getColor() {
-    return Color.RED;
+    return Colors.ERROR_ADDED;
   }
 }

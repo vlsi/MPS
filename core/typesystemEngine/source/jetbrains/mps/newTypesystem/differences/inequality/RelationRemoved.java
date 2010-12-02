@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.differences.inequality;
 
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.RelationMapKind;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
@@ -51,6 +52,6 @@ public class RelationRemoved extends RelationDifference {
   }
 
   public Color getColor() {
-    return new Color(0x774400);
+    return Colors.RELATION_REMOVED;
   }
 }

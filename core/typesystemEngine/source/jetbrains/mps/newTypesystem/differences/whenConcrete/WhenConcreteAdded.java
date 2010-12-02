@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.differences.whenConcrete;
 
 import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
 import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
@@ -51,7 +52,7 @@ public class WhenConcreteAdded extends Difference {
 
   @Override
   public Color getColor() {
-    return new Color(0x1111BB);
+    return Colors.WHEN_CONCRETE_ADDED;
   }
 
   @Override
