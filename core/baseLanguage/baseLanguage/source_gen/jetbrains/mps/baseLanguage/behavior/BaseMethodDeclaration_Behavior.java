@@ -211,6 +211,15 @@ public class BaseMethodDeclaration_Behavior {
     return SLinkOperations.getTargets(thisNode, "throwsItem", true);
   }
 
+  public static boolean call_hasAnnotation_5499146221535822693(SNode thisNode, SNode annotation) {
+    for (SNode annotationInstance : SLinkOperations.getTargets(thisNode, "annotation", true)) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == annotation) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public static List<Icon> call_getMarkIcons_5039675756633081786(SNode thisNode) {
     return (List<Icon>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getMarkIcons_3923831204883340393", PARAMETERS_5039675756633081786);
   }

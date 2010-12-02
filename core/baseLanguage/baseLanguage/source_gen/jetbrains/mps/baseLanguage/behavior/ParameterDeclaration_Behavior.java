@@ -54,6 +54,15 @@ public class ParameterDeclaration_Behavior {
     );
   }
 
+  public static boolean call_hasAnnotation_5499146221535981742(SNode thisNode, SNode annotation) {
+    for (SNode annotationInstance : SLinkOperations.getTargets(thisNode, "annotation", true)) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == annotation) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public static String call_getSuffix_3012473318495506887(SNode thisNode, Project project) {
     return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506887, project);
   }

@@ -145,7 +145,6 @@
   <unitInfo fileName="IfStatement_Behavior.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior" />
   <unitInfo fileName="FieldReferenceOperation_Behavior.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior" />
   <unitInfo fileName="Property_Behavior.java" startLine="13" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Property_Behavior" />
-  <unitInfo fileName="ParameterDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParameterDeclaration_Behavior" />
   <unitInfo fileName="ConstructorInvocationStatement_Behavior.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorInvocationStatement_Behavior" />
   <unitInfo fileName="IMethodCall_Behavior.java" startLine="147" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior$Pattern_fq0410_a0a0a5a2a1a2" />
   <unitInfo fileName="ClassifierType_Behavior.java" startLine="257" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior$Pattern_hz3823_a0a0a1a01" />
@@ -155,6 +154,7 @@
   <unitInfo fileName="IOperation_Behavior.java" startLine="11" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
   <unitInfo fileName="ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior" />
   <unitInfo fileName="BreakStatement_Behavior.java" startLine="10" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BreakStatement_Behavior" />
+  <unitInfo fileName="ParameterDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParameterDeclaration_Behavior" />
   <unitInfo fileName="StringLiteral_Behavior.java" startLine="9" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringLiteral_Behavior" />
   <unitInfo fileName="StatementList_Behavior.java" startLine="15" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
   <unitInfo fileName="InstanceMethodCallOperation_Behavior.java" startLine="25" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior" />
@@ -174,7 +174,7 @@
   <unitInfo fileName="FieldDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.FieldDeclaration_Behavior" />
   <unitInfo fileName="ClassConcept_Behavior.java" startLine="34" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
   <unitInfo fileName="IMethodCall_Behavior.java" startLine="30" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior" />
-  <unitInfo fileName="BaseMethodDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="270" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
+  <unitInfo fileName="BaseMethodDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
   <unitInfo fileName="Type_Behavior.java" startLine="26" startPosition="0" endLine="323" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
   <unitInfo fileName="ClassifierType_Behavior.java" startLine="28" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior" />
   <unitInfo fileName="Classifier_Behavior.java" startLine="28" startPosition="0" endLine="350" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
@@ -1189,21 +1189,31 @@
     <nodeInfo nodeId="3012473318495506910" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterDeclaration_Behavior.java" startLine="37" startPosition="27" endLine="38" endPosition="16" />
     <nodeInfo nodeId="3012473318495506923" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ParameterDeclaration_Behavior.java" startLine="46" startPosition="95" endLine="47" endPosition="72" />
     <nodeInfo nodeId="3012473318495506930" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterDeclaration_Behavior.java" startLine="48" startPosition="27" endLine="49" endPosition="16" />
+    <nodeInfo nodeId="5499146221535981754" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterDeclaration_Behavior.java" startLine="59" startPosition="93" endLine="60" endPosition="20" />
+    <nodeInfo nodeId="5499146221535981766" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterDeclaration_Behavior.java" startLine="62" startPosition="5" endLine="63" endPosition="17" />
     <nodeInfo nodeId="1223986314100" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ParameterDeclaration_Behavior.java" startLine="28" startPosition="139" endLine="31" endPosition="5" />
     <nodeInfo nodeId="3012473318495506908" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ParameterDeclaration_Behavior.java" startLine="36" startPosition="72" endLine="39" endPosition="5" />
     <nodeInfo nodeId="3012473318495506928" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ParameterDeclaration_Behavior.java" startLine="47" startPosition="72" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="5499146221535981752" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ParameterDeclaration_Behavior.java" startLine="58" startPosition="95" endLine="61" endPosition="7" />
     <nodeInfo nodeId="3012473318495506915" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterDeclaration_Behavior.java" startLine="39" startPosition="5" endLine="43" endPosition="6" />
     <nodeInfo nodeId="3012473318495506935" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterDeclaration_Behavior.java" startLine="50" startPosition="5" endLine="54" endPosition="6" />
+    <nodeInfo nodeId="5499146221535981750" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterDeclaration_Behavior.java" startLine="57" startPosition="98" endLine="62" endPosition="5" />
     <scopeInfo nodeId="1213877346965" fileName="ParameterDeclaration_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
     <scopeInfo nodeId="1223986314101" fileName="ParameterDeclaration_Behavior.java" startLine="29" startPosition="365" endLine="30" endPosition="18" />
     <scopeInfo nodeId="3012473318495506909" fileName="ParameterDeclaration_Behavior.java" startLine="37" startPosition="27" endLine="38" endPosition="16" />
     <scopeInfo nodeId="3012473318495506929" fileName="ParameterDeclaration_Behavior.java" startLine="48" startPosition="27" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="5499146221535981753" fileName="ParameterDeclaration_Behavior.java" startLine="59" startPosition="93" endLine="60" endPosition="20" />
     <scopeInfo nodeId="1213877346948" fileName="ParameterDeclaration_Behavior.java" startLine="21" startPosition="77" endLine="24" endPosition="15">
       <varInfo nodeId="1213877346950" varName="ref" />
     </scopeInfo>
+    <scopeInfo nodeId="5499146221535981751" fileName="ParameterDeclaration_Behavior.java" startLine="58" startPosition="95" endLine="61" endPosition="7" />
     <scopeInfo nodeId="1223986304761" fileName="ParameterDeclaration_Behavior.java" startLine="27" startPosition="77" endLine="32" endPosition="17">
       <varInfo nodeId="1223986314092" varName="method" />
     </scopeInfo>
+    <scopeInfo nodeId="5499146221535981750" fileName="ParameterDeclaration_Behavior.java" startLine="57" startPosition="98" endLine="62" endPosition="5">
+      <varInfo nodeId="5499146221535981761" varName="annotationInstance" />
+    </scopeInfo>
+    <scopeInfo nodeId="5499146221535981745" fileName="ParameterDeclaration_Behavior.java" startLine="57" startPosition="98" endLine="63" endPosition="17" />
     <scopeInfo nodeId="3012473318495506889" fileName="ParameterDeclaration_Behavior.java" startLine="35" startPosition="95" endLine="43" endPosition="6">
       <varInfo nodeId="3012473318495506904" varName="settings" />
     </scopeInfo>
@@ -1321,6 +1331,8 @@
     <nodeInfo nodeId="8847328628797656493" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="205" startPosition="19" endLine="206" endPosition="124" />
     <nodeInfo nodeId="8847328628797656460" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="206" startPosition="124" endLine="207" endPosition="25" />
     <nodeInfo nodeId="6204026822017058558" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="210" startPosition="91" endLine="211" endPosition="68" />
+    <nodeInfo nodeId="5499146221535829650" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="216" startPosition="93" endLine="217" endPosition="20" />
+    <nodeInfo nodeId="5499146221535829654" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="219" startPosition="5" endLine="220" endPosition="17" />
     <nodeInfo nodeId="1213877350356" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="86" startPosition="12" endLine="88" endPosition="7" />
     <nodeInfo nodeId="1213877350257" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="104" startPosition="10" endLine="106" endPosition="5" />
     <nodeInfo nodeId="1213877350292" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="111" startPosition="10" endLine="113" endPosition="5" />
@@ -1335,6 +1347,7 @@
     <nodeInfo nodeId="3165939133470356973" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="164" startPosition="5" endLine="167" endPosition="5" />
     <nodeInfo nodeId="2830572026628012405" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="183" startPosition="118" endLine="186" endPosition="7" />
     <nodeInfo nodeId="8847328628797656512" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="201" startPosition="19" endLine="204" endPosition="5" />
+    <nodeInfo nodeId="5499146221535829635" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="215" startPosition="95" endLine="218" endPosition="7" />
     <nodeInfo nodeId="1239354014684" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="53" startPosition="84" endLine="57" endPosition="5" />
     <nodeInfo nodeId="1225236483602" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BaseMethodDeclaration_Behavior.java" startLine="122" startPosition="135" endLine="126" endPosition="0" />
     <nodeInfo nodeId="5014346297260520002" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="134" startPosition="108" endLine="138" endPosition="5" />
@@ -1343,6 +1356,7 @@
     <nodeInfo nodeId="1213877350247" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="101" startPosition="66" endLine="106" endPosition="5" />
     <nodeInfo nodeId="1213877350276" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="108" startPosition="23" endLine="113" endPosition="5" />
     <nodeInfo nodeId="1225236476136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="121" startPosition="100" endLine="126" endPosition="35" />
+    <nodeInfo nodeId="5499146221535829633" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="214" startPosition="98" endLine="219" endPosition="5" />
     <nodeInfo nodeId="855369272314187186" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="147" startPosition="24" endLine="154" endPosition="5" />
     <nodeInfo nodeId="2830572026628012364" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="180" startPosition="85" endLine="187" endPosition="5" />
     <nodeInfo nodeId="855369272314187085" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="167" startPosition="5" endLine="175" endPosition="5" />
@@ -1375,6 +1389,7 @@
     <scopeInfo nodeId="1233921181817" fileName="BaseMethodDeclaration_Behavior.java" startLine="195" startPosition="79" endLine="196" endPosition="67" />
     <scopeInfo nodeId="8847328628797656513" fileName="BaseMethodDeclaration_Behavior.java" startLine="202" startPosition="77" endLine="203" endPosition="113" />
     <scopeInfo nodeId="6204026822017058555" fileName="BaseMethodDeclaration_Behavior.java" startLine="210" startPosition="91" endLine="211" endPosition="68" />
+    <scopeInfo nodeId="5499146221535829636" fileName="BaseMethodDeclaration_Behavior.java" startLine="216" startPosition="93" endLine="217" endPosition="20" />
     <scopeInfo nodeId="1239354014685" fileName="BaseMethodDeclaration_Behavior.java" startLine="54" startPosition="315" endLine="56" endPosition="29" />
     <scopeInfo nodeId="5014346297260520003" fileName="BaseMethodDeclaration_Behavior.java" startLine="135" startPosition="26" endLine="137" endPosition="104" />
     <scopeInfo nodeId="4025276038182319419" fileName="BaseMethodDeclaration_Behavior.java" startLine="65" startPosition="103" endLine="68" endPosition="18">
@@ -1383,6 +1398,7 @@
     <scopeInfo nodeId="8847328628797656512" fileName="BaseMethodDeclaration_Behavior.java" startLine="201" startPosition="19" endLine="204" endPosition="5">
       <varInfo nodeId="8847328628797656516" varName="p" />
     </scopeInfo>
+    <scopeInfo nodeId="5499146221535829634" fileName="BaseMethodDeclaration_Behavior.java" startLine="215" startPosition="95" endLine="218" endPosition="7" />
     <scopeInfo nodeId="1225236483602" fileName="BaseMethodDeclaration_Behavior.java" startLine="122" startPosition="135" endLine="126" endPosition="0" />
     <scopeInfo nodeId="855369272314187086" fileName="BaseMethodDeclaration_Behavior.java" startLine="168" startPosition="114" endLine="172" endPosition="110">
       <varInfo nodeId="855369272314187118" varName="enclosingClassifier" />
@@ -1400,9 +1416,13 @@
     <scopeInfo nodeId="2830572026628012365" fileName="BaseMethodDeclaration_Behavior.java" startLine="181" startPosition="73" endLine="186" endPosition="7">
       <varInfo nodeId="2830572026628012389" varName="param" />
     </scopeInfo>
+    <scopeInfo nodeId="5499146221535829633" fileName="BaseMethodDeclaration_Behavior.java" startLine="214" startPosition="98" endLine="219" endPosition="5">
+      <varInfo nodeId="5499146221535829642" varName="annotationInstance" />
+    </scopeInfo>
     <scopeInfo nodeId="1239353961347" fileName="BaseMethodDeclaration_Behavior.java" startLine="52" startPosition="80" endLine="58" endPosition="27">
       <varInfo nodeId="1239354014678" varName="expectedRetType" />
     </scopeInfo>
+    <scopeInfo nodeId="5499146221535822696" fileName="BaseMethodDeclaration_Behavior.java" startLine="214" startPosition="98" endLine="220" endPosition="17" />
     <scopeInfo nodeId="855369272314187186" fileName="BaseMethodDeclaration_Behavior.java" startLine="147" startPosition="24" endLine="154" endPosition="5">
       <varInfo nodeId="855369272314187225" varName="i" />
     </scopeInfo>
