@@ -84,6 +84,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
               myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
             } else {
               return;
+
             }
           }
         });
@@ -462,7 +463,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     @Override
     public boolean isBackground() {
-      return myHighlighted || myEnabled;
+      return true;
     }
 
     @Override

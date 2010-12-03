@@ -15,24 +15,4 @@ public interface ChangeListener extends EventListener {
   public void fileStatusChanged(@Nullable FileStatus newFileStatus, @NotNull SModel model);
   public void changeUpdateStarted();
   public void changeUpdateFinished();
-  public static class ChangeAdapter implements ChangeListener {
-    public ChangeAdapter() {
-    }
-
-    public void changeUpdateFinished() {
-    }
-
-    public void changeUpdateStarted() {
-    }
-
-    public void fileStatusChanged(@Nullable FileStatus newFileStatus, @NotNull SModel model) {
-    }
-
-    public void changeRemoved(@NotNull Change change, @NotNull SModel model) {
-    }
-
-    public void changeAdded(@NotNull Change change, @NotNull SModel model) {
-    }
-  }
-
 }

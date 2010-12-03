@@ -285,13 +285,15 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         }
         if (nodeToDecrement.value == null && change instanceof NewNodeChange) {
           final SNodeId parentId = ((NewNodeChange) change).getNodeParent();
-          nodeToDecrement.value = model.getNodeById(parentId);
-          if (nodeToDecrement.value == null && parentId != null) {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                nodeToDecrement.value = findNearestBaseAncestor(parentId, model);
-              }
-            });
+          if (parentId != null) {
+            nodeToDecrement.value = model.getNodeById(parentId);
+            if (nodeToDecrement.value == null && parentId != null) {
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  nodeToDecrement.value = findNearestBaseAncestor(parentId, model);
+                }
+              });
+            }
           }
         }
         if (nodeToDecrement.value != null) {
