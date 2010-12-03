@@ -119,22 +119,6 @@ public class State {
     }
   }
 
-  public void removeLastOperation(AbstractOperation operation) {
-    if (operation == null) {
-      return;
-    }
-    if (myOperationStack.peek() == operation) {
-      myOperationStack.pop();
-    }
-    myOperationStack.peek().removeConsequence(operation);
-
-    operation.undo(this);
-  }
-
-  public void popOperation() {
-    myOperationStack.pop();
-  }
-
   public boolean isConcrete(SNode node) {
     return myNonConcrete.isConcrete(node);
   }
