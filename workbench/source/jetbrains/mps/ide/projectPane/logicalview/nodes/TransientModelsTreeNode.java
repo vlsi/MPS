@@ -24,18 +24,13 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class TransientModelsTreeNode extends ProjectModuleTreeNode {
-  private IModule myTransientModule;
+  private TransientModelsModule myTransientModule;
 
-  public TransientModelsTreeNode(final Project project) {
+  public TransientModelsTreeNode(final Project project, final TransientModelsModule module) {
     //sometimes (when opening another project after first project) module repository does not contain transient module
     //temp fix
-    super(new ModuleContext(project.getComponent(TransientModelsModule.class), project) {
-      @Override
-      public IModule getModule() {
-        return project.getComponent(TransientModelsModule.class);
-      }
-    });
-    myTransientModule = project.getComponent(TransientModelsModule.class);
+    super(new ModuleContext(module, project));
+    myTransientModule = module;
     populate();
     updatePresentation();
     setNodeIdentifier(myTransientModule.getModuleReference().toString());
@@ -47,7 +42,12 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   }
 
   protected String getModulePresentation() {
-    return "transient models";
+    String name = myTransientModule.getModuleFqName();
+
+    if (name != null) {
+      return name;
+    }
+    return "transient";
   }
 
   public IModule getModule() {

@@ -63,8 +63,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myTransientModule = transientModule;
     myGenerationPlan = generationPlan;
 
-    getModule().setOriginalModule(invocationContext.getModule());
-
     if (prevContext != null) {
       myOriginalInputModel = prevContext.myOriginalInputModel;
       mySessionObjects = prevContext.mySessionObjects;

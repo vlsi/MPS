@@ -11,9 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.generator.TransientModelsComponent;
 
 public class RemoveTransientModels_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -62,9 +60,8 @@ public class RemoveTransientModels_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       RemoveTransientModels_Action.this.project.getComponent(MessagesViewTool.class).clear();
-      IModule module = RemoveTransientModels_Action.this.project.getComponent(TransientModelsModule.class);
-      SModelRepository.getInstance().unRegisterModelDescriptors(module);
-      SModelRepository.getInstance().removeUnusedDescriptors();
+      TransientModelsComponent component = RemoveTransientModels_Action.this.project.getComponent(TransientModelsComponent.class);
+      component.removeAllTransient();
       System.gc();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

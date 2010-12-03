@@ -15,31 +15,25 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TransientModelsModule extends AbstractModule implements ProjectComponent {
+public class TransientModelsModule extends AbstractModule {
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
 
-  private Project myProject;
-  private IModule myOriginalModule;
-  private int myModelsToKeepMax = 0 /* unlimited */;
+  private final IModule myOriginalModule;
+  private final TransientModelsComponent myComponent;
 
   private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
   private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
@@ -49,46 +43,21 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   //MPSProject must be disposed after TransientModelsModule for
   //the module's models to be disposed
 
-  public TransientModelsModule(Project project, MPSProject mpsProject) {
-    myProject = project;
-    ModuleReference reference = ModuleReference.fromString("TransientModule " + ourModuleCounter.getAndIncrement());
+  public TransientModelsModule(IModule original, TransientModelsComponent component) {
+    myComponent = component;
+    myOriginalModule = original;
+    ModuleReference reference = ModuleReference.fromString(original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement());
     setModuleReference(reference);
   }
 
-  public void projectOpened() {
-
-  }
-
-  public void projectClosed() {
-
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Transient Models Module";
-  }
-
-  public void initComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, new MPSModuleOwner() {
-        });
-      }
+  public void initModule() {
+    MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, new MPSModuleOwner() {
     });
   }
 
-  public void disposeComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        clearAll();
-        MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
-      }
-    });
-  }
-
-  public void setOriginalModule(IModule originalModule) {
-    myOriginalModule = originalModule;
+  public void disposeModule() {
+    clearAll();
+    MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
   }
 
   public Class getClass(String fqName) {
@@ -118,21 +87,18 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     // nothing
   }
 
+  public boolean hasPublished() {
+    return !myPublished.isEmpty();
+  }
+
   public void dispose() {
     super.dispose();
     clearAll();
   }
 
-  public void startGeneration(int modelsToKeep) {
-    clearAll();
-    myModelsToKeepMax = modelsToKeep;
-  }
-
   public void clearAll() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    SModelRepository.getInstance().removeUnusedDescriptors();
     invalidateCaches();
-    setOriginalModule(null);
     myModelsToKeep.clear();
     myPublished.clear();
     myModels.clear();
@@ -149,7 +115,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
   public boolean addModelToKeep(SModel model, boolean force) {
     assert model instanceof TransientSModel;
-    if ((myModelsToKeepMax >= 0 && myModelsToKeep.size() >= myModelsToKeepMax) && !force) {
+    if (!myComponent.canKeepOneMore() && !force) {
       // maximum number of models reached
       return myModelsToKeep.contains(model.getSModelReference().toString());
     }
@@ -208,7 +174,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   }
 
   public String toString() {
-    return "Transient models [" + myProject.getPresentableUrl() + "]";
+    return getModuleFqName();
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
@@ -244,7 +210,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
     protected ModelLoadResult initialLoad() {
       TransientSModel model = new TransientSModel(getSModelReference());
-      return new ModelLoadResult(model,ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
     @Override

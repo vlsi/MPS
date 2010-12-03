@@ -534,7 +534,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.generator.TransientModelsModule</implementation-class>
+      <implementation-class>jetbrains.mps.generator.TransientModelsComponent</implementation-class>
     </component>
 
     <component>

@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.TransientModelsComponent;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.*;
@@ -36,7 +37,7 @@ public class ProjectTree extends MPSTree {
     //MPSTreeNode root = new TextTreeNode("Empty");
     ProjectTreeNode root = new ProjectTreeNode(project);
 
-   // setRootVisible(false);
+    // setRootVisible(false);
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
     List<Solution> solutions = project.getProjectSolutions();
@@ -66,11 +67,9 @@ public class ProjectTree extends MPSTree {
     myModulesPoolTreeNode = new ProjectModulesPoolTreeNode(project);
     root.add(myModulesPoolTreeNode);
 
-    if (myProject.getComponent(TransientModelsModule.class).getOwnModelDescriptors().size() != 0) {
-      TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(myProject);
-      root.add(transientModelsNode);
+    for(TransientModelsModule module : myProject.getComponent(TransientModelsComponent.class).getModules()) {
+      root.add(new TransientModelsTreeNode(myProject, module));
     }
-
     return root;
   }
 

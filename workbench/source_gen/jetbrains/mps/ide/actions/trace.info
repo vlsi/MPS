@@ -103,13 +103,13 @@
   <unitInfo fileName="AddToFavoritesGroup_ActionGroup.java" startLine="25" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup" />
   <unitInfo fileName="LoadNonStubModels_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.LoadNonStubModels_Action" />
   <unitInfo fileName="ShowBookmarksDialog_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowBookmarksDialog_Action" />
+  <unitInfo fileName="RemoveTransientModels_Action.java" startLine="16" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
   <unitInfo fileName="StepOut_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepOut_Action" />
   <unitInfo fileName="StepInto_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepInto_Action" />
   <unitInfo fileName="StepOver_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepOver_Action" />
   <unitInfo fileName="Pause_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Pause_Action" />
   <unitInfo fileName="Resume_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Resume_Action" />
   <unitInfo fileName="EditorPopup_ActionGroup.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
-  <unitInfo fileName="RemoveTransientModels_Action.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
   <unitInfo fileName="NamespaceInternalActions_ActionGroup.java" startLine="24" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup" />
   <unitInfo fileName="ViewBreakpoints_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.ViewBreakpoints_Action" />
   <unitInfo fileName="LanguageActions_ActionGroup.java" startLine="8" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
@@ -1032,12 +1032,11 @@
     <scopeInfo nodeId="7789363376334215765" fileName="SaveModel_Action.java" startLine="32" startPosition="52" endLine="33" endPosition="75" />
   </root>
   <root nodeId="1215890512584">
-    <nodeInfo nodeId="1217420648361" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" fileName="RemoveTransientModels_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="26" />
-    <nodeInfo nodeId="1215890608410" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveTransientModels_Action.java" startLine="63" startPosition="9" endLine="64" endPosition="93" />
-    <nodeInfo nodeId="1215890642543" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="RemoveTransientModels_Action.java" startLine="64" startPosition="93" endLine="65" endPosition="107" />
-    <nodeInfo nodeId="1215890663823" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveTransientModels_Action.java" startLine="65" startPosition="107" endLine="66" endPosition="72" />
-    <nodeInfo nodeId="1215890684129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveTransientModels_Action.java" startLine="66" startPosition="72" endLine="67" endPosition="63" />
-    <nodeInfo nodeId="1215890700606" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveTransientModels_Action.java" startLine="67" startPosition="63" endLine="68" endPosition="18" />
+    <nodeInfo nodeId="1217420648361" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" fileName="RemoveTransientModels_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="26" />
+    <nodeInfo nodeId="1215890608410" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveTransientModels_Action.java" startLine="61" startPosition="9" endLine="62" endPosition="93" />
+    <nodeInfo nodeId="1215890642543" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="RemoveTransientModels_Action.java" startLine="62" startPosition="93" endLine="63" endPosition="130" />
+    <nodeInfo nodeId="1293486314515452589" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveTransientModels_Action.java" startLine="63" startPosition="130" endLine="64" endPosition="37" />
+    <nodeInfo nodeId="1215890700606" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveTransientModels_Action.java" startLine="64" startPosition="37" endLine="65" endPosition="18" />
   </root>
   <root nodeId="1215902895421">
     <nodeInfo nodeId="1217420648277" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" fileName="MakeModule_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="26" />

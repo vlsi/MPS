@@ -90,15 +90,15 @@ public class GeneratorManager {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        TransientModelsModule transientModelsModule = myProject.getComponent(TransientModelsModule.class);
-        transientModelsModule.startGeneration(options.getNumberOfModelsToKeep());
+        TransientModelsComponent transientModelsComponent = myProject.getComponent(TransientModelsComponent.class);
+        transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());
 
         options.getGenerationTracer().startTracing();
         fireBeforeGeneration(inputModels, options, invocationContext);
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
-        final GenerationController gc = new GenerationController(inputModels, transientModelsModule, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext, progress);
+        final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext, progress);
         result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
@@ -108,7 +108,7 @@ public class GeneratorManager {
         options.getGenerationTracer().finishTracing();
         fireAfterGeneration(inputModels, options, invocationContext);
 
-        transientModelsModule.publishAll();
+        transientModelsComponent.publishAll();
         CleanupManager.getInstance().cleanup();
       }
     });
