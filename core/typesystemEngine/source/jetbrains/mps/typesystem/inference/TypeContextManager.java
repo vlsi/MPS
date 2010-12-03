@@ -26,7 +26,7 @@ import java.util.Map.Entry;
  */
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
-  private static final boolean useNewTypeSystem = "true".equals(System.getProperty(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
+  private static final boolean useNewTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
   //minor
   public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {};
 
