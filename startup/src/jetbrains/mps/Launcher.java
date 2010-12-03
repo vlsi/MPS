@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class LauncherNew {
+public class Launcher {
   public static void main(String[] args) throws URISyntaxException {
     String mpsInternal = System.getProperty("mps.internal");
     System.setProperty("idea.is.internal", mpsInternal != null ? mpsInternal : "false");
