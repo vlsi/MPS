@@ -451,7 +451,7 @@ public class SModel {
   }
 
   @Nullable
-  public SNode getNodeById(SNodeId nodeId) {
+  public SNode getNodeById(@NotNull SNodeId nodeId) {
     checkNotDisposed();
     if (myDisposed) return null;
 
