@@ -259,7 +259,10 @@ public class ModelChangesManager {
       MapSequence.fromMap(myChangesCountsForRoots).put(rootId, MapSequence.fromMap(myChangesCountsForRoots).get(rootId) - 1);
     }
     MapSequence.fromMap(myRootForChange).removeKey(change);
-    fileStatusChangedForRootNode(getModel().getNodeById(rootId));
+    fileStatusChangedForRootNode((rootId == null ?
+      null :
+      getModel().getNodeById(rootId)
+    ));
   }
 
   private void addChange(@NotNull Change change, @Nullable SNode affectedRoot, boolean silent) {
