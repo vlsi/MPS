@@ -1,3 +1,16 @@
+core/idea-patch/classes
+core/kernel/classes
+core/typesystemEngine/classes
+core/debug/classes
+core/make-runtime/classes
+core/generator/classes
+workbench/javaParser/classes
+workbench/classes
+core/debug-api/classes
+core/runtime/classes
+MPSPlugin/apiclasses
+core/typesystemIntegration/classes
+workbench/typesystemUi/classes
 core/baseLanguage/baseLanguage/classes
 core/baseLanguage/baseLanguageInternal/classes
 core/baseLanguage/blTypes/classes
