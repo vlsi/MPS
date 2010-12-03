@@ -27,6 +27,7 @@ import jetbrains.mps.build.packaging.behavior.Antcall_Behavior;
 import jetbrains.mps.build.packaging.behavior.PathHolder_Behavior;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
+import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -348,6 +349,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_34695628122115601(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Util.SEPARATOR;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7715871110556345990(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_3028065460253121733(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -867,8 +872,8 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _7__yield_x583g4_a0a0a0a0a0vg;
-              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0vg_it;
+              private SNode _7__yield_x583g4_a0a0a0a0a0wg;
+              private Iterator<SNode> _7__yield_x583g4_a0a0a0a0a0wg_it;
               private SNode _2_apc;
               private Iterator<SNode> _2_apc_it;
 
@@ -891,13 +896,13 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 7:
-                      this._7__yield_x583g4_a0a0a0a0a0vg_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
+                      this._7__yield_x583g4_a0a0a0a0a0wg_it = Sequence.fromIterable(invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_2_apc, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))).iterator();
                     case 8:
-                      if (!(this._7__yield_x583g4_a0a0a0a0a0vg_it.hasNext())) {
+                      if (!(this._7__yield_x583g4_a0a0a0a0a0wg_it.hasNext())) {
                         this.__CP__ = 3;
                         break;
                       }
-                      this._7__yield_x583g4_a0a0a0a0a0vg = this._7__yield_x583g4_a0a0a0a0a0vg_it.next();
+                      this._7__yield_x583g4_a0a0a0a0a0wg = this._7__yield_x583g4_a0a0a0a0a0wg_it.next();
                       this.__CP__ = 9;
                       break;
                     case 5:
@@ -909,7 +914,7 @@ __switch__:
                       break;
                     case 10:
                       this.__CP__ = 8;
-                      this.yield(_7__yield_x583g4_a0a0a0a0a0vg);
+                      this.yield(_7__yield_x583g4_a0a0a0a0a0wg);
                       return true;
                     case 12:
                       this.__CP__ = 3;
@@ -943,6 +948,18 @@ __switch__:
     }.invoke(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "block", false), "entry", true));
   }
 
+  public static Iterable sourceNodesQuery_7715871110556345997(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.build.packaging.structure.Block")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode blk) {
+        return "idea-patch.jar".equals(SPropertyOperations.getString(blk, "name")) || "mps.jar".equals(SPropertyOperations.getString(blk, "name"));
+      }
+    }).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode blk) {
+        return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
+      }
+    });
+  }
+
   public static Iterable sourceNodesQuery_3028065460253121677(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.build.packaging.structure.Block")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode blk) {
@@ -950,7 +967,7 @@ __switch__:
       }
     }).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode blk) {
-        return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.Folder"), "entry", true);
+        return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
       }
     });
   }
