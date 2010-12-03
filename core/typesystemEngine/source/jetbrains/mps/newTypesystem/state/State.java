@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.states;
+package jetbrains.mps.newTypesystem.state;
 
 
 import jetbrains.mps.errors.IErrorReporter;
@@ -21,9 +21,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
-import jetbrains.mps.newTypesystem.differences.AbstractOperation;
-import jetbrains.mps.newTypesystem.differences.AddRemarkOperation;
-import jetbrains.mps.newTypesystem.differences.CheckAllOperation;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
+import jetbrains.mps.newTypesystem.operation.CheckAllOperation;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -45,9 +45,9 @@ public class State {
   private final TypeCheckingContextNew myTypeCheckingContext;
 
   private final Equations myEquations;
-  private final Inequalities myInequalities;
-  private final NodeMaps myNodeMaps;
-  private final NonConcrete myNonConcrete;
+  private final jetbrains.mps.newTypesystem.state.Inequalities myInequalities;
+  private final jetbrains.mps.newTypesystem.state.NodeMaps myNodeMaps;
+  private final jetbrains.mps.newTypesystem.state.NonConcrete myNonConcrete;
 
   private final VariableIdentifier myVariableIdentifier;
 
@@ -58,9 +58,9 @@ public class State {
   public State(TypeCheckingContextNew tcc) {
     myTypeCheckingContext = tcc;
     myEquations = new Equations(this);
-    myInequalities = new Inequalities(this);
-    myNonConcrete = new NonConcrete(this);
-    myNodeMaps = new NodeMaps(this);
+    myInequalities = new jetbrains.mps.newTypesystem.state.Inequalities(this);
+    myNonConcrete = new jetbrains.mps.newTypesystem.state.NonConcrete(this);
+    myNodeMaps = new jetbrains.mps.newTypesystem.state.NodeMaps(this);
     myVariableIdentifier = new VariableIdentifier();
   }
 
@@ -76,7 +76,7 @@ public class State {
     myInequalities.addInequality(subType, superType, isWeak, check, info);
   }
 
-  public void addRelation(SNode subType, SNode superType, RelationMapKind kind, EquationInfo info) {
+  public void addRelation(SNode subType, SNode superType, jetbrains.mps.newTypesystem.state.RelationMapKind kind, EquationInfo info) {
     if (!kind.isComparable()) {
       myInequalities.addInequality(subType, superType, kind.isWeak(), kind.isCheckOnly(), info);
     } else {
@@ -88,11 +88,11 @@ public class State {
     myInequalities.addComparableEquation(subType, superType, isWeak, info);
   }
 
-  public NodeMaps getNodeMaps() {
+  public jetbrains.mps.newTypesystem.state.NodeMaps getNodeMaps() {
     return myNodeMaps;
   }
 
-  public Inequalities getInequalities() {
+  public jetbrains.mps.newTypesystem.state.Inequalities getInequalities() {
     return myInequalities;
   }
 
@@ -148,7 +148,7 @@ public class State {
     myNodeMaps.addNodeToError(node, error, info);
   }
 
-  public NonConcrete getNonConcrete() {
+  public jetbrains.mps.newTypesystem.state.NonConcrete getNonConcrete() {
     return myNonConcrete;
   }
 
@@ -203,7 +203,7 @@ public class State {
     return myOperation;
   }
 
-  public void addWhenConcrete(WhenConcreteEntry entity, SNode node, boolean shallow) {
+  public void addWhenConcrete(jetbrains.mps.newTypesystem.state.WhenConcreteEntry entity, SNode node, boolean shallow) {
     myNonConcrete.addNonConcrete(entity, node, shallow);
   }
 

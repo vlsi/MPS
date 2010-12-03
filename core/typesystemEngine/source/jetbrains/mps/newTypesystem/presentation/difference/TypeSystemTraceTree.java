@@ -23,12 +23,11 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.AbstractOperation;
-import jetbrains.mps.newTypesystem.differences.TypeAssignedOperation;
-import jetbrains.mps.newTypesystem.differences.equation.EquationAddedOperation;
-import jetbrains.mps.newTypesystem.differences.inequality.AbstractRelationOperation;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
+import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
+import jetbrains.mps.newTypesystem.operation.inequality.AbstractRelationOperation;
 import jetbrains.mps.newTypesystem.presentation.state.ShowTypeSystemState;
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -125,7 +124,7 @@ public class TypeSystemTraceTree extends MPSTree {
     if (diff.getSource() == mySelectedNode) {
       return true;
     }
-    if (diff instanceof EquationAddedOperation) {
+    if (diff instanceof jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation) {
       EquationAddedOperation eq = (EquationAddedOperation) diff;
       if (myNodes.contains(eq.getChild()) || myNodes.contains(eq.getParent())) {
         return true;
@@ -149,7 +148,7 @@ public class TypeSystemTraceTree extends MPSTree {
       return;
     }
     if (diff instanceof EquationAddedOperation) {
-      EquationAddedOperation eq = (EquationAddedOperation) diff;
+      EquationAddedOperation eq = (jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation) diff;
       SNode child = eq.getChild();
       SNode parent = eq.getParent();
       if (myNodes.contains(child) && TypesUtil.isVariable(parent)) {
@@ -195,7 +194,7 @@ public class TypeSystemTraceTree extends MPSTree {
   }
 
   private void showState(MPSTreeNode node) {
-    State state = myTypeCheckingContextNew.getState();
+    jetbrains.mps.newTypesystem.state.State state = myTypeCheckingContextNew.getState();
     AbstractOperation rootDifference = myTypeCheckingContextNew.getOperation();
     Object difference = node.getUserObject();
     state.clear(false);

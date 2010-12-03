@@ -13,48 +13,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.operation;
 
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
+import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 14, 2010
- * Time: 1:42:37 PM
+ * Date: Nov 17, 2010
+ * Time: 2:46:01 PM
  */
-@Deprecated
-public class AddRemarkOperation extends AbstractOperation {
-  private String myString;
-  private Runnable myAction = null;
+public class TypeExpandedOperation extends TypeAssignedOperation {
+  private SNode myOldType;
 
-  public AddRemarkOperation(String string) {
-    myString = string;
+  public TypeExpandedOperation(SNode node, SNode type, EquationInfo info, SNode oldType) {
+    super(node, type, info);
+    myOldType = oldType;
   }
 
-  public AddRemarkOperation(String string, Runnable runnable) {
-    myString = string;
-    myAction = runnable;
+  @Override
+  public Color getColor() {
+    return Colors.TYPE_EXPANDED;
   }
 
   @Override
   public String getPresentation() {
-    return myString;
+    return "Type expanded: " + myNode + " ------> " + myType;
   }
 
   @Override
   public void doUndo(State state) {
+    state.getNodeToTypeMap().put(myNode, myOldType);
   }
-
-  @Override
-  public void doRedo(State state) {
-  }
-
-  public void execute(State state) {
-    if (myAction != null) {
-      myAction.run();
-      myAction = null;
-    }
-  }
-
 }

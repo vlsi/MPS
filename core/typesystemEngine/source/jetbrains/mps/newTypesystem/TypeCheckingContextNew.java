@@ -17,9 +17,8 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.newTypesystem.differences.AbstractOperation;
-import jetbrains.mps.newTypesystem.states.State;
-import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
@@ -57,7 +56,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     if (getOperationStack().isEmpty()) {
       return;
     }
-    AbstractOperation operation = getOperationStack().pop();
+    jetbrains.mps.newTypesystem.operation.AbstractOperation operation = getOperationStack().pop();
     System.out.println("Rolled back (" + operation.getPresentation() + ")");
     operation.undo(myState);
   }
@@ -170,16 +169,16 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
     //super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
 
-    myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId, argument), argument, false);
+    myState.addWhenConcrete(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(r, nodeModel, nodeId, argument), argument, false);
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
 
-    myState.addWhenConcrete(new WhenConcreteEntry(r, nodeModel, nodeId, skipError, argument), argument, isShallow);
+    myState.addWhenConcrete(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(r, nodeModel, nodeId, skipError, argument), argument, isShallow);
   }
 
-  public State getState() {
+  public jetbrains.mps.newTypesystem.state.State getState() {
     return myState;
   }
 

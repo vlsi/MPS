@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.states;
+package jetbrains.mps.newTypesystem.state;
 
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.differences.inequality.RelationRemovedOperation;
+import jetbrains.mps.newTypesystem.operation.inequality.RelationRemovedOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -31,11 +31,11 @@ import java.util.*;
  */
 public class RelationMapPair {
   private final State myState;
-  private final RelationMapKind myKind;
+  private final jetbrains.mps.newTypesystem.state.RelationMapKind myKind;
   private final Map<SNode, Map<SNode, EquationInfo>> mySubToSuper = new HashMap<SNode, Map<SNode, EquationInfo>>();
   private final Map<SNode, Map<SNode, EquationInfo>> mySuperToSub = new HashMap<SNode, Map<SNode, EquationInfo>>();
 
-  public RelationMapPair(State state, RelationMapKind kind) {
+  public RelationMapPair(State state, jetbrains.mps.newTypesystem.state.RelationMapKind kind) {
     myState = state;
     myKind = kind;
   }

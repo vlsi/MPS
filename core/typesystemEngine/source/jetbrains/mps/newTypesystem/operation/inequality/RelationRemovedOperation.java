@@ -13,44 +13,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.equation;
+package jetbrains.mps.newTypesystem.operation.inequality;
 
-import jetbrains.mps.newTypesystem.differences.AbstractOperation;
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
+import jetbrains.mps.newTypesystem.state.RelationMapKind;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:19:19 PM
+ * Date: Sep 23, 2010
+ * Time: 6:14:51 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EquationSubstitutedOperation extends AbstractOperation {
-  EquationAddedOperation myAdded;
-  EquationRemovedOperation myRemoved;
+public class RelationRemovedOperation extends AbstractRelationOperation {
 
-  public EquationSubstitutedOperation(SNode key, SNode prev, SNode cur, SNode source) {
-    myAdded = new EquationAddedOperation(key, cur, source, null);
-    myRemoved = new EquationRemovedOperation(key, prev, source);
-    mySource = source;
+  public RelationRemovedOperation(SNode subType, SNode superType, EquationInfo info, RelationMapKind kind) {
+    super(subType, superType, info, kind);
   }
 
   @Override
   public void doUndo(State state) {
-    myAdded.doUndo(state);
-    myRemoved.doUndo(state);
+    getRelationMap(state).add(mySubType, mySuperType, myEquationInfo);
   }
 
   @Override
   public void doRedo(State state) {
-    myRemoved.doRedo(state);
-    myAdded.doRedo(state);
+    getRelationMap(state).remove(mySubType, mySuperType);
   }
 
-  @Override
   public String getPresentation() {
-    return "Equation " + myRemoved.getShortPresentation() + " substituted with " +
-      myAdded.getShortPresentation();
+    return myRelationMapKind.getTitle() + " removed "
+      + mySubType + myRelationMapKind.getRelationSign() + mySuperType;
+  }
+
+  public Color getColor() {
+    return Colors.RELATION_REMOVED;
   }
 }

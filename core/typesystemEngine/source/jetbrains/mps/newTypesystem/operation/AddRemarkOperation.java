@@ -13,31 +13,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.operation;
 
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.state.State;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Oct 14, 2010
- * Time: 11:53:12 AM
+ * Time: 1:42:37 PM
  */
 @Deprecated
-public class CheckAllOperation extends AbstractOperation {
+public class AddRemarkOperation extends AbstractOperation {
+  private String myString;
+  private Runnable myAction = null;
 
-  @Override
-  public String getPresentation() {
-    return "Difference";
+  public AddRemarkOperation(String string) {
+    myString = string;
+  }
+
+  public AddRemarkOperation(String string, Runnable runnable) {
+    myString = string;
+    myAction = runnable;
   }
 
   @Override
-  public void doUndo(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
+  public String getPresentation() {
+    return myString;
+  }
+
+  @Override
+  public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
   }
 
   @Override
   public void doRedo(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
   }
+
+  public void execute(State state) {
+    if (myAction != null) {
+      myAction.run();
+      myAction = null;
+    }
+  }
+
 }

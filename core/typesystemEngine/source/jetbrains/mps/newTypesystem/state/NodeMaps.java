@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.states;
+package jetbrains.mps.newTypesystem.state;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
-import jetbrains.mps.newTypesystem.differences.AddErrorOperation;
-import jetbrains.mps.newTypesystem.differences.TypeAssignedOperation;
-import jetbrains.mps.newTypesystem.differences.TypeExpandedOperation;
+import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
+import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
+import jetbrains.mps.newTypesystem.operation.TypeExpandedOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;

@@ -13,46 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.equation;
+package jetbrains.mps.newTypesystem.operation.equation;
 
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Oct 8, 2010
- * Time: 1:17:49 PM
+ * Time: 1:17:32 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EquationRemovedOperation extends AbstractEquationOperation {
-
-  public EquationRemovedOperation(SNode child, SNode parent, SNode source) {
-    myChild = child;
-    myParent = parent;
-    mySource = source;
-  }
+public abstract class AbstractEquationOperation extends AbstractOperation {
+  protected SNode myChild;
+  protected SNode myParent;
 
   @Override
-  public void doUndo(State state) {
-    state.getEquations().add(myChild, myParent);
+  public String getShortPresentation() {
+    return myChild + " = " + myParent;
   }
 
-  @Override
-  public void doRedo(State state) {
-    state.getEquations().remove(myChild);
-  }
 
-  @Override
-  public String getPresentation() {
-    return "Equation removed " + getShortPresentation();
-  }
-
-  public SNode getChild() {
-    return myChild;
-  }
-
-  public SNode getParent() {
-    return myParent;
-  }
 }

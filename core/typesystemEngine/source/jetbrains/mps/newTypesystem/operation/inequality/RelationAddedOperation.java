@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.operation.inequality;
 
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -25,46 +25,31 @@ import java.awt.Color;
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:04:39 PM
+ * Date: Sep 23, 2010
+ * Time: 6:13:35 PM
+ * To change this template use File | Settings | File Templates.
  */
-public class TypeAssignedOperation extends AbstractOperation {
-  protected SNode myNode;
-  protected SNode myType;
-
-  public TypeAssignedOperation(SNode node, SNode type, EquationInfo info) {
-    myNode = node;
-    myType = type;
-    mySource = node;
-    myEquationInfo = info;
+public class RelationAddedOperation extends AbstractRelationOperation {
+  public RelationAddedOperation(SNode subType, SNode superType, jetbrains.mps.newTypesystem.state.RelationMapKind mapKind, EquationInfo info) {
+    super(subType, superType, info, mapKind);
   }
 
   @Override
-  //todo: it does not seem to update "type to node" map
   public void doUndo(State state) {
-    state.getNodeToTypeMap().remove(myNode);
+    getRelationMap(state).remove(mySubType, mySuperType);
+  }
+
+  public String getPresentation() {
+    return myRelationMapKind.getTitle() + " added "
+      + mySubType + myRelationMapKind.getRelationSign() + mySuperType;
+  }
+
+  public Color getColor() {
+    return Colors.RELATION_ADDED;
   }
 
   @Override
   public void doRedo(State state) {
-    state.getNodeToTypeMap().put(myNode, myType);
-  }
-
-  @Override
-  public String getPresentation() {
-    return "Type assigned (" + myNode + " : " + myType + ")";
-  }
-
-  @Override
-  public Color getColor() {
-    return Colors.TYPE_ASSIGNED;
-  }
-
-  public SNode getNode() {
-    return myNode;
-  }
-
-  public SNode getType() {
-    return myType;
+    getRelationMap(state).add(mySubType, mySuperType, myEquationInfo);
   }
 }

@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -25,29 +25,46 @@ import java.awt.Color;
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Nov 17, 2010
- * Time: 2:46:01 PM
+ * Date: Sep 15, 2010
+ * Time: 1:04:39 PM
  */
-public class TypeExpandedOperation extends TypeAssignedOperation {
-  private SNode myOldType;
+public class TypeAssignedOperation extends AbstractOperation {
+  protected SNode myNode;
+  protected SNode myType;
 
-  public TypeExpandedOperation(SNode node, SNode type, EquationInfo info, SNode oldType) {
-    super(node, type, info);
-    myOldType = oldType;
+  public TypeAssignedOperation(SNode node, SNode type, EquationInfo info) {
+    myNode = node;
+    myType = type;
+    mySource = node;
+    myEquationInfo = info;
   }
 
   @Override
-  public Color getColor() {
-    return Colors.TYPE_EXPANDED;
+  //todo: it does not seem to update "type to node" map
+  public void doUndo(State state) {
+    state.getNodeToTypeMap().remove(myNode);
+  }
+
+  @Override
+  public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
+    state.getNodeToTypeMap().put(myNode, myType);
   }
 
   @Override
   public String getPresentation() {
-    return "Type expanded: " + myNode + " ------> " + myType;
+    return "Type assigned (" + myNode + " : " + myType + ")";
   }
 
   @Override
-  public void doUndo(State state) {
-    state.getNodeToTypeMap().put(myNode, myOldType);
+  public Color getColor() {
+    return Colors.TYPE_ASSIGNED;
+  }
+
+  public SNode getNode() {
+    return myNode;
+  }
+
+  public SNode getType() {
+    return myType;
   }
 }

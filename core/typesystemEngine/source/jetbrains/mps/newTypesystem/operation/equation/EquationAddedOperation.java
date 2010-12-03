@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.equation;
+package jetbrains.mps.newTypesystem.operation.equation;
 
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -44,7 +44,7 @@ public class EquationAddedOperation extends AbstractEquationOperation {
   }
 
   @Override
-  public void doRedo(State state) {
+  public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
     state.getEquations().add(myChild, myParent);
   }
 

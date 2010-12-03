@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.states;
+package jetbrains.mps.newTypesystem.state;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
@@ -28,13 +28,13 @@ import java.util.List;
  */
 public class NonConcrete {
   private final State myState;
-  private final NonConcreteMapPair myShallow;
-  private final NonConcreteMapPair myDeep;
+  private final jetbrains.mps.newTypesystem.state.NonConcreteMapPair myShallow;
+  private final jetbrains.mps.newTypesystem.state.NonConcreteMapPair myDeep;
 
   public NonConcrete(State state) {
     myState = state;
-    myShallow = new NonConcreteMapPair(true, state);
-    myDeep = new NonConcreteMapPair(false, state);
+    myShallow = new jetbrains.mps.newTypesystem.state.NonConcreteMapPair(true, state);
+    myDeep = new jetbrains.mps.newTypesystem.state.NonConcreteMapPair(false, state);
   }
 
   public void substitute(SNode var, SNode type) {
@@ -42,7 +42,7 @@ public class NonConcrete {
     myDeep.substitute(var, type);
   }
 
-  public void addNonConcrete(WhenConcreteEntry entry, SNode node, boolean shallow) {
+  public void addNonConcrete(jetbrains.mps.newTypesystem.state.WhenConcreteEntry entry, SNode node, boolean shallow) {
     node = myState.getRepresentative(node);
     if (shallow) {
       myShallow.addWhenConcrete(entry, node);
@@ -83,28 +83,28 @@ public class NonConcrete {
     myDeep.clear();
   }
 
-  public void addDependency(WhenConcreteEntry entry, SNode node, boolean isShallow) {
-    NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
+  public void addDependency(jetbrains.mps.newTypesystem.state.WhenConcreteEntry entry, SNode node, boolean isShallow) {
+    jetbrains.mps.newTypesystem.state.NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
     nonConcreteMapPair.addDependency(entry, node);
   }
 
-  public void removeDependency(WhenConcreteEntry entry, SNode node, boolean isShallow) {
-    NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
+  public void removeDependency(jetbrains.mps.newTypesystem.state.WhenConcreteEntry entry, SNode node, boolean isShallow) {
+    jetbrains.mps.newTypesystem.state.NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
     nonConcreteMapPair.removeDependency(entry, node);
   }
 
-  public void removeWhenConcreteNoVars(WhenConcreteEntry entry, boolean isShallow) {
-    NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
+  public void removeWhenConcreteNoVars(jetbrains.mps.newTypesystem.state.WhenConcreteEntry entry, boolean isShallow) {
+    jetbrains.mps.newTypesystem.state.NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
     nonConcreteMapPair.removeWhenConcreteNoVars(entry);
   }
 
-  public void addWhenConcreteNoVars(WhenConcreteEntry entry, boolean isShallow) {
-    NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
+  public void addWhenConcreteNoVars(jetbrains.mps.newTypesystem.state.WhenConcreteEntry entry, boolean isShallow) {
+    jetbrains.mps.newTypesystem.state.NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
     nonConcreteMapPair.addWhenConcreteNoVars(entry);
   }
 
-   public void collectVarsExecuteIfNecessary(WhenConcreteEntry e, SNode type, boolean isShallow) {
-     NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
+   public void collectVarsExecuteIfNecessary(jetbrains.mps.newTypesystem.state.WhenConcreteEntry e, SNode type, boolean isShallow) {
+     jetbrains.mps.newTypesystem.state.NonConcreteMapPair nonConcreteMapPair = isShallow ? myShallow : myDeep;
      nonConcreteMapPair.collectVarsExecuteIfNecessary(e, type);
    }
 }

@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;

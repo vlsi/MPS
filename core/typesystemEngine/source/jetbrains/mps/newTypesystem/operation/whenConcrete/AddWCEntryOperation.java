@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.whenConcrete;
+package jetbrains.mps.newTypesystem.operation.whenConcrete;
 
-import jetbrains.mps.newTypesystem.differences.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.states.State;
-import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
+import jetbrains.mps.newTypesystem.state.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -27,25 +26,26 @@ import java.awt.Color;
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Oct 20, 2010
- * Time: 5:01:04 PM
+ * Date: Oct 15, 2010
+ * Time: 4:37:46 PM
  * To change this template use File | Settings | File Templates.
  */
-public class AddWCDependencyOperation extends AbstractOperation {
-  private SNode myNode;
+public class AddWCEntryOperation extends AbstractOperation {
+  private SNode myType;
   private WhenConcreteEntry myEntry;
   private boolean myIsShallow;
 
-  public AddWCDependencyOperation(WhenConcreteEntry entry, SNode node, boolean isShallow) {
-    myNode = node;
+  public AddWCEntryOperation(WhenConcreteEntry entry, SNode type, SNode source, boolean isShallow) {
+    myType = type;
+    mySource = source;
     myEntry = entry;
     myIsShallow = isShallow;
-    myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());
+    myEquationInfo = new EquationInfo(type, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
   @Override
   public String getPresentation() {
-    return "When concrete dependency added: " + myNode + "";
+    return "When Concrete added " + myType;
   }
 
   @Override
@@ -54,12 +54,18 @@ public class AddWCDependencyOperation extends AbstractOperation {
   }
 
   @Override
-  public void doUndo(State state) {
-    state.getNonConcrete().removeDependency(myEntry, myNode, myIsShallow);
+  public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
+    state.getNonConcrete().removeWhenConcreteNoVars(myEntry, myIsShallow);
   }
 
   @Override
-  public void doRedo(State state) {
-    state.getNonConcrete().addDependency(myEntry, myNode, myIsShallow);
+  public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
+    state.getNonConcrete().addWhenConcreteNoVars(myEntry, myIsShallow);
+  }
+
+  @Override
+  public void execute(jetbrains.mps.newTypesystem.state.State state) {
+    super.execute(state);
+    state.getNonConcrete().collectVarsExecuteIfNecessary(myEntry, myType, myIsShallow);
   }
 }

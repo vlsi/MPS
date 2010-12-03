@@ -13,45 +13,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.inequality;
+package jetbrains.mps.newTypesystem.operation.equation;
 
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.states.RelationMapKind;
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 23, 2010
- * Time: 6:14:51 PM
+ * Date: Oct 8, 2010
+ * Time: 1:19:19 PM
  * To change this template use File | Settings | File Templates.
  */
-public class RelationRemovedOperation extends AbstractRelationOperation {
+public class EquationSubstitutedOperation extends AbstractOperation {
+  EquationAddedOperation myAdded;
+  EquationRemovedOperation myRemoved;
 
-  public RelationRemovedOperation(SNode subType, SNode superType, EquationInfo info, RelationMapKind kind) {
-    super(subType, superType, info, kind);
+  public EquationSubstitutedOperation(SNode key, SNode prev, SNode cur, SNode source) {
+    myAdded = new EquationAddedOperation(key, cur, source, null);
+    myRemoved = new EquationRemovedOperation(key, prev, source);
+    mySource = source;
   }
 
   @Override
   public void doUndo(State state) {
-    getRelationMap(state).add(mySubType, mySuperType, myEquationInfo);
+    myAdded.doUndo(state);
+    myRemoved.doUndo(state);
   }
 
   @Override
   public void doRedo(State state) {
-    getRelationMap(state).remove(mySubType, mySuperType);
+    myRemoved.doRedo(state);
+    myAdded.doRedo(state);
   }
 
+  @Override
   public String getPresentation() {
-    return myRelationMapKind.getTitle() + " removed "
-      + mySubType + myRelationMapKind.getRelationSign() + mySuperType;
-  }
-
-  public Color getColor() {
-    return Colors.RELATION_REMOVED;
+    return "Equation " + myRemoved.getShortPresentation() + " substituted with " +
+      myAdded.getShortPresentation();
   }
 }

@@ -20,13 +20,12 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 public class EquationErrorReporterNew extends AbstractErrorReporter implements IErrorReporter {
-  private State myState;
+  private jetbrains.mps.newTypesystem.state.State myState;
   private String myBefore;
   private String myBetween;
   private String myAfter;
@@ -35,7 +34,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
 
   private SNode mySNode;
 
-  public EquationErrorReporterNew(SNode node, State state, String before, SNode left, String between, SNode right,
+  public EquationErrorReporterNew(SNode node, jetbrains.mps.newTypesystem.state.State state, String before, SNode left, String between, SNode right,
                                   String after, String ruleModel, String ruleId) {
     super(ruleModel, ruleId);
     myState = state;
@@ -47,7 +46,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
     mySNode = node;
   }
 
-  public EquationErrorReporterNew(SNode node, State state, String before, SNode left, String between, SNode right,
+  public EquationErrorReporterNew(SNode node, jetbrains.mps.newTypesystem.state.State state, String before, SNode left, String between, SNode right,
                                   String after, EquationInfo info) {
     this(node, state, before, left, between, right, after, info != null ? info.getRuleModel() : null,
       info != null ? info.getRuleId() : null);

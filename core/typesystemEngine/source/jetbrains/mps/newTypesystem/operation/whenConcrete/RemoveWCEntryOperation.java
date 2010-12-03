@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.whenConcrete;
+package jetbrains.mps.newTypesystem.operation.whenConcrete;
 
-import jetbrains.mps.newTypesystem.differences.AbstractOperation;
-import jetbrains.mps.newTypesystem.states.State;
-import jetbrains.mps.newTypesystem.states.WhenConcreteEntry;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.state.WhenConcreteEntry;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
@@ -38,7 +37,7 @@ public class RemoveWCEntryOperation extends AbstractOperation {
   }
 
   @Override
-  public void doUndo(State state) {
+  public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
     state.getNonConcrete().addWhenConcreteNoVars(myEntry, myIsShallow);
   }
 
@@ -48,12 +47,12 @@ public class RemoveWCEntryOperation extends AbstractOperation {
   }
 
   @Override
-  public void doRedo(State state) {
+  public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
     state.getNonConcrete().removeWhenConcreteNoVars(myEntry, myIsShallow);
   }
 
   @Override
-  public void execute(State state) {
+  public void execute(jetbrains.mps.newTypesystem.state.State state) {
     super.execute(state);
     myEntry.run();
   }

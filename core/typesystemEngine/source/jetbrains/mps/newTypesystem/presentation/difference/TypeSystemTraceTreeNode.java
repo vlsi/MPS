@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem.presentation.difference;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.newTypesystem.differences.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -47,7 +47,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
   }
 
   public void goToRule() {
-    AbstractOperation difference = (AbstractOperation) getUserObject();
+    jetbrains.mps.newTypesystem.operation.AbstractOperation difference = (AbstractOperation) getUserObject();
     EquationInfo info = difference.getEquationInfo();
     if (info != null) {
       GoToTypeErrorRuleUtil.goToRuleById(getOperationContext(), new Pair<String, String>(info.getRuleModel(), info.getRuleId()));

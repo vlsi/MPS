@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -56,7 +56,7 @@ public abstract class AbstractOperation {
 
   protected abstract void doRedo(State state);
 
-  public void undo(final State state) {
+  public void undo(final jetbrains.mps.newTypesystem.state.State state) {
     state.executeStateChangeAction(new Runnable() {
       @Override
       public void run() {
@@ -65,7 +65,7 @@ public abstract class AbstractOperation {
     });
   }
 
-  public void redo(final State state) {
+  public void redo(final jetbrains.mps.newTypesystem.state.State state) {
     state.executeStateChangeAction(new Runnable() {
       @Override
       public void run() {

@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences.inequality;
+package jetbrains.mps.newTypesystem.operation.inequality;
 
-import jetbrains.mps.newTypesystem.differences.AbstractOperation;
-import jetbrains.mps.newTypesystem.states.RelationMapKind;
-import jetbrains.mps.newTypesystem.states.RelationMapPair;
-import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
@@ -32,9 +30,9 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 public abstract class AbstractRelationOperation extends AbstractOperation {
   protected SNode mySubType;
   protected SNode mySuperType;
-  protected RelationMapKind myRelationMapKind;
+  protected jetbrains.mps.newTypesystem.state.RelationMapKind myRelationMapKind;
 
-  public AbstractRelationOperation(SNode subType, SNode superType, EquationInfo info, RelationMapKind kind) {
+  public AbstractRelationOperation(SNode subType, SNode superType, EquationInfo info, jetbrains.mps.newTypesystem.state.RelationMapKind kind) {
     mySubType = subType;
     mySuperType = superType;
     myRelationMapKind = kind;
@@ -49,7 +47,7 @@ public abstract class AbstractRelationOperation extends AbstractOperation {
     return mySuperType;
   }
 
-  protected RelationMapPair getRelationMap(State state) {
+  protected jetbrains.mps.newTypesystem.state.RelationMapPair getRelationMap(State state) {
     return state.getInequalities().getRelation(myRelationMapKind);
   }
 }

@@ -13,10 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.states;
+package jetbrains.mps.newTypesystem.state;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.newTypesystem.differences.whenConcrete.*;
+import jetbrains.mps.newTypesystem.operation.whenConcrete.AddWCDependencyOperation;
+import jetbrains.mps.newTypesystem.operation.whenConcrete.AddWCEntryOperation;
+import jetbrains.mps.newTypesystem.operation.whenConcrete.RemoveWCDependencyOperation;
+import jetbrains.mps.newTypesystem.operation.whenConcrete.RemoveWCEntryOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.hash.HashMap;
 
@@ -68,22 +71,22 @@ public class NonConcreteMapPair {
     }
   }
 
-  private void removeAndTrack(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
+  private void removeAndTrack(WhenConcreteEntry e, SNode var) {
     myState.executeOperation(new RemoveWCDependencyOperation(e, var, myIsShallow));
 
   }
 
-  public void removeDependency(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
+  public void removeDependency(WhenConcreteEntry e, SNode var) {
     myWhenConcreteEntries.get(e).remove(var);
     myDependents.get(var).remove(e);
   }
 
-  public void removeWhenConcreteNoVars(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e) {
+  public void removeWhenConcreteNoVars(WhenConcreteEntry e) {
     Set<SNode> vars = myWhenConcreteEntries.remove(e);
     assert vars.isEmpty();
   }
 
-  public void addWhenConcreteNoVars(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e) {
+  public void addWhenConcreteNoVars(WhenConcreteEntry e) {
     Set<SNode> previous = myWhenConcreteEntries.put(e, new HashSet<SNode>());
     assert previous == null;
   }

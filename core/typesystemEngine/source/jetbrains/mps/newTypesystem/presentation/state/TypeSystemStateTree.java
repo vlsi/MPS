@@ -17,7 +17,6 @@ package jetbrains.mps.newTypesystem.presentation.state;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.IOperationContext;
 
 import java.awt.Color;
@@ -32,10 +31,10 @@ import java.util.List;
  */
 public class TypeSystemStateTree extends MPSTree {
   IOperationContext myOperationContext;
-  private State myState;
+  private jetbrains.mps.newTypesystem.state.State myState;
 
 
-  public TypeSystemStateTree(IOperationContext operationContext, State state) {
+  public TypeSystemStateTree(IOperationContext operationContext, jetbrains.mps.newTypesystem.state.State state) {
     myOperationContext = operationContext;
     myState = state;
     this.rebuildNow();
@@ -49,7 +48,7 @@ public class TypeSystemStateTree extends MPSTree {
     return createNode(myState);
   }
 
-  private TypeSystemStateTreeNode createNode(State state) {
+  private TypeSystemStateTreeNode createNode(jetbrains.mps.newTypesystem.state.State state) {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
     result.add(createNode("Inequalities", myState.getInequalities().getListPresentation(), null));
     result.add(createNode("When concrete", myState.getNonConcrete().getListPresentation(), null));
