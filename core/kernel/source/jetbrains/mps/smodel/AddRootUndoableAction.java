@@ -33,6 +33,6 @@ class AddRootUndoableAction extends SNodeUndoableAction {
 
   @Override
   public boolean isGlobal() {
-    return true;
+    return false;
   }
 }
