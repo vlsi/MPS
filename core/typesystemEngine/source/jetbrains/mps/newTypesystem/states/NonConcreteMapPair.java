@@ -31,29 +31,24 @@ import java.util.*;
  */
 public class NonConcreteMapPair {
   private boolean myIsShallow;
-  private Map<WhenConcreteEntry, Set<SNode>> myDependencies;
+  private Map<WhenConcreteEntry, Set<SNode>> myWhenConcreteEntries;
   private Map<SNode, Set<WhenConcreteEntry>> myDependents;
   private State myState;
 
   public NonConcreteMapPair(boolean shallow, State state) {
     myIsShallow = shallow;
     myState = state;
-    myDependencies = new HashMap<WhenConcreteEntry, Set<SNode>>();
+    myWhenConcreteEntries = new HashMap<WhenConcreteEntry, Set<SNode>>();
     myDependents = new HashMap<SNode, Set<WhenConcreteEntry>>();
   }
 
   private void addAndTrack(WhenConcreteEntry e, SNode var) {
-    myState.executeOperation(new AddWCDependencyOperation(e, var, myIsShallow), false);
+    myState.executeOperation(new AddWCDependencyOperation(e, var, myIsShallow));
   }
 
   public void addDependency(WhenConcreteEntry e, SNode var) {
-    Set<SNode> dependencies = myDependencies.get(e);
-    if (dependencies == null) {
-      dependencies = new HashSet<SNode>();
-      myDependencies.put(e, dependencies);
-    }
+    Set<SNode> dependencies = myWhenConcreteEntries.get(e);
     dependencies.add(var);
-
     Set<WhenConcreteEntry> dependents = myDependents.get(var);
     if (dependents == null) {
       dependents = new HashSet<WhenConcreteEntry>();
@@ -63,47 +58,49 @@ public class NonConcreteMapPair {
   }
 
   private void becameConcrete(WhenConcreteEntry entry) {
-    myState.executeOperation(new PlayWCBodyOperation(myIsShallow, entry), true);
-    entry.run();
-    myState.popOperation();
+    myState.executeOperation(new RemoveWCEntryOperation(myIsShallow, entry));
   }
 
   private void testConcrete(WhenConcreteEntry entity) {
-    if (myDependencies.get(entity).isEmpty()) {
+    if (myWhenConcreteEntries.get(entity).isEmpty()) {
       becameConcrete(entity);
-      myDependencies.remove(entity);
+      myWhenConcreteEntries.remove(entity);
     }
   }
 
   private void removeAndTrack(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
-    myState.executeOperation(new RemoveWCDependencyOperation(e, var, myIsShallow), false);
+    myState.executeOperation(new RemoveWCDependencyOperation(e, var, myIsShallow));
 
   }
 
   public void removeDependency(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e, SNode var) {
-    myDependencies.get(e).remove(var);
+    myWhenConcreteEntries.get(e).remove(var);
     myDependents.get(var).remove(e);
   }
 
-  public void removeWhenConcrete(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e) {
-    myDependencies.remove(e);
-    //todo it seems that from "var -> WC" it is not removed
+  public void removeWhenConcreteNoVars(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e) {
+    Set<SNode> vars = myWhenConcreteEntries.remove(e);
+    assert vars.isEmpty();
   }
 
-  public void addWhenConcrete(WhenConcreteEntry e, SNode node) {
-    SNode source = myState.getNodeMaps().getNode(node);
-    if (source == null) {
-      source = node;
-    }
-    myState.executeOperation(new AddWCEntryOperation(e, node, source, myIsShallow), true);
-    List<SNode> variables = getChildAndReferentVariables(node);
+  public void addWhenConcreteNoVars(jetbrains.mps.newTypesystem.states.WhenConcreteEntry e) {
+    Set<SNode> previous = myWhenConcreteEntries.put(e, new HashSet<SNode>());
+    assert previous == null;
+  }
+
+  public void addWhenConcrete(WhenConcreteEntry e, SNode type) {
+    SNode source = myState.getNodeMaps().getNode(type); // todo works only in some cases
+    myState.executeOperation(new AddWCEntryOperation(e, type, source, myIsShallow));
+  }
+
+  public void collectVarsExecuteIfNecessary(WhenConcreteEntry e, SNode type) {
+    List<SNode> variables = getChildAndReferentVariables(type);
     if (variables.isEmpty()) {
       becameConcrete(e);
     }
     for (SNode var : variables) {
       addAndTrack(e, myState.getRepresentative(var));
     }
-    myState.popOperation();
   }
 
   public void substitute(SNode oldVar, SNode type) {
@@ -145,14 +142,14 @@ public class NonConcreteMapPair {
 
   public List<String> getListPresentation() {
     List<String> result = new LinkedList<String>();
-    for (WhenConcreteEntry key : myDependencies.keySet()) {
-      result.add(key + " -:- " + myDependencies.get(key) + (myIsShallow ? " shallow" : " deep"));
+    for (WhenConcreteEntry key : myWhenConcreteEntries.keySet()) {
+      result.add(key + " -:- " + myWhenConcreteEntries.get(key) + (myIsShallow ? " shallow" : " deep"));
     }
     return result;
   }
 
   public void clear() {
-    myDependencies.clear();
+    myWhenConcreteEntries.clear();
     myDependents.clear();
   }
 }

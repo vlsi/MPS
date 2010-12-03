@@ -83,10 +83,10 @@ public class RelationMapPair {
       Map<SNode, EquationInfo> map = pairMap.get(value);
       EquationInfo info = map.get(var);
       if (reversed) {
-        myState.executeOperation(new RelationRemovedOperation(var, value, info, myKind), false);
+        myState.executeOperation(new RelationRemovedOperation(var, value, info, myKind));
         myState.addRelation(type, value, myKind, info);
       } else {
-        myState.executeOperation(new RelationRemovedOperation(value, var, info, myKind), false);
+        myState.executeOperation(new RelationRemovedOperation(value, var, info, myKind));
         myState.addRelation(value, type, myKind, info);
       }
     }
@@ -126,7 +126,7 @@ public class RelationMapPair {
   private void removeAndTrack(SNode subType, SNode superType) {
     EquationInfo info = mySubToSuper.get(subType).get(superType);
     remove(subType, superType);
-    myState.executeOperation(new RelationRemovedOperation(subType, superType, info, myKind), false);
+    myState.executeOperation(new RelationRemovedOperation(subType, superType, info, myKind));
   }
 
   public void check() {

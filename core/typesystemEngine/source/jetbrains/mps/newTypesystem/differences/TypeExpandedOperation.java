@@ -47,7 +47,7 @@ public class TypeExpandedOperation extends TypeAssignedOperation {
   }
 
   @Override
-  public void rollBack(State state) {
+  public void undo(State state) {
     state.getNodeToTypeMap().put(myNode, myOldType);
   }
 }

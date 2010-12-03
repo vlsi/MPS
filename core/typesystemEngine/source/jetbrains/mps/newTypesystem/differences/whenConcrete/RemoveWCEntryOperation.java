@@ -27,19 +27,19 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Time: 5:16:25 PM
  * To change this template use File | Settings | File Templates.
  */
-public class PlayWCBodyOperation extends AbstractOperation {
+public class RemoveWCEntryOperation extends AbstractOperation {
   private WhenConcreteEntry myEntry;
   private boolean myIsShallow;
 
-  public PlayWCBodyOperation(boolean isShallow, WhenConcreteEntry entry) {
+  public RemoveWCEntryOperation(boolean isShallow, WhenConcreteEntry entry) {
     myIsShallow = isShallow;
     myEntry = entry;
     myEquationInfo = new EquationInfo(null, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
   @Override
-  public void rollBack(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
+  public void undo(State state) {
+    state.getNonConcrete().addWhenConcreteNoVars(myEntry, myIsShallow);
   }
 
   @Override
@@ -48,8 +48,13 @@ public class PlayWCBodyOperation extends AbstractOperation {
   }
 
   @Override
-  public void play(State state) {
-    state.getNonConcrete().removeWhenConcrete(myEntry, myIsShallow);
-    //todo it seems that from "var -> WC" it is not removed
+  public void redo(State state) {
+    state.getNonConcrete().removeWhenConcreteNoVars(myEntry, myIsShallow);
+  }
+
+  @Override
+  public void execute(State state) {
+    super.execute(state);
+    myEntry.run();
   }
 }

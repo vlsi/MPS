@@ -104,17 +104,19 @@ public class State {
     return myNodeMaps.getNodeToTypeMap();
   }
 
-  public void executeOperation(AbstractOperation operation, boolean push) {
+  public void executeOperation(AbstractOperation operation) {
     if (operation == null) {
       return;
     }
     if (!myOperationStack.empty()) {
       myOperationStack.peek().addConsequence(operation);
     }
-    if (push || myOperationStack.empty()) {
-      myOperationStack.push(operation);
+    myOperationStack.push(operation);
+    try {
+      operation.execute(this);
+    } finally {
+      myOperationStack.pop();
     }
-    operation.play(this);
   }
 
   public void removeLastOperation(AbstractOperation operation) {
@@ -126,7 +128,7 @@ public class State {
     }
     myOperationStack.peek().removeConsequence(operation);
 
-    operation.rollBack(this);
+    operation.undo(this);
   }
 
   public void popOperation() {
@@ -167,18 +169,24 @@ public class State {
   }
 
   public void solveInequalities() {
-    executeOperation(new AddRemarkOperation("Solving inequalities"), true);
-    myInequalities.solveInequalities();
-    popOperation();
+    executeOperation(new AddRemarkOperation("Solving inequalities", new Runnable() {
+      @Override
+      public void run() {
+        myInequalities.solveInequalities();
+      }
+    }));
   }
 
   public void checkInequalities() {
-    executeOperation(new AddRemarkOperation("Checking inequalities"), true);
-    myInequalities.check();
-    popOperation();
+    executeOperation(new AddRemarkOperation("Checking inequalities", new Runnable() {
+      @Override
+      public void run() {
+        myInequalities.check();
+      }
+    }));
   }
 
-  public void checkWhenConcrete() {
+  public void checkNonConcreteWhenConcretes() {
     // todo
   }
 
@@ -199,13 +207,16 @@ public class State {
   }
 
   public void expandAll() {
-    executeOperation(new AddRemarkOperation("Types Expansion"), true);
-    myNodeMaps.expandAll();
-    popOperation();
+    executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
+      @Override
+      public void run() {
+        myNodeMaps.expandAll();
+      }
+    }));
   }
 
   public boolean executeOperationsBeforeAnchor(AbstractOperation firstOp, Object anchor) {
-    firstOp.play(this);
+    firstOp.redo(this);
     if (firstOp.equals(anchor)) {
       return true;
     }

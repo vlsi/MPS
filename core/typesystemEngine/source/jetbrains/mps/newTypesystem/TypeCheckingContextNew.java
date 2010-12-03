@@ -59,7 +59,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     }
     AbstractOperation diff = getDifferenceStack().pop();
     System.out.println("Rolled back (" + diff.getPresentation() + ")");
-    diff.rollBack(myState);
+    diff.undo(myState);
   }
 
   public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {
@@ -111,7 +111,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
       myState.solveInequalities();
       myState.expandAll();
       myState.checkInequalities();
-      myState.checkWhenConcrete();
+      myState.checkNonConcreteWhenConcretes();
     }
   }
 

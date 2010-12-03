@@ -54,12 +54,12 @@ public class AddWCDependencyOperation extends AbstractOperation {
   }
 
   @Override
-  public void rollBack(State state) {
+  public void undo(State state) {
     state.getNonConcrete().removeDependency(myEntry, myNode, myIsShallow);
   }
 
   @Override
-  public void play(State state) {
+  public void redo(State state) {
     state.getNonConcrete().addDependency(myEntry, myNode, myIsShallow);
   }
 }

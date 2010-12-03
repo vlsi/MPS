@@ -36,7 +36,7 @@ public class RelationAddedOperation extends AbstractRelationOperation {
   }
 
   @Override
-  public void rollBack(State state) {
+  public void undo(State state) {
     getRelationMap(state).remove(mySubType, mySuperType);
   }
 
@@ -50,7 +50,7 @@ public class RelationAddedOperation extends AbstractRelationOperation {
   }
 
   @Override
-  public void play(State state) {
+  public void redo(State state) {
     getRelationMap(state).add(mySubType, mySuperType, myEquationInfo);
   }
 }

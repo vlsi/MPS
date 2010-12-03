@@ -26,9 +26,15 @@ import jetbrains.mps.newTypesystem.states.State;
 @Deprecated
 public class AddRemarkOperation extends AbstractOperation {
   private String myString;
+  private Runnable myAction = null;
 
   public AddRemarkOperation(String string) {
     myString = string;
+  }
+
+  public AddRemarkOperation(String string, Runnable runnable) {
+    myString = string;
+    myAction = runnable;
   }
 
   @Override
@@ -37,12 +43,18 @@ public class AddRemarkOperation extends AbstractOperation {
   }
 
   @Override
-  public void rollBack(State state) {
+  public void undo(State state) {
   }
 
   @Override
-  public void play(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
+  public void redo(State state) {
+  }
+
+  public void execute(State state) {
+    if (myAction != null) {
+      myAction.run();
+      myAction = null;
+    }
   }
 
 }

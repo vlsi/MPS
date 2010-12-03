@@ -85,7 +85,7 @@ public class Equations {
       return;
     }
     SNode source = myState.getNodeMaps().getNode(elem);
-    myState.executeOperation(new EquationSubstitutedOperation(elem, myRepresentatives.get(elem), current, source), false);
+    myState.executeOperation(new EquationSubstitutedOperation(elem, myRepresentatives.get(elem), current, source));
   }
 
   public void remove(SNode elem) {
@@ -124,15 +124,8 @@ public class Equations {
       parent = var;
       child = type;
     }
-    addAndTrack(child, parent, info);
-    myState.getInequalities().substitute(child, parent);
-    myState.getNonConcrete().substitute(child, parent);
-    myState.popOperation();
-  }
-
-  private void addAndTrack(SNode child, SNode parent, EquationInfo info) {
     SNode source = myState.getNodeMaps().getNode(child);
-    myState.executeOperation(new EquationAddedOperation(child, parent, source, info), true);
+    myState.executeOperation(new EquationAddedOperation(child, parent, source, info));
   }
 
   public void add(SNode child, SNode parent) {

@@ -37,15 +37,15 @@ public class EquationSubstitutedOperation extends AbstractOperation {
   }
 
   @Override
-  public void rollBack(State state) {
-    myAdded.rollBack(state);
-    myRemoved.rollBack(state);
+  public void undo(State state) {
+    myAdded.undo(state);
+    myRemoved.undo(state);
   }
 
   @Override
-  public void play(State state) {
-    myRemoved.play(state);
-    myAdded.play(state);
+  public void redo(State state) {
+    myRemoved.redo(state);
+    myAdded.redo(state);
   }
 
   @Override

@@ -39,13 +39,20 @@ public class EquationAddedOperation extends AbstractEquationOperation {
   }
 
   @Override
-  public void rollBack(State state) {
+  public void undo(State state) {
     state.getEquations().remove(myChild);
   }
 
   @Override
-  public void play(State state) {
+  public void redo(State state) {
     state.getEquations().add(myChild, myParent);
+  }
+
+  @Override
+  public void execute(State state) {
+    super.execute(state);
+    state.getInequalities().substitute(myChild, myParent);
+    state.getNonConcrete().substitute(myChild, myParent);
   }
 
   public SNode getChild() {

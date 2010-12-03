@@ -52,9 +52,14 @@ public abstract class AbstractOperation {
     myConsequences.remove(op);
   }
 
-  public abstract void rollBack(State state);
+  public abstract void undo(State state);
 
-  public abstract void play(State state);
+  public abstract void redo(State state);
+
+  // default implementation
+  public void execute(State state) {
+    redo(state);
+  }
 
   public String getPresentation() {
     return "";
@@ -83,7 +88,7 @@ public abstract class AbstractOperation {
   }
 
   public void playRecursively(State state) {
-    play(state);
+    redo(state);
     if (myConsequences != null) {
       for (AbstractOperation child : myConsequences) {
         child.playRecursively(state);

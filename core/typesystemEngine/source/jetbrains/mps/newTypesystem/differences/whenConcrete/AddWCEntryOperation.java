@@ -32,23 +32,21 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class AddWCEntryOperation extends AbstractOperation {
-  private SNode myNode;
+  private SNode myType;
   private WhenConcreteEntry myEntry;
   private boolean myIsShallow;
 
-  // todo: looks more like a remark (no play, no rollback..)
-  // todo: make non-empty play and rollback
-  public AddWCEntryOperation(WhenConcreteEntry entry, SNode node, SNode source, boolean isShallow) {
-    myNode = node;
+  public AddWCEntryOperation(WhenConcreteEntry entry, SNode type, SNode source, boolean isShallow) {
+    myType = type;
     mySource = source;
     myEntry = entry;
     myIsShallow = isShallow;
-    myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());
+    myEquationInfo = new EquationInfo(type, " ", entry.getNodeModel(), entry.getNodeId());
   }
 
   @Override
   public String getPresentation() {
-    return "When Concrete added " + myNode;
+    return "When Concrete added " + myType;
   }
 
   @Override
@@ -57,12 +55,18 @@ public class AddWCEntryOperation extends AbstractOperation {
   }
 
   @Override
-  public void rollBack(State state) {
-
+  public void undo(State state) {
+    state.getNonConcrete().removeWhenConcreteNoVars(myEntry, myIsShallow);
   }
 
   @Override
-  public void play(State state) {
-    //To change body of implemented methods use File | Settings | File Templates.
+  public void redo(State state) {
+    state.getNonConcrete().addWhenConcreteNoVars(myEntry, myIsShallow);
+  }
+
+  @Override
+  public void execute(State state) {
+    super.execute(state);
+    state.getNonConcrete().collectVarsExecuteIfNecessary(myEntry, myType, myIsShallow);
   }
 }

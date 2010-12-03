@@ -41,12 +41,12 @@ public class TypeAssignedOperation extends AbstractOperation {
 
   @Override
   //todo: it does not seem to update "type to node" map
-  public void rollBack(State state) {
+  public void undo(State state) {
     state.getNodeToTypeMap().remove(myNode);
   }
 
   @Override
-  public void play(State state) {
+  public void redo(State state) {
     state.getNodeToTypeMap().put(myNode, myType);
   }
 

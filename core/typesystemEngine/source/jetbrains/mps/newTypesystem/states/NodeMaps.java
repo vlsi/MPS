@@ -47,12 +47,12 @@ public class NodeMaps {
 
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
     myTypesToNodes.put(type, node);
-    myState.executeOperation(new TypeAssignedOperation(node, type, info), false);
+    myState.executeOperation(new TypeAssignedOperation(node, type, info));
   }
 
   public void updateNodeToType(SNode node, SNode type, EquationInfo info) {
     SNode oldType = myNodesToTypes.get(node);
-    myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType), false);
+    myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType));
   }
 
   public SNode typeOf(SNode node, EquationInfo info) {
@@ -65,7 +65,7 @@ public class NodeMaps {
   }
 
   public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {
-    myState.executeOperation(new AddErrorOperation(node, error, info), false);
+    myState.executeOperation(new AddErrorOperation(node, error, info));
   }
 
   public List<IErrorReporter> getNodeErrors(SNode node) {
