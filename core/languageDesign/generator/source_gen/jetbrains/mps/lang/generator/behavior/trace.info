@@ -160,7 +160,7 @@
       <varInfo nodeId="1213877290803" varName="prevNodeMacro" />
     </scopeInfo>
     <scopeInfo nodeId="1213877290855" fileName="NodeMacro_Behavior.java" startLine="54" startPosition="67" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="1213877290848" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="24" endLine="61" endPosition="5">
+    <scopeInfo nodeId="1213877290848" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeMacro_Behavior.java" startLine="53" startPosition="24" endLine="61" endPosition="5">
       <varInfo nodeId="1213877290853" varName="currentAttribute" />
     </scopeInfo>
     <scopeInfo nodeId="1213877290894" fileName="NodeMacro_Behavior.java" startLine="68" startPosition="90" endLine="77" endPosition="168">
@@ -168,7 +168,7 @@
       <varInfo nodeId="1213877290896" varName="ancestor" />
     </scopeInfo>
     <scopeInfo nodeId="8807286715961529134" fileName="NodeMacro_Behavior.java" startLine="34" startPosition="91" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="8807286715961529133" fileName="NodeMacro_Behavior.java" startLine="33" startPosition="28" endLine="45" endPosition="5">
+    <scopeInfo nodeId="8807286715961529133" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeMacro_Behavior.java" startLine="33" startPosition="28" endLine="45" endPosition="5">
       <varInfo nodeId="8807286715961529137" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="8807286715961509433" fileName="NodeMacro_Behavior.java" startLine="31" startPosition="78" endLine="46" endPosition="30">
@@ -218,7 +218,7 @@
       <varInfo nodeId="3166264919334429592" varName="mappingRule" />
     </scopeInfo>
     <scopeInfo nodeId="8360039740498071274" fileName="MappingConfiguration_Behavior.java" startLine="51" startPosition="70" endLine="56" endPosition="7" />
-    <scopeInfo nodeId="8360039740498071273" fileName="MappingConfiguration_Behavior.java" startLine="50" startPosition="48" endLine="57" endPosition="5">
+    <scopeInfo nodeId="8360039740498071273" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="MappingConfiguration_Behavior.java" startLine="50" startPosition="48" endLine="57" endPosition="5">
       <varInfo nodeId="8360039740498071318" varName="mapConfChild" />
     </scopeInfo>
     <scopeInfo nodeId="8360039740498071267" fileName="MappingConfiguration_Behavior.java" startLine="49" startPosition="98" endLine="58" endPosition="18">
@@ -411,7 +411,7 @@
     <nodeInfo nodeId="8360039740498070965" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TemplateSwitch_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5" />
     <scopeInfo nodeId="8360039740498070954" fileName="TemplateSwitch_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
     <scopeInfo nodeId="8360039740498070966" fileName="TemplateSwitch_Behavior.java" startLine="23" startPosition="98" endLine="24" endPosition="115" />
-    <scopeInfo nodeId="8360039740498070965" fileName="TemplateSwitch_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
+    <scopeInfo nodeId="8360039740498070965" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="TemplateSwitch_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
       <varInfo nodeId="8360039740498070969" varName="mappingRule" />
     </scopeInfo>
     <scopeInfo nodeId="7656801780400891054" fileName="TemplateSwitch_Behavior.java" startLine="29" startPosition="100" endLine="32" endPosition="111">
