@@ -33,7 +33,7 @@ public class ShowTypeSystemTraceForNode_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift W";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
