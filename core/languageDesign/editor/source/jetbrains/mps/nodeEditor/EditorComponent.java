@@ -1279,18 +1279,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && shiftDown(keyEvent)) {
       return CellActionType.SELECT_RIGHT;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && ctrlDown(keyEvent)) {
-      return CellActionType.SELECT_UP;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_W && ctrlDown(keyEvent)) {
-      return CellActionType.SELECT_UP;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && ctrlDown(keyEvent)) {
-      return CellActionType.SELECT_DOWN;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_W && ctrlShiftDown(keyEvent)) {
-      return CellActionType.SELECT_DOWN;
-    }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
       return CellActionType.SELECT_HOME;
     }
@@ -2240,8 +2228,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         case DOWN:
         case SELECT_LEFT:
         case SELECT_RIGHT:
-        case SELECT_UP:
-        case SELECT_DOWN:
         case SELECT_HOME:
         case SELECT_END:
         case PAGE_UP:

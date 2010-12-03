@@ -11,6 +11,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     this.addAction("jetbrains.mps.ide.actions.Collapse_Action", "jetbrains.mps.ide", "ctrl SUBTRACT", "ctrl MINUS");
     this.addAction("jetbrains.mps.ide.actions.ExpandAll_Action", "jetbrains.mps.ide", "ctrl shift ADD", "ctrl shift EQUALS");
     this.addAction("jetbrains.mps.ide.actions.CollapseAll_Action", "jetbrains.mps.ide", "ctrl shift SUBTRACT", "ctrl shift MINUS");
+    this.addAction("jetbrains.mps.ide.actions.SelectUp_Action", "jetbrains.mps.ide", "ctrl UP", "ctrl W");
+    this.addAction("jetbrains.mps.ide.actions.SelectDown_Action", "jetbrains.mps.ide", "ctrl DOWN", "ctrl shift W");
   }
 
   public String getScheme() {
