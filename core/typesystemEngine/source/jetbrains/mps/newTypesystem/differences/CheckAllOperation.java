@@ -32,12 +32,12 @@ public class CheckAllOperation extends AbstractOperation {
   }
 
   @Override
-  public void undo(State state) {
+  public void doUndo(State state) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
-  public void redo(State state) {
+  public void doRedo(State state) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 }

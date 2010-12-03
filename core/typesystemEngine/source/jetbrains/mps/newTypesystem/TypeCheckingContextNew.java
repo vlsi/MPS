@@ -54,12 +54,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   public void rollBack() {
-    if (getDifferenceStack().isEmpty()) {
+    if (getOperationStack().isEmpty()) {
       return;
     }
-    AbstractOperation diff = getDifferenceStack().pop();
-    System.out.println("Rolled back (" + diff.getPresentation() + ")");
-    diff.undo(myState);
+    AbstractOperation operation = getOperationStack().pop();
+    System.out.println("Rolled back (" + operation.getPresentation() + ")");
+    operation.undo(myState);
   }
 
   public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {
@@ -191,11 +191,11 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
     return mySubTyping;
   }
 
-  public Stack<AbstractOperation> getDifferenceStack() {
+  public Stack<AbstractOperation> getOperationStack() {
     return myState.getOperationStack();
   }
 
-  public AbstractOperation getDifference() {
+  public AbstractOperation getOperation() {
     return myState.getOperation();
   }
 

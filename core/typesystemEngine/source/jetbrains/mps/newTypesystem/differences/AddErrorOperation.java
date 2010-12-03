@@ -49,12 +49,12 @@ public class AddErrorOperation extends AbstractOperation {
   }
 
   @Override
-  public void undo(State state) {
+  public void doUndo(State state) {
     state.getErrors().get(myNode).remove(myError);
   }
 
   @Override
-  public void redo(State state) {
+  public void doRedo(State state) {
     Map<SNode, List<IErrorReporter>> errorMap = state.getErrors();
     List<IErrorReporter> errors = errorMap.get(myNode);
     if (errors == null) {

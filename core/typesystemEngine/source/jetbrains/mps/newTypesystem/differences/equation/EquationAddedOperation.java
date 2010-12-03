@@ -39,12 +39,12 @@ public class EquationAddedOperation extends AbstractEquationOperation {
   }
 
   @Override
-  public void undo(State state) {
+  public void doUndo(State state) {
     state.getEquations().remove(myChild);
   }
 
   @Override
-  public void redo(State state) {
+  public void doRedo(State state) {
     state.getEquations().add(myChild, myParent);
   }
 

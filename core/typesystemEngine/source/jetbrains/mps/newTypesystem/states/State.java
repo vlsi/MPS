@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.states;
 
 
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
@@ -39,6 +40,8 @@ import java.util.Stack;
  * Time: 6:09:38 PM
  */
 public class State {
+  private static final Logger LOG = Logger.getLogger(State.class);
+
   private final TypeCheckingContextNew myTypeCheckingContext;
 
   private final Equations myEquations;
@@ -50,6 +53,7 @@ public class State {
 
   private final Stack<AbstractOperation> myOperationStack = new Stack<AbstractOperation>();
   private AbstractOperation myOperation = new CheckAllOperation();
+  private boolean myInsideStateChangeAction = false;
 
   public State(TypeCheckingContextNew tcc) {
     myTypeCheckingContext = tcc;
@@ -102,6 +106,19 @@ public class State {
 
   public Map<SNode, SNode> getNodeToTypeMap() {
     return myNodeMaps.getNodeToTypeMap();
+  }
+
+  public void executeStateChangeAction(Runnable action) {
+    try {
+      myInsideStateChangeAction = true;
+      action.run();
+    } finally {
+      myInsideStateChangeAction = false;
+    }
+  }
+
+  public void assertIsInStateChangeAction() {
+    LOG.assertLog(myInsideStateChangeAction, "state change can be executed only inside state change action");
   }
 
   public void executeOperation(AbstractOperation operation) {

@@ -55,12 +55,12 @@ public class AddWCEntryOperation extends AbstractOperation {
   }
 
   @Override
-  public void undo(State state) {
+  public void doUndo(State state) {
     state.getNonConcrete().removeWhenConcreteNoVars(myEntry, myIsShallow);
   }
 
   @Override
-  public void redo(State state) {
+  public void doRedo(State state) {
     state.getNonConcrete().addWhenConcreteNoVars(myEntry, myIsShallow);
   }
 

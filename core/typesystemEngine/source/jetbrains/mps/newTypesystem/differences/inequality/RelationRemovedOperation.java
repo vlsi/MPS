@@ -37,12 +37,12 @@ public class RelationRemovedOperation extends AbstractRelationOperation {
   }
 
   @Override
-  public void undo(State state) {
+  public void doUndo(State state) {
     getRelationMap(state).add(mySubType, mySuperType, myEquationInfo);
   }
 
   @Override
-  public void redo(State state) {
+  public void doRedo(State state) {
     getRelationMap(state).remove(mySubType, mySuperType);
   }
 

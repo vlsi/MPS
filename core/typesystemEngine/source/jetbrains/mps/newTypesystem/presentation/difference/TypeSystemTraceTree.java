@@ -58,7 +58,7 @@ public class TypeSystemTraceTree extends MPSTree {
   public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, Frame frame, SNode node) {
     myOperationContext = operationContext;
     myTypeCheckingContextNew = tcc;
-    myDifference = tcc.getDifference();
+    myDifference = tcc.getOperation();
     myFrame = frame;
 
     mySelectedNode = node;
@@ -196,7 +196,7 @@ public class TypeSystemTraceTree extends MPSTree {
 
   private void showState(MPSTreeNode node) {
     State state = myTypeCheckingContextNew.getState();
-    AbstractOperation rootDifference = myTypeCheckingContextNew.getDifference();
+    AbstractOperation rootDifference = myTypeCheckingContextNew.getOperation();
     Object difference = node.getUserObject();
     state.clear(false);
     state.executeOperationsBeforeAnchor(rootDifference, difference);

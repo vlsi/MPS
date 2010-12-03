@@ -52,9 +52,27 @@ public abstract class AbstractOperation {
     myConsequences.remove(op);
   }
 
-  public abstract void undo(State state);
+  protected abstract void doUndo(State state);
 
-  public abstract void redo(State state);
+  protected abstract void doRedo(State state);
+
+  public void undo(final State state) {
+    state.executeStateChangeAction(new Runnable() {
+      @Override
+      public void run() {
+        doUndo(state);
+      }
+    });
+  }
+
+  public void redo(final State state) {
+    state.executeStateChangeAction(new Runnable() {
+      @Override
+      public void run() {
+        doRedo(state);
+      }
+    });
+  }
 
   // default implementation
   public void execute(State state) {

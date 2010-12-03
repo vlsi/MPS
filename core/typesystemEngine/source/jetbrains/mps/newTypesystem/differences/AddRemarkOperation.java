@@ -43,11 +43,11 @@ public class AddRemarkOperation extends AbstractOperation {
   }
 
   @Override
-  public void undo(State state) {
+  public void doUndo(State state) {
   }
 
   @Override
-  public void redo(State state) {
+  public void doRedo(State state) {
   }
 
   public void execute(State state) {

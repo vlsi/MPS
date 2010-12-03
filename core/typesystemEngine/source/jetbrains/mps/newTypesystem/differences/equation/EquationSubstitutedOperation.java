@@ -37,15 +37,15 @@ public class EquationSubstitutedOperation extends AbstractOperation {
   }
 
   @Override
-  public void undo(State state) {
-    myAdded.undo(state);
-    myRemoved.undo(state);
+  public void doUndo(State state) {
+    myAdded.doUndo(state);
+    myRemoved.doUndo(state);
   }
 
   @Override
-  public void redo(State state) {
-    myRemoved.redo(state);
-    myAdded.redo(state);
+  public void doRedo(State state) {
+    myRemoved.doRedo(state);
+    myAdded.doRedo(state);
   }
 
   @Override
