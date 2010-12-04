@@ -56,7 +56,12 @@ public class TraceInfoManager implements ApplicationComponent {
   public List<SNode> getVarsInScope(SNode scopeNode) {
     for (String concept : myScopeConceptsAndGetters.keySet()) {
       if (SNodeOperations.isInstanceOf(scopeNode, concept)) {
-        return myScopeConceptsAndGetters.get(concept).value(scopeNode);
+        try {
+          return myScopeConceptsAndGetters.get(concept).value(scopeNode);
+        } catch (Throwable t) {
+          LOG.error("Error while executing getVarsInScope for " + scopeNode, t);
+          break;
+        }
       }
     }
     return new ArrayList<SNode>(0);
@@ -70,7 +75,12 @@ public class TraceInfoManager implements ApplicationComponent {
         if (mapper == null) {
           return null;
         }
-        return mapper.value(unitNode);
+        try {
+          return mapper.value(unitNode);
+        } catch (Throwable t) {
+          LOG.error("Error while executing getUnitName for " + unitNode, t);
+          break;
+        }
       }
     }
     return null;
@@ -87,9 +97,8 @@ public class TraceInfoManager implements ApplicationComponent {
         try {
           return mapper.value(traceableNode);
         } catch (Throwable t) {
-          // todo this is temporary fix 
-          // see http://buildserver/viewLog.html?buildId=851611&tab=buildLog&buildTypeId=bt157&all=true 
-          return null;
+          LOG.error("Error while executing getPropertyString for " + traceableNode, t);
+          break;
         }
       }
     }
