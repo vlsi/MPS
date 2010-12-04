@@ -28,7 +28,7 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionAdapter;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointIconRenderer;
-import jetbrains.mps.debug.api.integration.ui.breakpoint.MPSBreakpointPainter;
+import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointPainter;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.logging.Logger;
@@ -204,7 +204,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
     if (breakpointsForRoot != null) {
       for (ILocationBreakpoint breakpoint : breakpointsForRoot) {
-        editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
+        editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
         editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
       }
       editorComponent.repaint(); //todo should it be executed in ED thread?
@@ -282,7 +282,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           if (editorComponent != null) {
             SNode editedNode = editorComponent.getEditedNode();
             if (root == editedNode) {
-              editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
+              editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
               editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
               editorComponent.repaint(); //todo should it be executed in ED thread?
             }

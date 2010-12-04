@@ -32,7 +32,9 @@ import java.util.*;
 public class RelationMapPair {
   private final State myState;
   private final jetbrains.mps.newTypesystem.state.RelationMapKind myKind;
+  @StateObject
   private final Map<SNode, Map<SNode, EquationInfo>> mySubToSuper = new HashMap<SNode, Map<SNode, EquationInfo>>();
+  @StateObject
   private final Map<SNode, Map<SNode, EquationInfo>> mySuperToSub = new HashMap<SNode, Map<SNode, EquationInfo>>();
 
   public RelationMapPair(State state, jetbrains.mps.newTypesystem.state.RelationMapKind kind) {
@@ -64,11 +66,13 @@ public class RelationMapPair {
     return result;
   }
 
+  @StateMethod
   public void add(SNode subType, SNode superType, EquationInfo info) {
     getMap(mySubToSuper, subType).put(superType, info);
     getMap(mySuperToSub, superType).put(subType, info);
   }
 
+  @StateMethod
   public void remove(SNode subType, SNode superType) {
     removeAndDelete(mySubToSuper, subType, superType);
     removeAndDelete(mySuperToSub, superType, subType);
@@ -125,7 +129,6 @@ public class RelationMapPair {
 
   private void removeAndTrack(SNode subType, SNode superType) {
     EquationInfo info = mySubToSuper.get(subType).get(superType);
-    remove(subType, superType);
     myState.executeOperation(new RelationRemovedOperation(subType, superType, info, myKind));
   }
 

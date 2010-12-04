@@ -21,14 +21,14 @@ import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
 
-public class MPSBreakpointPainter extends EditorCellPainter<IBreakpoint> {
+public class BreakpointPainter extends EditorCellPainter<IBreakpoint> {
   private static final Color CELL_BACKGROUND_COLOR = new Color(255, 200, 200, 50);
   private static final Color STRIPE_BACKGROUND_COLOR = new Color(255, 200, 200);
   private static final Color FRAME_COLOR = new Color(255, 100, 100);
 
   private final IBreakpoint myBreakpoint;
 
-  public MPSBreakpointPainter(IBreakpoint mpsBreakpoint) {
+  public BreakpointPainter(IBreakpoint mpsBreakpoint) {
     myBreakpoint = mpsBreakpoint;
   }
 

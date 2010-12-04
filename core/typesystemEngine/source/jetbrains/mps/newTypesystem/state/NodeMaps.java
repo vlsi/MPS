@@ -36,8 +36,11 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeMaps {
+  @StateObject
   private final Map<SNode, SNode> myNodesToTypes = new HashMap<SNode, SNode>();
+  @StateObject
   private final Map<SNode, SNode> myTypesToNodes = new HashMap<SNode, SNode>();
+  @StateObject
   private final Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
   private final State myState;
 
@@ -53,6 +56,37 @@ public class NodeMaps {
   public void updateNodeToType(SNode node, SNode type, EquationInfo info) {
     SNode oldType = myNodesToTypes.get(node);
     myState.executeOperation(new TypeExpandedOperation(node, type, info, oldType));
+  }
+
+  @StateMethod
+  public void assignNodeType(SNode node, SNode type) {
+    myTypesToNodes.put(type, node);
+    myNodesToTypes.put(node, type);
+  }
+
+  @StateMethod
+  public void removeNodeType(SNode node) {
+    SNode type = myNodesToTypes.remove(node);
+    myTypesToNodes.remove(type);
+  }
+
+  @StateMethod
+  public void addError(SNode node, IErrorReporter errorReporter) {
+    List<IErrorReporter> errors = myNodesToErrors.get(node);
+    if (errors == null) {
+      errors = new LinkedList<IErrorReporter>();
+      myNodesToErrors.put(node, errors);
+    }
+    errors.add(errorReporter);
+  }
+
+  @StateMethod
+  public void removeError(SNode node, IErrorReporter errorReporter) {
+    List<IErrorReporter> errors = myNodesToErrors.get(node);
+    errors.remove(errorReporter);
+    if (errors.isEmpty()) {
+      myNodesToErrors.remove(node);
+    }
   }
 
   public SNode typeOf(SNode node, EquationInfo info) {
@@ -126,14 +160,6 @@ public class NodeMaps {
 
   public SNode getNode(SNode type) {
     return myTypesToNodes.get(type);
-  }
-
-  /*package*/ Map<SNode, List<IErrorReporter>> getErrors() {
-    return myNodesToErrors;
-  }
-
-  /*package*/ Map<SNode, SNode> getNodeToTypeMap() {
-    return myNodesToTypes;
   }
 
   public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {

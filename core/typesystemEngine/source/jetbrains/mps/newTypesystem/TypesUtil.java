@@ -49,13 +49,8 @@ public class TypesUtil {
     return node != null && RuntimeTypeVariable.concept.equals(node.getConceptFqName());
   }
 
-  public static boolean isType(SNode node) {
+  public static boolean isShallowConcrete(SNode node) {
     return !isVariable(node);
-  }
-
-  public static int getDegree(SNode node) {
-    if (isVariable(node)) return 0;
-    return 1;
   }
 
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {

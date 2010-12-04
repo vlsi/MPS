@@ -37,12 +37,25 @@ import java.util.*;
  * Time: 4:33:42 PM
  */
 public class Equations {
+  @StateObject
   private final Map<SNode, SNode> myRepresentatives = new HashMap<SNode, SNode>();
+
+  //seems to be useless to use as a part of state but in such case it is a possible source of side effects
   private final Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
   private final State myState;
 
   public Equations(State state) {
     myState = state;
+  }
+
+  @StateMethod
+  public void remove(SNode elem) {
+    myRepresentatives.remove(elem);
+  }
+
+  @StateMethod
+  public void add(SNode child, SNode parent) {
+    myRepresentatives.put(child, parent);
   }
 
   private SNode getNameRepresentative(SNode node) {
@@ -56,7 +69,7 @@ public class Equations {
   }
 
   public SNode getRepresentative(final SNode node) {
-    if (node == null || TypesUtil.isType(node)) {
+    if (node == null || TypesUtil.isShallowConcrete(node)) {
       return node;
     }
     SNode nameRepresentative = getNameRepresentative(node);
@@ -88,10 +101,6 @@ public class Equations {
     myState.executeOperation(new EquationSubstitutedOperation(elem, myRepresentatives.get(elem), current, source));
   }
 
-  public void remove(SNode elem) {
-    myRepresentatives.remove(elem);
-  }
-
   public void addEquation(SNode left, SNode right, EquationInfo info) {
     SNode lRepresentative = getRepresentative(left);
     SNode rRepresentative = getRepresentative(right);
@@ -120,16 +129,8 @@ public class Equations {
   private void processEquation(SNode var, SNode type, EquationInfo info) {
     SNode parent = type;
     SNode child = var;
-    if (TypesUtil.getDegree(var) > TypesUtil.getDegree(type)) {
-      parent = var;
-      child = type;
-    }
     SNode source = myState.getNodeMaps().getNode(child);
     myState.executeOperation(new EquationAddedOperation(child, parent, source, info));
-  }
-
-  public void add(SNode child, SNode parent) {
-    myRepresentatives.put(child, parent);
   }
 
   public Set<SNode> expandSet(Set<SNode> set) {
