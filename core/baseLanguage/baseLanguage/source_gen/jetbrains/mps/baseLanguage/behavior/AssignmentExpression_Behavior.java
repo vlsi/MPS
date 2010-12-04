@@ -35,11 +35,15 @@ public class AssignmentExpression_Behavior {
   }
 
   public static SNode call_convertToLocalVariableDeclaration_1221573391693(SNode thisNode) {
-    assert SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     SNode exprStatement = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     SNode varType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "rValue", true)), "jetbrains.mps.baseLanguage.structure.Type");
     SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
-    SPropertyOperations.set(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "name", SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false), "name"));
+    SNode ref = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+    String name = ((SLinkOperations.getTarget(ref, "variableDeclaration", false) == null) ?
+      SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", "localVariableDeclaration")).getResolveInfo() :
+      SPropertyOperations.getString(SLinkOperations.getTarget(ref, "variableDeclaration", false), "name")
+    );
+    SPropertyOperations.set(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "name", name);
     SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "type", SNodeOperations.copyNode(varType), true);
     SLinkOperations.setTarget(SLinkOperations.getTarget(varDeclStmnt, "localVariableDeclaration", true), "initializer", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "rValue", true)), true);
     SNodeOperations.replaceWithAnother(exprStatement, varDeclStmnt);
