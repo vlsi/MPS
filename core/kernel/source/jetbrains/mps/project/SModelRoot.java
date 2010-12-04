@@ -25,8 +25,6 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
 
 public class SModelRoot {
-  private static final Logger LOG = Logger.getLogger(SModelRoot.class);
-
   private AbstractModule myModule;
   private ModelRoot myModelRoot;
   private IModelRootManager myManager;
@@ -43,17 +41,6 @@ public class SModelRoot {
       String className = myModelRoot.getManager().getClassName();
       return BaseStubModelRootManager.create(moduleId, className);
     }
-
-    /*if (myModelRoot.getHandlerClass() != null) {
-      String fqName = myModelRoot.getHandlerClass();
-      try {
-        Class cls = Class.forName(fqName);
-        return (IModelRootManager) cls.newInstance();
-      } catch (Exception e) {
-        LOG.error(e);
-        return IModelRootManager.NULL_MANAGER;
-      }
-    }*/
 
     return new DefaultModelRootManager();
   }
