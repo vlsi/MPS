@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.build.packaging.mps.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.mps.generator.template.util.CheckUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />

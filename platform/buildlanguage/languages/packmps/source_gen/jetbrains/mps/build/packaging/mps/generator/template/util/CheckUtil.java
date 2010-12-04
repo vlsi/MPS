@@ -83,6 +83,10 @@ public class CheckUtil {
       // if we are here, this means this solution is a part of MPS core 
       for (Language language : ListSequence.fromList(solution.getDependenciesManager().getAllUsedLanguages())) {
         for (IModule module : ListSequence.fromList(((LanguageDepsManager) language.getDependenciesManager()).getRuntimeDependOnModules())) {
+          if (module.getDescriptorFile() == null) {
+            // for filtering out modules like MPS.Classpath 
+            continue;
+          }
           // check that this module is in classpath on build startup 
           if (!(Sequence.fromIterable(coreModules).contains(module))) {
             String msg = "Module " + module.getModuleFqName() + " should be in core because it's a runtime of language " + language.getModuleFqName() + ", which is used by core solution " + solution.getModuleFqName();

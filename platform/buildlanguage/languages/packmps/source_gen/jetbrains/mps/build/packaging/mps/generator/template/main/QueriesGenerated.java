@@ -47,9 +47,9 @@ public class QueriesGenerated {
     if (!(CheckUtil.isInMpsAutobuild(_context.getOriginalInputModel()))) {
       return;
     }
-    System.out.println("check!");
     CheckUtil.checkCoreRuntimeDeps();
-    CheckUtil.checkIncludedLanguage();
+    // do not check included langs: it gives us a list of test languages, which should not be included in build 
+    // <node> 
     CheckUtil.checkSamples();
   }
 }
