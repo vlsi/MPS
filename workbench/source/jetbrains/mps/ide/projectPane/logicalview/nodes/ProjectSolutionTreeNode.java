@@ -33,10 +33,6 @@ class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logicalview.
 
   private boolean myInitialized;
 
-  public ProjectSolutionTreeNode(Solution solution, MPSProject project) {
-    this(solution, project, false);
-  }
-
   public ProjectSolutionTreeNode(Solution solution, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(solution, project));
     myShortNameOnly = shortNameOnly;
@@ -51,11 +47,9 @@ class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logicalview.
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     setIcon(Icons.SOLUTION_ICON);
-
     IFile descriptorFile = mySolution.getDescriptorFile();
-//    assert descriptorFile != null;
-
-    setNodeIdentifier(descriptorFile == null ? mySolution.getModuleFqName() : descriptorFile.getAbsolutePath());
+    String id = descriptorFile == null ? mySolution.getModuleFqName() : descriptorFile.getAbsolutePath();
+    setNodeIdentifier(id);
   }
 
   public IModule getModule() {
@@ -87,12 +81,10 @@ class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logicalview.
     return "solution";
   }
 
-  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
-  @Override
   public void init() {
     populate();
     myInitialized = true;

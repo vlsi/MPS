@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
-import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;

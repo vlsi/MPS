@@ -45,12 +45,10 @@ public class ProjectTreeNode extends MPSTreeNode {
     Project ideaProject = myProject.getProject();
     setText(ideaProject.getName());
     setFontStyle(Font.BOLD);
-    setErrorState(myProject.getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
     if (ideaProject.getBaseDir() != null) {
       //noinspection ConstantConditions
       setAdditionalText(ideaProject.getBaseDir().getPresentableUrl());
     }
-    setTooltipText(myProject.getErrors());
   }
 
   public ActionGroup getQuickCreateGroup(boolean plain) {
@@ -61,7 +59,6 @@ public class ProjectTreeNode extends MPSTreeNode {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PROJECT_ACTIONS);
   }
 
-  @Override
   public int getToggleClickCount() {
     return -1;
   }

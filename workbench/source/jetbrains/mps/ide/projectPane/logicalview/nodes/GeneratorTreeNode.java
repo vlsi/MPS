@@ -62,12 +62,10 @@ public class GeneratorTreeNode extends jetbrains.mps.ide.projectPane.logicalview
   }
 
 
-  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
-  @Override
   public void init() {
     populate();
     myInitialized = true;

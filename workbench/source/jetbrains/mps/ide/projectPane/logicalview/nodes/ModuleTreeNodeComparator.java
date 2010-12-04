@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -27,7 +26,7 @@ import java.util.Comparator;
 public class ModuleTreeNodeComparator implements Comparator<MPSTreeNode> {
   private IModule getModule(MPSTreeNode treeNode) {
     if (treeNode instanceof ProjectModuleTreeNode) {
-      return ((jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode) treeNode).getModule();
+      return ((ProjectModuleTreeNode) treeNode).getModule();
     }
     if (treeNode instanceof ModuleTreeNode) {
       return ((ModuleTreeNode) treeNode).getModule();
@@ -40,7 +39,7 @@ public class ModuleTreeNodeComparator implements Comparator<MPSTreeNode> {
       return ((ProjectModuleTreeNode) treeNode).getModulePresentation();
     }
     if (treeNode instanceof ModuleTreeNode) {
-      return ((ModuleTreeNode) treeNode).getText();
+      return treeNode.getText();
     }
     return null;
   }

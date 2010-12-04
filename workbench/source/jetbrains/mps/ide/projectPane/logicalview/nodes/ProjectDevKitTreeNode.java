@@ -60,12 +60,10 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     return myDevKit;
   }
 
-  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
-  @Override
   public void init() {
     populate();
     myInitialized = true;

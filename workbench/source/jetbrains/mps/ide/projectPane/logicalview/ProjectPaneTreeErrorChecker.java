@@ -18,6 +18,7 @@ package jetbrains.mps.ide.projectPane.logicalview;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -91,6 +92,12 @@ public class ProjectPaneTreeErrorChecker {
         setTooltipText(result);
       }
     }
+  }
+
+
+  private void updateErrors(ProjectTreeNode node) {
+    setErrorState(myProject.getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
+    setTooltipText(myProject.getErrors());
   }
 
 }

@@ -16,9 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.ide.projectPane.*;
-import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelReferenceTreeNode;
@@ -32,7 +30,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -41,10 +38,6 @@ class ProjectLanguageTreeNode extends jetbrains.mps.ide.projectPane.logicalview.
   private MPSProject myProject;
   private boolean myShortNameOnly;
   private boolean myInitialized;
-
-  public ProjectLanguageTreeNode(Language language, MPSProject project) {
-    this(language, project, false);
-  }
 
   public ProjectLanguageTreeNode(@NotNull Language language, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(language, project));
@@ -111,7 +104,7 @@ class ProjectLanguageTreeNode extends jetbrains.mps.ide.projectPane.logicalview.
 
     // language accessory models
     if (myLanguage.getAccessoryModels().size() > 0) {
-      TextTreeNode accessories = new AccessoriesModelTreeNode();
+      TextTreeNode accessories = new AccessoriesModelTreeNode(this);
 
       List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
       for (SModelDescriptor model : sortedModels) {
@@ -139,7 +132,7 @@ class ProjectLanguageTreeNode extends jetbrains.mps.ide.projectPane.logicalview.
     add(languageRuntime);
 
     if (myLanguage.getUtilModels().size() > 0) {
-      TextTreeNode utilModels = new SModelGroupTreeNode(operationContext);
+      TextTreeNode utilModels = new SModelGroupTreeNode(this, operationContext);
       SModelsSubtree.create(utilModels, operationContext, (List) myLanguage.getUtilModels());
       this.add(utilModels);
     }
@@ -151,71 +144,9 @@ class ProjectLanguageTreeNode extends jetbrains.mps.ide.projectPane.logicalview.
     add(allModels);
   }
 
-  public class RuntimeModulesTreeNode extends TextTreeNode {
-    public RuntimeModulesTreeNode() {
-      super("runtime");
-    }
-
-    public ActionGroup getActionGroup() {
-      return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS);
-    }
-  }
-
   public class AllModelsTreeNode extends TextTreeNode {
     public AllModelsTreeNode() {
       super("all models");
-    }
-  }
-
-  public class AccessoriesModelTreeNode extends TextTreeNode {
-    public AccessoriesModelTreeNode() {
-      super("accessories");
-      setIcon(Icons.LIB_ICON);
-      updatePresentation();
-    }
-
-    public List<String> validate() {
-      List<String> errors = new ArrayList<String>();
-      IScope scope = getLanguage().getScope();
-      for (SModelReference accessory : getLanguage().getModuleDescriptor().getAccessoryModels()) {
-        if (scope.getModelDescriptor(accessory) == null) {
-          errors.add("Can't find accessory " + accessory.getLongName());
-        }
-      }
-      return errors;
-    }
-
-    protected void doUpdatePresentation() {
-      super.doUpdatePresentation();
-      setErrorState(validate().isEmpty() ? ErrorState.NONE : ErrorState.ERROR);
-    }
-
-    public ActionGroup getActionGroup() {
-      return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_ACCESSORIES_ACTIONS);
-    }
-  }
-
-  public class SModelGroupTreeNode extends NamespaceTextNode implements StereotypeProvider {
-    public SModelGroupTreeNode(IOperationContext context) {
-      super("util models", context);
-    }
-
-    public String getNamespace() {
-      if (getParent() == null || !(getParent() instanceof ProjectLanguageTreeNode)) return "";
-      ProjectLanguageTreeNode parent = (ProjectLanguageTreeNode) getParent();
-      return parent.getModule().getModuleFqName();
-    }
-
-    public boolean isFinalName() {
-      return true;
-    }
-
-    public String getStereotype() {
-      return SModelStereotype.NONE;
-    }
-
-    public boolean isStrict() {
-      return false;
     }
   }
 }
