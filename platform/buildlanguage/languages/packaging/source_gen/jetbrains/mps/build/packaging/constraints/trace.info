@@ -67,14 +67,14 @@
     <scopeInfo nodeId="1213107435809" fileName="Delete_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="96" />
   </root>
   <root nodeId="1213107436317">
-    <nodeInfo nodeId="1213107436320" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Configuration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
+    <nodeInfo nodeId="1213107436320" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Configuration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="116" />
     <nodeInfo nodeId="1230221290628" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Configuration_fullName_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="160" />
-    <scopeInfo nodeId="1213107436319" fileName="Configuration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
+    <scopeInfo nodeId="1213107436319" fileName="Configuration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="116" />
     <scopeInfo nodeId="1230221270620" fileName="Configuration_fullName_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="160" />
   </root>
   <root nodeId="1220976305534">
-    <nodeInfo nodeId="1220980314510" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MacroReference_path_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="212" />
-    <scopeInfo nodeId="1220980308782" fileName="MacroReference_path_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="212" />
+    <nodeInfo nodeId="1220980314510" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MacroReference_path_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="209" />
+    <scopeInfo nodeId="1220980308782" fileName="MacroReference_path_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="209" />
   </root>
   <root nodeId="1224178310365">
     <nodeInfo nodeId="1230212831783" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Antcall_project_ReferentConstraint.java" startLine="25" startPosition="45" endLine="26" endPosition="81" />
@@ -88,8 +88,8 @@
     <scopeInfo nodeId="1224178316889" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="32" endPosition="128" />
   </root>
   <root nodeId="1226494817331">
-    <nodeInfo nodeId="1226494824130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseDirPath_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
-    <scopeInfo nodeId="1226494820841" fileName="BaseDirPath_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
+    <nodeInfo nodeId="1226494824130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseDirPath_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="116" />
+    <scopeInfo nodeId="1226494820841" fileName="BaseDirPath_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="116" />
   </root>
   <root nodeId="1239623935212">
     <nodeInfo nodeId="1239623941098" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractProjectComponent_name_PropertyConstraint.java" startLine="26" startPosition="67" endLine="27" endPosition="16" />

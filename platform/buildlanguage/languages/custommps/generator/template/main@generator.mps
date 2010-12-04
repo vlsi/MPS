@@ -23,7 +23,7 @@
   <import index="jt7v" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="60oz" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <import index="tpsk" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
-  <import index="tps4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
+  <import index="tps4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="8" />
   <import index="zh5n" modelUID="f:java_stub#jetbrains.mps.samples(jetbrains.mps.samples@java_stub)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -341,7 +341,7 @@
     </node>
   </root>
   <root id="1233926023574">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.MPSLayout" typeId="tps4.1202916958754" id="1233926062533">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.Layout" typeId="tps4.1202916958754" id="1233926062533">
       <property name="name" nameId="tpck.1169194664001" value="some" />
       <node role="component" roleId="tps4.1203599325709" type="tps4.File" typeId="tps4.1203598322527" id="1233926079045">
         <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="1233926079046">
@@ -442,7 +442,7 @@
     </node>
   </root>
   <root id="1233931547920">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.MPSLayout" typeId="tps4.1202916958754" id="1233931547926">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.Layout" typeId="tps4.1202916958754" id="1233931547926">
       <property name="name" nameId="tpck.1169194664001" value="some" />
       <node role="configuration" roleId="tps4.1204115898932" type="tps4.Configuration" typeId="tps4.1204115658627" id="1233931547927">
         <property name="name" nameId="tpck.1169194664001" value="default" />
@@ -1215,7 +1215,7 @@
     </node>
   </root>
   <root id="1236881017235">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.MPSLayout" typeId="tps4.1202916958754" id="1236881042717">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.Layout" typeId="tps4.1202916958754" id="1236881042717">
       <node role="component" roleId="tps4.1203599325709" type="tps4.Antcall" typeId="tps4.1210777529562" id="6128676491055272265">
         <property name="excludes" nameId="tps4.1204107522064" value="" />
         <link role="project" roleId="tps4.1210777812278" targetNodeId="8716889635481488580" resolveInfo="help-build" />
@@ -1250,7 +1250,7 @@
     </node>
   </root>
   <root id="1240396556348">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.MPSLayout" typeId="tps4.1202916958754" id="1240396593402">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.Layout" typeId="tps4.1202916958754" id="1240396593402">
       <node role="configuration" roleId="tps4.1204115898932" type="tps4.Configuration" typeId="tps4.1204115658627" id="1240396593403">
         <property name="name" nameId="tpck.1169194664001" value="default" />
       </node>
@@ -1276,7 +1276,7 @@
     </node>
   </root>
   <root id="2521628527372173250">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.MPSLayout" typeId="tps4.1202916958754" id="2521628527372173251">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.Layout" typeId="tps4.1202916958754" id="2521628527372173251">
       <property name="name" nameId="tpck.1169194664001" value="MPSBuildStructure" />
       <node role="component" roleId="tps4.1203599325709" type="j1at.MPSDistribution" typeId="j1at.2235195415637073414" id="2235195415637077170">
         <property name="excludes" nameId="tps4.1204107522064" value="" />
@@ -2480,7 +2480,7 @@
     </node>
   </root>
   <root id="2235195415637079240">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.MPSLayout" typeId="tps4.1202916958754" id="2235195415637079242">
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tps4.Layout" typeId="tps4.1202916958754" id="2235195415637079242">
       <property name="name" nameId="tpck.1169194664001" value="MPSDist" />
       <node role="component" roleId="tps4.1203599325709" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637079253">
         <property name="excludes" nameId="tps4.1204107522064" value="" />

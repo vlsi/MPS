@@ -48,7 +48,7 @@ public class DefaultCustomMpsLanguageConfigurationFromConfiguration extends Base
     final Wrappers._T<String> configurationId = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        layout.value = SNodeOperations.getAncestor(parameter, "jetbrains.mps.build.packaging.structure.MPSLayout", false, true);
+        layout.value = SNodeOperations.getAncestor(parameter, "jetbrains.mps.build.packaging.structure.Layout", false, true);
         isApplicable.value = (layout.value != null) && (ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty());
         configurationId.value = parameter.getId();
       }

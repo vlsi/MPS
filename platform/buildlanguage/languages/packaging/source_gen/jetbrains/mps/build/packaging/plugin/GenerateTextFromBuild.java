@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
+import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
@@ -34,7 +34,7 @@ public class GenerateTextFromBuild {
   public static File generate(final SNode configuration, SModelDescriptor descriptor, IOperationContext context, Project project, boolean showWindow) {
     final String basedir = ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return MPSLayout_Behavior.call_getFolderToGenerate_1229522949966(Configuration_Behavior.call_getLayout_1213877261819(configuration));
+        return Layout_Behavior.call_getFolderToGenerate_1229522949966(Configuration_Behavior.call_getLayout_1213877261819(configuration));
       }
     });
     // generate files 
@@ -64,7 +64,7 @@ public class GenerateTextFromBuild {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel model = descriptor.getSModel();
-        layout.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.build.packaging.structure.MPSLayout")).first();
+        layout.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.build.packaging.structure.Layout")).first();
       }
     });
     return layout.value;

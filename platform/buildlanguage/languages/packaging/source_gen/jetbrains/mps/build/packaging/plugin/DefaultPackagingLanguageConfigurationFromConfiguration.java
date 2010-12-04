@@ -48,7 +48,7 @@ public class DefaultPackagingLanguageConfigurationFromConfiguration extends Base
     final Wrappers._T<String> configurationId = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        layout.value = SNodeOperations.getAncestor(parameter, "jetbrains.mps.build.packaging.structure.MPSLayout", false, true);
+        layout.value = SNodeOperations.getAncestor(parameter, "jetbrains.mps.build.packaging.structure.Layout", false, true);
         isApplicable.value = (layout.value != null) && ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
         configurationId.value = parameter.getId();
       }

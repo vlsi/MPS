@@ -36,7 +36,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.BaseDirPath_Behavior" file="BaseDirPath_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Path_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -152,7 +152,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -202,15 +202,7 @@
   <dependency className="jetbrains.mps.build.packaging.behavior.Jar_Behavior" file="Jar_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.build.packaging.behavior.MPSLayoutConfigurationReferencePropertyValueExpression_Behavior" file="MPSLayoutConfigurationReferencePropertyValueExpression_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Configuration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" />
-    <classNode dependClassName="jetbrains.mps.buildlanguage.behavior.PropertyValueExpression_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" file="MPSLayout_Behavior.java">
+  <dependency className="jetbrains.mps.build.packaging.behavior.Layout_Behavior" file="Layout_Behavior.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -235,8 +227,16 @@
     <classNode dependClassName="jetbrains.mps.util.Macros" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
+  <dependency className="jetbrains.mps.build.packaging.behavior.MPSLayoutConfigurationReferencePropertyValueExpression_Behavior" file="MPSLayoutConfigurationReferencePropertyValueExpression_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Configuration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
+    <classNode dependClassName="jetbrains.mps.buildlanguage.behavior.PropertyValueExpression_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.MacroReference_Behavior" file="MacroReference_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>

@@ -23,7 +23,7 @@
     <scopeInfo nodeId="1228401917620" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="56" startPosition="62" endLine="60" endPosition="104">
       <varInfo nodeId="1228401952130" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="129" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="1228401917617" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="129" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1228398444444" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="53" startPosition="76" endLine="67" endPosition="29">
       <varInfo nodeId="1228399873799" varName="opener" />
       <varInfo nodeId="1228398608360" varName="project" />

@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedConcept, IVariableHolder, IMacroHolder, IAntScript {
-  public static final String concept = "jetbrains.mps.build.packaging.structure.MPSLayout";
+public class Layout extends BaseConcept implements ILayoutComponent, INamedConcept, IVariableHolder, IMacroHolder, IAntScript {
+  public static final String concept = "jetbrains.mps.build.packaging.structure.Layout";
   public static final String SCRIPTS_FOLDER = "scriptsFolder";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -30,207 +30,207 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   public static final String CYCLE = "cycle";
   public static final String MACRO = "macro";
 
-  public MPSLayout(SNode node) {
+  public Layout(SNode node) {
     super(node);
   }
 
   public String getScriptsFolder() {
-    return this.getProperty(MPSLayout.SCRIPTS_FOLDER);
+    return this.getProperty(Layout.SCRIPTS_FOLDER);
   }
 
   public void setScriptsFolder(String value) {
-    this.setProperty(MPSLayout.SCRIPTS_FOLDER, value);
+    this.setProperty(Layout.SCRIPTS_FOLDER, value);
   }
 
   public String getShortDescription() {
-    return this.getProperty(MPSLayout.SHORT_DESCRIPTION);
+    return this.getProperty(Layout.SHORT_DESCRIPTION);
   }
 
   public void setShortDescription(String value) {
-    this.setProperty(MPSLayout.SHORT_DESCRIPTION, value);
+    this.setProperty(Layout.SHORT_DESCRIPTION, value);
   }
 
   public String getAlias() {
-    return this.getProperty(MPSLayout.ALIAS);
+    return this.getProperty(Layout.ALIAS);
   }
 
   public void setAlias(String value) {
-    this.setProperty(MPSLayout.ALIAS, value);
+    this.setProperty(Layout.ALIAS, value);
   }
 
   public String getVirtualPackage() {
-    return this.getProperty(MPSLayout.VIRTUAL_PACKAGE);
+    return this.getProperty(Layout.VIRTUAL_PACKAGE);
   }
 
   public void setVirtualPackage(String value) {
-    this.setProperty(MPSLayout.VIRTUAL_PACKAGE, value);
+    this.setProperty(Layout.VIRTUAL_PACKAGE, value);
   }
 
   public String getName() {
-    return this.getProperty(MPSLayout.NAME);
+    return this.getProperty(Layout.NAME);
   }
 
   public void setName(String value) {
-    this.setProperty(MPSLayout.NAME, value);
+    this.setProperty(Layout.NAME, value);
   }
 
   public boolean getCompile() {
-    return this.getBooleanProperty(MPSLayout.COMPILE);
+    return this.getBooleanProperty(Layout.COMPILE);
   }
 
   public void setCompile(boolean value) {
-    this.setBooleanProperty(MPSLayout.COMPILE, value);
+    this.setBooleanProperty(Layout.COMPILE, value);
   }
 
   public boolean getUseTmpDir() {
-    return this.getBooleanProperty(MPSLayout.USE_TMP_DIR);
+    return this.getBooleanProperty(Layout.USE_TMP_DIR);
   }
 
   public void setUseTmpDir(boolean value) {
-    this.setBooleanProperty(MPSLayout.USE_TMP_DIR, value);
+    this.setBooleanProperty(Layout.USE_TMP_DIR, value);
   }
 
   public BaseDirPath getBaseDirectory() {
-    return (BaseDirPath) this.getChild(BaseDirPath.class, MPSLayout.BASE_DIRECTORY);
+    return (BaseDirPath) this.getChild(BaseDirPath.class, Layout.BASE_DIRECTORY);
   }
 
   public void setBaseDirectory(BaseDirPath node) {
-    super.setChild(MPSLayout.BASE_DIRECTORY, node);
+    super.setChild(Layout.BASE_DIRECTORY, node);
   }
 
   public PropertiesImport getPropertyFile() {
-    return (PropertiesImport) this.getChild(PropertiesImport.class, MPSLayout.PROPERTY_FILE);
+    return (PropertiesImport) this.getChild(PropertiesImport.class, Layout.PROPERTY_FILE);
   }
 
   public void setPropertyFile(PropertiesImport node) {
-    super.setChild(MPSLayout.PROPERTY_FILE, node);
+    super.setChild(Layout.PROPERTY_FILE, node);
   }
 
   public int getConfigurationsCount() {
-    return this.getChildCount(MPSLayout.CONFIGURATION);
+    return this.getChildCount(Layout.CONFIGURATION);
   }
 
   public Iterator<Configuration> configurations() {
-    return this.children(Configuration.class, MPSLayout.CONFIGURATION);
+    return this.children(Configuration.class, Layout.CONFIGURATION);
   }
 
   public List<Configuration> getConfigurations() {
-    return this.getChildren(Configuration.class, MPSLayout.CONFIGURATION);
+    return this.getChildren(Configuration.class, Layout.CONFIGURATION);
   }
 
   public void addConfiguration(Configuration node) {
-    this.addChild(MPSLayout.CONFIGURATION, node);
+    this.addChild(Layout.CONFIGURATION, node);
   }
 
   public void insertConfiguration(Configuration prev, Configuration node) {
-    this.insertChild(prev, MPSLayout.CONFIGURATION, node);
+    this.insertChild(prev, Layout.CONFIGURATION, node);
   }
 
   public int getComponentsCount() {
-    return this.getChildCount(MPSLayout.COMPONENT);
+    return this.getChildCount(Layout.COMPONENT);
   }
 
   public Iterator<AbstractProjectComponent> components() {
-    return this.children(AbstractProjectComponent.class, MPSLayout.COMPONENT);
+    return this.children(AbstractProjectComponent.class, Layout.COMPONENT);
   }
 
   public List<AbstractProjectComponent> getComponents() {
-    return this.getChildren(AbstractProjectComponent.class, MPSLayout.COMPONENT);
+    return this.getChildren(AbstractProjectComponent.class, Layout.COMPONENT);
   }
 
   public void addComponent(AbstractProjectComponent node) {
-    this.addChild(MPSLayout.COMPONENT, node);
+    this.addChild(Layout.COMPONENT, node);
   }
 
   public void insertComponent(AbstractProjectComponent prev, AbstractProjectComponent node) {
-    this.insertChild(prev, MPSLayout.COMPONENT, node);
+    this.insertChild(prev, Layout.COMPONENT, node);
   }
 
   public int getVariablesCount() {
-    return this.getChildCount(MPSLayout.VARIABLE);
+    return this.getChildCount(Layout.VARIABLE);
   }
 
   public Iterator<Variable> variables() {
-    return this.children(Variable.class, MPSLayout.VARIABLE);
+    return this.children(Variable.class, Layout.VARIABLE);
   }
 
   public List<Variable> getVariables() {
-    return this.getChildren(Variable.class, MPSLayout.VARIABLE);
+    return this.getChildren(Variable.class, Layout.VARIABLE);
   }
 
   public void addVariable(Variable node) {
-    this.addChild(MPSLayout.VARIABLE, node);
+    this.addChild(Layout.VARIABLE, node);
   }
 
   public void insertVariable(Variable prev, Variable node) {
-    this.insertChild(prev, MPSLayout.VARIABLE, node);
+    this.insertChild(prev, Layout.VARIABLE, node);
   }
 
   public int getBuiltInVariablesCount() {
-    return this.getChildCount(MPSLayout.BUILT_IN_VARIABLE);
+    return this.getChildCount(Layout.BUILT_IN_VARIABLE);
   }
 
   public Iterator<Variable> builtInVariables() {
-    return this.children(Variable.class, MPSLayout.BUILT_IN_VARIABLE);
+    return this.children(Variable.class, Layout.BUILT_IN_VARIABLE);
   }
 
   public List<Variable> getBuiltInVariables() {
-    return this.getChildren(Variable.class, MPSLayout.BUILT_IN_VARIABLE);
+    return this.getChildren(Variable.class, Layout.BUILT_IN_VARIABLE);
   }
 
   public void addBuiltInVariable(Variable node) {
-    this.addChild(MPSLayout.BUILT_IN_VARIABLE, node);
+    this.addChild(Layout.BUILT_IN_VARIABLE, node);
   }
 
   public void insertBuiltInVariable(Variable prev, Variable node) {
-    this.insertChild(prev, MPSLayout.BUILT_IN_VARIABLE, node);
+    this.insertChild(prev, Layout.BUILT_IN_VARIABLE, node);
   }
 
   public int getCyclesCount() {
-    return this.getChildCount(MPSLayout.CYCLE);
+    return this.getChildCount(Layout.CYCLE);
   }
 
   public Iterator<ModuleCycle> cycles() {
-    return this.children(ModuleCycle.class, MPSLayout.CYCLE);
+    return this.children(ModuleCycle.class, Layout.CYCLE);
   }
 
   public List<ModuleCycle> getCycles() {
-    return this.getChildren(ModuleCycle.class, MPSLayout.CYCLE);
+    return this.getChildren(ModuleCycle.class, Layout.CYCLE);
   }
 
   public void addCycle(ModuleCycle node) {
-    this.addChild(MPSLayout.CYCLE, node);
+    this.addChild(Layout.CYCLE, node);
   }
 
   public void insertCycle(ModuleCycle prev, ModuleCycle node) {
-    this.insertChild(prev, MPSLayout.CYCLE, node);
+    this.insertChild(prev, Layout.CYCLE, node);
   }
 
   public int getMacrosCount() {
-    return this.getChildCount(MPSLayout.MACRO);
+    return this.getChildCount(Layout.MACRO);
   }
 
   public Iterator<Macro> macros() {
-    return this.children(Macro.class, MPSLayout.MACRO);
+    return this.children(Macro.class, Layout.MACRO);
   }
 
   public List<Macro> getMacros() {
-    return this.getChildren(Macro.class, MPSLayout.MACRO);
+    return this.getChildren(Macro.class, Layout.MACRO);
   }
 
   public void addMacro(Macro node) {
-    this.addChild(MPSLayout.MACRO, node);
+    this.addChild(Layout.MACRO, node);
   }
 
   public void insertMacro(Macro prev, Macro node) {
-    this.insertChild(prev, MPSLayout.MACRO, node);
+    this.insertChild(prev, Layout.MACRO, node);
   }
 
-  public static MPSLayout newInstance(SModel sm, boolean init) {
-    return (MPSLayout) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MPSLayout", sm, GlobalScope.getInstance(), init).getAdapter();
+  public static Layout newInstance(SModel sm, boolean init) {
+    return (Layout) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Layout", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
-  public static MPSLayout newInstance(SModel sm) {
-    return MPSLayout.newInstance(sm, false);
+  public static Layout newInstance(SModel sm) {
+    return Layout.newInstance(sm, false);
   }
 }

@@ -7,6 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MacroReference_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "name", MPSLayout_Behavior.getBasedirName_1226509010730());
+    SPropertyOperations.set(thisNode, "name", Layout_Behavior.getBasedirName_1226509010730());
   }
 }

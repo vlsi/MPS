@@ -11,7 +11,7 @@ public class Configuration_Behavior {
   }
 
   public static SNode call_getLayout_1213877261819(SNode thisNode) {
-    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.MPSLayout");
+    return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.Layout");
   }
 
   public static String call_getBuildFileName_1230217425313(SNode thisNode) {

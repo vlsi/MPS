@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.util.Macros;
 
-public class MPSLayout_Behavior {
+public class Layout_Behavior {
   public static void init(SNode thisNode) {
     Map<String, String> vars = MapSequence.fromMap(new HashMap<String, String>());
     MapSequence.fromMap(vars).put("basedir", "basedir");
@@ -67,14 +67,14 @@ public class MPSLayout_Behavior {
   public static List<SNode> call_getTopologicalSortedComponents_1213877228271(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode component : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "component", true))) {
-      MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(component, result);
+      Layout_Behavior.proceesAbstractProjectComponent_1233317260545(component, result);
     }
     return result;
   }
 
   public static List<SNode> call_getTopologicalSortedComponents_1213877228296(SNode thisNode, SNode config) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> all = MPSLayout_Behavior.call_getTopologicalSortedComponents_1213877228271(thisNode);
+    List<SNode> all = Layout_Behavior.call_getTopologicalSortedComponents_1213877228271(thisNode);
     for (SNode component : ListSequence.fromList(all)) {
       if (AbstractProjectComponent_Behavior.call_included_1213877333807(component, config)) {
         ListSequence.fromList(result).addElement(component);
@@ -87,7 +87,7 @@ public class MPSLayout_Behavior {
   public static List<SNode> call_getModules_1213877228340(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode component : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "component", true))) {
-      MPSLayout_Behavior.call_getModules_9027273598492143575(thisNode, result, component);
+      Layout_Behavior.call_getModules_9027273598492143575(thisNode, result, component);
     }
     return result;
   }
@@ -95,14 +95,14 @@ public class MPSLayout_Behavior {
   public static void call_getModules_9027273598492143575(SNode thisNode, List<SNode> modules, SNode component) {
     if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
       for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true))) {
-        MPSLayout_Behavior.call_getModules_9027273598492143575(thisNode, modules, child);
+        Layout_Behavior.call_getModules_9027273598492143575(thisNode, modules, child);
       }
     } else
     if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.Module")) {
       ListSequence.fromList(modules).addElement(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.Module"));
     } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.BlockReference")) {
       for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))) {
-        MPSLayout_Behavior.call_getModules_9027273598492143575(thisNode, modules, child);
+        Layout_Behavior.call_getModules_9027273598492143575(thisNode, modules, child);
       }
     }
   }
@@ -133,12 +133,12 @@ public class MPSLayout_Behavior {
   public static void proceesAbstractProjectComponent_1233317260545(SNode component, List<SNode> list) {
     if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
       for (SNode entry : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true))) {
-        MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(entry, list);
+        Layout_Behavior.proceesAbstractProjectComponent_1233317260545(entry, list);
       }
     } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent")) {
       List<SNode> childrenToDo = ITransparentProjectComponent_Behavior.call_getChildrenToDo_1240564451382(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"));
       for (SNode child : ListSequence.fromList(childrenToDo)) {
-        MPSLayout_Behavior.proceesAbstractProjectComponent_1233317260545(child, list);
+        Layout_Behavior.proceesAbstractProjectComponent_1233317260545(child, list);
       }
       return;
     }

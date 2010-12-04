@@ -24,7 +24,7 @@ public class AbstractProjectComponent_Behavior {
   }
 
   public static File call_getHomePath_1213877333764(SNode thisNode) {
-    return new File(ILayoutComponent_Behavior.call_getPath_1213877230696(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.build.packaging.structure.MPSLayout")).first()));
+    return new File(ILayoutComponent_Behavior.call_getPath_1213877230696(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.build.packaging.structure.Layout")).first()));
   }
 
   public static File call_getPath_1233752667763(SNode thisNode, SNode parentNode) {

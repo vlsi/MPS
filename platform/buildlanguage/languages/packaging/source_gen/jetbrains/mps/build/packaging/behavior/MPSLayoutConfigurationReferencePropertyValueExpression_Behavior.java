@@ -14,7 +14,7 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "configuration", false) == null)) {
       return null;
     }
-    return MPSLayout_Behavior.call_getDefaultTargetName_1230209625713(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "configuration", false))) + "." + MPSLayoutConfigurationReferencePropertyValueExpression_Behavior.call_getProjectName_1230223364921(thisNode);
+    return Layout_Behavior.call_getDefaultTargetName_1230209625713(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(thisNode, "configuration", false))) + "." + MPSLayoutConfigurationReferencePropertyValueExpression_Behavior.call_getProjectName_1230223364921(thisNode);
   }
 
   public static String virtual_toString_1213877472569(SNode thisNode) {

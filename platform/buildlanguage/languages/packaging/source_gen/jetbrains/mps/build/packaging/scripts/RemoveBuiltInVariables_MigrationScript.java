@@ -26,7 +26,7 @@ public class RemoveBuiltInVariables_MigrationScript extends BaseMigrationScript 
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.build.packaging.structure.MPSLayout";
+        return "jetbrains.mps.build.packaging.structure.Layout";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {

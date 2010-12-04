@@ -23,7 +23,7 @@ public class ModuleCycle_Behavior {
   }
 
   public static String call_getBasedir_1218647622991(SNode thisNode) {
-    return ILayoutComponent_Behavior.call_getPath_1213877230696(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true));
+    return ILayoutComponent_Behavior.call_getPath_1213877230696(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true));
   }
 
   public static List<SNode> call_getClassPath_1218646038565(SNode thisNode) {
@@ -37,7 +37,7 @@ public class ModuleCycle_Behavior {
     IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false);
     List<String> stringClasspath = ModuleUtil.retrieveClassPath(classpath);
     // creating path holders to use in generator 
-    return ModuleCycle_Behavior.createPathHolders_1218716903754(stringClasspath, ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), "macro", true));
+    return ModuleCycle_Behavior.createPathHolders_1218716903754(stringClasspath, ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true));
   }
 
   public static List<SNode> getMPSClassPath_1218716245482(String homePath, List<SNode> macro) {

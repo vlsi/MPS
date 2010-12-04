@@ -20,7 +20,7 @@ import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Beh
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
-import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
+import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
 import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
@@ -207,7 +207,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1230650823092(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSLayout_Behavior.getMPSHomeName_1226508944077();
+    return Layout_Behavior.getMPSHomeName_1226508944077();
   }
 
   public static Object propertyMacro_GetPropertyValue_1230650061631(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -215,7 +215,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1230642371372(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSLayout_Behavior.getMPSHomeName_1226508944077();
+    return Layout_Behavior.getMPSHomeName_1226508944077();
   }
 
   public static Object propertyMacro_GetPropertyValue_1230234630784(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -718,7 +718,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1230649526198(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode baseDirectory = SLinkOperations.getTarget(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "buildScriptConfiguration", false)), "baseDirectory", true);
-    return !(SPropertyOperations.getString(SLinkOperations.getTarget(baseDirectory, "macro", true), "name").equals(MPSLayout_Behavior.getMPSHomeName_1226508944077()));
+    return !(SPropertyOperations.getString(SLinkOperations.getTarget(baseDirectory, "macro", true), "name").equals(Layout_Behavior.getMPSHomeName_1226508944077()));
   }
 
   public static boolean ifMacro_Condition_1237303706723(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -29,7 +29,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PathHolder_Behavior" />
