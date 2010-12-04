@@ -25,8 +25,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SReference;
 import java.util.ArrayList;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalSNodeId, List<GlobalSNodeId>> {
   public static final ID<GlobalSNodeId, List<GlobalSNodeId>> NAME = ID.create("jetbrains.mps.ClassifierSuccessorsIndexer");
@@ -126,16 +124,16 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
 
         private boolean isInstanceOfClassConcept(SNode node) {
           String conceptFQName = node.getConceptFqName();
-          return INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")).equals(conceptFQName);
+          return "jetbrains.mps.baseLanguage.structure.ClassConcept".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.EnumClass".equals(conceptFQName) || "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept".equals(conceptFQName) || "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase".equals(conceptFQName);
         }
 
         private boolean isInstanceOfAnonymousClassConcept(SNode node) {
-          return INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass")).equals(node.getConceptFqName());
+          return "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(node.getConceptFqName());
         }
 
         private boolean isInstanceOfInterfaceConcept(SNode node) {
           String conceptFQName = node.getConceptFqName();
-          return INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface")).equals(conceptFQName) || INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation")).equals(conceptFQName);
+          return "jetbrains.mps.baseLanguage.structure.Interface".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.Annotation".equals(conceptFQName);
         }
       });
       return result;
