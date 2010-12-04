@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class WrappingCellShouldntBeSelectable_Test extends BaseTransformationTest {
@@ -25,7 +23,8 @@ public class WrappingCellShouldntBeSelectable_Test extends BaseTransformationTes
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("2322823743453985857", "2322823743453985861");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl UP", "ctrl UP"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide#action#jetbrains.mps.ide.actions.SelectUp_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide#action#jetbrains.mps.ide.actions.SelectUp_Action");
     }
   }
 }
