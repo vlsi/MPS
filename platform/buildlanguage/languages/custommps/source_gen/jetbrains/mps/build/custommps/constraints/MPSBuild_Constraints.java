@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class MPSBuild_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout") && (ListSequence.fromList(SNodeOperations.getChildren(_context.getParentNode())).where(new IWhereFilter<SNode>() {
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.Layout") && (ListSequence.fromList(SNodeOperations.getChildren(_context.getParentNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.custommps.structure.MPSBuild");
       }

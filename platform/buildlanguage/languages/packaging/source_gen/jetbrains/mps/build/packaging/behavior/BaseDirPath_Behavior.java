@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BaseDirPath_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(SLinkOperations.getTarget(thisNode, "macro", true), "name", MPSLayout_Behavior.getMPSHomeName_1226508944077());
+    SPropertyOperations.set(SLinkOperations.getTarget(thisNode, "macro", true), "name", Layout_Behavior.getMPSHomeName_1226508944077());
   }
 
   public static String virtual_getName_1221141245424(SNode thisNode) {

@@ -59,10 +59,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1220978455167" fileName="QueriesGenerated.java" startLine="79" startPosition="129" endLine="83" endPosition="72" />
     <scopeInfo nodeId="1226516896953" fileName="QueriesGenerated.java" startLine="87" startPosition="39" endLine="91" endPosition="15" />
-    <scopeInfo nodeId="1220978832204" fileName="QueriesGenerated.java" startLine="98" startPosition="89" endLine="103" endPosition="13">
+    <scopeInfo nodeId="1220978832204" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="98" startPosition="89" endLine="103" endPosition="13">
       <varInfo nodeId="1220978832208" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="1220978455164" fileName="QueriesGenerated.java" startLine="78" startPosition="13" endLine="84" endPosition="13" />
+    <scopeInfo nodeId="1220978455164" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="78" startPosition="13" endLine="84" endPosition="13" />
     <scopeInfo nodeId="1220977388732" fileName="QueriesGenerated.java" startLine="73" startPosition="37" endLine="104" endPosition="34">
       <varInfo nodeId="1220978550912" varName="baseDir" />
       <varInfo nodeId="1234806669828" varName="abstractProjectComponent" />

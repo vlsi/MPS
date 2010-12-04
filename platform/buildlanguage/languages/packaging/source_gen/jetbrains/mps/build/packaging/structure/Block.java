@@ -57,11 +57,11 @@ public class Block extends BaseConcept implements INamedConcept, IMacroHolder {
     this.setProperty(Block.VIRTUAL_PACKAGE, value);
   }
 
-  public MPSLayout getLayout() {
-    return (MPSLayout) this.getReferent(MPSLayout.class, Block.LAYOUT);
+  public Layout getLayout() {
+    return (Layout) this.getReferent(Layout.class, Block.LAYOUT);
   }
 
-  public void setLayout(MPSLayout node) {
+  public void setLayout(Layout node) {
     super.setReferent(Block.LAYOUT, node);
   }
 

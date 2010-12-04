@@ -18,15 +18,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.util.Computable;
 
-public class GenerateMPSBuildAction_Action extends GeneratedAction {
+public class GenerateBuildAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GenerateMPSBuildAction_Action.class);
+  private static Logger LOG = Logger.getLogger(GenerateBuildAction_Action.class);
 
   private Project project;
   private IOperationContext operationContext;
   private SModelDescriptor modelDescriptor;
 
-  public GenerateMPSBuildAction_Action() {
+  public GenerateBuildAction_Action() {
     super("Generate Build Files", "Generate Build Files And Place Them Into Base Directory", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
@@ -38,7 +38,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return GenerateMPSBuildAction_Action.this.getMPSLayout() != null;
+    return GenerateBuildAction_Action.this.getMPSLayout() != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -48,7 +48,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "GenerateMPSBuildAction", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "GenerateBuildAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -82,23 +82,23 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       // calculate output path 
-      final SNode layout = GenerateMPSBuildAction_Action.this.getMPSLayout();
+      final SNode layout = GenerateBuildAction_Action.this.getMPSLayout();
       final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout, "configuration", true)).first();
         }
       });
-      GenerateTextFromBuild.generate(configuration.value, GenerateMPSBuildAction_Action.this.modelDescriptor, GenerateMPSBuildAction_Action.this.operationContext, GenerateMPSBuildAction_Action.this.project, true);
+      GenerateTextFromBuild.generate(configuration.value, GenerateBuildAction_Action.this.modelDescriptor, GenerateBuildAction_Action.this.operationContext, GenerateBuildAction_Action.this.project, true);
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction", t);
+      LOG.error("User's action execute method failed. Action:" + "GenerateBuildAction", t);
     }
   }
 
   private SNode getMPSLayout() {
     return ModelAccess.instance().runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
+        return GenerateTextFromBuild.getLayout(GenerateBuildAction_Action.this.modelDescriptor);
       }
     });
   }

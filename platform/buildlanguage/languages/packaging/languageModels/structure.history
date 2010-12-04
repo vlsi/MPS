@@ -435,5 +435,19 @@
       </entry>
     </conceptFeatureMap>
   </refactoringContext>
+  <refactoringContext modelVersion="8">
+    <dependencies>
+      <model modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
+    </dependencies>
+    <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
+    <moveMap />
+    <sourceMap />
+    <conceptFeatureMap>
+      <entry>
+        <key featureName="MPSLayout" conceptFQName="jetbrains.mps.build.packaging.structure.MPSLayout" featureKind="CONCEPT" />
+        <value featureName="Layout" conceptFQName="jetbrains.mps.build.packaging.structure.Layout" featureKind="CONCEPT" />
+      </entry>
+    </conceptFeatureMap>
+  </refactoringContext>
 </refactoringHistory>
 

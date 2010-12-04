@@ -87,7 +87,7 @@ public class DefaultCustomMpsLanguageConfigurationFromMPSLayout extends BaseConf
   }
 
   protected boolean isApplicable(final Object element) {
-    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.build.packaging.structure.MPSLayout");
+    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.build.packaging.structure.Layout");
   }
 
   @NotNull

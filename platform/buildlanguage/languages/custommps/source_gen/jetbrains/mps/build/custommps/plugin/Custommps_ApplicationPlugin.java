@@ -13,7 +13,6 @@ public class Custommps_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.build.custommps";
-    this.addGroup(groups, moduleName, "jetbrains.mps.build.custommps.plugin.InternalChecks_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup");
     return groups;
   }

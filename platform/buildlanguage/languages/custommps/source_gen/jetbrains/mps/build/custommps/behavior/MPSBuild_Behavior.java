@@ -48,7 +48,7 @@ public class MPSBuild_Behavior {
   }
 
   public static String call_getScriptsFolder_1241536330057(SNode thisNode) {
-    String parentScriptsFolder = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "scriptsFolder");
+    String parentScriptsFolder = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", false, false), "scriptsFolder");
     if (parentScriptsFolder == null) {
       return "build";
     }

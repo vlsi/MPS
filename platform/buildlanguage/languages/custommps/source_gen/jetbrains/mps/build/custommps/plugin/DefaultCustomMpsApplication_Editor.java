@@ -27,7 +27,7 @@ public class DefaultCustomMpsApplication_Editor extends JPanel {
       final Wrappers._T<SNode> c = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          c.value = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.MPSLayout");
+          c.value = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.Layout");
         }
       });
       return c.value;

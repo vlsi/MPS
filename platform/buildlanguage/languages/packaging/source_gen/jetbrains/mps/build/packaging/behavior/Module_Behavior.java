@@ -98,7 +98,7 @@ public class Module_Behavior {
     SNode pathHolder = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathHolder", null);
     SPropertyOperations.set(pathHolder, "fullPath", ModuleUtil.getRelativePath(path, AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath()));
     if (SPropertyOperations.getString(pathHolder, "fullPath").equals(path)) {
-      ModuleUtil.findMacro(pathHolder, SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.MPSLayout", true, true), "macro", true));
+      ModuleUtil.findMacro(pathHolder, SLinkOperations.getTargets(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true));
     }
     SLinkOperations.setTarget(pathHolder, "module", thisNode, false);
     return pathHolder;

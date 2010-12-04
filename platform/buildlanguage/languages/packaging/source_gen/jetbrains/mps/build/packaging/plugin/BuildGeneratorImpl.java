@@ -148,7 +148,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   protected SNode createMPSLayout(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     // create mps layout 
-    SNode mpsLayout = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MPSLayout", null);
+    SNode mpsLayout = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Layout", null);
     // add mps layout to the target model 
     SModel targetSModel = targetModelDescriptor.getSModel();
     SModelOperations.addRootNode(targetSModel, mpsLayout);
