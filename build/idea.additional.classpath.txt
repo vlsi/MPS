@@ -11,7 +11,6 @@ core/make-runtime/classes
 core/kernel/classes
 workbench/typesystemUi/classes
 workbench/javaParser/classes
-
 MPSPlugin/apiclasses
 core/baseLanguage/baseLanguage/classes
 core/baseLanguage/baseLanguageInternal/classes

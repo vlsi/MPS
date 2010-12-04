@@ -41,6 +41,10 @@ public class QueriesGenerated {
       public Iterable<SNode> translate(SNode blk) {
         return SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(blk, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true);
       }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy");
+      }
     });
   }
 
