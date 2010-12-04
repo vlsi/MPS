@@ -59,7 +59,6 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     setNodeIdentifier(myLanguage.getModuleReference().toString());
   }
 
-  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
@@ -156,7 +155,6 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       super("runtime");
     }
 
-    @Override
     public ActionGroup getActionGroup() {
       return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS);
     }
@@ -186,13 +184,11 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       return errors;
     }
 
-    @Override
     protected void doUpdatePresentation() {
       super.doUpdatePresentation();
       setErrorState(validate().isEmpty() ? ErrorState.NONE : ErrorState.ERROR);
     }
 
-    @Override
     public ActionGroup getActionGroup() {
       return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_ACCESSORIES_ACTIONS);
     }
@@ -203,24 +199,20 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       super("util models", context);
     }
 
-    @Override
     public String getNamespace() {
       if (getParent() == null || !(getParent() instanceof ProjectLanguageTreeNode)) return "";
       ProjectLanguageTreeNode parent = (ProjectLanguageTreeNode) getParent();
       return parent.getModule().getModuleFqName();
     }
 
-    @Override
     public boolean isFinalName() {
       return true;
     }
 
-    @Override
     public String getStereotype() {
       return SModelStereotype.NONE;
     }
 
-    @Override
     public boolean isStrict() {
       return false;
     }

@@ -15,25 +15,13 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
-import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode.GenerationStatus;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
-
-import javax.swing.SwingUtilities;
-import java.util.List;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -58,50 +46,9 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   protected void doUpdatePresentation() {
     if (getTree() == null) return;
-
     setText(getModulePresentation());
-
-    if (getModule().isPackaged()) {
-      setAdditionalText("packaged");
-    } else {
-      setAdditionalText(generationRequired().getMessage());
-    }
-    updateErrorsAsync();
   }
 
-  private void updateErrorsAsync() {
-    setTooltipText(null);
-
-    final String[] result = {null};
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      public void run() {
-        List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-          public List<String> compute() {
-            return ModuleValidatorFactory.createValidator(getModule()).getErrors();
-          }
-        });
-        boolean valid = errors.isEmpty();
-
-        setErrorState(valid ? ErrorState.NONE : ErrorState.ERROR);
-        if (!valid) {
-          result[0] = "<html>";
-          for (String error : errors) {
-            result[0] += error + "<br>";
-          }
-        }
-
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            if (result[0] !=null){
-              setTooltipText(result[0]);
-            }
-          }
-        });
-      }
-    });
-  }
-
-  @Override
   protected void onAdd() {
     super.onAdd();
     updatePresentation();
@@ -114,49 +61,9 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   protected abstract String getModulePresentation();
 
-  public GenerationStatus generationRequired() {
-    return generationRequired(this);
-  }
-
-  private GenerationStatus generationRequired(MPSTreeNode node) {
-    if (node instanceof SNodeTreeNode) return GenerationStatus.NOT_REQUIRED;
-    if (node instanceof AccessoriesModelTreeNode) return GenerationStatus.NOT_REQUIRED;
-
-    if (node instanceof SModelTreeNode) {
-      SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
-      GenerationStatus modelGenStatus = smodelTreeNode.getGenerationStatus();
-      if (isInheritableGenStatus(modelGenStatus)) return modelGenStatus;
-
-      for (SModelTreeNode child : smodelTreeNode.getSubfolderSModelTreeNodes()) {
-        GenerationStatus childGenStatus = generationRequired(child);
-        if (isInheritableGenStatus(childGenStatus)) return childGenStatus;
-      }
-
-      return GenerationStatus.NOT_REQUIRED;
-    }
-
-    if (!node.isInitialized()) {
-      node.init();
-    }
-
-    for (int i = 0; i < node.getChildCount(); i++) {
-      MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
-
-      GenerationStatus childGenStatus = generationRequired(child);
-      if (isInheritableGenStatus(childGenStatus)) return childGenStatus;
-    }
-
-    return GenerationStatus.NOT_REQUIRED;
-  }
-
-  private boolean isInheritableGenStatus(GenerationStatus childGenStatus) {
-    return childGenStatus == GenerationStatus.REQUIRED || childGenStatus == GenerationStatus.UPDATING;
-  }
-
   public abstract IModule getModule();
 
   protected final boolean canBeOpened() {
     return false;
   }
-
 }

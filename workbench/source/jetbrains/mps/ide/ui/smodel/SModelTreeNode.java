@@ -18,14 +18,12 @@ package jetbrains.mps.ide.ui.smodel;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.*;
-import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
@@ -128,56 +126,29 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   protected void doUpdatePresentation() {
-    SModelDescriptor sm = getSModelDescriptor();
-
-    Icon icon = Icons.MODEL_ICON;
-    if (getSModelDescriptor() != null) {
-      icon = IconManager.getIconFor(getSModelDescriptor());
-    }
-    if ((sm instanceof EditableSModelDescriptor) && sm.getLoadingState() != ModelLoadingState.NOT_LOADED && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) sm))) {
-      icon = new LayeredIcon(icon, Icons.MODIFIED_ICON);
-    }
-    setIcon(icon);
-
-    GenerationStatus generationStatus = getGenerationStatus();
-    setAdditionalText(generationStatus.getMessage());
-
     if (myModelDescriptor != null) {
       setNodeIdentifier(myModelDescriptor.toString());
     } else {
       setNodeIdentifier("");
     }
 
-    if (checkForErrors() && myModelDescriptor != null && myModelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) {
-      final IScope scope = getOperationContext().getScope();
-      List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-        public List<String> compute() {
-          List<String> errorsList = new ModelValidator(getSModelDescriptor().getSModel()).validate(scope);
-          boolean isValid = errorsList.isEmpty();
-          setErrorState(isValid ? ErrorState.NONE : ErrorState.ERROR);
-          return errorsList;
-        }
-      });
-      if (errors.isEmpty()) {
-        setTooltipText(null);
-      } else {
-        String result = "<html>";
-        for (String r : errors) {
-          result += r + "<br>";
-        }
-        setTooltipText(result);
-      }
-    }
-
     setText(calculateText());
+    setIcon(calcIcon());
+  }
+
+  private Icon calcIcon() {
+    Icon icon = Icons.MODEL_ICON;
+    if (getSModelDescriptor() != null) {
+      icon = IconManager.getIconFor(getSModelDescriptor());
+    }
+    if ((myModelDescriptor instanceof EditableSModelDescriptor) && myModelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor))) {
+      icon = new LayeredIcon(icon, Icons.MODIFIED_ICON);
+    }
+    return icon;
   }
 
   public boolean hasModelsUnder() {
     return !getSubfolderSModelTreeNodes().isEmpty();
-  }
-
-  protected boolean checkForErrors() {
-    return true;
   }
 
   DependencyRecorder<SNodeTreeNode> getDependencyRecorder() {
@@ -213,10 +184,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return current;
     }
     return null;
-  }
-
-  protected SNodeGroupTreeNode createGroup(String name) {
-    return createGroup(name, false);
   }
 
   void register(SNodeGroupTreeNode parent, SNodeGroupTreeNode groupTreeNode) {
@@ -268,12 +235,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         parent.insert(groupTreeNode, index);
       }
     }
-  }
-
-  protected SNodeGroupTreeNode createGroup(String name, boolean autoDelete) {
-    SNodeGroupTreeNode result = new SNodeGroupTreeNode(this, null, name, autoDelete);
-
-    return result;
   }
 
   protected void groupBecameEmpty(SNodeGroupTreeNode node) {
@@ -356,28 +317,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     return InternUtil.intern(result);
-  }
-
-  public GenerationStatus getGenerationStatus() {
-    if (getSModelDescriptor() == null) return GenerationStatus.NOT_REQUIRED;
-    if (isPackaged()) return GenerationStatus.PACKAGED;
-    if (isDoNotGenerate()) return GenerationStatus.DO_NOT_GENERATE;
-
-    Project project = getOperationContext().getProject();
-    if (DumbService.getInstance(project).isDumb()) return GenerationStatus.UPDATING;
-
-    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), ProjectOperationContext.get(project), false, true);
-    return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
-  }
-
-  private boolean isPackaged() {
-    if (!(myModelDescriptor instanceof EditableSModelDescriptor)) return false;
-    return ((EditableSModelDescriptor) myModelDescriptor).isPackaged();
-  }
-
-  private boolean isDoNotGenerate() {
-    if (getSModelDescriptor() == null) return false;
-    return GeneratorManager.isDoNotGenerate(getSModelDescriptor());
   }
 
   public void updateNodePresentationInTree() {

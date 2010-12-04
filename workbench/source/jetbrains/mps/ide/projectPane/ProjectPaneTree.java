@@ -74,6 +74,20 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     return myProjectPane.getProjectView().isAutoscrollToSource(myProjectPane.getId());
   }
 
+  public void rebuildNow() {
+    super.rebuildNow();
+    updateErrors();
+    updateGenStatuses();
+  }
+
+  private void updateGenStatuses() {
+    visit(new ProjectPaneTreeGenStatusUpdater());
+  }
+
+  private void updateErrors() {
+    visit(new ProjectPaneTreeErrorChecker());
+  }
+
   private class MyTransferable implements Transferable {
     private final String mySupportedFlavor = "MPSNodeToMoveFlavor";
     private Object myObject;
@@ -167,21 +181,14 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
   private class MyDumbModeListener implements DumbModeListener {
     public void enteredDumbMode() {
-      rebuildNow();
+      updateGenStatuses();
     }
 
     public void exitDumbMode() {
       Project p = getProject();
       if (p.isDisposed()) return;
 
-      DumbService.getInstance(p).smartInvokeLater(new Runnable() {
-        public void run() {
-          Project project = getProject();
-          if (project.isDisposed()) return;
-
-          rebuildNow();
-        }
-      });
+      updateGenStatuses();
     }
   }
 }
