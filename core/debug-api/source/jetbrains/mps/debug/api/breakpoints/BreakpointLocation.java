@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
+import org.jetbrains.annotations.Nullable;
 
 public class BreakpointLocation {
   private final SNodePointer myNodePointer;
@@ -39,6 +40,7 @@ public class BreakpointLocation {
     return myNodePointer;
   }
 
+  @Nullable
   public SNode getSNode() {
     return myNodePointer.getNode();
   }

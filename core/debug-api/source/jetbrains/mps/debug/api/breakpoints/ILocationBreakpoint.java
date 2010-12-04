@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.debug.api.breakpoints;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 public interface ILocationBreakpoint extends IBreakpoint {
+  @NotNull
   BreakpointLocation getLocation();
 }

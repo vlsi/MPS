@@ -44,6 +44,7 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
     return myFieldName != null;
   }
 
+  @NotNull
   @Override
   public BreakpointLocation getLocation() {
     return myLocation;

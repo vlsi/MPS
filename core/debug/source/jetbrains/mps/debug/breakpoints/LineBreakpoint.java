@@ -134,6 +134,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
     return myLocation.getPresentation();
   }
 
+  @NotNull
   @Override
   public BreakpointLocation getLocation() {
     return myLocation;

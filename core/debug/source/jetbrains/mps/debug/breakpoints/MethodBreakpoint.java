@@ -121,6 +121,7 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     return method.name().equals(myMethodName) && method.signature().equals(myJniSignature);
   }
 
+  @NotNull
   @Override
   public BreakpointLocation getLocation() {
     return myLocation;

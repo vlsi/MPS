@@ -26,10 +26,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -270,13 +267,15 @@ public class BreakpointsTree extends BreakpointsView {
 
   private class RootGroupKind extends GroupKind<BreakpointNodeData, SNodePointer> {
     @Override
-    public SNodePointer getGroup(BreakpointNodeData breakpointNodeData) {
+    public SNodePointer getGroup(@NotNull BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        return new SNodePointer(((ILocationBreakpoint) breakpoint).getLocation().getSNode().getContainingRoot());
-      } else {
-        return null;
+        SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
+        if (node != null) {
+          return new SNodePointer(node.getContainingRoot());
+        }
       }
+      return null;
     }
 
     @Override
@@ -286,9 +285,10 @@ public class BreakpointsTree extends BreakpointsView {
   }
 
   private class BreakpointNodeData implements NodeData {
+    @NotNull
     private final IBreakpoint myBreakpoint;
 
-    public BreakpointNodeData(IBreakpoint breakpoint) {
+    public BreakpointNodeData(@NotNull IBreakpoint breakpoint) {
       myBreakpoint = breakpoint;
     }
 
@@ -317,6 +317,7 @@ public class BreakpointsTree extends BreakpointsView {
       myBreakpoint.setEnabled(selected);
     }
 
+    @NotNull
     public IBreakpoint getBreakpoint() {
       return myBreakpoint;
     }

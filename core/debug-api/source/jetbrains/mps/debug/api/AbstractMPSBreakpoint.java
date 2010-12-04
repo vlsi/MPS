@@ -72,6 +72,7 @@ public abstract class AbstractMPSBreakpoint extends AbstractBreakpoint implement
     return false;
   }
 
+  @NotNull
   @Override
   public BreakpointLocation getLocation() {
     return myLocation;
