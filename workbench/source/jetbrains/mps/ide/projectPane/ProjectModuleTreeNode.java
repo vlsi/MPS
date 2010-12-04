@@ -32,8 +32,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 
+import javax.swing.SwingUtilities;
 import java.util.List;
-import java.util.concurrent.FutureTask;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -59,30 +59,46 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   protected void doUpdatePresentation() {
     if (getTree() == null) return;
 
+    setText(getModulePresentation());
+
     if (getModule().isPackaged()) {
       setAdditionalText("packaged");
     } else {
       setAdditionalText(generationRequired().getMessage());
     }
-    setText(getModulePresentation());
+    updateErrorsAsync();
+  }
 
-    List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        return ModuleValidatorFactory.createValidator(getModule()).getErrors();
+  private void updateErrorsAsync() {
+    setTooltipText(null);
+
+    final String[] result = {null};
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+          public List<String> compute() {
+            return ModuleValidatorFactory.createValidator(getModule()).getErrors();
+          }
+        });
+        boolean valid = errors.isEmpty();
+
+        setErrorState(valid ? ErrorState.NONE : ErrorState.ERROR);
+        if (!valid) {
+          result[0] = "<html>";
+          for (String error : errors) {
+            result[0] += error + "<br>";
+          }
+        }
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            if (result[0] !=null){
+              setTooltipText(result[0]);
+            }
+          }
+        });
       }
     });
-    boolean valid = errors.isEmpty();
-
-    setErrorState(valid ? ErrorState.NONE : ErrorState.ERROR);
-    if (valid) {
-      setTooltipText(null);
-    } else {
-      String result = "<html>";
-      for (String error : errors) {
-        result += error + "<br>";
-      }
-      setTooltipText(result);
-    }
   }
 
   @Override
