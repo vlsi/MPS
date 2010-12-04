@@ -40,14 +40,13 @@ public class TypeAssignedOperation extends AbstractOperation {
   }
 
   @Override
-  //todo: it does not seem to update "type to node" map
   public void doUndo(State state) {
-    state.getNodeToTypeMap().remove(myNode);
+    state.getNodeMaps().removeNodeType(myNode);
   }
 
   @Override
   public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
-    state.getNodeToTypeMap().put(myNode, myType);
+    state.getNodeMaps().assignNodeType(myNode, myType);
   }
 
   @Override

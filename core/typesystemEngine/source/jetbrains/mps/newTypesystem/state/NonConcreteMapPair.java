@@ -34,7 +34,9 @@ import java.util.*;
  */
 public class NonConcreteMapPair {
   private boolean myIsShallow;
+  @StateObject
   private Map<WhenConcreteEntry, Set<SNode>> myWhenConcreteEntries;
+  @StateObject
   private Map<SNode, Set<WhenConcreteEntry>> myDependents;
   private State myState;
 
@@ -45,12 +47,10 @@ public class NonConcreteMapPair {
     myDependents = new HashMap<SNode, Set<WhenConcreteEntry>>();
   }
 
-  private void addAndTrack(WhenConcreteEntry e, SNode var) {
-    myState.executeOperation(new AddWCDependencyOperation(e, var, myIsShallow));
-  }
-
+  @StateMethod
   public void addDependency(WhenConcreteEntry e, SNode var) {
     Set<SNode> dependencies = myWhenConcreteEntries.get(e);
+    assert dependencies != null;
     dependencies.add(var);
     Set<WhenConcreteEntry> dependents = myDependents.get(var);
     if (dependents == null) {
@@ -60,6 +60,39 @@ public class NonConcreteMapPair {
     dependents.add(e);
   }
 
+  @StateMethod
+  public void removeDependency(WhenConcreteEntry e, SNode var) {
+    // e should be kept in a map even if var set is empty
+    // e is removed from map by removeWhenConcreteNoVars(WhenConcreteEntry e)
+    myWhenConcreteEntries.get(e).remove(var); 
+    Set<WhenConcreteEntry> dependents = myDependents.get(var);
+    assert dependents != null;
+    dependents.remove(e);
+    if (dependents.isEmpty()) {
+      myDependents.remove(var);
+    }
+  }
+
+  @StateMethod
+  public void removeWhenConcreteNoVars(WhenConcreteEntry e) {
+    Set<SNode> vars = myWhenConcreteEntries.remove(e);
+    assert vars.isEmpty();
+  }
+
+  @StateMethod
+  public void addWhenConcreteNoVars(WhenConcreteEntry e) {
+    Set<SNode> previous = myWhenConcreteEntries.put(e, new HashSet<SNode>());
+    assert previous == null;
+  }
+
+  private void addAndTrack(WhenConcreteEntry e, SNode var) {
+    myState.executeOperation(new AddWCDependencyOperation(e, var, myIsShallow));
+  }
+
+  private void removeAndTrack(WhenConcreteEntry e, SNode var) {
+    myState.executeOperation(new RemoveWCDependencyOperation(e, var, myIsShallow));
+  }
+
   private void becameConcrete(WhenConcreteEntry entry) {
     myState.executeOperation(new RemoveWCEntryOperation(myIsShallow, entry));
   }
@@ -67,28 +100,7 @@ public class NonConcreteMapPair {
   private void testConcrete(WhenConcreteEntry entity) {
     if (myWhenConcreteEntries.get(entity).isEmpty()) {
       becameConcrete(entity);
-      myWhenConcreteEntries.remove(entity);
     }
-  }
-
-  private void removeAndTrack(WhenConcreteEntry e, SNode var) {
-    myState.executeOperation(new RemoveWCDependencyOperation(e, var, myIsShallow));
-
-  }
-
-  public void removeDependency(WhenConcreteEntry e, SNode var) {
-    myWhenConcreteEntries.get(e).remove(var);
-    myDependents.get(var).remove(e);
-  }
-
-  public void removeWhenConcreteNoVars(WhenConcreteEntry e) {
-    Set<SNode> vars = myWhenConcreteEntries.remove(e);
-    assert vars.isEmpty();
-  }
-
-  public void addWhenConcreteNoVars(WhenConcreteEntry e) {
-    Set<SNode> previous = myWhenConcreteEntries.put(e, new HashSet<SNode>());
-    assert previous == null;
   }
 
   public void addWhenConcrete(WhenConcreteEntry e, SNode type) {
@@ -118,7 +130,6 @@ public class NonConcreteMapPair {
       removeAndTrack(entity, oldVar);
       testConcrete(entity);
     }
-    myDependents.remove(oldVar);
   }
 
   private List<SNode> getChildAndReferentVariables(SNode node) {

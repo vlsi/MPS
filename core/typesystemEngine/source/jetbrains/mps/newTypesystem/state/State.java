@@ -44,9 +44,16 @@ public class State {
 
   private final TypeCheckingContextNew myTypeCheckingContext;
 
+  @StateObject
   private final Equations myEquations;
+
+  @StateObject
   private final jetbrains.mps.newTypesystem.state.Inequalities myInequalities;
+
+  @StateObject
   private final jetbrains.mps.newTypesystem.state.NodeMaps myNodeMaps;
+
+  @StateObject
   private final jetbrains.mps.newTypesystem.state.NonConcrete myNonConcrete;
 
   private final VariableIdentifier myVariableIdentifier;
@@ -100,14 +107,6 @@ public class State {
     return myTypeCheckingContext;
   }
 
-  public Map<SNode, List<IErrorReporter>> getErrors() {
-    return myNodeMaps.getErrors();
-  }
-
-  public Map<SNode, SNode> getNodeToTypeMap() {
-    return myNodeMaps.getNodeToTypeMap();
-  }
-
   public void executeStateChangeAction(Runnable action) {
     try {
       myInsideStateChangeAction = true;
@@ -141,7 +140,7 @@ public class State {
   }
 
   public boolean isConcrete(SNode node, boolean shallow) {
-    return (shallow && TypesUtil.isType(node) || isConcrete(node));
+    return (shallow && TypesUtil.isShallowConcrete(node) || isConcrete(node));
   }
 
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {
