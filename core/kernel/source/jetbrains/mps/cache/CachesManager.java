@@ -40,6 +40,17 @@ public class CachesManager implements ApplicationComponent {
   private ConcurrentMap<Object, AbstractCache> myCaches = new ConcurrentHashMap<Object, AbstractCache>();
   private ConcurrentMap<AbstractCache, ModelEventRouter> myModelEventRouters = new ConcurrentHashMap<AbstractCache, ModelEventRouter>();
   private ConcurrentMap<Object, List<SModelDescriptor>> myDependsOnModels = new ConcurrentHashMap<Object, List<SModelDescriptor>>();
+  private SModelRepositoryAdapter myModelRepoListener = new SModelRepositoryAdapter() {
+    public void modelRemoved(SModelDescriptor modelDescriptor) {
+      onModelRemoved(modelDescriptor);
+    }
+  };
+
+  private ReloadAdapter myCLMListener = new ReloadAdapter() {
+    public void unload() {
+      removeAllCaches();
+    }
+  };
 
   public static CachesManager getInstance() {
     return ApplicationManager.getApplication().getComponent(CachesManager.class);
@@ -51,42 +62,19 @@ public class CachesManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
-      public void modelRemoved(SModelDescriptor modelDescriptor) {
-        List<Object> keysToRemove = new ArrayList<Object>();
-        SModelReference reference = modelDescriptor.getSModelReference();
-        for (Object key : myDependsOnModels.keySet()) {
-          List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
-          if (dependsOnModels == null) {
-            continue;
-          }
-          for (SModelDescriptor dependsOnModel : dependsOnModels) {
-            if (dependsOnModel.getSModelReference().equals(reference)) {
-              keysToRemove.add(key);
-            }
-          }
-        }
+    mySModelRepository.addModelRepositoryListener(myModelRepoListener);
+    myClassLoaderManager.addReloadHandler(myCLMListener);
+  }
 
-        for (Object key : keysToRemove) {
-          removeCache(key);
-        }
-      }
-    });
-
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        removeAllCaches();
-      }
-    });
+  public void disposeComponent() {
+    myClassLoaderManager.removeReloadHandler(myCLMListener);
+    mySModelRepository.removeModelRepositoryListener(myModelRepoListener);
   }
 
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Caches Manager";
-  }
-
-  public void disposeComponent() {
   }
 
   private AbstractCache putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
@@ -115,9 +103,7 @@ public class CachesManager implements ApplicationComponent {
 
   public <T> AbstractCache getCache(Object key, T element, CacheCreator<T> creator) {
     AbstractCache result = myCaches.get(key);
-    if (result != null || element == null || creator == null) {
-      return result;
-    }
+    if (result != null || element == null || creator == null) return result;
     result = creator.create(key, element);
     Set<SModelDescriptor> descriptorSet = result.getDependsOnModels(element);
     if (descriptorSet.contains(null)) {
@@ -129,9 +115,7 @@ public class CachesManager implements ApplicationComponent {
 
   public void removeCache(Object key) {
     AbstractCache cache = myCaches.remove(key);
-    if (cache == null) {
-      return;
-    }
+    if (cache == null) return;
     ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
     List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
     if (eventRouter != null && dependsOnModels != null) {
@@ -151,6 +135,30 @@ public class CachesManager implements ApplicationComponent {
     }
   }
 
+  public void removeGenerationCaches() {
+    removeAllCaches();
+  }
+
+  private void onModelRemoved(SModelDescriptor modelDescriptor) {
+    List<Object> keysToRemove = new ArrayList<Object>();
+    SModelReference reference = modelDescriptor.getSModelReference();
+    for (Object key : myDependsOnModels.keySet()) {
+      List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
+      if (dependsOnModels == null) {
+        continue;
+      }
+      for (SModelDescriptor dependsOnModel : dependsOnModels) {
+        if (dependsOnModel.getSModelReference().equals(reference)) {
+          keysToRemove.add(key);
+        }
+      }
+    }
+
+    for (Object key : keysToRemove) {
+      removeCache(key);
+    }
+  }
+
   public interface CacheCreator<T> {
     AbstractCache create(Object key, T element);
   }
@@ -164,7 +172,6 @@ public class CachesManager implements ApplicationComponent {
     }
 
     // model listener
-
     public final void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
       if (!isLoading) {
         // model went out of loading state - drop cache because we don't know what has happened while in loading state

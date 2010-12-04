@@ -366,10 +366,14 @@
   </application-components>
 
   <project-components>
-
     <component>
       <implementation-class>jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.cache.CachesClearer</implementation-class>
+    </component>
+
     <component>
       <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
       </implementation-class>

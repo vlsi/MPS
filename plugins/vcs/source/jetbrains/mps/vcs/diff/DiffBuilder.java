@@ -102,10 +102,10 @@ public class DiffBuilder {
       addedNodes.add(change.getAffectedNodeId());
     }
     for (Change change : myChanges) {
-      SNode added = myNewModel.getNodeById(change.getAffectedNodeId());
-      if (added == null) {
-        continue;
-      }
+      SNodeId id = change.getAffectedNodeId();
+      if (id == null) continue;
+      SNode added = myNewModel.getNodeById(id);
+      if (added == null) continue;
       SNode addRoot = added;
       while (addRoot.getParent() != null && addedNodes.contains(addRoot.getParent().getSNodeId())) {
         addRoot = addRoot.getParent();
