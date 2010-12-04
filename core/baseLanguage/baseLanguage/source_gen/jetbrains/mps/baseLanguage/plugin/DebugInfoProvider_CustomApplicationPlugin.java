@@ -9,7 +9,7 @@ import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.debug.runtime.MPSBreakpoint;
+import jetbrains.mps.debug.breakpoints.LineBreakpoint;
 import jetbrains.mps.debug.breakpoints.MethodBreakpoint;
 import jetbrains.mps.debug.breakpoints.FieldBreakpoint;
 
@@ -24,7 +24,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     {
       Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
         public ILocationBreakpoint value(SNode debuggableNode, Project project) {
-          return new MPSBreakpoint(debuggableNode, project);
+          return new LineBreakpoint(debuggableNode, project);
         }
       };
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement", creator);

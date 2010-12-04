@@ -23,10 +23,7 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint;
-import jetbrains.mps.debug.breakpoints.FieldBreakpoint;
-import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
-import jetbrains.mps.debug.breakpoints.MethodBreakpoint;
+import jetbrains.mps.debug.breakpoints.*;
 import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent.AllDebugProcessesAction;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.Requestor;
@@ -123,7 +120,7 @@ public class RequestManager implements DebugProcessListener {
 
   //------------------- requests creation
 
-  public BreakpointRequest createBreakpointRequest(MPSBreakpoint requestor, Location location) {
+  public BreakpointRequest createBreakpointRequest(LineBreakpoint requestor, Location location) {
     DebuggerManagerThread.assertIsManagerThread();
     BreakpointRequest request = myEventRequestManager.createBreakpointRequest(location);
     initRequest(requestor, request);

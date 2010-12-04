@@ -19,124 +19,63 @@ import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
+import jetbrains.mps.debug.api.ToRemove;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
+import jetbrains.mps.debug.api.breakpoints.DefaultKind;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.breakpoints.JavaBreakpointKind;
+import jetbrains.mps.debug.breakpoints.LineBreakpoint;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.traceInfo.PositionInfo;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-// todo rename to line breakpoint
-public class MPSBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
-  private static final Logger LOG = Logger.getLogger(MPSBreakpoint.class);
-  private final BreakpointLocation myLocation;
-
+@Deprecated
+@ToRemove(version = 2.0)
+public class MPSBreakpoint extends LineBreakpoint {
   public MPSBreakpoint(SNodePointer nodePointer, Project project) {
-    super(project);
-    myLocation = new BreakpointLocation(nodePointer);
+    super(nodePointer, project);
   }
 
   public MPSBreakpoint(SNode node, Project project) {
-    this(new SNodePointer(node), project);
+    super(node, project);
   }
 
-  @Override
-  protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, final ReferenceType classType) {
-    RequestManager requestManager = debugProcess.getRequestManager();
-
-    try {
-      int lineIndex = myLocation.getLineIndexInFile();
-      List<Location> locs = classType.locationsOfLine(lineIndex);
-      if (locs.size() > 0) {
-        for (final Location location : locs) {
-          BreakpointRequest request = requestManager.createBreakpointRequest(this, location);
-          requestManager.enableRequest(request);
-        }
-      } else {
-        // there's no executable code in this class
-        requestManager.setInvalid(this, "no executable code found");
-        String message = "No locations of type " + classType.name() + " found at line " + myLocation.getLineIndexInFile();
-        LOG.warning(message);
-      }
-    } catch (ClassNotPreparedException ex) {
-      LOG.warning("ClassNotPreparedException: " + ex.getMessage());
-      // there's a chance to add a breakpoint when the class is prepared
-    } catch (ObjectCollectedException ex) {
-      LOG.warning("ObjectCollectedException: " + ex.getMessage());
-      // there's a chance to add a breakpoint when the class is prepared
-    } catch (InvalidLineNumberException ex) {
-      requestManager.setInvalid(this, "no executable code found");
-      LOG.warning("InvalidLineNumberException: " + ex.getMessage());
-    } catch (InternalException ex) {
-      LOG.error(ex);
-    } catch (Exception ex) {
-      LOG.error(ex);
-    }
+  public SNodePointer getNodePointer() {
+    return myLocation.getNodePointer();
   }
 
-
-  @Override
-  //called when breakpoint is hit
-  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    boolean result = super.processLocatableEvent(action, event);
-    if (!result) return false;
-//    try {
-      //todo conditions - later
-      /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
-        action.getSuspendContext(),
-        frameProxy,
-        getThisObject(context, event)
-      );
-
-      if(!evaluateCondition(evaluationContext, event)) {
-        return false;
-      }*/
-      //todo here some expressions may be evaluated; later
-      // runAction(evaluationContext, event);
-//    } catch (IncompatibleThreadStateException ex) {
-//      LOG.error(ex);
-//      return false;
-//    }
-    return true;
+  public SNode getSNode() {
+    return myLocation.getSNode();
   }
 
-  protected String getClassNameToPrepare() {
-    String className = myLocation.getTargetUnitName();
-
-    if (className == null) {
-      // todo when this case does actually happen?
-      String fileName = myLocation.getFileName();
-      if (fileName.endsWith(".java")) {
-        fileName = fileName.substring(0, fileName.length() - ".java".length());
-      }
-      className = myLocation.getNodePointer().getModelReference().getLongName() + "." + fileName;
-    }
-    return className;
+  public PositionInfo getTargetCodePosition() {
+    return myLocation.getTargetCodePosition();
   }
 
-  @NotNull
-  @Override
-  public JavaBreakpointKind getKind() {
-    return JavaBreakpointKind.LINE_BREAKPOINT;
+  public String getTargetUnitName() {
+    return myLocation.getTargetUnitName();
   }
 
-  @Override
-  public boolean isValid() {
-    return myLocation.getTargetCodePosition() != null;
+  public int getLineIndexInFile() {
+    return myLocation.getLineIndexInFile();
   }
 
-  @Override
-  public String getPresentation() {
-    return myLocation.getPresentation();
+  public String getFileName() {
+    return myLocation.getFileName();
   }
 
-  @Override
-  public BreakpointLocation getLocation() {
-    return myLocation;
+  public SModelReference getModelReference() {
+    return myLocation.getModelReference();
+  }
+
+  public boolean supportsDisable() {
+    return false;
   }
 }

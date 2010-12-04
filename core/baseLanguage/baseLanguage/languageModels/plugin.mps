@@ -13560,7 +13560,7 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2566194812863059404">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2566194812863059405">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2566194812863059406">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mtzj.~MPSBreakpoint%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,com%dintellij%dopenapi%dproject%dProject)" resolveInfo="MPSBreakpoint" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ktqx.~LineBreakpoint%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,com%dintellij%dopenapi%dproject%dProject)" resolveInfo="LineBreakpoint" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="2828915170999449664" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="2566194812863059433" />
               </node>

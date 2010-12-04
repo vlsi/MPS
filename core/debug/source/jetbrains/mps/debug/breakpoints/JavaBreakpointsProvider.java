@@ -28,7 +28,6 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
-import jetbrains.mps.debug.runtime.MPSBreakpoint;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
@@ -86,11 +85,11 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     switch (kind) {
       case LINE_BREAKPOINT:
         final JavaBreakpointInfo breakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
-        MPSBreakpoint breakpoint = ModelAccess.instance().runReadAction(new Computable<MPSBreakpoint>() {
+        LineBreakpoint breakpoint = ModelAccess.instance().runReadAction(new Computable<LineBreakpoint>() {
           @Override
-          public MPSBreakpoint compute() {
+          public LineBreakpoint compute() {
             SNodePointer pointer = new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId);
-            return new MPSBreakpoint(pointer.getNode(), project);
+            return new LineBreakpoint(pointer.getNode(), project);
           }
         });
         breakpointInfo.initBreakpoint(breakpoint);

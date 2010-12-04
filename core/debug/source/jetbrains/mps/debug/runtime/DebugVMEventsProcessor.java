@@ -28,6 +28,7 @@ import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.api.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.debug.breakpoints.LineBreakpoint;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -287,9 +288,9 @@ public class DebugVMEventsProcessor {
       LOG.error(t);
     }
 
-    if (requestHit && requestor instanceof MPSBreakpoint) {
+    if (requestHit && requestor instanceof LineBreakpoint) {
       // if requestor is a breakpoint and this breakpoint was hit, no matter its suspend policy
-      myBreakpointManager.processBreakpointHit((MPSBreakpoint) requestor);
+      myBreakpointManager.processBreakpointHit((LineBreakpoint) requestor);
     }
 
     if (!requestHit || resumePreferred) {
