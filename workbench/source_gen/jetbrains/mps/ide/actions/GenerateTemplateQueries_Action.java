@@ -100,7 +100,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
             models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it) {
-                return ModelGenerationStatusManager.getInstance().generationRequired(it, ProjectOperationContext.get(GenerateTemplateQueries_Action.this.project));
+                return ModelGenerationStatusManager.getInstance().generationRequired(it, ProjectOperationContext.get(GenerateTemplateQueries_Action.this.project), false, true);
               }
             }).toListSequence();
           }

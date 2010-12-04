@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
@@ -32,6 +33,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.List;
+import java.util.concurrent.FutureTask;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {

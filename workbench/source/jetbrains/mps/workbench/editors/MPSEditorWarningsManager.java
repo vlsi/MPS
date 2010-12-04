@@ -146,7 +146,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     final Set<Language> outdatedLanguages = new HashSet<Language>();
     for (Language l : SModelOperations.getLanguages(model.getSModel(), GlobalScope.getInstance())) {
       if (l.getEditorModelDescriptor() != null &&
-        ModelGenerationStatusManager.getInstance().generationRequiredFast(l.getEditorModelDescriptor(), ProjectOperationContext.get(project), false)) {
+        ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor(), ProjectOperationContext.get(project), true, false)) {
         outdatedLanguages.add(l);
       }
     }

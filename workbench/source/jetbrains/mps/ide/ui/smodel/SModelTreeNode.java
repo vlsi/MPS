@@ -366,7 +366,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     Project project = getOperationContext().getProject();
     if (DumbService.getInstance(project).isDumb()) return GenerationStatus.UPDATING;
 
-    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), ProjectOperationContext.get(project));
+    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), ProjectOperationContext.get(project), false, true);
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 

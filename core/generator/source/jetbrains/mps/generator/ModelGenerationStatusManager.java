@@ -88,7 +88,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return myCacheGenerator;
   }
 
-  public boolean generationRequiredFast(SModelDescriptor sm, IOperationContext operationContext, boolean defaultValue) {
+  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext, boolean fast, boolean defaultValue) {
     if (!(sm instanceof EditableSModelDescriptor)) return false;
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
@@ -97,26 +97,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (SModelRepository.getInstance().isChanged(esm)) return true;
     if (isEmpty(esm)) return false;
 
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext, true);
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext, fast);
     if (generationHashes == null) return defaultValue;
-
-    String generatedHash = getGenerationHash(sm);
-    if (generatedHash == null) return true;
-
-    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
-  }
-
-  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
-    if (!(sm instanceof EditableSModelDescriptor)) return false;
-    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-    if (esm.isPackaged()) return false;
-    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
-    if (GeneratorManager.isDoNotGenerate(sm)) return false;
-    if (SModelRepository.getInstance().isChanged(esm)) return true;
-    if (isEmpty(esm)) return false;
-
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
-    if (generationHashes == null) return true;
 
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
