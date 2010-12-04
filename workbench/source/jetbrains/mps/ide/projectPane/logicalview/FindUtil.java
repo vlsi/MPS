@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.projectPane.logicalview;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;

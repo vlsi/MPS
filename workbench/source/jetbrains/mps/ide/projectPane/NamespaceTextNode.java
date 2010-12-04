@@ -21,6 +21,7 @@ import jetbrains.mps.ide.actions.NewLanguage_Action;
 import jetbrains.mps.ide.actions.NewModel_Action;
 import jetbrains.mps.ide.actions.NewSolution_Action;
 import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;

@@ -36,6 +36,9 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.projectPane.logicalview.*;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -133,7 +136,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public ProjectTree getTree() {
-    return (ProjectTree) myTree;
+    return (jetbrains.mps.ide.projectPane.logicalview.ProjectTree) myTree;
   }
 
   public Project getProject() {

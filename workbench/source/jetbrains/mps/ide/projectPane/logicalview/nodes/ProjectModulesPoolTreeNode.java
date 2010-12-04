@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
+import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;

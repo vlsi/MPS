@@ -13,13 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
-import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AllModelsTreeNode;
+import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectLanguageTreeNode.AllModelsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.StubsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -61,7 +64,7 @@ public abstract class ProjectTreeFindHelper {
   public SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModelDescriptor model) {
     MPSProject project = getProject().getComponent(MPSProject.class);
 
-    IModule module = FindUtil.getModuleForModel(project, model);
+    IModule module = jetbrains.mps.ide.projectPane.logicalview.FindUtil.getModuleForModel(project, model);
     if (module == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());
 
     ProjectModuleTreeNode moduleTreeNode = findMostSuitableModuleTreeNode(module);
@@ -153,13 +156,13 @@ public abstract class ProjectTreeFindHelper {
   private static class ModuleInProjectCondition extends ModuleEverywhereCondition {
     public boolean met(MPSTreeNode object) {
       if (!super.met(object)) return false;
-      return !(object instanceof ProjectModulesPoolTreeNode);
+      return !(object instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode);
     }
   }
 
   private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
     public boolean met(MPSTreeNode node) {
-      if (node instanceof ProjectModuleTreeNode && !(node instanceof ProjectLanguageTreeNode)) return false;
+      if (node instanceof ProjectModuleTreeNode && !(node instanceof jetbrains.mps.ide.projectPane.logicalview.ProjectLanguageTreeNode)) return false;
       if (node instanceof SModelTreeNode) return false;
 /*
       todo: extract optimal module finding process. Used method only works when there is a single ability of selection

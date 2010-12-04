@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
@@ -25,7 +27,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.awt.Font;
 
-class ProjectTreeNode extends MPSTreeNode {
+public class ProjectTreeNode extends MPSTreeNode {
   private MPSProject myProject;
 
   ProjectTreeNode(MPSProject project) {

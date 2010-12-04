@@ -19,6 +19,8 @@ import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
@@ -255,7 +257,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public IModule getContextModule() {
     MPSTreeNode treeNode = (MPSTreeNode) getSelectedTreeNode(TreeNode.class);
-    while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
+    while (treeNode != null && !(treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode)) {
       treeNode = (MPSTreeNode) treeNode.getParent();
     }
     if (treeNode == null) return null;
@@ -315,9 +317,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       return ActionPlace.PROJECT_PANE_SNODE;
     } else if (treeNode instanceof SModelTreeNode) {
       return ActionPlace.PROJECT_PANE_SMODEL;
-    } else if ((treeNode instanceof ProjectTreeNode) || (treeNode instanceof jetbrains.mps.ide.projectPane.ProjectTreeNode)) {
+    } else if ((treeNode instanceof ProjectTreeNode) || (treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode)) {
       return ActionPlace.PROJECT_PANE_PROJECT;
-    } else if (treeNode instanceof GeneratorTreeNode) {
+    } else if (treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.GeneratorTreeNode) {
       return ActionPlace.PROJECT_PANE_GENERATOR;
     } else if (treeNode instanceof TransientModelsTreeNode) {
       return ActionPlace.PROJECT_PANE_TRANSIENT_MODULES;

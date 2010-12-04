@@ -1,7 +1,14 @@
-package jetbrains.mps.ide.projectPane;
+package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.ide.projectPane.*;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectDevKitTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -10,14 +17,13 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 
-import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectTree extends MPSTree {
   private Project myProject;
-  private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
+  private jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode myModulesPoolTreeNode;
 
   public ProjectTree(Project project) {
     myProject = project;
