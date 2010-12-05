@@ -27,11 +27,15 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode {
+public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode {
   private Solution mySolution;
   private boolean myShortNameOnly;
 
   private boolean myInitialized;
+
+  public ProjectSolutionTreeNode(Solution solution, MPSProject project) {
+    this(solution, project, false);
+  }
 
   public ProjectSolutionTreeNode(Solution solution, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(solution, project));

@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.StereotypeProvider;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -135,7 +136,7 @@ public class SModelsSubtree {
   }
 
   private static boolean isNeedBuildChildModels(MPSTreeNode rootTreeNode) {
-    return !(rootTreeNode instanceof jetbrains.mps.ide.projectPane.logicalview.ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode);
+    return !(rootTreeNode instanceof ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode);
   }
 
   private static int buildChildModels(SModelTreeNode treeNode, List<SModelDescriptor> candidates, int rootIndex) {

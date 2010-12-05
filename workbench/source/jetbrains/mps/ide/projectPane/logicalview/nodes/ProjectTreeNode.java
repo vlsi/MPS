@@ -30,7 +30,7 @@ import java.awt.Font;
 public class ProjectTreeNode extends MPSTreeNode {
   private MPSProject myProject;
 
-  ProjectTreeNode(MPSProject project) {
+  public ProjectTreeNode(MPSProject project) {
     super(ProjectOperationContext.get(project.getProject()));
 
     myProject = project;

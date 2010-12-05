@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
+public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPane myProjectPane;
 
   public ProjectPaneTree(ProjectPane projectPane, Project project) {

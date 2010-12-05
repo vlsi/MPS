@@ -340,7 +340,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ActionPlace.PROJECT_PANE;
   }
 
-  protected void editNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+  public void editNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
         MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
@@ -350,7 +350,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     });
   }
 
-  protected <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {
+  public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {
     TreePath[] selectionPaths = getTree().getSelectionPaths();
     if (selectionPaths == null) return new ArrayList<T>();
 

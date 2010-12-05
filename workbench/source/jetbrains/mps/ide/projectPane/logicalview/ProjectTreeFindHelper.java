@@ -17,10 +17,11 @@ package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
-import jetbrains.mps.ide.projectPane.logicalview.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.ProjectLanguageTreeNode.AllModelsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.StubsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.AccessoriesModelTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode.AllModelsTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -162,7 +163,7 @@ public abstract class ProjectTreeFindHelper {
 
   private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
     public boolean met(MPSTreeNode node) {
-      if (node instanceof ProjectModuleTreeNode && !(node instanceof jetbrains.mps.ide.projectPane.logicalview.ProjectLanguageTreeNode)) return false;
+      if (node instanceof ProjectModuleTreeNode && !(node instanceof ProjectLanguageTreeNode)) return false;
       if (node instanceof SModelTreeNode) return false;
 /*
       todo: extract optimal module finding process. Used method only works when there is a single ability of selection

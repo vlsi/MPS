@@ -33,11 +33,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Set;
 
-class ProjectLanguageTreeNode extends jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode {
+public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private Language myLanguage;
   private MPSProject myProject;
   private boolean myShortNameOnly;
   private boolean myInitialized;
+
+  public ProjectLanguageTreeNode(Language language, MPSProject project) {
+    this(language, project, false);
+  }
 
   public ProjectLanguageTreeNode(@NotNull Language language, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(language, project));
