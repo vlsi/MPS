@@ -33,6 +33,8 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   protected void visitModelNode(SModelTreeNode node) {
     GenerationStatus generationStatus = getGenerationStatus(node);
+
+
     node.setAdditionalText(generationStatus.getMessage());
   }
 

@@ -503,7 +503,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return true;
   }
 
-
   public String toString() {
     return getText();
   }

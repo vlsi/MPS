@@ -15,22 +15,27 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.visitor;
 
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public abstract class TreeNodeVisitor {
-  public void visitNode(MPSTreeNode node){
-    if (node instanceof SModelTreeNode){
-      visitModelNode(((SModelTreeNode) node));
-    }
-    if (node instanceof ProjectModuleTreeNode){
-      visitModuleNode(((ProjectModuleTreeNode) node));
-    }
-    if (node instanceof ProjectTreeNode){
-      visitProjectNode(((ProjectTreeNode) node));
-    }
+  public void visitNode(final MPSTreeNode node){
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        if (node instanceof SModelTreeNode){
+          visitModelNode(((SModelTreeNode) node));
+        }
+        if (node instanceof ProjectModuleTreeNode){
+          visitModuleNode(((ProjectModuleTreeNode) node));
+        }
+        if (node instanceof ProjectTreeNode){
+          visitProjectNode(((ProjectTreeNode) node));
+        }
+      }
+    });
   }
 
   protected abstract void visitModelNode(SModelTreeNode node);

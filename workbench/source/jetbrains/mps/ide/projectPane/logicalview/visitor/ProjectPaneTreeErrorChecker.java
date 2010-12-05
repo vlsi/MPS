@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.visitor;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.*;
@@ -27,64 +27,59 @@ import jetbrains.mps.smodel.*;
 import javax.swing.SwingUtilities;
 import java.util.List;
 
-public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor{
+public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
   protected void visitModelNode(final SModelTreeNode node) {
     final SModelDescriptor modelDescriptor = node.getSModelDescriptor();
     if (modelDescriptor != null && modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) {
       final IScope scope = node.getOperationContext().getScope();
       List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          List<String> errorsList = new ModelValidator(modelDescriptor.getSModel()).validate(scope);
-          boolean isValid = errorsList.isEmpty();
-          node.setErrorState(isValid ? ErrorState.NONE : ErrorState.ERROR);
-          return errorsList;
+          return new ModelValidator(modelDescriptor.getSModel()).validate(scope);
         }
       });
-      if (errors.isEmpty()) {
-        node.setTooltipText(null);
-      } else {
-        String result = "<html>";
+
+      String result = null;
+      if (!errors.isEmpty()) {
+        result = "<html>";
         for (String r : errors) {
           result += r + "<br>";
         }
-        node.setTooltipText(result);
       }
+
+      updateNodeLater(node, result);
     }
   }
 
   protected void visitModuleNode(final ProjectModuleTreeNode node) {
-    node.setTooltipText(null);
-
-    final String[] result = {null};
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      public void run() {
-        List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-          public List<String> compute() {
-            return ModuleValidatorFactory.createValidator(node.getModule()).getErrors();
-          }
-        });
-        boolean valid = errors.isEmpty();
-
-        node.setErrorState(valid ? ErrorState.NONE : ErrorState.ERROR);
-        if (!valid) {
-          result[0] = "<html>";
-          for (String error : errors) {
-            result[0] += error + "<br>";
-          }
-        }
-
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            node.setTooltipText(result[0]);
-            node.updateNodePresentationInTree();
-          }
-        });
+    List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return ModuleValidatorFactory.createValidator(node.getModule()).getErrors();
       }
     });
+
+    String result = null;
+    if (!errors.isEmpty()) {
+      result = "<html>";
+      for (String error : errors) {
+        result += error + "<br>";
+      }
+    }
+
+    updateNodeLater(node, result);
   }
 
-  protected void visitProjectNode(ProjectTreeNode node) {
-    node.setErrorState(node.getProject().getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
-    node.setTooltipText(node.getProject().getErrors());
+  protected void visitProjectNode(final ProjectTreeNode node) {
+    String errors = node.getProject().getErrors();
+    updateNodeLater(node, errors);
+  }
+
+  private void updateNodeLater(final MPSTreeNode node, final String tooltipText) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        node.setErrorState(tooltipText == null ? ErrorState.NONE : ErrorState.ERROR);
+        node.setTooltipText(tooltipText);
+        node.updateNodePresentationInTree();
+      }
+    });
   }
 }
