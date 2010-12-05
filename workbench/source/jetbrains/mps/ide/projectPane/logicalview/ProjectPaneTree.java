@@ -9,11 +9,11 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.messages.MessageBusConnection;
-import com.intellij.util.ui.tree.TreeModelAdapter;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
+import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneModifiedMarker;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeGenStatusUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.TreeNodeVisitor;
@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-import javax.swing.event.TreeModelEvent;
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -45,6 +44,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPane myProjectPane;
   private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
   private ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
+  private ProjectPaneModifiedMarker myModifiedMarker = new ProjectPaneModifiedMarker();
 
   public ProjectPaneTree(ProjectPane projectPane, Project project) {
     super(project);
@@ -52,12 +52,17 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
     addTreeNodeListener(new MPSTreeNodeListener() {
       public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree) {
-        myErrorVisitor.visitNode(treeNode);
-        myGenStatusVisitor.visitNode(treeNode);
+
       }
 
       public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
 
+      }
+
+      public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
+        myErrorVisitor.visitNode(treeNode);
+        myGenStatusVisitor.visitNode(treeNode);
+        myModifiedMarker.visitNode(treeNode);
       }
     });
     //enter can't be listened using keyboard actions because in this case tree's UI receives it first and just expands a node
@@ -95,20 +100,6 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
   public boolean isAutoOpen() {
     return myProjectPane.getProjectView().isAutoscrollToSource(myProjectPane.getId());
-  }
-
-  public void rebuildNow() {
-    super.rebuildNow();
-    updateErrors();
-    updateGenStatuses();
-  }
-
-  private void updateGenStatuses() {
-    visit(myGenStatusVisitor);
-  }
-
-  private void updateErrors() {
-    visit(myErrorVisitor);
   }
 
   private void visit(TreeNodeVisitor visitor) {
@@ -216,14 +207,14 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
   private class MyDumbModeListener implements DumbModeListener {
     public void enteredDumbMode() {
-      updateGenStatuses();
+      visit(myGenStatusVisitor);
     }
 
     public void exitDumbMode() {
       Project p = getProject();
       if (p.isDisposed()) return;
 
-      updateGenStatuses();
+      visit(myGenStatusVisitor);
     }
   }
 }

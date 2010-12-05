@@ -280,11 +280,17 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   protected void updatePresentation() {
     setColor(Color.BLACK);
     doUpdatePresentation();
+    if (myTree == null) {
+      myTree = getTree();
+    }
+    if (myTree != null) {
+      myTree.fireTreeNodeUpdated(this);
+    }
+    Color c = null;
+    String additionalText = null;
     synchronized (myTreeMessagesLock) {
       if (myTreeMessages != null) {
-        Color c = null;
         int maxColorPriority = Integer.MIN_VALUE;
-        String additionalText = null;
         int maxAdditionalTextPriority = Integer.MIN_VALUE;
         for (TreeMessage message : myTreeMessages) {
           if (maxColorPriority < message.getPriority() && message.alternatesColor()) {
@@ -294,15 +300,13 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
             additionalText = message.getAdditionalText();
           }
         }
-        if (c != null) {
-          setColor(c);
-        }
-        if (additionalText != null) {
-          //   String oldText = getAdditionalText();
-          //   oldText = oldText == null ? "" : oldText + " ";
-          setAdditionalText(/*oldText +*/ additionalText);
-        }
       }
+    }
+    if (c != null) {
+      setColor(c);
+    }
+    if (additionalText != null) {
+      setAdditionalText(additionalText);
     }
   }
 
@@ -515,16 +519,15 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     myAutoExpandable = autoExpandable;
   }
 
-  public void updateNodePresentationInTree() {
+  public final void updateNodePresentationInTree() {
     if (getTree() == null) return;
     ((DefaultTreeModel) getTree().getModel()).nodeChanged(this);
   }
 
   public void updateAncestorsPresentationInTree() {
     updateNodePresentationInTree();
-    if (getParent() != null) {
-      ((MPSTreeNode) getParent()).updateAncestorsPresentationInTree();
-    }
+    if (getParent() == null) return;
+    ((MPSTreeNode) getParent()).updateAncestorsPresentationInTree();
   }
 
   protected boolean canBeOpened() {

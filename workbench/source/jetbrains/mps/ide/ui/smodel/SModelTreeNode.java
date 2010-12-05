@@ -16,10 +16,7 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
-import com.intellij.ui.LayeredIcon;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.icons.IconManager;
@@ -29,7 +26,6 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -77,6 +73,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private boolean myPackagesEnabled = true;
 
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
+  private Icon myIcon;
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
@@ -114,6 +111,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
+    myIcon = IconManager.getIconFor(getSModelDescriptor());
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
@@ -125,6 +123,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     updatePresentation();
   }
 
+  public Icon getDefaultIcon() {
+    return myIcon;
+  }
+
   protected void doUpdatePresentation() {
     if (myModelDescriptor != null) {
       setNodeIdentifier(myModelDescriptor.toString());
@@ -133,18 +135,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     setText(calculateText());
-    setIcon(calcIcon());
-  }
-
-  private Icon calcIcon() {
-    Icon icon = Icons.MODEL_ICON;
-    if (getSModelDescriptor() != null) {
-      icon = IconManager.getIconFor(getSModelDescriptor());
-    }
-    if ((myModelDescriptor instanceof EditableSModelDescriptor) && myModelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor))) {
-      icon = new LayeredIcon(icon, Icons.MODIFIED_ICON);
-    }
-    return icon;
+    setIcon(myIcon);
   }
 
   public boolean hasModelsUnder() {
@@ -317,11 +308,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     return InternUtil.intern(result);
-  }
-
-  public void updateNodePresentationInTree() {
-    updatePresentation();
-    super.updateNodePresentationInTree();
   }
 
   public void setCountAdditionalNamePart(int count) {

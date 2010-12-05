@@ -663,5 +663,9 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
       unhighlightTreeNode(treeNode);
       unregisterTreeNode(treeNode);
     }
+
+    public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
+
+    }
   }
 }

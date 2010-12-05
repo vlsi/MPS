@@ -130,13 +130,19 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     myTreeNodeListeners.remove(listener);
   }
 
-  /*package */ void fireTreeNodeAdded(MPSTreeNode node) {
+  void fireTreeNodeUpdated(MPSTreeNode node) {
+    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+      listener.treeNodeUpdated(node, this);
+    }
+  }
+
+  void fireTreeNodeAdded(MPSTreeNode node) {
     for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
       listener.treeNodeAdded(node, this);
     }
   }
 
-  /*package */ void fireTreeNodeRemoved(MPSTreeNode node) {
+  void fireTreeNodeRemoved(MPSTreeNode node) {
     for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
       listener.treeNodeRemoved(node, this);
     }

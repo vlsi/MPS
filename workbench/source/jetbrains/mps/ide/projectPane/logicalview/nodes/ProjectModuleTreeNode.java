@@ -54,11 +54,6 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     updatePresentation();
   }
 
-  public void updateNodePresentationInTree() {
-    updatePresentation();
-    super.updateNodePresentationInTree();
-  }
-
   protected abstract String getModulePresentation();
 
   public abstract IModule getModule();
