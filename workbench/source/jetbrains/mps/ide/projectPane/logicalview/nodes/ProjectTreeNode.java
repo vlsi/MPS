@@ -51,6 +51,10 @@ public class ProjectTreeNode extends MPSTreeNode {
     }
   }
 
+  public MPSProject getProject() {
+    return myProject;
+  }
+
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_NEW_ACTIONS);
   }

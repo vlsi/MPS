@@ -10,6 +10,8 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.*;
+import jetbrains.mps.ide.projectPane.logicalview.visitor.*;
+import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeErrorChecker;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -87,6 +89,11 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
   private void updateErrors() {
     visit(new ProjectPaneTreeErrorChecker());
+  }
+
+  private void visit(TreeNodeVisitor visitor) {
+    //width-first because we normally see upper level first
+    123
   }
 
   private class MyTransferable implements Transferable {

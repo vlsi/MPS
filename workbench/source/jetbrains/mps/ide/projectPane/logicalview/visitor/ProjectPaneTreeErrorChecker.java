@@ -13,33 +13,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview;
+package jetbrains.mps.ide.projectPane.logicalview.visitor;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.ErrorState;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.ModelValidator;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.SwingUtilities;
 import java.util.List;
 
-public class ProjectPaneTreeErrorChecker {
-  public void visit(MPSTreeNode node) {
-    if (node instanceof ProjectModuleTreeNode) {
-      updateErrorsAsync(((ProjectModuleTreeNode) node));
+public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor{
+  protected void visitModelNode(final SModelTreeNode node) {
+    final SModelDescriptor modelDescriptor = node.getSModelDescriptor();
+    if (modelDescriptor != null && modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) {
+      final IScope scope = node.getOperationContext().getScope();
+      List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+        public List<String> compute() {
+          List<String> errorsList = new ModelValidator(modelDescriptor.getSModel()).validate(scope);
+          boolean isValid = errorsList.isEmpty();
+          node.setErrorState(isValid ? ErrorState.NONE : ErrorState.ERROR);
+          return errorsList;
+        }
+      });
+      if (errors.isEmpty()) {
+        node.setTooltipText(null);
+      } else {
+        String result = "<html>";
+        for (String r : errors) {
+          result += r + "<br>";
+        }
+        node.setTooltipText(result);
+      }
     }
   }
 
-
-  private void updateErrorsAsync(final ProjectModuleTreeNode node) {
+  protected void visitModuleNode(final ProjectModuleTreeNode node) {
     node.setTooltipText(null);
 
     final String[] result = {null};
@@ -70,34 +83,8 @@ public class ProjectPaneTreeErrorChecker {
     });
   }
 
-
-  private void updateErrors(SModelTreeNode node) {
-    if (myModelDescriptor != null && myModelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) {
-      final IScope scope = getOperationContext().getScope();
-      List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-        public List<String> compute() {
-          List<String> errorsList = new ModelValidator(getSModelDescriptor().getSModel()).validate(scope);
-          boolean isValid = errorsList.isEmpty();
-          setErrorState(isValid ? ErrorState.NONE : ErrorState.ERROR);
-          return errorsList;
-        }
-      });
-      if (errors.isEmpty()) {
-        setTooltipText(null);
-      } else {
-        String result = "<html>";
-        for (String r : errors) {
-          result += r + "<br>";
-        }
-        setTooltipText(result);
-      }
-    }
+  protected void visitProjectNode(ProjectTreeNode node) {
+    node.setErrorState(node.getProject().getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
+    node.setTooltipText(node.getProject().getErrors());
   }
-
-
-  private void updateErrors(ProjectTreeNode node) {
-    setErrorState(myProject.getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
-    setTooltipText(myProject.getErrors());
-  }
-
 }

@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview;
+package jetbrains.mps.ide.projectPane.logicalview.visitor;
 
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -28,7 +27,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
-public class ProjectPaneTreeGenStatusUpdater {
+public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor{
   public void visit(MPSTreeNode node) {
     if (node instanceof ProjectModuleTreeNode){
       updateGenStatus(((ProjectModuleTreeNode) node));
