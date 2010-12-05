@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.refactorings;
 
 import javax.swing.JScrollPane;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -13,9 +14,9 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class ModelOrNodeChooser extends JScrollPane {
-  private jetbrains.mps.ide.projectPane.logicalview.ProjectTree myTree;
-  private jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper myHelper = new jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper() {
-    protected jetbrains.mps.ide.projectPane.logicalview.ProjectTree getTree() {
+  private ProjectTree myTree;
+  private ProjectTreeFindHelper myHelper = new ProjectTreeFindHelper() {
+    protected ProjectTree getTree() {
       return ModelOrNodeChooser.this.myTree;
     }
   };

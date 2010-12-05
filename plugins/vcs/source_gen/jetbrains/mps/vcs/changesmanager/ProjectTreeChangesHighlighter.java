@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -77,7 +78,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         projectPane.addComponentCreationListener(new ProjectPane.ComponentCreationListener() {
           public void componentCreated(ProjectPane pane) {
             pane.removeComponentCreationListener(this);
-            jetbrains.mps.ide.projectPane.logicalview.ProjectTree createdTree = pane.getTree();
+            ProjectTree createdTree = pane.getTree();
             registerTreeNodesRecursively(createdTree.getRootNode());
             createdTree.addTreeNodeListener(myTreeNodeListener);
           }

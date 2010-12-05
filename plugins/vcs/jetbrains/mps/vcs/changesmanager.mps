@@ -70,6 +70,7 @@
   <import index="tbm9" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <import index="jna1" modelUID="f:java_stub#jetbrains.mps.errors(jetbrains.mps.errors@java_stub)" version="-1" />
   <import index="6wvk" modelUID="f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)" version="-1" />
+  <import index="uzov" modelUID="f:java_stub#jetbrains.mps.ide.projectPane.logicalview(jetbrains.mps.ide.projectPane.logicalview@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -19559,7 +19560,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4347917388473370677">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j2pb.~ProjectPane%dgetTree()%cjetbrains%dmps%dide%dprojectPane%dProjectTree" resolveInfo="getTree" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j2pb.~ProjectPane%dgetTree()%cjetbrains%dmps%dide%dprojectPane%dlogicalview%dProjectTree" resolveInfo="getTree" />
                   </node>
                 </node>
               </node>
@@ -19640,15 +19641,15 @@
                                   <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7601193928418877048">
                                     <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7601193928418877049">
                                       <property name="name" nameId="tpck.1169194664001" value="createdTree" />
-                                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7601193928418877050">
-                                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="j2pb.~ProjectTree" resolveInfo="ProjectTree" />
+                                      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3602739551354502007">
+                                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uzov.~ProjectTree" resolveInfo="ProjectTree" />
                                       </node>
                                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7601193928418877051">
                                         <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7601193928418877052">
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7601193928418877029" resolveInfo="pane" />
                                         </node>
                                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7601193928418877053">
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j2pb.~ProjectPane%dgetTree()%cjetbrains%dmps%dide%dprojectPane%dProjectTree" resolveInfo="getTree" />
+                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j2pb.~ProjectPane%dgetTree()%cjetbrains%dmps%dide%dprojectPane%dlogicalview%dProjectTree" resolveInfo="getTree" />
                                         </node>
                                       </node>
                                     </node>
@@ -19714,7 +19715,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5052922865790900487">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j2pb.~ProjectPane%dgetTree()%cjetbrains%dmps%dide%dprojectPane%dProjectTree" resolveInfo="getTree" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="j2pb.~ProjectPane%dgetTree()%cjetbrains%dmps%dide%dprojectPane%dlogicalview%dProjectTree" resolveInfo="getTree" />
               </node>
             </node>
           </node>

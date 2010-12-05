@@ -5,8 +5,8 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectTree" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectTreeFindHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTree" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SModelTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
