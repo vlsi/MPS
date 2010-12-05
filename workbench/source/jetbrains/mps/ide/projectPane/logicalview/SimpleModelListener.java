@@ -1,6 +1,5 @@
-package jetbrains.mps.ide.ui.smodel;
+package jetbrains.mps.ide.projectPane.logicalview;
 
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.*;
 
@@ -9,14 +8,6 @@ public abstract class SimpleModelListener extends SModelAdapter {
 
   public SimpleModelListener(MPSTreeNode treeNode) {
     myTreeNode = treeNode;
-  }
-
-  private MPSTree getTree() {
-    return myTreeNode.getTree();
-  }
-
-  private IOperationContext getOperationContext() {
-    return myTreeNode.getOperationContext();
   }
 
   private void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncesotrs) {
@@ -49,10 +40,10 @@ public abstract class SimpleModelListener extends SModelAdapter {
   }
 
   public boolean isValid() {
-    if (getTree() == null) return false;
+    if (myTreeNode.getTree() == null) return false;
 
     //module has been already removed
-    if (!getOperationContext().isValid()) return false;
+    if (!myTreeNode.getOperationContext().isValid()) return false;
 
     return true;
   }

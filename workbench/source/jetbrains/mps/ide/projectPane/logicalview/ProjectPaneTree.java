@@ -21,11 +21,10 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.tree.TreePath;
@@ -87,6 +86,10 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     MessageBusConnection connection = project.getMessageBus().connect();
     Disposer.register(this, connection);
     connection.subscribe(DumbService.DUMB_MODE, new MyDumbModeListener());
+  }
+
+  public Comparator<Object> getChildrenComparator() {
+    return myProjectPane.getTreeChildrenComparator();
   }
 
   public void editNode(final SNode node, IOperationContext context, boolean focus) {
@@ -151,11 +154,6 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     public void dropActionChanged(DragSourceDragEvent dsde) {
       dsde.getDragSourceContext().setCursor(null);
     }
-  }
-
-  @Override
-  public Comparator<Object> getChildrenComparator() {
-    return myProjectPane.getTreeChildrenComparator();
   }
 
   private class MyDragGestureListener implements DragGestureListener {
