@@ -277,6 +277,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return 2;
   }
 
+  //todo make final
   protected void updatePresentation() {
     setColor(Color.BLACK);
     doUpdatePresentation();

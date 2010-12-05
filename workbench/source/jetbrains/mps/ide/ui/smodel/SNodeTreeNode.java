@@ -58,10 +58,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     updatePresentation();
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
-  }
-
   protected final void doUpdatePresentation() {
     if (getSModelModelTreeNode() != null) {
       getSModelModelTreeNode().getDependencyRecorder().rebuild(this, new Runnable() {
