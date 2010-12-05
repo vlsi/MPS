@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.visitor;
 
-import com.apple.eawt.Application;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
