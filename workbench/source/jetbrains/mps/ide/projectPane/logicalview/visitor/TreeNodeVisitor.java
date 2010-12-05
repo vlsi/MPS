@@ -15,23 +15,29 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.visitor;
 
-import com.intellij.openapi.application.ApplicationManager;
+import com.apple.eawt.Application;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 public abstract class TreeNodeVisitor {
-  public void visitNode(final MPSTreeNode node){
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+  private ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(2, 2, 10, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
+
+  public void visitNode(final MPSTreeNode node) {
+    myExecutor.execute(new Runnable() {
       public void run() {
-        if (node instanceof SModelTreeNode){
+        if (node instanceof SModelTreeNode) {
           visitModelNode(((SModelTreeNode) node));
         }
-        if (node instanceof ProjectModuleTreeNode){
+        if (node instanceof ProjectModuleTreeNode) {
           visitModuleNode(((ProjectModuleTreeNode) node));
         }
-        if (node instanceof ProjectTreeNode){
+        if (node instanceof ProjectTreeNode) {
           visitProjectNode(((ProjectTreeNode) node));
         }
       }
@@ -39,6 +45,8 @@ public abstract class TreeNodeVisitor {
   }
 
   protected abstract void visitModelNode(SModelTreeNode node);
+
   protected abstract void visitModuleNode(ProjectModuleTreeNode node);
+
   protected abstract void visitProjectNode(ProjectTreeNode node);
 }

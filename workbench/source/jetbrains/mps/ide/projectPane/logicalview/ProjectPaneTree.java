@@ -17,7 +17,9 @@ import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeGenStatusUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.TreeNodeVisitor;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.MPSTreeNodeListener;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.IOperationContext;
@@ -48,6 +50,16 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     super(project);
     myProjectPane = projectPane;
 
+    addTreeNodeListener(new MPSTreeNodeListener() {
+      public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree) {
+        myErrorVisitor.visitNode(treeNode);
+        myGenStatusVisitor.visitNode(treeNode);
+      }
+
+      public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
+
+      }
+    });
     //enter can't be listened using keyboard actions because in this case tree's UI receives it first and just expands a node
     addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
