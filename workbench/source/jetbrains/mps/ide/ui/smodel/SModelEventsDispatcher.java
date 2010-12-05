@@ -13,20 +13,20 @@ import java.util.Map.Entry;
  * User: Alexander Shatalin
  * Date: 16.04.2010
  */
-class SModelEventsDispatcher {
+public class SModelEventsDispatcher {
   private static SModelEventsDispatcher myInstance;
 
   private EventsCollector myEventsCollector;
   private Map<SModelDescriptor, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashedMap();
 
-  static SModelEventsDispatcher getInstance() {
+  public static SModelEventsDispatcher getInstance() {
     if (myInstance == null) {
       myInstance = new SModelEventsDispatcher();
     }
     return myInstance;
   }
 
-  void registerListener(SModelEventsListener l) {
+  public void registerListener(SModelEventsListener l) {
     SModelDescriptor modelDescriptor = l.getModelDescriptor();
     Set<SModelEventsListener> listeners = myDescriptorsToListenersMap.get(modelDescriptor);
     if (listeners == null) {
@@ -37,7 +37,7 @@ class SModelEventsDispatcher {
     listeners.add(l);
   }
 
-  void unregisterListener(SModelEventsListener l) {
+  public void unregisterListener(SModelEventsListener l) {
     SModelDescriptor modelDescriptor = l.getModelDescriptor();
     Set<SModelEventsListener> listeners = myDescriptorsToListenersMap.get(modelDescriptor);
     assert listeners != null : "specified listener was not registered";
@@ -63,7 +63,7 @@ class SModelEventsDispatcher {
     return myEventsCollector;
   }
 
-  interface SModelEventsListener {
+  public interface SModelEventsListener {
 
     @NotNull
     SModelDescriptor getModelDescriptor();

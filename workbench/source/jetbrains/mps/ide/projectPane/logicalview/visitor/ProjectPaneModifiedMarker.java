@@ -34,9 +34,9 @@ public class ProjectPaneModifiedMarker extends TreeNodeVisitor {
     SModelDescriptor md = node.getSModelDescriptor();
     if (md.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
     if (!(md instanceof EditableSModelDescriptor)) return;
-    if (!SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) md))) return;
 
-    updateNodeLater(node, new LayeredIcon(node.getDefaultIcon(), Icons.MODIFIED_ICON));
+    boolean changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) md));
+    updateNodeLater(node, changed ? new LayeredIcon(node.getDefaultIcon(), Icons.MODIFIED_ICON) : node.getDefaultIcon());
   }
 
   protected void visitModuleNode(final ProjectModuleTreeNode node) {

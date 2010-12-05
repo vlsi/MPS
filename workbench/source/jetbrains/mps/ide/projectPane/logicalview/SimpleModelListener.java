@@ -10,7 +10,7 @@ public abstract class SimpleModelListener extends SModelAdapter {
     myTreeNode = treeNode;
   }
 
-  private void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncesotrs) {
+  protected void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncesotrs) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         if (!isValid()) return;

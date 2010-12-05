@@ -40,7 +40,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
   private SNode myNode;
   private String myRole;
-  private Condition<SNode> myCondition = Condition.TRUE_CONDITION;
+  private Condition<SNode> myCondition;
 
   public SNodeTreeNode(SNode node, IOperationContext operationContext) {
     this(node, null, operationContext);

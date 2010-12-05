@@ -9,6 +9,8 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.generator.ModelGenerationStatusListener;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -20,13 +22,16 @@ import jetbrains.mps.ide.projectPane.logicalview.visitor.TreeNodeVisitor;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
-import jetbrains.mps.ide.ui.smodel.PackageNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.smodel.*;
+import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -35,9 +40,7 @@ import java.awt.dnd.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPane myProjectPane;
@@ -49,21 +52,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     super(project);
     myProjectPane = projectPane;
 
-    addTreeNodeListener(new MPSTreeNodeListener() {
-      public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree) {
-
-      }
-
-      public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
-
-      }
-
-      public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
-        myErrorVisitor.visitNode(treeNode);
-        myGenStatusVisitor.visitNode(treeNode);
-        myModifiedMarker.visitNode(treeNode);
-      }
-    });
+    addTreeNodeListener(new MyMPSTreeNodeListener());
     //enter can't be listened using keyboard actions because in this case tree's UI receives it first and just expands a node
     addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
@@ -213,6 +202,186 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       if (p.isDisposed()) return;
 
       visit(myGenStatusVisitor);
+    }
+  }
+
+  private class MyMPSTreeNodeListener implements MPSTreeNodeListener {
+    private Map<SModelTreeNode, Listeners> myListeners = new HashMap<SModelTreeNode, Listeners>();
+
+    public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree) {
+      if (treeNode instanceof SModelTreeNode) {
+        SModelTreeNode modelNode = (SModelTreeNode) treeNode;
+        if (modelNode.getSModelDescriptor() == null) return;
+
+        addListeners(modelNode);
+      }
+    }
+
+    public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
+      if (treeNode instanceof SModelTreeNode) {
+        SModelTreeNode modelNode = (SModelTreeNode) treeNode;
+        if (modelNode.getSModelDescriptor() == null) return;
+
+        removeListeners(modelNode);
+      }
+    }
+
+    public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
+      myErrorVisitor.visitNode(treeNode);
+      myGenStatusVisitor.visitNode(treeNode);
+      myModifiedMarker.visitNode(treeNode);
+    }
+
+    protected void addListeners(SModelTreeNode modelNode) {
+      SModelDescriptor md = modelNode.getSModelDescriptor();
+      Listeners listeners = new Listeners(modelNode, md);
+      myListeners.put(modelNode, listeners);
+
+      SModelEventsDispatcher.getInstance().registerListener(listeners.myEventsListener);
+      md.addModelListener(listeners.mySimpleModelListener);
+
+      if (!SModelStereotype.isStubModelStereotype(md.getStereotype())) {
+        ModelGenerationStatusManager.getInstance().addGenerationStatusListener(listeners.myStatusListener);
+      }
+    }
+
+    protected void removeListeners(SModelTreeNode modelNode) {
+      SModelDescriptor md = modelNode.getSModelDescriptor();
+      Listeners listeners = myListeners.remove(modelNode);
+
+      if (!SModelStereotype.isStubModelStereotype(md.getStereotype())) {
+        ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(listeners.myStatusListener);
+      }
+
+      md.removeModelListener(listeners.mySimpleModelListener);
+      SModelEventsDispatcher.getInstance().unregisterListener(listeners.myEventsListener);
+    }
+
+    private class Listeners {
+      private SimpleModelListener mySimpleModelListener;
+      private MyGenerationStatusListener myStatusListener;
+      private SModelEventsListener myEventsListener;
+      private MySNodeTreeUpdater myTreeUpdater;
+
+      private SModelDescriptor myModel;
+
+      public Listeners(SModelTreeNode node, SModelDescriptor model) {
+        myModel = model;
+        mySimpleModelListener = new SimpleModelListener(node) {
+          public void modelChangedDramatically(SModel model) {
+            updateNodePresentation(false, false);
+          }
+
+          public void modelChanged(SModel model) {
+            updateNodePresentation(false, false);
+          }
+
+          public boolean isValid() {
+            if (!super.isValid()) return false;
+            return !(myModel.getLoadingState() != ModelLoadingState.NOT_LOADED && myModel.getSModel().isDisposed());
+          }
+        };
+        myStatusListener = new MyGenerationStatusListener();
+        if (model instanceof EditableSModelDescriptor) {
+          myTreeUpdater = new MySNodeTreeUpdater(node.getOperationContext().getProject(), node);
+          myTreeUpdater.setDependencyRecorder(node.getDependencyRecorder());
+        }
+        myEventsListener = new SModelEventsListener() {
+          @NotNull
+          public SModelDescriptor getModelDescriptor() {
+            return myModel;
+          }
+
+          public void eventsHappened(List<SModelEvent> events) {
+            if (myTreeUpdater == null) return;
+            myTreeUpdater.eventsHappenedInCommand(events);
+          }
+        };
+      }
+
+      private class MyGenerationStatusListener implements ModelGenerationStatusListener {
+        public void generatedFilesChanged(SModelDescriptor sm) {
+          if (sm == myModel) {
+            mySimpleModelListener.modelSaved(sm);
+          }
+        }
+      }
+    }
+
+    private class MySNodeTreeUpdater extends SNodeTreeUpdater<SModelTreeNode> {
+      public MySNodeTreeUpdater(Project project, SModelTreeNode treeNode) {
+        super(project, treeNode);
+      }
+
+      public boolean showPropertiesAndReferences() {
+        return showPropertiesAndReferences(myTreeNode);
+      }
+
+      private boolean showPropertiesAndReferences(SModelTreeNode node) {
+        Project project = node.getOperationContext().getProject();
+        return node.getTree() instanceof LogicalViewTree &&
+          ProjectPane.getInstance(project).isShowPropertiesAndReferences();
+      }
+
+      private SNodeTreeNode findRootSNodeTreeNode(SNode node) {
+        return findRootSNodeTreeNode(myTreeNode, node);
+      }
+
+      private SNodeTreeNode findRootSNodeTreeNode(MPSTreeNode current, SNode node) {
+        for (int i = 0; i < current.getChildCount(); i++) {
+          MPSTreeNode child = (MPSTreeNode) current.getChildAt(i);
+
+          if (child instanceof SNodeTreeNode && ((SNodeTreeNode) child).getSNode() == node) {
+            return (SNodeTreeNode) child;
+          }
+
+          if (child instanceof SNodeGroupTreeNode || child instanceof SModelTreeNode) {
+            SNodeTreeNode result = findRootSNodeTreeNode(child, node);
+            if (result != null) {
+              return result;
+            }
+          }
+        }
+
+        return null;
+      }
+
+      public SModelDescriptor getSModelDescriptor() {
+        return myTreeNode.getSModel().getModelDescriptor();
+      }
+
+      public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
+        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+        for (SNode root : removedRoots) {
+          SNodeTreeNode node = (SNodeTreeNode) findRootSNodeTreeNode(root);
+          if (node == null) continue;
+
+          MPSTreeNode parent = (MPSTreeNode) node.getParent();
+          treeModel.removeNodeFromParent(node);
+
+          if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
+            myTreeNode.groupBecameEmpty((SNodeGroupTreeNode) parent);
+          }
+        }
+        myTreeNode.insertRoots(addedRoots);
+      }
+
+      public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
+        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+
+        for (SNode node : nodesWithChangedPackages) {
+          SNodeTreeNode treeNode = findRootSNodeTreeNode(node);
+          if (treeNode == null) continue;
+
+          MPSTreeNode parent = (MPSTreeNode) treeNode.getParent();
+
+          treeModel.removeNodeFromParent(treeNode);
+          if (parent.getChildCount() == 0 && parent instanceof SNodeGroupTreeNode) {
+            myTreeNode.groupBecameEmpty((SNodeGroupTreeNode) parent);
+          }
+        }
+        myTreeNode.insertRoots(nodesWithChangedPackages);
+      }
     }
   }
 }

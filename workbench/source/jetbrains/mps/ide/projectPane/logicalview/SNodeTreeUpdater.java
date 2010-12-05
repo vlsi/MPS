@@ -1,10 +1,12 @@
-package jetbrains.mps.ide.ui.smodel;
+package jetbrains.mps.ide.projectPane.logicalview;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -90,8 +92,8 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     for (SNode node : nodesWithChangedPresentations) {
       SNodeTreeNode treeNode = (SNodeTreeNode) myTreeNode.findDescendantWith(node);
-
       if (treeNode == null) continue;
+
       if (node.isRoot()) {
         MPSTreeNode parentTreeNode = (MPSTreeNode) treeNode.getParent();
         int currentIndex = parentTreeNode.getIndex(treeNode);
@@ -128,8 +130,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
         propsNode.init();
       }
 
-      treeNode.updatePresentation();
-      treeNode.updateNodePresentationInTree();
+      treeNode.renewPresentation();
     }
   }
 
