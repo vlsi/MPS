@@ -52,10 +52,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private boolean myInitializing = false;
   private SModelEventsListener myEventsListener;
   private SimpleModelListener mySimpleModelListener = new SimpleModelListener(this) {
-    public void updateTreeNodePresentation() {
-      SModelTreeNode.this.updatePresentation();
-    }
-
     public boolean isValid() {
       if (!super.isValid()) return false;
       return !(myModelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED && myModelDescriptor.getSModel().isDisposed());

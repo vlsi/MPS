@@ -11,8 +11,6 @@ public abstract class SimpleModelListener extends SModelAdapter {
     myTreeNode = treeNode;
   }
 
-  public abstract void updateTreeNodePresentation();
-
   private MPSTree getTree() {
     return myTreeNode.getTree();
   }
@@ -26,8 +24,7 @@ public abstract class SimpleModelListener extends SModelAdapter {
       public void run() {
         if (!isValid()) return;
 
-        updateTreeNodePresentation();
-        myTreeNode.updateNodePresentationInTree();
+        myTreeNode.renewPresentation();
         if (reloadSubTree) {
           myTreeNode.updateSubTree();
         }

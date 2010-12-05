@@ -60,10 +60,6 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     if (myEventsListener != null) return;
     myEventsListener = new MyEventsListener(getModelDescriptor());
     mySNodeModelListener = new SimpleModelListener(this) {
-      public void updateTreeNodePresentation() {
-        UpdatableSNodeTreeNode.this.updatePresentation();
-      }
-
       public boolean isValid() {
         if (!super.isValid()) return false;
         return !getSNode().isDisposed();
