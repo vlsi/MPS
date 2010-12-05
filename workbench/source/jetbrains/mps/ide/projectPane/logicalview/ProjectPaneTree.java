@@ -9,9 +9,13 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.messages.MessageBusConnection;
-import jetbrains.mps.ide.projectPane.*;
-import jetbrains.mps.ide.projectPane.logicalview.visitor.*;
+import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
+import jetbrains.mps.ide.projectPane.LogicalViewTree;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeErrorChecker;
+import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeGenStatusUpdater;
+import jetbrains.mps.ide.projectPane.logicalview.visitor.TreeNodeVisitor;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -92,8 +96,15 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   }
 
   private void visit(TreeNodeVisitor visitor) {
-    //width-first because we normally see upper level first
-    123
+    //todo width-first will be better because we normally see upper level first
+    visit(getRootNode(), visitor);
+  }
+
+  private void visit(MPSTreeNode rootNode, TreeNodeVisitor visitor) {
+    visitor.visitNode(rootNode);
+    for (MPSTreeNode node : rootNode) {
+      visit(node, visitor);
+    }
   }
 
   private class MyTransferable implements Transferable {
