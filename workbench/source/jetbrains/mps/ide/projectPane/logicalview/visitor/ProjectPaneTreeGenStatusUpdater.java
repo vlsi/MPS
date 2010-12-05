@@ -30,21 +30,20 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
+import javax.swing.SwingUtilities;
+
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   protected void visitModelNode(SModelTreeNode node) {
     GenerationStatus generationStatus = getGenerationStatus(node);
-
-
-    node.setAdditionalText(generationStatus.getMessage());
+    updateNodeLater(node, generationStatus.getMessage());
   }
 
   protected void visitModuleNode(ProjectModuleTreeNode node) {
-    if (node.getModule().isPackaged()) {
-      node.setAdditionalText("packaged");
-    } else {
-      node.setAdditionalText(generationRequired(node).getMessage());
+    String text = "packaged";
+    if (!node.getModule().isPackaged()) {
+      text = generationRequired(node).getMessage();
     }
-    node.updateNodePresentationInTree();
+    updateNodeLater(node, text);
   }
 
   protected void visitProjectNode(ProjectTreeNode node) {
@@ -108,5 +107,14 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     SModelDescriptor md = node.getSModelDescriptor();
     if (md == null) return false;
     return GeneratorManager.isDoNotGenerate(md);
+  }
+
+  private void updateNodeLater(final MPSTreeNode node, final String addText) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        node.setAdditionalText(addText);
+        node.updateNodePresentationInTree();
+      }
+    });
   }
 }
