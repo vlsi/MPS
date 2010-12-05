@@ -16,13 +16,14 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.util.Computable;
+import org.jetbrains.annotations.Nullable;
 
 public interface UndoHandler {
   public void addUndoableAction(SNodeUndoableAction action);
 
   public <T> T runNonUndoableAction(Computable<T> t);
 
-  boolean needRegisterUndo(SModel model);
+  boolean needRegisterUndo(@Nullable SModel model);
 
   boolean isInsideUndoableCommand();
 

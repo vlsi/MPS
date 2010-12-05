@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.util.Computable;
+import org.jetbrains.annotations.Nullable;
 
 public class DefaultUndoHandler implements UndoHandler {
   public void addUndoableAction(SNodeUndoableAction action) {
@@ -26,7 +27,7 @@ public class DefaultUndoHandler implements UndoHandler {
     return t.compute();
   }
 
-  public boolean needRegisterUndo(SModel model) {
+  public boolean needRegisterUndo(@Nullable SModel model) {
     return false;
   }
 
