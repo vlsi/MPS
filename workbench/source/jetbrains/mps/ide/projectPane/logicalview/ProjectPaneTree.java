@@ -9,6 +9,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.messages.MessageBusConnection;
+import com.intellij.util.ui.tree.TreeModelAdapter;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -25,6 +26,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
+import javax.swing.event.TreeModelEvent;
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -39,6 +41,8 @@ import java.util.List;
 
 public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPane myProjectPane;
+  private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
+  private ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
 
   public ProjectPaneTree(ProjectPane projectPane, Project project) {
     super(project);
@@ -88,11 +92,11 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   }
 
   private void updateGenStatuses() {
-    visit(new ProjectPaneTreeGenStatusUpdater());
+    visit(myGenStatusVisitor);
   }
 
   private void updateErrors() {
-    visit(new ProjectPaneTreeErrorChecker());
+    visit(myErrorVisitor);
   }
 
   private void visit(TreeNodeVisitor visitor) {
