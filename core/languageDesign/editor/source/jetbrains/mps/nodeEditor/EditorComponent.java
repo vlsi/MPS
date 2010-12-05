@@ -2535,8 +2535,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myCellSwapInProgress;
   }
 
-  /*package*/
-
   CellInfo getRecentlySelectedCellInfo() {
     return myRecentlySelectedCellInfo;
   }
@@ -2573,13 +2571,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       });
     }
     if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
-      EditorCell rootCell = getRootCell();
-      if (rootCell == null) return null;
-      SNode node = rootCell.getSNode();
-      if (node == null) return null;
-      SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-      if (modelDescriptor == null) return null;
-      return modelDescriptor.getModule();
+      return getOperationContext().getModule();
     }
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
     if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
