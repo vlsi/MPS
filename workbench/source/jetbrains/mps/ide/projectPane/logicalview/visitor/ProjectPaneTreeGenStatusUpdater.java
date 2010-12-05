@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane.logicalview.visitor;
 
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.AccessoriesModelTreeNode;
@@ -27,21 +28,30 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode.GenerationStatus;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import javax.swing.SwingUtilities;
 
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
-  protected void visitModelNode(SModelTreeNode node) {
-    GenerationStatus generationStatus = getGenerationStatus(node);
+  protected void visitModelNode(final SModelTreeNode node) {
+    GenerationStatus generationStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
+      public GenerationStatus compute() {
+        return getGenerationStatus(node);
+      }
+    });
     updateNodeLater(node, generationStatus.getMessage());
   }
 
-  protected void visitModuleNode(ProjectModuleTreeNode node) {
+  protected void visitModuleNode(final ProjectModuleTreeNode node) {
     String text = "packaged";
     if (!node.getModule().isPackaged()) {
-      text = generationRequired(node).getMessage();
+      text = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return generationRequired(node).getMessage();
+        }
+      });
     }
     updateNodeLater(node, text);
   }
