@@ -20,8 +20,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public FieldIsNeverUsed_NonTypesystemRule() {
+public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_FieldIsNeverUsedOrAssigned_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode field, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
@@ -56,25 +56,30 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
       }
     } else {
       List<SNode> localFieldRefs = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{});
-      List<SNode> fieldReferenceOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
-      Iterable<SNode> fieldReferences = ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
+      List<SNode> fieldRefOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(field), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
+      Iterable<SNode> localFieldReferences = ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, "variableDeclaration", false) == field;
         }
       });
-      Sequence.fromIterable(fieldReferences).concat(ListSequence.fromList(fieldReferenceOperations).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> fieldReferenceOperations = ListSequence.fromList(fieldRefOperations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, "fieldDeclaration", false) == field;
         }
-      }));
-      if (Sequence.fromIterable(fieldReferences).isEmpty()) {
+      });
+      if (Sequence.fromIterable(localFieldReferences).isEmpty() && Sequence.fromIterable(fieldReferenceOperations).isEmpty()) {
         {
           BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Private field " + SPropertyOperations.getString(field, "name") + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7970711249077252023", intentionProvider, errorTarget);
         }
       } else {
-        for (SNode ref : fieldReferences) {
+        for (SNode ref : localFieldReferences) {
+          if (CheckingUtil.isAssigned(ref)) {
+            return;
+          }
+        }
+        for (SNode ref : fieldReferenceOperations) {
           if (CheckingUtil.isAssigned(ref)) {
             return;
           }
