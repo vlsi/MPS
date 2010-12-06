@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.impl.dependencies;
+package jetbrains.mps.smodel.persistence.def;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

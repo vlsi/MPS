@@ -24,7 +24,7 @@ import jetbrains.mps.vcs.VcsMergeVersion;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vcs.VcsHelper;
-import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
 import jetbrains.mps.vfs.IFile;
 
 public class ReRunMergeFromBackup_Action extends GeneratedAction {
@@ -137,7 +137,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
 
   private String getHash(SModel model) {
     byte[] currentBytes = ModelUtils.modelToBytes(model);
-    return ModelDigestHelper.hash(currentBytes);
+    return ModelDigestUtil.hash(currentBytes);
   }
 
   private IFile getModelFile() {

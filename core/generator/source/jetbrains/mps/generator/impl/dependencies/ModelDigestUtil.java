@@ -35,74 +35,6 @@ public class ModelDigestUtil {
 
   private static final Logger LOG = Logger.getLogger(ModelDigestUtil.class);
 
-  private static void extractRootHashes(byte[] content, Map<String, String> rootHashes) {
-    XmlFastScanner scanner = new XmlFastScanner(content);
-    int deep = 0, token, rootStart = -1;
-    String rootId = null;
-    boolean firstNode = true;
-
-    while ((token = scanner.next()) != XmlFastScanner.EOI) {
-      switch (token) {
-        case XmlFastScanner.OPEN_TAG:
-          deep++;
-          if (deep == 2 && ModelPersistence.NODE.equals(scanner.getName())) {
-            rootStart = scanner.getTokenOffset();
-            rootId = extractId(scanner.token());
-            if (rootId != null && firstNode) {
-              rootHashes.put(ModelDigestHelper.HEADER, hash(scanner.getText(0, rootStart)));
-              firstNode = false;
-            }
-          }
-          break;
-        case XmlFastScanner.SIMPLE_TAG:
-          if (deep == 1 && ModelPersistence.NODE.equals(scanner.getName())) {
-            rootId = extractId(scanner.token());
-            if (rootId != null) {
-              String s = scanner.getText(scanner.getTokenOffset(), scanner.getOffset());
-              rootHashes.put(rootId, hash(s));
-            }
-          }
-          break;
-
-        case XmlFastScanner.CLOSE_TAG:
-          if (deep == 2) {
-            if (rootId != null && ModelPersistence.NODE.equals(scanner.getName())) {
-              String s = scanner.getText(rootStart, scanner.getOffset());
-              rootHashes.put(rootId, hash(s));
-            }
-            rootStart = -1;
-            rootId = null;
-          }
-          deep--;
-          break;
-      }
-    }
-    if (deep != 0) {
-      LOG.error("xml: bad data");
-    }
-    if (firstNode) {
-      rootHashes.put(ModelDigestHelper.HEADER, hash(content));
-    }
-  }
-
-  private static String extractId(String tag) {
-    if (tag == null) {
-      return null;
-    }
-    int index = tag.lastIndexOf("id=\"");
-    if (index >= 0) {
-      int offset = index + 4;
-      index = offset;
-      while (index < tag.length() && Character.isDigit(tag.codePointAt(index))) {
-        index++;
-      }
-      if (index < tag.length() && tag.charAt(index) == '"') {
-        return tag.substring(offset, index);
-      }
-    }
-    return null;
-  }
-
   public static Map<String, String> calculateHashes(@NotNull IFile f) {
     InputStream in;
     try {
@@ -127,7 +59,7 @@ public class ModelDigestUtil {
   public static Map<String, String> getDigestMap(byte[] modelBytes) {
     Map<String, String> result = new HashMap<String, String>();
     result.put(ModelDigestHelper.FILE, hash(modelBytes));
-    extractRootHashes(modelBytes, result);
+    ModelPersistence.extractRootHashes(modelBytes, result);
     return result;
   }
 

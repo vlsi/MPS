@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.persistence.def;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.StructureModificationHistory;
@@ -515,5 +517,73 @@ public class ModelPersistence {
     } catch (IOException e) {
     }
     return version[0] == -1 ? getCurrentPersistenceVersion() : version[0];
+  }
+
+  public static void extractRootHashes(byte[] content, Map<String, String> rootHashes) {
+    XmlFastScanner scanner = new XmlFastScanner(content);
+    int deep = 0, token, rootStart = -1;
+    String rootId = null;
+    boolean firstNode = true;
+
+    while ((token = scanner.next()) != XmlFastScanner.EOI) {
+      switch (token) {
+        case XmlFastScanner.OPEN_TAG:
+          deep++;
+          if (deep == 2 && ModelPersistence.NODE.equals(scanner.getName())) {
+            rootStart = scanner.getTokenOffset();
+            rootId = extractId(scanner.token());
+            if (rootId != null && firstNode) {
+              rootHashes.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(scanner.getText(0, rootStart)));
+              firstNode = false;
+            }
+          }
+          break;
+        case XmlFastScanner.SIMPLE_TAG:
+          if (deep == 1 && ModelPersistence.NODE.equals(scanner.getName())) {
+            rootId = extractId(scanner.token());
+            if (rootId != null) {
+              String s = scanner.getText(scanner.getTokenOffset(), scanner.getOffset());
+              rootHashes.put(rootId, ModelDigestUtil.hash(s));
+            }
+          }
+          break;
+
+        case XmlFastScanner.CLOSE_TAG:
+          if (deep == 2) {
+            if (rootId != null && ModelPersistence.NODE.equals(scanner.getName())) {
+              String s = scanner.getText(rootStart, scanner.getOffset());
+              rootHashes.put(rootId, ModelDigestUtil.hash(s));
+            }
+            rootStart = -1;
+            rootId = null;
+          }
+          deep--;
+          break;
+      }
+    }
+    if (deep != 0) {
+      LOG.error("xml: bad data");
+    }
+    if (firstNode) {
+      rootHashes.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(content));
+    }
+  }
+
+  private static String extractId(String tag) {
+    if (tag == null) {
+      return null;
+    }
+    int index = tag.lastIndexOf("id=\"");
+    if (index >= 0) {
+      int offset = index + 4;
+      index = offset;
+      while (index < tag.length() && Character.isDigit(tag.codePointAt(index))) {
+        index++;
+      }
+      if (index < tag.length() && tag.charAt(index) == '"') {
+        return tag.substring(offset, index);
+      }
+    }
+    return null;
   }
 }
