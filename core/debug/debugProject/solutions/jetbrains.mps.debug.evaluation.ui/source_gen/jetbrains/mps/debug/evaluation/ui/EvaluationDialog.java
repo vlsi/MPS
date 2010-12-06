@@ -252,7 +252,14 @@ public class EvaluationDialog extends BaseDialog {
     public MySessionChangeListener() {
     }
 
-    public void resumed(AbstractDebugSession session) {
+    public void resumed(final AbstractDebugSession session) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          if (myEvaluationLogic.getDebugSession() == session && session.isStopped()) {
+            dispose();
+          }
+        }
+      });
     }
 
     public void paused(final AbstractDebugSession session) {
