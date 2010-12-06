@@ -49,7 +49,6 @@ public class NodeMaps {
   }
 
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
-    myTypesToNodes.put(type, node);
     myState.executeOperation(new TypeAssignedOperation(node, type, info));
   }
 

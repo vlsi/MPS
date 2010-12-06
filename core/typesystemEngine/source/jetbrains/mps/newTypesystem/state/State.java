@@ -29,8 +29,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -133,7 +131,7 @@ public class State {
   }
 
   public boolean isConcrete(SNode node, boolean shallow) {
-    return (shallow && TypesUtil.isShallowConcrete(node) || isConcrete(node));
+    return (shallow && !TypesUtil.isVariable(node) || isConcrete(node));
   }
 
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {

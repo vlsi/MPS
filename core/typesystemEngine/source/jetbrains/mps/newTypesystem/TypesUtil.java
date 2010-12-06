@@ -49,10 +49,6 @@ public class TypesUtil {
     return node != null && RuntimeTypeVariable.concept.equals(node.getConceptFqName());
   }
 
-  public static boolean isShallowConcrete(SNode node) {
-    return !isVariable(node);
-  }
-
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {
     if (left == right) {
       return true;

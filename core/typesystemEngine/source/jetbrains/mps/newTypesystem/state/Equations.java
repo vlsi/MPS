@@ -40,7 +40,7 @@ public class Equations {
   @StateObject
   private final Map<SNode, SNode> myRepresentatives = new HashMap<SNode, SNode>();
 
-  //seems to be useless to use as a part of state but in such case it is a possible source of side effects
+  //todo: seems to be useless to use as a part of state but in such case it is a possible source of side effects
   private final Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
   private final State myState;
 
@@ -71,7 +71,7 @@ public class Equations {
   }
 
   public SNode getRepresentative(final SNode node) {
-    if (node == null || TypesUtil.isShallowConcrete(node)) {
+    if (node == null || !TypesUtil.isVariable(node)) {
       return node;
     }
     SNode nameRepresentative = getNameRepresentative(node);
