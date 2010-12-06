@@ -1,285 +1,287 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)">
-  <persistence version="4" />
-  <refactoringHistory />
+  <persistence version="7" />
   <language namespace="0272d3b4-4cc8-481e-9e2f-07793fbfcb41(jetbrains.mps.lang.editor.table)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)" version="-1" />
-  <languageAspect modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
-  <maxImportIndex value="2" />
-  <import index="1" modelUID="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" version="0" />
-  <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8414272302258003914">
-    <link role="concept" targetNodeId="1.4677325677876404637:0" resolveInfo="Table" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8414272302258003915">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8414272302258003916">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="8414272302258032646">
-          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8414272302258032647">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3050082749681879106">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3050082749681879107">
-                <property name="name:3" value="row" />
-                <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3050082749681879108">
-                  <link role="concept:16" targetNodeId="1.4677325677876404638:0" resolveInfo="Row" />
+  <import index="ohyq" modelUID="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" version="0" />
+  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="n3wi" modelUID="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)" version="-1" implicit="yes" />
+  <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
+  <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" implicit="yes" />
+  <roots>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="8414272302258003914">
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="ohyq.4677325677876404637" resolveInfo="Table" />
+    </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="6216065619544941718">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tableProposal" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="ohyq.2253133157536766818" resolveInfo="CellModel_HierarchycalTable" />
+    </node>
+  </roots>
+  <root id="8414272302258003914">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="8414272302258003915">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8414272302258003916">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ForStatement" typeId="tpee.1144231330558" id="8414272302258032646">
+          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="8414272302258032647">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3050082749681879106">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3050082749681879107">
+                <property name="name" nameId="tpck.1169194664001" value="row" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3050082749681879108">
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="ohyq.4677325677876404638" resolveInfo="Row" />
                 </node>
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3050082749681879109">
-                  <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="3050082749681879110">
-                    <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3050082749681879111">
-                      <link role="concept:16" targetNodeId="1.4677325677876404638:0" resolveInfo="Row" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3050082749681879109">
+                  <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="3050082749681879110">
+                    <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3050082749681879111">
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="ohyq.4677325677876404638" resolveInfo="Row" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="3050082749681879078">
-              <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3050082749681879079">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3050082749681879130">
-                  <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3050082749681879131">
-                    <property name="name:3" value="dataCell" />
-                    <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3050082749681879132">
-                      <link role="concept:16" targetNodeId="1.3050082749681877749:0" resolveInfo="DataCell" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ForStatement" typeId="tpee.1144231330558" id="3050082749681879078">
+              <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="3050082749681879079">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3050082749681879130">
+                  <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3050082749681879131">
+                    <property name="name" nameId="tpck.1169194664001" value="dataCell" />
+                    <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3050082749681879132">
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="ohyq.3050082749681877749" resolveInfo="DataCell" />
                     </node>
-                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3050082749681879133">
-                      <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="3050082749681879134">
-                        <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3050082749681879135">
-                          <link role="concept:16" targetNodeId="1.3050082749681877749:0" resolveInfo="DataCell" />
+                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3050082749681879133">
+                      <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="3050082749681879134">
+                        <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3050082749681879135">
+                          <link role="concept" roleId="tp25.1138405853777" targetNodeId="ohyq.3050082749681877749" resolveInfo="DataCell" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3050082749681879138">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="3050082749681879145">
-                    <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3050082749681879153">
-                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3050082749681879156">
-                        <link role="variableDeclaration:3" targetNodeId="3050082749681879098" resolveInfo="j" />
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3050082749681879138">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3050082749681879145">
+                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3050082749681879153">
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3050082749681879156">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3050082749681879098" resolveInfo="j" />
                       </node>
-                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3050082749681879149">
-                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3050082749681879148">
-                          <link role="variableDeclaration:3" targetNodeId="8414272302258032649" resolveInfo="i" />
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3050082749681879149">
+                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3050082749681879148">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8414272302258032649" resolveInfo="i" />
                         </node>
-                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3050082749681879152">
-                          <property name="value:3" value=" " />
+                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3050082749681879152">
+                          <property name="value" nameId="tpee.1070475926801" value=" " />
                         </node>
                       </node>
                     </node>
-                    <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3050082749681879140">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3050082749681879139">
-                        <link role="variableDeclaration:3" targetNodeId="3050082749681879131" resolveInfo="dataCell" />
+                    <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3050082749681879140">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3050082749681879139">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3050082749681879131" resolveInfo="dataCell" />
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3050082749681879144">
-                        <link role="property:16" targetNodeId="1.3050082749681877755:0" resolveInfo="value" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3050082749681879113">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3050082749681879120">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3050082749681879115">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3050082749681879114">
-                        <link role="variableDeclaration:3" targetNodeId="3050082749681879107" resolveInfo="row" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3050082749681879119">
-                        <link role="link:16" targetNodeId="1.3050082749681877748:0" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="3050082749681879124">
-                      <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3050082749681879136">
-                        <link role="variableDeclaration:3" targetNodeId="3050082749681879131" resolveInfo="dataCell" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3050082749681879144">
+                        <link role="property" roleId="tp25.1138056395725" targetNodeId="ohyq.3050082749681877755" resolveInfo="value" />
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3050082749681879098">
-                <property name="name:3" value="j" />
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3050082749681879099" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3050082749681879100">
-                  <property name="value:3" value="0" />
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3050082749681879113">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3050082749681879120">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3050082749681879115">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3050082749681879114">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3050082749681879107" resolveInfo="row" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="3050082749681879119">
+                        <link role="link" roleId="tp25.1138056546658" targetNodeId="ohyq.3050082749681877748" />
+                      </node>
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3050082749681879124">
+                      <node role="argument" roleId="tp2q.1160612519549" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3050082749681879136">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3050082749681879131" resolveInfo="dataCell" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LessThanExpression:3" id="3050082749681879101">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3050082749681879102">
-                  <property name="value:3" value="3" />
-                </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3050082749681879103">
-                  <link role="variableDeclaration:3" targetNodeId="3050082749681879098" resolveInfo="i" />
+              <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3050082749681879098">
+                <property name="name" nameId="tpck.1169194664001" value="j" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3050082749681879099" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3050082749681879100">
+                  <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
               </node>
-              <node role="iteration:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="3050082749681879104">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3050082749681879105">
-                  <link role="variableDeclaration:3" targetNodeId="3050082749681879098" resolveInfo="i" />
+              <node role="condition" roleId="tpee.1144231399730" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="3050082749681879101">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3050082749681879102">
+                  <property name="value" nameId="tpee.1068580320021" value="3" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3050082749681879103">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3050082749681879098" resolveInfo="i" />
+                </node>
+              </node>
+              <node role="iteration" roleId="tpee.1144231408325" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="3050082749681879104">
+                <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3050082749681879105">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3050082749681879098" resolveInfo="i" />
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3050082749681879080">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3050082749681879081">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3050082749681879082">
-                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3050082749681879083" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3050082749681879084">
-                    <link role="link:16" targetNodeId="1.4677325677876404639:0" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3050082749681879080">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3050082749681879081">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3050082749681879082">
+                  <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="3050082749681879083" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="3050082749681879084">
+                    <link role="link" roleId="tp25.1138056546658" targetNodeId="ohyq.4677325677876404639" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="3050082749681879085">
-                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3050082749681879112">
-                    <link role="variableDeclaration:3" targetNodeId="3050082749681879107" resolveInfo="row" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="3050082749681879085">
+                  <node role="argument" roleId="tp2q.1160612519549" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3050082749681879112">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3050082749681879107" resolveInfo="row" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8414272302258032649">
-            <property name="name:3" value="i" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="8414272302258032650" />
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8414272302258032652">
-              <property name="value:3" value="0" />
+          <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8414272302258032649">
+            <property name="name" nameId="tpck.1169194664001" value="i" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8414272302258032650" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8414272302258032652">
+              <property name="value" nameId="tpee.1068580320021" value="0" />
             </node>
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LessThanExpression:3" id="8414272302258032654">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8414272302258032657">
-              <property name="value:3" value="5" />
+          <node role="condition" roleId="tpee.1144231399730" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="8414272302258032654">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8414272302258032657">
+              <property name="value" nameId="tpee.1068580320021" value="5" />
             </node>
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8414272302258032653">
-              <link role="variableDeclaration:3" targetNodeId="8414272302258032649" resolveInfo="i" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8414272302258032653">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8414272302258032649" resolveInfo="i" />
             </node>
           </node>
-          <node role="iteration:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="8414272302258032659">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8414272302258032660">
-              <link role="variableDeclaration:3" targetNodeId="8414272302258032649" resolveInfo="i" />
+          <node role="iteration" roleId="tpee.1144231408325" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="8414272302258032659">
+            <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8414272302258032660">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8414272302258032649" resolveInfo="i" />
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="4490468428501046559">
-          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4490468428501046560">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4490468428501046561">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4490468428501046562">
-                <property name="name:3" value="dataCell" />
-                <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4490468428501046563">
-                  <link role="concept:16" targetNodeId="1.3050082749681877749:0" resolveInfo="DataCell" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ForStatement" typeId="tpee.1144231330558" id="4490468428501046559">
+          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="4490468428501046560">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4490468428501046561">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4490468428501046562">
+                <property name="name" nameId="tpck.1169194664001" value="dataCell" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4490468428501046563">
+                  <link role="concept" roleId="tp25.1138405853777" targetNodeId="ohyq.3050082749681877749" resolveInfo="DataCell" />
                 </node>
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4490468428501046564">
-                  <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="4490468428501046565">
-                    <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4490468428501046566">
-                      <link role="concept:16" targetNodeId="1.3050082749681877749:0" resolveInfo="DataCell" />
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4490468428501046564">
+                  <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="4490468428501046565">
+                    <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4490468428501046566">
+                      <link role="concept" roleId="tp25.1138405853777" targetNodeId="ohyq.3050082749681877749" resolveInfo="DataCell" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4490468428501046567">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4490468428501046568">
-                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4490468428501046569">
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4490468428501046570">
-                    <link role="variableDeclaration:3" targetNodeId="4490468428501046584" resolveInfo="j" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4490468428501046567">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="4490468428501046568">
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="4490468428501046569">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4490468428501046570">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4490468428501046584" resolveInfo="j" />
                   </node>
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4490468428501046573">
-                    <property name="value:3" value="h-" />
-                  </node>
-                </node>
-                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4490468428501046574">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4490468428501046575">
-                    <link role="variableDeclaration:3" targetNodeId="4490468428501046562" resolveInfo="dataCell" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4490468428501046576">
-                    <link role="property:16" targetNodeId="1.3050082749681877755:0" resolveInfo="value" />
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4490468428501046573">
+                    <property name="value" nameId="tpee.1070475926801" value="h-" />
                   </node>
                 </node>
-              </node>
-            </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4490468428501046577">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4490468428501046578">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4490468428501046579">
-                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4490468428501046594" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="4490468428501046595">
-                    <link role="link:16" targetNodeId="1.4490468428501046490:0" />
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4490468428501046574">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4490468428501046575">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4490468428501046562" resolveInfo="dataCell" />
                   </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="4490468428501046582">
-                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4490468428501046583">
-                    <link role="variableDeclaration:3" targetNodeId="4490468428501046562" resolveInfo="dataCell" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="4490468428501046576">
+                    <link role="property" roleId="tp25.1138056395725" targetNodeId="ohyq.3050082749681877755" resolveInfo="value" />
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4490468428501046584">
-            <property name="name:3" value="i" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="4490468428501046585" />
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4490468428501046586">
-              <property name="value:3" value="0" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4490468428501046577">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4490468428501046578">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4490468428501046579">
+                  <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="4490468428501046594" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4490468428501046595">
+                    <link role="link" roleId="tp25.1138056546658" targetNodeId="ohyq.4490468428501046490" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="4490468428501046582">
+                  <node role="argument" roleId="tp2q.1160612519549" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4490468428501046583">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4490468428501046562" resolveInfo="dataCell" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LessThanExpression:3" id="4490468428501046587">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4490468428501046588">
-              <property name="value:3" value="3" />
-            </node>
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4490468428501046589">
-              <link role="variableDeclaration:3" targetNodeId="4490468428501046584" resolveInfo="j" />
+          <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4490468428501046584">
+            <property name="name" nameId="tpck.1169194664001" value="i" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4490468428501046585" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4490468428501046586">
+              <property name="value" nameId="tpee.1068580320021" value="0" />
             </node>
           </node>
-          <node role="iteration:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="4490468428501046590">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4490468428501046591">
-              <link role="variableDeclaration:3" targetNodeId="4490468428501046584" resolveInfo="j" />
+          <node role="condition" roleId="tpee.1144231399730" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="4490468428501046587">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4490468428501046588">
+              <property name="value" nameId="tpee.1068580320021" value="3" />
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4490468428501046589">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4490468428501046584" resolveInfo="j" />
+            </node>
+          </node>
+          <node role="iteration" roleId="tpee.1144231408325" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="4490468428501046590">
+            <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4490468428501046591">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4490468428501046584" resolveInfo="j" />
             </node>
           </node>
         </node>
       </node>
     </node>
-  </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" />
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="6216065619544941718">
-    <property name="virtualPackage" value="tableProposal" />
-    <link role="concept" targetNodeId="1.2253133157536766818:0" resolveInfo="CellModel_HierarchycalTable" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6216065619544944230">
-      <property name="name" value="getContainingConceptDeclaration" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6216065619544944231" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6216065619544944233">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6216065619544944236">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6216065619544944237">
-            <property name="name:3" value="editorComponent" />
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6216065619544944238">
-              <link role="concept:16" targetNodeId="2v.1080736578640:32" resolveInfo="BaseEditorComponent" />
+  </root>
+  <root id="6216065619544941718">
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="6216065619544944230">
+      <property name="name" nameId="tpck.1169194664001" value="getContainingConceptDeclaration" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6216065619544944231" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6216065619544944233">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6216065619544944236">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6216065619544944237">
+            <property name="name" nameId="tpck.1169194664001" value="editorComponent" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6216065619544944238">
+              <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.1080736578640" resolveInfo="BaseEditorComponent" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6216065619544944239">
-              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6216065619544944256" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="6216065619544944241">
-                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="6216065619544944243">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6216065619544944244">
-                    <link role="conceptDeclaration:16" targetNodeId="2v.1080736578640:32" resolveInfo="BaseEditorComponent" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6216065619544944239">
+              <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="6216065619544944256" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="6216065619544944241">
+                <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="6216065619544944243">
+                  <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="6216065619544944244">
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpc2.1080736578640" resolveInfo="BaseEditorComponent" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6216065619544944252">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6216065619544944253">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6216065619544944254">
-              <link role="variableDeclaration:3" targetNodeId="6216065619544944237" resolveInfo="editorComponent" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6216065619544944252">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6216065619544944253">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6216065619544944254">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6216065619544944237" resolveInfo="editorComponent" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6216065619544944255">
-              <link role="baseMethodDeclaration:16" targetNodeId="3v.7055725856388417603" resolveInfo="getConceptDeclaration" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6216065619544944255">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcb.7055725856388417603" resolveInfo="getConceptDeclaration" />
             </node>
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6216065619544944234">
-        <link role="concept:16" targetNodeId="2.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6216065619544944234">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
     </node>
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="6216065619544941719">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6216065619544941720" />
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="6216065619544941719">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6216065619544941720" />
     </node>
-  </node>
+  </root>
 </model>
 
