@@ -73,19 +73,8 @@ import com.intellij.openapi.util.Disposer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.actions.RefactoringPanel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import jetbrains.mps.project.IModule;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer;
@@ -103,6 +92,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRe
 import jetbrains.mps.InternalFlag;
 import javax.swing.JCheckBox;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import java.awt.Insets;
 
 public class StandardComponents {
   public StandardComponents() {
@@ -416,49 +406,6 @@ public class StandardComponents {
     return panel;
   }
 
-  private static JComponent createRefactoringItemComponent(final EditableSModelDescriptor modelDescriptor, final IOperationContext context) {
-    final Wrappers._T<RefactoringPanel> refactoringPanel = new Wrappers._T<RefactoringPanel>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (!(modelDescriptor.getStructureModificationHistory().getDataList().isEmpty())) {
-          refactoringPanel.value = new RefactoringPanel(modelDescriptor, RefactoringUtil.getAllRefactoringNodes(), context);
-        }
-      }
-    });
-    if (refactoringPanel.value == null) {
-      return null;
-    }
-    return refactoringPanel.value.getComponent();
-  }
-
-  public static JComponent createRefactoringHistoryComponent(EditableSModelDescriptor modelDescriptor, final IOperationContext context) {
-    JComponent component = StandardComponents.createRefactoringItemComponent(modelDescriptor, context);
-    if (component == null) {
-      return new JPanel();
-    }
-    return new JScrollPane(component, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-  }
-
-  public static JComponent createRefactoringHistoryComponent(IModule module, IOperationContext context) {
-    JPanel mainPanel = new JPanel(new GridBagLayout());
-    GridBagConstraints gridBagConstraints = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(4, 8, 4, 8), 0, 0);
-    gridBagConstraints.weighty = 0;
-    gridBagConstraints.gridy = GridBagConstraints.RELATIVE;
-    for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
-      if (!(modelDescriptor instanceof EditableSModelDescriptor)) {
-        continue;
-      }
-      JComponent component = StandardComponents.createRefactoringItemComponent(((EditableSModelDescriptor) modelDescriptor), context);
-      if (component == null) {
-        continue;
-      }
-      mainPanel.add(component, gridBagConstraints);
-    }
-    JPanel result = new JPanel(new BorderLayout());
-    result.add(mainPanel, BorderLayout.PAGE_START);
-    return new JScrollPane(result, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-  }
-
   private static JPanel createLegendPanel() {
     JPanel result = new JPanel(new GridBagLayout());
     GridBagConstraints c = StandardComponents.createConstraints(0, 0, 1, 4, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE);
@@ -477,12 +424,12 @@ public class StandardComponents {
   public static JPanel createTestConfigsPanel(final IBindedDialog owner, final String caption, final List<BaseTestConfiguration> list, final ProjectProperties properties) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        final BoundListPanel result_wf5hwp_a0a0a12 = new BoundListPanel(owner, caption, list);
-        final DefaultListCellRenderer result_wf5hwp_a0a0a0a12 = new TestConfigListCellRenderer();
-        result_wf5hwp_a0a0a12.setCellRenderer(result_wf5hwp_a0a0a0a12);
+        final BoundListPanel result_wf5hwp_a0a0a81 = new BoundListPanel(owner, caption, list);
+        final DefaultListCellRenderer result_wf5hwp_a0a0a0a81 = new TestConfigListCellRenderer();
+        result_wf5hwp_a0a0a81.setCellRenderer(result_wf5hwp_a0a0a0a81);
 
-        final JList jlist = result_wf5hwp_a0a0a12.getList();
-        final BaseValidatedAction result_wf5hwp_a3a0a0a12 = new ListAddAction(jlist) {
+        final JList jlist = result_wf5hwp_a0a0a81.getList();
+        final BaseValidatedAction result_wf5hwp_a3a0a0a81 = new ListAddAction(jlist) {
           protected int doAdd(AnActionEvent e) {
             TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getProject(), null);
             dialog.showDialog();
@@ -495,8 +442,8 @@ public class StandardComponents {
             return list.indexOf(config);
           }
         };
-        result_wf5hwp_a0a0a12.setAddAction(result_wf5hwp_a3a0a0a12);
-        final BaseValidatedAction result_wf5hwp_a4a0a0a12 = new ListRemoveAction(jlist) {
+        result_wf5hwp_a0a0a81.setAddAction(result_wf5hwp_a3a0a0a81);
+        final BaseValidatedAction result_wf5hwp_a4a0a0a81 = new ListRemoveAction(jlist) {
           protected void doRemove(AnActionEvent e) {
             for (Object value : jlist.getSelectedValues()) {
               properties.testConfigsChanged();
@@ -504,8 +451,8 @@ public class StandardComponents {
             }
           }
         };
-        result_wf5hwp_a0a0a12.setRemoveAction(result_wf5hwp_a4a0a0a12);
-        final BaseValidatedAction result_wf5hwp_a5a0a0a12 = new ListEditAction(jlist) {
+        result_wf5hwp_a0a0a81.setRemoveAction(result_wf5hwp_a4a0a0a81);
+        final BaseValidatedAction result_wf5hwp_a5a0a0a81 = new ListEditAction(jlist) {
           public void doEdit() {
             Object value = jlist.getSelectedValue();
             if (value == null) {
@@ -522,10 +469,10 @@ public class StandardComponents {
             properties.testConfigsChanged();
           }
         };
-        result_wf5hwp_a0a0a12.setEditAction(result_wf5hwp_a5a0a0a12);
+        result_wf5hwp_a0a0a81.setEditAction(result_wf5hwp_a5a0a0a81);
 
-        result_wf5hwp_a0a0a12.init();
-        return result_wf5hwp_a0a0a12;
+        result_wf5hwp_a0a0a81.init();
+        return result_wf5hwp_a0a0a81;
       }
     }.invoke();
   }
@@ -545,13 +492,13 @@ public class StandardComponents {
   public static JPanel createProjectModulesPathsList(final IBindedDialog owner, final String caption, final List<Path> list, final String extension) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        final BoundListPanel result_wf5hwp_a0a0a52 = new BoundListPanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a52 = new ModulePathChooser(extension, owner);
-        result_wf5hwp_a0a0a52.setChooser(result_wf5hwp_a0a0a0a52);
-        final DefaultListCellRenderer result_wf5hwp_a1a0a0a52 = new PathRenderer();
-        result_wf5hwp_a0a0a52.setCellRenderer(result_wf5hwp_a1a0a0a52);
-        result_wf5hwp_a0a0a52.init();
-        return result_wf5hwp_a0a0a52;
+        final BoundListPanel result_wf5hwp_a0a0a22 = new BoundListPanel(owner, caption, list);
+        final Computable result_wf5hwp_a0a0a0a22 = new ModulePathChooser(extension, owner);
+        result_wf5hwp_a0a0a22.setChooser(result_wf5hwp_a0a0a0a22);
+        final DefaultListCellRenderer result_wf5hwp_a1a0a0a22 = new PathRenderer();
+        result_wf5hwp_a0a0a22.setCellRenderer(result_wf5hwp_a1a0a0a22);
+        result_wf5hwp_a0a0a22.init();
+        return result_wf5hwp_a0a0a22;
       }
     }.invoke();
   }
