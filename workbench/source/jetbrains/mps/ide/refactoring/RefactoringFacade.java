@@ -26,7 +26,9 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.refactoring.StructureModification;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
+import jetbrains.mps.refactoring.StructureModificationProcessor0;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -284,7 +286,10 @@ public class RefactoringFacade extends StructureModificationProcessor {
     assert !refactoringContext.isLocal();
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
-    refactoringContext.getStructureModificationData().addDependencyModel(model);
-    addToHistory(refactoringContext.getStructureModificationData());
+//    refactoringContext.getStructureModificationData().addDependencyModel(model);
+//    addToHistory(refactoringContext.getStructureModificationData());
+    StructureModification data = refactoringContext.getStructureModification();
+    data.addDependencyModel(model.getSModelReference(), model.getVersion());
+    StructureModificationProcessor0.addToHistory(data);
   }
 }

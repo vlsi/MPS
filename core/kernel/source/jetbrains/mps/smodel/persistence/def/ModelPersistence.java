@@ -332,13 +332,13 @@ public class ModelPersistence {
 
   // upgrades model persistence and saves model
   public static void upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
-    if (fromVersion < 5 && toVersion >= 5) {
-      StructureModificationHistory refactorings = model.getRefactoringHistory();
-      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
-        RefactoringsPersistence.save(file, refactorings);
-      }
-      model.setRefactoringHistory(null);
-    }
+//    if (fromVersion < 5 && toVersion >= 5) {
+//      StructureModificationHistory refactorings = model.getRefactoringHistory();
+//      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
+//        RefactoringsPersistence.save(file, refactorings);
+//      }
+//      model.setRefactoringHistory(null);
+//    }
     model.setPersistenceVersion(toVersion);
     Document document = saveModel(model, toVersion);
     try {

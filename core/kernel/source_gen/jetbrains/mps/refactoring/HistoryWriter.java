@@ -4,7 +4,6 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import org.jdom.Document;
-import java.util.List;
 import org.jdom.Element;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -35,9 +34,9 @@ public class HistoryWriter {
   public HistoryWriter() {
   }
 
-  public Document saveHistory(List<StructureModification> history) {
+  public Document saveHistory(StructureModificationHistory0 history) {
     final Element root = new Element(MODIFICATION_HISTORY);
-    ListSequence.fromList(history).visitAll(new IVisitor<StructureModification>() {
+    ListSequence.fromList(history.getHistory()).visitAll(new IVisitor<StructureModification>() {
       public void visit(StructureModification it) {
         root.addContent(saveModification(it));
       }

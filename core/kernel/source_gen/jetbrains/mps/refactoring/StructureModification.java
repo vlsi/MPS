@@ -71,9 +71,10 @@ public class StructureModification {
     public String oldValue;
     public String newValue;
 
-    public RenameNode(SNodePointer id, StructureModification.RenameNode.RenameType type, String newValue) {
+    public RenameNode(SNodePointer id, StructureModification.RenameNode.RenameType type, String newValue, String oldValue) {
       oldID = id;
       this.type = type;
+      this.oldValue = oldValue;
       this.newValue = newValue;
     }
 

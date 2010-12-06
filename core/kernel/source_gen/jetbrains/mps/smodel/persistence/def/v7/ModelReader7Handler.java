@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.ModelLoadingState;
+import jetbrains.mps.refactoring.ModelLinkMap;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
@@ -43,6 +44,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
   private ModelLoadingState fieldstate;
   private SModel fieldmodel;
   private ReadHelper fieldhelper;
+  private ModelLinkMap fieldlinkMap;
 
   public ModelReader7Handler(ModelLoadingState state) {
     fieldstate = state;
@@ -254,6 +256,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
     }
 
     private boolean validateInternal(SModel result) throws SAXException {
+      // <node> 
       fieldmodel.setLoading(false);
       return true;
     }

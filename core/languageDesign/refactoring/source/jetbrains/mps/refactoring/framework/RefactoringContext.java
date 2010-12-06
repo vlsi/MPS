@@ -25,6 +25,10 @@ import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.refactoring.StructureModification;
+import jetbrains.mps.refactoring.StructureModification.MoveNode;
+import jetbrains.mps.refactoring.StructureModification.RenameNode;
+import jetbrains.mps.refactoring.StructureModification.RenameNode.RenameType;
 import jetbrains.mps.refactoring.StructureModificationData;
 import jetbrains.mps.refactoring.StructureModificationData.ConceptFeatureKind;
 import jetbrains.mps.smodel.*;
@@ -39,6 +43,7 @@ public class RefactoringContext {
 
   private IRefactoring myRefactoring;
   private StructureModificationData myData;
+  private StructureModification myLoggedData = new StructureModification();
   //-----------------
   private Map<String, Object> myParametersMap = new HashMap<String, Object>();
   //other
@@ -70,6 +75,10 @@ public class RefactoringContext {
 
   public StructureModificationData getStructureModificationData() {
     return myData;
+  }
+
+  public StructureModification getStructureModification() {
+    return myLoggedData;
   }
 
   public void addAdditionalParameters(Map<String, Object> parameters) {
@@ -162,6 +171,7 @@ public class RefactoringContext {
       SNode target = mapping.get(key);
       myData.addToMoveMap(key, target);
       myData.addToSourceMap(target, oldParent);
+      myLoggedData.getData().add(new MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -172,6 +182,7 @@ public class RefactoringContext {
   public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode) {
     myData.addToMoveMap(whatNode, withNode);
     myData.addToSourceMap(withNode, whatNode.getParent());
+    myLoggedData.getData().add(new MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
     whatNode.delete();
   }
 
@@ -196,6 +207,7 @@ public class RefactoringContext {
       SNode target = mapping.get(key);
       myData.addToMoveMap(key, target);
       myData.addToSourceMap(target, sourceModel);
+      myLoggedData.getData().add(new MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -218,14 +230,17 @@ public class RefactoringContext {
     String oldConceptFQName = "";
     String oldFeatureName = "";
     ConceptFeatureKind kind = ConceptFeatureKind.NONE;
+    RenameType renameType = null;
     if (adapter instanceof LinkDeclaration) {
       LinkDeclaration linkDeclaration = (LinkDeclaration) adapter;
       oldConceptFQName = NameUtil.nodeFQName(linkDeclaration.getParent());
       oldFeatureName = linkDeclaration.getRole();
       if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
         kind = ConceptFeatureKind.CHILD;
+        renameType = RenameType.CHILD;
       } else {
         kind = ConceptFeatureKind.REFERENCE;
+        renameType = RenameType.REFERENCE;
       }
       if (delete) {
         linkDeclaration.delete();
@@ -239,6 +254,7 @@ public class RefactoringContext {
       oldConceptFQName = NameUtil.nodeFQName(adapter.getParent());
       oldFeatureName = adapter.getName();
       kind = ConceptFeatureKind.PROPERTY;
+      renameType = RenameType.PROPERTY;
       if (delete) {
         adapter.delete();
       } else {
@@ -251,6 +267,7 @@ public class RefactoringContext {
       oldConceptFQName = NameUtil.nodeFQName(adapter);
       oldFeatureName = adapter.getName();
       kind = ConceptFeatureKind.CONCEPT;
+      renameType = RenameType.CONCEPT;
       if (delete) {
         adapter.delete();
       } else {
@@ -267,6 +284,7 @@ public class RefactoringContext {
 //      }
 //      myConceptFeatureMap.put(oldConceptFeature, newConceptFeature);
       myData.addToConceptFeatureMap(kind, oldConceptFQName, oldFeatureName, newConceptFQName, delete ? null : newFeatureName);
+      myLoggedData.getData().add(new RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
     }
   }
 

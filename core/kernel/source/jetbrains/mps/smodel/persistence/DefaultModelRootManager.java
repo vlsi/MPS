@@ -110,26 +110,26 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   @Override
   public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationHistory history) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    int persistence = dsm.getPersistenceVersion();
-    if (persistence >= 5) {
+//    int persistence = dsm.getPersistenceVersion();
+//    if (persistence >= 5) {
       RefactoringsPersistence.save(dsm.getModelFile(), history);
-    } else {
-      dsm.getSModel().setRefactoringHistory(history);
-    }
+//    } else {
+//      dsm.getSModel().setRefactoringHistory(history);
+//    }
   }
 
   @Override
   public StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     StructureModificationHistory refactorings = RefactoringsPersistence.load(dsm.getModelFile());
-    if (refactorings != null) {
+//    if (refactorings != null) {
       return refactorings;
-    }
+//    }
 
-    if (dsm.getPersistenceVersion() < 5) {
-      return RefactoringsPersistence.loadFromModel(dsm.getModelFile());
-    }
-    return null;
+//    if (dsm.getPersistenceVersion() < 5) {
+//      return RefactoringsPersistence.loadFromModel(dsm.getModelFile());
+//    }
+//    return null;
   }
 
   private ModelLoadResult handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
