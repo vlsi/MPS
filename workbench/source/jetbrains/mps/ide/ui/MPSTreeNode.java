@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
+import javax.swing.SwingUtilities;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
@@ -61,7 +62,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private ErrorState myCombinedErrorState = ErrorState.NONE;
   private final Object myTreeMessagesLock = new Object();
   private List<TreeMessage> myTreeMessages = null;
-  private Map<TextAttribute,Object> myFontAttributes = new HashMap<TextAttribute, Object>();
+  private Map<TextAttribute, Object> myFontAttributes = new HashMap<TextAttribute, Object>();
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -280,7 +281,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   //updates and refreshes tree
-  public void renewPresentation(){
+  public void renewPresentation() {
     updatePresentation();
     updateNodePresentationInTree();
   }
@@ -294,6 +295,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
     if (myTree != null) {
       myTree.fireTreeNodeUpdated(this);
+    } else {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          myTree = getTree();
+        }
+      });
     }
     Color c = null;
     String additionalText = null;
