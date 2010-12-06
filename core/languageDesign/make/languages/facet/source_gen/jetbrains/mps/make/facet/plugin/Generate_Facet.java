@@ -33,8 +33,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 
 public class Generate_Facet implements IFacet {
@@ -414,18 +412,16 @@ public class Generate_Facet implements IFacet {
                   return true;
                 }
               });
-              generationOk = gm.generateModels(Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
-                public Iterable<SModelDescriptor> translate(IResource in) {
-                  return ((MResource) in).models();
+              for (IResource res : Sequence.fromIterable(input)) {
+                generationOk = gm.generateModels(Sequence.fromIterable(((MResource) res).models()).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pind, new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()) {
+                  @Override
+                  public void clear() {
+                    // XPEH BAM 
+                  }
+                }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().create());
+                if (!(generationOk)) {
+                  return new IResult.FAILURE(_output_fi61u2_a0d.value);
                 }
-              }).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pind, new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()) {
-                @Override
-                public void clear() {
-                  // XPEH BAM 
-                }
-              }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().create());
-              if (!(generationOk)) {
-                return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0d.value);

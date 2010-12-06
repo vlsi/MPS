@@ -136,6 +136,7 @@ public class Script implements IScript {
               }
             }).distinct().toListSequence()
           ));
+          LOG.info("Input: " + input);
           if (trg.requiresInput()) {
             if (Sequence.fromIterable(input).isEmpty()) {
               LOG.info("No input. Stopping");

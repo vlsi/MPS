@@ -4,15 +4,37 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
 public class MResource implements IResource {
   private Iterable<SModelDescriptor> models;
+  private IModule module;
 
-  public MResource(Iterable<SModelDescriptor> models) {
+  public MResource(Iterable<SModelDescriptor> models, IModule module) {
     this.models = models;
+    this.module = module;
+  }
+
+  public MResource(SModelDescriptor model, IModule module) {
+    this.models = Sequence.<SModelDescriptor>singleton(model);
+    this.module = module;
   }
 
   public Iterable<SModelDescriptor> models() {
     return models;
+  }
+
+  @Override
+  public String toString() {
+    return Sequence.fromIterable(models).foldLeft(new StringBuilder("Models ["), new ILeftCombinator<SModelDescriptor, StringBuilder>() {
+      public StringBuilder combine(StringBuilder s, SModelDescriptor it) {
+        return s.append((s.length() > 8 ?
+          ", " :
+          ""
+        )).append(it.getSModelReference().getCompactPresentation());
+      }
+    }).append("] from ").append(module.getModuleFqName()).toString();
   }
 }

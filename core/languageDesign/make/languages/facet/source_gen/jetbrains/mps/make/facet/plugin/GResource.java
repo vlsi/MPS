@@ -16,6 +16,11 @@ public class GResource implements IResource {
     this.data = data;
   }
 
+  @Override
+  public String toString() {
+    return "GResource: " + String.valueOf(data);
+  }
+
   public static class Data extends MultiTuple._4<IModule, SModelDescriptor, Iterable<SModelDescriptor>, GenerationStatus> {
     public Data() {
       super();
