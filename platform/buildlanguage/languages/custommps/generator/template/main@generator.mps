@@ -951,7 +951,7 @@
         <property name="path" nameId="60oz.1230059161515" value="lib/idea-patch.jar" />
       </node>
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786037">
-        <property name="path" nameId="60oz.1230059161515" value="lib/mps.jar" />
+        <property name="path" nameId="60oz.1230059161515" value="lib/mpsboot.jar" />
       </node>
       <node role="classPathItem" roleId="60oz.1230059161511" type="60oz.SimplePath" typeId="60oz.1230059161514" id="1234780786086">
         <property name="path" nameId="60oz.1230059161515" value="lib/jdom/jdom.jar" />

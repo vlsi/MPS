@@ -4,6 +4,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Path_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.mps.generator.template.util.CheckUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />

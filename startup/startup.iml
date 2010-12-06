@@ -1,42 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$" />
-    <output-test url="file://$MODULE_DIR$" />
-    <content url="file://$MODULE_DIR$" />
+    <output url="file://$MODULE_DIR$/classes" />
+    <output-test url="file://$MODULE_DIR$/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" scope="RUNTIME">
-      <library name="idea-patch">
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/../core/idea-patch/classes" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="RUNTIME">
-      <library name="mps-startup">
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/../core/kernel/classes" />
-          <root url="file://$MODULE_DIR$/../core/typesystemEngine/classes" />
-          <root url="file://$MODULE_DIR$/../core/debug/classes" />
-          <root url="file://$MODULE_DIR$/../core/make-runtime/classes" />
-          <root url="file://$MODULE_DIR$/../core/generator/classes" />
-          <root url="file://$MODULE_DIR$/../workbench/javaParser/classes" />
-          <root url="file://$MODULE_DIR$/../workbench/classes" />
-          <root url="file://$MODULE_DIR$/../core/debug-api/classes" />
-          <root url="file://$MODULE_DIR$/../core/runtime/classes" />
-          <root url="file://$MODULE_DIR$/../MPSPlugin/apiclasses" />
-          <root url="file://$MODULE_DIR$/../core/typesystemIntegration/classes" />
-          <root url="file://$MODULE_DIR$/../workbench/typesystemUi/classes" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" scope="RUNTIME" name="JDOM" level="project" />
-    <orderEntry type="module-library" scope="RUNTIME">
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="module-library">
       <library name="idea-startup">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../lib/util.jar!/" />
@@ -48,7 +22,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="RUNTIME" name="JUnit4" level="project" />
+    <orderEntry type="library" name="JUnit4" level="project" />
   </component>
 </module>
 

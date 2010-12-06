@@ -19,7 +19,8 @@ import com.intellij.ide.Bootstrap;
 import com.intellij.ide.ClassloaderUtil;
 import com.intellij.openapi.application.PathManager;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -47,7 +48,7 @@ public class Launcher {
     }
     System.setProperty("idea.additional.classpath", cp.toString());
 
-    Bootstrap.main(args, MPSMainImpl.class.getName(), "start");
+    Bootstrap.main(args, "jetbrains.mps.MPSMainImpl", "start");
   }
 
   private static void addLanguagesClassPath(List<URL> classPath) {
