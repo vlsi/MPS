@@ -68,19 +68,18 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     SNode firstField = ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).first();
     SNode currentExpression = null;
     for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
-      SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
-      SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
+      SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+      SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
       SNode item = new GenerateToString_Intention.QuotationClass_6enhg7_a0a2a4a7().createNode(((field == firstField ?
         "" :
         ", "
       )) + SPropertyOperations.getString(field, "name") + "=");
-      SNode dotExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a3a4a7().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
       if (field == firstField) {
-        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a4a4a7().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
-        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a4a4a7().createNode(dotExpression, currentExpression);
+        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a3a4a7().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a3a4a7().createNode(fieldRef, currentExpression);
       } else {
-        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a0e0e0h().createNode(item, currentExpression);
-        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a0e0e0h().createNode(dotExpression, currentExpression);
+        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a0a0d0e0h().createNode(item, currentExpression);
+        currentExpression = new GenerateToString_Intention.QuotationClass_6enhg7_a0a1a0d0e0h().createNode(fieldRef, currentExpression);
       }
     }
     if (ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).isEmpty()) {
@@ -121,53 +120,8 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     }
   }
 
-  public static class QuotationClass_6enhg7_a0a3a4a7 {
-    public QuotationClass_6enhg7_a0a3a4a7() {
-    }
-
-    public SNode createNode(Object parameter_7, Object parameter_8) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_1;
-        {
-          quotedNode_2 = (SNode) parameter_7;
-          SNode quotedNode1_5;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_5 = quotedNode_2;
-          }
-          if (quotedNode1_5 != null) {
-            quotedNode_1.addChild("operand", HUtil.copyIfNecessary(quotedNode1_5));
-          }
-        }
-        {
-          quotedNode_3 = (SNode) parameter_8;
-          SNode quotedNode1_6;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
-          } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_6 = quotedNode_3;
-          }
-          if (quotedNode1_6 != null) {
-            quotedNode_1.addChild("operation", HUtil.copyIfNecessary(quotedNode1_6));
-          }
-        }
-        result = quotedNode1_4;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_6enhg7_a0a0a4a4a7 {
-    public QuotationClass_6enhg7_a0a0a4a4a7() {
+  public static class QuotationClass_6enhg7_a0a0a3a4a7 {
+    public QuotationClass_6enhg7_a0a0a3a4a7() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -204,8 +158,8 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     }
   }
 
-  public static class QuotationClass_6enhg7_a0a1a4a4a7 {
-    public QuotationClass_6enhg7_a0a1a4a4a7() {
+  public static class QuotationClass_6enhg7_a0a1a3a4a7 {
+    public QuotationClass_6enhg7_a0a1a3a4a7() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -249,8 +203,8 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     }
   }
 
-  public static class QuotationClass_6enhg7_a0a0a0e0e0h {
-    public QuotationClass_6enhg7_a0a0a0e0e0h() {
+  public static class QuotationClass_6enhg7_a0a0a0d0e0h {
+    public QuotationClass_6enhg7_a0a0a0d0e0h() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -294,8 +248,8 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     }
   }
 
-  public static class QuotationClass_6enhg7_a0a1a0e0e0h {
-    public QuotationClass_6enhg7_a0a1a0e0e0h() {
+  public static class QuotationClass_6enhg7_a0a1a0d0e0h {
+    public QuotationClass_6enhg7_a0a1a0d0e0h() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
