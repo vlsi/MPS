@@ -68,12 +68,14 @@ public class RelationMapPair {
 
   @StateMethod
   public void add(SNode subType, SNode superType, EquationInfo info) {
+    myState.assertIsInStateChangeAction();
     getMap(mySubToSuper, subType).put(superType, info);
     getMap(mySuperToSub, superType).put(subType, info);
   }
 
   @StateMethod
   public void remove(SNode subType, SNode superType) {
+    myState.assertIsInStateChangeAction();
     removeAndDelete(mySubToSuper, subType, superType);
     removeAndDelete(mySuperToSub, superType, subType);
   }

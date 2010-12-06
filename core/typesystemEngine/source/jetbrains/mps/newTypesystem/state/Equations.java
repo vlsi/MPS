@@ -50,11 +50,13 @@ public class Equations {
 
   @StateMethod
   public void remove(SNode elem) {
+    myState.assertIsInStateChangeAction();
     myRepresentatives.remove(elem);
   }
 
   @StateMethod
   public void add(SNode child, SNode parent) {
+    myState.assertIsInStateChangeAction();
     myRepresentatives.put(child, parent);
   }
 

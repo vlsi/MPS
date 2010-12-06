@@ -49,6 +49,7 @@ public class NonConcreteMapPair {
 
   @StateMethod
   public void addDependency(WhenConcreteEntry e, SNode var) {
+    myState.assertIsInStateChangeAction();
     Set<SNode> dependencies = myWhenConcreteEntries.get(e);
     assert dependencies != null;
     dependencies.add(var);
@@ -62,6 +63,7 @@ public class NonConcreteMapPair {
 
   @StateMethod
   public void removeDependency(WhenConcreteEntry e, SNode var) {
+    myState.assertIsInStateChangeAction();
     // e should be kept in a map even if var set is empty
     // e is removed from map by removeWhenConcreteNoVars(WhenConcreteEntry e)
     myWhenConcreteEntries.get(e).remove(var); 
@@ -75,12 +77,14 @@ public class NonConcreteMapPair {
 
   @StateMethod
   public void removeWhenConcreteNoVars(WhenConcreteEntry e) {
+    myState.assertIsInStateChangeAction();
     Set<SNode> vars = myWhenConcreteEntries.remove(e);
     assert vars.isEmpty();
   }
 
   @StateMethod
   public void addWhenConcreteNoVars(WhenConcreteEntry e) {
+    myState.assertIsInStateChangeAction();
     Set<SNode> previous = myWhenConcreteEntries.put(e, new HashSet<SNode>());
     assert previous == null;
   }

@@ -44,16 +44,9 @@ public class State {
 
   private final TypeCheckingContextNew myTypeCheckingContext;
 
-  @StateObject
   private final Equations myEquations;
-
-  @StateObject
   private final jetbrains.mps.newTypesystem.state.Inequalities myInequalities;
-
-  @StateObject
   private final jetbrains.mps.newTypesystem.state.NodeMaps myNodeMaps;
-
-  @StateObject
   private final jetbrains.mps.newTypesystem.state.NonConcrete myNonConcrete;
 
   private final VariableIdentifier myVariableIdentifier;

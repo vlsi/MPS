@@ -60,18 +60,21 @@ public class NodeMaps {
 
   @StateMethod
   public void assignNodeType(SNode node, SNode type) {
+    myState.assertIsInStateChangeAction();
     myTypesToNodes.put(type, node);
     myNodesToTypes.put(node, type);
   }
 
   @StateMethod
   public void removeNodeType(SNode node) {
+    myState.assertIsInStateChangeAction();
     SNode type = myNodesToTypes.remove(node);
     myTypesToNodes.remove(type);
   }
 
   @StateMethod
   public void addError(SNode node, IErrorReporter errorReporter) {
+    myState.assertIsInStateChangeAction();
     List<IErrorReporter> errors = myNodesToErrors.get(node);
     if (errors == null) {
       errors = new LinkedList<IErrorReporter>();
@@ -82,6 +85,7 @@ public class NodeMaps {
 
   @StateMethod
   public void removeError(SNode node, IErrorReporter errorReporter) {
+    myState.assertIsInStateChangeAction();
     List<IErrorReporter> errors = myNodesToErrors.get(node);
     errors.remove(errorReporter);
     if (errors.isEmpty()) {
