@@ -86,6 +86,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer patternRule_417xrn_a0a0m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088644");
   private static SNodePointer switchMacroRef_417xrn_a0a0a2a4m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088651");
   private static SNodePointer templateSwitchNodeNoInput_417xrn_a0a0a1a2a4m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
+  private static SNodePointer templateNode_417xrn_a0a0a1a2a1a2a4m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088649");
   private static SNodePointer rootMappingRule_417xrn_a0a0n = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767");
 
   private final Collection<TemplateReductionRule> rules;
@@ -1075,7 +1076,20 @@ public class Mappingmain implements TemplateMappingConfiguration {
         try {
           environment.getTracer().pushSwitch(templateSwitchNodeNoInput_417xrn_a0a0a1a2a4m);
           tlist1 = environment.trySwitch(templateSwitchNodeNoInput_417xrn_a0a0a1a2a4m, null, context);
+          if (tlist1 == null) {
+            final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.NullLiteral", false);
+            try {
+              environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a2a1a2a4m);
+              environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809088649");
 
+            } finally {
+              environment.getTracer().pushOutputNode(tnode2);
+              environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a2a1a2a4m);
+            }
+            if (tnode2 != null) {
+              tlist1 = TemplateUtil.singletonList(tnode2);
+            }
+          }
         } finally {
           // TODO close switch node 
         }

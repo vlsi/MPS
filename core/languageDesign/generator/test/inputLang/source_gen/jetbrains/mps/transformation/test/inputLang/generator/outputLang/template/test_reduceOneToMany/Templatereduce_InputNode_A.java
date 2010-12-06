@@ -23,6 +23,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
   private static SNodePointer includedTemplateNode_9iqmnb_a0a0a1a5a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251689");
   private static SNodePointer switchMacroRef_9iqmnb_a0a0a7a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310365");
   private static SNodePointer templateSwitchNodeNoInput_9iqmnb_a0a0a1a7a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
+  private static SNodePointer templateNode_9iqmnb_a0a0a1a2a1a7a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310362");
 
   public Templatereduce_InputNode_A() {
   }
@@ -93,7 +94,20 @@ public class Templatereduce_InputNode_A implements TemplateDeclaration {
       try {
         environment.getTracer().pushSwitch(templateSwitchNodeNoInput_9iqmnb_a0a0a1a7a0);
         tlist5 = environment.trySwitch(templateSwitchNodeNoInput_9iqmnb_a0a0a1a7a0, null, context);
+        if (tlist5 == null) {
+          final SNode tnode6 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
+          try {
+            environment.getTracer().pushTemplateNode(templateNode_9iqmnb_a0a0a1a2a1a7a0);
+            environment.nodeCopied(context, tnode6, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480310362");
 
+          } finally {
+            environment.getTracer().pushOutputNode(tnode6);
+            environment.getTracer().closeTemplateNode(templateNode_9iqmnb_a0a0a1a2a1a7a0);
+          }
+          if (tnode6 != null) {
+            tlist5 = TemplateUtil.singletonList(tnode6);
+          }
+        }
       } finally {
         // TODO close switch node 
       }
