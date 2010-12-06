@@ -221,10 +221,12 @@ public class BreakpointsTree extends BreakpointsView {
     public IModule getGroup(BreakpointNodeData breakpointData) {
       IBreakpoint breakpoint = breakpointData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        return SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference()).getModule();
-      } else {
-        return null;
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference());
+        if (modelDescriptor != null) {
+          return modelDescriptor.getModule();
+        }
       }
+      return null;
     }
 
     @Override
