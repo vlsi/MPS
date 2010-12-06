@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.vcs" uuid="b0d98700-54f0-4c39-a8e0-bb27733b8b38" extenallyVisible="true" dontLoadClasses="true" compileInMPS="false" java-stubs-enabled="false">
+<solution name="jetbrains.mps.vcs" uuid="b0d98700-54f0-4c39-a8e0-bb27733b8b38" dontLoadClasses="true" compileInMPS="false" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
