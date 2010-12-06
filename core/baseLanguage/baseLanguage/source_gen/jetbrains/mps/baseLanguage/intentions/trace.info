@@ -63,7 +63,6 @@
   <unitInfo fileName="MergeStringConcatenation_Intention.java" startLine="13" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MergeStringConcatenation_Intention" />
   <unitInfo fileName="SplitIntoDeclarationAndAssignment_Intention.java" startLine="13" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SplitIntoDeclarationAndAssignment_Intention" />
   <unitInfo fileName="MakeVariableFinal_Intention.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeVariableFinal_Intention" />
-  <unitInfo fileName="MakeParameterFinal_Intention.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeParameterFinal_Intention" />
   <unitInfo fileName="ConvertAssignmentToVariableDeclaration_Intention.java" startLine="13" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ConvertAssignmentToVariableDeclaration_Intention" />
   <unitInfo fileName="OverrideMethods_Intention.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.OverrideMethods_Intention" />
   <unitInfo fileName="ImplementMethods_Intention.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.ImplementMethods_Intention" />
@@ -72,6 +71,7 @@
   <unitInfo fileName="SurroundWithTypeCast_Intention.java" startLine="68" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithTypeCast_Intention$QuotationClass_598b5x_a0a1a7" />
   <unitInfo fileName="SurroundWithParenthesis_Intention.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.SurroundWithParenthesis_Intention" />
   <unitInfo fileName="MigrateString_Intention.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MigrateString_Intention" />
+  <unitInfo fileName="MakeParameterFinal_Intention.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeParameterFinal_Intention" />
   <unitInfo fileName="FilpEqualsIntention_Intention.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.FilpEqualsIntention_Intention" />
   <unitInfo fileName="MakeSynchronized_Intention.java" startLine="13" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeSynchronized_Intention" />
   <unitInfo fileName="CreateInternalLabel_Intention.java" startLine="13" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateInternalLabel_Intention" />
@@ -1817,13 +1817,16 @@
     <nodeInfo nodeId="3898325814824769594" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeParameterFinal_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="190" />
     <nodeInfo nodeId="3898325814824769624" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeParameterFinal_Intention.java" startLine="46" startPosition="190" endLine="47" endPosition="125" />
     <nodeInfo nodeId="3898325814824769644" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeParameterFinal_Intention.java" startLine="48" startPosition="30" endLine="49" endPosition="19" />
-    <nodeInfo nodeId="3898325814824769653" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeParameterFinal_Intention.java" startLine="50" startPosition="5" endLine="51" endPosition="108" />
-    <nodeInfo nodeId="3898325814824769668" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeParameterFinal_Intention.java" startLine="54" startPosition="76" endLine="55" endPosition="115" />
+    <nodeInfo nodeId="6820714546197416871" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeParameterFinal_Intention.java" startLine="51" startPosition="115" endLine="52" endPosition="19" />
+    <nodeInfo nodeId="3898325814824769653" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeParameterFinal_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="108" />
+    <nodeInfo nodeId="3898325814824769668" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeParameterFinal_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="115" />
     <nodeInfo nodeId="3898325814824769634" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeParameterFinal_Intention.java" startLine="47" startPosition="125" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="6820714546197416862" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeParameterFinal_Intention.java" startLine="50" startPosition="5" endLine="53" endPosition="5" />
     <scopeInfo nodeId="3898325814824766816" fileName="MakeParameterFinal_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="34" />
     <scopeInfo nodeId="3898325814824769635" fileName="MakeParameterFinal_Intention.java" startLine="48" startPosition="30" endLine="49" endPosition="19" />
-    <scopeInfo nodeId="3898325814824766818" fileName="MakeParameterFinal_Intention.java" startLine="54" startPosition="76" endLine="55" endPosition="115" />
-    <scopeInfo nodeId="3898325814824769560" fileName="MakeParameterFinal_Intention.java" startLine="45" startPosition="90" endLine="51" endPosition="108">
+    <scopeInfo nodeId="6820714546197416863" fileName="MakeParameterFinal_Intention.java" startLine="51" startPosition="115" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="3898325814824766818" fileName="MakeParameterFinal_Intention.java" startLine="57" startPosition="76" endLine="58" endPosition="115" />
+    <scopeInfo nodeId="3898325814824769560" fileName="MakeParameterFinal_Intention.java" startLine="45" startPosition="90" endLine="54" endPosition="108">
       <varInfo nodeId="3898325814824769625" varName="classNode" />
       <varInfo nodeId="3898325814824769595" varName="methodNode" />
     </scopeInfo>
