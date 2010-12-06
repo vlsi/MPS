@@ -26,8 +26,9 @@ public class HistoryWriter {
   public static final String RENAME_NODE = "rename";
   public static final String NODE_ID = "id";
   public static final String NEW_ID = "to";
-  public static final String NEW_NAME = "name";
-  public static final String NEW_ROLE = "role";
+  public static final String RENAME_TYPE = "type";
+  public static final String OLD_VALUE = "from";
+  public static final String NEW_VALUE = "to";
 
   private WriteHelper myHelper;
 
@@ -97,12 +98,11 @@ public class HistoryWriter {
   public Element saveRenameNode(StructureModification.RenameNode data) {
     Element elem = new Element(RENAME_NODE);
     elem.setAttribute(NODE_ID, genId(data.oldID));
-    if (data.newName != null) {
-      elem.setAttribute(NEW_NAME, data.newName);
+    elem.setAttribute(RENAME_TYPE, data.type.name());
+    if (data.oldValue != null) {
+      elem.setAttribute(OLD_VALUE, data.oldValue);
     }
-    if (data.newRole != null) {
-      elem.setAttribute(NEW_ROLE, data.newRole);
-    }
+    elem.setAttribute(NEW_VALUE, data.newValue);
     return elem;
   }
 

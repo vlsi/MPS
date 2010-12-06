@@ -321,14 +321,14 @@ public class HistoryReaderHandler extends XMLSAXHandler<List<StructureModificati
   }
 
   public class RenameNodeElementHandler extends HistoryReaderHandler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id"};
+    private String[] requiredAttributes = new String[]{"id", "type", "to"};
 
     public RenameNodeElementHandler() {
     }
 
     @Override
     protected StructureModification.RenameNode createObject(Attributes attrs) {
-      return new StructureModification.RenameNode(fieldhelper.readLinkId(attrs.getValue("id")));
+      return new StructureModification.RenameNode(fieldhelper.readLinkId(attrs.getValue("id")), StructureModification.RenameNode.RenameType.valueOf(attrs.getValue("type")), attrs.getValue("to"));
     }
 
     @Override
@@ -342,12 +342,14 @@ public class HistoryReaderHandler extends XMLSAXHandler<List<StructureModificati
       if ("id".equals(name)) {
         return;
       }
-      if ("name".equals(name)) {
-        result.newName = value;
+      if ("type".equals(name)) {
         return;
       }
-      if ("role".equals(name)) {
-        result.newRole = value;
+      if ("from".equals(name)) {
+        result.oldValue = value;
+        return;
+      }
+      if ("to".equals(name)) {
         return;
       }
       super.handleAttribute(resultObject, name, value);

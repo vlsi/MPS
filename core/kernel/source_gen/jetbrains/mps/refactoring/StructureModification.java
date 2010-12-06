@@ -67,22 +67,37 @@ public class StructureModification {
 
   public static class RenameNode implements StructureModification.Entry {
     public SNodePointer oldID;
-    public String newName;
-    public String newRole;
+    public StructureModification.RenameNode.RenameType type;
+    public String oldValue;
+    public String newValue;
 
-    public RenameNode(SNodePointer id) {
+    public RenameNode(SNodePointer id, StructureModification.RenameNode.RenameType type, String newValue) {
       oldID = id;
+      this.type = type;
+      this.newValue = newValue;
     }
 
     public boolean apply(ModelLinkMap linkMap) {
-      boolean result = false;
-      if (newName != null) {
-        result |= linkMap.setName(oldID, newName);
+      switch (type) {
+        case CONCEPT:
+        case PROPERTY:
+          return linkMap.setName(oldID, newValue);
+        case CHILD:
+        case REFERENCE:
+          return linkMap.setRole(oldID, newValue);
+        default:
+          return false;
       }
-      if (newRole != null) {
-        result |= linkMap.setRole(oldID, newRole);
+    }
+
+    public static     enum RenameType {
+      CONCEPT(),
+      PROPERTY(),
+      CHILD(),
+      REFERENCE();
+
+      RenameType() {
       }
-      return result;
     }
   }
 
