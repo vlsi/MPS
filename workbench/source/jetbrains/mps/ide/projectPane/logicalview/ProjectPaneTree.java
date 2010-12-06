@@ -282,11 +282,11 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
         myModel = model;
         mySimpleModelListener = new SimpleModelListener(node) {
           public void modelChangedDramatically(SModel model) {
-            updateNodePresentation(false, false);
+            updateNodePresentation(false, true);
           }
 
           public void modelChanged(SModel model) {
-            updateNodePresentation(false, false);
+            updateNodePresentation(false, true);
           }
 
           public boolean isValid() {
