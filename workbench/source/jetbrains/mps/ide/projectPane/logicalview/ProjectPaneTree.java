@@ -15,6 +15,7 @@ import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneModifiedMarker;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.visitor.ProjectPaneTreeGenStatusUpdater;
@@ -215,6 +216,8 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
         addListeners(modelNode);
       }
+
+      //treeNodeUpdated(treeNode,tree);
     }
 
     public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
@@ -230,6 +233,16 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       myErrorVisitor.visitNode(treeNode);
       myGenStatusVisitor.visitNode(treeNode);
       myModifiedMarker.visitNode(treeNode);
+
+      if (treeNode instanceof SModelTreeNode) {
+        MPSTreeNode node = treeNode;
+        while (!(node instanceof ProjectModuleTreeNode) && node != null) {
+          node = ((MPSTreeNode) node.getParent());
+        }
+        if (node != null) {
+          node.renewPresentation();
+        }
+      }
     }
 
     protected void addListeners(SModelTreeNode modelNode) {
@@ -353,7 +366,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
         DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
         for (SNode root : removedRoots) {
-          SNodeTreeNode node = (SNodeTreeNode) findRootSNodeTreeNode(root);
+          SNodeTreeNode node = findRootSNodeTreeNode(root);
           if (node == null) continue;
 
           MPSTreeNode parent = (MPSTreeNode) node.getParent();
