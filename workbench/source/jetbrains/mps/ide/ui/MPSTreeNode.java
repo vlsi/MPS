@@ -35,6 +35,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.font.TextAttribute;
 import java.util.*;
 
 /**
@@ -60,6 +61,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private ErrorState myCombinedErrorState = ErrorState.NONE;
   private final Object myTreeMessagesLock = new Object();
   private List<TreeMessage> myTreeMessages = null;
+  private Map<TextAttribute,Object> myFontAttributes = new HashMap<TextAttribute, Object>();
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -441,6 +443,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public final void setFontStyle(int fontStyle) {
     myFontStyle = fontStyle;
+  }
+
+  public final void addFontAttribute(TextAttribute key, Object value) {
+    myFontAttributes.put(key, value);
+  }
+
+  public final Map getFontAttributes() {
+    return myFontAttributes;
   }
 
   @NotNull

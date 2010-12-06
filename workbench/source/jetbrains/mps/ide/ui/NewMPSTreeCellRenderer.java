@@ -21,6 +21,9 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.tree.TreeCellRenderer;
 import java.awt.*;
+import java.awt.font.TextAttribute;
+import java.util.Map;
+
 
 class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
   private JLabel myMainTextLabel = new JLabel();
@@ -60,6 +63,7 @@ class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
       additionalText = treeNode.getAdditionalText();
 
       Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
+      newFont = newFont.deriveFont(treeNode.getFontAttributes());
       myMainTextLabel.setFont(newFont);
       myAdditionalTextLabel.setFont(tree.getFont());
 
