@@ -45,13 +45,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   }
 
   protected void doUpdatePresentation() {
-    if (getTree() == null) return;
     setText(getModulePresentation());
-  }
-
-  protected void onAdd() {
-    super.onAdd();
-    updatePresentation();
   }
 
   protected abstract String getModulePresentation();
