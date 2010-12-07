@@ -170,7 +170,6 @@ public class RefactoringContext {
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
       myData.addToMoveMap(key, target);
-      myData.addToSourceMap(target, oldParent);
       myLoggedData.getData().add(new MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
@@ -181,7 +180,6 @@ public class RefactoringContext {
 
   public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode) {
     myData.addToMoveMap(whatNode, withNode);
-    myData.addToSourceMap(withNode, whatNode.getParent());
     myLoggedData.getData().add(new MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
     whatNode.delete();
   }
@@ -206,7 +204,6 @@ public class RefactoringContext {
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
       myData.addToMoveMap(key, target);
-      myData.addToSourceMap(target, sourceModel);
       myLoggedData.getData().add(new MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {

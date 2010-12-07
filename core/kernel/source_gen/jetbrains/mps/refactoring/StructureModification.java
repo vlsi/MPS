@@ -15,9 +15,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class StructureModification {
   private Map<SModelReference, Integer> myDependencies = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
@@ -89,43 +86,7 @@ public class StructureModification {
     }
 
     public Iterable<SModelReference> getDependentModels() {
-      return Sequence.fromClosure(new ISequenceClosure<SModelReference>() {
-        public Iterable<SModelReference> iterable() {
-          return new Iterable<SModelReference>() {
-            public Iterator<SModelReference> iterator() {
-              return new YieldingIterator<SModelReference>() {
-                private int __CP__ = 0;
-
-                protected boolean moveToNext() {
-__loop__:
-                  do {
-__switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 2:
-                        this.__CP__ = 3;
-                        this.yield(oldID.getModelReference());
-                        return true;
-                      case 3:
-                        this.__CP__ = 1;
-                        this.yield(newID.getModelReference());
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      default:
-                        break __loop__;
-                    }
-                  } while (true);
-                  return false;
-                }
-              };
-            }
-          };
-        }
-      });
+      return Sequence.fromArray(new SModelReference[]{oldID.getModelReference(), newID.getModelReference()});
     }
   }
 
@@ -156,39 +117,7 @@ __switch__:
     }
 
     public Iterable<SModelReference> getDependentModels() {
-      return Sequence.fromClosure(new ISequenceClosure<SModelReference>() {
-        public Iterable<SModelReference> iterable() {
-          return new Iterable<SModelReference>() {
-            public Iterator<SModelReference> iterator() {
-              return new YieldingIterator<SModelReference>() {
-                private int __CP__ = 0;
-
-                protected boolean moveToNext() {
-__loop__:
-                  do {
-__switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 2:
-                        this.__CP__ = 1;
-                        this.yield(oldID.getModelReference());
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      default:
-                        break __loop__;
-                    }
-                  } while (true);
-                  return false;
-                }
-              };
-            }
-          };
-        }
-      });
+      return Sequence.fromArray(new SModelReference[]{oldID.getModelReference()});
     }
 
     public static     enum RenameType {
@@ -214,43 +143,7 @@ __switch__:
     }
 
     public Iterable<SModelReference> getDependentModels() {
-      return Sequence.fromClosure(new ISequenceClosure<SModelReference>() {
-        public Iterable<SModelReference> iterable() {
-          return new Iterable<SModelReference>() {
-            public Iterator<SModelReference> iterator() {
-              return new YieldingIterator<SModelReference>() {
-                private int __CP__ = 0;
-
-                protected boolean moveToNext() {
-__loop__:
-                  do {
-__switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 2:
-                        this.__CP__ = 3;
-                        this.yield(oldModel);
-                        return true;
-                      case 3:
-                        this.__CP__ = 1;
-                        this.yield(newModel);
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      default:
-                        break __loop__;
-                    }
-                  } while (true);
-                  return false;
-                }
-              };
-            }
-          };
-        }
-      });
+      return Sequence.fromArray(new SModelReference[]{oldModel, newModel});
     }
   }
 }

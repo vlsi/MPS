@@ -122,7 +122,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   private void updateOnLoad(SModel result) {
-    StructureModificationProcessor.updateModelOnLoad(result);
+    //StructureModificationProcessor.updateModelOnLoad(result);
     tryFixingVersion();
     myStructureModificationHistory = null;
     updateDiskTimestamp();
