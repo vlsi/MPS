@@ -24,10 +24,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
@@ -37,6 +34,7 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GoToModelAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
@@ -47,16 +45,17 @@ public class GoToModelAction extends BaseAction {
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
-      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new BaseModelItem(modelDescriptor) {
+      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
+        return new BaseModelItem(modelReference) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
-            projectPane.selectModel(modelDescriptor, false);
+            SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
+            projectPane.selectModel(md, false);
           }
         };
       }
 
-      public SModelDescriptor[] find(IScope scope) {
+      public SModelReference[] find(IScope scope) {
         Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
           public boolean met(SModelDescriptor modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
@@ -66,8 +65,11 @@ public class GoToModelAction extends BaseAction {
           }
         };
         ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
-        ArrayList<SModelDescriptor> res = new ArrayList<SModelDescriptor>(IterableUtil.asCollection(iter));
-        return res.toArray(new SModelDescriptor[res.size()]);
+        List<SModelReference> result = new ArrayList<SModelReference>();
+        for (SModelDescriptor md:iter){
+          result.add(md.getSModelReference());
+        }
+        return result.toArray(new SModelReference[result.size()]);
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));

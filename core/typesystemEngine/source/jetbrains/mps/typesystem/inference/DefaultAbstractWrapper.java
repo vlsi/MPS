@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import java.util.Set;
-import java.util.HashSet;
-
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class DefaultAbstractWrapper implements IWrapper {
 

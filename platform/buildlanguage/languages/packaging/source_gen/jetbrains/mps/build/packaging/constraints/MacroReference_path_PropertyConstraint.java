@@ -24,6 +24,6 @@ public class MacroReference_path_PropertyConstraint implements IModelConstraints
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return IMacroHolder_Behavior.call_evaluateMacro_1234975967990(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.MPSLayout", false, true), SPropertyOperations.getString(node, "name"));
+    return IMacroHolder_Behavior.call_evaluateMacro_1234975967990(SNodeOperations.getAncestor(node, "jetbrains.mps.build.packaging.structure.Layout", false, true), SPropertyOperations.getString(node, "name"));
   }
 }

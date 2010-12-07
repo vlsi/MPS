@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
   private JCheckBox myCheckBox;
@@ -57,7 +56,7 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
       }
     }
 
-    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new OverrideClassMethodStrategy.QuotationClass_px9rr4_a0a0a0a0e0a().createNode(it);
       }
@@ -161,7 +160,7 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;

@@ -97,8 +97,6 @@ public class IntelligentInputUtil {
         target.changeText(tail);
         target.end();
 
-        editorContext.getNodeEditorComponent().requestRelayout();
-
         if (target.isErrorState()) {
           target.validate(true, false);
         }
@@ -119,8 +117,7 @@ public class IntelligentInputUtil {
       EditorCell_Label label = (EditorCell_Label) nextCell;
       label.changeText(pattern);
       label.end();
-      editorContext.getNodeEditorComponent().changeSelection(label);
-      editorContext.getNodeEditorComponent().requestRelayout();
+      editorContext.getNodeEditorComponent().changeSelection(label);      
     } else {
       if (isInOneStepAmbigousPosition(info, smallPattern + tail)) {
         editorContext.getNodeEditorComponent().activateNodeSubstituteChooser(cell, info, false);
@@ -167,7 +164,6 @@ public class IntelligentInputUtil {
         EditorCell_Label errorCell1 = (EditorCell_Label) cellForNewNode1.findChild(CellFinders.FIRST_ERROR, true);
         ((EditorCell_Label) errorCell1).changeText(tail);
         errorCell1.setCaretPosition(tail.length());
-        editorContext.getNodeEditorComponent().requestRelayout();
         return true;
       }
 
@@ -204,11 +200,7 @@ public class IntelligentInputUtil {
   private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, final String tail, final EditorCell cellForNewNode, SNode newNode) {
     EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
 
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
-    // For: http://youtrack.jetbrains.net/issue/MPS-7757
-    assert typeCheckingContext != null : cellForNewNode.getSNode() == null ? "cellForNewNode.getSNode() == null" : "cellForNewNode.getSNode().isDisposed(): " + cellForNewNode.getSNode().isDisposed();
-
-    boolean hasSideActions = typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
+    boolean hasSideActions = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         return hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
@@ -221,8 +213,7 @@ public class IntelligentInputUtil {
       return false;
     }
 
-    if (cellForNewNode instanceof EditorCell_Label) {
-      editorContext.getNodeEditorComponent().requestRelayout();
+    if (cellForNewNode instanceof EditorCell_Label) {      
       ((EditorCell_Label)cellForNewNode).changeText(smallPattern);
     }
 
@@ -235,14 +226,12 @@ public class IntelligentInputUtil {
       final NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       assert rtSubstituteInfo != null;
       List<INodeSubstituteAction> rtMatchingActions =
-        typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<List<INodeSubstituteAction>>(){
+        TypeContextManager.getInstance().runResolveAction(new Computable<List<INodeSubstituteAction>>(){
           @Override
           public List<INodeSubstituteAction> compute() {
             return rtSubstituteInfo.getMatchingActions(tail, true);
           }
         });
-
-      typeCheckingContext.dispose();
 
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
@@ -333,14 +322,12 @@ public class IntelligentInputUtil {
 
   private static boolean applyLeftTransform(EditorContext editorContext, final String head, String smallPattern, final EditorCell cellForNewNode, SNode newNode, boolean sourceCellRemains) {
     EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.FIRST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
-    boolean hasSideActions = typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
+    boolean hasSideActions = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         return hasSideActions(cellForNewNode, CellSide.LEFT, head);
       }
     });
-    typeCheckingContext.dispose();
 
     if (ltAction == null || !hasSideActions) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
@@ -353,8 +340,7 @@ public class IntelligentInputUtil {
     }
 
     if (sourceCellRemains) {
-      ((EditorCell_Label) cellForNewNode).changeText(smallPattern);
-      editorContext.getNodeEditorComponent().requestRelayout();
+      ((EditorCell_Label) cellForNewNode).changeText(smallPattern);      
     }
 
     ltAction.execute(editorContext);
@@ -412,8 +398,7 @@ public class IntelligentInputUtil {
     }
     rtCell.changeText(textToSet);
     rtCell.end();
-
-    nodeEditorComponent.requestRelayout();
+    
     return rtCell;
   }
 
@@ -434,8 +419,7 @@ public class IntelligentInputUtil {
       if (errorCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) errorCell;
         if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-          label.changeText(textToSet);
-          component.requestRelayout();
+          label.changeText(textToSet);          
         }
         label.end();
       }

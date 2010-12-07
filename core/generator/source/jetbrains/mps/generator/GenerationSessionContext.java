@@ -39,6 +39,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private final IOperationContext myInvocationContext;
   private final IGenerationTracer myGenerationTracer;
+  private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
@@ -52,15 +53,15 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public GenerationSessionContext(IOperationContext invocationContext,
                                   IGenerationTracer generationTracer,
+                                  TransientModelsModule transientModule,
                                   SModel inputModel,
                                   GenerationPlan generationPlan,
                                   GenerationSessionContext prevContext) {
 
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
+    myTransientModule = transientModule;
     myGenerationPlan = generationPlan;
-
-    getModule().setInvocationContext(invocationContext.getModule());
 
     if (prevContext != null) {
       myOriginalInputModel = prevContext.myOriginalInputModel;
@@ -91,7 +92,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   @NotNull
   public TransientModelsModule getModule() {
-    return getComponent(TransientModelsModule.class);
+    return myTransientModule;
   }
 
   @NotNull
@@ -282,7 +283,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public boolean keepTransientModel(SModel model, boolean force) {
     if (model instanceof TransientSModel && (force || keepTransientForMessageNavigation())) {
-      return ((TransientModelsModule) getModule()).addModelToKeep(model, force);
+      return getModule().addModelToKeep(model, force);
     }
     return false;
   }

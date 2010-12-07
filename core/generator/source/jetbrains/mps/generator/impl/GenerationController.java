@@ -17,11 +17,10 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
@@ -43,9 +42,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class GenerationController {
+public class GenerationController implements ITaskPoolProvider {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
+  private final TransientModelsComponent myTransientModelsComponent;
   private GeneratorNotifierHelper myNotifierHelper;
   private List<SModelDescriptor> myInputModels;
   private final IOperationContext myOperationContext;
@@ -57,10 +57,10 @@ public class GenerationController {
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
 
-  public GenerationController(List<SModelDescriptor> _inputModels, GenerationOptions options,
+  public GenerationController(List<SModelDescriptor> _inputModels, TransientModelsComponent transientModelsComponent, GenerationOptions options,
                               IGenerationHandler generationHandler, GeneratorNotifierHelper notifierHelper,
                               GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressIndicator progress) {
-
+    myTransientModelsComponent = transientModelsComponent;
     myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
     myOperationContext = operationContext;
@@ -184,8 +184,8 @@ public class GenerationController {
     boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
     TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
 
-    final GenerationSession generationSession = new GenerationSession(this,
-      inputModel, invocationContext, myProgress, myLogger, ttrace, myOptions);
+    final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this,
+      myProgress, myLogger, myTransientModelsComponent.getModule(module), ttrace, myOptions);
 
     try {
       Logger.addLoggingHandler(generationSession.getLoggingHandler());

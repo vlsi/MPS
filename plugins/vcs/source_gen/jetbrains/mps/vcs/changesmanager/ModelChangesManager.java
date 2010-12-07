@@ -32,6 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.changes.NewNodeChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ICollectionSequence;
 import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
 import jetbrains.mps.vcs.diff.changes.MoveNodeChange;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
@@ -258,7 +259,10 @@ public class ModelChangesManager {
       MapSequence.fromMap(myChangesCountsForRoots).put(rootId, MapSequence.fromMap(myChangesCountsForRoots).get(rootId) - 1);
     }
     MapSequence.fromMap(myRootForChange).removeKey(change);
-    fileStatusChangedForRootNode(getModel().getNodeById(rootId));
+    fileStatusChangedForRootNode((rootId == null ?
+      null :
+      getModel().getNodeById(rootId)
+    ));
   }
 
   private void addChange(@NotNull Change change, @Nullable SNode affectedRoot, boolean silent) {
@@ -361,8 +365,8 @@ public class ModelChangesManager {
     // Note: this method does not notify ChangeListeners, so it should be invoked only during initialization 
 
     final Wrappers._T<List<Change>> changeList = new Wrappers._T<List<Change>>(ListSequence.fromList(new ArrayList<Change>()));
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<ICollectionSequence<Change>>() {
+      public ICollectionSequence<Change> invoke() {
         SModel model = getModel();
         final Set<SNodeId> addedNodes = SetSequence.fromSet(new HashSet<SNodeId>());
         final Set<SNodeId> removedNodes = SetSequence.fromSet(new HashSet<SNodeId>());
@@ -442,7 +446,7 @@ public class ModelChangesManager {
             ListSequence.fromList(changeList.value).addElement(change);
           }
         }
-        final List<SetNodeChange> setNodeChanges = ListSequence.fromList(changeList.value).translate(new ITranslator2<Change, SetNodeChange>() {
+        final List<SetNodeChange> setNodeChanges = ListSequence.fromList(changeList.value).<SetNodeChange>translate(new ITranslator2<Change, SetNodeChange>() {
           public Iterable<SetNodeChange> translate(final Change ch) {
             return new Iterable<SetNodeChange>() {
               public Iterator<SetNodeChange> iterator() {
@@ -494,7 +498,7 @@ __switch__:
             });
           }
         });
-        changeList.value = ListSequence.fromList(changeList.value).select(new ISelector<Change, Change>() {
+        changeList.value = ListSequence.fromList(changeList.value).<Change>select(new ISelector<Change, Change>() {
           public Change select(Change ch) {
             Change newCh = ch;
             if (ch instanceof DeleteNodeChange) {
@@ -507,10 +511,10 @@ __switch__:
           }
         }).toListSequence();
         ListSequence.fromList(myChangeList).clear();
-        ListSequence.fromList(myChangeList).addSequence(ListSequence.fromList(changeList.value));
+        return ListSequence.fromList(myChangeList).addSequence(ListSequence.fromList(changeList.value));
         // avoid returning value 
       }
-    });
+    }));
   }
 
   private void updateChangesCountsForRootsAndMultipleChildChanges() {

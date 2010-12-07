@@ -1,249 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
-  <persistence version="4" />
-  <refactoringHistory />
+  <persistence version="7" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="2" />
-  <import index="1" modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3702466984434609596">
-    <link role="conceptDeclaration:32" targetNodeId="1.3702466984434609595:5" resolveInfo="TestStatenetList" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3702466984434609598">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6951814850419519043">
-        <property name="text:32" value="{" />
-        <link role="styleClass:32" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="6951814850419519044">
-          <property name="flag:32" value="true" />
+  <import index="34bt" modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
+  <import index="yvim" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="yvnu" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="yvor" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="yvnl" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
+  <import index="uig5" modelUID="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)" version="-1" implicit="yes" />
+  <roots>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="3702466984434609596">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.3702466984434609595:5" resolveInfo="TestStatenetList" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="3702466984434806354">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.3702466984434723497:5" resolveInfo="TestStatement" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="3702466984434806358">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.3702466984434723496:5" resolveInfo="BracesStatement" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="3702466984434811406">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.3702466984434811404:5" resolveInfo="StubStatement" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="6859592652550843067">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.6859592652550843066:5" resolveInfo="VerticalLayoutStatementList" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="8497577741385080310">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.8497577741385080308:5" resolveInfo="BracesStubBlock" />
+    </node>
+    <node type="yvnl.StyleSheet" typeId="yvnl.1186402211651:32" id="7301049412170117872">
+      <property name="name" nameId="yvnu.1169194664001:0" value="TestLanguage_StyleSheet" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="3582597462265868789">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.3582597462265868788:5" resolveInfo="InspectorBlock" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="7658393498702771297">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.7658393498702771296:5" resolveInfo="ReferenceAnnotataion" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="5110219550149792115">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.5110219550149792114:5" resolveInfo="SideTranformWrapper" />
+    </node>
+    <node type="yvnl.CellActionMapDeclaration" typeId="yvnl.1139535219966:32" id="5110219550150152699">
+      <property name="name" nameId="yvnu.1169194664001:0" value="SideTransformWrapperActionMap" />
+      <link role="applicableConcept" roleId="yvnl.1139535219968:32" targetNodeId="34bt.5110219550149792114:5" resolveInfo="SideTranformWrapper" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="5110219550150295501">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.5110219550150263047:5" resolveInfo="IntegerLiteral" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="5110219550150400715">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.5110219550150320602:5" resolveInfo="BinaryExpression" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="2613454275903805306">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.2613454275903805304:5" resolveInfo="AttractsFocusBlock" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="2613454275903852517">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.2613454275903819473:5" resolveInfo="VariableDeclarationBlock" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="2613454275903920990">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.2613454275903920988:5" resolveInfo="VariableDeclarationReference" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="5633355289409839144">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.5633355289409839142:5" resolveInfo="BlockWithNonEmptyProperty" />
+    </node>
+    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="4965160547087302662">
+      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="34bt.4965160547087302660:5" resolveInfo="NotEditableVaraileReference" />
+    </node>
+  </roots>
+  <root id="3702466984434609596">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="3702466984434609598">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="6951814850419519043">
+        <property name="text" nameId="yvnl.1073389577007:32" value="{" />
+        <link role="styleClass" roleId="yvnl.1186406756722:32" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.IndentLayoutNewLineStyleClassItem" typeId="yvnl.1237308012275:32" id="6951814850419519044">
+          <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
         </node>
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3702466984434609600" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="3702466984434609605">
-        <link role="relationDeclaration:32" targetNodeId="1.3702466984434609602:5" />
-        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3702466984434609606" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem:32" id="6951814850419519048">
-          <property name="flag:32" value="true" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="3702466984434609600" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNodeList" typeId="yvnl.1073390211982:32" id="3702466984434609605">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.3702466984434609602:5" />
+        <node role="cellLayout" roleId="yvnl.1140524464360:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="3702466984434609606" />
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.IndentLayoutIndentStyleClassItem" typeId="yvnl.1237307900041:32" id="6951814850419519048">
+          <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="3702466984434609607">
-          <property name="flag:32" value="true" />
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.IndentLayoutNewLineChildrenStyleClassItem" typeId="yvnl.1237375020029:32" id="3702466984434609607">
+          <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="3702466984434609608">
-          <property name="flag:32" value="true" />
-        </node>
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6951814850419519046">
-        <property name="text:32" value="}" />
-        <link role="styleClass:32" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3702466984434806354">
-    <link role="conceptDeclaration:32" targetNodeId="1.3702466984434723497:5" resolveInfo="TestStatement" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3702466984434806356" />
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3702466984434806358">
-    <link role="conceptDeclaration:32" targetNodeId="1.3702466984434723496:5" resolveInfo="BracesStatement" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8497577741384827846">
-      <property name="usesBraces:32" value="true" />
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8497577741384827847" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="8497577741384754885">
-        <property name="usesBraces:32" value="false" />
-        <link role="relationDeclaration:32" targetNodeId="1.3702466984434609602:5" />
-        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8497577741384754886" />
-        <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8497577741384754887">
-          <property name="text:32" value="no statements" />
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.IndentLayoutNewLineStyleClassItem" typeId="yvnl.1237308012275:32" id="3702466984434609608">
+          <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
         </node>
       </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3702466984434811406">
-    <link role="conceptDeclaration:32" targetNodeId="1.3702466984434811404:5" resolveInfo="StubStatement" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3702466984434811408">
-      <property name="text:32" value="stub" />
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3582597462266521347" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="6859592652550843067">
-    <link role="conceptDeclaration:32" targetNodeId="1.6859592652550843066:5" resolveInfo="VerticalLayoutStatementList" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6859592652550843076">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6859592652550843080">
-        <property name="text:32" value="vertical layout" />
-      </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="6859592652550843077" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6859592652550843069">
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="6859592652550843072">
-          <link role="relationDeclaration:32" targetNodeId="1.3702466984434609602:5" />
-          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="8497577741384337634" />
-        </node>
-        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid:32" id="8497577741384630716" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="6951814850419519046">
+        <property name="text" nameId="yvnl.1073389577007:32" value="}" />
+        <link role="styleClass" roleId="yvnl.1186406756722:32" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
       </node>
     </node>
-  </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="8497577741385080310">
-    <link role="conceptDeclaration:32" targetNodeId="1.8497577741385080308:5" resolveInfo="BracesStubBlock" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8497577741385080316">
-      <property name="usesBraces:32" value="true" />
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8497577741385080318" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="8497577741385120965">
-        <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.StyleSheet:32" id="7301049412170117872">
-    <property name="name:32" value="TestLanguage_StyleSheet" />
-    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="7301049412170117873">
-      <property name="name:32" value="baseStyle" />
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="7301049412170117874">
-        <property name="style:32" value="PLAIN" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3582597462265868789">
-    <link role="conceptDeclaration:32" targetNodeId="1.3582597462265868788:5" resolveInfo="InspectorBlock" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3582597462265868791">
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3582597462265868793" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="3582597462266260257">
-        <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3582597462266514492" />
-      </node>
-    </node>
-    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3582597462265868796">
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3582597462265868797" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3582597462265868799">
-        <link role="relationDeclaration:32" targetNodeId="1.3582597462265868798:5" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7658393498702771297">
-    <link role="conceptDeclaration:32" targetNodeId="1.7658393498702771296:5" resolveInfo="ReferenceAnnotataion" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7658393498702771299">
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7658393498702771300" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7658393498702771304">
-        <property name="text:32" value="&lt;ref" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell:32" id="7658393498702861284" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7658393498702771306">
-        <property name="text:32" value="&gt;" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="7658393498703098515">
-          <property name="flag:32" value="true" />
+  </root>
+  <root id="3702466984434806354">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="3702466984434806356" />
+  </root>
+  <root id="3702466984434806358">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="8497577741384827846">
+      <property name="usesBraces" nameId="yvnl.1139416841293:32" value="true" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="8497577741384827847" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNodeList" typeId="yvnl.1073390211982:32" id="8497577741384754885">
+        <property name="usesBraces" nameId="yvnl.1140524450556:32" value="false" />
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.3702466984434609602:5" />
+        <node role="cellLayout" roleId="yvnl.1140524464360:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="8497577741384754886" />
+        <node role="emptyCellModel" roleId="yvnl.1140524464359:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="8497577741384754887">
+          <property name="text" nameId="yvnl.1073389577007:32" value="no statements" />
         </node>
       </node>
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5110219550149792115">
-    <link role="conceptDeclaration:32" targetNodeId="1.5110219550149792114:5" resolveInfo="SideTranformWrapper" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5110219550149792122">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5110219550150227188">
-        <property name="text:32" value="(" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="5110219550150227191">
-          <property name="flag:32" value="true" />
+  </root>
+  <root id="3702466984434811406">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="3702466984434811408">
+      <property name="text" nameId="yvnl.1073389577007:32" value="stub" />
+      <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.FontStyleStyleClassItem" typeId="yvnl.1186403751766:32" id="3582597462266521347" />
+    </node>
+  </root>
+  <root id="6859592652550843067">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="6859592652550843076">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="6859592652550843080">
+        <property name="text" nameId="yvnl.1073389577007:32" value="vertical layout" />
+      </node>
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="6859592652550843077" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="6859592652550843069">
+        <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNodeList" typeId="yvnl.1073390211982:32" id="6859592652550843072">
+          <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.3702466984434609602:5" />
+          <node role="cellLayout" roleId="yvnl.1140524464360:32" type="yvnl.CellLayout_Vertical" typeId="yvnl.1106270571710:32" id="8497577741384337634" />
+        </node>
+        <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_VerticalGrid" typeId="yvnl.1239814640496:32" id="8497577741384630716" />
+      </node>
+    </node>
+  </root>
+  <root id="8497577741385080310">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="8497577741385080316">
+      <property name="usesBraces" nameId="yvnl.1139416841293:32" value="true" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="8497577741385080318" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_ConceptProperty" typeId="yvnl.1137553248617:32" id="8497577741385120965">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="yvnu.1137473891462:0" resolveInfo="alias" />
+      </node>
+    </node>
+  </root>
+  <root id="7301049412170117872">
+    <node role="styleClass" roleId="yvnl.1186402402630:32" type="yvnl.StyleSheetClass" typeId="yvnl.1186402373407:32" id="7301049412170117873">
+      <property name="name" nameId="yvnu.1169194664001:0" value="baseStyle" />
+      <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.FontStyleStyleClassItem" typeId="yvnl.1186403751766:32" id="7301049412170117874">
+        <property name="style" nameId="yvnl.1186403771423:32" value="PLAIN" />
+      </node>
+    </node>
+  </root>
+  <root id="3582597462265868789">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="3582597462265868791">
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="3582597462265868793" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_ConceptProperty" typeId="yvnl.1137553248617:32" id="3582597462266260257">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="yvnu.1137473891462:0" resolveInfo="alias" />
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.FontStyleStyleClassItem" typeId="yvnl.1186403751766:32" id="3582597462266514492" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" roleId="yvnl.1078153129734:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="3582597462265868796">
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="3582597462265868797" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNode" typeId="yvnl.1073389882823:32" id="3582597462265868799">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.3582597462265868798:5" />
+      </node>
+    </node>
+  </root>
+  <root id="7658393498702771297">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="7658393498702771299">
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="7658393498702771300" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="7658393498702771304">
+        <property name="text" nameId="yvnl.1073389577007:32" value="&lt;ref" />
+      </node>
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_AttributedLinkCell" typeId="yvnl.1136564507907:32" id="7658393498702861284" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="7658393498702771306">
+        <property name="text" nameId="yvnl.1073389577007:32" value="&gt;" />
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.PunctuationLeftStyleClassItem" typeId="yvnl.1233758997495:32" id="7658393498703098515">
+          <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
         </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="5110219550149792130">
-        <link role="relationDeclaration:32" targetNodeId="1.5110219550149792118:5" />
-        <link role="actionMap:32" targetNodeId="5110219550150152699" resolveInfo="SideTransformWrapperActionMap" />
+    </node>
+  </root>
+  <root id="5110219550149792115">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="5110219550149792122">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="5110219550150227188">
+        <property name="text" nameId="yvnl.1073389577007:32" value="(" />
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.PunctuationRightStyleClassItem" typeId="yvnl.1233759184865:32" id="5110219550150227191">
+          <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
+        </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5110219550149792132">
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="5110219550149792133">
-          <property name="flag:32" value="false" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNode" typeId="yvnl.1073389882823:32" id="5110219550149792130">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.5110219550149792118:5" />
+        <link role="actionMap" roleId="yvnl.1139959269582:32" targetNodeId="5110219550150152699" resolveInfo="SideTransformWrapperActionMap" />
+      </node>
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="5110219550149792132">
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="5110219550149792133">
+          <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
         </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5110219550149792137">
-          <property name="text:32" value="right" />
+        <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="5110219550149792137">
+          <property name="text" nameId="yvnl.1073389577007:32" value="right" />
         </node>
-        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5110219550149792135" />
-        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="5110219550149792147">
-          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5110219550149792148">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5110219550149792149">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5110219550149792151">
-                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="5110219550149792150" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5110219550149792155">
-                  <link role="property:16" targetNodeId="1.5110219550149792121:5" resolveInfo="rightOpen" />
+        <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="5110219550149792135" />
+        <node role="renderingCondition" roleId="yvnl.1142887637401:32" type="yvnl.QueryFunction_NodeCondition" typeId="yvnl.1142886221719:32" id="5110219550149792147">
+          <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="5110219550149792148">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="5110219550149792149">
+              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5110219550149792151">
+                <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.ConceptFunctionParameter_node" typeId="yvnl.1142886811589:32" id="5110219550149792150" />
+                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="5110219550149792155">
+                  <link role="property" roleId="yvim.1138056395725:16" targetNodeId="34bt.5110219550149792121:5" resolveInfo="rightOpen" />
                 </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5110219550150227190">
-        <property name="text:32" value=")" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="5110219550150227192">
-          <property name="flag:32" value="true" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="5110219550150227190">
+        <property name="text" nameId="yvnl.1073389577007:32" value=")" />
+        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.PunctuationLeftStyleClassItem" typeId="yvnl.1233758997495:32" id="5110219550150227192">
+          <property name="flag" nameId="yvnl.1186414551515:32" value="true" />
         </node>
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5110219550149792124" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="5110219550149792124" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="5110219550150152699">
-    <property name="name:32" value="SideTransformWrapperActionMap" />
-    <link role="applicableConcept:32" targetNodeId="1.5110219550149792114:5" resolveInfo="SideTranformWrapper" />
-    <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="5110219550150152700">
-      <property name="actionId:32" value="right_transform_action_id" />
-      <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction:32" id="5110219550150152701">
-        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5110219550150152702">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5110219550150152703">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="5110219550150152710">
-              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5110219550150152713">
-                <property name="value:3" value="true" />
+  </root>
+  <root id="5110219550150152699">
+    <node role="item" roleId="yvnl.1139535219969:32" type="yvnl.CellActionMapItem" typeId="yvnl.1139535280617:32" id="5110219550150152700">
+      <property name="actionId" nameId="yvnl.1139535298778:32" value="right_transform_action_id" />
+      <node role="executeFunction" roleId="yvnl.1139535280620:32" type="yvnl.CellActionMap_ExecuteFunction" typeId="yvnl.1139535439104:32" id="5110219550150152701">
+        <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="5110219550150152702">
+          <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="5110219550150152703">
+            <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="5110219550150152710">
+              <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="5110219550150152713">
+                <property name="value" nameId="yvor.1068580123138:3" value="true" />
               </node>
-              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5110219550150152705">
-                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="5110219550150152704" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5110219550150152709">
-                  <link role="property:16" targetNodeId="1.5110219550149792121:5" resolveInfo="rightOpen" />
+              <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5110219550150152705">
+                <node role="operand" roleId="yvor.1197027771414:3" type="yvnl.CellActionMap_FunctionParm_selectedNode" typeId="yvnl.1139535439112:32" id="5110219550150152704" />
+                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="5110219550150152709">
+                  <link role="property" roleId="yvim.1138056395725:16" targetNodeId="34bt.5110219550149792121:5" resolveInfo="rightOpen" />
                 </node>
               </node>
             </node>
@@ -251,110 +244,103 @@
         </node>
       </node>
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5110219550150295501">
-    <link role="conceptDeclaration:32" targetNodeId="1.5110219550150263047:5" resolveInfo="IntegerLiteral" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="5110219550150295503">
-      <link role="relationDeclaration:32" targetNodeId="1.5110219550150263048:5" resolveInfo="value" />
+  </root>
+  <root id="5110219550150295501">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Property" typeId="yvnl.1073389658414:32" id="5110219550150295503">
+      <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.5110219550150263048:5" resolveInfo="value" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5110219550150400715">
-    <link role="conceptDeclaration:32" targetNodeId="1.5110219550150320602:5" resolveInfo="BinaryExpression" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5110219550150400718">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="5110219550150400721">
-        <link role="relationDeclaration:32" targetNodeId="1.5110219550150320604:5" />
+  </root>
+  <root id="5110219550150400715">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="5110219550150400718">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNode" typeId="yvnl.1073389882823:32" id="5110219550150400721">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.5110219550150320604:5" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="5110219550150400723">
-        <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_ConceptProperty" typeId="yvnl.1137553248617:32" id="5110219550150400723">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="yvnu.1137473891462:0" resolveInfo="alias" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="5110219550150400725">
-        <link role="relationDeclaration:32" targetNodeId="1.5110219550150320605:5" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNode" typeId="yvnl.1073389882823:32" id="5110219550150400725">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.5110219550150320605:5" />
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5110219550150400720" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="5110219550150400720" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2613454275903805306">
-    <link role="conceptDeclaration:32" targetNodeId="1.2613454275903805304:5" resolveInfo="AttractsFocusBlock" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2613454275903805308">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2613454275903805311">
-        <property name="text:32" value="attracts focus" />
+  </root>
+  <root id="2613454275903805306">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="2613454275903805308">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="2613454275903805311">
+        <property name="text" nameId="yvnl.1073389577007:32" value="attracts focus" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="2613454275903805313">
-        <property name="attractsFocus:32" value="1" />
-        <link role="relationDeclaration:32" targetNodeId="1.2613454275903805305:5" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNode" typeId="yvnl.1073389882823:32" id="2613454275903805313">
+        <property name="attractsFocus" nameId="yvnl.1130859485024:32" value="1" />
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.2613454275903805305:5" />
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2613454275903805310" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="2613454275903805310" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2613454275903852517">
-    <link role="conceptDeclaration:32" targetNodeId="1.2613454275903819473:5" resolveInfo="VariableDeclarationBlock" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2613454275903852519">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2613454275903852522">
-        <property name="text:32" value="var" />
+  </root>
+  <root id="2613454275903852517">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="2613454275903852519">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="2613454275903852522">
+        <property name="text" nameId="yvnl.1073389577007:32" value="var" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="2613454275903852524">
-        <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Property" typeId="yvnl.1073389658414:32" id="2613454275903852524">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="yvnu.1169194664001:0" resolveInfo="name" />
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2613454275903852521" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="2613454275903852521" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2613454275903920990">
-    <link role="conceptDeclaration:32" targetNodeId="1.2613454275903920988:5" resolveInfo="VariableDeclarationReference" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2613454275903920992">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="2613454275903920995">
-        <link role="relationDeclaration:32" targetNodeId="1.2613454275903920989:5" />
-        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="2613454275903920996">
-          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="2613454275903920998">
-            <property name="readOnly:32" value="true" />
-            <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+  </root>
+  <root id="2613454275903920990">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="2613454275903920992">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefCell" typeId="yvnl.1088013125922:32" id="2613454275903920995">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.2613454275903920989:5" />
+        <node role="editorComponent" roleId="yvnl.1088186146602:32" type="yvnl.InlineEditorComponent" typeId="yvnl.1088185857835:32" id="2613454275903920996">
+          <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Property" typeId="yvnl.1073389658414:32" id="2613454275903920998">
+            <property name="readOnly" nameId="yvnl.1140017977771:32" value="true" />
+            <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="yvnu.1169194664001:0" resolveInfo="name" />
           </node>
         </node>
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2613454275903920994" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="2613454275903920994" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5633355289409839144">
-    <link role="conceptDeclaration:32" targetNodeId="1.5633355289409839142:5" resolveInfo="BlockWithNonEmptyProperty" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5633355289409839146">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="5633355289410032965">
-        <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+  </root>
+  <root id="5633355289409839144">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="5633355289409839146">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_ConceptProperty" typeId="yvnl.1137553248617:32" id="5633355289410032965">
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="yvnu.1137473891462:0" resolveInfo="alias" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty:32" id="5633355289409887749">
-        <property name="allowEmptyText:32" value="true" />
-        <link role="relationDeclaration:32" targetNodeId="1.5633355289409839143:5" resolveInfo="value" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_NonEmptyProperty" typeId="yvnl.1184319644772:32" id="5633355289409887749">
+        <property name="allowEmptyText" nameId="yvnl.1140114345053:32" value="true" />
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.5633355289409839143:5" resolveInfo="value" />
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5633355289409839148" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="5633355289409839148" />
     </node>
-    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5633355289409964570">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5633355289409964572">
-        <property name="text:32" value="property" />
+    <node role="inspectedCellModel" roleId="yvnl.1078153129734:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="5633355289409964570">
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="5633355289409964572">
+        <property name="text" nameId="yvnl.1073389577007:32" value="property" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="5633355289409964574">
-        <property name="allowEmptyText:32" value="true" />
-        <property name="emptyNoTargetText:32" value="false" />
-        <property name="noTargetText:32" value="no value" />
-        <link role="relationDeclaration:32" targetNodeId="1.5633355289409839143:5" resolveInfo="value" />
+      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Property" typeId="yvnl.1073389658414:32" id="5633355289409964574">
+        <property name="allowEmptyText" nameId="yvnl.1140114345053:32" value="true" />
+        <property name="emptyNoTargetText" nameId="yvnl.1214560368769:32" value="false" />
+        <property name="noTargetText" nameId="yvnl.1139852716018:32" value="no value" />
+        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.5633355289409839143:5" resolveInfo="value" />
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5633355289409964571" />
+      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Indent" typeId="yvnl.1237303669825:32" id="5633355289409964571" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4965160547087302662">
-    <link role="conceptDeclaration:32" targetNodeId="1.4965160547087302660:5" resolveInfo="NotEditableVaraileReference" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="4965160547087302664">
-      <link role="relationDeclaration:32" targetNodeId="1.4965160547087302661:5" />
-      <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="4965160547087302665">
-        <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4965160547087302667">
-          <property name="readOnly:32" value="false" />
-          <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="4965160547087391735">
-            <property name="color:32" value="cyan" />
+  </root>
+  <root id="4965160547087302662">
+    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_RefCell" typeId="yvnl.1088013125922:32" id="4965160547087302664">
+      <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="34bt.4965160547087302661:5" />
+      <node role="editorComponent" roleId="yvnl.1088186146602:32" type="yvnl.InlineEditorComponent" typeId="yvnl.1088185857835:32" id="4965160547087302665">
+        <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Property" typeId="yvnl.1073389658414:32" id="4965160547087302667">
+          <property name="readOnly" nameId="yvnl.1140017977771:32" value="false" />
+          <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="yvnu.1169194664001:0" resolveInfo="name" />
+          <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.TextBackgroundColorStyleClassItem" typeId="yvnl.1214406454886:32" id="4965160547087391735">
+            <property name="color" nameId="yvnl.1186403713874:32" value="cyan" />
           </node>
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="7518418513047622167">
-            <property name="flag:32" value="false" />
+          <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.EditableStyleClassItem" typeId="yvnl.1186414860679:32" id="7518418513047622167">
+            <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
           </node>
         </node>
       </node>
     </node>
-  </node>
+  </root>
 </model>
 

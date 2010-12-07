@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence.def.v6;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.persistence.def.v5.ModelUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,6 +35,7 @@ public class VersionUtil {
 
   private SModelReference myModelRef;
   private Map<SModelReference, ImportElement> myImports;
+
   public VersionUtil(SModel model) {
     myModelRef = model.getSModelReference();
     myImports = new HashMap<SModelReference, ImportElement>();
@@ -64,6 +66,10 @@ public class VersionUtil {
     }
   }
 
+  public String genImportIndex(ImportElement elem) {
+    return Integer.toString(elem.getReferenceID());
+  }
+
   @NotNull
   public String genReferenceString(@NotNull SModelReference ref, @NotNull String text, boolean usemodel) {
     ImportElement impElem = myImports.get(ref);
@@ -78,11 +84,11 @@ public class VersionUtil {
     return result.toString();
   }
   @NotNull
-  public String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
+  private String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
     return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
   }
   @NotNull
-  public String genReferenceString(@Nullable BaseAdapter node, @NotNull String text, boolean usemodel) {
+  private String genReferenceString(@Nullable BaseAdapter node, @NotNull String text, boolean usemodel) {
     return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
   }
 
@@ -99,7 +105,9 @@ public class VersionUtil {
     return genReferenceString(node.getPropertyDeclaration(prop), prop, true);
   }
   public String genTarget(@NotNull SReference ref) {
-    return genReferenceString(ref.getTargetSModelReference(), ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^", true);
+    String target = ref instanceof StaticReference ? String.valueOf(ref.getTargetNodeId()) : "^";
+    SModelReference targetModel = ref.getTargetSModelReference();
+    return targetModel == null ? target : genReferenceString(targetModel, target, true);
   }
 
 
@@ -110,35 +118,37 @@ public class VersionUtil {
     myImports = new HashMap<SModelReference, ImportElement>();
     myImportByIx = new HashMap<Integer, ImportElement>();
   }
-  public void addImport(ImportElement elem) {
-    myImports.put(elem.getModelReference(), elem);
-    myImportByIx.put(elem.getReferenceID(), elem);
-  }
 
-
-  public class ParseResult {  // [modelID.]text[:version]
-    public int modelID;
-    public String text;
-    public int version;
+  public void addImport(SModel model, String index, String modelUID, int version, boolean implicit) {
+    if (modelUID == null) {
+      LOG.error("Error loading import element for index " + index + " in " + myModelRef);
+      return;
+    }
+    int ix = Integer.parseInt(index);
+    SModelReference modelRef = ModelUtil.upgradeModelUID(SModelReference.fromString(modelUID));
+    ImportElement elem = new ImportElement(modelRef, ix, version);
+    if (model.getMaxImportIndex() < ix)  model.setMaxImportIndex(ix);
+    myImports.put(modelRef, elem);
+    myImportByIx.put(ix, elem);
+    if (implicit)
+      model.addAdditionalModelVersion(elem);
+    else
+      model.addModelImport(elem);
   }
 
   public SModelReference getSModelReference(int ix) {
     return ix == -1 ? myModelRef : myImportByIx.get(ix).getModelReference();
   }
-  
-  public ParseResult parse(String src, boolean hasmodel) {
-    ParseResult res = new ParseResult();
-    char[] chars = src.toCharArray();
-    int i0 = -1, i1 = chars.length;
-    if (hasmodel) { // false means we shouldn't try to parse model id
-      while (++i0 < i1)  if (!Character.isDigit(chars[i0]))  break;
-      if (i0 == i1 || chars[i0] != MODEL_SEPARATOR_CHAR)  i0 = -1;
-    }
-    while (i0 < --i1)  if (!Character.isDigit(chars[i1]))  break;
-    if (i0 == i1 || chars[i1] != VERSION_SEPARATOR_CHAR)  i1 = chars.length;
-    res.text = src.substring(i0 + 1, i1);
-    res.modelID = i0 > 0 ? Integer.parseInt(src.substring(0, i0)) : -1;
-    res.version = i1 < chars.length-1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
+
+
+  private static class ParseResult {  // [modelID.]text[:version]
+    public int modelID;
+    public String text;
+    public int version;
+  }
+
+  private ParseResult parse(String src, boolean hasmodel) {
+    ParseResult res = parseWithoutCheck(src, hasmodel);
 
     // check integrity except concepts and attribute roles
     if (hasmodel && !AttributesRolesUtil.isAttributeRole(res.text)) {
@@ -151,6 +161,22 @@ public class VersionUtil {
     return res;
   }
 
+  private static ParseResult parseWithoutCheck(String src, boolean hasmodel) {
+    ParseResult res = new ParseResult();
+    char[] chars = src.toCharArray();
+    int i0 = -1, i1 = chars.length;
+    if (hasmodel) { // false means we shouldn't try to parse model id
+      while (++i0 < i1)  if (!Character.isDigit(chars[i0]))  break;
+      if (i0 == i1 || chars[i0] != MODEL_SEPARATOR_CHAR)  i0 = -1;
+    }
+    while (i0 < --i1)  if (!Character.isDigit(chars[i1]))  break;
+    if (i0 == i1 || chars[i1] != VERSION_SEPARATOR_CHAR)  i1 = chars.length;
+    res.text = src.substring(i0 + 1, i1);
+    res.modelID = i0 > 0 ? Integer.parseInt(src.substring(0, i0)) : -1;
+    res.version = i1 < chars.length-1 ? Integer.parseInt(src.substring(i1 + 1)) : -1;
+    return res;
+  }
+
   public String readType(String s) {
     return parse(s, false).text;
   }
@@ -160,7 +186,22 @@ public class VersionUtil {
   public String readName(String s) {
     return parse(s, true).text;
   }
-  public String readTarget(String s) {
-    return parse(s, true).text;
+
+  public SReference readLink(SNode node, String rawRole, String rawTarget, String resolveInfo) {
+    String role = readRole(rawRole);
+    ParseResult target = parse(rawTarget, true);
+    SModelReference modelRef = getSModelReference(target.modelID);
+    if (modelRef == null) {
+      LOG.error("couldn't create reference '" + role + "' : import for index [" + target.modelID + "] not found");
+      return null;
+    } else if (target.text.equals("^")) {
+      return new DynamicReference(role, node, modelRef, resolveInfo);
+    } else {
+      return new StaticReference(role, node, modelRef, SNodeId.fromString(target.text), resolveInfo);
+    }
+  }
+
+  public static String readRoleSimple(String s) {
+    return parseWithoutCheck(s, true).text;
   }
 }

@@ -71,7 +71,8 @@ public class TextGenManager {
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     myClassesCache = null;
-    int topLength = buffer.getTopBufferText().split(buffer.getLineSeparator(), -1).length + 2;
+    String topBufferText = buffer.getTopBufferText();
+    int topLength = topBufferText.isEmpty() ? 1 : topBufferText.split(buffer.getLineSeparator(), -1).length + 2;
     for (PositionInfo position : myPositions.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
@@ -128,6 +129,7 @@ public class TextGenManager {
       if (TraceInfoManager.getInstance().isTraceableNode(node)) {
         myPositions.put(node, info);
         info.setConceptFqName(node.getConceptFqName());
+        info.setPropertyString(TraceInfoManager.getInstance().getPropertyString(node));
       }
       if (TraceInfoManager.getInstance().isScopeNode(node)) {
         ScopePositionInfo scopePositionInfo = new ScopePositionInfo();

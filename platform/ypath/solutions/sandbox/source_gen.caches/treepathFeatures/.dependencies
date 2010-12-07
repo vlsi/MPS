@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.util.AbstractCollection" />
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor.Stub" />
+    <classNode extendsClassName="jetbrains.mps.ypath.runtime.Stub" />
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.TreePath" />
   </dependency>
   <dependency className="treepathFeatures.SNODE_Design" file="SNODE_Design.java">
@@ -40,7 +40,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.ypath.design.IParameterizedFeatureDesign" />
-    <classNode extendsClassName="jetbrains.mps.ypath.design.IParameterizedFeatureDesign.Stub" />
+    <classNode extendsClassName="jetbrains.mps.ypath.design.Stub" />
   </dependency>
   <dependency className="treepathFeatures.SNODE_GEN_Design" file="SNODE_GEN_Design.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -57,14 +57,12 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="treepathFeatures.SnodeGenUtil" />
     <classNode extendsClassName="jetbrains.mps.ypath.design.IGenericFeatureDesign" />
-    <classNode extendsClassName="jetbrains.mps.ypath.design.IGenericFeatureDesign.Stub" />
     <classNode extendsClassName="jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign" />
-    <classNode extendsClassName="jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign.Stub" />
+    <classNode extendsClassName="jetbrains.mps.ypath.design.Stub" />
   </dependency>
   <dependency className="treepathFeatures.SnodeDemo" file="SnodeDemo.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -102,8 +100,8 @@
     <classNode extendsClassName="java.util.AbstractCollection" />
     <classNode extendsClassName="java.util.AbstractList" />
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor.Stub" />
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.IFilter" />
+    <classNode extendsClassName="jetbrains.mps.ypath.runtime.Stub" />
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.TreePath" />
   </dependency>
 </dependenciesRoot>

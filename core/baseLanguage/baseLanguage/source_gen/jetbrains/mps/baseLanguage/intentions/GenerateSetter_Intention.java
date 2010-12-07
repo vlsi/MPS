@@ -19,7 +19,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateSetter_Intention extends GenerateIntention implements Intention {
@@ -107,7 +106,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getOperationContext().getMainFrame(), node);
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getMainFrame(), node);
     selectFieldsDialog.showDialog();
     intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
     return selectFieldsDialog.getAnswer();
@@ -166,7 +165,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
                 quotedNode_10 = (SNode) parameter_21;
                 SNode quotedNode1_18;
                 if (_parameterValues_129834374.contains(quotedNode_10)) {
-                  quotedNode1_18 = CopyUtil.copy(quotedNode_10);
+                  quotedNode1_18 = HUtil.copyIfNecessary(quotedNode_10);
                 } else {
                   _parameterValues_129834374.add(quotedNode_10);
                   quotedNode1_18 = quotedNode_10;
@@ -189,7 +188,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
             quotedNode_7 = (SNode) parameter_22;
             SNode quotedNode1_20;
             if (_parameterValues_129834374.contains(quotedNode_7)) {
-              quotedNode1_20 = CopyUtil.copy(quotedNode_7);
+              quotedNode1_20 = HUtil.copyIfNecessary(quotedNode_7);
             } else {
               _parameterValues_129834374.add(quotedNode_7);
               quotedNode1_20 = quotedNode_7;

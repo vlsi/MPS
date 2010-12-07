@@ -16,10 +16,10 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
 import java.util.*;
@@ -37,6 +37,7 @@ public class EquationInfo {
   private Set<Pair<String, String>> myInequationIdsAfter = null;
   private Set<String> myInequationGroupsBefore = null;
   private Set<String> myInequationGroupsAfter = null;
+  private Set<String> mySkippedRules = null;
 
   private QuickFixProvider myIntentionProvider;
 
@@ -168,6 +169,13 @@ public class EquationInfo {
     myInequationGroup = inequationGroup;
   }
 
+  public void addRuleToSkip(String ruleClass) {
+    if (mySkippedRules == null) {
+      mySkippedRules = new HashSet<String>(1);
+    }
+    mySkippedRules.add(ruleClass);
+  }
+
   boolean isStrong() {
     return myIsStrong;
   }
@@ -190,5 +198,9 @@ public class EquationInfo {
 
   public Set<String> getInequationGroupsBefore() {
     return myInequationGroupsBefore == null ? new HashSet<String>() : myInequationGroupsBefore;
+  }
+
+  public Set<String> getSkippedRules() {
+    return mySkippedRules == null ? new HashSet<String>() : mySkippedRules;
   }
 }

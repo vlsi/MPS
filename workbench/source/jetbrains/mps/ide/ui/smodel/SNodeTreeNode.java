@@ -23,6 +23,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -32,6 +33,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
+import java.awt.font.TextAttribute;
 import java.util.List;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
@@ -40,7 +42,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
   private SNode myNode;
   private String myRole;
-  private Condition<SNode> myCondition = Condition.TRUE_CONDITION;
+  private Condition<SNode> myCondition;
 
   public SNodeTreeNode(SNode node, IOperationContext operationContext) {
     this(node, null, operationContext);
@@ -56,10 +58,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myRole = role;
     myCondition = condition;
     updatePresentation();
-  }
-
-  protected void updatePresentation() {
-    super.updatePresentation();
   }
 
   protected final void doUpdatePresentation() {
@@ -111,6 +109,9 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
     if (SNodeOperations.isUnknown(myNode)) {
       setErrorState(ErrorState.ERROR);
+    }
+    if ((SLinkOperations.getTarget(myNode, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) != null)) {
+      addFontAttribute(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
     }
 
     setText(caclulateNodeTextPresentation());

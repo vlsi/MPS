@@ -20,13 +20,12 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.actions.SelectMembersDialog;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -58,21 +57,25 @@ public abstract class ChooserType<T> {
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModelModel(project) {
-        public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-          return new BaseModelItem(modelDescriptor) {
+        public NavigationItem doGetNavigationItem(final SModelReference ref) {
+          return new BaseModelItem(ref) {
             public void navigate(boolean requestFocus) {
-              context.setParameter(paramName, getModelDescriptor());
+              context.setParameter(paramName, getModelReference());
             }
           };
         }
 
-        public SModelDescriptor[] find(boolean checkboxState) {
+        public SModelReference[] find(boolean checkboxState) {
           List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
           List<SModelDescriptor> filteredModelDescriptors = filter(settings, modelDescriptors);
-          return filteredModelDescriptors.toArray(new SModelDescriptor[filteredModelDescriptors.size()]);
+          List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>(filteredModelDescriptors.size());
+          for (SModelDescriptor md:filteredModelDescriptors){
+            filteredModelRefs.add(md.getSModelReference());
+          }
+          return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
         }
 
-        public SModelDescriptor[] find(IScope scope) {
+        public SModelReference[] find(IScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 
@@ -97,21 +100,24 @@ public abstract class ChooserType<T> {
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModuleModel(project, "module") {
-        public NavigationItem doGetNavigationItem(final IModule module) {
+        public NavigationItem doGetNavigationItem(final ModuleReference module) {
           return new BaseModuleItem(module) {
             public void navigate(boolean requestFocus) {
-              context.setParameter(paramName, module);
+              context.setParameter(paramName, MPSModuleRepository.getInstance().getModule(module));
             }
           };
         }
 
-        public IModule[] find(boolean checkboxState) {
+        public ModuleReference[] find(boolean checkboxState) {
           List<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-          List<IModule> filteredModules = filter(settings, modules);
-          return filteredModules.toArray(new IModule[filteredModules.size()]);
+          List<ModuleReference> filteredModules = new ArrayList<ModuleReference>();
+          for (IModule module : filter(settings, modules)){
+            filteredModules.add(module.getModuleReference());
+          }
+          return filteredModules.toArray(new ModuleReference[filteredModules.size()]);
         }
 
-        public IModule[] find(IScope scope) {
+        public ModuleReference[] find(IScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 

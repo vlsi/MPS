@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.Pair;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 public class RulesManager {
 
@@ -97,6 +96,7 @@ public class RulesManager {
     return loadLanguage(l);
   }
 
+  //todo: we should not change language models while loading language
   public boolean loadLanguage(final Language l) {
     synchronized (RULES_LOCK) {
       if (myLoadedLanguages.contains(l.getModuleFqName())) {
@@ -118,7 +118,8 @@ public class RulesManager {
           myInferenceRules.addRuleSetItem(typesystemDescriptor.getInferenceRules());
           myNonTypesystemRules.addRuleSetItem(typesystemDescriptor.getNonTypesystemRules());
           mySubtypingRules.addRuleSetItem(typesystemDescriptor.getSubtypingRules());
-          myComparisonRules.addRuleSetItem(typesystemDescriptor.getComparisonRules());
+          Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystemDescriptor.getComparisonRules();
+          myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
           myReplacementRules.addRuleSetItem(typesystemDescriptor.getEliminationRules());
           myDependenciesContainer.addDependencies(typesystemDescriptor.getDependencies());
           myVariableConverters.addAll(typesystemDescriptor.getVariableConverters());

@@ -47,6 +47,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class ImportHelper {
@@ -64,11 +65,11 @@ public class ImportHelper {
     };
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
-      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new AddModelItem(project, model, modelDescriptor, module);
+      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
+        return new AddModelItem(project, model, modelReference, module);
       }
 
-      public SModelDescriptor[] find(IScope scope) {
+      public SModelReference[] find(IScope scope) {
         Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
           public boolean met(SModelDescriptor modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
@@ -78,8 +79,11 @@ public class ImportHelper {
           }
         };
         ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
-        ArrayList<SModelDescriptor> res = new ArrayList<SModelDescriptor>(IterableUtil.asCollection(iter));
-        return res.toArray(new SModelDescriptor[res.size()]);
+        List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>();
+        for (SModelDescriptor md:iter){
+          filteredModelRefs.add(md.getSModelReference());
+        }
+        return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
       }
 
       @Nullable
@@ -108,13 +112,16 @@ public class ImportHelper {
     };
 
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
-      public NavigationItem doGetNavigationItem(IModule module) {
-        return new AddLanguageItem((Language) module, contextModule, model);
+      public NavigationItem doGetNavigationItem(ModuleReference ref) {
+        return new AddLanguageItem(ref, contextModule, model);
       }
 
-      public Language[] find(IScope scope) {
-        ArrayList<Language> res = new ArrayList<Language>(IterableUtil.asCollection(scope.getVisibleLanguages()));
-        return res.toArray(new Language[res.size()]);
+      public ModuleReference[] find(IScope scope) {
+        ArrayList<ModuleReference> res = new ArrayList<ModuleReference>();
+        for (Language l:scope.getVisibleLanguages()){
+          res.add(l.getModuleReference());
+        }
+        return res.toArray(new ModuleReference[res.size()]);
       }
 
       @Nullable
@@ -139,7 +146,7 @@ public class ImportHelper {
     private IModule myContextModule;
     private SModelDescriptor myModel;
 
-    public AddLanguageItem(Language language, IModule contextModule, SModelDescriptor model) {
+    public AddLanguageItem(ModuleReference language, IModule contextModule, SModelDescriptor model) {
       super(language);
       myContextModule = contextModule;
       myModel = model;
@@ -148,11 +155,11 @@ public class ImportHelper {
     public void navigate(boolean requestFocus) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          Language lang = (Language) getModule();
-          if (myContextModule.getScope().getLanguage(lang.getModuleReference())==null) {
-            myContextModule.addUsedLanguage(lang.getModuleReference());
+          ModuleReference ref = getModuleReference();
+          if (myContextModule.getScope().getLanguage(ref)==null) {
+            myContextModule.addUsedLanguage(ref);
           }
-          myModel.getSModel().addLanguage(lang.getModuleReference());
+          myModel.getSModel().addLanguage(ref);
         }
       });
     }
@@ -172,7 +179,7 @@ public class ImportHelper {
         public NavigationItem doGetNavigationItem(SNode node) {
           return new BaseNodeItem(node) {
             public void navigate(boolean requestFocus) {
-              new AddModelItem(project, model, getNode().getModel().getModelDescriptor(), contextModule).navigate(requestFocus);
+              new AddModelItem(project, model, getNode().getModel().getSModelReference(), contextModule).navigate(requestFocus);
             }
           };
         }
@@ -198,7 +205,7 @@ public class ImportHelper {
 
         @Nullable
         public String getPromptText() {
-          return "Import model that includes root:";
+          return "Import model that contains root:";
         }
       };
     } else {
@@ -209,14 +216,14 @@ public class ImportHelper {
               SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
               SModel modelDescriptor = descriptor.getSModel();
               SNode node = object.getNode(modelDescriptor);
-              new AddModelItem(project, model, node.getModel().getModelDescriptor(), contextModule).navigate(requestFocus);
+              new AddModelItem(project, model, node.getModel().getSModelReference(), contextModule).navigate(requestFocus);
             }
           };
         }
 
         @Nullable
         public String getPromptText() {
-          return "Import model that includes root:";
+          return "Import model that contains root:";
         }
       };
     }
@@ -242,7 +249,7 @@ public class ImportHelper {
     private SModelDescriptor myModel;
     private IModule myModule;
 
-    public AddModelItem(Project project, SModelDescriptor model, SModelDescriptor modelToAdd, IModule currentModule) {
+    public AddModelItem(Project project, SModelDescriptor model, SModelReference modelToAdd, IModule currentModule) {
       super(modelToAdd);
       myProject = project;
       myModel = model;
@@ -256,8 +263,9 @@ public class ImportHelper {
     public void navigate(boolean requestFocus) {
       final ModuleReference moduleToImport = ModelAccess.instance().runReadAction(new Computable<ModuleReference>() {
         public ModuleReference compute() {
-          final ModuleReference moduleReference = getModelDescriptor().getModule().getModuleReference();
-          if (myModule.getScope().getModelDescriptor(getModelDescriptor().getSModelReference()) == null) {
+          SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getModelReference());
+          final ModuleReference moduleReference = md.getModule().getModuleReference();
+          if (myModule.getScope().getModelDescriptor(getModelReference()) == null) {
             return moduleReference;
           }
           return null;
@@ -266,7 +274,7 @@ public class ImportHelper {
 
       if (moduleToImport != null) {
         int res = JOptionPane.showConfirmDialog(getFrame(),
-          "<html>Model <b>" + getModelDescriptor().getSModelReference().getSModelFqName() + "</b> is owned by module <b>" + moduleToImport.getModuleFqName() + "</b> which is not imported.</html>\n\n" +
+          "<html>Model <b>" + getModelReference().getSModelFqName() + "</b> is owned by module <b>" + moduleToImport.getModuleFqName() + "</b> which is not imported.</html>\n\n" +
 
             "Importing the module will take some time.\n" +
             "Do you want to automatically import the module?",
@@ -282,7 +290,7 @@ public class ImportHelper {
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          myModel.getSModel().addModelImport(getModelDescriptor().getSModelReference(), false);
+          myModel.getSModel().addModelImport(getModelReference(), false);
         }
       });
     }

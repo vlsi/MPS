@@ -20,6 +20,7 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -361,7 +362,7 @@ public class NodeRangeSelection implements KeyboardHandler {
               label.setCaretEnabled(false);
             }
 
-            cell.paint(g);
+            cell.paint(g, ParentSettings.createDefaultSetting());
             if (cell instanceof EditorCell_Label && !wasSelected) {
               EditorCell_Label label = (EditorCell_Label) cell;
               label.setCaretEnabled(wasCaretEnabled);

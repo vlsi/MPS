@@ -16,16 +16,12 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.persistence.def.DefaultMPSHandler;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
-import java.util.List;
-
-public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
+public class Handler6 extends ModelReader6Handler {
   private ModelLoadingState myState;
   private boolean myIgnoreState = false;
 
@@ -36,12 +32,12 @@ public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
   }
 
   public void endElement(String uri, String localName, String qName) throws SAXException {
-    if (qName.equals(ModelPersistence.ROOTS)) {
+    if (qName.equals(ModelPersistence.ROOT_STUBS)) {
       if (myState == ModelLoadingState.FULLY_LOADED) {
         myIgnoreState = false;
       } else {
         super.endElement(null,"model","model");
-        throw new SAXException();
+        throw new BreakParseSAXException();
       }
     } else {
       if (myIgnoreState) return;
@@ -50,7 +46,7 @@ public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
   }
 
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-    if (qName.equals(ModelPersistence.ROOTS)) {
+    if (qName.equals(ModelPersistence.ROOT_STUBS)) {
       if (myState == ModelLoadingState.FULLY_LOADED) {
         myIgnoreState = true;
       }
@@ -63,15 +59,5 @@ public class Handler6 extends ModelReader6Handler implements DefaultMPSHandler {
   public void characters(char[] array, int start, int len) throws SAXException {
     if (myIgnoreState) return;
     super.characters(array, start, len);
-  }
-
-  @Override
-  public SModel getModel() {
-    return getResult().o1;
-  }
-
-  @Override
-  public List<SNodeId> getLineToIdMap() {
-    return getResult().o2;
   }
 }

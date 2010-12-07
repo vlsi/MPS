@@ -145,6 +145,7 @@ public class Generator extends AbstractModule {
     return templateModels;
   }
 
+  @Deprecated
   public List<MappingConfiguration> getOwnMappings() {
     List<SModelDescriptor> list = getOwnTemplateModels();
     List<MappingConfiguration> mappings = new ArrayList<MappingConfiguration>();

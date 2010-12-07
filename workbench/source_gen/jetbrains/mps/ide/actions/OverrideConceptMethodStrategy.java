@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
   public OverrideConceptMethodStrategy(Project project) {
@@ -31,7 +30,7 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     if (SNodeOperations.isInstanceOf(sourceMethodConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       sourceMethodConcept = null;
     }
-    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new OverrideConceptMethodStrategy.QuotationClass_3gioqg_a0a0a0a0d0a().createNode(it);
       }
@@ -128,7 +127,7 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;

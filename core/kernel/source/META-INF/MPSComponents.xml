@@ -93,6 +93,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.MessagesPoolClearer</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.library.LibraryManager</implementation-class>
     </component>
 
@@ -221,6 +225,18 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.debug.breakpoints.JavaBreakpointsProvider</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.debug.api.breakpoints.DefaultProvider</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
     </component>
 
@@ -309,7 +325,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.baseLanguage.textGen.BLDependenciesCache</implementation-class>
+      <implementation-class>jetbrains.mps.make.java.BLDependenciesCache</implementation-class>
     </component>
 
     <component>
@@ -343,17 +359,21 @@
     <component>
       <implementation-class>jetbrains.mps.save.ModelsSaver</implementation-class>
     </component>
-    
+
     <component>
       <implementation-class>jetbrains.mps.ide.generator.GeneratorCacheComponent</implementation-class>
     </component>
   </application-components>
 
   <project-components>
-
     <component>
       <implementation-class>jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.cache.CachesClearer</implementation-class>
+    </component>
+
     <component>
       <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
       </implementation-class>
@@ -473,7 +493,8 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointViewSettingsComponent</implementation-class>
+      <implementation-class>jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointViewSettingsComponent
+      </implementation-class>
       <skipForDummyProject/>
     </component>
 
@@ -513,7 +534,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.generator.TransientModelsModule</implementation-class>
+      <implementation-class>jetbrains.mps.generator.TransientModelsComponent</implementation-class>
     </component>
 
     <component>

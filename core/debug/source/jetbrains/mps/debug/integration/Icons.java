@@ -18,15 +18,14 @@ package jetbrains.mps.debug.integration;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.12.2009
- * Time: 18:22:38
- * To change this template use File | Settings | File Templates.
- */
 public class Icons {
   public static final Icon VARIABLE_PRIMITIVE = new ImageIcon(Icons.class.getResource("ui/icons/db_primitive.png"));
   public static final Icon VARIABLE_OBJECT = new ImageIcon(Icons.class.getResource("ui/icons/db_object.png"));
   public static final Icon RUNCONFIGURATION_REMOTE = new ImageIcon(Icons.class.getResource("ui/icons/db_runconfig_remote.png"));
+  public static final Icon EXCEPTION_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_exception_breakpoint.png"));
+  public static final Icon DISABLED_EXCEPTION_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_disabled_exception_breakpoint.png"));
+  public static final Icon METHOD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_method_breakpoint.png"));
+  public static final Icon DISABLED_METHOD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_disabled_method_breakpoint.png"));
+  public static final Icon FIELD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_field_breakpoint.png"));
+  public static final Icon DISABLED_FIELD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_disabled_field_breakpoint.png"));
 }

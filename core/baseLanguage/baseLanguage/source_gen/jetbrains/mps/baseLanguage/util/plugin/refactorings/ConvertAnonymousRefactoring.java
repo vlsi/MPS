@@ -24,7 +24,6 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConvertAnonymousRefactoring {
@@ -117,7 +116,7 @@ public class ConvertAnonymousRefactoring {
 
   private void makeConstructorBody(SNode constructorDeclaration) {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty()) {
-      List<SNode> parameterReferences = ListSequence.fromList(this.mySuperConstructorParameters).select(new ISelector<SNode, SNode>() {
+      List<SNode> parameterReferences = ListSequence.fromList(this.mySuperConstructorParameters).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0a0a8().createNode(it);
         }
@@ -137,7 +136,7 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void copyChildren(SNode from, SNode to) {
-    Set<String> toConceptRoles = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(to))).select(new ISelector<SNode, String>() {
+    Set<String> toConceptRoles = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(to))).<String>select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "role");
       }
@@ -188,7 +187,7 @@ public class ConvertAnonymousRefactoring {
 
   private SNode makeInnerConstructorInvocation(SNode constructor) {
     SNode constructorInvocation = new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a51().createNode(constructor, SLinkOperations.getTargets(this.myClassToRefactor, "actualArgument", true));
-    ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "actualArgument", true)).addSequence(SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).select(new ISelector<SNode, SNode>() {
+    ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "actualArgument", true)).addSequence(SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a1a51().createNode(it);
       }
@@ -230,7 +229,7 @@ public class ConvertAnonymousRefactoring {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -269,7 +268,7 @@ public class ConvertAnonymousRefactoring {
           quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;

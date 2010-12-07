@@ -83,7 +83,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       int exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
         new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1, Messages.getQuestionIcon());
       if (exitCode == 1) {
-        ProjectUtil.closeProject(myCurrentProject);
+        ProjectUtil.closeAndDispose(myCurrentProject);
       }
     }
 

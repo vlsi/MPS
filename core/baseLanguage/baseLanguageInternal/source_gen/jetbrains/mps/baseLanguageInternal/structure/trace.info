@@ -5,6 +5,7 @@
   <unitInfo fileName="ExtractStaticInnerClassConcept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept" />
   <unitInfo fileName="InternalThisExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression" />
   <unitInfo fileName="ExtractStaticMethod_CallExpression.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression" />
+  <unitInfo fileName="ExtractToConstantRefExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression" />
   <unitInfo fileName="InternalClassifierType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType" />
   <unitInfo fileName="InternalClassExpression.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression" />
   <unitInfo fileName="InternalStaticFieldReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference" />

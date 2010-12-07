@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.errors.AbstractErrorReporter;
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.typesystem.uiActions.PresentationManager;
-import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.AbstractErrorReporter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.PresentationManager;
 
 public class EquationErrorReporter extends AbstractErrorReporter implements IErrorReporter {
   private EquationManager myEquationManager;

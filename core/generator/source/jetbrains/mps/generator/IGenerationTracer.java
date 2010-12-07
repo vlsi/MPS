@@ -1,9 +1,10 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.lang.generator.structure.MappingScript;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -19,17 +20,17 @@ public interface IGenerationTracer {
 
   void popInputNode(SNode node);
 
-  void pushRule(SNode node);
+  void pushRule(SNodePointer node);
 
-  void closeRule(SNode node);
+  void closeRule(SNodePointer node);
 
-  void pushRuleConsequence(SNode node);
+  void pushRuleConsequence(SNodePointer node);
 
-  void pushSwitch(SNode node);
+  void pushSwitch(SNodePointer node);
 
-  void pushMacro(SNode node);
+  void pushMacro(SNodePointer node);
 
-  void closeMacro(SNode node);
+  void closeMacro(SNodePointer node);
 
   void pushOutputNode(SNode node);
 
@@ -37,9 +38,9 @@ public interface IGenerationTracer {
 
   void replaceOutputNode(SNode node, SNode newOutputNode);
 
-  void pushTemplateNode(SNode node);
+  void pushTemplateNode(SNodePointer node);
 
-  void closeTemplateNode(SNode node);
+  void closeTemplateNode(SNodePointer node);
 
   void pushCopyOperation();
 
@@ -57,7 +58,7 @@ public interface IGenerationTracer {
 
   List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelReference outputModelReference);
 
-  void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> preMappingScripts);
+  void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> preMappingScripts);
 
-  void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> postMappingScripts);
+  void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> postMappingScripts);
 }

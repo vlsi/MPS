@@ -6,13 +6,16 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4549711462050029098(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -21,6 +24,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_3391577739833458953(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name");
+  }
+
+  public static Object referenceMacro_GetReferent_5665267283159127972(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
   }
 
   public static boolean ifMacro_Condition_8921542504326913812(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -58,6 +65,17 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_3391577739833431906(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{});
+  }
+
+  public static Iterable sourceNodesQuery_5837079428841717746(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    SNode operation = SLinkOperations.getTarget(_context.getNode(), "operation", true);
+    SNode declaration;
+    if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+      declaration = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
+    } else {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+    return SLinkOperations.getTargets(declaration, "throwsItem", true);
   }
 
   public static Iterable sourceNodesQuery_3391577739833596041(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

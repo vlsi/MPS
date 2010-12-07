@@ -15,7 +15,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import javax.swing.JOptionPane;
-import jetbrains.mps.workbench.actions.nodes.MyBaseNodeDialog;
+import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 
 public class ShowInferredNodeType_Action extends GeneratedAction {
   private static final Icon ICON = null;

@@ -169,9 +169,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
 
-        TypeChecker.getInstance().clearForReload();
-
-
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
         if (reloadAll) {
@@ -190,7 +187,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
     //todo hack
     if (myProject != null) {
       if (MPSCore.getInstance().isTestMode()) {
-        ProjectUtil.closeProject(myProject);
+        ProjectUtil.closeAndDispose(myProject);
       }
     }
   }

@@ -16,7 +16,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ypath.design.IGenericFeatureDesign;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SNODE_GEN_Design {
@@ -156,7 +155,7 @@ public class SNODE_GEN_Design {
             quotedNode_2 = (SNode) parameter_7;
             SNode quotedNode1_5;
             if (_parameterValues_129834374.contains(quotedNode_2)) {
-              quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+              quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
             } else {
               _parameterValues_129834374.add(quotedNode_2);
               quotedNode1_5 = quotedNode_2;
@@ -208,7 +207,7 @@ public class SNODE_GEN_Design {
                 quotedNode_5 = (SNode) parameter_13;
                 SNode quotedNode1_10;
                 if (_parameterValues_129834374.contains(quotedNode_5)) {
-                  quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+                  quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
                 } else {
                   _parameterValues_129834374.add(quotedNode_5);
                   quotedNode1_10 = quotedNode_5;

@@ -12,8 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class DebuggableFramesSelector implements IDebuggableFramesSelector {
-  private static final Logger LOG = Logger.getLogger(DebuggableFramesSelector.class);
-
   @Override
   public IStackFrame findDeepestDebuggableFrame(List<IStackFrame> frames) {
     for (IStackFrame frame : frames) {
@@ -21,6 +19,17 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     }
     if (frames.isEmpty()) return null;
     return frames.get(0);
+  }
+
+  @Override
+  public int findDeepestDebuggableFrameIndex(List<IStackFrame> frames) {
+    int index = 0;
+    for (IStackFrame frame : frames) {
+      if (isDebuggableFrame(frame)) return index;
+      index++;
+    }
+    if (frames.isEmpty()) return AbstractUiState.NO_FRAME;
+    return 0;
   }
 
   @Override

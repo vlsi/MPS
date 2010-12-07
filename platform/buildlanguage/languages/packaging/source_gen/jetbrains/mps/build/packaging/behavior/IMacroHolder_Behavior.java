@@ -31,9 +31,9 @@ public class IMacroHolder_Behavior {
   }
 
   public static List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    List<String> names = ListSequence.fromListAndArray(new ArrayList<String>(), MPSLayout_Behavior.getMPSHomeName_1226508944077());
+    List<String> names = ListSequence.fromListAndArray(new ArrayList<String>(), Layout_Behavior.getMPSHomeName_1226508944077());
     if (addBasedir) {
-      ListSequence.fromList(names).addElement(MPSLayout_Behavior.getBasedirName_1226509010730());
+      ListSequence.fromList(names).addElement(Layout_Behavior.getBasedirName_1226509010730());
     }
     ListSequence.fromList(names).addSequence(SetSequence.fromSet(PathMacros.getInstance().getUserMacroNames()));
     return names;
@@ -43,10 +43,10 @@ public class IMacroHolder_Behavior {
     if (macroName == null) {
       return "";
     }
-    if (macroName.equals(MPSLayout_Behavior.getBasedirName_1226509010730())) {
+    if (macroName.equals(Layout_Behavior.getBasedirName_1226509010730())) {
       return IMacroHolder_Behavior.call_getPath_1234976932856(thisNode);
     }
-    if (macroName.equals(MPSLayout_Behavior.getMPSHomeName_1226508944077())) {
+    if (macroName.equals(Layout_Behavior.getMPSHomeName_1226508944077())) {
       return PathManager.getHomePath();
     }
     return PathMacros.getInstance().getValue(macroName);

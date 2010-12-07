@@ -7,10 +7,10 @@ public class ASMVarArgType extends ASMType {
   private ASMType myElementType;
 
   /*package*/ ASMVarArgType(ASMType elementType) {
-    this.myElementType = elementType;
+    myElementType = elementType;
   }
 
   public ASMType getElementType() {
-    return this.myElementType;
+    return myElementType;
   }
 }

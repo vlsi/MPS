@@ -25,6 +25,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -655,8 +656,8 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     }
 
     @Override
-    protected boolean isSelectionPaintedOnAncestor() {
-      return isSelected();
+    protected ParentSettings isSelectionPaintedOnAncestor(ParentSettings parentSettings) {
+      return ParentSettings.createSelectedSetting(isSelected());
     }
 
     /*  public void paintContent(Graphics g) {

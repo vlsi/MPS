@@ -5,22 +5,23 @@ package jetbrains.mps.graphLayout.graph;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import java.util.Iterator;
 
 public class Node implements INode {
   private List<Edge> myOutEdges;
   private List<Edge> myInEdges;
-  private int myIndex;
   private boolean myIsDummy;
+  private int myIndex;
+  private Graph myGraph;
 
-  /*package*/ Node(int index, boolean isDummy) {
+  /*package*/ Node(Graph graph, int index, boolean isDummy) {
+    myGraph = graph;
     myOutEdges = ListSequence.fromList(new LinkedList<Edge>());
     myInEdges = ListSequence.fromList(new LinkedList<Edge>());
     myIndex = index;
     myIsDummy = isDummy;
   }
 
-  public Edge addEdgeTo(Node target) {
+  /*package*/ Edge addEdgeTo(Node target) {
     Edge edge = new Edge(this, target);
     this.addOutEdge(edge);
     if (target != this) {
@@ -67,20 +68,12 @@ public class Node implements INode {
     return myIsDummy;
   }
 
+  public Graph getGraph() {
+    return myGraph;
+  }
+
   @Override
   public String toString() {
     return Integer.toString(myIndex);
-  }
-
-  public Iterator<Edge> getEdgesIterator() {
-    return ListSequence.fromList(getEdges()).iterator();
-  }
-
-  public Iterator<Edge> getOutEdgesIterator() {
-    return ListSequence.fromList(getOutEdges()).iterator();
-  }
-
-  public Iterator<Edge> getInEdgesIterator() {
-    return ListSequence.fromList(getInEdges()).iterator();
   }
 }

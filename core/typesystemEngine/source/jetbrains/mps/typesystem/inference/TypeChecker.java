@@ -26,7 +26,6 @@ import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
@@ -256,19 +255,7 @@ public class TypeChecker implements ApplicationComponent {
   public SNode getTypeOf(final SNode node) {
     if (node == null) return null;
     fireNodeTypeAccessed(node);
-    TypeCheckingContext context;
-    if (isGenerationMode()) {
-      if (myPerformanceTracer == null) {
-        context = TypeContextManager.getInstance().createTypeCheckingContext(node);
-      } else {
-        context = TypeContextManager.getInstance().createTracingTypeCheckingContext(node);
-      }
-    } else {
-      context = TypeContextManager.getInstance().getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
-      //todo provide owner
-    }
-    if (context == null) return null;
-    return context.getTypeOf(node, this);
+    return TypeContextManager.getInstance().getTypeOf(node, isGenerationMode(), myPerformanceTracer);
   }
 
 

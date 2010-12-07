@@ -12,7 +12,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactoring {
@@ -108,7 +107,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
             quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_7 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_7 = quotedNode_3;
@@ -121,7 +120,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
             quotedNode_4 = (SNode) parameter_10;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;

@@ -63,7 +63,7 @@ public class OverridingMethodsFinder {
           collectOverridingMethods(superClassifier, nameToMethodsMap, visitedClassifiers);
         }
       }
-      ListSequence.fromList(SLinkOperations.getTargets(clazz, "implementedInterface", true)).select(new ISelector<SNode, SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(clazz, "implementedInterface", true)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "classifier", false);
         }
@@ -83,7 +83,7 @@ public class OverridingMethodsFinder {
         }
       }
     } else if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).select(new ISelector<SNode, SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "classifier", false);
         }
@@ -151,7 +151,7 @@ public class OverridingMethodsFinder {
   }
 
   public static boolean canBeOverriden(SNode method) {
-    return !(SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
   }
 
   public static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {

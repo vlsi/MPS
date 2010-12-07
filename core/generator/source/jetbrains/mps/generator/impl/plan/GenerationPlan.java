@@ -1,14 +1,12 @@
 package jetbrains.mps.generator.impl.plan;
 
 import com.intellij.openapi.util.Pair;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.generator.impl.TemplateSwitchGraph;
+import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -18,22 +16,28 @@ import java.util.*;
  */
 public class GenerationPlan {
   private List<Generator> myGenerators;
+  private List<TemplateModel> myTemplateModels;
+  private Map<SNodePointer, TemplateMappingConfiguration> myMappingsMap;
+
   private Set<Language> myLanguages = new HashSet<Language>();
-  private List<List<MappingConfiguration>> myPlan;
+  private List<List<TemplateMappingConfiguration>> myPlan;
   private Set<MappingPriorityRule> myConflictingPriorityRules;
   private final String myInputName;
+  private TemplateSwitchGraph myTemplateSwitchGraph;
 
-  public GenerationPlan(@NotNull SModel inputModel) {
+  public GenerationPlan(@NotNull SModel inputModel, IScope scope) {
     myInputName = inputModel.getLongName();
     try {
-      myGenerators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, GlobalScope.getInstance());
+      myGenerators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, scope);
       for (Generator generator : myGenerators) {
         myLanguages.add(generator.getSourceLanguage());
       }
-      GenerationPartitioner partitioner = (new GenerationPartitioner());
-      myPlan = partitioner.createMappingSets(myGenerators);
+      initTemplateModels();
+
+      GenerationPartitioner partitioner = new GenerationPartitioner();
+      myPlan = partitioner.createMappingSets(myGenerators, myMappingsMap);
       if (myPlan.isEmpty()) {
-        myPlan.add(new ArrayList<MappingConfiguration>());
+        myPlan.add(new ArrayList<TemplateMappingConfiguration>());
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
     } catch (Throwable t) {
@@ -41,11 +45,36 @@ public class GenerationPlan {
     }
   }
 
+  public List<Generator> getGenerators() {
+    return myGenerators;
+  }
+
+  public void initTemplateModels() {
+    myTemplateModels = new ArrayList<TemplateModel>();
+    myMappingsMap = new HashMap<SNodePointer, TemplateMappingConfiguration>();
+
+    for (Generator generator : myGenerators) {
+      List<SModelDescriptor> list = generator.getOwnTemplateModels();
+      for (SModelDescriptor descriptor : list) {
+        SModel model = descriptor.getSModel();
+        if (model != null) {
+          myTemplateModels.add(new TemplateModelInterpreted(model));
+        }
+      }
+    }
+    for (TemplateModel model : myTemplateModels) {
+      for (TemplateMappingConfiguration templateMappingConfiguration : model.getConfigurations()) {
+        SNodePointer mnode = templateMappingConfiguration.getMappingNode();
+        myMappingsMap.put(mnode, templateMappingConfiguration);
+      }
+    }
+  }
+
   public int getStepCount() {
     return myPlan.size();
   }
 
-  public List<MappingConfiguration> getMappingConfigurations(int step) {
+  public List<TemplateMappingConfiguration> getMappingConfigurations(int step) {
     return myPlan.get(step);
   }
 
@@ -66,15 +95,6 @@ public class GenerationPlan {
     return true;
   }
 
-  public List<SModelDescriptor> getTemplateModels() {
-    List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
-    for (Generator generatorModule : myGenerators) {
-      List<SModelDescriptor> models = generatorModule.getOwnTemplateModels();
-      CollectionUtil.addMissing(models, templateModels);
-    }
-    return templateModels;
-  }
-
   public boolean hasConflictingPriorityRules() {
     return !myConflictingPriorityRules.isEmpty();
   }
@@ -90,14 +110,14 @@ public class GenerationPlan {
     sb.append(myPlan.size());
     sb.append(" steps\n");
     int i = 0;
-    for(List<MappingConfiguration> step : myPlan) {
-      sb.append("[" + (i++) + "]\n" );
+    for (List<TemplateMappingConfiguration> step : myPlan) {
+      sb.append("[" + (i++) + "]\n");
       List<String> res = new ArrayList<String>(step.size());
-      for(MappingConfiguration mconfig : step) {
+      for (TemplateMappingConfiguration mconfig : step) {
         res.add(toString(mconfig));
       }
       Collections.sort(res);
-      for(String s : res) {
+      for (String s : res) {
         sb.append(s);
         sb.append('\n');
       }
@@ -105,8 +125,16 @@ public class GenerationPlan {
     return sb.toString();
   }
 
-  private static String toString(MappingConfiguration mappingConfig) {
-    SModel model = mappingConfig.getModel();
+  private static String toString(TemplateMappingConfiguration mappingConfig) {
+    TemplateModel model = mappingConfig.getModel();
     return model.getLongName() + "#" + mappingConfig.getName();
+  }
+
+  public TemplateSwitchGraph getTemplateSwitchGraph() {
+    return myTemplateSwitchGraph;
+  }
+
+  public void createSwitchGraph() {
+    myTemplateSwitchGraph = new TemplateSwitchGraph(myTemplateModels);
   }
 }

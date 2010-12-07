@@ -15,24 +15,32 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.impl.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class ReferenceMacroContext extends TemplateQueryContext {
+public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   private SNode myOutputNode;
-  private SNode myMacro;
+  private String myRole;
 
   public ReferenceMacroContext(SNode node, SNode outputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
-    super(node, macroNode.getParent(), context, generator);
+    super(node, macroNode, context, generator);
     myOutputNode = outputNode;
-    myMacro = macroNode;
+    myRole = macroNode.getRole_();
+  }
+
+  public ReferenceMacroContext(SNode node, SNode outputNode, @NotNull SNodePointer macroNode, @NotNull String role, TemplateContext context, @NotNull ITemplateGenerator generator) {
+    super(node, macroNode, context, generator);
+    myOutputNode = outputNode;
+    myRole = role;
   }
 
   /**
@@ -42,14 +50,10 @@ public class ReferenceMacroContext extends TemplateQueryContext {
     return myOutputNode;
   }
 
-  public SNode getTemplateNodeForLogging() {
-    return myMacro;
-  }
-
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
     List<SNode> outputNodes = this.getAllOutputNodesByInputNodeAndMappingLabel(inputNode, label);
     SNode referenceSourceNode = getOutputNode();
-    String attributeRole = myMacro.getRole_();
+    String attributeRole = myRole;
     String referenceRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(attributeRole);
     ISearchScope referenceScope = SNodeOperations.getReferentSearchScope(referenceSourceNode, referenceRole, operationContext);
     for (SNode outputNode : outputNodes) {

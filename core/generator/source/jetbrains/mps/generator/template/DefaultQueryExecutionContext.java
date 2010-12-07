@@ -1,12 +1,10 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.ReductionContext;
-import jetbrains.mps.generator.impl.TemplateContext;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -15,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -55,26 +54,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
     }
     return false;
-  }
-
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
-    final SNode ruleNode = patternRule.getNode();
-    String methodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
-    try {
-      return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new PatternRuleContext(inputNode, ruleNode, generator, reductionContext.getQueryExecutor()),
-        ruleNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(patternRule), "cannot find condition method '" + methodName + "' : not applied");
-    } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(patternRule), "cannot find condition method '" + methodName + "' : not applied");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing pattern/condition ", BaseAdapter.fromAdapter(patternRule), t);
-    }
-    return null;
   }
 
   @Override
@@ -390,6 +369,21 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       generator.getLogger().handleException(t);
     }
     return null;
+  }
+
+  @Override
+  public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
+    processor.process(outputNode, context);
+  }
+
+  @Override
+  public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
+    return mapper.map(outputNode, context);
+  }
+
+  @Override
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return rule.tryToApply(environment, context);
   }
 
   @Override

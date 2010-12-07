@@ -26,9 +26,9 @@ import org.jetbrains.annotations.Nullable;
  * Date: Jan 25, 2007
  */
 public abstract class ReferenceInfo {
-  private SNode myOutputSourceNode;
-  private String myReferenceRole;
-  private SNode myInputNode;
+  protected SNode myOutputSourceNode;
+  protected String myReferenceRole;
+  protected SNode myInputNode;
 
   /**
    * @param referenceRole should be interned

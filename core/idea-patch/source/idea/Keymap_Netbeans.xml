@@ -108,9 +108,6 @@
       <keyboard-shortcut first-keystroke="shift control DOWN" />
       <keyboard-shortcut first-keystroke="shift control UP" />
     </action>
-    <action id="EditorIndentSelection">
-      <keyboard-shortcut first-keystroke="shift alt RIGHT" />
-    </action>
     <action id="EditorMoveToPageBottom">
       <keyboard-shortcut first-keystroke="shift alt PAGE_DOWN" />
     </action>

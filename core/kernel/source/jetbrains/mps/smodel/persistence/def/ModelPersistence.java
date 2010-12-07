@@ -31,10 +31,13 @@ import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
+import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
+import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
+import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -61,11 +64,14 @@ public class ModelPersistence {
   public static final String TARGET_NODE_ID = "targetNodeId";
   public static final String LINK = "link";
   public static final String ROLE = "role";
+  public static final String ROLE_ID = "roleId";
   public static final String NAME = "name";
+  public static final String NAME_ID = "nameId";
   public static final String NAMESPACE = "namespace";  // v0
   public static final String EXT_RESOLVE_INFO = "extResolveInfo"; //v0
   public static final String NODE = "node";
   public static final String TYPE = "type";
+  public static final String TYPE_ID = "typeId";
   public static final String ID = "id";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String MODEL = "model";
@@ -83,7 +89,11 @@ public class ModelPersistence {
   public static final String MODEL_UID = "modelUID";
   public static final String VERSION = "version";
   public static final String IMPLICIT = "implicit";
-  public static final String ROOTS = "root_stubs";
+  public static final String ROOTS = "roots";
+  public static final String ROOT_CONTENT = "root";
+
+  @Deprecated
+  public static final String ROOT_STUBS = "root_stubs";
 
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
@@ -95,7 +105,8 @@ public class ModelPersistence {
     new ModelPersistence3(),
     new ModelPersistence4(),
     new ModelPersistence5(),
-    new ModelPersistence6()
+    new ModelPersistence6(),
+    new ModelPersistence7()
   };
   private static final int currentApplicationPersistenceVersion = PersistenceSettings.MAX_VERSION;
 
@@ -113,13 +124,7 @@ public class ModelPersistence {
   }
   //--------read--------
 
-  public static DescriptorLoadResult loadDescriptor(IFile file) {
-    final DescriptorLoadResult result = new DescriptorLoadResult();
-    Map<String, String> metadata = loadMetadata(file);
-    if (metadata != null) {
-      result.setMetadata(metadata);
-    }
-
+  private static void doLoadDescriptor(final DescriptorLoadResult result, InputSource source) {
     DefaultHandler handler = new DefaultHandler() {
       public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (MODEL.equals(qName)) {
@@ -136,23 +141,35 @@ public class ModelPersistence {
             }
           }
         } else {
-          throw new SAXException();
+          throw new BreakParseSAXException();
         }
       }
 
       public void endElement(String uri, String localName, String qName) throws SAXException {
-        throw new SAXException();
+        throw new BreakParseSAXException();
       }
     };
 
     try {
-      InputSource source = JDOMUtil.loadSource(file);
       SAXParser parser = JDOMUtil.createSAXParser();
       parser.parse(source, handler);
     } catch (SAXException ex) {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
     } catch (Throwable t) {
+    }
+  }
+
+  public static DescriptorLoadResult loadDescriptor(IFile file) {
+    final DescriptorLoadResult result = new DescriptorLoadResult();
+    Map<String, String> metadata = loadMetadata(file);
+    if (metadata != null) {
+      result.setMetadata(metadata);
+    }
+
+    try {
+      doLoadDescriptor(result, JDOMUtil.loadSource(file));
+    } catch (IOException ignored) {
     }
 
     return result;
@@ -181,57 +198,54 @@ public class ModelPersistence {
   }
 
   public static ModelLoadResult readModel(int version, InputSource source, String name, String stereotype, ModelLoadingState state) {
-    if (version > PersistenceSettings.MAX_VERSION) {
-      SModel model = handleNullReaderForPersistence(name);
-      return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
-    } else if (version > 5) {
-      try {
-        SAXParser parser = JDOMUtil.createSAXParser();
-        DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler();
-        boolean partial = handler.setPartialLoading(state);
+    if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
+      // first try to use SAX parser
+      XMLSAXHandler<SModel> handler = getModelPersistence(version).getModelReaderHandler(state);
+      if (handler == null && state != ModelLoadingState.FULLY_LOADED) { // try SAX parser for full load
+        state = ModelLoadingState.FULLY_LOADED;
+        handler = getModelPersistence(version).getModelReaderHandler(state);
+      }
+      if (handler != null) {
         try {
-          parser.parse(source, (DefaultHandler) handler);
-        } catch (SAXException e) {
-          //this is normal
+          JDOMUtil.createSAXParser().parse(source, (DefaultHandler) handler);
+        } catch (BreakParseSAXException e) {
+          //this is normal for ROOTS_LOADED
+        } catch (Throwable t) {
+          LOG.error(t);
+          return new ModelLoadResult(new StubModel(new SModelReference(name, stereotype)), ModelLoadingState.NOT_LOADED);
         }
-        ModelLoadingState loadingState = partial ? state : ModelLoadingState.FULLY_LOADED;
-        return new ModelLoadResult(handler.getModel(), loadingState);
-      } catch (Throwable t) {
-        LOG.error(t);
-        StubModel model = new StubModel(new SModelReference(name, stereotype));
-        return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+        return new ModelLoadResult(handler.getResult(), state);
       }
-    } else {
-      Document document = loadModelDocument(source);
-      IModelReader modelReader = getModelPersistence(version).getModelReader();
-      if (modelReader == null) {
-        SModel model = handleNullReaderForPersistence(name);
-        return new ModelLoadResult(model, ModelLoadingState.NOT_LOADED);
+      // then try to use DOM reader
+      IModelReader reader = getModelPersistence(version).getModelReader();
+      if (reader != null) {
+        Document document = loadModelDocument(source);
+        return new ModelLoadResult(reader.readModel(document, name, stereotype), ModelLoadingState.FULLY_LOADED);
       }
-      SModel model = modelReader.readModel(document, name, stereotype);
-      return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
+    return handleNullReaderForPersistence(name);
   }
 
   @Nullable
-  public static List<SNodeId> getLineNumberToNodeIdMap(int version, String content) {
-    if (version >= 5) {
-      try {
-        SAXParser parser = JDOMUtil.createSAXParser();
-        DefaultMPSHandler handler = getModelPersistence(version).getModelReaderHandler();
+  public static List<LineContent> getLineToContentMap(String content) {
+    DescriptorLoadResult loadResult = new DescriptorLoadResult();
+    doLoadDescriptor(loadResult, new InputSource(new StringReader(content)));
+
+    int version = loadResult.getPersistenceVersion();
+
+    if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
+      XMLSAXHandler<List<LineContent>> handler = getModelPersistence(version).getLineToContentMapReaderHandler();
+      if (handler != null) {
         try {
+          SAXParser parser = JDOMUtil.createSAXParser();
           parser.parse(new ByteArrayInputStream(content.getBytes("UTF-8")), (DefaultHandler) handler);
-        } catch (SAXException e) {
-          //this is normal
+          return handler.getResult();
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-        return handler.getLineToIdMap();
-      } catch (Throwable t) {
-        LOG.error(t);
-        return null;
       }
-    } else {
-      return null;
     }
+    return null;
   }
 
   //--------write--------
@@ -341,15 +355,13 @@ public class ModelPersistence {
 
   @NotNull
   private static Document loadModelDocument(@NotNull InputSource source) {
-    Document document;
     try {
-      document = JDOMUtil.loadDocument(source);
+      return JDOMUtil.loadDocument(source);
     } catch (JDOMException e) {
       throw new ModelFileReadException("Exception in file " + source, e);
     } catch (IOException e) {
       throw new ModelFileReadException("Exception in file " + source, e);
     }
-    return document;
   }
 
   public static int getCurrentPersistenceVersion() {
@@ -382,7 +394,7 @@ public class ModelPersistence {
     return false;
   }
 
-  private static SModel handleNullReaderForPersistence(String modelTitle) {
+  private static ModelLoadResult handleNullReaderForPersistence(String modelTitle) {
     throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + modelTitle + "\n" +
       " Use newer version of JetBrains MPS to load this model.");
   }
@@ -403,12 +415,6 @@ public class ModelPersistence {
   }
 
   //--------deprecated--------
-
-  @NotNull
-  @Deprecated //very slow
-  public static SModel copyModel(@NotNull SModel model) {
-    return readModel(saveModel(model,model.getPersistenceVersion()), NameUtil.shortNameFromLongName(model.getLongName()), model.getStereotype());
-  }
 
   @Deprecated //very slow
   public static SModel readModel(@NotNull Document d, String name, String stereotype) {
@@ -495,12 +501,12 @@ public class ModelPersistence {
               }
             }
           } else {
-            throw new SAXException();
+            throw new BreakParseSAXException();
           }
         }
 
         public void endElement(String uri, String localName, String qName) throws SAXException {
-          throw new SAXException();
+          throw new BreakParseSAXException();
         }
       });
     } catch (SAXException ex) {

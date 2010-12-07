@@ -89,7 +89,7 @@ public class ImplementBehaviorMethod_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Project project = ImplementBehaviorMethod_Action.this.operationContext.getProject();
-      Frame frame = ImplementBehaviorMethod_Action.this.operationContext.getMainFrame();
+      Frame frame = ImplementBehaviorMethod_Action.this.editorContext.getMainFrame();
       new StratergyAddMethodDialog(ImplementBehaviorMethod_Action.this.editorContext, frame, new AddConceptMethodStrategy(ImplementBehaviorMethod_Action.this.selectedNode), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
 
     } catch (Throwable t) {

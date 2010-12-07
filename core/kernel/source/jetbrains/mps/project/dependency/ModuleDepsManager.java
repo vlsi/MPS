@@ -25,18 +25,13 @@ import java.util.*;
 
 public class ModuleDepsManager<T extends AbstractModule> implements DependencyManager {
   protected T myModule;
-  private List<IModule> myCachedExplicitlyDependentModules;
 
   public ModuleDepsManager(T module) {
     myModule = module;
   }
 
   public final List<IModule> getDependOnModules() {
-    if (myCachedExplicitlyDependentModules == null) {
-      myCachedExplicitlyDependentModules = doGetDependOnModules();
-    }
-
-    return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
+    return doGetDependOnModules();
   }
 
   public List<Language> getAllUsedLanguages() {
@@ -65,7 +60,7 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
   }
 
   protected List<IModule> doGetDependOnModules() {
-    List<IModule> res = new LinkedList();
+    List<IModule> res = new LinkedList<IModule>();
     res.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));
     res.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     res.addAll(ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences()));

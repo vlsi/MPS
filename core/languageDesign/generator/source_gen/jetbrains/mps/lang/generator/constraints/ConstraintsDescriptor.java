@@ -12,11 +12,14 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new GeneratorDescriptor_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Root_MappingRule_template_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CreateRootRule_templateNode_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TemplateArgumentParameterExpression_parameter_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new GeneratorParameterReference_declaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

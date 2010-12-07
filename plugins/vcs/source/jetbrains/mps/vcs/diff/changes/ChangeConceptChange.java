@@ -46,11 +46,11 @@ public class ChangeConceptChange extends Change {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+  public boolean isSameChange(Change c) {
+    if (this == c) return true;
+    if (c == null || getClass() != c.getClass()) return false;
 
-    ChangeConceptChange that = (ChangeConceptChange) o;
+    ChangeConceptChange that = (ChangeConceptChange) c;
 
     if (!myConceptFqName.equals(that.myConceptFqName)) return false;
     if (!mySNodeId.equals(that.mySNodeId)) return false;
@@ -59,10 +59,8 @@ public class ChangeConceptChange extends Change {
   }
 
   @Override
-  public int hashCode() {
-    int result = mySNodeId.hashCode();
-    result = 31 * result + myConceptFqName.hashCode();
-    return result;
+  public Object getChangeKey() {
+    return mySNodeId;
   }
 
   public String getConceptFqName() {

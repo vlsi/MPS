@@ -1304,7 +1304,7 @@ public final class SNode {
 
     String s = null;
     try {
-      s = getProperty(BaseConcept.ALIAS);
+      s = getPersistentProperty(BaseConcept.ALIAS);
       if (s == null) {
         s = getPresentation();
       }

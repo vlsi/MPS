@@ -64,21 +64,25 @@
     <category name="jetbrains.mps.watching" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-VCS"/>
+        <appender-ref ref="CONSOLE-WARN"/>
     </category>
 
     <category name="jetbrains.mps.vcs" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-VCS"/>
+        <appender-ref ref="CONSOLE-WARN"/>
     </category>
 
     <category name="com.intellij.openapi.vcs" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-VCS"/>
+        <appender-ref ref="CONSOLE-WARN"/>
     </category>
 
     <category name="jetbrains.mps.debug" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-DEBUG"/>
+        <appender-ref ref="CONSOLE-WARN"/>
     </category>
 
     <root>

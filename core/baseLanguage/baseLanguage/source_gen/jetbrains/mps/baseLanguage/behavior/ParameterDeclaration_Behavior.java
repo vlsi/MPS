@@ -26,7 +26,8 @@ public class ParameterDeclaration_Behavior {
 
   public static boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
     SNode method = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-    if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.IVisible") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+
+    if (SPropertyOperations.getBoolean(method, "isFinal") && !(BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(method, SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Override"))) || SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.IVisible") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       return true;
     }
     return false;
@@ -52,6 +53,15 @@ public class ParameterDeclaration_Behavior {
       "" :
       settings.getParameterSettings().o1
     );
+  }
+
+  public static boolean call_hasAnnotation_5499146221535981742(SNode thisNode, SNode annotation) {
+    for (SNode annotationInstance : SLinkOperations.getTargets(thisNode, "annotation", true)) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == annotation) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static String call_getSuffix_3012473318495506887(SNode thisNode, Project project) {

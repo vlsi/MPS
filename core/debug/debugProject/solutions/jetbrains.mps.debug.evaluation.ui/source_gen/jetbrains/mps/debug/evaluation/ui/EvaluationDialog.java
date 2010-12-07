@@ -36,7 +36,7 @@ import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.debug.api.SessionChangeListener;
+import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
@@ -248,11 +248,18 @@ public class EvaluationDialog extends BaseDialog {
     }, ModalityState.NON_MODAL);
   }
 
-  private class MySessionChangeListener implements SessionChangeListener {
+  private class MySessionChangeListener extends SessionChangeAdapter {
     public MySessionChangeListener() {
     }
 
-    public void resumed(AbstractDebugSession session) {
+    public void resumed(final AbstractDebugSession session) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          if (myEvaluationLogic.getDebugSession() == session && session.isStopped()) {
+            dispose();
+          }
+        }
+      });
     }
 
     public void paused(final AbstractDebugSession session) {

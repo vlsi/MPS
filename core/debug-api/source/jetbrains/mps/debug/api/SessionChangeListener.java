@@ -13,4 +13,6 @@ public interface SessionChangeListener {
   public void paused(AbstractDebugSession session);
 
   public void resumed(AbstractDebugSession session);
+
+  public void muted(AbstractDebugSession session);
 }

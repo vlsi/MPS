@@ -5,6 +5,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -13,6 +14,7 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -170,13 +172,13 @@ public class WeavingProcessor {
 
         boolean someOutputGenerated = true;
         myGenerationTracer.pushInputNode(applicableNode);
-        myGenerationTracer.pushRule(rule.getNode());
+        myGenerationTracer.pushRule(new SNodePointer(rule.getNode()));
         try {
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence == null) {
             myGenerator.showErrorMessage(applicableNode, null, rule.getNode(), "weaving rule: no rule consequence");
           } else {
-            myGenerationTracer.pushRuleConsequence(ruleConsequence.getNode());
+            myGenerationTracer.pushRuleConsequence(new SNodePointer(ruleConsequence.getNode()));
             if (ruleConsequence instanceof TemplateDeclarationReference) {
               TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
               weaveTemplateDeclaration(template, outputContextNode, rule,
@@ -190,7 +192,7 @@ public class WeavingProcessor {
                 break;
               }
               TemplateDeclaration template = weaveEach.getTemplate();
-              List<SNode> queryNodes = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new TemplateContext(applicableNode));
+              List<SNode> queryNodes = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new DefaultTemplateContext(applicableNode));
               if (queryNodes.isEmpty()) {
                 someOutputGenerated = false;
               }

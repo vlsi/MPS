@@ -25,7 +25,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public abstract class ExtractMethodRefactoring {
@@ -94,7 +93,7 @@ public abstract class ExtractMethodRefactoring {
     for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true))) {
       ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(Statement_Behavior.call_uncaughtThrowables_5412515780383108857(statement, false)));
     }
-    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
+    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0a2a6().createNode(it);
       }
@@ -284,7 +283,7 @@ public abstract class ExtractMethodRefactoring {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -316,7 +315,7 @@ public abstract class ExtractMethodRefactoring {
           quotedNode_2 = (SNode) parameter_6;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;

@@ -43,7 +43,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.AbstractProjectComponent" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.IMacroHolder" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.structure.MPSLayout" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.structure.Layout" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.Macro" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -242,7 +242,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.build.packaging.structure.MPSLayout" file="MPSLayout.java">
+  <dependency className="jetbrains.mps.build.packaging.structure.Layout" file="Layout.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />

@@ -56,7 +56,11 @@ public class MPSIconProvider extends MultiTabPropertyProvider implements FileIco
           if (node != null) {
             return IconManager.getIconWithoutAdditionalPart(node);
           }
-          return IconManager.getIconWithoutAdditionalPart(nodeFile.getNode());
+          node = nodeFile.getNode();
+          if (node != null) {
+            return IconManager.getIconWithoutAdditionalPart(node);
+          }
+          return null;
         }
       });
     }

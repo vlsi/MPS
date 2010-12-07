@@ -18,6 +18,9 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.MPSCore;
@@ -35,7 +38,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -55,6 +58,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object PENDING_LOCK = new Object();
 
   private boolean myStopThread = false;
+  private FileEditorManager myFileEditorManager;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
   protected Thread myThread;
@@ -63,7 +67,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<SModelEvent> myLastEvents = new ArrayList<SModelEvent>();
   private Set<EditorComponent> myCheckedOnceEditors = new WeakSet<EditorComponent>();
   private Set<Object> myCheckedOnceInspectors = new WeakSet<Object>();
-  private EditorsProvider myEditorsProvider;
   private InspectorTool myInspectorTool;
   private List<Runnable> myPendingActions = new ArrayList<Runnable>();
 
@@ -110,17 +113,15 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   };
 
-  public Highlighter(Project project, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager) {
+  public Highlighter(Project project,FileEditorManager fileEditorManager, GlobalSModelEventsManager eventsManager, ClassLoaderManager classLoaderManager,InspectorTool inspector) {
     myProject = project;
+    myFileEditorManager = fileEditorManager;
     myGlobalSModelEventsManager = eventsManager;
     myClassLoaderManager = classLoaderManager;
-    myEditorsProvider = new EditorsProvider(project);
-    myInspectorTool = project.getComponent(InspectorTool.class);
+    myInspectorTool = inspector;
   }
 
   public void projectOpened() {
-    myEditorsProvider = new EditorsProvider(myProject);
-
     if (myThread != null && myThread.isAlive()) {
       LOG.error("trying to initialize a Highlighter being already initialized");
       return;
@@ -140,13 +141,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
-
   }
 
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Higlighter";
+  }
+
+  public void initComponent() {
+
   }
 
   public void disposeComponent() {
@@ -215,11 +219,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     synchronized (ADD_EDITORS_LOCK) {
       myAdditionalEditors.clear();
     }
-  }
-
-  public void initComponent() {
-
-
   }
 
   public void stopUpdater() {
@@ -292,7 +291,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<EditorComponent> getAllEditorComponents() {
     final List<IEditor> list;
     synchronized (ADD_EDITORS_LOCK) {
-      list = myEditorsProvider.getSelectedEditors();
+      list = EditorsHelper.getSelectedEditors(myFileEditorManager);
       if (!myAdditionalEditors.isEmpty()) {
         list.addAll(myAdditionalEditors);
       }
@@ -406,7 +405,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       return false;
     }
 
-    NodeHighlightManager highlightManager = editor.getHighlightManager();
+    final NodeHighlightManager highlightManager = editor.getHighlightManager();
     boolean anyMessageChanged = false;
     for (final IEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
@@ -419,8 +418,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           owners[0] = checker.getOwner(node, editor);
           EditorContext editorContext = editor.getEditorContext();
           if (editorContext != null) {
-            messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce, editorContext));
-            messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
+            try {
+              messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce, editorContext));
+              messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
+            } catch (IndexNotReadyException ex) {
+              highlightManager.clearForOwner(owners[0], false);
+              checker.clear(node, editor);
+              throw ex;
+            }
           }
         }
       };
@@ -473,13 +478,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     public void run() {
       if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
-
+      DumbService dumbService = DumbService.getInstance(myProject);
       CommandProcessor commandProcessor = CommandProcessor.getInstance();
       while (true) {
         try {
           while (true) {
             while (commandProcessor.getCurrentCommand() != null) {
               Thread.sleep(200);
+            }
+            while (dumbService.isDumb()) {
+              Thread.sleep(600);
             }
             long current = System.currentTimeMillis();
             long commandTime = myLastCommandTime;
@@ -492,7 +500,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             }
           }
 
-          doUpdate();
+          try {
+            doUpdate();
+          } catch (IndexNotReadyException ex) {
+            myCheckedOnceEditors.clear();
+            myCheckedOnceInspectors.clear();
+          }
           processPendingActions();
           if (myStopThread) {
             break;

@@ -21,19 +21,18 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
-public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor> {
+public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
   public BaseModelModel(Project project) {
     super(project, "model");
   }
 
   public String doGetFullName(Object element) {
     BaseModelItem navigationItem = (BaseModelItem) element;
-    SModelReference ref = navigationItem.getModelDescriptor().getSModelReference();
+    SModelReference ref = navigationItem.getModelReference();
     return ref.getLongName() + getStereotypeString(ref);
   }
 
-  public String doGetObjectName(SModelDescriptor modelDescriptor) {
-    SModelReference ref = modelDescriptor.getSModelReference();
+  public String doGetObjectName(SModelReference ref) {
     return NameUtil.shortNameFromLongName(ref.getLongName()) + getStereotypeString(ref);
   }
 

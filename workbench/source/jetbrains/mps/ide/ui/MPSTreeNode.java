@@ -35,6 +35,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.font.TextAttribute;
 import java.util.*;
 
 /**
@@ -60,6 +61,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private ErrorState myCombinedErrorState = ErrorState.NONE;
   private final Object myTreeMessagesLock = new Object();
   private List<TreeMessage> myTreeMessages = null;
+  private Map<TextAttribute,Object> myFontAttributes = new HashMap<TextAttribute, Object>();
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -277,14 +279,27 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return 2;
   }
 
+  //updates and refreshes tree
+  public void renewPresentation(){
+    updatePresentation();
+    updateNodePresentationInTree();
+  }
+
+  //todo make final
   protected void updatePresentation() {
     setColor(Color.BLACK);
     doUpdatePresentation();
+    if (myTree == null) {
+      myTree = getTree();
+    }
+    if (myTree != null) {
+      myTree.fireTreeNodeUpdated(this);
+    }
+    Color c = null;
+    String additionalText = null;
     synchronized (myTreeMessagesLock) {
       if (myTreeMessages != null) {
-        Color c = null;
         int maxColorPriority = Integer.MIN_VALUE;
-        String additionalText = null;
         int maxAdditionalTextPriority = Integer.MIN_VALUE;
         for (TreeMessage message : myTreeMessages) {
           if (maxColorPriority < message.getPriority() && message.alternatesColor()) {
@@ -294,15 +309,13 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
             additionalText = message.getAdditionalText();
           }
         }
-        if (c != null) {
-          setColor(c);
-        }
-        if (additionalText != null) {
-          //   String oldText = getAdditionalText();
-          //   oldText = oldText == null ? "" : oldText + " ";
-          setAdditionalText(/*oldText +*/ additionalText);
-        }
       }
+    }
+    if (c != null) {
+      setColor(c);
+    }
+    if (additionalText != null) {
+      setAdditionalText(additionalText);
     }
   }
 
@@ -432,6 +445,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     myFontStyle = fontStyle;
   }
 
+  public final void addFontAttribute(TextAttribute key, Object value) {
+    myFontAttributes.put(key, value);
+  }
+
+  public final Map getFontAttributes() {
+    return myFontAttributes;
+  }
+
   @NotNull
   public final String getNodeIdentifier() {
     return myNodeIdentifier;
@@ -503,7 +524,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return true;
   }
 
-
   public String toString() {
     return getText();
   }
@@ -516,16 +536,15 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     myAutoExpandable = autoExpandable;
   }
 
-  public void updateNodePresentationInTree() {
+  public final void updateNodePresentationInTree() {
     if (getTree() == null) return;
     ((DefaultTreeModel) getTree().getModel()).nodeChanged(this);
   }
 
   public void updateAncestorsPresentationInTree() {
     updateNodePresentationInTree();
-    if (getParent() != null) {
-      ((MPSTreeNode) getParent()).updateAncestorsPresentationInTree();
-    }
+    if (getParent() == null) return;
+    ((MPSTreeNode) getParent()).updateAncestorsPresentationInTree();
   }
 
   protected boolean canBeOpened() {

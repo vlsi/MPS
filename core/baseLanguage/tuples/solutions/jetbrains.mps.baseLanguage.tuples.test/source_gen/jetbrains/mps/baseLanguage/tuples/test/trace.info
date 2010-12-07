@@ -312,9 +312,9 @@
     <nodeInfo nodeId="8755343252890010279" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="NamedTuples_Test.java" startLine="158" startPosition="98" endLine="161" endPosition="5" />
     <nodeInfo nodeId="1239720139050" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NamedTuples_Test.java" startLine="55" startPosition="44" endLine="59" endPosition="5" />
     <nodeInfo nodeId="1240933105391" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="98" startPosition="61" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="1240941184663" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="175" startPosition="140" endLine="179" endPosition="0" />
-    <nodeInfo nodeId="1241009587748" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="183" startPosition="134" endLine="187" endPosition="0" />
-    <nodeInfo nodeId="1241009714386" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="191" startPosition="146" endLine="195" endPosition="0" />
+    <nodeInfo nodeId="1240941184663" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="175" startPosition="148" endLine="179" endPosition="0" />
+    <nodeInfo nodeId="1241009587748" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="183" startPosition="142" endLine="187" endPosition="0" />
+    <nodeInfo nodeId="1241009714386" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="191" startPosition="154" endLine="195" endPosition="0" />
     <nodeInfo nodeId="1239719969664" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="197" startPosition="0" endLine="201" endPosition="0" />
     <nodeInfo nodeId="1239722643439" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="NamedTuples_Test.java" startLine="70" startPosition="15" endLine="75" endPosition="5" />
     <nodeInfo nodeId="1240574553396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NamedTuples_Test.java" startLine="90" startPosition="0" endLine="95" endPosition="0" />
@@ -390,9 +390,9 @@
     <scopeInfo nodeId="4817470067537861873" fileName="NamedTuples_Test.java" startLine="167" startPosition="49" endLine="171" endPosition="44">
       <varInfo nodeId="4817470067537861883" varName="pair" />
     </scopeInfo>
-    <scopeInfo nodeId="1240941184663" fileName="NamedTuples_Test.java" startLine="175" startPosition="140" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="1241009587748" fileName="NamedTuples_Test.java" startLine="183" startPosition="134" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="1241009714386" fileName="NamedTuples_Test.java" startLine="191" startPosition="146" endLine="195" endPosition="0" />
+    <scopeInfo nodeId="1240941184663" fileName="NamedTuples_Test.java" startLine="175" startPosition="148" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="1241009587748" fileName="NamedTuples_Test.java" startLine="183" startPosition="142" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="1241009714386" fileName="NamedTuples_Test.java" startLine="191" startPosition="154" endLine="195" endPosition="0" />
     <scopeInfo nodeId="1239719969664" fileName="NamedTuples_Test.java" startLine="197" startPosition="0" endLine="201" endPosition="0" />
     <scopeInfo nodeId="1239720051534" fileName="NamedTuples_Test.java" startLine="54" startPosition="56" endLine="59" endPosition="5">
       <varInfo nodeId="1239720135282" varName="seq" />
@@ -471,9 +471,9 @@
     <scopeInfo nodeId="1239720061723" fileName="NamedTuples_Test.java" startLine="202" startPosition="39" endLine="239" endPosition="7" />
     <scopeInfo nodeId="1239720061720" fileName="NamedTuples_Test.java" startLine="201" startPosition="0" endLine="241" endPosition="0" />
     <unitInfo nodeId="1240933105391" fileName="NamedTuples_Test.java" startLine="98" startPosition="39" endLine="102" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$1" />
-    <unitInfo nodeId="1240941184663" fileName="NamedTuples_Test.java" startLine="175" startPosition="91" endLine="179" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.ISelector$anonymous" />
-    <unitInfo nodeId="1241009587748" fileName="NamedTuples_Test.java" startLine="183" startPosition="91" endLine="187" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.ISelector$anonymous" />
-    <unitInfo nodeId="1241009714386" fileName="NamedTuples_Test.java" startLine="191" startPosition="91" endLine="195" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.ISelector$anonymous" />
+    <unitInfo nodeId="1240941184663" fileName="NamedTuples_Test.java" startLine="175" startPosition="99" endLine="179" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.ISelector$anonymous" />
+    <unitInfo nodeId="1241009587748" fileName="NamedTuples_Test.java" startLine="183" startPosition="99" endLine="187" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.ISelector$anonymous" />
+    <unitInfo nodeId="1241009714386" fileName="NamedTuples_Test.java" startLine="191" startPosition="99" endLine="195" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.ISelector$anonymous" />
     <unitInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="207" startPosition="23" endLine="235" endPosition="13" unitName="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$7" />
     <unitInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="205" startPosition="19" endLine="237" endPosition="9" unitName="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$6" />
     <unitInfo nodeId="1239720100328" fileName="NamedTuples_Test.java" startLine="203" startPosition="36" endLine="239" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$5" />

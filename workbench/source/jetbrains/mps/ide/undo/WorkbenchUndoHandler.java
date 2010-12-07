@@ -16,13 +16,15 @@
 package jetbrains.mps.ide.undo;
 
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.undo.*;
+import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -55,8 +57,15 @@ public class WorkbenchUndoHandler implements UndoHandler {
     }
   }
 
-  public boolean needRegisterUndo(SModel model) {
-    return !(model.isLoading()) && isInsideUndoableCommand();
+  public boolean needRegisterUndo(@Nullable SModel model) {
+    if (model == null) return false;
+    if (!isInsideUndoableCommand()) return false;
+
+    //todo these two should be moved to a model.hasUndo() method
+    if (AuxilaryRuntimeModel.isAuxModel(model)) return true;
+    if (model.isLoading()) return false;
+
+    return true;
   }
 
   public boolean isInsideUndoableCommand() {

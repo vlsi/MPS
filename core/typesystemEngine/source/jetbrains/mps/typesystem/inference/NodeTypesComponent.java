@@ -17,30 +17,28 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
-import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
+import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.NullSlicer;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.annotation.UseCarefully;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
-import java.util.Map.Entry;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-
-import org.jetbrains.annotations.NotNull;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class NodeTypesComponent {
 
@@ -97,17 +95,20 @@ public class NodeTypesComponent {
   private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new HashSet<SNode>();
   private boolean myCacheWasCurrentlyRebuiltNonTypesystem = false;
 
+  //temp
+ // private Map<NonTypesystemRule_Runtime, Integer> myRulesCounter = new HashMap<NonTypesystemRule_Runtime, Integer>();
+
   // nodes to rules which depend on this nodes
-  private Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myNodesToDependentNodesWithNTRules =
-    new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
+  private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myNodesToDependentNodesWithNTRules =
+    new HashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
 
   // properties to rules which depend on this nodes' properties
-  private Map<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myPropertiesToDependentNodesWithNTRules =
-    new HashMap<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
+  private Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myPropertiesToDependentNodesWithNTRules =
+    new HashMap<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
 
   // typed terms to rules which depend on this nodes
-  private Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> myTypedTermsToDependentNodesWithNTRules =
-    new HashMap<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>>();
+  private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myTypedTermsToDependentNodesWithNTRules =
+    new HashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
 
   private WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> myNodesDependentOnCachesWithNTRules =
     new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>();
@@ -154,17 +155,6 @@ public class NodeTypesComponent {
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
-  }
-
-  public NodeTypesComponent copy(TypeCheckingContext typeCheckingContext) {
-    NodeTypesComponent result = new NodeTypesComponent(myRootNode, myTypeChecker, typeCheckingContext);
-    result.myIsSpecial = myIsSpecial;
-    result.mySlicer = mySlicer;
-    result.myIsSmartCompletion = myIsSmartCompletion;
-    result.myHole = myHole;
-    result.myHoleTypeWrapper = myHoleTypeWrapper;
-    result.myHoleIsAType = myHoleIsAType;
-    return result;
   }
 
   public void clear() {
@@ -469,15 +459,15 @@ public class NodeTypesComponent {
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, true, new ArrayList<SNode>(0), false);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), false);
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(0), false);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), false);
   }
 
   public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(0), true);
+    return computeTypesForNode_special(initialNode, new ArrayList<SNode>(0), true);
   }
 
   public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
@@ -488,7 +478,7 @@ public class NodeTypesComponent {
       myIsSmartCompletion = true;
       myHole = hole;
       myHoleIsAType = holeIsAType;
-      computeTypesForNode_special(hole.getParent(), false, additionalNodes, false);
+      computeTypesForNode_special(hole.getParent(), additionalNodes, false);
       return myHoleTypeWrapper.getInequationSystem();
     } finally {
       myIsSmartCompletion = false;
@@ -511,7 +501,7 @@ public class NodeTypesComponent {
     return null;
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, boolean refreshTypes, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
+  private SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
@@ -522,14 +512,14 @@ public class NodeTypesComponent {
         if (prevNode != null) {
           additionalNodes.add(prevNode);
         }
-        computeTypes(node, refreshTypes, false, additionalNodes, inferenceMode);
+        computeTypes(node, true, false, additionalNodes, inferenceMode);
         type = getType(initialNode);
         if (type == null ||
           type.getAdapter() instanceof RuntimeTypeVariable ||
           (type.getAdapter() instanceof RuntimeHoleType && myHoleTypeWrapper.getInequationSystem().isEmpty()) ||
           !type.getAdapter().getDescendants(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
-            computeTypes(node, refreshTypes, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
+            computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
             type = getType(initialNode);
             return type;
           }
@@ -638,48 +628,55 @@ public class NodeTypesComponent {
   }
 
   private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn) {
-    addDepedentNodesNonTypesystem(sNode, rule, nodesToDependOn, false);
+   /* Integer integer = myRulesCounter.get(rule);
+    if (integer == null) {
+      integer = 0;
+    }
+    integer += nodesToDependOn.size();
+    myRulesCounter.put(rule, integer);*/
+
+    addDependentNodesNonTypesystem(sNode, rule, nodesToDependOn, false);
   }
 
   private void addDepedentTypeTermsNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> typesToDependOn) {
-    addDepedentNodesNonTypesystem(sNode, rule, typesToDependOn, true);
+    addDependentNodesNonTypesystem(sNode, rule, typesToDependOn, true);
   }
 
   private void addDepedentPropertiesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<Pair<SNode, String>> propertiesToDependOn) {
-    Map<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> mapToNodesWithNTRules
+    Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules
       = myPropertiesToDependentNodesWithNTRules;
     for (Pair<SNode, String> propertyToDependOn : propertiesToDependOn) {
       if (propertyToDependOn == null) continue;
-      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
+      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>(1);
+        dependentNodes = new HashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
         mapToNodesWithNTRules.put(propertyToDependOn, dependentNodes);
       }
-      Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(sNode);
-      if (rules == null) {
-        rules = new HashSet<NonTypesystemRule_Runtime>(1);
-        dependentNodes.put(sNode, rules);
+      WeakSet<SNode> nodes = dependentNodes.get(rule);
+      if (nodes == null) {
+        nodes = new WeakSet<SNode>(1);
+        dependentNodes.put(rule, nodes);
       }
-      rules.add(rule);
+      nodes.add(sNode);
     }
   }
 
-  private void addDepedentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn, boolean isTypedTerm) {
-    Map<SNode, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> mapToNodesWithNTRules =
+  private void addDependentNodesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<SNode> nodesToDependOn, boolean isTypedTerm) {
+    Map<SNode,Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> mapToNodesWithNTRules =
       isTypedTerm ? myTypedTermsToDependentNodesWithNTRules : myNodesToDependentNodesWithNTRules;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
-      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = mapToNodesWithNTRules.get(nodeToDependOn);
+      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> dependentNodes = mapToNodesWithNTRules.get(nodeToDependOn);
       if (dependentNodes == null) {
-        dependentNodes = new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>(1);
+        dependentNodes = new HashMap<NonTypesystemRule_Runtime, WeakSet<SNode>>(1);
         mapToNodesWithNTRules.put(nodeToDependOn, dependentNodes);
       }
-      Set<NonTypesystemRule_Runtime> rules = dependentNodes.get(sNode);
-      if (rules == null) {
-        rules = new HashSet<NonTypesystemRule_Runtime>(1);
-        dependentNodes.put(sNode, rules);
+      WeakSet<SNode> nodes = dependentNodes.get(rule);
+      if (nodes == null) {
+        nodes = new WeakSet<SNode>(1);
+        dependentNodes.put(rule, nodes);
       }
-      rules.add(rule);
+      nodes.add(sNode);
     }
   }
 
@@ -762,6 +759,22 @@ public class NodeTypesComponent {
       getTypeCheckingContext().setOperationContext(null);
       myIsNonTypesystemCheckingInProgress = false;
       myInvalidationWasPerformedNT = false;
+
+      //temp
+     /* List<Pair<NonTypesystemRule_Runtime, Integer>> list = new ArrayList<Pair<NonTypesystemRule_Runtime, Integer>>();
+      for (NonTypesystemRule_Runtime rule : myRulesCounter.keySet()) {
+        list.add(new Pair<NonTypesystemRule_Runtime, Integer>(rule, myRulesCounter.get(rule)));
+      }
+      myRulesCounter.clear();
+      Collections.sort(list, new Comparator<Pair<NonTypesystemRule_Runtime, Integer>>() {
+        @Override
+        public int compare(Pair<NonTypesystemRule_Runtime, Integer> o1, Pair<NonTypesystemRule_Runtime, Integer> o2) {
+          return o1.o2 - o2.o2;
+        }
+      });
+      for (Pair<NonTypesystemRule_Runtime, Integer> pair : list) {
+        System.err.println("rule " + pair.o1 + ": " + pair.o2 + " dependent nodes");
+      }*/
     }
   }
 
@@ -770,6 +783,9 @@ public class NodeTypesComponent {
     if (nonTypesystemRules != null) {
       for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
         Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
+      /*  if (rule.o1.getClass().getName().equals("jetbrains.mps.lang.core.typesystem.check_Constraints_NonTypesystemRule")) {
+          System.err.println("");
+        }*/
         MyTypesReadListener typesReadListener = new MyTypesReadListener();
         MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
         if (isIncrementalMode()) {
@@ -910,13 +926,13 @@ public class NodeTypesComponent {
     Set<Pair<SNode, NonTypesystemRule_Runtime>> invalidatedNodesAndRules = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(1);
     //nodes
     for (SNode node : myCurrentNodesToInvalidateNonTypesystem) {
-      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
+      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules = myNodesToDependentNodesWithNTRules.get(node);
       if (nodesAndRules != null) {
-        for (SNode nodeOfRule : nodesAndRules.keySet()) {
-          Set<NonTypesystemRule_Runtime> rules = nodesAndRules.get(nodeOfRule);
-          if (rules != null) {
-            for (NonTypesystemRule_Runtime rule : rules) {
-              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(nodeOfRule, rule));
+        for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
+          Set<SNode> nodes = nodesAndRules.get(ruleOfNode);
+          if (nodes != null) {
+            for (SNode depNode : nodes) {
+              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
             }
           }
         }
@@ -925,13 +941,13 @@ public class NodeTypesComponent {
 
     //properties
     for (Pair<SNode, String> pair : myCurrentPropertiesToInvalidateNonTypesystem) {
-      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> nodesAndRules = myPropertiesToDependentNodesWithNTRules.get(pair);
+      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules = myPropertiesToDependentNodesWithNTRules.get(pair);
       if (nodesAndRules != null) {
-        for (SNode nodeOfRule : nodesAndRules.keySet()) {
-          Set<NonTypesystemRule_Runtime> rules = nodesAndRules.get(nodeOfRule);
-          if (rules != null) {
-            for (NonTypesystemRule_Runtime rule : rules) {
-              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(nodeOfRule, rule));
+        for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
+          WeakSet<SNode> nodes = nodesAndRules.get(ruleOfNode);
+          if (nodes != null) {
+            for (SNode depNode : nodes) {
+              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
             }
           }
         }
@@ -940,13 +956,13 @@ public class NodeTypesComponent {
 
     //typed terms
     for (SNode node : myCurrentTypedTermsToInvalidateNonTypesystem) {
-      WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> nodesAndRules = myTypedTermsToDependentNodesWithNTRules.get(node);
+      Map<NonTypesystemRule_Runtime, WeakSet<SNode>> nodesAndRules = myTypedTermsToDependentNodesWithNTRules.get(node);
       if (nodesAndRules != null) {
-        for (SNode nodeOfRule : nodesAndRules.keySet()) {
-          Set<NonTypesystemRule_Runtime> rules = nodesAndRules.get(nodeOfRule);
-          if (rules != null) {
-            for (NonTypesystemRule_Runtime rule : rules) {
-              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(nodeOfRule, rule));
+        for (NonTypesystemRule_Runtime ruleOfNode : nodesAndRules.keySet()) {
+          Set<SNode> nodes = nodesAndRules.get(ruleOfNode);
+          if (nodes != null) {
+            for (SNode depNode : nodes) {
+              invalidatedNodesAndRules.add(new Pair<SNode, NonTypesystemRule_Runtime>(depNode, ruleOfNode));
             }
           }
         }

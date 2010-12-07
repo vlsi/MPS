@@ -31,6 +31,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DevkitActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Edit_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorInternal_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorTabActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup");
@@ -93,6 +94,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "VcsGroup", EditorPopup_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "VcsGroup", LanguageActions_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "VcsGroup", ModelActions_ActionGroup.LABEL_ID_ideavcs);
+    this.insertGroupIntoAnother(DebugTool_ActionGroup.ID, "DebugMuteAction", DebugTool_ActionGroup.LABEL_ID_MuteAction);
     this.insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, "NavbarPopupMenu", AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
     this.insertGroupIntoAnother(DebugTool_ActionGroup.ID, "DebugStopAction", DebugTool_ActionGroup.LABEL_ID_StopAction);
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "RunContextGroup", null);

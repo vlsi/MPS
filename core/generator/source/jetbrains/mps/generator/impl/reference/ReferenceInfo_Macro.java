@@ -18,25 +18,20 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.ReductionContext;
-import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.lang.generator.structure.ReferenceMacro;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.util.InternUtil;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 25, 2007
  */
-public class ReferenceInfo_Macro extends ReferenceInfo {
-  private final SNode myTemplateReferenceNode;
-  private final ReferenceMacro myReferenceMacro;
-  private final TemplateContext myContext;
-  private final ReductionContext myReductionContext;
+public abstract class ReferenceInfo_Macro extends ReferenceInfo {
+  protected final TemplateContext myContext;
+  protected final ReductionContext myReductionContext;
 
   // results of 'expandReferenceMacro'
   private boolean myMacroProcessed;
@@ -44,22 +39,10 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myOutputTargetNode;
   private SModelReference myExternalTargetModelReference;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, SNode templateReferenceNode, TemplateContext context, ReductionContext reductionContext) {
-    super(outputSourceNode, InternUtil.intern(getReferenceRole(macro)), context.getInput());
-    myTemplateReferenceNode = templateReferenceNode;
-    myReferenceMacro = macro;
+  public ReferenceInfo_Macro(SNode outputSourceNode, String role, TemplateContext context, ReductionContext reductionContext) {
+    super(outputSourceNode, role, context.getInput());
     myContext = context;
     myReductionContext = reductionContext;
-  }
-
-  public SNode getInputTargetNode() {
-    return myTemplateReferenceNode.getReferent(getReferenceRole());
-  }
-
-  private static String getReferenceRole(ReferenceMacro macro) {
-    String attributeRole = macro.getRole_();
-    String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(attributeRole);
-    return linkRole;
   }
 
   public SModelReference getTargetModelReference(TemplateGenerator generator) {
@@ -103,7 +86,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private void expandReferenceMacro(ITemplateGenerator generator) {
     String linkRole = getReferenceRole();
 
-    Object result = myReductionContext.getQueryExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
+    Object result = resolveReference();
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {
@@ -144,18 +127,22 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         // FIXME showErrorIfStrict
         generator.getLogger().warning(getOutputSourceNode(), "reference macro returned node from input model; role: " + linkRole + " in " + getOutputSourceNode().getDebugText(),
           GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"),
-          GeneratorUtil.describeIfExists(myReferenceMacro.getNode(), "reference macro"));
+          GeneratorUtil.describeIfExists(getMacroNode(), "reference macro"));
         generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel(), true);
       }
     }
   }
+
+  protected abstract Object resolveReference();
+
+  protected abstract SNode getMacroNode();
 
   @Override
   public ProblemDescription[] getErrorDescriptions() {
     SNode inputNode = getInputNode();
     return new ProblemDescription[]{
       GeneratorUtil.describe(inputNode, "input node"),
-      GeneratorUtil.describe(myReferenceMacro.getNode(), "reference macro")
+      GeneratorUtil.describe(getMacroNode(), "reference macro")
     };
   }
 }

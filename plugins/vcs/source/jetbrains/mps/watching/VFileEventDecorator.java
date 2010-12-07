@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.watching;
 
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 
@@ -36,6 +37,10 @@ public class VFileEventDecorator extends VFileEvent {
     return myPath;
   }
 
+  public VirtualFile getFile() {
+    return myEvent.getFile();
+  }
+
   public VirtualFileSystem getFileSystem() {
     return myEvent.getFileSystem();
   }
@@ -44,7 +49,6 @@ public class VFileEventDecorator extends VFileEvent {
     return myEvent.isValid();
   }
 
-  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
@@ -57,7 +61,6 @@ public class VFileEventDecorator extends VFileEvent {
     return true;
   }
 
-  @Override
   public int hashCode() {
     int result = myPath != null ? myPath.hashCode() : 0;
     result = 31 * result + (myEvent != null ? myEvent.hashCode() : 0);

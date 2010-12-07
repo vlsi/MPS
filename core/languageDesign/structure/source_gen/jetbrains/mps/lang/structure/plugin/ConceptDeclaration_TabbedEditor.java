@@ -513,7 +513,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     public List<SNode> getNodes(SNode node) {
       IScope scope = ConceptEditorHelper.getScope(Generator_Tab.this);
       Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node, scope)).select(new ISelector<SNode, SNode>() {
+      SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(node, scope)).<SNode>select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.getContainingRoot(it);
         }

@@ -103,7 +103,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                 editorContext
               );
               QuickFixProvider intentionProvider = errorReporter.getIntentionProvider();
-
+              final SNode quickFixNode = errorNode.o1;
               if (intentionProvider != null && intentionProvider.isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
                 if (!instantIntentionApplied) {
                   final QuickFix_Runtime intention = intentionProvider.getQuickFix();
@@ -115,17 +115,17 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                         public void run() {
                           EditorCell selectedCell = editorContext.getSelectedCell();
                           if (selectedCell == null) return;
-                          SNode selectedNode = selectedCell.getSNode();
-                          Integer caretPosition = null;
-                          if (selectedCell instanceof EditorCell_Label) {
-                            caretPosition = ((EditorCell_Label)selectedCell).getCaretPosition();
-                          }
-                          Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
+                          //  SNode selectedNode = selectedCell.getSNode();
+                          //  Integer caretPosition = null;
+                          //  if (selectedCell instanceof EditorCell_Label) {
+                          //    caretPosition = ((EditorCell_Label)selectedCell).getCaretPosition();
+                          //  }
+                          // Pair<SNode, Integer> wasSelected = new Pair<SNode, Integer>(selectedNode, caretPosition);
                           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                             public void run() {
                               CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
                                 public void run() {
-                                  intention.execute(node);
+                                  intention.execute(quickFixNode);
                                 }
                               });
                             }
@@ -180,6 +180,14 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   public void checkingIterationFinished() {
     myMessagesChanged = false;
+  }
+
+  @Override
+  public void clear(SNode node, EditorComponent editorComponent) {
+    if (node == null) return;
+    TypeCheckingContext context = editorComponent.getTypeCheckingContext();
+    if (context == null) return;
+    context.clear();
   }
 
   public static class Owner implements EditorMessageOwner {

@@ -15,7 +15,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SplitTraceInfoAndDebugInfo_MigrationScript extends BaseMigrationScript {
@@ -82,7 +81,7 @@ public class SplitTraceInfoAndDebugInfo_MigrationScript extends BaseMigrationScr
             quotedNode_4 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_7 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_7 = quotedNode_4;

@@ -1,15 +1,14 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.ReductionContext;
-import jetbrains.mps.generator.impl.TemplateContext;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -20,8 +19,6 @@ public interface QueryExecutionContext {
   boolean isMultithreaded();
 
   boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
-
-  GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule, @NotNull ReductionContext reductionContext) throws GenerationFailureException;
 
   boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException;
 
@@ -48,4 +45,10 @@ public interface QueryExecutionContext {
   SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule);
 
   Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context);
+
+  void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor);
+
+  SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper);
+
+  Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 }

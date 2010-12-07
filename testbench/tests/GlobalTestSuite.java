@@ -1,9 +1,10 @@
-import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import jetbrains.mps.testbench.MpsMakeHelper;
+import jetbrains.mps.testbench.junit.runners.WatchingSuite;
 import junit.framework.TestSuite;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
+
 
 @SuiteClasses({jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test.class,
 jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test.class,
@@ -40,7 +41,15 @@ jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test.class,
 jetbrains.mps.internalCollections.test.closures.Find_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test.class,
+jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test.class,
+jetbrains.mps.make.unittest.FacetRegistry_Test.class,
+jetbrains.mps.make.unittest.Execute_Test.class,
+jetbrains.mps.make.generator.Generator_Test.class,
+jetbrains.mps.make.unittest.ScriptBuilder_Test.class,
+jetbrains.mps.make.unittest.LogReporting_Test.class,
+jetbrains.mps.make.unittest.Targets_Test.class,
+jetbrains.mps.make.unittest.Cycles_Test.class,
 jetbrains.mps.lang.pattern.test.Patternv3_Test.class,
 jetbrains.mps.lang.pattern.test.PatternOrPattern_Test.class,
 jetbrains.mps.lang.pattern.test.Patternv2_Test.class,
@@ -343,6 +352,7 @@ jetbrains.mps.closures.test.WhileBreak_Test.class,
 jetbrains.mps.vcs.diff.MergeRefactoringTest.class,
 jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest.class,
 jetbrains.mps.vcs.diff.MergeReferencesTest.class,
+jetbrains.mps.vcs.diff.MergeSymmetricChangesTest.class,
 jetbrains.mps.vcs.diff.MergeConceptAndImportsTest.class,
 jetbrains.mps.generator.test.ParallelPoolTest.class,
 jetbrains.mps.generator.test.ParallelGenerationMeasuringTest.class,
@@ -358,6 +368,7 @@ jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test.class,
 jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test.class,
 jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test.class,
 jetbrains.mps.refactoring.RefactoringTest.class,
+jetbrains.mps.persistence.PersistenceTest.class,
 jetbrains.mps.vfs.VfsTest.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Map_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.ListOperations_Test.class,

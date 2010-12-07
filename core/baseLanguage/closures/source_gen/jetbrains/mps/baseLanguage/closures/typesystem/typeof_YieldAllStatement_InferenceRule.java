@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -26,9 +25,9 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(statement, "expression", true);
       BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998112076", 0, intentionProvider);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "5050026341848553735", 3, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1228998118192", true), (SNode) new typeof_YieldAllStatement_InferenceRule.QuotationClass_oliywx_a0a1a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1228998160752), typeCheckingContext.getRepresentative(elementType_typevar_1228998160752), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "5050026341848553737", true), (SNode) new typeof_YieldAllStatement_InferenceRule.QuotationClass_oliywx_a0a1a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1228998160752), typeCheckingContext.getRepresentative(elementType_typevar_1228998160752), typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -69,7 +68,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
             quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4, typeCheckingContext);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -87,7 +86,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
             quotedNode_5 = (SNode) parameter_12;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
-              quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5, typeCheckingContext);
             } else {
               _parameterValues_129834374.add(quotedNode_5);
               quotedNode1_10 = quotedNode_5;
@@ -121,7 +120,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
             quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -139,7 +138,7 @@ public class typeof_YieldAllStatement_InferenceRule extends AbstractInferenceRul
             quotedNode_5 = (SNode) parameter_12;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
-              quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
             } else {
               _parameterValues_129834374.add(quotedNode_5);
               quotedNode1_10 = quotedNode_5;

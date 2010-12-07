@@ -31,7 +31,7 @@ public class CreateMethodDeclarationUtil {
     }
     String name = editorCell.getRenderedText();
     if (name.endsWith("()")) {
-      name = name.substring(0, name.length() - 3);
+      name = name.substring(0, name.length() - 2);
     }
     if (!(name.matches("[a-zA-Z0-9_]*"))) {
       return null;

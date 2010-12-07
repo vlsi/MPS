@@ -15,88 +15,89 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.lang.generator.structure.TemplateSwitch;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.FlattenIterable;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TemplateSwitchGraph {
 
-  private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
+  private Map<SNodePointer, Node> mySwitchToNode = new HashMap<SNodePointer, Node>();
 
-  public TemplateSwitchGraph(List<SModelDescriptor> templateModels) {
-    for (SModelDescriptor templateModel : templateModels) {
-      for (SNode root : templateModel.getSModel().roots()) {
-        if (!(root.getAdapter() instanceof TemplateSwitch)) continue;
+  public TemplateSwitchGraph(List<TemplateModel> templateModels) {
+    for (TemplateModel templateModel : templateModels) {
+      for (TemplateSwitchMapping root : templateModel.getSwitches()) {
+        mySwitchToNode.put(root.getSwitchNode(), new Node(root));
+      }
+    }
 
-        TemplateSwitch adapter = (TemplateSwitch) root.getAdapter();
-        if (myTemplateSwitchToGraphNodeMap.get(adapter) == null) {
-          addSwitch(adapter);
+    for (Node node : mySwitchToNode.values()) {
+      SNodePointer modifiesSwitchPtr = node.mySwitch.getModifiesSwitch();
+      if (modifiesSwitchPtr != null) {
+        Node modifiedSwitch = mySwitchToNode.get(modifiesSwitchPtr);
+        if (modifiedSwitch != null) {
+          node.myModified = modifiedSwitch;
         }
       }
-    }
-  }
-
-  private TemplateSwitchGraphNode addSwitch(TemplateSwitch templateSwitch) {
-    if (myTemplateSwitchToGraphNodeMap.get(templateSwitch) != null) {
-      throw new RuntimeException("Couldn't add template switch more then once: " + templateSwitch.getDebugText());
-    }
-    //    System.out.println("add switch: " + templateSwitch.getDebugText());
-
-    TemplateSwitchGraphNode switchNode = new TemplateSwitchGraphNode(templateSwitch);
-    myTemplateSwitchToGraphNodeMap.put(templateSwitch, switchNode);
-    TemplateSwitch modifiedSwitch = templateSwitch.getModifiedSwitch();
-    if (modifiedSwitch != null) {
-      TemplateSwitchGraphNode modifiedSwitchNode = myTemplateSwitchToGraphNodeMap.get(modifiedSwitch);
-      if (modifiedSwitchNode == null) {
-        modifiedSwitchNode = addSwitch(modifiedSwitch);
+      if (node.myModified == null) {
+        node.myRules = new LinkedList<TemplateSwitchMapping>();
       }
-      switchNode.myModifiedSwitchNode = modifiedSwitchNode;
-      modifiedSwitchNode.myModifierSwitchNodes.add(switchNode);
     }
-
-    return switchNode;
-  }
-
-  public List<TemplateSwitch> getSubgraphAsList(TemplateSwitch baseSwitch) {
-    TemplateSwitchGraphNode bottomSwitchNode = myTemplateSwitchToGraphNodeMap.get(baseSwitch);
-    if (bottomSwitchNode == bottomSwitchNode.myModifiedSwitchNode) {
-      throw new RuntimeException("Template switch declaration " + baseSwitch + " extends itself."); //TODO some kind of normal diagnostic message
+    for (Node node : mySwitchToNode.values()) {
+      Node bottom = node;
+      int i = 256;
+      while (bottom.myModified != null && --i > 0) {
+        bottom = bottom.myModified;
+      }
+      if (node != bottom) {
+        node.myModified = bottom;
+        if (i == 0) {
+          throw new RuntimeException("Template switch loop in: " + node);     // TODO handle correctly
+        }
+      }
+      bottom.myRules.add(node.mySwitch);
     }
-    while (bottomSwitchNode.myModifiedSwitchNode != null) {
-      bottomSwitchNode = bottomSwitchNode.myModifiedSwitchNode;
-    }
-    List<TemplateSwitchGraphNode> graphNodes = new LinkedList<TemplateSwitchGraphNode>();
-    modifierSwitchesToList(bottomSwitchNode, graphNodes);
-    graphNodes.add(bottomSwitchNode);
-
-    List<TemplateSwitch> switches = new LinkedList<TemplateSwitch>();
-    for (TemplateSwitchGraphNode switchGraphNode : graphNodes) {
-      switches.add(switchGraphNode.myTemplateSwitch);
-    }
-    return switches;
-  }
-
-  private void modifierSwitchesToList(TemplateSwitchGraphNode switchNode, List<TemplateSwitchGraphNode> list) {
-    if (!switchNode.myModifierSwitchNodes.isEmpty()) {
-      list.addAll(switchNode.myModifierSwitchNodes);
-      for (TemplateSwitchGraphNode modifierSwitchNode : switchNode.myModifierSwitchNodes) {
-        modifierSwitchesToList(modifierSwitchNode, list);
+    for (Node node : mySwitchToNode.values()) {
+      if (node.myModified == null) {
+        node.createFinder();
       }
     }
   }
 
-  private static class TemplateSwitchGraphNode {
-    final TemplateSwitch myTemplateSwitch;
-    TemplateSwitchGraphNode myModifiedSwitchNode;
-    List<TemplateSwitchGraphNode> myModifierSwitchNodes = new LinkedList<TemplateSwitchGraphNode>();
+  public FastRuleFinder getRuleFinder(SNodePointer baseSwitch) {
+    Node bottom = mySwitchToNode.get(baseSwitch);
+    while (bottom.myModified != null) {
+      bottom = bottom.myModified;
+    }
+    return bottom.finder;
+  }
 
-    public TemplateSwitchGraphNode(TemplateSwitch templateSwitch) {
-      this.myTemplateSwitch = templateSwitch;
+  public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
+    Node node = mySwitchToNode.get(switch_);
+    return node != null ? node.mySwitch : null;
+  }
+
+  private static class Node {
+    final TemplateSwitchMapping mySwitch;
+    Node myModified;
+    List<TemplateSwitchMapping> myRules;
+    FastRuleFinder finder;
+
+    public Node(TemplateSwitchMapping switch_) {
+      this.mySwitch = switch_;
+    }
+
+    private void createFinder() {
+      FlattenIterable<TemplateReductionRule> rules = new FlattenIterable<TemplateReductionRule>(new ArrayList<Iterable<TemplateReductionRule>>());
+      for (TemplateSwitchMapping sw : myRules) {
+        rules.add(sw.getReductionRules());
+      }
+
+      this.myRules = null;
+      this.finder = new FastRuleFinder(rules);
     }
   }
 }

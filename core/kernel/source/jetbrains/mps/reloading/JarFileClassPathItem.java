@@ -18,6 +18,8 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.ReadUtil;
 
 import java.io.File;
@@ -121,16 +123,22 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public void collectAvailableClasses(Set<String> classes, String namespace) {
+  public Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     ensureInitialized();
-    classes.addAll(myCache.getClassesSetFor(namespace));
+    Set<String> start = myCache.getClassesSetFor(namespace);
+    Condition<String> cond = new Condition<String>() {
+      public boolean met(String className) {
+        return !isAnonymous(className);
+      }
+    };
+    return new ConditionalIterable<String>(start, cond);
   }
 
-  public void collectSubpackages(Set<String> subpackages, String namespace) {
+  public Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     ensureInitialized();
-    subpackages.addAll(myCache.getSubpackagesSetFor(namespace));
+    return myCache.getSubpackagesSetFor(namespace);
   }
 
   public long getClassesTimestamp(String namespace) {

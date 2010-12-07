@@ -10,8 +10,8 @@ import jetbrains.mps.graphLayout.graphLayout.GraphPointLayout;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import java.awt.GridBagLayout;
-import jetbrains.mps.graphLayout.flowOrthogonalLayout.OrthogonalPointFlowLayouter;
-import jetbrains.mps.graphLayout.flowOrthogonalLayout.FlowLayoutWithNodeProcessing;
+import jetbrains.mps.graphLayout.internal.flowOrthogonalLayout.OrthogonalPointFlowLayouter;
+import jetbrains.mps.graphLayout.internal.flowOrthogonalLayout.FlowLayoutWithNodeProcessing;
 import jetbrains.mps.graphLayout.stOrthogonalLayout.OrthogonalLayouter;
 import jetbrains.mps.graphLayout.layeredLayout.LayeredLayouter;
 import layeredLayoutTest.EdgeReverterProxy;
@@ -243,11 +243,6 @@ public class TestPanel extends JPanel {
           graphics.setColor(oldColor);
           graphics.drawOval(x, y, TestPanel.NSIZE, TestPanel.NSIZE);
           graphics.drawString(Integer.toString(node.getIndex()), x + TestPanel.NSIZE / 3, y + 2 * TestPanel.NSIZE / 3);
-          /*
-            if (node.isDummy()) {
-              graphics.fillOval(x, y, TestPanel.NSIZE, TestPanel.NSIZE);
-            }
-          */
         }
       }
     }

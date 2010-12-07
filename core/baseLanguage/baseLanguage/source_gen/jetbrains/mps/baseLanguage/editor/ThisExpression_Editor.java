@@ -68,6 +68,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
       style.set(StyleAttributes.EDITABLE, true);
     }
+    editorCell.addKeyMap(new ThisExpressionToLocal());
     editorCell.setDefaultText("");
     return editorCell;
   }

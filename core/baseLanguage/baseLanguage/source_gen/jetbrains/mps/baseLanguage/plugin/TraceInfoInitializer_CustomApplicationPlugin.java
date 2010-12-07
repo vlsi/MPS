@@ -7,6 +7,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
@@ -24,9 +26,21 @@ public class TraceInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
   public void doInit() {
     TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
     traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.Statement");
-    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new Mapper<SNode, String>() {
+      public String value(SNode traceableNode) {
+        return SPropertyOperations.getString(traceableNode, "name");
+      }
+    });
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new Mapper<SNode, String>() {
+      public String value(SNode traceableNode) {
+        return SPropertyOperations.getString(traceableNode, "name");
+      }
+    });
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper<SNode, String>() {
+      public String value(SNode traceableNode) {
+        return SPropertyOperations.getString(traceableNode, "name") + "#" + BaseMethodDeclaration_Behavior.call_jniSignature_8847328628797656446(traceableNode);
+      }
+    });
     traceInfoManager.addScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         return SLinkOperations.getTargets(scopeNode, "parameter", true);

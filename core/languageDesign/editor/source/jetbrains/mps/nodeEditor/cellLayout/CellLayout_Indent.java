@@ -260,6 +260,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
         collection.setWidth(x1 - x0);
         collection.setHeight(y1 - y0);
 
+        //collection is implicitly laid out
+        collection.unrequestLayout();
+
         if (collection != myCell) {
           int ascent = getAscent(collection);
           int descent = collection.getHeight() - ascent;
@@ -275,8 +278,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
       }
 
       PunctuationUtil.addGaps(cell.getParent(), cell);
-
-      cell.setX(myX + myLineWidth);
+      
+      cell.moveTo(myX + myLineWidth, cell.getY());
       cell.relayout();
 
       myLineAscent = Math.max(myLineAscent, cell.getAscent());
@@ -350,6 +353,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
       while (true) {
         EditorCell prevLeaf = result.getPrevLeaf();
+        // taking into account prevLeafs located inside collections with non-indent layouts:
+        // in this case topmost collection itself will be included into myLineContent as a
+        // child element 
+        while (prevLeaf != null && !myLineContent.contains(prevLeaf)) {
+          prevLeaf = prevLeaf.getParent();
+        }
 
         if (!myCell.isAncestorOf(prevLeaf)) break;
         if (!myLineContent.contains(prevLeaf)) break;

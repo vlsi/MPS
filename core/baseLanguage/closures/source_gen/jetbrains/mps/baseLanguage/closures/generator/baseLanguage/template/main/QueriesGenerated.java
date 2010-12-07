@@ -2508,7 +2508,16 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_608109309169980431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true), "elementType", true);
+    SNode st;
+    SNode t = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    st = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+    if ((st == null)) {
+      st = TypeChecker.getInstance().getRuntimeSupport().coerce_(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(t, "jetbrains.mps.lang.typesystem.structure.JoinType"), "argument", true)).getElement(0), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+    }
+    if ((st == null)) {
+      st = TypeChecker.getInstance().getRuntimeSupport().coerce_(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(t, "jetbrains.mps.lang.typesystem.structure.JoinType"), "argument", true)).getElement(1), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
+    }
+    return SLinkOperations.getTarget(st, "elementType", true);
   }
 
   public static SNode sourceNodeQuery_9117832275706131042(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2583,7 +2592,7 @@ public class QueriesGenerated {
     );
     final Map<SNode, SNode> theMap = FunctionTypeUtil.mapAdaptableTargetTVDs(SLinkOperations.getTarget(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), trg);
     final List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
-    return ListSequence.fromList(SLinkOperations.getTargets(trg, "typeVariableDeclaration", true)).select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(trg, "typeVariableDeclaration", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(final SNode tvd) {
         return ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(MapSequence.fromMap(theMap).findFirst(new IWhereFilter<IMapping<SNode, SNode>>() {
           public boolean accept(IMapping<SNode, SNode> m) {
@@ -3826,7 +3835,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_2857237956452627703(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"))), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"))), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode pt) {
         return FunctionTypeUtil.unbound(pt);
       }

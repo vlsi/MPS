@@ -17,6 +17,8 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.StereotypeProvider;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectLanguageTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -61,7 +63,7 @@ public class SModelsSubtree {
     SModelNamespaceTreeBuilder builder;
     List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext, isNeedBuildChildModels(rootTreeNode));
     if (!regularModelNodes.isEmpty()) {
-      if (rootTreeNode instanceof ProjectSolutionTreeNode) {
+      if (rootTreeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectSolutionTreeNode) {
         builder = new SModelNamespaceTreeBuilder();
         for (SModelTreeNode treeNode : regularModelNodes) {
           builder.addNode(treeNode);

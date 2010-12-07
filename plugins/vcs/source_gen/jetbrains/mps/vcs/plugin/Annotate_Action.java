@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.vcs.annotation.AnnotationManager;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class Annotate_Action extends GeneratedAction {
@@ -20,8 +21,8 @@ public class Annotate_Action extends GeneratedAction {
   private Project project;
 
   public Annotate_Action() {
-    super("Annotate (internal)", "", ICON);
-    this.setIsAlwaysVisible(false);
+    super("Annotate", "", ICON);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
@@ -30,9 +31,16 @@ public class Annotate_Action extends GeneratedAction {
     return "";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return AnnotationManager.getInstance(Annotate_Action.this.project).isAnnotateable(Annotate_Action.this.editor);
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "Annotate", t);
@@ -64,7 +72,7 @@ public class Annotate_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      AnnotateUtil.annotate(Annotate_Action.this.editor, Annotate_Action.this.project);
+      AnnotationManager.getInstance(Annotate_Action.this.project).annotate(Annotate_Action.this.editor);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Annotate", t);

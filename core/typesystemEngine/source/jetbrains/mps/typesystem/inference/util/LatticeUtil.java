@@ -15,20 +15,22 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import jetbrains.mps.typesystem.inference.*;
-import jetbrains.mps.lang.typesystem.structure.*;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.lang.typesystem.structure.*;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.typesystem.inference.NodeWrapper;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
-import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class LatticeUtil {
   public static void processMeetsAndJoins(IWrapper type) {

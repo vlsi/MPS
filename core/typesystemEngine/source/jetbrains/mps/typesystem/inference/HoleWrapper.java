@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNode;
 
 public class HoleWrapper extends NodeWrapper {
 

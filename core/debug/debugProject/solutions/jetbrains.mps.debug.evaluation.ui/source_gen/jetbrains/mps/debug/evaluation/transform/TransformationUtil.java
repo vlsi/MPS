@@ -30,7 +30,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class TransformationUtil {
   private static Logger LOG = Logger.getLogger(TransformationUtil.class);
@@ -224,7 +223,7 @@ public class TransformationUtil {
   }
 
   public static String getJniSignature(SNode methodDeclaration) {
-    return getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).select(new ISelector<SNode, SNode>() {
+    return getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "type", true);
       }
@@ -374,7 +373,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_13;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_8 = quotedNode_2;
@@ -387,7 +386,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_14;
           SNode quotedNode1_9;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_9 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_9 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_9 = quotedNode_3;
@@ -439,7 +438,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_11;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_7 = quotedNode_2;
@@ -452,7 +451,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_12;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_8 = quotedNode_3;
@@ -465,7 +464,7 @@ public class TransformationUtil {
           quotedNode_4 = (SNode) parameter_13;
           SNode quotedNode1_9;
           if (_parameterValues_129834374.contains(quotedNode_4)) {
-            quotedNode1_9 = CopyUtil.copy(quotedNode_4);
+            quotedNode1_9 = HUtil.copyIfNecessary(quotedNode_4);
           } else {
             _parameterValues_129834374.add(quotedNode_4);
             quotedNode1_9 = quotedNode_4;
@@ -478,7 +477,7 @@ public class TransformationUtil {
           quotedNode_5 = (SNode) parameter_14;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_5)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
           } else {
             _parameterValues_129834374.add(quotedNode_5);
             quotedNode1_10 = quotedNode_5;
@@ -514,7 +513,7 @@ public class TransformationUtil {
             quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_7 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_7 = quotedNode_3;
@@ -527,7 +526,7 @@ public class TransformationUtil {
             quotedNode_4 = (SNode) parameter_10;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -561,7 +560,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -574,7 +573,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -606,7 +605,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -619,7 +618,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -651,7 +650,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -664,7 +663,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -696,7 +695,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -709,7 +708,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -741,7 +740,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -754,7 +753,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -786,7 +785,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -799,7 +798,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -831,7 +830,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -844,7 +843,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -876,7 +875,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -889,7 +888,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -921,7 +920,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -934,7 +933,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -966,7 +965,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -979,7 +978,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -1011,7 +1010,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -1024,7 +1023,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_6 = quotedNode_3;
@@ -1063,7 +1062,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_17;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_10 = quotedNode_2;
@@ -1133,7 +1132,7 @@ public class TransformationUtil {
             quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_7 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_7 = quotedNode_3;
@@ -1146,7 +1145,7 @@ public class TransformationUtil {
             quotedNode_4 = (SNode) parameter_10;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -1189,7 +1188,7 @@ public class TransformationUtil {
             quotedNode_3 = (SNode) parameter_19;
             SNode quotedNode1_12;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_12 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_12 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_12 = quotedNode_3;
@@ -1207,7 +1206,7 @@ public class TransformationUtil {
               quotedNode_5 = (SNode) parameter_20;
               SNode quotedNode1_14;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_14 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_14 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_14 = quotedNode_5;
@@ -1220,7 +1219,7 @@ public class TransformationUtil {
               quotedNode_6 = (SNode) parameter_21;
               SNode quotedNode1_15;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
-                quotedNode1_15 = CopyUtil.copy(quotedNode_6);
+                quotedNode1_15 = HUtil.copyIfNecessary(quotedNode_6);
               } else {
                 _parameterValues_129834374.add(quotedNode_6);
                 quotedNode1_15 = quotedNode_6;
@@ -1280,7 +1279,7 @@ public class TransformationUtil {
             quotedNode_3 = (SNode) parameter_15;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_10 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_10 = quotedNode_3;
@@ -1297,7 +1296,7 @@ public class TransformationUtil {
               quotedNode_5 = (SNode) parameter_16;
               SNode quotedNode1_12;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_12 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_12 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_12 = quotedNode_5;
@@ -1310,7 +1309,7 @@ public class TransformationUtil {
               quotedNode_6 = (SNode) parameter_17;
               SNode quotedNode1_13;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
-                quotedNode1_13 = CopyUtil.copy(quotedNode_6);
+                quotedNode1_13 = HUtil.copyIfNecessary(quotedNode_6);
               } else {
                 _parameterValues_129834374.add(quotedNode_6);
                 quotedNode1_13 = quotedNode_6;
@@ -1323,7 +1322,7 @@ public class TransformationUtil {
               quotedNode_7 = (SNode) parameter_18;
               SNode quotedNode1_14;
               if (_parameterValues_129834374.contains(quotedNode_7)) {
-                quotedNode1_14 = CopyUtil.copy(quotedNode_7);
+                quotedNode1_14 = HUtil.copyIfNecessary(quotedNode_7);
               } else {
                 _parameterValues_129834374.add(quotedNode_7);
                 quotedNode1_14 = quotedNode_7;
@@ -1365,7 +1364,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_15;
           SNode quotedNode1_9;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_9 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_9 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_9 = quotedNode_2;
@@ -1378,7 +1377,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_16;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_10 = quotedNode_3;
@@ -1391,7 +1390,7 @@ public class TransformationUtil {
           quotedNode_4 = (SNode) parameter_17;
           SNode quotedNode1_11;
           if (_parameterValues_129834374.contains(quotedNode_4)) {
-            quotedNode1_11 = CopyUtil.copy(quotedNode_4);
+            quotedNode1_11 = HUtil.copyIfNecessary(quotedNode_4);
           } else {
             _parameterValues_129834374.add(quotedNode_4);
             quotedNode1_11 = quotedNode_4;
@@ -1444,7 +1443,7 @@ public class TransformationUtil {
             quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_7 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_7 = quotedNode_3;
@@ -1457,7 +1456,7 @@ public class TransformationUtil {
             quotedNode_4 = (SNode) parameter_10;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -1494,7 +1493,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_11;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_7 = quotedNode_2;
@@ -1507,7 +1506,7 @@ public class TransformationUtil {
           quotedNode_3 = (SNode) parameter_12;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_8 = quotedNode_3;
@@ -1520,7 +1519,7 @@ public class TransformationUtil {
           quotedNode_4 = (SNode) parameter_13;
           SNode quotedNode1_9;
           if (_parameterValues_129834374.contains(quotedNode_4)) {
-            quotedNode1_9 = CopyUtil.copy(quotedNode_4);
+            quotedNode1_9 = HUtil.copyIfNecessary(quotedNode_4);
           } else {
             _parameterValues_129834374.add(quotedNode_4);
             quotedNode1_9 = quotedNode_4;
@@ -1533,7 +1532,7 @@ public class TransformationUtil {
           quotedNode_5 = (SNode) parameter_14;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_5)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
           } else {
             _parameterValues_129834374.add(quotedNode_5);
             quotedNode1_10 = quotedNode_5;
@@ -1569,7 +1568,7 @@ public class TransformationUtil {
             quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_7 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_7 = quotedNode_3;
@@ -1582,7 +1581,7 @@ public class TransformationUtil {
             quotedNode_4 = (SNode) parameter_10;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -1620,7 +1619,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_11;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_7 = quotedNode_2;
@@ -1706,7 +1705,7 @@ public class TransformationUtil {
               quotedNode_5 = (SNode) parameter_17;
               SNode quotedNode1_13;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_13 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_13 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_13 = quotedNode_5;
@@ -2013,7 +2012,7 @@ public class TransformationUtil {
         quotedNode_1 = (SNode) parameter_3;
         SNode quotedNode1_2;
         if (_parameterValues_129834374.contains(quotedNode_1)) {
-          quotedNode1_2 = CopyUtil.copy(quotedNode_1);
+          quotedNode1_2 = HUtil.copyIfNecessary(quotedNode_1);
         } else {
           _parameterValues_129834374.add(quotedNode_1);
           quotedNode1_2 = quotedNode_1;
@@ -2316,7 +2315,7 @@ public class TransformationUtil {
         quotedNode_1 = (SNode) parameter_3;
         SNode quotedNode1_2;
         if (_parameterValues_129834374.contains(quotedNode_1)) {
-          quotedNode1_2 = CopyUtil.copy(quotedNode_1);
+          quotedNode1_2 = HUtil.copyIfNecessary(quotedNode_1);
         } else {
           _parameterValues_129834374.add(quotedNode_1);
           quotedNode1_2 = quotedNode_1;
@@ -2354,7 +2353,7 @@ public class TransformationUtil {
             quotedNode_3 = (SNode) parameter_17;
             SNode quotedNode1_11;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_11 = CopyUtil.copy(quotedNode_3);
+              quotedNode1_11 = HUtil.copyIfNecessary(quotedNode_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3);
               quotedNode1_11 = quotedNode_3;
@@ -2372,7 +2371,7 @@ public class TransformationUtil {
               quotedNode_5 = (SNode) parameter_18;
               SNode quotedNode1_13;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
-                quotedNode1_13 = CopyUtil.copy(quotedNode_5);
+                quotedNode1_13 = HUtil.copyIfNecessary(quotedNode_5);
               } else {
                 _parameterValues_129834374.add(quotedNode_5);
                 quotedNode1_13 = quotedNode_5;
@@ -2429,7 +2428,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_11;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_7 = quotedNode_2;
@@ -2479,7 +2478,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -2656,7 +2655,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -2689,7 +2688,7 @@ public class TransformationUtil {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -2734,7 +2733,7 @@ public class TransformationUtil {
         quotedNode_1 = (SNode) parameter_3;
         SNode quotedNode1_2;
         if (_parameterValues_129834374.contains(quotedNode_1)) {
-          quotedNode1_2 = CopyUtil.copy(quotedNode_1);
+          quotedNode1_2 = HUtil.copyIfNecessary(quotedNode_1);
         } else {
           _parameterValues_129834374.add(quotedNode_1);
           quotedNode1_2 = quotedNode_1;

@@ -75,7 +75,7 @@ public class EditorCell_Image extends EditorCell_Basic {
     return result;
   }
 
-  public void paintContent(Graphics g) {
+  public void paintContent(Graphics g, ParentSettings parentSettings) {
     if (myImage == null) return;
     switch (myAlignment) {
       case alignmentJustify: {

@@ -19,7 +19,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateGetter_Intention extends GenerateIntention implements Intention {
@@ -103,7 +102,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getOperationContext().getMainFrame(), node);
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getMainFrame(), node);
     selectFieldsDialog.showDialog();
     intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
     return selectFieldsDialog.getAnswer();
@@ -134,7 +133,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
           quotedNode_2 = (SNode) parameter_13;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_8 = quotedNode_2;
@@ -158,7 +157,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
               quotedNode_6 = (SNode) parameter_14;
               SNode quotedNode1_12;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
-                quotedNode1_12 = CopyUtil.copy(quotedNode_6);
+                quotedNode1_12 = HUtil.copyIfNecessary(quotedNode_6);
               } else {
                 _parameterValues_129834374.add(quotedNode_6);
                 quotedNode1_12 = quotedNode_6;

@@ -6,11 +6,12 @@ import com.intellij.openapi.util.Computable;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import java.util.ArrayList;
 
 public class ModelChooser implements Computable<List<SModelReference>> {
   private final IBindedDialog myOwner;
@@ -20,19 +21,16 @@ public class ModelChooser implements Computable<List<SModelReference>> {
   }
 
   public List<SModelReference> compute() {
-    List<SModelDescriptor> models = ModelAccess.instance().runReadAction(new Computable<List<SModelDescriptor>>() {
-      public List<SModelDescriptor> compute() {
-        return GlobalScope.getInstance().getModelDescriptors();
+    List<SModelReference> models = ModelAccess.instance().runReadAction(new Computable<List<SModelReference>>() {
+      public List<SModelReference> compute() {
+        List<SModelDescriptor> descriptors = GlobalScope.getInstance().getModelDescriptors();
+        return ListSequence.fromList(descriptors).<SModelReference>select(new ISelector<SModelDescriptor, SModelReference>() {
+          public SModelReference select(SModelDescriptor it) {
+            return it.getSModelReference();
+          }
+        }).toListSequence();
       }
     });
-    List<SModelDescriptor> sModelDescriptor = CommonChoosers.showDialogModelCollectionChooser(myOwner.getMainComponent(), models, null);
-    if (sModelDescriptor == null) {
-      return null;
-    }
-    List<SModelReference> references = new ArrayList<SModelReference>();
-    for (SModelDescriptor md : sModelDescriptor) {
-      references.add(md.getSModelReference());
-    }
-    return references;
+    return CommonChoosers.showDialogModelCollectionChooser(myOwner.getMainComponent(), models, null);
   }
 }

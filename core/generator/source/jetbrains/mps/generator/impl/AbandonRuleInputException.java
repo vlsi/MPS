@@ -15,5 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
-public class AbandonRuleInputException extends Exception {
+import jetbrains.mps.generator.runtime.GenerationException;
+
+public class AbandonRuleInputException extends GenerationException {
 }

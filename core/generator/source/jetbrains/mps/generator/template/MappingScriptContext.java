@@ -17,14 +17,24 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class MappingScriptContext extends TemplateQueryContext {
-  private SNode myScript;
+  private final SNode myScript;
+  private final SNodePointer myScriptPointer;
   private SModel myModel;
 
   public MappingScriptContext(SModel model, SNode mappingScript, ITemplateGenerator generator) {
     super(null, null, null, generator);
     myScript = mappingScript;
+    myScriptPointer = null;
+    myModel = model;
+  }
+
+  public MappingScriptContext(SModel model, SNodePointer mappingScript, ITemplateGenerator generator) {
+    super(null, null, null, generator);
+    myScript = null;
+    myScriptPointer = mappingScript;
     myModel = model;
   }
 
@@ -48,6 +58,7 @@ public class MappingScriptContext extends TemplateQueryContext {
   }
 
   public SNode getTemplateNodeForLogging() {
-    return myScript;
+    return myScript != null ? myScript :
+      myScriptPointer != null ? myScriptPointer.getNode() : null;
   }
 }

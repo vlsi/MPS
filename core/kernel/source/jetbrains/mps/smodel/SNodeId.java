@@ -110,6 +110,10 @@ public abstract class SNodeId implements Comparable<SNodeId> {
       myId = InternUtil.intern(id);
     }
 
+    public String getId() {
+      return myId;
+    }
+
     public boolean equals(Object o) {
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;

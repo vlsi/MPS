@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Graphics;
+import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import java.awt.event.KeyEvent;
@@ -27,7 +28,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
   }
 
   @Override
-  public void paintContent(Graphics g) {
+  public void paintContent(Graphics g, ParentSettings parentSettings) {
     this.myTextLine.setShowCaret(this.myCaretVisible && this.isWithinSelection() && this.getEditor().hasFocus());
     this.myTextLine.paint(g, this.myX + this.myGapLeft, this.myY);
   }
@@ -71,7 +72,6 @@ public class EditorCell_Empty extends EditorCell_Basic {
       return false;
     }
     this.myCaretVisible = true;
-    this.getEditor().requestRelayout();
     final String symbol = "" + p0.getKeyChar();
     if (this.isFirstCaretPosition()) {
       side = CellSide.LEFT;

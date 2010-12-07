@@ -18,6 +18,7 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
   public static final String BEFORE_EQUATIONS = "beforeEquations";
   public static final String AFTER_GROUPS = "afterGroups";
   public static final String BEFORE_GROUPS = "beforeGroups";
+  public static final String RULES_TO_SKIP = "rulesToSkip";
 
   public AbstractInequationStatement(SNode node) {
     super(node);
@@ -126,6 +127,26 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
 
   public void insertBeforeGroups(DefaultGroupReference prev, DefaultGroupReference node) {
     this.insertChild(prev, AbstractInequationStatement.BEFORE_GROUPS, node);
+  }
+
+  public int getRulesToSkipsCount() {
+    return this.getChildCount(AbstractInequationStatement.RULES_TO_SKIP);
+  }
+
+  public Iterator<ReplacementRuleReference> rulesToSkips() {
+    return this.children(ReplacementRuleReference.class, AbstractInequationStatement.RULES_TO_SKIP);
+  }
+
+  public List<ReplacementRuleReference> getRulesToSkips() {
+    return this.getChildren(ReplacementRuleReference.class, AbstractInequationStatement.RULES_TO_SKIP);
+  }
+
+  public void addRulesToSkip(ReplacementRuleReference node) {
+    this.addChild(AbstractInequationStatement.RULES_TO_SKIP, node);
+  }
+
+  public void insertRulesToSkip(ReplacementRuleReference prev, ReplacementRuleReference node) {
+    this.insertChild(prev, AbstractInequationStatement.RULES_TO_SKIP, node);
   }
 
   public static AbstractInequationStatement newInstance(SModel sm, boolean init) {

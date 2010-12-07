@@ -126,11 +126,15 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myOutputModel;
   }
 
-  public GeneratorMappings getMappings() {
+  GeneratorMappings getMappings() {
     return myMappings;
   }
 
   public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
+    return myMappings.findOutputNodeByTemplateNodeUnique(templateNode);
+  }
+
+  public SNode findOutputNodeByTemplateNodeUnique(String templateNode) {
     return myMappings.findOutputNodeByTemplateNodeUnique(templateNode);
   }
 
@@ -161,6 +165,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
     return myMappings.findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
+  }
+
+  public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, String templateNodeId) {
+    return myMappings.findOutputNodeByInputAndTemplateNode(inputNode, templateNodeId);
   }
 
   public SNode findOutputNodeById(SNodeId nodeId) {

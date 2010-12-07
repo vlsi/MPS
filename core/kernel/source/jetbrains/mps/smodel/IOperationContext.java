@@ -29,6 +29,7 @@ public interface IOperationContext {
   @NotNull
   IScope getScope();
 
+  @Deprecated
   Frame getMainFrame();
 
   boolean isValid();

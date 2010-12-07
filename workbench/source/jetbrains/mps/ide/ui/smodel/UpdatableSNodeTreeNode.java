@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
+import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -60,10 +62,6 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     if (myEventsListener != null) return;
     myEventsListener = new MyEventsListener(getModelDescriptor());
     mySNodeModelListener = new SimpleModelListener(this) {
-      public void updateTreeNodePresentation() {
-        UpdatableSNodeTreeNode.this.updatePresentation();
-      }
-
       public boolean isValid() {
         if (!super.isValid()) return false;
         return !getSNode().isDisposed();

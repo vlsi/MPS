@@ -13,14 +13,13 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class FunctionMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_functionType_2857237956452412451(SNode thisNode) {
-    List<SNode> params = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, SNode>() {
+    List<SNode> params = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode pd) {
         return SNodeOperations.copyNode(SLinkOperations.getTarget(pd, "type", true));
       }
@@ -51,7 +50,7 @@ public class FunctionMethodDeclaration_Behavior {
           quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_5 = quotedNode_3;

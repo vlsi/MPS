@@ -21,10 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.ArrayList;
@@ -57,7 +54,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
-        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project))) {
+        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project), false, true)) {
           continue;
         }
 
@@ -80,7 +77,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
-        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, ProjectOperationContext.get(project))) ||
+        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, ProjectOperationContext.get(project), false, true)) ||
           GeneratorManager.isDoNotGenerate(model)) {
           it.remove();
         }

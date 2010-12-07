@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MakeParameterFinal_Intention extends BaseIntention implements Intention {
   public MakeParameterFinal_Intention() {
@@ -46,6 +46,9 @@ public class MakeParameterFinal_Intention extends BaseIntention implements Inten
     SNode methodNode = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     SNode classNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
     if ((classNode == null)) {
+      return false;
+    }
+    if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "variableDeclaration", false), "isFinal")) {
       return false;
     }
     return ListSequence.fromList(SNodeOperations.getAncestors(classNode, null, false)).contains(methodNode);

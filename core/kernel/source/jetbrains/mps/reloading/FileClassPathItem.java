@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.reloading;
 
+import com.intellij.util.containers.EmptyIterable;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.ReadUtil;
+import jetbrains.mps.util.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -108,28 +107,31 @@ public class FileClassPathItem extends RealClassPathItem {
     }
   }
 
-  public void collectAvailableClasses(Set<String> classes, String namespace) {
+  public Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
-    Set<String> result = myAvailableClassesCache.get(namespace);
-    if (result != null) {
-      classes.addAll(result);
-    }
+    Set<String> start = myAvailableClassesCache.get(namespace);
+    if (start == null) return new EmptyIterable<String>();
+    Condition<String> cond = new Condition<String>() {
+      public boolean met(String className) {
+        return !isAnonymous(className);
+      }
+    };
+    return new ConditionalIterable<String>(start, cond);
   }
 
-  public void collectSubpackages(Set<String> subpackages, String namespace) {
+  public Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     if (!mySubpackagesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
     Set<String> result = mySubpackagesCache.get(namespace);
-    if (result != null) {
-      subpackages.addAll(result);
-    }
+    if (result == null) return new EmptyIterable<String>();
+    return result;
   }
 
   private void buildCacheFor(String namespace) {

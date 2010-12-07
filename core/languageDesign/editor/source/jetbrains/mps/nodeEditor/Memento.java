@@ -87,6 +87,11 @@ class Memento {
   }
 
   void restore(EditorComponent editor) {
+    editor.clearFoldedCells();
+    editor.clearBracesEnabledCells();
+
+    // TODO: remove this variable and simply mark editor as "needsRelayout" from the top editor cell + relayout it on .. next paint?
+    boolean needsRelayout = false;
     editor.flushEvents();
 
     if (mySelectedCellInfo != null) {
@@ -103,13 +108,13 @@ class Memento {
       }
     }
     for (CellInfo collectionInfo : myFolded) {
+      needsRelayout = true;
       EditorCell collection = collectionInfo.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) continue;
-      ((EditorCell_Collection)collection).fold(true);
-      editor.requestRelayout();
+      ((EditorCell_Collection)collection).fold(true);      
     }
     
-    restoreErrors(editor);
+    needsRelayout = restoreErrors(editor) || needsRelayout;
 
     EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
     if (deepestSelectedCell != null && myCaretX != null) {
@@ -126,11 +131,13 @@ class Memento {
         myFirstRangeSelectionNode.getParent() == myLastRangeSelectionNode.getParent()) {
         editor.getNodeRangeSelection().setRange(myFirstRangeSelectionNode, myLastRangeSelectionNode);
     }
-
+    if (needsRelayout) {
+      editor.relayout();
+    }
   }
 
-  private void restoreErrors(EditorComponent editor) {    
-    boolean needRelayout = false;
+  private boolean restoreErrors(EditorComponent editor) {
+    boolean needsRelayout = false;
     for (Entry<CellInfo, String> entry : myErrorTexts.entrySet()) {
       EditorCell_Label cell = (EditorCell_Label) entry.getKey().findCell(editor);
       if (cell != null) {
@@ -138,14 +145,11 @@ class Memento {
         String oldText = entry.getValue();
         if (!EqualUtil.equals(text, oldText)) {
           cell.changeText(entry.getValue());
-          needRelayout = true;
+          needsRelayout = true;
         }
       }
     }
-
-    if (needRelayout) {
-      editor.requestRelayout();
-    }
+    return needsRelayout;
   }
 
   CellInfo getSelectedCellInfo() {

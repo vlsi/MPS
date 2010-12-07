@@ -12,6 +12,7 @@ import org.objectweb.asm.tree.FieldNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.Opcodes;
+import org.objectweb.asm.tree.InnerClassNode;
 import java.util.Collections;
 
 public class ASMClass {
@@ -25,16 +26,16 @@ public class ASMClass {
   private ASMType myGenericSuperclass;
 
   public ASMClass(ClassReader reader) {
-    this.myNode = new ClassNode();
-    reader.accept(this.myNode, ClassReader.SKIP_CODE & ClassReader.SKIP_DEBUG);
-    if (this.myNode.signature != null) {
-      SignatureReader signReader = new SignatureReader(this.myNode.signature);
+    myNode = new ClassNode();
+    reader.accept(myNode, ClassReader.SKIP_CODE & ClassReader.SKIP_DEBUG & ClassReader.SKIP_FRAMES);
+    if (myNode.signature != null) {
+      SignatureReader signReader = new SignatureReader(myNode.signature);
       signReader.accept(new SignatureVisitorAdapter() {
         public SignatureVisitor visitSuperclass() {
           return new ASMClass.ClassifierSignatureVisitor() {
             public void visitEnd() {
-              ASMClassType cls = new ASMClassType(this.myName);
-              ASMClass.this.myGenericSuperclass = new ASMParameterizedType(cls, this.myParameters);
+              ASMClassType cls = new ASMClassType(myName);
+              myGenericSuperclass = new ASMParameterizedType(cls, myParameters);
             }
           };
         }
@@ -42,135 +43,115 @@ public class ASMClass {
         public SignatureVisitor visitInterface() {
           return new ASMClass.ClassifierSignatureVisitor() {
             public void visitEnd() {
-              ASMClassType cls = new ASMClassType(this.myName);
-              ASMClass.this.myGenericInterfaces.add(new ASMParameterizedType(cls, this.myParameters));
+              ASMClassType cls = new ASMClassType(myName);
+              myGenericInterfaces.add(new ASMParameterizedType(cls, myParameters));
             }
           };
         }
       });
     } else {
-      if (this.myNode.superName != null) {
-        this.myGenericSuperclass = new ASMClassType(this.myNode.superName.replace('/', '.'));
+      if (myNode.superName != null) {
+        myGenericSuperclass = new ASMClassType(myNode.superName.replace('/', '.'));
       }
-      for (String intfc : (List<String>) this.myNode.interfaces) {
-        this.myGenericInterfaces.add(new ASMClassType(intfc.replace('/', '.')));
+      for (String intfc : (List<String>) myNode.interfaces) {
+        myGenericInterfaces.add(new ASMClassType(intfc.replace('/', '.')));
       }
     }
-    if (this.myNode.signature != null) {
-      this.myTypeVariables.addAll(TypeUtil.getFormalTypeParameters(this.myNode.signature));
+    if (myNode.signature != null) {
+      myTypeVariables.addAll(TypeUtil.getFormalTypeParameters(myNode.signature));
     }
-    for (FieldNode fn : (List<FieldNode>) this.myNode.fields) {
-      this.myFields.add(new ASMField(fn));
+    for (FieldNode fn : (List<FieldNode>) myNode.fields) {
+      myFields.add(new ASMField(fn));
     }
-    for (MethodNode mn : (List<MethodNode>) this.myNode.methods) {
+    for (MethodNode mn : (List<MethodNode>) myNode.methods) {
       ASMMethod am = new ASMMethod(mn);
       if (am.isConstructor()) {
-        this.myConstructors.add(am);
+        myConstructors.add(am);
       } else {
-        this.myMethods.add(am);
+        myMethods.add(am);
       }
     }
-    if (this.myNode.visibleAnnotations != null || this.myNode.invisibleAnnotations != null) {
-      int size = ((this.myNode.visibleAnnotations != null ?
-        this.myNode.visibleAnnotations.size() :
+    if (myNode.visibleAnnotations != null || myNode.invisibleAnnotations != null) {
+      int size = ((myNode.visibleAnnotations != null ?
+        myNode.visibleAnnotations.size() :
         0
-      )) + ((this.myNode.invisibleAnnotations != null ?
-        this.myNode.invisibleAnnotations.size() :
+      )) + ((myNode.invisibleAnnotations != null ?
+        myNode.invisibleAnnotations.size() :
         0
       ));
-      this.myAnnotations = new ArrayList<ASMAnnotation>(size);
-      if (this.myNode.visibleAnnotations != null) {
-        for (AnnotationNode an : (List<AnnotationNode>) this.myNode.visibleAnnotations) {
+      myAnnotations = new ArrayList<ASMAnnotation>(size);
+      if (myNode.visibleAnnotations != null) {
+        for (AnnotationNode an : (List<AnnotationNode>) myNode.visibleAnnotations) {
           ASMAnnotation aa = new ASMAnnotation(an);
-          this.myAnnotations.add(aa);
+          myAnnotations.add(aa);
         }
       }
-      if (this.myNode.invisibleAnnotations != null) {
-        for (AnnotationNode an : (List<AnnotationNode>) this.myNode.invisibleAnnotations) {
+      if (myNode.invisibleAnnotations != null) {
+        for (AnnotationNode an : (List<AnnotationNode>) myNode.invisibleAnnotations) {
           ASMAnnotation aa = new ASMAnnotation(an);
-          this.myAnnotations.add(aa);
+          myAnnotations.add(aa);
         }
       }
     }
   }
 
   public boolean isAbstract() {
-    return (this.myNode.access & Opcodes.ACC_ABSTRACT) != 0;
+    return (myNode.access & Opcodes.ACC_ABSTRACT) != 0;
   }
 
   public boolean isPublic() {
-    return (this.myNode.access & Opcodes.ACC_PUBLIC) != 0;
+    return (myNode.access & Opcodes.ACC_PUBLIC) != 0;
   }
 
   public boolean isFinal() {
-    return (this.myNode.access & Opcodes.ACC_FINAL) != 0;
+    return (myNode.access & Opcodes.ACC_FINAL) != 0;
   }
 
   public boolean isDeprecated() {
-    return (Opcodes.ACC_DEPRECATED & this.myNode.access) != 0;
+    return (Opcodes.ACC_DEPRECATED & myNode.access) != 0;
   }
 
   public String getName() {
-    return this.myNode.name;
+    return myNode.name;
   }
 
   public String getFqName() {
-    return this.myNode.name.replace("/", ".");
+    return myNode.name.replace("/", ".");
+  }
+
+  public List<InnerClassNode> getInnerClasses() {
+    return myNode.innerClasses;
   }
 
   public List<ASMTypeVariable> getTypeParameters() {
-    return Collections.unmodifiableList(this.myTypeVariables);
+    return Collections.unmodifiableList(myTypeVariables);
   }
 
   public List<ASMType> getGenericInterfaces() {
-    return Collections.unmodifiableList(this.myGenericInterfaces);
+    return Collections.unmodifiableList(myGenericInterfaces);
   }
 
   public List<ASMAnnotation> getAnnotations() {
-    return ((List<ASMAnnotation>) (this.myAnnotations == null ?
+    return ((List<ASMAnnotation>) (myAnnotations == null ?
       Collections.emptyList() :
-      Collections.unmodifiableList(this.myAnnotations)
+      Collections.unmodifiableList(myAnnotations)
     ));
   }
 
   public ASMType getGenericSuperclass() {
-    return this.myGenericSuperclass;
+    return myGenericSuperclass;
   }
 
   public List<ASMField> getDeclaredFields() {
-    return Collections.unmodifiableList(this.myFields);
+    return Collections.unmodifiableList(myFields);
   }
 
   public List<ASMMethod> getDeclaredMethods() {
-    return Collections.unmodifiableList(this.myMethods);
+    return Collections.unmodifiableList(myMethods);
   }
 
   public List<ASMMethod> getDeclaredConstructors() {
-    return Collections.unmodifiableList(this.myConstructors);
-  }
-
-  private class ClassifierSignatureVisitor_old extends SignatureVisitorAdapter {
-    /*package*/ String myName;
-    /*package*/ List<ASMType> myParameters = new ArrayList<ASMType>();
-
-    private ClassifierSignatureVisitor_old() {
-    }
-
-    public SignatureVisitor visitTypeArgument(char wildcard) {
-      return new SignatureVisitorAdapter() {
-        public void visitClassType(String name) {
-          ClassifierSignatureVisitor_old.this.myParameters.add(new ASMClassType(name.replace('/', '.')));
-        }
-
-        public void visitTypeVariable(String name) {
-          ClassifierSignatureVisitor_old.this.myParameters.add(new ASMTypeVariable(name));
-        }
-      };
-    }
-
-    public void visitClassType(String name) {
-      this.myName = name.replace('/', '.');
-    }
+    return Collections.unmodifiableList(myConstructors);
   }
 
   private class ClassifierSignatureVisitor extends SignatureVisitorAdapter {
@@ -182,34 +163,34 @@ public class ASMClass {
     }
 
     public ClassifierSignatureVisitor(ASMClass.ClassifierSignatureVisitor parentVisitor) {
-      this.myParentVisitor = parentVisitor;
+      myParentVisitor = parentVisitor;
     }
 
     public SignatureVisitor visitTypeArgument(char wildcard) {
       return new ASMClass.ClassifierSignatureVisitor(this) {
         public void visitTypeVariable(String name) {
-          if (this.myParentVisitor != null) {
-            if (this.myParentVisitor.myParameters == null) {
-              this.myParentVisitor.myParameters = new ArrayList<ASMType>();
+          if (myParentVisitor != null) {
+            if (myParentVisitor.myParameters == null) {
+              myParentVisitor.myParameters = new ArrayList<ASMType>();
             }
-            this.myParentVisitor.myParameters.add(new ASMTypeVariable(name));
+            myParentVisitor.myParameters.add(new ASMTypeVariable(name));
           }
         }
 
         public void visitEnd() {
-          if (this.myParentVisitor != null) {
-            ASMClassType cls = new ASMClassType(this.myName);
-            if (this.myParentVisitor.myParameters == null) {
-              this.myParentVisitor.myParameters = new ArrayList<ASMType>();
+          if (myParentVisitor != null) {
+            ASMClassType cls = new ASMClassType(myName);
+            if (myParentVisitor.myParameters == null) {
+              myParentVisitor.myParameters = new ArrayList<ASMType>();
             }
-            this.myParentVisitor.myParameters.add(new ASMParameterizedType(cls, this.myParameters));
+            myParentVisitor.myParameters.add(new ASMParameterizedType(cls, myParameters));
           }
         }
       };
     }
 
     public void visitClassType(String name) {
-      this.myName = name.replace('/', '.');
+      myName = name.replace('/', '.');
     }
   }
 }

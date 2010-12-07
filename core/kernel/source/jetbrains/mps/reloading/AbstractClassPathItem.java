@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.reloading;
 
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.ConditionalIterable;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.regex.Pattern;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
+  private static final Pattern DIGITS = Pattern.compile("\\d+");
+
   public long getTimestamp() {
     return getTimestamp("");
   }
@@ -29,30 +31,31 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     return this;
   }
 
-  @NotNull
-  public final Set<String> getSubpackages(String namespace) {
-    Set<String> result = new HashSet<String>();
-    collectSubpackages(result, namespace);
-    return result;
+  //todo can make it faster
+
+
+  public Iterable<String> getRootClasses(String namespace) {
+    return new ConditionalIterable<String>(getAvailableClasses(namespace),new Condition<String>() {
+      public boolean met(String className) {
+        return !(className.contains("$"));
+      }
+    });
   }
 
-  @NotNull
-  public final Set<String> getAvailableClasses(String namespace) {
-    Set<String> result = new HashSet<String>();
-    collectAvailableClasses(result, namespace);
-    return result;
+  public static boolean isAnonymous(String className) {
+    if (!className.contains("$")) return false;
+
+    for (String part : className.split("\\$")) {
+      if (DIGITS.matcher(part).matches()) return true;
+    }
+    return false;
   }
 
   private long getTimestamp(String namespace) {
     long result = getClassesTimestamp(namespace);
-    Set<String> subpackages = getSubpackages(namespace);
-    for (String subpackage : subpackages) {
+    for (String subpackage : getSubpackages(namespace)) {
       result = Math.max(result, getTimestamp(subpackage));
     }
     return result;
   }
-
-  protected abstract void collectSubpackages(Set<String> subpackages, String namespace);
-
-  protected abstract void collectAvailableClasses(Set<String> classes, String namespace);
 }

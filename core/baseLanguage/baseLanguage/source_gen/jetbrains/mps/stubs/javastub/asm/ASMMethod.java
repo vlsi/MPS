@@ -25,65 +25,65 @@ public class ASMMethod {
   private Object myAnnotationDefault;
 
   /*package*/ ASMMethod(MethodNode method) {
-    this.myMethod = method;
-    this.myReturnType = TypeUtil.fromType(Type.getReturnType(method.desc));
+    myMethod = method;
+    myReturnType = TypeUtil.fromType(Type.getReturnType(method.desc));
     if (method.signature != null) {
-      this.myTypeVariables = ((List<ASMTypeVariable>) ((List) Collections.unmodifiableList(TypeUtil.getFormalTypeParameters(method.signature))));
+      myTypeVariables = ((List<ASMTypeVariable>) ((List) Collections.unmodifiableList(TypeUtil.getFormalTypeParameters(method.signature))));
     } else {
-      this.myTypeVariables = ((List<ASMTypeVariable>) ((List) Collections.emptyList()));
+      myTypeVariables = ((List<ASMTypeVariable>) ((List) Collections.emptyList()));
     }
     if (method.signature != null) {
-      this.myGenericReturnType = TypeUtil.getReturnType(method.signature);
+      myGenericReturnType = TypeUtil.getReturnType(method.signature);
     } else {
-      this.myGenericReturnType = this.myReturnType;
+      myGenericReturnType = myReturnType;
     }
     Type[] argumentTypes = Type.getArgumentTypes(method.desc);
-    this.myParameterTypes = (argumentTypes.length > 0 ?
+    myParameterTypes = (argumentTypes.length > 0 ?
       new ArrayList<ASMType>(argumentTypes.length) :
       ((List<ASMType>) ((List) Collections.emptyList()))
     );
     for (Type t : argumentTypes) {
-      this.myParameterTypes.add(TypeUtil.fromType(t));
+      myParameterTypes.add(TypeUtil.fromType(t));
     }
     if (method.signature != null) {
-      this.myGenericParameterTypes = TypeUtil.getParameterTypes(method.signature);
+      myGenericParameterTypes = TypeUtil.getParameterTypes(method.signature);
     } else {
-      this.myGenericParameterTypes = this.myParameterTypes;
+      myGenericParameterTypes = myParameterTypes;
     }
-    if (this.isVarArg()) {
-      int lastIndex = this.myGenericParameterTypes.size() - 1;
-      ASMType lastParamType = this.myGenericParameterTypes.get(lastIndex);
+    if (isVarArg()) {
+      int lastIndex = myGenericParameterTypes.size() - 1;
+      ASMType lastParamType = myGenericParameterTypes.get(lastIndex);
       if (lastParamType instanceof ASMArrayType) {
-        this.myGenericParameterTypes.set(lastIndex, new ASMVarArgType(((ASMArrayType) lastParamType).getElementType()));
+        myGenericParameterTypes.set(lastIndex, new ASMVarArgType(((ASMArrayType) lastParamType).getElementType()));
       }
-      if (this.myGenericParameterTypes != this.myParameterTypes) {
-        lastIndex = this.myParameterTypes.size() - 1;
-        lastParamType = this.myParameterTypes.get(lastIndex);
+      if (myGenericParameterTypes != myParameterTypes) {
+        lastIndex = myParameterTypes.size() - 1;
+        lastParamType = myParameterTypes.get(lastIndex);
         if (lastParamType instanceof ASMArrayType) {
-          this.myParameterTypes.set(lastIndex, new ASMVarArgType(((ASMArrayType) lastParamType).getElementType()));
+          myParameterTypes.set(lastIndex, new ASMVarArgType(((ASMArrayType) lastParamType).getElementType()));
         }
       }
     }
-    this.myParameterAnnotations = new ArrayList<List<ASMAnnotation>>(this.myParameterTypes.size());
-    for (int i = 0; i < this.myParameterTypes.size(); i++) {
+    myParameterAnnotations = new ArrayList<List<ASMAnnotation>>(myParameterTypes.size());
+    for (int i = 0; i < myParameterTypes.size(); i++) {
       List<ASMAnnotation> annotations = null;
-      if (this.myMethod.visibleParameterAnnotations != null && this.myMethod.visibleParameterAnnotations[i] != null) {
-        for (AnnotationNode an : (List<AnnotationNode>) this.myMethod.visibleParameterAnnotations[i]) {
+      if (myMethod.visibleParameterAnnotations != null && myMethod.visibleParameterAnnotations[i] != null) {
+        for (AnnotationNode an : (List<AnnotationNode>) myMethod.visibleParameterAnnotations[i]) {
           if (annotations == null) {
             annotations = new ArrayList<ASMAnnotation>();
           }
           annotations.add(new ASMAnnotation(an));
         }
       }
-      if (this.myMethod.invisibleParameterAnnotations != null && this.myMethod.invisibleParameterAnnotations[i] != null) {
-        for (AnnotationNode an : (List<AnnotationNode>) this.myMethod.invisibleParameterAnnotations[i]) {
+      if (myMethod.invisibleParameterAnnotations != null && myMethod.invisibleParameterAnnotations[i] != null) {
+        for (AnnotationNode an : (List<AnnotationNode>) myMethod.invisibleParameterAnnotations[i]) {
           if (annotations == null) {
             annotations = new ArrayList<ASMAnnotation>();
           }
           annotations.add(new ASMAnnotation(an));
         }
       }
-      this.myParameterAnnotations.add((annotations == null ?
+      myParameterAnnotations.add((annotations == null ?
         ((List<ASMAnnotation>) ((List) Collections.emptyList())) :
         annotations
       ));
@@ -93,154 +93,154 @@ public class ASMMethod {
       exceptions = TypeUtil.getExceptionTypes(method.signature);
     }
     if (!(exceptions.isEmpty())) {
-      this.myExceptions = exceptions;
+      myExceptions = exceptions;
     } else {
-      this.myExceptions = new ArrayList<ASMType>(this.myMethod.exceptions.size());
-      for (String s : (List<String>) this.myMethod.exceptions) {
-        this.myExceptions.add(new ASMClassType(s.replace('/', '.')));
+      myExceptions = new ArrayList<ASMType>(myMethod.exceptions.size());
+      for (String s : (List<String>) myMethod.exceptions) {
+        myExceptions.add(new ASMClassType(s.replace('/', '.')));
       }
     }
-    if (this.myMethod.visibleAnnotations != null || this.myMethod.invisibleAnnotations != null) {
-      int size = ((this.myMethod.visibleAnnotations != null ?
-        this.myMethod.visibleAnnotations.size() :
+    if (myMethod.visibleAnnotations != null || myMethod.invisibleAnnotations != null) {
+      int size = ((myMethod.visibleAnnotations != null ?
+        myMethod.visibleAnnotations.size() :
         0
-      )) + ((this.myMethod.invisibleAnnotations != null ?
-        this.myMethod.invisibleAnnotations.size() :
+      )) + ((myMethod.invisibleAnnotations != null ?
+        myMethod.invisibleAnnotations.size() :
         0
       ));
-      this.myAnnotations = new ArrayList<ASMAnnotation>(size);
-      if (this.myMethod.visibleAnnotations != null) {
-        for (AnnotationNode an : (List<AnnotationNode>) this.myMethod.visibleAnnotations) {
+      myAnnotations = new ArrayList<ASMAnnotation>(size);
+      if (myMethod.visibleAnnotations != null) {
+        for (AnnotationNode an : (List<AnnotationNode>) myMethod.visibleAnnotations) {
           ASMAnnotation aa = new ASMAnnotation(an);
-          this.myAnnotations.add(aa);
+          myAnnotations.add(aa);
         }
       }
-      if (this.myMethod.invisibleAnnotations != null) {
-        for (AnnotationNode an : (List<AnnotationNode>) this.myMethod.invisibleAnnotations) {
+      if (myMethod.invisibleAnnotations != null) {
+        for (AnnotationNode an : (List<AnnotationNode>) myMethod.invisibleAnnotations) {
           ASMAnnotation aa = new ASMAnnotation(an);
-          this.myAnnotations.add(aa);
+          myAnnotations.add(aa);
         }
       }
     }
-    if (!(this.myParameterTypes.isEmpty())) {
-      this.myParameterNames = new ArrayList<String>(this.myParameterTypes.size());
-      for (int i = 0; i < this.myParameterTypes.size(); i++) {
-        this.myParameterNames.add("p" + i);
+    if (!(myParameterTypes.isEmpty())) {
+      myParameterNames = new ArrayList<String>(myParameterTypes.size());
+      for (int i = 0; i < myParameterTypes.size(); i++) {
+        myParameterNames.add("p" + i);
       }
-      if (method.localVariables != null && this.myParameterTypes.size() < method.localVariables.size()) {
-        int offset = (!(this.isStatic()) ?
+      if (method.localVariables != null && myParameterTypes.size() < method.localVariables.size()) {
+        int offset = (!(isStatic()) ?
           1 :
           0
         );
         for (Object lv : method.localVariables) {
           LocalVariableNode node = ((LocalVariableNode) lv);
           int index = node.index - offset;
-          if (index >= 0 && index < this.myParameterTypes.size()) {
-            this.myParameterNames.set(index, node.name);
+          if (index >= 0 && index < myParameterTypes.size()) {
+            myParameterNames.set(index, node.name);
           }
         }
       }
     }
     if (method.annotationDefault != null) {
-      this.myAnnotationDefault = ASMAnnotation.processValue(method.annotationDefault);
+      myAnnotationDefault = ASMAnnotation.processValue(method.annotationDefault);
     }
   }
 
   public Object getAnnotationDefault() {
-    return this.myAnnotationDefault;
+    return myAnnotationDefault;
   }
 
   public String getName() {
-    return this.myMethod.name;
+    return myMethod.name;
   }
 
   public boolean isVarArg() {
-    return (Opcodes.ACC_VARARGS & this.myMethod.access) != 0;
+    return (Opcodes.ACC_VARARGS & myMethod.access) != 0;
   }
 
   public boolean isPrivate() {
-    return (Opcodes.ACC_PRIVATE & this.myMethod.access) != 0;
+    return (Opcodes.ACC_PRIVATE & myMethod.access) != 0;
   }
 
   public boolean isPublic() {
-    return (Opcodes.ACC_PUBLIC & this.myMethod.access) != 0;
+    return (Opcodes.ACC_PUBLIC & myMethod.access) != 0;
   }
 
   public boolean isProtected() {
-    return (Opcodes.ACC_PROTECTED & this.myMethod.access) != 0;
+    return (Opcodes.ACC_PROTECTED & myMethod.access) != 0;
   }
 
   public boolean isPackageProtected() {
-    return !(this.isPublic()) && !(this.isPrivate()) && !(this.isProtected());
+    return !(isPublic()) && !(isPrivate()) && !(isProtected());
   }
 
   public boolean isStatic() {
-    return (Opcodes.ACC_STATIC & this.myMethod.access) != 0;
+    return (Opcodes.ACC_STATIC & myMethod.access) != 0;
   }
 
   public boolean isDeprecated() {
-    return (Opcodes.ACC_DEPRECATED & this.myMethod.access) != 0;
+    return (Opcodes.ACC_DEPRECATED & myMethod.access) != 0;
   }
 
   public boolean isFinal() {
-    return (Opcodes.ACC_FINAL & this.myMethod.access) != 0;
+    return (Opcodes.ACC_FINAL & myMethod.access) != 0;
   }
 
   public boolean isAbstract() {
-    return (Opcodes.ACC_ABSTRACT & this.myMethod.access) != 0;
+    return (Opcodes.ACC_ABSTRACT & myMethod.access) != 0;
   }
 
   public boolean isBridge() {
-    return (Opcodes.ACC_BRIDGE & this.myMethod.access) != 0;
+    return (Opcodes.ACC_BRIDGE & myMethod.access) != 0;
   }
 
   public boolean isConstructor() {
-    return this.myMethod.name.equals("<init>");
+    return myMethod.name.equals("<init>");
   }
 
   public boolean isCompilerGenerated() {
-    return this.myMethod.name.startsWith("access$") || this.myMethod.name.equals("<clinit>");
+    return myMethod.name.startsWith("access$") || myMethod.name.equals("<clinit>");
   }
 
   public List<ASMTypeVariable> getTypeParameters() {
-    return this.myTypeVariables;
+    return myTypeVariables;
   }
 
   public ASMType getReturnType() {
-    return this.myReturnType;
+    return myReturnType;
   }
 
   public ASMType getGenericReturnType() {
-    return this.myGenericReturnType;
+    return myGenericReturnType;
   }
 
   public List<ASMAnnotation> getAnnotations() {
-    return (this.myAnnotations == null ?
+    return (myAnnotations == null ?
       ((List<ASMAnnotation>) ((List) Collections.emptyList())) :
-      Collections.unmodifiableList(this.myAnnotations)
+      Collections.unmodifiableList(myAnnotations)
     );
   }
 
   public List<ASMType> getParameterTypes() {
-    return Collections.unmodifiableList(this.myParameterTypes);
+    return Collections.unmodifiableList(myParameterTypes);
   }
 
   public List<ASMType> getGenericParameterTypes() {
-    return Collections.unmodifiableList(this.myGenericParameterTypes);
+    return Collections.unmodifiableList(myGenericParameterTypes);
   }
 
   public List<String> getParameterNames() {
-    return ((this.myParameterNames == null ?
+    return ((myParameterNames == null ?
       ((List<String>) ((List) Collections.emptyList())) :
-      Collections.unmodifiableList(this.myParameterNames)
+      Collections.unmodifiableList(myParameterNames)
     ));
   }
 
   public List<List<ASMAnnotation>> getParameterAnnotations() {
-    return Collections.unmodifiableList(this.myParameterAnnotations);
+    return Collections.unmodifiableList(myParameterAnnotations);
   }
 
   public List<ASMType> getExceptionTypes() {
-    return Collections.unmodifiableList(this.myExceptions);
+    return Collections.unmodifiableList(myExceptions);
   }
 }

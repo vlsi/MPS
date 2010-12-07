@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Mps_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.Mps_ProjectPlugin" />
+  <unitInfo fileName="Mps_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.Mps_ApplicationPlugin" />
+  <unitInfo fileName="InternalChecks_ActionGroup.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.InternalChecks_ActionGroup" />
+  <unitInfo fileName="CheckSamples_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckSamples_Action" />
+  <unitInfo fileName="CheckIncludedLanguages_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckIncludedLanguages_Action" />
+  <unitInfo fileName="CheckCoreRuntimeDeps_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckCoreRuntimeDeps_Action" />
+  <root nodeId="3583849467507913695">
+    <nodeInfo nodeId="3583849467508048985" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckCoreRuntimeDeps_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="39" />
+  </root>
+  <root nodeId="3583849467507913837">
+    <nodeInfo nodeId="3583849467508048933" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckIncludedLanguages_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="40" />
+  </root>
+  <root nodeId="3583849467507913885">
+    <nodeInfo nodeId="3583849467508042444" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckSamples_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="31" />
+  </root>
+  <root nodeId="3583849467507913934">
+    <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="149" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="18" startPosition="149" endLine="19" endPosition="157" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="19" startPosition="157" endLine="20" endPosition="159" />
+  </root>
+</debugInfo>
+

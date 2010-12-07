@@ -163,7 +163,7 @@ public class NameUtil {
     for (int i = 0; i < result.length() && Character.isUpperCase(result.charAt(i)); i++) {
       // decapitalizing first/last characters and any other if next one is capital character
       // desired behavior: EDTExecutor -> edtExecutor
-      if (i == 0 || i == result.length() || Character.isUpperCase(result.charAt(i + 1))) {
+      if (i == 0 || i == result.length() - 1 || Character.isUpperCase(result.charAt(i + 1))) {
         result.setCharAt(i, Character.toLowerCase(result.charAt(i)));
       }
     }

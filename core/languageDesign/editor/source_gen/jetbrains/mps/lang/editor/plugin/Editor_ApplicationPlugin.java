@@ -14,7 +14,6 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.editor";
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.editor.plugin.EditorInt_ActionGroup");
     return groups;
   }
 

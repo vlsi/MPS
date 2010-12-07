@@ -109,7 +109,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      VcsActionsHelper.showDiffrence(ShowDiffererenesWithCurrentRevision_Action.this.frame, ShowDiffererenesWithCurrentRevision_Action.this.context, ShowDiffererenesWithCurrentRevision_Action.this.model.getSModel(), ShowDiffererenesWithCurrentRevision_Action.this.node, ShowDiffererenesWithCurrentRevision_Action.this.project);
+      VcsActionsHelper.showRootDifference(ShowDiffererenesWithCurrentRevision_Action.this.frame, ShowDiffererenesWithCurrentRevision_Action.this.context, ShowDiffererenesWithCurrentRevision_Action.this.model.getSModel(), ShowDiffererenesWithCurrentRevision_Action.this.node, ShowDiffererenesWithCurrentRevision_Action.this.project);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDiffererenesWithCurrentRevision", t);

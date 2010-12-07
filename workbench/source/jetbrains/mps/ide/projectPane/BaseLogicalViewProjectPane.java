@@ -19,6 +19,8 @@ import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
@@ -146,6 +148,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     removeListeners();
     myDisposed = true;
+    super.dispose();
   }
 
   public boolean isShowPropertiesAndReferences() {
@@ -254,7 +257,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public IModule getContextModule() {
     MPSTreeNode treeNode = (MPSTreeNode) getSelectedTreeNode(TreeNode.class);
-    while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
+    while (treeNode != null && !(treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode)) {
       treeNode = (MPSTreeNode) treeNode.getParent();
     }
     if (treeNode == null) return null;
@@ -314,9 +317,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       return ActionPlace.PROJECT_PANE_SNODE;
     } else if (treeNode instanceof SModelTreeNode) {
       return ActionPlace.PROJECT_PANE_SMODEL;
-    } else if (treeNode instanceof ProjectTreeNode) {
+    } else if ((treeNode instanceof ProjectTreeNode) || (treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode)) {
       return ActionPlace.PROJECT_PANE_PROJECT;
-    } else if (treeNode instanceof GeneratorTreeNode) {
+    } else if (treeNode instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.GeneratorTreeNode) {
       return ActionPlace.PROJECT_PANE_GENERATOR;
     } else if (treeNode instanceof TransientModelsTreeNode) {
       return ActionPlace.PROJECT_PANE_TRANSIENT_MODULES;
@@ -337,7 +340,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ActionPlace.PROJECT_PANE;
   }
 
-  protected void editNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+  public void editNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
         MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
@@ -347,7 +350,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     });
   }
 
-  protected <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {
+  public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {
     TreePath[] selectionPaths = getTree().getSelectionPaths();
     if (selectionPaths == null) return new ArrayList<T>();
 

@@ -214,7 +214,7 @@ public class GeneratorFacade {
             public Map<String, String> getModelHashes(SModelDescriptor sm, IOperationContext operationContext) {
               return ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
             }
-
+                         
             @Override
             public GenerationCacheContainer getContainer() {
               return cache;
@@ -266,13 +266,13 @@ public class GeneratorFacade {
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), module.getScope())) {
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
+        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project), false, true)) {
           result.add(sm);
         }
       }
 
       for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
-        if (statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
+        if (statusManager.generationRequired(sm, ProjectOperationContext.get(project), false, true)) {
           result.add(sm);
         }
       }

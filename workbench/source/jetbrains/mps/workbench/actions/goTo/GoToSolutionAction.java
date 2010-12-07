@@ -25,7 +25,9 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
@@ -43,23 +45,23 @@ public class GoToSolutionAction extends BaseAction {
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseSolutionModel goToSolutionModel = new BaseSolutionModel(project) {
-      public NavigationItem doGetNavigationItem(final IModule module) {
-        return new BaseModuleItem(module) {
+      public NavigationItem doGetNavigationItem(final ModuleReference ref) {
+        return new BaseModuleItem(ref) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
+            IModule module = MPSModuleRepository.getInstance().getModule(ref);
             projectPane.selectModule(module, true);
           }
         };
       }
 
-      public Solution[] find(IScope scope) {
-        List<Solution> solutions = new ArrayList<Solution>();
+      public ModuleReference[] find(IScope scope) {
+        List<ModuleReference> solutions = new ArrayList<ModuleReference>();
         for (IModule module : scope.getVisibleModules()) {
-          if (module instanceof Solution) {
-            solutions.add((Solution) module);
-          }
+          if (!(module instanceof Solution)) continue;
+          solutions.add(module.getModuleReference());
         }
-        return solutions.toArray(new Solution[0]);
+        return solutions.toArray(new ModuleReference[solutions.size()]);
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, DefaultMatcherFactory.createAllMatcher(goToSolutionModel));

@@ -99,7 +99,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    final IOperationContext operationContext = editorContext.getOperationContext();
+    IOperationContext operationContext = editorContext.getOperationContext();
     IModule module = operationContext.getModule();
     List<SNode> mappings;
     if (module instanceof Generator) {
@@ -107,7 +107,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     } else {
       mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     }
-    final List<String> existingLabels = ListSequence.fromList(mappings).translate(new ITranslator2<SNode, String>() {
+    final List<String> existingLabels = ListSequence.fromList(mappings).<String>translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(final SNode it) {
         return new Iterable<String>() {
           public Iterator<String> iterator() {
@@ -157,7 +157,7 @@ __switch__:
     }).toListSequence();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, operationContext.getMainFrame(), editorContext);
+        AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, editorContext.getMainFrame(), editorContext);
         dialog.showDialog();
       }
     });

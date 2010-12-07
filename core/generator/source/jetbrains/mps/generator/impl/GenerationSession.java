@@ -17,17 +17,19 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.interpreted.TemplateMappingScriptInterpreted;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
-import jetbrains.mps.lang.generator.structure.MappingScript;
-import jetbrains.mps.lang.generator.structure.MappingScriptKind;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.messages.NodeWithContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -44,11 +46,12 @@ import java.util.List;
  * Created once per model generation.
  */
 public class GenerationSession {
-  private final GenerationController myController;
+  private final ITaskPoolProvider myTaskPoolProvider;
   private final SModelDescriptor myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
 
   private final IOperationContext myInvocationContext;
+  private final TransientModelsModule myTransientModelsModule;
   private final IGenerationTracer myGenerationTracer;
   private final boolean myDiscardTransients;
   private final ProgressIndicator myProgressMonitor;
@@ -64,12 +67,13 @@ public class GenerationSession {
   private int myMinorStep = -1;
   private GenerationOptions myGenerationOptions;
 
-  public GenerationSession(GenerationController controller, @NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
-                           ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger,
+  public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
+                           ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
                            IPerformanceTracer tracer, GenerationOptions generationOptions) {
-    myController = controller;
+    myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
+    myTransientModelsModule = transientModelsModule;
     myGenerationTracer = generationOptions.getGenerationTracer();
     myDiscardTransients = !generationOptions.isSaveTransientModels();
     myProgressMonitor = progressMonitor;
@@ -85,7 +89,7 @@ public class GenerationSession {
 
     // create a plan
     ttrace.push("analyzing dependencies", false);
-    myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel());
+    myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel(), GlobalScope.getInstance());
     if (!checkGenerationPlan(myGenerationPlan)) {
       // throw new GenerationCanceledException();
     }
@@ -130,6 +134,8 @@ public class GenerationSession {
       SModel currOutput = null;
 
       ttrace.push("steps", false);
+      myGenerationPlan.createSwitchGraph();
+
       for (myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
         if (myLogger.needsInfo()) {
           myLogger.info("executing step " + (myMajorStep + 1));
@@ -195,7 +201,7 @@ public class GenerationSession {
     }
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, inputModel, myGenerationPlan, mySessionContext);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, myTransientModelsModule, inputModel, myGenerationPlan, mySessionContext);
     myLogger.setOperationContext(mySessionContext);
 
     // -- prepare generator
@@ -306,7 +312,7 @@ public class GenerationSession {
     myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
     final TemplateGenerator tg =
       myGenerationOptions.isGenerateInParallel()
-        ? new ParallelTemplateGenerator(myController, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
+        ? new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
         : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
     if (tg instanceof ParallelTemplateGenerator) {
       hasChanges = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
@@ -329,7 +335,7 @@ public class GenerationSession {
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
-    List<MappingScript> preMappingScripts = ruleManager.getPreMappingScripts();
+    List<TemplateMappingScript> preMappingScripts = ruleManager.getPreMappingScripts();
     if (preMappingScripts.isEmpty()) {
       return currentInputModel;
     }
@@ -337,9 +343,9 @@ public class GenerationSession {
     // need to clone input model?
     boolean needToCloneInputModel = !myDiscardTransients;  // clone model if save transients (needed for tracing)
     if (!needToCloneInputModel) {
-      for (MappingScript preMappingScript : preMappingScripts) {
-        if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
-          if (preMappingScript.getModifiesModel()) {
+      for (TemplateMappingScript preMappingScript : preMappingScripts) {
+        if (preMappingScript.getKind() == TemplateMappingScript.PREPROCESS) {
+          if (preMappingScript.modifiesModel()) {
             needToCloneInputModel = true;
             break;
           }
@@ -366,16 +372,16 @@ public class GenerationSession {
     }
 
     boolean preProcessed = false;
-    for (MappingScript preMappingScript : preMappingScripts) {
-      if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
-        myLogger.warning(preMappingScript.getNode(), "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
+    for (TemplateMappingScript preMappingScript : preMappingScripts) {
+      if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
+        myLogger.warning(preMappingScript.getScriptNode().getNode(), "skip script " + preMappingScript.getLongName() + " - wrong script kind");
         continue;
       }
       if (myLogger.needsInfo()) {
-        myLogger.info(preMappingScript.getNode(), "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")");
+        myLogger.info(preMappingScript.getScriptNode().getNode(), "pre-process " + preMappingScript.getLongName());
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
-      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(preMappingScript, currentInputModel);
+      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(((TemplateMappingScriptInterpreted)preMappingScript).getNode(), currentInputModel);
       preProcessed = true;
     }
     if (needToCloneInputModel) {
@@ -393,7 +399,7 @@ public class GenerationSession {
   }
 
   private SModel postProcessModel(RuleManager ruleManager, SModel currentModel) throws GenerationFailureException {
-    List<MappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
+    List<TemplateMappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
     if (postMappingScripts.isEmpty()) {
       return currentModel;
     }
@@ -415,16 +421,16 @@ public class GenerationSession {
     }
 
     boolean postProcessed = false;
-    for (MappingScript postMappingScript : postMappingScripts) {
-      if (postMappingScript.getScriptKind() != MappingScriptKind.post_process_output_model) {
-        myLogger.warning(postMappingScript.getNode(), "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
+    for (TemplateMappingScript postMappingScript : postMappingScripts) {
+      if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
+        myLogger.warning(postMappingScript.getScriptNode().getNode(), "skip script " + postMappingScript.getLongName() + " - wrong script kind");
         continue;
       }
       if (myLogger.needsInfo()) {
-        myLogger.info(postMappingScript.getNode(), "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
+        myLogger.info(postMappingScript.getScriptNode().getNode(), "post-process " + postMappingScript.getLongName());
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel, myGenerationOptions, myDependenciesBuilder, ttrace);
-      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(postMappingScript, currentModel);
+      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(((TemplateMappingScriptInterpreted)postMappingScript).getNode(), currentModel);
       postProcessed = true;
     }
     if (needToCloneModel) {

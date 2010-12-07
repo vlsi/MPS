@@ -4,19 +4,23 @@ import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Set;
+
 public class DebugSession extends AbstractDebugSession<JavaUiState> {
   //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it
-  private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
   private EvaluationAuxModule myAuxModule;
+  private volatile boolean myIsMute = false;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
     super(p);
@@ -116,6 +120,41 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   public void sessionUnregistered(DebugSessionManagerComponent manager) {
     myAuxModule.dispose();
     myAuxModule = null;
+  }
+
+  @Override
+  public boolean isMute() {
+    return myIsMute;
+  }
+
+  @Override
+  public void muteBreakpoints(final boolean mute) {
+    if (myEventsProcessor.isAttached()) {
+      myEventsProcessor.getManagerThread().schedule(new DebuggerCommand(){
+        @Override
+        protected void action() throws Exception {
+          if (myIsMute != mute) {
+            Set<IBreakpoint> breakpoints = myEventsProcessor.getBreakpointManager().getAllIBreakpoints();
+            RequestManager requestManager = myEventsProcessor.getRequestManager();
+            for (IBreakpoint bp : breakpoints) {
+              if (bp instanceof JavaBreakpoint) {
+                JavaBreakpoint breakpoint = (JavaBreakpoint) bp;
+                if (mute) {
+                  requestManager.deleteRequests(breakpoint); // todo enabling and disabling breakpoints should be symmetrical
+                } else {
+                  breakpoint.createOrWaitPrepare(getEventsProcessor());
+                }
+              }
+            }
+            myIsMute = mute;
+            fireSessionMuted(DebugSession.this);
+          }
+        }
+      });
+    } else {
+      myIsMute = mute;
+      fireSessionMuted(DebugSession.this);
+    }
   }
 
   private class MyDebugProcessAdapter extends DebugProcessAdapter {

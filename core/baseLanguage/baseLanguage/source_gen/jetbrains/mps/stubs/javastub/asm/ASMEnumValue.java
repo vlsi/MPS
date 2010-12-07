@@ -8,15 +8,15 @@ public class ASMEnumValue {
   private String myConstant;
 
   /*package*/ ASMEnumValue(String type, String name) {
-    this.myType = TypeUtil.fromDescriptor(type);
-    this.myConstant = name;
+    myType = TypeUtil.fromDescriptor(type);
+    myConstant = name;
   }
 
   public ASMType getType() {
-    return this.myType;
+    return myType;
   }
 
   public String getConstant() {
-    return this.myConstant;
+    return myConstant;
   }
 }

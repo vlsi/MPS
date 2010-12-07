@@ -94,7 +94,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, final IntentionContext intentionContext) {
-    Frame frame = editorContext.getOperationContext().getMainFrame();
+    Frame frame = editorContext.getMainFrame();
     final Wrappers._T<SNode> superclass = new Wrappers._T<SNode>(null);
     final Wrappers._boolean needsShowConstructorsDialog = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {

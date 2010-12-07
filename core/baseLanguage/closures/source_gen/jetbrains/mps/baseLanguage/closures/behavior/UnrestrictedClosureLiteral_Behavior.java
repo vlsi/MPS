@@ -9,7 +9,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class UnrestrictedClosureLiteral_Behavior {
   public static void init(SNode thisNode) {
@@ -44,7 +43,7 @@ public class UnrestrictedClosureLiteral_Behavior {
           quotedNode_3 = (SNode) parameter_10;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_3);
+            quotedNode1_7 = HUtil.copyIfNecessary(quotedNode_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3);
             quotedNode1_7 = quotedNode_3;
@@ -57,7 +56,7 @@ public class UnrestrictedClosureLiteral_Behavior {
           quotedNode_4 = (SNode) parameter_11;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_4)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+            quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
           } else {
             _parameterValues_129834374.add(quotedNode_4);
             quotedNode1_8 = quotedNode_4;

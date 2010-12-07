@@ -119,7 +119,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final IModule module) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, Class>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).<Class>select(new ISelector<SNode, Class>() {
       public Class select(SNode it) {
         return Type_Behavior.call_getClass_1213877337327(SLinkOperations.getTarget(it, "type", true), module);
       }
@@ -209,6 +209,15 @@ public class BaseMethodDeclaration_Behavior {
 
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "throwsItem", true);
+  }
+
+  public static boolean call_hasAnnotation_5499146221535822693(SNode thisNode, SNode annotation) {
+    for (SNode annotationInstance : SLinkOperations.getTargets(thisNode, "annotation", true)) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == annotation) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633081786(SNode thisNode) {

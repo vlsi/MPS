@@ -10,6 +10,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.runtime.TemplateModel;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_3893401255414132234(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -20,11 +21,19 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceOneToMany", "none");
   }
 
+  public static boolean baseMappingRule_Condition_8371596541809066879(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return false;
+  }
+
   public static Iterable sourceNodesQuery_3893401255414086894(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getChildren(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_3893401255414161783(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _context.getNode(), _context.getNode());
+  }
+
+  public static TemplateModel getDescriptor() {
+    return new TemplateModelImpl();
   }
 }

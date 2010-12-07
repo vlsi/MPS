@@ -18,7 +18,7 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class HighlightUtil {
-  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, EditorCheckerAdapter checker, EditorContext editorContext) {
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, IEditorChecker checker, EditorContext editorContext) {
     if (errorReporter == null) {
       errorReporter = new SimpleErrorReporter(node, message, null, null, MessageStatus.ERROR, new NodeMessageTarget());
     }

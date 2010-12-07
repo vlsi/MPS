@@ -1,9 +1,10 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.lang.generator.structure.MappingScript;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -28,27 +29,27 @@ public class NullGenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void pushRule(SNode node) {
+  public void pushRule(SNodePointer node) {
   }
 
   @Override
-  public void closeRule(SNode node) {
+  public void closeRule(SNodePointer node) {
   }
 
   @Override
-  public void pushRuleConsequence(SNode node) {
+  public void pushRuleConsequence(SNodePointer node) {
   }
 
   @Override
-  public void pushSwitch(SNode node) {
+  public void pushSwitch(SNodePointer node) {
   }
 
   @Override
-  public void pushMacro(SNode node) {
+  public void pushMacro(SNodePointer node) {
   }
 
   @Override
-  public void closeMacro(SNode node) {
+  public void closeMacro(SNodePointer node) {
   }
 
   @Override
@@ -63,12 +64,13 @@ public class NullGenerationTracer implements IGenerationTracer {
   public void replaceOutputNode(SNode node, SNode newOutputNode) {
   }
 
+
   @Override
-  public void pushTemplateNode(SNode node) {
+  public void pushTemplateNode(SNodePointer node) {
   }
 
   @Override
-  public void closeTemplateNode(SNode node) {
+  public void closeTemplateNode(SNodePointer node) {
   }
 
   @Override
@@ -107,10 +109,10 @@ public class NullGenerationTracer implements IGenerationTracer {
   }
 
   @Override
-  public void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> preMappingScripts) {
+  public void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> preMappingScripts) {
   }
 
   @Override
-  public void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> postMappingScripts) {
+  public void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<TemplateMappingScript> postMappingScripts) {
   }
 }

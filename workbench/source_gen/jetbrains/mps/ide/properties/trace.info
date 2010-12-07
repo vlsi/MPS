@@ -440,11 +440,11 @@
       <varInfo nodeId="3201642974933961020" varName="context" />
       <varInfo nodeId="3201642974933961018" varName="l" />
     </scopeInfo>
-    <unitInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="145" startPosition="15" endLine="199" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="901357770590758372" fileName="StandardDialogs.java" startLine="203" startPosition="15" endLine="257" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="901357770590751352" fileName="StandardDialogs.java" startLine="357" startPosition="15" endLine="436" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="261" startPosition="15" endLine="353" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="21" startPosition="15" endLine="141" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="145" startPosition="15" endLine="199" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="901357770590758372" fileName="StandardDialogs.java" startLine="203" startPosition="15" endLine="257" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="901357770590751352" fileName="StandardDialogs.java" startLine="357" startPosition="15" endLine="436" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="261" startPosition="15" endLine="353" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="21" startPosition="15" endLine="141" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
     <unitInfo nodeId="3201642974933960738" fileName="StandardDialogs.java" startLine="19" startPosition="0" endLine="439" endPosition="0" unitName="jetbrains.mps.ide.properties.StandardDialogs" />
   </root>
   <root nodeId="4060390951635972879">
@@ -1151,29 +1151,29 @@
       <varInfo nodeId="4060390951635974473" varName="caption" />
       <varInfo nodeId="4060390951635974478" varName="properties" />
     </scopeInfo>
-    <unitInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="257" startPosition="53" endLine="263" endPosition="9" unitName="Anonymous in invoke() in jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="257" startPosition="53" endLine="263" endPosition="9" unitName="Anonymous in invoke() in jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
     <unitInfo nodeId="7355563316698773787" fileName="StandardComponents.java" startLine="421" startPosition="45" endLine="427" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$15" />
-    <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="499" startPosition="64" endLine="506" endPosition="9" unitName="Anonymous in invoke() in jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="499" startPosition="64" endLine="506" endPosition="9" unitName="Anonymous in invoke() in jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
     <unitInfo nodeId="4060390951635974914" fileName="StandardComponents.java" startLine="584" startPosition="38" endLine="592" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$18" />
-    <unitInfo nodeId="7355563316698764000" fileName="StandardComponents.java" startLine="202" startPosition="15" endLine="212" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764000" fileName="StandardComponents.java" startLine="202" startPosition="15" endLine="212" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
     <unitInfo nodeId="4060390951635973518" fileName="StandardComponents.java" startLine="401" startPosition="38" endLine="411" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$14" />
-    <unitInfo nodeId="7355563316698764465" fileName="StandardComponents.java" startLine="546" startPosition="15" endLine="556" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698763744" fileName="StandardComponents.java" startLine="154" startPosition="15" endLine="166" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698763930" fileName="StandardComponents.java" startLine="170" startPosition="15" endLine="182" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698763965" fileName="StandardComponents.java" startLine="186" startPosition="15" endLine="198" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="485" startPosition="64" endLine="497" endPosition="9" unitName="Anonymous in invoke() in jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698764024" fileName="StandardComponents.java" startLine="216" startPosition="15" endLine="229" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="233" startPosition="15" endLine="246" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698763895" fileName="StandardComponents.java" startLine="132" startPosition="15" endLine="146" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="277" startPosition="15" endLine="292" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698764249" fileName="StandardComponents.java" startLine="296" startPosition="15" endLine="311" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698764305" fileName="StandardComponents.java" startLine="315" startPosition="15" endLine="330" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="112" startPosition="15" endLine="128" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="508" startPosition="64" endLine="524" endPosition="9" unitName="Anonymous in invoke() in jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764465" fileName="StandardComponents.java" startLine="546" startPosition="15" endLine="556" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698763744" fileName="StandardComponents.java" startLine="154" startPosition="15" endLine="166" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698763930" fileName="StandardComponents.java" startLine="170" startPosition="15" endLine="182" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698763965" fileName="StandardComponents.java" startLine="186" startPosition="15" endLine="198" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="485" startPosition="64" endLine="497" endPosition="9" unitName="Anonymous in invoke() in jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764024" fileName="StandardComponents.java" startLine="216" startPosition="15" endLine="229" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="233" startPosition="15" endLine="246" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698763895" fileName="StandardComponents.java" startLine="132" startPosition="15" endLine="146" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764203" fileName="StandardComponents.java" startLine="277" startPosition="15" endLine="292" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764249" fileName="StandardComponents.java" startLine="296" startPosition="15" endLine="311" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764305" fileName="StandardComponents.java" startLine="315" startPosition="15" endLine="330" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="112" startPosition="15" endLine="128" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
+    <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="508" startPosition="64" endLine="524" endPosition="9" unitName="Anonymous in invoke() in jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
     <unitInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="334" startPosition="31" endLine="351" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$13" />
-    <unitInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="250" startPosition="15" endLine="273" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="250" startPosition="15" endLine="273" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
     <unitInfo nodeId="4060390951635972881" fileName="StandardComponents.java" startLine="604" startPosition="0" endLine="637" endPosition="0" unitName="jetbrains.mps.ide.properties.StandardComponents$CheckboxDescriptor" />
-    <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="478" startPosition="15" endLine="530" endPosition="5" unitName="jetbrains.mps.ide.properties._FunctionTypes._return_P0_E0$anonymous" />
+    <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="478" startPosition="15" endLine="530" endPosition="5" unitName="jetbrains.mps.ide.properties._return_P0_E0$anonymous" />
     <unitInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="107" startPosition="0" endLine="638" endPosition="0" unitName="jetbrains.mps.ide.properties.StandardComponents" />
   </root>
   <root nodeId="5923576889075039038">
@@ -1584,62 +1584,61 @@
     <nodeInfo nodeId="5923576889075042709" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="26" startPosition="51" endLine="27" endPosition="26" />
     <nodeInfo nodeId="5923576889075042715" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="27" startPosition="26" endLine="28" endPosition="32" />
     <nodeInfo nodeId="5923576889075042723" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SolutionPropertiesDialog.java" startLine="31" startPosition="39" endLine="32" endPosition="110" />
-    <nodeInfo nodeId="5923576889075042730" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="32" startPosition="110" endLine="33" endPosition="131" />
-    <nodeInfo nodeId="5923576889075042741" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="33" startPosition="131" endLine="34" endPosition="121" />
-    <nodeInfo nodeId="7168227884262507356" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="35" startPosition="40" endLine="36" endPosition="136" />
-    <nodeInfo nodeId="7168227884262507367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="36" startPosition="136" endLine="37" endPosition="155" />
-    <nodeInfo nodeId="5923576889075042775" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionPropertiesDialog.java" startLine="38" startPosition="5" endLine="39" endPosition="62" />
-    <nodeInfo nodeId="5923576889075042783" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="42" startPosition="44" endLine="43" endPosition="44" />
-    <nodeInfo nodeId="5923576889075042790" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="43" startPosition="44" endLine="44" endPosition="60" />
-    <nodeInfo nodeId="5923576889075042811" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionPropertiesDialog.java" startLine="48" startPosition="29" endLine="49" endPosition="19" />
-    <nodeInfo nodeId="5923576889075042824" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SolutionPropertiesDialog.java" startLine="52" startPosition="25" endLine="53" endPosition="81" />
-    <nodeInfo nodeId="5923576889075042832" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="53" startPosition="81" endLine="54" endPosition="48" />
-    <nodeInfo nodeId="5923576889075042839" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="54" startPosition="48" endLine="55" endPosition="67" />
-    <nodeInfo nodeId="5923576889075042846" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="55" startPosition="67" endLine="56" endPosition="26" />
-    <nodeInfo nodeId="5923576889075042852" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionPropertiesDialog.java" startLine="58" startPosition="43" endLine="59" endPosition="16" />
-    <nodeInfo nodeId="5923576889075042858" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionPropertiesDialog.java" startLine="62" startPosition="37" endLine="63" endPosition="57" />
-    <nodeInfo nodeId="5923576889075042871" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="66" startPosition="25" endLine="67" endPosition="20" />
-    <nodeInfo nodeId="5923576889075042873" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="67" startPosition="20" endLine="68" endPosition="35" />
+    <nodeInfo nodeId="5923576889075042741" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="32" startPosition="110" endLine="33" endPosition="121" />
+    <nodeInfo nodeId="7168227884262507356" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="34" startPosition="40" endLine="35" endPosition="136" />
+    <nodeInfo nodeId="7168227884262507367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="35" startPosition="136" endLine="36" endPosition="155" />
+    <nodeInfo nodeId="5923576889075042775" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionPropertiesDialog.java" startLine="37" startPosition="5" endLine="38" endPosition="62" />
+    <nodeInfo nodeId="5923576889075042783" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="41" startPosition="44" endLine="42" endPosition="44" />
+    <nodeInfo nodeId="5923576889075042790" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="42" startPosition="44" endLine="43" endPosition="60" />
+    <nodeInfo nodeId="5923576889075042811" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionPropertiesDialog.java" startLine="47" startPosition="29" endLine="48" endPosition="19" />
+    <nodeInfo nodeId="5923576889075042824" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SolutionPropertiesDialog.java" startLine="51" startPosition="25" endLine="52" endPosition="81" />
+    <nodeInfo nodeId="5923576889075042832" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="52" startPosition="81" endLine="53" endPosition="48" />
+    <nodeInfo nodeId="5923576889075042839" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="53" startPosition="48" endLine="54" endPosition="67" />
+    <nodeInfo nodeId="5923576889075042846" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="54" startPosition="67" endLine="55" endPosition="26" />
+    <nodeInfo nodeId="5923576889075042852" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionPropertiesDialog.java" startLine="57" startPosition="43" endLine="58" endPosition="16" />
+    <nodeInfo nodeId="5923576889075042858" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionPropertiesDialog.java" startLine="61" startPosition="37" endLine="62" endPosition="57" />
+    <nodeInfo nodeId="5923576889075042871" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="65" startPosition="25" endLine="66" endPosition="20" />
+    <nodeInfo nodeId="5923576889075042873" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="66" startPosition="20" endLine="67" endPosition="35" />
     <nodeInfo nodeId="5923576889075042696" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="20" startPosition="53" endLine="23" endPosition="0" />
-    <nodeInfo nodeId="5923576889075042805" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SolutionPropertiesDialog.java" startLine="47" startPosition="37" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="5923576889075042805" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SolutionPropertiesDialog.java" startLine="46" startPosition="37" endLine="49" endPosition="5" />
     <nodeInfo nodeId="5923576889075042690" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SolutionPropertiesDialog.java" startLine="19" startPosition="41" endLine="23" endPosition="4" />
-    <nodeInfo nodeId="7168227884262507350" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SolutionPropertiesDialog.java" startLine="34" startPosition="121" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="5923576889075042854" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="7168227884262507350" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SolutionPropertiesDialog.java" startLine="33" startPosition="121" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="5923576889075042854" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <nodeInfo nodeId="5923576889075042700" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="SolutionPropertiesDialog.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
-    <nodeInfo nodeId="5923576889075042779" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="5923576889075042867" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="65" startPosition="0" endLine="70" endPosition="0" />
-    <nodeInfo nodeId="5923576889075042820" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="51" startPosition="67" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="5923576889075042813" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="50" startPosition="5" endLine="58" endPosition="43" />
-    <nodeInfo nodeId="5923576889075042719" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="30" startPosition="0" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="5923576889075042801" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="46" startPosition="0" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="5923576889075042779" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="5923576889075042867" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="5923576889075042820" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="50" startPosition="67" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="5923576889075042813" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionPropertiesDialog.java" startLine="49" startPosition="5" endLine="57" endPosition="43" />
+    <nodeInfo nodeId="5923576889075042719" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="30" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="5923576889075042801" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionPropertiesDialog.java" startLine="45" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="5923576889075042699" fileName="SolutionPropertiesDialog.java" startLine="21" startPosition="27" endLine="21" endPosition="27" />
-    <scopeInfo nodeId="5923576889075042810" fileName="SolutionPropertiesDialog.java" startLine="48" startPosition="29" endLine="49" endPosition="19" />
-    <scopeInfo nodeId="5923576889075042857" fileName="SolutionPropertiesDialog.java" startLine="62" startPosition="37" endLine="63" endPosition="57" />
-    <scopeInfo nodeId="7168227884262507351" fileName="SolutionPropertiesDialog.java" startLine="35" startPosition="40" endLine="37" endPosition="155" />
-    <scopeInfo nodeId="5923576889075042782" fileName="SolutionPropertiesDialog.java" startLine="42" startPosition="44" endLine="44" endPosition="60" />
-    <scopeInfo nodeId="5923576889075042870" fileName="SolutionPropertiesDialog.java" startLine="66" startPosition="25" endLine="68" endPosition="35" />
+    <scopeInfo nodeId="5923576889075042810" fileName="SolutionPropertiesDialog.java" startLine="47" startPosition="29" endLine="48" endPosition="19" />
+    <scopeInfo nodeId="5923576889075042857" fileName="SolutionPropertiesDialog.java" startLine="61" startPosition="37" endLine="62" endPosition="57" />
+    <scopeInfo nodeId="7168227884262507351" fileName="SolutionPropertiesDialog.java" startLine="34" startPosition="40" endLine="36" endPosition="155" />
+    <scopeInfo nodeId="5923576889075042782" fileName="SolutionPropertiesDialog.java" startLine="41" startPosition="44" endLine="43" endPosition="60" />
+    <scopeInfo nodeId="5923576889075042870" fileName="SolutionPropertiesDialog.java" startLine="65" startPosition="25" endLine="67" endPosition="35" />
     <scopeInfo nodeId="5923576889075042696" fileName="SolutionPropertiesDialog.java" startLine="20" startPosition="53" endLine="23" endPosition="0" />
     <scopeInfo nodeId="5923576889075042705" fileName="SolutionPropertiesDialog.java" startLine="25" startPosition="95" endLine="28" endPosition="32" />
-    <scopeInfo nodeId="5923576889075042823" fileName="SolutionPropertiesDialog.java" startLine="52" startPosition="25" endLine="56" endPosition="26">
+    <scopeInfo nodeId="5923576889075042823" fileName="SolutionPropertiesDialog.java" startLine="51" startPosition="25" endLine="55" endPosition="26">
       <varInfo nodeId="5923576889075042825" varName="solutionDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042854" fileName="SolutionPropertiesDialog.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042854" fileName="SolutionPropertiesDialog.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="5923576889075042700" fileName="SolutionPropertiesDialog.java" startLine="24" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="5923576889075042703" varName="operationContext" />
       <varInfo nodeId="5923576889075042701" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042779" fileName="SolutionPropertiesDialog.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042867" fileName="SolutionPropertiesDialog.java" startLine="65" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042820" fileName="SolutionPropertiesDialog.java" startLine="51" startPosition="67" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042722" fileName="SolutionPropertiesDialog.java" startLine="31" startPosition="39" endLine="39" endPosition="62">
+    <scopeInfo nodeId="5923576889075042779" fileName="SolutionPropertiesDialog.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042867" fileName="SolutionPropertiesDialog.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042722" fileName="SolutionPropertiesDialog.java" startLine="31" startPosition="39" endLine="38" endPosition="62">
       <varInfo nodeId="5923576889075042724" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042719" fileName="SolutionPropertiesDialog.java" startLine="30" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5923576889075042804" fileName="SolutionPropertiesDialog.java" startLine="47" startPosition="37" endLine="59" endPosition="16" />
-    <scopeInfo nodeId="5923576889075042801" fileName="SolutionPropertiesDialog.java" startLine="46" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042820" fileName="SolutionPropertiesDialog.java" startLine="50" startPosition="67" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042719" fileName="SolutionPropertiesDialog.java" startLine="30" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="5923576889075042804" fileName="SolutionPropertiesDialog.java" startLine="46" startPosition="37" endLine="58" endPosition="16" />
+    <scopeInfo nodeId="5923576889075042801" fileName="SolutionPropertiesDialog.java" startLine="45" startPosition="0" endLine="60" endPosition="0" />
     <unitInfo nodeId="5923576889075042695" fileName="SolutionPropertiesDialog.java" startLine="20" startPosition="39" endLine="23" endPosition="3" unitName="jetbrains.mps.ide.properties.SolutionPropertiesDialog$1" />
-    <unitInfo nodeId="5923576889075042819" fileName="SolutionPropertiesDialog.java" startLine="51" startPosition="55" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.properties.SolutionPropertiesDialog$2" />
-    <unitInfo nodeId="5923576889075042681" fileName="SolutionPropertiesDialog.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.properties.SolutionPropertiesDialog" />
+    <unitInfo nodeId="5923576889075042819" fileName="SolutionPropertiesDialog.java" startLine="50" startPosition="55" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.properties.SolutionPropertiesDialog$2" />
+    <unitInfo nodeId="5923576889075042681" fileName="SolutionPropertiesDialog.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.properties.SolutionPropertiesDialog" />
   </root>
   <root nodeId="5923576889075042878">
     <nodeInfo nodeId="5923576889075042881" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ModelProperties.java" startLine="24" startPosition="47" endLine="25" endPosition="49" />
@@ -2112,72 +2111,69 @@
     <unitInfo nodeId="5923576889075043939" fileName="LanguageProperties.java" startLine="16" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.ide.properties.LanguageProperties" />
   </root>
   <root nodeId="5923576889075044370">
-    <nodeInfo nodeId="5923576889075044373" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="SolutionProperties.java" startLine="8" startPosition="58" endLine="9" endPosition="70" />
-    <nodeInfo nodeId="5923576889075044377" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="SolutionProperties.java" startLine="9" startPosition="70" endLine="10" endPosition="56" />
-    <nodeInfo nodeId="5923576889075044381" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="SolutionProperties.java" startLine="10" startPosition="56" endLine="11" endPosition="69" />
-    <nodeInfo nodeId="5923576889075044385" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SolutionProperties.java" startLine="12" startPosition="0" endLine="13" endPosition="38" />
-    <nodeInfo nodeId="5923576889075044388" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SolutionProperties.java" startLine="13" startPosition="38" endLine="14" endPosition="36" />
-    <nodeInfo nodeId="5923576889075044391" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SolutionProperties.java" startLine="14" startPosition="36" endLine="15" endPosition="30" />
-    <nodeInfo nodeId="5923576889075044401" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionProperties.java" startLine="20" startPosition="40" endLine="21" endPosition="31" />
-    <nodeInfo nodeId="5923576889075044411" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="24" startPosition="63" endLine="25" endPosition="44" />
-    <nodeInfo nodeId="5923576889075044421" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionProperties.java" startLine="28" startPosition="38" endLine="29" endPosition="29" />
-    <nodeInfo nodeId="5923576889075044431" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="32" startPosition="59" endLine="33" endPosition="40" />
-    <nodeInfo nodeId="5923576889075044441" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionProperties.java" startLine="36" startPosition="33" endLine="37" endPosition="24" />
-    <nodeInfo nodeId="5923576889075044451" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="40" startPosition="48" endLine="41" endPosition="30" />
-    <nodeInfo nodeId="5923576889075044463" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="SolutionProperties.java" startLine="45" startPosition="53" endLine="46" endPosition="52" />
-    <nodeInfo nodeId="5923576889075044467" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="46" startPosition="52" endLine="47" endPosition="31" />
-    <nodeInfo nodeId="5923576889075044470" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SolutionProperties.java" startLine="47" startPosition="31" endLine="48" endPosition="59" />
-    <nodeInfo nodeId="5923576889075044476" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="48" startPosition="59" endLine="49" endPosition="50" />
-    <nodeInfo nodeId="5923576889075044484" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="49" startPosition="50" endLine="50" endPosition="46" />
-    <nodeInfo nodeId="5923576889075044492" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="50" startPosition="46" endLine="51" endPosition="37" />
-    <nodeInfo nodeId="5923576889075044507" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="SolutionProperties.java" startLine="55" startPosition="51" endLine="56" endPosition="52" />
-    <nodeInfo nodeId="5923576889075044511" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="56" startPosition="52" endLine="57" endPosition="29" />
-    <nodeInfo nodeId="5923576889075044514" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SolutionProperties.java" startLine="57" startPosition="29" endLine="58" endPosition="59" />
-    <nodeInfo nodeId="5923576889075044520" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="58" startPosition="59" endLine="59" endPosition="48" />
-    <nodeInfo nodeId="5923576889075044527" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="59" startPosition="48" endLine="60" endPosition="44" />
-    <nodeInfo nodeId="5923576889075044534" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="60" startPosition="44" endLine="61" endPosition="34" />
-    <nodeInfo nodeId="5923576889075044394" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="SolutionProperties.java" startLine="16" startPosition="0" endLine="18" endPosition="3" />
-    <nodeInfo nodeId="5923576889075044397" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <nodeInfo nodeId="5923576889075044405" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="5923576889075044417" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <nodeInfo nodeId="5923576889075044425" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="5923576889075044437" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="5923576889075044445" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <nodeInfo nodeId="5923576889075044457" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="43" startPosition="0" endLine="53" endPosition="0" />
-    <nodeInfo nodeId="5923576889075044501" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="53" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044396" fileName="SolutionProperties.java" startLine="17" startPosition="31" endLine="17" endPosition="31" />
-    <scopeInfo nodeId="5923576889075044400" fileName="SolutionProperties.java" startLine="20" startPosition="40" endLine="21" endPosition="31" />
-    <scopeInfo nodeId="5923576889075044410" fileName="SolutionProperties.java" startLine="24" startPosition="63" endLine="25" endPosition="44" />
-    <scopeInfo nodeId="5923576889075044420" fileName="SolutionProperties.java" startLine="28" startPosition="38" endLine="29" endPosition="29" />
-    <scopeInfo nodeId="5923576889075044430" fileName="SolutionProperties.java" startLine="32" startPosition="59" endLine="33" endPosition="40" />
-    <scopeInfo nodeId="5923576889075044440" fileName="SolutionProperties.java" startLine="36" startPosition="33" endLine="37" endPosition="24" />
-    <scopeInfo nodeId="5923576889075044450" fileName="SolutionProperties.java" startLine="40" startPosition="48" endLine="41" endPosition="30" />
-    <scopeInfo nodeId="5923576889075044394" fileName="SolutionProperties.java" startLine="16" startPosition="0" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="5923576889075044397" fileName="SolutionProperties.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044405" fileName="SolutionProperties.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <nodeInfo nodeId="5923576889075044377" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="SolutionProperties.java" startLine="8" startPosition="58" endLine="9" endPosition="56" />
+    <nodeInfo nodeId="5923576889075044381" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="SolutionProperties.java" startLine="9" startPosition="56" endLine="10" endPosition="69" />
+    <nodeInfo nodeId="5923576889075044385" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SolutionProperties.java" startLine="11" startPosition="0" endLine="12" endPosition="38" />
+    <nodeInfo nodeId="5923576889075044388" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SolutionProperties.java" startLine="12" startPosition="38" endLine="13" endPosition="36" />
+    <nodeInfo nodeId="5923576889075044391" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SolutionProperties.java" startLine="13" startPosition="36" endLine="14" endPosition="30" />
+    <nodeInfo nodeId="5923576889075044401" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionProperties.java" startLine="19" startPosition="40" endLine="20" endPosition="31" />
+    <nodeInfo nodeId="5923576889075044411" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="23" startPosition="63" endLine="24" endPosition="44" />
+    <nodeInfo nodeId="5923576889075044421" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionProperties.java" startLine="27" startPosition="38" endLine="28" endPosition="29" />
+    <nodeInfo nodeId="5923576889075044431" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="31" startPosition="59" endLine="32" endPosition="40" />
+    <nodeInfo nodeId="5923576889075044441" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SolutionProperties.java" startLine="35" startPosition="33" endLine="36" endPosition="24" />
+    <nodeInfo nodeId="5923576889075044451" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="39" startPosition="48" endLine="40" endPosition="30" />
+    <nodeInfo nodeId="5923576889075044463" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="SolutionProperties.java" startLine="44" startPosition="53" endLine="45" endPosition="52" />
+    <nodeInfo nodeId="5923576889075044467" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="45" startPosition="52" endLine="46" endPosition="31" />
+    <nodeInfo nodeId="5923576889075044470" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SolutionProperties.java" startLine="46" startPosition="31" endLine="47" endPosition="59" />
+    <nodeInfo nodeId="5923576889075044484" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="47" startPosition="59" endLine="48" endPosition="46" />
+    <nodeInfo nodeId="5923576889075044492" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="48" startPosition="46" endLine="49" endPosition="37" />
+    <nodeInfo nodeId="5923576889075044507" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="SolutionProperties.java" startLine="53" startPosition="51" endLine="54" endPosition="52" />
+    <nodeInfo nodeId="5923576889075044511" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="54" startPosition="52" endLine="55" endPosition="29" />
+    <nodeInfo nodeId="5923576889075044514" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SolutionProperties.java" startLine="55" startPosition="29" endLine="56" endPosition="59" />
+    <nodeInfo nodeId="5923576889075044527" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="56" startPosition="59" endLine="57" endPosition="44" />
+    <nodeInfo nodeId="5923576889075044534" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SolutionProperties.java" startLine="57" startPosition="44" endLine="58" endPosition="34" />
+    <nodeInfo nodeId="5923576889075044394" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="SolutionProperties.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
+    <nodeInfo nodeId="5923576889075044397" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="5923576889075044405" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <nodeInfo nodeId="5923576889075044417" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="5923576889075044425" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="5923576889075044437" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="5923576889075044445" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="5923576889075044457" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="5923576889075044501" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SolutionProperties.java" startLine="51" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044396" fileName="SolutionProperties.java" startLine="16" startPosition="31" endLine="16" endPosition="31" />
+    <scopeInfo nodeId="5923576889075044400" fileName="SolutionProperties.java" startLine="19" startPosition="40" endLine="20" endPosition="31" />
+    <scopeInfo nodeId="5923576889075044410" fileName="SolutionProperties.java" startLine="23" startPosition="63" endLine="24" endPosition="44" />
+    <scopeInfo nodeId="5923576889075044420" fileName="SolutionProperties.java" startLine="27" startPosition="38" endLine="28" endPosition="29" />
+    <scopeInfo nodeId="5923576889075044430" fileName="SolutionProperties.java" startLine="31" startPosition="59" endLine="32" endPosition="40" />
+    <scopeInfo nodeId="5923576889075044440" fileName="SolutionProperties.java" startLine="35" startPosition="33" endLine="36" endPosition="24" />
+    <scopeInfo nodeId="5923576889075044450" fileName="SolutionProperties.java" startLine="39" startPosition="48" endLine="40" endPosition="30" />
+    <scopeInfo nodeId="5923576889075044394" fileName="SolutionProperties.java" startLine="15" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="5923576889075044397" fileName="SolutionProperties.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044405" fileName="SolutionProperties.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="5923576889075044408" varName="externallyVisible" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044417" fileName="SolutionProperties.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044425" fileName="SolutionProperties.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="5923576889075044417" fileName="SolutionProperties.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044425" fileName="SolutionProperties.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="5923576889075044428" varName="dontLoadClasses" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044437" fileName="SolutionProperties.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5923576889075044445" fileName="SolutionProperties.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="5923576889075044437" fileName="SolutionProperties.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="5923576889075044445" fileName="SolutionProperties.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="5923576889075044448" varName="outputPath" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044462" fileName="SolutionProperties.java" startLine="45" startPosition="53" endLine="51" endPosition="37">
+    <scopeInfo nodeId="5923576889075044462" fileName="SolutionProperties.java" startLine="44" startPosition="53" endLine="49" endPosition="37">
       <varInfo nodeId="5923576889075044471" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044506" fileName="SolutionProperties.java" startLine="55" startPosition="51" endLine="61" endPosition="34">
+    <scopeInfo nodeId="5923576889075044506" fileName="SolutionProperties.java" startLine="53" startPosition="51" endLine="58" endPosition="34">
       <varInfo nodeId="5923576889075044515" varName="d" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044457" fileName="SolutionProperties.java" startLine="43" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="5923576889075044457" fileName="SolutionProperties.java" startLine="42" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="5923576889075044460" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075044501" fileName="SolutionProperties.java" startLine="53" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="5923576889075044501" fileName="SolutionProperties.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="5923576889075044504" varName="descriptor" />
     </scopeInfo>
-    <unitInfo nodeId="5923576889075044370" fileName="SolutionProperties.java" startLine="8" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.properties.SolutionProperties" />
+    <unitInfo nodeId="5923576889075044370" fileName="SolutionProperties.java" startLine="8" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ide.properties.SolutionProperties" />
   </root>
   <root nodeId="5923576889075044542">
     <nodeInfo nodeId="5923576889075044544" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="ModuleProperties.java" startLine="14" startPosition="31" endLine="15" endPosition="53" />

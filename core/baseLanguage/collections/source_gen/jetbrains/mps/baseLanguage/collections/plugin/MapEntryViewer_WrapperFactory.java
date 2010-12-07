@@ -32,7 +32,7 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
       if (value == null) {
         return false;
       }
-      if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljava.util.Map$Entry;", value.virtualMachine()))) {
+      if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljava/util/Map$Entry;", value.virtualMachine()))) {
         return false;
       }
       return true;

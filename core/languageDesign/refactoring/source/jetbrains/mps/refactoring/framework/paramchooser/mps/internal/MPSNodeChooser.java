@@ -18,9 +18,9 @@ package jetbrains.mps.refactoring.framework.paramchooser.mps.internal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.projectPane.ProjectModulesPoolTreeNode;
-import jetbrains.mps.ide.projectPane.ProjectTree;
-import jetbrains.mps.ide.projectPane.ProjectTreeFindHelper;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
@@ -34,11 +34,11 @@ import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 
 public class MPSNodeChooser implements IChooser {
-  private ProjectTree myTree;
+  private jetbrains.mps.ide.projectPane.logicalview.ProjectTree myTree;
   private JScrollPane myScrollPane;
 
-  private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
-    protected ProjectTree getTree() {
+  private ProjectTreeFindHelper myFindHelper = new jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper() {
+    protected jetbrains.mps.ide.projectPane.logicalview.ProjectTree getTree() {
       return myTree;
     }
 

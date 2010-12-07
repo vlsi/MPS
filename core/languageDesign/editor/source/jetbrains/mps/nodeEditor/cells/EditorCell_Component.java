@@ -76,7 +76,7 @@ public class EditorCell_Component extends EditorCell_Basic {
     return myComponent;
   }
 
-  public void paintContent(Graphics g) {
+  public void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
   public int getAscent() {

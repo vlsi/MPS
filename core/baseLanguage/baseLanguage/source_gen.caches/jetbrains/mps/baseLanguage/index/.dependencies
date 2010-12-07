@@ -34,7 +34,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.psi.search.GlobalSearchScope" />
-    <classNode extendsClassName="com.intellij.util.indexing.FileBasedIndex.ValueProcessor" />
+    <classNode extendsClassName="com.intellij.util.indexing.ValueProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer" file="ClassifierSuccessorsIndexer.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -44,6 +44,7 @@
     <classNode dependClassName="com.intellij.util.io.DataExternalizer" />
     <classNode dependClassName="com.intellij.util.io.KeyDescriptor" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
@@ -55,7 +56,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -64,8 +64,8 @@
     <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.index.BaseSNodeDescriptorIndex" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.util.indexing.DataIndexer" />
-    <classNode extendsClassName="com.intellij.util.indexing.FileBasedIndex.InputFilter" />
     <classNode extendsClassName="com.intellij.util.indexing.FileBasedIndexExtension" />
+    <classNode extendsClassName="com.intellij.util.indexing.InputFilter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.index.GlobalSNodeId" file="GlobalSNodeId.java">
     <classNode dependClassName="java.lang.Object" />

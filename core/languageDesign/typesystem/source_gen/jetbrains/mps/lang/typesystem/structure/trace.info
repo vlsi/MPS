@@ -79,6 +79,7 @@
   <unitInfo fileName="LinkPatternVariableReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference" />
   <unitInfo fileName="PatternVariableReference.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" />
   <unitInfo fileName="CreateEquationStatement.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" />
+  <unitInfo fileName="ReplacementRuleReference.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference" />
   <unitInfo fileName="OriginalNodeId.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OriginalNodeId" />
   <unitInfo fileName="NodeInfo.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.NodeInfo" />
   <unitInfo fileName="VariableConverterItem.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.VariableConverterItem" />
@@ -145,6 +146,6 @@
   <unitInfo fileName="WhenConcreteStatement.java" startLine="14" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" />
   <unitInfo fileName="DependentComputationItem.java" startLine="13" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.DependentComputationItem" />
   <unitInfo fileName="TypesystemQuickFix.java" startLine="14" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" />
-  <unitInfo fileName="AbstractInequationStatement.java" startLine="12" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement" />
+  <unitInfo fileName="AbstractInequationStatement.java" startLine="12" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement" />
 </debugInfo>
 

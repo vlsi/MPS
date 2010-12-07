@@ -13,7 +13,7 @@ import com.intellij.openapi.project.Project;
 import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;

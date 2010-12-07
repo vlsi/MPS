@@ -27,3 +27,4 @@
 +debugTests:**/*_Test.java
 +analyzers:**/*_Test.java
 +**/math/*Test.java
++make:**/*_Test.java

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 

@@ -33,6 +33,7 @@
       <languagePath path="${project}/languages/generictasks/generictasks.mpl" folder="buildlanguage" />
       <languagePath path="${project}/languages/packaging/packaging.mpl" folder="packaging" />
       <languagePath path="${project}/languages/property/property.mpl" folder="buildlanguage" />
+      <languagePath path="${project}/languages/packmps/packmps.mpl" folder="customMPS" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

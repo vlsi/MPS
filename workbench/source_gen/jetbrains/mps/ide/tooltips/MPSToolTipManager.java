@@ -13,7 +13,9 @@ import javax.swing.JComponent;
 import java.awt.Point;
 import java.awt.Frame;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.util.HtmlCharsUtil;
 import javax.swing.JLabel;
+import com.intellij.ide.TooltipEvent;
 import com.intellij.ide.IdeTooltipManager;
 import com.intellij.openapi.application.ApplicationManager;
 
@@ -126,7 +128,10 @@ public class MPSToolTipManager implements ApplicationComponent {
     if (text == null) {
       return;
     }
-    if (eq_k25xh9_a0b0n(myText, text)) {
+    if (text.contains("\n")) {
+      text = "<html>" + HtmlCharsUtil.asHtml(text, false) + "</html>";
+    }
+    if (eq_k25xh9_a0c0n(myText, text)) {
       return;
     }
     myText = text;
@@ -134,11 +139,11 @@ public class MPSToolTipManager implements ApplicationComponent {
     label.setOpaque(false);
     myIdeTooltip = new IdeTooltip(component, point, label) {
       @Override
-      protected boolean canAutohideOn(MouseEvent event, boolean b) {
+      protected boolean canAutohideOn(TooltipEvent event) {
         return false;
       }
     };
-    IdeTooltipManager.getInstance().showTipNow(myIdeTooltip);
+    IdeTooltipManager.getInstance().show(myIdeTooltip, true);
   }
 
   public void hideToolTip() {
@@ -164,7 +169,7 @@ public class MPSToolTipManager implements ApplicationComponent {
     );
   }
 
-  private static boolean eq_k25xh9_a0b0n(Object a, Object b) {
+  private static boolean eq_k25xh9_a0c0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

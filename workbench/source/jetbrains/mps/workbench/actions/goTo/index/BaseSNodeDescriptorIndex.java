@@ -43,7 +43,7 @@ import java.util.List;
 
 public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndexExtension<List<BaseSNodeDescriptor>> {
   private static final Logger LOG = Logger.getLogger(BaseSNodeDescriptorIndex.class);
-  public static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
+  private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
   private final MyInputFilter myInputFilter = new MyInputFilter();
   private final MyIndexer myIndexer = new MyIndexer();
@@ -83,7 +83,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     if (model == null) {
       //todo only roots loading
       IFile file = new IdeaFileSystemProvider().getFile(inputData.getFile());
-      model = ModelPersistence.readModel(file, ModelLoadingState.ROOTS_LOADED).getModel();
+      model = ModelPersistence.readModel(file, ModelLoadingState.FULLY_LOADED).getModel();
       model.setLoading(true);
       inputData.putUserData(PARSED_MODEL, model);
     }

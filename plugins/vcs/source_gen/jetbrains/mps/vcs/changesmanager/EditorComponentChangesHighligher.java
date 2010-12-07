@@ -283,7 +283,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void rollbackChanges(@NotNull EditorContext editorContext) {
-    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Change>() {
+    myModelChangesManager.rollbackChanges(ListSequence.fromList(myFoldingAreaPainter.getCurrentMessageGroup().getMessages()).<Change>select(new ISelector<EditorComponentChangesHighligher.ChangeEditorMessage, Change>() {
       public Change select(EditorComponentChangesHighligher.ChangeEditorMessage msg) {
         return msg.getChange();
       }
@@ -462,7 +462,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     @Override
     public boolean isBackground() {
-      return true;
+      return myHighlighted || myEnabled;
     }
 
     @Override

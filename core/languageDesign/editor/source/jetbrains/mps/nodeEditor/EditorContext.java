@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -23,6 +25,7 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 
+import java.awt.Frame;
 import java.util.List;
 
 /**
@@ -75,6 +78,12 @@ public class EditorContext {
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
+  }
+
+  public final Frame getMainFrame() {
+    Project project = getOperationContext().getProject();
+    if (project == null) return null;
+    return WindowManager.getInstance().getFrame(project);
   }
 
   public void resetModelEvents() {
@@ -261,9 +270,8 @@ public class EditorContext {
       final Memento memento = (Memento) o;
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          myNodeEditorComponent.relayoutIfNeeded();
+          myNodeEditorComponent.relayout();
           memento.restore(myNodeEditorComponent);
-          myNodeEditorComponent.relayoutIfNeeded();
         }
       });
 
@@ -320,6 +328,4 @@ public class EditorContext {
   public <T> T executeCommand(Computable<T> c) {
     return myNodeEditorComponent.executeCommand(c);
   }
-
-
 }

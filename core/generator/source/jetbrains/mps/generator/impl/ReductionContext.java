@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.lang.generator.structure.ReductionRule;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,7 +15,7 @@ public class ReductionContext {
 
   private final ReductionContext myParent;
   private final SNode myInputNode;
-  private final ReductionRule myReductionRule;
+  private final TemplateReductionRule myReductionRule;
   private final QueryExecutionContext myExecutionContext;
 
   ReductionContext(@NotNull QueryExecutionContext executionContext) {
@@ -25,14 +25,14 @@ public class ReductionContext {
     myExecutionContext = executionContext;
   }
 
-  ReductionContext(@NotNull ReductionContext parent, @NotNull SNode inputNode, @NotNull ReductionRule reductionRule) {
+  ReductionContext(@NotNull ReductionContext parent, @NotNull SNode inputNode, @NotNull TemplateReductionRule reductionRule) {
     myParent = parent;
     myInputNode = inputNode;
     myReductionRule = reductionRule;
     myExecutionContext = parent.myExecutionContext;
   }
 
-  boolean isBlocked(SNode inputNode, ReductionRule rule) {
+  boolean isBlocked(SNode inputNode, TemplateReductionRule rule) {
     for (ReductionContext current = this; current != null; current = current.myParent) {
       if (current.myInputNode == inputNode && current.myReductionRule == rule) {
         return true;
@@ -60,8 +60,8 @@ public class ReductionContext {
       return set2;
     if (set2 == null)
       return set1;
-    if (set1 instanceof ReductionRule) {
-      if (set2 instanceof ReductionRule) {
+    if (set1 instanceof TemplateReductionRule) {
+      if (set2 instanceof TemplateReductionRule) {
         Set<Object> set = new HashSet<Object>(2);
         set.add(set1);
         set.add(set2);
@@ -73,7 +73,7 @@ public class ReductionContext {
         return set;
       }
     } else {
-      if (set2 instanceof ReductionRule) {
+      if (set2 instanceof TemplateReductionRule) {
         Set<Object> set = new HashSet<Object>(((Set) set1).size() + 1);
         set.addAll((Set) set1);
         set.add(set2);

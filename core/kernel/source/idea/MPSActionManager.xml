@@ -62,6 +62,11 @@
       <reference ref="Stop"/>
     </group>
 
+    <!--for being able to use MuteAction in j.m.ide.actions-->
+    <group id="DebugMuteAction" popup="false">
+      <action id="Mute" class="jetbrains.mps.debug.api.integration.ui.MuteBreakpoints"/>
+    </group>
+
     <!--actions for alt+shift+F9/F10-->
     <action id="ChooseRunConfiguration" class="com.intellij.execution.actions.ChooseRunConfigurationAction"
             text="Run..." icon="/general/toolWindowRun.png"/>
@@ -79,11 +84,6 @@
     <group id="MPSToolbarRunGroup">
       <!--for integration purposes-->
       <add-to-group group-id="ToolbarRunGroup" relative-to-action="RunConfiguration" anchor="before"/>
-    </group>
-
-    <!--add "select in" action to all the editors-->
-    <group id="CodeEditorViewGroup" class="com.intellij.ide.actions.CodeEditorActionGroup">
-      <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
     </group>
 
     <group id="MPSProjectActions" text="MPSProjectActions">

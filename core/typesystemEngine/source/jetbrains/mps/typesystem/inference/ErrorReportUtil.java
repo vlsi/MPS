@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class ErrorReportUtil {
   public static boolean shouldReportError(SNode node) {

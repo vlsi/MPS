@@ -21,8 +21,13 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroNode;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -30,6 +35,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -61,7 +67,7 @@ public class TemplateProcessor {
     }
 
     try {
-      List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, TemplateContext.getContext(context, mappingName), 0);
+      List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, context.subContext(mappingName), 0);
       if (outputNodes == null) {
         throw new TemplateProcessingFailureException();
       }
@@ -98,16 +104,16 @@ public class TemplateProcessor {
       if (macroCount <= nodeMacrosToSkip) continue;
       NodeMacro nodeMacro = (NodeMacro) templateChildNode;
 
-      generationTracer.pushMacro(nodeMacro.getNode());
+      generationTracer.pushMacro(new SNodePointer(nodeMacro.getNode()));
       try {
         return createOutputNodesForTemplateNodeWithMacro(nodeMacro, templateNode, context, nodeMacrosToSkip);
       } finally {
-        generationTracer.closeMacro(nodeMacro.getNode());
+        generationTracer.closeMacro(new SNodePointer(nodeMacro.getNode()));
       }
     }
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
-    generationTracer.pushTemplateNode(templateNode);
+    generationTracer.pushTemplateNode(new SNodePointer(templateNode));
     SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
     GeneratorMappings mappings = myGenerator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
@@ -149,7 +155,7 @@ public class TemplateProcessor {
       if (templateChildNode instanceof PropertyMacro) {
         myReductionContext.getQueryExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, context.getInput(), templateNode, outputNode, context);
       } else if (templateChildNode instanceof ReferenceMacro) {
-        ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
+        ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroNode(
           outputNode, (ReferenceMacro) templateChildNode,
           templateNode,
           context, myReductionContext
@@ -185,7 +191,7 @@ public class TemplateProcessor {
       }
     } finally {
       generationTracer.pushOutputNode(outputNode);
-      generationTracer.closeTemplateNode(templateNode);
+      generationTracer.closeTemplateNode(new SNodePointer(templateNode));
     }
     return Collections.singletonList(outputNode);
   }
@@ -205,7 +211,7 @@ public class TemplateProcessor {
           generationTracer.pushInputNode(newInputNode);
         }
         try {
-          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, TemplateContext.getContext(templateContext, mappingName, newInputNode), nodeMacrosToSkip + 1);
+          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         } finally {
           if (inputChanged) {
@@ -218,11 +224,12 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = getNewInputNodes(nodeMacro, templateContext);
+      SNodePointer templateNodeRef = templateNode == null ? null : new SNodePointer(templateNode);
       for (SNode newInputNode : newInputNodes) {
-        List<SNode> _outputNodes =
+        Collection<SNode> _outputNodes =
           newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.isRegistered()
-            ? myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myReductionContext, new boolean[]{false})
-            : myGenerator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, myReductionContext);
+            ? myGenerator.copyNodeFromInputNode(mappingName, templateNodeRef, newInputNode, myReductionContext, new boolean[]{false})
+            : myGenerator.copyNodeFromExternalNode(mappingName, templateNodeRef, newInputNode, myReductionContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
@@ -246,7 +253,7 @@ public class TemplateProcessor {
       // $IF$
       List<SNode> _outputNodes = null;
       if (myReductionContext.getQueryExecutor().checkConditionForIfMacro(templateContext.getInput(), (IfMacro) nodeMacro, templateContext)) {
-        _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, TemplateContext.getContext(templateContext, mappingName), nodeMacrosToSkip + 1);
+        _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
       } else {
         // alternative consequence
         RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
@@ -257,15 +264,11 @@ public class TemplateProcessor {
               myGenerator.showErrorMessage(templateContext.getInput(), null, nodeMacro.getNode(), "error processing $IF$/alternative");
               return null;
             }
-//            SNode altTemplateNode = nodeAndMappingNamePairs.o1;
-//            if (nodeAndMappingNamePairs.o2 != null) {
-//              mappingName = nodeAndMappingNamePairs.o2;
-//            }
-//            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode);
+
             for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
               SNode altTemplateNode = nodeAndMappingNamePair.o1;
               String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-              List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(innerMappingName, altTemplateNode, TemplateContext.getContext(templateContext, innerMappingName));
+              List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(innerMappingName, altTemplateNode, templateContext.subContext(innerMappingName));
               if (__outputNodes != null) {
                 if (_outputNodes == null) _outputNodes = new ArrayList<SNode>();
                 _outputNodes.addAll(__outputNodes);
@@ -295,7 +298,7 @@ public class TemplateProcessor {
           generationTracer.pushInputNode(newInputNode);
         }
         try {
-          TemplateContext newcontext = TemplateContext.getContext(templateContext, mappingName, newInputNode);
+          TemplateContext newcontext = templateContext.subContext(mappingName, newInputNode);
           if (macro_mapperFunction != null) {
             SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
             generationTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
@@ -330,49 +333,43 @@ public class TemplateProcessor {
         return null;
       }
 
+      final SNodePointer switchPtr = new SNodePointer(templateSwitch.getNode());
       SNode newInputNode = getNewInputNode(nodeMacro, templateContext);
       if (newInputNode == null) {
-        GeneratorMessage generatorMessage = templateSwitch.getNullInputMessage();
-        if (generatorMessage != null) {
-          GeneratorUtil.processGeneratorMessage(generatorMessage, templateContext.getInput(), nodeMacro.getNode(), null, myGenerator);
+        TemplateSwitchMapping tswitch = myGenerator.getSwitch(switchPtr);
+        if(tswitch != null) {
+          tswitch.processNull(new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, myGenerator.getOperationContext(), myGenerator.getGenerationTracer()), switchPtr, templateContext);
         }
-        return outputNodes; // skip template
+        return Collections.emptyList(); // skip template
       }
 
       boolean inputChanged = (newInputNode != templateContext.getInput());
       if (inputChanged) {
         generationTracer.pushInputNode(newInputNode);
       }
-      generationTracer.pushSwitch(templateSwitch.getNode());
+      generationTracer.pushSwitch(new SNodePointer(templateSwitch.getNode()));
       try {
-        List<SNode> _outputNodes = null;
-        RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getRuleManager().getConsequenceForSwitchCase(newInputNode, templateSwitch, myReductionContext, myGenerator);
-        if (consequenceForCase == null) {
-          // no switch-case found for the inputNode - continue with templateNode under the $switch$
-          _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, TemplateContext.getContext(templateContext, mappingName, newInputNode), nodeMacrosToSkip + 1);
+        final TemplateContext switchContext = templateContext.subContext(mappingName, newInputNode);
 
-        } else {
-          List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myReductionContext, myGenerator);
-          if (nodeAndMappingNamePairs == null) {
-            myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), consequenceForCase.getNode(), "error processing $SWITCH$");
-            return null;
+        Collection<SNode> collection = myGenerator.tryToReduce(switchContext, switchPtr, mappingName, myReductionContext);
+        if (collection == null) {
+          // try the default case
+          TemplateSwitchMapping tswitch = myGenerator.getSwitch(switchPtr);
+          if(tswitch != null) {
+            TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, myGenerator.getOperationContext(), myGenerator.getGenerationTracer());
+            collection = tswitch.applyDefault(environment, switchPtr, mappingName, switchContext);
           }
 
-          for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-            SNode templateNodeForCase = nodeAndMappingNamePair.o1;
-            String innerMappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : mappingName;
-            List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(innerMappingName, templateNodeForCase, TemplateContext.getContext(templateContext, innerMappingName, newInputNode));
-            if (__outputNodes != null) {
-              if (_outputNodes == null) _outputNodes = new ArrayList<SNode>();
-              _outputNodes.addAll(__outputNodes);
-            }
+          // no switch-case found for the inputNode - continue with templateNode under the $switch$
+          if(collection == null) {
+            collection = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
           }
         }
 
-        if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+        if (collection != null) {
+          outputNodes.addAll(collection);
+        }
 
-      } catch (AbandonRuleInputException e) {
-        // it's ok. just ignore.
       } finally {
         if (inputChanged) {
           generationTracer.closeInputNode(newInputNode);
@@ -420,13 +417,13 @@ public class TemplateProcessor {
       if (inputChanged) {
         generationTracer.pushInputNode(newInputNode);
       }
-      generationTracer.pushTemplateNode(includeTemplate.getNode());
+      generationTracer.pushTemplateNode(new SNodePointer(includeTemplate.getNode()));
 
       try {
         for (TemplateFragment fragment : fragments) {
           SNode templateForInclude = fragment.getParent().getNode();
           mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
-          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, TemplateContext.getContext(templateContext, mappingName, newInputNode));
+          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, templateContext.subContext(mappingName, newInputNode));
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         }
       } finally {
@@ -469,13 +466,13 @@ public class TemplateProcessor {
       if (inputChanged) {
         generationTracer.pushInputNode(newInputNode);
       }
-      generationTracer.pushTemplateNode(template.getNode());
+      generationTracer.pushTemplateNode(new SNodePointer(template.getNode()));
 
       try {
         for (TemplateFragment fragment : fragments) {
           SNode templateForInclude = fragment.getParent().getNode();
           mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
-          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, TemplateContext.getContext(newcontext, mappingName));
+          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newcontext.subContext(mappingName));
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         }
       } finally {
@@ -495,7 +492,7 @@ public class TemplateProcessor {
           generationTracer.pushInputNode(newInputNode);
         }
         try {
-          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, TemplateContext.getContext(templateContext, mappingName, newInputNode), nodeMacrosToSkip + 1);
+          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName, newInputNode), nodeMacrosToSkip + 1);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         } finally {
           if (inputChanged) {
@@ -508,26 +505,11 @@ public class TemplateProcessor {
   }
 
   private SNode getNewInputNode(NodeMacro nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext);
-//    if(myGenerator.isStrict() && node != null) {
-//      if(node.getModel() != myGenerator.getInputModel()) {
-//        myGenerator.showErrorMessage(nodeMacro.getNode(), "returned node should be from input model");
-//      }
-//    }
-    return node;
+    return InputQueryUtil.getNewInputNode(nodeMacro, context.getInput(), context, myReductionContext);
   }
 
   private List<SNode> getNewInputNodes(NodeMacro nodeMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext);
-//    if(myGenerator.isStrict() && nodes != null) {
-//      for(SNode node : nodes) {
-//        if(node.getModel() != myGenerator.getInputModel()) {
-//          myGenerator.showErrorMessage(nodeMacro.getNode(), "returned nodes should be from input model");
-//          break;
-//        }
-//      }
-//    }
-    return nodes;
+    return InputQueryUtil.getNewInputNodes(nodeMacro, context.getInput(), context, myReductionContext);
   }
 
   @Nullable
@@ -541,6 +523,6 @@ public class TemplateProcessor {
     return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, context, 0);
   }
 
-  public static class TemplateProcessingFailureException extends Exception {
+  public static class TemplateProcessingFailureException extends GenerationException {
   }
 }

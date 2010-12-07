@@ -39,11 +39,11 @@
   <unitInfo fileName="PlusOperation_Editor.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.PlusOperation_Editor" />
   <unitInfo fileName="IfFunction_Editor.java" startLine="18" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.samples.formulaLanguage.editor.IfFunction_Editor" />
   <root nodeId="1154452994236">
-    <nodeInfo nodeId="1154453067084" fileName="Operation_leftOperand_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="102" />
+    <nodeInfo nodeId="1154453067084" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Operation_leftOperand_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="102" />
     <scopeInfo nodeId="1154453031692" fileName="Operation_leftOperand_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="102" />
   </root>
   <root nodeId="1154453098790">
-    <nodeInfo nodeId="1154453098794" fileName="Operation_rightOperand_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="101" />
+    <nodeInfo nodeId="1154453098794" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Operation_rightOperand_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="101" />
     <scopeInfo nodeId="1154453098793" fileName="Operation_rightOperand_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="101" />
   </root>
   <root nodeId="1154453497787">

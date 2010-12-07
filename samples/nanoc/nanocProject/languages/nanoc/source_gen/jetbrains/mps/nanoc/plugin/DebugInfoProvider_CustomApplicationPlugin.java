@@ -8,10 +8,9 @@ import jetbrains.mps.debug.api.DebugInfoManager;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
@@ -22,14 +21,13 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
     {
-      Mapper2<SNode, Project, AbstractMPSBreakpoint> creator = new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
-        public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
+      Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
+        public ILocationBreakpoint value(SNode debuggableNode, Project project) {
           return new GDBBreakpoint(new SNodePointer(debuggableNode), project);
         }
       };
       manager.addConceptBreakpointCreator("jetbrains.mps.nanoc.structure.CStatement", creator);
     }
-    BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 
   public void doDispose() {

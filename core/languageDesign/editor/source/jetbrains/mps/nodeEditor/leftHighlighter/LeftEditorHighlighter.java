@@ -16,15 +16,13 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TIntObjectProcedure;
+import jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -41,6 +39,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -61,6 +61,7 @@ import java.util.List;
  */
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
+  private static final Color BACKGROUND_COLOR = new Color(0xF0F0F0);
 
   private static final int MIN_LEFT_TEXT_WIDTH = 0;
   private static final int MIN_ICON_RENDERERS_WIDTH = 14;
@@ -68,7 +69,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private static final int MIN_RIGHT_FOLDING_AREA_WIDTH = 4;
   private static final int GAP_BETWEEN_ICONS = 3;
   private static final int LEFT_GAP = 1;
-  private static final Comparator<AbstractFoldingAreaPainter> FOLDING_ARAE_PAINTERS_COMPARATOR = new Comparator<AbstractFoldingAreaPainter>() {
+  private static final Comparator<AbstractFoldingAreaPainter> FOLDING_AREA_PAINTERS_COMPARATOR = new Comparator<AbstractFoldingAreaPainter>() {
     @Override
     public int compare(AbstractFoldingAreaPainter afap1, AbstractFoldingAreaPainter afap2) {
       if (afap1.getWeight() == afap2.getWeight() && !afap1.equals(afap2)) {
@@ -79,10 +80,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   };
 
   private EditorComponent myEditorComponent;
-  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_ARAE_PAINTERS_COMPARATOR);
+  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_AREA_PAINTERS_COMPARATOR);
   private BracketsPainter myBracketsPainter;
 
-  private Set<LeftTextColumn> myTextColumns = new HashSet<LeftTextColumn>();
+  private List<AbstractLeftColumn> myTextColumns = new ArrayList<AbstractLeftColumn>();
 
   private BookmarkListener myListener;
   private BookmarkManager myBookmarkManager = null;
@@ -104,19 +105,21 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private int myHeight;
   
   public LeftEditorHighlighter(@NotNull EditorComponent editorComponent) {
-    setBackground(Color.white);
+    setBackground(BACKGROUND_COLOR);
     myEditorComponent = editorComponent;
     addMouseListener(new MouseAdapter() {
       @Override
       public void mouseExited(MouseEvent e) {
         mouseExitedFoldingArea(e);
-        mouseExitedIconsArea();
+        mouseExitedIconsArea(e);
       }
 
       @Override
       public void mouseEntered(MouseEvent e) {
         if (isInFoldingArea(e)) {
           mouseMovedInFoldingArea(e);
+        } if (isInTextArea(e)) {
+          mouseMovedInTextArea(e);
         } else {
           mouseMovedInIconsArea(e);
         }
@@ -125,8 +128,12 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     addMouseMotionListener(new MouseMotionAdapter() {
       public void mouseMoved(MouseEvent e) {
         if (isInFoldingArea(e)) {
-          mouseExitedIconsArea();
+          mouseExitedIconsArea(e);
           mouseMovedInFoldingArea(e);
+        } else if (isInTextArea(e)) {
+          mouseExitedFoldingArea(e);
+          mouseExitedIconsArea(e);
+          mouseMovedInTextArea(e);
         } else {
           mouseExitedFoldingArea(e);
           mouseMovedInIconsArea(e);
@@ -186,6 +193,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       painter.dispose();
     }
+    for (AbstractLeftColumn column : myTextColumns) {
+      column.dispose();
+    }
     BookmarkManager bookmarkManager = getBookmarkManager();
     if (bookmarkManager != null) {
       bookmarkManager.removeBookmarkListener(myListener);
@@ -205,7 +215,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     repaint();
   }
 
-  public void addTextColumn(LeftTextColumn column) {
+  public void addTextColumn(AbstractLeftColumn column) {
     myTextColumns.add(column);
     recalculateTextColumnWidth();
     recalculateIconRenderersWidth();
@@ -213,7 +223,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     repaint();
   }
 
-  public void removeTextColumn(LeftTextColumn column) {
+  public void removeTextColumn(AbstractLeftColumn column) {
     myTextColumns.remove(column);
     recalculateTextColumnWidth();
     recalculateIconRenderersWidth();
@@ -242,7 +252,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private void paintBackgroundAndFoldingLine(Graphics g, Rectangle clipBounds) {
     Graphics2D g2d = (Graphics2D) g;
     g.setColor(getBackground());
-    g.fillRect(clipBounds.x, clipBounds.y, clipBounds.width, clipBounds.height);
+    g.fillRect(clipBounds.x, clipBounds.y, Math.min(clipBounds.width, myFoldingLineX - clipBounds.x), clipBounds.height);
+    g.setColor(getEditorComponent().getBackground());
+    g.fillRect(Math.max(clipBounds.x, myFoldingLineX), clipBounds.y, clipBounds.width - Math.max(0, myFoldingLineX - clipBounds.x), clipBounds.height);
 
     // same as in EditorComponent.paint() method
     EditorCell deepestCell = myEditorComponent.getDeepestSelectedCell();
@@ -286,11 +298,13 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     if (clipBounds.x > myTextColumnWidth) {
       return;
     }
-    for (LeftTextColumn column : myTextColumns) {
+    for (AbstractLeftColumn column : myTextColumns) {
       if (clipBounds.x > column.getX() + column.getWidth()) {
         continue;
       }
-      column.paint(g, myEditorComponent);
+      column.paint(g);
+      UIUtil.drawVDottedLine((Graphics2D) g, column.getX() + column.getWidth() - 1,
+        (int) clipBounds.getMinY(), (int) clipBounds.getMaxY(), getBackground(), Color.GRAY);
     }
   }
 
@@ -513,9 +527,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   private void recalculateTextColumnWidth() {
     int offset = 0;
-    for (LeftTextColumn column : myTextColumns) {
+    for (AbstractLeftColumn column : myTextColumns) {
       column.setX(offset);
-      column.relayout(myEditorComponent);
+      column.relayout();
       offset += column.getWidth();
     }
     myTextColumnWidth = Math.max(MIN_LEFT_TEXT_WIDTH, offset);
@@ -569,7 +583,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         }
       }
     } else if (isInTextArea(e)) {
-      LeftTextColumn column = getTextColumnByX(e.getX());
+      AbstractLeftColumn column = getTextColumnByX(e.getX());
       if (column != null) {
         return column.getTooltipText(e);
       }
@@ -595,7 +609,14 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         } else {
           mousePressedInIconsArea(e);
         }
+        if (!e.isConsumed() && e.getButton() == MouseEvent.BUTTON3 && e.getID() == MouseEvent.MOUSE_PRESSED) {
+          BaseGroup actionGroup = ActionUtils.getGroup(EditorLeftPanelMenu_ActionGroup.ID);
+          ActionPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, actionGroup);
+          popupMenu.getComponent().show(e.getComponent(), e.getX(), e.getY());
+          e.consume();
+        }
     }
+
     // suppressing future event processig in case event was consumed by one of LeftHighlighter elements
     if (!e.isConsumed()) {
       super.processMouseEvent(e);
@@ -607,7 +628,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     if (iconRenderer != null) {
       if (e.getButton() == MouseEvent.BUTTON3) {
         JPopupMenu popupMenu = iconRenderer.getPopupMenu();
-        if (popupMenu != null && e.getID() == MouseEvent.MOUSE_CLICKED) {
+        if (popupMenu != null && e.getID() == MouseEvent.MOUSE_PRESSED) {
           e.consume();
           popupMenu.show(myEditorComponent, e.getX(), e.getY());
         }
@@ -637,9 +658,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   private void mousePressedInTextArea(MouseEvent e) {
     if (e.isConsumed()) return;
-    LeftTextColumn column = getTextColumnByX(e.getX());
+    AbstractLeftColumn column = getTextColumnByX(e.getX());
     if (column != null) {
-      column.mousePressed(e, myEditorComponent);
+      column.mousePressed(e);
       e.consume();
     }
   }
@@ -663,8 +684,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     }
   }
 
-  private void mouseExitedIconsArea() {
-    if (!myMouseIsInFoldingArea && myRendererUnderMouse != null) {
+  private void mouseExitedIconsArea(MouseEvent e) {
+    if (!myMouseIsInFoldingArea && myRendererUnderMouse != null && !isInTextArea(e)) {
       setCursor(null);
     }
   }
@@ -678,6 +699,16 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       setCursor(null);
     }
     myRendererUnderMouse = newRendererUnderMouse;
+  }
+
+  private void mouseMovedInTextArea(MouseEvent e) {
+    myMouseIsInFoldingArea = false;
+    AbstractLeftColumn textColumn = getTextColumnByX(e.getX());
+    if (textColumn != null) {
+      setCursor(textColumn.getCursor(e));
+    } else {
+      setCursor(null);
+    }
   }
 
   private boolean isInFoldingArea(MouseEvent e) {
@@ -711,8 +742,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return theRenderer[0];
   }
 
-  private LeftTextColumn getTextColumnByX(int x) {
-    for (LeftTextColumn column : myTextColumns) {
+  private AbstractLeftColumn getTextColumnByX(int x) {
+    for (AbstractLeftColumn column : myTextColumns) {
       int columnX = column.getX();
       if (columnX <= x && columnX + column.getWidth() > x) {
         return column;

@@ -40,7 +40,6 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
@@ -64,6 +63,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SystemInfo;
@@ -105,7 +105,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final int SCROLL_GAP = 15;
 
   private final Object myAdditionalPaintersLock = new Object();
-  private TypeCheckingContext myTypeCheckingContext;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -125,7 +124,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
   private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
-  private WeakHashMap<ReferencedNodeContext, WeakReference<EditorCell>> myRefNodeContextsToBigCellsMap = new WeakHashMap<ReferencedNodeContext, WeakReference<EditorCell>>();
 
   private WeakHashMap<EditorCell, Set<SNodePointer>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<EditorCell, Set<SNodePointer>>();
   private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>>();
@@ -136,8 +134,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
   private CellTracker myCellTracker = new CellTracker();
-
-  private boolean myRelayoutRequested = false;
+  
   private boolean myIsEditable = true;
 
   private boolean myDisposed = false;
@@ -212,6 +209,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private List<CellSelectionListener> mySelectionListeners = new LinkedList<CellSelectionListener>();
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
+  private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
   private PropertyChangeListener myFocusListener;
   private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
 
@@ -796,7 +794,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
         myNode = node;
-        createTypeCheckingContext();
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
@@ -1062,6 +1059,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new HashSet<EditorCell>(myFoldedCells);
   }
 
+  void clearFoldedCells() {
+    myFoldedCells.clear();
+  }
+
   public void setBracesEnabled(EditorCell cell, boolean enabled) {
     if (enabled) {
       myBracesEnabledCells.add(cell);
@@ -1074,12 +1075,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new HashSet<EditorCell>(myBracesEnabledCells);
   }
 
+  void clearBracesEnabledCells() {
+    myBracesEnabledCells.clear();
+  }
+
   public void flushEvents() {
     myEventsCollector.flush();
   }
 
   public void dispose() {
     if (myDisposed) throw new IllegalStateException(myDisposedTrace);
+    fireEditorWillBeDisposed();
     myDisposed = true;
     myDisposedTrace = new Throwable("Editor was disposed by: ");
     if (!MPSCore.getInstance().isTestMode()) {
@@ -1159,7 +1165,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     removeOurListeners();
     myCellsToRefTargetsToDependOnMap.clear();
     myNodesToBigCellsMap.clear();
-    myRefNodeContextsToBigCellsMap.clear();
     myNodePropertiesAccessedCleanlyToDependentCellsMap.clear();
     myNodePropertiesAccessedDirtilyToDependentCellsMap.clear();
     myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.clear();
@@ -1177,9 +1182,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     if (myRootCell != null) {
       ((EditorCell_Basic) myRootCell).onAdd();
-    }
-
-    requestRelayout();
+    }    
 
     Set<SModelDescriptor> oldModelsToDependOn = getModels(oldNodesToDependOn);
     Set<SModelDescriptor> newModelsToDependOn = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
@@ -1275,18 +1278,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT && shiftDown(keyEvent)) {
       return CellActionType.SELECT_RIGHT;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_UP && ctrlDown(keyEvent)) {
-      return CellActionType.SELECT_UP;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_W && ctrlDown(keyEvent)) {
-      return CellActionType.SELECT_UP;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && ctrlDown(keyEvent)) {
-      return CellActionType.SELECT_DOWN;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_W && ctrlShiftDown(keyEvent)) {
-      return CellActionType.SELECT_DOWN;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME && shiftDown(keyEvent)) {
       return CellActionType.SELECT_HOME;
@@ -1453,18 +1444,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     revalidate();
     repaint();
     myMessagesGutter.repaint();
-  }
-
-  public void requestRelayout() {
-    myRelayoutRequested = true;
-  }
-
-  public void relayoutIfNeeded() {
-    if (myRelayoutRequested) {
-      relayout();
-      myRelayoutRequested = false;
-    }
-  }
+  }  
 
   public void revalidateAndRepaint() {
     myLeftHighlighter.relayout(false);
@@ -1533,11 +1513,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     changeSelection(cell.getLastLeaf(CellConditions.SELECTABLE));
   }
 
+  @Nullable
   public EditorCell findNodeCell(final SNode node) {
     WeakReference<EditorCell> weakReference = myNodesToBigCellsMap.get(node);
     if (weakReference == null) return null;
     EditorCell result = weakReference.get();
-    if (result != null && result.getRootParent() != getRootCell()) {
+    if (result != null && (result.getRootParent() != getRootCell() || result.isUnderFolded())) {
       return null;
     }
     return result;
@@ -1605,7 +1586,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     clearUserData();
     rebuildEditorContent(null);
 
-    relayoutIfNeeded();
+    relayout();
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
@@ -1643,6 +1624,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  private void fireEditorWillBeDisposed() {
+    for (EditorDisposeListener listener : new ArrayList<EditorDisposeListener>(myDisposeListeners)) {
+      listener.editorWillBeDisposed(this);
+    }
+  }
+
+  public void addDisposeListener(EditorDisposeListener listener) {
+    if (!myDisposeListeners.contains(listener)) {
+      myDisposeListeners.add(listener);
+    }
+  }
+
+  public void removeDisposeListener(EditorDisposeListener listener) {
+    myDisposeListeners.remove(listener);
+  }
 
   public void addRebuildListener(RebuildListener listener) {
     myRebuildListeners.add(listener);
@@ -1714,7 +1710,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
               String s = message.getMessage();
-              final MPSErrorDialog dialog = new MPSErrorDialog(myOperationContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
+              final MPSErrorDialog dialog = new MPSErrorDialog(myEditorContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
               if (herror.getRuleModel() != null && herror.getRuleId() != null) {
                 final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
                 final JButton button = new JButton();
@@ -1868,16 +1864,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         mySelectedCell.setSelected(true);
       }
 
-      boolean eq = false;
-      if (newSelectedCell != null && mySelectedCell != null) {
-        String id1 = newSelectedCell.getCellId();
-        String id2 = mySelectedCell.getCellId();
-
-        if (id1 != null)
-          eq = id1.equals(id2);
-      }
-
-      //if (!eq)
       fireCellSelectionChanged(oldSelection, newSelectedCell);
     }
 
@@ -2051,7 +2037,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());
 
-      myRootCell.paint(g);
+      myRootCell.paint(g, ParentSettings.createDefaultSetting());
     }
 
     for (AdditionalPainter additionalPainter : additionalPainters) {
@@ -2145,18 +2131,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public TypeCheckingContext getTypeCheckingContext() {
-    return myTypeCheckingContext;
-  }
-
-  protected void createTypeCheckingContext() {
-    myTypeCheckingContext = TypeContextManager.getInstance().getContextForEditedRootNode(myNode, this, true);
+    return TypeContextManager.getInstance().getContextForEditedRootNode(myNode, this, true);
   }
 
   protected void disposeTypeCheckingContext() {
-    if (myTypeCheckingContext != null) {
-      TypeContextManager.getInstance().removeOwnerForRootNodeContext(myNode, this);
-      myTypeCheckingContext = null;
-    }
+    TypeContextManager.getInstance().removeOwnerForRootNodeContext(myNode, this);
   }
 
   public void sendKeyEvent(KeyEvent keyEvent) {
@@ -2181,11 +2160,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               if (sNode == null) {
                 return;
               }
+              TypeCheckingContext typeCheckingContext = getTypeCheckingContext();
+              typeCheckingContext.clear();
               Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
               if (highlighter != null) {
                 highlighter.resetCheckedState(EditorComponent.this);
+              } else {
+                typeCheckingContext.checkRoot();
               }
-              getTypeCheckingContext().checkRoot(true);
               rebuildEditorContent();
             }
           });
@@ -2246,8 +2228,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         case DOWN:
         case SELECT_LEFT:
         case SELECT_RIGHT:
-        case SELECT_UP:
-        case SELECT_DOWN:
         case SELECT_HOME:
         case SELECT_END:
         case PAGE_UP:
@@ -2276,7 +2256,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myInsideOfCommand = false;
     }
 
-    relayoutIfNeeded();
+    relayout();
   }
 
   <T> T executeCommand(final Computable<T> c) {
@@ -2454,17 +2434,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  void registerAsBigCell(EditorCell cell, ReferencedNodeContext refContext, EditorManager manager) {
+  void registerAsBigCell(EditorCell cell, EditorManager manager) {
     if (manager == EditorManager.getInstanceFromContext(myOperationContext)) {
-      myRefNodeContextsToBigCellsMap.put(refContext, new WeakReference<EditorCell>(cell));
       myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<EditorCell>(cell));
     }
-  }
-
-  EditorCell getBigCellForRefContext(ReferencedNodeContext refContext) {
-    WeakReference<EditorCell> weakReference = myRefNodeContextsToBigCellsMap.get(refContext);
-    if (weakReference == null) return null;
-    return weakReference.get();
   }
 
   @Nullable
@@ -2548,8 +2521,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (getEditorContext() != null) {
         memento = getEditorContext().createMemento();
       }
-      myFoldedCells.clear();
-      myBracesEnabledCells.clear();
       action.run();
       if (getEditorContext() != null) {
         getEditorContext().setMemento(memento);
@@ -2563,8 +2534,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   boolean isCellSwapInProgress() {
     return myCellSwapInProgress;
   }
-
-  /*package*/
 
   CellInfo getRecentlySelectedCellInfo() {
     return myRecentlySelectedCellInfo;
@@ -2602,13 +2571,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       });
     }
     if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
-      EditorCell rootCell = getRootCell();
-      if (rootCell == null) return null;
-      SNode node = rootCell.getSNode();
-      if (node == null) return null;
-      SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-      if (modelDescriptor == null) return null;
-      return modelDescriptor.getModule();
+      return getOperationContext().getModule();
     }
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
     if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
@@ -2668,22 +2631,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                 cell.synchronizeViewWithModel();
                 fireCellSynchronized(cell);
               }
-            }
-            requestRelayout();
+            }            
           }
-          relayoutIfNeeded();
+          relayout();
           return;
         }
         if (editorCells != null) {
           rebuildEditorContent(events);
-          relayoutIfNeeded();
+          relayout();
           updateSelection(events, lastSelectedNode);
         } else if (editorCell_properties != null) {
           for (EditorCell_Property cell : editorCell_properties) {
             cell.synchronizeViewWithModel();
             fireCellSynchronized(cell);
-          }
-          requestRelayout();
+          }          
           revertErrorCells(events);
         }
       } else {
@@ -2697,12 +2658,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       revertErrorCells(events);
-      relayoutIfNeeded();
+      relayout();
       updateSelection(events, lastSelectedNode);
     }
 
     if (!myInsideOfCommand) {
-      relayoutIfNeeded();
+      relayout();
     }
   }
 
@@ -2868,10 +2829,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return false;
         }
       });
-    }
-    if (wereReverted[0]) {
-      requestRelayout();
-    }
+    }    
   }
 
   private void synchronizeWithModelWithinBigCell(EditorCell cell) {
@@ -2968,6 +2926,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(EditorCell cell);
+  }
+
+  public static interface EditorDisposeListener {
+    public void editorWillBeDisposed(EditorComponent component);
   }
 
   public void repaint() {

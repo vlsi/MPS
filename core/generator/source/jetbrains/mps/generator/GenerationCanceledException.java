@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.runtime.GenerationException;
+
 /**
  * @author Kostik
  */
 @SuppressWarnings({"serial"})
-public class GenerationCanceledException extends Exception {
+public class GenerationCanceledException extends GenerationException {
 
   public GenerationCanceledException() {
   }

@@ -15,16 +15,18 @@
  */
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
@@ -47,13 +49,6 @@ public class BreakpointsTable extends BreakpointsView {
   @Override
   public JComponent getMainComponent() {
     return myBreakpointsTable;
-  }
-
-  @Override
-  public void breakpointDeleted(AbstractMPSBreakpoint breakpoint) {
-    // do not know why, but update does not work here
-    int row = getBreakpointsList().indexOf(breakpoint);
-    myBreakpointsTableModel.breakpointDeleted(row);
   }
 
   @Override
@@ -80,7 +75,7 @@ public class BreakpointsTable extends BreakpointsView {
       public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         MyAbstractTableModel model = (MyAbstractTableModel) table.getModel();
         if (value != null) {
-          AbstractMPSBreakpoint bp = model.getBreakpointAt(row);
+          IBreakpoint bp = model.getBreakpointAt(row);
           myPanelWithCheckBox = new JPanelWithCheckbox(bp, true);
           myPanelWithCheckBox.getCheckBox().addItemListener(new ItemListener() {
             @Override
@@ -106,15 +101,23 @@ public class BreakpointsTable extends BreakpointsView {
       public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         MyAbstractTableModel model = (MyAbstractTableModel) table.getModel();
         if (value != null) {
-          AbstractMPSBreakpoint bp = model.getBreakpointAt(row);
+          IBreakpoint bp = model.getBreakpointAt(row);
           return new JPanelWithCheckbox(bp, isSelected);
         }
         return new JLabel();
       }
     });
+
+    myBreakpointsTable.getColumnModel().getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+      @Override
+      public void valueChanged(ListSelectionEvent e) {
+        fireBreakpointSelected(getSelectedBreakpoint());
+      }
+    });
   }
 
-  public AbstractMPSBreakpoint getSelectedBreakpoint() {
+  @Nullable
+  public IBreakpoint getSelectedBreakpoint() {
     MyAbstractTableModel model = (MyAbstractTableModel) myBreakpointsTable.getModel();
     int selectedRow = myBreakpointsTable.getSelectedRow();
     if (selectedRow < 0 || selectedRow >= model.getRowCount()) {
@@ -133,23 +136,6 @@ public class BreakpointsTable extends BreakpointsView {
   }
 
   private class MyAbstractTableModel extends AbstractTableModel {
-
-    public void breakpointDeleted(int row) {
-      ApplicationManager.getApplication().assertIsDispatchThread();
-
-      updateBreakpoints();
-      fireTableRowsDeleted(row, row);
-      int count = getRowCount();
-      if (count == 0) return;
-      int index;
-      if (count <= row) {
-        index = row - 1;
-      } else {
-        index = row;
-      }
-      myBreakpointsTable.getSelectionModel().setSelectionInterval(index, index);
-    }
-
     @Override
     public int getRowCount() {
       return getBreakpointsList().size();
@@ -163,7 +149,7 @@ public class BreakpointsTable extends BreakpointsView {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
       if (columnIndex == 0) {
-        AbstractMPSBreakpoint breakpoint = getBreakpointsList().get(rowIndex);
+        IBreakpoint breakpoint = getBreakpointsList().get(rowIndex);
         return breakpoint.isEnabled();
       }
       return null;
@@ -174,8 +160,8 @@ public class BreakpointsTable extends BreakpointsView {
       if (!(value instanceof Boolean)) return;
       if (columnIndex != 0) return;
       if (rowIndex >= getBreakpointsList().size()) return;
-      AbstractMPSBreakpoint breakpoint = getBreakpointsList().get(rowIndex);
-      if (breakpoint.supportsDisable()) {
+      IBreakpoint breakpoint = getBreakpointsList().get(rowIndex);
+      if (breakpoint.getKind().supportsDisable()) {
         breakpoint.setEnabled((Boolean) value);
       }
     }
@@ -183,10 +169,10 @@ public class BreakpointsTable extends BreakpointsView {
     @Override
     public boolean isCellEditable(int rowIndex, int columnIndex) {
       if (columnIndex != 0) return false;
-      return getBreakpointsList().get(rowIndex).supportsDisable();
+      return getBreakpointsList().get(rowIndex).getKind().supportsDisable();
     }
 
-    public AbstractMPSBreakpoint getBreakpointAt(int row) {
+    public IBreakpoint getBreakpointAt(int row) {
       return getBreakpointsList().get(row);
     }
 

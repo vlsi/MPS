@@ -393,7 +393,7 @@ public class QueriesGenerated {
     _context.putTransientObject("traversal_axis", axis);
     _context.putTransientObject("siblings_operation", _context.getNode());
     final List<SNode> oppFeats = ListSequence.fromList(new ArrayList<SNode>());
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -448,7 +448,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1225096838117(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode origOp = (SNode) _context.getTransientObject("siblings_operation");
     final SNode currOpp = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", false);
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -514,7 +514,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1225096837297(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode origOp = (SNode) _context.getTransientObject("siblings_operation");
     final SNode currOpp = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", false);
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(origOp)).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
@@ -570,7 +570,7 @@ __switch__:
     _context.putTransientObject("traversal_axis", axis);
     _context.putTransientObject("siblings_operation", _context.getNode());
     final List<SNode> oppFeats = ListSequence.fromList(new ArrayList<SNode>());
-    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(OperationsUtil.substituteApplicableOperations(_context.getNode())).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {

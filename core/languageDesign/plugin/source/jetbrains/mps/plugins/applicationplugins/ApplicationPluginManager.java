@@ -95,14 +95,12 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   private List<BaseApplicationPlugin> createPlugins() {
     Set<IModule> modules = new HashSet<IModule>();
-    modules.addAll(PluginUtil.collectSolutionPlugins());
+    modules.addAll(PluginUtil.getBootstrapPluginModules());
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       modules.addAll(PluginUtil.collectPluginModules(p));
     }
 
-    List<BaseApplicationPlugin> plugins = PluginUtil.createPlugins(modules, new ApplicationPluginCreator());
-
-    return plugins;
+    return PluginUtil.createPlugins(modules, new ApplicationPluginCreator());
   }
 
   public void disposePlugins() {

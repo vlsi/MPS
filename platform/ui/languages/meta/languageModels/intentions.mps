@@ -1,144 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)">
-  <persistence version="3" />
-  <refactoringHistory />
+  <persistence version="7" />
   <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <languageAspect modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
-  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="3" />
-  <import index="1" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
-  <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="6247544121092588774">
-    <property name="name" value="LinkDeclaration_addOverrideAnnotation" />
-    <link role="forConcept" targetNodeId="3.1071489288298" resolveInfo="LinkDeclaration" />
-    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="6247544121092588775">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6247544121092588776">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6247544121092588798">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="6247544121092588799">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6247544121092588817">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6247544121092588804">
-                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6247544121092588803" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="6247544121092588808">
-                  <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="6247544121092588816">
-                    <link role="annotationLink" targetNodeId="1.6247544121092588810" resolveInfo="OverrideLink" />
+  <import index="gec6" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
+  <import index="yvim" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
+  <import index="yvnr" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <import index="yvor" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="yvjb" modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" implicit="yes" />
+  <import index="yvnu" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <roots>
+    <node type="yvjb.IntentionDeclaration" typeId="yvjb.1192794744107:8" id="6247544121092588774">
+      <property name="name" nameId="yvnu.1169194664001:0" value="LinkDeclaration_addOverrideAnnotation" />
+      <link role="forConcept" roleId="yvjb.2522969319638198290:8" targetNodeId="yvnr.1071489288298:0" resolveInfo="LinkDeclaration" />
+    </node>
+    <node type="yvjb.IntentionDeclaration" typeId="yvjb.1192794744107:8" id="6030013275786405059">
+      <property name="name" nameId="yvnu.1169194664001:0" value="ChildAspectDefinition_makeOptional" />
+      <property name="isAvailableInChildNodes" nameId="yvjb.2522969319638091386:8" value="true" />
+      <link role="forConcept" roleId="yvjb.2522969319638198290:8" targetNodeId="gec6.6424935405034408143:2" resolveInfo="ChildAspectDefinition" />
+    </node>
+  </roots>
+  <root id="6247544121092588774">
+    <node role="descriptionFunction" roleId="yvjb.2522969319638093993:8" type="yvjb.DescriptionBlock" typeId="yvjb.1192794782375:8" id="6247544121092588775">
+      <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="6247544121092588776">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="6247544121092588798">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.TernaryOperatorExpression" typeId="yvor.1163668896201:3" id="6247544121092588799">
+            <node role="condition" roleId="yvor.1163668914799:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6247544121092588817">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6247544121092588804">
+                <node role="operand" roleId="yvor.1197027771414:3" type="yvjb.ConceptFunctionParameter_node" typeId="yvjb.1192796902958:8" id="6247544121092588803" />
+                <node role="operation" roleId="yvor.1197027833540:3" type="yvim.AttributeAccessOperation" typeId="yvim.1204761823073:16" id="6247544121092588808">
+                  <node role="attributeQualifier" roleId="yvim.1204762310079:16" type="yvim.NodeAttributeAccessQualifier" typeId="yvim.1204763358057:16" id="6247544121092588816">
+                    <link role="annotationLink" roleId="yvim.1204763443606:16" targetNodeId="gec6.6247544121092588810:2" resolveInfo="OverrideLink" />
                   </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="6247544121092588821" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvim.Node_IsNullOperation" typeId="yvim.1171999116870:16" id="6247544121092588821" />
             </node>
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6247544121092588822">
-              <property name="value" value="Add override annotation" />
+            <node role="ifTrue" roleId="yvor.1163668922816:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="6247544121092588822">
+              <property name="value" nameId="yvor.1070475926801:3" value="Add override annotation" />
             </node>
-            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6247544121092588823">
-              <property name="value" value="Remove override annotation" />
+            <node role="ifFalse" roleId="yvor.1163668934364:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="6247544121092588823">
+              <property name="value" nameId="yvor.1070475926801:3" value="Remove override annotation" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="6247544121092588777">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6247544121092588778">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6247544121092588824">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6247544121092588835">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6247544121092588828">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6247544121092588827" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="6247544121092588832">
-                <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="6247544121092588834">
-                  <link role="annotationLink" targetNodeId="1.6247544121092588810" resolveInfo="OverrideLink" />
+    <node role="executeFunction" roleId="yvjb.2522969319638198291:8" type="yvjb.ExecuteBlock" typeId="yvjb.1192795911897:8" id="6247544121092588777">
+      <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="6247544121092588778">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.IfStatement" typeId="yvor.1068580123159:3" id="6247544121092588824">
+          <node role="condition" roleId="yvor.1068580123160:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6247544121092588835">
+            <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6247544121092588828">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvjb.ConceptFunctionParameter_node" typeId="yvjb.1192796902958:8" id="6247544121092588827" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvim.AttributeAccessOperation" typeId="yvim.1204761823073:16" id="6247544121092588832">
+                <node role="attributeQualifier" roleId="yvim.1204762310079:16" type="yvim.NodeAttributeAccessQualifier" typeId="yvim.1204763358057:16" id="6247544121092588834">
+                  <link role="annotationLink" roleId="yvim.1204763443606:16" targetNodeId="gec6.6247544121092588810:2" resolveInfo="OverrideLink" />
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="6247544121092588839" />
+            <node role="operation" roleId="yvor.1197027833540:3" type="yvim.Node_IsNullOperation" typeId="yvim.1171999116870:16" id="6247544121092588839" />
           </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6247544121092588826">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6247544121092588840">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6247544121092588849">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6247544121092588852">
-                  <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="6247544121092588854">
-                    <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6247544121092588855">
-                      <link role="concept" targetNodeId="1.6247544121092588772" resolveInfo="OverrideAnnotation" />
+          <node role="ifTrue" roleId="yvor.1068580123161:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="6247544121092588826">
+            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="6247544121092588840">
+              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="6247544121092588849">
+                <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="6247544121092588852">
+                  <node role="creator" roleId="yvor.1145553007750:3" type="yvim.SNodeCreator" typeId="yvim.1180636770613:16" id="6247544121092588854">
+                    <node role="createdType" roleId="yvim.1180636770616:16" type="yvim.SNodeType" typeId="yvim.1138055754698:16" id="6247544121092588855">
+                      <link role="concept" roleId="yvim.1138405853777:16" targetNodeId="gec6.6247544121092588772:2" resolveInfo="OverrideAnnotation" />
                     </node>
                   </node>
                 </node>
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6247544121092588842">
-                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6247544121092588841" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="6247544121092588846">
-                    <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="6247544121092588848">
-                      <link role="annotationLink" targetNodeId="1.6247544121092588810" resolveInfo="OverrideLinkAnnotation" />
+                <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6247544121092588842">
+                  <node role="operand" roleId="yvor.1197027771414:3" type="yvjb.ConceptFunctionParameter_node" typeId="yvjb.1192796902958:8" id="6247544121092588841" />
+                  <node role="operation" roleId="yvor.1197027833540:3" type="yvim.AttributeAccessOperation" typeId="yvim.1204761823073:16" id="6247544121092588846">
+                    <node role="attributeQualifier" roleId="yvim.1204762310079:16" type="yvim.NodeAttributeAccessQualifier" typeId="yvim.1204763358057:16" id="6247544121092588848">
+                      <link role="annotationLink" roleId="yvim.1204763443606:16" targetNodeId="gec6.6247544121092588810:2" resolveInfo="OverrideLinkAnnotation" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="6247544121092588857">
-            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6247544121092588858">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6247544121092588859">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6247544121092588871">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6247544121092588861">
-                    <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6247544121092588860" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" id="6247544121092588865">
-                      <node role="attributeQualifier" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" id="6247544121092588867">
-                        <link role="annotationLink" targetNodeId="1.6247544121092588810" resolveInfo="OverrideLinkAnnotation" />
+          <node role="ifFalseStatement" roleId="yvor.1082485599094:3" type="yvor.BlockStatement" typeId="yvor.1082485599095:3" id="6247544121092588857">
+            <node role="statements" roleId="yvor.1082485599096:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="6247544121092588858">
+              <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="6247544121092588859">
+                <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6247544121092588871">
+                  <node role="operand" roleId="yvor.1197027771414:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6247544121092588861">
+                    <node role="operand" roleId="yvor.1197027771414:3" type="yvjb.ConceptFunctionParameter_node" typeId="yvjb.1192796902958:8" id="6247544121092588860" />
+                    <node role="operation" roleId="yvor.1197027833540:3" type="yvim.AttributeAccessOperation" typeId="yvim.1204761823073:16" id="6247544121092588865">
+                      <node role="attributeQualifier" roleId="yvim.1204762310079:16" type="yvim.NodeAttributeAccessQualifier" typeId="yvim.1204763358057:16" id="6247544121092588867">
+                        <link role="annotationLink" roleId="yvim.1204763443606:16" targetNodeId="gec6.6247544121092588810:2" resolveInfo="OverrideLinkAnnotation" />
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" id="6247544121092588875" />
+                  <node role="operation" roleId="yvor.1197027833540:3" type="yvim.Node_DetachOperation" typeId="yvim.1228341669568:16" id="6247544121092588875" />
                 </node>
               </node>
             </node>
@@ -146,51 +102,48 @@
         </node>
       </node>
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="6030013275786405059">
-    <property name="name" value="ChildAspectDefinition_makeOptional" />
-    <property name="isAvailableInChildNodes" value="true" />
-    <link role="forConcept" targetNodeId="1.6424935405034408143" resolveInfo="ChildAspectDefinition" />
-    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="6030013275786405060">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6030013275786405061">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6030013275786411099">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6030013275786411100">
-            <property name="value" value="Make Optional" />
+  </root>
+  <root id="6030013275786405059">
+    <node role="descriptionFunction" roleId="yvjb.2522969319638093993:8" type="yvjb.DescriptionBlock" typeId="yvjb.1192794782375:8" id="6030013275786405060">
+      <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="6030013275786405061">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="6030013275786411099">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="6030013275786411100">
+            <property name="value" nameId="yvor.1070475926801:3" value="Make Optional" />
           </node>
         </node>
       </node>
     </node>
-    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="6030013275786405062">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6030013275786405063">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6030013275786413366">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6030013275786413373">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6030013275786413376">
-              <property name="value" value="true" />
+    <node role="executeFunction" roleId="yvjb.2522969319638198291:8" type="yvjb.ExecuteBlock" typeId="yvjb.1192795911897:8" id="6030013275786405062">
+      <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="6030013275786405063">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="6030013275786413366">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.AssignmentExpression" typeId="yvor.1068498886294:3" id="6030013275786413373">
+            <node role="rValue" roleId="yvor.1068498886297:3" type="yvor.BooleanConstant" typeId="yvor.1068580123137:3" id="6030013275786413376">
+              <property name="value" nameId="yvor.1068580123138:3" value="true" />
             </node>
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6030013275786413368">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6030013275786413367" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="6030013275786413372">
-                <link role="property" targetNodeId="1.6030013275786405028" resolveInfo="optional" />
+            <node role="lValue" roleId="yvor.1068498886295:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6030013275786413368">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvjb.ConceptFunctionParameter_node" typeId="yvjb.1192796902958:8" id="6030013275786413367" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="6030013275786413372">
+                <link role="property" roleId="yvim.1138056395725:16" targetNodeId="gec6.6030013275786405028:2" resolveInfo="optional" />
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="6030013275786411101">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6030013275786411102">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6030013275786411103">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="6030013275786413362">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6030013275786413363">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6030013275786413364" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="6030013275786413365">
-                <link role="property" targetNodeId="1.6030013275786405028" resolveInfo="optional" />
+    <node role="isApplicableFunction" roleId="yvjb.2522969319638093995:8" type="yvjb.IsApplicableBlock" typeId="yvjb.1192795771125:8" id="6030013275786411101">
+      <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="6030013275786411102">
+        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="6030013275786411103">
+          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.NotExpression" typeId="yvor.1081516740877:3" id="6030013275786413362">
+            <node role="expression" roleId="yvor.1081516765348:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="6030013275786413363">
+              <node role="operand" roleId="yvor.1197027771414:3" type="yvjb.ConceptFunctionParameter_node" typeId="yvjb.1192796902958:8" id="6030013275786413364" />
+              <node role="operation" roleId="yvor.1197027833540:3" type="yvim.SPropertyAccess" typeId="yvim.1138056022639:16" id="6030013275786413365">
+                <link role="property" roleId="yvim.1138056395725:16" targetNodeId="gec6.6030013275786405028:2" resolveInfo="optional" />
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-  </node>
+  </root>
 </model>
 

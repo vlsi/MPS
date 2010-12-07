@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import com.intellij.util.containers.HashMap;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
-import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
-
-import com.intellij.util.containers.HashMap;
-import org.jetbrains.annotations.Nullable;
+import java.util.Map;
+import java.util.Set;
 
 public class ConceptWrapper extends DefaultAbstractWrapper {
   private String myConceptFQName;

@@ -52,7 +52,7 @@ public class DefaultCustomMpsLanguageConfigurationFromMPSBuild extends BaseConfi
     final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        layout.value = SNodeOperations.getAncestor(parameter, "jetbrains.mps.build.packaging.structure.MPSLayout", false, true);
+        layout.value = SNodeOperations.getAncestor(parameter, "jetbrains.mps.build.packaging.structure.Layout", false, true);
         isApplicable.value = (layout.value != null);
         configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout.value, "configuration", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

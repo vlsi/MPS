@@ -77,7 +77,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     }
 
     Collections.sort(namespaces, new ToStringComparator());
-    Collections.sort(nodes, new ModuleTreeNodeComparator());
+    Collections.sort(nodes, new jetbrains.mps.ide.projectPane.logicalview.nodes.ModuleTreeNodeComparator());
 
     node.removeAllChildren();
 

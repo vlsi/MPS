@@ -19,7 +19,7 @@ import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
-import jetbrains.mps.newTypesystem.states.Equations;
+import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
@@ -37,6 +37,7 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class TypesUtil {
+
   public SNode leastCommonSuperType(SNode left, SNode right) {
     //left.isInstanceOfConcept()
     //if ()
@@ -45,16 +46,11 @@ public class TypesUtil {
   }
 
   public static boolean isVariable(SNode node) {
-    return RuntimeTypeVariable.concept.equals(node.getConceptFqName());
+    return node != null && RuntimeTypeVariable.concept.equals(node.getConceptFqName());
   }
 
-  public static boolean isType(SNode node) {
+  public static boolean isShallowConcrete(SNode node) {
     return !isVariable(node);
-  }
-
-  public static int getDegree(SNode node) {
-    if (isVariable(node)) return 0;
-    return 1;
   }
 
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {
@@ -64,29 +60,47 @@ public class TypesUtil {
     if (left == null || right == null) {
       return false;
     }
-    final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
-    boolean result = MatchingUtil.matchNodes(left, right, new IMatchModifier() {
-      public boolean accept(SNode node1, SNode node2) {
-        return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);
+    if (TypesUtil.isVariable(left) || TypesUtil.isVariable(right)) {
+      if (!checkOnly) {
+        equations.addEquation(left, right, info);
       }
-
-      public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
-        return false;
-      }
-
-      public void performAction(SNode node1, SNode node2) {
-        childEQs.add(new Pair<SNode, SNode>(node1, node2));
-      }
-
-      public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
-      }
-    }, false);
+      return true;
+    }
+    TypeMatchModifier typeMatchModifier = new TypeMatchModifier();
+    boolean result = MatchingUtil.matchNodes(left, right, typeMatchModifier, false);
     if (!checkOnly && result) {
       if (equations != null) {
-        equations.addEquations(childEQs, info);
+        equations.addEquations(typeMatchModifier.getChildEqs(), info);
       }
     }
     return result;
+  }
+
+  private static class TypeMatchModifier implements IMatchModifier {
+    final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
+
+    public boolean accept(SNode node1, SNode node2) {
+      return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);
+    }
+
+    public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
+      return false;
+    }
+
+    public void performAction(SNode node1, SNode node2) {
+      childEQs.add(new Pair<SNode, SNode>(node1, node2));
+    }
+
+    public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
+    }
+
+    public Set<Pair<SNode, SNode>> getChildEqs() {
+      return childEQs;
+    }
+
+    public void clear() {
+      childEQs.clear();
+    }
   }
 }
 

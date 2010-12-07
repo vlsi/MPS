@@ -4,8 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.runtime;
 
 import java.util.List;
 import java.util.regex.Pattern;
-import junit.framework.Test;
-import junit.framework.TestCase;
+import org.junit.runner.Description;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.regex.Matcher;
 import java.util.ArrayList;
@@ -20,56 +19,59 @@ public class TestEvent {
   private static List<String> ALL_TOKENS;
   private static Pattern REGEXP_6m48zo_a0a0b0b0c = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
 
-  private String token;
-  private String testCaseName;
-  private String testMethodName;
-  private long memoryUsage;
-  private long time;
+  private final String myToken;
+  private final String myTestCaseName;
+  private final String myTestMethodName;
+  private final long myMemoryUsage;
+  private final long myTime;
 
-  public TestEvent(String token, Test test) {
-    this.token = token;
-    this.testCaseName = test.getClass().getName();
-    if (test instanceof TestCase) {
-      this.testMethodName = ((TestCase) test).getName();
-    }
+  public TestEvent(String token, Description description) {
+    myToken = token;
+    myTestCaseName = description.getTestClass().getName();
+    myTestMethodName = description.getMethodName();
     Runtime runtime = Runtime.getRuntime();
-    this.memoryUsage = runtime.totalMemory() - runtime.freeMemory();
-    this.time = System.currentTimeMillis();
+    myMemoryUsage = runtime.totalMemory() - runtime.freeMemory();
+    myTime = System.currentTimeMillis();
   }
 
-  private TestEvent() {
+  private TestEvent(String token, String testCaseName, String testMethodName, long memoryUsage, long time) {
+    myToken = token;
+    myTestCaseName = testCaseName;
+    myTestMethodName = testMethodName;
+    myMemoryUsage = memoryUsage;
+    myTime = time;
   }
 
   public String toString() {
     StringBuilder builder = new StringBuilder();
-    builder.append(this.token);
-    builder.append(this.testCaseName);
-    if (this.testMethodName != null) {
-      builder.append(':').append(this.testMethodName);
+    builder.append(this.myToken);
+    builder.append(this.myTestCaseName);
+    if (this.myTestMethodName != null) {
+      builder.append(':').append(this.myTestMethodName);
     }
-    builder.append(":memory=").append(this.memoryUsage);
-    builder.append(":time=").append(this.time);
+    builder.append(":memory=").append(this.myMemoryUsage);
+    builder.append(":time=").append(this.myTime);
     return builder.toString();
   }
 
   public String getToken() {
-    return this.token;
+    return this.myToken;
   }
 
   public String getTestCaseName() {
-    return this.testCaseName;
+    return this.myTestCaseName;
   }
 
   public String getTestMethodName() {
-    return this.testMethodName;
+    return this.myTestMethodName;
   }
 
   public long getMemoryUsage() {
-    return this.memoryUsage;
+    return this.myMemoryUsage;
   }
 
   public long getTime() {
-    return this.time;
+    return this.myTime;
   }
 
   @Override
@@ -78,17 +80,17 @@ public class TestEvent {
       return false;
     }
     TestEvent event = (TestEvent) p0;
-    return event.token.equals(this.token) && event.testCaseName.equals(this.testCaseName) && event.testMethodName.equals(this.testMethodName);
+    return event.myToken.equals(this.myToken) && event.myTestCaseName.equals(this.myTestCaseName) && event.myTestMethodName.equals(this.myTestMethodName);
   }
 
   @Override
   public int hashCode() {
-    return this.token.hashCode() + 10 * this.testCaseName.hashCode() + 10 * this.testMethodName.hashCode();
+    return this.myToken.hashCode() + 10 * this.myTestCaseName.hashCode() + 10 * this.myTestMethodName.hashCode();
   }
 
   public static String isTestEvent(String messageString) {
     String token = null;
-    for (String expectedToken : ListSequence.fromList(ALL_TOKENS)) {
+    for (String expectedToken : ListSequence.fromList(TestEvent.ALL_TOKENS)) {
       if (messageString.startsWith(expectedToken)) {
         token = expectedToken;
         break;
@@ -114,12 +116,7 @@ public class TestEvent {
         Pattern _pattern_0 = REGEXP_6m48zo_a0a0b0b0c;
         Matcher _matcher_0 = _pattern_0.matcher(params);
         if (_matcher_0.matches()) {
-          testEvent = new TestEvent();
-          testEvent.token = expectedToken;
-          testEvent.testCaseName = _matcher_0.group(1);
-          testEvent.testMethodName = _matcher_0.group(2);
-          testEvent.memoryUsage = Long.parseLong(_matcher_0.group(3));
-          testEvent.time = Long.parseLong(_matcher_0.group(4));
+          testEvent = new TestEvent(expectedToken, _matcher_0.group(1), _matcher_0.group(2), Long.parseLong(_matcher_0.group(3)), Long.parseLong(_matcher_0.group(4)));
         }
       }
     }
@@ -127,6 +124,6 @@ public class TestEvent {
   }
 
   static {
-    ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), START_TEST_PREFIX, END_TEST_PREFIX, ERROR_TEST_PREFIX, ERROR_TEST_SUFFIX, FAILURE_TEST_PREFIX, FAILURE_TEST_SUFFIX);
+    TestEvent.ALL_TOKENS = ListSequence.fromListAndArray(new ArrayList<String>(), TestEvent.START_TEST_PREFIX, TestEvent.END_TEST_PREFIX, TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX);
   }
 }

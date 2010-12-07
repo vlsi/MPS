@@ -131,7 +131,7 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
         Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
         relativePoint = new RelativePoint(GoToOverridenMethod_Action.this.editorComponent, point);
       }
-      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
+      GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).<SNode>select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
         public SNode select(Tuples._2<SNode, SNode> it) {
           return it._0();
         }

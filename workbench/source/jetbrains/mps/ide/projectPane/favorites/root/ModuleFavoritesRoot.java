@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
+import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;

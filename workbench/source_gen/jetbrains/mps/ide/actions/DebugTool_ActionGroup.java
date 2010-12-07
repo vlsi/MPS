@@ -9,6 +9,7 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DebugTool_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.DebugTool";
   public static final String LABEL_ID_StopAction = ID + "StopAction";
+  public static final String LABEL_ID_MuteAction = ID + "MuteAction";
 
   public DebugTool_ActionGroup() {
     super("DebugTool", ID);
@@ -23,6 +24,7 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
       DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EvaluateExpression_Action", "jetbrains.mps.ide");
       DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExportThreads_Action", "jetbrains.mps.ide");
       DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ViewBreakpoints_Action", "jetbrains.mps.ide");
+      DebugTool_ActionGroup.this.addAnchor(DebugTool_ActionGroup.LABEL_ID_MuteAction);
       DebugTool_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

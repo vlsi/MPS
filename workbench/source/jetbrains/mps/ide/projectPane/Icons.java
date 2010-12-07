@@ -94,7 +94,7 @@ public class Icons {
   public static final Icon INFER_FAILED_ICON = new ImageIcon(Icons.class.getResource("nodes/inferFailed.png"));
   public static final Icon INFER_QUESTION_ICON = new ImageIcon(Icons.class.getResource("nodes/inferQuestion.png"));
 
-  public static final Icon INSPECTOR_ICON = new ImageIcon(Icons.class.getResource("inspector.png"));
+  public static final Icon INSPECTOR_ICON = new ImageIcon(Icons.class.getResource("nodes/inspector.png"));
 
   public static final Icon DELETE_ICON = new ImageIcon(Icons.class.getResource("other/cancel.png"));
   public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png"));

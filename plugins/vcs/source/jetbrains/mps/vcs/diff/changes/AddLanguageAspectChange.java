@@ -62,4 +62,9 @@ public class AddLanguageAspectChange extends Change {
   public String toString() {
     return "add language aspect model UID " + myImportElement.getModelReference() + " version " + myImportElement.getUsedVersion();
   }
+
+  @Override
+  public Object getChangeKey() {
+    return getSModelReference();
+  }
 }

@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.projectPane.ProjectTree;
+import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -285,13 +285,15 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         }
         if (nodeToDecrement.value == null && change instanceof NewNodeChange) {
           final SNodeId parentId = ((NewNodeChange) change).getNodeParent();
-          nodeToDecrement.value = model.getNodeById(parentId);
-          if (nodeToDecrement.value == null && parentId != null) {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                nodeToDecrement.value = findNearestBaseAncestor(parentId, model);
-              }
-            });
+          if (parentId != null) {
+            nodeToDecrement.value = model.getNodeById(parentId);
+            if (nodeToDecrement.value == null && parentId != null) {
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  nodeToDecrement.value = findNearestBaseAncestor(parentId, model);
+                }
+              });
+            }
           }
         }
         if (nodeToDecrement.value != null) {
@@ -660,6 +662,10 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
     public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
       unhighlightTreeNode(treeNode);
       unregisterTreeNode(treeNode);
+    }
+
+    public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
+
     }
   }
 }

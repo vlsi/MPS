@@ -27,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
@@ -274,7 +273,7 @@ public class QueriesGenerated {
           quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_5 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_5 = quotedNode_2;
@@ -306,7 +305,7 @@ public class QueriesGenerated {
         quotedNode_1 = (SNode) parameter_3;
         SNode quotedNode1_2;
         if (_parameterValues_129834374.contains(quotedNode_1)) {
-          quotedNode1_2 = CopyUtil.copy(quotedNode_1);
+          quotedNode1_2 = HUtil.copyIfNecessary(quotedNode_1);
         } else {
           _parameterValues_129834374.add(quotedNode_1);
           quotedNode1_2 = quotedNode_1;

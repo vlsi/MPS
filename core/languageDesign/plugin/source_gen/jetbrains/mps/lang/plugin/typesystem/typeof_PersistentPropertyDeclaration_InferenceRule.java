@@ -17,7 +17,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_PersistentPropertyDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -118,7 +117,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
           quotedNode_5 = (SNode) parameter_11;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_5)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5, typeCheckingContext);
           } else {
             _parameterValues_129834374.add(quotedNode_5);
             quotedNode1_10 = quotedNode_5;
@@ -165,7 +164,7 @@ public class typeof_PersistentPropertyDeclaration_InferenceRule extends Abstract
           quotedNode_5 = (SNode) parameter_11;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_5)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
           } else {
             _parameterValues_129834374.add(quotedNode_5);
             quotedNode1_10 = quotedNode_5;

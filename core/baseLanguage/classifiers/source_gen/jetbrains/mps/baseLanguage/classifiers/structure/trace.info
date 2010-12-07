@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="IClassifierPart.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart" />
+  <unitInfo fileName="IClassifier.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.IClassifier" />
+  <unitInfo fileName="IMember.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.IMember" />
+  <unitInfo fileName="IMemberOperation.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" />
+  <unitInfo fileName="Classifiers_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.Classifiers_Language" />
+  <unitInfo fileName="SuperClassifierExpresson.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson" />
+  <unitInfo fileName="BaseClassifierType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType" />
+  <unitInfo fileName="DefaultClassifierType.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType" />
+  <unitInfo fileName="DefaultClassifierFieldDeclaration.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" />
+  <unitInfo fileName="ThisClassifierExpression.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" />
+  <unitInfo fileName="DefaultClassifierFieldAccessOperation.java" startLine="11" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" />
+  <unitInfo fileName="DefaultClassifierMethodDeclaration.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" />
+  <unitInfo fileName="DefaultClassifierMethodCallOperation.java" startLine="14" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" />
+  <unitInfo fileName="DefaultClassifier.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier" />
+</debugInfo>
 

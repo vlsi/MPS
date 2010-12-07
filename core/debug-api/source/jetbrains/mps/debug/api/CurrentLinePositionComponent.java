@@ -39,22 +39,23 @@ public class CurrentLinePositionComponent implements ProjectComponent {
 
   //todo extract and generify
   private final DebugSessionListener myCurrentDebugSessionListener = new MyCurrentDebugSessionListener();
+  private final EditorOpenListener myEditorOpenListener = new EditorOpenListener() {
+    @Override
+    public void editorOpened(MPSFileNodeEditor editor) {
+      editorComponentOpened(editor.getNodeEditor());
+    }
+
+    @Override
+    public void editorClosed(MPSFileNodeEditor editor) {
+      editorComponentClosed(editor.getNodeEditor());
+    }
+  };
+  private final EditorsProvider myEditorsProvider;
 
   public CurrentLinePositionComponent(Project project, FileEditorManager fileEditorManager, MPSEditorOpener editorOpener) {
     myFileEditorManager = fileEditorManager;
     myEditorOpener = editorOpener;
-    EditorsProvider editorsProvider = new EditorsProvider(project);
-    editorsProvider.addEditorOpenListener(new EditorOpenListener() {
-      @Override
-      public void editorOpened(MPSFileNodeEditor editor) {
-        editorComponentOpened(editor.getNodeEditor());
-      }
-
-      @Override
-      public void editorClosed(MPSFileNodeEditor editor) {
-        editorComponentClosed(editor.getNodeEditor());
-      }
-    });
+    myEditorsProvider = new EditorsProvider(project);
     myProject = project;
   }
 
@@ -96,12 +97,15 @@ public class CurrentLinePositionComponent implements ProjectComponent {
   public void initComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addCurrentDebugSessionListener(myCurrentDebugSessionListener);
+    myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
   }
 
   @Override
   public void disposeComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeCurrentDebugSessionListener(myCurrentDebugSessionListener);
+    myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);
+    myEditorsProvider.dispose();
   }
 
   private void detachPainter(AbstractDebugSession newDebugSession) {
@@ -240,7 +244,7 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     }
   }
 
-  private class MySessionChangeListener implements SessionChangeListener {
+  private class MySessionChangeListener extends SessionChangeAdapter {
     @Override
     public void stateChanged(AbstractDebugSession session) {
       detachPainter(session);

@@ -18,6 +18,7 @@ package jetbrains.mps.debug.api;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -45,7 +46,7 @@ public class DebugInfoManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(DebugInfoManager.class);
   }
 
-  private final Map<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>> myDebuggableConcepts = new HashMap<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>>();
+  private final Map<String, Mapper2<SNode, Project, ILocationBreakpoint>> myDebuggableConcepts = new HashMap<String, Mapper2<SNode, Project, ILocationBreakpoint>>();
 
   @NotNull
   public String getComponentName() {
@@ -58,15 +59,33 @@ public class DebugInfoManager implements ApplicationComponent {
 
   @Deprecated
   public void addDebuggableConcept(String fqName) {
-    addConceptBreakpointCreator(fqName, null);
+    addDebuggableConcept(fqName, null);
   }
 
-  public void addConceptBreakpointCreator(String fqName, Mapper2<SNode, Project, AbstractMPSBreakpoint> breakpointCreator) {
+  public void addConceptBreakpointCreator(String fqName, Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
     myDebuggableConcepts.put(fqName, breakpointCreator);
+  }
+
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public void addDebuggableConcept(String fqName, final Mapper2<SNode, Project, AbstractMPSBreakpoint> breakpointCreator) {
+    // legacy
+    myDebuggableConcepts.put(fqName, new Mapper2<SNode, Project, ILocationBreakpoint>() {
+      @Override
+      public ILocationBreakpoint value(SNode key1, Project key2) {
+        return (ILocationBreakpoint) breakpointCreator.value(key1, key2);
+      }
+    });
   }
 
   public void removeConceptBreakpointCreator(String fqName) {
     myDebuggableConcepts.remove(fqName);
+  }
+
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public void removeDebuggableConcept(String fqName) {
+    removeConceptBreakpointCreator(fqName);
   }
 
   @Deprecated
@@ -96,8 +115,8 @@ public class DebugInfoManager implements ApplicationComponent {
     return false;
   }
 
-  private AbstractMPSBreakpoint createBreakpoint(String concept, SNode node, Project project) {
-    Mapper2<SNode, Project, AbstractMPSBreakpoint> mapper2 = myDebuggableConcepts.get(concept);
+  private ILocationBreakpoint createBreakpoint(String concept, SNode node, Project project) {
+    Mapper2<SNode, Project, ILocationBreakpoint> mapper2 = myDebuggableConcepts.get(concept);
     if (mapper2 == null) {
       LOG.warning("Could not create breakpoint for node " + node);
       return null;
@@ -106,7 +125,7 @@ public class DebugInfoManager implements ApplicationComponent {
   }
 
   @Nullable
-  public AbstractMPSBreakpoint createBreakpoint(SNode node, Project project) {
+  public ILocationBreakpoint createBreakpoint(SNode node, Project project) {
     for (String concept : myDebuggableConcepts.keySet()) {
       if (SNodeOperations.isInstanceOf(node, concept)) {
         return createBreakpoint(concept, node, project);

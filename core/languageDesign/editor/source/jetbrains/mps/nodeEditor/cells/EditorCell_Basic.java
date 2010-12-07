@@ -66,7 +66,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCell_Collection myParent = null;
   private SNode myNode;
   private NodeSubstituteInfo mySubstituteInfo;
-  private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();  
+  private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();
 
   private Style myStyle = new Style(this);
 
@@ -79,6 +79,8 @@ public abstract class EditorCell_Basic implements EditorCell {
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
   protected int myGapRight;
+
+  private boolean myIsNeedRelayout = true;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
@@ -200,7 +202,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorCellAction getApplicableCellAction(CellActionType type) {
-    EditorCell current = this;    
+    EditorCell current = this;
     while (current != null) {
       EditorCellAction currentAction = current.getAction(type);
       if (currentAction != null && currentAction.canExecute(myEditorContext)) {
@@ -273,7 +275,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       return getRole();
     }
   }
-  
+
   public final void setSNode(SNode node) {
     myNode = node;
   }
@@ -320,6 +322,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setY(int y) {
     myY = y;
+    requestRelayout();
   }
 
   public int getX() {
@@ -328,6 +331,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setX(int x) {
     myX = x;
+    requestRelayout();
   }
 
   public boolean isSelected() {
@@ -338,6 +342,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return mySelected && getEditor().getDeepestSelectedCell() == this;
   }
 
+
   public boolean isSelectable() {
     return getStyle().get(StyleAttributes.SELECTABLE);
   }
@@ -346,7 +351,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     getStyle().set(StyleAttributes.SELECTABLE, selectable);
   }
 
-  public void setCellId(String cellId) {    
+  public void setCellId(String cellId) {
     assert myCellId == null;
     myCellId = cellId;
   }
@@ -478,7 +483,7 @@ public abstract class EditorCell_Basic implements EditorCell {
           editor.changeSelection(editable);
           editor.processKeyTyped(e);
         } else {
-          editor.changeSelection(nodeCell);         
+          editor.changeSelection(nodeCell);
           editor.processKeyTyped(e);
         }
       }
@@ -561,7 +566,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
     collectCellsWithY(this, y, candidates, false);
     for (EditorCell cell : candidates) {
-      
+
     }
     for (EditorCell cell : candidates) {
       if (condition.met(cell)) {
@@ -648,48 +653,51 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void paint(Graphics g) {
-    if (!isSelectionPaintedOnAncestor()) {
-      paintBackground(g);
+    paint(g, null);
+  }
+
+  public void paint(Graphics g, ParentSettings parentSettings) {
+    if (!isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted()) {
+      paintBackground(g, parentSettings);
     }
-    paintSelectionIfRequired(g);
-    paintContent(g);
+    paintSelectionIfRequired(g, parentSettings);
+    paintContent(g, parentSettings);
     paintDecorations(g);
   }
 
-  protected boolean isSelectionPaintedOnAncestor() {
-    if (isSelectionPainted()) {
-      return true;
-    }
-    if (getParent() != null) {
-      return ((EditorCell_Basic) getParent()).isSelectionPaintedOnAncestor();
-    }
-    return false;
+  protected ParentSettings isSelectionPaintedOnAncestor(ParentSettings parentSettings) {
+    return ParentSettings.createSelectedSetting(isSelectionPainted()).combineWith(parentSettings);
   }
 
-  public void paintBackground(Graphics g) {
-    if (getCellBackgroundColor() != null) {
-      g.setColor(getCellBackgroundColor());
-      g.fillRect(getX(), getY(), getWidth(), getHeight());
+  public ParentSettings paintBackground(Graphics g, ParentSettings parentSettings) {
+    if (!parentSettings.isSkipBackground()) {
+      if (getCellBackgroundColor() != null) {
+        g.setColor(getCellBackgroundColor());
+        g.fillRect(getX(), getY(), getWidth(), getHeight());
+      }
     }
+    boolean hasMessages = false;
     List<EditorMessage> messages = getMessages();
     for (EditorMessage message : messages) {
       if (message != null && message.isBackground()) {
         message.paint(g, getEditor(), this);
+        hasMessages = true;
       }
     }
+    return ParentSettings.createBackgroundlessSetting(hasMessages).combineWith(parentSettings);
   }
 
   protected boolean isSelectionPainted() {
     return isSelected();
   }
 
-  protected void paintSelectionIfRequired(Graphics g) {
+  protected void paintSelectionIfRequired(Graphics g, ParentSettings parentSettings) {
     if (isSelectionPainted()) {
-      paintSelection(g, getSelectionColor(), true);
+      paintSelection(g, getSelectionColor(), true, parentSettings);
     }
   }
 
-  public abstract void paintContent(Graphics g);
+  public abstract void paintContent(Graphics g, ParentSettings parentSettings);
 
   protected void paintDecorations(Graphics g) {
     int effectiveWidth = getEffectiveWidth();
@@ -824,6 +832,10 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void paintSelection(Graphics g, Color c, boolean drawBorder) {
+    paintSelection(g, c, drawBorder, ParentSettings.createDefaultSetting());
+  }
+
+  public void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings) {
     g.setColor(c);
     g.fillRect(getX(), getY() /*+ getTopInset()*/, getWidth(), getHeight() - getTopInset() - getBottomInset());
     if (getEditor().hasFocus() && drawBorder) {
@@ -837,6 +849,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public final void relayout() {
+    if (!myIsNeedRelayout) {
+      return;
+    }
     boolean drawBrackets = isDrawBrackets();
     if (drawBrackets) {
       myX += BRACKET_WIDTH;
@@ -851,6 +866,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     myX -= myGapLeft;
     myWidth += myGapLeft + myGapRight;
+    myIsNeedRelayout = false;
   }
 
   protected void relayoutImpl() {
@@ -1104,7 +1120,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     EditorCell current = this;
     while (current.getLeafToRight(condition) != null) {
       current = current.getLeafToRight(condition);
-    }   
+    }
     return current.getLastLeaf(condition);
   }
 
@@ -1328,4 +1344,16 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void setRightGap(int gap) {
     myGapRight = gap;
   }
+
+  protected void requestRelayout() {
+    myIsNeedRelayout = true;
+    if (getParent() != null) {
+      getParent().requestRelayout();
+    }
+  }
+
+  public void unrequestLayout() {
+    myIsNeedRelayout = false;
+  }
+
 }

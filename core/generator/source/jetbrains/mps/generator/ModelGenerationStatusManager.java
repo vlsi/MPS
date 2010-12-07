@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -48,7 +49,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   private Map<SModelDescriptor, String> myGeneratedFilesHashes = new HashMap<SModelDescriptor, String>();
 
-  private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
+  private final List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
   private final GlobalSModelEventsManager myGlobalEventsManager;
   private final SModelAdapter mySmodelReloadListener = new SModelAdapter() {
@@ -63,8 +64,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     myCacheGenerator = new CacheGenerator() {
       public void generateCache(GenerationStatus status, StreamHandler handler) {
         String hashName = generateHashFileName(status);
-        if(hashName != null) {
-          handler.saveStream(hashName, "", true);
+        if (hashName != null) {
+          handler.saveStream(hashName, status.getInputModel().getSModelReference().toString(), true);
         }
       }
     };
@@ -87,7 +88,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return myCacheGenerator;
   }
 
-  public boolean generationRequiredFast(SModelDescriptor sm, IOperationContext operationContext, boolean defaultValue) {
+  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext, boolean fast, boolean defaultValue) {
     if (!(sm instanceof EditableSModelDescriptor)) return false;
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
@@ -96,26 +97,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (SModelRepository.getInstance().isChanged(esm)) return true;
     if (isEmpty(esm)) return false;
 
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext, true);
-    if(generationHashes == null) return defaultValue;
-
-    String generatedHash = getGenerationHash(sm);
-    if (generatedHash == null) return true;
-
-    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
-  }
-
-  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
-    if (!(sm instanceof EditableSModelDescriptor)) return false;
-    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
-    if (esm.isPackaged()) return false;
-    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
-    if (GeneratorManager.isDoNotGenerate(sm)) return false;
-    if (SModelRepository.getInstance().isChanged(esm)) return true;
-    if (isEmpty(esm)) return false;
-
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
-    if(generationHashes == null) return true;
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext, fast);
+    if (generationHashes == null) return defaultValue;
 
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
@@ -151,7 +134,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     synchronized (myListeners) {
       copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
     }
-    for(SModelDescriptor model : models) {
+    for (SModelDescriptor model : models) {
       myGeneratedFilesHashes.remove(model);
       for (ModelGenerationStatusListener l : copy) {
         l.generatedFilesChanged(model);
@@ -174,28 +157,19 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private String calculateGeneratedHash(SModelDescriptor sm) {
     IModule module = sm.getModule();
 
-    if (module == null) {
-      throw new IllegalStateException();
-    }
+    if (module == null) throw new IllegalStateException();
 
     IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
     IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
 
-    List<IFile> files = sourcesDir.list();
-    String result = null;
-    if (files != null) {
-      for (IFile f : files) {
-        String name = f.getName();
-        if (name.startsWith(HASH_PREFIX)) {
-          if (result != null) {
-            return null; //we have several hash files so it was probably caused by merge
-          }
-          result = name.substring(HASH_PREFIX.length());
-        }
+    List<IFile> files = sourcesDir.list(new IFileNameFilter() {
+      public boolean accept(IFile parent, String name) {
+        return name.startsWith(HASH_PREFIX);
       }
-    }
+    });
+    if (files.size() != 1) return null;
 
-    return result;
+    return files.get(0).getName().substring(HASH_PREFIX.length());
   }
 
   private String generateHashFileName(GenerationStatus status) {

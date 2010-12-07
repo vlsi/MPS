@@ -13,6 +13,7 @@ public class DebuggableNodeItem extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.DebuggableNodeItem";
   public static final String DECLARATION = "declaration";
   public static final String CREATE_BREAKPOINT = "createBreakpoint";
+  public static final String PROPERTY_STRING_GETTER = "propertyStringGetter";
 
   public DebuggableNodeItem(SNode node) {
     super(node);
@@ -32,6 +33,14 @@ public class DebuggableNodeItem extends BaseConcept {
 
   public void setCreateBreakpoint(ConceptFunction_CreateBreakpoint node) {
     super.setChild(DebuggableNodeItem.CREATE_BREAKPOINT, node);
+  }
+
+  public ConceptFunction_PropertyStringGetter getPropertyStringGetter() {
+    return (ConceptFunction_PropertyStringGetter) this.getChild(ConceptFunction_PropertyStringGetter.class, DebuggableNodeItem.PROPERTY_STRING_GETTER);
+  }
+
+  public void setPropertyStringGetter(ConceptFunction_PropertyStringGetter node) {
+    super.setChild(DebuggableNodeItem.PROPERTY_STRING_GETTER, node);
   }
 
   public static DebuggableNodeItem newInstance(SModel sm, boolean init) {

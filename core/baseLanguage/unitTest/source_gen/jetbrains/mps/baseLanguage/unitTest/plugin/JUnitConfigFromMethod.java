@@ -10,8 +10,8 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.execution.configurations.ConfigurationType;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationFactory;
@@ -32,14 +32,18 @@ public class JUnitConfigFromMethod extends BaseConfigCreator<SNode> implements C
   }
 
   private void createConfig(final SNode parameter) {
+    ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(parameter);
+    if (wrapper == null || wrapper.isTestCase()) {
+      return;
+    }
     JUnitConfigFromMethod.this.setSourceElement(new MPSPsiElement(parameter));
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethod.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig");
-      _config.setName(ITestMethod_Behavior.call_getTestName_1216136419751(parameter));
+      _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().type = JUnitRunTypes.METHOD;
-      _config.getStateObject().fullMethodNames = new ClonableList<String>(INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(parameter)) + TestUtils.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(parameter));
+      _config.getStateObject().testMethods = new ClonableList<String>(TestUtils.pointerToString(new SNodePointer(parameter)));
       JUnitConfigFromMethod.this.myConfig = _config;
     }
   }
@@ -50,7 +54,7 @@ public class JUnitConfigFromMethod extends BaseConfigCreator<SNode> implements C
   }
 
   protected boolean isApplicable(final Object element) {
-    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.lang.core.structure.INamedConcept");
   }
 
   @NotNull

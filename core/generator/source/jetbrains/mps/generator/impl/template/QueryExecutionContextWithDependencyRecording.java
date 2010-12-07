@@ -1,9 +1,8 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.ReductionContext;
-import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
+import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -13,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -33,16 +33,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.checkCondition(condition, required, inputNode, ruleNode);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public GeneratedMatchingPattern checkIfApplicable(SNode inputNode, PatternReduction_MappingRule patternRule, @NotNull ReductionContext reductionContext) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkIfApplicable(inputNode, patternRule, reductionContext);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -177,6 +167,36 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
         listener.readNode((SNode) target);
       }
       return target;
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      wrapped.executeInContext(outputNode, context, processor);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.executeInContext(outputNode, context, mapper);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.tryToApply(rule, environment, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

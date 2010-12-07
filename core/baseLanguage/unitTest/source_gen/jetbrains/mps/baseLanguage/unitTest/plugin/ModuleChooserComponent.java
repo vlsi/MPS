@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseChooserComponent;
 import java.util.List;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ModuleChooserComponent extends BaseChooserComponent {
-  private final List<IModule> myCheckedModules = ListSequence.fromList(new ArrayList<IModule>());
+  private final List<ModuleReference> myCheckedModules = ListSequence.fromList(new ArrayList<ModuleReference>());
 
   public ModuleChooserComponent() {
     super();
@@ -31,9 +31,9 @@ public class ModuleChooserComponent extends BaseChooserComponent {
       public void actionPerformed(ActionEvent p0) {
         ModuleChooserComponent.this.collectModules();
         StringBuilder result = new StringBuilder();
-        IModule module = CommonChoosers.showDialogModuleChooser(ModuleChooserComponent.this, "", ModuleChooserComponent.this.myCheckedModules, Collections.EMPTY_LIST);
-        if (module != null) {
-          result.append(module.getModuleFqName());
+        ModuleReference ref = CommonChoosers.showDialogModuleChooser(ModuleChooserComponent.this, "", ModuleChooserComponent.this.myCheckedModules, Collections.EMPTY_LIST);
+        if (ref != null) {
+          result.append(ref.getModuleFqName());
           ModuleChooserComponent.this.setText(result.toString());
         }
       }
@@ -48,7 +48,7 @@ public class ModuleChooserComponent extends BaseChooserComponent {
         for (SNode node : nodes) {
           SModel model = SNodeOperations.getModel(node);
           SModelDescriptor md = model.getModelDescriptor();
-          IModule module = md.getModule();
+          ModuleReference module = md.getModule().getModuleReference();
           if (ListSequence.fromList(ModuleChooserComponent.this.myCheckedModules).contains(module)) {
             continue;
           }

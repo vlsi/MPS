@@ -16,15 +16,15 @@
 package jetbrains.mps.generator.impl.plan;
 
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -152,22 +152,22 @@ public class GenerationPartitioningUtil {
   }
 
 
-  public static List<String> toStrings(List<MappingConfiguration> mappings) {
+  public static List<String> toStrings(List<TemplateMappingConfiguration> mappings) {
     List<String> strings = new ArrayList<String>();
 
     // consolidate mappings
-    Map<SModel, Integer> numOfMappingsByModel = new HashMap<SModel, Integer>();
-    for (MappingConfiguration mappingConfig : mappings) {
-      SModel model = mappingConfig.getModel();
+    Map<TemplateModel, Integer> numOfMappingsByModel = new HashMap<TemplateModel, Integer>();
+    for (TemplateMappingConfiguration mappingConfig : mappings) {
+      TemplateModel model = mappingConfig.getModel();
       if (!numOfMappingsByModel.containsKey(model)) {
         numOfMappingsByModel.put(model, 0);
       }
       numOfMappingsByModel.put(model, numOfMappingsByModel.get(model) + 1);
     }
-    Iterator<SModel> models = numOfMappingsByModel.keySet().iterator();
+    Iterator<TemplateModel> models = numOfMappingsByModel.keySet().iterator();
     while (models.hasNext()) {
-      SModel model = models.next();
-      int totalMappings = model.getFastNodeFinder().getNodes(MappingConfiguration.concept,true).size();
+      TemplateModel model = models.next();
+      int totalMappings = model.getConfigurations().size();
       if (totalMappings <= 1 || numOfMappingsByModel.get(model) < totalMappings) {
         models.remove();
       } else {
@@ -176,8 +176,8 @@ public class GenerationPartitioningUtil {
     }
 
     // output
-    for (MappingConfiguration mappingConfig : mappings) {
-      SModel model = mappingConfig.getModel();
+    for (TemplateMappingConfiguration mappingConfig : mappings) {
+      TemplateModel model = mappingConfig.getModel();
       if (numOfMappingsByModel.containsKey(model)) {
         if (numOfMappingsByModel.get(model) == 0) {
           strings.add(model.getLongName() + ".*");

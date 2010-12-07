@@ -2,10 +2,12 @@
 <debugInfo>
   <unitInfo fileName="SuperNodeExpression_Constraints.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints" />
   <unitInfo fileName="ThisNodeExpression_Constraints.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ThisNodeExpression_Constraints" />
+  <unitInfo fileName="LocalBehaviorMethodCall_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints" />
   <unitInfo fileName="ConceptBehavior_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_Constraints" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_declaration_ReferentConstraint" />
   <unitInfo fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_name_PropertyConstraint" />
   <unitInfo fileName="ConceptBehavior_defaultConcreteConcept_ReferentConstraint.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptBehavior_defaultConcreteConcept_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="SuperNodeExpression_superConcept_ReferentConstraint.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_superConcept_ReferentConstraint" />
   <unitInfo fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_overriddenMethod_ReferentConstraint" />
   <root nodeId="1225194245328">
@@ -118,6 +120,15 @@
     <scopeInfo nodeId="5299096511375909195" fileName="SuperNodeExpression_superConcept_ReferentConstraint.java" startLine="30" startPosition="132" endLine="49" endPosition="18">
       <varInfo nodeId="5299096511375911550" varName="abstractConceptDeclaration" />
       <varInfo nodeId="5299096511375911567" varName="result" />
+    </scopeInfo>
+  </root>
+  <root nodeId="6496299201655529040">
+    <nodeInfo nodeId="6496299201655590933" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="143" />
+    <nodeInfo nodeId="6496299201655590262" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="30" endPosition="192" />
+    <nodeInfo nodeId="6496299201655529138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="30" startPosition="192" endLine="31" endPosition="158" />
+    <scopeInfo nodeId="6496299201655590932" fileName="LocalBehaviorMethodCall_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="143" />
+    <scopeInfo nodeId="6496299201655529043" fileName="LocalBehaviorMethodCall_declaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="31" endPosition="158">
+      <varInfo nodeId="6496299201655590263" varName="concept" />
     </scopeInfo>
   </root>
 </debugInfo>

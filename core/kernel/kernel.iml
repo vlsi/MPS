@@ -16,14 +16,33 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="plugin" />
     <orderEntry type="module" module-name="runtime" exported="" />
-    <orderEntry type="module" module-name="mps-lite" />
     <orderEntry type="library" name="tools" level="project" />
     <orderEntry type="module" module-name="baseLanguage" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="library" name="Beansbinding" level="project" />
-    <orderEntry type="module" module-name="xmlQuery-runtime" />
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="library" name="OROMatcher" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/objenesis-1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/jmock-script-2.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-2.1_3-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/jmock-2.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/jmock-legacy-2.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1/jmock-2.5.1.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
     <orderEntry type="module" module-name="testbench" scope="TEST" />
   </component>
 </module>

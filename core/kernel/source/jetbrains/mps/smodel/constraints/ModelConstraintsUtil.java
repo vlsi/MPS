@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.SearchScopeStatus.ERROR;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.UndefinedSearchScope;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 
 /**
@@ -66,9 +67,7 @@ public class ModelConstraintsUtil {
         if (contextNode == null) {
           contextNode = referenceNode;
         }
-        // todo: if inside non-typesystem rules, do not create a new context
-        TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(contextNode);
-        typeCheckingContext.runTypeCheckingActionInEditorQueries(new Runnable() {
+        TypeContextManager.getInstance().runResolveAction(new Runnable() {
           @Override
           public void run() {
             try {
@@ -79,7 +78,6 @@ public class ModelConstraintsUtil {
             }
           }
         });
-        typeCheckingContext.dispose();
       }
     });
     return status[0];
@@ -94,7 +92,7 @@ public class ModelConstraintsUtil {
     AbstractConceptDeclaration linkTarget,
     IOperationContext context) {
 
-    INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
+    INodeReferentSearchScopeProvider scopeProvider = getSearchScopeProvider(referenceNodeConcept, linkRole);
     ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget));
     DefaultReferencPresentation referencePresentation = null;
     if (scopeProvider != null) {
@@ -107,10 +105,43 @@ public class ModelConstraintsUtil {
           scopeProvider.getSearchScopeValidatorNodePointer());
       }
     }
-
     // global search scope
-    ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
+    ISearchScope searchScope = createDefaultScope(model, context);
     return newOK(searchScope, referencePresentation, true, null);
+  }
+
+  public static ISearchScope createDefaultScope(SModel model, IOperationContext context) {
+    return SModelSearchUtil.createModelAndImportedModelsScope(model, false, context.getScope());
+  }
+
+  //used in checkers
+  public static SearchScopeStatus createSearchScope(final INodeReferentSearchScopeProvider scopeProvider,
+    SModel model,
+    SNode enclosingNode,
+    SNode referenceNode,
+    SNode linkTarget,
+    final IOperationContext context) {
+    if (scopeProvider == null) return new OK(createDefaultScope(model, context), null, true, null);
+    final ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, linkTarget);
+    try {
+    ISearchScope searchScope = TypeContextManager.getInstance().runResolveAction(new Computable<ISearchScope>() {
+      @Override
+      public ISearchScope compute() {
+        return scopeProvider.createNodeReferentSearchScope(context, referentConstraintContext);
+      }
+    });
+      if (searchScope instanceof UndefinedSearchScope) {
+      return new OK(createDefaultScope(model, context), null, true, null);
+    } else {
+      return new OK(searchScope, null, false, scopeProvider.getSearchScopeValidatorNodePointer());
+    }
+    } catch (Throwable t) {
+      return new ERROR(t.getMessage());
+    }
+  }
+
+  public static INodeReferentSearchScopeProvider getSearchScopeProvider(AbstractConceptDeclaration referenceNodeConcept, String linkRole) {
+    return ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
   }
 
   public static IReferencePresentation getPresentation(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IOperationContext context) {
@@ -126,7 +157,7 @@ public class ModelConstraintsUtil {
       model = null;
     }
 
-    INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
+    INodeReferentSearchScopeProvider scopeProvider = getSearchScopeProvider(referenceNodeConcept, linkRole);
     ReferentConstraintContext referentConstraintContext = new ReferentConstraintContext(model, enclosingNode, referenceNode, BaseAdapter.fromAdapter(linkTarget));
     return new DefaultReferencPresentation(context, referentConstraintContext, scopeProvider);
   }

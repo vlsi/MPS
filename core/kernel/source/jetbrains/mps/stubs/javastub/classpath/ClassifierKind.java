@@ -16,19 +16,12 @@ public enum ClassifierKind {
   ClassifierKind() {
   }
 
-  public static ClassifierKind getClassifierKind(byte[] code) {
-    if (code == null) {
-      return UNKNOWN;
-    }
-    ClassReader reader = new ClassReader(code);
-    return ClassifierKind.getClassifierKind(reader);
-  }
-
   public static ClassifierKind getClassifierKind(ClassReader reader) {
     int flag = reader.readUnsignedShort(reader.header);
     return getClassifierKind(flag);
   }
 
+  @Deprecated //slow
   public static ClassifierKind getClassifierKind(InputStream inp) throws IOException {
     ClassReader reader = new ClassReader(inp);
     return ClassifierKind.getClassifierKind(reader);

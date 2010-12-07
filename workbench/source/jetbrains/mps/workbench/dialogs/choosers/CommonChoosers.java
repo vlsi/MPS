@@ -22,10 +22,10 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
@@ -46,9 +46,9 @@ import java.awt.Window;
 import java.util.List;
 
 public class CommonChoosers {
-  private static List<SModelDescriptor> showDialogModelChooser_internal(final Component parent, final List<SModelDescriptor> models,
-                                                                        @Nullable List<SModelDescriptor> nonProjectModels,
-                                                                        boolean multiSelection) {
+  private static List<SModelReference> showDialogModelChooser_internal(final Component parent, final List<SModelReference> models,
+                                                                       @Nullable List<SModelReference> nonProjectModels,
+                                                                       boolean multiSelection) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     ModelChooserDialog dialog;
     if (window instanceof Frame) {
@@ -60,15 +60,15 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  private static <T extends IModule> List<T> showDialogModuleChooser_internal(final Component parent, String entityString, final List<T> modules,
-                                                                              @Nullable List<T> nonProjectModules,
-                                                                              boolean multiSelection) {
+  private static List<ModuleReference> showDialogModuleChooser_internal(final Component parent, String entityString, final List<ModuleReference> modules,
+                                                                        @Nullable List<ModuleReference> nonProjectModules,
+                                                                        boolean multiSelection) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
-    ModuleChooserDialog<T> dialog;
+    ModuleChooserDialog dialog;
     if (window instanceof Frame) {
-      dialog = new ModuleChooserDialog<T>((Frame) window, modules, nonProjectModules, entityString, multiSelection);
+      dialog = new ModuleChooserDialog((Frame) window, modules, nonProjectModules, entityString, multiSelection);
     } else {
-      dialog = new ModuleChooserDialog<T>((Dialog) window, modules, nonProjectModules, entityString, multiSelection);
+      dialog = new ModuleChooserDialog((Dialog) window, modules, nonProjectModules, entityString, multiSelection);
     }
     dialog.showDialog();
     return dialog.getResult();
@@ -86,23 +86,23 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  public static List<SModelDescriptor> showDialogModelCollectionChooser(Component parent, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
+  public static List<SModelReference> showDialogModelCollectionChooser(Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
     return showDialogModelChooser_internal(parent, models, nonProjectModels, true);
   }
 
-  public static SModelDescriptor showDialogModelChooser(Component parent, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
-    List<SModelDescriptor> result = showDialogModelChooser_internal(parent, models, nonProjectModels, false);
+  public static SModelReference showDialogModelChooser(Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
+    List<SModelReference> result = showDialogModelChooser_internal(parent, models, nonProjectModels, false);
     if (result == null || result.isEmpty()) return null;
     return result.get(0);
   }
 
-  public static <T extends IModule> T showDialogModuleChooser(Component parent, String entityString, List<T> modules, @Nullable List<T> nonProjectModules) {
-    List<T> result = showDialogModuleChooser_internal(parent, entityString, modules, nonProjectModules, false);
+  public static ModuleReference showDialogModuleChooser(Component parent, String entityString, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules) {
+    List<ModuleReference> result = showDialogModuleChooser_internal(parent, entityString, modules, nonProjectModules, false);
     if (result == null || result.isEmpty()) return null;
     return result.get(0);
   }
 
-  public static <T extends IModule> List<T> showDialogModuleCollectionChooser(Component parent, String entityString, List<T> modules, @Nullable List<T> nonProjectModules) {
+  public static List<ModuleReference> showDialogModuleCollectionChooser(Component parent, String entityString, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules) {
     return showDialogModuleChooser_internal(parent, entityString, modules, nonProjectModules, true);
   }
 
@@ -153,21 +153,21 @@ public class CommonChoosers {
   }
 
   // todo: unused?
-  public static void showSimpleModelChooser(final List<SModelDescriptor> models, final ChooserCallback<SModelDescriptor> callback) {
+  public static void showSimpleModelChooser(final List<SModelReference> models, final ChooserCallback<SModelReference> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
-      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new BaseModelItem(modelDescriptor) {
+      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
+        return new BaseModelItem(modelReference) {
           public void navigate(boolean requestFocus) {
-            callback.execute(getModelDescriptor());
+            callback.execute(getModelReference());
           }
         };
       }
 
-      public SModelDescriptor[] find(IScope scope) {
-        return models.toArray(new SModelDescriptor[models.size()]);
+      public SModelReference[] find(IScope scope) {
+        return models.toArray(new SModelReference[models.size()]);
       }
     };
 
@@ -187,29 +187,29 @@ public class CommonChoosers {
     }, ModalityState.current(), true);
   }
 
-  public static <T extends IModule> void showSimpleModuleChooser(final List<T> modules, final String entityString, final ChooserCallback<T> callback) {
+  public static void showSimpleModuleChooser(final List<ModuleReference> modules, final String entityString, final ChooserCallback<ModuleReference> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
-    BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(project, entityString) {
+    BaseMPSChooseModel<ModuleReference> goToModuleModel = new BaseMPSChooseModel<ModuleReference>(project, entityString) {
       public String doGetFullName(Object element) {
-        return ((BaseModuleItem) element).getModule().getModuleFqName();
+        return ((BaseModuleItem) element).getModuleReference().getModuleFqName();
       }
 
-      public String doGetObjectName(T module) {
+      public String doGetObjectName(ModuleReference module) {
         return module.getModuleFqName();
       }
 
-      public NavigationItem doGetNavigationItem(final T module) {
+      public NavigationItem doGetNavigationItem(final ModuleReference module) {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {
-            callback.execute((T) module);
+            callback.execute(module);
           }
         };
       }
 
-      public T[] find(IScope scope) {
-        return (T[]) modules.toArray();
+      public ModuleReference[] find(IScope scope) {
+        return (ModuleReference[]) modules.toArray();
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, DefaultMatcherFactory.createAllMatcher(goToModuleModel));

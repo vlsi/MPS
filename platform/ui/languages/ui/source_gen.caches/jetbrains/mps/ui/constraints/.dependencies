@@ -174,7 +174,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
-    <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodeReferenceFullSetHandler" />
   </dependency>
   <dependency className="jetbrains.mps.ui.constraints.EnclosingContextCompartmentExpression_Constraints" file="EnclosingContextCompartmentExpression_Constraints.java">
     <classNode dependClassName="java.lang.String" />

@@ -15,10 +15,13 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class ConceptToRulesMap<T> {
   private Map<AbstractConceptDeclaration, Set<T>> myMap = new HashMap<AbstractConceptDeclaration, Set<T>>();

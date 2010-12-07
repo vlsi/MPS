@@ -31,7 +31,7 @@ public class RunUtil {
         public void run() {
           SModelDescriptor md = SNodeOperations.getModel(node).getModelDescriptor();
           if (md instanceof EditableSModelDescriptor) {
-            if (!(ListSequence.fromList(models).contains((EditableSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, ProjectOperationContext.get(project))) {
+            if (!(ListSequence.fromList(models).contains((EditableSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, ProjectOperationContext.get(project), false, true)) {
               ListSequence.fromList(models).addElement((EditableSModelDescriptor) md);
             }
 

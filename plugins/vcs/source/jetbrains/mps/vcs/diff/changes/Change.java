@@ -46,15 +46,15 @@ public abstract class Change {
     myIsError = b;
   }
 
-  protected boolean equals(Object o1, Object o2) {
-    if (o1 == null) {
-      return o1 == o2;
-    } else {
-      return o1.equals(o2);
-    }
-  }
-
   public MessageTarget getMessageTarget() {
     return null;
+ }
+
+  public Object getChangeKey() {
+    return null;
+  }
+
+  public boolean isSameChange(Change c) {
+    return c == this;
   }
 }

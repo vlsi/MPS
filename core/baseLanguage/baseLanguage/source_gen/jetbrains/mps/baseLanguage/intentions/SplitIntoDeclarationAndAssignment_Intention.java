@@ -27,7 +27,7 @@ public class SplitIntoDeclarationAndAssignment_Intention extends BaseIntention i
   }
 
   public boolean isAvailableInChildNodes() {
-    return false;
+    return true;
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {

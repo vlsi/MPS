@@ -1,21 +1,24 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.impl.TemplateContext;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Evgeny Gryaznov, May 17, 2010
  */
 public class PatternRuleContext extends BaseMappingRuleContext {
-  private QueryExecutionContext myExecutionContext;
 
-  public PatternRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator, QueryExecutionContext executionContext) {
+  public PatternRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
-    myExecutionContext = executionContext;
+  }
+
+  public PatternRuleContext(SNode inputNode, SNodePointer ruleNode, ITemplateGenerator generator) {
+    super(inputNode, ruleNode, generator);
   }
 
   public void createPatternContext(GeneratedMatchingPattern pattern) {
-    myContext = new TemplateContext(pattern, null, getInputNode());
+    myContext = new DefaultTemplateContext(pattern, null, getInputNode());
   }
 }

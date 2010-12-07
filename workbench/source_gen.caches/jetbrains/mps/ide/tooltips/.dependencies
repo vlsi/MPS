@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.tooltips.MPSToolTipManager" file="MPSToolTipManager.java">
     <classNode dependClassName="com.intellij.ide.IdeTooltip" />
     <classNode dependClassName="com.intellij.ide.IdeTooltipManager" />
+    <classNode dependClassName="com.intellij.ide.TooltipEvent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Frame" />
@@ -18,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTip" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTipData" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.TooltipComponent" />
+    <classNode dependClassName="jetbrains.mps.util.HtmlCharsUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />

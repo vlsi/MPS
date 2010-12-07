@@ -6,7 +6,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 
 public class SolutionProperties extends ModuleProperties {
-  public static final String EXTERNALLY_VISIBLE = "externallyVisible";
   public static final String OUTPUT_PATH = "outputPath";
   public static final String DONT_LOAD_CLASSPATH = "dontLoadClasses";
 
@@ -46,7 +45,6 @@ public class SolutionProperties extends ModuleProperties {
     assert descriptor instanceof SolutionDescriptor;
     super.loadFrom(descriptor);
     SolutionDescriptor d = (SolutionDescriptor) descriptor;
-    myExternallyVisible = d.isExternallyVisible();
     myDontLoadClasses = d.isDontLoadClasses();
     myOutputPath = d.getOutputPath();
   }
@@ -56,7 +54,6 @@ public class SolutionProperties extends ModuleProperties {
     assert descriptor instanceof SolutionDescriptor;
     super.saveTo(descriptor);
     SolutionDescriptor d = (SolutionDescriptor) descriptor;
-    d.setExternallyVisible(myExternallyVisible);
     d.setDontLoadClasses(myDontLoadClasses);
     d.setOutputPath(myOutputPath);
   }

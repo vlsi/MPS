@@ -23,6 +23,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
+import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -49,7 +51,7 @@ public class SModel {
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
 
-  private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
+  private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
 
   private StructureModificationHistory myStructureModificationHistory = new StructureModificationHistory();
 
@@ -60,7 +62,12 @@ public class SModel {
   private Throwable myDisposedStacktrace = null;
 
   public SModel(@NotNull SModelReference modelReference) {
+    this(modelReference,new UniversalOptimizedNodeIdMap());
+  }
+
+  public SModel(@NotNull SModelReference modelReference,INodeIdToNodeMap map) {
     myReference = modelReference;
+    myIdToNodeMap = map;
   }
 
   //---------common properties--------
@@ -192,7 +199,7 @@ public class SModel {
   }
 
   public void clearAdaptersAndUserObjects() {
-    for (SNode node : getAllNodesWithIds()) {
+    for (SNode node : myIdToNodeMap.values()) {
       node.clearAdapter();
       node.removeAllUserObjects();
     }
@@ -209,7 +216,7 @@ public class SModel {
     }
   }
 
-  public boolean setLoading(boolean loading) {
+  public synchronized boolean setLoading(boolean loading) {
     boolean wasLoading = myLoading;
     myLoading = loading;
     if (wasLoading != loading) {
@@ -218,11 +225,11 @@ public class SModel {
     return wasLoading;
   }
 
-  public boolean isLoading() {
+  public synchronized boolean isLoading() {
     return myLoading;
   }
 
-  private boolean canFireEvent() {
+  private synchronized boolean canFireEvent() {
     return !myLoading;
   }
 
@@ -430,6 +437,10 @@ public class SModel {
     resetIdCounter();
   }
 
+  protected final INodeIdToNodeMap createNodeIdMap() {
+    return new UniversalOptimizedNodeIdMap();
+  }
+
   static void resetIdCounter() {
     ourCounter.set(Math.abs(new SecureRandom().nextLong()));
   }
@@ -439,16 +450,8 @@ public class SModel {
     return new SNodeId.Regular(id);
   }
 
-  public Map<SNodeId, SNode> getNodeIdToNodeMap() {
-    checkNotDisposed();
-    if (myDisposed) return Collections.emptyMap();
-
-    enforceFullLoad();
-    return Collections.unmodifiableMap(myIdToNodeMap);
-  }
-
   @Nullable
-  public SNode getNodeById(SNodeId nodeId) {
+  public SNode getNodeById(@NotNull SNodeId nodeId) {
     checkNotDisposed();
     if (myDisposed) return null;
 
@@ -581,7 +584,6 @@ public class SModel {
   @NotNull
   private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     for (SNode node : model.nodes()) {
-      //result.add(node.getConceptDeclarationNode().getModel().getSModelReference());
       SNode concept = node.getConceptDeclarationNode();
       if (concept == null) {
         LOG.error("concept not found for node " + node);
@@ -589,7 +591,6 @@ public class SModel {
         result.add(concept.getModel().getSModelReference());
       }
       for (String propname : node.getProperties().keySet()) {
-        //result.add(node.getPropertyDeclaration(propname).getModel().getSModelReference());
         PropertyDeclaration decl = node.getPropertyDeclaration(propname);
         if (decl == null) {
           LOG.error("property declaration " + propname + " not found for node " + node);
@@ -598,8 +599,12 @@ public class SModel {
         }
       }
       for (SReference ref : node.getReferencesIterable()) {
-        result.add(ref.getTargetSModelReference());
-        //result.add(node.getLinkDeclaration(ref.getRole()).getModel().getSModelReference());
+        SModelReference targetModelRef = ref.getTargetSModelReference();
+        if (targetModelRef == null) {
+          LOG.error("target model reference " + ref.getRole() + " is null for node " + node);
+        } else {
+          result.add(targetModelRef);
+        }
         LinkDeclaration decl = node.getLinkDeclaration(ref.getRole());
         if (decl == null) {
           LOG.error("link declaration " + ref.getRole() + " not found for node " + node);
@@ -608,7 +613,6 @@ public class SModel {
         }
       }
       for (SNode child : node.getChildren()) {
-        //result.add(child.getRoleLink().getModel().getSModelReference());
         if (child.isAttribute()) {
           continue;   // temporary don't check annotation roles, suppose the model of AnnotationDeclaration is the same as of concept
         }
@@ -815,7 +819,7 @@ public class SModel {
     enforceFullLoad();
 
     boolean changed = false;
-    for (SNode node : getAllNodesWithIds()) {
+    for (SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
@@ -878,7 +882,7 @@ public class SModel {
     enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
-    for (SNode node : getAllNodesWithIds()) {
+    for (SNode node : myIdToNodeMap.values()) {
       for (SReference reference : node.getReferences()) {
         if (oldReference.equals(reference.getTargetSModelReference())) {
           reference.setTargetSModelReference(newModelReference);
@@ -955,16 +959,6 @@ public class SModel {
       }
     }
     return result;
-  }
-
-  @Deprecated
-  @NotNull
-  public Collection<SNode> getAllNodesWithIds() {
-    checkNotDisposed();
-    if (myDisposed) return Collections.emptySet();
-
-    enforceFullLoad();
-    return Collections.unmodifiableCollection(myIdToNodeMap.values());
   }
 
   @Nullable

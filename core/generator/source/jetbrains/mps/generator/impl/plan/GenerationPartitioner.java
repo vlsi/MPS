@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateModelInterpreted;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -37,12 +41,25 @@ public class GenerationPartitioner {
   private List<CoherentSetData> myCoherentMappings;
   private Set<MappingPriorityRule> myConflictingRules;
 
-  public List<List<MappingConfiguration>> createMappingSets(List<Generator> generators) {
-    return doPartitioning(null, generators);
+  public List<List<TemplateMappingConfiguration>> createMappingSets(List<Generator> generators, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
+    return convertPlan(doPartitioning(null, generators), mappingsMap);
   }
 
-  public List<List<MappingConfiguration>> createMappingSets(GeneratorDescriptor descriptorWorkingCopy, List<Generator> generators) {
-    return doPartitioning(descriptorWorkingCopy, generators);
+  private static List<List<TemplateMappingConfiguration>> convertPlan(List<List<MappingConfiguration>> plan, Map<SNodePointer, TemplateMappingConfiguration> mappingsMap) {
+    List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>();
+
+    for(List<MappingConfiguration> step : plan) {
+      List<TemplateMappingConfiguration> s = new ArrayList<TemplateMappingConfiguration>(step.size());
+      for(MappingConfiguration c : step) {
+        TemplateMappingConfiguration configuration = mappingsMap.get(new SNodePointer(c.getNode()));
+        if(configuration == null) {
+          throw new IllegalStateException("unknown configuration found: " + c.getName());
+        }
+        s.add(configuration);
+      }
+      result.add(s);
+    }
+    return result;
   }
 
   private void reset() {
@@ -297,10 +314,6 @@ public class GenerationPartitioner {
     }
 
     return new ArrayList();
-  }
-
-  public boolean hasConflictingPriorityRules() {
-    return !myConflictingRules.isEmpty();
   }
 
   public Set<MappingPriorityRule> getConflictingPriorityRules() {

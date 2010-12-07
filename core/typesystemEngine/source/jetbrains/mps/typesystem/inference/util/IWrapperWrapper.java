@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import jetbrains.mps.typesystem.inference.IWrapper;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.typesystem.inference.IWrapper;
 
 class IWrapperWrapper {
   private IWrapper myWrapper;

@@ -28,19 +28,13 @@ import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.api.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.debug.breakpoints.LineBreakpoint;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 14.12.2009
- * Time: 16:23:30
- * To change this template use File | Settings | File Templates.
- */
 public class DebugVMEventsProcessor {
   private static final Logger LOG = Logger.getLogger(DebugVMEventsProcessor.class);
 
@@ -273,26 +267,16 @@ public class DebugVMEventsProcessor {
     //  public void contextAction() throws Exception {
     final SuspendManager suspendManager = mySuspendManager;
 
-
-    //todo - check if inside evaluation later; no evaluation currently implemented
     SuspendContext pausedContext = getSuspendManager().getPausedContext();
     if (pausedContext != null && pausedContext.isEvaluating()) {
       suspendManager.voteResume(suspendContext);
       return;
     }
-    // SuspendContext evaluatingContext = SuspendManagerUtil.getEvaluatingContext(suspendManager, getSuspendContext().getThread());
-    //if(evaluatingContext != null) {
-    // is inside evaluation, so ignore any breakpoints
-    //      suspendManager.voteResume(suspendContext);
-    //      return;
-    //    }
-
 
     //breakpoint found
-    final LocatableEventRequestor requestor =
-      (LocatableEventRequestor) getRequestManager().findRequestor(event.request());
+    final LocatableEventRequestor requestor = (LocatableEventRequestor) getRequestManager().findRequestor(event.request());
 
-    // boolean resumePreferred = requestor != null && DebuggerSettings.SUSPEND_NONE.equals(requestor.getSuspendPolicy());
+    boolean resumePreferred = requestor != null && EventRequest.SUSPEND_NONE == requestor.getSuspendPolicy();
     boolean requestHit = false;
 
     try {
@@ -304,12 +288,12 @@ public class DebugVMEventsProcessor {
       LOG.error(t);
     }
 
-    if (requestHit && requestor instanceof MPSBreakpoint) {
+    if (requestHit && requestor instanceof LineBreakpoint) {
       // if requestor is a breakpoint and this breakpoint was hit, no matter its suspend policy
-      myBreakpointManager.processBreakpointHit((MPSBreakpoint) requestor);
+      myBreakpointManager.processBreakpointHit((LineBreakpoint) requestor);
     }
 
-    if (!requestHit /*|| resumePreferred*/) {
+    if (!requestHit || resumePreferred) {
       suspendManager.voteResume(suspendContext);
     } else {
       suspendManager.voteSuspend(suspendContext);

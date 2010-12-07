@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior" />
+  <unitInfo fileName="LocalBehaviorMethodCall_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_Behavior" />
   <unitInfo fileName="SuperNodeExpression_Behavior.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior" />
   <unitInfo fileName="ConceptBehavior_Behavior.java" startLine="172" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior$QuotationClass_xahq23_a0a0b0a0a0e" />
   <unitInfo fileName="ConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior" />
@@ -232,6 +233,24 @@
     <scopeInfo nodeId="1225196403958" fileName="ConceptMethodDeclaration_Behavior.java" startLine="31" startPosition="77" endLine="38" endPosition="16" />
     <scopeInfo nodeId="1227262347925" fileName="ConceptMethodDeclaration_Behavior.java" startLine="41" startPosition="81" endLine="57" endPosition="16">
       <varInfo nodeId="1227262494605" varName="parameterCount" />
+    </scopeInfo>
+  </root>
+  <root nodeId="7148319044498527609">
+    <nodeInfo nodeId="7148319044498537589" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="117" />
+    <nodeInfo nodeId="7148319044498527615" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="17" startPosition="92" endLine="18" endPosition="98" />
+    <nodeInfo nodeId="7148319044498527623" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="19" startPosition="92" endLine="20" endPosition="85" />
+    <nodeInfo nodeId="7148319044498527634" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="22" startPosition="73" endLine="23" endPosition="31" />
+    <nodeInfo nodeId="7148319044498527641" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="24" startPosition="12" endLine="25" endPosition="18" />
+    <nodeInfo nodeId="7148319044498527639" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="24" startPosition="10" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="7148319044498527632" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="21" startPosition="10" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="7148319044498527621" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="18" startPosition="98" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="7148319044498527611" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="7148319044498537588" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="117" />
+    <scopeInfo nodeId="7148319044498527622" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="19" startPosition="92" endLine="20" endPosition="85" />
+    <scopeInfo nodeId="7148319044498527633" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="22" startPosition="73" endLine="23" endPosition="31" />
+    <scopeInfo nodeId="7148319044498527640" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="24" startPosition="12" endLine="25" endPosition="18" />
+    <scopeInfo nodeId="7148319044498527614" fileName="LocalBehaviorMethodCall_Behavior.java" startLine="17" startPosition="92" endLine="26" endPosition="5">
+      <varInfo nodeId="7148319044498527616" varName="methodDeclaration" />
     </scopeInfo>
   </root>
   <root nodeId="7448026190102457307">

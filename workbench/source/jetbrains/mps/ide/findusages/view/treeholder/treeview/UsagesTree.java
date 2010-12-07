@@ -629,7 +629,7 @@ public class UsagesTree extends MPSTree {
   }
 
   public void navigateToNextResult() {
-    assert getResultsNode().getChildCount() != 0;
+    if (getResultsNode().getChildCount() == 0) return;
 
     UsagesTreeNode currentNode = getCurrentNode();
     UsagesTreeNode next;
@@ -637,7 +637,7 @@ public class UsagesTree extends MPSTree {
     if (currentNode == null || !inResults(currentNode)) {
       next = findFirstResultInSubtree((UsagesTreeNode) getResultsNode().getChildAt(0), false);
     } else {
-      next = findNextResult((UsagesTreeNode) currentNode);
+      next = findNextResult(currentNode);
     }
 
     if (next != null) {
@@ -660,7 +660,7 @@ public class UsagesTree extends MPSTree {
     if (currentNode == null) {
       next = findLastResultInSubtree((UsagesTreeNode) getResultsNode().getChildAt(0), false);
     } else {
-      next = findPrevResult((UsagesTreeNode) currentNode);
+      next = findPrevResult(currentNode);
     }
 
     if (next != null) {

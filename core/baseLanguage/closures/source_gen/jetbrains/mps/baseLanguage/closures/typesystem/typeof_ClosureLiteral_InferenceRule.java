@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -28,7 +29,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -111,6 +111,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       }
     }
     final SNode RLCS_typevar_1221579075692 = typeCheckingContext.createNewRuntimeTypesVariable();
+    boolean isVoid = false;
     for (SNode rs : allRets) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(rs, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true), "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
         {
@@ -118,18 +119,26 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "3294521177951941138", 0, intentionProvider);
           _info_12389875345.setInequationGroup("default");
-          typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(RLCS_typevar_1221579075692), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0a01a0().createNode(typeCheckingContext), false, _info_12389875345);
+          typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(RLCS_typevar_1221579075692), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0a11a0().createNode(typeCheckingContext), false, _info_12389875345);
         }
       } else {
-        {
-          SNode _nodeToCheck_1029348928467 = closure;
-          BaseQuickFixProvider intentionProvider = null;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075710", 0, intentionProvider);
-          _info_12389875345.setInequationGroup("default");
-          typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(RLCS_typevar_1221579075692), (SNode) ((SLinkOperations.getTarget(SNodeOperations.cast(rs, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true) != null) ?
-            typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(rs, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1231434118678", true) :
-            new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0a0a01a0().createNode(typeCheckingContext)
-          ), false, _info_12389875345);
+        SNode retExpression = SLinkOperations.getTarget(SNodeOperations.cast(rs, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true);
+        if (retExpression == null) {
+          {
+            SNode _nodeToCheck_1029348928467 = closure;
+            BaseQuickFixProvider intentionProvider = null;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4542977447015145880", 0, intentionProvider);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(RLCS_typevar_1221579075692), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a1a0a0l0a().createNode(typeCheckingContext), _info_12389875345);
+          }
+          isVoid = true;
+        } else {
+          {
+            SNode _nodeToCheck_1029348928467 = retExpression;
+            BaseQuickFixProvider intentionProvider = null;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "5604339164783014263", 0, intentionProvider);
+            _info_12389875345.setInequationGroup("default");
+            typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(RLCS_typevar_1221579075692), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "5604339164783014269", true), false, _info_12389875345);
+          }
         }
       }
     }
@@ -141,7 +150,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221579075724", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
         typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(YLCS_typevar_1221579075693), (SNode) (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(ys, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"), "expression", true), "jetbrains.mps.baseLanguage.structure.NullLiteral") ?
-          new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0m0a().createNode(typeCheckingContext) :
+          new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0n0a().createNode(typeCheckingContext) :
           typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(ys, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"), "expression", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "3294521177951978057", true)
         ), false, _info_12389875345);
       }
@@ -154,7 +163,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229000989981", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229000996769", true), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a1a41a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1229000969704), typeCheckingContext.getRepresentative(elementType_typevar_1229000969704), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229000996769", true), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a1a51a0().createNode(typeCheckingContext.getRepresentative(elementType_typevar_1229000969704), typeCheckingContext.getRepresentative(elementType_typevar_1229000969704), typeCheckingContext), false, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = closure;
@@ -166,11 +175,11 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
     }
     List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(closure, "body", true), "statement", true);
     SNode lastStmt = (stmts != null && ListSequence.fromList(stmts).count() > 0 ?
-      ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1) :
+      IMethodLike_Behavior.call_getLastStatement_1239354409446(closure) :
       null
     );
     boolean returnsValue = !(ListSequence.fromList(allRets).isEmpty());
-    boolean returnsFromLast = SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(closure));
+    boolean returnsFromLast = !(isVoid) && SNodeOperations.isInstanceOf(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && !(IStatementListContainer_Behavior.call_isExecuteSynchronous_1230212745736(closure));
     boolean yieldsValue = !(ListSequence.fromList(allYlds).isEmpty());
     switch (ListSequence.fromList(allYldAlls).count()) {
       case 0:
@@ -183,7 +192,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
             BaseQuickFixProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229001407669", 0, intentionProvider);
             _info_12389875345.setInequationGroup("default");
-            typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(RLCS_typevar_1221579075692), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a1a0a1u0a().createNode(typeCheckingContext.getRepresentative(YALCS_typevar_1229000934873), typeCheckingContext), false, _info_12389875345);
+            typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.getRepresentative(RLCS_typevar_1221579075692), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a1a0a1v0a().createNode(typeCheckingContext.getRepresentative(YALCS_typevar_1229000934873), typeCheckingContext), false, _info_12389875345);
           }
           break;
         }
@@ -214,7 +223,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "3294521177951941153", 0, intentionProvider);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(TERMINATE_typevar_1232105622932), (SNode) (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "jetbrains.mps.baseLanguage.structure.NullLiteral") ?
-          new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0z0a().createNode(typeCheckingContext) :
+          new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0ab0a().createNode(typeCheckingContext) :
           typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "3294521177951944160", true)
         ), _info_12389875345);
       }
@@ -244,7 +253,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         SNode _nodeToCheck_1029348928467 = closure;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232131979682", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(TERMINATE_typevar_1232105622932), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0z0a_0().createNode(typeCheckingContext), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(TERMINATE_typevar_1232105622932), (SNode) new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a0a0a0ab0a_0().createNode(typeCheckingContext), _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = closure;
@@ -286,14 +295,14 @@ with_allThrows:
         SNode _nodeToCheck_1029348928467 = closure;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718256918", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718251100", true), (SNode) ClosureLiteral_Behavior.call_getType_1229718192182(closure, paramTypes, new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a1a0a0a0a82a0().createNode(typeCheckingContext.getRepresentative(YLCS_typevar_1221579075693), typeCheckingContext), null, null, realThrows), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718251100", true), (SNode) ClosureLiteral_Behavior.call_getType_1229718192182(closure, paramTypes, new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a1a0a0a0a92a0().createNode(typeCheckingContext.getRepresentative(YLCS_typevar_1221579075693), typeCheckingContext), null, null, realThrows), _info_12389875345);
       }
     } else {
       {
         SNode _nodeToCheck_1029348928467 = closure;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718281813", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718277155", true), (SNode) ClosureLiteral_Behavior.call_getType_1229718192182(closure, paramTypes, new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a1a0a0a0a0cb0a().createNode(typeCheckingContext), new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a2a0a0a0a0cb0a().createNode(typeCheckingContext), new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a3a0a0a0a0cb0a().createNode(typeCheckingContext), realThrows), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718277155", true), (SNode) ClosureLiteral_Behavior.call_getType_1229718192182(closure, paramTypes, new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a1a0a0a0a0db0a().createNode(typeCheckingContext), new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a2a0a0a0a0db0a().createNode(typeCheckingContext), new typeof_ClosureLiteral_InferenceRule.QuotationClass_nx7618_a3a0a0a0a0db0a().createNode(typeCheckingContext), realThrows), _info_12389875345);
       }
     }
   }
@@ -313,8 +322,8 @@ with_allThrows:
     return false;
   }
 
-  public static class QuotationClass_nx7618_a0a0a0a01a0 {
-    public QuotationClass_nx7618_a0a0a0a01a0() {
+  public static class QuotationClass_nx7618_a0a0a0a11a0 {
+    public QuotationClass_nx7618_a0a0a0a11a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -342,8 +351,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a0a0a0a0a01a0 {
-    public QuotationClass_nx7618_a0a0a0a0a01a0() {
+  public static class QuotationClass_nx7618_a0a0a1a0a0l0a {
+    public QuotationClass_nx7618_a0a0a1a0a0l0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -371,8 +380,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a0a0a0m0a {
-    public QuotationClass_nx7618_a0a0a0m0a() {
+  public static class QuotationClass_nx7618_a0a0a0n0a {
+    public QuotationClass_nx7618_a0a0a0n0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -402,8 +411,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a0a1a41a0 {
-    public QuotationClass_nx7618_a0a1a41a0() {
+  public static class QuotationClass_nx7618_a0a1a51a0 {
+    public QuotationClass_nx7618_a0a1a51a0() {
     }
 
     public SNode createNode(Object parameter_11, Object parameter_12, final TypeCheckingContext typeCheckingContext) {
@@ -424,7 +433,7 @@ with_allThrows:
             quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4, typeCheckingContext);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -442,7 +451,7 @@ with_allThrows:
             quotedNode_5 = (SNode) parameter_12;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
-              quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5, typeCheckingContext);
             } else {
               _parameterValues_129834374.add(quotedNode_5);
               quotedNode1_10 = quotedNode_5;
@@ -476,7 +485,7 @@ with_allThrows:
             quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
-              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
+              quotedNode1_8 = HUtil.copyIfNecessary(quotedNode_4);
             } else {
               _parameterValues_129834374.add(quotedNode_4);
               quotedNode1_8 = quotedNode_4;
@@ -494,7 +503,7 @@ with_allThrows:
             quotedNode_5 = (SNode) parameter_12;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
-              quotedNode1_10 = CopyUtil.copy(quotedNode_5);
+              quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_5);
             } else {
               _parameterValues_129834374.add(quotedNode_5);
               quotedNode1_10 = quotedNode_5;
@@ -511,8 +520,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a0a1a0a1u0a {
-    public QuotationClass_nx7618_a0a1a0a1u0a() {
+  public static class QuotationClass_nx7618_a0a1a0a1v0a {
+    public QuotationClass_nx7618_a0a1a0a1v0a() {
     }
 
     public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
@@ -527,7 +536,7 @@ with_allThrows:
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2, typeCheckingContext);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -553,7 +562,7 @@ with_allThrows:
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -568,8 +577,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a0a0a0z0a {
-    public QuotationClass_nx7618_a0a0a0z0a() {
+  public static class QuotationClass_nx7618_a0a0a0ab0a {
+    public QuotationClass_nx7618_a0a0a0ab0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -599,8 +608,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a0a0a0z0a_0 {
-    public QuotationClass_nx7618_a0a0a0z0a_0() {
+  public static class QuotationClass_nx7618_a0a0a0ab0a_0 {
+    public QuotationClass_nx7618_a0a0a0ab0a_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -628,8 +637,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a1a0a0a0a82a0 {
-    public QuotationClass_nx7618_a1a0a0a0a82a0() {
+  public static class QuotationClass_nx7618_a1a0a0a0a92a0 {
+    public QuotationClass_nx7618_a1a0a0a0a92a0() {
     }
 
     public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
@@ -644,7 +653,7 @@ with_allThrows:
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2, typeCheckingContext);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -670,7 +679,7 @@ with_allThrows:
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2);
             quotedNode1_4 = quotedNode_2;
@@ -685,8 +694,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a1a0a0a0a0cb0a {
-    public QuotationClass_nx7618_a1a0a0a0a0cb0a() {
+  public static class QuotationClass_nx7618_a1a0a0a0a0db0a {
+    public QuotationClass_nx7618_a1a0a0a0a0db0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -714,8 +723,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a2a0a0a0a0cb0a {
-    public QuotationClass_nx7618_a2a0a0a0a0cb0a() {
+  public static class QuotationClass_nx7618_a2a0a0a0a0db0a {
+    public QuotationClass_nx7618_a2a0a0a0a0db0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -743,8 +752,8 @@ with_allThrows:
     }
   }
 
-  public static class QuotationClass_nx7618_a3a0a0a0a0cb0a {
-    public QuotationClass_nx7618_a3a0a0a0a0cb0a() {
+  public static class QuotationClass_nx7618_a3a0a0a0a0db0a {
+    public QuotationClass_nx7618_a3a0a0a0a0db0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

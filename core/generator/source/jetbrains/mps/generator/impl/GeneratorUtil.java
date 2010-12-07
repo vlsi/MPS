@@ -21,15 +21,13 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -149,14 +147,14 @@ public class GeneratorUtil {
   }
 
   @Nullable
-  static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ReductionContext reductionContext, TemplateGenerator generator)
+  public static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ReductionContext reductionContext, TemplateGenerator generator)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
 
     if (ruleConsequence == null) {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
     }
-    generator.getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
+    generator.getGenerationTracer().pushRuleConsequence(new SNodePointer(ruleConsequence.getNode()));
 
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
@@ -216,15 +214,6 @@ public class GeneratorUtil {
     return null;
   }
 
-  static RuleConsequence getReductionConsequence(ReductionRule rule) {
-    if (rule instanceof Reduction_MappingRule) {
-      return ((Reduction_MappingRule) rule).getRuleConsequence();
-    } else if (rule instanceof PatternReduction_MappingRule) {
-      return ((PatternReduction_MappingRule) rule).getRuleConsequence();
-    }
-    return null;
-  }
-
   private static Expression[] getArguments(ITemplateCall templateCall) {
     final List<Expression> args = templateCall.getActualArguments();
     if (args == null || args.size() == 0) {
@@ -245,7 +234,7 @@ public class GeneratorUtil {
     return parameterDeclarations.toArray(new TemplateParameterDeclaration[parameterDeclarations.size()]);
   }
 
-  static BaseConcept getPatternVariable(TemplateArgumentPatternRef argument) {
+  public static BaseConcept getPatternVariable(TemplateArgumentPatternRef argument) {
     if (argument instanceof TemplateArgumentPatternVarRefExpression) {
       return ((TemplateArgumentPatternVarRefExpression) argument).getPatternVarDecl();
     } else if (argument instanceof TemplateArgumentLinkPatternRefExpression) {
@@ -257,11 +246,11 @@ public class GeneratorUtil {
   }
 
   @NotNull
-  static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, RuleConsequence consequence, SNode newInputNode, ITemplateGenerator generator) {
+  public static TemplateContext createTemplateContext(SNode inputNode, @Nullable TemplateContext outerContext, @NotNull ReductionContext reductionContext, RuleConsequence consequence, SNode newInputNode, ITemplateGenerator generator) {
     if (consequence instanceof ITemplateCall) {
       return createTemplateContext(inputNode, outerContext, reductionContext, (ITemplateCall) consequence, newInputNode, generator);
     }
-    return outerContext != null ? outerContext : new TemplateContext(newInputNode);
+    return outerContext != null ? outerContext : new DefaultTemplateContext(newInputNode);
   }
 
   @NotNull
@@ -270,11 +259,11 @@ public class GeneratorUtil {
     final TemplateParameterDeclaration[] parameters = getParameters(templateCall);
 
     if (arguments == null && parameters == null) {
-      return new TemplateContext(newInputNode);
+      return outerContext != null ? outerContext.subContext(null, newInputNode) : new DefaultTemplateContext(newInputNode);
     }
     if (arguments == null || parameters == null || arguments.length != parameters.length) {
       generator.showErrorMessage(inputNode, templateCall.getNode(), "number of arguments doesn't match template");
-      return new TemplateContext(newInputNode);
+      return outerContext != null ? outerContext.subContext(null, newInputNode) : new DefaultTemplateContext(newInputNode);
     }
 
     final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
@@ -290,6 +279,13 @@ public class GeneratorUtil {
         value = ((StringLiteral) expr).getValue();
       } else if (expr instanceof NullLiteral) {
         /* ok */
+      } else if (expr instanceof TemplateArgumentParameterExpression && outerContext != null) {
+        TemplateParameterDeclaration parameter = ((TemplateArgumentParameterExpression) expr).getParameter();
+        if (parameter == null) {
+          generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference");
+        } else {
+          value = outerContext.getVariable(parameter.getName());
+        }
       } else if (expr instanceof TemplateArgumentPatternRef && outerContext != null) {
         BaseConcept patternVar = getPatternVariable((TemplateArgumentPatternRef) expr);
         if (patternVar == null) {
@@ -307,7 +303,7 @@ public class GeneratorUtil {
 
       vars.put(name, value);
     }
-    return new TemplateContext(null, vars, newInputNode);
+    return new DefaultTemplateContext(null, vars, newInputNode);
   }
 
   /**
@@ -315,7 +311,7 @@ public class GeneratorUtil {
    */
   /*package*/
   @Nullable
-  static GeneratorMessageType processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
+  public static GeneratorMessageType processGeneratorMessage(GeneratorMessage message, SNode inputNode, SNode templateNode, SNode ruleNode, ITemplateGenerator generator) {
     GeneratorMessageType messageType = null;
     if (message != null) {
       messageType = message.getMessageType();
@@ -400,4 +396,7 @@ public class GeneratorUtil {
     }
   }
 
+  public static String getTemplateNodeId(SNode templateNode) {
+    return "tpl/" + templateNode.getModel().getSModelId() + "/" + templateNode.getSNodeId();
+  }
 }

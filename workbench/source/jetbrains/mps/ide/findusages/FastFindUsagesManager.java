@@ -214,11 +214,14 @@ public class FastFindUsagesManager extends FindUsagesManager {
   private Set<SNode> findInstancesOfNodeInCache(AbstractConceptDeclaration concept, final IScope scope, boolean isExact) {
     Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     final Set<VirtualFile> scopeFiles = getScopeFiles(scope);
-    candidates.addAll(getCandidates(scopeFiles, NameUtil.nodeFQName(concept)));
+    // quick fix for new persistence, todo: should be persistence dependent
+    //candidates.addAll(getCandidates(scopeFiles, NameUtil.nodeFQName(concept)));
+    if (concept != null) candidates.addAll(getCandidates(scopeFiles, concept.getName()));
     if (!isExact) {
       Set<String> fqNames = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(concept));
       for (String fqName : fqNames) {
-        candidates.addAll(getCandidates(scopeFiles, fqName));
+//        candidates.addAll(getCandidates(scopeFiles, fqName));
+        candidates.addAll(getCandidates(scopeFiles, fqName.substring(fqName.lastIndexOf('.')+1)));
       }
     }
     Set<SNode> result = new HashSet<SNode>();
@@ -286,29 +289,42 @@ public class FastFindUsagesManager extends FindUsagesManager {
         int end = indexOfQuoteAndVersionColon(chars, charsLength, offset)[0];
         if (end > offset) {
           int e = offset;
-          while (e < end && chars[e] >= '0' && chars[e] <= '9') {
-            e++;
-          }
-          if (e > offset) {
-            if (e < end && chars[e] == 'v') {
-              e++;
-            }
-            if (e + 1 < end && chars[e] == '.') {
-              offset = e + 1;
-            }
-          }
-          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+          // quick temporary fix for new persistences, todo: should be persistence dependent
+//          while (e < end && chars[e] >= '0' && chars[e] <= '9') {
+//            e++;
+//          }
+//          if (e > offset) {
+//            if (e < end && chars[e] == 'v') {
+//              e++;
+//            }
+//            if (e + 1 < end && chars[e] == '.') {
+//              offset = e + 1;
+//            }
+//          }
+//          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+          while (e < end && chars[e] != '.')  ++e;
+          if (e > offset && e + 1 < end && chars[e] == '.')
+            offset = e + 1;
+          String test = unescape(new String(chars, offset, end - offset)).replace("%d", ".").replace("%c", ":");
+          result.put(new IdIndexEntry(test, true), offset);
+
         }
       } else if (contains(chars, charsLength, offset, TYPE_PREFIX)) {
         // check pattern "type=\"(.+?)\" id=\".+?\""
         offset += TYPE_PREFIX.length();
         int[] indices = indexOfQuoteAndVersionColon(chars, charsLength, offset);
         int end = indices[0];
-        int qend = indices[1];
-        if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
+        // quick temporary fix for new persistences, todo: should be persistence dependent
+//        int qend = indices[1];
+//        if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
           // report
+//          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+        // use only the name part of type="abcd.name" or type="model.structure.name:0"
+          int start = end;
+          while (start >= offset && chars[start] != '.')  --start;
+          offset = start + 1;
           result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-        }
+  //      }
       }
     }
 

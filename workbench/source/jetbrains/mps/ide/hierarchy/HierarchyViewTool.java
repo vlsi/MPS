@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> implements INavigateableTool {
-  private static List<SModelDescriptor> myStructureModels = new ArrayList<SModelDescriptor>();
+  private List<SModelDescriptor> myStructureModels = new ArrayList<SModelDescriptor>();
   private SModelListener myModelListener;
   private LanguageHierarchyCache myCache;
 

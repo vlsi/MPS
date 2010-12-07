@@ -100,44 +100,44 @@ import java.util.Stack;
 
       public void visitFormalTypeParameter(String name) {
         if (this.name != null) {
-          this.flush();
+          flush();
         }
         this.name = name;
       }
 
       public SignatureVisitor visitClassBound() {
-        this.classBoundVisitor = new TypeUtil.TypeBuilderVisitor();
-        return this.classBoundVisitor;
+        classBoundVisitor = new TypeUtil.TypeBuilderVisitor();
+        return classBoundVisitor;
       }
 
       public SignatureVisitor visitInterfaceBound() {
         TypeUtil.TypeBuilderVisitor visitor = new TypeUtil.TypeBuilderVisitor();
-        this.interfaceBoundVisitors.add(visitor);
+        interfaceBoundVisitors.add(visitor);
         return visitor;
       }
 
       public SignatureVisitor visitReturnType() {
-        if (this.name != null) {
-          this.flush();
+        if (name != null) {
+          flush();
         }
         return super.visitReturnType();
       }
 
       public SignatureVisitor visitSuperclass() {
-        if (this.name != null) {
-          this.flush();
+        if (name != null) {
+          flush();
         }
         return super.visitSuperclass();
       }
 
       private void flush() {
-        List<ASMType> interfaceBounds = new ArrayList<ASMType>(this.interfaceBoundVisitors.size());
-        for (TypeUtil.TypeBuilderVisitor v : this.interfaceBoundVisitors) {
+        List<ASMType> interfaceBounds = new ArrayList<ASMType>(interfaceBoundVisitors.size());
+        for (TypeUtil.TypeBuilderVisitor v : interfaceBoundVisitors) {
           interfaceBounds.add(v.getResult());
         }
         ASMType formalType = null;
-        if (this.classBoundVisitor != null) {
-          formalType = this.classBoundVisitor.getResult();
+        if (classBoundVisitor != null) {
+          formalType = classBoundVisitor.getResult();
           if (formalType instanceof ASMClassType) {
             ASMClassType classFormalType = (ASMClassType) formalType;
             if (classFormalType.getName().equals(Object.class.getName())) {
@@ -145,10 +145,10 @@ import java.util.Stack;
             }
           }
         }
-        result.add(new ASMFormalTypeParameter(this.name, formalType, interfaceBounds));
-        this.name = null;
-        this.classBoundVisitor = null;
-        this.interfaceBoundVisitors.clear();
+        result.add(new ASMFormalTypeParameter(name, formalType, interfaceBounds));
+        name = null;
+        classBoundVisitor = null;
+        interfaceBoundVisitors.clear();
       }
     });
     return result;
@@ -194,96 +194,96 @@ import java.util.Stack;
     }
 
     protected void setResult(ASMType type) {
-      this.myResult = type;
+      myResult = type;
     }
 
     protected void addPart(ASMType type) {
-      if (this.myTypes.isEmpty()) {
-        this.myTypes.add(type);
+      if (myTypes.isEmpty()) {
+        myTypes.add(type);
         return;
       }
-      if (this.myTypes.peek() instanceof ASMClassType) {
-        ASMClassType ct = (ASMClassType) this.myTypes.pop();
+      if (myTypes.peek() instanceof ASMClassType) {
+        ASMClassType ct = (ASMClassType) myTypes.pop();
         ASMParameterizedType replacement = new ASMParameterizedType(ct, new ArrayList<ASMType>());
-        if (!(this.myTypes.isEmpty())) {
-          ASMParameterizedType parent = (ASMParameterizedType) this.myTypes.peek();
+        if (!(myTypes.isEmpty())) {
+          ASMParameterizedType parent = (ASMParameterizedType) myTypes.peek();
           parent.removeArgument(ct);
           parent.addArgument(replacement);
         }
-        this.myTypes.push(replacement);
+        myTypes.push(replacement);
       }
-      if (this.myTypes.peek() instanceof ASMParameterizedType) {
-        ((ASMParameterizedType) this.myTypes.peek()).addArgument(this.wrap(type));
+      if (myTypes.peek() instanceof ASMParameterizedType) {
+        ((ASMParameterizedType) myTypes.peek()).addArgument(wrap(type));
       }
       if (type instanceof ASMClassType) {
-        this.myTypes.push(type);
+        myTypes.push(type);
       }
     }
 
     private void finish() {
-      if (this.myTypes.size() == 1) {
-        this.setResult(this.myTypes.peek());
+      if (myTypes.size() == 1) {
+        setResult(myTypes.peek());
       }
-      if (!(this.myTypes.isEmpty())) {
-        this.myTypes.pop();
+      if (!(myTypes.isEmpty())) {
+        myTypes.pop();
       }
     }
 
     private ASMType wrap(ASMType type) {
-      if (this.myWildcard == '+') {
-        this.myWildcard = '=';
+      if (myWildcard == '+') {
+        myWildcard = '=';
         return new ASMExtendsType(type);
       }
-      if (this.myWildcard == '-') {
-        this.myWildcard = '=';
+      if (myWildcard == '-') {
+        myWildcard = '=';
         return new ASMSuperType(type);
       }
       return type;
     }
 
     public void visitTypeArgument() {
-      this.addPart(new ASMUnboundedType());
+      addPart(new ASMUnboundedType());
     }
 
     public SignatureVisitor visitTypeArgument(char wildcard) {
-      this.myWildcard = wildcard;
+      myWildcard = wildcard;
       return this;
     }
 
     public void visitBaseType(char descriptor) {
-      this.addPart(TypeUtil.fromType(Type.getType("" + descriptor)));
+      addPart(TypeUtil.fromType(Type.getType("" + descriptor)));
     }
 
     public void visitTypeVariable(String name) {
-      this.addPart(new ASMTypeVariable(name));
+      addPart(new ASMTypeVariable(name));
     }
 
     public SignatureVisitor visitArrayType() {
-      return this.myArrayVisitor = new TypeUtil.TypeBuilderVisitor();
+      return myArrayVisitor = new TypeUtil.TypeBuilderVisitor();
     }
 
     public void visitClassType(String name) {
-      this.addPart(new ASMClassType(name.replace('/', '.')));
+      addPart(new ASMClassType(name.replace('/', '.')));
     }
 
     public void visitEnd() {
-      if (this.myArrayVisitor != null) {
-        this.addPart(new ASMArrayType(this.myArrayVisitor.getResult()));
-        this.myArrayVisitor = null;
+      if (myArrayVisitor != null) {
+        addPart(new ASMArrayType(myArrayVisitor.getResult()));
+        myArrayVisitor = null;
       } else {
-        this.finish();
+        finish();
       }
     }
 
     /*package*/ ASMType getResult() {
-      if (this.myArrayVisitor != null) {
-        this.addPart(new ASMArrayType(this.myArrayVisitor.getResult()));
-        this.myArrayVisitor = null;
+      if (myArrayVisitor != null) {
+        addPart(new ASMArrayType(myArrayVisitor.getResult()));
+        myArrayVisitor = null;
       }
-      if (this.myResult == null) {
-        this.finish();
+      if (myResult == null) {
+        finish();
       }
-      return this.myResult;
+      return myResult;
     }
   }
 }

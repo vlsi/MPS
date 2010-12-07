@@ -16,11 +16,11 @@
 package jetbrains.mps.newTypesystem.presentation.difference;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
-import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -38,7 +38,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
 
   public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext) {
     super(userObject, operationContext);
-    Difference difference = (Difference) userObject;
+    AbstractOperation difference = (AbstractOperation) userObject;
     setNodeIdentifier(difference.getPresentation());
     setColor(difference.getColor());
     this.setAutoExpandable(true);
@@ -47,7 +47,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
   }
 
   public void goToRule() {
-    Difference difference = (Difference) getUserObject();
+    jetbrains.mps.newTypesystem.operation.AbstractOperation difference = (AbstractOperation) getUserObject();
     EquationInfo info = difference.getEquationInfo();
     if (info != null) {
       GoToTypeErrorRuleUtil.goToRuleById(getOperationContext(), new Pair<String, String>(info.getRuleModel(), info.getRuleId()));
@@ -55,9 +55,9 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
   }
 
   public void goToNode() {
-    Difference difference = (Difference) getUserObject();
+    AbstractOperation difference = (AbstractOperation) getUserObject();
     SNode source = difference.getSource();
-    if (source != null) {
+    if (source != null && source.isRegistered()) {
       getOperationContext().getComponent(MPSEditorOpener.class).editNode(source, getOperationContext());
     }
   }

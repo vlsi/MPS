@@ -54,15 +54,26 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.(\\w+)$");
   private static INodePropertyGetter NULL_GETTER = new INodePropertyGetter() {
-    public Object execPropertyGet(SNode node, String propertyName, IScope scope) { return null; }
-    public void registerSelf(ModelConstraintsManager manager) { }
-    public void unRegisterSelf(ModelConstraintsManager manager) { }
+    public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
+      return null;
+    }
+
+    public void registerSelf(ModelConstraintsManager manager) {
+    }
+
+    public void unRegisterSelf(ModelConstraintsManager manager) {
+    }
   };
 
   private static INodePropertySetter NULL_SETTER = new INodePropertySetter() {
-    public void execPropertySet(SNode node, String propertyName, String value, IScope scope) { }
-    public void registerSelf(ModelConstraintsManager manager) { }
-    public void unRegisterSelf(ModelConstraintsManager manager) { }
+    public void execPropertySet(SNode node, String propertyName, String value, IScope scope) {
+    }
+
+    public void registerSelf(ModelConstraintsManager manager) {
+    }
+
+    public void unRegisterSelf(ModelConstraintsManager manager) {
+    }
   };
 
   public static ModelConstraintsManager getInstance() {
@@ -72,13 +83,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Object myLock = new Object();
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
   private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
-  private Map<Pair<String,String>, INodePropertyGetter> myNodePropertyGettersCache = new ConcurrentHashMap<Pair<String,String>, INodePropertyGetter>();
-  private Map<Pair<String,String>, INodePropertySetter> myNodePropertySettersCache = new ConcurrentHashMap<Pair<String,String>, INodePropertySetter>();
-  private Map<Pair<String,String>, INodePropertyValidator> myNodePropertyValidatorsCache = new HashMap<Pair<String,String>, INodePropertyValidator>();
+  private Map<Pair<String, String>, INodePropertyGetter> myNodePropertyGettersCache = new ConcurrentHashMap<Pair<String, String>, INodePropertyGetter>();
+  private Map<Pair<String, String>, INodePropertySetter> myNodePropertySettersCache = new ConcurrentHashMap<Pair<String, String>, INodePropertySetter>();
+  private Map<Pair<String, String>, INodePropertyValidator> myNodePropertyValidatorsCache = new HashMap<Pair<String, String>, INodePropertyValidator>();
 
-  private Map<Pair<String,String>, INodePropertyGetter> myNodePropertyGettersMap = new ConcurrentHashMap<Pair<String,String>, INodePropertyGetter>();
-  private Map<Pair<String,String>, INodePropertySetter> myNodePropertySettersMap = new ConcurrentHashMap<Pair<String,String>, INodePropertySetter>();
-  private Map<Pair<String,String>, INodePropertyValidator> myNodePropertyValidatorsMap = new ConcurrentHashMap<Pair<String,String>, INodePropertyValidator>();
+  private Map<Pair<String, String>, INodePropertyGetter> myNodePropertyGettersMap = new ConcurrentHashMap<Pair<String, String>, INodePropertyGetter>();
+  private Map<Pair<String, String>, INodePropertySetter> myNodePropertySettersMap = new ConcurrentHashMap<Pair<String, String>, INodePropertySetter>();
+  private Map<Pair<String, String>, INodePropertyValidator> myNodePropertyValidatorsMap = new ConcurrentHashMap<Pair<String, String>, INodePropertyValidator>();
 
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
@@ -133,7 +144,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {
-    Pair<String,String> key = new Pair<String,String>(conceptFqName, propertyName);
+    Pair<String, String> key = new Pair<String, String>(conceptFqName, propertyName);
     INodePropertyGetter old = myNodePropertyGettersMap.put(key, getter);
     if (old != null) {
       LOG.error("property getter is already registered for key '" + key + "' : " + old);
@@ -142,13 +153,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void unRegisterNodePropertyGetter(String conceptFqName, String propertyName) {
-    Pair<String,String> key = new Pair<String,String>(conceptFqName, propertyName);
+    Pair<String, String> key = new Pair<String, String>(conceptFqName, propertyName);
     myNodePropertyGettersMap.remove(key);
     myNodePropertyGettersCache.clear();
   }
 
   public void registerNodePropertySetter(String conceptFqName, String propertyName, INodePropertySetter setter) {
-    Pair<String,String> key = new Pair<String,String>(conceptFqName, propertyName);
+    Pair<String, String> key = new Pair<String, String>(conceptFqName, propertyName);
     INodePropertySetter old = myNodePropertySettersMap.put(key, setter);
     if (old != null) {
       LOG.error("property setter is already registered for key '" + key + "' : " + old);
@@ -158,13 +169,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void unRegisterNodePropertySetter(String conceptFqName, String propertyName) {
-    Pair<String,String> key = new Pair<String,String>(conceptFqName, propertyName);
+    Pair<String, String> key = new Pair<String, String>(conceptFqName, propertyName);
     myNodePropertySettersMap.remove(key);
     myNodePropertySettersCache.clear();
   }
 
   public void registerNodePropertyValidator(String conceptFqName, String propertyName, INodePropertyValidator validator) {
-    Pair<String,String> key = new Pair<String,String>(conceptFqName, propertyName);
+    Pair<String, String> key = new Pair<String, String>(conceptFqName, propertyName);
     INodePropertyValidator old = myNodePropertyValidatorsMap.put(key, validator);
     if (old != null) {
       LOG.error("property validator is already registered for key '" + key + "' : " + old);
@@ -175,7 +186,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void unRegisterNodePropertyValidator(String conceptFqName, String propertyName) {
-    Pair<String,String> key = new Pair<String,String>(conceptFqName, propertyName);
+    Pair<String, String> key = new Pair<String, String>(conceptFqName, propertyName);
     myNodePropertyValidatorsMap.remove(key);
     synchronized (myLock) {
       myNodePropertyValidatorsCache.clear();
@@ -282,7 +293,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       return null;
     }
 
-    final Pair<String,String> originalKey = new Pair<String, String>(conceptFqName, propertyName);
+    final Pair<String, String> originalKey = new Pair<String, String>(conceptFqName, propertyName);
 
     if (isSetter) {
       INodePropertySetter setter = myNodePropertySettersCache.get(originalKey);
@@ -337,7 +348,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (node == null) return null;
 
     final String nodeConceptFqName = node.getConceptFqName();
-    final Pair<String,String> originalKey = new Pair<String,String>(nodeConceptFqName, propertyName);
+    final Pair<String, String> originalKey = new Pair<String, String>(nodeConceptFqName, propertyName);
 
     synchronized (myLock) {
       INodePropertyValidator result = myNodePropertyValidatorsCache.get(originalKey);
@@ -354,7 +365,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
             ensureLanguageAdded(l);
 
             String conceptFqName = NameUtil.nodeFQName(concept);
-            INodePropertyValidator result = myNodePropertyValidatorsMap.get(new Pair<String,String>(conceptFqName, propertyName));
+            INodePropertyValidator result = myNodePropertyValidatorsMap.get(new Pair<String, String>(conceptFqName, propertyName));
             if (result != null) {
               myNodePropertyValidatorsCache.put(originalKey, result);
               return result;
@@ -370,12 +381,21 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
-    INodeReferentSearchScopeProvider result = null;
-    result = getNodeReferentSearchScopeProviderNonDefault(nodeConcept, referentRole);
-    if (result != null) {
-      return result;
-    }
+    INodeReferentSearchScopeProvider result = getNodeReferentSearchScopeProviderNonDefault(nodeConcept, referentRole);
+    if (result != null) return result;
     LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
+    if (linkDeclaration == null) {
+      LOG.error("No reference serch scope provider was found. Concept: " + nodeConcept.getAlias() + "; refName: " + referentRole);
+      return new BaseNodeReferenceSearchScopeProvider() {
+        public void registerSelf(ModelConstraintsManager manager) {
+
+        }
+
+        public void unRegisterSelf(ModelConstraintsManager manager) {
+
+        }
+      };
+    }
     return getNodeDefaultSearchScopeProvider(linkDeclaration.getTarget());
   }
 
@@ -564,7 +584,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
   }
 
-  private Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
+  public Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
     final String fqName = parentNode.getConceptFqName();
     synchronized (myCanBeParentMethods) {
       Method result = myCanBeParentMethods.get(fqName);
@@ -616,6 +636,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     Method m = getCanBeParentMethod(parentNode, context);
+    return canBeParent(m, parentNode, childConcept, link, context);
+  }
+
+  public boolean canBeParent(Method m, SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     if (m != null) {
       try {
         return (Boolean) m.invoke(null, context, new CanBeAParentContext(parentNode, childConcept, link));
@@ -630,12 +654,16 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeParentBlock(SNode parentNode, IOperationContext context) {
     Method m = getCanBeParentMethod(parentNode, context);
+    return getCanBeParentBlock(context, m);
+  }
+
+  public SNode getCanBeParentBlock(IOperationContext context, Method m) {
     ConceptConstraints constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
     return BaseAdapter.fromAdapter(constraints.getCanBeParent());
   }
 
-  private Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
+  public Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
     synchronized (myCanBeChildMethods) {
       if (myCanBeChildMethods.containsKey(conceptFqName)) {
         return myCanBeChildMethods.get(conceptFqName);
@@ -677,8 +705,15 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     Method method = getCanBeChildMethod(fqName, context);
     if (method != null) {
+      SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
+      return canBeChild(concept, method, context, parentNode, link);
+    }
+    return true;
+  }
+
+  public boolean canBeChild(SNode concept, Method method, IOperationContext context, SNode parentNode, SNode link) {
+    if (method != null) {
       try {
-        SNode concept = BaseAdapter.fromAdapter(SModelUtil_new.findConceptDeclaration(fqName, context.getScope()));
         return (Boolean) method.invoke(null, context, new CanBeAChildContext(parentNode, link, concept));
       } catch (IllegalAccessException e) {
         LOG.error(e);
@@ -691,13 +726,17 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeChildBlock(IOperationContext context, String conceptFqName) {
     Method m = getCanBeChildMethod(conceptFqName, context);
+    return getCanBeChildBlock(context, m);
+  }
+
+  public SNode getCanBeChildBlock(IOperationContext context, Method m) {
     ConceptConstraints constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
     return BaseAdapter.fromAdapter(constraints.getCanBeChild());
   }
 
   @Nullable
-  private Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
+  public Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
     synchronized (myCanBeRootMethods) {
       if (myCanBeRootMethods.containsKey(conceptFqName)) {
         return myCanBeRootMethods.get(conceptFqName);
@@ -751,6 +790,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeRootBlock(IOperationContext context, String conceptFqName) {
     Method m = getCanBeRootMethod(conceptFqName, context);
+    return getCanBeRootBlock(context, m);
+  }
+
+  public SNode getCanBeRootBlock(IOperationContext context, Method m) {
     if (m == null) return null;
     ConceptConstraints constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
@@ -762,9 +805,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
     if (concept == null) {
       return false;
     }
+    Method method = getCanBeRootMethod(conceptFqName, context);
+    return canBeRoot(context, method, model, concept);
+  }
 
+  public boolean canBeRoot(IOperationContext context, Method method, SModel model, AbstractConceptDeclaration concept) {
     if (concept instanceof ConceptDeclaration && ((ConceptDeclaration) concept).getRootable()) {
-      Method method = getCanBeRootMethod(conceptFqName, context);
       if (method != null) {
         try {
           return (Boolean) method.invoke(null, context, new CanBeARootContext(model));
@@ -792,7 +838,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     }
     SModelDescriptor sm = language.getConstraintsModelDescriptor();
     if (sm == null) return null;
-    SNode root = SModelOperations.getRootByName(sm.getSModel(),rootName);
+    SNode root = SModelOperations.getRootByName(sm.getSModel(), rootName);
     if (root == null) return null;
     if (root.getAdapter() instanceof ConceptConstraints) {
       return (ConceptConstraints) root.getAdapter();

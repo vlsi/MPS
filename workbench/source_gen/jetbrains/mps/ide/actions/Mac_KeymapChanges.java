@@ -28,6 +28,8 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     this.addAction("jetbrains.mps.ide.actions.Home_Action", "jetbrains.mps.ide", " HOME", "meta LEFT");
     this.addAction("jetbrains.mps.ide.actions.End_Action", "jetbrains.mps.ide", " END", "meta RIGHT");
     this.addAction("jetbrains.mps.ide.actions.GoToDevkit_Action", "jetbrains.mps.ide", "ctrl alt shift E");
+    this.addAction("jetbrains.mps.ide.actions.SelectUp_Action", "jetbrains.mps.ide", "ctrl UP", "ctrl W");
+    this.addAction("jetbrains.mps.ide.actions.SelectDown_Action", "jetbrains.mps.ide", "ctrl DOWN", "ctrl shift W");
   }
 
   public String getScheme() {

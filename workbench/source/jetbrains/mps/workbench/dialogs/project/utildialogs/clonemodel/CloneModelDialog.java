@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -28,6 +27,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
@@ -213,9 +213,13 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        SModel smodel = modelDescriptor.getSModel();
-        IScope scope = getOperationContext().getScope();
-        CloneModelUtil.cloneModel(myCloningModel, smodel, scope);
+        final SModel smodel = modelDescriptor.getSModel();
+        smodel.runLoadingAction(new Runnable() {
+          public void run() {
+            CopyUtil.copyModelContent(myCloningModel, smodel);
+          }
+        });
+        ((EditableSModelDescriptor) smodel.getModelDescriptor()).save();
       }
     });
 

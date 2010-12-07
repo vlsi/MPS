@@ -79,7 +79,7 @@ public class CurrentLinePainter extends EditorCellPainter<SNode> {
 
   @Override
   public boolean isAbove(AdditionalPainter additionalPainter, EditorComponent editorComponent) {
-    if (additionalPainter instanceof MPSBreakpointPainter) {
+    if (additionalPainter instanceof BreakpointPainter) {
       return true;
     }
     return false;

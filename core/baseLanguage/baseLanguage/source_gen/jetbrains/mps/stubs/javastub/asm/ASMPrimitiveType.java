@@ -17,14 +17,14 @@ public class ASMPrimitiveType extends ASMType {
   private String myName;
 
   private ASMPrimitiveType(String name) {
-    this.myName = name;
+    myName = name;
   }
 
   public String getName() {
-    return this.myName;
+    return myName;
   }
 
   public String toString() {
-    return this.myName;
+    return myName;
   }
 }

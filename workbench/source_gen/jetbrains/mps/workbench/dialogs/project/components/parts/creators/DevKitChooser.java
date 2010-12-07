@@ -6,11 +6,13 @@ import com.intellij.openapi.util.Computable;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.project.DevKit;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import java.util.ArrayList;
 
 public class DevKitChooser implements Computable<List<ModuleReference>> {
   private final IBindedDialog myOwner;
@@ -20,19 +22,17 @@ public class DevKitChooser implements Computable<List<ModuleReference>> {
   }
 
   public List<ModuleReference> compute() {
-    List<DevKit> devkits = ModelAccess.instance().runReadAction(new Computable<List<DevKit>>() {
-      public List<DevKit> compute() {
-        return GlobalScope.getInstance().getVisibleDevkits();
+    final Wrappers._T<List<ModuleReference>> dkRefs = new Wrappers._T<List<ModuleReference>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<DevKit> devkits = GlobalScope.getInstance().getVisibleDevkits();
+        dkRefs.value = ListSequence.fromList(devkits).<ModuleReference>select(new ISelector<DevKit, ModuleReference>() {
+          public ModuleReference select(DevKit it) {
+            return it.getModuleReference();
+          }
+        }).toListSequence();
       }
     });
-    List<DevKit> devKit = CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "devkit", devkits, null);
-    if (devKit == null) {
-      return null;
-    }
-    List<ModuleReference> references = new ArrayList<ModuleReference>();
-    for (DevKit dk : devKit) {
-      references.add(dk.getModuleReference());
-    }
-    return references;
+    return CommonChoosers.showDialogModuleCollectionChooser(myOwner.getMainComponent(), "devkit", dkRefs.value, null);
   }
 }

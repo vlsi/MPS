@@ -2,6 +2,7 @@ package jetbrains.mps.typesystem.inference;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -10,7 +11,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -23,13 +26,15 @@ import java.util.Map.Entry;
  */
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
-  private static final boolean useNewTypeSystem = false;
+  private static final boolean useNewTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
+  //minor
   public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {};
 
   private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
     new HashMap<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
-  private Map<SNode, Long> myAccessTimes = new HashMap<SNode, Long>();
+
+  private ThreadLocal<Stack<Object>> myResolveStack = new ThreadLocal<Stack<Object>>();
 
   Timer myTimer;
 
@@ -59,6 +64,7 @@ public class TypeContextManager implements ApplicationComponent {
     }
   };
   private static final long TIMEOUT = 60000;
+  private SModelRepositoryAdapter mySModelRepositoryListener;
 
   public TypeContextManager(TypeChecker typeChecker, ClassLoaderManager classLoaderManager) {
     myTypeChecker = typeChecker;
@@ -85,14 +91,59 @@ public class TypeContextManager implements ApplicationComponent {
         clearDefaultOwners();
       }
     }, TIMEOUT, TIMEOUT);
+    mySModelRepositoryListener = new SModelRepositoryAdapter() {
+      @Override
+      public void modelDeleted(SModelDescriptor modelDescriptor) {
+        myListeningForModels.remove(modelDescriptor);
+      }
+
+      @Override
+      public void modelRemoved(SModelDescriptor modelDescriptor) {
+        myListeningForModels.remove(modelDescriptor);
+      }
+    };
+    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
   @Override
   public void disposeComponent() {
+    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
   }
 
   public static TypeContextManager getInstance() {
     return ApplicationManager.getApplication().getComponent(TypeContextManager.class);
+  }
+
+  public void runResolveAction(Runnable r) {
+    Object o = new Object();
+    Stack<Object> stack = myResolveStack.get();
+    if (stack == null) {
+      stack = new Stack<Object>();
+      myResolveStack.set(stack);
+    }
+    stack.push(o);
+    try {
+      r.run();
+    } finally {
+      Object popped = stack.pop();
+      assert o == popped;
+    }
+  }
+
+  public <T> T runResolveAction(Computable<T> computable) {
+    Object o = new Object();
+    Stack<Object> stack = myResolveStack.get();
+    if (stack == null) {
+      stack = new Stack<Object>();
+      myResolveStack.set(stack);
+    }
+    stack.push(o);
+    try {
+      return computable.compute();
+    } finally {
+      Object popped = stack.pop();
+      assert o == popped;
+    }
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
@@ -115,18 +166,25 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public TypeCheckingContext getContextForEditedRootNode(SNode node, ITypeContextOwner owner, boolean alwaysRegisterOwner) {
+    return getContextForEditedRootNode(node, owner, alwaysRegisterOwner, true);
+  }
+
+  public TypeCheckingContext getContextForEditedRootNode(SNode node, ITypeContextOwner owner, boolean alwaysRegisterOwner, boolean forceCreate) {
     if (node == null) return null;
     synchronized (myLock) {
-      myAccessTimes.put(node, System.currentTimeMillis());
       Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(node);
       if (contextWithOwners == null) {
-        TypeCheckingContext newTypeCheckingContext = createTypeCheckingContext(node);
-        addModelListener(node);
-        List<ITypeContextOwner> owners = new ArrayList<ITypeContextOwner>(1);
-        contextWithOwners = new Pair<TypeCheckingContext, List<ITypeContextOwner>>(newTypeCheckingContext, owners);
-        owners.add(owner);
-        myTypeCheckingContexts.put(node, contextWithOwners);
-        return newTypeCheckingContext;
+        if (forceCreate) {
+          TypeCheckingContext newTypeCheckingContext = createTypeCheckingContext(node);
+          addModelListener(node);
+          List<ITypeContextOwner> owners = new ArrayList<ITypeContextOwner>(1);
+          contextWithOwners = new Pair<TypeCheckingContext, List<ITypeContextOwner>>(newTypeCheckingContext, owners);
+          owners.add(owner);
+          myTypeCheckingContexts.put(node, contextWithOwners);
+          return newTypeCheckingContext;
+        } else {
+          return null;
+        }
       } else {
         TypeCheckingContext context = contextWithOwners.o1;
         if (alwaysRegisterOwner && !contextWithOwners.o2.contains(owner)) {
@@ -146,7 +204,6 @@ public class TypeContextManager implements ApplicationComponent {
         if (owners.isEmpty()) {
           contextWithOwners.o1.dispose();
           myTypeCheckingContexts.remove(node);
-          myAccessTimes.remove(node);
         }
       }
     }
@@ -158,7 +215,6 @@ public class TypeContextManager implements ApplicationComponent {
       if (contextWithOwners != null) {
         contextWithOwners.o1.dispose();
         myTypeCheckingContexts.remove(node);
-        myAccessTimes.remove(node);
       }
     }
   }
@@ -182,22 +238,64 @@ public class TypeContextManager implements ApplicationComponent {
 
   private void clearDefaultOwners() {
     synchronized (myLock) {
-      long current = System.currentTimeMillis();
       Set<Entry<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>> entries =
         new HashSet<Entry<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>>>(myTypeCheckingContexts.entrySet());
       for (Entry<SNode,Pair<TypeCheckingContext,List<ITypeContextOwner>>> entry : entries) {
         SNode node = entry.getKey();
-        Long accessTime = myAccessTimes.get(node);
-        if (accessTime == null || current - accessTime > TIMEOUT) {
-          Pair<TypeCheckingContext, List<ITypeContextOwner>> value = entry.getValue();
-          value.o2.remove(DEFAULT_OWNER);
-          if (value.o2.isEmpty()) {
-            value.o1.dispose();
-            myTypeCheckingContexts.remove(node);
-            myAccessTimes.remove(node);
-          }
+        Pair<TypeCheckingContext, List<ITypeContextOwner>> value = entry.getValue();
+        value.o2.remove(DEFAULT_OWNER);
+        if (value.o2.isEmpty()) {
+          value.o1.dispose();
+          myTypeCheckingContexts.remove(node);
         }
       }
     }
+  }
+
+  private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
+    SNode root = node.getContainingRoot();
+    if (root == null) {
+      root = node.getTopmostAncestor();
+    }
+    if (useNewTypeSystem) {
+      return new TypeCheckingContextNew(root, myTypeChecker); //todo should be resolving
+    }
+    return new TypeCheckingContext(root, myTypeChecker, true);
+  }
+
+  @Nullable
+  public SNode getTypeOf(final SNode node, boolean generationMode, IPerformanceTracer tracer) {
+    if (node == null) return null;
+    TypeCheckingContext context;
+    Stack<Object> resolve = myResolveStack.get();
+    if (resolve == null) {
+      resolve = new Stack<Object>();
+      myResolveStack.set(resolve);
+    }
+    if (!resolve.isEmpty()) {
+      context = generationMode ? null : getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER, false);
+      if (context == null || !context.isNonTypesystemComputation()) {
+        //resolve mode
+        context = createTypeCheckingContextForResolve(node);
+        SNode type = context.getTypeOf(node, myTypeChecker);
+        context.dispose();
+        return type;
+      }
+    }
+    if (generationMode) {
+      if (tracer == null) {
+        context = createTypeCheckingContext(node);
+      } else {
+        context = createTracingTypeCheckingContext(node);
+      }
+    } else {
+      context = getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
+    }
+    if (context == null) return null;
+    SNode type = context.getTypeOf(node, myTypeChecker);
+    if (generationMode) {
+      context.dispose();
+    }
+    return type;
   }
 }

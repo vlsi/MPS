@@ -17,25 +17,32 @@ package jetbrains.mps.workbench.choose.modules;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
 public class ModulePresentation extends BasePresentation {
-  private IModule myModule;
+  private ModuleReference myModuleReference;
 
-  public ModulePresentation(IModule module) {
-    myModule = module;
+  public ModulePresentation(ModuleReference moduleReference) {
+    myModuleReference = moduleReference;
   }
 
   @NotNull
   public String doGetPresentableText() {
-    if (myModule instanceof Generator) {
-      return ((Generator) myModule).getAlias();
+    IModule module = getModule();
+    if (module instanceof Generator) {
+      return ((Generator) module).getAlias();
     }
-    return myModule.getModuleFqName();
+    return myModuleReference.getModuleFqName();
+  }
+
+  private IModule getModule() {
+    return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }
 
   public String doGetLocationString() {
@@ -43,6 +50,6 @@ public class ModulePresentation extends BasePresentation {
   }
 
   public Icon doGetIcon() {
-    return IconManager.getIconFor(myModule);
+    return IconManager.getIconFor(getModule());
   }
 }

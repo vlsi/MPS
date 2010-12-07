@@ -19,6 +19,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
@@ -36,7 +37,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
-import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -60,12 +61,12 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private PluginsState myState = new PluginsState();
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
-  private EditorsProvider myEditorsProvider;
+  private FileEditorManager myManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
-  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker) {
+  public ProjectPluginManager(Project project, StartupModuleMaker moduleMaker, FileEditorManager manager) {
     myProject = project;
-    myEditorsProvider = new EditorsProvider(myProject);    
+    myManager = manager;
   }
 
   public void projectOpened() {
@@ -80,7 +81,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public <T extends BaseGeneratedTool> T getTool(Class<T> toolClass) {
     synchronized (myPluginsLock) {
       for (BaseProjectPlugin plugin : mySortedPlugins) {
-        List<BaseGeneratedTool> tools = ((BaseProjectPlugin) plugin).getTools();
+        List<BaseGeneratedTool> tools = plugin.getTools();
         for (BaseGeneratedTool tool : tools) {
           if (tool.getClass().getName().equals(toolClass.getName())) return (T) tool;
         }
@@ -92,7 +93,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   public <T extends BaseProjectPrefsComponent> T getPrefsComponent(Class<T> componentClass) {
     synchronized (myPluginsLock) {
       for (BaseProjectPlugin plugin : mySortedPlugins) {
-        List<BaseProjectPrefsComponent> components = ((BaseProjectPlugin) plugin).getPrefsComponents();
+        List<BaseProjectPrefsComponent> components = plugin.getPrefsComponents();
         for (BaseProjectPrefsComponent component : components) {
           if (component.getClass().getName().equals(componentClass.getName())) return (T) component;
         }
@@ -113,7 +114,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         public void run() {
           Set<IModule> modules = new HashSet<IModule>();
           modules.addAll(PluginUtil.collectPluginModules(myProject));
-          modules.addAll(PluginUtil.collectSolutionPlugins());
+          modules.addAll(PluginUtil.getBootstrapPluginModules());
           mySortedPlugins = PluginUtil.createPlugins(modules, new ProjectPluginCreator());
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
@@ -213,7 +214,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (MPSFileNodeEditor editor : myEditorsProvider.getAllEditors()) {
+        for (MPSFileNodeEditor editor : EditorsHelper.getAllEditors(myManager)) {
           if (editor.isValid() && editor.getNodeEditor() instanceof TabbedEditor){
             editor.recreateEditor();
           }

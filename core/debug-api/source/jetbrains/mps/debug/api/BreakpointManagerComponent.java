@@ -15,16 +15,20 @@
  */
 package jetbrains.mps.debug.api;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.debug.api.BreakpointManagerComponent.MyState;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionAdapter;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
+import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointIconRenderer;
-import jetbrains.mps.debug.api.integration.ui.breakpoint.MPSBreakpointPainter;
+import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointPainter;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.logging.Logger;
@@ -35,25 +39,19 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorOpenListener;
+import jetbrains.mps.workbench.highlighter.EditorsHelper;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
+import org.jdom.Attribute;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.MouseEvent;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.12.2009
- * Time: 15:24:44
- * To change this template use File | Settings | File Templates.
- */
 @State(
   name = "BreakpointManager",
   storages = {
@@ -63,62 +61,42 @@ import java.util.Set;
     )
   }
 )
-public class BreakpointManagerComponent implements ProjectComponent, PersistentStateComponent<MyState> {
+public class BreakpointManagerComponent implements ProjectComponent, PersistentStateComponent<Element> {
   private static final Logger LOG = Logger.getLogger(BreakpointManagerComponent.class);
+  private static final String BREAKPOINTS_LIST_ELEMENT = "breakpointsList";
+  private static final String BREAKPOINT_ELEMENT = "breakpoint";
+  private static final String KIND_TAG = "kind";
 
   private final Project myProject;
   private final DebugInfoManager myDebugInfoManager;
+  private final BreakpointProvidersManager myProvidersManager;
 
   private final EditorsProvider myEditorsProvider;
-  private final Map<SNodePointer, Set<AbstractMPSBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<AbstractMPSBreakpoint>>();
-  private final Set<AbstractMPSBreakpoint> myBreakpoints = new HashSet<AbstractMPSBreakpoint>();
-  // because DebugInfoInitializers may be loaded after this component
-  private Set<FutureBreakpoint> myFutureBreakpoints = new HashSet<FutureBreakpoint>();
+  private final Map<SNodePointer, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<ILocationBreakpoint>>();
+  private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
 
-  private LeftMarginMouseListener myMouseListener = new LeftMarginMouseListener() {
-    @Override
-    public void mousePressed(MouseEvent e, EditorComponent editorComponent) {
-    }
+  private final MyBreakpointListener myBreakpointListener = new MyBreakpointListener();
+  private final LeftMarginMouseListener myMouseListener = new MyLeftMarginMouseListener();
+  private final SessionChangeListener myChangeListener = new MySessionChangeAdapter();
+  private final DebugSessionListener myDebugSessionListener = new MyDebugSessionAdapter();
+  private final BreakpointManagerComponent.MyEditorOpenListener myEditorOpenListener = new BreakpointManagerComponent.MyEditorOpenListener();
+  private final List<IBreakpointManagerListener> myListeners = new ArrayList<IBreakpointManagerListener>();
+  private final FileEditorManager myFileEditorManager;
 
-    @Override
-    public void mouseReleased(MouseEvent e, EditorComponent editorComponent) {
-    }
+  public static BreakpointManagerComponent getInstance(@NotNull Project project) {
+    return project.getComponent(BreakpointManagerComponent.class);
+  }
 
-    @Override
-    public void mouseClicked(final MouseEvent e, final EditorComponent editorComponent) {
-      if (e.getButton() == MouseEvent.BUTTON1) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            SNode node = findDebuggableNode(editorComponent, e.getX(), e.getY());
-            if (node != null) {
-              toggleBreakpoint(node, false);
-            }
-          }
-        });
-      }
-    }
-  };
-
-  public BreakpointManagerComponent(Project project, DebugInfoManager debugInfoManager) {
+  public BreakpointManagerComponent(Project project, DebugInfoManager debugInfoManager, BreakpointProvidersManager providersManager, FileEditorManager fileEditorManager) {
     myProject = project;
     myDebugInfoManager = debugInfoManager;
+    myProvidersManager = providersManager;
+    myFileEditorManager = fileEditorManager;
     myEditorsProvider = new EditorsProvider(project);
-    myEditorsProvider.addEditorOpenListener(new EditorOpenListener() {
-      @Override
-      public void editorOpened(MPSFileNodeEditor editor) {
-        editorComponentOpened(editor.getNodeEditor().getCurrentEditorComponent());
-      }
-
-      @Override
-      public void editorClosed(MPSFileNodeEditor editor) {
-        editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
-      }
-    });
   }
 
   public void toggleBreakpoint(EditorCell cell) {
-    EditorCell debuggableCell = findDebuggableCell(cell);
+    EditorCell debuggableCell = findDebuggableOrTraceableCell(cell);
     if (debuggableCell != null) {
       toggleBreakpoint(debuggableCell.getSNode(), true);
     }
@@ -128,22 +106,33 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     return findDebuggableCell(cell) != null || findTraceableCell(cell) != null;
   }
 
-  private SNode findDebuggableNode(EditorComponent editorComponent, int x, int y) {
-    EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y);
+  private SNode findDebuggableNode(final EditorComponent editorComponent, int x, final int y) {
+    EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y, new Condition<EditorCell>() {
+      @Override
+      public boolean met(EditorCell object) {
+        EditorCell debuggableOrTraceableCell = findDebuggableOrTraceableCell(object);
+        if (debuggableOrTraceableCell == null) {
+          return false;
+        }
+        EditorCell iconAnchorCell = BreakpointIconRenderer.getBreakpointIconAnchorCell(editorComponent.findNodeCell(debuggableOrTraceableCell.getSNode()));
+        // ignoring mouse clicks to any other rows except one containing "BreakpointIconAnchorCell"
+        // (this cell will be marked with breakpoint icon in LeftEditorHighlighter)
+        return (y >= iconAnchorCell.getY() && iconAnchorCell.getBaseline() >= y);
+      }
+    });
     if (foundCell == null) return null;
+    EditorCell cell = findDebuggableOrTraceableCell(foundCell);
+    if (cell == null) return null;
+    return cell.getSNode();
+  }
+
+  private EditorCell findDebuggableOrTraceableCell(EditorCell foundCell) {
     EditorCell cell = findDebuggableCell(foundCell);
     if (cell == null) {
       cell = findTraceableCell(foundCell);
     }
     if (cell == null) return null;
-    SNode sNode = cell.getSNode();
-    EditorCell iconAnchorCell = BreakpointIconRenderer.getBreakpointIconAnchorCell(editorComponent.findNodeCell(sNode));
-    if (y < iconAnchorCell.getY() || iconAnchorCell.getBaseline() < y) {
-      // ignoring mouse clicks to any other rows except one containing "BreakpointIconAnchorCell"
-      // (this cell will be marked with breakpoint icon in LeftEditorHighlighter)  
-      return null;
-    }
-    return sNode;
+    return cell;
   }
 
   private EditorCell findDebuggableCell(EditorCell foundCell) {
@@ -188,10 +177,17 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   @Override
   public void initComponent() {
+    DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
+    component.addCurrentDebugSessionListener(myDebugSessionListener);
+    myEditorsProvider.addEditorOpenListener(myEditorOpenListener);
   }
 
   @Override
   public void disposeComponent() {
+    DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
+    component.removeCurrentDebugSessionListener(myDebugSessionListener);
+    myEditorsProvider.removeEditorOpenListener(myEditorOpenListener);
+    myEditorsProvider.dispose();
   }
 
   private void editorComponentOpened(@Nullable EditorComponent editorComponent) {
@@ -205,11 +201,11 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         return new SNodePointer(rootNode);
       }
     });
-    Set<AbstractMPSBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
+    Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
     if (breakpointsForRoot != null) {
-      for (AbstractMPSBreakpoint breakpoint : breakpointsForRoot) {
-        editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
-        editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint));
+      for (ILocationBreakpoint breakpoint : breakpointsForRoot) {
+        editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
+        editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
       }
       editorComponent.repaint(); //todo should it be executed in ED thread?
     }
@@ -224,13 +220,13 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     SNode root = node.getContainingRoot();
     if (root == null) return;
     boolean hasBreakpoint = false;
-    AbstractMPSBreakpoint breakpoint = null;
+    IBreakpoint breakpoint = null;
     SNodePointer rootPointer = new SNodePointer(root);
-    Set<AbstractMPSBreakpoint> mpsBreakpointSet = myRootsToBreakpointsMap.get(rootPointer);
+    Set<ILocationBreakpoint> mpsBreakpointSet = myRootsToBreakpointsMap.get(rootPointer);
     if (mpsBreakpointSet != null) {
       hasBreakpoint = false;
-      for (AbstractMPSBreakpoint mpsBreakpoint : mpsBreakpointSet) {
-        if (mpsBreakpoint.getSNode() == node) {
+      for (ILocationBreakpoint mpsBreakpoint : mpsBreakpointSet) {
+        if (mpsBreakpoint.getLocation().getSNode() == node) {
           hasBreakpoint = true;
           breakpoint = mpsBreakpoint;
           break;
@@ -244,7 +240,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
         removeBreakpoint(breakpoint);
       }
     } else {
-      AbstractMPSBreakpoint newBreakpoint = createNewBreakpoint(node);
+      ILocationBreakpoint newBreakpoint = myDebugInfoManager.createBreakpoint(node, myProject);
       if (newBreakpoint != null) {
         addBreakpoint(newBreakpoint);
       } else if (myDebugInfoManager.isDebuggableNode(node)) {
@@ -255,92 +251,40 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
-  private AbstractMPSBreakpoint createNewBreakpoint(SNode node) {
-    AbstractMPSBreakpoint abstractMPSBreakpoint = AbstractMPSBreakpoint.fromNode(node, myProject);
-    if (abstractMPSBreakpoint != null) {
-      abstractMPSBreakpoint.setCreationTime(System.currentTimeMillis());
-    }
-    return abstractMPSBreakpoint;
-  }
-
-  public void addBreakpoint(AbstractMPSBreakpoint breakpoint) {
+  public void addBreakpoint(@NotNull IBreakpoint breakpoint) {
     synchronized (myBreakpoints) {
-      SNode node = breakpoint.getSNode();
-      if (node != null) {
-        SNode root = node.getContainingRoot();
-        if (root != null) {
-          myBreakpoints.add(breakpoint);
-          SNodePointer rootPointer = new SNodePointer(root);
-          Set<AbstractMPSBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
-          if (breakpointsForRoot == null) {
-            breakpointsForRoot = new HashSet<AbstractMPSBreakpoint>();
-            myRootsToBreakpointsMap.put(rootPointer, breakpointsForRoot);
-          }
-          breakpointsForRoot.add(breakpoint);
-
-          for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-            EditorComponent editorComponent = editor.getCurrentEditorComponent();
-            if (editorComponent != null) {
-              SNode editedNode = editorComponent.getEditedNode();
-              if (root == editedNode) {
-                editorComponent.addAdditionalPainter(new MPSBreakpointPainter(breakpoint));
-                editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint));
-                editorComponent.repaint(); //todo should it be executed in ED thread?
-              }
-            }
-          }
-          breakpoint.addToRunningSessions();
-        }
+      if (breakpoint instanceof ILocationBreakpoint) {
+        addLocationBreakpoint((ILocationBreakpoint) breakpoint);
       }
+      breakpoint.setCreationTime(System.currentTimeMillis());
+      myBreakpoints.add(breakpoint);
+      breakpoint.addBreakpointListener(myBreakpointListener);
+      breakpoint.addToRunningSessions();
     }
+    fireBreakpointsChanged();
   }
 
-  public void removeBreakpoint(AbstractMPSBreakpoint breakpoint) {
-    synchronized (myBreakpoints) {
-      myBreakpoints.remove(breakpoint);
-      SNode node = breakpoint.getSNode();
-      if (node != null) {
-        SNode root = node.getContainingRoot();
-        if (root != null) {
-          SNodePointer rootPointer = new SNodePointer(root);
-          Set<AbstractMPSBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
-          if (breakpointsForRoot != null) {
-            breakpointsForRoot.remove(breakpoint);
-          }
-
-          for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-            EditorComponent editorComponent = editor.getCurrentEditorComponent();
-            if (editorComponent != null) {
-              SNode editedNode = editorComponent.getEditedNode();
-              if (root == editedNode) {
-                editorComponent.removeAdditionalPainterByItem(breakpoint);
-                editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getSNode(), BreakpointIconRenderer.TYPE);
-                editorComponent.repaint(); //todo should it be executed in ED thread?
-              }
-            }
-          }
+  private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
+    SNode node = breakpoint.getLocation().getSNode();
+    if (node != null) {
+      SNode root = node.getContainingRoot();
+      if (root != null) {
+        SNodePointer rootPointer = new SNodePointer(root);
+        Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
+        if (breakpointsForRoot == null) {
+          breakpointsForRoot = new HashSet<ILocationBreakpoint>();
+          myRootsToBreakpointsMap.put(rootPointer, breakpointsForRoot);
         }
-      }
-      breakpoint.removeFromRunningSessions();
-    }
-  }
+        breakpointsForRoot.add(breakpoint);
 
-  //toggles breakpoint and repaints if necessary
-
-  public void setBreakpointEnabled(AbstractMPSBreakpoint breakpoint, boolean enabled) {
-    boolean toggled = breakpoint.setEnabledInternal(enabled);
-    if (toggled) {
-      SNode node = breakpoint.getSNode();
-      if (node != null) {
-        SNode root = node.getContainingRoot();
-        if (root != null) {
-          for (IEditor editor : myEditorsProvider.getSelectedEditors()) {
-            EditorComponent editorComponent = editor.getCurrentEditorComponent();
-            if (editorComponent != null) {
-              SNode editedNode = editorComponent.getEditedNode();
-              if (root == editedNode) {
-                editorComponent.repaint(); //todo should it be executed in ED thread?
-              }
+        for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
+          EditorComponent editorComponent = editor.getCurrentEditorComponent();
+          if (editorComponent != null) {
+            SNode editedNode = editorComponent.getEditedNode();
+            if (root == editedNode) {
+              editorComponent.addAdditionalPainter(new BreakpointPainter(breakpoint));
+              editorComponent.getLeftEditorHighlighter().addIconRenderer(new BreakpointIconRenderer(breakpoint, editorComponent));
+              editorComponent.repaint(); //todo should it be executed in ED thread?
             }
           }
         }
@@ -348,29 +292,44 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
-  public static void notifyDebuggableConceptsAdded() {
-    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      BreakpointManagerComponent breakpointManager = p.getComponent(BreakpointManagerComponent.class);
-      if (breakpointManager != null) {
-        breakpointManager.processFutureBreakpoints();
+  public void removeBreakpoint(@NotNull final IBreakpoint breakpoint) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        synchronized (myBreakpoints) {
+          if (breakpoint instanceof ILocationBreakpoint) {
+            removeLocationBreakpoint((ILocationBreakpoint) breakpoint);
+          }
+          myBreakpoints.remove(breakpoint);
+          breakpoint.removeBreakpointListener(myBreakpointListener);
+          breakpoint.removeFromRunningSessions();
+        }
       }
-    }
+    });
+    fireBreakpointsChanged();
   }
 
-  public void processFutureBreakpoints() {
-    synchronized (myBreakpoints) {
-      for (FutureBreakpoint futureBreakpoint : new HashSet<FutureBreakpoint>(myFutureBreakpoints)) {
-        AbstractMPSBreakpoint breakpoint = futureBreakpoint.createBreakpoint(myProject);
-        if (breakpoint != null) {
-          SNodePointer rootPointer = futureBreakpoint.getRootPointer();
-          Set<AbstractMPSBreakpoint> mpsBreakpointSet = myRootsToBreakpointsMap.get(rootPointer);
-          if (mpsBreakpointSet == null) {
-            mpsBreakpointSet = new HashSet<AbstractMPSBreakpoint>();
-            myRootsToBreakpointsMap.put(rootPointer, mpsBreakpointSet);
+  private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
+    SNode node = breakpoint.getLocation().getSNode();
+    if (node != null) {
+      SNode root = node.getContainingRoot();
+      if (root != null) {
+        SNodePointer rootPointer = new SNodePointer(root);
+        Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
+        if (breakpointsForRoot != null) {
+          breakpointsForRoot.remove(breakpoint);
+        }
+
+        for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
+          EditorComponent editorComponent = editor.getCurrentEditorComponent();
+          if (editorComponent != null) {
+            SNode editedNode = editorComponent.getEditedNode();
+            if (root == editedNode) {
+              editorComponent.removeAdditionalPainterByItem(breakpoint);
+              editorComponent.getLeftEditorHighlighter().removeIconRenderer(breakpoint.getLocation().getSNode(), BreakpointIconRenderer.TYPE);
+              editorComponent.repaint(); //todo should it be executed in ED thread?
+            }
           }
-          mpsBreakpointSet.add(breakpoint);
-          myBreakpoints.add(breakpoint);
-          myFutureBreakpoints.remove(futureBreakpoint);
         }
       }
     }
@@ -380,114 +339,230 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     synchronized (myBreakpoints) {
       myRootsToBreakpointsMap.clear();
       myBreakpoints.clear();
-      myFutureBreakpoints.clear();
     }
   }
 
-  public void loadState(MyState state) {
+  public void createFromUi(IBreakpointKind kind) {
+    IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+    if (provider == null) {
+      Messages.showErrorDialog(myProject, "Can not create " + kind.getPresentation() + ". Provider was not found.", "Error Creating" + kind.getPresentation());
+    } else {
+      IBreakpoint breakpoint = provider.createFromUi(kind, myProject);
+      if (breakpoint != null) {
+        addBreakpoint(breakpoint);
+      }
+    }
+  }
+
+  public void loadState(Element state) {
     synchronized (myBreakpoints) {
       clear();
-      for (MyRootBreakpointInfo rootBreakpointInfo : state.myRootBreakpointInfos) {
-        SNodePointer rootPointer = new SNodePointer(rootBreakpointInfo.myModelReference, rootBreakpointInfo.myNodeId);
-        Set<AbstractMPSBreakpoint> mpsBreakpointSet = myRootsToBreakpointsMap.get(rootPointer);
-        if (mpsBreakpointSet == null) {
-          mpsBreakpointSet = new HashSet<AbstractMPSBreakpoint>();
-          myRootsToBreakpointsMap.put(rootPointer, mpsBreakpointSet);
+      List breakpointsElement = state.getChildren(BREAKPOINT_ELEMENT);
+      for (ListIterator it = breakpointsElement.listIterator(); it.hasNext();) {
+        Element breakpointElement = (Element) it.next();
+        String kindName = breakpointElement.getAttributeValue(KIND_TAG);
+
+        IBreakpointKind kind = myProvidersManager.getKind(kindName);
+        if (kind == null) {
+          // todo we might save whatever we cant read for later?
+          continue;
         }
-        for (BreakpointInfo breakpointInfo : rootBreakpointInfo.myBreakpointInfos) {
-          FutureBreakpoint futureBreakpoint = new FutureBreakpoint(breakpointInfo, rootPointer);
-          AbstractMPSBreakpoint breakpoint = futureBreakpoint.createBreakpoint(myProject);
-          if (breakpoint != null) {
-            mpsBreakpointSet.add(breakpoint);
-            myBreakpoints.add(breakpoint);
-          } else {
-            myFutureBreakpoints.add(futureBreakpoint);
-          }
+
+        IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+        if (provider == null) {
+          continue;
+        }
+
+        IBreakpoint breakpoint = provider.loadFromState((Element) breakpointElement.getChildren().get(0), kind, myProject);
+        if (breakpoint != null) {
+          myBreakpoints.add(breakpoint);
         }
       }
     }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        synchronized (myBreakpoints) {
+          for (IBreakpoint breakpoint : myBreakpoints) {
+            if (breakpoint instanceof ILocationBreakpoint) {
+              addLocationBreakpoint((ILocationBreakpoint) breakpoint);
+            }
+          }
+        }
+      }
+    });
   }
 
-  public MyState getState() {
+  public Element getState() {
     synchronized (myBreakpoints) {
-      Set<SNodePointer> roots = new HashSet<SNodePointer>(myRootsToBreakpointsMap.keySet());
+      Element rootElement = new Element(BREAKPOINTS_LIST_ELEMENT);
 
-      Map<SNodePointer, Set<FutureBreakpoint>> futureBreakpointsMap =
-        new HashMap<SNodePointer, Set<FutureBreakpoint>>();
-      for (FutureBreakpoint futureBreakpoint : myFutureBreakpoints) {
-        SNodePointer rootPointer = futureBreakpoint.getRootPointer();
-        roots.add(rootPointer);
-        Set<FutureBreakpoint> futures = futureBreakpointsMap.get(rootPointer);
-        if (futures == null) {
-          futures = new HashSet<FutureBreakpoint>();
-          futureBreakpointsMap.put(rootPointer, futures);
+      for (IBreakpoint breakpoint : myBreakpoints) {
+        IBreakpointKind kind = breakpoint.getKind();
+        IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+        if (provider == null) {
+          continue;
         }
-        futures.add(futureBreakpoint);
-      }
 
-      MyState state = new MyState();
-      state.myRootBreakpointInfos = new MyRootBreakpointInfo[roots.size()];
-      int i = 0;
-      for (SNodePointer rootPointer : roots) {
-        MyRootBreakpointInfo rootBreakpointInfo = new MyRootBreakpointInfo(
-          rootPointer.getModelReference().toString(),
-          rootPointer.getNodeId().toString());
-        state.myRootBreakpointInfos[i] = rootBreakpointInfo;
-        Set<AbstractMPSBreakpoint> mpsBreakpointSet = myRootsToBreakpointsMap.get(rootPointer);
-        Set<FutureBreakpoint> futureBreakpoints = futureBreakpointsMap.get(rootPointer);
-
-        if (mpsBreakpointSet != null || futureBreakpoints != null) {
-          int size1 = mpsBreakpointSet == null ? 0 : mpsBreakpointSet.size();
-          int size2 = futureBreakpoints == null ? 0 : futureBreakpoints.size();
-          int j = 0;
-          rootBreakpointInfo.myBreakpointInfos = new BreakpointInfo[size1 + size2];
-          if (mpsBreakpointSet != null) {
-            for (AbstractMPSBreakpoint mpsBreakpoint : mpsBreakpointSet) {
-              rootBreakpointInfo.myBreakpointInfos[j] = mpsBreakpoint.createBreakpointInfo();
-              j++;
-            }
-          }
-          if (futureBreakpoints != null) {
-            for (FutureBreakpoint futureBreakpoint : futureBreakpoints) {
-              rootBreakpointInfo.myBreakpointInfos[j] = futureBreakpoint.getBreakpointInfo();
-              j++;
-            }
-          }
+        Element element = provider.saveToState(breakpoint);
+        if (element != null) {
+          Element breakpointElement = new Element(BREAKPOINT_ELEMENT);
+          breakpointElement.setAttribute(new Attribute(KIND_TAG, kind.getName()));
+          breakpointElement.addContent(element);
+          rootElement.addContent(breakpointElement);
         }
-        i++;
       }
-      return state;
+      return rootElement;
     }
   }
 
   //this is called when a breakpoint is hit
 
-  public void processBreakpointHit(AbstractMPSBreakpoint breakpoint) {
+  public void processBreakpointHit(IBreakpoint breakpoint) {
     //todo do something later if necessary (like highlihgting a line, etc)
   }
 
+  public Set<IBreakpoint> getAllIBreakpoints() {
+    synchronized (myBreakpoints) {
+      return new HashSet<IBreakpoint>(myBreakpoints);
+    }
+  }
+
+  @Deprecated
+  @ToRemove(version = 2.0)
   public Set<AbstractMPSBreakpoint> getAllBreakpoints() {
     synchronized (myBreakpoints) {
-      return new HashSet<AbstractMPSBreakpoint>(myBreakpoints);
+      Set<AbstractMPSBreakpoint> result = new HashSet<AbstractMPSBreakpoint>();
+      for (IBreakpoint bp : myBreakpoints) {
+        if (bp instanceof AbstractMPSBreakpoint) {
+          result.add((AbstractMPSBreakpoint) bp);
+        }
+      }
+      return result;
     }
   }
 
-  public static class MyRootBreakpointInfo {
-    public MyRootBreakpointInfo() {
-
+  public void addChangeListener(IBreakpointManagerListener listener) {
+    synchronized (myListeners) {
+      myListeners.add(listener);
     }
-
-    public MyRootBreakpointInfo(String modelReference, String nodeId) {
-      myModelReference = modelReference;
-      myNodeId = nodeId;
-    }
-
-    public String myModelReference;
-    public String myNodeId;
-    public BreakpointInfo[] myBreakpointInfos = new BreakpointInfo[0];
   }
 
-  public static class MyState {
-    public MyRootBreakpointInfo[] myRootBreakpointInfos = new MyRootBreakpointInfo[0];
+  public void removeChangeListener(IBreakpointManagerListener listener) {
+    synchronized (myListeners) {
+      myListeners.remove(listener);
+    }
+  }
+
+  private void fireBreakpointsChanged() {
+    List<IBreakpointManagerListener> listeners;
+    synchronized (myListeners) {
+      listeners = new ArrayList<IBreakpointManagerListener>(myListeners);
+    }
+    for (IBreakpointManagerListener listener : listeners) {
+      listener.breakpointsChanged();
+    }
+  }
+
+  // TODO legacy method so the users code would compile -- remove after MPS2.0
+  @Deprecated
+  public static void notifyDebuggableConceptsAdded(){}
+
+  private class MyBreakpointListener implements IBreakpointListener {
+    @Override
+    public void breakpointToggled(final IBreakpoint breakpoint, boolean enabled) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          if (breakpoint instanceof ILocationBreakpoint) {
+            SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
+            if (node != null) {
+              SNode root = node.getContainingRoot();
+              if (root != null) {
+                for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
+                  EditorComponent editorComponent = editor.getCurrentEditorComponent();
+                  if (editorComponent != null) {
+                    SNode editedNode = editorComponent.getEditedNode();
+                    if (root == editedNode) {
+                      editorComponent.repaint(); //todo should it be executed in ED thread?
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+  }
+
+  private class MyLeftMarginMouseListener implements LeftMarginMouseListener {
+    @Override
+    public void mousePressed(MouseEvent e, EditorComponent editorComponent) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e, EditorComponent editorComponent) {
+    }
+
+    @Override
+    public void mouseClicked(final MouseEvent e, final EditorComponent editorComponent) {
+      if (e.getButton() == MouseEvent.BUTTON1) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SNode node = findDebuggableNode(editorComponent, e.getX(), e.getY());
+            if (node != null) {
+              toggleBreakpoint(node, false);
+            }
+          }
+        });
+      }
+    }
+  }
+
+  private class MySessionChangeAdapter extends SessionChangeAdapter {
+    @Override
+    public void muted(AbstractDebugSession session) {
+      ApplicationManager.getApplication().invokeLater((new Runnable() {
+        @Override
+        public void run() {
+          for (IEditor editor : EditorsHelper.getSelectedEditors(myFileEditorManager)) {
+            EditorComponent editorComponent = editor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              editorComponent.repaint();
+            }
+          }
+        }
+      }));
+    }
+  }
+
+  private class MyDebugSessionAdapter extends DebugSessionAdapter {
+    @Override
+    public void registered(AbstractDebugSession session) {
+      session.addChangeListener(myChangeListener);
+    }
+
+    @Override
+    public void detached(AbstractDebugSession session) {
+      session.removeChangeListener(myChangeListener);
+    }
+  }
+
+  private class MyEditorOpenListener implements EditorOpenListener {
+    @Override
+    public void editorOpened(MPSFileNodeEditor editor) {
+      editorComponentOpened(editor.getNodeEditor().getCurrentEditorComponent());
+    }
+
+    @Override
+    public void editorClosed(MPSFileNodeEditor editor) {
+      editorComponentClosed(editor.getNodeEditor().getCurrentEditorComponent());
+    }
+  }
+
+  public interface IBreakpointManagerListener {
+    void breakpointsChanged();
   }
 }

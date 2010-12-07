@@ -122,10 +122,6 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
-  protected void createTypeCheckingContext() {
-  }
-
-  @Override
   protected void disposeTypeCheckingContext() {
   }
 }

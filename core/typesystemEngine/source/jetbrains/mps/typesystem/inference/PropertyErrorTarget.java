@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 
 public class PropertyErrorTarget implements IErrorTarget {

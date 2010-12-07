@@ -112,9 +112,7 @@ public class EditorCell_Property extends EditorCell_Label {
 
     if (isValidText(text) && isEditable()) {
       myModelAccessor.setText(text);
-    } else {
-      getEditorContext().getNodeEditorComponent().requestRelayout();
-    }
+    } 
     setErrorState(!isValidText(text));
   }
 

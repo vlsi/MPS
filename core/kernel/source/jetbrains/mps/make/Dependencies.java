@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
+import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.project.IModule;

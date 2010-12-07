@@ -241,6 +241,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   public void setText(String text) {
     myNoTextSet = (text == null || text.length() == 0);
     myTextLine.setText(myNoTextSet ? null : text);
+    requestRelayout();
   }
 
   public void setDefaultText(String text) {
@@ -323,10 +324,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return isSelected() && getEditorContext().getNodeEditorComponent().getNodeRangeSelection().isActive();
   }
 
-  public void paintContent(Graphics g) {
+  public void paintContent(Graphics g, ParentSettings parentSettings) {
     TextLine textLine = getRenderedTextLine();
     boolean toShowCaret = toShowCaret();
-    boolean selected = isSelectionPaintedOnAncestor();
+    boolean selected = isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted();
     textLine.setSelected(selected);
     textLine.setShowCaret(toShowCaret);
     Color cellFontColor = getEditor().getAdditionalCellFontColor(this);
@@ -337,8 +338,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
-  public void paintSelection(Graphics g, Color c, boolean drawBorder) {
-    if (!isSelectionPaintedOnAncestor() && getEditor().getAdditionalCellFontColor(this) != null) {
+  public void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings) {
+    if (!isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted() && getEditor().getAdditionalCellFontColor(this) != null) {
       /*
        * Suppresing selection painting in case this cell is not actually selected and additionalCellFontColor() for it is not null.
        * This will hide messages feedback if there is an AdditionalPainter instance (with specified cellFontColor) covering this cell.
@@ -347,7 +348,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
        */
       return;
     }
-    super.paintSelection(g, c, drawBorder);
+    super.paintSelection(g, c, drawBorder, parentSettings);
   }
 
   protected boolean toShowCaret() {
@@ -412,7 +413,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if (processMutableKeyPressed(keyEvent, allowErrors)) {
       getEditorContext().flushEvents();
 
-      getEditor().requestRelayout();
       return true;
     }
     return false;
@@ -438,8 +438,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         public void run() {
           if (processMutableKeyTyped(keyEvent, allowErrors)) {
             getEditorContext().flushEvents();
-
-            getEditor().requestRelayout();
 
             if (isErrorState() && side != null) {
               if (allowsIntelligentInputKeyStroke(keyEvent)) {
@@ -663,7 +661,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myTextLine.setCaretPosition(stSel);
     editor.resetLastCaretX();
     ensureCaretVisible();
-    editor.requestRelayout();
   }
 
   public void changeText(final String text) {
@@ -781,8 +778,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
       EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
       if (cell != null) {
-        cell.changeText(myText);
-        cell.getEditorContext().getNodeEditorComponent().requestRelayout();
+        cell.changeText(myText);        
       }
     }
   }
@@ -907,8 +903,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       final String s = TextPasteUtil.getStringFromClipboard();
       cell.insertText(s);
       context.getNodeEditorComponent().resetLastCaretX();
-      cell.ensureCaretVisible();
-      context.getNodeEditorComponent().requestRelayout();
+      cell.ensureCaretVisible();      
     }
   }
 

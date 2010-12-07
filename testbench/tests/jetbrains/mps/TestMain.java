@@ -20,7 +20,6 @@ import com.intellij.idea.IdeaTestApplication;
 import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
@@ -54,10 +53,7 @@ import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -96,7 +92,64 @@ public class TestMain {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
     final MPSProject project = loadProject(projectFile);
-    pr.execute(project.getProject());
+    pr.execute(project);
+  }
+
+  public static boolean testOnProjectCopy(final File source, final File destinationDir,
+                                          final String projectName, ProjectRunnable pr) {
+    IdeMain.setTestMode(TestMode.CORE_TEST);
+    TestMain.configureMPS();
+
+    if (destinationDir.exists()) {
+      FileUtil.delete(destinationDir);
+    }
+    if (source.isDirectory()) {
+      FileUtil.copyDir(source, destinationDir);
+    } else {  // it is allowed to have zipped directory here
+      try {
+        destinationDir.mkdir();
+        UnzipUtil.unzip(source, destinationDir);
+      } catch (IOException e) {
+        e.printStackTrace();
+        return false;
+      }
+    }
+
+    final MPSProject[] project = new MPSProject[]{null};
+    try {
+      // load a project
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          try {
+            project[0] = loadProject(new File(destinationDir, projectName));
+            VirtualFile projectVirtualDir = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(destinationDir);
+            assert projectVirtualDir != null;
+            projectVirtualDir.refresh(false, true);
+          } catch (Throwable t) {
+            t.printStackTrace();
+          }
+        }
+      });
+      // execute test
+      return pr.execute(project[0]);
+    } catch (Throwable t) {
+      t.printStackTrace();
+      return false;
+    } finally {
+      // Wait until last invokeLater() is executed
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        public void run() {}
+      }, ModalityState.NON_MODAL);
+      // clean up
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          if (project[0] != null) {
+            project[0].dispose();
+          }
+          FileUtil.delete(destinationDir);
+        }
+      });
+    }
   }
 
   public static MPSProject loadProject(File projectFile) {
@@ -156,30 +209,43 @@ public class TestMain {
     }, leakThreshold);
   }
 
+
+  private static ProjectScope getProjectScope(MPSProject project) {
+    return  project.getProject().getComponent(ProjectScope.class);
+  }
+
+  public static SModelDescriptor getModel(MPSProject project, String modelName) {
+    return getProjectScope(project).getModelDescriptor(SModelReference.fromString(modelName));
+  }
+
+  public static Language getLanguage(MPSProject project, String languageName) {
+    return getProjectScope(project).getLanguage(languageName);
+  }
+
+  public static void updateLanguageClasspath(Language l, String classpath) {
+    LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
+    ClassPathEntry cpEntry = new ClassPathEntry();
+    cpEntry.setPath(classpath);
+    languageDescriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpEntry));
+    l.setLanguageDescriptor(languageDescriptor, false);
+  }
+
+  private final static String REFACTORING_PROJECT = "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT;
+  private final static String REFACTORING_SANDBOX[] = new String[] { "testRefactoring.sandbox", "testRefactoring.sandbox2" };
+  private final static String REFACTORING_LANGUAGE[] = new String[] { "testRefactoring", "testRefactoringTargetLang" };
+
   public static boolean testRefactoringTestEnvironment(File projectDirectory) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
-    File projectFile = new File(projectDirectory, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
-    final MPSProject project = loadProject(projectFile);
+    final MPSProject project = loadProject(new File(projectDirectory, REFACTORING_PROJECT));
+
     final boolean[] b = new boolean[]{true};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (getSandbox1(project) == null) {
-          b[0] = false;
-          return;
-        }
-        if (getSandbox2(project) == null) {
-          b[0] = false;
-          return;
-        }
-        if (getTestRefactoringLanguage(project) == null) {
-          b[0] = false;
-          return;
-        }
-        if (getTestRefactoringTargetLanguage(project) == null) {
-          b[0] = false;
-          return;
-        }
+        b[0] = getModel(project, REFACTORING_SANDBOX[0]) != null
+            && getModel(project, REFACTORING_SANDBOX[1]) != null
+            && getLanguage(project, REFACTORING_LANGUAGE[0]) != null
+            && getLanguage(project, REFACTORING_LANGUAGE[1]) != null;
       }
     });
 
@@ -191,120 +257,28 @@ public class TestMain {
     return b[0];
   }
 
-  private static SModelDescriptor getSandbox1(MPSProject project) {
-    return project.getProject().getComponent(ProjectScope.class).getModelDescriptor(SModelReference.fromString("testRefactoring.sandbox"));
-  }
-
-  private static SModelDescriptor getSandbox2(MPSProject project) {
-    return project.getProject().getComponent(ProjectScope.class).getModelDescriptor(SModelReference.fromString("testRefactoring.sandbox2"));
-  }
-
-  private static Language getTestRefactoringLanguage(MPSProject project) {
-    return project.getProject().getComponent(ProjectScope.class).getLanguage("testRefactoring");
-  }
-
-  private static Language getTestRefactoringTargetLanguage(MPSProject project) {
-    return project.getProject().getComponent(ProjectScope.class).getLanguage("testRefactoringTargetLang");
-  }
-
   public static boolean testRefactoringOnProject(final File sourceProjectDir, final IRefactoringTester refactoringTester) {
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
-    final boolean[] b = new boolean[]{true};
-
-
     final File destinationProjectDir = new File(PathManager.getHomePath(), "TEST_REFACTORING");
-    if (destinationProjectDir.exists()) {
-      FileUtil.delete(destinationProjectDir);
-    }
-    FileUtil.copyDir(sourceProjectDir, destinationProjectDir);
-    final MPSProject[] projectArray = new MPSProject[]{null};
-    //loading a project
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        try {
-          File projectFile = new File(destinationProjectDir, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
-          projectArray[0] = loadProject(projectFile);
-          VirtualFile projectVirtualDir = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(destinationProjectDir);
-          assert projectVirtualDir != null;
-          projectVirtualDir.refresh(false, true);
-        } catch (Throwable t) {
-          t.printStackTrace();
+    return testOnProjectCopy(sourceProjectDir, destinationProjectDir, REFACTORING_PROJECT,
+      new ProjectRunnable() {
+        public boolean execute(final MPSProject project) {
+          final SModelDescriptor[] sandbox = new SModelDescriptor[]{null, null};
+          final Language[] testLanguage = new Language[]{null, null};
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              String classPath = destinationProjectDir.getAbsolutePath() + "/classes";
+              sandbox[0] = getModel(project, REFACTORING_SANDBOX[0]);
+              sandbox[1] = getModel(project, REFACTORING_SANDBOX[1]);
+              testLanguage[0] = getLanguage(project, REFACTORING_LANGUAGE[0]);
+              testLanguage[1] = getLanguage(project, REFACTORING_LANGUAGE[1]);
+              updateLanguageClasspath(testLanguage[0], classPath);
+              updateLanguageClasspath(testLanguage[1], classPath);
+            }
+          });
+
+          return refactoringTester.testRefactoring(project.getProject(), sandbox[0], sandbox[1], testLanguage[0], testLanguage[1]);
         }
-      }
-    });
-    if (projectArray[0] == null) return false;
-
-    final MPSProject project = projectArray[0];
-
-
-    final Runnable continuation = new Runnable() {
-      public void run() {
-        if (project != null) {
-          project.dispose();
-        }
-        FileUtil.delete(destinationProjectDir);
-      }
-    };
-
-    final SModelDescriptor[] sandbox1 = new SModelDescriptor[]{null};
-    final SModelDescriptor[] sandbox2 = new SModelDescriptor[]{null};
-    final Language[] testRefactoringLanguage = new Language[]{null};
-    final Language[] testRefactoringTargetLanguage = new Language[]{null};
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        try {
-          sandbox1[0] = getSandbox1(project);
-          sandbox2[0] = getSandbox2(project);
-          testRefactoringLanguage[0] = getTestRefactoringLanguage(project);
-          testRefactoringTargetLanguage[0] = getTestRefactoringTargetLanguage(project);
-
-          //update languages' classpathes
-          {
-            LanguageDescriptor testRefactoringDescriptor = testRefactoringLanguage[0].getModuleDescriptor();
-            LanguageDescriptor testRefactoringTargetDescriptor = testRefactoringTargetLanguage[0].getModuleDescriptor();
-
-            ClassPathEntry cpEntry1 = new ClassPathEntry();
-            ClassPathEntry cpEntry2 = new ClassPathEntry();
-            String classPath = destinationProjectDir.getAbsolutePath() + "/classes";
-            cpEntry1.setPath(classPath);
-            cpEntry2.setPath(classPath);
-
-            testRefactoringDescriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpEntry1));
-            testRefactoringTargetDescriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(cpEntry2));
-
-            testRefactoringLanguage[0].setLanguageDescriptor(testRefactoringDescriptor, false);
-            testRefactoringTargetLanguage[0].setLanguageDescriptor(testRefactoringTargetDescriptor, false);
-          }
-        } catch (Throwable t) {
-          t.printStackTrace();
-          b[0] = false;
-          return;
-        }
-      }
-    });
-
-    if (!b[0]) {
-      return false;
-    }
-    try {
-      return refactoringTester.testRefactoring(
-        project.getProject(),
-        sandbox1[0],
-        sandbox2[0],
-        testRefactoringLanguage[0],
-        testRefactoringTargetLanguage[0]);
-    } catch (Throwable t) {
-      t.printStackTrace();
-      return false;
-    } finally {
-      // Wait until last invokeLater() is executed
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        @Override
-        public void run() {}
-      }, ModalityState.NON_MODAL);
-      ThreadUtils.runInUIThreadAndWait(continuation);
-    }
+      });
   }
 
   public static boolean testProjectReloadForLeaks(final File projectFile) {
@@ -450,7 +424,7 @@ public class TestMain {
   }
 
   public static interface ProjectRunnable {
-    void execute(Project project);
+    boolean execute(MPSProject project);
   }
 
   public static class ProjectTester {
