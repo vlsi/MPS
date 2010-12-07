@@ -20,8 +20,6 @@ public interface QueryExecutionContext {
 
   boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
 
-  boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException;
-
   boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException;
 
   void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException;

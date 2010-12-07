@@ -8,6 +8,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -57,24 +58,24 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void createRootNodeFromTemplate(final String mappingName, @NotNull final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure, final QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
+  protected void createRootNodeFromTemplate(final String mappingName, @NotNull final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure, final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.createRootNodeFromTemplate(mappingName, templateNode, inputNode, copyRootOnFailure, executionContext);
+        ParallelTemplateGenerator.super.createRootNodeFromTemplate(mappingName, templateNode, inputNode, copyRootOnFailure, environment);
       }
-    }, new Pair(inputNode, templateNode), executionContext);
+    }, new Pair(inputNode, templateNode), environment.getReductionContext().getQueryExecutor());
 
   }
 
   @Override
-  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, @NotNull final QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode, executionContext);
+        ParallelTemplateGenerator.super.copyRootNodeFromInput(inputRootNode, environment);
       }
-    }, new Pair(inputRootNode, null), executionContext);
+    }, new Pair(inputRootNode, null), environment.getReductionContext().getQueryExecutor());
   }
 
   @Override

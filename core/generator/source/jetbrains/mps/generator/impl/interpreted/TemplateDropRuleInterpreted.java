@@ -19,11 +19,13 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.template.DropRootRuleContext;
+import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.DropRootRule;
-import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 /**
  * Evgeny Gryaznov, Nov 30, 2010
@@ -55,7 +57,28 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
 
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    // TODO
+    SNode condition = ruleNode.getChild(DropRootRule.CONDITION_FUNCTION);
+    if (condition == null) {
+      // condition is not required
+      return true;
+    }
+
+    String methodName = TemplateFunctionMethodName.dropRootRule_Condition(condition);
+    try {
+      return (Boolean) QueryMethodGenerated.invoke(
+        methodName,
+        environment.getGenerator().getGeneratorSessionContext(),
+        new DropRootRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
+        ruleNode.getModel(),
+        true);
+    } catch (ClassNotFoundException e) {
+      environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
+    } catch (NoSuchMethodException e) {
+      environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to TRUE");
+    } catch (Throwable t) {
+      throw new GenerationFailureException("error executing condition ", condition, t);
+    }
+    // in this case 'true' is better default
     return true;
   }
 }

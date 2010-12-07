@@ -51,6 +51,7 @@ public class ReductionContext {
     return currentSet;
   }
 
+  @NotNull
   public QueryExecutionContext getQueryExecutor() {
     return myExecutionContext;
   }

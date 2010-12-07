@@ -36,7 +36,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   private final IOperationContext operationContext;
   private final IGenerationTracer tracer;
 
-  public TemplateExecutionEnvironmentImpl(TemplateGenerator generator, ReductionContext reductionContext, IOperationContext operationContext, IGenerationTracer tracer) {
+  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull ReductionContext reductionContext, IOperationContext operationContext, @NotNull IGenerationTracer tracer) {
     this.generator = generator;
     this.reductionContext = reductionContext;
     this.operationContext = operationContext;

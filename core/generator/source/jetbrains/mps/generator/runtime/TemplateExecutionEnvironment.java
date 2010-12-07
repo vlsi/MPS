@@ -42,6 +42,7 @@ public interface TemplateExecutionEnvironment {
 
   IGenerationTracer getTracer();
 
+  @NotNull
   ReductionContext getReductionContext();
 
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);

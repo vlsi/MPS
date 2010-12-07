@@ -49,16 +49,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("check condition: drop root", ruleNode), true);
-      return wrapped.checkCondition(condition, inputRootNode, ruleNode);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("check if condition", ifMacro.getNode()), true);
