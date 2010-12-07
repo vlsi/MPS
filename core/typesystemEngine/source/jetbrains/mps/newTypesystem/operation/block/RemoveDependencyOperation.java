@@ -20,6 +20,7 @@ import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.ConditionKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,19 +38,20 @@ public class RemoveDependencyOperation extends AbstractOperation {
     myVar = var;
     myBlock = block;
     myConditionKind = conditionKind;
-    // todo
-    // myEquationInfo = new EquationInfo(input, " ", block.getNodeModel(), block.getNodeId());
-  }
-
-/*  @Override
-  public String getPresentation() {
-    return "When concrete dependency removed: " + myNode + "";
+    myEquationInfo = new EquationInfo(var, " ", block.getNodeModel(), block.getNodeId());
   }
 
   @Override
+  public String getPresentation() {
+    return "Block dependency removed: " + myVar + " -> " + myBlock.getPresentation();
+  }
+
+/*
+  @Override
   public Color getColor() {
     return Colors.WHEN_CONCRETE_REMOVED;
-  }*/
+  }
+*/
 
   @Override
   public void doUndo(State state) {

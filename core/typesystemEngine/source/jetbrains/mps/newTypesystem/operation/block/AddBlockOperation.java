@@ -16,10 +16,13 @@
 package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+
+import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,20 +36,18 @@ public class AddBlockOperation extends AbstractOperation {
 
   public AddBlockOperation(Block block) {
     myBlock = block;
-
-    ///todo
-    // myEquationInfo = new EquationInfo(type, " ", block.getNodeModel(), block.getNodeId());
+    myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
- /* @Override
+  @Override
   public String getPresentation() {
-    return "When Concrete added " + myType;
+    return "Block added : " + myBlock.getPresentation();
   }
 
   @Override
   public Color getColor() {
     return Colors.WHEN_CONCRETE_ADDED;
-  }*/
+  }
 
   @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {

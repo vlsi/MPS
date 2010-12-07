@@ -55,4 +55,9 @@ public class WhenConcreteEntry extends Block {
     Pair<SNode, ConditionKind> input = new Pair<SNode, ConditionKind>(myArgument, myConditionKind);
     return CollectionUtil.set(input);
   }
+
+  @Override
+  public String getPresentation() {
+    return "when concrete (" + myConditionKind.getPresentation() + ") : " + myArgument;
+  }
 }

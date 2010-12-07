@@ -20,6 +20,7 @@ import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.ConditionKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,16 +38,15 @@ public class AddDependencyOperation extends AbstractOperation {
     myVar = input;
     myBlock = block;
     myConditionKind = conditionKind;
-    //todo
-    // myEquationInfo = new EquationInfo(input, " ", block.getNodeModel(), block.getNodeId());
-  }
-
-/*  @Override
-  public String getPresentation() {
-    return "When concrete dependency added: " + myInput + "";
+    myEquationInfo = new EquationInfo(input, " ", block.getNodeModel(), block.getNodeId());
   }
 
   @Override
+  public String getPresentation() {
+    return "Block dependency added: " + myVar + " -> " + myBlock.getPresentation();
+  }
+
+/*  @Override
   public Color getColor() {
     return Colors.WHEN_CONCRETE_ADDED;
   }*/

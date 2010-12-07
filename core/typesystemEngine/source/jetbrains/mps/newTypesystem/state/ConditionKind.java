@@ -33,6 +33,11 @@ public enum ConditionKind {
     public List<SNode> getUnresolvedInputs(SNode node) {
       return Collections.EMPTY_LIST;
     }
+
+    @Override
+    public String getPresentation() {
+      return "";
+    }
   },
   SHALLOW {
     @Override
@@ -43,6 +48,11 @@ public enum ConditionKind {
         }
       }
       return Collections.EMPTY_LIST;
+    }
+
+    @Override
+    public String getPresentation() {
+      return "shallow";
     }
   },
   CONCRETE {
@@ -65,7 +75,14 @@ public enum ConditionKind {
       }
       return result;
     }
+
+    @Override
+    public String getPresentation() {
+      return "concrete";
+    }
   };
 
   public abstract List<SNode> getUnresolvedInputs(SNode node);
+
+  public abstract String getPresentation();
 }

@@ -31,14 +31,13 @@ public class RemoveBlockOperation extends AbstractOperation {
 
   public RemoveBlockOperation(Block block) {
     myBlock = block;
-    // todo
-    // myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
+    myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
-  /*@Override
+  @Override
   public String getPresentation() {
-    return "Became concrete";
-  }*/
+    return "Block executed : " + myBlock.getPresentation();
+  }
 
   @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {

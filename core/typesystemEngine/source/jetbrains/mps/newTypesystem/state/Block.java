@@ -38,8 +38,6 @@ public abstract class Block {
     myNodeId = nodeId;
   }
 
-  public abstract void performAction();
-
   public SNode getResolvedInput(SNode input) {
     return myState.expand(input);
   }
@@ -51,6 +49,10 @@ public abstract class Block {
   public String getNodeId() {
     return myNodeId;
   }
+
+  public abstract String getPresentation();
+
+  public abstract void performAction();
 
   public abstract Set<Pair<SNode, ConditionKind>> getInitialInputs();
 }
