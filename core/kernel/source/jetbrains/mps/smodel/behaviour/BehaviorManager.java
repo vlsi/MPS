@@ -28,6 +28,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -216,7 +217,7 @@ public final class BehaviorManager implements ApplicationComponent {
         Language l = SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
 
         Method method = null;
-        String fqName = NameUtil.nodeFQName(concept);
+        String fqName = InternUtil.intern(NameUtil.nodeFQName(concept));
 
         MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
 
