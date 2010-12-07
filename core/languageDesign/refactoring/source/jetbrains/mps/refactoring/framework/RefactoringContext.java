@@ -284,7 +284,9 @@ public class RefactoringContext {
 //      }
 //      myConceptFeatureMap.put(oldConceptFeature, newConceptFeature);
       myData.addToConceptFeatureMap(kind, oldConceptFQName, oldFeatureName, newConceptFQName, delete ? null : newFeatureName);
-      myLoggedData.getData().add(new RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
+      if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) { // deletion is not loggable
+        myLoggedData.getData().add(new RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
+      }
     }
   }
 

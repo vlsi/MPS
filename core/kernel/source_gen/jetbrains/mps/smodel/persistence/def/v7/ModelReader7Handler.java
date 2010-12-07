@@ -515,7 +515,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
           fieldlinkMap.addTargetLocation(ptr, (StaticReference) ref);
         }
         result.addReference(ref);
-        fieldlinkMap.addRoleLocation(fieldhelper.readLinkId(child[3]), result);
+        fieldlinkMap.addRoleLocation(fieldhelper.readLinkId(child[3]), ref);
         return;
       }
       if ("node".equals(tagName)) {

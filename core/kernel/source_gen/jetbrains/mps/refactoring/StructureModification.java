@@ -9,9 +9,15 @@ import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class StructureModification {
   private Map<SModelReference, Integer> myDependencies = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
@@ -22,6 +28,16 @@ public class StructureModification {
 
   public void addDependencyModel(SModelReference modelRef, int version) {
     MapSequence.fromMap(myDependencies).put(modelRef, version);
+  }
+
+  public void addDependencyModel(SModelReference modelRef) {
+    if (!(MapSequence.fromMap(myDependencies).containsKey(modelRef))) {
+      EditableSModelDescriptor model = as_hr78sn_a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(modelRef), EditableSModelDescriptor.class);
+      MapSequence.fromMap(myDependencies).put(modelRef, (model == null ?
+        -1 :
+        model.getVersion()
+      ));
+    }
   }
 
   public void setDependencies(Map<SModelReference, Integer> dependencies) {
@@ -46,8 +62,16 @@ public class StructureModification {
     return updated.value;
   }
 
+  private static <T> T as_hr78sn_a0a0a0a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
   public static interface Entry {
     public boolean apply(ModelLinkMap linkMap);
+    public Iterable<SModelReference> getDependentModels();
   }
 
   public static class MoveNode implements StructureModification.Entry {
@@ -62,6 +86,46 @@ public class StructureModification {
 
     public boolean apply(ModelLinkMap linkMap) {
       return linkMap.moveNode(oldID, newID);
+    }
+
+    public Iterable<SModelReference> getDependentModels() {
+      return Sequence.fromClosure(new ISequenceClosure<SModelReference>() {
+        public Iterable<SModelReference> iterable() {
+          return new Iterable<SModelReference>() {
+            public Iterator<SModelReference> iterator() {
+              return new YieldingIterator<SModelReference>() {
+                private int __CP__ = 0;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        this.__CP__ = 3;
+                        this.yield(oldID.getModelReference());
+                        return true;
+                      case 3:
+                        this.__CP__ = 1;
+                        this.yield(newID.getModelReference());
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while (true);
+                  return false;
+                }
+              };
+            }
+          };
+        }
+      });
     }
   }
 
@@ -91,6 +155,42 @@ public class StructureModification {
       }
     }
 
+    public Iterable<SModelReference> getDependentModels() {
+      return Sequence.fromClosure(new ISequenceClosure<SModelReference>() {
+        public Iterable<SModelReference> iterable() {
+          return new Iterable<SModelReference>() {
+            public Iterator<SModelReference> iterator() {
+              return new YieldingIterator<SModelReference>() {
+                private int __CP__ = 0;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        this.__CP__ = 1;
+                        this.yield(oldID.getModelReference());
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while (true);
+                  return false;
+                }
+              };
+            }
+          };
+        }
+      });
+    }
+
     public static     enum RenameType {
       CONCEPT(),
       PROPERTY(),
@@ -111,6 +211,46 @@ public class StructureModification {
 
     public boolean apply(ModelLinkMap linkMap) {
       return linkMap.updateModelReference(oldModel, newModel);
+    }
+
+    public Iterable<SModelReference> getDependentModels() {
+      return Sequence.fromClosure(new ISequenceClosure<SModelReference>() {
+        public Iterable<SModelReference> iterable() {
+          return new Iterable<SModelReference>() {
+            public Iterator<SModelReference> iterator() {
+              return new YieldingIterator<SModelReference>() {
+                private int __CP__ = 0;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        this.__CP__ = 3;
+                        this.yield(oldModel);
+                        return true;
+                      case 3:
+                        this.__CP__ = 1;
+                        this.yield(newModel);
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while (true);
+                  return false;
+                }
+              };
+            }
+          };
+        }
+      });
     }
   }
 }

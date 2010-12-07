@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class StructureModificationProcessor0 {
@@ -27,9 +30,8 @@ public class StructureModificationProcessor0 {
   }
 
   private boolean playRefactoring(@NotNull StructureModification data) {
-    boolean result = false;
     for (IMapping<SModelReference, Integer> entry : MapSequence.fromMap(data.getDependencies())) {
-      // adds implicit import if necessary; maybe should not add 
+      // also adds implicit import if necessary 
       myModel.updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
     }
     return data.apply(myModelMap);
@@ -46,7 +48,7 @@ public class StructureModificationProcessor0 {
         return false;
       }
       for (StructureModification data : history.getHistory()) {
-        if (MapSequence.fromMap(data.getDependencies()).get(usedModelDescriptor.getSModelReference()) <= usedVersion) {
+        if (MapSequence.fromMap(data.getDependencies()).get(usedModelDescriptor.getSModelReference()) < usedVersion) {
           continue;
         }
         played |= playRefactoring(data);
@@ -88,8 +90,15 @@ public class StructureModificationProcessor0 {
     return result;
   }
 
-  public static void addToHistory(@NotNull StructureModification data) {
-    // add all dependencies and current version 
+  public static void addToHistory(@NotNull final StructureModification data) {
+    // add all dependencies with current version 
+    for (StructureModification.Entry d : ListSequence.fromList(data.getData())) {
+      Sequence.fromIterable(d.getDependentModels()).visitAll(new IVisitor<SModelReference>() {
+        public void visit(SModelReference it) {
+          data.addDependencyModel(it);
+        }
+      });
+    }
     // add data to all dependent models 
     for (IMapping<SModelReference, Integer> d : MapSequence.fromMap(data.getDependencies())) {
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.key());
