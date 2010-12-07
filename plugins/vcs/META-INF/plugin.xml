@@ -81,7 +81,6 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsProjectConfiguration</implementation-class>
-      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.annotation.AnnotationManager</implementation-class>
