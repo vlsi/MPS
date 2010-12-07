@@ -126,7 +126,7 @@ public class ModelPersistence {
   }
   //--------read--------
 
-  private static void doLoadDescriptor(final DescriptorLoadResult result, InputSource source) {
+  public static void loadDescriptor(final DescriptorLoadResult result, InputSource source) {
     DefaultHandler handler = new DefaultHandler() {
       public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (MODEL.equals(qName)) {
@@ -170,7 +170,7 @@ public class ModelPersistence {
     }
 
     try {
-      doLoadDescriptor(result, JDOMUtil.loadSource(file));
+      loadDescriptor(result, JDOMUtil.loadSource(file));
     } catch (IOException ignored) {
     }
 
@@ -231,7 +231,7 @@ public class ModelPersistence {
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) {
     DescriptorLoadResult loadResult = new DescriptorLoadResult();
-    doLoadDescriptor(loadResult, new InputSource(new StringReader(content)));
+    loadDescriptor(loadResult, new InputSource(new StringReader(content)));
 
     int version = loadResult.getPersistenceVersion();
 
@@ -416,6 +416,13 @@ public class ModelPersistence {
     return 0;
   }
 
+  public static Map<String, String> calculateHashes(byte[] modelBytes, int persistenceVersion) {
+    IHashProvider hashProvider = getModelPersistence(persistenceVersion).getHashProvider();
+    Map<String,String> result = hashProvider.getRootHashes(modelBytes);
+    result.put(ModelDigestHelper.FILE, hashProvider.getHash(modelBytes));
+    return result;
+  }
+
   //--------deprecated--------
 
   @Deprecated //very slow
@@ -517,156 +524,5 @@ public class ModelPersistence {
     } catch (IOException e) {
     }
     return version[0] == -1 ? getCurrentPersistenceVersion() : version[0];
-  }
-
-  public static void extractRootHashes(byte[] content, Map<String, String> rootHashes) {
-    XmlFastScanner scanner = new XmlFastScanner(content);
-    int depth = 0, token, rootStart = -1;
-    String rootId = null;
-
-    //up to v6
-/*
-    boolean isEmpty = true;
-    while ((token = scanner.next()) != XmlFastScanner.EOI) {
-      switch (token) {
-        case XmlFastScanner.OPEN_TAG:
-          depth++;
-          if (depth == 2 && ModelPersistence.NODE.equals(scanner.getName())) {
-            rootStart = scanner.getTokenOffset();
-            rootId = extractId(scanner.token());
-            if (rootId != null && isEmpty) {
-              rootHashes.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(scanner.getText(0, rootStart)));
-              isEmpty = false;
-            }
-          }
-          break;
-        case XmlFastScanner.SIMPLE_TAG:
-          if (depth == 1 && ModelPersistence.NODE.equals(scanner.getName())) {
-            rootId = extractId(scanner.token());
-            if (rootId != null) {
-              String s = scanner.getText(scanner.getTokenOffset(), scanner.getOffset());
-              rootHashes.put(rootId, ModelDigestUtil.hash(s));
-            }
-          }
-          break;
-        case XmlFastScanner.CLOSE_TAG:
-          if (depth == 2) {
-            if (rootId != null && ModelPersistence.NODE.equals(scanner.getName())) {
-              String s = scanner.getText(rootStart, scanner.getOffset());
-              rootHashes.put(rootId, ModelDigestUtil.hash(s));
-            }
-            rootStart = -1;
-            rootId = null;
-          }
-          depth--;
-          break;
-      }
-    }
-    if (depth != 0) {
-      LOG.error("xml: bad data");
-    }
-    if (isEmpty) {
-      rootHashes.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(content));
-    }
-*/
-
-
-    //v7
-    Map<String, String> shortContent = new HashMap<String, String>();
-    boolean insideRoots = false;
-    while ((token = scanner.next()) != XmlFastScanner.EOI) {
-      switch (token) {
-        case XmlFastScanner.SIMPLE_TAG:
-          boolean rootShortPart = insideRoots && ModelPersistence.NODE.equals(scanner.getName());
-          boolean rootLongPart = depth == 1 && ModelPersistence.ROOT_CONTENT.equals(scanner.getName());
-          if (rootShortPart || rootLongPart) {
-            rootId = extractId(scanner.token());
-            if (rootId != null) {
-              String s = scanner.getText(scanner.getTokenOffset(), scanner.getOffset());
-              if (rootShortPart) {
-                shortContent.put(rootId, s);
-              } else {
-                addMultiHash(rootHashes, rootId, shortContent.get(rootId), s);
-              }
-            }
-            rootId = null;
-          }
-          break;
-
-        case XmlFastScanner.OPEN_TAG:
-          depth++;
-
-          if (depth == 2 && ModelPersistence.ROOTS.equals(scanner.getName())) {
-            insideRoots = true;
-            rootHashes.put(ModelDigestHelper.HEADER, ModelDigestUtil.hash(scanner.getText(0, scanner.getTokenOffset())));
-          }
-
-          if (insideRoots && ModelPersistence.NODE.equals(scanner.getName())) {
-            rootStart = scanner.getTokenOffset();
-            rootId = extractId(scanner.token());
-          }
-
-          if (depth == 2 && ModelPersistence.ROOT_CONTENT.equals(scanner.getName())) {
-            rootStart = scanner.getTokenOffset();
-            rootId = extractId(scanner.token());
-          }
-          break;
-
-        case XmlFastScanner.CLOSE_TAG:
-          if (depth == 2 && ModelPersistence.ROOTS.equals(scanner.getName())) {
-            insideRoots = false;
-          }
-
-          if (insideRoots && rootId != null && ModelPersistence.NODE.equals(scanner.getName())) {
-            String s = scanner.getText(rootStart, scanner.getOffset());
-            shortContent.put(rootId, s);
-            rootStart = -1;
-            rootId = null;
-          }
-
-          if (depth == 2 && rootId != null && ModelPersistence.ROOT_CONTENT.equals(scanner.getName())) {
-            String s = scanner.getText(rootStart, scanner.getOffset());
-            addMultiHash(rootHashes, rootId, shortContent.get(rootId), s);
-            rootStart = -1;
-            rootId = null;
-          }
-
-          depth--;
-          break;
-      }
-    }
-
-    if (depth != 0) {
-      LOG.error("xml: bad data");
-    }
-  }
-
-  private static void addMultiHash(Map<String, String> rootHashes, String rootId, String... cont) {
-    StringBuilder sb = new StringBuilder();
-    for (String s : cont) {
-      assert s != null;
-      sb.append(s);
-    }
-    String hash = ModelDigestUtil.hash(sb.toString());
-    rootHashes.put(rootId, hash);
-  }
-
-  private static String extractId(String tag) {
-    if (tag == null) {
-      return null;
-    }
-    String idString = " id=\"";
-    int index = tag.lastIndexOf(idString);
-    if (index >= 0) {
-      int offset = index + idString.length();
-      index = offset;
-      while (index < tag.length() && Character.isDigit(tag.codePointAt(index))) {
-        index++;
-      }
-      if (index < tag.length() && tag.charAt(index) == '"') {
-        return tag.substring(offset, index);
-      }
-    }
-    return null;
   }
 }

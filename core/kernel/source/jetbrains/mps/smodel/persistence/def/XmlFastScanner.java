@@ -5,11 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-/**
- * Evgeny Gryaznov, Jun 2, 2010
- */
-class XmlFastScanner {
-
+public class XmlFastScanner {
   public static final int EOI = 0;
   public static final int SIMPLE_TAG = 1;
   public static final int OPEN_TAG = 2;

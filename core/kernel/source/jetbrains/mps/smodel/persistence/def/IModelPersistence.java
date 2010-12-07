@@ -24,22 +24,16 @@ import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Nov 2, 2010
- * Time: 12:46:04 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface IModelPersistence {
   IModelWriter getModelWriter();
 
   IModelReader getModelReader();
 
+  IHashProvider getHashProvider();
+
   XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state);
 
   XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler();
-
 
   SModelReference upgradeModelUID(SModelReference modelReference);
 

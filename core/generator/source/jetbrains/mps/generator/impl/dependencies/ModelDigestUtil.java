@@ -17,9 +17,11 @@ package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.xml.sax.InputSource;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -57,10 +59,10 @@ public class ModelDigestUtil {
   }
 
   public static Map<String, String> getDigestMap(byte[] modelBytes) {
-    Map<String, String> result = new HashMap<String, String>();
-    result.put(ModelDigestHelper.FILE, hash(modelBytes));
-    ModelPersistence.extractRootHashes(modelBytes, result);
-    return result;
+    DescriptorLoadResult d = new DescriptorLoadResult();
+    ModelPersistence.loadDescriptor(d, new InputSource(new ByteArrayInputStream(modelBytes)));
+
+    return ModelPersistence.calculateHashes(modelBytes,d.getPersistenceVersion());
   }
 
   public static String hash(byte[] content) {
