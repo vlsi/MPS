@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
 
 import java.io.File;
@@ -221,11 +222,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
         buildPackageCaches(pack);
         myCache.addClass(pack, className);
 
-        if (pack.length() > 0) {
-          myEntries.put(pack + "." + className, entry);
-        } else {
-          myEntries.put(className, entry);
-        }
+        String fullClassName =pack.length() > 0? pack + "." + className:className;
+        myEntries.put(InternUtil.intern(fullClassName), entry);
       }
     }
   }

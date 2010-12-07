@@ -24,6 +24,7 @@ import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -429,7 +430,7 @@ public class StructureModificationData {
     public ConceptFeature(String conceptFQName, ConceptFeatureKind kind, String featureName) {
       myConceptFeatureKind = kind;
       myFeatureName = featureName;
-      myConceptFQName = conceptFQName;
+      myConceptFQName = InternUtil.intern(conceptFQName);
     }
 
     public ConceptFeature(Element element) {
