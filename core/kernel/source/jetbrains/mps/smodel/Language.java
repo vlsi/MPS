@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.lang.core.structure.Core_Language;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
 import jetbrains.mps.lang.refactoring.structure.Refactoring;
@@ -503,20 +502,21 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (structureModelDescriptor == null) return null;
     SModel structureModel = structureModelDescriptor.getSModel();
 
-    if (myNamesLoadingState.compareTo(ModelLoadingState.ROOTS_LOADED) <= 0) {
+    //if not all the model is loaded, we try to look up the given concept only between root nodes first
+    if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
       for (SNode root : structureModel.roots()) {
         if (root.getAdapter() instanceof AbstractConceptDeclaration) {
-          myNameToConceptCache.put(root.getPersistentProperty(INamedConcept.NAME), (AbstractConceptDeclaration) root.getAdapter());
+          myNameToConceptCache.put(root.getName(), (AbstractConceptDeclaration) root.getAdapter());
         }
       }
       if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
     }
 
+    //if we haven't found a root concept, then try to find in any node in the model
     myNameToConceptCache.put(conceptName, null);
     for (SNode node : structureModel.getFastNodeFinder().getNodes(AbstractConceptDeclaration.concept, true)) {
       myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
     }
-    if (!myNameToConceptCache.containsKey(conceptName)) myNameToConceptCache.get(conceptName);
 
     return myNameToConceptCache.get(conceptName);
   }
