@@ -102,6 +102,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
     setUserObject(modelDescriptor);
+    if (myModelDescriptor != null) {
+      setNodeIdentifier(myModelDescriptor.toString());
+    } else {
+      setNodeIdentifier("");
+    }
+    setText(calculateText());
     setIcon(myIcon);
   }
 
@@ -109,20 +115,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myIcon;
   }
 
-  protected void doUpdatePresentation() {
-    if (myModelDescriptor != null) {
-      setNodeIdentifier(myModelDescriptor.toString());
-    } else {
-      setNodeIdentifier("");
-    }
-
-    setText(calculateText());
-  }
-
   public boolean hasModelsUnder() {
     return !getSubfolderSModelTreeNodes().isEmpty();
   }
-
 
   //do not use!
   public DependencyRecorder<SNodeTreeNode> getDependencyRecorder() {
@@ -267,7 +262,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return new CreateRootNodeGroup(plain);
   }
 
-  public String calculateText() {
+  private String calculateText() {
     SModelReference reference;
 
     if (getSModelDescriptor() != null) {

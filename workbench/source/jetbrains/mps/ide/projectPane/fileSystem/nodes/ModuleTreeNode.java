@@ -28,9 +28,9 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
 
   public ModuleTreeNode(Project project, IModule m) {
     super(project, VirtualFileUtils.getVirtualFile(m.getDescriptorFile().getParent()));
-
     myModule = m;
 
+    setNodeIdentifier(getFile().getPath());
     add(new FolderTreeNode(project, VirtualFileUtils.getVirtualFile(m.getDescriptorFile().getParent()), true));
   }
 
@@ -38,7 +38,6 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     setText(myModule.getModuleFqName());
-    setNodeIdentifier(getFile().getPath());
     VirtualFile file = VirtualFileUtils.getVirtualFile(myModule.getDescriptorFile());
     if (file != null) {
       setIcon(file.getFileType().getIcon());

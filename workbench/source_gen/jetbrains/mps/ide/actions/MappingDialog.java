@@ -145,13 +145,10 @@ public class MappingDialog extends BaseDialog {
       myIcon = icon;
       myNodeIdentifier = nodeIdentifier;
       myText = text;
-    }
 
-    protected void doUpdatePresentation() {
-      super.doUpdatePresentation();
+      setNodeIdentifier(myNodeIdentifier);
       setText(myText);
       setIcon(myIcon);
-      setNodeIdentifier(myNodeIdentifier);
     }
   }
 }

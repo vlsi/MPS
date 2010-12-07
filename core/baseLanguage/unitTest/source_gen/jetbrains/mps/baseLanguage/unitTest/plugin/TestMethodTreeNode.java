@@ -15,11 +15,6 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   public TestMethodTreeNode(IOperationContext operationContext, ITestNodeWrapper testMethod) {
     super(operationContext);
     this.testMethod = testMethod;
-    this.doUpdatePresentation();
-  }
-
-  public void doUpdatePresentation() {
-    super.doUpdatePresentation();
     this.setNodeIdentifier(this.testMethod.getNode().getId());
     this.setText(this.testMethod.getName());
   }

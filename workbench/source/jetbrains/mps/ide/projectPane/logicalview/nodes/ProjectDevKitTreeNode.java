@@ -38,16 +38,13 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     super(new ModuleContext(devkit, project));
     myShortNameOnly = shortNameOnly;
     myDevKit = devkit;
+
+    setNodeIdentifier(calculateNodeIdentifier());
+    setIcon(Icons.DEVKIT_ICON);
   }
 
   public Object getUserObject() {
     return myDevKit;
-  }
-
-  protected void doUpdatePresentation() {
-    super.doUpdatePresentation();
-    setIcon(Icons.DEVKIT_ICON);
-    setNodeIdentifier(calculateNodeIdentifier());
   }
 
   public IModule getModule() {

@@ -104,12 +104,11 @@ public class ClassPathViewerTool extends BaseProjectTool {
       private ModuleTreeNode(IModule module) {
         super(null);
         myModule = module;
-      }
 
-      protected void doUpdatePresentation() {
+        setNodeIdentifier(myModule.getModuleFqName());
+
         setText(myModule.getModuleFqName());
         setIcon(IconManager.getIconFor(myModule));
-        setNodeIdentifier(myModule.getModuleFqName());
       }
 
       public boolean isLeaf() {

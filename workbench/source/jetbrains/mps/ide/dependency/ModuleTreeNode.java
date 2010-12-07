@@ -39,6 +39,12 @@ public class ModuleTreeNode extends MPSTreeNode {
     super(module, null);
     myProject = project;
     myModule = module;
+
+    String name = myModule.getModuleFqName();
+    setNodeIdentifier(name);
+
+    setText(name);
+    setIcon(IconManager.getIconFor(myModule));
   }
 
   public void doubleClick() {
@@ -101,14 +107,6 @@ public class ModuleTreeNode extends MPSTreeNode {
 
   public IModule getModule() {
     return myModule;
-  }
-
-  protected void doUpdatePresentation() {
-    super.doUpdatePresentation();
-    String uid = myModule.getModuleFqName();
-    setText(uid);
-    setNodeIdentifier(uid);
-    setIcon(IconManager.getIconFor(myModule));
   }
 
   private void addModules(MPSTreeNode node, List<? extends IModule> ms) {

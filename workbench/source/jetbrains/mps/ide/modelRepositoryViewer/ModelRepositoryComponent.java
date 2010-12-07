@@ -108,6 +108,7 @@ public class ModelRepositoryComponent {
       public ModelTreeNode(SModelDescriptor modelDescriptor) {
         super(null);
         myModelDescriptor = modelDescriptor;
+        setNodeIdentifier(myModelDescriptor.getLongName());
         for (ModelOwner owner : SModelRepository.getInstance().getOwners(myModelDescriptor)) {
           add(new OwnerTreeNode(owner));
         }
@@ -121,7 +122,6 @@ public class ModelRepositoryComponent {
           //setColor(new Color(0x00, 0x00, 0x90));
         }
         setColor(Color.BLACK);
-        setNodeIdentifier(myModelDescriptor.getLongName());
         setText(myModelDescriptor.getLongName() + ("(" + myModelDescriptor.getLoadingState().toString() + ")"));
       }
     }
@@ -132,9 +132,7 @@ public class ModelRepositoryComponent {
       public OwnerTreeNode(ModelOwner owner) {
         super(null);
         myOwner = owner;
-      }
-
-      protected void doUpdatePresentation() {
+        setNodeIdentifier(myOwner.toString());
 
         if (myOwner instanceof Generator) {
           setIcon(Icons.GENERATOR_ICON);
@@ -147,7 +145,6 @@ public class ModelRepositoryComponent {
         } else {
           setIcon(Icons.DEFAULT_ICON);
         }
-        setNodeIdentifier(myOwner.toString());
       }
 
       public boolean isLeaf() {

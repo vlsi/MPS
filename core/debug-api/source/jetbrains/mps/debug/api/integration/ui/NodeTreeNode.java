@@ -11,10 +11,7 @@ public class NodeTreeNode extends AbstractWatchableNode {
 
   public NodeTreeNode(IOperationContext context, @NotNull SNode node) {
     super(context, node);
-  }
 
-  @Override
-  protected void updatePresentation() {
     setNodeIdentifier(myNode.toString());
     setIcon(jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON);
   }

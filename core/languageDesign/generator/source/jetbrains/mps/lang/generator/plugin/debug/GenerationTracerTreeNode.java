@@ -40,11 +40,36 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     super(null);
     myProject = project;
     myTracerNode = tracerNode;
+
+    SNodePointer nodePointer = myTracerNode.getNodePointer();
+    if (nodePointer != null) {
+      setNodeIdentifier("" + nodePointer.hashCode());
+    }else {
+      setNodeIdentifier("<" + myTracerNode.getKind() + ">");
+    }
+    setIcon(Icons.getIcon(myTracerNode));
+
     if (myTracerNode.getDepth() < 1000) {
       for (TracerNode childTracerNode : myTracerNode.getChildren()) {
         add(new GenerationTracerTreeNode(childTracerNode, project));
       }
     }
+  }
+
+  protected void doUpdatePresentation() {
+    Kind kind = myTracerNode.getKind();
+    SNodePointer nodePointer = myTracerNode.getNodePointer();
+    if (nodePointer != null) {
+      if (kind == Kind.APPROXIMATE_OUTPUT || kind == Kind.APPROXIMATE_INPUT) {
+        setText("[approximate location] " + nodePointer.toString());
+      } else {
+        setText(nodePointer.toString());
+      }
+      setAdditionalText("" + nodePointer.getModelReference().getSModelFqName());
+    } else {
+      setText("<" + kind + ">");
+    }
+    setAutoExpandable(getChildCount() == 1);
   }
 
   public TracerNode getTracerNode() {
@@ -164,24 +189,5 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
   public boolean isLeaf() {
     return getChildCount() == 0;
-  }
-
-  protected void doUpdatePresentation() {
-    Kind kind = myTracerNode.getKind();
-    SNodePointer nodePointer = myTracerNode.getNodePointer();
-    if (nodePointer != null) {
-      if (kind == Kind.APPROXIMATE_OUTPUT || kind == Kind.APPROXIMATE_INPUT) {
-        setText("[approximate location] " + nodePointer.toString());
-      } else {
-        setText(nodePointer.toString());
-      }
-      setAdditionalText("" + nodePointer.getModelReference().getSModelFqName());
-      setNodeIdentifier("" + nodePointer.hashCode());
-    } else {
-      setText("<" + kind + ">");
-      setNodeIdentifier("<" + kind + ">");
-    }
-    setIcon(Icons.getIcon(myTracerNode));
-    setAutoExpandable(getChildCount() == 1);
   }
 }
