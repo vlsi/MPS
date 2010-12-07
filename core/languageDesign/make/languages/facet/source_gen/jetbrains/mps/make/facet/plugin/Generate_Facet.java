@@ -410,9 +410,9 @@ public class Generate_Facet implements IFacet {
               }
               ProgressIndicator pind = new EmptyProgressIndicator();
 
-              GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource.Data>() {
-                public Boolean invoke(GResource.Data data) {
-                  _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new GResource(data))));
+              GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
+                public Boolean invoke(GResource data) {
+                  _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }
               });

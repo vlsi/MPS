@@ -67,29 +67,29 @@ public class TextGen_Facet implements IFacet {
           switch (0) {
             case 0:
               final FileProcessor fileProc = new FileProcessor();
-              for (IResource resource : input) {
-                GResource gr = (GResource) resource;
-                if (!(gr.data.status().isOk())) {
+              for (IResource resource : Sequence.fromIterable(input)) {
+                GResource gres = new GResource().assignFrom((GResource) resource);
+                if (!(gres.status().isOk())) {
                   Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                IFile targetDir = FileSystem.getInstance().getFileByPath(gr.data.module().getOutputFor(gr.data.model()));
-                JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gr.data.model(), targetDir, fileProc);
+                IFile targetDir = FileSystem.getInstance().getFileByPath(gres.module().getOutputFor(gres.model()));
+                JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, fileProc);
                 try {
                   ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
                   BLDependenciesCache bldc = BLDependenciesCache.getInstance();
                   TraceInfoCache tic = TraceInfoCache.getInstance();
                   GenerationDependenciesCache gdc = GenerationDependenciesCache.getInstance();
                   boolean res;
-                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gr.data.status());
+                  res = new TextGenerator(javaStreamHandler, mgsm.getCacheGenerator(), bldc.getGenerator(), tic.getGenerator(), gdc.getGenerator()).handleOutput(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gres.status());
                   if (!(res)) {
                     Logger.getLogger("jetbrains.mps.make.TextGen").error("TextGenerator returned false");
                     return new IResult.FAILURE(_output_21gswx_a0a);
                   }
-                  _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(gr)));
                 } finally {
                   javaStreamHandler.dispose();
                 }
+                _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module()))));
               }
               ModelAccess.instance().writeFilesInEDT(new Runnable() {
                 public void run() {
@@ -112,7 +112,7 @@ public class TextGen_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate"), new ITarget.Name("checkParameters")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

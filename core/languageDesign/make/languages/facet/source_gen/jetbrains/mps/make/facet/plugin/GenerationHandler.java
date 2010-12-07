@@ -16,9 +16,9 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class GenerationHandler extends GenerationHandlerBase {
-  private _FunctionTypes._return_P1_E0<? extends Boolean, ? super GResource.Data> resourceHandler;
+  private _FunctionTypes._return_P1_E0<? extends Boolean, ? super GResource> resourceHandler;
 
-  public GenerationHandler(_FunctionTypes._return_P1_E0<? extends Boolean, ? super GResource.Data> resourceHandler) {
+  public GenerationHandler(_FunctionTypes._return_P1_E0<? extends Boolean, ? super GResource> resourceHandler) {
     this.resourceHandler = resourceHandler;
   }
 
@@ -31,7 +31,7 @@ public class GenerationHandler extends GenerationHandlerBase {
   }
 
   public boolean handleOutput(IModule module, SModelDescriptor descriptor, GenerationStatus status, IOperationContext context, ITaskProgressHelper helper) {
-    return resourceHandler.invoke(new GResource.Data(module, descriptor, null, status));
+    return resourceHandler.invoke(new GResource(module, descriptor, null, status));
   }
 
   public void startModule(IModule module, List<SModelDescriptor> list, IOperationContext context, ITaskProgressHelper helper) {

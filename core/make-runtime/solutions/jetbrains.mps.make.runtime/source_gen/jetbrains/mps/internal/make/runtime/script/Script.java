@@ -146,6 +146,7 @@ public class Script implements IScript {
             // TODO: check for appropriate input class 
           }
           IJob job = trg.createJob();
+          // TODO: catch possible errors 
           IResult jr = job.execute(input, monit, pool);
           if (!(trg.producesOutput())) {
             // ignore the output 

@@ -367,11 +367,11 @@ __switch__:
                       break;
                     case 6:
                       this.__CP__ = 1;
-                      this.yield(new MResource(models.value, ListSequence.fromList(models.value).last().getModule()));
+                      this.yield(new MResource(ListSequence.fromList(models.value).last().getModule(), models.value));
                       return true;
                     case 15:
                       this.__CP__ = 16;
-                      this.yield(new MResource(models.value, ListSequence.fromList(models.value).last().getModule()));
+                      this.yield(new MResource(ListSequence.fromList(models.value).last().getModule(), models.value));
                       return true;
                     case 0:
                       this.__CP__ = 2;

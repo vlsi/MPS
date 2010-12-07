@@ -190,6 +190,87 @@ public class Execute_Test extends MockTestCase {
   }
 
   @Test
+  public void test_noDuplicateResources() throws Exception {
+    final ITarget make = Mockups.target(context, "make");
+    final ITarget nop = Mockups.target(context, "nop");
+    final ITarget nop2 = Mockups.target(context, "nop2");
+    final ITarget dup = Mockups.target(context, "dup");
+    final ITarget res = Mockups.target(context, "res");
+    final IResource resA = Mockups.resource(context, "resA");
+    final IResource resB = Mockups.resource(context, "resB");
+    final IResult result = Mockups.result(context, "result", true);
+    context.checking(new Expectations() {
+      {
+        atLeast(1).of(res).before();
+        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        exactly(1).of(res).createJob();
+        will(returnValue(Mockups.job(context, "resjob", new _FunctionTypes._return_P0_E0<IResult>() {
+          public IResult invoke() {
+            return result;
+          }
+        })));
+        atLeast(1).of(res).producesOutput();
+        will(returnValue(true));
+        atLeast(1).of(result).output();
+        will(returnValue(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)));
+
+        atLeast(1).of(nop).before();
+        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
+        atLeast(1).of(nop).after();
+        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
+
+        atLeast(1).of(nop2).before();
+        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
+        atLeast(1).of(nop2).after();
+        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
+
+        atLeast(1).of(dup).before();
+        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("make"))));
+        atLeast(1).of(dup).after();
+        will(returnValue(Sequence.<ITarget.Name>singleton(new ITarget.Name("res"))));
+        exactly(1).of(dup).createJob();
+        will(returnValue(Mockups.job(context, "resjob2", new _FunctionTypes._return_P0_E0<IResult>() {
+          public IResult invoke() {
+            return result;
+          }
+        })));
+        atLeast(1).of(dup).producesOutput();
+        will(returnValue(true));
+
+        atLeast(1).of(make).requiresInput();
+        will(returnValue(true));
+        exactly(1).of(make).createJob();
+        IJob makejob = new IJob() {
+          public IResult execute(Iterable<IResource> input, IJobMonitor mon, IParametersPool pp) {
+            Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(input)).isEmpty());
+            return result;
+          }
+        };
+        will(returnValue(makejob));
+      }
+    });
+    Mockups.allowing(context, res);
+    Mockups.allowing(context, nop);
+    Mockups.allowing(context, nop2);
+    Mockups.allowing(context, dup);
+    Mockups.allowing(context, make);
+    Mockups.allowing(context, result);
+
+    TargetRange tr = new TargetRange();
+    tr.addTarget(make);
+    tr.addRelated(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, nop, nop2, dup));
+
+    Script sc = new Script(tr, new ITarget.Name("make"));
+    sc.validate();
+    Assert.assertTrue(sc.isValid());
+
+    IResult r = sc.execute();
+    Assert.assertNotNull(r);
+    Assert.assertTrue(r.isSucessful());
+    Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
+  }
+
+  @Test
   public void test_fail() throws Exception {
     final ITarget make = Mockups.target(context, "make");
     final ITarget gen = Mockups.target(context, "gen");

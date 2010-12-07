@@ -18,6 +18,7 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class JavaCompile_Facet implements IFacet {
@@ -61,18 +62,18 @@ public class JavaCompile_Facet implements IFacet {
           Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
-              for (IResource resource : input) {
-                GResource gr = (GResource) resource;
-                if (gr.data.module() == null) {
+              for (IResource resource : Sequence.fromIterable(input)) {
+                TResource tres = new TResource().assignFrom((TResource) resource);
+                if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
                 CompilationResult compilationResult;
-                compilationResult = new ModuleMaker().make(CollectionUtil.set(gr.data.module()), new EmptyProgressIndicator());
+                compilationResult = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressIndicator());
                 if (compilationResult != null && compilationResult.getErrors() > 0) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
-                if (gr.data.module().reloadClassesAfterGeneration()) {
-                  _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(gr)));
+                if (tres.module().reloadClassesAfterGeneration()) {
+                  _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               }
             default:
@@ -135,7 +136,13 @@ public class JavaCompile_Facet implements IFacet {
           Iterable<IResource> _output_wf1ya0_a0b = null;
           switch (0) {
             case 0:
-              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+              if (Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
+                public boolean accept(IResource in) {
+                  return ((TResource) in).module().reloadClassesAfterGeneration();
+                }
+              })) {
+                ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+              }
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0b);
           }
