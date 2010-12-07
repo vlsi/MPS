@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.state;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
@@ -109,8 +110,12 @@ public class Equations {
     if (lRepresentative == null || rRepresentative == null || lRepresentative.equals(rRepresentative)) {
       return;
     }
-    if (TypesUtil.isVariable(lRepresentative) || TypesUtil.isVariable(rRepresentative)) {
+    if (TypesUtil.isVariable(lRepresentative)) {
       processEquation(lRepresentative, rRepresentative, info);
+      return;
+    }
+    if (TypesUtil.isVariable(rRepresentative)) {
+      processEquation(rRepresentative, lRepresentative, info);
       return;
     }
     if (!compareTypes(lRepresentative, rRepresentative, info)) {
@@ -129,10 +134,8 @@ public class Equations {
   }
 
   private void processEquation(SNode var, SNode type, EquationInfo info) {
-    SNode parent = type;
-    SNode child = var;
-    SNode source = myState.getNodeMaps().getNode(child);
-    myState.executeOperation(new EquationAddedOperation(child, parent, source, info));
+    SNode source = myState.getNodeMaps().getNode(var);
+    myState.executeOperation(new EquationAddedOperation(var, type, source, info));
   }
 
   public Set<SNode> expandSet(Set<SNode> set) {

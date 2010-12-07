@@ -72,6 +72,18 @@ public class NodeMaps {
   }
 
   @StateMethod
+  public void assignNodeTypeDontChangeSource(SNode node, SNode type) {
+    myState.assertIsInStateChangeAction();
+    myNodesToTypes.put(node, type);
+  }
+
+  @StateMethod
+  public void removeNodeTypeDontChangeSource(SNode node) {
+    myState.assertIsInStateChangeAction();
+    myNodesToTypes.remove(node);
+  }
+
+  @StateMethod
   public void addError(SNode node, IErrorReporter errorReporter) {
     myState.assertIsInStateChangeAction();
     List<IErrorReporter> errors = myNodesToErrors.get(node);
@@ -154,7 +166,7 @@ public class NodeMaps {
   }
 
   public void expandAll() {
-    for (SNode node : myNodesToTypes.keySet()) {
+    for (SNode node : new HashSet<SNode>(myNodesToTypes.keySet())) {
       SNode var = myNodesToTypes.get(node);
       SNode type = myState.getEquations().expandNode(var);
       updateNodeToType(node, type, null);
