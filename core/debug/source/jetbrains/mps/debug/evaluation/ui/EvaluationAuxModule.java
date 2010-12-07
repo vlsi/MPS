@@ -96,11 +96,13 @@ public class EvaluationAuxModule extends AbstractModule {
   public StubPath addStubPath(String stubPath) {
     StubPath path = new StubPath(stubPath, STUBS_MANAGER);
     if (myStubPaths.contains(path)) {
-      return null;
+      path = null;
     } else {
       myStubPaths.add(path);
-      return path;
     }
+    updateClassPath();
+    MPSModuleRepository.getInstance().fireModuleChanged(this);
+    return path;
   }
 
   public void clearAll() {
