@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class HistoryWriter {
   public static final String MODIFICATION_HISTORY = "history";
-  public static final String MODIFICATION_ELEMENT = "StuctureModification";
+  public static final String MODIFICATION_ELEMENT = "StructureModification";
   public static final String DEPENDENCIES = "dependencies";
   public static final String DEPEND_MODEL = "model";
   public static final String MODEL_INDEX = "index";

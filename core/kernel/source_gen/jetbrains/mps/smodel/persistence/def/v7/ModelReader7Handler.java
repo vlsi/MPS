@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
+import jetbrains.mps.refactoring.StructureModificationProcessor0;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -165,6 +166,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.setLoading(true);
       fieldhelper = new ReadHelper(fieldmodel.getSModelReference());
+      fieldlinkMap = new ModelLinkMap(fieldmodel);
       return fieldmodel;
     }
 
@@ -256,7 +258,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
     }
 
     private boolean validateInternal(SModel result) throws SAXException {
-      // <node> 
+      new StructureModificationProcessor0(fieldlinkMap, fieldmodel).updateModelOnLoad();
       fieldmodel.setLoading(false);
       return true;
     }
@@ -448,7 +450,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
         return;
       }
       if ("typeId".equals(name)) {
-        // helper.addNodeType(value, result) 
+        fieldlinkMap.addTypeLocation(fieldhelper.readLinkId(value), result);
         return;
       }
       if ("role".equals(name)) {
@@ -456,7 +458,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
         return;
       }
       if ("roleId".equals(name)) {
-        // helper.addNodeRole(value, result) 
+        fieldlinkMap.addRoleLocation(fieldhelper.readLinkId(value), result);
         return;
       }
       if ("id".equals(name)) {
@@ -491,7 +493,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
         String[] child = (String[]) value;
         if (child[1] != null) {
           result.setProperty(fieldhelper.readName(child[0]), child[1], false);
-          // helper.addPropName(child[2], result, child[0]) 
+          fieldlinkMap.addNameLocation(fieldhelper.readLinkId(child[2]), result, child[0]);
         }
         return;
       }
@@ -507,13 +509,13 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
         SReference ref;
         if (ptr.getNodeId() == null) {
           ref = new DynamicReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), child[2]);
-          // helper.addDynamicRef(ptr.getModelReference(), ref) 
+          fieldlinkMap.addDynamicReference(ptr.getModelReference(), (DynamicReference) ref);
         } else {
           ref = new StaticReference(fieldhelper.readRole(child[0]), result, ptr.getModelReference(), ptr.getNodeId(), child[2]);
-          // helper.addTarget(ptr, ref) 
+          fieldlinkMap.addTargetLocation(ptr, (StaticReference) ref);
         }
         result.addReference(ref);
-        // helper.addRole(child[3], result) 
+        fieldlinkMap.addRoleLocation(fieldhelper.readLinkId(child[3]), result);
         return;
       }
       if ("node".equals(tagName)) {
@@ -533,7 +535,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
 
     @Override
     protected String[] createObject(Attributes attrs) {
-      return new String[]{attrs.getValue("name"), null};
+      return new String[]{attrs.getValue("name"), null, null};
     }
 
     @Override
@@ -548,7 +550,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
         return;
       }
       if ("nameId".equals(name)) {
-        // result[2] = value 
+        result[2] = value;
         return;
       }
       if ("value".equals(name)) {

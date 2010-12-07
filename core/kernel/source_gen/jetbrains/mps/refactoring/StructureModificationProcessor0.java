@@ -95,6 +95,9 @@ public class StructureModificationProcessor0 {
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.key());
       // <node> 
       StructureModificationHistory0 history = RefactoringsPersistence.load0(model.getModelFile());
+      if (history == null) {
+        history = new StructureModificationHistory0();
+      }
       history.addStructureModification(data);
       model.setVersion(d.value() + 1);
       // <node> 

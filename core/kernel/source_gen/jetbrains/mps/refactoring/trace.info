@@ -11,8 +11,8 @@
   <unitInfo fileName="HistoryReaderHandler.java" startLine="18" startPosition="0" endLine="386" endPosition="0" unitName="jetbrains.mps.refactoring.HistoryReaderHandler" />
   <root nodeId="2742566862758590074">
     <nodeInfo nodeId="2742566862758590080" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_HISTORY" fileName="HistoryWriter.java" startLine="15" startPosition="28" endLine="16" endPosition="62" />
-    <nodeInfo nodeId="2742566862758590088" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_ELEMENT" fileName="HistoryWriter.java" startLine="16" startPosition="62" endLine="17" endPosition="75" />
-    <nodeInfo nodeId="2742566862758590094" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES" fileName="HistoryWriter.java" startLine="17" startPosition="75" endLine="18" endPosition="59" />
+    <nodeInfo nodeId="2742566862758590088" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_ELEMENT" fileName="HistoryWriter.java" startLine="16" startPosition="62" endLine="17" endPosition="76" />
+    <nodeInfo nodeId="2742566862758590094" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES" fileName="HistoryWriter.java" startLine="17" startPosition="76" endLine="18" endPosition="59" />
     <nodeInfo nodeId="2742566862758590100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPEND_MODEL" fileName="HistoryWriter.java" startLine="18" startPosition="59" endLine="19" endPosition="52" />
     <nodeInfo nodeId="2742566862758590106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODEL_INDEX" fileName="HistoryWriter.java" startLine="19" startPosition="52" endLine="20" endPosition="51" />
     <nodeInfo nodeId="2742566862758590112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODEL_UID" fileName="HistoryWriter.java" startLine="20" startPosition="51" endLine="21" endPosition="52" />
@@ -650,40 +650,42 @@
     <nodeInfo nodeId="9051163691968353691" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StructureModificationProcessor0.java" startLine="94" startPosition="94" endLine="95" endPosition="125" />
     <nodeInfo nodeId="3294668569473090962" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="StructureModificationProcessor0.java" startLine="95" startPosition="125" endLine="96" endPosition="16" />
     <nodeInfo nodeId="3294668569473090955" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StructureModificationProcessor0.java" startLine="96" startPosition="16" endLine="97" endPosition="98" />
-    <nodeInfo nodeId="9051163691968353708" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="97" startPosition="98" endLine="98" endPosition="45" />
-    <nodeInfo nodeId="9051163691968353713" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="98" startPosition="45" endLine="99" endPosition="38" />
-    <nodeInfo nodeId="3294668569473092588" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="StructureModificationProcessor0.java" startLine="99" startPosition="38" endLine="100" endPosition="16" />
-    <nodeInfo nodeId="3294668569473092594" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="StructureModificationProcessor0.java" startLine="100" startPosition="16" endLine="101" endPosition="16" />
-    <nodeInfo nodeId="3294668569473092599" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="101" startPosition="16" endLine="102" endPosition="67" />
-    <nodeInfo nodeId="9051163691968353734" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="102" startPosition="67" endLine="103" endPosition="62" />
-    <nodeInfo nodeId="9051163691968353858" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="108" startPosition="64" endLine="109" endPosition="19" />
-    <nodeInfo nodeId="9051163691968353865" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="111" startPosition="49" endLine="112" endPosition="19" />
-    <nodeInfo nodeId="9051163691968353873" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StructureModificationProcessor0.java" startLine="114" startPosition="93" endLine="115" endPosition="130" />
-    <nodeInfo nodeId="9051163691968353889" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="StructureModificationProcessor0.java" startLine="116" startPosition="73" endLine="117" endPosition="17" />
-    <nodeInfo nodeId="9051163691968353902" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="119" startPosition="107" endLine="120" endPosition="20" />
-    <nodeInfo nodeId="9051163691968353904" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="122" startPosition="5" endLine="123" endPosition="17" />
+    <nodeInfo nodeId="4758770321634037389" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="98" startPosition="28" endLine="99" endPosition="54" />
+    <nodeInfo nodeId="9051163691968353708" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="100" startPosition="7" endLine="101" endPosition="45" />
+    <nodeInfo nodeId="9051163691968353713" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="101" startPosition="45" endLine="102" endPosition="38" />
+    <nodeInfo nodeId="3294668569473092588" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="StructureModificationProcessor0.java" startLine="102" startPosition="38" endLine="103" endPosition="16" />
+    <nodeInfo nodeId="3294668569473092594" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="StructureModificationProcessor0.java" startLine="103" startPosition="16" endLine="104" endPosition="16" />
+    <nodeInfo nodeId="3294668569473092599" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="104" startPosition="16" endLine="105" endPosition="67" />
+    <nodeInfo nodeId="9051163691968353734" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureModificationProcessor0.java" startLine="105" startPosition="67" endLine="106" endPosition="62" />
+    <nodeInfo nodeId="9051163691968353858" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="111" startPosition="64" endLine="112" endPosition="19" />
+    <nodeInfo nodeId="9051163691968353865" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="114" startPosition="49" endLine="115" endPosition="19" />
+    <nodeInfo nodeId="9051163691968353873" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StructureModificationProcessor0.java" startLine="117" startPosition="93" endLine="118" endPosition="130" />
+    <nodeInfo nodeId="9051163691968353889" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="StructureModificationProcessor0.java" startLine="119" startPosition="73" endLine="120" endPosition="17" />
+    <nodeInfo nodeId="9051163691968353902" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="122" startPosition="107" endLine="123" endPosition="20" />
+    <nodeInfo nodeId="9051163691968353904" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="125" startPosition="5" endLine="126" endPosition="17" />
     <nodeInfo nodeId="9051163691968380086" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="StructureModificationProcessor0.java" startLine="61" startPosition="10" endLine="63" endPosition="5" />
     <nodeInfo nodeId="8035425343761251220" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="44" startPosition="112" endLine="47" endPosition="7" />
     <nodeInfo nodeId="9051163691968353950" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="48" startPosition="63" endLine="51" endPosition="9" />
     <nodeInfo nodeId="9051163691968353747" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="67" startPosition="41" endLine="70" endPosition="5" />
     <nodeInfo nodeId="9051163691968353753" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="70" startPosition="5" endLine="73" endPosition="5" />
     <nodeInfo nodeId="9051163691968353804" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="80" startPosition="194" endLine="83" endPosition="9" />
-    <nodeInfo nodeId="9051163691968353854" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="107" startPosition="70" endLine="110" endPosition="5" />
-    <nodeInfo nodeId="9051163691968353860" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="110" startPosition="5" endLine="113" endPosition="5" />
-    <nodeInfo nodeId="9051163691968353882" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="115" startPosition="130" endLine="118" endPosition="7" />
-    <nodeInfo nodeId="9051163691968353890" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="118" startPosition="7" endLine="121" endPosition="7" />
+    <nodeInfo nodeId="4758770321634037380" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="97" startPosition="98" endLine="100" endPosition="7" />
+    <nodeInfo nodeId="9051163691968353854" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="110" startPosition="70" endLine="113" endPosition="5" />
+    <nodeInfo nodeId="9051163691968353860" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="113" startPosition="5" endLine="116" endPosition="5" />
+    <nodeInfo nodeId="9051163691968353882" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="118" startPosition="130" endLine="121" endPosition="7" />
+    <nodeInfo nodeId="9051163691968353890" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="121" startPosition="7" endLine="124" endPosition="7" />
     <nodeInfo nodeId="9051163691968353673" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StructureModificationProcessor0#(Ljetbrains/mps/refactoring/ModelLinkMap;Ljetbrains/mps/smodel/SModel;)V" fileName="StructureModificationProcessor0.java" startLine="23" startPosition="0" endLine="27" endPosition="3" />
     <nodeInfo nodeId="9051163691968378212" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="30" startPosition="27" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="9051163691968353666" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="126" startPosition="70" endLine="130" endPosition="6" />
+    <nodeInfo nodeId="9051163691968353666" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureModificationProcessor0.java" startLine="129" startPosition="70" endLine="133" endPosition="6" />
     <nodeInfo nodeId="9051163691968353943" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="47" startPosition="7" endLine="53" endPosition="7" />
     <nodeInfo nodeId="9051163691968353789" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="78" startPosition="21" endLine="85" endPosition="7" />
-    <nodeInfo nodeId="9051163691968353666" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_xn3qp2_a0a0a1a6a2#(Ljava/lang/Object;Ljava/lang/Class;)null" fileName="StructureModificationProcessor0.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="9051163691968353666" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_xn3qp2_a0a0a1a6a2#(Ljava/lang/Object;Ljava/lang/Class;)null" fileName="StructureModificationProcessor0.java" startLine="128" startPosition="0" endLine="135" endPosition="0" />
     <nodeInfo nodeId="9051163691968378166" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="playRefactoring#(Ljetbrains/mps/refactoring/StructureModification;)Z" fileName="StructureModificationProcessor0.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="9051163691968353867" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="113" startPosition="5" endLine="122" endPosition="5" />
+    <nodeInfo nodeId="9051163691968353867" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="116" startPosition="5" endLine="125" endPosition="5" />
     <nodeInfo nodeId="9051163691968353782" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="StructureModificationProcessor0.java" startLine="76" startPosition="19" endLine="87" endPosition="21" />
-    <nodeInfo nodeId="3294668569473094846" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="93" startPosition="40" endLine="104" endPosition="5" />
-    <nodeInfo nodeId="9051163691968353677" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addToHistory#(Ljetbrains/mps/refactoring/StructureModification;)V" fileName="StructureModificationProcessor0.java" startLine="90" startPosition="0" endLine="106" endPosition="0" />
-    <nodeInfo nodeId="9051163691968353847" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasRefactoringsToPlay#(Ljetbrains/mps/smodel/SModel;)Z" fileName="StructureModificationProcessor0.java" startLine="106" startPosition="0" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="3294668569473094846" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="93" startPosition="40" endLine="107" endPosition="5" />
+    <nodeInfo nodeId="9051163691968353677" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addToHistory#(Ljetbrains/mps/refactoring/StructureModification;)V" fileName="StructureModificationProcessor0.java" startLine="90" startPosition="0" endLine="109" endPosition="0" />
+    <nodeInfo nodeId="9051163691968353847" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasRefactoringsToPlay#(Ljetbrains/mps/smodel/SModel;)Z" fileName="StructureModificationProcessor0.java" startLine="109" startPosition="0" endLine="128" endPosition="0" />
     <nodeInfo nodeId="9051163691968353928" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StructureModificationProcessor0.java" startLine="40" startPosition="105" endLine="63" endPosition="5" />
     <nodeInfo nodeId="9051163691968380095" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModelOnLoad#()Z" fileName="StructureModificationProcessor0.java" startLine="65" startPosition="0" endLine="90" endPosition="0" />
     <nodeInfo nodeId="9051163691968378171" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="playUsedModelDescriptorsRefactorings#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)Z" fileName="StructureModificationProcessor0.java" startLine="37" startPosition="0" endLine="65" endPosition="0" />
@@ -693,10 +695,11 @@
     <scopeInfo nodeId="9051163691968353750" fileName="StructureModificationProcessor0.java" startLine="68" startPosition="64" endLine="69" endPosition="19" />
     <scopeInfo nodeId="9051163691968353757" fileName="StructureModificationProcessor0.java" startLine="71" startPosition="51" endLine="72" endPosition="19" />
     <scopeInfo nodeId="9051163691968353810" fileName="StructureModificationProcessor0.java" startLine="81" startPosition="112" endLine="82" endPosition="19" />
-    <scopeInfo nodeId="9051163691968353857" fileName="StructureModificationProcessor0.java" startLine="108" startPosition="64" endLine="109" endPosition="19" />
-    <scopeInfo nodeId="9051163691968353864" fileName="StructureModificationProcessor0.java" startLine="111" startPosition="49" endLine="112" endPosition="19" />
-    <scopeInfo nodeId="9051163691968353888" fileName="StructureModificationProcessor0.java" startLine="116" startPosition="73" endLine="117" endPosition="17" />
-    <scopeInfo nodeId="9051163691968353901" fileName="StructureModificationProcessor0.java" startLine="119" startPosition="107" endLine="120" endPosition="20" />
+    <scopeInfo nodeId="4758770321634037381" fileName="StructureModificationProcessor0.java" startLine="98" startPosition="28" endLine="99" endPosition="54" />
+    <scopeInfo nodeId="9051163691968353857" fileName="StructureModificationProcessor0.java" startLine="111" startPosition="64" endLine="112" endPosition="19" />
+    <scopeInfo nodeId="9051163691968353864" fileName="StructureModificationProcessor0.java" startLine="114" startPosition="49" endLine="115" endPosition="19" />
+    <scopeInfo nodeId="9051163691968353888" fileName="StructureModificationProcessor0.java" startLine="119" startPosition="73" endLine="120" endPosition="17" />
+    <scopeInfo nodeId="9051163691968353901" fileName="StructureModificationProcessor0.java" startLine="122" startPosition="107" endLine="123" endPosition="20" />
     <scopeInfo nodeId="9051163691968353676" fileName="StructureModificationProcessor0.java" startLine="24" startPosition="79" endLine="26" endPosition="20" />
     <scopeInfo nodeId="9051163691968378215" fileName="StructureModificationProcessor0.java" startLine="31" startPosition="98" endLine="33" endPosition="77" />
     <scopeInfo nodeId="9051163691968353673" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StructureModificationProcessor0#(Ljetbrains/mps/refactoring/ModelLinkMap;Ljetbrains/mps/smodel/SModel;)V" fileName="StructureModificationProcessor0.java" startLine="23" startPosition="0" endLine="27" endPosition="3">
@@ -705,7 +708,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9051163691968378212" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="30" startPosition="27" endLine="34" endPosition="5" />
     <scopeInfo nodeId="9051163691968353949" fileName="StructureModificationProcessor0.java" startLine="48" startPosition="63" endLine="52" endPosition="40" />
-    <scopeInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor0.java" startLine="126" startPosition="70" endLine="130" endPosition="6" />
+    <scopeInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor0.java" startLine="129" startPosition="70" endLine="133" endPosition="6" />
     <scopeInfo nodeId="9051163691968380082" fileName="StructureModificationProcessor0.java" startLine="55" startPosition="46" endLine="60" endPosition="18" />
     <scopeInfo nodeId="9051163691968353794" fileName="StructureModificationProcessor0.java" startLine="79" startPosition="97" endLine="84" endPosition="76">
       <varInfo nodeId="9051163691968353796" varName="usedModelDescriptor" />
@@ -719,32 +722,32 @@
     <scopeInfo nodeId="9051163691968353789" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="78" startPosition="21" endLine="85" endPosition="7">
       <varInfo nodeId="9051163691968353792" varName="importElement" />
     </scopeInfo>
-    <scopeInfo nodeId="9051163691968353872" fileName="StructureModificationProcessor0.java" startLine="114" startPosition="93" endLine="121" endPosition="7">
+    <scopeInfo nodeId="9051163691968353872" fileName="StructureModificationProcessor0.java" startLine="117" startPosition="93" endLine="124" endPosition="7">
       <varInfo nodeId="9051163691968353874" varName="usedModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="9051163691968353666" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_xn3qp2_a0a0a1a6a2#(Ljava/lang/Object;Ljava/lang/Class;)null" fileName="StructureModificationProcessor0.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="9051163691968353666" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_xn3qp2_a0a0a1a6a2#(Ljava/lang/Object;Ljava/lang/Class;)null" fileName="StructureModificationProcessor0.java" startLine="128" startPosition="0" endLine="135" endPosition="0" />
     <scopeInfo nodeId="9051163691968378166" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="playRefactoring#(Ljetbrains/mps/refactoring/StructureModification;)Z" fileName="StructureModificationProcessor0.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="9051163691968354033" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="9051163691968353784" fileName="StructureModificationProcessor0.java" startLine="77" startPosition="8" endLine="86" endPosition="23" />
-    <scopeInfo nodeId="3294668569473094849" fileName="StructureModificationProcessor0.java" startLine="94" startPosition="94" endLine="103" endPosition="62">
+    <scopeInfo nodeId="9051163691968353867" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="116" startPosition="5" endLine="125" endPosition="5">
+      <varInfo nodeId="9051163691968353870" varName="importElement" />
+    </scopeInfo>
+    <scopeInfo nodeId="3294668569473094849" fileName="StructureModificationProcessor0.java" startLine="94" startPosition="94" endLine="106" endPosition="62">
       <varInfo nodeId="3294668569473090956" varName="history" />
       <varInfo nodeId="9051163691968353692" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="9051163691968353867" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="113" startPosition="5" endLine="122" endPosition="5">
-      <varInfo nodeId="9051163691968353870" varName="importElement" />
-    </scopeInfo>
-    <scopeInfo nodeId="3294668569473094846" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="93" startPosition="40" endLine="104" endPosition="5" />
     <scopeInfo nodeId="9051163691968353932" fileName="StructureModificationProcessor0.java" startLine="41" startPosition="39" endLine="54" endPosition="20">
       <varInfo nodeId="9051163691968626596" varName="history" />
       <varInfo nodeId="9051163691968353934" varName="played" />
     </scopeInfo>
-    <scopeInfo nodeId="9051163691968353683" fileName="StructureModificationProcessor0.java" startLine="91" startPosition="72" endLine="104" endPosition="5" />
-    <scopeInfo nodeId="9051163691968353677" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addToHistory#(Ljetbrains/mps/refactoring/StructureModification;)V" fileName="StructureModificationProcessor0.java" startLine="90" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="3294668569473094846" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StructureModificationProcessor0.java" startLine="93" startPosition="40" endLine="107" endPosition="5" />
+    <scopeInfo nodeId="9051163691968353683" fileName="StructureModificationProcessor0.java" startLine="91" startPosition="72" endLine="107" endPosition="5" />
+    <scopeInfo nodeId="9051163691968353853" fileName="StructureModificationProcessor0.java" startLine="110" startPosition="70" endLine="126" endPosition="17" />
+    <scopeInfo nodeId="9051163691968353677" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addToHistory#(Ljetbrains/mps/refactoring/StructureModification;)V" fileName="StructureModificationProcessor0.java" startLine="90" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="9051163691968353680" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="9051163691968353853" fileName="StructureModificationProcessor0.java" startLine="107" startPosition="70" endLine="123" endPosition="17" />
-    <scopeInfo nodeId="9051163691968353847" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasRefactoringsToPlay#(Ljetbrains/mps/smodel/SModel;)Z" fileName="StructureModificationProcessor0.java" startLine="106" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="9051163691968353847" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasRefactoringsToPlay#(Ljetbrains/mps/smodel/SModel;)Z" fileName="StructureModificationProcessor0.java" startLine="109" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="9051163691968353850" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="9051163691968353746" fileName="StructureModificationProcessor0.java" startLine="66" startPosition="38" endLine="88" endPosition="18">
@@ -759,7 +762,7 @@
     <scopeInfo nodeId="9051163691968378171" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="playUsedModelDescriptorsRefactorings#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)Z" fileName="StructureModificationProcessor0.java" startLine="37" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="9051163691968353911" varName="usedModelDescriptor" />
     </scopeInfo>
-    <unitInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor0.java" startLine="18" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModificationProcessor0" />
+    <unitInfo nodeId="9051163691968353666" fileName="StructureModificationProcessor0.java" startLine="18" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.refactoring.StructureModificationProcessor0" />
   </root>
 </debugInfo>
 
