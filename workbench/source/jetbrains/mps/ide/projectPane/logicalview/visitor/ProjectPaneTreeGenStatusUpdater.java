@@ -20,12 +20,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -60,32 +59,11 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   }
 
-  private GenerationStatus generationRequired(MPSTreeNode node) {
-    if (node instanceof SNodeTreeNode) return GenerationStatus.NOT_REQUIRED;
-    if (node instanceof AccessoriesModelTreeNode) return GenerationStatus.NOT_REQUIRED;
-
-    if (node instanceof SModelTreeNode) {
-      SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
-      GenerationStatus modelGenStatus = getGenerationStatus(smodelTreeNode);
-      if (isInheritableGenStatus(modelGenStatus)) return modelGenStatus;
-
-      for (SModelTreeNode child : smodelTreeNode.getSubfolderSModelTreeNodes()) {
-        GenerationStatus childGenStatus = generationRequired(child);
-        if (isInheritableGenStatus(childGenStatus)) return childGenStatus;
-      }
-
-      return GenerationStatus.NOT_REQUIRED;
-    }
-
-    if (!node.isInitialized()) {
-      node.init();
-    }
-
-    for (int i = 0; i < node.getChildCount(); i++) {
-      MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
-
-      GenerationStatus childGenStatus = generationRequired(child);
-      if (isInheritableGenStatus(childGenStatus)) return childGenStatus;
+  private GenerationStatus generationRequired(ProjectModuleTreeNode node) {
+    IModule module = node.getModule();
+    for (SModelDescriptor md : module.getOwnModelDescriptors()) {
+      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md, ProjectOperationContext.get(node.getOperationContext().getProject()), false, true);
+      if (required) return GenerationStatus.REQUIRED;
     }
 
     return GenerationStatus.NOT_REQUIRED;
