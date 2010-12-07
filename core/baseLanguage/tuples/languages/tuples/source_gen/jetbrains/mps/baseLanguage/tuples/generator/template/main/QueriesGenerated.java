@@ -1266,6 +1266,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), "initValue", true);
   }
 
+  public static Iterable sourceNodesQuery_2423993921025729703(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "implements", true);
+  }
+
   public static Iterable sourceNodesQuery_1239636931070(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "component", true);
   }
@@ -1320,6 +1324,10 @@ public class QueriesGenerated {
         return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(cmp, "type", true));
       }
     });
+  }
+
+  public static Iterable sourceNodesQuery_2423993921025729590(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "implements", true);
   }
 
   public static Iterable sourceNodesQuery_247710080512637050(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
