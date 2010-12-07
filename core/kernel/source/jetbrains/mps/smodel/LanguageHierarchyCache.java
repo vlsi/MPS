@@ -49,7 +49,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private Object myParentsNamesLock = new Object();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
 
-  private Object myDescendantsLock = new Object();
+  private final Object myDescendantsLock = new Object();
   private Map<String, Set<String>> myDirectDescendantsCache = new HashMap<String, Set<String>>();
   private boolean myDescendantsCachesAreValid = false;
 
@@ -152,24 +152,24 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             if (declaration instanceof ConceptDeclaration) {
               ConceptDeclaration cd = (ConceptDeclaration) declaration;
               if (cd.getExtends() != null) {
-                result.add(NameUtil.nodeFQName(cd.getExtends()));
+                result.add(InternUtil.intern(NameUtil.nodeFQName(cd.getExtends())));
               } else if (!BaseConcept.concept.equals(NameUtil.nodeFQName(cd))) {
                 result.add(BaseConcept.concept);
               }
               for (InterfaceConceptReference icr : cd.getImplementses()) {
-                result.add(NameUtil.nodeFQName(icr.getIntfc()));
+                result.add(InternUtil.intern(NameUtil.nodeFQName(icr.getIntfc())));
               }
             }
             if (declaration instanceof InterfaceConceptDeclaration) {
               InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
               for (InterfaceConceptReference icr : icd.getExtendses()) {
-                result.add(NameUtil.nodeFQName(icr.getIntfc()));
+                result.add(InternUtil.intern(NameUtil.nodeFQName(icr.getIntfc())));
               }
             }
             return result;
           }
         });
-        myParentsNamesMap.put(conceptFqName, result);
+        myParentsNamesMap.put(InternUtil.intern(conceptFqName), result);
       }
       return Collections.unmodifiableSet(result);
     }
@@ -291,7 +291,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
         for (Language language : myModuleRepository.getAllLanguages()) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
-          
+
           Condition<SNode> cond = new Condition<SNode>() {
             public boolean met(SNode node) {
               return node.isInstanceOfConcept(AbstractConceptDeclaration.concept);
