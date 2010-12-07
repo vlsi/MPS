@@ -17,13 +17,10 @@ package jetbrains.mps.smodel.persistence.def.v3;
 
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v0.SimpleHashProvider;
 import jetbrains.mps.smodel.persistence.def.v2.ModelPersistence2;
-import jetbrains.mps.vfs.IFile;
 
 public class ModelPersistence3 extends ModelPersistence2 {
   public IModelWriter getModelWriter() {

@@ -38,7 +38,7 @@ public class ModelPersistence0 implements IModelPersistence {
   }
 
   public IHashProvider getHashProvider() {
-    return new SimpleHashProvider();
+    return new jetbrains.mps.smodel.persistence.def.IHashProvider.SimpleHashProvider();
   }
 
   public XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state) {

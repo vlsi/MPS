@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.v0.ModelPersistence0;
-import jetbrains.mps.smodel.persistence.def.v0.SimpleHashProvider;
+import jetbrains.mps.smodel.persistence.def.IHashProvider.SimpleHashProvider;
 
 public class ModelPersistence1 extends ModelPersistence0 {
   public IModelWriter getModelWriter() {

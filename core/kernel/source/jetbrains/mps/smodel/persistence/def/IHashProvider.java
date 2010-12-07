@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public abstract class IHashProvider {
@@ -37,5 +38,15 @@ public abstract class IHashProvider {
     if (index < tag.length() && tag.charAt(index) == '"') return tag.substring(offset, index);
 
     return null;
+  }
+
+  public static class SimpleHashProvider extends IHashProvider {
+    public String getHash(byte[] modelBytes) {
+      return "";
+    }
+
+    public Map<String, String> getRootHashes(byte[] modelBytes) {
+      return new HashMap<String, String>();
+    }
   }
 }

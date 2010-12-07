@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v0.SimpleHashProvider;
+import jetbrains.mps.smodel.persistence.def.IHashProvider.SimpleHashProvider;
 import jetbrains.mps.smodel.persistence.def.v1.ModelPersistence1;
 import jetbrains.mps.vfs.IFile;
 
