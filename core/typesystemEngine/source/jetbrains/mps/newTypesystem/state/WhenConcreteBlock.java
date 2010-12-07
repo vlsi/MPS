@@ -28,13 +28,13 @@ import java.util.Set;
  * Date: Sep 15, 2010
  * Time: 5:56:54 PM
  */
-public class WhenConcreteEntry extends Block {
+public class WhenConcreteBlock extends Block {
   //todo refactor runnable into a runnable with an argument
   private final Runnable myRunnable;
   private final SNode myArgument;
   private final ConditionKind myConditionKind;
 
-  public WhenConcreteEntry(State state, Runnable runnable, String nodeModel, String nodeId, SNode argument, boolean isShallow) {
+  public WhenConcreteBlock(State state, Runnable runnable, String nodeModel, String nodeId, SNode argument, boolean isShallow) {
     super(state, nodeModel, nodeId);
     myRunnable = runnable;
     myArgument = argument;

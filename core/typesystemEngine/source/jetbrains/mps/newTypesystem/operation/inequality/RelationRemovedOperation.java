@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem.operation.inequality;
 
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
-import jetbrains.mps.newTypesystem.state.RelationMapKind;
+import jetbrains.mps.newTypesystem.state.RelationKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -32,7 +32,7 @@ import java.awt.Color;
  */
 public class RelationRemovedOperation extends AbstractRelationOperation {
 
-  public RelationRemovedOperation(SNode subType, SNode superType, EquationInfo info, RelationMapKind kind) {
+  public RelationRemovedOperation(SNode subType, SNode superType, EquationInfo info, RelationKind kind) {
     super(subType, superType, info, kind);
   }
 

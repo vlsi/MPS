@@ -33,7 +33,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
 import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.*;
@@ -184,7 +183,7 @@ public class State {
     myInequalities.addInequality(subType, superType, isWeak, check, info);
   }
 
-  public void addRelation(SNode subType, SNode superType, jetbrains.mps.newTypesystem.state.RelationMapKind kind, EquationInfo info) {
+  public void addRelation(SNode subType, SNode superType, RelationKind kind, EquationInfo info) {
     if (!kind.isComparable()) {
       myInequalities.addInequality(subType, superType, kind.isWeak(), kind.isCheckOnly(), info);
     } else {

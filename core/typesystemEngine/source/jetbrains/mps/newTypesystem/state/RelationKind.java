@@ -22,7 +22,7 @@ package jetbrains.mps.newTypesystem.state;
  * Time: 16:41
  * To change this template use File | Settings | File Templates.
  */
-public enum RelationMapKind {
+public enum RelationKind {
   WEAK(" <= ", "Subtyping", true, false, false),
   STRONG(" <<= ", "Subtyping (strong)", false, false, false),
   WEAK_CHECK(" <=' ", "Check-only subtyping", true, true, false),
@@ -37,7 +37,7 @@ public enum RelationMapKind {
   private boolean myCheckOnly;
   private boolean myComparable;
 
-  RelationMapKind(String relationSign, String title, boolean weak, boolean checkOnly, boolean comparable) {
+  RelationKind(String relationSign, String title, boolean weak, boolean checkOnly, boolean comparable) {
     myRelationSign = relationSign;
     myTitle = title;
     myWeak = weak;

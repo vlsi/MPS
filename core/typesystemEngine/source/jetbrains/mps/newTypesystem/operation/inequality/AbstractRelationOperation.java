@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.operation.inequality;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.state.RelationKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -30,9 +31,9 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 public abstract class AbstractRelationOperation extends AbstractOperation {
   protected SNode mySubType;
   protected SNode mySuperType;
-  protected jetbrains.mps.newTypesystem.state.RelationMapKind myRelationMapKind;
+  protected RelationKind myRelationMapKind;
 
-  public AbstractRelationOperation(SNode subType, SNode superType, EquationInfo info, jetbrains.mps.newTypesystem.state.RelationMapKind kind) {
+  public AbstractRelationOperation(SNode subType, SNode superType, EquationInfo info, RelationKind kind) {
     mySubType = subType;
     mySuperType = superType;
     myRelationMapKind = kind;

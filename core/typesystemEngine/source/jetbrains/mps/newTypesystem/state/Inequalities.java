@@ -40,8 +40,8 @@ import java.util.Map;
 public class Inequalities {
   private final State myState;
 
-  private final Map<jetbrains.mps.newTypesystem.state.RelationMapKind, jetbrains.mps.newTypesystem.state.RelationMapPair> myRelations =
-    new HashMap<jetbrains.mps.newTypesystem.state.RelationMapKind, jetbrains.mps.newTypesystem.state.RelationMapPair>();
+  private final Map<RelationKind, jetbrains.mps.newTypesystem.state.RelationMapPair> myRelations =
+    new HashMap<RelationKind, jetbrains.mps.newTypesystem.state.RelationMapPair>();
 
   private boolean solveOnlyConcrete;
 
@@ -49,12 +49,12 @@ public class Inequalities {
   public Inequalities(State state) {
     myState = state;
     solveOnlyConcrete = true;
-    myRelations.put(jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK));
-    myRelations.put(jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK_CHECK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK_CHECK));
-    myRelations.put(jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG));
-    myRelations.put(jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG_CHECK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG_CHECK));
-    myRelations.put(jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK_COMPARABLE, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK_COMPARABLE));
-    myRelations.put(jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG_COMPARABLE, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG_COMPARABLE));
+    myRelations.put(RelationKind.WEAK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.WEAK));
+    myRelations.put(RelationKind.WEAK_CHECK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.WEAK_CHECK));
+    myRelations.put(RelationKind.STRONG, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.STRONG));
+    myRelations.put(RelationKind.STRONG_CHECK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.STRONG_CHECK));
+    myRelations.put(RelationKind.WEAK_COMPARABLE, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.WEAK_COMPARABLE));
+    myRelations.put(RelationKind.STRONG_COMPARABLE, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.STRONG_COMPARABLE));
   }
 
   public void substitute(SNode var, SNode type) {
@@ -131,11 +131,11 @@ public class Inequalities {
   }
 
   void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    jetbrains.mps.newTypesystem.state.RelationMapKind kind;
+    RelationKind kind;
     if (isWeak) {
-      kind = check ? jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK_CHECK : jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK;
+      kind = check ? RelationKind.WEAK_CHECK : RelationKind.WEAK;
     } else {
-      kind = check ? jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG_CHECK : jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG;
+      kind = check ? RelationKind.STRONG_CHECK : RelationKind.STRONG;
     }
     if (!getRelation(kind).contains(subType, superType)) {
       myState.executeOperation(new jetbrains.mps.newTypesystem.operation.inequality.RelationAddedOperation(subType, superType, kind, info));
@@ -143,7 +143,7 @@ public class Inequalities {
   }
 
   void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
-    jetbrains.mps.newTypesystem.state.RelationMapKind kind = isWeak ? jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK_COMPARABLE : jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG_COMPARABLE;
+    RelationKind kind = isWeak ? RelationKind.WEAK_COMPARABLE : RelationKind.STRONG_COMPARABLE;
     if (!getRelation(kind).contains(subType, superType)) {
       myState.executeOperation(new jetbrains.mps.newTypesystem.operation.inequality.RelationAddedOperation(subType, superType, kind, info));
     }
@@ -176,30 +176,30 @@ public class Inequalities {
   }
 
   public jetbrains.mps.newTypesystem.state.RelationMapPair getWeakInequalities() {
-    return myRelations.get(jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK);
+    return myRelations.get(RelationKind.WEAK);
   }
 
   public jetbrains.mps.newTypesystem.state.RelationMapPair getStrongInequalities() {
-    return myRelations.get(jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG);
+    return myRelations.get(RelationKind.STRONG);
   }
 
   public jetbrains.mps.newTypesystem.state.RelationMapPair getWeakCheckInequalities() {
-    return myRelations.get(jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK_CHECK);
+    return myRelations.get(RelationKind.WEAK_CHECK);
   }
 
   public jetbrains.mps.newTypesystem.state.RelationMapPair getStrongCheckInequalities() {
-    return myRelations.get(jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG_CHECK);
+    return myRelations.get(RelationKind.STRONG_CHECK);
   }
 
   public jetbrains.mps.newTypesystem.state.RelationMapPair getWeakComparable() {
-    return myRelations.get(jetbrains.mps.newTypesystem.state.RelationMapKind.WEAK_COMPARABLE);
+    return myRelations.get(RelationKind.WEAK_COMPARABLE);
   }
 
   public jetbrains.mps.newTypesystem.state.RelationMapPair getStrongComparable() {
-    return myRelations.get(jetbrains.mps.newTypesystem.state.RelationMapKind.STRONG_COMPARABLE);
+    return myRelations.get(RelationKind.STRONG_COMPARABLE);
   }
 
-  public jetbrains.mps.newTypesystem.state.RelationMapPair getRelation(jetbrains.mps.newTypesystem.state.RelationMapKind kind) {
+  public jetbrains.mps.newTypesystem.state.RelationMapPair getRelation(RelationKind kind) {
     return myRelations.get(kind);
   }
 }

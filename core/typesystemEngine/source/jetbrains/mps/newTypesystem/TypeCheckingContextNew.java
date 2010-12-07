@@ -19,6 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.state.WhenConcreteBlock;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
@@ -167,12 +168,12 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
-    myState.addBlock(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(myState, r, nodeModel, nodeId, argument, false));
+    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, false));
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
-    myState.addBlock(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(myState, r, nodeModel, nodeId, argument, isShallow));
+    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow));
   }
 
   public jetbrains.mps.newTypesystem.state.State getState() {

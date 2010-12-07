@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.operation.inequality;
 
 import jetbrains.mps.newTypesystem.presentation.color.Colors;
+import jetbrains.mps.newTypesystem.state.RelationKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -30,7 +31,7 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class RelationAddedOperation extends AbstractRelationOperation {
-  public RelationAddedOperation(SNode subType, SNode superType, jetbrains.mps.newTypesystem.state.RelationMapKind mapKind, EquationInfo info) {
+  public RelationAddedOperation(SNode subType, SNode superType, RelationKind mapKind, EquationInfo info) {
     super(subType, superType, info, mapKind);
   }
 

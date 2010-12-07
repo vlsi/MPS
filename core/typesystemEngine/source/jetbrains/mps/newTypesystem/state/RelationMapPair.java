@@ -31,13 +31,13 @@ import java.util.*;
  */
 public class RelationMapPair {
   private final State myState;
-  private final jetbrains.mps.newTypesystem.state.RelationMapKind myKind;
+  private final RelationKind myKind;
   @StateObject
   private final Map<SNode, Map<SNode, EquationInfo>> mySubToSuper = new HashMap<SNode, Map<SNode, EquationInfo>>();
   @StateObject
   private final Map<SNode, Map<SNode, EquationInfo>> mySuperToSub = new HashMap<SNode, Map<SNode, EquationInfo>>();
 
-  public RelationMapPair(State state, jetbrains.mps.newTypesystem.state.RelationMapKind kind) {
+  public RelationMapPair(State state, RelationKind kind) {
     myState = state;
     myKind = kind;
   }
