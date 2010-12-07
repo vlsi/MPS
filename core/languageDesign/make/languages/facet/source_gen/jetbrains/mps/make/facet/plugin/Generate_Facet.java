@@ -33,7 +33,10 @@ import jetbrains.mps.generator.GeneratorManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.generator.TransientModelsComponent;
 
 public class Generate_Facet implements IFacet {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -44,6 +47,7 @@ public class Generate_Facet implements IFacet {
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_b());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_c());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_d());
+    ListSequence.fromList(targets).addElement(new Generate_Facet.Target_fi61u2_e());
   }
 
   public Iterable<ITarget> targets() {
@@ -412,16 +416,18 @@ public class Generate_Facet implements IFacet {
                   return true;
                 }
               });
-              for (IResource res : Sequence.fromIterable(input)) {
-                generationOk = gm.generateModels(Sequence.fromIterable(((MResource) res).models()).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pind, new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()) {
-                  @Override
-                  public void clear() {
-                    // XPEH BAM 
-                  }
-                }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().create());
-                if (!(generationOk)) {
-                  return new IResult.FAILURE(_output_fi61u2_a0d.value);
+              generationOk = gm.generateModels(Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
+                public Iterable<SModelDescriptor> translate(IResource in) {
+                  return ((MResource) in).models();
                 }
+              }).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pind, new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()) {
+                @Override
+                public void clear() {
+                  // XPEH BAM 
+                }
+              }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().create());
+              if (!(generationOk)) {
+                return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0d.value);
@@ -460,6 +466,67 @@ public class Generate_Facet implements IFacet {
 
     public boolean producesOutput() {
       return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+  }
+
+  public static class Target_fi61u2_e implements ITarget {
+    private ITarget.Name name = new ITarget.Name("cleanUpAfterGeneration");
+
+    public Target_fi61u2_e() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          Iterable<IResource> _output_fi61u2_a0e = null;
+          switch (0) {
+            case 0:
+              pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
+            default:
+              return new IResult.SUCCESS(_output_fi61u2_a0e);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters"), new ITarget.Name("generate")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")});
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
+      return false;
+    }
+
+    public boolean producesOutput() {
+      return false;
     }
 
     public Class<? extends IResource> expectedResources() {
