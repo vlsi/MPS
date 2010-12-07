@@ -19,13 +19,6 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 15, 2010
- * Time: 11:44:26 AM
- * To change this template use File | Settings | File Templates.
- */
 public class TypeSystemStateTreeNode extends MPSTreeNode {
   public TypeSystemStateTreeNode(IOperationContext operationContext) {
     super(operationContext);

@@ -24,13 +24,6 @@ import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 15, 2010
- * Time: 11:44:26 AM
- * To change this template use File | Settings | File Templates.
- */
 public class TypeSystemTraceTreeNode extends MPSTreeNode {
   public TypeSystemTraceTreeNode(IOperationContext operationContext) {
     super(operationContext);
@@ -43,7 +36,6 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     setColor(difference.getColor());
     this.setAutoExpandable(true);
     this.setIcon(difference.getIcon());
-
   }
 
   public void goToRule() {

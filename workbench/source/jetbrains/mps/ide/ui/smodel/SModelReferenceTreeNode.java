@@ -11,13 +11,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 
 import javax.swing.Icon;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Jun 3, 2010
- * Time: 2:40:34 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SModelReferenceTreeNode extends MPSTreeNode {
   private SModelDescriptor myModelDescriptor;
   private Project myProject;

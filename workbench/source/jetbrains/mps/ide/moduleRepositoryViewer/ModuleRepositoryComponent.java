@@ -103,16 +103,12 @@ public class ModuleRepositoryComponent {
       public LanguageTreeNode(IModule module) {
         super(null);
         myModule = module;
+        setNodeIdentifier(myModule.toString());
+        setIcon(IconManager.getIconFor(myModule));
         for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(myModule)) {
           add(new OwnerTreeNode(owner));
         }
       }
-
-      protected void doUpdatePresentation() {
-        setIcon(IconManager.getIconFor(myModule));
-        setNodeIdentifier(myModule.toString());
-      }
-
     }
 
     private class OwnerTreeNode extends MPSTreeNode {
@@ -121,11 +117,8 @@ public class ModuleRepositoryComponent {
       public OwnerTreeNode(MPSModuleOwner owner) {
         super(null);
         myOwner = owner;
-      }
-
-      protected void doUpdatePresentation() {
-        IconManager.getIconFor(myOwner);
         setNodeIdentifier(myOwner.toString());
+        setIcon(IconManager.getIconFor(myOwner));
       }
 
       public boolean isLeaf() {
