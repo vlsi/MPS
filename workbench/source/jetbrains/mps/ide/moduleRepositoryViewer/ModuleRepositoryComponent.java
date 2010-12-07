@@ -106,8 +106,6 @@ public class ModuleRepositoryComponent {
         for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(myModule)) {
           add(new OwnerTreeNode(owner));
         }
-
-        updatePresentation();
       }
 
       protected void doUpdatePresentation() {
@@ -123,7 +121,6 @@ public class ModuleRepositoryComponent {
       public OwnerTreeNode(MPSModuleOwner owner) {
         super(null);
         myOwner = owner;
-        updatePresentation();
       }
 
       protected void doUpdatePresentation() {

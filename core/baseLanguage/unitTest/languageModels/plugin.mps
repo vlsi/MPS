@@ -26154,18 +26154,6 @@
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="mwyq.~Override" />
       </node>
     </node>
-    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8940381362895276519">
-      <property name="name" nameId="tpck.1169194664001" value="updatePresentation" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8940381362895276520" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="8940381362895280316" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8940381362895276522">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8940381362895280314">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="8940381362895280315">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rdl2.~MPSTreeNode%dupdatePresentation()%cvoid" resolveInfo="updatePresentation" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7719232434617373713">
       <property name="name" nameId="tpck.1169194664001" value="setState" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7719232434617373714">
@@ -26191,20 +26179,9 @@
         <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteEDTCommandStatement" typeId="tp4k.1225441312937" id="7719232434617373723">
           <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="7719232434617373724">
             <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="7719232434617373725">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7719232434617373726">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7719232434617373727">
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7719232434617373728">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8940381362895276519" resolveInfo="updatePresentation" />
-                  </node>
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7719232434617373729" />
-                </node>
-              </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7719232434617373730">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7719232434617373731">
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7719232434617373732">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rdl2.~MPSTreeNode%dupdateNodePresentationInTree()%cvoid" resolveInfo="updateNodePresentationInTree" />
-                  </node>
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="7719232434617373733" />
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3859917115714518763">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="3859917115714518764">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rdl2.~MPSTreeNode%drenewPresentation()%cvoid" resolveInfo="renewPresentation" />
                 </node>
               </node>
             </node>
@@ -27249,19 +27226,9 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="497539554676247555">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="497539554676247556">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="497539554676247557">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8940381362895276519" resolveInfo="updatePresentation" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rdl2.~MPSTreeNode%drenewPresentation()%cvoid" resolveInfo="renewPresentation" />
                   </node>
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="497539554676247565">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="497539554676247550" resolveInfo="node" />
-                  </node>
-                </node>
-              </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="497539554676247559">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="497539554676247560">
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="497539554676247561">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rdl2.~MPSTreeNode%dupdateNodePresentationInTree()%cvoid" resolveInfo="updateNodePresentationInTree" />
-                  </node>
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="497539554676247568">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="497539554676247550" resolveInfo="node" />
                   </node>
                 </node>

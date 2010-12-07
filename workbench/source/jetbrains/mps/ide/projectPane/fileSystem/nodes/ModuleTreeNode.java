@@ -32,8 +32,6 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
     myModule = m;
 
     add(new FolderTreeNode(project, VirtualFileUtils.getVirtualFile(m.getDescriptorFile().getParent()), true));
-
-    updatePresentation();
   }
 
   @Override

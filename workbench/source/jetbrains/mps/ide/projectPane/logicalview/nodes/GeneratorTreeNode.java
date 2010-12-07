@@ -32,7 +32,6 @@ public class GeneratorTreeNode extends jetbrains.mps.ide.projectPane.logicalview
 
   public GeneratorTreeNode(Generator generator, MPSProject project) {
     super(new ModuleContext(generator, project));
-    updatePresentation();
   }
 
   protected String getModulePresentation() {

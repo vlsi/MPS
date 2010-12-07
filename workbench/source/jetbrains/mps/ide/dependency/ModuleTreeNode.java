@@ -39,8 +39,6 @@ public class ModuleTreeNode extends MPSTreeNode {
     super(module, null);
     myProject = project;
     myModule = module;
-
-    updatePresentation();
   }
 
   public void doubleClick() {

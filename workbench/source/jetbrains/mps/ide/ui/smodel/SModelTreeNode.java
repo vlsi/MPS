@@ -103,7 +103,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myCountAdditionalNamePart = countNamePart;
     setUserObject(modelDescriptor);
     setIcon(myIcon);
-    updatePresentation();
   }
 
   public Icon getDefaultIcon() {

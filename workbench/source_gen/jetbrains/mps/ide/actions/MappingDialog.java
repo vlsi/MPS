@@ -145,7 +145,6 @@ public class MappingDialog extends BaseDialog {
       myIcon = icon;
       myNodeIdentifier = nodeIdentifier;
       myText = text;
-      updatePresentation();
     }
 
     protected void doUpdatePresentation() {

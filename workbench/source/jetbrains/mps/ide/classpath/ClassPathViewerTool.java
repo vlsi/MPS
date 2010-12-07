@@ -104,7 +104,6 @@ public class ClassPathViewerTool extends BaseProjectTool {
       private ModuleTreeNode(IModule module) {
         super(null);
         myModule = module;
-        updatePresentation();
       }
 
       protected void doUpdatePresentation() {

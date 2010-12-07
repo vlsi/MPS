@@ -41,7 +41,6 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     super(new ModuleContext(solution, project));
     myShortNameOnly = shortNameOnly;
     mySolution = solution;
-    updatePresentation();
   }
 
   public Object getUserObject() {

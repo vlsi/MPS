@@ -30,7 +30,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import javax.swing.SwingUtilities;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
@@ -131,6 +130,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   protected void onAdd() {
+    updatePresentation();
     getTree().fireTreeNodeAdded(this);
   }
 
@@ -295,12 +295,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
     if (myTree != null) {
       myTree.fireTreeNodeUpdated(this);
-    } else {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          myTree = getTree();
-        }
-      });
     }
     Color c = null;
     String additionalText = null;
@@ -339,8 +333,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
               if (project == null) return;
               if (project.isDisposed()) return;
 
-              updatePresentation();
-              updateNodePresentationInTree();
+              renewPresentation();
             }
           });
         }

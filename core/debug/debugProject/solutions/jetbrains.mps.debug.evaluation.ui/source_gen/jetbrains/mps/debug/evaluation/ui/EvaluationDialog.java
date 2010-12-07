@@ -399,7 +399,6 @@ public class EvaluationDialog extends BaseDialog {
         }
       }
 
-      updatePresentation();
       doInit();
     }
 
@@ -462,7 +461,6 @@ public class EvaluationDialog extends BaseDialog {
   private static class EvaluatingTreeNode extends TextTreeNode {
     public EvaluatingTreeNode() {
       super("evaluating...");
-      updatePresentation();
     }
 
     @Override

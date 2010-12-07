@@ -1117,11 +1117,6 @@
             </node>
           </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="1646263976589218729" />
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1646263976589218717">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="1646263976589218718">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2952675617660606641" resolveInfo="updatePresentation" />
-            </node>
-          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5987618377061983231">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5987618377061983232">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1646263976589229464" resolveInfo="doInit" />

@@ -11,7 +11,6 @@ public class NodeTreeNode extends AbstractWatchableNode {
 
   public NodeTreeNode(IOperationContext context, @NotNull SNode node) {
     super(context, node);
-    updatePresentation();
   }
 
   @Override

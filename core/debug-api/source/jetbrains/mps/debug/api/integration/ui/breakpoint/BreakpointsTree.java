@@ -326,10 +326,8 @@ public class BreakpointsTree extends BreakpointsView {
   }
 
   private class BreakpointTreeNode extends MPSTreeNode {
-
     public BreakpointTreeNode(IOperationContext operationContext, BreakpointNodeData breakpoint) {
       super(breakpoint, operationContext);
-      updatePresentation();
     }
 
     @Override

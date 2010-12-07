@@ -45,7 +45,6 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
         add(new GenerationTracerTreeNode(childTracerNode, project));
       }
     }
-    updatePresentation();
   }
 
   public TracerNode getTracerNode() {

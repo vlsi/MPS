@@ -38,9 +38,6 @@ import javax.swing.JScrollPane;
 import java.awt.Color;
 import java.awt.Font;
 
-/**
- * @author Kostik
- */
 public class ModelRepositoryComponent {
   private MPSTree myTree = new MyTree();
   private JScrollPane myComponent = new JScrollPane(myTree);
@@ -114,8 +111,6 @@ public class ModelRepositoryComponent {
         for (ModelOwner owner : SModelRepository.getInstance().getOwners(myModelDescriptor)) {
           add(new OwnerTreeNode(owner));
         }
-
-        updatePresentation();
       }
 
       protected void doUpdatePresentation() {
@@ -137,8 +132,6 @@ public class ModelRepositoryComponent {
       public OwnerTreeNode(ModelOwner owner) {
         super(null);
         myOwner = owner;
-
-        updatePresentation();
       }
 
       protected void doUpdatePresentation() {

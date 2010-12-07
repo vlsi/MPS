@@ -114,7 +114,6 @@ public class StructureViewComponent {
     public SNodeTreeNode(SNode node) {
       super(myContext);
       myNode = node;
-      updatePresentation();
     }
 
     protected void doUpdatePresentation() {

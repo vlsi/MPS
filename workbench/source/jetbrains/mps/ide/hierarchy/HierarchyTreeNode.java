@@ -45,8 +45,6 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     myNodePointer = new SNodePointer(declaration);
     myHierarchyTree = tree;
     setUserObject(declaration);
-
-    updatePresentation();
   }
 
   protected void doUpdatePresentation() {

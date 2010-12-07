@@ -59,8 +59,6 @@ public class CompositeTreeNode extends MPSTreeNode {
         add(new FolderTreeNode(project, virtualDirectory, true));
       }
     }
-
-    updatePresentation();
   }
 
   @Override

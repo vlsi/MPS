@@ -48,7 +48,6 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     myShortNameOnly = shortNameOnly;
     myLanguage = language;
     myProject = project;
-    updatePresentation();
   }
 
   protected void doUpdatePresentation() {

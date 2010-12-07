@@ -57,7 +57,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myNode = node;
     myRole = role;
     myCondition = condition;
-    updatePresentation();
   }
 
   protected final void doUpdatePresentation() {

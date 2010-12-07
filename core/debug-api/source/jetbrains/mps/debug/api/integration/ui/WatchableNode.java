@@ -20,7 +20,6 @@ public class WatchableNode extends AbstractWatchableNode {
   public WatchableNode(IOperationContext context, @NotNull IWatchable watchable) {
     super(context, watchable.getNode());
     myWatchable = watchable;
-    updatePresentation();
   }
 
   protected void doUpdate() {

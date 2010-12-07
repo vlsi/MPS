@@ -216,8 +216,6 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
 
         addListeners(modelNode);
       }
-
-      //treeNodeUpdated(treeNode,tree);
     }
 
     public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {

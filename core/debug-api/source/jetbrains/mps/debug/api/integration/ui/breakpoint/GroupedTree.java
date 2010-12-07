@@ -188,8 +188,6 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
           }
         }
       }
-
-      updatePresentation();
     }
 
     @Override

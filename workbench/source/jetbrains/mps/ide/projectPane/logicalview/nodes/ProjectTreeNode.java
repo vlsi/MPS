@@ -37,7 +37,6 @@ public class ProjectTreeNode extends MPSTreeNode {
 
     setIcon(Icons.PROJECT_ICON);
     setNodeIdentifier("Project");
-    updatePresentation();
   }
 
   protected void doUpdatePresentation() {

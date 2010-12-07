@@ -36,12 +36,8 @@ public class SNodeGroupTreeNode extends TextTreeNode {
 
   public SNodeGroupTreeNode(SModelTreeNode model, SNodeGroupTreeNode parentGroup, String text, boolean autoDelete) {
     super(text);
-
     model.register(parentGroup, this);
-
     myAutoDelete = autoDelete;
-
-    updatePresentation();
   }
 
   protected void doUpdatePresentation() {

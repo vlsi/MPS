@@ -15,45 +15,23 @@
  */
 package jetbrains.mps.ide.ui;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.messages.Icons;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 15.10.2010
- * Time: 18:02:30
- * To change this template use File | Settings | File Templates.
- */
 public class ErrorTreeNode extends TextTreeNode {
+  public ErrorTreeNode(@NotNull String text) {
+    super(text);
+  }
 
-    public ErrorTreeNode(@NotNull String text) {
-      super(text);
-      updatePresentation();
-    }
+  public boolean isLeaf() {
+    return true;
+  }
 
-    @Override
-    public boolean isLeaf() {
-      return true;
-    }
-
-    @Override
-    protected void updatePresentation() {
-      super.updatePresentation();
-      setColor(Color.RED);
-      setIcon(Icons.ERROR_ICON);
-    }
+  protected void updatePresentation() {
+    super.updatePresentation();
+    setColor(Color.RED);
+    setIcon(Icons.ERROR_ICON);
+  }
 }

@@ -191,8 +191,6 @@ public class CellExplorerView extends BaseProjectTool {
     public CellTreeNode(EditorCell cell) {
       super(cell, null);
       myCell = cell;
-
-      updatePresentation();
     }
 
     protected void doUpdatePresentation() {

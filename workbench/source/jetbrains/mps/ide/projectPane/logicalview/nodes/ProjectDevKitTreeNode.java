@@ -38,8 +38,6 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     super(new ModuleContext(devkit, project));
     myShortNameOnly = shortNameOnly;
     myDevKit = devkit;
-
-    updatePresentation();
   }
 
   public Object getUserObject() {

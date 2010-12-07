@@ -32,7 +32,6 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     super(new ModuleContext(module, project));
     myTransientModule = module;
     populate();
-    updatePresentation();
     setNodeIdentifier(myTransientModule.getModuleReference().toString());
   }
 
