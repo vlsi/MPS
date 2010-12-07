@@ -49,16 +49,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("check condition: create root", createRootRule.getNode()), true);
-      return wrapped.checkCondition(createRootRule);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
   public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
     try {
       tracer.push(taskName("check condition: drop root", ruleNode), true);
@@ -203,6 +193,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       tracer.push(taskName("trying to apply rule", rule.getRuleNode().getNode()), true);
       return wrapped.tryToApply(rule, environment, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("check condition", rule.getRuleNode().getNode()), true);
+      return wrapped.isApplicable(rule, environment, context);
     } finally {
       tracer.pop();
     }

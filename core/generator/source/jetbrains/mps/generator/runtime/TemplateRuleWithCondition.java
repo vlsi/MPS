@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.SNode;
-
-import java.util.Collection;
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
- * Evgeny Gryaznov, 10/27/10
+ * Evgeny Gryaznov, 12/7/10
  */
-public interface TemplateCreateRootRule extends TemplateRuleWithCondition {
+public interface TemplateRuleWithCondition {
 
-  Collection<SNode> apply(TemplateExecutionEnvironment environment);
+  SNodePointer getRuleNode();
+
+  boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException;
 }

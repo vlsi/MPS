@@ -16,17 +16,14 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.Collection;
 
 /**
  * Evgeny Gryaznov, 10/27/10
  */
-public interface TemplateRootMappingRule {
+public interface TemplateRootMappingRule extends TemplateRuleWithCondition {
 
-  SNodePointer getRuleNode();
-  
   String getApplicableConcept();
 
   boolean applyToInheritors();

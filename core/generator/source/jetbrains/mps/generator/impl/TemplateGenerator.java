@@ -36,8 +36,9 @@ import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
+import jetbrains.mps.lang.generator.structure.CreateRootRule;
+import jetbrains.mps.lang.generator.structure.DropRootRule;
+import jetbrains.mps.lang.generator.structure.Root_MappingRule;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -153,11 +154,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   protected void applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
     // create all roots
+    TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, null, getOperationContext(), myGenerationTracer);
     if (isPrimary) {
       ttrace.push("create root", false);
       for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
         checkMonitorCanceled();
-        applyCreateRootRule(((TemplateCreateRootRuleInterpreted) rule).getNode());
+        applyCreateRootRule(rule, environment);
       }
       ttrace.pop();
     }
@@ -170,7 +172,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
-      applyRootMappingRule(((TemplateRootMappingRuleInterpreted)rule).getNode(), rootsToCopy);
+      applyRootMappingRule(rule, rootsToCopy, environment);
     }
     ttrace.pop();
 
@@ -185,37 +187,37 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void applyCreateRootRule(CreateRootRule createRootRule) throws GenerationFailureException, GenerationCanceledException {
+  private void applyCreateRootRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     final QueryExecutionContext executionContext = getExecutionContext(null);
     if (executionContext == null) {
       return;
     }
 
-    if (executionContext.checkCondition(createRootRule)) {
+    if (executionContext.isApplicable(rule, environment, null)) {
+      CreateRootRule createRootRule = ((TemplateCreateRootRuleInterpreted)rule).getNode();
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
-        showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
+        showErrorMessage(null, null, rule.getRuleNode().getNode(), "'create root' rule has no template");
       } else {
-        SNodePointer ruleNode = new SNodePointer(createRootRule.getNode());
-        myGenerationTracer.pushRule(ruleNode);
+        myGenerationTracer.pushRule(rule.getRuleNode());
         try {
           createRootNodeFromTemplate(
             GeneratorUtil.getMappingName(createRootRule, null),
             BaseAdapter.fromAdapter(templateNode), null, false, executionContext);
         } finally {
-          myGenerationTracer.closeRule(ruleNode);
+          myGenerationTracer.closeRule(rule.getRuleNode());
         }
       }
     }
   }
 
-  private void applyRootMappingRule(Root_MappingRule rule, List<SNode> rootsToCopy) throws GenerationFailureException, GenerationCanceledException {
-    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+  private void applyRootMappingRule(TemplateRootMappingRule rule1, List<SNode> rootsToCopy, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
+    String applicableConcept = rule1.getApplicableConcept();
     if (applicableConcept == null) {
-      showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
+      showErrorMessage(null, null, rule1.getRuleNode().getNode(), "rule has no applicable concept defined");
       return;
     }
-    boolean includeInheritors = rule.getApplyToConceptInheritors();
+    boolean includeInheritors = rule1.applyToInheritors();
     Iterable<SNode> inputNodes = myInputModel.getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
@@ -223,14 +225,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (getGeneratorSessionContext().isCopiedRoot(inputNode)) continue;
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
+      Root_MappingRule rule = ((TemplateRootMappingRuleInterpreted)rule1).getNode();
       if (executionContext != null && executionContext.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputNode);
-        myGenerationTracer.pushRule(new SNodePointer(rule.getNode()));
+        myGenerationTracer.pushRule(rule1.getRuleNode());
         try {
           SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
           if (templateNode != null) {
             boolean copyRootOnFailure = false;
-            if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
+            if (inputNode.isRoot() && !rule1.keepSourceRoot()) {
               rootsToCopy.remove(inputNode);
               copyRootOnFailure = true;
             }
@@ -267,7 +270,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void copyRootNodeFromInput(@NotNull SNode inputRootNode, @NotNull QueryExecutionContext executionContext) throws GenerationFailureException, GenerationCanceledException {
     // check if can drop
     for (TemplateDropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
-      if (isApplicableDropRootRule(inputRootNode, ((TemplateDropRuleInterpreted)dropRootRule).getNode(), executionContext)) {
+      if (isApplicableDropRootRule(inputRootNode, ((TemplateDropRuleInterpreted) dropRootRule).getNode(), executionContext)) {
         return;
       }
     }
@@ -290,7 +293,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     WeavingProcessor wp = new WeavingProcessor(this);
     for (TemplateWeavingRule rule : myRuleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
-      wp.apply(((TemplateWeavingRuleInterpreted)rule).getNode());
+      wp.apply(((TemplateWeavingRuleInterpreted) rule).getNode());
     }
   }
 

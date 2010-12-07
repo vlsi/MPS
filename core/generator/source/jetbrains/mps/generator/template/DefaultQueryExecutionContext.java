@@ -57,30 +57,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
-    CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
-    if (conditionFunction == null) {
-      return true;
-    }
-    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
-    try {
-      return (Boolean) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new CreateRootRuleContext(createRootRule.getNode(), generator),
-        createRootRule.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(createRootRule), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(createRootRule), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(createRootRule), t);
-    }
-    return false;
-  }
-
-  @Override
   public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
     if (condition == null) {
       // condition is not required
@@ -384,6 +360,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     return rule.tryToApply(environment, context);
+  }
+
+  @Override
+  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+    return rule.isApplicable(environment, context);
   }
 
   @Override

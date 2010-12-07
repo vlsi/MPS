@@ -15,10 +15,15 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.lang.generator.structure.DropRootRule;
+import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * Evgeny Gryaznov, Nov 30, 2010
@@ -26,9 +31,11 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
   
   private final SNode ruleNode;
+  private final SNode applicableConcept;
 
   public TemplateDropRuleInterpreted(SNode child) {
-    ruleNode = child;
+    this.ruleNode = child;
+    this.applicableConcept = ruleNode.getReferent(DropRootRule.APPLICABLE_CONCEPT);
   }
 
   @Override
@@ -36,8 +43,19 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
     return new SNodePointer(ruleNode);
   }
 
+  @Override
+  public String getApplicableConcept() {
+    return NameUtil.nodeFQName(this.applicableConcept);
+  }
+
   @Deprecated
   public DropRootRule getNode() {
     return (DropRootRule) ruleNode.getAdapter();
+  }
+
+  @Override
+  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+    // TODO
+    return true;
   }
 }

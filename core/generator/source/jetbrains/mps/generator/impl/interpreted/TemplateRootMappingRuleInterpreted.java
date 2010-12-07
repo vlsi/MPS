@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -43,6 +44,12 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
   @Override
   public SNodePointer getRuleNode() {
     return new SNodePointer(ruleNode);
+  }
+
+  @Override
+  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+    // TODO
+    return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override

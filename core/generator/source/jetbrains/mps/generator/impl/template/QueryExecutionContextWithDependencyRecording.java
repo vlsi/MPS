@@ -5,7 +5,6 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -33,16 +32,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.checkCondition(condition, required, inputNode, ruleNode);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkCondition(createRootRule);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -197,6 +186,16 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.tryToApply(rule, environment, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.isApplicable(rule, environment, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

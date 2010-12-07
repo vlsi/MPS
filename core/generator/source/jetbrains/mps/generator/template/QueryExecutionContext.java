@@ -20,8 +20,6 @@ public interface QueryExecutionContext {
 
   boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
 
-  boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException;
-
   boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException;
 
   boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException;
@@ -51,4 +49,6 @@ public interface QueryExecutionContext {
   SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper);
 
   Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+
+  boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException;
 }
