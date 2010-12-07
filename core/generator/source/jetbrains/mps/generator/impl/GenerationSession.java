@@ -54,6 +54,7 @@ public class GenerationSession {
   private final TransientModelsModule myTransientModelsModule;
   private final IGenerationTracer myGenerationTracer;
   private final boolean myDiscardTransients;
+  private final boolean myKeepFinalOutput;
   private final ProgressIndicator myProgressMonitor;
   private ILoggingHandler myLoggingHandler;
   private final GenerationSessionLogger myLogger;
@@ -76,6 +77,7 @@ public class GenerationSession {
     myTransientModelsModule = transientModelsModule;
     myGenerationTracer = generationOptions.getGenerationTracer();
     myDiscardTransients = !generationOptions.isSaveTransientModels();
+    myKeepFinalOutput = generationOptions.isKeepOutputModel();
     myProgressMonitor = progressMonitor;
     myLogger = new GenerationSessionLogger(logger);
     ttrace = tracer;
@@ -157,6 +159,10 @@ public class GenerationSession {
       // since session objects might include objects with disposed class loaders
       if (mySessionContext != null) {
         mySessionContext.clearTransientObjects();
+      }
+
+      if (myKeepFinalOutput && mySessionContext != null) {
+        mySessionContext.keepTransientModel(currOutput, true);
       }
 
       GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
