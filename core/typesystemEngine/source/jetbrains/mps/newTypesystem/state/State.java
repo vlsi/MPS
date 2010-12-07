@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.state;
 
 
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
@@ -24,12 +25,18 @@ import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.operation.CheckAllOperation;
+import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
+import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
+import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
+import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.WhenConcreteEntity;
+import jetbrains.mps.util.ManyToManyMap;
 
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -45,7 +52,6 @@ public class State {
   private final Equations myEquations;
   private final jetbrains.mps.newTypesystem.state.Inequalities myInequalities;
   private final jetbrains.mps.newTypesystem.state.NodeMaps myNodeMaps;
-  private final jetbrains.mps.newTypesystem.state.NonConcrete myNonConcrete;
 
   private final VariableIdentifier myVariableIdentifier;
 
@@ -53,14 +59,118 @@ public class State {
   private AbstractOperation myOperation = new CheckAllOperation();
   private boolean myInsideStateChangeAction = false;
 
+
+  @StateObject
+  private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
+    new HashMap<ConditionKind, ManyToManyMap<SNode, Block>>();
+
+  @StateObject
+  private final Set<Block> myBlocks = new HashSet<Block>();
+
   public State(TypeCheckingContextNew tcc) {
     myTypeCheckingContext = tcc;
     myEquations = new Equations(this);
     myInequalities = new jetbrains.mps.newTypesystem.state.Inequalities(this);
-    myNonConcrete = new jetbrains.mps.newTypesystem.state.NonConcrete(this);
     myNodeMaps = new jetbrains.mps.newTypesystem.state.NodeMaps(this);
     myVariableIdentifier = new VariableIdentifier();
+    {
+      myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<SNode, Block>());
+      myBlocksAndInputs.put(ConditionKind.CONCRETE, new ManyToManyMap<SNode, Block>());
+    }
   }
+
+
+  @StateMethod
+  public void addDependency(Block dataFlowBlock, SNode var, ConditionKind condition) {
+    assertIsInStateChangeAction();
+    ManyToManyMap<SNode, Block> map = myBlocksAndInputs.get(condition);
+    map.addLink(var, dataFlowBlock);
+  }
+
+  @StateMethod
+  public void removeDependency(Block dataFlowBlock, SNode var, ConditionKind condition) {
+    assertIsInStateChangeAction();
+    ManyToManyMap<SNode, Block> map = myBlocksAndInputs.get(condition);
+    map.removeLink(var, dataFlowBlock);
+  }
+
+  @StateMethod
+  public void removeBlockNoVars(Block dataFlowBlock) {
+    assertIsInStateChangeAction();
+    for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
+      assert !map.containsSecond(dataFlowBlock);
+    }
+    boolean removed = myBlocks.remove(dataFlowBlock);
+    assert removed;
+  }
+
+  @StateMethod
+  public void addBlockNoVars(Block dataFlowBlock) {
+    assertIsInStateChangeAction();
+    for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
+      assert !map.containsSecond(dataFlowBlock);
+    }
+    boolean addedAnew = myBlocks.add(dataFlowBlock);
+    assert addedAnew;
+  }
+
+  public void substitute(SNode oldVar, SNode type) {
+    for (ConditionKind conditionKind : myBlocksAndInputs.keySet()) {
+      ManyToManyMap<SNode, Block> map = myBlocksAndInputs.get(conditionKind);
+      Set<Block> blocks = map.getByFirst(oldVar);
+      if (blocks == null) {
+        return;
+      }
+      for (Block block : blocks) {
+        for (SNode variable : conditionKind.getUnresolvedInputs(type)) {
+          addInputAndTrack(block, variable, conditionKind);
+        }
+        removeInputAndTrack(block, oldVar, conditionKind);
+        testInputsResolved(block);
+      }
+    }
+  }
+
+  private void addInputAndTrack(Block block, SNode var, ConditionKind conditionKind) {
+    executeOperation(new AddDependencyOperation(block, var, conditionKind));
+  }
+
+  private void removeInputAndTrack(Block block, SNode var, ConditionKind conditionKind) {
+    executeOperation(new RemoveDependencyOperation(block, var, conditionKind));
+  }
+
+  private void becameConcrete(Block block) {
+    executeOperation(new RemoveBlockOperation(block));
+  }
+
+  public void addBlock(Block block) {
+    executeOperation(new AddBlockOperation(block));
+  }
+
+  private void testInputsResolved(Block block) {
+    boolean concrete = true;
+    for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
+      concrete = concrete && map.getBySecond(block).isEmpty();
+    }
+    if (concrete) {
+      becameConcrete(block);
+    }
+  }
+
+  public void collectVarsExecuteIfNecessary(Block block) {
+    Set<Pair<SNode,ConditionKind>> initialInputs = block.getInitialInputs();
+    for (Pair<SNode,ConditionKind> input : initialInputs) {
+      SNode type = input.first;
+      ConditionKind conditionKind = input.second;
+      for (SNode variable : conditionKind.getUnresolvedInputs(type)) {
+        addInputAndTrack(block, variable, conditionKind);
+      }
+    }
+    testInputsResolved(block);
+  }
+
+
+  //---------------------------------------------
 
   public Equations getEquations() {
     return myEquations;
@@ -126,20 +236,18 @@ public class State {
     }
   }
 
+  @Deprecated
   public boolean isConcrete(SNode node) {
-    return myNonConcrete.isConcrete(node);
+    return !TypesUtil.isVariable(node);
   }
 
+  @Deprecated
   public boolean isConcrete(SNode node, boolean shallow) {
-    return (shallow && !TypesUtil.isVariable(node) || isConcrete(node));
+    return !TypesUtil.isVariable(node);
   }
 
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {
     myNodeMaps.addNodeToError(node, error, info);
-  }
-
-  public jetbrains.mps.newTypesystem.state.NonConcrete getNonConcrete() {
-    return myNonConcrete;
   }
 
   public SNode typeOf(SNode node, EquationInfo info) {
@@ -150,8 +258,11 @@ public class State {
     myEquations.clear();
     myInequalities.clear();
     myNodeMaps.clear();
-    myNonConcrete.clear();
     myVariableIdentifier.clear();
+    myBlocks.clear();
+    for (ManyToManyMap map : myBlocksAndInputs.values()) {
+      map.clear();
+    }
     if (clearDiff) {
       myOperationStack.clear();
       myOperation = new CheckAllOperation();
@@ -191,10 +302,6 @@ public class State {
 
   public AbstractOperation getOperation() {
     return myOperation;
-  }
-
-  public void addWhenConcrete(jetbrains.mps.newTypesystem.state.WhenConcreteEntry entity, SNode node, boolean shallow) {
-    myNonConcrete.addNonConcrete(entity, node, shallow);
   }
 
   public void expandAll() {

@@ -13,36 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.operation.whenConcrete;
+package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
+import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.ConditionKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 20, 2010
- * Time: 5:19:06 PM
+ * User: Cyril.Konopko
+ * Date: 07.12.10
+ * Time: 16:09
  * To change this template use File | Settings | File Templates.
  */
-public class RemoveWCDependencyOperation extends AbstractOperation {
-  private SNode myNode;
-  private jetbrains.mps.newTypesystem.state.WhenConcreteEntry myEntry;
-  private boolean myIsShallow;
+public class RemoveDependencyOperation extends AbstractOperation {
+  private SNode myVar;
+  private Block myBlock;
+  private ConditionKind myConditionKind;
 
-  public RemoveWCDependencyOperation(jetbrains.mps.newTypesystem.state.WhenConcreteEntry entry, SNode node, boolean isShallow) {
-    myNode = node;
-    myEntry = entry;
-    myIsShallow = isShallow;
-    myEquationInfo = new EquationInfo(node, " ", entry.getNodeModel(), entry.getNodeId());
+  public RemoveDependencyOperation(Block block, SNode var, ConditionKind conditionKind) {
+    myVar = var;
+    myBlock = block;
+    myConditionKind = conditionKind;
+    // todo
+    // myEquationInfo = new EquationInfo(input, " ", block.getNodeModel(), block.getNodeId());
   }
 
-  @Override
+/*  @Override
   public String getPresentation() {
     return "When concrete dependency removed: " + myNode + "";
   }
@@ -50,15 +49,15 @@ public class RemoveWCDependencyOperation extends AbstractOperation {
   @Override
   public Color getColor() {
     return Colors.WHEN_CONCRETE_REMOVED;
-  }
+  }*/
 
   @Override
   public void doUndo(State state) {
-    state.getNonConcrete().addDependency(myEntry, myNode, myIsShallow);
+    state.addDependency(myBlock, myVar, myConditionKind);
   }
 
   @Override
   public void doRedo(State state) {
-    state.getNonConcrete().removeDependency(myEntry, myNode, myIsShallow);
+    state.removeDependency(myBlock, myVar, myConditionKind);
   }
 }

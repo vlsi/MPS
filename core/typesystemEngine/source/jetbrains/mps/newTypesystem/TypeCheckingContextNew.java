@@ -167,15 +167,12 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
-    //super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
-
-    myState.addWhenConcrete(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(r, nodeModel, nodeId, argument), argument, false);
+    myState.addBlock(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(myState, r, nodeModel, nodeId, argument, false));
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
-
-    myState.addWhenConcrete(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(r, nodeModel, nodeId, skipError, argument), argument, isShallow);
+    myState.addBlock(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(myState, r, nodeModel, nodeId, argument, isShallow));
   }
 
   public jetbrains.mps.newTypesystem.state.State getState() {

@@ -13,37 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.operation.whenConcrete;
+package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
+import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.WhenConcreteEntry;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.awt.Color;
-
 /**
  * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 15, 2010
- * Time: 4:37:46 PM
+ * User: Cyril.Konopko
+ * Date: 07.12.10
+ * Time: 16:08
  * To change this template use File | Settings | File Templates.
  */
-public class AddWCEntryOperation extends AbstractOperation {
-  private SNode myType;
-  private WhenConcreteEntry myEntry;
-  private boolean myIsShallow;
+public class AddBlockOperation extends AbstractOperation {
+  private Block myBlock;
 
-  public AddWCEntryOperation(WhenConcreteEntry entry, SNode type, SNode source, boolean isShallow) {
-    myType = type;
-    mySource = source;
-    myEntry = entry;
-    myIsShallow = isShallow;
-    myEquationInfo = new EquationInfo(type, " ", entry.getNodeModel(), entry.getNodeId());
+  public AddBlockOperation(Block block) {
+    myBlock = block;
+
+    ///todo
+    // myEquationInfo = new EquationInfo(type, " ", block.getNodeModel(), block.getNodeId());
   }
 
-  @Override
+ /* @Override
   public String getPresentation() {
     return "When Concrete added " + myType;
   }
@@ -51,21 +46,21 @@ public class AddWCEntryOperation extends AbstractOperation {
   @Override
   public Color getColor() {
     return Colors.WHEN_CONCRETE_ADDED;
-  }
+  }*/
 
   @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
-    state.getNonConcrete().removeWhenConcreteNoVars(myEntry, myIsShallow);
+    state.removeBlockNoVars(myBlock);
   }
 
   @Override
   public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
-    state.getNonConcrete().addWhenConcreteNoVars(myEntry, myIsShallow);
+    state.addBlockNoVars(myBlock);
   }
 
   @Override
   public void execute(jetbrains.mps.newTypesystem.state.State state) {
     super.execute(state);
-    state.getNonConcrete().collectVarsExecuteIfNecessary(myEntry, myType, myIsShallow);
+    state.collectVarsExecuteIfNecessary(myBlock);
   }
 }

@@ -94,4 +94,9 @@ public class ManyToManyMap<F, S> {
   public boolean containsSecond(S s) {
     return mySToF.containsKey(s);
   }
+
+  public void clear() {
+    myFToS.clear();
+    mySToF.clear();
+  }
 }

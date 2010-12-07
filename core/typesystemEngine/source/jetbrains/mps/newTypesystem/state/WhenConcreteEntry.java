@@ -15,7 +15,12 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.CollectionUtil;
+
+import java.util.Collections;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,42 +28,31 @@ import jetbrains.mps.smodel.SNode;
  * Date: Sep 15, 2010
  * Time: 5:56:54 PM
  */
-public class WhenConcreteEntry {
+public class WhenConcreteEntry extends Block {
+  //todo refactor runnable into a runnable with an argument
   private final Runnable myRunnable;
-  private final String myNodeModel;
-  private final String myNodeId;
-  private boolean mySkipError = false;
   private final SNode myArgument;
+  private final ConditionKind myConditionKind;
 
-  public WhenConcreteEntry(Runnable runnable, String nodeModel, String nodeId, boolean skipError, SNode argument) {
-    this(runnable, nodeModel, nodeId, argument);
-    mySkipError = skipError;
-  }
-
-  public WhenConcreteEntry(Runnable runnable, String nodeModel, String nodeId, SNode argument) {
+  public WhenConcreteEntry(State state, Runnable runnable, String nodeModel, String nodeId, SNode argument, boolean isShallow) {
+    super(state, nodeModel, nodeId);
     myRunnable = runnable;
-    myNodeModel = nodeModel;
-    myNodeId = nodeId;
     myArgument = argument;
+    myConditionKind = isShallow ? ConditionKind.SHALLOW : ConditionKind.CONCRETE;
   }
 
   public String toString() {
     return myArgument.toString();
   }
 
-  public void run() {
+  @Override
+  public void performAction() {
     myRunnable.run();
   }
 
-  public String getNodeModel() {
-    return myNodeModel;
-  }
-
-  public String getNodeId() {
-    return myNodeId;
-  }
-
-  public boolean skipsError() {
-    return mySkipError;
+  @Override
+  public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
+    Pair<SNode, ConditionKind> input = new Pair<SNode, ConditionKind>(myArgument, myConditionKind);
+    return CollectionUtil.set(input);
   }
 }

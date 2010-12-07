@@ -200,33 +200,6 @@ public class Equations {
     }
   }
 
-  private void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
-    IErrorReporter errorReporter;
-    SNode nodeWithError = null;
-    QuickFixProvider intentionProvider = null;
-    String errorString = null;
-    String ruleModel = null;
-    String ruleId = null;
-    if (info != null) {
-      nodeWithError = info.getNodeWithError();
-      intentionProvider = info.getIntentionProvider();
-      errorString = info.getErrorString();
-      ruleModel = info.getRuleModel();
-      ruleId = info.getRuleId();
-    }
-    if (errorString != null) {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
-    } else {
-      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "incompatible types: ",
-        right, " and ", left, "", ruleModel, ruleId);
-    }
-    errorReporter.setIntentionProvider(intentionProvider);
-    if (info != null) {
-      errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
-    }
-    myState.addError(nodeWithError, errorReporter, info);
-  }
-
   void reportRecursiveType(SNode node) {
     //todo IErrorReporter errorReporter = new SimpleErrorReporter(node, "Recursive types not allowed", null, null);
   }

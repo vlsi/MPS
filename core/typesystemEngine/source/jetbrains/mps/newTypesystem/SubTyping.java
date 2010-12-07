@@ -47,7 +47,8 @@ public class SubTyping {
   }
 
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, boolean checkOnly) {
-    if (LatticeUtil.isJoin(superType)) {
+    //todo use replacement rules
+/*    if (LatticeUtil.isJoin(superType)) {
       for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
         if (myState.isConcrete(argument) && isSubTypeByReplacementRules(subType, argument)) {
           return true;
@@ -66,7 +67,7 @@ public class SubTyping {
           return true;
         }
       }
-    }
+    }*/
     return false;
   }
 

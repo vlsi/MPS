@@ -13,47 +13,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.operation.whenConcrete;
+package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.state.WhenConcreteEntry;
+import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 20, 2010
- * Time: 5:16:25 PM
+ * User: Cyril.Konopko
+ * Date: 07.12.10
+ * Time: 16:08
  * To change this template use File | Settings | File Templates.
  */
-public class RemoveWCEntryOperation extends AbstractOperation {
-  private WhenConcreteEntry myEntry;
-  private boolean myIsShallow;
+public class RemoveBlockOperation extends AbstractOperation {
+   private Block myBlock;
 
-  public RemoveWCEntryOperation(boolean isShallow, WhenConcreteEntry entry) {
-    myIsShallow = isShallow;
-    myEntry = entry;
-    myEquationInfo = new EquationInfo(null, " ", entry.getNodeModel(), entry.getNodeId());
+  public RemoveBlockOperation(Block block) {
+    myBlock = block;
+    // todo
+    // myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
+
+  /*@Override
+  public String getPresentation() {
+    return "Became concrete";
+  }*/
 
   @Override
   public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
-    state.getNonConcrete().addWhenConcreteNoVars(myEntry, myIsShallow);
-  }
-
-  @Override
-  public String getPresentation() {
-    return "Became concrete";
+    state.addBlockNoVars(myBlock);
   }
 
   @Override
   public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
-    state.getNonConcrete().removeWhenConcreteNoVars(myEntry, myIsShallow);
+    state.removeBlockNoVars(myBlock);
   }
 
   @Override
   public void execute(jetbrains.mps.newTypesystem.state.State state) {
     super.execute(state);
-    myEntry.run();
+    myBlock.performAction();
   }
 }
