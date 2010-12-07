@@ -64,13 +64,25 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosed(WindowEvent e) {
-        for (BreakpointsView view : myViews) {
-          view.saveState();
-        }
+        saveState();
+      }
+    });
+
+    addFocusListener(new FocusAdapter() {
+      @Override
+      public void focusLost(FocusEvent focusEvent) {
+        saveState();
       }
     });
 
     initPropertiesUi();
+  }
+
+  private void saveState() {
+    if (myContext.getProject().isDisposed()) return;
+    for (BreakpointsView view : myViews) {
+      view.saveState();
+    }
   }
 
   private void initPropertiesUi() {
