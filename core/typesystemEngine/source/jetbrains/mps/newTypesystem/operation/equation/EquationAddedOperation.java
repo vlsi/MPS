@@ -52,8 +52,6 @@ public class EquationAddedOperation extends AbstractEquationOperation {
   public void execute(State state) {
     super.execute(state);
     state.substitute(myChild, myParent);
-    //todo remove:
-    state.getInequalities().substitute(myChild, myParent);
   }
 
   public SNode getChild() {

@@ -110,7 +110,6 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
       myNodeTypesComponent.checkNode(myRootNode, true);
       myState.solveInequalities();
       myState.expandAll();
-      myState.checkInequalities();
       myState.checkNonConcreteWhenConcretes();
     }
   }

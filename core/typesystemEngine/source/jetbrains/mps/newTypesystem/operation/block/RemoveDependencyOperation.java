@@ -43,7 +43,7 @@ public class RemoveDependencyOperation extends AbstractOperation {
 
   @Override
   public String getPresentation() {
-    return "Block dependency removed: " + myVar + " -> " + myBlock.getPresentation();
+    return "Block dependency removed: " + myVar + " -> [" + myBlock.getPresentation() + "]";
   }
 
 /*

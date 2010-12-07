@@ -64,4 +64,28 @@ public enum RelationKind {
   public boolean isComparable() {
     return myComparable;
   }
+
+  public static RelationKind fromFlags(boolean isWeak, boolean isCheckOnly, boolean isComparable) {
+    if (isComparable) {
+      if (isWeak) {
+        return WEAK_COMPARABLE;
+      } else {
+        return STRONG_COMPARABLE;
+      }
+    } else {
+      if (isCheckOnly) {
+        if (isWeak) {
+          return WEAK_CHECK;
+        } else {
+          return STRONG_CHECK;
+        }
+      } else {
+        if (isWeak) {
+          return WEAK;
+        } else {
+          return STRONG;
+        }
+      }
+    }
+  }
 }

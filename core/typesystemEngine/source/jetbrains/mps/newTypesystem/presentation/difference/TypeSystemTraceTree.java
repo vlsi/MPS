@@ -26,7 +26,6 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
 import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
-import jetbrains.mps.newTypesystem.operation.inequality.AbstractRelationOperation;
 import jetbrains.mps.newTypesystem.presentation.state.ShowTypeSystemState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -130,7 +129,7 @@ public class TypeSystemTraceTree extends MPSTree {
         return true;
       }
     }
-    if (diff instanceof AbstractRelationOperation) {
+    /*if (diff instanceof AbstractRelationOperation) {
       AbstractRelationOperation d = (AbstractRelationOperation) diff;
       if (myNodes.contains(d.getSubType())) {
         return true;
@@ -138,7 +137,7 @@ public class TypeSystemTraceTree extends MPSTree {
       if (myNodes.contains(d.getSuperType())) {
         return true;
       }
-    }
+    }*/
 
     return false;
   }

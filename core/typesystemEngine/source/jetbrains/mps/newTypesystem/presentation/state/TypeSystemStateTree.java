@@ -50,7 +50,8 @@ public class TypeSystemStateTree extends MPSTree {
 
   private TypeSystemStateTreeNode createNode(jetbrains.mps.newTypesystem.state.State state) {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
-    result.add(createNode("Inequalities", myState.getInequalities().getListPresentation(), null));
+   //todo: show info from blocks grouped by class
+   // result.add(createNode("Inequalities", myState.getInequalities().getListPresentation(), null));
    // result.add(createNode("When concrete", myState.getNonConcrete().getListPresentation(), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
     result.add(createNode("Types", myState.getNodeMaps().getTypeListPresentation(), null));

@@ -180,19 +180,11 @@ public class State {
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    myInequalities.addInequality(subType, superType, isWeak, check, info);
+    addBlock(new InequalityBlock(this, subType, superType, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
-  public void addRelation(SNode subType, SNode superType, RelationKind kind, EquationInfo info) {
-    if (!kind.isComparable()) {
-      myInequalities.addInequality(subType, superType, kind.isWeak(), kind.isCheckOnly(), info);
-    } else {
-      myInequalities.addComparableEquation(subType, superType, kind.isWeak(), info);
-    }
-  }
-
-  public void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
-    myInequalities.addComparableEquation(subType, superType, isWeak, info);
+  public void addComparable(SNode left, SNode right, boolean isWeak, EquationInfo info) {
+     addBlock(new InequalityBlock(this, left, right, RelationKind.fromFlags(isWeak, true, true), info));
   }
 
   public jetbrains.mps.newTypesystem.state.NodeMaps getNodeMaps() {
@@ -274,15 +266,6 @@ public class State {
       @Override
       public void run() {
         myInequalities.solveInequalities();
-      }
-    }));
-  }
-
-  public void checkInequalities() {
-    executeOperation(new AddRemarkOperation("Checking inequalities", new Runnable() {
-      @Override
-      public void run() {
-        myInequalities.check();
       }
     }));
   }

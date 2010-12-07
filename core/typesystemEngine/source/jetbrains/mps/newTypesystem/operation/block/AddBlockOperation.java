@@ -39,7 +39,7 @@ public class AddBlockOperation extends AbstractOperation {
 
   @Override
   public String getPresentation() {
-    return "Block added : " + myBlock.getPresentation();
+    return "Block added : [" + myBlock.getPresentation() + "]";
   }
 
   @Override

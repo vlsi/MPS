@@ -36,7 +36,7 @@ public class RemoveBlockOperation extends AbstractOperation {
 
   @Override
   public String getPresentation() {
-    return "Block executed : " + myBlock.getPresentation();
+    return "Block executed : [" + myBlock.getPresentation() + "]";
   }
 
   @Override

@@ -43,7 +43,7 @@ public class AddDependencyOperation extends AbstractOperation {
 
   @Override
   public String getPresentation() {
-    return "Block dependency added: " + myVar + " -> " + myBlock.getPresentation();
+    return "Block dependency added: " + myVar + " -> [" + myBlock.getPresentation() + "]";
   }
 
 /*  @Override

@@ -37,169 +37,77 @@ import java.util.Map;
  * Date: Sep 10, 2010
  * Time: 5:26:43 PM
  */
+ //todo implement solve inequalities (only)
 public class Inequalities {
   private final State myState;
-
-  private final Map<RelationKind, jetbrains.mps.newTypesystem.state.RelationMapPair> myRelations =
-    new HashMap<RelationKind, jetbrains.mps.newTypesystem.state.RelationMapPair>();
 
   private boolean solveOnlyConcrete;
 
 
   public Inequalities(State state) {
     myState = state;
-    solveOnlyConcrete = true;
-    myRelations.put(RelationKind.WEAK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.WEAK));
-    myRelations.put(RelationKind.WEAK_CHECK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.WEAK_CHECK));
-    myRelations.put(RelationKind.STRONG, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.STRONG));
-    myRelations.put(RelationKind.STRONG_CHECK, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.STRONG_CHECK));
-    myRelations.put(RelationKind.WEAK_COMPARABLE, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.WEAK_COMPARABLE));
-    myRelations.put(RelationKind.STRONG_COMPARABLE, new jetbrains.mps.newTypesystem.state.RelationMapPair(myState, RelationKind.STRONG_COMPARABLE));
-  }
-
-  public void substitute(SNode var, SNode type) {
-    for (jetbrains.mps.newTypesystem.state.RelationMapPair inequalityMapPair : myRelations.values()) {
-      inequalityMapPair.substitute(var, type);
-    }
-  }
-
-  public void addInequality(SNode subType, SNode superType, final boolean isWeak, boolean check, final EquationInfo info) {
-    subType = myState.getRepresentative(subType);
-    superType = myState.getRepresentative(superType);
-
-    if (subType == null || superType == null || subType == superType) {
-      return;
-    }
-    //Variables inside
-    if (!myState.isConcrete(subType) && solveOnlyConcrete || TypesUtil.isVariable(superType)) {
-      addSubTyping(subType, superType, isWeak, check, info);
-      return;
-    }
-    //replacement rules
-    TypeChecker typeChecker = myState.getTypeCheckingContext().getTypeChecker();
-    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : typeChecker.getRulesManager().getReplacementRules(subType, superType)) {
-      InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
-
-      IsApplicable2Status status = inequalityReplacementRule.o2;
-      myState.executeOperation(new AddRemarkOperation(subType + " is subtype of " + superType + " by replacement rule"));
-      ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, info, myState.getTypeCheckingContext(), status);
-      return;
-    }
-
-    subType = myState.getEquations().expandNode(subType);
-    superType = myState.getEquations().expandNode(superType);
-    final SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
-
-    final SNode finalSubType = subType;
-    final SNode finalSuperType = superType;
-    myState.executeOperation(new jetbrains.mps.newTypesystem.operation.AddRemarkOperation("checking whether " + subType + " is subtype of " + superType, new Runnable() {
-      @Override
-      public void run() {
-        if (!subTyping.isSubType(finalSubType, finalSuperType, info, isWeak, false)) {
-          myState.getNodeMaps().reportSubTypeError(finalSubType, finalSuperType, info, isWeak);
-        }
-      }
-    }));
-
-  }
-
-  public void addComparableEquation(SNode left, SNode right, boolean isWeak, EquationInfo info) {
-    left = myState.getRepresentative(left);
-    right = myState.getRepresentative(right);
-    if (left == null || right == null || left == right) {
-      return;
-    }
-    // if one of them is a var
-    if (!myState.isConcrete(left) || !myState.isConcrete(right)) {
-      addComparable(left, right, isWeak, info);
-      return;
-    }
-    //expand, if contains some vars.
-    left = myState.expand(left);
-    right = myState.expand(right);
-    SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
-    // if subType or superType
-    if (subTyping.isComparableByRules(left, right, info, isWeak) ||
-      subTyping.isSubTypeByReplacementRules(left, right) ||
-      subTyping.isSubTypeByReplacementRules(right, left) ||
-      subTyping.isSubType(left, right, info, isWeak, true) ||
-      subTyping.isSubType(right, left, info, isWeak, true)) {
-      myState.executeOperation(new AddRemarkOperation(left + " is comparable with " + right));
-      return;
-    }
-    myState.getNodeMaps().reportComparableError(left, right, info, isWeak);
-  }
-
-  void addSubTyping(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    RelationKind kind;
-    if (isWeak) {
-      kind = check ? RelationKind.WEAK_CHECK : RelationKind.WEAK;
-    } else {
-      kind = check ? RelationKind.STRONG_CHECK : RelationKind.STRONG;
-    }
-    if (!getRelation(kind).contains(subType, superType)) {
-      myState.executeOperation(new jetbrains.mps.newTypesystem.operation.inequality.RelationAddedOperation(subType, superType, kind, info));
-    }
-  }
-
-  void addComparable(SNode subType, SNode superType, boolean isWeak, EquationInfo info) {
-    RelationKind kind = isWeak ? RelationKind.WEAK_COMPARABLE : RelationKind.STRONG_COMPARABLE;
-    if (!getRelation(kind).contains(subType, superType)) {
-      myState.executeOperation(new jetbrains.mps.newTypesystem.operation.inequality.RelationAddedOperation(subType, superType, kind, info));
-    }
   }
 
   public void solveInequalities() {
     solveOnlyConcrete = false;
-    getWeakInequalities().solve();
-    getStrongInequalities().solve();
+    //todo implement
+    /* solve(false);
+    solve(true);*/
   }
 
-  public List<String> getListPresentation() {
-    List<String> result = new LinkedList<String>();
-    for (jetbrains.mps.newTypesystem.state.RelationMapPair inequalityMapPair : myRelations.values()) {
-      result.addAll(inequalityMapPair.getListPresentation());
+ /* private void solve(boolean shallow) {
+    for (int i = 1; i < 7; i++) {
+      //todo more sensible loop, this is for debug
+      iteration(shallow, true);
+      iteration(shallow, false);
     }
-    return result;
   }
 
-  public void check() {
-    getWeakCheckInequalities().check();
-    getStrongCheckInequalities().check();
+  private boolean iteration(boolean shallow, boolean sub) {
+
+    Map<SNode, Map<SNode, EquationInfo>> map = sub ? mySubToSuper : mySuperToSub;
+    SubTyping subTyping = new SubTyping(myState);
+    boolean stateChanged = false;
+    for (SNode node : new HashSet<SNode>(map.keySet())) {
+      Map<SNode, EquationInfo> otherMap = map.get(node);
+      if (otherMap == null) {
+        continue;
+      }
+      Set<SNode> concreteTypes = getConcrete(otherMap.keySet(), shallow);
+      if (concreteTypes == null || concreteTypes.isEmpty()) {
+        continue;
+      }
+      Set<SNode> expandedConcreteTypes = myState.getEquations().expandSet(concreteTypes);
+      if (TypesUtil.isVariable(node)) {
+        SNode type = sub ? subTyping.createMeet(expandedConcreteTypes) : subTyping.createLCS(expandedConcreteTypes);
+        for (SNode concreteType : expandedConcreteTypes) {
+          //  EquationInfo info = map.get(node).get(concreteType);
+          if (sub) {
+            removeAndTrack(node, concreteType);
+          } else {
+            removeAndTrack(concreteType, node);
+          }
+        }
+        myState.addEquation(node, type, null);
+      } else if (myState.isConcrete(node, shallow)) {
+        for (SNode concreteType : expandedConcreteTypes) {
+          EquationInfo info = map.get(node).get(concreteType);
+          if (sub) {
+            removeAndTrack(node, concreteType);
+            myState.addRelation(node, concreteType, myKind, info);
+          } else {
+            removeAndTrack(concreteType, node);
+            myState.addRelation(concreteType, node, myKind, info);
+          }
+        }
+      }
+      stateChanged = true;
+    }
+    return stateChanged;
   }
+*/
 
   public void clear() {
-    for (jetbrains.mps.newTypesystem.state.RelationMapPair inequalityMapPair : myRelations.values()) {
-      inequalityMapPair.clear();
-    }
     solveOnlyConcrete = true;
-  }
-
-  public jetbrains.mps.newTypesystem.state.RelationMapPair getWeakInequalities() {
-    return myRelations.get(RelationKind.WEAK);
-  }
-
-  public jetbrains.mps.newTypesystem.state.RelationMapPair getStrongInequalities() {
-    return myRelations.get(RelationKind.STRONG);
-  }
-
-  public jetbrains.mps.newTypesystem.state.RelationMapPair getWeakCheckInequalities() {
-    return myRelations.get(RelationKind.WEAK_CHECK);
-  }
-
-  public jetbrains.mps.newTypesystem.state.RelationMapPair getStrongCheckInequalities() {
-    return myRelations.get(RelationKind.STRONG_CHECK);
-  }
-
-  public jetbrains.mps.newTypesystem.state.RelationMapPair getWeakComparable() {
-    return myRelations.get(RelationKind.WEAK_COMPARABLE);
-  }
-
-  public jetbrains.mps.newTypesystem.state.RelationMapPair getStrongComparable() {
-    return myRelations.get(RelationKind.STRONG_COMPARABLE);
-  }
-
-  public jetbrains.mps.newTypesystem.state.RelationMapPair getRelation(RelationKind kind) {
-    return myRelations.get(kind);
   }
 }
