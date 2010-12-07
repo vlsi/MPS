@@ -99,8 +99,10 @@ public class JUnitConfigEditor extends JPanel {
     component.add(this.createComponent_d0(), LayoutUtil.createPanelConstraints(1));
     component.add(this.createComponent_e0(), LayoutUtil.createPanelConstraints(1));
     this.myEvents.initialize();
-    myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
-    myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
+    if (myThis.getProject() != null) {
+      myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
+      myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
+    }
     myThis.myTestCases_d0.init(myThis.getNodes(), false);
     myThis.myTestMethods_e0.init(myThis.getMethods(), true);
     myThis.setButtons(new JRadioButton[JUnitRunTypes.values().length]);
