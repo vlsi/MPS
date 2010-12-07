@@ -122,7 +122,7 @@ public class State {
         return;
       }
       for (Block block : blocks) {
-        for (SNode variable : conditionKind.getUnresolvedInputs(type)) {
+        for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
           addInputAndTrack(block, variable, conditionKind);
         }
         removeInputAndTrack(block, oldVar, conditionKind);
@@ -162,7 +162,7 @@ public class State {
     for (Pair<SNode,ConditionKind> input : initialInputs) {
       SNode type = input.first;
       ConditionKind conditionKind = input.second;
-      for (SNode variable : conditionKind.getUnresolvedInputs(type)) {
+      for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
         addInputAndTrack(block, variable, conditionKind);
       }
     }

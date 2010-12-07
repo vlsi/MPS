@@ -21,16 +21,16 @@ import jetbrains.mps.smodel.SNode;
 import java.util.*;
 
 /**
-* Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 06.12.10
-* Time: 22:37
-* To change this template use File | Settings | File Templates.
-*/
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 06.12.10
+ * Time: 22:37
+ * To change this template use File | Settings | File Templates.
+ */
 public enum ConditionKind {
   ANY {
     @Override
-    public List<SNode> getUnresolvedInputs(SNode node) {
+    public List<SNode> getUnresolvedInputs(SNode node, State state) {
       return Collections.EMPTY_LIST;
     }
 
@@ -41,10 +41,11 @@ public enum ConditionKind {
   },
   SHALLOW {
     @Override
-    public List<SNode> getUnresolvedInputs(SNode node) {
+    public List<SNode> getUnresolvedInputs(SNode node, State state) {
       if (node != null) {
-        if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-          return Arrays.asList(node);
+        SNode representative = state.getRepresentative(node);
+        if (representative.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+          return Arrays.asList(representative);
         }
       }
       return Collections.EMPTY_LIST;
@@ -57,21 +58,25 @@ public enum ConditionKind {
   },
   CONCRETE {
     @Override
-    public List<SNode> getUnresolvedInputs(SNode node) {
+    public List<SNode> getUnresolvedInputs(SNode node, State state) {
       if (node == null) {
         return new LinkedList<SNode>();
       }
-      if (node.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-        return Arrays.asList(node);
+      SNode representative = state.getRepresentative(node);
+      if (representative.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+        return Arrays.asList(representative);
       }
       List<SNode> result = new ArrayList<SNode>();
-      for (SNode referent : node.getReferents()) {
-        if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-          result.add(referent);
+      for (SNode referent : representative.getReferents()) {
+        if (referent != null) {
+          SNode refRepresentative = state.getRepresentative(referent);
+          if (refRepresentative.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+            result.add(refRepresentative);
+          }
         }
       }
-      for (SNode child : node.getChildren(false)) {
-        result.addAll(getUnresolvedInputs(child));
+      for (SNode child : representative.getChildren(false)) {
+        result.addAll(getUnresolvedInputs(child, state));
       }
       return result;
     }
@@ -82,7 +87,7 @@ public enum ConditionKind {
     }
   };
 
-  public abstract List<SNode> getUnresolvedInputs(SNode node);
+  public abstract List<SNode> getUnresolvedInputs(SNode node, State state);
 
   public abstract String getPresentation();
 }
