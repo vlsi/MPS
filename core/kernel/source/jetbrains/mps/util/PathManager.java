@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.logging.Logger;
+import org.apache.commons.lang.StringUtils;
 
 import java.io.File;
 import java.net.URL;
@@ -133,7 +134,7 @@ public class PathManager {
       resultPath = resultPath.substring(0, resultPath.length() - 1);
     }
 
-    resultPath = StringUtil.replace(resultPath, "%20", " ");
+    resultPath = StringUtils.replace(resultPath, "%20", " ");
     return resultPath;
   }
 }

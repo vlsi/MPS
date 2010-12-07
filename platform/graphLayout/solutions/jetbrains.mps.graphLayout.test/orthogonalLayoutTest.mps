@@ -10,11 +10,11 @@
   <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="n1y2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="5s23" modelUID="r:c20b0f8c-abbe-4eb9-8b1f-6472cf6ea30c(jetbrains.mps.graphLayout.stOrthogonalLayout)" version="-1" />
-  <import index="kthp" modelUID="r:d228b8c9-d2b1-4686-9904-e3c49a346bc6(jetbrains.mps.graphLayout.graph)" version="-1" />
+  <import index="kthp" modelUID="r:d228b8c9-d2b1-4686-9904-e3c49a346bc6(jetbrains.mps.graphLayout.graph)" version="0" />
   <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="zcas" modelUID="r:d0ff68b2-4710-4f71-b818-0fa9dd95286e(jetbrains.mps.graphLayout.planarization)" version="-1" />
   <import index="j8ic" modelUID="r:839ad18f-aa0d-4b1a-8b4c-ca87cf3bcac6(jetbrains.mps.graphLayout.graphLayout)" version="-1" />
-  <import index="x9z7" modelUID="r:8254b240-abed-4f97-a7cd-2eef733ec7fb(jetbrains.mps.graphLayout.util)" version="-1" />
+  <import index="x9z7" modelUID="r:8254b240-abed-4f97-a7cd-2eef733ec7fb(jetbrains.mps.graphLayout.util)" version="0" />
   <import index="p08e" modelUID="r:5aba4e89-d910-492c-9b56-c5e3fe8c0f28(jetbrains.mps.graphLayout.algorithms)" version="-1" />
   <import index="6bc0" modelUID="r:1674ee60-7c44-4176-8f8c-2c87c767d971(sampleGraphs)" version="-1" />
   <import index="5ked" modelUID="r:0556f5bf-4f71-4957-94d0-632c34bda241(jetbrains.mps.graphLayout.flowOrthogonalLayout)" version="-1" />
@@ -4552,10 +4552,13 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7428187320254617023">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7428187320254617025">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o2ld.1123934034178617962" resolveInfo="checkEmbeddedGraph" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="o2ld.1123934034178617860" resolveInfo="CheckEmbeddedGraph" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o2ld.4136567681074297509" resolveInfo="checkEmbeddedGraph" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7428187320254617026">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4655725461921804742" resolveInfo="embeddedGraph" />
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4136567681074455575">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
             </node>
           </node>
         </node>
@@ -5536,10 +5539,13 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5736847780448733393">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5736847780448733395">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o2ld.1123934034178617962" resolveInfo="checkEmbeddedGraph" />
             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="o2ld.1123934034178617860" resolveInfo="CheckEmbeddedGraph" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o2ld.4136567681074297509" resolveInfo="checkEmbeddedGraph" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5736847780448733396">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="100801320082837133" resolveInfo="embeddedGraph" />
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4136567681074455577">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
             </node>
           </node>
         </node>

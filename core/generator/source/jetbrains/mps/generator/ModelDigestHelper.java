@@ -61,14 +61,6 @@ public class ModelDigestHelper {
     return ModelDigestUtil.calculateHashes(modelFile);
   }
 
-  public static String hash(byte[] content) {
-    return ModelDigestUtil.hash(content);
-  }
-
-  public static Map<String, String> getDigestMap(byte[] modelBytes) {
-    return ModelDigestUtil.getDigestMap(modelBytes);
-  }
-
   public interface DigestProvider {
     Map<String, String> getGenerationHashes(IOperationContext operationContext, @NotNull IFile f);
   }

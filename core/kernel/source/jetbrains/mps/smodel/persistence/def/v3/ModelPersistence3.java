@@ -17,33 +17,25 @@ package jetbrains.mps.smodel.persistence.def.v3;
 
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.v2.ModelPersistence2;
-import jetbrains.mps.vfs.IFile;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Nov 2, 2010
- * Time: 7:49:43 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelPersistence3 extends ModelPersistence2 {
-  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter3();
   }
 
-  @Override
   public IModelReader getModelReader() {
     return new ModelReader3();
   }
 
-  @Override
+  public IHashProvider getHashProvider() {
+    return new HashProvider3();
+  }
+
   public SModelReference upgradeModelUID(SModelReference modelReference) {
     return new SModelReference(new SModelFqName(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype())), modelReference.getSModelId());
   }
-
 }

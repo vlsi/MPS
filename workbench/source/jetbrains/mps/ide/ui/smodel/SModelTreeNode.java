@@ -476,22 +476,4 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myModelDescriptor;
   }
 
-  public static enum GenerationStatus {
-    PACKAGED("packaged"),
-    DO_NOT_GENERATE("do not generate"),
-    UPDATING("updating..."),
-    REQUIRED("generation required"),
-    NOT_REQUIRED(null);
-
-    private String myMessage;
-
-    GenerationStatus(String message) {
-      myMessage = message;
-    }
-
-    @Nullable
-    public String getMessage() {
-      return myMessage;
-    }
-  }
 }

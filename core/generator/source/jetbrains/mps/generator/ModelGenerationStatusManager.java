@@ -21,6 +21,7 @@ import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
+import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -197,7 +198,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       }
     }
 
-    String hash = ModelDigestHelper.hash(content);
+    String hash = ModelDigestUtil.hash(content);
     return ModelGenerationStatusManager.HASH_PREFIX + hash;
   }
 

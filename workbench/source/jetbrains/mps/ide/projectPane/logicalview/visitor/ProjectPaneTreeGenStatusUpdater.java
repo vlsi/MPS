@@ -25,12 +25,12 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode.GenerationStatus;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 
@@ -126,5 +126,24 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
         node.updateNodePresentationInTree();
       }
     });
+  }
+
+  public static enum GenerationStatus {
+    PACKAGED("packaged"),
+    DO_NOT_GENERATE("do not generate"),
+    UPDATING("updating..."),
+    REQUIRED("generation required"),
+    NOT_REQUIRED(null);
+
+    private String myMessage;
+
+    GenerationStatus(String message) {
+      myMessage = message;
+    }
+
+    @Nullable
+    public String getMessage() {
+      return myMessage;
+    }
   }
 }

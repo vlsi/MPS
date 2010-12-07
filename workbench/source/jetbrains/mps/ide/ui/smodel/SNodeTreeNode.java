@@ -72,15 +72,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
   }
 
-  protected void onAdd() {
-    super.onAdd();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        updatePresentation();
-      }
-    });
-  }
-
   protected void onRemove() {
     super.onRemove();
     if (getSModelModelTreeNode() != null) {

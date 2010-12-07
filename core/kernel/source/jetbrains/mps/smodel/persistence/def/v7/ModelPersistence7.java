@@ -17,37 +17,33 @@ package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.def.v3.HashProvider3;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
 import java.util.List;
 
-/**
- * User: Michael.Vlassiev
- * Date: Nov 2, 2010
- * Time: 5:02:26 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelPersistence7 extends ModelPersistence5 {
-  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter7();
   }
 
-  @Override
   public IModelReader getModelReader() {
     return new ModelReader7();
   }
 
-  @Override
+  public IHashProvider getHashProvider() {
+    return new HashProvider7();
+  }
+
   public XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state) {
     return state == ModelLoadingState.ROOTS_LOADED || state == ModelLoadingState.FULLY_LOADED ? new ModelReader7Handler(state) : null;
   }
 
-  @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader7Handler();
   }

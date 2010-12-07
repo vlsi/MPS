@@ -24,7 +24,7 @@ import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.DataInput;
@@ -52,7 +52,7 @@ public class ModelDigestIndex extends SingleEntryFileBasedIndexExtension<Map<Str
       @Override
       protected Map<String, String> computeValue(@NotNull FileContent inputData) {
         final byte[] content = inputData.getContent();
-        return ModelDigestHelper.getDigestMap(content);
+        return ModelDigestUtil.getDigestMap(content);
       }
     };
   }

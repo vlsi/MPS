@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence.def.v0;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -27,13 +28,6 @@ import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Nov 2, 2010
- * Time: 6:32:43 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelPersistence0 implements IModelPersistence {
   public IModelWriter getModelWriter() {
     return null;
@@ -41,6 +35,10 @@ public class ModelPersistence0 implements IModelPersistence {
 
   public IModelReader getModelReader() {
     return new ModelReader0();
+  }
+
+  public IHashProvider getHashProvider() {
+    return new jetbrains.mps.smodel.persistence.def.IHashProvider.SimpleHashProvider();
   }
 
   public XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state) {

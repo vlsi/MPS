@@ -17,39 +17,34 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.def.v3.HashProvider3;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Nov 2, 2010
- * Time: 5:02:26 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelPersistence6 extends ModelPersistence5 {
-  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter6();
   }
 
-  @Override
   public IModelReader getModelReader() {
     return new ModelReader6();
   }
 
-  @Override
+  public IHashProvider getHashProvider() {
+    return new HashProvider3();
+  }
+
   public XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state) {
     Handler6 handler = new Handler6();
     return handler.setPartialLoading(state) ? handler : null;
   }
 
-  @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader6Handler();
   }

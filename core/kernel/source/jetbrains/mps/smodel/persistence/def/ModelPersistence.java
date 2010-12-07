@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.persistence.def;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.StructureModificationHistory;
@@ -124,7 +126,7 @@ public class ModelPersistence {
   }
   //--------read--------
 
-  private static void doLoadDescriptor(final DescriptorLoadResult result, InputSource source) {
+  public static void loadDescriptor(final DescriptorLoadResult result, InputSource source) {
     DefaultHandler handler = new DefaultHandler() {
       public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (MODEL.equals(qName)) {
@@ -168,7 +170,7 @@ public class ModelPersistence {
     }
 
     try {
-      doLoadDescriptor(result, JDOMUtil.loadSource(file));
+      loadDescriptor(result, JDOMUtil.loadSource(file));
     } catch (IOException ignored) {
     }
 
@@ -229,7 +231,7 @@ public class ModelPersistence {
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) {
     DescriptorLoadResult loadResult = new DescriptorLoadResult();
-    doLoadDescriptor(loadResult, new InputSource(new StringReader(content)));
+    loadDescriptor(loadResult, new InputSource(new StringReader(content)));
 
     int version = loadResult.getPersistenceVersion();
 
@@ -412,6 +414,13 @@ public class ModelPersistence {
       return DocUtil.readIntAttributeValue(persistence, PERSISTENCE_VERSION);
     }
     return 0;
+  }
+
+  public static Map<String, String> calculateHashes(byte[] modelBytes, int persistenceVersion) {
+    IHashProvider hashProvider = getModelPersistence(persistenceVersion).getHashProvider();
+    Map<String,String> result = hashProvider.getRootHashes(modelBytes);
+    result.put(ModelDigestHelper.FILE, hashProvider.getHash(modelBytes));
+    return result;
   }
 
   //--------deprecated--------

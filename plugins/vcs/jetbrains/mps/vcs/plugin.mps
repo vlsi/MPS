@@ -44,6 +44,7 @@
   <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="tq4k" modelUID="f:java_stub#com.intellij.openapi.vcs.annotate(com.intellij.openapi.vcs.annotate@java_stub)" version="-1" />
   <import index="bvbc" modelUID="r:f509a650-cbd9-47e7-b2a0-79f49c562c0b(jetbrains.mps.vcs.annotation)" version="-1" />
+  <import index="qir2" modelUID="f:java_stub#jetbrains.mps.generator.impl.dependencies(jetbrains.mps.generator.impl.dependencies@java_stub)" version="-1" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -1074,10 +1075,10 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7545884443035896193">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9050290358924394922">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qspx.~ModelDigestHelper%dhash(byte[])%cjava%dlang%dString" resolveInfo="hash" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qspx.~ModelDigestHelper" resolveInfo="ModelDigestHelper" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9050290358924394923">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1864815924658196545">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qir2.~ModelDigestUtil" resolveInfo="ModelDigestUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qir2.~ModelDigestUtil%dhash(byte[])%cjava%dlang%dString" resolveInfo="hash" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1864815924658196546">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7545884443035896188" resolveInfo="currentBytes" />
             </node>
           </node>

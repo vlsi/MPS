@@ -7,6 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Graph implements IGraph {
+  private static int showInfo = 0;
+
   private GraphModificationProcessor myProcessor;
   private List<Node> myNodes;
   private int myNextNum;
@@ -51,12 +53,18 @@ public class Graph implements IGraph {
       throw new RuntimeException("try to connect nodes of other graph");
     }
     Edge edge = sourceNode.addEdgeTo(targetNode);
+    if (showInfo > 0) {
+      System.out.println("graph: " + this.hashCode() + "added edge: " + edge);
+    }
     myProcessor.fire(new GraphModificationEvent(GraphModificationEvent.Type.EDGE_ADDED, edge));
     return edge;
   }
 
   public void addEdge(Edge edge) {
     edge.addToGraph();
+    if (showInfo > 0) {
+      System.out.println("graph: " + this.hashCode() + "restore edge: " + edge);
+    }
     myProcessor.fire(new GraphModificationEvent(GraphModificationEvent.Type.EDGE_ADDED, edge));
   }
 
@@ -92,13 +100,11 @@ public class Graph implements IGraph {
   }
 
   public List<Edge> splitEdge(Edge edge) {
-    myProcessor.suspend();
-    edge.removeFromGraph();
+    removeEdge(edge);
     List<Edge> newEdges = ListSequence.fromList(new ArrayList<Edge>(2));
     Node middleNode = createDummyNode();
     ListSequence.fromList(newEdges).addElement(connect(edge.getSource(), middleNode));
     ListSequence.fromList(newEdges).addElement(connect(middleNode, edge.getTarget()));
-    myProcessor.resume();
     myProcessor.fire(new GraphModificationEvent(GraphModificationEvent.Type.EDGE_SPLITTED, edge, newEdges));
     return newEdges;
   }
@@ -134,5 +140,9 @@ public class Graph implements IGraph {
 
   public GraphModificationProcessor getModificationProcessor() {
     return myProcessor;
+  }
+
+  public Graph createNew() {
+    return new Graph();
   }
 }
