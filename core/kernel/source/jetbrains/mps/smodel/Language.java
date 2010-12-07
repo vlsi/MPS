@@ -514,8 +514,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     //if we haven't found a root concept, then try to find in any node in the model
     myNameToConceptCache.put(conceptName, null);
-    for (SNode node : structureModel.getFastNodeFinder().getNodes(AbstractConceptDeclaration.concept, true)) {
-      myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
+    for (SNode node:structureModel.nodes()){
+      if (node.getAdapter() instanceof AbstractConceptDeclaration) {
+        myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
+      }
     }
 
     return myNameToConceptCache.get(conceptName);
