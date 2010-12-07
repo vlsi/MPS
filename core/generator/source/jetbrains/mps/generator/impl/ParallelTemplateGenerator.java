@@ -8,12 +8,15 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -58,18 +61,27 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void createRootNodeFromTemplate(final String mappingName, @NotNull final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure, final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
+  protected void createRootNodeByRule(final TemplateCreateRootRule rule, final TemplateExecutionEnvironment environment) throws GenerationCanceledException, GenerationFailureException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
-        ParallelTemplateGenerator.super.createRootNodeFromTemplate(mappingName, templateNode, inputNode, copyRootOnFailure, environment);
+        ParallelTemplateGenerator.super.createRootNodeByRule(rule, environment);
       }
-    }, new Pair(inputNode, templateNode), environment.getReductionContext().getQueryExecutor());
-
+    }, new Pair(null, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
   }
 
   @Override
-  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
+  protected void createRootNodeByRule(final TemplateRootMappingRule rule, final SNode inputNode, final boolean copyRootOnFailure, final TemplateExecutionEnvironment environment) throws GenerationCanceledException, GenerationFailureException {
+    pushTask(new RootGenerationTask() {
+      @Override
+      public void run() throws GenerationCanceledException, GenerationFailureException {
+        ParallelTemplateGenerator.super.createRootNodeByRule(rule, inputNode, copyRootOnFailure, environment);
+      }
+    }, new Pair(inputNode, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
+  }
+
+  @Override
+  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode, @NotNull final TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
@@ -128,10 +140,10 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNode templateNode) {
+  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodePointer templateNode) {
     RootGenerationTask task = myInputToTask.get(new Pair(inputNode, templateNode));
     if (task == null) {
-      showErrorMessage(inputNode, templateNode, "internal: cannot find task for generated root");
+      showErrorMessage(inputNode, templateNode.getNode(), "internal: cannot find task for generated root");
     } else {
       task.addGeneratedRoot(outputRoot);
     }

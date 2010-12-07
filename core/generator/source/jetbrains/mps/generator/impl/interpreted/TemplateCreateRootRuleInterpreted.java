@@ -15,13 +15,19 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.TemplateProcessor;
+import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.CreateRootRule;
+import jetbrains.mps.lang.generator.structure.MappingLabelDeclaration;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -42,19 +48,6 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
   @Override
   public SNodePointer getRuleNode() {
     return new SNodePointer(ruleNode);
-  }
-
-  @Override
-  public Collection<SNode> apply(TemplateExecutionEnvironment environment) {
-    // TODO
-
-
-    return null;
-  }
-
-  @Deprecated
-  public CreateRootRule getNode() {
-    return (CreateRootRule) ruleNode.getAdapter();
   }
 
   @Override
@@ -79,5 +72,20 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
       throw new GenerationFailureException("error executing condition ", ruleNode, t);
     }
     return false;
+  }
+
+  @Override
+  public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, TemplateProcessingFailureException, GenerationFailureException, DismissTopMappingRuleException {
+    SNode templateNode = ruleNode.getReferent(CreateRootRule.TEMPLATE_NODE);
+    if (templateNode != null) {
+      SNode labelDeclaration = ruleNode.getReferent(CreateRootRule.LABEL);
+      String ruleMappingName = labelDeclaration != null ? labelDeclaration.getProperty(MappingLabelDeclaration.NAME) : null;
+
+      return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
+        .processTemplateNode(ruleMappingName, templateNode, new DefaultTemplateContext(null));
+    } else {
+      environment.getGenerator().showErrorMessage(null, null, ruleNode, "'create root' rule has no template");
+      return null;
+    }
   }
 }

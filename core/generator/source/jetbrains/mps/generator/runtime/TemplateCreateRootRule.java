@@ -24,5 +24,5 @@ import java.util.Collection;
  */
 public interface TemplateCreateRootRule extends TemplateRuleWithCondition {
 
-  Collection<SNode> apply(TemplateExecutionEnvironment environment);
+  Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException;
 }

@@ -15,16 +15,24 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.TemplateProcessor;
+import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.lang.generator.structure.MappingLabelDeclaration;
 import jetbrains.mps.lang.generator.structure.Root_MappingRule;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.Collection;
 
@@ -47,12 +55,6 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
   }
 
   @Override
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    // TODO
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
   public String getApplicableConcept() {
     return NameUtil.nodeFQName(this.applicableConcept);
   }
@@ -63,20 +65,48 @@ public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRu
   }
 
   @Override
-  public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    // TODO
-
-    return null;
-  }
-
-  @Override
   public boolean keepSourceRoot() {
     String value = ruleNode.getProperty(Root_MappingRule.KEEP_SOURCE_ROOT);
     return Options_DefaultTrue.parseValue(value) == Options_DefaultTrue.true_;
   }
 
-  @Deprecated
-  public Root_MappingRule getNode() {
-    return (Root_MappingRule) ruleNode.getAdapter();
+  @Override
+  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+    SNode condition = ruleNode.getChild(Root_MappingRule.CONDITION_FUNCTION);
+    if (condition == null) {
+      return true;
+    }
+
+    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
+    try {
+      return (Boolean) QueryMethodGenerated.invoke(
+        methodName,
+        environment.getGenerator().getGeneratorSessionContext(),
+        new BaseMappingRuleContext(context.getInput(), ruleNode, environment.getGenerator()),
+        ruleNode.getModel(),
+        true);
+    } catch (ClassNotFoundException e) {
+      environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (NoSuchMethodException e) {
+      environment.getGenerator().getLogger().warning(condition, "cannot find condition method '" + methodName + "' : evaluate to FALSE");
+    } catch (Throwable t) {
+      throw new GenerationFailureException("error executing condition ", condition, t);
+    }
+    return false;
+  }
+
+  @Override
+  public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    SNode templateNode = ruleNode.getReferent(Root_MappingRule.TEMPLATE);
+    if (templateNode != null) {
+      SNode labelDeclaration = ruleNode.getReferent(Root_MappingRule.LABEL_DECLARATION);
+      String ruleMappingName = labelDeclaration != null ? labelDeclaration.getProperty(MappingLabelDeclaration.NAME) : null;
+
+      return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
+        .processTemplateNode(ruleMappingName, templateNode, context);
+    } else {
+      environment.getGenerator().showErrorMessage(context.getInput(), null, ruleNode, "no template is defined for the rule");
+    }
+    return null;
   }
 }

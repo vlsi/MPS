@@ -23,8 +23,6 @@ import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureE
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
-import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
-import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
@@ -34,9 +32,6 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.generator.structure.CreateRootRule;
-import jetbrains.mps.lang.generator.structure.Root_MappingRule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -190,21 +185,19 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void applyCreateRootRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException, GenerationCanceledException {
-    if (environment.getReductionContext().getQueryExecutor().isApplicable(rule, environment, null)) {
-      CreateRootRule createRootRule = ((TemplateCreateRootRuleInterpreted)rule).getNode();
-      INamedConcept templateNode = createRootRule.getTemplateNode();
-      if (templateNode == null) {
-        showErrorMessage(null, null, rule.getRuleNode().getNode(), "'create root' rule has no template");
-      } else {
+    try {
+      if (environment.getReductionContext().getQueryExecutor().isApplicable(rule, environment, null)) {
         myGenerationTracer.pushRule(rule.getRuleNode());
         try {
-          createRootNodeFromTemplate(
-            GeneratorUtil.getMappingName(createRootRule, null),
-            BaseAdapter.fromAdapter(templateNode), null, false, environment);
+          createRootNodeByRule(rule, environment);
         } finally {
           myGenerationTracer.closeRule(rule.getRuleNode());
         }
       }
+    } catch (GenerationException e) {
+      if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
+      if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
+      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
     }
   }
 
@@ -222,48 +215,78 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (getGeneratorSessionContext().isCopiedRoot(inputNode)) continue;
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
-      if(executionContext != null) {
+      if (executionContext != null) {
         TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(this, new ReductionContext(executionContext), getOperationContext(), myGenerationTracer);
-        Root_MappingRule rootMappingRule = ((TemplateRootMappingRuleInterpreted)rule).getNode();
-        if (executionContext.checkCondition(rootMappingRule.getConditionFunction(), false, inputNode, rootMappingRule.getNode())) {
-          myGenerationTracer.pushInputNode(inputNode);
-          myGenerationTracer.pushRule(rule.getRuleNode());
-          try {
-            SNode templateNode = BaseAdapter.fromAdapter(rootMappingRule.getTemplate());
-            if (templateNode != null) {
+        try {
+          if (executionContext.isApplicable(rule, environment, new DefaultTemplateContext(inputNode))) {
+            myGenerationTracer.pushInputNode(inputNode);
+            myGenerationTracer.pushRule(rule.getRuleNode());
+            try {
               boolean copyRootOnFailure = false;
               if (inputNode.isRoot() && !rule.keepSourceRoot()) {
                 rootsToCopy.remove(inputNode);
                 copyRootOnFailure = true;
               }
-              createRootNodeFromTemplate(GeneratorUtil.getMappingName(rootMappingRule, null), templateNode, inputNode, copyRootOnFailure, environment);
-            } else {
-              myLogger.error(BaseAdapter.fromAdapter(rootMappingRule), "no template is defined for the rule");
+              createRootNodeByRule(rule, inputNode, copyRootOnFailure, environment);
+            } finally {
+              myGenerationTracer.closeInputNode(inputNode);
             }
-          } finally {
-            myGenerationTracer.closeInputNode(inputNode);
           }
+        } catch (GenerationException e) {
+          if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
+          if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
+          showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
         }
       }
     }
   }
 
-  protected void createRootNodeFromTemplate(String mappingName, @NotNull SNode templateNode, SNode inputNode, boolean copyRootOnFailure, TemplateExecutionEnvironment environment)
-    throws GenerationFailureException, GenerationCanceledException {
-
+  protected void createRootNodeByRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationCanceledException, GenerationFailureException {
     try {
-      List<SNode> outputNodes = new TemplateProcessor(this, environment.getReductionContext()).processTemplateNode(mappingName, templateNode, new DefaultTemplateContext(inputNode));
+      Collection<SNode> outputNodes = environment.getReductionContext().getQueryExecutor().applyRule(rule, environment);
+      if (outputNodes == null) {
+        return;
+      }
+
       for (SNode outputNode : outputNodes) {
-        registerRoot(outputNode, inputNode, templateNode, false);
+        registerRoot(outputNode, null, rule.getRuleNode(), false);
         setChanged();
       }
+    } catch (DismissTopMappingRuleException ex) {
+      // it's ok, just continue
+    } catch (TemplateProcessingFailureException e) {
+      showErrorMessage(null, rule.getRuleNode().getNode(), "couldn't create root node");
+    } catch (GenerationException e) {
+      if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
+      if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
+      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+    }
+  }
+
+  protected void createRootNodeByRule(TemplateRootMappingRule rule, SNode inputNode, boolean copyRootOnFailure, TemplateExecutionEnvironment environment)
+    throws GenerationCanceledException, GenerationFailureException {
+    try {
+      Collection<SNode> outputNodes = environment.getReductionContext().getQueryExecutor().applyRule(rule, environment, new DefaultTemplateContext(inputNode));
+      if (outputNodes == null) {
+        return;
+      }
+
+      for (SNode outputNode : outputNodes) {
+        registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
+        setChanged();
+      }
+
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
       if (copyRootOnFailure && inputNode.isRoot()) {
         copyRootNodeFromInput(inputNode, environment);
       }
     } catch (TemplateProcessingFailureException e) {
-      showErrorMessage(inputNode, templateNode, "couldn't create root node");
+      showErrorMessage(inputNode, rule.getRuleNode().getNode(), "couldn't create root node");
+    } catch (GenerationException e) {
+      if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
+      if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
+      showErrorMessage(inputNode, rule.getRuleNode().getNode(), "internal error: " + e.toString());
     }
   }
 
@@ -304,13 +327,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return false;
     }
 
-    if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
-      if(environment.getReductionContext().getQueryExecutor().isApplicable(rule, environment, new DefaultTemplateContext(inputRootNode))) {
-        myGenerationTracer.pushInputNode(inputRootNode);
-        myGenerationTracer.pushRule(rule.getRuleNode());
-        myGenerationTracer.closeInputNode(inputRootNode);
-        return true;
+    try {
+      if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
+        if (environment.getReductionContext().getQueryExecutor().isApplicable(rule, environment, new DefaultTemplateContext(inputRootNode))) {
+          myGenerationTracer.pushInputNode(inputRootNode);
+          myGenerationTracer.pushRule(rule.getRuleNode());
+          myGenerationTracer.closeInputNode(inputRootNode);
+          return true;
+        }
       }
+    } catch (GenerationException e) {
+      if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
+      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
     }
 
     return false;
@@ -642,7 +670,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = true;
   }
 
-  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNode templateNode, boolean isCopied) {
+  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodePointer templateNode, boolean isCopied) {
     synchronized (this) {
       registerInModel(outputRoot, inputNode, templateNode);
       myNewToOldRoot.put(outputRoot, inputNode);
@@ -653,7 +681,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNode templateNode) {
+  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodePointer templateNode) {
     myOutputRoots.add(outputRoot);
   }
 

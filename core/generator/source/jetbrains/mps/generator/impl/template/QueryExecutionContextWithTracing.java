@@ -1,6 +1,8 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
@@ -189,10 +191,36 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     try {
       tracer.push(taskName("check condition", rule.getRuleNode().getNode()), true);
       return wrapped.isApplicable(rule, environment, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    if(rule instanceof TemplateRootMappingRuleInterpreted) {
+      return wrapped.applyRule(rule, environment, context);
+    }
+    try {
+      tracer.push(taskName("root mapping rule", rule.getRuleNode().getNode()), true);
+      return wrapped.applyRule(rule, environment,context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
+    if(rule instanceof TemplateCreateRootRuleInterpreted) {
+      return wrapped.applyRule(rule, environment);
+    }
+    try {
+      tracer.push(taskName("create root rule", rule.getRuleNode().getNode()), true);
+      return wrapped.applyRule(rule, environment);
     } finally {
       tracer.pop();
     }

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.smodel.SNodePointer;
 
 /**
@@ -25,5 +24,5 @@ public interface TemplateRuleWithCondition {
 
   SNodePointer getRuleNode();
 
-  boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException;
+  boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 }

@@ -235,7 +235,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     @Override
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
   }
