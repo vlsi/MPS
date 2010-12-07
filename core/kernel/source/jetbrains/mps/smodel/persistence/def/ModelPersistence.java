@@ -228,19 +228,23 @@ public class ModelPersistence {
     return handleNullReaderForPersistence(name);
   }
 
+  public static int getPersistenceVersion(@NotNull InputSource inputSource) {
+    DescriptorLoadResult loadResult = new DescriptorLoadResult();
+    loadDescriptor(loadResult, inputSource);
+    return loadResult.getPersistenceVersion();
+  }
+
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) {
-    DescriptorLoadResult loadResult = new DescriptorLoadResult();
-    loadDescriptor(loadResult, new InputSource(new StringReader(content)));
-
-    int version = loadResult.getPersistenceVersion();
+    InputSource inputSource = new InputSource(new StringReader(content));
+    int version = getPersistenceVersion(inputSource);
 
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
       XMLSAXHandler<List<LineContent>> handler = getModelPersistence(version).getLineToContentMapReaderHandler();
       if (handler != null) {
         try {
           SAXParser parser = JDOMUtil.createSAXParser();
-          parser.parse(new ByteArrayInputStream(content.getBytes("UTF-8")), (DefaultHandler) handler);
+          parser.parse(inputSource, handler);
           return handler.getResult();
         } catch (Throwable t) {
           LOG.error(t);
