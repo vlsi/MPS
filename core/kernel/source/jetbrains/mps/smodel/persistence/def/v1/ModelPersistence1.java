@@ -15,25 +15,22 @@
  */
 package jetbrains.mps.smodel.persistence.def.v1;
 
+import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.v0.ModelPersistence0;
+import jetbrains.mps.smodel.persistence.def.v0.SimpleHashProvider;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Nov 2, 2010
- * Time: 6:43:13 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelPersistence1 extends ModelPersistence0 {
-  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter1();
   }
 
-  @Override
   public IModelReader getModelReader() {
     return new ModelReader1();
+  }
+
+  public IHashProvider getHashProvider() {
+    return new SimpleHashProvider();
   }
 }

@@ -13,24 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.persistence.def.v4;
+package jetbrains.mps.smodel.persistence.def.v0;
 
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
-import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v3.HashProvider3;
-import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 
-public class ModelPersistence4 extends ModelPersistence3 {
-  public IModelWriter getModelWriter() {
-    return new ModelWriter4();
+import java.util.HashMap;
+import java.util.Map;
+
+public class SimpleHashProvider extends IHashProvider {
+  public String getHash(byte[] modelBytes) {
+    return "";
   }
 
-  public IModelReader getModelReader() {
-    return new ModelReader4();
-  }
-
-  public IHashProvider getHashProvider() {
-    return new HashProvider3();
+  public Map<String, String> getRootHashes(byte[] modelBytes) {
+    return new HashMap<String, String>();
   }
 }

@@ -16,30 +16,26 @@
 package jetbrains.mps.smodel.persistence.def.v2;
 
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.def.v0.SimpleHashProvider;
 import jetbrains.mps.smodel.persistence.def.v1.ModelPersistence1;
 import jetbrains.mps.vfs.IFile;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Michael.Vlassiev
- * Date: Nov 2, 2010
- * Time: 7:44:43 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelPersistence2 extends ModelPersistence1 {
-  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter2();
   }
 
-  @Override
   public IModelReader getModelReader() {
     return new ModelReader2();
   }
 
-  @Override
+  public IHashProvider getHashProvider() {
+    return new SimpleHashProvider();
+  }
+
   public boolean needsRecreating(IFile file) {
     String fileName = file.getName();
     int index = fileName.indexOf('.');
@@ -52,7 +48,6 @@ public class ModelPersistence2 extends ModelPersistence1 {
     return SModelStereotype.TEMPLATES.equals(modelStereotype);
   }
 
-  @Override
   protected String upgradeStereotype(String stereotype) {
     if (SModelStereotype.TEMPLATES.equals(stereotype)) {
       return SModelStereotype.GENERATOR;
