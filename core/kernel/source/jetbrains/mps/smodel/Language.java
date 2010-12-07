@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.lang.core.structure.Core_Language;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
 import jetbrains.mps.lang.refactoring.structure.Refactoring;
@@ -505,7 +506,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (myNamesLoadingState.compareTo(ModelLoadingState.ROOTS_LOADED) <= 0) {
       for (SNode root : structureModel.roots()) {
         if (root.getAdapter() instanceof AbstractConceptDeclaration) {
-          myNameToConceptCache.put(root.getName(), (AbstractConceptDeclaration) root.getAdapter());
+          myNameToConceptCache.put(root.getPersistentProperty(INamedConcept.NAME), (AbstractConceptDeclaration) root.getAdapter());
         }
       }
       if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
