@@ -78,12 +78,6 @@ public class NodeMaps {
   }
 
   @StateMethod
-  public void removeNodeTypeDontChangeSource(SNode node) {
-    myState.assertIsInStateChangeAction();
-    myNodesToTypes.remove(node);
-  }
-
-  @StateMethod
   public void addError(SNode node, IErrorReporter errorReporter) {
     myState.assertIsInStateChangeAction();
     List<IErrorReporter> errors = myNodesToErrors.get(node);
