@@ -217,11 +217,11 @@
     <nodeInfo nodeId="5686963296372576471" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="replace_withAnotherSequenceType.java" startLine="31" startPosition="505" endLine="32" endPosition="134" />
     <nodeInfo nodeId="5686963296372870434" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="34" startPosition="41" endLine="35" endPosition="74" />
     <nodeInfo nodeId="7246115176735615110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="44" startPosition="144" endLine="45" endPosition="90" />
-    <nodeInfo nodeId="5686963296372870424" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="replace_withAnotherSequenceType.java" startLine="33" startPosition="150" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="5686963296372870424" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="replace_withAnotherSequenceType.java" startLine="33" startPosition="150" endLine="37" endPosition="0" />
     <nodeInfo nodeId="5686963296372576461" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="replace_withAnotherSequenceType.java" startLine="32" startPosition="134" endLine="37" endPosition="64" />
     <scopeInfo nodeId="5686963296372870425" fileName="replace_withAnotherSequenceType.java" startLine="34" startPosition="41" endLine="35" endPosition="74" />
     <scopeInfo nodeId="7246115176735615087" fileName="replace_withAnotherSequenceType.java" startLine="44" startPosition="144" endLine="45" endPosition="90" />
-    <scopeInfo nodeId="5686963296372870424" fileName="replace_withAnotherSequenceType.java" startLine="33" startPosition="150" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5686963296372870424" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="replace_withAnotherSequenceType.java" startLine="33" startPosition="150" endLine="37" endPosition="0" />
     <scopeInfo nodeId="7246115176735615085" fileName="replace_withAnotherSequenceType.java" startLine="30" startPosition="105" endLine="37" endPosition="64">
       <varInfo nodeId="3357971920377774943" varName="others" />
       <varInfo nodeId="5686963296372576472" varName="act" />
