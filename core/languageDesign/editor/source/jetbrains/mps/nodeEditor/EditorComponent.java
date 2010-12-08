@@ -66,7 +66,6 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.SystemInfo;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.IFile;
@@ -1258,10 +1257,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && noKeysDown(keyEvent)) {
       return CellActionType.DOWN;
     }
-    if (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT && noKeysDown(keyEvent)) {
+    if (!com.intellij.openapi.util.SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT && noKeysDown(keyEvent)) {
       return CellActionType.INSERT_BEFORE;
     }
-    if (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_ENTER && shiftDown(keyEvent)) {
+    if (com.intellij.openapi.util.SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_ENTER && shiftDown(keyEvent)) {
       return CellActionType.INSERT_BEFORE;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && noKeysDown(keyEvent)) {
@@ -1358,10 +1357,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     // ---
-    if (keyEvent.getKeyCode() == KeyEvent.VK_C && (SystemInfo.isMac ? metaDown(keyEvent) : ctrlDown(keyEvent))) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_C && (com.intellij.openapi.util.SystemInfo.isMac ? metaDown(keyEvent) : ctrlDown(keyEvent))) {
       return CellActionType.COPY;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_X && (SystemInfo.isMac ? metaDown(keyEvent) : ctrlDown(keyEvent))) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_X && (com.intellij.openapi.util.SystemInfo.isMac ? metaDown(keyEvent) : ctrlDown(keyEvent))) {
       return CellActionType.CUT;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_V) {
@@ -1678,7 +1677,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       goByCurrentReference();
     }
 
-    boolean ctrlDown = SystemInfo.isMac ? mouseEvent.isMetaDown() : mouseEvent.isControlDown();
+    boolean ctrlDown = com.intellij.openapi.util.SystemInfo.isMac ? mouseEvent.isMetaDown() : mouseEvent.isControlDown();
     if (ctrlDown) {
       if (mouseEvent.isAltDown()) {
         showCellError();
@@ -3006,7 +3005,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         private int getKeyCode() {
-          return SystemInfo.isMac ? KeyEvent.VK_META : KeyEvent.VK_CONTROL;
+          return com.intellij.openapi.util.SystemInfo.isMac ? KeyEvent.VK_META : KeyEvent.VK_CONTROL;
         }
       });
       addMouseMotionListener(new MouseMotionListener() {
@@ -3017,7 +3016,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (!myEditorContext.getNodeEditorComponent().isFocusOwner()) return;
 
           clearControlOver();
-          if (!(SystemInfo.isMac ? e.isMetaDown() : e.isControlDown())) {
+          if (!(com.intellij.openapi.util.SystemInfo.isMac ? e.isMetaDown() : e.isControlDown())) {
             myLastReferenceCell = null;
             return;
           }

@@ -2328,6 +2328,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.InstallIDEAPlugin_Action" file="InstallIDEAPlugin_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
@@ -2338,7 +2339,6 @@
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.util.SystemInfo" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />

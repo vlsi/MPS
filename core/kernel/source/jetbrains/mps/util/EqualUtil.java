@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.util;
 
+/**
+ * @deprecated use {@link org.apache.commons.lang.ObjectUtils} instead
+ */
 public class EqualUtil {
   /**
    * @deprecated use {@link org.apache.commons.lang.ObjectUtils#equals(Object, Object)} instead
@@ -24,21 +27,4 @@ public class EqualUtil {
     if (o1 == null || o2 == null) return false;
     return o1.equals(o2);
   }
-
-  /**
-   * @deprecated use {@link org.apache.commons.lang.StringUtils#equalsIgnoreCase(String, String)} instead
-   */
-  public static boolean equalsIgnoreCase(String s1, String s2) {
-    if (s1 == s2) return true;
-    if (s1 == null || s2 == null) return false;
-    return s1.equalsIgnoreCase(s2);
-  }
-
-  /**
-   * @deprecated use {@link org.apache.commons.lang.ObjectUtils#hashCode(Object)} instead
-   */
-  public static int hashCode(Object o) {
-    if (o == null) return 0;
-    else return o.hashCode();
-  }
-}                                      
+}
