@@ -34,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner" file="ClassRunner.java">
