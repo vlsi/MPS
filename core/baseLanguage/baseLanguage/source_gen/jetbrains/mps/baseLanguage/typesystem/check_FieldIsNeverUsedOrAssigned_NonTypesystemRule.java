@@ -43,6 +43,9 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7970711249077251955", intentionProvider, errorTarget);
         }
       } else {
+        if (SLinkOperations.getTarget(field, "initializer", true) != null) {
+          return;
+        }
         for (SNode ref : references) {
           if (CheckingUtil.isAssigned(ref)) {
             return;
@@ -74,6 +77,9 @@ public class check_FieldIsNeverUsedOrAssigned_NonTypesystemRule extends Abstract
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(field, "Private field " + SPropertyOperations.getString(field, "name") + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7970711249077252023", intentionProvider, errorTarget);
         }
       } else {
+        if (SLinkOperations.getTarget(field, "initializer", true) != null) {
+          return;
+        }
         for (SNode ref : localFieldReferences) {
           if (CheckingUtil.isAssigned(ref)) {
             return;
