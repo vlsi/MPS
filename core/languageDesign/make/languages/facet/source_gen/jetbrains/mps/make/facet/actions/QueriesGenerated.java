@@ -184,17 +184,23 @@ __switch__:
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "dependency", true)).<SNode>select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode d) {
-                return SLinkOperations.getTarget(SLinkOperations.getTarget(d, "dependsOn", false), "parameters", true);
+            final SNode td = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
+            SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+            return ListSequence.fromList(SLinkOperations.getTargets(fd, "targetDeclaration", true)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode sibl) {
+                return sibl != td;
               }
-            }).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode v) {
-                return (v != null);
+            }).concat(ListSequence.fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+              public Iterable<SNode> translate(SNode rfd) {
+                return SLinkOperations.getTargets(SLinkOperations.getTarget(rfd, "facet", false), "targetDeclaration", true);
+              }
+            })).<SNode>select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode rtd) {
+                return SLinkOperations.getTarget(rtd, "parameters", true);
               }
             }).<SNode>translate(new ITranslator2<SNode, SNode>() {
-              public Iterable<SNode> translate(SNode v) {
-                return SLinkOperations.getTargets(v, "component", true);
+              public Iterable<SNode> translate(SNode p) {
+                return SLinkOperations.getTargets(p, "component", true);
               }
             }).toListSequence();
           }

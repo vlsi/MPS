@@ -20,6 +20,7 @@
     <orderEntry type="module" module-name="findUsages" />
     <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="make-runtime" />
   </component>
 </module>
 

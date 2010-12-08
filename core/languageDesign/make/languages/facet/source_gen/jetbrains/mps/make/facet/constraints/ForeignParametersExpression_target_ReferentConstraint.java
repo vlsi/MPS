@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ForeignParametersExpression_target_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -29,15 +29,16 @@ public class ForeignParametersExpression_target_ReferentConstraint extends BaseN
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     final SNode td = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
-    return ListSequence.fromList(SLinkOperations.getTargets(td, "dependency", true)).<SNode>select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode d) {
-        return SLinkOperations.getTarget(d, "dependsOn", false);
+    SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), "jetbrains.mps.make.facet.structure.FacetDeclaration");
+    return ListSequence.fromList(SLinkOperations.getTargets(fd, "targetDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode sibl) {
+        return sibl != td;
       }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode td) {
-        return (td != null);
+    }).concat(ListSequence.fromList(SLinkOperations.getTargets(fd, "required", true)).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode rfd) {
+        return SLinkOperations.getTargets(SLinkOperations.getTarget(rfd, "facet", false), "targetDeclaration", true);
       }
-    });
+    }));
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

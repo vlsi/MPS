@@ -214,7 +214,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters")});
+      return null;
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -445,7 +445,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("configure"), new ITarget.Name("checkParameters")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("configure")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -506,7 +506,7 @@ public class Generate_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("checkParameters"), new ITarget.Name("generate")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("generate")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="2974008768272250195">
+    <nodeInfo nodeId="2974008768272253425" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModule#(Ljetbrains/mps/project/IModule;)Z" fileName="IJavaCompiler.java" startLine="7" startPosition="32" endLine="8" endPosition="47" />
+    <scopeInfo nodeId="2974008768272253425" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModule#(Ljetbrains/mps/project/IModule;)Z" fileName="IJavaCompiler.java" startLine="7" startPosition="32" endLine="8" endPosition="47">
+      <varInfo nodeId="2974008768272253430" varName="module" />
+    </scopeInfo>
+    <unitInfo nodeId="2974008768272250195" fileName="IJavaCompiler.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
+  </root>
+  <root nodeId="2974008768272253139">
+    <nodeInfo nodeId="7017136043751668687" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJavaCompiler#()Ljetbrains/mps/internal/make/runtime/java/IJavaCompiler;" fileName="IAuxProjectPeer.java" startLine="6" startPosition="34" endLine="7" endPosition="41" />
+    <scopeInfo nodeId="7017136043751668687" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJavaCompiler#()Ljetbrains/mps/internal/make/runtime/java/IJavaCompiler;" fileName="IAuxProjectPeer.java" startLine="6" startPosition="34" endLine="7" endPosition="41" />
+    <unitInfo nodeId="2974008768272253139" fileName="IAuxProjectPeer.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer" />
+  </root>
   <root nodeId="4328738523548225305">
     <nodeInfo nodeId="4328738523548225308" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessor" fileName="JavaGenerationHandler.java" startLine="32" startPosition="66" endLine="33" endPosition="36" />
     <nodeInfo nodeId="4328738523548225321" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="JavaGenerationHandler.java" startLine="38" startPosition="57" endLine="39" endPosition="52" />

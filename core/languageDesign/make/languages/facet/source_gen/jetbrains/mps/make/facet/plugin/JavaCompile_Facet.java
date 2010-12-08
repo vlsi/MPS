@@ -18,6 +18,8 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.make.script.IConfig;
+import jetbrains.mps.MPSCore;
+import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
@@ -28,6 +30,7 @@ public class JavaCompile_Facet implements IFacet {
   public JavaCompile_Facet() {
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_a());
     ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_b());
+    ListSequence.fromList(targets).addElement(new JavaCompile_Facet.Target_wf1ya0_c());
   }
 
   public Iterable<ITarget> targets() {
@@ -39,7 +42,7 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("TextGen"), new IFacet.Name("Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -66,6 +69,9 @@ public class JavaCompile_Facet implements IFacet {
                 TResource tres = new TResource().assignFrom((TResource) resource);
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
+                }
+                if (!(tres.module().isCompileInMPS())) {
+                  continue;
                 }
                 CompilationResult compilationResult;
                 compilationResult = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressIndicator());
@@ -125,7 +131,7 @@ public class JavaCompile_Facet implements IFacet {
   }
 
   public static class Target_wf1ya0_b implements ITarget {
-    private ITarget.Name name = new ITarget.Name("reloadClasses");
+    private ITarget.Name name = new ITarget.Name("auxCompile");
 
     public Target_wf1ya0_b() {
     }
@@ -136,6 +142,89 @@ public class JavaCompile_Facet implements IFacet {
           Iterable<IResource> _output_wf1ya0_a0b = null;
           switch (0) {
             case 0:
+              for (IResource resource : Sequence.fromIterable(input)) {
+                TResource tres = new TResource().assignFrom((TResource) resource);
+                if (tres.module() == null) {
+                  return new IResult.FAILURE(_output_wf1ya0_a0b);
+                }
+                if (tres.module().isCompileInMPS()) {
+                  continue;
+                }
+                if (MPSCore.getInstance().isTestMode()) {
+                  return new IResult.FAILURE(_output_wf1ya0_a0b);
+                }
+                IAuxProjectPeer peer = pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(IAuxProjectPeer.class);
+                if (peer == null) {
+                  return new IResult.FAILURE(_output_wf1ya0_a0b);
+                }
+                peer.getJavaCompiler().compileModule(tres.module());
+                if (!(peer.getJavaCompiler().compileModule(tres.module()))) {
+                  return new IResult.FAILURE(_output_wf1ya0_a0b);
+                }
+                if (tres.module().reloadClassesAfterGeneration()) {
+                  _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
+                }
+              }
+            default:
+              return new IResult.SUCCESS(_output_wf1ya0_a0b);
+          }
+        }
+      };
+    }
+
+    public IConfig createConfig() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> notAfter() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> after() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("textGen")});
+    }
+
+    public Iterable<ITarget.Name> notBefore() {
+      return null;
+    }
+
+    public Iterable<ITarget.Name> before() {
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")});
+    }
+
+    public ITarget.Name getName() {
+      return name;
+    }
+
+    public boolean requiresInput() {
+      return true;
+    }
+
+    public boolean producesOutput() {
+      return true;
+    }
+
+    public Class<? extends IResource> expectedResources() {
+      return null;
+    }
+
+    public <T> T createParameters(Class<T> cls) {
+      return null;
+    }
+  }
+
+  public static class Target_wf1ya0_c implements ITarget {
+    private ITarget.Name name = new ITarget.Name("reloadClasses");
+
+    public Target_wf1ya0_c() {
+    }
+
+    public IJob createJob() {
+      return new IJob() {
+        public IResult execute(final Iterable<IResource> input, final IJobMonitor monitor, final IParametersPool pool) {
+          Iterable<IResource> _output_wf1ya0_a0c = null;
+          switch (0) {
+            case 0:
               if (Sequence.fromIterable(input).any(new IWhereFilter<IResource>() {
                 public boolean accept(IResource in) {
                   return ((TResource) in).module().reloadClassesAfterGeneration();
@@ -144,7 +233,7 @@ public class JavaCompile_Facet implements IFacet {
                 ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
               }
             default:
-              return new IResult.SUCCESS(_output_wf1ya0_a0b);
+              return new IResult.SUCCESS(_output_wf1ya0_a0c);
           }
         }
       };
