@@ -33,9 +33,14 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     super(userObject, operationContext);
     AbstractOperation difference = (AbstractOperation) userObject;
     setNodeIdentifier(difference.getPresentation());
-    setColor(difference.getColor());
     this.setAutoExpandable(true);
     this.setIcon(difference.getIcon());
+  }
+
+  public void doUpdatePresentation() {
+    super.doUpdatePresentation();
+    AbstractOperation difference = (AbstractOperation) getUserObject();
+    setColor(difference.getColor());
   }
 
   public void goToRule() {
