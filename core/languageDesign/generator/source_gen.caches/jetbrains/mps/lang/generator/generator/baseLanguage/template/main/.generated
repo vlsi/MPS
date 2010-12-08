@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c1ft6cak6uzhhjwhe4heie825as61g9">
+<dependencies version="2" modelHash="-8g4bkcwjlhh64nyfrb31mr3jhe2bhh9">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#java.util(java.util@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" />
@@ -22,7 +22,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" hash="-2c523ozfcs5lv7jjdn4cty0h2zmxwii" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" hash="ba7659dzw3vu5gxfuwajty5c1idrag5" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="1bxcgdyn8alnummfdplmklszlwb5ntn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-c1ft6cak6uzhhjwhe4heie825as61g9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-8g4bkcwjlhh64nyfrb31mr3jhe2bhh9" />
   <dep model="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)" hash="2pb6f8fgfbw2qpt02klmwgtxttogl31" />
   <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="808aju4u68z4dgxvvhbutsg7dewsa42" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="b91qmznnj1pllawmkgy1rg1q02i6e8z" />
@@ -37,7 +37,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-8f82d4cxe4v2yq62yrd2l42vbyf0710" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-ar0tag66nzayvuhus5tvt93hf3ysy78" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9prgvyskhaa1wl0u5zigmxr3vqmsqzs" />
-  <common hash="-c1ft6cak6uzhhjwhe4heie825as61g9">
+  <common hash="-8g4bkcwjlhh64nyfrb31mr3jhe2bhh9">
     <dep root="1147906725605225569" />
     <dep root="1167163214015" />
     <dep root="1167163229003" />
@@ -139,68 +139,194 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1167163214015" name="insert_CreateRootRule_Condition" />
-  <source id="1167163229003" name="QueriesGenerated" />
-  <source id="1167163238171" name="TLB_main" />
-  <source id="1167172794967" name="insert_BaseMappingRule_Condition" />
-  <source id="1167763406918" name="insert_PropertyMacro_GetPropertyValue" />
-  <source id="1167770891041" name="insert_ReferenceMacro_GetReferent" />
-  <source id="1167946761267" name="insert_IfMacro_Condition" />
-  <source id="1167952935363" name="insert_SourceSubstituteMacro_SourceNodesQuery" />
-  <source id="1168025033008" name="insert_SourceSubstituteMacro_SourceNodeQuery" />
-  <source id="1170727064412" name="insert_MapSrcMacro_MapperFunction" />
-  <source id="1184374857687" name="insert_TemplateFragment_ContextNodeQuery" />
-  <source id="1184617630748" name="insert_Weaving_MappingRule_ContextNodeQuery" />
-  <source id="1195504684801" name="insert_MappingScript_CodeBlock" />
-  <source id="1199965771119" name="AddTypeHints" />
-  <source id="1216944103857" name="reduce_ScopeToGetScope" />
-  <source id="1217270660170" name="ReduceReferenceToText" />
-  <source id="1219959145090" name="insert_DropRootRule_Condition" />
-  <source id="1225233707631" name="insert_MapSrcMacro_PostMapperFunction" />
-  <source id="3666777440507052026" name="insert_TemplateArgumentQuery" />
-  <source id="1434091819680826103" name="insert_PatternReduction_Condition" />
-  <source id="6342833957791858285" name="checkGenerator" />
-  <source id="3084749922879516635" name="map_TemplateDeclaration" />
-  <source id="2478203504267210458" name="reduce_Node" />
-  <source id="6304885153124990546" name="reduce_TemplateFragment" />
-  <source id="6304885153124996632" name="reduce_TemplateDeclaration" />
-  <source id="5301578252490218394" name="reduce_LoopMacro" />
-  <source id="8285036680620207023" name="reduce_TemplateNode" />
-  <source id="8285036680620300245" name="reduce_IncludeMacro" />
-  <source id="8285036680620300247" name="reduce_Macro" />
-  <source id="747214206848642841" name="reduce_CopySrc" />
-  <source id="747214206848656631" name="map_Template" />
-  <source id="4429320018138031253" name="map_MappingConfiguration" />
-  <source id="344761564571002658" name="reduce_CopyList" />
-  <source id="344761564571002674" name="reduce_If" />
-  <source id="344761564571002687" name="reduce_MapSrc" />
-  <source id="344761564571002698" name="reduce_Call" />
-  <source id="344761564571002709" name="reduce_MapSrcL" />
-  <source id="344761564571002720" name="reduce_Switch" />
-  <source id="3038523907450732753" name="reduce_SubNodeListExpression" />
-  <source id="8961331321403206046" name="reduce_Context" />
-  <source id="2895393989835677675" name="reduce_Consequence" />
-  <source id="2895393989835680694" name="reduce_AbandonInputConsequence" />
-  <source id="2895393989835680822" name="reduce_DismissTopMappingRule" />
-  <source id="2226924809855855981" name="reduce_InlineSwitchConsequence" />
-  <source id="2226924809855859161" name="reduce_InlineTemplateWithContextConsequence" />
-  <source id="2226924809855859163" name="reduce_InlineTemplateRuleConsequence" />
-  <source id="2226924809855869474" name="reduce_TemplateDeclarationReferenceConsequence" />
-  <source id="2226924809855869476" name="reduce_WeaveEachRuleConsequence" />
-  <source id="1147906725605225569" name="reduce_ReductionRule" />
-  <source id="5412006700504152615" name="reduce_TemplateArgumentQueryExpression" />
-  <source id="5412006700504157831" name="reduce_Argument" />
-  <source id="5412006700504199285" name="reduce_RootMappingRule" />
-  <source id="1940510396026561969" name="map_TemplateSwitch" />
-  <source id="8626372016104475434" name="reduce_TemplateNodeExpression" />
-  <source id="2321430363679347640" name="reduce_MapSrc_helper" />
-  <source id="9071348379728451047" name="reduce_toSNodePointer" />
-  <source id="5659786285834775960" name="reduce_TemplateArgumentParameterExpr" />
-  <source id="330395710727988205" name="reduce_CreateRootRule" />
-  <source id="330395710727988537" name="reduce_DropRootRule" />
-  <source id="330395710727988576" name="reduce_WeavingRule" />
-  <source id="330395710727988683" name="reduce_PatternRule" />
-  <source id="3076445114127780885" name="TemplateModelImpl" />
-  <source id="8371596541809191595" name="reduce_TemplateArgumentPatternRef" />
+  <source id="1167163214015" name="insert_CreateRootRule_Condition">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1167163229003" name="QueriesGenerated">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1167163238171" name="TLB_main">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1167172794967" name="insert_BaseMappingRule_Condition">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1167763406918" name="insert_PropertyMacro_GetPropertyValue">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1167770891041" name="insert_ReferenceMacro_GetReferent">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1167946761267" name="insert_IfMacro_Condition">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1167952935363" name="insert_SourceSubstituteMacro_SourceNodesQuery">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1168025033008" name="insert_SourceSubstituteMacro_SourceNodeQuery">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1170727064412" name="insert_MapSrcMacro_MapperFunction">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1184374857687" name="insert_TemplateFragment_ContextNodeQuery">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1184617630748" name="insert_Weaving_MappingRule_ContextNodeQuery">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1195504684801" name="insert_MappingScript_CodeBlock">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1199965771119" name="AddTypeHints">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1216944103857" name="reduce_ScopeToGetScope">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1217270660170" name="ReduceReferenceToText">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1219959145090" name="insert_DropRootRule_Condition">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1225233707631" name="insert_MapSrcMacro_PostMapperFunction">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3666777440507052026" name="insert_TemplateArgumentQuery">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1434091819680826103" name="insert_PatternReduction_Condition">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="6342833957791858285" name="checkGenerator">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3084749922879516635" name="map_TemplateDeclaration">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2478203504267210458" name="reduce_Node">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="6304885153124990546" name="reduce_TemplateFragment">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="6304885153124996632" name="reduce_TemplateDeclaration">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="5301578252490218394" name="reduce_LoopMacro">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="8285036680620207023" name="reduce_TemplateNode">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="8285036680620300245" name="reduce_IncludeMacro">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="8285036680620300247" name="reduce_Macro">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="747214206848642841" name="reduce_CopySrc">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="747214206848656631" name="map_Template">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="4429320018138031253" name="map_MappingConfiguration">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="344761564571002658" name="reduce_CopyList">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="344761564571002674" name="reduce_If">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="344761564571002687" name="reduce_MapSrc">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="344761564571002698" name="reduce_Call">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="344761564571002709" name="reduce_MapSrcL">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="344761564571002720" name="reduce_Switch">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3038523907450732753" name="reduce_SubNodeListExpression">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="8961331321403206046" name="reduce_Context">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2895393989835677675" name="reduce_Consequence">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2895393989835680694" name="reduce_AbandonInputConsequence">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2895393989835680822" name="reduce_DismissTopMappingRule">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2226924809855855981" name="reduce_InlineSwitchConsequence">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2226924809855859161" name="reduce_InlineTemplateWithContextConsequence">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2226924809855859163" name="reduce_InlineTemplateRuleConsequence">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2226924809855869474" name="reduce_TemplateDeclarationReferenceConsequence">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2226924809855869476" name="reduce_WeaveEachRuleConsequence">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1147906725605225569" name="reduce_ReductionRule">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="5412006700504152615" name="reduce_TemplateArgumentQueryExpression">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="5412006700504157831" name="reduce_Argument">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="5412006700504199285" name="reduce_RootMappingRule">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1940510396026561969" name="map_TemplateSwitch">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="8626372016104475434" name="reduce_TemplateNodeExpression">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="2321430363679347640" name="reduce_MapSrc_helper">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="9071348379728451047" name="reduce_toSNodePointer">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="5659786285834775960" name="reduce_TemplateArgumentParameterExpr">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="330395710727988205" name="reduce_CreateRootRule">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="330395710727988537" name="reduce_DropRootRule">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="330395710727988576" name="reduce_WeavingRule">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="330395710727988683" name="reduce_PatternRule">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3076445114127780885" name="TemplateModelImpl">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="8371596541809191595" name="reduce_TemplateArgumentPatternRef">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
 </dependencies>
 
