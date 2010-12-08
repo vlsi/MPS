@@ -193,17 +193,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   public StructureModificationHistory getStructureModificationHistory() {
     synchronized (myRefactoringHistoryLock) {
       if (myStructureModificationHistory == null) {
-//        SModel model = mySModel;
-//        if (model != null && myPersistenceVersion >= 0 && myPersistenceVersion < 5) {
-//          //noinspection deprecation
-//          myStructureModificationHistory = model.getRefactoringHistory();
-//        }
-//        if (myStructureModificationHistory == null) {
-          myStructureModificationHistory = myModelRootManager.loadModelRefactorings(this);
-//        }
-        if (myStructureModificationHistory == null) {
-          myStructureModificationHistory = new StructureModificationHistory();
-        }
+        myStructureModificationHistory = myModelRootManager.loadModelRefactorings(this);
+      }
+      if (myStructureModificationHistory == null) {
+        myStructureModificationHistory = new StructureModificationHistory();
       }
     }
     return myStructureModificationHistory;

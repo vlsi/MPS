@@ -104,26 +104,4 @@ public class RefactoringsPersistence {
     }
     return null;
   }
-
-  public static StructureModificationHistory loadFromModel(IFile modelFile) {
-    if (!modelFile.exists()) {
-      return null;
-    }
-    try {
-      Element root = JDOMUtil.loadDocument(modelFile).getRootElement();
-      if (ModelPersistence.MODEL.equals(root.getName())) {
-        Element child = root.getChild(StructureModificationHistory.REFACTORING_HISTORY);
-        if (child != null) {
-          return new StructureModificationHistory().fromElement(child);
-        }
-      }
-      return null;
-    } catch (IOException e) {
-      LOG.error(e);
-      return null;
-    } catch (JDOMException e) {
-      LOG.error(e);
-      return null;
-    }
-  }
 }
