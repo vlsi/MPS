@@ -25,7 +25,7 @@
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.refactoring.ModelLinkMap" />
-    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationProcessor0" />
+    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationProcessor" />
     <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

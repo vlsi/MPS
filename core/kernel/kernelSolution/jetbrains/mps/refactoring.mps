@@ -43,7 +43,7 @@
       <property name="name" nameId="tpck.1169194664001" value="StructureModificationHistory0" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9051163691968353666">
-      <property name="name" nameId="tpck.1169194664001" value="StructureModificationProcessor0" />
+      <property name="name" nameId="tpck.1169194664001" value="StructureModificationProcessor" />
     </node>
   </roots>
   <root id="5817662974489412297">

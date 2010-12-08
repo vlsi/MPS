@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
-import jetbrains.mps.refactoring.StructureModificationProcessor0;
+import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -258,7 +258,7 @@ public class ModelReader7Handler extends XMLSAXHandler<SModel> {
     }
 
     private boolean validateInternal(SModel result) throws SAXException {
-      new StructureModificationProcessor0(fieldlinkMap, fieldmodel).updateModelOnLoad();
+      new StructureModificationProcessor(fieldlinkMap, fieldmodel).updateModelOnLoad();
       fieldmodel.setLoading(false);
       return true;
     }

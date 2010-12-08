@@ -22,10 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.ISerializable;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -254,15 +251,6 @@ public class StructureModificationData {
   public void addToConceptFeatureMap(ConceptFeatureKind kind, String oldConceptFQName, String oldFeatureName, String newConceptFQName, String newFeatureName) {
     myConceptFeatureMap.put(new ConceptFeature(oldConceptFQName, kind, oldFeatureName), newFeatureName == null ? null : new ConceptFeature(newConceptFQName, kind, newFeatureName));
     myCachesAreUpToDate = false;
-  }
-
-  public void addDependencyModel(@NotNull SModelReference modelReference, int version) {
-    if (myDependencies == null)  myDependencies = new ArrayList<Dependency>();
-    myDependencies.add(new Dependency(modelReference, version));
-  }
-
-  public void addDependencyModel(@NotNull EditableSModelDescriptor model) {
-    addDependencyModel(model.getSModelReference(), model.getVersion());
   }
 
   public List<Dependency> getDependencies() {

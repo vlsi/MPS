@@ -25,10 +25,10 @@ import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.StructureModification;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
-import jetbrains.mps.refactoring.StructureModificationProcessor0;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -45,7 +45,8 @@ import java.util.Set;
 /**
  * Evgeny Gryaznov, Aug 25, 2010
  */
-public class RefactoringFacade extends StructureModificationProcessor {
+public class RefactoringFacade {
+  protected static final Logger LOG = Logger.getLogger(RefactoringFacade.class);
 
   public void execute(final IRefactoring refactoring, final RefactoringContext refactoringContext) {
     refactoringContext.setRefactoring(refactoring);
@@ -290,6 +291,6 @@ public class RefactoringFacade extends StructureModificationProcessor {
 //    addToHistory(refactoringContext.getStructureModificationData());
     StructureModification data = refactoringContext.getStructureModification();
     data.addDependencyModel(model.getSModelReference(), model.getVersion());
-    StructureModificationProcessor0.addToHistory(data);
+    StructureModificationProcessor.addToHistory(data);
   }
 }

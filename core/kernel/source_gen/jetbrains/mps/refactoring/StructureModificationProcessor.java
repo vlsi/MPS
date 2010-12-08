@@ -18,13 +18,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelDescriptor;
 
-public class StructureModificationProcessor0 {
-  protected static final Logger LOG = Logger.getLogger(StructureModificationProcessor0.class);
+public class StructureModificationProcessor {
+  protected static final Logger LOG = Logger.getLogger(StructureModificationProcessor.class);
 
   private ModelLinkMap myModelMap;
   private SModel myModel;
 
-  public StructureModificationProcessor0(ModelLinkMap modelMap, SModel model) {
+  public StructureModificationProcessor(ModelLinkMap modelMap, SModel model) {
     myModelMap = modelMap;
     myModel = model;
   }
@@ -79,7 +79,7 @@ public class StructureModificationProcessor0 {
     do {
       played = false;
       for (SModel.ImportElement importElement : SModelOperations.getAllImportElements(myModel)) {
-        EditableSModelDescriptor usedModelDescriptor = as_xn3qp2_a0a0a1a6a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
+        EditableSModelDescriptor usedModelDescriptor = as_etzqsh_a0a0a1a6a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
         if (usedModelDescriptor == null || usedModelDescriptor.getVersion() <= importElement.getUsedVersion()) {
           continue;
         }
@@ -135,7 +135,7 @@ public class StructureModificationProcessor0 {
     return false;
   }
 
-  private static <T> T as_xn3qp2_a0a0a1a6a2(Object o, Class<T> type) {
+  private static <T> T as_etzqsh_a0a0a1a6a2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
