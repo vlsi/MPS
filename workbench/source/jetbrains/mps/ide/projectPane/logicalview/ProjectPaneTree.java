@@ -48,26 +48,28 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
   private ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
   private ProjectPaneModifiedMarker myModifiedMarker = new ProjectPaneModifiedMarker();
+  private KeyAdapter myKeyListener = new KeyAdapter() {
+    public void keyPressed(KeyEvent e) {
+      if (e.getModifiers() != 0) return;
+      if (!(e.getKeyCode() == KeyEvent.VK_ENTER)) return;
+
+      TreePath selPath = getSelectionPath();
+      if (selPath == null) return;
+      MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+      selNode.doubleClick();
+
+      e.consume();
+    }
+  };
+  private MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
 
   public ProjectPaneTree(ProjectPane projectPane, Project project) {
     super(project);
     myProjectPane = projectPane;
 
-    addTreeNodeListener(new MyMPSTreeNodeListener());
+    addTreeNodeListener(myNodeListener);
     //enter can't be listened using keyboard actions because in this case tree's UI receives it first and just expands a node
-    addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
-        if (e.getModifiers() != 0) return;
-        if (!(e.getKeyCode() == KeyEvent.VK_ENTER)) return;
-
-        TreePath selPath = getSelectionPath();
-        if (selPath == null) return;
-        MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
-        selNode.doubleClick();
-
-        e.consume();
-      }
-    });
+    addKeyListener(myKeyListener);
 
     //drag support is alive while the tree is alive
     DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(this, DnDConstants.ACTION_MOVE, new MyDragGestureListener());
@@ -76,6 +78,12 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     MessageBusConnection connection = project.getMessageBus().connect();
     Disposer.register(this, connection);
     connection.subscribe(DumbService.DUMB_MODE, new MyDumbModeListener());
+  }
+
+  public void dispose() {
+    removeKeyListener(myKeyListener);
+    removeTreeNodeListener(myNodeListener);
+    super.dispose();
   }
 
   public Comparator<Object> getChildrenComparator() {
