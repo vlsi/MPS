@@ -46,14 +46,14 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   private ConcurrentMap<String, Set<String>> myAncestorsNamesMap = new ConcurrentHashMap<String, Set<String>>();
 
-  private Object myParentsNamesLock = new Object();
+  private final Object myParentsNamesLock = new Object();
   private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
 
   private final Object myDescendantsLock = new Object();
   private Map<String, Set<String>> myDirectDescendantsCache = new HashMap<String, Set<String>>();
   private boolean myDescendantsCachesAreValid = false;
 
-  private Object myLanguageLock = new Object();
+  private final Object myLanguageLock = new Object();
   private Map<Language, LanguageConceptsCache> myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
 
   private CopyOnWriteArrayList<CacheChangeListener> myCacheChangeListeners = new CopyOnWriteArrayList<CacheChangeListener>();
@@ -249,7 +249,6 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     synchronized (myDescendantsLock) {
       if (!myDescendantsCachesAreValid) {
         NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-          @Override
           public void run() {
             rebuildDescendantsCaches();
           }
