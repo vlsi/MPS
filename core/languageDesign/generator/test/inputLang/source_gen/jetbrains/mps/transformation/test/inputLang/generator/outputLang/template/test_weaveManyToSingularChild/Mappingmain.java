@@ -139,8 +139,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     @Override
-    public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
+      return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
   }
 }

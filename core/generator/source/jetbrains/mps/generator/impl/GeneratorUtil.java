@@ -85,7 +85,7 @@ public class GeneratorUtil {
 
   /*package*/
 
-  static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
+  public static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
     // FIXME rewrite
     List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
     for (INodeAdapter subnode : template.getDescendants()) {

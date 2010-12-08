@@ -69,4 +69,6 @@ public interface TemplateExecutionEnvironment {
   SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
   void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
+
+  void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodePointer templateNode, SNode inputNode);
 }

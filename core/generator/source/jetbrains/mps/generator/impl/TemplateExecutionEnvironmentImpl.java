@@ -18,8 +18,11 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -198,5 +201,31 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
     generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, reductionContext);
+  }
+
+  @Override
+  public void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodePointer templateNode, SNode inputNode) {
+    // check child
+    RoleValidationStatus status = generator.validateChild(contextParentNode, childRole, outputNodeToWeave);
+    if (status != null) {
+      status.reportProblem(false, "",
+        GeneratorUtil.describe(inputNode, "input"),
+        GeneratorUtil.describe(templateNode.getNode(), "template"));
+    }
+
+    // add
+    LinkDeclaration childLinkDeclaration = contextParentNode.getLinkDeclaration(childRole);
+    if (childLinkDeclaration == null) {
+      // there should have been warning about that
+      contextParentNode.addChild(childRole, outputNodeToWeave);
+    } else {
+      // if singular child then don't add more that 1 child
+      Cardinality cardinality = childLinkDeclaration.getSourceCardinality();
+      if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
+        contextParentNode.setChild(childRole, outputNodeToWeave);
+      } else {
+        contextParentNode.addChild(childRole, outputNodeToWeave);
+      }
+    }
   }
 }

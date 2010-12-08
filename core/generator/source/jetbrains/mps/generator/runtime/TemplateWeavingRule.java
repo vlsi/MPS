@@ -17,8 +17,6 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.SNode;
 
-import java.util.Collection;
-
 /**
  * Evgeny Gryaznov, Nov 29, 2010
  */
@@ -30,5 +28,5 @@ public interface TemplateWeavingRule extends TemplateRuleWithCondition {
 
   SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context);
 
-  Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+  boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException;
 }
