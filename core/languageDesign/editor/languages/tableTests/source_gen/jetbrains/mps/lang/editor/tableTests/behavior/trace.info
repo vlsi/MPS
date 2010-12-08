@@ -19,16 +19,16 @@
     <scopeInfo nodeId="731445707575002360" fileName="Table_Behavior.java" startLine="22" startPosition="33" endLine="25" endPosition="104">
       <varInfo nodeId="731445707575002362" varName="dataCell" />
     </scopeInfo>
-    <scopeInfo nodeId="731445707575002311" fileName="Table_Behavior.java" startLine="14" startPosition="111" endLine="19" endPosition="7">
+    <scopeInfo nodeId="731445707575002311" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="Table_Behavior.java" startLine="14" startPosition="111" endLine="19" endPosition="7">
       <varInfo nodeId="731445707575002336" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="731445707575002359" fileName="Table_Behavior.java" startLine="21" startPosition="5" endLine="26" endPosition="5">
+    <scopeInfo nodeId="731445707575002359" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="Table_Behavior.java" startLine="21" startPosition="5" endLine="26" endPosition="5">
       <varInfo nodeId="731445707575002382" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="731445707575002304" fileName="Table_Behavior.java" startLine="13" startPosition="33" endLine="20" endPosition="96">
       <varInfo nodeId="731445707575002306" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="731445707575002303" fileName="Table_Behavior.java" startLine="12" startPosition="43" endLine="21" endPosition="5">
+    <scopeInfo nodeId="731445707575002303" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="Table_Behavior.java" startLine="12" startPosition="43" endLine="21" endPosition="5">
       <varInfo nodeId="731445707575002351" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="731445707575002296" fileName="Table_Behavior.java" startLine="12" startPosition="43" endLine="26" endPosition="5" />
