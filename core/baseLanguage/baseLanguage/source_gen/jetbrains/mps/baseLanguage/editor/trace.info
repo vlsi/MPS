@@ -129,6 +129,7 @@
   <unitInfo fileName="NotExpression_Parens_Actions.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.NotExpression_Parens_Actions" />
   <unitInfo fileName="ArrayType_Brackets_Actions.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ArrayType_Brackets_Actions" />
   <unitInfo fileName="IfStatement_LastBrace.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IfStatement_LastBrace" />
+  <unitInfo fileName="TryStatement_FinallyBlock_Actions.java" startLine="19" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TryStatement_FinallyBlock_Actions$TryStatement_FinallyBlock_Actions_DELETE" />
   <unitInfo fileName="StaticFieldReference_Actions.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticFieldReference_Actions" />
   <unitInfo fileName="DeleteFirstForLoopVar.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.DeleteFirstForLoopVar" />
   <unitInfo fileName="UncommentSingleLineComment.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.UncommentSingleLineComment" />
@@ -153,6 +154,7 @@
   <unitInfo fileName="AbstractClassifierReference_KeyMap.java" startLine="69" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AbstractClassifierReference_KeyMap.AbstractClassifierReference_KeyMap_Action0$QuotationClass_l22mu2_a1a0a4a" />
   <unitInfo fileName="BinaryOperation_RightArgument_Actions.java" startLine="21" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions$BinaryOperation_RightArgument_Actions_DELETE" />
   <unitInfo fileName="BinaryOperation_LeftArgument_Actions.java" startLine="21" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BinaryOperation_LeftArgument_Actions$BinaryOperation_LeftArgument_Actions_DELETE" />
+  <unitInfo fileName="TryStatement_FinallyBlock_Actions.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TryStatement_FinallyBlock_Actions" />
   <unitInfo fileName="AnonymousClass_CurlyBraces.java" startLine="20" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnonymousClass_CurlyBraces$AnonymousClass_CurlyBraces_DELETE" />
   <unitInfo fileName="ElsifClause_Editor.java" startLine="144" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ElsifClause_Editor$ElsifClause_generic_cellMenu_a0a0" />
   <unitInfo fileName="AnonymousClassCreator_Editor.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnonymousClassCreator_Editor" />
@@ -265,7 +267,7 @@
   <unitInfo fileName="LastCommentPart.java" startLine="15" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LastCommentPart" />
   <unitInfo fileName="PrimitiveClassExpression_Editor.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.PrimitiveClassExpression_Editor" />
   <unitInfo fileName="AddForStatementVar.java" startLine="25" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AddForStatementVar$AddForStatementVar_Action0" />
-  <unitInfo fileName="TryStatement_Editor.java" startLine="171" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TryStatement_Editor$catchClauseListHandler_cmnz0s_e0" />
+  <unitInfo fileName="TryStatement_Editor.java" startLine="173" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TryStatement_Editor$catchClauseListHandler_cmnz0s_e0" />
   <unitInfo fileName="Annotation_Editor.java" startLine="185" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Annotation_Editor$annotationMethodListHandler_mr1gse_b4a" />
   <unitInfo fileName="EnumClass_Editor.java" startLine="335" startPosition="0" endLine="387" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EnumClass_Editor$implementedInterfaceListHandler_y68cfu_g0" />
   <unitInfo fileName="Interface_Editor.java" startLine="363" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Interface_Editor$staticFieldListHandler_4hcgjd_b8a" />
@@ -400,8 +402,8 @@
   <unitInfo fileName="ClassCreator_Editor.java" startLine="34" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ClassCreator_Editor" />
   <unitInfo fileName="AnnotationInstance_Editor.java" startLine="33" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.AnnotationInstance_Editor" />
   <unitInfo fileName="ThisExpression_Editor.java" startLine="24" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ThisExpression_Editor" />
-  <unitInfo fileName="TryStatement_Editor.java" startLine="27" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TryStatement_Editor" />
   <unitInfo fileName="StaticMethodCall_Editor.java" startLine="29" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StaticMethodCall_Editor" />
+  <unitInfo fileName="TryStatement_Editor.java" startLine="27" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.TryStatement_Editor" />
   <unitInfo fileName="SuperMethodCall_Editor.java" startLine="35" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.SuperMethodCall_Editor" />
   <unitInfo fileName="Property_Editor.java" startLine="23" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.Property_Editor" />
   <unitInfo fileName="ParameterDeclaration_Editor.java" startLine="32" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.ParameterDeclaration_Editor" />
@@ -1571,6 +1573,18 @@
       <varInfo nodeId="3380441905079626423" varName="operation" />
       <varInfo nodeId="3380441905079626416" varName="dot" />
     </scopeInfo>
+  </root>
+  <root nodeId="3726020645866465468">
+    <nodeInfo nodeId="3726020645866489767" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="TryStatement_FinallyBlock_Actions.java" startLine="35" startPosition="102" endLine="36" endPosition="134" />
+    <nodeInfo nodeId="3726020645866489775" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TryStatement_FinallyBlock_Actions.java" startLine="36" startPosition="134" endLine="37" endPosition="114" />
+    <nodeInfo nodeId="3726020645866756349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TryStatement_FinallyBlock_Actions.java" startLine="37" startPosition="114" endLine="38" endPosition="106" />
+    <nodeInfo nodeId="3726020645866489792" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TryStatement_FinallyBlock_Actions.java" startLine="38" startPosition="106" endLine="39" endPosition="188" />
+    <nodeInfo nodeId="3726020645866489812" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TryStatement_FinallyBlock_Actions.java" startLine="39" startPosition="188" endLine="40" endPosition="41" />
+    <nodeInfo nodeId="3726020645866489744" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="TryStatement_FinallyBlock_Actions.java" startLine="34" startPosition="75" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="3726020645866489746" fileName="TryStatement_FinallyBlock_Actions.java" startLine="35" startPosition="102" endLine="40" endPosition="41">
+      <varInfo nodeId="3726020645866489768" varName="tryCatchStatement" />
+    </scopeInfo>
+    <scopeInfo nodeId="3726020645866465471" fileName="TryStatement_FinallyBlock_Actions.java" startLine="34" startPosition="75" endLine="41" endPosition="7" />
   </root>
   <root nodeId="4276006055363816577">
     <nodeInfo nodeId="4276006055363816581" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DeleteSynchronizedInBaseMethod.java" startLine="28" startPosition="75" endLine="29" endPosition="66" />
