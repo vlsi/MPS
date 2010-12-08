@@ -11,17 +11,19 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.execution.impl.ConsoleViewImpl;
-import java.awt.BorderLayout;
-import javax.swing.JTabbedPane;
 import javax.swing.JComponent;
+import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
 import com.intellij.openapi.ui.Splitter;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import com.intellij.execution.ui.ConsoleView;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
+import com.intellij.ui.components.JBScrollPane;
 import javax.swing.JTable;
 import java.awt.GridLayout;
 import javax.swing.Icon;
@@ -58,33 +60,54 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   }
 
   private void initComponent(ConsoleViewImpl console, IOperationContext context) {
-    // Create test results pane 
-    JPanel rightPanel = new JPanel(new BorderLayout());
-    rightPanel.setBorder(null);
-    JTabbedPane resultTabs = new JTabbedPane();
-    this.myTreeComponent = new TestTree(this.myProject, this.myTestState, context, this);
-    resultTabs.addTab("Output", this.getIcon("testOutput.png"), this.createOutputComponent(this.myProject, console));
     StatisticsTableModel statisticsModel = new StatisticsTableModel(this.myTestState);
-    resultTabs.addTab("Statistics", this.getIcon("testStatistics.png"), this.createStatisticsComponent(statisticsModel));
+
+    this.myTreeComponent = new TestTree(this.myProject, this.myTestState, context, this);
+    this.myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(this.myTreeComponent, statisticsModel, this.myOutputComponent));
+    this.myTreeComponent.addMouseListener(new TestTreeRootMouseListener(this.myTreeComponent, statisticsModel, this.myOutputComponent));
+    this.myActionToolComponent = new TestToolbarPanel(this.myProject, this.myTreeComponent, this.myTestNavigator);
+
     JComponent leftPanel = this.createTreeComponent();
+    leftPanel.add(this.myActionToolComponent, BorderLayout.NORTH);
+
+    JPanel rightPanel = new JPanel(new GridBagLayout());
+    Splitter resultTabs = new Splitter(false);
+    resultTabs.setFirstComponent(this.createOutputComponent(this.myProject, console));
+    JComponent statistics = this.createStatisticsComponent(statisticsModel);
+    resultTabs.setSecondComponent(statistics);
+    JComponent stackTraceActions = this.createActionsToolbar(console);
+    stackTraceActions.setMaximumSize(new Dimension(rightPanel.getWidth(), stackTraceActions.getMaximumSize().height));
+    this.myProgressLineComponent = new ProgressLine(this.myTestState);
+    this.myProgressLineComponent.setMinimumSize(new Dimension(0, this.myProgressLineComponent.getMinimumSize().height));
+
+    GridBagConstraints c = new GridBagConstraints();
+    rightPanel.setBorder(null);
+    c.fill = GridBagConstraints.VERTICAL;
+    c.anchor = GridBagConstraints.LINE_START;
+    c.gridx = 0;
+    c.gridy = 1;
+    c.weighty = 1;
+    c.weightx = 0;
+    rightPanel.add(stackTraceActions, c);
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.gridx = 1;
+    c.gridy = 0;
+    c.weighty = 0;
+    c.weightx = 1;
+    rightPanel.add(this.myProgressLineComponent, c);
+    c.fill = GridBagConstraints.BOTH;
+    c.gridx = 1;
+    c.gridy = 1;
+    c.weighty = 1;
+    c.weightx = 1;
+    rightPanel.add(resultTabs, c);
+
     Splitter splitter = new Splitter(false);
     splitter.setProportion(0.2f);
     splitter.setFirstComponent(leftPanel);
     splitter.setSecondComponent(rightPanel);
     this.setLayout(new BorderLayout());
-    JComponent stackTraceActions = this.createActionsToolbar(console);
-    stackTraceActions.setMaximumSize(new Dimension(rightPanel.getWidth(), stackTraceActions.getMaximumSize().height));
-    this.myActionToolComponent = new TestToolbarPanel(this.myProject, this.myTreeComponent, this.myTestNavigator);
-    this.myProgressLineComponent = new ProgressLine(this.myTestState);
-    this.myProgressLineComponent.setMinimumSize(new Dimension(0, this.myProgressLineComponent.getMinimumSize().height));
-    this.myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(this.myTreeComponent, statisticsModel, this.myOutputComponent));
-    this.myTreeComponent.addMouseListener(new TestTreeRootMouseListener(this.myTreeComponent, statisticsModel, this.myOutputComponent));
 
-
-    leftPanel.add(this.myActionToolComponent, BorderLayout.NORTH);
-    rightPanel.add(stackTraceActions, BorderLayout.LINE_START);
-    rightPanel.add(this.myProgressLineComponent, BorderLayout.NORTH);
-    rightPanel.add(resultTabs, BorderLayout.CENTER);
     this.add(splitter, BorderLayout.CENTER);
 
     this.myTestState.addView(this.myTreeComponent);
@@ -96,12 +119,13 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     DefaultActionGroup group = new DefaultActionGroup(console.createConsoleActions());
     ActionManager manager = ActionManager.getInstance();
     ActionToolbar toolbar = manager.createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    toolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     return toolbar.getComponent();
   }
 
   private JComponent createTreeComponent() {
     UnitTestViewComponent.MyTreePanel treePanel = new UnitTestViewComponent.MyTreePanel(new BorderLayout());
-    JScrollPane scrollPane = new JScrollPane(this.myTreeComponent);
+    JScrollPane scrollPane = new JBScrollPane(this.myTreeComponent);
     treePanel.add(scrollPane, BorderLayout.CENTER);
     this.myTestNavigator = new FailedTestOccurenceNavigator(this.myTreeComponent);
     return treePanel;
@@ -116,7 +140,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     JTable statisticsTable = new JTable(testStatisticsModel);
     statisticsTable.setDefaultRenderer(TestStatisticsRow.class, new StatisticsRowRenderer());
     JPanel tablePanel = new JPanel(new GridLayout(1, 1));
-    tablePanel.add(new JScrollPane(statisticsTable));
+    tablePanel.add(new JBScrollPane(statisticsTable));
     return tablePanel;
   }
 
