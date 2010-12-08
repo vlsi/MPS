@@ -100,7 +100,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      return new TemplateoutputRoot().apply(environment, context);
+      Collection<SNode> result = new TemplateoutputRoot().apply(environment, context);
+      return result;
     }
   }
 }

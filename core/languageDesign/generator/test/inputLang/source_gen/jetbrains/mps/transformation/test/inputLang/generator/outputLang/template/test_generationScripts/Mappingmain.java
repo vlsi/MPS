@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170730024");
@@ -217,7 +218,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      return new TemplateOutputRoot_by_MappingRule().apply(environment, context);
+      Collection<SNode> result = new TemplateOutputRoot_by_MappingRule().apply(environment, context);
+      return result;
     }
   }
 
@@ -236,9 +238,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return true;
     }
 
-    public Collection<SNode> apply(TemplateExecutionEnvironment environment) {
-      // TODO 
-      return null;
+    public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
+      Collection<SNode> result = new TemplateOutputRoot_By_RootRule().apply(environment, new DefaultTemplateContext(null));
+      return result;
     }
   }
 }
