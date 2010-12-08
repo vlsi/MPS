@@ -431,6 +431,18 @@ public class TypeCheckingContext {
       checkOnly);
   }
 
+  public void createGreaterThanInequationStrong(SNode node1,
+                                          SNode node2,
+                                          boolean checkOnly,
+                                          EquationInfo equationInfo) {
+    getNodeTypesComponent().getEquationManager().addInequation(
+      node2,
+      node1,
+      equationInfo,
+      false,
+      checkOnly);
+  }
+
   public void createComparableEquation(SNode node1,
                                        SNode node2,
                                        EquationInfo equationInfo) {

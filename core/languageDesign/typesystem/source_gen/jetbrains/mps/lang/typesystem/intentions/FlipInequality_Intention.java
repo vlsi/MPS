@@ -42,6 +42,10 @@ public class FlipInequality_Intention extends BaseIntention implements Intention
       newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", null);
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement")) {
       newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", null);
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement")) {
+      newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", null);
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement")) {
+      newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", null);
     } else {
       return;
     }
