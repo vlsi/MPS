@@ -316,7 +316,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     WeavingProcessor wp = new WeavingProcessor(this);
     for (TemplateWeavingRule rule : myRuleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
-      wp.apply(((TemplateWeavingRuleInterpreted) rule).getNode());
+      wp.apply(rule);
     }
   }
 

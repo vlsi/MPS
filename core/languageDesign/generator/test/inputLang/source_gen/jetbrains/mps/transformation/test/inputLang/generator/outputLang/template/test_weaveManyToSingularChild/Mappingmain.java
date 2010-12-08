@@ -117,5 +117,30 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public SNodePointer getRuleNode() {
       return weavingRule_417xrn_a0a0b;
     }
+
+    @Override
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public String getApplicableConcept() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean applyToInheritors() {
+      return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
   }
 }

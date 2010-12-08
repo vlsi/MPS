@@ -5,10 +5,13 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -147,15 +150,16 @@ public class WeavingProcessor {
     }
   }
 
-  public void apply(Weaving_MappingRule rule)
+  public void apply(TemplateWeavingRule rule)
     throws GenerationFailureException, GenerationCanceledException {
 
-    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+    String applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      myGenerator.showErrorMessage(null, null, rule.getNode(), "rule has no applicable concept defined");
+      myGenerator.showErrorMessage(null, null, rule.getRuleNode().getNode(), "rule has no applicable concept defined");
       return;
     }
-    boolean includeInheritors = rule.getApplyToConceptInheritors();
+
+    boolean includeInheritors = rule.applyToInheritors();
     Iterable<SNode> nodes = myFastNodeFinder.getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
       QueryExecutionContext executionContext = myGenerator.getExecutionContext(applicableNode);
@@ -163,61 +167,72 @@ public class WeavingProcessor {
         continue;
       }
       ReductionContext reductionContext = new ReductionContext(executionContext);
-      if (reductionContext.getQueryExecutor().checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode())) {
-        SNode outputContextNode = reductionContext.getQueryExecutor().getContextNodeForWeavingingRule(applicableNode, rule);
-        if (!checkContext(rule, applicableNode, outputContextNode)) {
-          continue;
-        }
-        myGenerator.setChanged();
+      TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, reductionContext, myGenerator.getOperationContext(), myGenerationTracer);
 
-        boolean someOutputGenerated = true;
-        myGenerationTracer.pushInputNode(applicableNode);
-        myGenerationTracer.pushRule(new SNodePointer(rule.getNode()));
-        try {
-          RuleConsequence ruleConsequence = rule.getRuleConsequence();
-          if (ruleConsequence == null) {
-            myGenerator.showErrorMessage(applicableNode, null, rule.getNode(), "weaving rule: no rule consequence");
-          } else {
-            myGenerationTracer.pushRuleConsequence(new SNodePointer(ruleConsequence.getNode()));
-            if (ruleConsequence instanceof TemplateDeclarationReference) {
-              TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-              weaveTemplateDeclaration(template, outputContextNode, rule,
-                GeneratorUtil.createTemplateContext(applicableNode, null, reductionContext, ruleConsequence, applicableNode, myGenerator), reductionContext);
+      try {
+        DefaultTemplateContext context = new DefaultTemplateContext(applicableNode);
+        if(executionContext.isApplicable(rule, environment, context)) {
+          SNode outputContextNode = executionContext.getContextNode(rule, environment, context);
+          if (!checkContext(rule, applicableNode, outputContextNode)) {
+            continue;
+          }
+          myGenerator.setChanged();
 
-            } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
-              WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
-              SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
-              if (query == null) {
-                myGenerator.showErrorMessage(applicableNode, rule.getNode(), "weaving rule: cannot create list of source nodes");
-                break;
-              }
-              TemplateDeclaration template = weaveEach.getTemplate();
-              List<SNode> queryNodes = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, new DefaultTemplateContext(applicableNode));
-              if (queryNodes.isEmpty()) {
-                someOutputGenerated = false;
-              }
-              for (SNode queryNode : queryNodes) {
-                weaveTemplateDeclaration(template, outputContextNode, rule,
-                  GeneratorUtil.createTemplateContext(queryNode, null, reductionContext, ruleConsequence, queryNode, myGenerator), reductionContext);
-              }
+          boolean someOutputGenerated = true;
+          myGenerationTracer.pushInputNode(applicableNode);
+          myGenerationTracer.pushRule(rule.getRuleNode());
+          try {
+            // TODO
+            Weaving_MappingRule weavingRule = ((TemplateWeavingRuleInterpreted) rule).getNode();
+            RuleConsequence ruleConsequence = weavingRule.getRuleConsequence();
+            if (ruleConsequence == null) {
+              myGenerator.showErrorMessage(applicableNode, null, weavingRule.getNode(), "weaving rule: no rule consequence");
             } else {
-              myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "weaving rule: unsupported rule consequence");
+              myGenerationTracer.pushRuleConsequence(new SNodePointer(ruleConsequence.getNode()));
+              if (ruleConsequence instanceof TemplateDeclarationReference) {
+                TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+                weaveTemplateDeclaration(template, outputContextNode, weavingRule,
+                  GeneratorUtil.createTemplateContext(applicableNode, null, reductionContext, ruleConsequence, applicableNode, myGenerator), reductionContext);
+
+              } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
+                WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
+                SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
+                if (query == null) {
+                  myGenerator.showErrorMessage(applicableNode, rule.getRuleNode().getNode(), "weaving rule: cannot create list of source nodes");
+                  break;
+                }
+                TemplateDeclaration template = weaveEach.getTemplate();
+                List<SNode> queryNodes = reductionContext.getQueryExecutor().evaluateSourceNodesQuery(applicableNode, weavingRule.getNode(), null, query, context);
+                if (queryNodes.isEmpty()) {
+                  someOutputGenerated = false;
+                }
+                for (SNode queryNode : queryNodes) {
+                  weaveTemplateDeclaration(template, outputContextNode, weavingRule,
+                    GeneratorUtil.createTemplateContext(queryNode, null, reductionContext, ruleConsequence, queryNode, myGenerator), reductionContext);
+                }
+              } else {
+                myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "weaving rule: unsupported rule consequence");
+              }
+            }
+          } finally {
+            if (someOutputGenerated) {
+              myGenerationTracer.closeInputNode(applicableNode);
+            } else {
+              myGenerationTracer.popInputNode(applicableNode);
             }
           }
-        } finally {
-          if (someOutputGenerated) {
-            myGenerationTracer.closeInputNode(applicableNode);
-          } else {
-            myGenerationTracer.popInputNode(applicableNode);
-          }
         }
+      } catch (GenerationException e) {
+        if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
+        if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
+        myGenerator.showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
       }
     }
   }
 
-  private boolean checkContext(Weaving_MappingRule rule, SNode applicableNode, SNode contextNode) {
+  private boolean checkContext(TemplateWeavingRule rule, SNode applicableNode, SNode contextNode) {
     if (contextNode == null) {
-      myGenerator.showErrorMessage(applicableNode, rule.getNode(), "weaving rule: cannot find context node");
+      myGenerator.showErrorMessage(applicableNode, rule.getRuleNode().getNode(), "weaving rule: cannot find context node");
       return false;
     }
 
@@ -228,18 +243,18 @@ public class WeavingProcessor {
       SNode inputRoot = applicableNode.getContainingRoot();
       SNode originalContextRoot = myGenerator.getOriginalRootByGenerated(contextRoot);
       if (originalContextRoot == null) {
-        myGenerator.showErrorIfStrict(rule.getNode(), "bad context for weaving rule: " + contextRoot + " is generated by 'create root' rule");
+        myGenerator.showErrorIfStrict(rule.getRuleNode().getNode(), "bad context for weaving rule: " + contextRoot + " is generated by 'create root' rule");
         wasError = true;
       } else {
         if (originalContextRoot != inputRoot && inputRoot != null) {
-          myGenerator.showErrorIfStrict(rule.getNode(),
+          myGenerator.showErrorIfStrict(rule.getRuleNode().getNode(),
             "bad context for weaving rule: " + contextRoot.toString() + " is generated from " + originalContextRoot.toString()
               + ", while input node is from " + inputRoot.toString());
           wasError = true;
         }
       }
     } else {
-      myGenerator.showErrorIfStrict(rule.getNode(), "bad context for weaving rule: no root for context " + contextNode);
+      myGenerator.showErrorIfStrict(rule.getRuleNode().getNode(), "bad context for weaving rule: no root for context " + contextNode);
       wasError = true;
     }
     return !(wasError && myGenerator.isStrict());

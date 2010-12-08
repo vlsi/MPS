@@ -277,28 +277,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
-    Weaving_MappingRule_ContextNodeQuery query = rule.getContextNodeQuery();
-    if (query != null) {
-      String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(query.getNode());
-      try {
-        return (SNode) QueryMethodGenerated.invoke(
-          methodName,
-          generator.getGeneratorSessionContext(),
-          new WeavingMappingRuleContext(inputNode, rule.getNode(), generator),
-          query.getModel());
-      } catch (NoSuchMethodException e) {
-        generator.getLogger().warning(BaseAdapter.fromAdapter(rule), "cannot find context node query '" + methodName + "' : evaluate to null");
-        return null;
-      } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, rule.getNode(), "cannot evaluate rule context query");
-        generator.getLogger().handleException(e);
-      }
-    }
-    return null;
-  }
-
-  @Override
   public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     ReferenceMacro_GetReferent function = refMacro.getReferentFunction();
     if (function == null) {
@@ -349,6 +327,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
     return rule.apply(environment);
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+    return rule.getContextNode(environment, context);
   }
 
   @Override

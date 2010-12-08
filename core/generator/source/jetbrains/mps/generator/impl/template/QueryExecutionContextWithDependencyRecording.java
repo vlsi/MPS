@@ -130,16 +130,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.getContextNodeForWeavingingRule(inputNode, rule);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
   public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
@@ -214,6 +204,16 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.applyRule(rule, environment);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.getContextNode(rule, environment, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

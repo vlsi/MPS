@@ -1,6 +1,5 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.lang.generator.structure.*;
@@ -39,8 +38,6 @@ public interface QueryExecutionContext {
 
   SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context);
 
-  SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule);
-
   Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context);
 
   void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor);
@@ -54,4 +51,6 @@ public interface QueryExecutionContext {
   Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 
   Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException;
+
+  SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context);
 }

@@ -131,16 +131,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
-    try {
-      tracer.push(taskName("context for weaving", rule.getNode()), true);
-      return wrapped.getContextNodeForWeavingingRule(inputNode, rule);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
   public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     try {
       tracer.push(taskName("referent target", refMacro.getNode()), true);
@@ -221,6 +211,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       tracer.push(taskName("create root rule", rule.getRuleNode().getNode()), true);
       return wrapped.applyRule(rule, environment);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+    try {
+      tracer.push(taskName("context for weaving", rule.getRuleNode().getNode()), true);
+      return wrapped.getContextNode(rule, environment, context);
     } finally {
       tracer.pop();
     }
