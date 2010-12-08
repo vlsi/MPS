@@ -22,7 +22,7 @@ import jetbrains.mps.util.Pair;
 import java.io.IOException;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.make.CompilationResult;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -113,7 +113,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         String info = "compiling in JetBrains MPS...";
         progressHelper.setText2(info);
         info(info);
-        CompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressIndicator());
+        MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressIndicator());
         progressHelper.finishTask();
         if (compilationResult == null || compilationResult.getErrors() > 0) {
           compiledSuccessfully = false;

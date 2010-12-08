@@ -63,6 +63,17 @@ public class IDEAProjectPeer implements ProjectComponent, IAuxProjectPeer {
   }
 
   private class IDEACompiler implements IJavaCompiler{
+
+    public void refreshFiles() {
+      if (!isIDEAPresent()) { return; }
+
+      try {
+        myIdeaProjectHandler.refreshFS();
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+
     public boolean compileModule(IModule module) {
       if (!isIDEAPresent()) {
         return false;
@@ -70,8 +81,6 @@ public class IDEAProjectPeer implements ProjectComponent, IAuxProjectPeer {
 
       boolean compiledSuccessfully = true;
       try {
-        myIdeaProjectHandler.refreshFS();
-
         CompilationResult compilationResult = myIdeaProjectHandler.buildModule(module.getGeneratorOutputPath());
 
         if (compilationResult == null || compilationResult.getErrors() > 0) {

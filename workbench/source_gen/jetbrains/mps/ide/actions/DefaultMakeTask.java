@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.make.CompilationResult;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class DefaultMakeTask extends Task.Modal {
@@ -32,7 +32,7 @@ public class DefaultMakeTask extends Task.Modal {
         if (needClean) {
           maker.clean(modules, indicator);
         }
-        CompilationResult compilationResult = maker.make(modules, indicator);
+        MPSCompilationResult compilationResult = maker.make(modules, indicator);
         if (compilationResult.isReloadingNeeded()) {
           ClassLoaderManager.getInstance().reloadAll(indicator);
         }

@@ -20,7 +20,7 @@ import java.io.Serializable;
 /**
  * Evgeny Gryaznov, Aug 20, 2010
  */
-public class CompilationResult implements Serializable {
+public class MPSCompilationResult implements Serializable {
   private static final long serialVersionUID = -4445402451448540384L;
 
   private int myErrors;
@@ -28,11 +28,11 @@ public class CompilationResult implements Serializable {
   private boolean myAborted;
   private boolean myCompiledAnything;
 
-  public CompilationResult(int errors, int warnings, boolean aborted) {
+  public MPSCompilationResult(int errors, int warnings, boolean aborted) {
     this(errors, warnings, aborted, true);
   }
 
-  public CompilationResult(int errors, int warnings, boolean aborted, boolean compiled) {
+  public MPSCompilationResult(int errors, int warnings, boolean aborted, boolean compiled) {
     myErrors = errors;
     myWarnings = warnings;
     myAborted = aborted;

@@ -6,4 +6,5 @@ import jetbrains.mps.project.IModule;
 
 public interface IJavaCompiler {
   public boolean compileModule(IModule module);
+  public void refreshFiles();
 }

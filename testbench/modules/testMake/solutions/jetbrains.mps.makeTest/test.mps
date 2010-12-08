@@ -1706,7 +1706,7 @@
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382594">
-                      <link role="baseMethodDeclaration:3" targetNodeId="24.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.make.CompilationResult" resolveInfo="make" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="24.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.make.MPSCompilationResult" resolveInfo="make" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7196776143116382595">
                         <link role="baseMethodDeclaration:3" targetNodeId="8.~Collections.singleton(java.lang.Object):java.util.Set" resolveInfo="singleton" />
                         <link role="classConcept:3" targetNodeId="8.~Collections" resolveInfo="Collections" />
