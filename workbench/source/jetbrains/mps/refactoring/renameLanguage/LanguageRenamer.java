@@ -84,7 +84,7 @@ public class LanguageRenamer {
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
 
-    RefactoringFacade.writeIntoLog(structure, myContext);
+    RefactoringFacade.writeIntoLog(myContext);
     SModelRepository.getInstance().saveAll();
   }
 
@@ -109,8 +109,7 @@ public class LanguageRenamer {
 
   public void update() {
     updateReferences();
-    EditableSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    RefactoringFacade.updateLoadedModels(structure.getSModelReference(), structure, myContext);
+    RefactoringFacade.updateLoadedModels(myContext);
   }
 
   private void updateReferences() {

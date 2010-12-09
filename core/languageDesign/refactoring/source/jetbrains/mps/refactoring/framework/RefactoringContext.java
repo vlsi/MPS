@@ -270,8 +270,16 @@ public class RefactoringContext {
     if (kind != ConceptFeatureKind.NONE) {
       myConceptFeatureMap.put(new ConceptFeature(oldConceptFQName, kind, oldFeatureName), delete ? null : new ConceptFeature(newConceptFQName, kind, newFeatureName));
       myCachesAreUpToDate = false;
-      if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) { // deletion is not loggable
+      if (newFeatureName == null)  return;  // deletion is not loggable
+      if (!newFeatureName.equals(oldFeatureName)) {
         myLoggedData.getData().add(new RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
+      } else if (kind == ConceptFeatureKind.CONCEPT && !oldConceptFQName.equals(newConceptFQName)) {  // model renamed
+//        String oldModelName = NameUtil.namespaceFromLongName(oldConceptFQName);
+//        String newModelName = NameUtil.namespaceFromLongName(newConceptFQName);
+//        SModelReference modelRef = feature.getModel().getSModelReference();
+//        SModelReference oldModelRef = new SModelReference(new SModelFqName(oldModelName, modelRef.getStereotype()), modelRef.getSModelId());
+//        SModelReference newModelRef = new SModelReference(newModelName, modelRef.getStereotype());
+//        myLoggedData.getData().add(new MoveNode(new SNodePointer(oldModelRef, feature.getSNodeId()), new SNodePointer(newModelRef, feature.getSNodeId())));
       }
     }
   }

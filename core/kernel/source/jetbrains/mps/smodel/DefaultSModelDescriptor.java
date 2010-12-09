@@ -122,7 +122,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private void updateOnLoad(SModel result) {
     //StructureModificationProcessor.updateModelOnLoad(result);
     tryFixingVersion();
-    myStructureModificationLog = null;
     updateDiskTimestamp();
   }
 
@@ -380,15 +379,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private void tryFixingVersion() {
     if (getVersion() != -1) return;
 
-    int maxVersion = -1;
-    for (StructureModification data : getStructureModificationLog().getHistory()) {
-      Integer version = data.getDependencies().get(getSModelReference());
-      if (version != null && maxVersion <= version)
-        maxVersion = version + 1;
-    }
-
-    if (maxVersion != -1) {
-      setVersion(maxVersion);
+    int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
+    myStructureModificationLog = null;  // we don't need to keep log in memory
+    if (latestVersion != -1) {
+      setVersion(latestVersion);
       LOG.error("Metadata file for model " + getSModelReference().getSModelFqName() + " wasn't present. Recreated a new one.");
     }
   }

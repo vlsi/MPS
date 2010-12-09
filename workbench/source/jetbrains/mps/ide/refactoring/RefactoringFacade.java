@@ -27,11 +27,10 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.refactoring.StructureModification;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,7 +39,7 @@ import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 /**
  * Evgeny Gryaznov, Aug 25, 2010
@@ -161,8 +160,6 @@ public class RefactoringFacade {
 
   protected void doExecute(final @NotNull RefactoringContext refactoringContext) {
     final IRefactoring refactoring = refactoringContext.getRefactoring();
-    final SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
-    final SModelReference initialModelReference = modelDescriptor.getSModelReference();
     Runnable runnable = new Runnable() {
       public void run() {
         List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
@@ -172,7 +169,7 @@ public class RefactoringFacade {
             try {
               refactoring.refactor(refactoringContext);
               if (refactoring instanceof ILoggableRefactoring) {
-                updateModels(modelDescriptor, refactoringContext, initialModelReference);
+                updateModels(refactoringContext);
               }
             } catch (Throwable t) {
               LOG.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);
@@ -236,36 +233,44 @@ public class RefactoringFacade {
     }
   }
 
-  protected static void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, SModelReference initialModelReference) {
+  protected static void updateModels(RefactoringContext refactoringContext) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     if (!refactoringContext.isLocal()) {
-      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
-      updateLoadedModels(initialModelReference, (EditableSModelDescriptor) modelDescriptor, refactoringContext);
+      writeIntoLog(refactoringContext);
+      updateLoadedModels(refactoringContext);
     } else {
       UsagesList usages = refactoringContext.getUsages();
       if (usages != null) {
         for (SModel anotherModel : usages.getAffectedModels()) {
-          updateModel(anotherModel, modelDescriptor, refactoringContext);
+          updateModel(anotherModel, refactoringContext);
         }
       }
     }
   }
 
-  public static void updateLoadedModels(SModelReference initialModelReference, EditableSModelDescriptor model, RefactoringContext refactoringContext) {
+  public static void updateLoadedModels(RefactoringContext refactoringContext) {
+    Map<SModelReference, Integer> dependencies = refactoringContext.getStructureModification().getDependencies();
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
       if (anotherDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) continue;
       SModel anotherModel = anotherDescriptor.getSModel();
 
-      Set<SModelReference> dependenciesModels = SModelOperations.getDependenciesModelRefs(anotherModel);
-      if (/*model != anotherDescriptor
-        &&*/ !dependenciesModels.contains(initialModelReference)) continue;
-      updateModel(anotherModel, model, refactoringContext);
+//      Set<SModelReference> dependenciesModels = SModelOperations.getDependenciesModelRefs(anotherModel);
+//      if (!dependenciesModels.contains(initialModelReference)) continue;
+//      updateModel(anotherModel, refactoringContext);
+      // suppose that all models were saved before refactoring started => ImportElements are up to date
+      for (ImportElement elem : SModelOperations.getAllImportElements(anotherModel)) {
+        Integer version = dependencies.get(elem.getModelReference());
+        if (version != null && elem.getUsedVersion() <= version) {
+          updateModel(anotherModel, refactoringContext);
+          break;
+        }
+      }
     }
   }
 
-  protected static void updateModel(final SModel model, final SModelDescriptor usedModel, final RefactoringContext refactoringContext) {
+  protected static void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     model.runLoadingAction(new Runnable() {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
@@ -276,21 +281,20 @@ public class RefactoringFacade {
         }
 
         if (!refactoringContext.isLocal()) {
-          model.updateImportedModelUsedVersion(usedModel.getSModelReference(), ((EditableSModelDescriptor) usedModel).getVersion());
+          Map<SModelReference, Integer> dependencies = refactoringContext.getStructureModification().getDependencies();
+          for (SModelReference modelRef : dependencies.keySet()) {
+            model.updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
+          }
         }
         SModelRepository.getInstance().markChanged(model);
       }
     });
   }
 
-  public static void writeIntoLog(EditableSModelDescriptor model, RefactoringContext refactoringContext) {
+  public static void writeIntoLog(RefactoringContext refactoringContext) {
     assert !refactoringContext.isLocal();
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
-//    refactoringContext.getStructureModificationData().addDependencyModel(model);
-//    addToHistory(refactoringContext.getStructureModificationData());
-    StructureModification data = refactoringContext.getStructureModification();
-    data.addDependencyModel(model.getSModelReference(), model.getVersion());
-    StructureModificationProcessor.addToHistory(data);
+    StructureModificationProcessor.addToLog(refactoringContext.getStructureModification());
   }
 }
