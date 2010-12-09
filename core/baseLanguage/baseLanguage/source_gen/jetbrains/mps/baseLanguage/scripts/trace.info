@@ -34,7 +34,7 @@
     <scopeInfo nodeId="1240068592554" fileName="JavaUtilReferences_MigrationScript.java" startLine="28" startPosition="53" endLine="32" endPosition="11">
       <varInfo nodeId="1240068640281" varName="targetModelFQName" />
     </scopeInfo>
-    <scopeInfo nodeId="1240068592553" fileName="JavaUtilReferences_MigrationScript.java" startLine="27" startPosition="59" endLine="33" endPosition="9">
+    <scopeInfo nodeId="1240068592553" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="JavaUtilReferences_MigrationScript.java" startLine="27" startPosition="59" endLine="33" endPosition="9">
       <varInfo nodeId="1240068592557" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1240068577504" fileName="JavaUtilReferences_MigrationScript.java" startLine="27" startPosition="59" endLine="34" endPosition="21" />
@@ -233,16 +233,16 @@
     <scopeInfo nodeId="4652593672363192099" fileName="ConvertLoopLabels_MigrationScript.java" startLine="125" startPosition="159" endLine="134" endPosition="11" />
     <scopeInfo nodeId="4652593672363188840" fileName="ConvertLoopLabels_MigrationScript.java" startLine="31" startPosition="59" endLine="41" endPosition="21" />
     <scopeInfo nodeId="4652593672363192152" fileName="ConvertLoopLabels_MigrationScript.java" startLine="93" startPosition="59" endLine="103" endPosition="21" />
-    <scopeInfo nodeId="4652593672363191709" fileName="ConvertLoopLabels_MigrationScript.java" startLine="51" startPosition="53" endLine="62" endPosition="9">
+    <scopeInfo nodeId="4652593672363191709" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConvertLoopLabels_MigrationScript.java" startLine="51" startPosition="53" endLine="62" endPosition="9">
       <varInfo nodeId="4652593672363191713" varName="breakStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="4652593672363191931" fileName="ConvertLoopLabels_MigrationScript.java" startLine="62" startPosition="9" endLine="73" endPosition="9">
+    <scopeInfo nodeId="4652593672363191931" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConvertLoopLabels_MigrationScript.java" startLine="62" startPosition="9" endLine="73" endPosition="9">
       <varInfo nodeId="4652593672363191977" varName="continueStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="4652593672363192045" fileName="ConvertLoopLabels_MigrationScript.java" startLine="113" startPosition="53" endLine="124" endPosition="9">
+    <scopeInfo nodeId="4652593672363192045" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConvertLoopLabels_MigrationScript.java" startLine="113" startPosition="53" endLine="124" endPosition="9">
       <varInfo nodeId="4652593672363192091" varName="breakStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="4652593672363192098" fileName="ConvertLoopLabels_MigrationScript.java" startLine="124" startPosition="9" endLine="135" endPosition="9">
+    <scopeInfo nodeId="4652593672363192098" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConvertLoopLabels_MigrationScript.java" startLine="124" startPosition="9" endLine="135" endPosition="9">
       <varInfo nodeId="4652593672363192144" varName="continueStatement" />
     </scopeInfo>
     <scopeInfo nodeId="4652593672363186203" fileName="ConvertLoopLabels_MigrationScript.java" startLine="44" startPosition="52" endLine="73" endPosition="9">
@@ -266,7 +266,7 @@
     <scopeInfo nodeId="119214807404908477" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="31" startPosition="59" endLine="32" endPosition="180" />
     <scopeInfo nodeId="5098418897313072645" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="36" startPosition="85" endLine="37" endPosition="112" />
     <scopeInfo nodeId="420955509724271474" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="42" startPosition="29" endLine="43" endPosition="90" />
-    <scopeInfo nodeId="5098418897313072644" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="35" startPosition="52" endLine="38" endPosition="9">
+    <scopeInfo nodeId="5098418897313072644" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="35" startPosition="52" endLine="38" endPosition="9">
       <varInfo nodeId="5098418897313072656" varName="parameter" />
     </scopeInfo>
     <scopeInfo nodeId="5098418897313070123" fileName="RefactorAnonymousClasses_MigrationScript.java" startLine="35" startPosition="52" endLine="44" endPosition="9">
