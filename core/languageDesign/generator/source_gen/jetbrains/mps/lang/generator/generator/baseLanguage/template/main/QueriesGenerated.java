@@ -1107,6 +1107,34 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "template", false), "templDeclarationClass"), "constructor", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_7664108699562529367(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return "applyPart" + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).indexOf(_context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_7664108699562529851(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return "applyPart" + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).indexOf(_context.getNode());
+  }
+
+  public static Object referenceMacro_GetReferent_7664108699562529691(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return _context.getTransientObject(SNodeOperations.getParent(it)) != null;
+      }
+    });
+
+    return "applyPart" + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).indexOf(Sequence.fromIterable(selected).first());
+  }
+
+  public static Object referenceMacro_GetReferent_7664108699562529310(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return _context.getTransientObject(SNodeOperations.getParent(it)) != null;
+      }
+    });
+
+    return "applyPart" + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).indexOf(Sequence.fromIterable(selected).first());
+  }
+
   public static boolean ifMacro_Condition_8530225126180766850(final IOperationContext operationContext, final IfMacroContext _context) {
     return GenUtil.isGeneratable(_context.getOriginalInputModel());
   }
@@ -1151,6 +1179,10 @@ public class QueriesGenerated {
     return false;
   }
 
+  public static boolean ifMacro_Condition_7664108699562529990(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).isNotEmpty();
+  }
+
   public static boolean ifMacro_Condition_99767819676237501(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"));
   }
@@ -1171,11 +1203,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0rj(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0wj(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0sj(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0xj(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_4155486055398184252(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1877,6 +1909,53 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence");
   }
 
+  public static boolean ifMacro_Condition_7664108699562497131(final IOperationContext operationContext, final IfMacroContext _context) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return _context.getTransientObject(SNodeOperations.getParent(it)) != null;
+      }
+    });
+
+    return Sequence.fromIterable(selected).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        String name = (String) _context.getTransientObject(SNodeOperations.getParent(it));
+        return name.startsWith("tnode");
+      }
+    });
+  }
+
+  public static boolean ifMacro_Condition_7664108699562529595(final IOperationContext operationContext, final IfMacroContext _context) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return _context.getTransientObject(SNodeOperations.getParent(it)) != null;
+      }
+    });
+
+    if (Sequence.fromIterable(selected).count() == 1) {
+      String var = (String) _context.getTransientObject(SNodeOperations.getParent(Sequence.fromIterable(selected).first()));
+      return var.startsWith("tlist");
+    }
+    return false;
+  }
+
+  public static boolean ifMacro_Condition_7664108699562497291(final IOperationContext operationContext, final IfMacroContext _context) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return _context.getTransientObject(SNodeOperations.getParent(it)) != null;
+      }
+    }).count() > 1;
+  }
+
+  public static boolean ifMacro_Condition_7664108699562497351(final IOperationContext operationContext, final IfMacroContext _context) {
+    Iterable<SNode> selected = Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return _context.getTransientObject(SNodeOperations.getParent(it)) != null;
+      }
+    });
+
+    return Sequence.fromIterable(selected).count() == 1;
+  }
+
   public static SNode sourceNodeQuery_1168025917226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -2143,6 +2222,13 @@ public class QueriesGenerated {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
     }
     return "context";
+  }
+
+  public static Object templateArgumentQuery_7664108699562530008(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).isNotEmpty() ?
+      "contextWithParams" :
+      "context"
+    );
   }
 
   public static Object templateArgumentQuery_99767819676237552(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -2467,7 +2553,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0lu(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0vu(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -2643,6 +2729,22 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
+  public static Iterable sourceNodesQuery_7664108699562529086(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return _context.getTransientObject(SNodeOperations.getParent(it)) != null;
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_7664108699562529848(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return _context.getTransientObject(SNodeOperations.getParent(it)) != null;
+      }
+    });
+  }
+
   public static void mapSrcMacro_post_mapper_5070605274413823725(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     String name = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
     if (name.startsWith("tnode")) {
@@ -2782,21 +2884,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0rj(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0wj(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0sj(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0xj(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0lu(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0vu(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

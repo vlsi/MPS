@@ -52,10 +52,5 @@ public class TemplateOutputRoot implements TemplateDeclaration {
       environment.getTracer().closeTemplateNode(templateNode_q702qm_a0a0a1a1);
     }
     return TemplateUtil.singletonList(tnode1);
-
-  }
-
-  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode node) throws GenerationException {
-    return null;
   }
 }
