@@ -92,6 +92,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       }
       updateOnLoad(result.getModel());
     }
+    updateDiskTimestamp();
     return result;
   }
 
@@ -267,8 +268,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public boolean needsReloading() {
-    if (myDiskTimestamp == -1) return false;
-    return fileTimestamp() != myDiskTimestamp;
+    return myDiskTimestamp != -1 && fileTimestamp() != myDiskTimestamp;
   }
 
   public boolean isPackaged() {
