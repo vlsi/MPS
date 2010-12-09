@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import javax.swing.JOptionPane;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.NameUtil;
 import java.util.ArrayList;
 
@@ -65,11 +65,11 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
         return false;
       }
       if (ListSequence.fromList(nodesToRefactor.value).isEmpty()) {
-        JOptionPane.showMessageDialog(frame, "Variable is never used", "", JOptionPane.INFORMATION_MESSAGE);
+        Messages.showInfoMessage(frame, "Variable is never used", "Inline Variable");
         return false;
       } else {
-        int code = JOptionPane.showConfirmDialog(frame, "Inline variable? (" + NameUtil.formatNumericalString(ListSequence.fromList(nodesToRefactor.value).count(), "occurence") + ")", "", JOptionPane.YES_NO_OPTION);
-        if (code != JOptionPane.YES_OPTION) {
+        int code = Messages.showYesNoDialog(frame, "Inline local variable '" + myVariable + "'? (" + NameUtil.formatNumericalString(ListSequence.fromList(nodesToRefactor.value).count(), "occurence") + ")", "Inline Variable", null);
+        if (code != 0) {
           return false;
         }
       }
