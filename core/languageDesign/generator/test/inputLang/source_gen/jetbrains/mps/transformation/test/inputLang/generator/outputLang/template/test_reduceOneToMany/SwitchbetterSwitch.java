@@ -20,6 +20,8 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 
 public class SwitchbetterSwitch implements TemplateSwitchMapping {
   private static SNodePointer reductionRule_duaj4c_a0a2a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066877");
+  private static SNodePointer conseq_duaj4c_a0a0a4a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066883");
+  private static SNodePointer conseq_duaj4c_a0a0a3 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066876");
 
   private final Iterable<TemplateReductionRule> rules;
 
@@ -40,7 +42,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
   }
 
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
-    environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066876"));
+    environment.getTracer().pushRuleConsequence(conseq_duaj4c_a0a0a3);
     Collection<SNode> tlist1 = Collections.emptyList();
     return tlist1;
   }
@@ -82,7 +84,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
     }
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066883"));
+      environment.getTracer().pushRuleConsequence(conseq_duaj4c_a0a0a4a);
       Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
       return tlist1;
     }

@@ -25,6 +25,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer rootMappingRule_417xrn_a0a0a = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
   private static SNodePointer rootMappingRule_417xrn_b0b0a0a4a = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
   private static SNodePointer weavingRule_417xrn_a0a0b = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738863683");
+  private static SNodePointer weavingConseq_417xrn_a0a0a5b = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738992786");
 
   private final Collection<TemplateRootMappingRule> rootRules;
   private final Collection<TemplateWeavingRule> weavings;
@@ -138,7 +139,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode node) throws GenerationException {
-      return false;
+      environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a0a5b);
+      Collection<SNode> tlist1 = new Templateweave_InputNode_A().apply(environment, context);
+      return !(tlist1.isEmpty());
     }
   }
 }

@@ -67,6 +67,17 @@ public class DefaultTemplateContext implements TemplateContext {
     this.myInputNode = inputNode;
   }
 
+  /**
+   * Creates a new context for template declaration.
+   */
+  private DefaultTemplateContext(DefaultTemplateContext parent, Map<String, Object> variables) {
+    this.myParent = parent;
+    this.variables = variables;
+    this.pattern = null;
+    this.myInputName = null;
+    this.myInputNode = null;
+  }
+
   public DefaultTemplateContext getParent() {
     return myParent;
   }
@@ -177,5 +188,13 @@ public class DefaultTemplateContext implements TemplateContext {
       return this;
     }
     return new DefaultTemplateContext(this, inputName, getInput());
+  }
+
+  @Override
+  public TemplateContext subContext(Map<String, Object> variables) {
+    if (variables == null || variables.isEmpty()) {
+      return this;
+    }
+    return new DefaultTemplateContext(this, variables);
   }
 }

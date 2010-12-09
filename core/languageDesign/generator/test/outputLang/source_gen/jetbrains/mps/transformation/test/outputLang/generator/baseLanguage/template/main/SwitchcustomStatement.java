@@ -17,8 +17,10 @@ import java.util.Collections;
 
 public class SwitchcustomStatement implements TemplateSwitchMapping {
   private static SNodePointer reductionRule_68cped_a0a2a = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088657");
+  private static SNodePointer conseq_68cped_a0a0a4a = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090600");
   private static SNodePointer templateNode_68cped_a0a0a2a4a = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090602");
   private static SNodePointer reductionRule_68cped_a0a2b = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090603");
+  private static SNodePointer conseq_68cped_a0a0a4b = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090622");
   private static SNodePointer templateNode_68cped_a0a0a2a4b = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090625");
 
   private final Iterable<TemplateReductionRule> rules;
@@ -79,7 +81,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     }
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090600"));
+      environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a4a);
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.NullLiteral", false);
       try {
         environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a4a);
@@ -126,7 +128,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
     }
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809090622"));
+      environment.getTracer().pushRuleConsequence(conseq_68cped_a0a0a4b);
       final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.IntegerConstant", false);
       try {
         environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a4b);

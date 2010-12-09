@@ -3,6 +3,8 @@ package jetbrains.mps.generator.runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.annotation.ImmutableObject;
 
+import java.util.Map;
+
 /**
  * Evgeny Gryaznov, Mar 26, 2010
  */
@@ -26,4 +28,6 @@ public interface TemplateContext {
   TemplateContext subContext(String inputName, SNode inputNode);
 
   TemplateContext subContext(String inputName);
+
+  TemplateContext subContext(Map<String, Object> variables);
 }

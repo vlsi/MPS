@@ -16,6 +16,7 @@ import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Switchbetter_switch2 implements TemplateSwitchMapping {
+  private static SNodePointer conseq_nm87k1_a0a0a3 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075901");
   private static SNodePointer templateNode_nm87k1_a0a0a2a3 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075903");
 
   public Switchbetter_switch2() {
@@ -34,7 +35,7 @@ public class Switchbetter_switch2 implements TemplateSwitchMapping {
   }
 
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
-    environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075901"));
+    environment.getTracer().pushRuleConsequence(conseq_nm87k1_a0a0a3);
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.NullLiteral", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_nm87k1_a0a0a2a3);

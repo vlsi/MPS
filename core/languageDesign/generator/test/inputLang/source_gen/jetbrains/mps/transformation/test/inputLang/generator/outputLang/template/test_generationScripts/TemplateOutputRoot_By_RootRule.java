@@ -13,24 +13,33 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_By_RootRule implements TemplateDeclaration {
-  private static SNodePointer templateNode_yy1eeq_a0a0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195166061402");
+  private static SNodePointer template_yy1eeq_a0a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195166061402");
+  private static SNodePointer templateNode_yy1eeq_a0a0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195166061402");
 
   public TemplateOutputRoot_By_RootRule() {
+  }
+
+  public SNodePointer getTemplateNode() {
+    return template_yy1eeq_a0a0;
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", false);
     try {
-      environment.getTracer().pushTemplateNode(templateNode_yy1eeq_a0a0a1a0);
+      environment.getTracer().pushTemplateNode(templateNode_yy1eeq_a0a0a1a1);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195166061402");
       tnode1.setProperty("name", "OutputRoot_By_RootRule");
       tnode1.setProperty("text", "OutputRoot by RootRule");
 
     } finally {
       environment.getTracer().pushOutputNode(tnode1);
-      environment.getTracer().closeTemplateNode(templateNode_yy1eeq_a0a0a1a0);
+      environment.getTracer().closeTemplateNode(templateNode_yy1eeq_a0a0a1a1);
     }
     return TemplateUtil.singletonList(tnode1);
 
+  }
+
+  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode node) throws GenerationException {
+    return null;
   }
 }

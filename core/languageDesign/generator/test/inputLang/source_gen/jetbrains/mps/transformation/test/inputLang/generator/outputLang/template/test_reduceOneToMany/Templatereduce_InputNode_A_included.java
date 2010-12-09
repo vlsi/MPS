@@ -4,42 +4,57 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.Collection;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.runtime.TemplateUtil;
+import java.util.Collection;
 
 public class Templatereduce_InputNode_A_included implements TemplateDeclaration {
-  private static SNodePointer templateNode_nxpb9y_a0a0a1a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251692");
-  private static SNodePointer templateNode_nxpb9y_a0a0a3a0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480277769");
+  private static SNodePointer templateNode_nxpb9y_a0a0a1a1 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251692");
+  private static SNodePointer templateNode_nxpb9y_a0a0a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480277769");
 
   public Templatereduce_InputNode_A_included() {
   }
 
-  public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  public SNodePointer getTemplateNode() {
+    return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480251689");
+  }
+
+  public SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
-      environment.getTracer().pushTemplateNode(templateNode_nxpb9y_a0a0a1a0);
+      environment.getTracer().pushTemplateNode(templateNode_nxpb9y_a0a0a1a1);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480251692");
       tnode1.setProperty("text", "child included #1");
 
     } finally {
       environment.getTracer().pushOutputNode(tnode1);
-      environment.getTracer().closeTemplateNode(templateNode_nxpb9y_a0a0a1a0);
+      environment.getTracer().closeTemplateNode(templateNode_nxpb9y_a0a0a1a1);
     }
+    return tnode1;
+  }
+
+  public SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
-      environment.getTracer().pushTemplateNode(templateNode_nxpb9y_a0a0a3a0);
+      environment.getTracer().pushTemplateNode(templateNode_nxpb9y_a0a0a1a2);
       environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480277769");
       tnode2.setProperty("text", "child included #2");
 
     } finally {
       environment.getTracer().pushOutputNode(tnode2);
-      environment.getTracer().closeTemplateNode(templateNode_nxpb9y_a0a0a3a0);
+      environment.getTracer().closeTemplateNode(templateNode_nxpb9y_a0a0a1a2);
     }
-    return TemplateUtil.asList(tnode1, tnode2);
+    return tnode2;
+  }
+
+  public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
+    return null;
+  }
+
+  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode node) throws GenerationException {
+    return null;
   }
 }
