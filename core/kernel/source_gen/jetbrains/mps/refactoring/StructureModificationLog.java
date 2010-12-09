@@ -6,10 +6,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class StructureModificationHistory0 {
+public class StructureModificationLog {
   private List<StructureModification> myDataList = ListSequence.fromList(new ArrayList<StructureModification>());
 
-  public StructureModificationHistory0() {
+  public StructureModificationLog() {
   }
 
   public List<StructureModification> getHistory() {

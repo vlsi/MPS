@@ -17,15 +17,13 @@ package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.StructureModificationHistory;
+import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
 import java.util.Set;
 
 public interface IModelRootManager {
@@ -38,9 +36,9 @@ public interface IModelRootManager {
 
   SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade);
 
-  StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
+  StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor);
 
-  void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationHistory history);
+  void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationLog log);
 
   boolean isFindUsagesSupported();
 

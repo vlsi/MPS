@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.StructureModificationHistory;
+import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -108,13 +108,13 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   @Override
-  public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationHistory history) {
+  public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationLog log) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    RefactoringsPersistence.save(dsm.getModelFile(), history);
+    RefactoringsPersistence.save(dsm.getModelFile(), log);
   }
 
   @Override
-  public StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor sm) {
+  public StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     return RefactoringsPersistence.load(dsm.getModelFile());
   }

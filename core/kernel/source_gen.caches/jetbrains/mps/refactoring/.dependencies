@@ -11,7 +11,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModification" />
-    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationHistory0" />
+    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationLog" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.ReadHelper" />
     <classNode dependClassName="org.xml.sax.Attributes" />
@@ -29,7 +29,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModification" />
-    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationHistory0" />
+    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationLog" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.WriteHelper" />
@@ -84,7 +84,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode extendsClassName="jetbrains.mps.refactoring.Entry" />
   </dependency>
-  <dependency className="jetbrains.mps.refactoring.StructureModificationHistory0" file="StructureModificationHistory0.java">
+  <dependency className="jetbrains.mps.refactoring.StructureModificationLog" file="StructureModificationLog.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -103,7 +103,7 @@
     <classNode dependClassName="jetbrains.mps.refactoring.ModelLinkMap" />
     <classNode dependClassName="jetbrains.mps.refactoring.PlayRefactoringsFlag" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModification" />
-    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationHistory0" />
+    <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationLog" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
@@ -111,7 +111,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.RefactoringsPersistence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
 </dependenciesRoot>

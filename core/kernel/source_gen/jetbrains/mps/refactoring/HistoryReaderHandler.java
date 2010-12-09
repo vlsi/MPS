@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 
-public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationHistory0> {
+public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog> {
   private static String[] EMPTY_ARRAY = new String[0];
 
   private HistoryReaderHandler.historyElementHandler historyhandler = new HistoryReaderHandler.historyElementHandler();
@@ -28,13 +28,13 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationHis
   private Stack<HistoryReaderHandler.ElementHandler> myHandlersStack = new Stack<HistoryReaderHandler.ElementHandler>();
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
-  private StructureModificationHistory0 myResult;
+  private StructureModificationLog myResult;
   private ReadHelper fieldhelper;
 
   public HistoryReaderHandler() {
   }
 
-  public StructureModificationHistory0 getResult() {
+  public StructureModificationLog getResult() {
     return myResult;
   }
 
@@ -61,7 +61,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationHis
     if (current != null) {
       current.validate(childValue);
       if (myHandlersStack.empty()) {
-        myResult = (StructureModificationHistory0) childValue;
+        myResult = (StructureModificationLog) childValue;
       } else {
         myHandlersStack.peek().handleChild(myValues.peek(), qName, childValue);
       }
@@ -90,7 +90,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationHis
 
     Object result = current.createObject(attributes);
     if (myHandlersStack.empty()) {
-      myResult = (StructureModificationHistory0) result;
+      myResult = (StructureModificationLog) result;
     }
 
     // handle attributes 
@@ -144,8 +144,8 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationHis
     }
 
     @Override
-    protected StructureModificationHistory0 createObject(Attributes attrs) {
-      return new StructureModificationHistory0();
+    protected StructureModificationLog createObject(Attributes attrs) {
+      return new StructureModificationLog();
     }
 
     @Override
@@ -158,7 +158,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationHis
 
     @Override
     protected void handleChild(Object resultObject, String tagName, Object value) throws SAXException {
-      StructureModificationHistory0 result = (StructureModificationHistory0) resultObject;
+      StructureModificationLog result = (StructureModificationLog) resultObject;
       if ("StructureModification".equals(tagName)) {
         StructureModification child = (StructureModification) value;
         ListSequence.fromList(result.getHistory()).addElement(child);

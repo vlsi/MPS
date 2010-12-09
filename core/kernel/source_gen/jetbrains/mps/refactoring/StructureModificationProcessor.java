@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,8 +41,7 @@ public class StructureModificationProcessor {
     int usedVersion = SModelOperations.getUsedVersion(myModel, usedModelDescriptor.getSModelReference());
     if (currentVersion > usedVersion) {
       boolean played = false;
-      // <node> 
-      StructureModificationHistory0 history = RefactoringsPersistence.load0(usedModelDescriptor.getModelFile());
+      StructureModificationLog history = usedModelDescriptor.getStructureModificationLog();
       if (history == null) {
         return false;
       }
@@ -102,16 +100,10 @@ public class StructureModificationProcessor {
     // add data to all dependent models 
     for (IMapping<SModelReference, Integer> d : MapSequence.fromMap(data.getDependencies())) {
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.key());
-      // <node> 
-      StructureModificationHistory0 history = RefactoringsPersistence.load0(model.getModelFile());
-      if (history == null) {
-        history = new StructureModificationHistory0();
-      }
+      StructureModificationLog history = model.getStructureModificationLog();
       history.addStructureModification(data);
       model.setVersion(d.value() + 1);
-      // <node> 
-      // <node> 
-      RefactoringsPersistence.save0(model.getModelFile(), history);
+      model.saveStructureModificationLog(history);
       SModelRepository.getInstance().markChanged(model, true);
     }
   }

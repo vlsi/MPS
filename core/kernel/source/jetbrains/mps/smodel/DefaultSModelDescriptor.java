@@ -18,9 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.StructureModificationData;
-import jetbrains.mps.refactoring.StructureModificationHistory;
-import jetbrains.mps.refactoring.StructureModificationProcessor;
+import jetbrains.mps.refactoring.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -46,7 +44,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private Map<String, String> myMetadata;
 
   private final Object myRefactoringHistoryLock = new Object();
-  private StructureModificationHistory myStructureModificationHistory;
+  private StructureModificationLog myStructureModificationLog;
   private int myPersistenceVersion = -1;
 
   private long myLastChange;
@@ -124,7 +122,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private void updateOnLoad(SModel result) {
     //StructureModificationProcessor.updateModelOnLoad(result);
     tryFixingVersion();
-    myStructureModificationHistory = null;
+    myStructureModificationLog = null;
     updateDiskTimestamp();
   }
 
@@ -190,21 +188,21 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   @NotNull
-  public StructureModificationHistory getStructureModificationHistory() {
+  public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
-      if (myStructureModificationHistory == null) {
-        myStructureModificationHistory = myModelRootManager.loadModelRefactorings(this);
+      if (myStructureModificationLog == null) {
+        myStructureModificationLog = myModelRootManager.loadModelRefactorings(this);
       }
-      if (myStructureModificationHistory == null) {
-        myStructureModificationHistory = new StructureModificationHistory();
+      if (myStructureModificationLog == null) {
+        myStructureModificationLog = new StructureModificationLog();
       }
     }
-    return myStructureModificationHistory;
+    return myStructureModificationLog;
   }
 
-  public void saveStructureModificationHistory(@NotNull StructureModificationHistory history) {
-    myStructureModificationHistory = history;
-    myModelRootManager.saveModelRefactorings(this, history);
+  public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
+    myStructureModificationLog = log;
+    myModelRootManager.saveModelRefactorings(this, log);
   }
 
   public long lastChangeTime() {
@@ -278,7 +276,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     mySModel = newModel;
     setLoadingState(mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED);
 
-    myStructureModificationHistory = null;
+    myStructureModificationLog = null;
     if (mySModel != null) {
       mySModel.setModelDescriptor(this);
     }
@@ -383,8 +381,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (getVersion() != -1) return;
 
     int maxVersion = -1;
-    for (StructureModificationData data : getStructureModificationHistory().getDataList()) {
-      maxVersion = Math.max(maxVersion, data.getModelVersion());
+    for (StructureModification data : getStructureModificationLog().getHistory()) {
+      Integer version = data.getDependencies().get(getSModelReference());
+      if (version != null && maxVersion <= version)
+        maxVersion = version + 1;
     }
 
     if (maxVersion != -1) {

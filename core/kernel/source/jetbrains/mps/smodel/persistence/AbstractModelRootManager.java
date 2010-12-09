@@ -16,14 +16,12 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.refactoring.StructureModificationHistory;
+import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
 import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
@@ -59,12 +57,12 @@ public abstract class AbstractModelRootManager implements IModelRootManager {
   }
 
   @Override
-  public StructureModificationHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
+  public StructureModificationLog loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
     return null;
   }
 
   @Override
-  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationHistory history) {
+  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull StructureModificationLog log) {
     throw new UnsupportedOperationException();
   }
 

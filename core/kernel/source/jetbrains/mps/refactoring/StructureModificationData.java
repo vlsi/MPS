@@ -240,13 +240,6 @@ public class StructureModificationData {
     return mySerializer.deserialize(element);
   }
 
-  public int getModelVersion() {
-    return myModelVersion;
-  }
-  public void setModelVersion(int version) {
-    myModelVersion = version;
-  }
-
   public static class Dependency {
     private final String MODEL_UID = "modelUID";
     private final String MODEL_VERSION = "version";

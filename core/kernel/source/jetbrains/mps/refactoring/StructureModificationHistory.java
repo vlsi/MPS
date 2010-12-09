@@ -25,14 +25,6 @@ public class StructureModificationHistory {
 
   private List<StructureModificationData> myDataList = new ArrayList<StructureModificationData>();
 
-  public List<StructureModificationData> getDataList() {
-    return myDataList;
-  }
-
-  public void addStructureModificationData(StructureModificationData data) {
-    myDataList.add(data);
-  }
-
   public StructureModificationHistory fromElement(Element e) {
     if (e == null) return this;
     for (Element refactoringContextElement : (List<Element>) e.getChildren(StructureModificationData.REFACTORING_CONTEXT)) {

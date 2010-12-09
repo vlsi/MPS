@@ -34,7 +34,7 @@ public class HistoryWriter {
   public HistoryWriter() {
   }
 
-  public Document saveHistory(StructureModificationHistory0 history) {
+  public Document saveHistory(StructureModificationLog history) {
     final Element root = new Element(MODIFICATION_HISTORY);
     ListSequence.fromList(history.getHistory()).visitAll(new IVisitor<StructureModification>() {
       public void visit(StructureModification it) {

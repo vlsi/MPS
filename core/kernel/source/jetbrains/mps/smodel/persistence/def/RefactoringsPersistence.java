@@ -4,14 +4,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.HistoryReaderHandler;
 import jetbrains.mps.refactoring.HistoryWriter;
-import jetbrains.mps.refactoring.StructureModificationHistory;
-import jetbrains.mps.refactoring.StructureModificationHistory0;
+import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.JDOMException;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
@@ -32,11 +29,11 @@ public class RefactoringsPersistence {
     return FileSystem.getInstance().getFileByPath(refactoringsPath);
   }
 
-  public static void save(IFile modelFile, StructureModificationHistory refactorings) {
+  public static void save(IFile modelFile, StructureModificationLog log) {
     IFile refactoringsFile = getRefactoringsFile(modelFile);
     refactoringsFile.createNewFile();
 
-    Document document = new Document(refactorings.toElement());
+    Document document = new HistoryWriter().saveHistory(log);
     if (refactoringsFile.isReadOnly()) {
       LOG.error("Can't write to " + refactoringsFile.getAbsolutePath());
       return;
@@ -49,44 +46,7 @@ public class RefactoringsPersistence {
     }
   }
 
-  public static void save0(IFile modelFile, StructureModificationHistory0 history) {
-    IFile refactoringsFile = getRefactoringsFile(modelFile);
-    refactoringsFile.createNewFile();
-
-    Document document = new HistoryWriter().saveHistory(history);
-    if (refactoringsFile.isReadOnly()) {
-      LOG.error("Can't write to " + refactoringsFile.getAbsolutePath());
-      return;
-    }
-
-    try {
-      JDOMUtil.writeDocument(document, refactoringsFile);
-    } catch (IOException e) {
-      LOG.error("Error in file " + refactoringsFile, e);
-    }
-  }
-
-  public static StructureModificationHistory load(IFile modelFile) {
-    IFile refactoringsFile = getRefactoringsFile(modelFile);
-    if (!refactoringsFile.exists()) {
-      return null;
-    }
-    try {
-      Element root = JDOMUtil.loadDocument(refactoringsFile).getRootElement();
-      if (StructureModificationHistory.REFACTORING_HISTORY.equals(root.getName())) {
-        return new StructureModificationHistory().fromElement(root);
-      }
-      return null;
-    } catch (IOException e) {
-      LOG.error(e);
-      return null;
-    } catch (JDOMException e) {
-      LOG.error(e);
-      return null;
-    }
-  }
-
-  public static StructureModificationHistory0 load0(IFile modelFile) {
+  public static StructureModificationLog load(IFile modelFile) {
     IFile refactoringsFile = getRefactoringsFile(modelFile);
     if (!refactoringsFile.exists())  return null;
     try {
