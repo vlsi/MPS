@@ -28,7 +28,7 @@
     <nodeInfo nodeId="1240319640334" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="QueryBlock_Editor.java" startLine="99" startPosition="109" endLine="102" endPosition="13" />
     <nodeInfo nodeId="1240319640388" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="QueryBlock_Editor.java" startLine="107" startPosition="90" endLine="110" endPosition="15" />
     <nodeInfo nodeId="1240319640374" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueryBlock_Editor.java" startLine="104" startPosition="102" endLine="113" endPosition="13" />
-    <nodeInfo nodeId="1240319640313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="QueryBlock_Editor.java" startLine="96" startPosition="43" endLine="116" endPosition="0" />
+    <nodeInfo nodeId="1240319640313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" fileName="QueryBlock_Editor.java" startLine="96" startPosition="43" endLine="116" endPosition="0" />
     <nodeInfo nodeId="1240319640308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueryBlock_Editor.java" startLine="95" startPosition="44" endLine="116" endPosition="10" />
     <scopeInfo nodeId="1240319640335" fileName="QueryBlock_Editor.java" startLine="100" startPosition="128" endLine="101" endPosition="188" />
     <scopeInfo nodeId="1240319640389" fileName="QueryBlock_Editor.java" startLine="108" startPosition="40" endLine="109" endPosition="105" />
@@ -37,13 +37,13 @@
       <varInfo nodeId="1240319640377" varName="alias" />
       <varInfo nodeId="1240319640383" varName="description" />
     </scopeInfo>
-    <scopeInfo nodeId="1240319640374" fileName="QueryBlock_Editor.java" startLine="104" startPosition="102" endLine="113" endPosition="13">
+    <scopeInfo nodeId="1240319640374" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueryBlock_Editor.java" startLine="104" startPosition="102" endLine="113" endPosition="13">
       <varInfo nodeId="1240319640417" varName="cfp" />
     </scopeInfo>
     <scopeInfo nodeId="1240319640318" fileName="QueryBlock_Editor.java" startLine="97" startPosition="75" endLine="114" endPosition="30">
       <varInfo nodeId="1240319640320" varName="collection" />
     </scopeInfo>
-    <scopeInfo nodeId="1240319640313" fileName="QueryBlock_Editor.java" startLine="96" startPosition="43" endLine="116" endPosition="0">
+    <scopeInfo nodeId="1240319640313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" fileName="QueryBlock_Editor.java" startLine="96" startPosition="43" endLine="116" endPosition="0">
       <varInfo nodeId="1240319640316" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="1240319640307" fileName="QueryBlock_Editor.java" startLine="95" startPosition="44" endLine="116" endPosition="10" />

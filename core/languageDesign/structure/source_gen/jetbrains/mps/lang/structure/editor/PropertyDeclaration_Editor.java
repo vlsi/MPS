@@ -115,13 +115,13 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_lnae77_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("doNotGenerate");
-    provider.setNoTargetText("<no doNotGenerate>");
+  private EditorCell createRefCell_lnae77_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("dataType");
+    provider.setNoTargetText("<no data type>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline_lnae77_a2a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_doNotGenerate");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -133,13 +133,13 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_lnae77_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("dataType");
-    provider.setNoTargetText("<no data type>");
+  private EditorCell createProperty_lnae77_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("doNotGenerate");
+    provider.setNoTargetText("<no doNotGenerate>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline_lnae77_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_doNotGenerate");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

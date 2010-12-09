@@ -162,7 +162,7 @@
     <scopeInfo nodeId="7388416617631956518" fileName="ExponentOperation_Component.java" startLine="135" startPosition="67" endLine="136" endPosition="86" />
     <scopeInfo nodeId="7388416617631943029" fileName="ExponentOperation_Component.java" startLine="143" startPosition="70" endLine="144" endPosition="87" />
     <scopeInfo nodeId="7388416617631865947" fileName="ExponentOperation_Component.java" startLine="111" startPosition="221" endLine="114" endPosition="9" />
-    <scopeInfo nodeId="7388416617631865944" fileName="ExponentOperation_Component.java" startLine="110" startPosition="73" endLine="115" endPosition="7" />
+    <scopeInfo nodeId="7388416617631865944" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExponentOperation_Component.java" startLine="110" startPosition="73" endLine="115" endPosition="7" />
     <scopeInfo nodeId="7255837154369796266" fileName="ExponentOperation_Component.java" startLine="109" startPosition="105" endLine="116" endPosition="20">
       <varInfo nodeId="7388416617631865922" varName="result" />
     </scopeInfo>

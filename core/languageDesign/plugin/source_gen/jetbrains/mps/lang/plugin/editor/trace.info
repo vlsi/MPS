@@ -245,10 +245,10 @@
     <nodeInfo nodeId="1171743928471867523" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ActionParameter_Hint.java" startLine="90" startPosition="19" endLine="93" endPosition="9" />
     <nodeInfo nodeId="1171743928471867586" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ActionParameter_Hint.java" startLine="121" startPosition="19" endLine="124" endPosition="9" />
     <nodeInfo nodeId="1171743928471867616" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ActionParameter_Hint.java" startLine="129" startPosition="18" endLine="132" endPosition="9" />
-    <nodeInfo nodeId="1171743928471867473" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ActionParameter_Hint.java" startLine="78" startPosition="207" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="1171743928471867509" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ActionParameter_Hint.java" startLine="86" startPosition="138" endLine="90" endPosition="0" />
-    <nodeInfo nodeId="1171743928471867566" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ActionParameter_Hint.java" startLine="117" startPosition="207" endLine="121" endPosition="0" />
-    <nodeInfo nodeId="1171743928471867602" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ActionParameter_Hint.java" startLine="125" startPosition="142" endLine="129" endPosition="0" />
+    <nodeInfo nodeId="1171743928471867473" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionParameter_Hint.java" startLine="78" startPosition="207" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="1171743928471867509" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionParameter_Hint.java" startLine="86" startPosition="138" endLine="90" endPosition="0" />
+    <nodeInfo nodeId="1171743928471867566" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionParameter_Hint.java" startLine="117" startPosition="207" endLine="121" endPosition="0" />
+    <nodeInfo nodeId="1171743928471867602" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionParameter_Hint.java" startLine="125" startPosition="142" endLine="129" endPosition="0" />
     <nodeInfo nodeId="1171743928471867462" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ActionParameter_Hint.java" startLine="77" startPosition="31" endLine="82" endPosition="19" />
     <nodeInfo nodeId="1171743928471867500" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ActionParameter_Hint.java" startLine="85" startPosition="9" endLine="90" endPosition="19" />
     <nodeInfo nodeId="1171743928471867555" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ActionParameter_Hint.java" startLine="116" startPosition="31" endLine="121" endPosition="19" />
@@ -262,10 +262,10 @@
     <scopeInfo nodeId="1171743928471867605" fileName="ActionParameter_Hint.java" startLine="126" startPosition="43" endLine="127" endPosition="128" />
     <scopeInfo nodeId="1171743928471867617" fileName="ActionParameter_Hint.java" startLine="130" startPosition="38" endLine="131" endPosition="20" />
     <scopeInfo nodeId="1171743928471867643" fileName="ActionParameter_Hint.java" startLine="153" startPosition="111" endLine="154" endPosition="95" />
-    <scopeInfo nodeId="1171743928471867473" fileName="ActionParameter_Hint.java" startLine="78" startPosition="207" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1171743928471867509" fileName="ActionParameter_Hint.java" startLine="86" startPosition="138" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1171743928471867566" fileName="ActionParameter_Hint.java" startLine="117" startPosition="207" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="1171743928471867602" fileName="ActionParameter_Hint.java" startLine="125" startPosition="142" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="1171743928471867473" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionParameter_Hint.java" startLine="78" startPosition="207" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1171743928471867509" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionParameter_Hint.java" startLine="86" startPosition="138" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1171743928471867566" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionParameter_Hint.java" startLine="117" startPosition="207" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="1171743928471867602" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionParameter_Hint.java" startLine="125" startPosition="142" endLine="129" endPosition="0" />
     <scopeInfo nodeId="1171743928471867461" fileName="ActionParameter_Hint.java" startLine="77" startPosition="31" endLine="95" endPosition="33">
       <varInfo nodeId="1171743928471867463" varName="annotation" />
       <varInfo nodeId="1171743928471867501" varName="description" />
@@ -453,7 +453,7 @@
     <nodeInfo nodeId="6193305307616734315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="59" startPosition="49" endLine="60" endPosition="34" />
     <nodeInfo nodeId="6193305307616734285" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="54" startPosition="51" endLine="58" endPosition="9" />
     <scopeInfo nodeId="6193305307616734292" fileName="ParameterizedShortcutChange_Editor.java" startLine="55" startPosition="148" endLine="57" endPosition="30" />
-    <scopeInfo nodeId="6193305307616734285" fileName="ParameterizedShortcutChange_Editor.java" startLine="54" startPosition="51" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="6193305307616734285" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="54" startPosition="51" endLine="58" endPosition="9" />
     <scopeInfo nodeId="6193305307616734279" fileName="ParameterizedShortcutChange_Editor.java" startLine="53" startPosition="31" endLine="60" endPosition="34">
       <varInfo nodeId="6193305307616734281" varName="params" />
     </scopeInfo>

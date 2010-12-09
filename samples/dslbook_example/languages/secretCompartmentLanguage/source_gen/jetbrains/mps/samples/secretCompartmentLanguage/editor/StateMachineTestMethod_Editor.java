@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -119,13 +119,13 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_ttjdsx_b0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("methodName");
-    provider.setNoTargetText("<no methodName>");
+  private EditorCell createRefCell_ttjdsx_b1b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("finalState");
+    provider.setNoTargetText("<no finalState>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new StateMachineTestMethod_Editor._Inline_ttjdsx_a1b1b0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_methodName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -137,13 +137,13 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_ttjdsx_b1b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("finalState");
-    provider.setNoTargetText("<no finalState>");
+  private EditorCell createProperty_ttjdsx_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("methodName");
+    provider.setNoTargetText("<no methodName>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StateMachineTestMethod_Editor._Inline_ttjdsx_a1b1b0());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_methodName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

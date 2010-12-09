@@ -8,8 +8,8 @@
   <unitInfo fileName="CreateEquationStatement_Editor.java" startLine="177" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.CreateEquationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_0" />
   <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="657" startPosition="0" endLine="665" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$ReplaceWith_AbstractEquationStatement_cellMenu_a0b0_1" />
   <unitInfo fileName="TypeOfExpression_Editor.java" startLine="57" startPosition="48" endLine="67" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.TypeOfExpression_Editor$1" />
-  <unitInfo fileName="AbstractEquationStatement_Editor.java" startLine="101" startPosition="48" endLine="111" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractEquationStatement_Editor$1" />
-  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="382" startPosition="48" endLine="392" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$1" />
+  <unitInfo fileName="AbstractEquationStatement_Editor.java" startLine="67" startPosition="48" endLine="77" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractEquationStatement_Editor$1" />
+  <unitInfo fileName="AbstractInequationStatement_Editor.java" startLine="310" startPosition="48" endLine="320" endPosition="7" unitName="jetbrains.mps.lang.typesystem.editor.AbstractInequationStatement_Editor$1" />
   <unitInfo fileName="SimpleRule_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.SimpleRule_Editor" />
   <unitInfo fileName="TypeClause_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.TypeClause_Editor" />
   <unitInfo fileName="ApplicableNodeCondition_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.ApplicableNodeCondition_Editor" />
@@ -216,7 +216,7 @@
     <scopeInfo nodeId="1214399678505" fileName="AbstractEquationStatement_Editor.java" startLine="124" startPosition="107" endLine="129" endPosition="5" />
   </root>
   <root nodeId="1176893712697">
-    <nodeInfo nodeId="1176893715917" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="Colors.java" startLine="7" startPosition="21" endLine="8" endPosition="58" />
+    <nodeInfo nodeId="1176893715917" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BROWN" fileName="Colors.java" startLine="7" startPosition="21" endLine="8" endPosition="58" />
     <unitInfo nodeId="1176893712697" fileName="Colors.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.typesystem.editor.Colors" />
   </root>
   <root nodeId="1195214383471">

@@ -270,11 +270,11 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 
-  private static int _StyleParameter_QueryFunction_j8ahcr_a4b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
-  }
-
   private static boolean _StyleParameter_QueryFunction_j8ahcr_a5b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
+  private static int _StyleParameter_QueryFunction_j8ahcr_a4b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 }
