@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.watching;
 
+import com.intellij.openapi.fileEditor.FileDocumentManager;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
-
-import java.io.File;
 
 class ModuleFileProcessor extends EventProcessor {
   private static final ModuleFileProcessor INSTANCE = new ModuleFileProcessor();
@@ -34,12 +33,11 @@ class ModuleFileProcessor extends EventProcessor {
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
-    if (!event.isFromRefresh()) {
-      return;
-    }
-    IModule module = getModuleByEvent(event);
-    if ((module != null) && (module.needReloading())) {
-      reloadSession.addChangedModule(module);
+    if (event.isFromRefresh() && event.getRequestor() instanceof FileDocumentManager) {
+      IModule module = getModuleByEvent(event);
+      if ((module != null) && (module.needReloading())) {
+        reloadSession.addChangedModule(module);
+      }
     }
   }
 
