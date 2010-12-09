@@ -29,8 +29,9 @@ import jetbrains.mps.refactoring.StructureModification;
 import jetbrains.mps.refactoring.StructureModification.MoveNode;
 import jetbrains.mps.refactoring.StructureModification.RenameNode;
 import jetbrains.mps.refactoring.StructureModification.RenameNode.RenameType;
-import jetbrains.mps.refactoring.StructureModificationData;
+import jetbrains.mps.refactoring.StructureModificationData.ConceptFeature;
 import jetbrains.mps.refactoring.StructureModificationData.ConceptFeatureKind;
+import jetbrains.mps.refactoring.StructureModificationData.FullNodeId;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
@@ -42,7 +43,6 @@ public class RefactoringContext {
   private static final Logger LOG = Logger.getLogger(RefactoringContext.class);
 
   private IRefactoring myRefactoring;
-  private StructureModificationData myData;
   private StructureModification myLoggedData = new StructureModification();
   //-----------------
   private Map<String, Object> myParametersMap = new HashMap<String, Object>();
@@ -65,16 +65,7 @@ public class RefactoringContext {
   //-----------------
 
   public RefactoringContext(IRefactoring refactoring) {
-    this(new StructureModificationData());
     setRefactoring(refactoring);
-  }
-
-  public RefactoringContext(StructureModificationData data) {
-    myData = data;
-  }
-
-  public StructureModificationData getStructureModificationData() {
-    return myData;
   }
 
   public StructureModification getStructureModification() {
@@ -169,7 +160,8 @@ public class RefactoringContext {
     }
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
-      myData.addToMoveMap(key, target);
+      myMoveMap.put(new FullNodeId(key), new FullNodeId(target));
+      myCachesAreUpToDate = false;
       myLoggedData.getData().add(new MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
@@ -179,7 +171,8 @@ public class RefactoringContext {
   }
 
   public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode) {
-    myData.addToMoveMap(whatNode, withNode);
+    myMoveMap.put(new FullNodeId(whatNode), new FullNodeId(withNode));
+    myCachesAreUpToDate = false;
     myLoggedData.getData().add(new MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
     whatNode.delete();
   }
@@ -203,7 +196,8 @@ public class RefactoringContext {
     }
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
-      myData.addToMoveMap(key, target);
+      myMoveMap.put(new FullNodeId(key), new FullNodeId(target));
+      myCachesAreUpToDate = false;
       myLoggedData.getData().add(new MoveNode(new SNodePointer(key), new SNodePointer(target)));
     }
     for (SNode node : sourceNodes) {
@@ -274,13 +268,8 @@ public class RefactoringContext {
       }
     }
     if (kind != ConceptFeatureKind.NONE) {
-//      ConceptFeature oldConceptFeature = new ConceptFeature(oldConceptFQName, kind, oldFeatureName);
-//      ConceptFeature newConceptFeature = null;
-//      if (!delete) {
-//        newConceptFeature = new ConceptFeature(newConceptFQName, kind, newFeatureName);
-//      }
-//      myConceptFeatureMap.put(oldConceptFeature, newConceptFeature);
-      myData.addToConceptFeatureMap(kind, oldConceptFQName, oldFeatureName, newConceptFQName, delete ? null : newFeatureName);
+      myConceptFeatureMap.put(new ConceptFeature(oldConceptFQName, kind, oldFeatureName), delete ? null : new ConceptFeature(newConceptFQName, kind, newFeatureName));
+      myCachesAreUpToDate = false;
       if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) { // deletion is not loggable
         myLoggedData.getData().add(new RenameNode(new SNodePointer(feature), renameType, newFeatureName, oldFeatureName));
       }
@@ -288,23 +277,201 @@ public class RefactoringContext {
   }
 
   public void updateByDefault(SModel model) {
-    myData.updateModelWithMaps(model, true);
+    updateModelWithMaps(model);
   }
 
+
+  // Moved from old StructureModificationData till new Refactoring language will be implemented
+  // for updateModelWithMaps()
+  private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
+  private Map<FullNodeId, FullNodeId> myMoveMap = new HashMap<FullNodeId, FullNodeId>();
+  private Map<String, Set<ConceptFeature>> myFQNamesToConceptFeaturesCache = new HashMap<String, Set<ConceptFeature>>();
+  private Map<SNodeId, Set<FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<FullNodeId>>();
+  private boolean myCachesAreUpToDate = false;
+
+  public void computeCaches() {
+    myFQNamesToConceptFeaturesCache.clear();
+    myNodeIdsToFullNodeIdsCache.clear();
+
+    //nodeId -> fullNodeId
+    for (FullNodeId fullNodeId : myMoveMap.keySet()) {
+      SNodeId nodeId = fullNodeId.getNodeId();
+      Set<FullNodeId> ids = myNodeIdsToFullNodeIdsCache.get(nodeId);
+      if (ids == null) {
+        ids = new HashSet<FullNodeId>();
+        myNodeIdsToFullNodeIdsCache.put(nodeId, ids);
+      }
+      ids.add(fullNodeId);
+    }
+
+    //concept fq name -> concept feature
+    for (ConceptFeature conceptFeature : myConceptFeatureMap.keySet()) {
+      String conceptFQName = conceptFeature.getConceptFQName();
+      Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
+      if (conceptFeatures == null) {
+        conceptFeatures = new HashSet<ConceptFeature>();
+        myFQNamesToConceptFeaturesCache.put(conceptFQName, conceptFeatures);
+      }
+      conceptFeatures.add(conceptFeature);
+    }
+    myCachesAreUpToDate = true;
+  }
+
+  public void updateModelWithMaps(SModel model) {
+    if (!myCachesAreUpToDate)  computeCaches();
+
+    for (SNode node : model.nodes()) {
+
+      //updating concept features' names
+      String conceptFQName = node.getConceptFqName();
+
+      //only this concept
+      Set<ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
+      if (exactConceptFeatures != null) {
+        for (ConceptFeature conceptFeature : exactConceptFeatures) {
+          ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
+          ConceptFeatureKind kind = conceptFeature.getConceptFeatureKind();
+
+          if (kind == ConceptFeatureKind.CONCEPT) {
+            if (newConceptFeature == null) {
+              node.delete();
+            } else {
+              String newConceptFQName = newConceptFeature.getConceptFQName();
+              HackSNodeUtil.setConceptFqName(node, newConceptFQName);
+            }
+          }
+        }
+      }
+
+      //this concept and parents
+      Set<ConceptFeature> allConceptFeatures = new HashSet<ConceptFeature>();
+      if (exactConceptFeatures != null) {
+        allConceptFeatures.addAll(exactConceptFeatures);
+      }
+
+      for (String parentConceptFQName : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFQName)) {
+        Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(parentConceptFQName);
+        if (conceptFeatures != null) {
+          allConceptFeatures.addAll(conceptFeatures);
+        }
+      }
+
+
+      for (ConceptFeature conceptFeature : allConceptFeatures) {
+        ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
+        boolean delete = newConceptFeature == null;
+        ConceptFeatureKind kind = conceptFeature.getConceptFeatureKind();
+
+        if (kind == ConceptFeatureKind.REFERENCE) {
+          String oldRole = conceptFeature.getFeatureName();
+          String newRole = null;
+          if (!delete) {
+            newRole = newConceptFeature.getFeatureName();
+          }
+          for (SReference reference : node.getReferences()) {
+            if (reference.getRole().equals(oldRole)) {
+              if (delete) {
+                node.removeReference(reference);
+              } else {
+                reference.setRole(newRole);
+              }
+            }
+          }
+          for (SNode linkAttribute : node.getLinkAttributesForLinkRole(oldRole)) {
+            if (delete) {
+              linkAttribute.delete();
+            } else {
+              String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole_());
+              linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
+            }
+          }
+        }
+
+        if (kind == ConceptFeatureKind.CHILD) {
+          String oldRole = conceptFeature.getFeatureName();
+          String newRole = null;
+          if (!delete) {
+            newRole = newConceptFeature.getFeatureName();
+          }
+          for (SNode child : new ArrayList<SNode>(node.getChildren())) {
+            String childRole = child.getRole_();
+            if (childRole != null && childRole.equals(oldRole)) {
+              if (delete) {
+                child.delete();
+              } else {
+                child.setRoleInParent(newRole);
+              }
+            }
+          }
+        }
+
+        if (kind == ConceptFeatureKind.PROPERTY) {
+          String oldName = conceptFeature.getFeatureName();
+          String newName = null;
+          if (!delete) {
+            newName = newConceptFeature.getFeatureName();
+            HackSNodeUtil.changePropertyName(node, oldName, newName);
+          } else {
+            node.setProperty(oldName, null, false);
+          }
+          for (SNode propertyAttribute : node.getPropertyAttributesForPropertyName(oldName)) {
+            if (delete) {
+              propertyAttribute.delete();
+            } else {
+              String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole_());
+              propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
+            }
+          }
+        }
+      }
+
+      //updating references' targets
+      for (SReference reference : node.getReferences()) {
+        if (reference instanceof StaticReference) {
+          StaticReference staticReference = (StaticReference) reference;
+          SNodeId id = staticReference.getTargetNodeId();
+          Set<FullNodeId> ids = myNodeIdsToFullNodeIdsCache.get(id);
+          if (ids != null) {
+            for (FullNodeId fullNodeId : ids) {
+              FullNodeId newFullNodeId = myMoveMap.get(fullNodeId);
+              if (fullNodeId.getModelUID().equals(staticReference.getTargetSModelReference())) {
+                staticReference.setTargetSModelReference(newFullNodeId.getModelUID());
+                staticReference.setTargetNodeId(newFullNodeId.getNodeId());
+              }
+            }
+          }
+        }
+      }
+    }
+    SModelOperations.validateLanguagesAndImports(model, true, true);  // not a good place for this validation, should be on higher level or exact import adding
+  }
+
+
   public void setUpMembersAccessModifier(RefactoringNodeMembersAccessModifier modifier) {
-    myData.setUpMembersAccessModifier(modifier);
+    for (StructureModification.Entry entry : myLoggedData.getData()) {
+      if (!(entry instanceof RenameNode))  continue;
+      RenameNode data = (RenameNode) entry;
+      if (data.type == RenameType.CONCEPT)  continue;
+      SNode oldNode= data.oldID.getNode();
+      if (oldNode == null || oldNode.getParent() == null)  continue;
+      String conceptFQName = oldNode.getParent().getConceptFqName();
+      switch (data.type) {
+        case CHILD: modifier.addChildRoleChange(conceptFQName, data.oldValue, data.newValue);
+          break;
+        case REFERENCE: modifier.addReferentRoleChange(conceptFQName, data.oldValue, data.newValue);
+          break;
+        case PROPERTY: modifier.addPropertyNameChange(conceptFQName, data.oldValue, data.newValue);
+          break;
+      }
+    }
   }
 
 
   public void setRefactoring(IRefactoring refactoring) {
     myRefactoring = refactoring;
-    myData.setRefactoringClassName(refactoring == null ? null : getRefactoringClassName(refactoring));
   }
 
   public IRefactoring getRefactoring() {
-    if (myRefactoring == null && myData.getRefactoringClassName() != null) {
-      myRefactoring = getRefactoring(myData.getRefactoringClassName());
-    }
     return myRefactoring;
   }
 
