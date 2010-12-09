@@ -8,6 +8,10 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.Constraints;
+import com.intellij.openapi.actionSystem.Anchor;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 
 public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,6 +22,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.EditorInternalVCS_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.vcs.plugin.VCS_ActionGroup");
@@ -28,6 +33,23 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     BaseGroup group = ActionFactory.getInstance().acquireRegisteredGroup(groupName, moduleName);
     if (group != null) {
       ListSequence.fromList(groups).addElement(group);
+    }
+  }
+
+  public void adjustInterfaceGroups() {
+  }
+
+  public void insertGroupIntoAnother(String toId, String whatId, String labelName) {
+    DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
+    DefaultActionGroup gWhat = (DefaultActionGroup) ActionManager.getInstance().getAction(whatId);
+    if (gTo == null || gWhat == null) {
+      return;
+    }
+    if (labelName != null) {
+      Constraints constraints = new Constraints(Anchor.AFTER, labelName);
+      gTo.add(gWhat, constraints);
+    } else {
+      gTo.add(gWhat);
     }
   }
 
