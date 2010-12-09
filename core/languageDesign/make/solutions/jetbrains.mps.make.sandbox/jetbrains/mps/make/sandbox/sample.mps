@@ -59,10 +59,6 @@
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="505095865854424938">
               <node role="resource" roleId="q9ra.2360002718792622193" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="505095865854424939" />
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.ResultStatement" typeId="q9ra.7077360340906447917" id="2885299051984351019">
-              <property name="result" nameId="q9ra.7077360340906447918" value="FAILURE" />
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2885299051984351017" />
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.ResultStatement" typeId="q9ra.7077360340906447917" id="505095865854424940">
               <property name="result" nameId="q9ra.7077360340906447918" value="SUCCESS" />
             </node>
