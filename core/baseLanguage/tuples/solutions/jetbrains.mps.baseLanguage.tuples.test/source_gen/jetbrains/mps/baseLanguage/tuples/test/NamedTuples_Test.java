@@ -171,6 +171,11 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("Z", pair.second());
   }
 
+  public void test_record() throws Exception {
+    Record r = new Record("Foo", 567, 0.5f);
+    Assert.assertEquals("Foo:567:0.5", r.toString());
+  }
+
   public String getString(SharedPair<String, String>... tuples) {
     return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).<String>select(new ISelector<SharedPair<String, String>, String>() {
       public String select(SharedPair<String, String> t) {

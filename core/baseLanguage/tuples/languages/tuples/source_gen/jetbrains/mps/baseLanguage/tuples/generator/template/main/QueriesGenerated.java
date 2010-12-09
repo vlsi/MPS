@@ -1286,6 +1286,10 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_4911703277116535899(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "method", true);
+  }
+
   public static Iterable sourceNodesQuery_1239640523117(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "component", true);
   }
@@ -1384,6 +1388,10 @@ public class QueriesGenerated {
         return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(cmp, "type", true));
       }
     });
+  }
+
+  public static Iterable sourceNodesQuery_4911703277116535788(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "method", true);
   }
 
   public static Iterable sourceNodesQuery_247710080512637216(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -4,16 +4,16 @@ package jetbrains.mps.baseLanguage.tuples.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
@@ -41,10 +41,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
-  public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1239580454767(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), false) != null);
-  }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_ClassifierType_1240500098737(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration") && "extends".equals(SPropertyOperations.getString(_context.getLink(), "role"));
   }
@@ -67,11 +63,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1239580440685(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    return result;
-  }
-
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierType_1240500090073(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
@@ -92,7 +83,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g().createNode((item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0e().createNode((item));
               }
             });
           }
@@ -124,10 +115,10 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> toRef = new _FunctionTypes._return_P1_E0<SNode, Object>() {
                   public SNode invoke(Object cmp) {
-                    return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0h().createNode(cmp);
+                    return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0f().createNode(cmp);
                   }
                 };
-                return new QueriesGenerated.QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0h().createNode(ListSequence.fromList(SLinkOperations.getTargets((item), "component", true)).<SNode>select(toRef).toListSequence(), (item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0f().createNode(ListSequence.fromList(SLinkOperations.getTargets((item), "component", true)).<SNode>select(toRef).toListSequence(), (item));
               }
 
               public String getMatchingText(String pattern) {
@@ -165,7 +156,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0i().createNode((item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g().createNode((item));
               }
 
               public String getMatchingText(String pattern) {
@@ -232,8 +223,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0e {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0e() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -250,8 +241,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0h {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0h() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0f {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0f() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -274,8 +265,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0h {
-    public QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0h() {
+  public static class QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0f {
+    public QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0f() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
@@ -300,8 +291,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0i {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0i() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0g() {
     }
 
     public SNode createNode(Object parameter_3) {
