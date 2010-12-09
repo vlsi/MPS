@@ -138,9 +138,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_1218738863685(environment.getOperationContext(), new WeavingMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a0b, environment.getGenerator()));
     }
 
-    public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode node) throws GenerationException {
+    public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a0a5b);
-      Collection<SNode> tlist1 = new Templateweave_InputNode_A().apply(environment, context);
+      Collection<SNode> tlist1 = new Templateweave_InputNode_A().weave(environment, context, outputContextNode);
       return !(tlist1.isEmpty());
     }
   }

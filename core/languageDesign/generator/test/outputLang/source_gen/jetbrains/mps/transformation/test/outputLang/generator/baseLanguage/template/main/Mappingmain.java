@@ -7,11 +7,11 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import java.util.Collections;
-import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SNode;
@@ -30,6 +30,10 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "1209604172327");
@@ -101,15 +105,19 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer templateSwitchNodeNoInput_417xrn_a0a0a1a2a4m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
   private static SNodePointer templateNode_417xrn_a0a0a1a2a1a2a4m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088649");
   private static SNodePointer rootMappingRule_417xrn_a0a0n = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767");
+  private static SNodePointer weavingRule_417xrn_a0a0o = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918064");
+  private static SNodePointer weavingConseq_417xrn_a0a1a5o = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068");
 
   private final Collection<TemplateReductionRule> rules;
   private final Collection<TemplateRootMappingRule> rootRules;
+  private final Collection<TemplateWeavingRule> weavings;
   private final TemplateModel myModel;
 
   public Mappingmain(TemplateModel model) {
     this.myModel = model;
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1(), new Mappingmain.ReductionRule2(), new Mappingmain.ReductionRule3(), new Mappingmain.ReductionRule4(), new Mappingmain.PatternRule0(), new Mappingmain.PatternRule1(), new Mappingmain.PatternRule2(), new Mappingmain.PatternRule3(), new Mappingmain.PatternRule4(), new Mappingmain.PatternRule5(), new Mappingmain.PatternRule6(), new Mappingmain.PatternRule7());
     rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mappingmain.RootMappingRule0());
+    weavings = TemplateUtil.<TemplateWeavingRule>asCollection(new Mappingmain.WeavingRule0());
   }
 
   public String getName() {
@@ -137,7 +145,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public Collection<TemplateWeavingRule> getWeavingRules() {
-    return Collections.emptySet();
+    return weavings;
   }
 
   public Collection<TemplateDropRootRule> getDropRules() {
@@ -1139,7 +1147,64 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       Collection<SNode> result = new TemplateRootCustom().apply(environment, context);
+      environment.registerLabel(null, result, "rootcustom");
       return result;
+    }
+  }
+
+  public class WeavingRule0 implements TemplateWeavingRule {
+    public WeavingRule0() {
+    }
+
+    public SNodePointer getRuleNode() {
+      return weavingRule_417xrn_a0a0o;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.baseLanguage.structure.BlockStatement";
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      if (!(QueriesGenerated.baseMappingRule_Condition_3571912445009978241(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a0o, environment.getGenerator())))) {
+        return false;
+      }
+      return true;
+    }
+
+    public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_3571912445009918066(environment.getOperationContext(), new WeavingMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a0o, environment.getGenerator()));
+    }
+
+    public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
+      final List<SNode> tlist1 = new ArrayList();
+      environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a1a5o);
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_3571912445009918069(environment.getOperationContext(), new SourceSubstituteMacroNodesContext(context.getInput(), weavingConseq_417xrn_a0a1a5o, null, context, environment.getGenerator()));
+      for (SNode itnode1 : weaveEachList1) {
+        if (itnode1 == null) {
+          continue;
+        }
+        boolean inputChanged1 = context.getInput() != itnode1;
+        try {
+          if (inputChanged1) {
+            environment.getTracer().pushInputNode(itnode1);
+          }
+          TemplateContext context1 = context.subContext(null, itnode1);
+          Collection<SNode> innerResult1 = new Templateweave_Statement().weave(environment, context1, outputContextNode);
+
+          if (innerResult1 != null) {
+            tlist1.addAll(innerResult1);
+          }
+        } finally {
+          if (inputChanged1) {
+            environment.getTracer().closeInputNode(itnode1);
+          }
+        }
+      }
+      return !(tlist1.isEmpty());
     }
   }
 }
