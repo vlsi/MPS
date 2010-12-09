@@ -84,13 +84,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   protected ModelLoadResult initialLoad() {
     ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
-    if (StructureModificationProcessor.hasRefactoringsToPlay(result.getModel())) {
-      if (result.getState() != ModelLoadingState.FULLY_LOADED) {
-        result = load(ModelLoadingState.FULLY_LOADED);
-      }
-      updateOnLoad(result.getModel());
-    }
-    updateDiskTimestamp();
+    updateOnLoad(result.getModel());
     return result;
   }
 
@@ -120,7 +114,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   private void updateOnLoad(SModel result) {
-    //StructureModificationProcessor.updateModelOnLoad(result);
     tryFixingVersion();
     updateDiskTimestamp();
   }
@@ -258,7 +251,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public boolean needsReloading() {
-    return myDiskTimestamp != -1 && fileTimestamp() != myDiskTimestamp;
+    if (myDiskTimestamp == -1) return false;
+    return fileTimestamp() != myDiskTimestamp;
   }
 
   public boolean isPackaged() {

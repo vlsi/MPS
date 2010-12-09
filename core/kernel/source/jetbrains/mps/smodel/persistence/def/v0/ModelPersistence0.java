@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def.v0;
 
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
@@ -41,7 +41,7 @@ public class ModelPersistence0 implements IModelPersistence {
     return new jetbrains.mps.smodel.persistence.def.IHashProvider.SimpleHashProvider();
   }
 
-  public XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state) {
+  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state) {
     return null;
   }
 

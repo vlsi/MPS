@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vfs.IFile;
@@ -31,7 +31,7 @@ public interface IModelPersistence {
 
   IHashProvider getHashProvider();
 
-  XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state);
+  XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state);
 
   XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler();
 
