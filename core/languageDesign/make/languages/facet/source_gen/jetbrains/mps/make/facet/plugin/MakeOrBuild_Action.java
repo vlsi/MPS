@@ -18,6 +18,7 @@ import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
@@ -130,6 +131,10 @@ public class MakeOrBuild_Action extends GeneratedAction {
 
         public IProgress currentProgress() {
           return logStrat.currentProgress();
+        }
+
+        public void reportFeedback(IFeedback fdbk) {
+          feedbackStrat.reportFeedback(fdbk);
         }
       };
       final IConfigMonitor cmon = new IConfigMonitor() {

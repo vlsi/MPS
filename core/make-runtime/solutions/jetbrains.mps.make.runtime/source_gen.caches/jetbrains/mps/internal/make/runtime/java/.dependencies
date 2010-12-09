@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" file="IJavaCompiler.java">
+    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.JavaGenerationHandler" file="JavaGenerationHandler.java">

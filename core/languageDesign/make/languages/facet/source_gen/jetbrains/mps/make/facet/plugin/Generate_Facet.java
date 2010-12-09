@@ -14,6 +14,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.project.Project;
@@ -84,14 +85,17 @@ public class Generate_Facet implements IFacet {
             case 0:
               Logger logger = Logger.getLogger("jetbrains.mps.make.Generator");
               if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).project() == null) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("project is null")));
                 logger.error("project is null");
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
               if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext() == null) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("operationContext is null")));
                 logger.error("operationContext is null");
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
               if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).cleanMake() == null) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no cleanMake")));
                 logger.error("no cleanMake");
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }

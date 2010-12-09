@@ -19,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IJobMonitor" file="IJobMonitor.java">
+    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IMonitors" file="IMonitors.java">

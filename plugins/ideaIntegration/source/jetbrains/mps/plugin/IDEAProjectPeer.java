@@ -5,6 +5,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer;
 import jetbrains.mps.internal.make.runtime.java.IJavaCompiler;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 
@@ -74,23 +75,22 @@ public class IDEAProjectPeer implements ProjectComponent, IAuxProjectPeer {
       }
     }
 
-    public boolean compileModule(IModule module) {
+    public MPSCompilationResult compileModule(IModule module) {
       if (!isIDEAPresent()) {
-        return false;
+        return null;
       }
 
-      boolean compiledSuccessfully = true;
       try {
-        CompilationResult compilationResult = myIdeaProjectHandler.buildModule(module.getGeneratorOutputPath());
+        CompilationResult cr = myIdeaProjectHandler.buildModule(module.getGeneratorOutputPath());
 
-        if (compilationResult == null || compilationResult.getErrors() > 0) {
-          compiledSuccessfully = false;
+        if (cr != null) {
+          return new MPSCompilationResult(cr.getErrors(), cr.getWarnings(), cr.isAborted(), cr.isCompiledAnything());
         }
 
       } catch (RemoteException e) {
         e.printStackTrace();
       }
-      return compiledSuccessfully;
+      return null;
     }
   }
 }

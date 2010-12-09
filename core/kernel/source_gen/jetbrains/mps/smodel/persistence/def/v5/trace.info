@@ -81,7 +81,7 @@
     <scopeInfo nodeId="3912764103614069951" fileName="ModelReader5Handler.java" startLine="277" startPosition="80" endLine="278" endPosition="85" />
     <scopeInfo nodeId="7707758858786147441" fileName="ModelReader5Handler.java" startLine="459" startPosition="25" endLine="460" endPosition="59" />
     <scopeInfo nodeId="7707758858786147506" fileName="ModelReader5Handler.java" startLine="487" startPosition="31" endLine="488" endPosition="105" />
-    <scopeInfo nodeId="3912764103614069948" fileName="ModelReader5Handler.java" startLine="276" startPosition="73" endLine="279" endPosition="7">
+    <scopeInfo nodeId="3912764103614069948" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelReader5Handler.java" startLine="276" startPosition="73" endLine="279" endPosition="7">
       <varInfo nodeId="3912764103614069949" varName="referencePersister" />
     </scopeInfo>
   </root>
@@ -89,19 +89,19 @@
     <nodeInfo nodeId="2286463592495498180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelUtil.java" startLine="14" startPosition="56" endLine="15" endPosition="40" />
     <nodeInfo nodeId="2286463592495498184" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelUtil.java" startLine="16" startPosition="5" endLine="17" endPosition="22" />
     <nodeInfo nodeId="2286463592495498143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelUtil.java" startLine="20" startPosition="81" endLine="21" endPosition="160" />
-    <nodeInfo nodeId="2286463592495498123" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ModelUtil.java" startLine="9" startPosition="24" endLine="11" endPosition="3" />
+    <nodeInfo nodeId="2286463592495498123" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelUtil#()V" fileName="ModelUtil.java" startLine="9" startPosition="24" endLine="11" endPosition="3" />
     <nodeInfo nodeId="2286463592495498170" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelUtil.java" startLine="13" startPosition="61" endLine="16" endPosition="5" />
-    <nodeInfo nodeId="2286463592495498127" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ModelUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <nodeInfo nodeId="2286463592495498162" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ModelUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0" />
+    <nodeInfo nodeId="2286463592495498127" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeModelUID#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelReference;" fileName="ModelUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <nodeInfo nodeId="2286463592495498162" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeStereotype#(Ljava/lang/String;)Ljava/lang/String;" fileName="ModelUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="2286463592495498126" fileName="ModelUtil.java" startLine="10" startPosition="22" endLine="10" endPosition="22" />
     <scopeInfo nodeId="2286463592495498172" fileName="ModelUtil.java" startLine="14" startPosition="56" endLine="15" endPosition="40" />
     <scopeInfo nodeId="2286463592495498130" fileName="ModelUtil.java" startLine="20" startPosition="81" endLine="21" endPosition="160" />
-    <scopeInfo nodeId="2286463592495498123" fileName="ModelUtil.java" startLine="9" startPosition="24" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="2286463592495498123" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelUtil#()V" fileName="ModelUtil.java" startLine="9" startPosition="24" endLine="11" endPosition="3" />
     <scopeInfo nodeId="2286463592495498165" fileName="ModelUtil.java" startLine="13" startPosition="61" endLine="17" endPosition="22" />
-    <scopeInfo nodeId="2286463592495498127" fileName="ModelUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="2286463592495498127" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeModelUID#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelReference;" fileName="ModelUtil.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="2286463592495498140" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="2286463592495498162" fileName="ModelUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="2286463592495498162" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="upgradeStereotype#(Ljava/lang/String;)Ljava/lang/String;" fileName="ModelUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="2286463592495498168" varName="stereotype" />
     </scopeInfo>
     <unitInfo nodeId="2286463592495498121" fileName="ModelUtil.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelUtil" />
@@ -123,8 +123,8 @@
     <scopeInfo nodeId="651246788329832372" fileName="LineToContentMapReader5Handler.java" startLine="272" startPosition="28" endLine="273" endPosition="58" />
   </root>
   <root nodeId="8837498651724313880">
-    <nodeInfo nodeId="8837498651724313930" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="LineContentAccumulator.java" startLine="18" startPosition="37" endLine="19" endPosition="101" />
-    <nodeInfo nodeId="8837498651724313937" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="LineContentAccumulator.java" startLine="19" startPosition="101" endLine="20" endPosition="92" />
+    <nodeInfo nodeId="8837498651724313930" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineToContentMap" fileName="LineContentAccumulator.java" startLine="18" startPosition="37" endLine="19" endPosition="101" />
+    <nodeInfo nodeId="8837498651724313937" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeIdStack" fileName="LineContentAccumulator.java" startLine="19" startPosition="101" endLine="20" endPosition="92" />
     <nodeInfo nodeId="8837498651724313885" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineContentAccumulator.java" startLine="25" startPosition="57" endLine="26" endPosition="63" />
     <nodeInfo nodeId="7606567306781654147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineContentAccumulator.java" startLine="26" startPosition="63" endLine="27" endPosition="22" />
     <nodeInfo nodeId="7606567306781654137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineContentAccumulator.java" startLine="30" startPosition="40" endLine="31" endPosition="22" />
@@ -139,19 +139,19 @@
     <nodeInfo nodeId="8837498651724314181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineContentAccumulator.java" startLine="60" startPosition="62" endLine="61" endPosition="94" />
     <nodeInfo nodeId="8837498651724314134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LineContentAccumulator.java" startLine="63" startPosition="93" endLine="64" endPosition="72" />
     <nodeInfo nodeId="8837498651724313956" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LineContentAccumulator.java" startLine="68" startPosition="50" endLine="69" endPosition="30" />
-    <nodeInfo nodeId="8837498651724313945" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="LineContentAccumulator.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
+    <nodeInfo nodeId="8837498651724313945" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LineContentAccumulator#()V" fileName="LineContentAccumulator.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
     <nodeInfo nodeId="8837498651724314020" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LineContentAccumulator.java" startLine="35" startPosition="64" endLine="38" endPosition="5" />
     <nodeInfo nodeId="8837498651724314171" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LineContentAccumulator.java" startLine="59" startPosition="35" endLine="62" endPosition="5" />
     <nodeInfo nodeId="8837498651724314127" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LineContentAccumulator.java" startLine="62" startPosition="5" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="8837498651724314074" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <nodeInfo nodeId="8837498651724313900" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <nodeInfo nodeId="8837498651724313906" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <nodeInfo nodeId="8837498651724313914" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="8837498651724313951" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="8837498651724313881" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
-    <nodeInfo nodeId="8837498651724313892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="8837498651724313980" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="8837498651724313922" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="LineContentAccumulator.java" startLine="57" startPosition="0" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="8837498651724314074" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveElement#(Lorg/xml/sax/Locator;Ljetbrains/mps/smodel/persistence/lines/LineContent;)V" fileName="LineContentAccumulator.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="8837498651724313900" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveNode#(Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="8837498651724313906" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveProperty#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="8837498651724313914" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveReference#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="8837498651724313951" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineToContentMap#()Ljava/util/List;" fileName="LineContentAccumulator.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="8837498651724313881" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushNode#(Ljetbrains/mps/smodel/SNodeId;Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="8837498651724313892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popNode#(Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="8837498651724313980" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveElement#(ILjetbrains/mps/smodel/persistence/lines/LineContent;)V" fileName="LineContentAccumulator.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="8837498651724313922" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processText#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="57" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="8837498651724313948" fileName="LineContentAccumulator.java" startLine="22" startPosition="35" endLine="22" endPosition="35" />
     <scopeInfo nodeId="8837498651724314022" fileName="LineContentAccumulator.java" startLine="36" startPosition="72" endLine="37" endPosition="65" />
     <scopeInfo nodeId="8837498651724314077" fileName="LineContentAccumulator.java" startLine="42" startPosition="70" endLine="43" endPosition="58" />
@@ -161,41 +161,41 @@
     <scopeInfo nodeId="8837498651724314172" fileName="LineContentAccumulator.java" startLine="60" startPosition="62" endLine="61" endPosition="94" />
     <scopeInfo nodeId="8837498651724314133" fileName="LineContentAccumulator.java" startLine="63" startPosition="93" endLine="64" endPosition="72" />
     <scopeInfo nodeId="8837498651724313955" fileName="LineContentAccumulator.java" startLine="68" startPosition="50" endLine="69" endPosition="30" />
-    <scopeInfo nodeId="8837498651724313945" fileName="LineContentAccumulator.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="8837498651724313945" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LineContentAccumulator#()V" fileName="LineContentAccumulator.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
     <scopeInfo nodeId="8837498651724313884" fileName="LineContentAccumulator.java" startLine="25" startPosition="57" endLine="27" endPosition="22" />
     <scopeInfo nodeId="8837498651724313895" fileName="LineContentAccumulator.java" startLine="30" startPosition="40" endLine="32" endPosition="56" />
     <scopeInfo nodeId="8837498651724313983" fileName="LineContentAccumulator.java" startLine="35" startPosition="64" endLine="39" endPosition="77" />
-    <scopeInfo nodeId="8837498651724314074" fileName="LineContentAccumulator.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="8837498651724314074" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveElement#(Lorg/xml/sax/Locator;Ljetbrains/mps/smodel/persistence/lines/LineContent;)V" fileName="LineContentAccumulator.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="8837498651724314079" varName="locator" />
       <varInfo nodeId="8837498651724314081" varName="lineContent" />
     </scopeInfo>
-    <scopeInfo nodeId="8837498651724313900" fileName="LineContentAccumulator.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="8837498651724313900" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveNode#(Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="8837498651724313904" varName="locator" />
     </scopeInfo>
-    <scopeInfo nodeId="8837498651724313906" fileName="LineContentAccumulator.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="8837498651724313906" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveProperty#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="8837498651724313912" varName="locator" />
       <varInfo nodeId="8837498651724313910" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="8837498651724313914" fileName="LineContentAccumulator.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="8837498651724313914" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveReference#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="8837498651724313920" varName="locator" />
       <varInfo nodeId="8837498651724313918" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="8837498651724313951" fileName="LineContentAccumulator.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="8837498651724313881" fileName="LineContentAccumulator.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="8837498651724313951" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineToContentMap#()Ljava/util/List;" fileName="LineContentAccumulator.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="8837498651724313881" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushNode#(Ljetbrains/mps/smodel/SNodeId;Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="7606567306781654143" varName="locator" />
       <varInfo nodeId="8837498651724313890" varName="nodeId" />
     </scopeInfo>
-    <scopeInfo nodeId="8837498651724313892" fileName="LineContentAccumulator.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="8837498651724313892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popNode#(Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="7606567306781654134" varName="locator" />
     </scopeInfo>
-    <scopeInfo nodeId="8837498651724313980" fileName="LineContentAccumulator.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="8837498651724313980" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveElement#(ILjetbrains/mps/smodel/persistence/lines/LineContent;)V" fileName="LineContentAccumulator.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="8837498651724313987" varName="lineContent" />
       <varInfo nodeId="8837498651724313985" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="8837498651724313925" fileName="LineContentAccumulator.java" startLine="58" startPosition="57" endLine="65" endPosition="5">
       <varInfo nodeId="8837498651724314166" varName="lineContent" />
     </scopeInfo>
-    <scopeInfo nodeId="8837498651724313922" fileName="LineContentAccumulator.java" startLine="57" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="8837498651724313922" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processText#(Ljava/lang/String;Lorg/xml/sax/Locator;)V" fileName="LineContentAccumulator.java" startLine="57" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="8837498651724313928" varName="locator" />
       <varInfo nodeId="8837498651724313926" varName="text" />
     </scopeInfo>

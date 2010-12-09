@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2974008768272250195">
-    <nodeInfo nodeId="2974008768272253425" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModule#(Ljetbrains/mps/project/IModule;)Z" fileName="IJavaCompiler.java" startLine="7" startPosition="32" endLine="8" endPosition="47" />
-    <nodeInfo nodeId="2427888168044467804" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshFiles#()V" fileName="IJavaCompiler.java" startLine="8" startPosition="47" endLine="9" endPosition="29" />
-    <scopeInfo nodeId="2974008768272253425" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModule#(Ljetbrains/mps/project/IModule;)Z" fileName="IJavaCompiler.java" startLine="7" startPosition="32" endLine="8" endPosition="47">
+    <nodeInfo nodeId="2974008768272253425" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModule#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/make/MPSCompilationResult;" fileName="IJavaCompiler.java" startLine="8" startPosition="32" endLine="9" endPosition="60" />
+    <nodeInfo nodeId="2427888168044467804" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshFiles#()V" fileName="IJavaCompiler.java" startLine="9" startPosition="60" endLine="10" endPosition="29" />
+    <scopeInfo nodeId="2974008768272253425" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModule#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/make/MPSCompilationResult;" fileName="IJavaCompiler.java" startLine="8" startPosition="32" endLine="9" endPosition="60">
       <varInfo nodeId="2974008768272253430" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="2427888168044467804" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshFiles#()V" fileName="IJavaCompiler.java" startLine="8" startPosition="47" endLine="9" endPosition="29" />
-    <unitInfo nodeId="2974008768272250195" fileName="IJavaCompiler.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
+    <scopeInfo nodeId="2427888168044467804" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshFiles#()V" fileName="IJavaCompiler.java" startLine="9" startPosition="60" endLine="10" endPosition="29" />
+    <unitInfo nodeId="2974008768272250195" fileName="IJavaCompiler.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
   </root>
   <root nodeId="2974008768272253139">
     <nodeInfo nodeId="7017136043751668687" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJavaCompiler#()Ljetbrains/mps/internal/make/runtime/java/IJavaCompiler;" fileName="IAuxProjectPeer.java" startLine="6" startPosition="34" endLine="7" endPosition="41" />
