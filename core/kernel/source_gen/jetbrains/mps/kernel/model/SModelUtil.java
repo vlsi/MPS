@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.InternUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -80,7 +81,7 @@ public class SModelUtil {
               String modelName = p0.getNode().getModel().getLongName();
               String newName = modelName + "." + p0.getNewPropertyValue();
               String oldName = modelName + "." + p0.getOldPropertyValue();
-              MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(newName, MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).get(oldName));
+              MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(InternUtil.intern(newName), MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).get(oldName));
               MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).removeKey(oldName);
             }
           }
@@ -127,7 +128,7 @@ public class SModelUtil {
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
         AbstractConceptDeclaration resultAdapter = language.findConceptDeclaration(conceptName);
         SNode result = ((SNode) BaseAdapter.fromAdapter(resultAdapter));
-        MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(conceptFQName, result);
+        MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(InternUtil.intern(conceptFQName), result);
         return result;
       }
     });

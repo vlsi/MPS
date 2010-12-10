@@ -17,6 +17,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemFile;
@@ -200,9 +201,9 @@ public class JarFileClassPathItem extends RealClassPathItem {
         myCache.addClass(pack, className);
 
         if (pack.length() > 0) {
-          myEntries.put(pack + "." + className, entry);
+          myEntries.put(InternUtil.intern(pack + "." + className), entry);
         } else {
-          myEntries.put(className, entry);
+          myEntries.put(InternUtil.intern(className), entry);
         }
       }
     }

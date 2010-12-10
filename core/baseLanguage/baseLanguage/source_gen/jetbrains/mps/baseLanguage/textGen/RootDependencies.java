@@ -25,7 +25,7 @@ public class RootDependencies implements Comparable<RootDependencies> {
   private String myFileName;
 
   public RootDependencies(String nodeName, String fileName, List<String> dependNodes, List<String> extendsNodes) {
-    this.myClassName = nodeName;
+    this.myClassName = InternUtil.intern(nodeName);
     this.myFileName = fileName;
     if (dependNodes != null) {
       ListSequence.fromList(this.myDependNodes).addSequence(ListSequence.fromList(dependNodes));
