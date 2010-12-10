@@ -84,7 +84,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   protected ModelLoadResult initialLoad() {
     ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
-    updateOnLoad(result.getModel());
+    tryFixingVersion();
+    updateDiskTimestamp();
     return result;
   }
 
@@ -111,11 +112,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
     return ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
-  }
-
-  private void updateOnLoad(SModel result) {
-    tryFixingVersion();
-    updateDiskTimestamp();
   }
 
   public IFile getModelFile() {

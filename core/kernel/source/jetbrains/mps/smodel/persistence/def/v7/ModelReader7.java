@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence.def.v7;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.ModelLinkMap;
+import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
@@ -96,6 +97,7 @@ public class ModelReader7 implements IModelReader {
       readChildren(node, root);
     }
 
+    new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
     model.setLoading(false);
     return model;
   }
