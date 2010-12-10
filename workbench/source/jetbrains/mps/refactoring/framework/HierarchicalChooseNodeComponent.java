@@ -142,11 +142,11 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
       return null;
     }
 
-    protected Set<INodeAdapter> getParents(INodeAdapter node) {
+    protected Set<INodeAdapter> getParents(INodeAdapter node, Set<INodeAdapter> visited) {
       return new HashSet();
     }
 
-    protected Set<INodeAdapter> getDescendants(INodeAdapter node) {
+    protected Set<INodeAdapter> getDescendants(INodeAdapter node, Set<INodeAdapter> visited) {
       return myDescendantsProvider.getDescendants(node);
     }
 

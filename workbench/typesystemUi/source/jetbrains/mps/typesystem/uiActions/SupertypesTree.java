@@ -49,11 +49,11 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
     return null;
   }
 
-  protected Set<INodeAdapter> getParents(INodeAdapter node) {
+  protected Set<INodeAdapter> getParents(INodeAdapter node, Set<INodeAdapter> visited) {
     return new HashSet<INodeAdapter>();
   }
 
-  protected Set<INodeAdapter> getDescendants(INodeAdapter node) {
+  protected Set<INodeAdapter> getDescendants(INodeAdapter node, Set<INodeAdapter> visited) {
     if (node == null) {
       return new HashSet<INodeAdapter>();
     }

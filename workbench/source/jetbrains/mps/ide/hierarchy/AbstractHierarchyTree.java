@@ -31,6 +31,7 @@ import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPSTree {
@@ -115,16 +116,16 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   protected abstract T getParent(T node);
 
-  protected abstract Set<T> getParents(T node) throws CircularHierarchyException;
+  protected abstract Set<T> getParents(T node, Set<T> visited) throws CircularHierarchyException;
 
-  protected abstract Set<T> getDescendants(T node) throws CircularHierarchyException;
+  protected abstract Set<T> getDescendants(T node, Set<T> visited) throws CircularHierarchyException;
 
-  protected Set<T> getAbstractChildren(final T node) throws CircularHierarchyException {
+  protected Set<T> getAbstractChildren(final T node, Set<T> visited) throws CircularHierarchyException {
     Set<T> result;
     if (myIsParentHierarchy) {
-      result = getParents(node);
+      result = getParents(node, visited);
     } else {
-      result = getDescendants(node);
+      result = getDescendants(node, visited);
     }
     if (myOnlyInOneModel) {
       result = CollectionUtil.filter(result, new Condition<T>() {
@@ -174,11 +175,12 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     HierarchyTreeNode parentTreeNode = null;
     HierarchyTreeNode hierarchyTreeNode = null;
     HierarchyTreeNode rootNode = null;
-
+    Set<T> visited = new HashSet<T>();
     for (int i = parentHierarchy.size() - 1; i >= 0; i--) {
       hierarchyTreeNode = i > 0 ? (new HierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this))
-        : new ChildHierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this);
+        : new ChildHierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this, visited);
       if (i == parentHierarchy.size() - 1) rootNode = hierarchyTreeNode;
+      visited.add(parentHierarchy.get(i));
       if (parentTreeNode != null) {
         parentTreeNode.add(hierarchyTreeNode);
       }

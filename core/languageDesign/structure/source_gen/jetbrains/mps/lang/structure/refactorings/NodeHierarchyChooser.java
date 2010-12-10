@@ -65,7 +65,7 @@ public class NodeHierarchyChooser extends JScrollPane {
       this.myHierarchyNode = ((BaseConcept) SNodeOperations.getAdapter(node));
     }
 
-    protected Set<INodeAdapter> getDescendants(INodeAdapter adapter) {
+    protected Set<INodeAdapter> getDescendants(INodeAdapter adapter, Set<INodeAdapter> visited) {
       this.ancestorsProvider = new ConceptAncestorsProvider();
       return this.ancestorsProvider.getDescendants(adapter);
     }
@@ -74,7 +74,7 @@ public class NodeHierarchyChooser extends JScrollPane {
       return null;
     }
 
-    protected Set<INodeAdapter> getParents(INodeAdapter adapter) {
+    protected Set<INodeAdapter> getParents(INodeAdapter adapter, Set<INodeAdapter> visited) {
       return new HashSet();
     }
 
