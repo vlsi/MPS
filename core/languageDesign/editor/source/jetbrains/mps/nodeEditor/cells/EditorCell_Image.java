@@ -138,15 +138,17 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   private static IModule findAnchorModule(SModel sourceModel) {
-    IModule module;
+    IModule module = null;
     SModelDescriptor modelDescriptor = sourceModel.getModelDescriptor();
     Language modelLang = Language.getLanguageFor(modelDescriptor);
     if (modelLang != null) {
       module = modelLang;
     } else {
-      module = modelDescriptor.getModule();
-      if (!(module instanceof Solution)) {
-        module = null;
+      if (modelDescriptor != null) {
+        module = modelDescriptor.getModule();
+        if (!(module instanceof Solution)) {
+          module = null;
+        }
       }
     }
     return module;
