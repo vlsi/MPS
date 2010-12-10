@@ -162,5 +162,6 @@
 
     <group id="ConsoleView.PopupMenu"/>
 
+    <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
   </actions>
 </component>
