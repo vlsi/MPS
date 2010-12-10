@@ -420,6 +420,7 @@ public class Generate_Facet implements IFacet {
                   return true;
                 }
               });
+
               generationOk = gm.generateModels(Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();

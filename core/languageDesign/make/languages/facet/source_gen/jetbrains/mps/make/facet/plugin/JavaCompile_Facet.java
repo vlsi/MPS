@@ -78,7 +78,7 @@ public class JavaCompile_Facet implements IFacet {
                 MPSCompilationResult cr = new ModuleMaker().make(CollectionUtil.set(tres.module()), new EmptyProgressIndicator());
 
                 if (cr == null || !(cr.isOk())) {
-                  if (cr == null) {
+                  if (cr != null) {
                     if (cr.getErrors() > 0) {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr)));
                     } else if (cr.getWarnings() > 0) {
@@ -179,7 +179,7 @@ public class JavaCompile_Facet implements IFacet {
 
                 MPSCompilationResult cr = peer.getJavaCompiler().compileModule(tres.module());
                 if (cr == null || !(cr.isOk())) {
-                  if (cr == null) {
+                  if (cr != null) {
                     if (cr.getErrors() > 0) {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr)));
                     } else if (cr.getWarnings() > 0) {

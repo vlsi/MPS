@@ -70,7 +70,25 @@
       <property name="name" nameId="tpck.1169194664001" value="qweqwe" />
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="505095865854424941">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="505095865854424942">
-          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424943" />
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424943">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5898308035039018853" />
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="3297237684108626081">
+              <property name="work" nameId="q9ra.187226666892820016" value="ASDF" />
+              <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626085">
+                <property name="value" nameId="tpee.1068580320021" value="10" />
+              </node>
+              <node role="ofTotal" roleId="q9ra.187226666892740071" type="q9ra.AllWorkLeftExpression" typeId="q9ra.3297237684108627658" id="5898308035038932579" />
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="3297237684108626087">
+              <property name="work" nameId="q9ra.187226666892820016" value="ASDF" />
+              <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626089">
+                <property name="value" nameId="tpee.1068580320021" value="10" />
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="3297237684108626091">
+              <property name="work" nameId="q9ra.187226666892820016" value="ASDF" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
