@@ -35,7 +35,7 @@ public class ModelPersistence6 extends ModelPersistence5 {
   }
 
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state) {
-    return state == ModelLoadingState.ROOTS_LOADED || state == ModelLoadingState.FULLY_LOADED ? new ModelReader6Handler(state) : null;
+    return new ModelReader6Handler(state);
   }
 
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {

@@ -43,13 +43,13 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private BaseSModelDescriptor.ModelLoadResult myResult;
-  private ModelLoadingState fieldstate;
+  private ModelLoadingState fieldtoState;
   private SModel fieldmodel;
   private ReadHelper fieldhelper;
   private ModelLinkMap fieldlinkMap;
 
-  public ModelReader7Handler(ModelLoadingState state) {
-    fieldstate = state;
+  public ModelReader7Handler(ModelLoadingState toState) {
+    fieldtoState = toState;
   }
 
   public BaseSModelDescriptor.ModelLoadResult getResult() {
@@ -168,7 +168,7 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       fieldmodel.setLoading(true);
       fieldhelper = new ReadHelper(fieldmodel.getSModelReference());
       fieldlinkMap = new ModelLinkMap(fieldmodel);
-      return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.FULLY_LOADED);
+      return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
 
     @Override
@@ -239,14 +239,10 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       }
       if ("roots".equals(tagName)) {
         Object child = (Object) value;
-        if (fieldstate == ModelLoadingState.ROOTS_LOADED) {
-          if (StructureModificationProcessor.hasRefactoringsToPlay(fieldmodel)) {
-            fieldstate = ModelLoadingState.FULLY_LOADED;
-          } else {
-            fieldmodel.setLoading(false);
-            myResult = new BaseSModelDescriptor.ModelLoadResult(fieldmodel, fieldstate);
-            throw new BreakParseSAXException();
-          }
+        if (fieldtoState == ModelLoadingState.ROOTS_LOADED && !(StructureModificationProcessor.hasRefactoringsToPlay(fieldmodel))) {
+          result.setState(ModelLoadingState.ROOTS_LOADED);
+          fieldmodel.setLoading(false);
+          throw new BreakParseSAXException();
         }
         return;
       }
@@ -265,6 +261,7 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
 
     private boolean validateInternal(BaseSModelDescriptor.ModelLoadResult result) throws SAXException {
       new StructureModificationProcessor(fieldlinkMap, fieldmodel).updateModelOnLoad();
+      result.setState(ModelLoadingState.FULLY_LOADED);
       fieldmodel.setLoading(false);
       return true;
     }

@@ -83,6 +83,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       return state;
     }
 
+    public void setState(ModelLoadingState state) {
+      this.state = state;
+    }
+
     public SModel getModel() {
       return model;
     }

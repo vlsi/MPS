@@ -36,12 +36,12 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
   private Stack<Object> myValues = new Stack<Object>();
   private Locator myLocator;
   private BaseSModelDescriptor.ModelLoadResult myResult;
-  private ModelLoadingState fieldstate;
+  private ModelLoadingState fieldtoState;
   private SModel fieldmodel;
   private VersionUtil fieldhelper;
 
-  public ModelReader6Handler(ModelLoadingState state) {
-    fieldstate = state;
+  public ModelReader6Handler(ModelLoadingState toState) {
+    fieldtoState = toState;
   }
 
   public BaseSModelDescriptor.ModelLoadResult getResult() {
@@ -159,7 +159,7 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.setLoading(true);
       fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
-      return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, fieldstate);
+      return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
 
     @Override
@@ -237,7 +237,8 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       }
       if ("root_stubs".equals(tagName)) {
         Object child = (Object) value;
-        if (fieldstate == ModelLoadingState.ROOTS_LOADED) {
+        if (fieldtoState == ModelLoadingState.ROOTS_LOADED) {
+          result.setState(ModelLoadingState.ROOTS_LOADED);
           fieldmodel.setLoading(false);
           throw new BreakParseSAXException();
         }
@@ -254,6 +255,7 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
     }
 
     private boolean validateInternal(BaseSModelDescriptor.ModelLoadResult result) throws SAXException {
+      result.setState(ModelLoadingState.FULLY_LOADED);
       fieldmodel.setLoading(false);
       return true;
     }

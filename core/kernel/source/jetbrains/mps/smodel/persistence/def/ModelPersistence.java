@@ -200,10 +200,6 @@ public class ModelPersistence {
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
       // first try to use SAX parser
       XMLSAXHandler<ModelLoadResult> handler = getModelPersistence(version).getModelReaderHandler(state);
-      if (handler == null && state != ModelLoadingState.FULLY_LOADED) { // try SAX parser for full load
-        state = ModelLoadingState.FULLY_LOADED;
-        handler = getModelPersistence(version).getModelReaderHandler(state);
-      }
       if (handler != null) {
         try {
           JDOMUtil.createSAXParser().parse(source, handler);
