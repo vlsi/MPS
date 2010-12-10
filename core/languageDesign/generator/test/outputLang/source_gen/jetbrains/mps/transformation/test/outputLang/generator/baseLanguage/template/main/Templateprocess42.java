@@ -27,6 +27,7 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
   private static SNodePointer templateNode_nofsa1_a0a0a1a3a1a3a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039201");
   private static SNodePointer propertyMacro_nofsa1_c0b0b0a2a1a3a1a3a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039218");
   private static SNodePointer templateNode_nofsa1_a0a0a1a4a1a3a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039206");
+  private static SNodePointer weaveTfConst_nofsa1_a0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039207");
 
   private SNode myNode;
 
@@ -44,7 +45,7 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
     return result;
   }
 
-  public SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.PlusExpression", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a1a2);
@@ -130,7 +131,11 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
     return TemplateUtil.singletonList(applyPart0(environment, contextWithParams));
   }
 
-  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode node) throws GenerationException {
-    return null;
+  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
+    TemplateContext contextWithParams = context.subContext(getParametersAsMap());
+    SNode tnodepart0 = applyPart0(environment, contextWithParams);
+    SNodePointer weaveTf0 = weaveTfConst_nofsa1_a0c0e;
+    environment.weaveNode(outputContextNode, "initializer", tnodepart0, weaveTf0, contextWithParams.getInput());
+    return TemplateUtil.singletonList(tnodepart0);
   }
 }

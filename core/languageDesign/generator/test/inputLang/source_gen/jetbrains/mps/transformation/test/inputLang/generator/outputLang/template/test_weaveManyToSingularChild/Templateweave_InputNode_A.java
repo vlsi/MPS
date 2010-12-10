@@ -16,6 +16,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 public class Templateweave_InputNode_A implements TemplateDeclarationWeavingAware {
   private static SNodePointer templateNode_xxay57_a0a0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740073391");
   private static SNodePointer propertyMacro_xxay57_c0b0b0a2a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
+  private static SNodePointer weaveTfConst_xxay57_a0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740112298");
 
   public Templateweave_InputNode_A() {
   }
@@ -24,7 +25,7 @@ public class Templateweave_InputNode_A implements TemplateDeclarationWeavingAwar
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738992784");
   }
 
-  public SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_xxay57_a0a0a1a1);
@@ -42,7 +43,10 @@ public class Templateweave_InputNode_A implements TemplateDeclarationWeavingAwar
     return TemplateUtil.singletonList(applyPart0(environment, context));
   }
 
-  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode node) throws GenerationException {
-    return null;
+  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
+    SNode tnodepart0 = applyPart0(environment, context);
+    SNodePointer weaveTf0 = weaveTfConst_xxay57_a0b0d;
+    environment.weaveNode(outputContextNode, "specialChild", tnodepart0, weaveTf0, context.getInput());
+    return TemplateUtil.singletonList(tnodepart0);
   }
 }

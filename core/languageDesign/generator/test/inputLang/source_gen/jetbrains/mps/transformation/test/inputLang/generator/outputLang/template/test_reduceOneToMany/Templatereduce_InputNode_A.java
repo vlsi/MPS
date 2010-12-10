@@ -24,6 +24,10 @@ public class Templatereduce_InputNode_A implements TemplateDeclarationWeavingAwa
   private static SNodePointer switchMacroRef_9iqmnb_a0a0a1a4 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310365");
   private static SNodePointer templateSwitchNodeNoInput_9iqmnb_a0a0a1a1a4 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
   private static SNodePointer templateNode_9iqmnb_a0a0a1a2a1a1a4 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310362");
+  private static SNodePointer weaveTfConst_9iqmnb_a0b0g = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100173");
+  private static SNodePointer weaveTfConst_9iqmnb_a0e0g = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1391450457158185609");
+  private static SNodePointer weaveTfConst_9iqmnb_a0h0g = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480068637");
+  private static SNodePointer weaveTfConst_9iqmnb_a0k0g = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310363");
 
   public Templatereduce_InputNode_A() {
   }
@@ -32,7 +36,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclarationWeavingAwa
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100167");
   }
 
-  public Collection<SNode> applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected Collection<SNode> applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final List<SNode> tlist1 = new ArrayList();
     try {
       environment.getTracer().pushMacro(loopMacroRef_9iqmnb_a0a0a1a1);
@@ -72,7 +76,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclarationWeavingAwa
     return tlist1;
   }
 
-  public SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode3 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
       environment.getTracer().pushTemplateNode(templateNode_9iqmnb_a0a0a1a2);
@@ -86,7 +90,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclarationWeavingAwa
     return tnode3;
   }
 
-  public Collection<SNode> applyPart2(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected Collection<SNode> applyPart2(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist4 = null;
     try {
       environment.getTracer().pushMacro(includeMacro_9iqmnb_a0a0a1a3);
@@ -103,7 +107,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclarationWeavingAwa
     return tlist4;
   }
 
-  public Collection<SNode> applyPart3(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected Collection<SNode> applyPart3(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist5 = null;
     try {
       environment.getTracer().pushMacro(switchMacroRef_9iqmnb_a0a0a1a4);
@@ -137,7 +141,25 @@ public class Templatereduce_InputNode_A implements TemplateDeclarationWeavingAwa
     return TemplateUtil.asList(applyPart0(environment, context), applyPart1(environment, context), applyPart2(environment, context), applyPart3(environment, context));
   }
 
-  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode node) throws GenerationException {
-    return null;
+  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
+    Collection<SNode> tlistpart0 = applyPart0(environment, context);
+    SNodePointer weaveTf0 = weaveTfConst_9iqmnb_a0b0g;
+    for (SNode nodeToWeave : tlistpart0) {
+      environment.weaveNode(outputContextNode, "outputChild", nodeToWeave, weaveTf0, context.getInput());
+    }
+    SNode tnodepart1 = applyPart1(environment, context);
+    SNodePointer weaveTf1 = weaveTfConst_9iqmnb_a0e0g;
+    environment.weaveNode(outputContextNode, "outputChild", tnodepart1, weaveTf1, context.getInput());
+    Collection<SNode> tlistpart2 = applyPart2(environment, context);
+    SNodePointer weaveTf2 = weaveTfConst_9iqmnb_a0h0g;
+    for (SNode nodeToWeave : tlistpart2) {
+      environment.weaveNode(outputContextNode, "outputChild", nodeToWeave, weaveTf2, context.getInput());
+    }
+    Collection<SNode> tlistpart3 = applyPart3(environment, context);
+    SNodePointer weaveTf3 = weaveTfConst_9iqmnb_a0k0g;
+    for (SNode nodeToWeave : tlistpart3) {
+      environment.weaveNode(outputContextNode, "outputChild", nodeToWeave, weaveTf3, context.getInput());
+    }
+    return TemplateUtil.asList(tlistpart0, tnodepart1, tlistpart2, tlistpart3);
   }
 }

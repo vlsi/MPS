@@ -2,6 +2,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
@@ -58,6 +59,10 @@ public class WeavingProcessor {
           try {
             someOutputGenerated = rule.apply(environment, context, outputContextNode);
 
+          } catch (DismissTopMappingRuleException e) {
+            environment.getGenerator().showErrorMessage(context.getInput(), null, rule.getRuleNode().getNode(), "wrong template: dismission of weaving rule is not supported");
+          } catch (TemplateProcessingFailureException e) {
+            environment.getGenerator().showErrorMessage(context.getInput(), null, rule.getRuleNode().getNode(), "weaving rule: error processing template fragment");
           } finally {
             if (someOutputGenerated) {
               myGenerationTracer.closeInputNode(applicableNode);
