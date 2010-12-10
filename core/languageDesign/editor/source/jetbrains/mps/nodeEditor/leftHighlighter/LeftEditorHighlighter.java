@@ -61,7 +61,7 @@ import java.util.List;
  */
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
-  private static final Color BACKGROUND_COLOR = new Color(0xF0F0F0);
+  private static final Color BACKGROUND_COLOR = Color.WHITE; // new Color(0xF0F0F0);
 
   private static final int MIN_LEFT_TEXT_WIDTH = 0;
   private static final int MIN_ICON_RENDERERS_WIDTH = 14;
