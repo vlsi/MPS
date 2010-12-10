@@ -27,6 +27,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
@@ -40,10 +42,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   //it should be possible to add listeners from any thread so we use lock here
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
-  private Set<SModelListener> myModelListeners = new HashSet<SModelListener>(0);
-  private SModelListener[] myModelListenersCopy;
-  private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
-  private SModelCommandListener[] myModelCommandListenersCopy;
+  private Set<SModelListener> myModelListeners = new CopyOnWriteArraySet<SModelListener>();
+  private Set<SModelCommandListener> myModelCommandListeners = new CopyOnWriteArraySet<SModelCommandListener>();
 
   public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference) {
     myModelReference = modelReference;
@@ -224,7 +224,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void addModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
       myModelListeners.add(listener);
-      myModelListenersCopy = null;
     }
   }
 
@@ -237,19 +236,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void removeModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
       myModelListeners.remove(listener);
-      myModelListenersCopy = null;
     }
   }
 
   @NotNull
   public SModelListener[] getModelListeners() {
-    synchronized (myListenersLock) {
-      if (myModelListenersCopy == null) {
-        myModelListenersCopy = myModelListeners.toArray(new SModelListener[myModelListeners.size()]);
-        Arrays.sort(myModelListenersCopy, SModelAdapter.COMPARATOR);
-      }
-      return myModelListenersCopy;
-    }
+    return myModelListeners.toArray(new SModelListener[myModelListeners.size()]);
   }
 
   public boolean hasModelCommandListener(@NotNull SModelCommandListener listener) {
@@ -261,25 +253,18 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void addModelCommandListener(@NotNull SModelCommandListener listener) {
     synchronized (myListenersLock) {
       myModelCommandListeners.add(listener);
-      myModelCommandListenersCopy = null;
     }
   }
 
   public void removeModelCommandListener(@NotNull SModelCommandListener listener) {
     synchronized (myListenersLock) {
       myModelCommandListeners.remove(listener);
-      myModelCommandListenersCopy = null;
     }
   }
 
   @NotNull
   public SModelCommandListener[] getModelCommandListeners() {
-    synchronized (myListenersLock) {
-      if (myModelCommandListenersCopy == null) {
-        myModelCommandListenersCopy = myModelCommandListeners.toArray(new SModelCommandListener[myModelCommandListeners.size()]);
-      }
-      return myModelCommandListenersCopy;
-    }
+    return myModelCommandListeners.toArray(new SModelCommandListener[myModelCommandListeners.size()]);
   }
 
   private void clearListeners() {
