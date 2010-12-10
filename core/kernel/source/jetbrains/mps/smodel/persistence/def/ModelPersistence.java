@@ -123,6 +123,12 @@ public class ModelPersistence {
   }
   //--------read--------
 
+  public static DescriptorLoadResult loadDescriptor(InputSource source) {
+    final DescriptorLoadResult result = new DescriptorLoadResult();
+    loadDescriptor(result, source);
+    return result;
+  }
+
   public static void loadDescriptor(final DescriptorLoadResult result, InputSource source) {
     DefaultHandler handler = new DefaultHandler() {
       public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
@@ -222,9 +228,7 @@ public class ModelPersistence {
   }
 
   public static int getPersistenceVersion(@NotNull InputSource inputSource) {
-    DescriptorLoadResult loadResult = new DescriptorLoadResult();
-    loadDescriptor(loadResult, inputSource);
-    return loadResult.getPersistenceVersion();
+    return loadDescriptor(inputSource).getPersistenceVersion();
   }
 
   @Nullable

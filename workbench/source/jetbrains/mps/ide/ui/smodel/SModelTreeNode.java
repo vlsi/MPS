@@ -16,25 +16,18 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.ModelGenerationStatusListener;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.*;
-import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
+import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.tree.DefaultTreeModel;
@@ -267,8 +260,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     if (getSModelDescriptor() != null) {
       reference = getSModelDescriptor().getSModelReference();
-    } else {
+    } else if (getSModel() != null) {
       reference = getSModel().getSModelReference();
+    } else {
+      return "";
     }
 
     String name = calculatePresentationText(reference);

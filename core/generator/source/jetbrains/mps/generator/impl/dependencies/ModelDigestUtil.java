@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
-import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +25,6 @@ import java.io.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -59,10 +56,8 @@ public class ModelDigestUtil {
   }
 
   public static Map<String, String> getDigestMap(byte[] modelBytes) {
-    DescriptorLoadResult d = new DescriptorLoadResult();
-    ModelPersistence.loadDescriptor(d, new InputSource(new ByteArrayInputStream(modelBytes)));
-
-    return ModelPersistence.calculateHashes(modelBytes,d.getPersistenceVersion());
+    int persistenceVersion = ModelPersistence.getPersistenceVersion(new InputSource(new ByteArrayInputStream(modelBytes)));
+    return ModelPersistence.calculateHashes(modelBytes, persistenceVersion);
   }
 
   public static String hash(byte[] content) {
