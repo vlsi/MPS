@@ -45,7 +45,9 @@ import javax.swing.event.TreeWillExpandListener;
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.tree.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
@@ -323,7 +325,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     JPopupMenu defaultMenu = createDefaultPopupMenu();
     if (defaultMenu == null) return;
     defaultMenu.show(this, x, y);
-    }
+  }
 
   @Nullable
   public Comparator<Object> getChildrenComparator() {
@@ -472,6 +474,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       public void run() {
         runRebuildAction(new Runnable() {
           public void run() {
+            setAnchorSelectionPath(null);
+            setLeadSelectionPath(null);
             MPSTreeNode root = rebuild();
             setRootNode(root);
           }
