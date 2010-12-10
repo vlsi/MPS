@@ -69,6 +69,18 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   private List<IEditor> myAdditionalEditors = new ArrayList<IEditor>();
 
+  private volatile boolean myToClearCheckedEditors = false;
+
+  public void clearCheckedEditors() {
+    myToClearCheckedEditors = true;
+  }
+
+  private void doClearCheckedEditors() {
+    myCheckedOnceEditors.clear();
+    myCheckedOnceInspectors.clear();
+    myToClearCheckedEditors = false;
+  }
+
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void onReload() {
       myCheckedOnceEditors.clear();
@@ -462,6 +474,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           }
 
           doUpdate();
+          if (myToClearCheckedEditors) {
+            doClearCheckedEditors();
+          }
           if (myStopThread) {
             break;
           }
