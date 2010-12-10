@@ -10,10 +10,10 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -40,8 +40,7 @@ public class StructureModificationProcessor {
     int modelVersion = model.getVersion();
     if (modelVersion > usedVersion) {
       boolean played = false;
-      StructureModificationLog modificationLog = model.getStructureModificationLog();
-      for (StructureModification data : modificationLog.getHistory()) {
+      for (StructureModification data : ListSequence.fromList(model.getStructureModificationLog().getHistory())) {
         if (MapSequence.fromMap(data.getDependencies()).get(model.getSModelReference()) < usedVersion) {
           continue;
         }
@@ -49,14 +48,20 @@ public class StructureModificationProcessor {
       }
       return played;
     } else if (modelVersion < usedVersion) {
-      if (log.isErrorEnabled()) {
-        log.error("Model version mismatch for import " + model.getSModelReference().getSModelFqName() + " in model " + myModel.getSModelFqName());
-      }
-      if (log.isErrorEnabled()) {
-        log.error("Used version = " + usedVersion + ", current version = " + modelVersion);
-      }
-      // <node> 
-      // <node> 
+      /*
+        {
+          if (log.isErrorEnabled()) {
+            log.error("Model version mismatch for import " + model.getSModelReference().getSModelFqName() + " in model " + myModel.getSModelFqName());
+          }
+        }
+        {
+          if (log.isErrorEnabled()) {
+            log.error("Used version = " + usedVersion + ", current version = " + modelVersion);
+          }
+        }
+        // <node> 
+        // <node> 
+      */
       return false;
     } else {
       return false;
@@ -65,10 +70,7 @@ public class StructureModificationProcessor {
 
   public boolean updateModelOnLoad() {
     // should be called in loading state 
-    if (!(PlayRefactoringsFlag.refactoringsPlaybackEnabled())) {
-      return false;
-    }
-    if (!(SModelStereotype.isUserModel(myModel))) {
+    if (!(refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(myModel))) {
       return false;
     }
     boolean result = false;
@@ -76,8 +78,8 @@ public class StructureModificationProcessor {
     boolean played;
     do {
       played = false;
-      for (SModel.ImportElement importElement : SModelOperations.getAllImportElements(myModel)) {
-        EditableSModelDescriptor usedModel = as_etzqsh_a0a0a1a6a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
+      for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel))) {
+        EditableSModelDescriptor usedModel = as_etzqsh_a0a0a1a5a2(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
         if (usedModel != null && playModelRefactorings(usedModel, importElement.getUsedVersion())) {
           result = played = true;
         }
@@ -87,7 +89,7 @@ public class StructureModificationProcessor {
   }
 
   public static void addToLog(@NotNull final StructureModification data) {
-    // add all dependencies with current version 
+    // add all missed dependencies with current version 
     for (StructureModification.Entry entry : ListSequence.fromList(data.getData())) {
       Sequence.fromIterable(entry.getDependentModels()).visitAll(new IVisitor<SModelReference>() {
         public void visit(SModelReference it) {
@@ -107,29 +109,29 @@ public class StructureModificationProcessor {
   }
 
   public static boolean hasRefactoringsToPlay(@NotNull SModel model) {
-    if (!(PlayRefactoringsFlag.refactoringsPlaybackEnabled())) {
-      return false;
-    }
-    if (!(SModelStereotype.isUserModel(model))) {
-      return false;
-    }
-    for (SModel.ImportElement importElement : SModelOperations.getAllImportElements(model)) {
-      EditableSModelDescriptor usedModel = as_etzqsh_a0a0a2a1(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
-      if (usedModel != null && importElement.getUsedVersion() < usedModel.getVersion()) {
-        return true;
+    if (refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(model)) {
+      for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model))) {
+        EditableSModelDescriptor usedModel = as_etzqsh_a0a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), EditableSModelDescriptor.class);
+        if (usedModel != null && importElement.getUsedVersion() < usedModel.getVersion()) {
+          return true;
+        }
       }
     }
     return false;
   }
 
-  private static <T> T as_etzqsh_a0a0a2a1(Object o, Class<T> type) {
+  public static boolean refactoringsPlaybackEnabled() {
+    return !("false".equals(System.getProperty("mps.playRefactorings")));
+  }
+
+  private static <T> T as_etzqsh_a0a0a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_etzqsh_a0a0a1a6a2(Object o, Class<T> type) {
+  private static <T> T as_etzqsh_a0a0a1a5a2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

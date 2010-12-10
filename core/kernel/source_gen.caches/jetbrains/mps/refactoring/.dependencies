@@ -96,13 +96,13 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.refactoring.ModelLinkMap" />
-    <classNode dependClassName="jetbrains.mps.refactoring.PlayRefactoringsFlag" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModification" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationLog" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
