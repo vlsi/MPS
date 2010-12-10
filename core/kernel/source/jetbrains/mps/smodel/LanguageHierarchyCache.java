@@ -151,24 +151,24 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             if (declaration instanceof ConceptDeclaration) {
               ConceptDeclaration cd = (ConceptDeclaration) declaration;
               if (cd.getExtends() != null) {
-                result.add(NameUtil.nodeFQName(cd.getExtends()));
+                result.add(InternUtil.intern(NameUtil.nodeFQName(cd.getExtends())));
               } else if (!BaseConcept.concept.equals(NameUtil.nodeFQName(cd))) {
                 result.add(BaseConcept.concept);
               }
               for (InterfaceConceptReference icr : cd.getImplementses()) {
-                result.add(NameUtil.nodeFQName(icr.getIntfc()));
+                result.add(InternUtil.intern(NameUtil.nodeFQName(icr.getIntfc())));
               }
             }
             if (declaration instanceof InterfaceConceptDeclaration) {
               InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) declaration;
               for (InterfaceConceptReference icr : icd.getExtendses()) {
-                result.add(NameUtil.nodeFQName(icr.getIntfc()));
+                result.add(InternUtil.intern(NameUtil.nodeFQName(icr.getIntfc())));
               }
             }
             return result;
           }
         });
-        myParentsNamesMap.put(conceptFqName, result);
+        myParentsNamesMap.put(InternUtil.intern(conceptFqName), result);
       }
       return Collections.unmodifiableSet(result);
     }
@@ -277,7 +277,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private void addToCache(String nodeFQName) {
     for (String parentFQName : getParentsNames(nodeFQName)) {
       if (!myDirectDescendantsCache.containsKey(parentFQName)) {
-        myDirectDescendantsCache.put(parentFQName, new LinkedHashSet<String>());
+        myDirectDescendantsCache.put(InternUtil.intern(parentFQName), new LinkedHashSet<String>());
       }
       myDirectDescendantsCache.get(parentFQName).add(nodeFQName);
     }
