@@ -172,6 +172,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.RefScopeChecker" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.TargetConceptChecker" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
