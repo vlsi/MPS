@@ -411,6 +411,9 @@
             </implementation-class>
         </component>
 
+        <component>
+          <implementation-class>jetbrains.mps.cache.CachesClearer</implementation-class>
+        </component>
 
         <component>
             <implementation-class>com.intellij.platform.PlatformVcsDetector</implementation-class>
