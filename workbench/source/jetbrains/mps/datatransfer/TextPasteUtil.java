@@ -15,35 +15,30 @@
  */
 package jetbrains.mps.datatransfer;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
+import com.intellij.ide.CopyPasteManagerEx;
+
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 
 public class TextPasteUtil {
   public static boolean hasStringInClipboard() {
-    try {
-      Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-      return cb.isDataFlavorAvailable(DataFlavor.stringFlavor);
-    } catch (IllegalStateException e) {
-      return false;
+    Transferable content = null;
+    for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+      if (trf != null && trf.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+        content = trf;
+        break;
+      }
     }
+    return content != null;
   }
 
   public static String getStringFromClipboard() {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = null;
-    try {
-      if (!cb.isDataFlavorAvailable(DataFlavor.stringFlavor)) {
-        return null;
+    for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+      if (trf != null && trf.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+        content = trf;
+        break;
       }
-    } catch (IllegalStateException e) {
-      return null;
-    }
-    try {
-      content = cb.getContents(null);
-    }
-    catch (RuntimeException ignored) {
     }
     if (content == null) return null;
     return getStringFromTransferable(content);

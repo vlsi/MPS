@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.datatransfer;
 
+import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -25,8 +26,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -236,23 +235,19 @@ public class CopyPasteUtil {
   }
 
   public static void copyTextToClipboard(String text) {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new StringSelection(text), null);
+    CopyPasteManagerEx.getInstanceEx().setContents(new StringSelection(text));
   }
 
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, String text) {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new SNodeTransferable(nodes, text), null);
+    CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(nodes, text));
   }
 
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, Map<SNode, Set<SNode>> nodesAndAttributes, String text) {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new SNodeTransferable(nodes, text, nodesAndAttributes), null);
+    CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(nodes, text, nodesAndAttributes));
   }
 
   public static void copyNodesToClipboard(List<SNode> nodes) {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new SNodeTransferable(nodes), null);
+    CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(nodes));
   }
 
   public static void copyNodeToClipboard(SNode node) {
@@ -268,28 +263,17 @@ public class CopyPasteUtil {
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
     IModule module = model.getModelDescriptor().getModule();
 
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    if (cb == null) {
-      return PasteNodeData.emptyPasteNodeData(module, model);
-    }
-    try {
-      if (!cb.isDataFlavorAvailable(SModelDataFlavor.sNode)) {
-        return PasteNodeData.emptyPasteNodeData(module, model);
-      }
-    } catch (IllegalStateException e) {
-      return PasteNodeData.emptyPasteNodeData(module, model);
-    }
-
     Transferable content = null;
-    try {
-      content = cb.getContents(null);
-    } catch (IllegalStateException e) {
-      //LOG.warning("Clipboard is not accessible. It can happen if another application is using it.");
+    for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+      if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+        content = trf;
+        break;
+      }
     }
     if (content == null) {
       return PasteNodeData.emptyPasteNodeData(module, model);
     }
-
+    
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
       SNodeTransferable nodeTransferable;
       try {
@@ -365,11 +349,12 @@ public class CopyPasteUtil {
   }
 
   public static boolean doesClipboardContainNode() {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    try {
-      return cb.isDataFlavorAvailable(SModelDataFlavor.sNode);
-    } catch (IllegalStateException e) {
-      return false;
+    Transferable content = null;
+    for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+      if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
+        return true;
+      }
     }
+    return false;
   }
 }

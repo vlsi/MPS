@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.ide.BrowserUtil;
+import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
@@ -46,7 +47,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -303,7 +303,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
             sb.append(((Message) o).getText());
             sb.append("\n");
           }
-          Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(sb.toString()), null);
+          CopyPasteManagerEx.getInstance().setContents(new StringSelection(sb.toString()));
         }
       });
     }
