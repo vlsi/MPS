@@ -10,10 +10,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class OutputResources_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -37,12 +37,14 @@ public class OutputResources_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_qhdij8_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("resource");
-    provider.setNoTargetText("<no resource>");
+  private EditorCell createConceptProperty_qhdij8_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("conceptProperty_alias");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -54,14 +56,12 @@ public class OutputResources_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_qhdij8_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
+  private EditorCell createRefNode_qhdij8_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("resource");
+    provider.setNoTargetText("<no resource>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -8,13 +8,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
@@ -31,15 +31,14 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_x08tk8_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("qualifier");
-    provider.setNoTargetText("<no qualifier>");
+  private EditorCell createRefCell_x08tk8_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("dependsOn");
+    provider.setNoTargetText("<no dependsOn>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new TargetDependency_Editor._Inline_x08tk8_a1a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_qualifier");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TargetDependency_Editor.ReplaceWith_TargetDependency_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -50,14 +49,15 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_x08tk8_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("dependsOn");
-    provider.setNoTargetText("<no dependsOn>");
+  private EditorCell createProperty_x08tk8_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("qualifier");
+    provider.setNoTargetText("<no qualifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TargetDependency_Editor._Inline_x08tk8_a1a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setCellId("property_qualifier");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TargetDependency_Editor.ReplaceWith_TargetDependency_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
