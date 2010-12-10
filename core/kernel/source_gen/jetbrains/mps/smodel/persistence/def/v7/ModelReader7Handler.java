@@ -168,7 +168,7 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       fieldmodel.setLoading(true);
       fieldhelper = new ReadHelper(fieldmodel.getSModelReference());
       fieldlinkMap = new ModelLinkMap(fieldmodel);
-      return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, fieldstate);
+      return new BaseSModelDescriptor.ModelLoadResult(fieldmodel, ModelLoadingState.FULLY_LOADED);
     }
 
     @Override
@@ -244,6 +244,7 @@ public class ModelReader7Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
             fieldstate = ModelLoadingState.FULLY_LOADED;
           } else {
             fieldmodel.setLoading(false);
+            myResult = new BaseSModelDescriptor.ModelLoadResult(fieldmodel, fieldstate);
             throw new BreakParseSAXException();
           }
         }
