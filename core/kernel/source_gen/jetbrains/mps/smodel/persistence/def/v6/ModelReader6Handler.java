@@ -368,7 +368,7 @@ public class ModelReader6Handler extends XMLSAXHandler<BaseSModelDescriptor.Mode
       Object result = (Object) resultObject;
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
-        if (child != null) {
+        if (fieldtoState == ModelLoadingState.ROOTS_LOADED && child != null) {
           fieldmodel.addRoot(child);
         }
         return;
