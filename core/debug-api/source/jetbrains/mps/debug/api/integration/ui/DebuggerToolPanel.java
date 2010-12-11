@@ -14,6 +14,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
+import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
@@ -45,18 +46,20 @@ public class DebuggerToolPanel {
     myUiState = myDebugSession.getUiState();
     myDebugSession.addChangeListener(new MySessionChangeListener());
 
-    JPanel threadsPanel = new JPanel(new BorderLayout());
+    ui.getDefaults().initTabDefaults(0, "Debugger", null);
 
-    threadsPanel.add(createThreadsComponent(), BorderLayout.NORTH);
-    threadsPanel.add(createStackFrameComponent(), BorderLayout.CENTER);
+    JPanel framesPanel = new JPanel(new BorderLayout());
 
-    Content framesContent = ui.createContent("Threads", threadsPanel, "Threads", null, null);
+    framesPanel.add(createThreadsComponent(), BorderLayout.NORTH);
+    framesPanel.add(createStackFrameComponent(), BorderLayout.CENTER);
+
+    Content framesContent = ui.createContent("Frames", framesPanel, "Frames", Icons.FRAMES, null);
     framesContent.setCloseable(false);
     ui.addContent(framesContent, 0, PlaceInGrid.left, false);
 
     JComponent variablesPanel = createVariablesPanel(project);
 
-    Content variablesContent = ui.createContent("Variables", variablesPanel, "Variables", null, null);
+    Content variablesContent = ui.createContent("Variables", variablesPanel, "Variables", Icons.VARIABLES, null);
     variablesContent.setCloseable(false);
     ui.addContent(variablesContent, 0, PlaceInGrid.center, false);
   }
