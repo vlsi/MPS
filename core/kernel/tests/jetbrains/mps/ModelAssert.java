@@ -31,19 +31,24 @@ public class ModelAssert {
     assertSameModelImports(expectedModel, actualModel);
     assertSameLanguageAspects(expectedModel, actualModel);
 
-    // todo check not only child nodes
+    assertSameNodesCollections("root", expectedModel.roots(), actualModel.roots());
+  }
 
-
-    HashMap<SNodeId, SNode> actualRoots = new HashMap<SNodeId, SNode>();
-    for (SNode actualRoot : actualModel.roots()) {
-      actualRoots.put(actualRoot.getSNodeId(), actualRoot);
+  private static void assertSameNodesCollections(String objectName, Iterable<SNode> expected, Iterable<SNode> actual) {
+    HashMap<SNodeId, SNode> actualIdToNodeMap = new HashMap<SNodeId, SNode>();
+    for (SNode actualNode : actual) {
+      actualIdToNodeMap.put(actualNode.getSNodeId(), actualNode);
     }
 
-    for (SNode expectedRoot : expectedModel.roots()) {
-      SNode actualRoot = actualRoots.get(expectedRoot.getSNodeId());
-      assertNotNull("Not found expected root " + expectedRoot, actualRoot);
-      assertDeepNodeEquals(expectedRoot, actualRoot);
+    for (SNode expectedNode : expected) {
+      SNodeId rootId = expectedNode.getSNodeId();
+      SNode actualNode = actualIdToNodeMap.get(rootId);
+      assertNotNull("Not found expected " + objectName + " " + expectedNode, actualNode);
+      assertDeepNodeEquals(expectedNode, actualNode);
+      actualIdToNodeMap.remove(rootId);
     }
+
+    assertTrue("Found not expected " + objectName + " " + actualIdToNodeMap, actualIdToNodeMap.isEmpty());
   }
 
   private static void assertSameModelImports(SModel expectedModel, SModel actualModel) {
@@ -175,20 +180,11 @@ public class ModelAssert {
 
       assertEquals(getErrorString("child count for role " + role, expectedNode, actualNode), expectedChildren.size(), actualChildren.size());
 
+      Iterator<SNode> actualIterator = actualChildren.iterator();
       for (SNode expectedChild : expectedChildren) {
-        boolean wasFound = false;
-        for (SNode actualChild : actualChildren) {
-          if (actualChild.getSNodeId().equals(expectedChild.getSNodeId())) {
-            wasFound = true;
-            assertDeepNodeEquals(expectedChild, actualChild);
-            break;
-          }
-        }
-        if (!wasFound) {
-          fail(getErrorString("children", expectedNode, actualNode) + " Expected  child " + expectedChild + " was not found." +
-            "Expected children are " + expectedChildren + "\n" +
-            "Actual children are " + actualChildren + "\n");
-        }
+        SNode actualChild = actualIterator.next();
+        assertEquals(getErrorString("child children for role " + role, expectedNode, actualNode), expectedChild.getSNodeId(), actualChild.getSNodeId());
+        assertDeepNodeEquals(expectedChild, actualChild);
       }
     }
   }
