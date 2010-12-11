@@ -29,12 +29,16 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
 
   @Override
   public JavaLocation getLocation() {
-    return new JavaLocation(getStackFrame().location());
+    StackFrame stackFrame = getStackFrame();
+    if (stackFrame == null) return null;
+    return new JavaLocation(stackFrame.location());
   }
 
   @Override
   public JavaThread getThread() {
-    return new JavaThread(getStackFrame().thread());
+    StackFrame stackFrame = getStackFrame();
+    if (stackFrame == null) return null;
+    return new JavaThread(stackFrame.thread());
   }
 
   @Nullable
