@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class EvaluateExpression_Action extends GeneratedAction {
@@ -37,7 +38,8 @@ public class EvaluateExpression_Action extends GeneratedAction {
     try {
       {
         AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled() && debugSession.canShowEvaluationDialog());
+        IEvaluationProvider provider = debugSession.getEvaluationProvider();
+        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled() && provider != null);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -70,7 +72,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      DebugActionsUtil.getDebugSession(event).showEvaluationDialog(EvaluateExpression_Action.this.operationContext);
+      DebugActionsUtil.getDebugSession(event).getEvaluationProvider().showEvaluationDialog(EvaluateExpression_Action.this.operationContext);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "EvaluateExpression", t);

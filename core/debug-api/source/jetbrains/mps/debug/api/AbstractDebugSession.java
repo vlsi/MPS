@@ -2,9 +2,12 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.evaluation.DummyEvaluationProvider;
+import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,13 +137,18 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
 
   public abstract void showEvaluationDialog(IOperationContext operationContext);
 
+  @Nullable
+  public IEvaluationProvider getEvaluationProvider() {
+    if (!canShowEvaluationDialog()) return null;
+    return new DummyEvaluationProvider(this);
+  }
+
   public void sessionRegistered(DebugSessionManagerComponent manager) {
   }
 
   public void sessionUnregistered(DebugSessionManagerComponent manager) {
   }
 
-  // todo make next two abstract after 2.0 (now we can not: will break users code)
   public void muteBreakpoints(boolean mute) {
   }
 
