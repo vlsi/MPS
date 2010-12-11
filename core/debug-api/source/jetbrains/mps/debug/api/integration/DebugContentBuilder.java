@@ -100,15 +100,9 @@ public class DebugContentBuilder implements Disposable {
   }
 
   private void buildUi(RunnerLayoutUi ui, ExecutionConsole console) {
-//    ui.getDefaults().initTabDefaults(0, "Debugger", null).initFocusContent(DebuggerContentInfo.FRAME_CONTENT, "");
-//    ui.getDefaults().initTabDefaults(1, "Console", null).initFocusContent(DebuggerContentInfo.CONSOLE_CONTENT, LayoutViewOptions.STARTUP, new LayoutAttractionPolicy.FocusOnce(false));
+    ui.getDefaults().initTabDefaults(0, "Debugger", null);
 
-    // debugger tab
-    DebuggerToolPanel debuggerToolPanel = new DebuggerToolPanel(myProject, myExecutionResult.getProcessHandler());
-    Content debuggerContent = ui.createContent("Debugger", debuggerToolPanel, "Debugger", null, debuggerToolPanel);
-    debuggerContent.setSearchComponent(debuggerToolPanel);
-    debuggerContent.setCloseable(false);
-    ui.addContent(debuggerContent, 0, PlaceInGrid.center, false);
+    new DebuggerToolPanel(myProject, myExecutionResult.getProcessHandler(), ui);
 
     Content consoleContent = ui.createContent("Console", console.getComponent(), "Console", IconLoader.getIcon("/debugger/console.png"), console.getPreferredFocusableComponent());
     consoleContent.setSearchComponent(console.getComponent());

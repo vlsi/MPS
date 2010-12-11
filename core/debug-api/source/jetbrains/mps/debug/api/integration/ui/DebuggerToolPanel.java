@@ -2,9 +2,14 @@ package jetbrains.mps.debug.api.integration.ui;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.RunnerLayoutUi;
+import com.intellij.execution.ui.layout.PlaceInGrid;
+import com.intellij.ide.ui.ListCellRendererWrapper;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Splitter;
+import com.intellij.ui.components.JBList;
+import com.intellij.ui.components.JBScrollPane;
+import com.intellij.ui.content.Content;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
@@ -24,7 +29,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.util.List;
 
-public class DebuggerToolPanel extends JPanel {
+public class DebuggerToolPanel {
   private final AbstractDebugSession myDebugSession;
   @NotNull
   private AbstractUiState myUiState;
@@ -34,29 +39,31 @@ public class DebuggerToolPanel extends JPanel {
   private VariablesTree myVariablesTree;
   private JList myFramesList;
 
-  public DebuggerToolPanel(Project project, ProcessHandler processHandler) {
-    super(new BorderLayout());
-    // TODO debug session should be a constructor parameter
+  public DebuggerToolPanel(Project project, ProcessHandler processHandler, RunnerLayoutUi ui) {
+
     myDebugSession = DebugSessionManagerComponent.getInstance(project).getDebugSession(processHandler);
     myUiState = myDebugSession.getUiState();
     myDebugSession.addChangeListener(new MySessionChangeListener());
 
-    JPanel leftPanel = new JPanel(new BorderLayout());
+    JPanel threadsPanel = new JPanel(new BorderLayout());
 
-    leftPanel.add(createThreadsComponent(), BorderLayout.NORTH);
-    leftPanel.add(createStackFrameComponent(), BorderLayout.CENTER);
-    leftPanel.setBorder(new TitledBorder("Threads"));
+    threadsPanel.add(createThreadsComponent(), BorderLayout.NORTH);
+    threadsPanel.add(createStackFrameComponent(), BorderLayout.CENTER);
 
-    Splitter splitter = new Splitter(false);
-    splitter.setLayout(new BorderLayout());
-    splitter.setFirstComponent(leftPanel);
-    splitter.setSecondComponent(createVariablesPanel(project));
-    add(splitter, BorderLayout.CENTER);
+    Content framesContent = ui.createContent("Threads", threadsPanel, "Threads", null, null);
+    framesContent.setCloseable(false);
+    ui.addContent(framesContent, 0, PlaceInGrid.left, false);
+
+    JComponent variablesPanel = createVariablesPanel(project);
+
+    Content variablesContent = ui.createContent("Variables", variablesPanel, "Variables", null, null);
+    variablesContent.setCloseable(false);
+    ui.addContent(variablesContent, 0, PlaceInGrid.center, false);
   }
 
   private JComponent createVariablesPanel(Project project) {
     myVariablesTree = new VariablesTree(project, myDebugSession.getUiState());
-    JScrollPane scrollPane = new JScrollPane(myVariablesTree);
+    JScrollPane scrollPane = new JBScrollPane(myVariablesTree);
     scrollPane.setBorder(new TitledBorder("Variables"));
     return scrollPane;
   }
@@ -64,16 +71,13 @@ public class DebuggerToolPanel extends JPanel {
   private JComponent createThreadsComponent() {
     myThreadsComboBoxModel = new ThreadsComboBoxModel();
     JComboBox threadsComboBox = new JComboBox(myThreadsComboBoxModel);
-    threadsComboBox.setRenderer(new DefaultListCellRenderer() {
+    threadsComboBox.setRenderer(new ListCellRendererWrapper<IThread>(threadsComboBox.getRenderer()) {
       @Override
-      public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        Component defaultComponent = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+      public void customize(JList list, IThread value, int index, boolean selected, boolean hasFocus) {
         if (value != null) {
-          IThread thread = (IThread) value;
-          setText(thread.getPresentation());
-          setIcon(thread.getPresentationIcon());
+          setText(value.getPresentation());
+          setIcon(value.getPresentationIcon());
         }
-        return defaultComponent;
       }
     });
     return threadsComboBox;
@@ -81,7 +85,7 @@ public class DebuggerToolPanel extends JPanel {
 
   private JComponent createStackFrameComponent() {
     myStackFramesListModel = new StackFramesListModel();
-    myFramesList = new JList(myStackFramesListModel);
+    myFramesList = new JBList(myStackFramesListModel);
     myFramesList.addListSelectionListener(new ListSelectionListener() {
       @Override
       public void valueChanged(ListSelectionEvent e) {
@@ -118,7 +122,7 @@ public class DebuggerToolPanel extends JPanel {
         return defaultComponent;
       }
     });
-    return new JScrollPane(myFramesList);
+    return new JBScrollPane(myFramesList);
   }
 
   private void updateUi() {
