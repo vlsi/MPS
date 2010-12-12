@@ -131,7 +131,7 @@ public class FileClassPathItem extends RealClassPathItem {
 
     Set<String> result = mySubpackagesCache.get(namespace);
     if (result == null) return new EmptyIterable<String>();
-    return result;
+    return Collections.unmodifiableSet(result);
   }
 
   private void buildCacheFor(String namespace) {
@@ -148,13 +148,15 @@ public class FileClassPathItem extends RealClassPathItem {
           if (classes == null) {
             classes = new HashSet<String>(files.length);
           }
-          classes.add(name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length()));
+          String classname = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
+          classes.add(InternUtil.intern(classname));
         } else {
           if (file.isDirectory()) {
             if (subpacks == null) {
               subpacks = new HashSet<String>();
             }
-            subpacks.add(namespace.length() > 0 ? namespace + "." + name : name);
+            String fqName = namespace.length() > 0 ? namespace + "." + name : name;
+            subpacks.add(InternUtil.intern(fqName));
           }
         }
       }
