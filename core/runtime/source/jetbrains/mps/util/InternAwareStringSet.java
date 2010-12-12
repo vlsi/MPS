@@ -15,9 +15,25 @@
  */
 package jetbrains.mps.util;
 
+import java.util.Collection;
 import java.util.HashSet;
 
 public class InternAwareStringSet extends HashSet<String> {
+  public InternAwareStringSet() {
+  }
+
+  public InternAwareStringSet(Collection<? extends String> c) {
+    super(c);
+  }
+
+  public InternAwareStringSet(int initialCapacity, float loadFactor) {
+    super(initialCapacity, loadFactor);
+  }
+
+  public InternAwareStringSet(int initialCapacity) {
+    super(initialCapacity);
+  }
+
   public boolean add(String s) {
     return super.add(InternUtil.intern(s));
   }
