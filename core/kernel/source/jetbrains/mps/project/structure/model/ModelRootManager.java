@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.model;
 
+import jetbrains.mps.util.InternUtil;
 import org.apache.commons.lang.ObjectUtils;
 
 public class ModelRootManager {
@@ -26,16 +27,16 @@ public class ModelRootManager {
   }
 
   public ModelRootManager(String moduleId, String className) {
-    myModuleId = moduleId;
-    myClassName = className;
+    myModuleId = InternUtil.intern(moduleId);
+    myClassName = InternUtil.intern(className);
   }
 
   public void setModuleId(String moduleId) {
-    myModuleId = moduleId;
+    myModuleId = InternUtil.intern(moduleId);
   }
 
   public void setClassName(String className) {
-    myClassName = className;
+    myClassName = InternUtil.intern(className);
   }
 
   public String getModuleId() {
