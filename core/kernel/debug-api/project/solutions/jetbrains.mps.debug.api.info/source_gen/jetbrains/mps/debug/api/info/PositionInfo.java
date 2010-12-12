@@ -112,6 +112,12 @@ public class PositionInfo implements Comparable<PositionInfo> {
     if (eq_1myh1n_a0a0q(this.getLineDistance(), p.getLineDistance())) {
       if (eq_1myh1n_a0a0a0q(this.myStartLine, p.myStartLine)) {
         if (eq_1myh1n_a0a0a0a0q(this.myStartPosition, p.myStartPosition)) {
+          if (myNodeId == null) {
+            return -1;
+          }
+          if (p.myNodeId == null) {
+            return 1;
+          }
           return this.myNodeId.compareTo(p.myNodeId);
         } else {
           return this.myStartPosition - p.myStartPosition;
