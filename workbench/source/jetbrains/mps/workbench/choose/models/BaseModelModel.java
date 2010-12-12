@@ -18,19 +18,26 @@ package jetbrains.mps.workbench.choose.models;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
-public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor> {
+public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference> {
   public BaseModelModel(Project project) {
     super(project, "model");
   }
 
   public String doGetFullName(Object element) {
     BaseModelItem navigationItem = (BaseModelItem) element;
-    return navigationItem.getModelDescriptor().getSModelFqName().toString();
+    SModelReference ref = navigationItem.getModelReference();
+    return ref.getLongName() + getStereotypeString(ref);
   }
 
-  public String doGetObjectName(SModelDescriptor modelDescriptor) {
-    return modelDescriptor.getSModelReference().getSModelFqName().toString();
+  public String doGetObjectName(SModelReference ref) {
+    return NameUtil.shortNameFromLongName(ref.getLongName()) + getStereotypeString(ref);
+  }
+
+  private String getStereotypeString(SModelReference ref) {
+    return ref.hasStereotype() ? ("@" + ref.getStereotype()) : "";
   }
 }

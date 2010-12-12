@@ -20,6 +20,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.actions.SelectMembersDialog;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -57,21 +58,25 @@ public abstract class ChooserType<T> {
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModelModel(project) {
-        public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-          return new BaseModelItem(modelDescriptor) {
+        public NavigationItem doGetNavigationItem(final SModelReference ref) {
+          return new BaseModelItem(ref) {
             public void navigate(boolean requestFocus) {
-              context.setParameter(paramName, getModelDescriptor());
+              context.setParameter(paramName, getModelReference());
             }
           };
         }
 
-        public SModelDescriptor[] find(boolean checkboxState) {
+        public SModelReference[] find(boolean checkboxState) {
           List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
           List<SModelDescriptor> filteredModelDescriptors = filter(settings, modelDescriptors);
-          return filteredModelDescriptors.toArray(new SModelDescriptor[filteredModelDescriptors.size()]);
+          List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>(filteredModelDescriptors.size());
+          for (SModelDescriptor md:filteredModelDescriptors){
+            filteredModelRefs.add(md.getSModelReference());
+          }
+          return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
         }
 
-        public SModelDescriptor[] find(IScope scope) {
+        public SModelReference[] find(IScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 

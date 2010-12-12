@@ -50,6 +50,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JScrollPane;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -310,15 +312,25 @@ public class TestConfigurationDialog extends BaseDialog {
       ListAddAction addAction = new ListAddAction(myModelsList) {
         @Override
         protected int doAdd(AnActionEvent e) {
-          List<SModelDescriptor> models = myProject.getComponent(MPSProject.class).getProjectModels();
-          SModelDescriptor sModelDescriptor = CommonChoosers.showDialogModelChooser(ModelsPanel.this, models, SModelRepository.getInstance().getModelDescriptors());
-          if (sModelDescriptor == null) {
+          List<SModelDescriptor> projModels = myProject.getComponent(MPSProject.class).getProjectModels();
+          List<SModelReference> projModelRefs = ListSequence.fromList(projModels).select(new ISelector<SModelDescriptor, SModelReference>() {
+            public SModelReference select(SModelDescriptor it) {
+              return it.getSModelReference();
+            }
+          }).toListSequence();
+          List<SModelDescriptor> allModels = SModelRepository.getInstance().getModelDescriptors();
+          List<SModelReference> allModelRefs = ListSequence.fromList(allModels).select(new ISelector<SModelDescriptor, SModelReference>() {
+            public SModelReference select(SModelDescriptor it) {
+              return it.getSModelReference();
+            }
+          }).toListSequence();
+          SModelReference modelRef = CommonChoosers.showDialogModelChooser(ModelsPanel.this, projModelRefs, allModelRefs);
+          if (modelRef == null) {
             return -1;
           }
-          SModelReference modelRef = sModelDescriptor.getSModelReference();
           myModels.add(modelRef);
           if (!(myNamePanel.isConfigNameSet())) {
-            myNamePanel.setConfigName(sModelDescriptor.getName());
+            myNamePanel.setConfigName(modelRef.getShortName());
           }
           return myModels.indexOf(modelRef);
         }

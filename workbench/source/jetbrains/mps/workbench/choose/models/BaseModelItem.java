@@ -19,18 +19,19 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModelItem implements NavigationItem {
-  private SModelDescriptor myModelDescriptor;
+  private SModelReference myModelReference;
 
-  public BaseModelItem(SModelDescriptor modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
+  public BaseModelItem(SModelReference modelReference) {
+    myModelReference = modelReference;
   }
 
-  public SModelDescriptor getModelDescriptor() {
-    return myModelDescriptor;
+  public SModelReference getModelReference() {
+    return myModelReference;
   }
 
   public String getName() {
@@ -39,11 +40,13 @@ public abstract class BaseModelItem implements NavigationItem {
 
   @Nullable
   public ItemPresentation getPresentation() {
-    return new ModelPresentation(myModelDescriptor);
+    return new ModelPresentation(myModelReference);
   }
 
   public FileStatus getFileStatus() {
-    boolean changed = SModelRepository.getInstance().isChanged(myModelDescriptor);
+    boolean changed = false;
+    SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+    changed = SModelRepository.getInstance().isChanged(( md));
     return changed ? FileStatus.MODIFIED : FileStatus.NOT_CHANGED;
   }
 

@@ -25,12 +25,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
@@ -38,6 +33,7 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GoToModelAction extends BaseAction {
@@ -49,27 +45,31 @@ public class GoToModelAction extends BaseAction {
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
-      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new BaseModelItem(modelDescriptor) {
+      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
+        return new BaseModelItem(modelReference) {
           public void navigate(boolean requestFocus) {
             ProjectPane projectPane = ProjectPane.getInstance(project);
-            projectPane.selectModel(modelDescriptor);
+            SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
+            projectPane.selectModel(md);
           }
         };
       }
 
-      public SModelDescriptor[] find(IScope scope) {
-        List<SModelDescriptor> modelDescriptors =
-          CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
-            public boolean met(SModelDescriptor modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-                || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
-              boolean hasModule = modelDescriptor.getModule() != null;
-              return rightStereotype && hasModule;
-            }
-          });
-
-        return modelDescriptors.toArray(new SModelDescriptor[0]);
+      public SModelReference[] find(IScope scope) {
+        Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+          public boolean met(SModelDescriptor modelDescriptor) {
+            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
+              || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+            boolean hasModule = modelDescriptor.getModule() != null;
+            return rightStereotype && hasModule;
+          }
+        };
+        List<SModelReference> result = new ArrayList<SModelReference>();
+        for (SModelDescriptor md:scope.getModelDescriptors()){
+          if(!cond.met(md)) continue;
+          result.add(md.getSModelReference());
+        }
+        return result.toArray(new SModelReference[result.size()]);
       }
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());

@@ -64,22 +64,25 @@ public class ImportHelper {
     };
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
-      public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new AddModelItem(project, model, modelDescriptor, module);
+      public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
+        return new AddModelItem(project, model, modelReference, module);
       }
 
-      public SModelDescriptor[] find(IScope scope) {
-        List<SModelDescriptor> modelDescriptors =
-          CollectionUtil.filter(scope.getModelDescriptors(), new Condition<SModelDescriptor>() {
-            public boolean met(SModelDescriptor modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-                || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
-              boolean hasModule = modelDescriptor.getModule() != null;
-              return rightStereotype && hasModule;
-            }
-          });
-
-        return modelDescriptors.toArray(new SModelDescriptor[modelDescriptors.size()]);
+      public SModelReference[] find(IScope scope) {
+        Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+          public boolean met(SModelDescriptor modelDescriptor) {
+            boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
+              || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+            boolean hasModule = modelDescriptor.getModule() != null;
+            return rightStereotype && hasModule;
+          }
+        };
+        List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>();
+        for (SModelDescriptor md:scope.getModelDescriptors()){
+          if (!cond.met(md)) continue;
+          filteredModelRefs.add(md.getSModelReference());
+        }
+        return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
       }
 
       @Nullable
@@ -171,7 +174,7 @@ public class ImportHelper {
         public NavigationItem doGetNavigationItem(SNode node) {
           return new BaseNodeItem(node) {
             public void navigate(boolean requestFocus) {
-              new AddModelItem(project, model, getNode().getModel().getModelDescriptor(), contextModule).navigate(requestFocus);
+              new AddModelItem(project, model, getNode().getModel().getSModelReference(), contextModule).navigate(requestFocus);
             }
           };
         }
@@ -211,7 +214,7 @@ public class ImportHelper {
               SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
               SModel modelDescriptor = descriptor.getSModel();
               SNode node = object.getNode(modelDescriptor);
-              new AddModelItem(project, model, node.getModel().getModelDescriptor(), contextModule).navigate(requestFocus);
+              new AddModelItem(project, model, node.getModel().getSModelReference(), contextModule).navigate(requestFocus);
             }
           };
         }
@@ -245,7 +248,7 @@ public class ImportHelper {
     private SModelDescriptor myModel;
     private IModule myModule;
 
-    public AddModelItem(Project project, SModelDescriptor model, SModelDescriptor modelToAdd, IModule currentModule) {
+    public AddModelItem(Project project, SModelDescriptor model, SModelReference modelToAdd, IModule currentModule) {
       super(modelToAdd);
       myProject = project;
       myModel = model;
@@ -259,8 +262,9 @@ public class ImportHelper {
     public void navigate(boolean requestFocus) {
       final ModuleReference moduleToImport = ModelAccess.instance().runReadAction(new Computable<ModuleReference>() {
         public ModuleReference compute() {
-          final ModuleReference moduleReference = getModelDescriptor().getModule().getModuleReference();
-          if (myModule.getScope().getModelDescriptor(getModelDescriptor().getSModelReference()) == null) {
+          SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getModelReference());
+          final ModuleReference moduleReference = md.getModule().getModuleReference();
+          if (myModule.getScope().getModelDescriptor(getModelReference()) == null) {
             return moduleReference;
           }
           return null;
@@ -269,7 +273,7 @@ public class ImportHelper {
 
       if (moduleToImport != null) {
         int res = JOptionPane.showConfirmDialog(getFrame(),
-          "<html>Model <b>" + getModelDescriptor().getSModelFqName() + "</b> is owned by module <b>" + moduleToImport.getModuleFqName() + "</b> which is not imported.</html>\n\n" +
+          "<html>Model <b>" + getModelReference().getSModelFqName() + "</b> is owned by module <b>" + moduleToImport.getModuleFqName() + "</b> which is not imported.</html>\n\n" +
 
             "Importing the module will take some time.\n" +
             "Do you want to automatically import the module?",
@@ -285,7 +289,7 @@ public class ImportHelper {
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          myModel.getSModel().addImportedModel(getModelDescriptor().getSModelReference());
+          myModel.getSModel().addImportedModel(getModelReference(), false);
         }
       });
     }
