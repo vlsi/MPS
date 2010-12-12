@@ -342,8 +342,12 @@
                                             <link role="classifier:3" targetNodeId="1237995590703" resolveInfo="SModelUtil" />
                                             <link role="variableDeclaration:3" targetNodeId="1237995590978" resolveInfo="myFQNameToConcepDecl" />
                                           </node>
-                                          <node role="key:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3493706235933783513">
-                                            <link role="variableDeclaration:3" targetNodeId="3493706235933782475" resolveInfo="newName" />
+                                          <node role="key:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8127587646303148623">
+                                            <link role="baseMethodDeclaration:3" targetNodeId="3.~InternUtil.intern(java.lang.String):java.lang.String" resolveInfo="intern" />
+                                            <link role="classConcept:3" targetNodeId="3.~InternUtil" resolveInfo="InternUtil" />
+                                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8127587646303148624">
+                                              <link role="variableDeclaration:3" targetNodeId="3493706235933782475" resolveInfo="newName" />
+                                            </node>
                                           </node>
                                         </node>
                                         <node role="rValue:3" type="jetbrains.mps.baseLanguage.collections.structure.MapElement:7" id="5766047821322649758">
@@ -767,8 +771,12 @@
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5540842959600300428">
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="5540842959600300429">
                           <node role="lValue:3" type="jetbrains.mps.baseLanguage.collections.structure.MapElement:7" id="5540842959600300430">
-                            <node role="key:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5540842959600300431">
-                              <link role="variableDeclaration:3" targetNodeId="1237995590798" resolveInfo="conceptFQName" />
+                            <node role="key:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8127587646303148626">
+                              <link role="baseMethodDeclaration:3" targetNodeId="3.~InternUtil.intern(java.lang.String):java.lang.String" resolveInfo="intern" />
+                              <link role="classConcept:3" targetNodeId="3.~InternUtil" resolveInfo="InternUtil" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8127587646303148627">
+                                <link role="variableDeclaration:3" targetNodeId="1237995590798" resolveInfo="conceptFQName" />
+                              </node>
                             </node>
                             <node role="map:7" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5540842959600300432">
                               <link role="variableDeclaration:3" targetNodeId="1237995590978" resolveInfo="myFQNameToConcepDecl" />

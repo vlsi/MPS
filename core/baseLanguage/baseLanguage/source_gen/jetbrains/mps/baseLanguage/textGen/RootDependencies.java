@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.textGen;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
 import org.jdom.Attribute;
-import jetbrains.mps.util.InternUtil;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Collection;
@@ -26,7 +26,7 @@ public class RootDependencies implements Comparable<RootDependencies> {
 
   public RootDependencies(String nodeName, String fileName, List<String> dependNodes, List<String> extendsNodes) {
     this.myClassName = InternUtil.intern(nodeName);
-    this.myFileName = fileName;
+    this.myFileName = InternUtil.intern(fileName);
     if (dependNodes != null) {
       ListSequence.fromList(this.myDependNodes).addSequence(ListSequence.fromList(dependNodes));
     }
@@ -36,10 +36,10 @@ public class RootDependencies implements Comparable<RootDependencies> {
   }
 
   public RootDependencies(Element element) {
-    myClassName = element.getAttribute(CLASS_NAME).getValue();
+    myClassName = InternUtil.intern(element.getAttribute(CLASS_NAME).getValue());
     Attribute attr = element.getAttribute(FILE_NAME);
     if (attr != null) {
-      myFileName = attr.getValue();
+      myFileName = InternUtil.intern(attr.getValue());
     }
     for (Element e : ((List<Element>) element.getChildren(DEPEND_CLASS))) {
       if (e == null) {
