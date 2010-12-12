@@ -176,7 +176,7 @@ public final class BehaviorManager implements ApplicationComponent {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
     Language language = node.getLanguage(GlobalScope.getInstance());
 
-    String conceptFqName = NameUtil.nodeFQName(concept);
+    String conceptFqName = InternUtil.intern(NameUtil.nodeFQName(concept));
 
     List<Method> methodsToCall;
 
