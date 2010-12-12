@@ -220,7 +220,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
         }
 
         buildPackageCaches(pack);
-        myCache.addClass(pack, className);
+        myCache.addClass(InternUtil.intern(pack), InternUtil.intern(className));
 
         String fullClassName =pack.length() > 0? pack + "." + className:className;
         myEntries.put(InternUtil.intern(fullClassName), entry);
@@ -231,7 +231,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private void buildPackageCaches(String namespace) {
     String parent = getParentPackage(namespace);
     if (parent.equals(namespace)) return;
-    myCache.addPackage(namespace, parent);
+    myCache.addPackage(InternUtil.intern(namespace), InternUtil.intern(parent));
     buildPackageCaches(parent);
   }
 
