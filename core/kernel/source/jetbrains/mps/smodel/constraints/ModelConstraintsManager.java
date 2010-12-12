@@ -80,7 +80,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(ModelConstraintsManager.class);
   }
 
-  private Object myLock = new Object();
+  private final Object myLock = new Object();
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
   private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
   private Map<Pair<String, String>, INodePropertyGetter> myNodePropertyGettersCache = new ConcurrentHashMap<Pair<String, String>, INodePropertyGetter>();
@@ -94,13 +94,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
 
-  private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
-  private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
-  private Map<String, Method> myCanBeAncestorMethods = new HashMap<String, Method>();
-  private Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
-  private Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
+  private final Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
+  private final Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
+  private final Map<String, Method> myCanBeAncestorMethods = new HashMap<String, Method>();
+  private final Map<String, Method> myCanBeRootMethods = new HashMap<String, Method>();
+  private final Map<String, String> myDefaultConceptNames = new HashMap<String, String>();
 
-  private Map<String, String> myConstraintClassNames = new HashMap<String, String>();
+  private final Map<String, String> myConstraintClassNames = new HashMap<String, String>();
 
   public ModelConstraintsManager(ClassLoaderManager cm) {
   }
