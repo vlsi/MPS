@@ -31,7 +31,7 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public PositionInfo(Element element) throws DataConversionException {
-    this.myNodeId = check_1myh1n_a0a0b(element.getAttribute(PositionInfo.NODE_ID));
+    this.myNodeId = InternUtil.intern(check_1myh1n_a0a0a1(element.getAttribute(NODE_ID)));
     this.myConceptFqName = InternUtil.intern(check_1myh1n_a0a1a1(element.getAttribute(CONCEPT_FQ_NAME)));
     this.myFileName = InternUtil.intern(check_1myh1n_a0a2a1(element.getAttribute(FILE_NAME)));
     this.myStartLine = element.getAttribute(PositionInfo.START_LINE).getIntValue();
@@ -75,8 +75,8 @@ public class PositionInfo implements Comparable<PositionInfo> {
     this.myFileName = InternUtil.intern(fileName);
   }
 
-  public void setNodeId(String nodeIf) {
-    this.myNodeId = nodeIf;
+  public void setNodeId(String nodeId) {
+    this.myNodeId = InternUtil.intern(nodeId);
   }
 
   public void setStartLine(int startLine) {
@@ -174,7 +174,7 @@ public class PositionInfo implements Comparable<PositionInfo> {
     myConceptFqName = InternUtil.intern(conceptFqName);
   }
 
-  private static String check_1myh1n_a0a0b(Attribute p) {
+  private static String check_1myh1n_a0a0a1(Attribute p) {
     if (null == p) {
       return null;
     }
