@@ -63,7 +63,7 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   private ConcurrentHashMap<MethodInfo, Object> myMethods = new ConcurrentHashMap<MethodInfo, Object>();
-  private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
+  private final Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
   private ClassLoaderManager myClassLoaderManager;
 
