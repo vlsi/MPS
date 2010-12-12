@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.IScope;
@@ -96,12 +95,9 @@ public class AddAccessoryModel_Action extends GeneratedAction {
       final List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          List<SModelDescriptor> descriptors = GlobalScope.getInstance().getModelDescriptors();
-          ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
-            public SModelReference select(SModelDescriptor it) {
-              return it.getSModelReference();
-            }
-          }));
+          for (SModelDescriptor md : GlobalScope.getInstance().getModelDescriptors()) {
+            ListSequence.fromList(models).addElement(md.getSModelReference());
+          }
         }
       });
       final SModelReference result = CommonChoosers.showDialogModelChooser(AddAccessoryModel_Action.this.frame, models, null);
