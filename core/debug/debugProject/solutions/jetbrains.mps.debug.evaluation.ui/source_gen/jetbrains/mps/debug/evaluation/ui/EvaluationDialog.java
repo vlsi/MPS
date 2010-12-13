@@ -99,7 +99,7 @@ public class EvaluationDialog extends BaseDialog {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        EvaluationDialog.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationDialog.this.myEvaluationLogic.getModule(), EvaluationDialog.this.myEvaluationLogic.getModule().getMPSProject()), EvaluationDialog.this.myEvaluationLogic.getModule(), EvaluationDialog.this.myEvaluationLogic.getRootToShow(), myEvaluationLogic.getNodeToShow(), true);
+        EvaluationDialog.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationDialog.this.myEvaluationLogic.getModule(), EvaluationDialog.this.myEvaluationLogic.getModule().getMPSProject().getProject()), EvaluationDialog.this.myEvaluationLogic.getModule(), EvaluationDialog.this.myEvaluationLogic.getRootToShow(), myEvaluationLogic.getNodeToShow(), true);
 
         for (Language language : EvaluationDialog.this.myEvaluationLogic.getRequiredLanguages()) {
           EvaluationDialog.this.myEditor.addLanguage(language);
