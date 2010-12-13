@@ -74,4 +74,10 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
     super.updateState();
     throw new RuntimeException("update state unimplemented!");
   }
+
+  public HighLevelEvaluationModel copy() {
+    HighLevelEvaluationModel model = new HighLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule);
+    copyInto(model);
+    return model;
+  }
 }

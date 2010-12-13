@@ -62,6 +62,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -309,6 +310,17 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
       }
     }
+  }
+
+  public LowLevelEvaluationModel copy() {
+    final Wrappers._T<LowLevelEvaluationModel> model = new Wrappers._T<LowLevelEvaluationModel>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        model.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule);
+        copyInto(model.value);
+      }
+    });
+    return model.value;
   }
 
   public static class QuotationClass_qkk2f2_a0a0a0b0a {

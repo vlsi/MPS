@@ -46,7 +46,7 @@ public class EvaluationDialog extends BaseDialog {
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new AnAction("Watch Expression", "Add Expression To Watches Tool", Icons.WATCH) {
       public void actionPerformed(AnActionEvent p0) {
-        myProvider.watch(myEvaluationPanel.getEvaluationModel());
+        myProvider.watch(myEvaluationPanel.getEvaluationModel().copy());
       }
     });
     myMainPanel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent(), BorderLayout.NORTH);

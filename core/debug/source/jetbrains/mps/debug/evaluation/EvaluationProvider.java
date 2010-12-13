@@ -26,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,12 +63,12 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   @Override
   public JComponent createWatchesPanel() {
-    return new JLabel("Here watches panel lies!");
+    return new WatchesPanel(this);
   }
 
   public void watch(AbstractEvaluationModel evaluationModel) {
     myWatches.add(evaluationModel);
-    fireUpdateWatches();
+    fireWatchAdded(evaluationModel);
   }
 
   public DebugSession getDebugSession() {
@@ -92,21 +91,25 @@ public class EvaluationProvider implements IEvaluationProvider {
     return new LowLevelEvaluationModel(project, myDebugSession, getAuxModule());
   }
 
-  private void fireUpdateWatches() {
+  public List<AbstractEvaluationModel> getWatches() {
+    return myWatches;
+  }
+
+  private void fireWatchAdded(AbstractEvaluationModel model) {
     for (IWatchListener listener : myWatchListeners) {
-      listener.watchesUpdated();
+      listener.watchAdded(model);
     }
   }
 
-  private void addWatchListener(@NotNull IWatchListener listener) {
+  public void addWatchListener(@NotNull IWatchListener listener) {
     myWatchListeners.add(listener);
   }
 
-  private void removeWatchListener(@NotNull IWatchListener listener) {
+  public void removeWatchListener(@NotNull IWatchListener listener) {
     myWatchListeners.remove(listener);
   }
 
   public interface IWatchListener {
-    public void watchesUpdated();
+    public void watchAdded(AbstractEvaluationModel model);
   }
 }

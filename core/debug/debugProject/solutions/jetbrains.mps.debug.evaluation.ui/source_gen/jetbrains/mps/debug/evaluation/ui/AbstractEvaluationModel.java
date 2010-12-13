@@ -210,6 +210,12 @@ public abstract class AbstractEvaluationModel {
     }
   }
 
+  protected void copyInto(AbstractEvaluationModel model) {
+    model.myEvaluator = SNodeOperations.copyNode(myEvaluator);
+  }
+
+  public abstract AbstractEvaluationModel copy();
+
   protected IModule getLocationModule() {
     return getLocationModel().getModelDescriptor().getModule();
   }
