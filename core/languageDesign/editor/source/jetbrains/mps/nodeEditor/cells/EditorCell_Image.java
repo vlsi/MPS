@@ -133,8 +133,7 @@ public class EditorCell_Image extends EditorCell_Basic {
   private static String expandIconPath(String path, SNode sourceNode) {
     IModule module = findAnchorModule(sourceNode.getModel());
     final Macros macros = MacrosFactory.moduleDescriptor(module);
-    String filename = module == null ? null : macros.expandPath(path, module.getDescriptorFile());
-    return filename;
+    return module == null ? null : macros.expandPath(path, module.getDescriptorFile());
   }
 
   private static IModule findAnchorModule(SModel sourceModel) {

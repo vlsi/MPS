@@ -178,12 +178,12 @@ public class ModelAssert {
       List<SNode> expectedChildren = expectedNode.getChildren(role);
       List<SNode> actualChildren = actualNode.getChildren(role);
 
-      assertEquals(getErrorString("child count for role " + role, expectedNode, actualNode), expectedChildren.size(), actualChildren.size());
+      assertEquals(getErrorString("child count in role " + role, expectedNode, actualNode), expectedChildren.size(), actualChildren.size());
 
       Iterator<SNode> actualIterator = actualChildren.iterator();
       for (SNode expectedChild : expectedChildren) {
         SNode actualChild = actualIterator.next();
-        assertEquals(getErrorString("child children for role " + role, expectedNode, actualNode), expectedChild.getSNodeId(), actualChild.getSNodeId());
+        assertEquals(getErrorString("children in role " + role, expectedNode, actualNode), expectedChild.getSNodeId(), actualChild.getSNodeId());
         assertDeepNodeEquals(expectedChild, actualChild);
       }
     }
