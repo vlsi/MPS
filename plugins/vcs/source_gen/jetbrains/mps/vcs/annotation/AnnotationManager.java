@@ -61,8 +61,8 @@ public class AnnotationManager extends AbstractProjectComponent {
       return true;
     }
     final SNode root = editorComponent.getEditedNode();
-    SModel model = root.getModel();
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModel model = check_3wfzcf_a0d0c(root);
+    SModelDescriptor modelDescriptor = check_3wfzcf_a0e0c(model);
     if (!((modelDescriptor instanceof EditableSModelDescriptor))) {
       return false;
     }
@@ -156,5 +156,19 @@ public class AnnotationManager extends AbstractProjectComponent {
 
   public static AnnotationManager getInstance(Project project) {
     return project.getComponent(AnnotationManager.class);
+  }
+
+  private static SModel check_3wfzcf_a0d0c(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getModel();
+  }
+
+  private static SModelDescriptor check_3wfzcf_a0e0c(SModel p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getModelDescriptor();
   }
 }
