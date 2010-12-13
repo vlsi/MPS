@@ -93,6 +93,8 @@ public class ProjectTest {
       //"/platform/contracts/contracts.mpr",
       "/workbench/ideSolution/ide.mpr",
 
+      "/plugins/vcs/vcs.mpr",
+
       //  Samples
       "/samples/complexLanguage/Complex.mpr",
       "/samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr",
