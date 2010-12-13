@@ -5,8 +5,7 @@ package jetbrains.mps.debug.evaluation.ui;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debug.runtime.JavaUiState;
-import jetbrains.mps.debug.evaluation.EvaluationProvider;
+import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -16,12 +15,12 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public class HighLevelEvaluationLogic extends AbstractEvaluationLogic {
+public class HighLevelEvaluationModel extends AbstractEvaluationModel {
   private SNode myLocationRootCopy;
   private SNode myNodeToShow;
 
-  public HighLevelEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull EvaluationProvider provider) {
-    super(project, state, provider);
+  public HighLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
+    super(project, session, module);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -31,8 +30,8 @@ public class HighLevelEvaluationLogic extends AbstractEvaluationLogic {
 
         SNode locationNode = getLocationNode();
         SNode locationRoot = getLocationRoot();
-        HighLevelEvaluationLogic.this.myLocationRootCopy = SNodeOperations.copyNode(locationRoot);
-        SNode locationNodeCopy = HighLevelEvaluationLogic.this.findNodesCopy(locationRoot, HighLevelEvaluationLogic.this.myLocationRootCopy, locationNode);
+        HighLevelEvaluationModel.this.myLocationRootCopy = SNodeOperations.copyNode(locationRoot);
+        SNode locationNodeCopy = HighLevelEvaluationModel.this.findNodesCopy(locationRoot, HighLevelEvaluationModel.this.myLocationRootCopy, locationNode);
 
         SNodeOperations.insertNextSiblingChild(locationNodeCopy, myNodeToShow);
       }

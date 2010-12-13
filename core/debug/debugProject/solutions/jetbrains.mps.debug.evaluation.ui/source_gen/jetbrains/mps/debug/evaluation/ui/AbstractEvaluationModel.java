@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -55,10 +54,9 @@ import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debug.evaluation.transform.Transformator;
 
-public abstract class AbstractEvaluationLogic {
-  private static final Logger LOG = Logger.getLogger(AbstractEvaluationLogic.class);
+public abstract class AbstractEvaluationModel {
+  private static final Logger LOG = Logger.getLogger(AbstractEvaluationModel.class);
   private static final String EVALUATOR_NAME = "EvaluatorInstance";
-  private static final boolean IS_IN_HIGHLEVEL_MODE = false;
   private static final boolean IS_DEVELOPER_MODE = false;
 
   protected JavaUiState myUiState;
@@ -70,13 +68,11 @@ public abstract class AbstractEvaluationLogic {
   protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
-  public AbstractEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull EvaluationProvider provider) {
-    myUiState = state;
-    myDebugSession = provider.getDebugSession();
+  public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule) {
+    myUiState = session.getUiState();
+    myDebugSession = session;
     myContext = ModuleContext.create(getLocationNode(), project);
-
-    // creating module 
-    myAuxModule = provider.getAuxModule();
+    myAuxModule = auxModule;
 
     // creating evaluator node 
     final Wrappers._T<SNode> evaluatorConcept = new Wrappers._T<SNode>();
@@ -127,7 +123,7 @@ public abstract class AbstractEvaluationLogic {
     myAuxModel = model;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myAuxModel.getSModel().addRoot(AbstractEvaluationLogic.this.myEvaluator);
+        myAuxModel.getSModel().addRoot(AbstractEvaluationModel.this.myEvaluator);
       }
     });
   }
@@ -167,7 +163,7 @@ public abstract class AbstractEvaluationLogic {
 
       Project project = myContext.getProject();
       final String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
-      InMemoryJavaGenerationHandler handler = new AbstractEvaluationLogic.MyInMemoryJavaGenerationHandler(false, true, classpaths);
+      InMemoryJavaGenerationHandler handler = new AbstractEvaluationModel.MyInMemoryJavaGenerationHandler(false, true, classpaths);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
@@ -222,13 +218,6 @@ public abstract class AbstractEvaluationLogic {
     return myContext;
   }
 
-  public static AbstractEvaluationLogic createInstance(Project project, JavaUiState state, EvaluationProvider provider) {
-    if (IS_IN_HIGHLEVEL_MODE) {
-      return new HighLevelEvaluationLogic(project, state, provider);
-    }
-    return new LowLevelEvaluationLogic(project, state, provider);
-  }
-
   private class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {
     private final Set<IClassPathItem> myClasspaths;
 
@@ -255,12 +244,12 @@ public abstract class AbstractEvaluationLogic {
     public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper helper) {
       SModel model = status.getOutputModel();
       if (model != null) {
-        final SNode evaluator = SModelOperations.getRootByName(model, AbstractEvaluationLogic.EVALUATOR_NAME);
+        final SNode evaluator = SModelOperations.getRootByName(model, AbstractEvaluationModel.EVALUATOR_NAME);
 
         if (evaluator != null) {
           try {
             new Transformator(evaluator, true).transformEvaluator();
-            if (AbstractEvaluationLogic.IS_DEVELOPER_MODE) {
+            if (AbstractEvaluationModel.IS_DEVELOPER_MODE) {
               for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
                 listener.invoke(evaluator);
               }

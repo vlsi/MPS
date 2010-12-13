@@ -9,8 +9,7 @@ import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.runtime.JavaUiState;
-import jetbrains.mps.debug.evaluation.EvaluationProvider;
+import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
@@ -28,7 +27,6 @@ import jetbrains.mps.debug.runtime.SuspendContext;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
@@ -60,24 +58,24 @@ public class EvaluationPanel extends JPanel {
   private final EvaluationPanel.MyTree myTree;
   private EmbeddableEditor myEditor;
   private EmbeddableEditor myResultEditor;
-  private final AbstractEvaluationLogic myEvaluationLogic;
+  private final AbstractEvaluationModel myEvaluationModel;
   private final EvaluationPanel.MySessionChangeListener mySessionChangeListener;
   protected final DebugSession myDebugSession;
   private final Highlighter myHighlighter;
   private EvaluationPanel.IErrorTextListener myErrorListener;
   private volatile boolean myIsDisposed = false;
 
-  public EvaluationPanel(Project project, JavaUiState uiState, EvaluationProvider provider) {
+  public EvaluationPanel(Project project, @NotNull DebugSession session, AbstractEvaluationModel evaluationModel) {
     super(new BorderLayout());
     myHighlighter = project.getComponent(Highlighter.class);
-    myDebugSession = provider.getDebugSession();
+    myDebugSession = session;
 
     mySessionChangeListener = new EvaluationPanel.MySessionChangeListener();
     myDebugSession.addChangeListener(mySessionChangeListener);
 
-    myEvaluationLogic = provider.createEvaluationLogic(project);
-    if (myEvaluationLogic.isDeveloperMode()) {
-      myEvaluationLogic.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
+    myEvaluationModel = evaluationModel;
+    if (myEvaluationModel.isDeveloperMode()) {
+      myEvaluationModel.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode result) {
           EvaluationPanel.this.updateGenerationResultTab(result);
         }
@@ -86,9 +84,9 @@ public class EvaluationPanel extends JPanel {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        EvaluationPanel.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationPanel.this.myEvaluationLogic.getModule(), EvaluationPanel.this.myEvaluationLogic.getModule().getMPSProject().getProject()), EvaluationPanel.this.myEvaluationLogic.getModule(), EvaluationPanel.this.myEvaluationLogic.getRootToShow(), myEvaluationLogic.getNodeToShow(), true);
+        EvaluationPanel.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationPanel.this.myEvaluationModel.getModule(), EvaluationPanel.this.myEvaluationModel.getModule().getMPSProject().getProject()), EvaluationPanel.this.myEvaluationModel.getModule(), EvaluationPanel.this.myEvaluationModel.getRootToShow(), myEvaluationModel.getNodeToShow(), true);
 
-        for (Language language : EvaluationPanel.this.myEvaluationLogic.getRequiredLanguages()) {
+        for (Language language : EvaluationPanel.this.myEvaluationModel.getRequiredLanguages()) {
           EvaluationPanel.this.myEditor.addLanguage(language);
         }
       }
@@ -100,15 +98,15 @@ public class EvaluationPanel extends JPanel {
         d.value = myEditor.getModel();
       }
     });
-    myEvaluationLogic.setModel(d.value);
+    myEvaluationModel.setModel(d.value);
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
     splitPane.setResizeWeight(0.5);
     splitPane.setTopComponent(myEditor.getComponenet());
-    myTree = new EvaluationPanel.MyTree(uiState.getStackFrame().getLocation().getUnitName(), uiState.getThread().getThread());
+    myTree = new EvaluationPanel.MyTree(session.getUiState().getStackFrame().getLocation().getUnitName(), session.getUiState().getThread().getThread());
     splitPane.setBottomComponent(new JBScrollPane(myTree));
 
-    if (myEvaluationLogic.isDeveloperMode()) {
+    if (myEvaluationModel.isDeveloperMode()) {
       myTabbedPane.addTab("Main", splitPane);
       add(myTabbedPane);
     } else {
@@ -122,6 +120,10 @@ public class EvaluationPanel extends JPanel {
     myErrorListener = listener;
   }
 
+  public AbstractEvaluationModel getEvaluationModel() {
+    return myEvaluationModel;
+  }
+
   public void dispose() {
     if (myIsDisposed) {
       return;
@@ -133,12 +135,12 @@ public class EvaluationPanel extends JPanel {
   }
 
   public void evaluate() {
-    if (!(myEvaluationLogic.getDebugSession().isStepEnabled())) {
+    if (!(myEvaluationModel.getDebugSession().isStepEnabled())) {
       setErrorText("Program should be paused on breakpoint to evaluate");
       return;
     }
     try {
-      final Evaluator evaluator = myEvaluationLogic.evaluate();
+      final Evaluator evaluator = myEvaluationModel.evaluate();
       setEvaluating();
       final DebugVMEventsProcessor eventsProcessor = myDebugSession.getEventsProcessor();
       ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
@@ -223,7 +225,7 @@ public class EvaluationPanel extends JPanel {
         if (EvaluationPanel.this.myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(new ModuleContext(myEvaluationLogic.getModule(), myEvaluationLogic.getModule().getMPSProject()), myEvaluationLogic.getModule(), generatedResult, generatedResult, false);
+              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject()), myEvaluationModel.getModule(), generatedResult, generatedResult, false);
             }
           });
           EvaluationPanel.this.myTabbedPane.add("Generated Result", EvaluationPanel.this.myResultEditor.getComponenet());
@@ -246,9 +248,9 @@ public class EvaluationPanel extends JPanel {
     public void paused(final AbstractDebugSession session) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          if (myEvaluationLogic.getDebugSession() == session) {
+          if (myEvaluationModel.getDebugSession() == session) {
             setErrorText("");
-            myEvaluationLogic.updateState();
+            myEvaluationModel.updateState();
           }
         }
       });
@@ -257,8 +259,8 @@ public class EvaluationPanel extends JPanel {
     public void stateChanged(final AbstractDebugSession session) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          if (myEvaluationLogic.getDebugSession() == session) {
-            myEvaluationLogic.updateState();
+          if (myEvaluationModel.getDebugSession() == session) {
+            myEvaluationModel.updateState();
           }
         }
       });

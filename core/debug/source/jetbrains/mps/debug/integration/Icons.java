@@ -28,4 +28,5 @@ public class Icons {
   public static final Icon DISABLED_METHOD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_disabled_method_breakpoint.png"));
   public static final Icon FIELD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_field_breakpoint.png"));
   public static final Icon DISABLED_FIELD_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_disabled_field_breakpoint.png"));
+  public static final Icon WATCH = new ImageIcon(Icons.class.getResource("ui/icons/db_watch.png"));
 }

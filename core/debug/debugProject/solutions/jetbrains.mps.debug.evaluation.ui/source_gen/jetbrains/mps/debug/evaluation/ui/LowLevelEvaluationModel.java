@@ -10,8 +10,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debug.runtime.JavaUiState;
-import jetbrains.mps.debug.evaluation.EvaluationProvider;
+import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -67,14 +66,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
-  private static final Logger LOG = Logger.getLogger(LowLevelEvaluationLogic.class);
+public class LowLevelEvaluationModel extends AbstractEvaluationModel {
+  private static final Logger LOG = Logger.getLogger(LowLevelEvaluationModel.class);
 
   private AbstractClassifiersScope myScope;
   private final Map<String, SNode> myUsedVars = MapSequence.fromMap(new HashMap<String, SNode>());
 
-  public LowLevelEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull EvaluationProvider provider) {
-    super(project, state, provider);
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
+    super(project, session, module);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -85,7 +84,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     });
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        IModule locationModule = LowLevelEvaluationLogic.this.getLocationModule();
+        IModule locationModule = LowLevelEvaluationModel.this.getLocationModule();
         IClassPathItem classPath = AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
         final Set<StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<StubPath>());
         classPath.accept(new EachClassPathItemVisitor() {
@@ -117,31 +116,31 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     // TODO generics 
     if (type instanceof PrimitiveType) {
       if (type instanceof BooleanType) {
-        return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0a0b0a().createNode();
+        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0a0b0a().createNode();
       }
       if (type instanceof ByteType) {
-        return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0b0b0a().createNode();
+        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0b0b0a().createNode();
       }
       if (type instanceof ShortType) {
-        return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0c0b0a().createNode();
+        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0c0b0a().createNode();
       }
       if (type instanceof LongType) {
-        return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0d0b0a().createNode();
+        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0d0b0a().createNode();
       }
       if (type instanceof IntegerType) {
-        return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0e0b0a().createNode();
+        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0e0b0a().createNode();
       }
       if (type instanceof DoubleType) {
-        return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0f0b0a().createNode();
+        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0f0b0a().createNode();
       }
       if (type instanceof FloatType) {
-        return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0g0b0a().createNode();
+        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0g0b0a().createNode();
       }
       if (type instanceof CharType) {
-        return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0h0b0a().createNode();
+        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0h0b0a().createNode();
       }
     } else if (type instanceof ArrayType) {
-      return new LowLevelEvaluationLogic.QuotationClass_qka7a1_a0a0a1a0().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType()));
+      return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0a1a0().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType()));
     }
     return createClassifierType(type.name());
   }
@@ -224,7 +223,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        LowLevelEvaluationLogic.this.importStubForFqName(getLocationModel().getSModelFqName().toString());
+        LowLevelEvaluationModel.this.importStubForFqName(getLocationModel().getSModelFqName().toString());
       }
     });
     createVars();
@@ -312,8 +311,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0a0b0a {
-    public QuotationClass_qka7a1_a0a0a0b0a() {
+  public static class QuotationClass_qkk2f2_a0a0a0b0a {
+    public QuotationClass_qkk2f2_a0a0a0b0a() {
     }
 
     public SNode createNode() {
@@ -329,8 +328,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0b0b0a {
-    public QuotationClass_qka7a1_a0a0b0b0a() {
+  public static class QuotationClass_qkk2f2_a0a0b0b0a {
+    public QuotationClass_qkk2f2_a0a0b0b0a() {
     }
 
     public SNode createNode() {
@@ -346,8 +345,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0c0b0a {
-    public QuotationClass_qka7a1_a0a0c0b0a() {
+  public static class QuotationClass_qkk2f2_a0a0c0b0a {
+    public QuotationClass_qkk2f2_a0a0c0b0a() {
     }
 
     public SNode createNode() {
@@ -363,8 +362,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0d0b0a {
-    public QuotationClass_qka7a1_a0a0d0b0a() {
+  public static class QuotationClass_qkk2f2_a0a0d0b0a {
+    public QuotationClass_qkk2f2_a0a0d0b0a() {
     }
 
     public SNode createNode() {
@@ -380,8 +379,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0e0b0a {
-    public QuotationClass_qka7a1_a0a0e0b0a() {
+  public static class QuotationClass_qkk2f2_a0a0e0b0a {
+    public QuotationClass_qkk2f2_a0a0e0b0a() {
     }
 
     public SNode createNode() {
@@ -397,8 +396,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0f0b0a {
-    public QuotationClass_qka7a1_a0a0f0b0a() {
+  public static class QuotationClass_qkk2f2_a0a0f0b0a {
+    public QuotationClass_qkk2f2_a0a0f0b0a() {
     }
 
     public SNode createNode() {
@@ -414,8 +413,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0g0b0a {
-    public QuotationClass_qka7a1_a0a0g0b0a() {
+  public static class QuotationClass_qkk2f2_a0a0g0b0a {
+    public QuotationClass_qkk2f2_a0a0g0b0a() {
     }
 
     public SNode createNode() {
@@ -431,8 +430,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0h0b0a {
-    public QuotationClass_qka7a1_a0a0h0b0a() {
+  public static class QuotationClass_qkk2f2_a0a0h0b0a {
+    public QuotationClass_qkk2f2_a0a0h0b0a() {
     }
 
     public SNode createNode() {
@@ -448,8 +447,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     }
   }
 
-  public static class QuotationClass_qka7a1_a0a0a1a0 {
-    public QuotationClass_qka7a1_a0a0a1a0() {
+  public static class QuotationClass_qkk2f2_a0a0a1a0 {
+    public QuotationClass_qkk2f2_a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_5) {

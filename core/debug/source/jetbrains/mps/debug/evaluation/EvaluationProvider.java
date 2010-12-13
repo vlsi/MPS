@@ -17,9 +17,7 @@ package jetbrains.mps.debug.evaluation;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.debug.evaluation.ui.AbstractEvaluationLogic;
-import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
-import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
+import jetbrains.mps.debug.evaluation.ui.*;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.smodel.IOperationContext;
@@ -50,9 +48,12 @@ public class EvaluationProvider implements IEvaluationProvider {
   public void showEvaluationDialog(IOperationContext context) {
     JavaUiState state = myDebugSession.getUiState();
     if (state.isPausedOnBreakpoint()) {
-      EvaluationDialog evaluationDialog = new EvaluationDialog(context, state, this);
+      EvaluationDialog evaluationDialog = new EvaluationDialog(context, this, createEvaluationLogic(context.getProject()));
       evaluationDialog.showDialog();
     }
+  }
+
+  public void watch(AbstractEvaluationModel evaluationModel) {
   }
 
   public DebugSession getDebugSession() {
@@ -63,7 +64,15 @@ public class EvaluationProvider implements IEvaluationProvider {
     return myAuxModule;
   }
 
-  public AbstractEvaluationLogic createEvaluationLogic(Project project) {
-    return AbstractEvaluationLogic.createInstance(project, myDebugSession.getUiState(), this);
+  public AbstractEvaluationModel createEvaluationLogic(Project project) {
+    return createLowLevelEvaluationModel(project);
+  }
+
+  AbstractEvaluationModel createHighLevelEvaluationModel(Project project) {
+    return new HighLevelEvaluationModel(project, myDebugSession, getAuxModule());
+  }
+
+  AbstractEvaluationModel createLowLevelEvaluationModel(Project project) {
+    return new LowLevelEvaluationModel(project, myDebugSession, getAuxModule());
   }
 }
