@@ -278,7 +278,7 @@ public class JavaCompile_Facet implements IFacet {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("compile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("compile"), new ITarget.Name("auxCompile")});
     }
 
     public Iterable<ITarget.Name> notBefore() {

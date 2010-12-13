@@ -113,7 +113,9 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
 
     ExpectLogEvent ignoreEvent = desc.getAnnotation(ExpectLogEvent.class);
     if (ignoreEvent != null) {
-      app.expectEvent(ignoreEvent.level(), ignoreEvent.text());
+      for (String text: ignoreEvent.text()) {
+        app.expectEvent(ignoreEvent.level(), text);
+      }
     }
 
     for (com.intellij.openapi.diagnostic.Logger ignore: IGNORED_LOGGERS) {

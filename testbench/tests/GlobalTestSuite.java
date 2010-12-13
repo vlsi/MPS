@@ -6,7 +6,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
 
-@SuiteClasses({jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test.class,
+@SuiteClasses({
+
+  jetbrains.mps.make.generator.Generator_Test.class,
+  jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test.class,
 jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test.class,
 jetbrains.mps.internalCollections.test.basicOperations.QueueDequeStack_Test.class,
 jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test.class,
@@ -45,7 +48,7 @@ jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test.class,
 jetbrains.mps.make.unittest.FacetRegistry_Test.class,
 jetbrains.mps.make.unittest.Execute_Test.class,
-jetbrains.mps.make.generator.Generator_Test.class,
+
 jetbrains.mps.make.unittest.ScriptBuilder_Test.class,
 jetbrains.mps.make.unittest.LogReporting_Test.class,
 jetbrains.mps.make.unittest.Targets_Test.class,

@@ -24,6 +24,7 @@ import java.util.Collections;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.make.script.IProgress;
 
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
@@ -194,7 +195,7 @@ public class Script implements IScript {
     }
 
     public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-      code.invoke(new IJobMonitor.Stub());
+      code.invoke(new IJobMonitor.Stub(new IProgress.Stub()));
     }
 
     public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {

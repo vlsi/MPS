@@ -55,7 +55,6 @@ public class LoggingProgressStrategy {
   private void progress(LoggingProgressStrategy.LogReportingProgress wrk) {
     double p = ((double) Math.min(wrk.estimate, wrk.done)) / wrk.estimate;
     logger.info(wrk.fullName() + " -- done " + ((int) Math.ceil(p * 100)) + "%");
-
   }
 
   private void finish(LoggingProgressStrategy.LogReportingProgress wrk) {

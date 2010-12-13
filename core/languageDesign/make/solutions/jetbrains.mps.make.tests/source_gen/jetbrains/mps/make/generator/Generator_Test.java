@@ -7,22 +7,25 @@ import org.jmock.integration.junit4.JMock;
 import jetbrains.mps.make.unittest.MockTestCase;
 import org.junit.Test;
 import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
+import jetbrains.mps.make.script.IProgress;
+import org.jmock.Expectations;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.make.script.IMonitors;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.make.script.IJobMonitor;
 import junit.framework.Assert;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.make.script.IMonitors;
 import jetbrains.mps.make.unittest.Mockups;
-import jetbrains.mps.make.script.IConfigMonitor;
-import org.jmock.Expectations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.jmock.api.Action;
 import org.jmock.api.Invocation;
 import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
 import org.junit.Before;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -36,7 +39,18 @@ public class Generator_Test extends MockTestCase {
   @Test
   public void test_buildScript() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
-    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("Make")).toScript();
+    final IProgress pstub = context.mock(IProgress.class);
+    context.checking(new Expectations() {
+      {
+        exactly(1).of(pstub).beginWork(with(equal("GENERATE")), with(same(100)), with(any(Integer.class)));
+        atMost(1).of(pstub).doneWork(with(equal("GENERATE")), with(same(50)));
+        exactly(1).of(pstub).finishWork(with(equal("GENERATE")));
+        allowing(pstub).workLeft();
+        will(returnValue(Integer.MAX_VALUE));
+      }
+    });
+
+    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Generator")).withTarget(new ITarget.Name("Make")).withMonitors(new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub))).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.defaultTarget();
     Assert.assertNotNull(dt);
@@ -169,6 +183,82 @@ public class Generator_Test extends MockTestCase {
     IResult res = scr.execute();
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
+  }
+
+  @Test
+  public void test_progress() throws Exception {
+    ScriptBuilder scb = new ScriptBuilder();
+    final IProgress pstub = context.mock(IProgress.class);
+    context.checking(new Expectations() {
+      {
+        org.jmock.Sequence seq = context.sequence("sequence");
+        exactly(1).of(pstub).beginWork(with(equal("WORK")), with(same(100)), with(any(Integer.class)));
+        inSequence(seq);
+        atMost(1).of(pstub).doneWork(with(equal("WORK")), with(same(50)));
+        inSequence(seq);
+        exactly(1).of(pstub).beginWork(with(equal("WORKWORK")), with(same(10)), with(any(Integer.class)));
+        inSequence(seq);
+        atMost(1).of(pstub).doneWork(with(equal("WORKWORK")), with(same(5)));
+        inSequence(seq);
+        atMost(1).of(pstub).doneWork(with(equal("WORKWORK")), with(same(5)));
+        inSequence(seq);
+        exactly(1).of(pstub).finishWork(with(equal("WORKWORK")));
+        inSequence(seq);
+        exactly(1).of(pstub).finishWork(with(equal("WORK")));
+        inSequence(seq);
+        allowing(pstub).workLeft();
+        will(returnValue(Integer.MAX_VALUE));
+      }
+    });
+
+    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Worker")).withTarget(new ITarget.Name("Make")).withMonitors(new IMonitors.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub))).toScript();
+    Assert.assertTrue(scr.isValid());
+    ITarget dt = scr.defaultTarget();
+    Assert.assertNotNull(dt);
+    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    IResult res = scr.execute();
+    Assert.assertNotNull(res);
+    Assert.assertTrue(res.isSucessful());
+    Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
+  }
+
+  @Test
+  public void test_logProgress() throws Exception {
+    final LoggingProgressStrategy.Log logger = context.mock(LoggingProgressStrategy.Log.class);
+    context.checking(new Expectations() {
+      {
+        oneOf(logger).info(with(equal("\u221e/WORK -- started")));
+        oneOf(logger).info(with(equal("\u221e -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/WORK -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/WORK/WORKWORK -- started")));
+        oneOf(logger).info(with(equal("\u221e -- done 62%")));
+        oneOf(logger).info(with(equal("\u221e/WORK -- done 62%")));
+        oneOf(logger).info(with(equal("\u221e/WORK/WORKWORK -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e -- done 74%")));
+        oneOf(logger).info(with(equal("\u221e/WORK -- done 74%")));
+        oneOf(logger).info(with(equal("\u221e/WORK/WORKWORK -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/WORK/WORKWORK -- finished")));
+        oneOf(logger).info(with(equal("\u221e/WORK -- finished")));
+      }
+    });
+    final LoggingProgressStrategy strat = new LoggingProgressStrategy(logger);
+    ScriptBuilder scb = new ScriptBuilder();
+    IJobMonitor.Stub jmon = new IJobMonitor.Stub(null) {
+      @Override
+      public IProgress currentProgress() {
+        return strat.currentProgress();
+      }
+    };
+
+    IScript scr = scb.withFacet(new IFacet.Name("Maker")).withFacet(new IFacet.Name("Worker")).withTarget(new ITarget.Name("Make")).withMonitors(new IMonitors.Stub(new IConfigMonitor.Stub(), jmon)).toScript();
+    Assert.assertTrue(scr.isValid());
+    ITarget dt = scr.defaultTarget();
+    Assert.assertNotNull(dt);
+    Assert.assertEquals(new ITarget.Name("Make"), dt.getName());
+    IResult res = scr.execute();
+    Assert.assertNotNull(res);
+    Assert.assertTrue(res.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
 
