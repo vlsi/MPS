@@ -2,7 +2,6 @@
 <debugInfo>
   <unitInfo fileName="Mappingmain.java" startLine="269" startPosition="32" endLine="281" endPosition="9" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$1" />
   <unitInfo fileName="Templategen_static_method.java" startLine="376" startPosition="42" endLine="388" endPosition="19" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Templategen_static_method$1" />
-  <unitInfo fileName="TemplateModelImpl.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl" />
   <unitInfo fileName="Mappingmain.java" startLine="1124" startPosition="0" endLine="1154" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$RootMappingRule0" />
   <unitInfo fileName="Mappingmain.java" startLine="545" startPosition="0" endLine="583" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$PatternRule0" />
   <unitInfo fileName="Mappingmain.java" startLine="773" startPosition="0" endLine="811" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$PatternRule3" />
@@ -24,6 +23,7 @@
   <unitInfo fileName="Mappingmain.java" startLine="222" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$ReductionRule1" />
   <unitInfo fileName="Mappingmain.java" startLine="698" startPosition="0" endLine="772" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$PatternRule2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="400" startPosition="0" endLine="478" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a0a0a43" />
+  <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl" />
   <unitInfo fileName="TemplateconvertMult.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateconvertMult" />
   <unitInfo fileName="Mappingmain.java" startLine="966" startPosition="0" endLine="1059" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.Mappingmain$PatternRule6" />
   <unitInfo fileName="QueriesGenerated.java" startLine="227" startPosition="0" endLine="336" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a0a0a23" />

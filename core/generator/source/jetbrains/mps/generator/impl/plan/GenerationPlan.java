@@ -137,4 +137,8 @@ public class GenerationPlan {
   public void createSwitchGraph() {
     myTemplateSwitchGraph = new TemplateSwitchGraph(myTemplateModels);
   }
+
+  public Collection<TemplateModel> getTemplateModels() {
+    return myTemplateModels;
+  }
 }

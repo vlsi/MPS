@@ -51,6 +51,8 @@ public interface TemplateExecutionEnvironment {
 
   Collection<SNode> trySwitch(SNodePointer _switch, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException;
 
+  Collection<SNode> applyTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
+
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
   void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel);

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TemplateModelImpl.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
   <unitInfo fileName="QueriesGenerated.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
   <unitInfo fileName="Switchbetter_switch3.java" startLine="18" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter_switch3" />
   <unitInfo fileName="Mappingmain.java" startLine="119" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$RootMappingRule0" />
@@ -11,6 +10,7 @@
   <unitInfo fileName="TemplateOutputRoot.java" startLine="16" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" />
   <unitInfo fileName="Templatereduce_InputNode_A_switch.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A_switch" />
   <unitInfo fileName="Templatereduce_InputNode_A_included.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce_InputNode_A_included" />
+  <unitInfo fileName="TemplateModelImpl.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
   <unitInfo fileName="Switchswitch_InputNode_A.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch_InputNode_A" />
   <unitInfo fileName="SwitchbetterSwitch.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch" />
   <unitInfo fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />

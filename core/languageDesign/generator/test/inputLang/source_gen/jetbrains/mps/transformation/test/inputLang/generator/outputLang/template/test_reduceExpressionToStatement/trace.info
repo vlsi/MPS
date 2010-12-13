@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.QueriesGenerated" />
-  <unitInfo fileName="TemplateModelImpl.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl" />
   <unitInfo fileName="Mappingmain.java" startLine="143" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$RootMappingRule0" />
+  <unitInfo fileName="TemplateModelImpl.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl" />
   <unitInfo fileName="Mappingmain.java" startLine="82" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain$ReductionRule0" />
   <unitInfo fileName="Templateout_class.java" startLine="17" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Templateout_class" />
   <unitInfo fileName="Mappingmain.java" startLine="24" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
