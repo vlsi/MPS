@@ -72,7 +72,11 @@ public class EvaluateExpression_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      DebugActionsUtil.getDebugSession(event).getEvaluationProvider().showEvaluationDialog(EvaluateExpression_Action.this.operationContext);
+      IEvaluationProvider provider = DebugActionsUtil.getDebugSession(event).getEvaluationProvider();
+      if (provider == null) {
+        return;
+      }
+      provider.showEvaluationDialog(EvaluateExpression_Action.this.operationContext);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "EvaluateExpression", t);

@@ -13,6 +13,7 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.debug.runtime.JavaUiState;
+import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import com.intellij.openapi.project.Project;
 import java.awt.Dimension;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -73,20 +74,20 @@ public class EvaluationDialog extends BaseDialog {
   protected DebugSession myDebugSession;
   private Highlighter myHighlighter;
 
-  public EvaluationDialog(final IOperationContext context, JavaUiState uiState, final DebugSession debugSession) {
+  public EvaluationDialog(final IOperationContext context, JavaUiState uiState, EvaluationProvider provider) {
     super(context.getMainFrame(), "Evaluate");
     Project project = context.getProject();
     myHighlighter = project.getComponent(Highlighter.class);
     myClassFQName = uiState.getStackFrame().getLocation().getUnitName();
     myThreadReference = uiState.getThread().getThread();
-    myDebugSession = debugSession;
+    myDebugSession = provider.getDebugSession();
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
 
     mySessionChangeListener = new EvaluationDialog.MySessionChangeListener();
-    debugSession.addChangeListener(mySessionChangeListener);
+    myDebugSession.addChangeListener(mySessionChangeListener);
 
-    myEvaluationLogic = AbstractEvaluationLogic.createInstance(project, uiState, debugSession);
+    myEvaluationLogic = provider.createEvaluationLogic(project);
     myContext = myEvaluationLogic.getContext();
     if (myEvaluationLogic.isDeveloperMode()) {
       myEvaluationLogic.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
@@ -125,7 +126,7 @@ public class EvaluationDialog extends BaseDialog {
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosed(WindowEvent event) {
-        debugSession.removeChangeListener(mySessionChangeListener);
+        myDebugSession.removeChangeListener(mySessionChangeListener);
         myHighlighter.removeAdditionalEditor(myEditor.getEditor());
         myEditor.disposeEditor(false);
       }

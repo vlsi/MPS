@@ -135,7 +135,10 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     return myExecutionState;
   }
 
-  public abstract void showEvaluationDialog(IOperationContext operationContext);
+  @Deprecated
+  @ToRemove(version = 2.0)
+  public void showEvaluationDialog(IOperationContext operationContext) {
+  }
 
   @Nullable
   public IEvaluationProvider getEvaluationProvider() {

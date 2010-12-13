@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.Transformator" />
@@ -94,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.WatchableNode" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
@@ -130,14 +132,13 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -178,7 +179,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
-    <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />

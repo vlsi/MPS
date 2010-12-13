@@ -11,7 +11,7 @@ import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.runtime.JavaUiState;
-import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -73,8 +73,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   private AbstractClassifiersScope myScope;
   private final Map<String, SNode> myUsedVars = MapSequence.fromMap(new HashMap<String, SNode>());
 
-  public LowLevelEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
-    super(project, state, debugSession);
+  public LowLevelEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull EvaluationProvider provider) {
+    super(project, state, provider);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {

@@ -5,12 +5,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
-import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 
@@ -19,18 +19,15 @@ import java.util.Set;
 public class DebugSession extends AbstractDebugSession<JavaUiState> {
   //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it
   private final DebugVMEventsProcessor myEventsProcessor;
-  private EvaluationAuxModule myAuxModule;
   private volatile boolean myIsMute = false;
+  private final EvaluationProvider myEvaluationProvider;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
     super(p);
     myEventsProcessor = eventsProcessor;
     myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
     eventsProcessor.getMulticaster().addListener(new MyDebugProcessAdapter());
-  }
-
-  public EvaluationAuxModule getAuxModule() {
-    return myAuxModule;
+    myEvaluationProvider = new EvaluationProvider(this);
   }
 
   protected JavaUiState createUiState() {
@@ -67,14 +64,6 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     return true;
   }
 
-  public void showEvaluationDialog(IOperationContext operationContext) {
-    JavaUiState state = getUiState();
-    if (state.isPausedOnBreakpoint()) {
-      EvaluationDialog evaluationDialog = new EvaluationDialog(operationContext, state, this);
-      evaluationDialog.showDialog();
-    }
-  }
-
   private void step(StepType type) {
     JavaUiState state = getUiState();
     SuspendContext context = state.getContext();
@@ -109,17 +98,12 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
     VMEventsProcessorManagerComponent vmManager
       = manager.getProject().getComponent(VMEventsProcessorManagerComponent.class);
     vmManager.addDebugSession(this);
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        myAuxModule = new EvaluationAuxModule(myProject);
-      }
-    });
+    myEvaluationProvider.init();
   }
 
   @Override
   public void sessionUnregistered(DebugSessionManagerComponent manager) {
-    myAuxModule.dispose();
-    myAuxModule = null;
+    myEvaluationProvider.dispose();
   }
 
   @Override
@@ -155,6 +139,11 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
       myIsMute = mute;
       fireSessionMuted(DebugSession.this);
     }
+  }
+
+  @Override
+  public IEvaluationProvider getEvaluationProvider() {
+    return myEvaluationProvider;
   }
 
   private class MyDebugProcessAdapter extends DebugProcessAdapter {

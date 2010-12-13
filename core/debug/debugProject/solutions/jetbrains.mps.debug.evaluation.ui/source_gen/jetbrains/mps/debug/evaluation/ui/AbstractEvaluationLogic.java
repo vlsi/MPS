@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -69,13 +70,13 @@ public abstract class AbstractEvaluationLogic {
   protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
-  public AbstractEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
+  public AbstractEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull EvaluationProvider provider) {
     myUiState = state;
-    myDebugSession = debugSession;
+    myDebugSession = provider.getDebugSession();
     myContext = ModuleContext.create(getLocationNode(), project);
 
     // creating module 
-    myAuxModule = myDebugSession.getAuxModule();
+    myAuxModule = provider.getAuxModule();
 
     // creating evaluator node 
     final Wrappers._T<SNode> evaluatorConcept = new Wrappers._T<SNode>();
@@ -221,11 +222,11 @@ public abstract class AbstractEvaluationLogic {
     return myContext;
   }
 
-  public static AbstractEvaluationLogic createInstance(Project project, JavaUiState state, DebugSession session) {
+  public static AbstractEvaluationLogic createInstance(Project project, JavaUiState state, EvaluationProvider provider) {
     if (IS_IN_HIGHLEVEL_MODE) {
-      return new HighLevelEvaluationLogic(project, state, session);
+      return new HighLevelEvaluationLogic(project, state, provider);
     }
-    return new LowLevelEvaluationLogic(project, state, session);
+    return new LowLevelEvaluationLogic(project, state, provider);
   }
 
   private class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {
