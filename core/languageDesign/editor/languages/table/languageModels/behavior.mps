@@ -18,7 +18,6 @@
   <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="6216065619544941718">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="tableProposal" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="ohyq.2253133157536766818" resolveInfo="CellModel_HierarchycalTable" />
     </node>
   </roots>
