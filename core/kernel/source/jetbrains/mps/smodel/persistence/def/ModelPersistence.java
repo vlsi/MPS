@@ -233,15 +233,14 @@ public class ModelPersistence {
 
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) {
-    InputSource inputSource = new InputSource(new StringReader(content));
-    int version = getPersistenceVersion(inputSource);
+    int version = getPersistenceVersion(new InputSource(new StringReader(content)));
 
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
       XMLSAXHandler<List<LineContent>> handler = getModelPersistence(version).getLineToContentMapReaderHandler();
       if (handler != null) {
         try {
           SAXParser parser = JDOMUtil.createSAXParser();
-          parser.parse(inputSource, handler);
+          parser.parse(new InputSource(new StringReader(content)), handler);
           return handler.getResult();
         } catch (Throwable t) {
           LOG.error(t);
