@@ -18,10 +18,10 @@ import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.AbstractVcs;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.vcs.changesmanager.ChangesManager;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import com.intellij.openapi.vcs.annotate.AnnotationProvider;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.vcs.changes.BackgroundFromStartOption;
@@ -75,13 +75,19 @@ public class AnnotationManager extends AbstractProjectComponent {
     if (vcs == null) {
       return false;
     }
-    FileStatus fileStatus = FileStatusManager.getInstance(myProject).getStatus(file);
-    if (fileStatus == FileStatus.UNKNOWN || fileStatus == FileStatus.ADDED || fileStatus == FileStatus.IGNORED) {
+
+    _FunctionTypes._return_P1_E0<? extends Boolean, ? super FileStatus> checkFileStatus = new _FunctionTypes._return_P1_E0<Boolean, FileStatus>() {
+      public Boolean invoke(FileStatus fs) {
+        return fs == FileStatus.UNKNOWN || fs == FileStatus.ADDED || fs == FileStatus.IGNORED;
+      }
+    };
+    if (checkFileStatus.invoke(FileStatusManager.getInstance(myProject).getStatus(file))) {
       return false;
     }
-    if (ChangesManager.getInstance(myProject).getModelChangesManager(model).isAddedNode(new SNodePointer(root))) {
+    if (checkFileStatus.invoke(RootNodeFileStatusManager.getInstance(myProject).getStatus(root))) {
       return false;
     }
+
     final AnnotationProvider annotationProvider = vcs.getAnnotationProvider();
     if (annotationProvider == null) {
       return false;
