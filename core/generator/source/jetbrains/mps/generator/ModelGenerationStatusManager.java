@@ -45,6 +45,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
   }
 
+  private final Object LOCK = new Object();
   private Map<SModelDescriptor, Boolean> myEmptyStatus = new HashMap<SModelDescriptor, Boolean>();
   private Map<SModelDescriptor, Long> myEmptyStatusRetrievalTime = new HashMap<SModelDescriptor, Long>();
 
@@ -112,14 +113,14 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       return sm.isEmpty();
     }
 
-    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor) sm).lastChangeTime()) {
-      return myEmptyStatus.get(sm);
-    }
+    synchronized (LOCK) {
+      if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor) sm).lastChangeTime()) return myEmptyStatus.get(sm);
 
-    boolean result = sm.isEmpty();
-    myEmptyStatus.put(sm, result);
-    myEmptyStatusRetrievalTime.put(sm, System.currentTimeMillis());
-    return result;
+      boolean result = sm.isEmpty();
+      myEmptyStatus.put(sm, result);
+      myEmptyStatusRetrievalTime.put(sm, System.currentTimeMillis());
+      return result;
+    }
   }
 
   private String getGenerationHash(SModelDescriptor sm) {
