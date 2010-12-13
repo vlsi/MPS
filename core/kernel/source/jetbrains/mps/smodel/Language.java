@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
@@ -51,6 +52,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Language extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
@@ -60,7 +62,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new ArrayList<Generator>();
 
-  private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
+  private ConcurrentHashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new ConcurrentHashMap<String, AbstractConceptDeclaration>();
+  //the following is needed because we can't store null values in myNameToConceptCache, as long as it's a ConcurrentHashMap
+  private ConcurrentHashSet<String> myNamesWithNoConcepts = new ConcurrentHashSet<String>(1);
+
   private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
 
   private IClassPathItem myLanguageRuntimeClasspathCache;
@@ -489,6 +494,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void invalidateCaches() {
     super.invalidateCaches();
     myNameToConceptCache.clear();
+    myNamesWithNoConcepts.clear();
     myNotFoundRefactorings.clear();
     myCachedRefactorings = null;
     myAllExtendedLanguages = null;
@@ -497,6 +503,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNamesLoadingState == ModelLoadingState.FULLY_LOADED) return myNameToConceptCache.get(conceptName);
     if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
+    if (myNamesWithNoConcepts.contains(conceptName)) return null;
 
     SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
     if (structureModelDescriptor == null) return null;
@@ -506,21 +513,25 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
       for (SNode root : structureModel.roots()) {
         if (root.getAdapter() instanceof AbstractConceptDeclaration) {
-          myNameToConceptCache.put(root.getName(), (AbstractConceptDeclaration) root.getAdapter());
+          myNameToConceptCache.putIfAbsent(root.getName(), (AbstractConceptDeclaration) root.getAdapter());
         }
       }
       if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
     }
 
     //if we haven't found a root concept, then try to find in any node in the model
-    myNameToConceptCache.put(conceptName, null);
-    for (SNode node:structureModel.nodes()){
+    for (SNode node : structureModel.nodes()) {
       if (node.getAdapter() instanceof AbstractConceptDeclaration) {
-        myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
+        myNameToConceptCache.putIfAbsent(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
       }
     }
 
-    return myNameToConceptCache.get(conceptName);
+    AbstractConceptDeclaration result = myNameToConceptCache.get(conceptName);
+    if (result == null) {
+      myNamesWithNoConcepts.add(conceptName);
+    }
+
+    return result;
   }
 
   public void save() {
