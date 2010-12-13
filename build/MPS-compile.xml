@@ -4333,8 +4333,8 @@
   </target>
   <target name="compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.unitTest.lib.classes}.tmp" />
-    <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/source_gen" />
-    <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/test_gen" />
+    <mkdir dir="core/baseLanguage/unitTest/solutions/lib/source_gen" />
+    <mkdir dir="core/baseLanguage/unitTest/solutions/lib/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.baseLanguage.unitTest.lib.classes}" />
     <javac classpathref="cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc.classpaths" destdir="${classes.dump}">

@@ -19,11 +19,11 @@
     <orderEntry type="module-library" exported="">
       <library name="JMock">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1" />
+          <root url="file://$MODULE_DIR$/solutions/lib/lib/jmock-2.5.1" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/solutions/lib/lib/jmock-2.5.1" recursive="false" />
       </library>
     </orderEntry>
   </component>
