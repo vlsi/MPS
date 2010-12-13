@@ -22,10 +22,19 @@ import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EvaluationProvider implements IEvaluationProvider {
   private final DebugSession myDebugSession;
   private EvaluationAuxModule myAuxModule;
+  private final List<AbstractEvaluationModel> myWatches = new ArrayList<AbstractEvaluationModel>();
+  private final List<IWatchListener> myWatchListeners = new ArrayList<IWatchListener>();
 
   public EvaluationProvider(DebugSession debugSession) {
     myDebugSession = debugSession;
@@ -53,7 +62,14 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
   }
 
+  @Override
+  public JComponent createWatchesPanel() {
+    return new JLabel("Here watches panel lies!");
+  }
+
   public void watch(AbstractEvaluationModel evaluationModel) {
+    myWatches.add(evaluationModel);
+    fireUpdateWatches();
   }
 
   public DebugSession getDebugSession() {
@@ -74,5 +90,23 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   AbstractEvaluationModel createLowLevelEvaluationModel(Project project) {
     return new LowLevelEvaluationModel(project, myDebugSession, getAuxModule());
+  }
+
+  private void fireUpdateWatches() {
+    for (IWatchListener listener : myWatchListeners) {
+      listener.watchesUpdated();
+    }
+  }
+
+  private void addWatchListener(@NotNull IWatchListener listener) {
+    myWatchListeners.add(listener);
+  }
+
+  private void removeWatchListener(@NotNull IWatchListener listener) {
+    myWatchListeners.remove(listener);
+  }
+
+  public interface IWatchListener {
+    public void watchesUpdated();
   }
 }

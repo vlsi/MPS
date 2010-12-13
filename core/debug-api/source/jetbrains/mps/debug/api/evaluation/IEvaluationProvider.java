@@ -16,6 +16,9 @@
 package jetbrains.mps.debug.api.evaluation;
 
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.Nullable;
+
+import javax.swing.JComponent;
 
 public interface IEvaluationProvider {
 
@@ -28,4 +31,7 @@ public interface IEvaluationProvider {
   */
 
   void showEvaluationDialog(IOperationContext context);
+
+  @Nullable
+  JComponent createWatchesPanel();
 }

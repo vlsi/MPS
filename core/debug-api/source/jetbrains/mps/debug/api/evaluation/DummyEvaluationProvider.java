@@ -18,6 +18,8 @@ package jetbrains.mps.debug.api.evaluation;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.smodel.IOperationContext;
 
+import javax.swing.JComponent;
+
 public class DummyEvaluationProvider implements IEvaluationProvider {
   private final AbstractDebugSession mySession;
 
@@ -28,5 +30,10 @@ public class DummyEvaluationProvider implements IEvaluationProvider {
   @Override
   public void showEvaluationDialog(IOperationContext context) {
     mySession.showEvaluationDialog(context);
+  }
+
+  @Override
+  public JComponent createWatchesPanel() {
+    return null;
   }
 }
