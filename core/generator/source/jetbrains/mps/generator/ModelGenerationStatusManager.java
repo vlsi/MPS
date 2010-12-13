@@ -107,7 +107,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
   }
 
-  private boolean isEmpty(SModelDescriptor sm) {
+  private boolean isEmpty(@NotNull SModelDescriptor sm) {
     if (!(sm instanceof EditableSModelDescriptor)) {
       return sm.isEmpty();
     }
