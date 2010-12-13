@@ -50,6 +50,12 @@ public abstract class Block {
     return myNodeId;
   }
 
+  public String getExpandedPresentation(State state) {
+    return getPresentation();
+  }
+
+  public abstract BlockKind getBlockKind();
+
   public abstract String getPresentation();
 
   public abstract void performAction();

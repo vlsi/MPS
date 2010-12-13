@@ -25,10 +25,6 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TypeSystemTraceTreeNode extends MPSTreeNode {
-  public TypeSystemTraceTreeNode(IOperationContext operationContext) {
-    super(operationContext);
-  }
-
   public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext) {
     super(userObject, operationContext);
     AbstractOperation difference = (AbstractOperation) userObject;

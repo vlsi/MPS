@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.operation.block;
 
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 /**
@@ -40,17 +41,17 @@ public class RemoveBlockOperation extends AbstractOperation {
   }
 
   @Override
-  public void doUndo(jetbrains.mps.newTypesystem.state.State state) {
+  public void doUndo(State state) {
     state.addBlockNoVars(myBlock);
   }
 
   @Override
-  public void doRedo(jetbrains.mps.newTypesystem.state.State state) {
+  public void doRedo(State state) {
     state.removeBlockNoVars(myBlock);
   }
 
   @Override
-  public void execute(jetbrains.mps.newTypesystem.state.State state) {
+  public void execute(State state) {
     super.execute(state);
     myBlock.performAction();
   }

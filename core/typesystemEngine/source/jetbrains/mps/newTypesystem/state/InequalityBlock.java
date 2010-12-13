@@ -20,7 +20,6 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.SubTyping;
-import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -31,77 +30,46 @@ import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.10
- * Time: 20:06
- * To change this template use File | Settings | File Templates.
+ * User: Ilya.Lintsbakh
+ * Date: Dec 9, 2010
+ * Time: 12:11:13 PM
  */
-public class InequalityBlock extends Block {
-  private RelationKind myRelationKind;
-  private SNode myLeftNode;
-  private SNode myRightNode;
-  private EquationInfo myEquationInfo;
+public class InequalityBlock extends RelationBlock {
+  private SNode myOutput;
 
-
-  public InequalityBlock(State state, SNode left, SNode right,
-                         RelationKind kind, EquationInfo equationInfo) {
-    super(state, equationInfo.getRuleModel(), equationInfo.getRuleId());
-    myRelationKind = kind;
-    myLeftNode = left;
-    myRightNode = right;
-    myEquationInfo = equationInfo;
+  public SNode getOutput() {
+    return myOutput;
   }
 
-  public RelationKind getRelationKind() {
-    return myRelationKind;
-  }
-
-  public SNode getLeftNode() {
-    return myLeftNode;
-  }
-
-  public SNode getRightNode() {
-    return myRightNode;
-  }
-
-  public EquationInfo getEquationInfo() {
-    return myEquationInfo;
-  }
-
-  @Override
-  public String getPresentation() {
-    return myRelationKind.getTitle() + " : " +
-      myLeftNode + myRelationKind.getRelationSign() + myRightNode;
-  }
-
-  @Override
-  public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
-    if (myRelationKind.isComparable() || myRelationKind.isCheckOnly()) {
-      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
-    } else {
-      //todo create a counterpart for "solve only concrete"
-      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
-        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.SHALLOW));
+  public SNode getInput() {
+    if (myRelationKind.isCheckOnly()) {
+      return null;
     }
+    if (myOutput == myLeftNode) {
+      return myRightNode;
+    }
+    if (myOutput == myRightNode) {
+      return myLeftNode;
+    }
+    return null; 
+  }
+
+  public InequalityBlock(State state, SNode left, SNode right, SNode output, RelationKind kind, EquationInfo equationInfo) {
+    super(state, left, right, kind, equationInfo);
+    myOutput = output;
   }
 
   @Override
   public void performAction() {
     SNode left = getResolvedInput(myLeftNode);
     SNode right = getResolvedInput(myRightNode);
-    if (myRelationKind.isComparable()) {
-      processComparableEquation(left, right);
-    } else {
-      processInequality(left, right);
-    }
+    processInequality(left, right);
   }
 
   public void processInequality(final SNode subType, final SNode superType) {
     if (subType == null || superType == null || subType == superType) {
       return;
     }
-
     //replacement rules
     TypeChecker typeChecker = myState.getTypeCheckingContext().getTypeChecker();
     for (jetbrains.mps.util.Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequalityReplacementRule : typeChecker.getRulesManager().getReplacementRules(subType, superType)) {
@@ -116,9 +84,7 @@ public class InequalityBlock extends Block {
       }));
       return;
     }
-
     final SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
-
     myState.executeOperation(new jetbrains.mps.newTypesystem.operation.AddRemarkOperation("checking whether " + subType + " is subtype of " + superType, new Runnable() {
       @Override
       public void run() {
@@ -127,26 +93,45 @@ public class InequalityBlock extends Block {
         }
       }
     }));
-
   }
 
-  public void processComparableEquation(final SNode left, final SNode right) {
-    if (left == null || right == null || left == right) {
-      return;
+  @Override
+  public Set<Pair<SNode, ConditionKind>> getInitialInputs() {
+    if (myRelationKind.isCheckOnly()) {
+      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
+        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.CONCRETE));
+    } else {
+      //todo create a counterpart for "solve only concrete"
+      return CollectionUtil.set(new Pair<SNode, ConditionKind>(myLeftNode, ConditionKind.CONCRETE),
+        new Pair<SNode, ConditionKind>(myRightNode, ConditionKind.SHALLOW));
     }
-
-    SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
-    // if subType or superType
-    boolean isWeak = myRelationKind.isWeak();
-    if (subTyping.isComparableByRules(left, right, myEquationInfo, isWeak) ||
-      subTyping.isSubTypeByReplacementRules(left, right) ||
-      subTyping.isSubTypeByReplacementRules(right, left) ||
-      subTyping.isSubType(left, right, myEquationInfo, isWeak, true) ||
-      subTyping.isSubType(right, left, myEquationInfo, isWeak, true)) {
-      myState.executeOperation(new AddRemarkOperation(left + " is comparable with " + right));
-      return;
-    }
-    myState.getNodeMaps().reportComparableError(left, right, myEquationInfo, isWeak);
   }
 
+  @Override
+  public BlockKind getBlockKind() {
+    return BlockKind.INEQUALITY;
+  }
+
+  private String getPresentationInternal(SNode left, SNode right) {
+    String sign = myRelationKind.getRelationSign();
+    if (myLeftNode == myOutput) {
+      sign = ":" + sign;
+    } else if (myRightNode == myOutput) {
+      sign = sign + ":";
+    }
+    return myRelationKind.getTitle() + " : " +
+      left + sign + right;
+  }
+
+  @Override
+  public String getPresentation() {
+    return getPresentationInternal(myLeftNode, myRightNode);
+  }
+
+
+  @Override
+  public String getExpandedPresentation(State state) {
+
+    return getPresentationInternal(state.getRepresentative(myLeftNode), state.getRepresentative(myRightNode));
+  }
 }

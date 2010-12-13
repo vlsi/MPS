@@ -49,15 +49,14 @@ public class State {
   private final TypeCheckingContextNew myTypeCheckingContext;
 
   private final Equations myEquations;
-  private final jetbrains.mps.newTypesystem.state.Inequalities myInequalities;
-  private final jetbrains.mps.newTypesystem.state.NodeMaps myNodeMaps;
+  private final Inequalities myInequalities;
+  private final NodeMaps myNodeMaps;
 
   private final VariableIdentifier myVariableIdentifier;
 
   private final Stack<AbstractOperation> myOperationStack = new Stack<AbstractOperation>();
   private AbstractOperation myOperation = new CheckAllOperation();
   private boolean myInsideStateChangeAction = false;
-
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
@@ -69,8 +68,8 @@ public class State {
   public State(TypeCheckingContextNew tcc) {
     myTypeCheckingContext = tcc;
     myEquations = new Equations(this);
-    myInequalities = new jetbrains.mps.newTypesystem.state.Inequalities(this);
-    myNodeMaps = new jetbrains.mps.newTypesystem.state.NodeMaps(this);
+    myInequalities = new Inequalities(this);
+    myNodeMaps = new NodeMaps(this);
     myVariableIdentifier = new VariableIdentifier();
     {
       myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<SNode, Block>());
@@ -104,6 +103,14 @@ public class State {
   }
 
   @StateMethod
+  public void removeInequalityBlock(InequalityBlock block) {
+    assertIsInStateChangeAction();
+   
+    boolean removed = myBlocks.remove(block);
+    assert removed;
+  }
+
+  @StateMethod
   public void addBlockNoVars(Block dataFlowBlock) {
     assertIsInStateChangeAction();
     for (ManyToManyMap<SNode, Block> map : myBlocksAndInputs.values()) {
@@ -120,7 +127,7 @@ public class State {
       if (blocks == null) {
         return;
       }
-      for (Block block : blocks) {
+      for (Block block : new HashSet<Block>(blocks)) {
         for (SNode variable : conditionKind.getUnresolvedInputs(type, this)) {
           addInputAndTrack(block, variable, conditionKind);
         }
@@ -179,12 +186,16 @@ public class State {
     myEquations.addEquation(left, right, info);
   }
 
-  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info) {
-    addBlock(new InequalityBlock(this, subType, superType, RelationKind.fromFlags(isWeak, check, false), info));
+  public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
+    SNode output = null;
+    if (!check) {
+      output = lessThan ? subType : superType;
+    }
+    addBlock(new InequalityBlock(this, subType, superType, output, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
   public void addComparable(SNode left, SNode right, boolean isWeak, EquationInfo info) {
-     addBlock(new InequalityBlock(this, left, right, RelationKind.fromFlags(isWeak, true, true), info));
+     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, true, true), info));
   }
 
   public jetbrains.mps.newTypesystem.state.NodeMaps getNodeMaps() {
@@ -327,4 +338,20 @@ public class State {
     clear(false);
     myOperation.playRecursively(this);
   }
+
+  public Set<Block> getBlocks() {
+    return myBlocks;
+  }
+
+  public Set<Block> getBlocks(BlockKind kind) {
+    Set<Block> result = new HashSet<Block>();
+    for (Block block: myBlocks) {
+      if (block.getBlockKind() == kind) {
+        result.add(block);
+      }
+    }
+    return result;
+  }
+
+  
 }

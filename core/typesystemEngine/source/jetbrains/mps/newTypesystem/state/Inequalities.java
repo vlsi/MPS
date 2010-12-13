@@ -15,21 +15,12 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
-import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.ManyToManyMap;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -43,16 +34,143 @@ public class Inequalities {
 
   private boolean solveOnlyConcrete;
 
-
   public Inequalities(State state) {
     myState = state;
   }
 
+  private SNode getNodeWithNoInput(ManyToManyMap<SNode, SNode> inputsToOutputs, SNode node, int n) {
+    if (inputsToOutputs.getBySecond(node).isEmpty()) {
+      return node;
+    }
+    SNode result = inputsToOutputs.getBySecond(node).iterator().next();
+    int counter = 0;
+    while(true) {
+      if (inputsToOutputs.getBySecond(result).isEmpty()) {
+        return result;
+      }
+      result = inputsToOutputs.getBySecond(result).iterator().next();
+      counter++;
+      if (counter == n) {
+        return null; // cycle!
+      }
+    }
+  }
+
+  private List<SNode> sort(ManyToManyMap<SNode, SNode> inputsToOutputs, Set<SNode> unsorted) {
+    SNode node = unsorted.iterator().next();
+    int size = unsorted.size();
+    List<SNode> result = new LinkedList<SNode>();
+    while (result.size() < size) {
+      SNode current = getNodeWithNoInput(inputsToOutputs, node, unsorted.size());
+      result.add(current);
+      unsorted.remove(current);
+      if (unsorted.isEmpty()) {
+        return result;
+      }
+      if (inputsToOutputs.getByFirst(current).isEmpty()) {
+        node = unsorted.iterator().next();
+      } else {
+        node = inputsToOutputs.getByFirst(current).iterator().next();
+      }
+      inputsToOutputs.clearFirst(current);
+    }
+    return result;
+  }
+
+  private List<InequalityBlock> getInequalitiesToSolve() {
+    List<InequalityBlock> result = new LinkedList<InequalityBlock>();
+    Set<Block> set = myState.getBlocks(BlockKind.INEQUALITY);
+    for (Block block : set) {
+      InequalityBlock inequality = (InequalityBlock) block;
+      if (!inequality.getRelationKind().isCheckOnly()) {
+        result.add(inequality);
+      }
+    }
+    return result;
+  }
+
   public void solveInequalities() {
+    List<InequalityBlock> inequalities = getInequalitiesToSolve();
+    int counter = 0;
+    while (!inequalities.isEmpty() && counter < 5) {
+      iteration(inequalities);
+      inequalities = getInequalitiesToSolve();
+      counter++;
+    }
+  }
+
+  private void checkNonsenseInequality(InequalityBlock block) {
+    SNode left = myState.getRepresentative(block.getLeftNode());
+    SNode right = myState.getRepresentative(block.getRightNode());
+    if (left == right) {
+      
+    }
+  }
+
+  private void iteration( List<InequalityBlock> inequalities) {
     solveOnlyConcrete = false;
-    //todo implement
-    /* solve(false);
-    solve(true);*/
+    Set<SNode> nodes = new LinkedHashSet<SNode>();
+    ManyToManyMap<SNode, SNode> inputsToOutputs = new ManyToManyMap<SNode, SNode>();
+    ManyToManyMap<SNode, InequalityBlock> nodesToBlocks = new ManyToManyMap<SNode, InequalityBlock>();
+    for (InequalityBlock inequality : inequalities) {
+      SNode input = myState.getRepresentative(inequality.getInput());
+      SNode output = myState.getRepresentative(inequality.getOutput());
+
+      if (input != null) {
+        if (input != output) {
+          inputsToOutputs.addLink(input, output);
+          nodesToBlocks.addLink(input, inequality);
+          nodes.add(input);
+        }
+        nodesToBlocks.addLink(output, inequality);
+        nodes.add(output);
+      }
+    }
+   // System.out.println(nodes);
+    if (nodes.isEmpty()) {
+      return;
+    }
+    List<SNode> sortedNodes = sort(inputsToOutputs, nodes);
+
+   // System.out.println(sortedNodes);
+    for (SNode node : sortedNodes) {
+      //todo if concrete continue
+     if (!TypesUtil.isVariable(node)) {
+       continue;
+     }
+      Set<InequalityBlock> blocks = nodesToBlocks.getByFirst(node);
+      Set<SNode> superTypes = new LinkedHashSet<SNode>();
+      Set<SNode> subTypes = new LinkedHashSet<SNode>();
+      for (InequalityBlock block : blocks) {
+        if (block.getRelationKind().isCheckOnly()) {
+          continue;
+        }
+        SNode left = myState.getRepresentative(block.getLeftNode());
+        SNode right = myState.getRepresentative(block.getRightNode());
+        if (right == left) {
+          continue;
+        }
+        if (left == node) {
+          superTypes.add(right);
+        }
+        if (right == node) {
+          subTypes.add(left);
+        } 
+      }
+      SubTyping subTyping = new SubTyping(myState);
+      if (TypesUtil.isVariable(node)) {
+        if (!subTypes.isEmpty()) {
+          myState.addEquation(node, subTyping.createMeet(subTypes), null);
+        }
+        if (!superTypes.isEmpty()) {
+          myState.addEquation(node, subTyping.createLCS(superTypes), null);
+        }
+      } else {
+
+      }
+
+    }
+
   }
 
  /* private void solve(boolean shallow) {

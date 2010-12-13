@@ -15,12 +15,23 @@
  */
 package jetbrains.mps.newTypesystem.presentation.state;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.newTypesystem.presentation.difference.TypeSystemTraceTreeNode;
+import jetbrains.mps.newTypesystem.state.Block;
+import jetbrains.mps.newTypesystem.state.BlockKind;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 
+import javax.swing.JPopupMenu;
 import java.awt.Color;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -51,8 +62,9 @@ public class TypeSystemStateTree extends MPSTree {
   private TypeSystemStateTreeNode createNode(jetbrains.mps.newTypesystem.state.State state) {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
    //todo: show info from blocks grouped by class
-   // result.add(createNode("Inequalities", myState.getInequalities().getListPresentation(), null));
-   // result.add(createNode("When concrete", myState.getNonConcrete().getListPresentation(), null));
+    result.add(createNode("Inequalities", myState.getBlocks(BlockKind.INEQUALITY), null));
+    result.add(createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null));
+    result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
     result.add(createNode("Types", myState.getNodeMaps().getTypeListPresentation(), null));
     result.add(createNode("Equations", myState.getEquations().getListPresentation(), null));
@@ -70,4 +82,27 @@ public class TypeSystemStateTree extends MPSTree {
     }
     return result;
   }
-}
+
+  private TypeSystemStateTreeNode createNode(String category, Set<Block> entries, Color color) {
+    TypeSystemStateTreeNode result = new TypeSystemStateTreeNode(category, myOperationContext);
+    if (color != null) {
+      result.setColor(color);
+    }
+    for (Block block : entries) {
+      result.add(new TypeSystemStateTreeNode(block, myOperationContext, myState));
+    }
+    return result;
+  }
+
+  @Override
+   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
+     BaseAction goToRule = new BaseAction("Go to rule") {
+       public void doExecute(AnActionEvent e) {
+         ((TypeSystemStateTreeNode) treeNode).goToRule();
+       }
+     };
+     DefaultActionGroup group = ActionUtils.groupFromActions(goToRule);
+     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
+   }
+
+ }

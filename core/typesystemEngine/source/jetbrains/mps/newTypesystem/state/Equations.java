@@ -160,6 +160,7 @@ public class Equations {
         reportRecursiveType(type);
       }
       variablesMet.add(type);
+      return type;
     }
     if (type != node) {
       SNode result = expandNode(type, variablesMet);

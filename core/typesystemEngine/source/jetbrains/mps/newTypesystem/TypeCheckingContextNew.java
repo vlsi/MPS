@@ -62,24 +62,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     operation.undo(myState);
   }
 
-  public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {
-    myState.addInequality(left.getNode(), right.getNode(), true, true, equationInfo);
-  }
-
-  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck,
-                                             String errorString, String ruleModel, String ruleId, boolean checkOnly,
-                                             int inequationPriority, QuickFixProvider intentionProvider) {
-    myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
-      ruleId, inequationPriority, intentionProvider));
-  }
-
-  @Override
-  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority, QuickFixProvider intentionProvider) {
-    myState.addInequality(node2, node1, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
-      ruleId, inequationPriority, intentionProvider));
-  }
-
-
   @Override
   public void checkRoot() {
     if (!myChecked) {
@@ -116,23 +98,37 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node1, node2, true, checkOnly, equationInfo);
+    myState.addInequality(node1, node2, true, checkOnly, equationInfo, true);
   }
 
   @Override
   public void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node1, node2, false, checkOnly, equationInfo);
+    myState.addInequality(node1, node2, false, checkOnly, equationInfo, true);
   }
 
   @Override
   public void createGreaterThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node2, node1, true, checkOnly, equationInfo);
+    myState.addInequality(node2, node1, true, checkOnly, equationInfo, false);
   }
 
   @Override
   public void createEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
     myState.addEquation(node1, node2, equationInfo);
   }
+
+  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck,
+                                             String errorString, String ruleModel, String ruleId, boolean checkOnly,
+                                             int inequationPriority, QuickFixProvider intentionProvider) {
+    myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
+      ruleId, inequationPriority, intentionProvider), true);
+  }
+
+  @Override
+  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority, QuickFixProvider intentionProvider) {
+    myState.addInequality(node2, node1, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
+      ruleId, inequationPriority, intentionProvider), false);
+  }
+
 
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {

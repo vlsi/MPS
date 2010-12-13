@@ -27,7 +27,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * User: Cyril.Konopko
  * Date: 07.12.10
  * Time: 16:08
- * To change this template use File | Settings | File Templates.
  */
 public class AddDependencyOperation extends AbstractOperation {
   private SNode myVar;
