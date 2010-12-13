@@ -71,6 +71,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_rna4g_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rna4g_b1b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_rna4g_c1b0(editorContext, node));
     return editorCell;
   }
 
@@ -97,6 +98,19 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_rna4g_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rna4g_b1b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rna4g_c1b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_rna4g_c1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_rna4g_c1b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_rna4g_a2b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rna4g_b2b1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_rna4g_c2b1a(editorContext, node));
     return editorCell;
   }
 
@@ -143,6 +157,20 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_rna4g_a2b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate Idea initializer");
+    editorCell.setCellId("Constant_rna4g_a2b1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_rna4g_b2b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_rna4g_b2b1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_rna4g_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_rna4g_c0");
@@ -181,6 +209,24 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_generateApplicationPlugin");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_rna4g_c2b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("generateIdeaInitializer");
+    provider.setNoTargetText("<no generateIdeaInitializer>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_generateIdeaInitializer");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

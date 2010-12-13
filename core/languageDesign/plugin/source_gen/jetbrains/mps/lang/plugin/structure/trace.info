@@ -157,7 +157,6 @@
   <unitInfo fileName="ReportErrorStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" />
   <unitInfo fileName="AddElementStatement.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AddElementStatement" />
   <unitInfo fileName="AskStatement.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AskStatement" />
-  <unitInfo fileName="GeneratePlugins.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" />
   <unitInfo fileName="KeyMapKeystroke.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" />
   <unitInfo fileName="ModificationStatement.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ModificationStatement" />
   <unitInfo fileName="UnitNodeItem.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.UnitNodeItem" />
@@ -173,6 +172,7 @@
   <unitInfo fileName="ToolActionPlace.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ToolActionPlace" />
   <unitInfo fileName="SimpleActionPlace.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.SimpleActionPlace" />
   <unitInfo fileName="ExecuteConfigBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock" />
+  <unitInfo fileName="GeneratePlugins.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" />
   <unitInfo fileName="DoUpdateGroupBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock" />
   <unitInfo fileName="BuildGroupBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" />
   <unitInfo fileName="Separator.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Separator" />
@@ -225,8 +225,8 @@
   <unitInfo fileName="RunConfigurationDeclaration.java" startLine="16" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
   <unitInfo fileName="ActionDeclaration.java" startLine="15" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
   <root nodeId="485694842829280671">
-    <nodeInfo nodeId="485694842829280677" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44" />
-    <scopeInfo nodeId="485694842829280677" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44">
+    <nodeInfo nodeId="485694842829280677" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(null)V" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44" />
+    <scopeInfo nodeId="485694842829280677" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(null)V" fileName="IComponentDisposer.java" startLine="7" startPosition="59" endLine="8" endPosition="44">
       <varInfo nodeId="485694842829280681" varName="component" />
     </scopeInfo>
     <unitInfo nodeId="485694842829280671" fileName="IComponentDisposer.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IComponentDisposer" />
