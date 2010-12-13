@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 import jetbrains.mps.logging.Logger;
 import javax.swing.JTabbedPane;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
-import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
@@ -35,6 +34,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -62,8 +62,6 @@ public class EvaluationPanel extends JPanel {
   private EmbeddableEditor myResultEditor;
   private final AbstractEvaluationLogic myEvaluationLogic;
   private final EvaluationPanel.MySessionChangeListener mySessionChangeListener;
-  protected String myClassFQName;
-  protected final ThreadReference myThreadReference;
   protected final DebugSession myDebugSession;
   private final Highlighter myHighlighter;
   private EvaluationPanel.IErrorTextListener myErrorListener;
@@ -72,8 +70,6 @@ public class EvaluationPanel extends JPanel {
   public EvaluationPanel(Project project, JavaUiState uiState, EvaluationProvider provider) {
     super(new BorderLayout());
     myHighlighter = project.getComponent(Highlighter.class);
-    myClassFQName = uiState.getStackFrame().getLocation().getUnitName();
-    myThreadReference = uiState.getThread().getThread();
     myDebugSession = provider.getDebugSession();
 
     mySessionChangeListener = new EvaluationPanel.MySessionChangeListener();
@@ -109,7 +105,7 @@ public class EvaluationPanel extends JPanel {
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
     splitPane.setResizeWeight(0.5);
     splitPane.setTopComponent(myEditor.getComponenet());
-    myTree = new EvaluationPanel.MyTree(myClassFQName, myThreadReference);
+    myTree = new EvaluationPanel.MyTree(uiState.getStackFrame().getLocation().getUnitName(), uiState.getThread().getThread());
     splitPane.setBottomComponent(new JBScrollPane(myTree));
 
     if (myEvaluationLogic.isDeveloperMode()) {
