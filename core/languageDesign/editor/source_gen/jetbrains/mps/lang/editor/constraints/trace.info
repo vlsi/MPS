@@ -44,10 +44,10 @@
     <nodeInfo nodeId="1213104846447" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="34" startPosition="157" endLine="35" endPosition="117" />
     <nodeInfo nodeId="1213104846453" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="35" startPosition="117" endLine="36" endPosition="114" />
     <nodeInfo nodeId="1227880682114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="38" startPosition="39" endLine="39" endPosition="74" />
-    <nodeInfo nodeId="1227880682110" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="73" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="1227880682110" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="73" endLine="41" endPosition="0" />
     <nodeInfo nodeId="1213104846459" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="36" startPosition="114" endLine="41" endPosition="24" />
     <scopeInfo nodeId="1227880682113" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="38" startPosition="39" endLine="39" endPosition="74" />
-    <scopeInfo nodeId="1227880682110" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="73" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1227880682110" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="73" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1213104846437" fileName="CellModel_RefCell_linkDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="41" endPosition="24">
       <varInfo nodeId="1213104846448" varName="editedConcept" />
       <varInfo nodeId="1213104846454" varName="links" />
@@ -95,10 +95,10 @@
     <nodeInfo nodeId="1213104860430" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="33" startPosition="157" endLine="34" endPosition="117" />
     <nodeInfo nodeId="1213104860436" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="34" startPosition="117" endLine="35" endPosition="125" />
     <nodeInfo nodeId="1227880682155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="39" endLine="38" endPosition="77" />
-    <nodeInfo nodeId="1227880682151" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="36" startPosition="73" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="1227880682151" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="36" startPosition="73" endLine="40" endPosition="0" />
     <nodeInfo nodeId="1213104860442" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="35" startPosition="125" endLine="40" endPosition="24" />
     <scopeInfo nodeId="1227880682154" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="39" endLine="38" endPosition="77" />
-    <scopeInfo nodeId="1227880682151" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="36" startPosition="73" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1227880682151" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="36" startPosition="73" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1213104860420" fileName="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="40" endPosition="24">
       <varInfo nodeId="1213104860431" varName="editedConcept" />
       <varInfo nodeId="1213104860437" varName="links" />
@@ -112,10 +112,10 @@
     <nodeInfo nodeId="1213104860592" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="34" startPosition="157" endLine="35" endPosition="117" />
     <nodeInfo nodeId="1213104860598" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="35" startPosition="117" endLine="36" endPosition="125" />
     <nodeInfo nodeId="1227880682071" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="38" startPosition="39" endLine="39" endPosition="74" />
-    <nodeInfo nodeId="1227880682067" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="73" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="1227880682067" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="73" endLine="41" endPosition="0" />
     <nodeInfo nodeId="1213104860604" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="36" startPosition="125" endLine="41" endPosition="24" />
     <scopeInfo nodeId="1227880682070" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="38" startPosition="39" endLine="39" endPosition="74" />
-    <scopeInfo nodeId="1227880682067" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="73" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1227880682067" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="73" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1213104860582" fileName="CellModel_RefNode_linkDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="41" endPosition="24">
       <varInfo nodeId="1213104860593" varName="editedConcept" />
       <varInfo nodeId="1213104860599" varName="links" />

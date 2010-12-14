@@ -7,7 +7,7 @@
     <nodeInfo nodeId="4531786690998643525" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="18" startPosition="122" endLine="19" endPosition="52" />
     <nodeInfo nodeId="4531786690998643511" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="36" endLine="20" endPosition="5" />
     <scopeInfo nodeId="4531786690998643514" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="18" startPosition="122" endLine="19" endPosition="52" />
-    <scopeInfo nodeId="4531786690998643511" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="36" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="4531786690998643511" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="36" endLine="20" endPosition="5" />
     <scopeInfo nodeId="4531786690998643508" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="16" startPosition="102" endLine="20" endPosition="5" />
   </root>
 </debugInfo>

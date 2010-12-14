@@ -329,7 +329,7 @@
     <nodeInfo nodeId="226730285127012701" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="765" startPosition="110" endLine="766" endPosition="41" />
     <nodeInfo nodeId="226730285127012743" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="QueriesGenerated.java" startLine="742" startPosition="82" endLine="745" endPosition="13" />
     <nodeInfo nodeId="226730285127017408" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="QueriesGenerated.java" startLine="746" startPosition="173" endLine="749" endPosition="13" />
-    <nodeInfo nodeId="226730285127018095" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="QueriesGenerated.java" startLine="753" startPosition="80" endLine="757" endPosition="0" />
+    <nodeInfo nodeId="226730285127018095" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="QueriesGenerated.java" startLine="753" startPosition="80" endLine="757" endPosition="0" />
     <nodeInfo nodeId="226730285127012720" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="752" startPosition="164" endLine="757" endPosition="32" />
     <scopeInfo nodeId="226730285127012744" fileName="QueriesGenerated.java" startLine="743" startPosition="130" endLine="744" endPosition="31" />
     <scopeInfo nodeId="226730285127017409" fileName="QueriesGenerated.java" startLine="747" startPosition="34" endLine="748" endPosition="31" />
@@ -337,7 +337,7 @@
     <scopeInfo nodeId="226730285127012662" fileName="QueriesGenerated.java" startLine="764" startPosition="98" endLine="766" endPosition="41">
       <varInfo nodeId="226730285127399210" varName="abstractOperation" />
     </scopeInfo>
-    <scopeInfo nodeId="226730285127018095" fileName="QueriesGenerated.java" startLine="753" startPosition="80" endLine="757" endPosition="0" />
+    <scopeInfo nodeId="226730285127018095" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="QueriesGenerated.java" startLine="753" startPosition="80" endLine="757" endPosition="0" />
     <scopeInfo nodeId="226730285127012660" fileName="QueriesGenerated.java" startLine="741" startPosition="37" endLine="757" endPosition="32">
       <varInfo nodeId="226730285127399053" varName="list" />
       <varInfo nodeId="226730285127017444" varName="type" />

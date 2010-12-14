@@ -20,6 +20,7 @@
   <import index="n3wi" modelUID="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="6216065619544939788">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tableProposal" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="ohyq.2253133157536766818" resolveInfo="CellModel_HierarchycalTable" />
     </node>
   </roots>

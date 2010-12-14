@@ -465,10 +465,10 @@
     <nodeInfo nodeId="1176889028394" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="_EditorUtil.java" startLine="11" startPosition="81" endLine="12" endPosition="38" />
     <nodeInfo nodeId="1176889050760" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="_EditorUtil.java" startLine="13" startPosition="5" endLine="14" endPosition="16" />
     <nodeInfo nodeId="1176888947599" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="_EditorUtil.java" startLine="10" startPosition="60" endLine="13" endPosition="5" />
-    <nodeInfo nodeId="1176888881562" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="_EditorUtil.java" startLine="9" startPosition="26" endLine="16" endPosition="0" />
+    <nodeInfo nodeId="1176888881562" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="grayIfNotSelectable#(Ljetbrains/mps/smodel/SNode;)Ljava/awt/Color;" fileName="_EditorUtil.java" startLine="9" startPosition="26" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1176888947601" fileName="_EditorUtil.java" startLine="11" startPosition="81" endLine="12" endPosition="38" />
     <scopeInfo nodeId="1176888881564" fileName="_EditorUtil.java" startLine="10" startPosition="60" endLine="14" endPosition="16" />
-    <scopeInfo nodeId="1176888881562" fileName="_EditorUtil.java" startLine="9" startPosition="26" endLine="16" endPosition="0">
+    <scopeInfo nodeId="1176888881562" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="grayIfNotSelectable#(Ljetbrains/mps/smodel/SNode;)Ljava/awt/Color;" fileName="_EditorUtil.java" startLine="9" startPosition="26" endLine="16" endPosition="0">
       <varInfo nodeId="1176888932798" varName="cellModel" />
     </scopeInfo>
     <unitInfo nodeId="1176888877514" fileName="_EditorUtil.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._EditorUtil" />
@@ -488,7 +488,7 @@
     <scopeInfo nodeId="1178883849546" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="69" startPosition="35" endLine="72" endPosition="119">
       <varInfo nodeId="1178884039624" varName="constantCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1178883849542" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="68" startPosition="41" endLine="73" endPosition="7">
+    <scopeInfo nodeId="1178883849542" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="68" startPosition="41" endLine="73" endPosition="7">
       <varInfo nodeId="1178883849544" varName="word" />
     </scopeInfo>
     <scopeInfo nodeId="1178883422618" fileName="_SplitConctantCellIntoWordsKeyMap.java" startLine="63" startPosition="146" endLine="73" endPosition="7">
@@ -552,7 +552,7 @@
     <nodeInfo nodeId="1183710831061" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CellModel_Collection_Actions.java" startLine="38" startPosition="88" endLine="41" endPosition="9" />
     <nodeInfo nodeId="1183710697356" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CellModel_Collection_Actions.java" startLine="35" startPosition="75" endLine="46" endPosition="7" />
     <scopeInfo nodeId="1183710831064" fileName="CellModel_Collection_Actions.java" startLine="39" startPosition="61" endLine="40" endPosition="62" />
-    <scopeInfo nodeId="1183710831061" fileName="CellModel_Collection_Actions.java" startLine="38" startPosition="88" endLine="41" endPosition="9" />
+    <scopeInfo nodeId="1183710831061" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CellModel_Collection_Actions.java" startLine="38" startPosition="88" endLine="41" endPosition="9" />
     <scopeInfo nodeId="1240655864854" fileName="CellModel_Collection_Actions.java" startLine="42" startPosition="112" endLine="45" endPosition="15">
       <varInfo nodeId="1240656097709" varName="cell" />
     </scopeInfo>
@@ -735,7 +735,7 @@
     <scopeInfo nodeId="5915179142333055749" fileName="MatchingLabelStyleClassItem_Editor.java" startLine="152" startPosition="106" endLine="153" endPosition="62" />
   </root>
   <root nodeId="1239461406724">
-    <nodeInfo nodeId="1239461445589" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="SelectImageFileButton.java" startLine="24" startPosition="52" endLine="25" endPosition="23" />
+    <nodeInfo nodeId="1239461445589" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" fileName="SelectImageFileButton.java" startLine="24" startPosition="52" endLine="25" endPosition="23" />
     <nodeInfo nodeId="1239461479793" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SelectImageFileButton.java" startLine="27" startPosition="44" endLine="28" endPosition="23" />
     <nodeInfo nodeId="1239461511709" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SelectImageFileButton.java" startLine="28" startPosition="23" endLine="29" endPosition="70" />
     <nodeInfo nodeId="1239461530965" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SelectImageFileButton.java" startLine="29" startPosition="70" endLine="30" endPosition="52" />
@@ -753,16 +753,16 @@
     <nodeInfo nodeId="1239462012315" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SelectImageFileButton.java" startLine="42" startPosition="58" endLine="45" endPosition="11" />
     <nodeInfo nodeId="1239462314462" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SelectImageFileButton.java" startLine="46" startPosition="51" endLine="49" endPosition="11" />
     <nodeInfo nodeId="1239461697846" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SelectImageFileButton.java" startLine="32" startPosition="148" endLine="36" endPosition="6" />
-    <nodeInfo nodeId="1239462455349" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SelectImageFileButton.java" startLine="52" startPosition="73" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="1239462455349" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="SelectImageFileButton.java" startLine="52" startPosition="73" endLine="56" endPosition="0" />
     <nodeInfo nodeId="1239462455348" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SelectImageFileButton.java" startLine="51" startPosition="126" endLine="56" endPosition="13" />
     <nodeInfo nodeId="1239461962426" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SelectImageFileButton.java" startLine="39" startPosition="76" endLine="57" endPosition="9" />
-    <nodeInfo nodeId="1239461771014" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SelectImageFileButton.java" startLine="37" startPosition="48" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="1239461771014" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" fileName="SelectImageFileButton.java" startLine="37" startPosition="48" endLine="59" endPosition="0" />
     <nodeInfo nodeId="1239461738678" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SelectImageFileButton.java" startLine="36" startPosition="6" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="1239461406726" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="SelectImageFileButton.java" startLine="26" startPosition="0" endLine="60" endPosition="3" />
+    <nodeInfo nodeId="1239461406726" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectImageFileButton#(Ljetbrains/mps/smodel/SNode;)V" fileName="SelectImageFileButton.java" startLine="26" startPosition="0" endLine="60" endPosition="3" />
     <scopeInfo nodeId="1239462012316" fileName="SelectImageFileButton.java" startLine="43" startPosition="54" endLine="44" endPosition="103" />
     <scopeInfo nodeId="1239462314463" fileName="SelectImageFileButton.java" startLine="47" startPosition="31" endLine="48" endPosition="19" />
     <scopeInfo nodeId="1239462455350" fileName="SelectImageFileButton.java" startLine="53" startPosition="31" endLine="54" endPosition="98" />
-    <scopeInfo nodeId="1239462455349" fileName="SelectImageFileButton.java" startLine="52" startPosition="73" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1239462455349" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="SelectImageFileButton.java" startLine="52" startPosition="73" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1239461962427" fileName="SelectImageFileButton.java" startLine="40" startPosition="36" endLine="56" endPosition="13">
       <varInfo nodeId="1239462293319" varName="result" />
       <varInfo nodeId="1239461973061" varName="frame" />
@@ -773,7 +773,7 @@
     <scopeInfo nodeId="1239461771017" fileName="SelectImageFileButton.java" startLine="38" startPosition="50" endLine="57" endPosition="9">
       <varInfo nodeId="1239461871524" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1239461771014" fileName="SelectImageFileButton.java" startLine="37" startPosition="48" endLine="59" endPosition="0">
+    <scopeInfo nodeId="1239461771014" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" fileName="SelectImageFileButton.java" startLine="37" startPosition="48" endLine="59" endPosition="0">
       <varInfo nodeId="1239461785837" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1239461406729" fileName="SelectImageFileButton.java" startLine="27" startPosition="44" endLine="59" endPosition="7">
@@ -781,7 +781,7 @@
       <varInfo nodeId="1239461570088" varName="language" />
       <varInfo nodeId="1239461697847" varName="baseFile" />
     </scopeInfo>
-    <scopeInfo nodeId="1239461406726" fileName="SelectImageFileButton.java" startLine="26" startPosition="0" endLine="60" endPosition="3">
+    <scopeInfo nodeId="1239461406726" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectImageFileButton#(Ljetbrains/mps/smodel/SNode;)V" fileName="SelectImageFileButton.java" startLine="26" startPosition="0" endLine="60" endPosition="3">
       <varInfo nodeId="1239461471094" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1239462455349" fileName="SelectImageFileButton.java" startLine="52" startPosition="61" endLine="56" endPosition="11" unitName="jetbrains.mps.lang.editor.editor.SelectImageFileButton$2" />
