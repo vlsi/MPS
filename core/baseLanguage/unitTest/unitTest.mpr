@@ -10,7 +10,7 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" folder="" />
+      <solutionPath path="${project}/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/unitTest.mpl" />
