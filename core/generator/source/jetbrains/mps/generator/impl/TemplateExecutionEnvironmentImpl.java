@@ -151,6 +151,28 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return templateDeclarationInstance.apply(this, context);
   }
 
+  @Override
+  public Collection<SNode> weaveTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException {
+    TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
+    if(templateModel == null) {
+      generator.getLogger().error(templateNode.getNode(), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
+        GeneratorUtil.describeIfExists(context.getInput(), "input"),
+        GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
+        GeneratorUtil.describeIfExists(templateDeclaration.getNode(), "template declaration"));
+      return Collections.emptyList();
+    }
+
+    TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
+    if(templateDeclarationInstance == null || !(templateDeclarationInstance instanceof TemplateDeclarationWeavingAware)) {
+      generator.getLogger().error(templateNode.getNode(), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
+        GeneratorUtil.describeIfExists(context.getInput(), "input"),
+        GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
+        GeneratorUtil.describeIfExists(templateDeclaration.getNode(), "template declaration"));
+      return Collections.emptyList();
+    }
+
+    return ((TemplateDeclarationWeavingAware)templateDeclarationInstance).weave(this, context, outputContextNode);  }
+
 
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
     GeneratorMappings mappings = generator.getMappings();
