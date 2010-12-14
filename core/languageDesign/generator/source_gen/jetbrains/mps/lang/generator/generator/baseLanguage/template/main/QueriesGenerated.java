@@ -939,7 +939,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_99767819676504307(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
+    return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(SLinkOperations.getTarget(_context.getNode(), "sourceNodeQuery", true));
   }
 
   public static Object referenceMacro_GetReferent_6992377099006889725(final IOperationContext operationContext, final ReferenceMacroContext _context) {

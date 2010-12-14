@@ -16306,12 +16306,12 @@
                     <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="99767819676504307">
                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="99767819676504308">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="99767819676504309">
-                          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="99767819676504310">
+                          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2106021839376803537">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2md3.~TemplateFunctionMethodName%dsourceSubstituteMacro_SourceNodeQuery(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="sourceSubstituteMacro_SourceNodeQuery" />
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2md3.~TemplateFunctionMethodName" resolveInfo="TemplateFunctionMethodName" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2md3.~TemplateFunctionMethodName%dsourceSubstituteMacro_SourceNodesQuery(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="sourceSubstituteMacro_SourceNodesQuery" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="99767819676504311">
-                              <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="99767819676504312" />
-                              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="99767819676504313">
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2106021839376803538">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="2106021839376803539" />
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2106021839376803540">
                                 <link role="link" roleId="tp25.1138056516764" targetNodeId="tpf8.1168380395224" />
                               </node>
                             </node>
@@ -16621,7 +16621,7 @@
                               <property name="makeUnique" nameId="tp68.8835849473318867199" value="true" />
                               <node role="expression" roleId="tp68.1238251454130" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4155486055398088664">
                                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4155486055398088665">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4155486055398088666" />
                                 </node>
                                 <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="4155486055398088667">
