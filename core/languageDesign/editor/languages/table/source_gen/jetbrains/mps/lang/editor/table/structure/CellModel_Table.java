@@ -16,11 +16,11 @@ public class CellModel_Table extends EditorCellModel {
     super(node);
   }
 
-  public GetTableModel getTableModel() {
-    return (GetTableModel) this.getChild(GetTableModel.class, CellModel_Table.TABLE_MODEL);
+  public QueryFunction_TableModel getTableModel() {
+    return (QueryFunction_TableModel) this.getChild(QueryFunction_TableModel.class, CellModel_Table.TABLE_MODEL);
   }
 
-  public void setTableModel(GetTableModel node) {
+  public void setTableModel(QueryFunction_TableModel node) {
     super.setChild(CellModel_Table.TABLE_MODEL, node);
   }
 
