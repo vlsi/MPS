@@ -56,11 +56,11 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1216225645804(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.PLUGIN.is(_context.getOriginalInputModel()) || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor")).isEmpty();
+    return LanguageAspect.PLUGIN.is(_context.getOriginalInputModel()) || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor")).isNotEmpty();
   }
 
   public static boolean createRootRule_Condition_880980402160600933(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.PLUGIN.is(_context.getOriginalInputModel()) || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor")).isEmpty();
+    return LanguageAspect.PLUGIN.is(_context.getOriginalInputModel()) || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor")).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_1209910438762(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
