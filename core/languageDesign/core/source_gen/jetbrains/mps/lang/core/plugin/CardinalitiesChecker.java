@@ -8,8 +8,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -27,6 +28,9 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);
     for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
+      if (StringUtils.isEmpty(SPropertyOperations.getString(link, "role"))) {
+        continue;
+      }
       component.addDependency(link);
       if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
         if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
