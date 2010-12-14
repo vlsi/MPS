@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.*;
+import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -167,7 +167,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     myMetadata = dr.getMetadata();
 
     ModelLoadResult result = load(getLoadingState());
-    replaceModel(result.getModel());
+    replaceModel(result.getModel(), getLoadingState());
     updateLastChange();
   }
 
@@ -255,7 +255,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return FileSystem.getInstance().isPackaged(getModelFile());
   }
 
-  public void replaceModel(SModel newModel) {
+  //this method should be called only with a fully loaded model as parameter
+  public void replaceModel(@NotNull SModel newModel) {
+    replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
+  }
+
+  private void replaceModel(SModel newModel, ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
     if (newModel == mySModel) return;
     final SModel oldSModel = mySModel;
@@ -263,7 +268,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       oldSModel.setModelDescriptor(null);
     }
     mySModel = newModel;
-    setLoadingState(mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED);
+    setLoadingState(state);
 
     myStructureModificationLog = null;
     if (mySModel != null) {
