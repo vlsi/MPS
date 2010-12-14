@@ -15,10 +15,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.project.AbstractModule;
-import java.util.Collections;
 import java.util.Set;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -28,23 +25,6 @@ import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.stubs.StubReloadManager;
 import org.jetbrains.annotations.Nullable;
-import com.sun.jdi.Type;
-import com.sun.jdi.ClassNotLoadedException;
-import com.sun.jdi.PrimitiveType;
-import com.sun.jdi.BooleanType;
-import com.sun.jdi.ByteType;
-import com.sun.jdi.ShortType;
-import com.sun.jdi.LongType;
-import com.sun.jdi.IntegerType;
-import com.sun.jdi.DoubleType;
-import com.sun.jdi.FloatType;
-import com.sun.jdi.CharType;
-import com.sun.jdi.ArrayType;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
-import com.sun.jdi.Location;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import com.sun.jdi.AbsentInformationException;
-import com.sun.jdi.ObjectReference;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -56,25 +36,24 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import com.sun.jdi.StackFrame;
-import com.sun.jdi.LocalVariable;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private static final Logger LOG = Logger.getLogger(LowLevelEvaluationModel.class);
 
   private AbstractClassifiersScope myScope;
   private final Map<String, SNode> myUsedVars = MapSequence.fromMap(new HashMap<String, SNode>());
+  private final StackFrameContext myContext;
 
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
     super(project, session, module);
+
+    myContext = new StackFrameContext(myUiState);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -85,8 +64,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     });
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        IModule locationModule = LowLevelEvaluationModel.this.getLocationModule();
-        IClassPathItem classPath = AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
+        IClassPathItem classPath = myContext.getClassPathItem();
         final Set<StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<StubPath>());
         classPath.accept(new EachClassPathItemVisitor() {
           @Override
@@ -110,67 +88,6 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         StubReloadManager.getInstance().loadImmediately(myAuxModule, pathsToAdd);
       }
     });
-  }
-
-  @Nullable
-  private SNode getMpsTypeFromJdiType(Type type) throws ClassNotLoadedException {
-    // TODO generics 
-    if (type instanceof PrimitiveType) {
-      if (type instanceof BooleanType) {
-        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0a0b0a().createNode();
-      }
-      if (type instanceof ByteType) {
-        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0b0b0a().createNode();
-      }
-      if (type instanceof ShortType) {
-        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0c0b0a().createNode();
-      }
-      if (type instanceof LongType) {
-        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0d0b0a().createNode();
-      }
-      if (type instanceof IntegerType) {
-        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0e0b0a().createNode();
-      }
-      if (type instanceof DoubleType) {
-        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0f0b0a().createNode();
-      }
-      if (type instanceof FloatType) {
-        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0g0b0a().createNode();
-      }
-      if (type instanceof CharType) {
-        return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0h0b0a().createNode();
-      }
-    } else if (type instanceof ArrayType) {
-      return new LowLevelEvaluationModel.QuotationClass_qkk2f2_a0a0a1a0().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType()));
-    }
-    return createClassifierType(type.name());
-  }
-
-  public SNode createStaticContextType() {
-    JavaStackFrame frame = myUiState.getStackFrame();
-    if (frame != null) {
-      Location location = frame.getLocation().getLocation();
-      try {
-        final String unitType = TraceInfoUtil.getUnitName(location.declaringType().name(), location.sourceName(), location.lineNumber());
-        if (unitType == null) {
-          return null;
-        }
-        return this.createClassifierType(unitType);
-      } catch (AbsentInformationException e) {
-        LOG.error(e);
-      }
-    }
-    return null;
-  }
-
-  @Nullable
-  public SNode createThisClassifierType() {
-    ObjectReference thisObject = myUiState.getThisObject();
-    if (thisObject == null) {
-      return null;
-    }
-
-    return createStaticContextType();
   }
 
   @Nullable
@@ -233,7 +150,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private void importStubForFqName(String fqName) {
     SModelReference stubReference = StubHelper.uidForPackageInStubs(fqName);
     if (stubReference == null) {
-      LOG.error("Stub for " + fqName + " was not found.");
+      LowLevelEvaluationModel.LOG.error("Stub for " + fqName + " was not found.");
       return;
     }
     myAuxModel.getSModel().addModelImport(stubReference, false);
@@ -257,58 +174,48 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   private void fillVariables() {
-    JavaStackFrame javaStackFrame = myUiState.getStackFrame();
-    if (javaStackFrame != null) {
-      StackFrame stackFrame = javaStackFrame.getStackFrame();
-      if (stackFrame != null) {
-        try {
-
-          final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
-          // create vars 
-          List<LocalVariable> variables = stackFrame.visibleVariables();
-          for (LocalVariable variable : ListSequence.fromList(variables)) {
-            String name = variable.name();
-            try {
-              SNode lowLevelVarNode;
-              if (!(MapSequence.fromMap(myUsedVars).containsKey(name))) {
-                lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
-                SPropertyOperations.set(lowLevelVarNode, "name", name);
-                ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true)).addElement(lowLevelVarNode);
-                MapSequence.fromMap(myUsedVars).put(name, lowLevelVarNode);
-              } else {
-                lowLevelVarNode = MapSequence.fromMap(myUsedVars).get(name);
-              }
-              SNode deducedType = getMpsTypeFromJdiType(((LocalVariable) variable).type());
-              if (deducedType == null) {
-                LOG.warning("Could not deduce type for variable " + name);
-                continue;
-              }
-              SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);
-              SetSequence.fromSet(foundVars).addElement(lowLevelVarNode);
-            } catch (ClassNotLoadedException cne) {
-              LOG.warning("Exception when creating variable " + name, cne);
-            }
-
-          }
-
-          // now mark vars which are currently out of scope 
-          Sequence.fromIterable(MapSequence.fromMap(myUsedVars).values()).visitAll(new IVisitor<SNode>() {
-            public void visit(SNode it) {
-              SPropertyOperations.set(it, "isOutOfScope", "" + (!(SetSequence.fromSet(foundVars).contains(it))));
-            }
-          });
-
-          // create static context type 
-          SLinkOperations.setTarget(myEvaluator, "staticContextType", createStaticContextType(), true);
-          // create this 
-          SLinkOperations.setTarget(myEvaluator, "thisType", createThisClassifierType(), true);
-        } catch (InvalidStackFrameException e) {
-          LOG.warning("InvalidStackFrameException", e);
-        } catch (AbsentInformationException e) {
-          LOG.error(e);
+    SNode evaluatorConcept = myEvaluator;
+    try {
+      _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType = new _FunctionTypes._return_P1_E0<SNode, String>() {
+        public SNode invoke(String name) {
+          return createClassifierType(name);
         }
-
+      };
+      Map<String, SNode> contextVariables = myContext.getVariables(createClassifierType);
+      final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
+      for (String variable : SetSequence.fromSet(MapSequence.fromMap(contextVariables).keySet())) {
+        String name = variable;
+        SNode lowLevelVarNode;
+        if (!(MapSequence.fromMap(myUsedVars).containsKey(name))) {
+          lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
+          SPropertyOperations.set(lowLevelVarNode, "name", name);
+          ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
+          MapSequence.fromMap(myUsedVars).put(name, lowLevelVarNode);
+        } else {
+          lowLevelVarNode = MapSequence.fromMap(myUsedVars).get(name);
+        }
+        SNode deducedType = MapSequence.fromMap(contextVariables).get(name);
+        if (deducedType == null) {
+          LowLevelEvaluationModel.LOG.error("Could not deduce type for variable " + name);
+          continue;
+        }
+        SLinkOperations.setTarget(lowLevelVarNode, "type", deducedType, true);
+        SetSequence.fromSet(foundVars).addElement(lowLevelVarNode);
       }
+
+      // now mark vars which are currently out of scope 
+      Sequence.fromIterable(MapSequence.fromMap(myUsedVars).values()).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SPropertyOperations.set(it, "isOutOfScope", "" + (!(SetSequence.fromSet(foundVars).contains(it))));
+        }
+      });
+
+      // create static context type 
+      SLinkOperations.setTarget(evaluatorConcept, "staticContextType", myContext.getStaticContextType(createClassifierType), true);
+      // create this 
+      SLinkOperations.setTarget(evaluatorConcept, "thisType", myContext.getThisClassifierType(createClassifierType), true);
+    } catch (InvalidStackFrameException e) {
+      LowLevelEvaluationModel.LOG.warning("InvalidStackFrameException", e);
     }
   }
 
@@ -321,172 +228,5 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       }
     });
     return model.value;
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0a0b0a {
-    public QuotationClass_qkk2f2_a0a0a0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0b0b0a {
-    public QuotationClass_qkk2f2_a0a0b0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0c0b0a {
-    public QuotationClass_qkk2f2_a0a0c0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0d0b0a {
-    public QuotationClass_qkk2f2_a0a0d0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0e0b0a {
-    public QuotationClass_qkk2f2_a0a0e0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0f0b0a {
-    public QuotationClass_qkk2f2_a0a0f0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0g0b0a {
-    public QuotationClass_qkk2f2_a0a0g0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0h0b0a {
-    public QuotationClass_qkk2f2_a0a0h0b0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_qkk2f2_a0a0a1a0 {
-    public QuotationClass_qkk2f2_a0a0a1a0() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = (SNode) parameter_5;
-          SNode quotedNode1_4;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_4 = quotedNode_2;
-          }
-          if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_4));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
   }
 }

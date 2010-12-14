@@ -79,7 +79,7 @@ public abstract class AbstractEvaluationModel {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         evaluatorConcept.value = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
-        SPropertyOperations.set(evaluatorConcept.value, "isRuntime", "" + IS_DEVELOPER_MODE);
+        SPropertyOperations.set(evaluatorConcept.value, "isRuntime", "" + AbstractEvaluationModel.IS_DEVELOPER_MODE);
       }
     });
     this.myEvaluator = evaluatorConcept.value;
@@ -100,7 +100,7 @@ public abstract class AbstractEvaluationModel {
           Location location = stackFrame.location();
           locationNode = TraceInfoUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
         } catch (Throwable t) {
-          LOG.error(t);
+          AbstractEvaluationModel.LOG.error(t);
         }
       }
     }
@@ -143,7 +143,7 @@ public abstract class AbstractEvaluationModel {
   }
 
   public boolean isDeveloperMode() {
-    return IS_DEVELOPER_MODE;
+    return AbstractEvaluationModel.IS_DEVELOPER_MODE;
   }
 
   public void updateState() {
@@ -162,7 +162,7 @@ public abstract class AbstractEvaluationModel {
       classpaths.add(ClassPathFactory.getInstance().createFromPath(path));
 
       Project project = myContext.getProject();
-      final String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
+      final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationModel.MyInMemoryJavaGenerationHandler(false, true, classpaths);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
