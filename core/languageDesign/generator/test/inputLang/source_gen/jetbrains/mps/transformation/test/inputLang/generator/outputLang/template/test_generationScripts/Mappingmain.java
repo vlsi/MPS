@@ -8,12 +8,12 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
-import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -40,6 +40,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
   private final Collection<TemplateCreateRootRule> createRules;
   private final Collection<TemplateRootMappingRule> rootRules;
+  private final Collection<TemplateMappingScript> preScripts;
+  private final Collection<TemplateMappingScript> postScripts;
   private final TemplateModel myModel;
 
   public Mappingmain(TemplateModel model) {
@@ -47,14 +49,16 @@ public class Mappingmain implements TemplateMappingConfiguration {
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1());
     createRules = TemplateUtil.<TemplateCreateRootRule>asCollection(new Mappingmain.CreateRootRule0());
     rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mappingmain.RootMappingRule0());
+    preScripts = TemplateUtil.<TemplateMappingScript>asCollection(new Scripttest_preMappingScript());
+    postScripts = TemplateUtil.<TemplateMappingScript>asCollection(new Scripttest_postMappingScript());
   }
 
   public String getName() {
-    return null;
+    return "main";
   }
 
   public TemplateModel getModel() {
-    return null;
+    return this.myModel;
   }
 
   public SNodePointer getMappingNode() {
@@ -82,11 +86,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public Collection<TemplateMappingScript> getPostScripts() {
-    return null;
+    return postScripts;
   }
 
   public Collection<TemplateMappingScript> getPreScripts() {
-    return null;
+    return preScripts;
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
