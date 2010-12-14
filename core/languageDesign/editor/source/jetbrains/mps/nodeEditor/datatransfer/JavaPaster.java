@@ -45,8 +45,8 @@ public class JavaPaster {
     for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
       if (trf != null && trf.isDataFlavorSupported(DataFlavor.stringFlavor)) {
         contents = trf;
-        break;
       }
+      break; // look up only the first one
     }
 
     if (contents == null) return null;
