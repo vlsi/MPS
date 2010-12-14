@@ -68,6 +68,11 @@
   <root id="6189378527250534337">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6189378527250534338">
       <property name="name" nameId="tpck.1169194664001" value="_context_class_" />
+      <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5234869524401074253">
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5234869524401074254" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5234869524401074255" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5234869524401074256" />
+      </node>
       <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="6189378527250534339">
         <property name="name" nameId="tpck.1169194664001" value="_cell_setup_method_basic_" />
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6189378527250534340">
@@ -293,6 +298,8 @@
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="squ6.6332812368705026200" resolveInfo="HierarchycalTableModelWithHeader" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="8401920295129595726" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="293523277269609045">
+                      <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="ohyq.4677325677876400523" resolveInfo="CellModel_Table" />
+                      <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="ohyq.4490468428501048483" />
                       <node role="referenceMacro$link_attribute$conceptDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269610527">
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269610528">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269610529">
@@ -329,6 +336,8 @@
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="293523277269645371">
+                      <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="ohyq.4677325677876400523" resolveInfo="CellModel_Table" />
+                      <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="ohyq.4490468428501048483" />
                       <node role="referenceMacro$link_attribute$conceptDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645372">
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269645373">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269645374">
@@ -365,6 +374,8 @@
                       </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="293523277269645390">
+                      <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="ohyq.4677325677876400523" resolveInfo="CellModel_Table" />
+                      <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="ohyq.4490468428501048483" />
                       <node role="referenceMacro$link_attribute$conceptDeclaration" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="293523277269645391">
                         <node role="referentFunction" roleId="tpf8.1167770376702" type="tpf8.ReferenceMacro_GetReferent" typeId="tpf8.1167770111131" id="293523277269645392">
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="293523277269645393">
