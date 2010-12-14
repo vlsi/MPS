@@ -15,31 +15,47 @@
  */
 package jetbrains.mps.newTypesystem.presentation.difference;
 
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JDialog;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Frame;
+import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class ShowTypeSystemTrace extends JDialog {
+  Checkbox myBlockDependencies;
+  Checkbox myTraceForNode;
+  TypeSystemTraceTree myTree;
 
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node) {
     super(frame);
     t.checkRoot(true);
     this.setLayout(new BorderLayout());
     this.getContentPane().setBackground(this.getBackground());
-    MPSTree tree = new TypeSystemTraceTree(operationContext, t, frame, node);
-    JScrollPane scrollPane = new JScrollPane(tree);
+    myTree = new TypeSystemTraceTree(operationContext, t, frame, node);
+    JScrollPane scrollPane = new JScrollPane(myTree);
     scrollPane.setBackground(this.getBackground());
+
     this.add(scrollPane, BorderLayout.CENTER);
-    tree.setBackground(getBackground());
-    tree.setForeground(new Color(0x07025D));
+    JPanel checkBoxes = new JPanel();
+    checkBoxes.setLayout(new FlowLayout());
+    this.add(checkBoxes, BorderLayout.SOUTH);
+
+    myBlockDependencies = new Checkbox("Block dependencies");
+    myBlockDependencies.setState(myTree.isShowDependencyOperations());
+    myTraceForNode = new Checkbox("Trace for node");
+    checkBoxes.add(myBlockDependencies);
+    checkBoxes.add(myTraceForNode);
+    CheckBoxListener listener = new CheckBoxListener();
+    myBlockDependencies.addItemListener(listener);
+    myTraceForNode.addItemListener(listener);
+
+    myTree.setBackground(getBackground());
+    myTree.setForeground(new Color(0x07025D));
     this.setSize(500, 600);
     this.setPreferredSize(new Dimension(500, 900));
     String title = "TypeSystem trace";
@@ -54,5 +70,21 @@ public class ShowTypeSystemTrace extends JDialog {
 
   public Color getBackground() {
     return Color.WHITE;
+  }
+
+  public class CheckBoxListener implements ItemListener {
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+      Object source = e.getItemSelectable();
+      boolean selected = ItemEvent.SELECTED == e.getStateChange();
+      if (source == myTraceForNode) {
+        myTree.setTraceForNode(selected);
+      } else {
+        myTree.setShowDependencyOperations(selected);
+      }
+      myTree.rebuildNow();
+      myTree.expandAll();
+    }
   }
 }

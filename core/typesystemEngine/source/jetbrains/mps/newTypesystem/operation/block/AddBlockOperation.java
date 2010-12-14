@@ -29,9 +29,8 @@ import java.awt.Color;
  * Time: 16:08
  * To change this template use File | Settings | File Templates.
  */
-public class AddBlockOperation extends AbstractOperation {
-  private Block myBlock;
-
+public class AddBlockOperation extends AbstractBlockOperation {
+  
   public AddBlockOperation(Block block) {
     myBlock = block;
     myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());

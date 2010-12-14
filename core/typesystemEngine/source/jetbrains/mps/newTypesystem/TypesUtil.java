@@ -49,6 +49,23 @@ public class TypesUtil {
     return node != null && RuntimeTypeVariable.concept.equals(node.getConceptFqName());
   }
 
+  public static boolean hasVariablesInside(SNode node) {
+    if (isVariable(node)) {
+      return true;
+    }
+    for (SNode child : node.getChildren()) {
+      if (hasVariablesInside(child)) {
+        return true;
+      }
+    }
+    for (SNode ref : node.getReferents()) {
+      if (hasVariablesInside(ref)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {
     if (left == right) {
       return true;

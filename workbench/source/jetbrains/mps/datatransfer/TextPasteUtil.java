@@ -26,8 +26,8 @@ public class TextPasteUtil {
     for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
       if (trf != null && trf.isDataFlavorSupported(DataFlavor.stringFlavor)) {
         content = trf;
-        break;
       }
+      break; // look up only the first one
     }
     return content != null;
   }
@@ -37,8 +37,8 @@ public class TextPasteUtil {
     for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
       if (trf != null && trf.isDataFlavorSupported(DataFlavor.stringFlavor)) {
         content = trf;
-        break;
       }
+      break; // look up only the first one
     }
     if (content == null) return null;
     return getStringFromTransferable(content);

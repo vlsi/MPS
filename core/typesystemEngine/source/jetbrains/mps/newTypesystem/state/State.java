@@ -121,7 +121,7 @@ public class State {
   }
 
   public void substitute(SNode oldVar, SNode type) {
-    for (ConditionKind conditionKind : myBlocksAndInputs.keySet()) {
+    for (ConditionKind conditionKind : new HashSet<ConditionKind>(myBlocksAndInputs.keySet())) {
       ManyToManyMap<SNode, Block> map = myBlocksAndInputs.get(conditionKind);
       Set<Block> blocks = map.getByFirst(oldVar);
       if (blocks == null) {
@@ -236,16 +236,6 @@ public class State {
     } finally {
       myOperationStack.pop();
     }
-  }
-
-  @Deprecated
-  public boolean isConcrete(SNode node) {
-    return !TypesUtil.isVariable(node);
-  }
-
-  @Deprecated
-  public boolean isConcrete(SNode node, boolean shallow) {
-    return !TypesUtil.isVariable(node);
   }
 
   public void addError(SNode node, IErrorReporter error, EquationInfo info) {

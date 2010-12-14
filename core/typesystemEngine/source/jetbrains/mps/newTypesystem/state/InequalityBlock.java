@@ -115,9 +115,9 @@ public class InequalityBlock extends RelationBlock {
   private String getPresentationInternal(SNode left, SNode right) {
     String sign = myRelationKind.getRelationSign();
     if (myLeftNode == myOutput) {
-      sign = ":" + sign;
+      sign = " : " + sign;
     } else if (myRightNode == myOutput) {
-      sign = sign + ":";
+      sign = sign + " : ";
     }
     return myRelationKind.getTitle() + " : " +
       left + sign + right;

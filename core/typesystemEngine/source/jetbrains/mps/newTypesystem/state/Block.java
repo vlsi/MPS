@@ -60,5 +60,7 @@ public abstract class Block {
 
   public abstract void performAction();
 
+  public abstract Set<SNode> getInputs();
+
   public abstract Set<Pair<SNode, ConditionKind>> getInitialInputs();
 }

@@ -267,8 +267,8 @@ public class CopyPasteUtil {
     for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
       if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
         content = trf;
-        break;
       }
+      break; // look up only the first one
     }
     if (content == null) {
       return PasteNodeData.emptyPasteNodeData(module, model);
@@ -354,6 +354,7 @@ public class CopyPasteUtil {
       if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
         return true;
       }
+      break; // look up only the first one
     }
     return false;
   }

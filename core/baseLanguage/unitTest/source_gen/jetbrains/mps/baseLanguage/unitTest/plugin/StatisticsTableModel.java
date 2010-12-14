@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.application.ApplicationManager;
 import javax.swing.event.TableModelEvent;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -112,9 +113,13 @@ public class StatisticsTableModel implements TableModel {
   }
 
   private void fireTableChanged() {
-    for (TableModelListener listener : ListSequence.fromList(this.myListeners)) {
-      listener.tableChanged(new TableModelEvent(this));
-    }
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        for (TableModelListener listener : ListSequence.fromList(StatisticsTableModel.this.myListeners)) {
+          listener.tableChanged(new TableModelEvent(StatisticsTableModel.this));
+        }
+      }
+    });
   }
 
   public int getRowCount() {
@@ -137,9 +142,7 @@ public class StatisticsTableModel implements TableModel {
         return it.matches(StatisticsTableModel.this.myFilterTestCase, StatisticsTableModel.this.myFilterTestMethod);
       }
     }).toListSequence();
-    for (TableModelListener listener : ListSequence.fromList(this.myListeners)) {
-      listener.tableChanged(new TableModelEvent(this));
-    }
+    fireTableChanged();
   }
 
   public int getColumnCount() {

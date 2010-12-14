@@ -73,7 +73,9 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
-    return myState.typeOf(node, null);
+    synchronized (TYPECHECKING_LOCK) {
+      return myState.typeOf(node, null);
+    }
   }
 
   /*
@@ -199,6 +201,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   @Override
   public void clear() {
     myState.clear(true);
+    myChecked = false;
   }
 
   @Override
