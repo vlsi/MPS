@@ -292,8 +292,7 @@ class IdeaFile implements IFileEx {
         String jarPath = myPath.substring(0, index);
         String entryPath = myPath.substring(index + 1);
 
-        assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in JAR entry path";
-        entryPath = entryPath.replace('\\', '/');
+        entryPath = entryPath.replaceAll("\\\\", "/");
         if (entryPath.startsWith("/")) {
           entryPath = entryPath.substring(1);
         }
