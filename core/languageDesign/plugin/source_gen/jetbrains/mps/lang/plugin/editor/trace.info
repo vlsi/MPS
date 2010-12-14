@@ -180,6 +180,7 @@
   <unitInfo fileName="KeyMapKeystroke_Editor.java" startLine="28" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_Editor" />
   <unitInfo fileName="ActionInstance_Editor.java" startLine="33" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionInstance_Editor" />
   <unitInfo fileName="ActionParameter_Hint.java" startLine="33" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint" />
+  <unitInfo fileName="GeneratePlugins_Editor.java" startLine="22" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GeneratePlugins_Editor" />
   <unitInfo fileName="ToolTab_Editor.java" startLine="19" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolTab_Editor" />
   <unitInfo fileName="UniversalRunConfigCreator_Editor.java" startLine="22" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UniversalRunConfigCreator_Editor" />
   <unitInfo fileName="RunNodeConfigCreator_Editor.java" startLine="25" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunNodeConfigCreator_Editor" />
@@ -191,9 +192,9 @@
   <unitInfo fileName="GenerationListenerDeclaration_Editor.java" startLine="24" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GenerationListenerDeclaration_Editor" />
   <unitInfo fileName="ApplicationPluginDeclaration_Editor.java" startLine="31" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ApplicationPluginDeclaration_Editor" />
   <unitInfo fileName="ProjectPluginDeclaration_Editor.java" startLine="31" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectPluginDeclaration_Editor" />
-  <unitInfo fileName="GeneratePlugins_Editor.java" startLine="22" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GeneratePlugins_Editor" />
   <unitInfo fileName="ParametrizedExecuteBlock_Editor.java" startLine="20" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParametrizedExecuteBlock_Editor" />
   <unitInfo fileName="DebugInfoInitializer_Editor.java" startLine="22" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebugInfoInitializer_Editor" />
+  <unitInfo fileName="IdeaInitializerDescriptor_Editor.java" startLine="18" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.IdeaInitializerDescriptor_Editor" />
   <unitInfo fileName="TabbedEditorDeclaration_Editor.java" startLine="34" startPosition="0" endLine="315" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.TabbedEditorDeclaration_Editor" />
   <unitInfo fileName="RunConfigurationDeclaration_Editor.java" startLine="29" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationDeclaration_Editor" />
   <unitInfo fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="32" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationTypeDeclaration_Editor" />

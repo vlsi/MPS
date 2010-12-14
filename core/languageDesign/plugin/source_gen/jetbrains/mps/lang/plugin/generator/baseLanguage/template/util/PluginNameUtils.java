@@ -27,10 +27,6 @@ public class PluginNameUtils {
     return getModuleShortName(module) + "_PluginInitializer";
   }
 
-  public static String getPluginInitializerXMLName(IModule module) {
-    return getModuleShortName(module);
-  }
-
   public static IModule getOriginalModule(TemplateQueryContext context) {
     IModule originalModule = ((TemplateQueryContext) context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     assert originalModule != null;

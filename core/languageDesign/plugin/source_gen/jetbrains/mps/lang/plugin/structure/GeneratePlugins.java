@@ -12,7 +12,6 @@ public class GeneratePlugins extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.GeneratePlugins";
   public static final String GENERATE_APPLICATION_PLUGIN = "generateApplicationPlugin";
   public static final String GENERATE_PROJECT_PLUGIN = "generateProjectPlugin";
-  public static final String GENERATE_IDEA_INITIALIZER = "generateIdeaInitializer";
 
   public GeneratePlugins(SNode node) {
     super(node);
@@ -32,14 +31,6 @@ public class GeneratePlugins extends BaseConcept {
 
   public void setGenerateProjectPlugin(boolean value) {
     this.setBooleanProperty(GeneratePlugins.GENERATE_PROJECT_PLUGIN, value);
-  }
-
-  public boolean getGenerateIdeaInitializer() {
-    return this.getBooleanProperty(GeneratePlugins.GENERATE_IDEA_INITIALIZER);
-  }
-
-  public void setGenerateIdeaInitializer(boolean value) {
-    this.setBooleanProperty(GeneratePlugins.GENERATE_IDEA_INITIALIZER, value);
   }
 
   public static GeneratePlugins newInstance(SModel sm, boolean init) {
