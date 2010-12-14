@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.lang.core.structure.Core_Language;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
 import jetbrains.mps.lang.refactoring.structure.Refactoring;
@@ -512,18 +513,18 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     //if not all the model is loaded, we try to look up the given concept only between root nodes first
     if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
       for (SNode root : structureModel.roots()) {
-        if (root.getAdapter() instanceof AbstractConceptDeclaration) {
-          myNameToConceptCache.putIfAbsent(root.getName(), (AbstractConceptDeclaration) root.getAdapter());
-        }
+        String name = getConceptName(root);
+        if (name == null) continue;
+        myNameToConceptCache.putIfAbsent(name, (AbstractConceptDeclaration) root.getAdapter());
       }
       if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
     }
 
     //if we haven't found a root concept, then try to find in any node in the model
     for (SNode node : structureModel.nodes()) {
-      if (node.getAdapter() instanceof AbstractConceptDeclaration) {
-        myNameToConceptCache.putIfAbsent(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
-      }
+      String name = getConceptName(node);
+      if (name == null) continue;
+      myNameToConceptCache.putIfAbsent(name, (AbstractConceptDeclaration) node.getAdapter());
     }
 
     AbstractConceptDeclaration result = myNameToConceptCache.get(conceptName);
@@ -532,6 +533,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     return result;
+  }
+
+  private String getConceptName(SNode node) {
+    if (!(node.getAdapter() instanceof AbstractConceptDeclaration)) return null;
+    return node.getPersistentProperty(INamedConcept.NAME);
   }
 
   public void save() {
