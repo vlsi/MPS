@@ -7,14 +7,20 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 /**
  * Evgeny Gryaznov, Jan 18, 2010
  */
 public class GenerationPlan {
+
+  private static boolean USE_GENERATED = false;
+
   private List<Generator> myGenerators;
   private List<TemplateModel> myTemplateModels;
   private Map<SNodePointer, TemplateMappingConfiguration> myMappingsMap;
@@ -56,9 +62,18 @@ public class GenerationPlan {
     for (Generator generator : myGenerators) {
       List<SModelDescriptor> list = generator.getOwnTemplateModels();
       for (SModelDescriptor descriptor : list) {
-        SModel model = descriptor.getSModel();
-        if (model != null) {
-          myTemplateModels.add(new TemplateModelInterpreted(model));
+        TemplateModel templateModel = null;
+        if(USE_GENERATED) {
+          templateModel = getGeneratedTemplateModel(descriptor);
+        }
+        if(templateModel == null) {
+          SModel model = descriptor.getSModel();
+          if (model != null) {
+            templateModel = new TemplateModelInterpreted(model);
+          }
+        }
+        if(templateModel != null) {
+          myTemplateModels.add(templateModel);
         }
       }
     }
@@ -68,6 +83,26 @@ public class GenerationPlan {
         myMappingsMap.put(mnode, templateMappingConfiguration);
       }
     }
+  }
+
+  private TemplateModel getGeneratedTemplateModel(SModelDescriptor descriptor) {
+    try {
+      Class aClass = QueryMethodGenerated.getQueriesGeneratedClassFor(descriptor, true);
+      try {
+        Method meth = aClass.getMethod("getDescriptor");
+        Object result = meth.invoke(null);
+        if(result instanceof TemplateModel) {
+          return (TemplateModel) result;
+        }
+      } catch (IllegalArgumentException e) {
+      } catch (IllegalAccessException e) {
+      } catch (InvocationTargetException e) {
+      } catch (NoSuchMethodException e) {
+      }
+    } catch (ClassNotFoundException e) {
+      /* ignore */
+    }
+    return null;
   }
 
   public int getStepCount() {
