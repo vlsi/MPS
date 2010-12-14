@@ -2,6 +2,7 @@
 <debugInfo>
   <unitInfo fileName="EditorInternalVCS_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.plugin.EditorInternalVCS_ActionGroup" />
   <unitInfo fileName="ChangesStrip_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup" />
+  <unitInfo fileName="Vcs_PluginInitializer.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" />
   <unitInfo fileName="AnnotateGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.plugin.AnnotateGroup_ActionGroup" />
   <unitInfo fileName="InstallCustomMergeDriverGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup" />
   <unitInfo fileName="VCSModelActions_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup" />
@@ -9,7 +10,7 @@
   <unitInfo fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup" />
   <unitInfo fileName="main_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.vcs.plugin.main_CustomApplicationPlugin" />
   <unitInfo fileName="VCS_ActionGroup.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VCS_ActionGroup" />
-  <unitInfo fileName="Vcs_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
+  <unitInfo fileName="Vcs_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
   <unitInfo fileName="DumpChangesManager_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.vcs.plugin.DumpChangesManager_Action" />
   <unitInfo fileName="GoToPreviousChange_Action.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToPreviousChange_Action" />
   <unitInfo fileName="GoToNextChange_Action.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToNextChange_Action" />
@@ -310,7 +311,7 @@
     <nodeInfo nodeId="7545884443035907127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VcsActionsHelper.java" startLine="165" startPosition="93" endLine="166" endPosition="95" />
     <nodeInfo nodeId="7545884443035907150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VcsActionsHelper.java" startLine="171" startPosition="57" endLine="172" endPosition="56" />
     <nodeInfo nodeId="7545884443035907162" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsActionsHelper#()V" fileName="VcsActionsHelper.java" startLine="42" startPosition="0" endLine="44" endPosition="3" />
-    <nodeInfo nodeId="7590932940322140496" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsActionsHelper.java" startLine="60" startPosition="30" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="7590932940322140496" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="VcsActionsHelper.java" startLine="60" startPosition="30" endLine="63" endPosition="7" />
     <nodeInfo nodeId="7545884443035906991" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="VcsActionsHelper.java" startLine="54" startPosition="59" endLine="58" endPosition="0" />
     <nodeInfo nodeId="7545884443035907042" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="VcsActionsHelper.java" startLine="71" startPosition="59" endLine="75" endPosition="0" />
     <nodeInfo nodeId="7545884443035907078" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsActionsHelper.java" startLine="105" startPosition="27" endLine="109" endPosition="23" />
@@ -554,7 +555,7 @@
     <nodeInfo nodeId="2890452262040415915" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="270" startPosition="17" endLine="271" endPosition="18" />
     <nodeInfo nodeId="5407760271366641038" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="272" startPosition="29" endLine="273" endPosition="19" />
     <nodeInfo nodeId="8461255328188996336" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="117" startPosition="33" endLine="120" endPosition="11" />
-    <nodeInfo nodeId="8461255328188996324" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="127" startPosition="37" endLine="130" endPosition="15" />
+    <nodeInfo nodeId="8461255328188996324" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="127" startPosition="37" endLine="130" endPosition="15" />
     <nodeInfo nodeId="5407760271366640947" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="184" startPosition="66" endLine="187" endPosition="5" />
     <nodeInfo nodeId="2890452262040415932" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="258" startPosition="11" endLine="261" endPosition="11" />
     <nodeInfo nodeId="8076150362379150525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="56" startPosition="192" endLine="60" endPosition="0" />

@@ -83,6 +83,7 @@
     </node>
     <node type="tp4k.GeneratePlugins" typeId="tp4k.1216225441716" id="6763225944573363122">
       <property name="generateApplicationPlugin" nameId="tp4k.1216227663668" value="true" />
+      <property name="generateIdeaInitializer" nameId="tp4k.880980402160343974" value="true" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6763225944573505210">
       <property name="name" nameId="tpck.1169194664001" value="GoToVCS" />
