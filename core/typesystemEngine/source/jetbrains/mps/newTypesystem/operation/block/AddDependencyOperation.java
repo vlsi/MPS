@@ -28,9 +28,9 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Date: 07.12.10
  * Time: 16:08
  */
-public class AddDependencyOperation extends AbstractOperation {
+public class AddDependencyOperation extends AbstractBlockOperation {
   private SNode myVar;
-  private Block myBlock;
+
   private ConditionKind myConditionKind;
 
   public AddDependencyOperation(Block block, SNode input, ConditionKind conditionKind) {

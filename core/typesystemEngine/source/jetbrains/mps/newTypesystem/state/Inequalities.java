@@ -126,15 +126,17 @@ public class Inequalities {
         nodes.add(output);
       }
     }
-   // System.out.println(nodes);
+    System.out.println(inputsToOutputs);
+    System.out.println(nodes);
     if (nodes.isEmpty()) {
       return;
     }
     List<SNode> sortedNodes = sort(inputsToOutputs, nodes);
 
-   // System.out.println(sortedNodes);
+    System.out.println(sortedNodes);
     for (SNode node : sortedNodes) {
-      //todo if concrete continue
+      //todo shallow concrete
+      //todo switch input <--> output if input is deeply concrete?
      if (!TypesUtil.isVariable(node)) {
        continue;
      }

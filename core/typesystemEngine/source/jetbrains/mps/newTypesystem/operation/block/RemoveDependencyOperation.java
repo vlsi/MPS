@@ -29,9 +29,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Time: 16:09
  * To change this template use File | Settings | File Templates.
  */
-public class RemoveDependencyOperation extends AbstractOperation {
+public class RemoveDependencyOperation extends AbstractBlockOperation {
   private SNode myVar;
-  private Block myBlock;
   private ConditionKind myConditionKind;
 
   public RemoveDependencyOperation(Block block, SNode var, ConditionKind conditionKind) {

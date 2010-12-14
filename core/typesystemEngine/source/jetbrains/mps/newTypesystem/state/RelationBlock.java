@@ -65,4 +65,9 @@ public abstract class RelationBlock extends Block {
     return myRelationKind.getTitle() + " : " +
       myLeftNode + myRelationKind.getRelationSign() + myRightNode;
   }
+
+  @Override
+  public Set<SNode> getInputs() {
+    return CollectionUtil.set(myLeftNode, myRightNode);
+  }
 }

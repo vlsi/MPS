@@ -27,8 +27,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
  * Time: 16:08
  * To change this template use File | Settings | File Templates.
  */
-public class RemoveBlockOperation extends AbstractOperation {
-   private Block myBlock;
+public class RemoveBlockOperation extends AbstractBlockOperation {
 
   public RemoveBlockOperation(Block block) {
     myBlock = block;

@@ -57,6 +57,11 @@ public class WhenConcreteBlock extends Block {
   }
 
   @Override
+  public Set<SNode> getInputs() {
+    return CollectionUtil.set(myArgument);
+  }
+
+  @Override
   public String getPresentation() {
     return "when concrete (" + myConditionKind.getPresentation() + ") : " + myArgument;
   }
