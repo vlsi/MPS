@@ -29,8 +29,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -42,6 +41,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_Behavior;
 
 public class QueriesGenerated {
@@ -2252,7 +2252,15 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8371596541809530209(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SLinkOperations.getTarget(_context.getNode(), "query", true));
+    SNode typeNode = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SLinkOperations.getTarget(_context.getNode(), "query", true));
+    if (SNodeOperations.isInstanceOf(typeNode, "jetbrains.mps.baseLanguage.structure.Type")) {
+      SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.cast(typeNode, "jetbrains.mps.baseLanguage.structure.Type"));
+      return ((classifierType != null) ?
+        classifierType :
+        typeNode
+      );
+    }
+    return typeNode;
   }
 
   public static SNode sourceNodeQuery_5659786285834776071(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2276,7 +2284,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5659786285834812682(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "type", true);
+    SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "type", true));
+    return ((classifierType != null) ?
+      classifierType :
+      SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "type", true)
+    );
   }
 
   public static SNode sourceNodeQuery_9191117361655150401(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2298,7 +2310,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5577795813925496660(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(_context.getNode(), "type", true));
     return ((classifierType != null) ?
       classifierType :
       SLinkOperations.getTarget(_context.getNode(), "type", true)
@@ -2306,7 +2318,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5577795813925496757(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(_context.getNode(), "type", true));
     return ((classifierType != null) ?
       classifierType :
       SLinkOperations.getTarget(_context.getNode(), "type", true)
