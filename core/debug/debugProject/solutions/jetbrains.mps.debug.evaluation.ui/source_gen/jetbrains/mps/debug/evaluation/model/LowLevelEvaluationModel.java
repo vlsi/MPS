@@ -33,12 +33,14 @@ import jetbrains.mps.traceInfo.TraceInfoManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
@@ -147,6 +149,25 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       }
     });
     createVars();
+
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        // re-resolve references 
+        // todo only needed in watch 
+        for (SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(myEvaluator, "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", false, new String[]{}))) {
+          SReference sReference = ref.getReference(LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(SLinkOperations.findLinkDeclaration("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "variableDeclaration")));
+          if (sReference == null) {
+            continue;
+          }
+          for (SNode var : ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true))) {
+            if (SPropertyOperations.getString(var, "name").equals(sReference.getResolveInfo())) {
+              SLinkOperations.setTarget(ref, "baseVariableDeclaration", var, false);
+              break;
+            }
+          }
+        }
+      }
+    });
   }
 
   private void importStubForFqName(String fqName) {
@@ -225,11 +246,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     final Wrappers._T<LowLevelEvaluationModel> model = new Wrappers._T<LowLevelEvaluationModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        model.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, SimpleContext.fromEvaluationContext(myEvaluationContext, new _FunctionTypes._return_P1_E0<SNode, String>() {
-          public SNode invoke(String name) {
-            return createClassifierType(name);
-          }
-        }));
+        model.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule);
         copyInto(model.value);
       }
     });
