@@ -13,6 +13,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.AbstractModule;
 import java.util.Collections;
@@ -47,8 +48,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class StackFrameContext extends EvaluationContext {
   private static Logger LOG = Logger.getLogger(StackFrameContext.class);
 
-  protected JavaUiState myUiState;
-
   public StackFrameContext(JavaUiState uiState) {
     myUiState = uiState;
   }
@@ -62,7 +61,7 @@ public class StackFrameContext extends EvaluationContext {
   }
 
   @Nullable
-  private final SNode getLocationNode() {
+  public SNode getLocationNode() {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     SNode locationNode = null;
     if (javaStackFrame != null) {
@@ -79,6 +78,7 @@ public class StackFrameContext extends EvaluationContext {
     return locationNode;
   }
 
+  @NotNull
   public IClassPathItem getClassPathItem() {
     IModule locationModule = getLocationModule();
     return AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
@@ -92,6 +92,7 @@ public class StackFrameContext extends EvaluationContext {
     myUiState = uiState;
   }
 
+  @NotNull
   public Map<String, SNode> getVariables(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
     Map<String, SNode> result = MapSequence.fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
 

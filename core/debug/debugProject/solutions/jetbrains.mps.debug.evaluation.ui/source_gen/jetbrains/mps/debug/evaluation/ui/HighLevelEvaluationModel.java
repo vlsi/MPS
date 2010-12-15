@@ -20,7 +20,7 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
   private SNode myNodeToShow;
 
   public HighLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
-    super(project, session, module);
+    super(project, session, module, new StackFrameContext(session.getUiState()));
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -28,7 +28,7 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
         myNodeToShow = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
         SLinkOperations.setNewChild(myNodeToShow, AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
 
-        SNode locationNode = getLocationNode();
+        SNode locationNode = myEvaluationContext.getLocationNode();
         SNode locationRoot = getLocationRoot();
         HighLevelEvaluationModel.this.myLocationRootCopy = SNodeOperations.copyNode(locationRoot);
         SNode locationNodeCopy = HighLevelEvaluationModel.this.findNodesCopy(locationRoot, HighLevelEvaluationModel.this.myLocationRootCopy, locationNode);
@@ -40,7 +40,7 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
 
   @Nullable
   private SNode getLocationRoot() {
-    SNode locationNode = getLocationNode();
+    SNode locationNode = myEvaluationContext.getLocationNode();
     if (locationNode != null) {
       return SNodeOperations.getAncestor(locationNode, null, false, true);
     }

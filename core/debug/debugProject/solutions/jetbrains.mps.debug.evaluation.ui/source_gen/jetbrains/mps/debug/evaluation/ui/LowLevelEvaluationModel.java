@@ -48,12 +48,9 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   private AbstractClassifiersScope myScope;
   private final Map<String, SNode> myUsedVars = MapSequence.fromMap(new HashMap<String, SNode>());
-  private final StackFrameContext myContext;
 
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
-    super(project, session, module);
-
-    myContext = new StackFrameContext(myUiState);
+    super(project, session, module, new StackFrameContext(session.getUiState()));
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -64,7 +61,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     });
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        IClassPathItem classPath = myContext.getClassPathItem();
+        IClassPathItem classPath = myEvaluationContext.getClassPathItem();
         final Set<StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<StubPath>());
         classPath.accept(new EachClassPathItemVisitor() {
           @Override
@@ -181,7 +178,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           return createClassifierType(name);
         }
       };
-      Map<String, SNode> contextVariables = myContext.getVariables(createClassifierType);
+      Map<String, SNode> contextVariables = myEvaluationContext.getVariables(createClassifierType);
       final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
       for (String variable : SetSequence.fromSet(MapSequence.fromMap(contextVariables).keySet())) {
         String name = variable;
@@ -211,9 +208,9 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       });
 
       // create static context type 
-      SLinkOperations.setTarget(evaluatorConcept, "staticContextType", myContext.getStaticContextType(createClassifierType), true);
+      SLinkOperations.setTarget(evaluatorConcept, "staticContextType", myEvaluationContext.getStaticContextType(createClassifierType), true);
       // create this 
-      SLinkOperations.setTarget(evaluatorConcept, "thisType", myContext.getThisClassifierType(createClassifierType), true);
+      SLinkOperations.setTarget(evaluatorConcept, "thisType", myEvaluationContext.getThisClassifierType(createClassifierType), true);
     } catch (InvalidStackFrameException e) {
       LowLevelEvaluationModel.LOG.warning("InvalidStackFrameException", e);
     }

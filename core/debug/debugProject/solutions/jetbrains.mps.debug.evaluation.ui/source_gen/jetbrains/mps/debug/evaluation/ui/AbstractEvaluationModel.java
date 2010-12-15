@@ -24,12 +24,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
-import com.sun.jdi.StackFrame;
-import com.sun.jdi.Location;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import java.util.Set;
@@ -67,12 +63,14 @@ public abstract class AbstractEvaluationModel {
   private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"));
   protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
+  protected final EvaluationContext myEvaluationContext;
 
-  public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule) {
+  public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule, EvaluationContext context) {
     myUiState = session.getUiState();
     myDebugSession = session;
-    myContext = ModuleContext.create(getLocationNode(), project);
+    myContext = ModuleContext.create(context.getLocationNode(), project);
     myAuxModule = auxModule;
+    myEvaluationContext = context;
 
     // creating evaluator node 
     final Wrappers._T<SNode> evaluatorConcept = new Wrappers._T<SNode>();
@@ -86,25 +84,7 @@ public abstract class AbstractEvaluationModel {
   }
 
   protected SModel getLocationModel() {
-    return SNodeOperations.getModel(getLocationNode());
-  }
-
-  @Nullable
-  protected final SNode getLocationNode() {
-    JavaStackFrame javaStackFrame = myUiState.getStackFrame();
-    SNode locationNode = null;
-    if (javaStackFrame != null) {
-      StackFrame stackFrame = javaStackFrame.getStackFrame();
-      if (stackFrame != null) {
-        try {
-          Location location = stackFrame.location();
-          locationNode = TraceInfoUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
-        } catch (Throwable t) {
-          AbstractEvaluationModel.LOG.error(t);
-        }
-      }
-    }
-    return locationNode;
+    return SNodeOperations.getModel(myEvaluationContext.getLocationNode());
   }
 
   public JavaUiState getUiState() {
@@ -148,6 +128,7 @@ public abstract class AbstractEvaluationModel {
 
   public void updateState() {
     myUiState = myDebugSession.getUiState();
+    myEvaluationContext.setUiState(myUiState);
   }
 
   @Nullable
