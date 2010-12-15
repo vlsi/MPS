@@ -15,17 +15,21 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.text.TextRenderUtil;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.NodeRangeSelection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.nodeEditor.text.TextRenderUtil;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -43,6 +47,12 @@ public class CellAction_CopyNode extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
+    _3<List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
+    if (tuple == null) return;
+    CopyPasteUtil.copyNodesAndTextToClipboard(tuple._0(), tuple._1(), tuple._2());
+  }
+
+  protected _3<List<SNode>, Map<SNode, Set<SNode>>, String> extractSelection (EditorContext context) {
     List<SNode> nodeList = new LinkedList<SNode>();
     EditorComponent editorComponent = context.getNodeEditorComponent();
     TextBuilder textBuilder = TextRenderUtil.getTextBuilderForSelectedCellsOfEditor(editorComponent);
@@ -65,7 +75,7 @@ public class CellAction_CopyNode extends EditorCellAction {
       }
     }
     if (nodeList.size() == 0) {
-      return;
+      return null;
     }
     List<SNode> copyNodeList = new ArrayList<SNode>();
     Map<SNode, Set<SNode>> nodesAndAttributes = new HashMap<SNode, Set<SNode>>();
@@ -101,7 +111,6 @@ public class CellAction_CopyNode extends EditorCellAction {
         copyNodeList.add(node);
       }
     }
-
-    CopyPasteUtil.copyNodesAndTextToClipboard(copyNodeList, nodesAndAttributes, textBuilder.getText());
+    return new MultiTuple._3<List<SNode>, Map<SNode, Set<SNode>>, String> (copyNodeList, nodesAndAttributes, textBuilder.getText()); 
   }
 }
