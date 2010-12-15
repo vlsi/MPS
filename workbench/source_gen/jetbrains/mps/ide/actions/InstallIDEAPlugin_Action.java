@@ -22,6 +22,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 
@@ -140,8 +141,11 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     descriptor.setTitle("Select IntelliJ IDEA configuration folder");
     descriptor.setRoot(ideaConfigRoot);
 
+    String oldShowHiddenValue = PropertiesComponent.getInstance().getValue("FileChooser.showHiddens");
+    PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", Boolean.TRUE.toString());
     FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, InstallIDEAPlugin_Action.this.frame);
     VirtualFile[] files = dialog.choose(ideaConfigRoot, null);
+    PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", oldShowHiddenValue);
     assert files.length <= 1;
     return (files.length == 0 ?
       null :

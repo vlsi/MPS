@@ -2272,6 +2272,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.InstallIDEAPlugin_Action" file="InstallIDEAPlugin_Action.java">
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -2280,9 +2281,9 @@
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2296,6 +2297,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup" file="JUnitTestCaseActions_ActionGroup.java">
