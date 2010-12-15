@@ -137,6 +137,8 @@ public abstract class AbstractModule implements IModule {
 
   public void addUsedDevkit(ModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor.getUsedDevkits().contains(devkitRef)) return;
+
     descriptor.getUsedDevkits().add(devkitRef);
     setModuleDescriptor(descriptor, true);
     save();
