@@ -28,7 +28,6 @@
     <orderEntry type="module" module-name="collections" exported="" />
     <orderEntry type="module" module-name="pattern" exported="" />
     <orderEntry type="module" module-name="quotation" exported="" />
-    <orderEntry type="module" module-name="annotations" exported="" />
     <orderEntry type="module" module-name="workbench" exported="" />
     <orderEntry type="module" module-name="kernel" exported="" />
     <orderEntry type="module" module-name="plugin" exported="" />
