@@ -5,14 +5,13 @@ package jetbrains.mps.debug.evaluation.ui;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import javax.swing.JPanel;
+import jetbrains.mps.debug.runtime.SessionStopDisposer;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import java.awt.Dimension;
 import jetbrains.mps.debug.runtime.DebugSession;
 import java.awt.BorderLayout;
-import jetbrains.mps.debug.api.SessionChangeAdapter;
-import jetbrains.mps.debug.api.AbstractDebugSession;
 import com.intellij.openapi.application.ApplicationManager;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -22,6 +21,7 @@ public class EvaluationDialog extends BaseDialog {
   private final EvaluationProvider myProvider;
   private final EvaluationPanel myEvaluationPanel;
   private final JPanel myMainPanel;
+  private final SessionStopDisposer mySessionStopDisposer;
 
   public EvaluationDialog(final IOperationContext context, @NotNull EvaluationProvider provider, AbstractEvaluationModel evalModel) {
     super(context.getMainFrame(), "Evaluate");
@@ -38,22 +38,20 @@ public class EvaluationDialog extends BaseDialog {
     });
     myMainPanel = new JPanel(new BorderLayout());
     myMainPanel.add(myEvaluationPanel, BorderLayout.CENTER);
-    debugSession.addChangeListener(new SessionChangeAdapter() {
-      public void resumed(final AbstractDebugSession session) {
-        if (debugSession == session && session.isStopped()) {
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() {
-              dispose();
-            }
-          });
-        }
-      }
-    });
 
+    mySessionStopDisposer = new SessionStopDisposer(debugSession) {
+      public void doDispose() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            dispose();
+          }
+        });
+      }
+    };
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosed(WindowEvent event) {
-        myEvaluationPanel.dispose();
+        dispose();
       }
     });
   }
@@ -65,6 +63,7 @@ public class EvaluationDialog extends BaseDialog {
   @BaseDialog.Button(position = 1, name = "Watch", mnemonic = 'W', defaultButton = false)
   public void buttonWatch() {
     myProvider.watch(myEvaluationPanel.getEvaluationModel());
+    dispose();
   }
 
   @BaseDialog.Button(position = 0, name = "Evaluate", mnemonic = 'E', defaultButton = true)
@@ -74,6 +73,13 @@ public class EvaluationDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 2, name = "Close", mnemonic = 'C', defaultButton = false)
   public void buttonCancel() {
-    this.dispose();
+    dispose();
+  }
+
+  @Override
+  public void dispose() {
+    ApplicationManager.getApplication().assertIsDispatchThread();
+    super.dispose();
+    myEvaluationPanel.dispose();
   }
 }

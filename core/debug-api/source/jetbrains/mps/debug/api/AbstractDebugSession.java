@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -82,26 +83,32 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
     return myDebuggableFramesSelector;
   }
 
+  private List<SessionChangeListener> getListeners() {
+    List<SessionChangeListener> listeners = new ArrayList<SessionChangeListener>();
+    listeners.addAll(myListeners);
+    return listeners;
+  }
+
   protected void fireStateChanged() {
-    for (SessionChangeListener listener : myListeners) {
+    for (SessionChangeListener listener : getListeners()) {
       listener.stateChanged(this);
     }
   }
 
   protected void fireSessionPaused(AbstractDebugSession debugSession) {
-    for (SessionChangeListener listener : myListeners) {
+    for (SessionChangeListener listener : getListeners()) {
       listener.paused(debugSession);
     }
   }
 
   protected void fireSessionResumed(AbstractDebugSession debugSession) {
-    for (SessionChangeListener listener : myListeners) {
+    for (SessionChangeListener listener : getListeners()) {
       listener.resumed(debugSession);
     }
   }
 
   protected void fireSessionMuted(AbstractDebugSession debugSession) {
-    for (SessionChangeListener listener : myListeners) {
+    for (SessionChangeListener listener : getListeners()) {
       listener.muted(debugSession);
     }
   }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.debug.evaluation;
 
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.model.*;

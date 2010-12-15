@@ -19,12 +19,11 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.impl.JBTabsImpl;
-import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.IWatchListener;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.debug.runtime.SessionStopDisposer;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -34,6 +33,7 @@ import java.util.List;
 public class WatchesPanel extends JPanel {
   private final List<EvaluationPanel> myPanels = new ArrayList<EvaluationPanel>();
   private final JBTabsImpl myTabsPane;
+  private final SessionStopDisposer mySessionStopDisposer;
 
   public WatchesPanel(final EvaluationProvider provider) {
     super(new BorderLayout());
@@ -53,8 +53,17 @@ public class WatchesPanel extends JPanel {
       }
     });
 
-    MySessionChangeAdapter listener = new MySessionChangeAdapter(debugSession);
-    debugSession.addChangeListener(listener);
+    mySessionStopDisposer = new SessionStopDisposer(debugSession) {
+      @Override
+      public void doDispose() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            WatchesPanel.this.dispose();
+          }
+        });
+      }
+    };
 
     add(myTabsPane, BorderLayout.CENTER);
   }
@@ -63,28 +72,6 @@ public class WatchesPanel extends JPanel {
     myTabsPane.removeAllTabs();
     for (EvaluationPanel panel : myPanels) {
       panel.dispose();
-    }
-  }
-
-  private class MySessionChangeAdapter extends SessionChangeAdapter {
-    private final DebugSession myDebugSession;
-
-    public MySessionChangeAdapter(DebugSession debugSession) {
-      myDebugSession = debugSession;
-    }
-
-    @Override
-    public void resumed(AbstractDebugSession s) {
-      if (s == myDebugSession && myDebugSession.isStopped()) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            //todo almost the same stuff in EvaluationPanel -- extract
-            myDebugSession.removeChangeListener(MySessionChangeAdapter.this);
-            dispose();
-          }
-        });
-      }
     }
   }
 }

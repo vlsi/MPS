@@ -10,11 +10,10 @@
     <classNode dependClassName="java.awt.event.WindowAdapter" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.SessionStopDisposer" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EvaluationPanel" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
     <classNode dependClassName="java.awt.Dimension" />

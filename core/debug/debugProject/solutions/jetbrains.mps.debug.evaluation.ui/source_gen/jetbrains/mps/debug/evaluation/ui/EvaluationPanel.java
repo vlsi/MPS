@@ -25,9 +25,9 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.KeyStroke;
 import javax.swing.JComponent;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.runtime.SuspendContext;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
@@ -138,6 +138,7 @@ public class EvaluationPanel extends JPanel {
   }
 
   public void dispose() {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     if (myIsDisposed) {
       return;
     }
