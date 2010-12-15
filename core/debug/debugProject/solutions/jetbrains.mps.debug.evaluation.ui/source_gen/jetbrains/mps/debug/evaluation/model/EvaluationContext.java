@@ -14,7 +14,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public abstract class EvaluationContext {
   protected JavaUiState myUiState;
 
-  public EvaluationContext() {
+  public EvaluationContext(JavaUiState state) {
+    myUiState = state;
   }
 
   @NotNull

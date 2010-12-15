@@ -49,7 +49,7 @@ public class StackFrameContext extends EvaluationContext {
   private static Logger LOG = Logger.getLogger(StackFrameContext.class);
 
   public StackFrameContext(JavaUiState uiState) {
-    myUiState = uiState;
+    super(uiState);
   }
 
   protected IModule getLocationModule() {

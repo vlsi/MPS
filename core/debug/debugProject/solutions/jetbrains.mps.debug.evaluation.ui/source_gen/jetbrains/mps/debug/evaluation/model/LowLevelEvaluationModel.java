@@ -51,7 +51,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private final Map<String, SNode> myUsedVars = MapSequence.fromMap(new HashMap<String, SNode>());
 
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
-    super(project, session, module, new StackFrameContext(session.getUiState()));
+    this(project, session, module, new StackFrameContext(session.getUiState()));
+  }
+
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context) {
+    super(project, session, module, context);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -221,7 +225,11 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     final Wrappers._T<LowLevelEvaluationModel> model = new Wrappers._T<LowLevelEvaluationModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        model.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule);
+        model.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, SimpleContext.fromEvaluationContext(myEvaluationContext, new _FunctionTypes._return_P1_E0<SNode, String>() {
+          public SNode invoke(String name) {
+            return createClassifierType(name);
+          }
+        }));
         copyInto(model.value);
       }
     });
