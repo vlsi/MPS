@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Mappingmain.java" startLine="234" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Mappingmain$CreateRootRule0" />
-  <unitInfo fileName="Scripttest_postMappingScript.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest_postMappingScript" />
-  <unitInfo fileName="Scripttest_preMappingScript.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest_preMappingScript" />
+  <unitInfo fileName="Scripttest_postMappingScript.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest_postMappingScript" />
+  <unitInfo fileName="Scripttest_preMappingScript.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest_preMappingScript" />
   <unitInfo fileName="TemplateOutputRoot_By_RootRule.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateOutputRoot_By_RootRule" />
   <unitInfo fileName="Mappingmain.java" startLine="201" startPosition="0" endLine="233" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Mappingmain$RootMappingRule0" />
   <unitInfo fileName="TemplateModelImpl.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateModelImpl" />
