@@ -5,4 +5,6 @@ package jetbrains.mps.lang.dataFlow.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class DataFlow_ProjectPlugin extends BaseProjectPlugin {
+  public DataFlow_ProjectPlugin() {
+  }
 }

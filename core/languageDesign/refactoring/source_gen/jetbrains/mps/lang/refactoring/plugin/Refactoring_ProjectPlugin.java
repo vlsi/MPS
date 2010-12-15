@@ -5,4 +5,6 @@ package jetbrains.mps.lang.refactoring.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Refactoring_ProjectPlugin extends BaseProjectPlugin {
+  public Refactoring_ProjectPlugin() {
+  }
 }

@@ -5,4 +5,6 @@ package jetbrains.mps.lang.script.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Script_ProjectPlugin extends BaseProjectPlugin {
+  public Script_ProjectPlugin() {
+  }
 }

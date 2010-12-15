@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Editor_ProjectPlugin.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" />
-  <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ApplicationPlugin" />
+  <unitInfo fileName="Editor_ProjectPlugin.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" />
+  <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ApplicationPlugin" />
   <unitInfo fileName="EditorActions_ActionGroup.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup" />
   <unitInfo fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" />
   <unitInfo fileName="ExtractComponent_Action.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.ExtractComponent_Action" />
   <unitInfo fileName="CopyThisDown_Action.java" startLine="20" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.CopyThisDown_Action" />
   <unitInfo fileName="DeleteLine_Action.java" startLine="29" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.DeleteLine_Action" />
   <root nodeId="1207225803603">
-    <nodeInfo nodeId="1217420648498" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="CopyThisDown_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="42" />
-    <nodeInfo nodeId="1207226167041" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="CopyThisDown_Action.java" startLine="24" startPosition="42" endLine="25" endPosition="33" />
+    <nodeInfo nodeId="1217420648498" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="editorComponent" fileName="CopyThisDown_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="42" />
+    <nodeInfo nodeId="1207226167041" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="inputNodes" fileName="CopyThisDown_Action.java" startLine="24" startPosition="42" endLine="25" endPosition="33" />
     <nodeInfo nodeId="3993568175834620213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CopyThisDown_Action.java" startLine="38" startPosition="52" endLine="39" endPosition="142" />
     <nodeInfo nodeId="1221393443095" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CopyThisDown_Action.java" startLine="87" startPosition="84" endLine="88" endPosition="94" />
     <nodeInfo nodeId="1221393443103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CopyThisDown_Action.java" startLine="89" startPosition="63" endLine="90" endPosition="63" />
@@ -41,7 +41,7 @@
     <scopeInfo nodeId="1221393443126" fileName="CopyThisDown_Action.java" startLine="93" startPosition="29" endLine="94" endPosition="19" />
     <scopeInfo nodeId="1221393877122" fileName="CopyThisDown_Action.java" startLine="111" startPosition="27" endLine="112" endPosition="17" />
     <scopeInfo nodeId="1221393998363" fileName="CopyThisDown_Action.java" startLine="114" startPosition="102" endLine="115" endPosition="77" />
-    <scopeInfo nodeId="1221393998360" fileName="CopyThisDown_Action.java" startLine="113" startPosition="9" endLine="116" endPosition="9" />
+    <scopeInfo nodeId="1221393998360" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CopyThisDown_Action.java" startLine="113" startPosition="9" endLine="116" endPosition="9" />
     <scopeInfo nodeId="1221393443132" fileName="CopyThisDown_Action.java" startLine="96" startPosition="80" endLine="101" endPosition="19">
       <varInfo nodeId="1221393443134" varName="copy" />
     </scopeInfo>
@@ -67,7 +67,7 @@
     <nodeInfo nodeId="98380422617954516" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorActions_ActionGroup.java" startLine="20" startPosition="130" endLine="21" endPosition="136" />
   </root>
   <root nodeId="1207844373881">
-    <nodeInfo nodeId="1215438685387" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="13" startPosition="0" endLine="14" endPosition="38" />
+    <nodeInfo nodeId="1215438685387" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAutoResolver" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="13" startPosition="0" endLine="14" endPosition="38" />
     <nodeInfo nodeId="1207844454228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="19" startPosition="42" endLine="20" endPosition="82" />
     <nodeInfo nodeId="1207844495367" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="20" startPosition="82" endLine="21" endPosition="83" />
     <nodeInfo nodeId="1207844535198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="22" startPosition="30" endLine="23" endPosition="87" />
@@ -85,8 +85,8 @@
     </scopeInfo>
   </root>
   <root nodeId="2969742747086834029">
-    <nodeInfo nodeId="2969742747086834033" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="DeleteLine_Action.java" startLine="32" startPosition="0" endLine="33" endPosition="42" />
-    <nodeInfo nodeId="2969742747086835691" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="DeleteLine_Action.java" startLine="33" startPosition="42" endLine="34" endPosition="33" />
+    <nodeInfo nodeId="2969742747086834033" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="editorComponent" fileName="DeleteLine_Action.java" startLine="32" startPosition="0" endLine="33" endPosition="42" />
+    <nodeInfo nodeId="2969742747086835691" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="currentCell" fileName="DeleteLine_Action.java" startLine="33" startPosition="42" endLine="34" endPosition="33" />
     <nodeInfo nodeId="3993568175834620211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DeleteLine_Action.java" startLine="47" startPosition="52" endLine="48" endPosition="66" />
     <nodeInfo nodeId="2969742747086839753" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DeleteLine_Action.java" startLine="86" startPosition="80" endLine="87" endPosition="102" />
     <nodeInfo nodeId="1647926994661834922" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DeleteLine_Action.java" startLine="87" startPosition="102" endLine="88" endPosition="116" />
@@ -142,15 +142,15 @@
     <scopeInfo nodeId="1647926994661861967" fileName="DeleteLine_Action.java" startLine="95" startPosition="78" endLine="98" endPosition="13" />
     <scopeInfo nodeId="2969742747086894742" fileName="DeleteLine_Action.java" startLine="129" startPosition="36" endLine="132" endPosition="18" />
     <scopeInfo nodeId="5243890846674987817" fileName="DeleteLine_Action.java" startLine="137" startPosition="48" endLine="140" endPosition="9" />
-    <scopeInfo nodeId="1647926994661861964" fileName="DeleteLine_Action.java" startLine="94" startPosition="11" endLine="99" endPosition="11" />
+    <scopeInfo nodeId="1647926994661861964" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DeleteLine_Action.java" startLine="94" startPosition="11" endLine="99" endPosition="11" />
     <scopeInfo nodeId="5243890846674987844" fileName="DeleteLine_Action.java" startLine="128" startPosition="59" endLine="133" endPosition="11" />
-    <scopeInfo nodeId="5243890846674987816" fileName="DeleteLine_Action.java" startLine="136" startPosition="7" endLine="141" endPosition="7">
+    <scopeInfo nodeId="5243890846674987816" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DeleteLine_Action.java" startLine="136" startPosition="7" endLine="141" endPosition="7">
       <varInfo nodeId="5243890846674987820" varName="nodeToDelete" />
     </scopeInfo>
     <scopeInfo nodeId="5243890846675096231" fileName="DeleteLine_Action.java" startLine="115" startPosition="99" endLine="121" endPosition="15">
       <varInfo nodeId="5243890846675096233" varName="sibling" />
     </scopeInfo>
-    <scopeInfo nodeId="5243890846675096230" fileName="DeleteLine_Action.java" startLine="114" startPosition="67" endLine="122" endPosition="13">
+    <scopeInfo nodeId="5243890846675096230" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DeleteLine_Action.java" startLine="114" startPosition="67" endLine="122" endPosition="13">
       <varInfo nodeId="5243890846675096248" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1647926994661861893" fileName="DeleteLine_Action.java" startLine="90" startPosition="67" endLine="99" endPosition="11">
@@ -172,9 +172,9 @@
     </scopeInfo>
   </root>
   <root nodeId="98380422617954338">
-    <nodeInfo nodeId="98380422617954491" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ExtractComponent_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="21" />
-    <nodeInfo nodeId="98380422617954498" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ExtractComponent_Action.java" startLine="20" startPosition="21" endLine="21" endPosition="38" />
-    <nodeInfo nodeId="3993568175834622690" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ExtractComponent_Action.java" startLine="21" startPosition="38" endLine="22" endPosition="42" />
+    <nodeInfo nodeId="98380422617954491" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" fileName="ExtractComponent_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="21" />
+    <nodeInfo nodeId="98380422617954498" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="editorContext" fileName="ExtractComponent_Action.java" startLine="20" startPosition="21" endLine="21" endPosition="38" />
+    <nodeInfo nodeId="3993568175834622690" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="editorComponent" fileName="ExtractComponent_Action.java" startLine="21" startPosition="38" endLine="22" endPosition="42" />
     <nodeInfo nodeId="3993568175834621563" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExtractComponent_Action.java" startLine="35" startPosition="52" endLine="36" endPosition="72" />
     <nodeInfo nodeId="98380422618935585" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtractComponent_Action.java" startLine="86" startPosition="9" endLine="87" endPosition="123" />
     <scopeInfo nodeId="3993568175834620251" fileName="ExtractComponent_Action.java" startLine="35" startPosition="52" endLine="36" endPosition="72" />
@@ -191,25 +191,25 @@
     <nodeInfo nodeId="98380422618935145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ExtractComponentUtil.java" startLine="33" startPosition="96" endLine="34" endPosition="124" />
     <nodeInfo nodeId="98380422618935151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtractComponentUtil.java" startLine="34" startPosition="124" endLine="35" endPosition="82" />
     <nodeInfo nodeId="98380422618935158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtractComponentUtil.java" startLine="35" startPosition="82" endLine="36" endPosition="60" />
-    <nodeInfo nodeId="98380422618925939" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ExtractComponentUtil.java" startLine="17" startPosition="35" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="98380422618925939" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractComponentUtil#()V" fileName="ExtractComponentUtil.java" startLine="17" startPosition="35" endLine="19" endPosition="3" />
     <nodeInfo nodeId="98380422618935095" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ExtractComponentUtil.java" startLine="23" startPosition="132" endLine="26" endPosition="5" />
-    <nodeInfo nodeId="98380422618935102" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ExtractComponentUtil.java" startLine="27" startPosition="67" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="98380422618935102" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ExtractComponentUtil.java" startLine="27" startPosition="67" endLine="38" endPosition="0" />
     <nodeInfo nodeId="98380422618935101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ExtractComponentUtil.java" startLine="26" startPosition="5" endLine="38" endPosition="7" />
-    <nodeInfo nodeId="98380422618935059" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ExtractComponentUtil.java" startLine="20" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="98380422618935059" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="extractComponent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" fileName="ExtractComponentUtil.java" startLine="20" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="98380422618925942" fileName="ExtractComponentUtil.java" startLine="18" startPosition="33" endLine="18" endPosition="33" />
     <scopeInfo nodeId="98380422618935096" fileName="ExtractComponentUtil.java" startLine="24" startPosition="32" endLine="25" endPosition="13" />
-    <scopeInfo nodeId="98380422618925939" fileName="ExtractComponentUtil.java" startLine="17" startPosition="35" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="98380422618925939" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtractComponentUtil#()V" fileName="ExtractComponentUtil.java" startLine="17" startPosition="35" endLine="19" endPosition="3" />
     <scopeInfo nodeId="98380422618935103" fileName="ExtractComponentUtil.java" startLine="28" startPosition="25" endLine="36" endPosition="60">
       <varInfo nodeId="98380422618935105" varName="model" />
       <varInfo nodeId="98380422618935113" varName="component" />
       <varInfo nodeId="98380422618935146" varName="toReplace" />
     </scopeInfo>
-    <scopeInfo nodeId="98380422618935102" fileName="ExtractComponentUtil.java" startLine="27" startPosition="67" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="98380422618935102" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ExtractComponentUtil.java" startLine="27" startPosition="67" endLine="38" endPosition="0" />
     <scopeInfo nodeId="98380422618935062" fileName="ExtractComponentUtil.java" startLine="21" startPosition="86" endLine="38" endPosition="7">
       <varInfo nodeId="98380422618935085" varName="componentName" />
       <varInfo nodeId="98380422618935075" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="98380422618935059" fileName="ExtractComponentUtil.java" startLine="20" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="98380422618935059" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="extractComponent#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" fileName="ExtractComponentUtil.java" startLine="20" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="98380422618935063" varName="node" />
       <varInfo nodeId="98380422618935065" varName="editorContext" />
     </scopeInfo>

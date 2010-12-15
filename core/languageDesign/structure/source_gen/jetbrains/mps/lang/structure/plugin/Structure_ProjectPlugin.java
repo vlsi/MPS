@@ -21,6 +21,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Structure_ProjectPlugin extends BaseProjectPlugin {
+  public Structure_ProjectPlugin() {
+  }
+
   public void initEditors(Project project) {
     MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
     opener.registerOpenHandler(new MPSEditorOpenHandler() {
