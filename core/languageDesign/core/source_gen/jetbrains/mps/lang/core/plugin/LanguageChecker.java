@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
@@ -59,7 +60,7 @@ public class LanguageChecker implements IEditorChecker {
   };
   private SModelListener myModelListener = new SModelAdapter() {
     public void beforeModelDisposed(SModel model) {
-      clearForModel(model.getModelDescriptor());
+      clearForModel(model.getSModelReference());
     }
   };
   private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
@@ -108,7 +109,7 @@ public class LanguageChecker implements IEditorChecker {
 
   private void modelDescriptorRemoved(SModelDescriptor modelDescriptor) {
     this.removeModelListener(modelDescriptor);
-    this.clearForModel(modelDescriptor);
+    this.clearForModel(modelDescriptor.getSModelReference());
   }
 
   private void removeModelListener(SModelDescriptor modelDescriptor) {
@@ -125,15 +126,15 @@ public class LanguageChecker implements IEditorChecker {
     }
   }
 
-  private void clearForModel(SModelDescriptor modelDescriptor) {
+  private void clearForModel(SModelReference modelReference) {
     for (SNode root : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myRootsToComponents).keySet())) {
-      if (SNodeOperations.getModel(root).getModelDescriptor() == modelDescriptor) {
+      if (SNodeOperations.getModel(root).getSModelReference().equals(modelReference)) {
         MapSequence.fromMap(myRootsToComponents).get(root).dispose();
         MapSequence.fromMap(myRootsToComponents).removeKey(root);
       }
     }
     for (EditorComponent component : SetSequence.fromSetWithValues(new HashSet<EditorComponent>(), myEditorComponents)) {
-      if (component.getEditedNode().getModel().getModelDescriptor() == modelDescriptor) {
+      if (component.getEditedNode().getModel().getSModelReference().equals(modelReference)) {
         component.removeDisposeListener(myDisposeListener);
         SetSequence.fromSet(myEditorComponents).removeElement(component);
       }
@@ -181,6 +182,12 @@ public class LanguageChecker implements IEditorChecker {
       LOG.error("containing root for node " + node + " is null");
       return result;
     }
+    SModelDescriptor descriptor = SNodeOperations.getModel(root).getModelDescriptor();
+    if (descriptor == null) {
+      // descriptor is null for a replaced model 
+      // after model is replaced but before it is disposed (this can happen asyncronously) 
+      return result;
+    }
     LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myRootsToComponents).get(root);
 
     if (errorsComponent == null) {
@@ -191,7 +198,6 @@ public class LanguageChecker implements IEditorChecker {
       SetSequence.fromSet(myEditorComponents).addElement(editorComponent);
       editorComponent.addDisposeListener(myDisposeListener);
     }
-    SModelDescriptor descriptor = SNodeOperations.getModel(root).getModelDescriptor();
     addModelListener(descriptor);
 
     if (!(wasCheckedOnce)) {

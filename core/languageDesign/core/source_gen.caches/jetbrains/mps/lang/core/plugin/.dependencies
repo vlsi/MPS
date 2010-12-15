@@ -166,6 +166,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.TypesEditorChecker" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.ConstraintsChecker" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
