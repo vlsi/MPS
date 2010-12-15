@@ -30,7 +30,7 @@ public class EvaluationDialog extends BaseDialog {
 
     myProvider = provider;
     final DebugSession debugSession = provider.getDebugSession();
-    myEvaluationPanel = new EvaluationPanel(context.getProject(), debugSession, evalModel);
+    myEvaluationPanel = new EvaluationPanel(context.getProject(), debugSession, evalModel, false);
     myEvaluationPanel.setErrorTextListener(new EvaluationPanel.IErrorTextListener() {
       public void updateErrorText(String text) {
         setErrorText(text);

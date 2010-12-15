@@ -39,7 +39,7 @@ public class WatchesPanel extends JPanel {
     provider.addWatchListener(new IWatchListener() {
       @Override
       public void watchAdded(AbstractEvaluationModel model) {
-        EvaluationPanel evaluationPanel = new EvaluationPanel(project, provider.getDebugSession(), model);
+        EvaluationPanel evaluationPanel = new EvaluationPanel(project, provider.getDebugSession(), model, true);
         TabInfo info = new TabInfo(evaluationPanel);
         info.setText("This is a watch.");
         pane.addTab(info);

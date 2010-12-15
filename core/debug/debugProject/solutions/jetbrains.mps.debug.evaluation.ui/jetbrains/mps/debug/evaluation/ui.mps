@@ -192,6 +192,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2814952292830127453">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2814952292830127447" resolveInfo="evalModel" />
                 </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1694178016777393157">
+                  <property name="value" nameId="tpee.1068580123138" value="false" />
+                </node>
               </node>
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2099067570390539034">
@@ -644,6 +647,18 @@
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="920354110794004397">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f3c7.7757449281563189597" resolveInfo="updateState" />
                                   </node>
+                                </node>
+                              </node>
+                              <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="8668174811004042173">
+                                <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8668174811004042174">
+                                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8668174811004043377">
+                                    <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8668174811004043378">
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="920354110794005252" resolveInfo="evaluate" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8668174811004043376">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8668174811004043362" resolveInfo="myAutoUpdate" />
                                 </node>
                               </node>
                             </node>
@@ -2012,6 +2027,10 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f3c7.7757449281563189239" resolveInfo="AbstractEvaluationModel" />
         </node>
       </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8668174811004040710">
+        <property name="name" nameId="tpck.1169194664001" value="autoUpdate" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="8668174811004042153" />
+      </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="920354110794004980">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="920354110794195522">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JPanel%d&lt;init&gt;(java%dawt%dLayoutManager)" resolveInfo="JPanel" />
@@ -2046,6 +2065,16 @@
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="920354110794005022">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="920354110794005623" resolveInfo="myDebugSession" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8668174811004043367">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8668174811004043369">
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8668174811004043372">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8668174811004040710" resolveInfo="autoUpdate" />
+            </node>
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8668174811004043368">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8668174811004043362" resolveInfo="myAutoUpdate" />
             </node>
           </node>
         </node>
@@ -2504,7 +2533,7 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7283833278907755830" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="8668174811004042154" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7283833278907755831">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7283833278907755832">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="162769737603668785">
@@ -3521,6 +3550,12 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1055996919827581986">
         <property name="value" nameId="tpee.1068580123138" value="false" />
       </node>
+    </node>
+    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8668174811004043362">
+      <property name="name" nameId="tpck.1169194664001" value="myAutoUpdate" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8668174811004043363" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="8668174811004043365" />
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="920354110794194623">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i09a.~JPanel" resolveInfo="JPanel" />

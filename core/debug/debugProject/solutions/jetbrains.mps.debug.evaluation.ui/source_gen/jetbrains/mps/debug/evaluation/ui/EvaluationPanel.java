@@ -69,11 +69,13 @@ public class EvaluationPanel extends JPanel {
   private final Highlighter myHighlighter;
   private EvaluationPanel.IErrorTextListener myErrorListener;
   private volatile boolean myIsDisposed = false;
+  private final boolean myAutoUpdate;
 
-  public EvaluationPanel(Project project, @NotNull DebugSession session, AbstractEvaluationModel evaluationModel) {
+  public EvaluationPanel(Project project, @NotNull DebugSession session, AbstractEvaluationModel evaluationModel, boolean autoUpdate) {
     super(new BorderLayout());
     myHighlighter = project.getComponent(Highlighter.class);
     myDebugSession = session;
+    myAutoUpdate = autoUpdate;
 
     mySessionChangeListener = new EvaluationPanel.MySessionChangeListener();
     myDebugSession.addChangeListener(mySessionChangeListener);
@@ -262,6 +264,9 @@ public class EvaluationPanel extends JPanel {
           if (myEvaluationModel.getDebugSession() == session) {
             setErrorText("");
             myEvaluationModel.updateState();
+            if (myAutoUpdate) {
+              evaluate();
+            }
           }
         }
       });
