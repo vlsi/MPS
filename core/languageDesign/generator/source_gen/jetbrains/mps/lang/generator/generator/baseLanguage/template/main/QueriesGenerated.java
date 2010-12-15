@@ -217,7 +217,7 @@ public class QueriesGenerated {
     return role;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1503590073461952828(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2053864656213145643(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String role = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(_context.getNode().getRole_());
     SNode original = SNodeOperations.getParent(_context.getNode());
     return original.getProperty(role);
@@ -843,7 +843,7 @@ public class QueriesGenerated {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
 
-  public static Object referenceMacro_GetReferent_4155486055398183622(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_2053864656213145618(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.propertyMacro_GetPropertyValue(SLinkOperations.getTarget(_context.getNode(), "propertyValueFunction", true));
   }
 
@@ -1331,7 +1331,7 @@ public class QueriesGenerated {
     return innervar.startsWith("tnode");
   }
 
-  public static boolean ifMacro_Condition_1503590073461987819(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2053864656213145666(final IOperationContext operationContext, final IfMacroContext _context) {
     String role = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(_context.getNode().getRole_());
     SNode original = SNodeOperations.getParent(_context.getNode());
     return original.getProperty(role) != null;
@@ -2490,11 +2490,11 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object templateArgumentQuery_4155486055398183636(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2053864656213145634(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object templateArgumentQuery_4155486055398183648(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_2053864656213145700(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
 

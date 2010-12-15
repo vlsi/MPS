@@ -11,7 +11,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templateout_class implements TemplateDeclaration {
@@ -79,7 +78,7 @@ public class Templateout_class implements TemplateDeclaration {
             try {
               environment.getTracer().pushMacro(copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1);
               final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1209150187921(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1, context, environment.getGenerator()));
-              tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1, null, context);
+              tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1, null, context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1);
             }

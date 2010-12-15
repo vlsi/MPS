@@ -13,12 +13,12 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateOutputRoot_2 implements TemplateDeclaration {
   private static SNodePointer template_rz5qmw_a0a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338159177");
@@ -97,7 +97,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_rz5qmw_a0a0a3a2a2a3a2a2a3a2a2a1a5a1a1);
                             environment.nodeCopied(context4, tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338467041");
-                            tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_text_", propertyMacro_rz5qmw_c0b0b0a2a3a2a2a3a2a2a3a2a2a1a5a1a1, context4, environment.getGenerator())));
+                            tnode5.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_text_", propertyMacro_rz5qmw_c0b0b0a2a3a2a2a3a2a2a3a2a2a1a5a1a1, context4, environment.getGenerator()))));
 
                             {
                               final List<SNode> tlist6 = new ArrayList();

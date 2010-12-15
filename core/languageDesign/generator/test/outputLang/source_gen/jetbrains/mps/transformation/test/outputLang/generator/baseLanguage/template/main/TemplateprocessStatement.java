@@ -12,11 +12,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import java.util.Collections;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateprocessStatement implements TemplateDeclarationWeavingAware {
   private static SNodePointer templateNode_slzep9_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288695026");
@@ -96,7 +95,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a3a1a2);
                   environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288695068");
-                  tnode4.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695070(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "aa", propertyMacro_slzep9_c0b0b0a2a1a3a1a3a1a3a1a2, context, environment.getGenerator())));
+                  tnode4.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695070(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "aa", propertyMacro_slzep9_c0b0b0a2a1a3a1a3a1a3a1a2, context, environment.getGenerator()))));
 
                 } finally {
                   environment.getTracer().pushOutputNode(tnode4);
@@ -112,7 +111,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a3a1a2);
                   environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/2163819695913280742");
-                  tnode5.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_2163819695913280744(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "ss", propertyMacro_slzep9_c0b0b0a2a1a4a1a3a1a3a1a2, context, environment.getGenerator())));
+                  tnode5.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2163819695913280744(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "ss", propertyMacro_slzep9_c0b0b0a2a1a4a1a3a1a3a1a2, context, environment.getGenerator()))));
 
                 } finally {
                   environment.getTracer().pushOutputNode(tnode5);
@@ -143,7 +142,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a3a1a4a1a3a1a2);
                   environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288695033");
-                  tnode7.setProperty("name", (String) QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695040(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "nvar", propertyMacro_slzep9_c0b0b0a2a1a3a1a4a1a3a1a2, context, environment.getGenerator())));
+                  tnode7.setProperty("name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695040(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "nvar", propertyMacro_slzep9_c0b0b0a2a1a3a1a4a1a3a1a2, context, environment.getGenerator()))));
 
                   {
                     final SNode tnode8 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.IntegerType", false);
@@ -165,7 +164,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                     try {
                       environment.getTracer().pushMacro(copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a2);
                       final SNode copySrcInput9 = QueriesGenerated.sourceNodeQuery_2681305894288695056(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a2, context, environment.getGenerator()));
-                      tlist9 = environment.copyNodes(Collections.singletonList(copySrcInput9), copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a2, null, context);
+                      tlist9 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput9), copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a2, null, context);
                     } finally {
                       environment.getTracer().closeMacro(copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a2);
                     }

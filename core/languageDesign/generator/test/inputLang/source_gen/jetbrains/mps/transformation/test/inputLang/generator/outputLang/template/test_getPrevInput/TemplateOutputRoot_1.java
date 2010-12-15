@@ -13,9 +13,9 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 
@@ -103,14 +103,14 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_rz5qmv_a0a0a2a3a2a2a3a2a2a2a3a3a1a5a1a1);
                               environment.nodeCopied(context4, tnode6, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202256495546");
-                              tnode6.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_text_", propertyMacro_rz5qmv_c0b0b0a2a2a3a2a2a3a2a2a2a3a3a1a5a1a1, context4, environment.getGenerator())));
+                              tnode6.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_text_", propertyMacro_rz5qmv_c0b0b0a2a2a3a2a2a3a2a2a2a3a3a1a5a1a1, context4, environment.getGenerator()))));
 
                               {
                                 final SNode tnode7 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_rz5qmv_a0a0a1a4a2a3a2a2a3a2a2a2a3a3a1a5a1a1);
                                   environment.nodeCopied(context4, tnode7, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327206676");
-                                  tnode7.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_root_level_was_", propertyMacro_rz5qmv_c0b0b0a2a1a4a2a3a2a2a3a2a2a2a3a3a1a5a1a1, context4, environment.getGenerator())));
+                                  tnode7.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_root_level_was_", propertyMacro_rz5qmv_c0b0b0a2a1a4a2a3a2a2a3a2a2a2a3a3a1a5a1a1, context4, environment.getGenerator()))));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(tnode7);
@@ -130,7 +130,7 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
                                     try {
                                       environment.getTracer().pushTemplateNode(templateNode_rz5qmv_a0a0a1a1a1a5a2a3a2a2a3a2a2a2a3a3a1a5a1a1);
                                       environment.nodeCopied(context4, tnode9, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327778745");
-                                      tnode9.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_level_1_was_", propertyMacro_rz5qmv_c0b0b0a2a1a1a1a5a2a3a2a2a3a2a2a2a3a3a1a5a1a1, context4, environment.getGenerator())));
+                                      tnode9.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_level_1_was_", propertyMacro_rz5qmv_c0b0b0a2a1a1a1a5a2a3a2a2a3a2a2a2a3a3a1a5a1a1, context4, environment.getGenerator()))));
 
                                     } finally {
                                       environment.getTracer().pushOutputNode(tnode9);
@@ -152,7 +152,7 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_rz5qmv_a0a0a1a6a2a3a2a2a3a2a2a2a3a3a1a5a1a1);
                                   environment.nodeCopied(context4, tnode11, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327949446");
-                                  tnode11.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_level_2_was_", propertyMacro_rz5qmv_c0b0b0a2a1a6a2a3a2a2a3a2a2a2a3a3a1a5a1a1, context4, environment.getGenerator())));
+                                  tnode11.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_level_2_was_", propertyMacro_rz5qmv_c0b0b0a2a1a6a2a3a2a2a3a2a2a2a3a3a1a5a1a1, context4, environment.getGenerator()))));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(tnode11);

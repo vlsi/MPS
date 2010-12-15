@@ -12,12 +12,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templateprocess42 implements TemplateDeclarationWeavingAware {
   private static SNodePointer templateNode_nofsa1_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039171");
@@ -84,7 +84,7 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_nofsa1_a0a0a1a3a1a3a1a4a1a2);
                   environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039201");
-                  tnode5.setProperty("value", (String) QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), null, propertyMacro_nofsa1_c0b0b0a2a1a3a1a3a1a4a1a2, context, environment.getGenerator())));
+                  tnode5.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), null, propertyMacro_nofsa1_c0b0b0a2a1a3a1a3a1a4a1a2, context, environment.getGenerator()))));
 
                 } finally {
                   environment.getTracer().pushOutputNode(tnode5);

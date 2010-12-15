@@ -43,6 +43,10 @@ public class TemplateUtil {
     return result;
   }
 
+  public static String asString(Object obj) {
+    return obj != null ? String.valueOf(obj) : null;
+  }
+
   public static Collection<SNode> asList(Object... nodesOrCollectionOfNodes) {
     if (nodesOrCollectionOfNodes == null || nodesOrCollectionOfNodes.length == 0) {
       return Collections.emptyList();
