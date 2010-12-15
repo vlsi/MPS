@@ -17,7 +17,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.properties.StandardDialogs;
 
 public class GeneratorProperties_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\generatorProperties.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/generatorProperties.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GeneratorProperties_Action.class);
 
   private Project project;

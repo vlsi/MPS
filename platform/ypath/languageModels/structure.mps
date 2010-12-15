@@ -71,7 +71,7 @@
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1168879975004">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\treepath.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/treepath.png" />
       <property name="name" nameId="yvnu.1169194664001:0" value="TreePathAspect" />
       <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="treePath" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" />

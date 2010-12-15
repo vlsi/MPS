@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.properties.StandardDialogs;
 
 public class SolutionProperties_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\solutionProperties.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/solutionProperties.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(SolutionProperties_Action.class);
 
   private IOperationContext context;

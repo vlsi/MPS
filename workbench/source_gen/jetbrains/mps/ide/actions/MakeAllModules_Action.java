@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.progress.ProgressManager;
 
 public class MakeAllModules_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\compile.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/compile.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(MakeAllModules_Action.class);
 
   private Project project;

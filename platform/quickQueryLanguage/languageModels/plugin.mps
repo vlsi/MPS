@@ -95,7 +95,7 @@
     <node type="yvju.ToolDeclaration" typeId="yvju.1203071677434:23" id="1220008857613">
       <property name="name" nameId="yvnu.1169194664001:0" value="RunReplacement" />
       <property name="caption" nameId="yvju.6547237850567462620:23" value="Replacement" />
-      <property name="icon" nameId="yvju.6547237850567462766:23" value="${language_descriptor}\icons\replace.png" />
+      <property name="icon" nameId="yvju.6547237850567462766:23" value="${language_descriptor}/icons/replace.png" />
     </node>
   </roots>
   <root id="1219056224639">

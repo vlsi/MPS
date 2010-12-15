@@ -60,7 +60,7 @@ public class MacrosTest extends BaseMPSTest {
 
   private List<String> generateExpandTests() {
     List<String> tests = new ArrayList<String>();
-    tests.add("${mps_home}\\1/2\\3/4");
+    tests.add("${mps_home}/1/2/3/4");
     return tests;
   }
 

@@ -11,7 +11,7 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225194240794">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\behavior.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/behavior.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptBehavior" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />

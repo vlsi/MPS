@@ -13,7 +13,7 @@ public class TodoViewer_Tool extends GeneratedTool {
   private TodoViewer myComponent;
 
   public TodoViewer_Tool(Project project) {
-    super(project, "TODO", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true), ToolWindowAnchor.BOTTOM, false);
+    super(project, "TODO", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png", "jetbrains.mps.baseLanguage"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
   public void init(Project project) {

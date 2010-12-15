@@ -64,7 +64,7 @@ public class BuildScriptRunnerComponent extends JPanel implements DataProvider {
   }
 
   private Icon loadIcon(String name) {
-    return IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\icons\\" + name + ".png", "jetbrains.mps.buildlanguage"), true);
+    return IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/" + name + ".png", "jetbrains.mps.buildlanguage"), true);
   }
 
   private DefaultActionGroup createActions() {

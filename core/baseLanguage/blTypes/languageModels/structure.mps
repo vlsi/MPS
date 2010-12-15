@@ -7,7 +7,7 @@
   <import index="yvog" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1159268590033">
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\primitive.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/primitive.png" />
       <property name="name" nameId="yvnu.1169194664001:0" value="PrimitiveTypeDescriptor" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" resolveInfo="BaseConcept" />
     </node>

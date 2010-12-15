@@ -24,7 +24,7 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\editor.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editor.png" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1080736578640" resolveInfo="BaseEditorComponent" />
     </node>
@@ -75,7 +75,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1078938745671">
       <property name="name" nameId="tpck.1169194664001" value="EditorComponentDeclaration" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\editorComponent.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorComponent.png" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1080736578640" resolveInfo="BaseEditorComponent" />
     </node>
@@ -94,7 +94,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1081293058843">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\keyMap.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/keyMap.png" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="CellKeyMapDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellKeyMap" />
@@ -208,7 +208,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535219966">
       <property name="name" nameId="tpck.1169194664001" value="CellActionMapDeclaration" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\actionMap.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/actionMap.png" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535280617">
@@ -414,7 +414,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166040637528">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\menuComponent.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/menuComponent.png" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="CellMenuComponent" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
@@ -527,7 +527,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186402211651">
       <property name="name" nameId="tpck.1169194664001" value="StyleSheet" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\editorStylesheet.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorStylesheet.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" />
     </node>

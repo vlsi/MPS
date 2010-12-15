@@ -115,12 +115,12 @@
     <node type="tp4k.ToolDeclaration" typeId="tp4k.1203071677434" id="1209126436954">
       <property name="name" nameId="tpck.1169194664001" value="TodoViewer" />
       <property name="caption" nameId="tp4k.6547237850567462620" value="TODO" />
-      <property name="icon" nameId="tp4k.6547237850567462766" value="${language_descriptor}\source\jetbrains\mps\baseLanguage\plugin\todo.png" />
+      <property name="icon" nameId="tp4k.6547237850567462766" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1217597602946">
       <property name="name" nameId="tpck.1169194664001" value="ShowTodoViewer" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Todo Tool" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${language_descriptor}\source\jetbrains\mps\baseLanguage\plugin\todo.png" />
+      <property name="iconPath" nameId="tp4k.1203083803952" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>

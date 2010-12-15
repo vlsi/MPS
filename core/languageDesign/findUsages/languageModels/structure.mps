@@ -18,7 +18,7 @@
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1197044488845">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
       <property name="name" nameId="yvnu.1169194664001:0" value="FinderDeclaration" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\usagesFinder.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/usagesFinder.png" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="1218978086674:2" resolveInfo="AbstractFinderDeclaration" />
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1197044488852">

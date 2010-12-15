@@ -15,7 +15,7 @@
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1192794744107">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
       <property name="name" nameId="yvnu.1169194664001:0" value="IntentionDeclaration" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\intention.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/intention.png" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="2522969319638091381:8" resolveInfo="BaseIntentionDeclaration" />
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1192794782375">
