@@ -7,6 +7,7 @@ import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import javax.swing.JPanel;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import java.awt.Dimension;
 import jetbrains.mps.debug.runtime.DebugSession;
 import java.awt.BorderLayout;

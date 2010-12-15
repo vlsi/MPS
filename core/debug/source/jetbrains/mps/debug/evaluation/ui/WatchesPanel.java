@@ -20,6 +20,7 @@ import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.impl.JBTabsImpl;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.IWatchListener;
+import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;

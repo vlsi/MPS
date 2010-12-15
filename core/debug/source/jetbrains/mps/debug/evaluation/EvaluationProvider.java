@@ -17,6 +17,9 @@ package jetbrains.mps.debug.evaluation;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
+import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debug.evaluation.model.HighLevelEvaluationModel;
+import jetbrains.mps.debug.evaluation.model.LowLevelEvaluationModel;
 import jetbrains.mps.debug.evaluation.ui.*;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.runtime.JavaUiState;
