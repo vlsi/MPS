@@ -62,7 +62,9 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
           environment.getTracer().pushOutputNode(tnode2);
           environment.getTracer().closeTemplateNode(templateNode_nofsa1_a0a0a1a3a1a2);
         }
-        tnode1.addChild("leftExpression", tnode2);
+        if (tnode2 != null) {
+          tnode1.addChild("leftExpression", tnode2);
+        }
         // TODO validate child 
       }
       {
@@ -88,7 +90,9 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
                   environment.getTracer().pushOutputNode(tnode5);
                   environment.getTracer().closeTemplateNode(templateNode_nofsa1_a0a0a1a3a1a3a1a4a1a2);
                 }
-                tnode4.addChild("operand", tnode5);
+                if (tnode5 != null) {
+                  tnode4.addChild("operand", tnode5);
+                }
                 // TODO validate child 
               }
               {
@@ -102,21 +106,27 @@ public class Templateprocess42 implements TemplateDeclarationWeavingAware {
                   environment.getTracer().pushOutputNode(tnode6);
                   environment.getTracer().closeTemplateNode(templateNode_nofsa1_a0a0a1a4a1a3a1a4a1a2);
                 }
-                tnode4.addChild("operation", tnode6);
+                if (tnode6 != null) {
+                  tnode4.addChild("operation", tnode6);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode4);
               environment.getTracer().closeTemplateNode(templateNode_nofsa1_a0a0a1a3a1a4a1a2);
             }
-            tnode3.addChild("expression", tnode4);
+            if (tnode4 != null) {
+              tnode3.addChild("expression", tnode4);
+            }
             // TODO validate child 
           }
         } finally {
           environment.getTracer().pushOutputNode(tnode3);
           environment.getTracer().closeTemplateNode(templateNode_nofsa1_a0a0a1a4a1a2);
         }
-        tnode1.addChild("rightExpression", tnode3);
+        if (tnode3 != null) {
+          tnode1.addChild("rightExpression", tnode3);
+        }
         // TODO validate child 
       }
     } finally {

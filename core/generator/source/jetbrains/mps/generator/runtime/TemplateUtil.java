@@ -76,6 +76,10 @@ public class TemplateUtil {
     return asCollection(objects);
   }
 
+  public static <T> Iterable<T> asNotNull(final Iterable<T> objects) {
+    return objects == null ? Collections.<T>emptyList() : objects;
+  }
+
   public static <T> Collection<T> asCollection(final T... objects) {
     return new AbstractCollection<T>() {
       @Override

@@ -44,7 +44,7 @@ public class TemplateOutputRoot_by_MappingRule implements TemplateDeclaration {
         } finally {
           environment.getTracer().closeMacro(copySrcListMacro_jwmwuq_a0a0a1a5a1a1);
         }
-        for (SNode child3 : tlist2) {
+        for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild("outputChild", child3);
         }
         // TODO validate child 

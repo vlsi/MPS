@@ -206,7 +206,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a4a);
           }
-          for (SNode child3 : tlist2) {
+          for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild("outputChild", child3);
           }
           // TODO validate child 
@@ -335,7 +335,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a4c);
           }
-          for (SNode child3 : tlist2) {
+          for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild("outputChild", child3);
           }
           // TODO validate child 
@@ -446,14 +446,18 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 environment.getTracer().pushOutputNode(tnode3);
                 environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a2a4e);
               }
-              tnode2.addChild("type", tnode3);
+              if (tnode3 != null) {
+                tnode2.addChild("type", tnode3);
+              }
               // TODO validate child 
             }
           } finally {
             environment.getTracer().pushOutputNode(tnode2);
             environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a4e);
           }
-          tnode1.addChild("localVariableDeclaration", tnode2);
+          if (tnode2 != null) {
+            tnode1.addChild("localVariableDeclaration", tnode2);
+          }
           // TODO validate child 
         }
       } finally {
@@ -482,7 +486,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 environment.getTracer().pushOutputNode(tnode6);
                 environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a4a4e);
               }
-              tnode5.addChild("type", tnode6);
+              if (tnode6 != null) {
+                tnode5.addChild("type", tnode6);
+              }
               // TODO validate child 
             }
             {
@@ -502,7 +508,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
                     environment.getTracer().pushOutputNode(tnode8);
                     environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a1a5a1a3a4a4e);
                   }
-                  tnode7.addChild("leftExpression", tnode8);
+                  if (tnode8 != null) {
+                    tnode7.addChild("leftExpression", tnode8);
+                  }
                   // TODO validate child 
                 }
                 {
@@ -516,21 +524,27 @@ public class Mappingmain implements TemplateMappingConfiguration {
                     environment.getTracer().pushOutputNode(tnode9);
                     environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a5a1a3a4a4e);
                   }
-                  tnode7.addChild("rightExpression", tnode9);
+                  if (tnode9 != null) {
+                    tnode7.addChild("rightExpression", tnode9);
+                  }
                   // TODO validate child 
                 }
               } finally {
                 environment.getTracer().pushOutputNode(tnode7);
                 environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a5a1a3a4a4e);
               }
-              tnode5.addChild("initializer", tnode7);
+              if (tnode7 != null) {
+                tnode5.addChild("initializer", tnode7);
+              }
               // TODO validate child 
             }
           } finally {
             environment.getTracer().pushOutputNode(tnode5);
             environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a4a4e);
           }
-          tnode4.addChild("localVariableDeclaration", tnode5);
+          if (tnode5 != null) {
+            tnode4.addChild("localVariableDeclaration", tnode5);
+          }
           // TODO validate child 
         }
       } finally {
@@ -641,7 +655,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   } finally {
                     environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a3a1a3a1a3a2a4g);
                   }
-                  for (SNode child5 : tlist4) {
+                  for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                     tnode3.addChild("expression", child5);
                   }
                   // TODO validate child 
@@ -650,7 +664,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 environment.getTracer().pushOutputNode(tnode3);
                 environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a1a3a2a4g);
               }
-              tnode2.addChild("rightExpression", tnode3);
+              if (tnode3 != null) {
+                tnode2.addChild("rightExpression", tnode3);
+              }
               // TODO validate child 
             }
             {
@@ -668,7 +684,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                   } finally {
                     environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a3a1a4a1a3a2a4g);
                   }
-                  for (SNode child8 : tlist7) {
+                  for (SNode child8 : TemplateUtil.asNotNull(tlist7)) {
                     tnode6.addChild("expression", child8);
                   }
                   // TODO validate child 
@@ -677,14 +693,18 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 environment.getTracer().pushOutputNode(tnode6);
                 environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a2a4g);
               }
-              tnode2.addChild("leftExpression", tnode6);
+              if (tnode6 != null) {
+                tnode2.addChild("leftExpression", tnode6);
+              }
               // TODO validate child 
             }
           } finally {
             environment.getTracer().pushOutputNode(tnode2);
             environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a4g);
           }
-          tnode1.addChild("expression", tnode2);
+          if (tnode2 != null) {
+            tnode1.addChild("expression", tnode2);
+          }
           // TODO validate child 
         }
       } finally {
@@ -743,7 +763,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a3a2a4h);
           }
-          for (SNode child3 : tlist2) {
+          for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
             tnode1.addChild("rightExpression", child3);
           }
           // TODO validate child 
@@ -757,7 +777,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           } finally {
             environment.getTracer().closeMacro(copySrcMacro_417xrn_a0a0a1a4a2a4h);
           }
-          for (SNode child5 : tlist4) {
+          for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
             tnode1.addChild("leftExpression", child5);
           }
           // TODO validate child 
@@ -865,7 +885,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 environment.getTracer().pushOutputNode(tnode3);
                 environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a1a3a2a4j);
               }
-              tnode2.addChild("leftExpression", tnode3);
+              if (tnode3 != null) {
+                tnode2.addChild("leftExpression", tnode3);
+              }
               // TODO validate child 
             }
             {
@@ -885,7 +907,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
                     environment.getTracer().pushOutputNode(tnode5);
                     environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a1a4a1a3a2a4j);
                   }
-                  tnode4.addChild("operand", tnode5);
+                  if (tnode5 != null) {
+                    tnode4.addChild("operand", tnode5);
+                  }
                   // TODO validate child 
                 }
                 {
@@ -899,21 +923,27 @@ public class Mappingmain implements TemplateMappingConfiguration {
                     environment.getTracer().pushOutputNode(tnode6);
                     environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a4a1a3a2a4j);
                   }
-                  tnode4.addChild("operation", tnode6);
+                  if (tnode6 != null) {
+                    tnode4.addChild("operation", tnode6);
+                  }
                   // TODO validate child 
                 }
               } finally {
                 environment.getTracer().pushOutputNode(tnode4);
                 environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a4a1a3a2a4j);
               }
-              tnode2.addChild("rightExpression", tnode4);
+              if (tnode4 != null) {
+                tnode2.addChild("rightExpression", tnode4);
+              }
               // TODO validate child 
             }
           } finally {
             environment.getTracer().pushOutputNode(tnode2);
             environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a4j);
           }
-          tnode1.addChild("expression", tnode2);
+          if (tnode2 != null) {
+            tnode1.addChild("expression", tnode2);
+          }
           // TODO validate child 
         }
       } finally {
@@ -1019,7 +1049,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 environment.getTracer().pushOutputNode(tnode3);
                 environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a1a3a2a4l);
               }
-              tnode2.addChild("leftExpression", tnode3);
+              if (tnode3 != null) {
+                tnode2.addChild("leftExpression", tnode3);
+              }
               // TODO validate child 
             }
             {
@@ -1037,7 +1069,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
               } finally {
                 environment.getTracer().closeMacro(callMacro_417xrn_a0a0a1a4a1a3a2a4l);
               }
-              for (SNode child5 : tlist4) {
+              for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                 tnode2.addChild("rightExpression", child5);
               }
               // TODO validate child 
@@ -1046,7 +1078,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
             environment.getTracer().pushOutputNode(tnode2);
             environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a4l);
           }
-          tnode1.addChild("expression", tnode2);
+          if (tnode2 != null) {
+            tnode1.addChild("expression", tnode2);
+          }
           // TODO validate child 
         }
       } finally {

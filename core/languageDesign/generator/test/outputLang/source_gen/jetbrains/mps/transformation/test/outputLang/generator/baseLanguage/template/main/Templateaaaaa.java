@@ -52,7 +52,9 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
           environment.getTracer().pushOutputNode(tnode2);
           environment.getTracer().closeTemplateNode(templateNode_54ml0j_a0a0a1a3a1a2);
         }
-        tnode1.addChild("statements", tnode2);
+        if (tnode2 != null) {
+          tnode1.addChild("statements", tnode2);
+        }
         // TODO validate child 
       }
     } finally {

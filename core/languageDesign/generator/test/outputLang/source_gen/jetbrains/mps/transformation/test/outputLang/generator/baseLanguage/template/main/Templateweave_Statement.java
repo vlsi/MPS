@@ -53,7 +53,9 @@ public class Templateweave_Statement implements TemplateDeclarationWeavingAware 
           environment.getTracer().pushOutputNode(tnode2);
           environment.getTracer().closeTemplateNode(templateNode_38fazg_a0a0a1a4a1a1);
         }
-        tnode1.addChild("returnType", tnode2);
+        if (tnode2 != null) {
+          tnode1.addChild("returnType", tnode2);
+        }
         // TODO validate child 
       }
       {
@@ -66,7 +68,9 @@ public class Templateweave_Statement implements TemplateDeclarationWeavingAware 
           environment.getTracer().pushOutputNode(tnode3);
           environment.getTracer().closeTemplateNode(templateNode_38fazg_a0a0a1a5a1a1);
         }
-        tnode1.addChild("visibility", tnode3);
+        if (tnode3 != null) {
+          tnode1.addChild("visibility", tnode3);
+        }
         // TODO validate child 
       }
       {
@@ -92,21 +96,27 @@ public class Templateweave_Statement implements TemplateDeclarationWeavingAware 
                   environment.getTracer().pushOutputNode(tnode6);
                   environment.getTracer().closeTemplateNode(templateNode_38fazg_a0a0a1a3a1a3a1a6a1a1);
                 }
-                tnode5.addChild("commentPart", tnode6);
+                if (tnode6 != null) {
+                  tnode5.addChild("commentPart", tnode6);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode5);
               environment.getTracer().closeTemplateNode(templateNode_38fazg_a0a0a1a3a1a6a1a1);
             }
-            tnode4.addChild("statement", tnode5);
+            if (tnode5 != null) {
+              tnode4.addChild("statement", tnode5);
+            }
             // TODO validate child 
           }
         } finally {
           environment.getTracer().pushOutputNode(tnode4);
           environment.getTracer().closeTemplateNode(templateNode_38fazg_a0a0a1a6a1a1);
         }
-        tnode1.addChild("body", tnode4);
+        if (tnode4 != null) {
+          tnode1.addChild("body", tnode4);
+        }
         // TODO validate child 
       }
     } finally {
@@ -133,7 +143,9 @@ public class Templateweave_Statement implements TemplateDeclarationWeavingAware 
           environment.getTracer().pushOutputNode(tnode8);
           environment.getTracer().closeTemplateNode(templateNode_38fazg_a0a0a1a3a1a2);
         }
-        tnode7.addChild("commentPart", tnode8);
+        if (tnode8 != null) {
+          tnode7.addChild("commentPart", tnode8);
+        }
         // TODO validate child 
       }
     } finally {

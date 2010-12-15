@@ -43,7 +43,9 @@ public class TemplateoutputRoot implements TemplateDeclaration {
           environment.getTracer().pushOutputNode(tnode2);
           environment.getTracer().closeTemplateNode(templateNode_9pkn2m_a0a0a1a5a1a1);
         }
-        tnode1.addChild("outputChild", tnode2);
+        if (tnode2 != null) {
+          tnode1.addChild("outputChild", tnode2);
+        }
         // TODO validate child 
       }
     } finally {

@@ -102,7 +102,9 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                   environment.getTracer().pushOutputNode(tnode4);
                   environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a3a1a2);
                 }
-                tnode3.addChild("commentPart", tnode4);
+                if (tnode4 != null) {
+                  tnode3.addChild("commentPart", tnode4);
+                }
                 // TODO validate child 
               }
               {
@@ -116,14 +118,18 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                   environment.getTracer().pushOutputNode(tnode5);
                   environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a3a1a2);
                 }
-                tnode3.addChild("commentPart", tnode5);
+                if (tnode5 != null) {
+                  tnode3.addChild("commentPart", tnode5);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode3);
               environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a2);
             }
-            tnode2.addChild("statement", tnode3);
+            if (tnode3 != null) {
+              tnode2.addChild("statement", tnode3);
+            }
             // TODO validate child 
           }
           {
@@ -149,7 +155,9 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                       environment.getTracer().pushOutputNode(tnode8);
                       environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a4a1a3a1a2);
                     }
-                    tnode7.addChild("type", tnode8);
+                    if (tnode8 != null) {
+                      tnode7.addChild("type", tnode8);
+                    }
                     // TODO validate child 
                   }
                   {
@@ -161,7 +169,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                     } finally {
                       environment.getTracer().closeMacro(copySrcMacro_slzep9_a0a0a1a5a1a3a1a4a1a3a1a2);
                     }
-                    for (SNode child10 : tlist9) {
+                    for (SNode child10 : TemplateUtil.asNotNull(tlist9)) {
                       tnode7.addChild("initializer", child10);
                     }
                     // TODO validate child 
@@ -170,21 +178,27 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                   environment.getTracer().pushOutputNode(tnode7);
                   environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a4a1a3a1a2);
                 }
-                tnode6.addChild("localVariableDeclaration", tnode7);
+                if (tnode7 != null) {
+                  tnode6.addChild("localVariableDeclaration", tnode7);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode6);
               environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a2);
             }
-            tnode2.addChild("statement", tnode6);
+            if (tnode6 != null) {
+              tnode2.addChild("statement", tnode6);
+            }
             // TODO validate child 
           }
         } finally {
           environment.getTracer().pushOutputNode(tnode2);
           environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a2);
         }
-        tnode1.addChild("statements", tnode2);
+        if (tnode2 != null) {
+          tnode1.addChild("statements", tnode2);
+        }
         // TODO validate child 
       }
     } finally {
@@ -229,21 +243,27 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                       environment.getTracer().pushOutputNode(tnode15);
                       environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a3a1a3a1a3);
                     }
-                    tnode14.addChild("type", tnode15);
+                    if (tnode15 != null) {
+                      tnode14.addChild("type", tnode15);
+                    }
                     // TODO validate child 
                   }
                 } finally {
                   environment.getTracer().pushOutputNode(tnode14);
                   environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a3a1a3);
                 }
-                tnode13.addChild("localVariableDeclaration", tnode14);
+                if (tnode14 != null) {
+                  tnode13.addChild("localVariableDeclaration", tnode14);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode13);
               environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a3);
             }
-            tnode12.addChild("statement", tnode13);
+            if (tnode13 != null) {
+              tnode12.addChild("statement", tnode13);
+            }
             // TODO validate child 
           }
           {
@@ -269,7 +289,9 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                       environment.getTracer().pushOutputNode(tnode18);
                       environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a4a1a3a1a3);
                     }
-                    tnode17.addChild("lValue", tnode18);
+                    if (tnode18 != null) {
+                      tnode17.addChild("lValue", tnode18);
+                    }
                     // TODO validate child 
                   }
                   {
@@ -283,28 +305,36 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                       environment.getTracer().pushOutputNode(tnode19);
                       environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a4a1a3a1a3);
                     }
-                    tnode17.addChild("rValue", tnode19);
+                    if (tnode19 != null) {
+                      tnode17.addChild("rValue", tnode19);
+                    }
                     // TODO validate child 
                   }
                 } finally {
                   environment.getTracer().pushOutputNode(tnode17);
                   environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a4a1a3a1a3);
                 }
-                tnode16.addChild("expression", tnode17);
+                if (tnode17 != null) {
+                  tnode16.addChild("expression", tnode17);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode16);
               environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a3);
             }
-            tnode12.addChild("statement", tnode16);
+            if (tnode16 != null) {
+              tnode12.addChild("statement", tnode16);
+            }
             // TODO validate child 
           }
         } finally {
           environment.getTracer().pushOutputNode(tnode12);
           environment.getTracer().closeTemplateNode(templateNode_slzep9_a0a0a1a3a1a3);
         }
-        tnode11.addChild("statements", tnode12);
+        if (tnode12 != null) {
+          tnode11.addChild("statements", tnode12);
+        }
         // TODO validate child 
       }
     } finally {

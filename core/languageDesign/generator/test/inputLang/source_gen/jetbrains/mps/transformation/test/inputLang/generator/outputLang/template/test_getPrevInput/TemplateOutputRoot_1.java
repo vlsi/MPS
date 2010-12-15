@@ -116,7 +116,9 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
                                   environment.getTracer().pushOutputNode(tnode7);
                                   environment.getTracer().closeTemplateNode(templateNode_rz5qmv_a0a0a1a4a2a3a2a2a3a2a2a2a3a3a1a5a1a1);
                                 }
-                                tnode6.addChild("outputChild", tnode7);
+                                if (tnode7 != null) {
+                                  tnode6.addChild("outputChild", tnode7);
+                                }
                                 // TODO validate child 
                               }
                               {
@@ -140,7 +142,7 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
                                 } finally {
                                   environment.getTracer().closeMacro(ifMacroRef_rz5qmv_a0a0a1a5a2a3a2a2a3a2a2a2a3a3a1a5a1a1);
                                 }
-                                for (SNode child10 : tlist8) {
+                                for (SNode child10 : TemplateUtil.asNotNull(tlist8)) {
                                   tnode6.addChild("outputChild", child10);
                                 }
                                 // TODO validate child 
@@ -156,7 +158,9 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
                                   environment.getTracer().pushOutputNode(tnode11);
                                   environment.getTracer().closeTemplateNode(templateNode_rz5qmv_a0a0a1a6a2a3a2a2a3a2a2a2a3a3a1a5a1a1);
                                 }
-                                tnode6.addChild("outputChild", tnode11);
+                                if (tnode11 != null) {
+                                  tnode6.addChild("outputChild", tnode11);
+                                }
                                 // TODO validate child 
                               }
                             } finally {
@@ -220,7 +224,7 @@ public class TemplateOutputRoot_1 implements TemplateDeclaration {
         } finally {
           environment.getTracer().closeMacro(mapsrclMacroRef_rz5qmv_a0a0a1a5a1a1);
         }
-        for (SNode child13 : tlist2) {
+        for (SNode child13 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild("outputChild", child13);
         }
         // TODO validate child 

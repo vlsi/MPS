@@ -43,7 +43,9 @@ public class Templatemap_outputNode implements TemplateDeclaration {
           environment.getTracer().pushOutputNode(tnode2);
           environment.getTracer().closeTemplateNode(templateNode_q2tkcg_a0a0a1a5a1a1);
         }
-        tnode1.addChild("specialChild", tnode2);
+        if (tnode2 != null) {
+          tnode1.addChild("specialChild", tnode2);
+        }
         // TODO validate child 
       }
     } finally {

@@ -123,7 +123,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
                               } finally {
                                 environment.getTracer().closeMacro(mapsrcMacroRef_rz5qmw_a0a0a1a4a3a2a2a3a2a2a3a2a2a1a5a1a1);
                               }
-                              for (SNode child7 : tlist6) {
+                              for (SNode child7 : TemplateUtil.asNotNull(tlist6)) {
                                 tnode5.addChild("outputChild", child7);
                               }
                               // TODO validate child 
@@ -148,7 +148,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
                               } finally {
                                 environment.getTracer().closeMacro(mapsrcMacroRef_rz5qmw_a0a0a1a5a3a2a2a3a2a2a3a2a2a1a5a1a1);
                               }
-                              for (SNode child9 : tlist8) {
+                              for (SNode child9 : TemplateUtil.asNotNull(tlist8)) {
                                 tnode5.addChild("outputChild", child9);
                               }
                               // TODO validate child 
@@ -177,7 +177,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
                               } finally {
                                 environment.getTracer().closeMacro(mapsrcMacroRef_rz5qmw_a0a0a1a6a3a2a2a3a2a2a3a2a2a1a5a1a1);
                               }
-                              for (SNode child11 : tlist10) {
+                              for (SNode child11 : TemplateUtil.asNotNull(tlist10)) {
                                 tnode5.addChild("outputChild", child11);
                               }
                               // TODO validate child 
@@ -224,7 +224,7 @@ public class TemplateOutputRoot_2 implements TemplateDeclaration {
         } finally {
           environment.getTracer().closeMacro(loopMacroRef_rz5qmw_a0a0a1a5a1a1);
         }
-        for (SNode child12 : tlist2) {
+        for (SNode child12 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild("outputChild", child12);
         }
         // TODO validate child 
