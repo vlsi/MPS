@@ -15,37 +15,76 @@
  */
 package jetbrains.mps.debug.evaluation.ui;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.impl.JBTabsImpl;
+import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.IWatchListener;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debug.runtime.DebugSession;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WatchesPanel extends JPanel {
-
-  // todo dispose this stuff
-  // clone evaluation model??
+  private final List<EvaluationPanel> myPanels = new ArrayList<EvaluationPanel>();
+  private final JBTabsImpl myTabsPane;
 
   public WatchesPanel(final EvaluationProvider provider) {
     super(new BorderLayout());
 
-    final Project project = provider.getDebugSession().getProject();
-    final JBTabsImpl pane = new JBTabsImpl(project);
+    final DebugSession debugSession = provider.getDebugSession();
+    final Project project = debugSession.getProject();
+    myTabsPane = new JBTabsImpl(project);
 
     provider.addWatchListener(new IWatchListener() {
       @Override
       public void watchAdded(AbstractEvaluationModel model) {
-        EvaluationPanel evaluationPanel = new EvaluationPanel(project, provider.getDebugSession(), model, true);
+        EvaluationPanel evaluationPanel = new EvaluationPanel(project, debugSession, model, true);
+        myPanels.add(evaluationPanel);
         TabInfo info = new TabInfo(evaluationPanel);
         info.setText("This is a watch.");
-        pane.addTab(info);
+        myTabsPane.addTab(info);
       }
     });
 
-    add(pane, BorderLayout.CENTER);
+    MySessionChangeAdapter listener = new MySessionChangeAdapter(debugSession);
+    debugSession.addChangeListener(listener);
+
+    add(myTabsPane, BorderLayout.CENTER);
+  }
+
+  private void dispose() {
+    myTabsPane.removeAllTabs();
+    for (EvaluationPanel panel : myPanels) {
+      panel.dispose();
+    }
+  }
+
+  private class MySessionChangeAdapter extends SessionChangeAdapter {
+    private final DebugSession myDebugSession;
+
+    public MySessionChangeAdapter(DebugSession debugSession) {
+      myDebugSession = debugSession;
+    }
+
+    @Override
+    public void resumed(AbstractDebugSession s) {
+      if (s == myDebugSession && myDebugSession.isStopped()) {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            //todo almost the same stuff in EvaluationPanel -- extract
+            myDebugSession.removeChangeListener(MySessionChangeAdapter.this);
+            dispose();
+          }
+        });
+      }
+    }
   }
 }

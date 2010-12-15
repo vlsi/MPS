@@ -40,13 +40,13 @@ public class EvaluationDialog extends BaseDialog {
     myMainPanel.add(myEvaluationPanel, BorderLayout.CENTER);
     debugSession.addChangeListener(new SessionChangeAdapter() {
       public void resumed(final AbstractDebugSession session) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            if (debugSession == session && session.isStopped()) {
+        if (debugSession == session && session.isStopped()) {
+          ApplicationManager.getApplication().invokeLater(new Runnable() {
+            public void run() {
               dispose();
             }
-          }
-        });
+          });
+        }
       }
     });
 

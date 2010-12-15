@@ -259,27 +259,27 @@ public class EvaluationPanel extends JPanel {
     }
 
     public void paused(final AbstractDebugSession session) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          if (myEvaluationModel.getDebugSession() == session) {
+      if (myEvaluationModel.getDebugSession() == session) {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
             setErrorText("");
             myEvaluationModel.updateState();
             if (myAutoUpdate) {
               evaluate();
             }
           }
-        }
-      });
+        });
+      }
     }
 
     public void stateChanged(final AbstractDebugSession session) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          if (myEvaluationModel.getDebugSession() == session) {
+      if (myEvaluationModel.getDebugSession() == session) {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
             myEvaluationModel.updateState();
           }
-        }
-      });
+        });
+      }
     }
   }
 
