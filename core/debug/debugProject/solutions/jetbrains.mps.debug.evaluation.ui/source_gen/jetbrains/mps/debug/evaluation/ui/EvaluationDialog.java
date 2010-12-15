@@ -11,12 +11,6 @@ import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import java.awt.Dimension;
 import jetbrains.mps.debug.runtime.DebugSession;
 import java.awt.BorderLayout;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.debug.integration.Icons;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import com.intellij.openapi.application.ApplicationManager;
@@ -44,14 +38,6 @@ public class EvaluationDialog extends BaseDialog {
     });
     myMainPanel = new JPanel(new BorderLayout());
     myMainPanel.add(myEvaluationPanel, BorderLayout.CENTER);
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new AnAction("Watch Expression", "Add Expression To Watches Tool", Icons.WATCH) {
-      public void actionPerformed(AnActionEvent p0) {
-        myProvider.watch(myEvaluationPanel.getEvaluationModel());
-      }
-    });
-    myMainPanel.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent(), BorderLayout.NORTH);
-
     debugSession.addChangeListener(new SessionChangeAdapter() {
       public void resumed(final AbstractDebugSession session) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -76,12 +62,17 @@ public class EvaluationDialog extends BaseDialog {
     return myMainPanel;
   }
 
+  @BaseDialog.Button(position = 1, name = "Watch", mnemonic = 'W', defaultButton = false)
+  public void buttonWatch() {
+    myProvider.watch(myEvaluationPanel.getEvaluationModel());
+  }
+
   @BaseDialog.Button(position = 0, name = "Evaluate", mnemonic = 'E', defaultButton = true)
   public void buttonEvaluate() {
     myEvaluationPanel.evaluate();
   }
 
-  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
+  @BaseDialog.Button(position = 2, name = "Close", mnemonic = 'C', defaultButton = false)
   public void buttonCancel() {
     this.dispose();
   }

@@ -1,84 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5849716370568348282">
-    <nodeInfo nodeId="2814952292830128634" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvider" fileName="EvaluationDialog.java" startLine="27" startPosition="50" endLine="28" endPosition="46" />
-    <nodeInfo nodeId="2099067570390530282" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvaluationPanel" fileName="EvaluationDialog.java" startLine="28" startPosition="46" endLine="29" endPosition="50" />
-    <nodeInfo nodeId="2814952292830128647" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" fileName="EvaluationDialog.java" startLine="29" startPosition="50" endLine="30" endPosition="35" />
-    <nodeInfo nodeId="5849716370568348356" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="EvaluationDialog.java" startLine="32" startPosition="133" endLine="33" endPosition="46" />
-    <nodeInfo nodeId="5849716370568348373" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="33" startPosition="46" endLine="34" endPosition="37" />
-    <nodeInfo nodeId="5849716370568348381" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="34" startPosition="37" endLine="35" endPosition="20" />
-    <nodeInfo nodeId="2099067570390539031" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="EvaluationDialog.java" startLine="35" startPosition="20" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="2814952292830128641" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="36" startPosition="0" endLine="37" endPosition="26" />
-    <nodeInfo nodeId="2814952292830128625" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EvaluationDialog.java" startLine="37" startPosition="26" endLine="38" endPosition="65" />
-    <nodeInfo nodeId="2099067570390539033" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="38" startPosition="65" endLine="39" endPosition="91" />
-    <nodeInfo nodeId="2099067570390781890" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="41" startPosition="48" endLine="42" endPosition="27" />
-    <nodeInfo nodeId="2814952292830128652" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="44" startPosition="7" endLine="45" endPosition="49" />
-    <nodeInfo nodeId="2814952292830128664" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="45" startPosition="49" endLine="46" endPosition="60" />
-    <nodeInfo nodeId="2814952292830131266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EvaluationDialog.java" startLine="46" startPosition="60" endLine="47" endPosition="56" />
-    <nodeInfo nodeId="7222423519129141571" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="49" startPosition="53" endLine="50" endPosition="65" />
-    <nodeInfo nodeId="2814952292830129859" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="52" startPosition="7" endLine="53" endPosition="139" />
-    <nodeInfo nodeId="2099067570390781893" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="EvaluationDialog.java" startLine="53" startPosition="139" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="9023635436034252743" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="59" startPosition="65" endLine="60" endPosition="24" />
-    <nodeInfo nodeId="401530490754835446" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="EvaluationDialog.java" startLine="65" startPosition="7" endLine="66" endPosition="0" />
-    <nodeInfo nodeId="2099067570390757576" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="69" startPosition="51" endLine="70" endPosition="36" />
-    <nodeInfo nodeId="9023635436034367447" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EvaluationDialog.java" startLine="75" startPosition="40" endLine="76" endPosition="23" />
-    <nodeInfo nodeId="2099067570390757665" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="80" startPosition="32" endLine="81" endPosition="33" />
-    <nodeInfo nodeId="5849716370568348679" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="85" startPosition="30" endLine="86" endPosition="19" />
-    <nodeInfo nodeId="9023635436034252741" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="EvaluationDialog.java" startLine="58" startPosition="29" endLine="61" endPosition="13" />
-    <nodeInfo nodeId="2099067570390781884" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateErrorText#(Ljava/lang/String;)V" fileName="EvaluationDialog.java" startLine="40" startPosition="85" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="2814952292830131290" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="EvaluationDialog.java" startLine="48" startPosition="95" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="9023635436034332026" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" fileName="EvaluationDialog.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <nodeInfo nodeId="2099067570390759360" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="39" startPosition="91" endLine="44" endPosition="7" />
-    <nodeInfo nodeId="2814952292830131278" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="47" startPosition="56" endLine="52" endPosition="7" />
-    <nodeInfo nodeId="5181580596494446025" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="windowClosed#(Ljava/awt/event/WindowEvent;)V" fileName="EvaluationDialog.java" startLine="67" startPosition="43" endLine="72" endPosition="0" />
-    <nodeInfo nodeId="5849716370568348542" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonEvaluate#()V" fileName="EvaluationDialog.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <nodeInfo nodeId="5849716370568348663" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" fileName="EvaluationDialog.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
-    <nodeInfo nodeId="9023635436034252737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="EvaluationDialog.java" startLine="57" startPosition="72" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="5181580596494419333" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="66" startPosition="0" endLine="72" endPosition="7" />
-    <nodeInfo nodeId="9023635436034252729" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="56" startPosition="63" endLine="63" endPosition="11" />
-    <nodeInfo nodeId="9023635436034252723" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" fileName="EvaluationDialog.java" startLine="55" startPosition="63" endLine="65" endPosition="0" />
-    <nodeInfo nodeId="2099067570390781895" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="54" startPosition="0" endLine="65" endPosition="7" />
-    <nodeInfo nodeId="5849716370568348349" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debug/evaluation/EvaluationProvider;Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;)V" fileName="EvaluationDialog.java" startLine="31" startPosition="0" endLine="73" endPosition="3" />
-    <scopeInfo nodeId="2099067570390781889" fileName="EvaluationDialog.java" startLine="41" startPosition="48" endLine="42" endPosition="27" />
-    <scopeInfo nodeId="2814952292830131295" fileName="EvaluationDialog.java" startLine="49" startPosition="53" endLine="50" endPosition="65" />
-    <scopeInfo nodeId="9023635436034252742" fileName="EvaluationDialog.java" startLine="59" startPosition="65" endLine="60" endPosition="24" />
-    <scopeInfo nodeId="5181580596494446030" fileName="EvaluationDialog.java" startLine="69" startPosition="51" endLine="70" endPosition="36" />
-    <scopeInfo nodeId="9023635436034332029" fileName="EvaluationDialog.java" startLine="75" startPosition="40" endLine="76" endPosition="23" />
-    <scopeInfo nodeId="5849716370568348545" fileName="EvaluationDialog.java" startLine="80" startPosition="32" endLine="81" endPosition="33" />
-    <scopeInfo nodeId="5849716370568348666" fileName="EvaluationDialog.java" startLine="85" startPosition="30" endLine="86" endPosition="19" />
-    <scopeInfo nodeId="9023635436034252740" fileName="EvaluationDialog.java" startLine="58" startPosition="29" endLine="61" endPosition="13" />
-    <scopeInfo nodeId="2099067570390781884" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateErrorText#(Ljava/lang/String;)V" fileName="EvaluationDialog.java" startLine="40" startPosition="85" endLine="44" endPosition="0">
+    <nodeInfo nodeId="2814952292830128634" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvider" fileName="EvaluationDialog.java" startLine="21" startPosition="50" endLine="22" endPosition="46" />
+    <nodeInfo nodeId="2099067570390530282" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvaluationPanel" fileName="EvaluationDialog.java" startLine="22" startPosition="46" endLine="23" endPosition="50" />
+    <nodeInfo nodeId="2814952292830128647" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" fileName="EvaluationDialog.java" startLine="23" startPosition="50" endLine="24" endPosition="35" />
+    <nodeInfo nodeId="5849716370568348356" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="EvaluationDialog.java" startLine="26" startPosition="133" endLine="27" endPosition="46" />
+    <nodeInfo nodeId="5849716370568348373" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="27" startPosition="46" endLine="28" endPosition="37" />
+    <nodeInfo nodeId="5849716370568348381" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="28" startPosition="37" endLine="29" endPosition="20" />
+    <nodeInfo nodeId="2099067570390539031" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="EvaluationDialog.java" startLine="29" startPosition="20" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="2814952292830128641" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="30" startPosition="0" endLine="31" endPosition="26" />
+    <nodeInfo nodeId="2814952292830128625" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EvaluationDialog.java" startLine="31" startPosition="26" endLine="32" endPosition="65" />
+    <nodeInfo nodeId="2099067570390539033" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="32" startPosition="65" endLine="33" endPosition="91" />
+    <nodeInfo nodeId="2099067570390781890" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="35" startPosition="48" endLine="36" endPosition="27" />
+    <nodeInfo nodeId="2814952292830128652" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="38" startPosition="7" endLine="39" endPosition="49" />
+    <nodeInfo nodeId="2814952292830128664" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="39" startPosition="49" endLine="40" endPosition="60" />
+    <nodeInfo nodeId="9023635436034252743" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="45" startPosition="65" endLine="46" endPosition="24" />
+    <nodeInfo nodeId="401530490754835446" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="EvaluationDialog.java" startLine="51" startPosition="7" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="2099067570390757576" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="55" startPosition="51" endLine="56" endPosition="36" />
+    <nodeInfo nodeId="9023635436034367447" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EvaluationDialog.java" startLine="61" startPosition="40" endLine="62" endPosition="23" />
+    <nodeInfo nodeId="162769737603681293" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="66" startPosition="29" endLine="67" endPosition="61" />
+    <nodeInfo nodeId="2099067570390757665" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="71" startPosition="32" endLine="72" endPosition="33" />
+    <nodeInfo nodeId="5849716370568348679" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="76" startPosition="30" endLine="77" endPosition="19" />
+    <nodeInfo nodeId="9023635436034252741" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="EvaluationDialog.java" startLine="44" startPosition="29" endLine="47" endPosition="13" />
+    <nodeInfo nodeId="2099067570390781884" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateErrorText#(Ljava/lang/String;)V" fileName="EvaluationDialog.java" startLine="34" startPosition="85" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="9023635436034332026" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" fileName="EvaluationDialog.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="2099067570390759360" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="33" startPosition="91" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="5181580596494446025" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="windowClosed#(Ljava/awt/event/WindowEvent;)V" fileName="EvaluationDialog.java" startLine="53" startPosition="43" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="162769737603681273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonWatch#()V" fileName="EvaluationDialog.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="5849716370568348542" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonEvaluate#()V" fileName="EvaluationDialog.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="5849716370568348663" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" fileName="EvaluationDialog.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="9023635436034252737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="EvaluationDialog.java" startLine="43" startPosition="72" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="5181580596494419333" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="52" startPosition="0" endLine="58" endPosition="7" />
+    <nodeInfo nodeId="9023635436034252729" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="42" startPosition="63" endLine="49" endPosition="11" />
+    <nodeInfo nodeId="9023635436034252723" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" fileName="EvaluationDialog.java" startLine="41" startPosition="63" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="2099067570390781895" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EvaluationDialog.java" startLine="40" startPosition="60" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="5849716370568348349" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debug/evaluation/EvaluationProvider;Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;)V" fileName="EvaluationDialog.java" startLine="25" startPosition="0" endLine="59" endPosition="3" />
+    <scopeInfo nodeId="2099067570390781889" fileName="EvaluationDialog.java" startLine="35" startPosition="48" endLine="36" endPosition="27" />
+    <scopeInfo nodeId="9023635436034252742" fileName="EvaluationDialog.java" startLine="45" startPosition="65" endLine="46" endPosition="24" />
+    <scopeInfo nodeId="5181580596494446030" fileName="EvaluationDialog.java" startLine="55" startPosition="51" endLine="56" endPosition="36" />
+    <scopeInfo nodeId="9023635436034332029" fileName="EvaluationDialog.java" startLine="61" startPosition="40" endLine="62" endPosition="23" />
+    <scopeInfo nodeId="162769737603681276" fileName="EvaluationDialog.java" startLine="66" startPosition="29" endLine="67" endPosition="61" />
+    <scopeInfo nodeId="5849716370568348545" fileName="EvaluationDialog.java" startLine="71" startPosition="32" endLine="72" endPosition="33" />
+    <scopeInfo nodeId="5849716370568348666" fileName="EvaluationDialog.java" startLine="76" startPosition="30" endLine="77" endPosition="19" />
+    <scopeInfo nodeId="9023635436034252740" fileName="EvaluationDialog.java" startLine="44" startPosition="29" endLine="47" endPosition="13" />
+    <scopeInfo nodeId="2099067570390781884" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateErrorText#(Ljava/lang/String;)V" fileName="EvaluationDialog.java" startLine="34" startPosition="85" endLine="38" endPosition="0">
       <varInfo nodeId="2099067570390781887" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="2814952292830131290" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="EvaluationDialog.java" startLine="48" startPosition="95" endLine="52" endPosition="0">
-      <varInfo nodeId="2814952292830131293" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="9023635436034332026" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" fileName="EvaluationDialog.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="5181580596494446025" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="windowClosed#(Ljava/awt/event/WindowEvent;)V" fileName="EvaluationDialog.java" startLine="67" startPosition="43" endLine="72" endPosition="0">
+    <scopeInfo nodeId="9023635436034332026" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" fileName="EvaluationDialog.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="5181580596494446025" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="windowClosed#(Ljava/awt/event/WindowEvent;)V" fileName="EvaluationDialog.java" startLine="53" startPosition="43" endLine="58" endPosition="0">
       <varInfo nodeId="5181580596494446028" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5849716370568348542" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonEvaluate#()V" fileName="EvaluationDialog.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="5849716370568348663" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" fileName="EvaluationDialog.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="9023635436034252737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="EvaluationDialog.java" startLine="57" startPosition="72" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="9023635436034252728" fileName="EvaluationDialog.java" startLine="56" startPosition="63" endLine="63" endPosition="11" />
-    <scopeInfo nodeId="9023635436034252723" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" fileName="EvaluationDialog.java" startLine="55" startPosition="63" endLine="65" endPosition="0">
+    <scopeInfo nodeId="162769737603681273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonWatch#()V" fileName="EvaluationDialog.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="5849716370568348542" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonEvaluate#()V" fileName="EvaluationDialog.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="5849716370568348663" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" fileName="EvaluationDialog.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="9023635436034252737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="EvaluationDialog.java" startLine="43" startPosition="72" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="9023635436034252728" fileName="EvaluationDialog.java" startLine="42" startPosition="63" endLine="49" endPosition="11" />
+    <scopeInfo nodeId="9023635436034252723" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" fileName="EvaluationDialog.java" startLine="41" startPosition="63" endLine="51" endPosition="0">
       <varInfo nodeId="9023635436034252726" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="5849716370568348355" fileName="EvaluationDialog.java" startLine="32" startPosition="133" endLine="72" endPosition="7">
+    <scopeInfo nodeId="5849716370568348355" fileName="EvaluationDialog.java" startLine="26" startPosition="133" endLine="58" endPosition="7">
       <varInfo nodeId="2814952292830128626" varName="debugSession" />
-      <varInfo nodeId="2814952292830131267" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="5849716370568348349" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debug/evaluation/EvaluationProvider;Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;)V" fileName="EvaluationDialog.java" startLine="31" startPosition="0" endLine="73" endPosition="3">
+    <scopeInfo nodeId="5849716370568348349" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/debug/evaluation/EvaluationProvider;Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;)V" fileName="EvaluationDialog.java" startLine="25" startPosition="0" endLine="59" endPosition="3">
       <varInfo nodeId="5849716370568348351" varName="context" />
       <varInfo nodeId="2814952292830128614" varName="provider" />
       <varInfo nodeId="2814952292830127447" varName="evalModel" />
     </scopeInfo>
-    <unitInfo nodeId="2099067570390781882" fileName="EvaluationDialog.java" startLine="40" startPosition="47" endLine="44" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$1" />
-    <unitInfo nodeId="2814952292830131288" fileName="EvaluationDialog.java" startLine="48" startPosition="18" endLine="52" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$2" />
-    <unitInfo nodeId="5181580596494446023" fileName="EvaluationDialog.java" startLine="67" startPosition="26" endLine="72" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$4" />
-    <unitInfo nodeId="9023635436034252735" fileName="EvaluationDialog.java" startLine="57" startPosition="60" endLine="63" endPosition="9" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$4" />
-    <unitInfo nodeId="2099067570390781910" fileName="EvaluationDialog.java" startLine="55" startPosition="39" endLine="65" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$3" />
-    <unitInfo nodeId="5849716370568348282" fileName="EvaluationDialog.java" startLine="27" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog" />
+    <unitInfo nodeId="2099067570390781882" fileName="EvaluationDialog.java" startLine="34" startPosition="47" endLine="38" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$1" />
+    <unitInfo nodeId="5181580596494446023" fileName="EvaluationDialog.java" startLine="53" startPosition="26" endLine="58" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$3" />
+    <unitInfo nodeId="9023635436034252735" fileName="EvaluationDialog.java" startLine="43" startPosition="60" endLine="49" endPosition="9" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$3" />
+    <unitInfo nodeId="2099067570390781910" fileName="EvaluationDialog.java" startLine="41" startPosition="39" endLine="51" endPosition="5" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog$2" />
+    <unitInfo nodeId="5849716370568348282" fileName="EvaluationDialog.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debug.evaluation.ui.EvaluationDialog" />
   </root>
   <root nodeId="920354110794004331">
     <nodeInfo nodeId="920354110794004940" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" fileName="EvaluationPanel.java" startLine="55" startPosition="45" endLine="56" endPosition="76" />
