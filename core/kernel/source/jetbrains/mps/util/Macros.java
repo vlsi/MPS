@@ -34,11 +34,17 @@ public abstract class Macros {
   public final String expandPath(String path, IFile anchorFile) {
     if (path == null) return null;
 
-    //todo this is a support for old project files. New format introduced before beta
-    path = path.replace('\\', File.separatorChar);
-    path = path.replace('/', File.separatorChar);
+    // This is a support for paths with macros which were saved in Windows before MPS beta.
+    // Path with macros should always be stored with slashes.
+    if (path.indexOf('\\') != -1) {
+      LOG.warning("Using backslashes in macros: " + path);
+      path = path.replace('\\', SEPARATOR_CHAR);
+    }
 
-    path = path.replace(SEPARATOR_CHAR, File.separatorChar);
+    if (!FileSystem.getInstance().isPackaged(anchorFile)) {
+      path = path.replace(SEPARATOR_CHAR, File.separatorChar);
+    }
+
     return expandPath_internal(path, anchorFile);
   }
 
