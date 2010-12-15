@@ -17,12 +17,11 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.FlattenIterable;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Manages rules/templates of major step.
@@ -41,6 +40,8 @@ public class RuleManager {
 
   private List<TemplateMappingConfiguration> myMappings;
 
+  private Map<SModelReference, TemplateModel> myModelMap;
+
   private final FastRuleFinder myRuleFinder;
 
   public RuleManager(GenerationPlan plan, int step) {
@@ -49,6 +50,11 @@ public class RuleManager {
     if (myTemplateSwitchGraph == null) throw new IllegalStateException("switch graph is not initialized");
     initialize(myMappings);
     myRuleFinder = initRules(myMappings);
+
+    myModelMap = new HashMap<SModelReference, TemplateModel>();
+    for(TemplateModel m : plan.getTemplateModels()) {
+      myModelMap.put(m.getSModelReference(), m);
+    }
   }
 
   private void initialize(List<TemplateMappingConfiguration> list) {
@@ -112,6 +118,10 @@ public class RuleManager {
 
   public TemplateSwitchMapping getSwitch(SNodePointer switch_) {
     return myTemplateSwitchGraph.getSwitch(switch_);
+  }
+
+  public TemplateModel getTemplateModel(SModelReference modelReference) {
+    return myModelMap.get(modelReference);
   }
 
   public List<TemplateMappingScript> getPreMappingScripts() {

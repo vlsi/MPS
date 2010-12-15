@@ -31,7 +31,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class BaseTransformationTest extends TestCase {
   private static ProjectContainer myContainer = new ProjectContainer();
-  private static final String PATH_MACRO_PREFIX = "path.macro.";
+  public static final String PATH_MACRO_PREFIX = "path.macro.";
 
   private SModelDescriptor myModel;
   private SModelDescriptor myTransidentModel;

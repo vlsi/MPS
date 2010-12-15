@@ -132,21 +132,21 @@
     <scopeInfo nodeId="2379153299285187434" fileName="NodesTestCase_Behavior.java" startLine="80" startPosition="90" endLine="82" endPosition="91">
       <varInfo nodeId="2379153299285187453" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1217250593499" fileName="NodesTestCase_Behavior.java" startLine="28" startPosition="48" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1217512074090" fileName="NodesTestCase_Behavior.java" startLine="31" startPosition="5" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1217424543027" fileName="NodesTestCase_Behavior.java" startLine="56" startPosition="111" endLine="59" endPosition="7">
+    <scopeInfo nodeId="1217250593499" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodesTestCase_Behavior.java" startLine="28" startPosition="48" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="1217512074090" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodesTestCase_Behavior.java" startLine="31" startPosition="5" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1217424543027" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodesTestCase_Behavior.java" startLine="56" startPosition="111" endLine="59" endPosition="7">
       <varInfo nodeId="1217424543037" varName="url" />
     </scopeInfo>
-    <scopeInfo nodeId="7149605750504389879" fileName="NodesTestCase_Behavior.java" startLine="62" startPosition="192" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="1937023808170650696" fileName="NodesTestCase_Behavior.java" startLine="67" startPosition="111" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="7149605750504389879" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodesTestCase_Behavior.java" startLine="62" startPosition="192" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="1937023808170650696" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodesTestCase_Behavior.java" startLine="67" startPosition="111" endLine="70" endPosition="7" />
     <scopeInfo nodeId="1217424543001" fileName="NodesTestCase_Behavior.java" startLine="55" startPosition="9" endLine="59" endPosition="7">
       <varInfo nodeId="1217424543003" varName="urls" />
     </scopeInfo>
     <scopeInfo nodeId="7292080432684956722" fileName="NodesTestCase_Behavior.java" startLine="66" startPosition="86" endLine="70" endPosition="7">
       <varInfo nodeId="7292080432684961353" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="2379153299285187431" fileName="NodesTestCase_Behavior.java" startLine="79" startPosition="60" endLine="83" endPosition="5" />
-    <scopeInfo nodeId="7292080432684956719" fileName="NodesTestCase_Behavior.java" startLine="65" startPosition="5" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="2379153299285187431" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodesTestCase_Behavior.java" startLine="79" startPosition="60" endLine="83" endPosition="5" />
+    <scopeInfo nodeId="7292080432684956719" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodesTestCase_Behavior.java" startLine="65" startPosition="5" endLine="71" endPosition="5" />
     <scopeInfo nodeId="1217250554966" fileName="NodesTestCase_Behavior.java" startLine="27" startPosition="78" endLine="35" endPosition="18">
       <varInfo nodeId="1217250576175" varName="result" />
     </scopeInfo>
@@ -243,9 +243,9 @@
     <nodeInfo nodeId="6268941039745883750" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnonymousCellAnnotation_Behavior.java" startLine="67" startPosition="101" endLine="72" endPosition="5" />
     <nodeInfo nodeId="1932269937152438144" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnonymousCellAnnotation_Behavior.java" startLine="72" startPosition="5" endLine="77" endPosition="5" />
     <nodeInfo nodeId="9114978211826243753" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AnonymousCellAnnotation_Behavior.java" startLine="80" startPosition="109" endLine="86" endPosition="5" />
-    <nodeInfo nodeId="7465350948216906313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnonymousCellAnnotation_Behavior.java" startLine="41" startPosition="57" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="7465350948216906313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnonymousCellAnnotation_Behavior.java" startLine="41" startPosition="57" endLine="49" endPosition="0" />
     <nodeInfo nodeId="7465350948216906312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnonymousCellAnnotation_Behavior.java" startLine="40" startPosition="60" endLine="49" endPosition="7" />
-    <nodeInfo nodeId="6268941039745711531" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AnonymousCellAnnotation_Behavior.java" startLine="28" startPosition="57" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="6268941039745711531" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnonymousCellAnnotation_Behavior.java" startLine="28" startPosition="57" endLine="39" endPosition="0" />
     <nodeInfo nodeId="6268941039745711530" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnonymousCellAnnotation_Behavior.java" startLine="27" startPosition="77" endLine="39" endPosition="7" />
     <scopeInfo nodeId="6268941039745707956" fileName="AnonymousCellAnnotation_Behavior.java" startLine="22" startPosition="43" endLine="22" endPosition="43" />
     <scopeInfo nodeId="1977980803835923817" fileName="AnonymousCellAnnotation_Behavior.java" startLine="30" startPosition="72" endLine="31" endPosition="144" />
@@ -274,8 +274,8 @@
       <varInfo nodeId="5681471431307922095" varName="nodeToSelect" />
     </scopeInfo>
     <scopeInfo nodeId="6268941039745711532" fileName="AnonymousCellAnnotation_Behavior.java" startLine="29" startPosition="25" endLine="37" endPosition="117" />
-    <scopeInfo nodeId="7465350948216906313" fileName="AnonymousCellAnnotation_Behavior.java" startLine="41" startPosition="57" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="6268941039745711531" fileName="AnonymousCellAnnotation_Behavior.java" startLine="28" startPosition="57" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="7465350948216906313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnonymousCellAnnotation_Behavior.java" startLine="41" startPosition="57" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="6268941039745711531" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnonymousCellAnnotation_Behavior.java" startLine="28" startPosition="57" endLine="39" endPosition="0" />
     <scopeInfo nodeId="6268941039745719584" fileName="AnonymousCellAnnotation_Behavior.java" startLine="60" startPosition="157" endLine="77" endPosition="5">
       <varInfo nodeId="5681471431307928018" varName="component" />
       <varInfo nodeId="6268941039745883761" varName="selectedCell" />

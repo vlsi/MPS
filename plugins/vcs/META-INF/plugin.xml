@@ -25,6 +25,9 @@
 
   <application-components>
     <component>
+      <implementation-class>jetbrains.mps.vcs.plugin.Vcs_PluginInitializer</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.watching.ModelChangesWatcher</implementation-class>
     </component>
     <component>

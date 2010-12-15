@@ -58,8 +58,8 @@ public class TypesUtil {
         return true;
       }
     }
-    for (SNode ref : node.getReferents()) {
-      if (hasVariablesInside(ref)) {
+    for (SNode referent : node.getReferents()) {
+      if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
         return true;
       }
     }

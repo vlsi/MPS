@@ -59,8 +59,8 @@ public class NodeTypesComponent {
 
   private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
 
-  private Set<SNode> myFullyCheckedNodes = new HashSet<SNode>(); //nodes which are checked with their children
-  private Set<SNode> myPartlyCheckedNodes = new HashSet<SNode>(); // nodes which are checked themselves but not children
+  protected Set<SNode> myFullyCheckedNodes = new HashSet<SNode>(); //nodes which are checked with their children
+  protected Set<SNode> myPartlyCheckedNodes = new HashSet<SNode>(); // nodes which are checked themselves but not children
 
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
     = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
@@ -125,11 +125,11 @@ public class NodeTypesComponent {
   private boolean myInvalidationResult = false;
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
-  private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
+  protected Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
-  private boolean myIsSpecial = false;
+  protected boolean myIsSpecial = false;
 
   boolean myIsNonTypesystemCheckingInProgress = false;
 

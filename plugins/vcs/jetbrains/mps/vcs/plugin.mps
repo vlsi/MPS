@@ -81,9 +81,6 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Rollback" />
       <property name="iconPath" nameId="tp4k.1203083803952" value="${solution_descriptor}/icons/reset.png" />
     </node>
-    <node type="tp4k.GeneratePlugins" typeId="tp4k.1216225441716" id="6763225944573363122">
-      <property name="generateApplicationPlugin" nameId="tp4k.1216227663668" value="true" />
-    </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6763225944573505210">
       <property name="name" nameId="tpck.1169194664001" value="GoToVCS" />
     </node>
@@ -161,6 +158,15 @@
     </node>
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="994404492881108397">
       <property name="name" nameId="tpck.1169194664001" value="IDEAVcsGlobal" />
+    </node>
+    <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="3531023421907347091">
+      <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.vcs" />
+      <property name="name" nameId="tp4k.5023285075122009367" value="VCS Integration for MPS" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="VCS features in MPS" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="1.5" />
+      <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
     </node>
   </roots>
   <root id="6763225944573363022">
@@ -488,7 +494,6 @@
       </node>
     </node>
   </root>
-  <root id="6763225944573363122" />
   <root id="6763225944573505210">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6763225944573505212">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6763225944573505213">
@@ -4260,5 +4265,6 @@
     </node>
     <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="994404492881108399" />
   </root>
+  <root id="3531023421907347091" />
 </model>
 

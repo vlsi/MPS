@@ -34,19 +34,10 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
 
-  //-----------  introduced temporary for VCS plugin and other IDEA plugins containing mps plugins
-
-  private List<BaseApplicationPlugin> myPluginPlugins = new ArrayList<BaseApplicationPlugin>();
-
-  public void loadPlugin(BaseApplicationPlugin p) {
-    myPluginPlugins.add(p);
-  }
-
   //-------
 
   public void loadPlugins() {
     mySortedPlugins = createPlugins();
-    mySortedPlugins.addAll(myPluginPlugins);
 
     BaseApplicationPlugin idePlugin = null;
 
@@ -89,18 +80,25 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
 
-    GroupAdjuster.adjustTopLevelGroups((BaseApplicationPlugin) idePlugin);
+    GroupAdjuster.adjustTopLevelGroups(idePlugin);
     GroupAdjuster.refreshCustomizations();
   }
 
   private List<BaseApplicationPlugin> createPlugins() {
+    List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
+
+    Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
+    result.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ApplicationPluginCreator()));
+
+    result.addAll(PluginUtil.getStandaloneAppPlugins());
+
     Set<IModule> modules = new HashSet<IModule>();
-    modules.addAll(PluginUtil.getBootstrapPluginModules());
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       modules.addAll(PluginUtil.collectPluginModules(p));
     }
+    result.addAll(PluginUtil.createPlugins(modules, new ApplicationPluginCreator()));
 
-    return PluginUtil.createPlugins(modules, new ApplicationPluginCreator());
+    return result;
   }
 
   public void disposePlugins() {

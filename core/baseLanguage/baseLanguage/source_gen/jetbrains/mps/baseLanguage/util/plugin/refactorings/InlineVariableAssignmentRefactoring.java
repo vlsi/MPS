@@ -17,10 +17,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.Frame;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.NameUtil;
+import java.util.List;
 import java.util.ArrayList;
 
 public class InlineVariableAssignmentRefactoring extends InlineVariableRefactoring {
@@ -53,22 +53,24 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
       }
     });
     if (isLocalVariable.value) {
-      final Wrappers._T<List<SNode>> nodesToRefactor = new Wrappers._T<List<SNode>>();
-      final Wrappers._T<SNode> initializer = new Wrappers._T<SNode>();
+      final Wrappers._T<String> variableName = new Wrappers._T<String>();
+      final Wrappers._boolean notInitialized = new Wrappers._boolean();
+      final Wrappers._int nodesCount = new Wrappers._int();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          initializer.value = SLinkOperations.getTarget(SNodeOperations.cast(InlineVariableAssignmentRefactoring.this.myVariable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true);
-          nodesToRefactor.value = InlineVariableAssignmentRefactoring.this.getNodesToRefactor();
+          variableName.value = myVariable + "";
+          notInitialized.value = (SLinkOperations.getTarget(SNodeOperations.cast(InlineVariableAssignmentRefactoring.this.myVariable, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true) == null);
+          nodesCount.value = ListSequence.fromList(getNodesToRefactor()).count();
         }
       });
-      if (initializer.value == null) {
+      if (notInitialized.value) {
         return false;
       }
-      if (ListSequence.fromList(nodesToRefactor.value).isEmpty()) {
-        Messages.showInfoMessage(frame, "Variable is never used", "Inline Variable");
+      if (nodesCount.value == 0) {
+        Messages.showInfoMessage(frame, "Variable " + variableName.value + " is never used", "Inline Variable");
         return false;
       } else {
-        int code = Messages.showYesNoDialog(frame, "Inline local variable '" + myVariable + "'? (" + NameUtil.formatNumericalString(ListSequence.fromList(nodesToRefactor.value).count(), "occurence") + ")", "Inline Variable", null);
+        int code = Messages.showYesNoDialog(frame, "Inline local variable '" + variableName.value + "'? (" + NameUtil.formatNumericalString(nodesCount.value, "occurence") + ")", "Inline Variable", null);
         if (code != 0) {
           return false;
         }
@@ -79,8 +81,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
 
   public SNode doRefactoring() {
     SNode newSelection = null;
-    for (SNode ref : this.getNodesToRefactor()) {
-      SNode sourceNode = ref;
+    for (SNode sourceNode : this.getNodesToRefactor()) {
       // <node> 
       for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(sourceNode, "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{}))) {
         if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == myVariable) {

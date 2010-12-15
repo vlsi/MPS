@@ -21,6 +21,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 
@@ -29,7 +30,9 @@ import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.plugins.PluginUtil;
+import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
@@ -112,10 +115,19 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     synchronized (myPluginsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
+          mySortedPlugins = new ArrayList<BaseProjectPlugin>();
+
+          Collection bootstrapPlugins = PluginUtil.getBootstrapPluginModules();
+          mySortedPlugins.addAll(PluginUtil.createPlugins(bootstrapPlugins, new ProjectPluginCreator()));
+
+          mySortedPlugins.addAll(PluginUtil.getStandaloneProjPlugins());
+
           Set<IModule> modules = new HashSet<IModule>();
-          modules.addAll(PluginUtil.collectPluginModules(myProject));
-          modules.addAll(PluginUtil.getBootstrapPluginModules());
-          mySortedPlugins = PluginUtil.createPlugins(modules, new ProjectPluginCreator());
+          for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+            modules.addAll(PluginUtil.collectPluginModules(p));
+          }
+          mySortedPlugins.addAll(PluginUtil.createPlugins(modules, new ProjectPluginCreator()));
+
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
               plugin.init(myProject);

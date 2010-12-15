@@ -34,6 +34,7 @@ public class PluginUtil {
     return file.findElementAt(editor.getCaretModel().getOffset());
   }
 
+  @SuppressWarnings("unchecked")
   public static <PE extends PsiElement> PE getElement(PsiElement current, Class<PE> elementClass) {
     if (current == null) return null;
     if (elementClass.isInstance(current)) {

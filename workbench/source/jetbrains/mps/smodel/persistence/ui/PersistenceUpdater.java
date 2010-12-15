@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence.ui;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -102,12 +101,8 @@ public class PersistenceUpdater {
       return;
     }
 
-    PersistenceSettings persistenceSettings = ApplicationManager.getApplication().getComponent(PersistenceSettings.class);
-    boolean needsAskUpgradePersistence = !persistenceSettings.isUserPersistenceVersionDefined() ||
-      persistenceSettings.getUserSelectedPersistenceVersion() < PersistenceSettings.MAX_VERSION;
-
     UpdatePersistenceDialog updatePersistenceDialog =
-      new UpdatePersistenceDialog(modelDescriptors, mainframe, unitDescription, needsAskUpgradePersistence);
+      new UpdatePersistenceDialog(modelDescriptors, mainframe, unitDescription, false);
     updatePersistenceDialog.showDialog();
 
     if (updatePersistenceDialog.getAnswer()) {
@@ -116,9 +111,6 @@ public class PersistenceUpdater {
           upgradePersistence(modelDescriptors, PersistenceSettings.MAX_VERSION);
         }
       });
-      if (needsAskUpgradePersistence && updatePersistenceDialog.needsSetVersion()) {
-        persistenceSettings.setUserPersistenceVersion(PersistenceSettings.MAX_VERSION);
-      }
     }
   }
 

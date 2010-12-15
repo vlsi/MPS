@@ -41,8 +41,6 @@ public class ToolsAppComponent implements ApplicationComponent {
   public void initComponent() {
     myDiffManager.registerDiffTool(myModelDiffTool);
     myDiffManager.registerDiffTool(myModelMergeTool);
-
-    ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).loadPlugin(new Vcs_ApplicationPlugin());
   }
 
   public void disposeComponent() {

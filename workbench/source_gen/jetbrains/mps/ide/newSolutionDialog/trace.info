@@ -41,12 +41,12 @@
     <nodeInfo nodeId="1203609690220" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NewSolutionDialogContentPane.java" startLine="205" startPosition="5" endLine="209" endPosition="5" />
     <nodeInfo nodeId="4015801747712958717" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NewSolutionDialogContentPane.java" startLine="213" startPosition="106" endLine="217" endPosition="5" />
     <nodeInfo nodeId="1203611190216" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NewSolutionDialogContentPane.java" startLine="217" startPosition="5" endLine="221" endPosition="5" />
-    <nodeInfo nodeId="1203599986635" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NewSolutionDialogContentPane.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
-    <nodeInfo nodeId="8115509433044647713" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NewSolutionDialogContentPane.java" startLine="224" startPosition="86" endLine="229" endPosition="0" />
+    <nodeInfo nodeId="1203599986635" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" fileName="NewSolutionDialogContentPane.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
+    <nodeInfo nodeId="8115509433044647713" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" fileName="NewSolutionDialogContentPane.java" startLine="224" startPosition="86" endLine="229" endPosition="0" />
     <nodeInfo nodeId="8115509433044647709" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NewSolutionDialogContentPane.java" startLine="223" startPosition="0" endLine="229" endPosition="60" />
-    <nodeInfo nodeId="1203608542333" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NewSolutionDialogContentPane.java" startLine="235" startPosition="0" endLine="241" endPosition="0" />
-    <nodeInfo nodeId="1203676067041" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NewSolutionDialogContentPane.java" startLine="241" startPosition="0" endLine="252" endPosition="0" />
-    <nodeInfo nodeId="1203599983021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NewSolutionDialogContentPane.java" startLine="196" startPosition="0" endLine="231" endPosition="0" />
+    <nodeInfo nodeId="1203608542333" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewSolution#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/Solution;" fileName="NewSolutionDialogContentPane.java" startLine="235" startPosition="0" endLine="241" endPosition="0" />
+    <nodeInfo nodeId="1203676067041" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateSolutionPath#()V" fileName="NewSolutionDialogContentPane.java" startLine="241" startPosition="0" endLine="252" endPosition="0" />
+    <nodeInfo nodeId="1203599983021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" fileName="NewSolutionDialogContentPane.java" startLine="196" startPosition="0" endLine="231" endPosition="0" />
     <scopeInfo nodeId="1203599986637" fileName="NewSolutionDialogContentPane.java" startLine="232" startPosition="31" endLine="233" endPosition="33" />
     <scopeInfo nodeId="1203679190578" fileName="NewSolutionDialogContentPane.java" startLine="243" startPosition="38" endLine="244" endPosition="13" />
     <scopeInfo nodeId="1203676180746" fileName="NewSolutionDialogContentPane.java" startLine="248" startPosition="96" endLine="249" endPosition="64" />
@@ -60,23 +60,23 @@
       <varInfo nodeId="5890305283801268146" varName="solution" />
     </scopeInfo>
     <scopeInfo nodeId="1203593931550" fileName="NewSolutionDialogContentPane.java" startLine="59" startPosition="31" endLine="63" endPosition="37" />
-    <scopeInfo nodeId="1203599986635" fileName="NewSolutionDialogContentPane.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
-    <scopeInfo nodeId="8115509433044647713" fileName="NewSolutionDialogContentPane.java" startLine="224" startPosition="86" endLine="229" endPosition="0" />
-    <scopeInfo nodeId="1203608542333" fileName="NewSolutionDialogContentPane.java" startLine="235" startPosition="0" endLine="241" endPosition="0">
+    <scopeInfo nodeId="1203599986635" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" fileName="NewSolutionDialogContentPane.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
+    <scopeInfo nodeId="8115509433044647713" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" fileName="NewSolutionDialogContentPane.java" startLine="224" startPosition="86" endLine="229" endPosition="0" />
+    <scopeInfo nodeId="1203608542333" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewSolution#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/Solution;" fileName="NewSolutionDialogContentPane.java" startLine="235" startPosition="0" endLine="241" endPosition="0">
       <varInfo nodeId="1203608561247" varName="solutionDescriptorFile" />
     </scopeInfo>
     <scopeInfo nodeId="1203676067043" fileName="NewSolutionDialogContentPane.java" startLine="242" startPosition="41" endLine="250" endPosition="5">
       <varInfo nodeId="1203676147983" varName="prefix" />
       <varInfo nodeId="1203676097255" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1203676067041" fileName="NewSolutionDialogContentPane.java" startLine="241" startPosition="0" endLine="252" endPosition="0" />
+    <scopeInfo nodeId="1203676067041" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateSolutionPath#()V" fileName="NewSolutionDialogContentPane.java" startLine="241" startPosition="0" endLine="252" endPosition="0" />
     <scopeInfo nodeId="1203599983023" fileName="NewSolutionDialogContentPane.java" startLine="197" startPosition="27" endLine="229" endPosition="60">
       <varInfo nodeId="4015801747712958711" varName="message" />
       <varInfo nodeId="1203609837751" varName="dir" />
       <varInfo nodeId="1203609799598" varName="file" />
       <varInfo nodeId="1203609752878" varName="descriptorPath" />
     </scopeInfo>
-    <scopeInfo nodeId="1203599983021" fileName="NewSolutionDialogContentPane.java" startLine="196" startPosition="0" endLine="231" endPosition="0" />
+    <scopeInfo nodeId="1203599983021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" fileName="NewSolutionDialogContentPane.java" startLine="196" startPosition="0" endLine="231" endPosition="0" />
     <unitInfo nodeId="8115509433044647713" fileName="NewSolutionDialogContentPane.java" startLine="224" startPosition="71" endLine="229" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialogContentPane$2" />
   </root>
   <root nodeId="5890305283801268194">
@@ -90,20 +90,20 @@
     <nodeInfo nodeId="5890305283801268268" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NewModuleUtil.java" startLine="25" startPosition="66" endLine="26" endPosition="54" />
     <nodeInfo nodeId="8115509433044647702" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NewModuleUtil.java" startLine="28" startPosition="25" endLine="29" endPosition="95" />
     <nodeInfo nodeId="5890305283801268299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NewModuleUtil.java" startLine="31" startPosition="7" endLine="32" endPosition="52" />
-    <nodeInfo nodeId="5890305283801268308" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="NewModuleUtil.java" startLine="14" startPosition="28" endLine="16" endPosition="3" />
-    <nodeInfo nodeId="8115509433044647700" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="NewModuleUtil.java" startLine="27" startPosition="59" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="5890305283801268308" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewModuleUtil#()V" fileName="NewModuleUtil.java" startLine="14" startPosition="28" endLine="16" endPosition="3" />
+    <nodeInfo nodeId="8115509433044647700" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="NewModuleUtil.java" startLine="27" startPosition="59" endLine="31" endPosition="0" />
     <nodeInfo nodeId="8115509433044647696" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NewModuleUtil.java" startLine="26" startPosition="54" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="5890305283801268195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="NewModuleUtil.java" startLine="17" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="5890305283801268195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewSolution#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/MPSProject;)Ljetbrains/mps/project/Solution;" fileName="NewModuleUtil.java" startLine="17" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="5890305283801268311" fileName="NewModuleUtil.java" startLine="15" startPosition="26" endLine="15" endPosition="26" />
     <scopeInfo nodeId="8115509433044647701" fileName="NewModuleUtil.java" startLine="28" startPosition="25" endLine="29" endPosition="95" />
-    <scopeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="14" startPosition="28" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="8115509433044647700" fileName="NewModuleUtil.java" startLine="27" startPosition="59" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="5890305283801268308" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewModuleUtil#()V" fileName="NewModuleUtil.java" startLine="14" startPosition="28" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="8115509433044647700" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="NewModuleUtil.java" startLine="27" startPosition="59" endLine="31" endPosition="0" />
     <scopeInfo nodeId="5890305283801268201" fileName="NewModuleUtil.java" startLine="18" startPosition="90" endLine="32" endPosition="52">
       <varInfo nodeId="5890305283801268221" varName="solutionDescriptor" />
       <varInfo nodeId="5890305283801268231" varName="fileName" />
       <varInfo nodeId="5890305283801268250" varName="modelRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="5890305283801268195" fileName="NewModuleUtil.java" startLine="17" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="5890305283801268195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewSolution#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/MPSProject;)Ljetbrains/mps/project/Solution;" fileName="NewModuleUtil.java" startLine="17" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="5890305283801268198" varName="project" />
       <varInfo nodeId="5890305283801268196" varName="solutionFile" />
     </scopeInfo>

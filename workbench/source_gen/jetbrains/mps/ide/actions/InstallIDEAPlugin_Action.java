@@ -12,10 +12,19 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
-import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.util.FileUtil;
 import javax.swing.JOptionPane;
 import java.io.IOException;
+import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.ide.util.PropertiesComponent;
+import com.intellij.openapi.fileChooser.FileChooserDialog;
+import com.intellij.openapi.fileChooser.FileChooserFactory;
 
 public class InstallIDEAPlugin_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -26,7 +35,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
   public InstallIDEAPlugin_Action() {
     super("Install IntelliJ IDEA Plugin", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
@@ -64,11 +73,9 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
-      File targetDir;
-      if (!(SystemInfo.isMac)) {
-        targetDir = new File(System.getProperty("user.home") + File.separator + ".IntelliJIdea90" + File.separator + "config" + File.separator + "plugins");
-      } else {
-        targetDir = new File(System.getProperty("user.home") + File.separator + "Library" + File.separator + "Application Support" + File.separator + "IntelliJIdea90");
+      File targetDir = InstallIDEAPlugin_Action.this.getTargetDir();
+      if (targetDir == null) {
+        return;
       }
       if (!(targetDir.exists())) {
         targetDir.mkdirs();
@@ -84,5 +91,65 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
         log.error("User's action execute method failed. Action:" + "InstallIDEAPlugin", t);
       }
     }
+  }
+
+  private File getTargetDir() {
+    File targetIdeaInstallDir = InstallIDEAPlugin_Action.this.getTargetIdeaInstallDir();
+    if (targetIdeaInstallDir == null) {
+      return null;
+    }
+    if (SystemInfo.isMac) {
+      return targetIdeaInstallDir;
+    }
+    return new File(targetIdeaInstallDir, "config" + File.separator + "plugins");
+  }
+
+  private File getTargetIdeaInstallDir() {
+    boolean isMac = SystemInfo.isMac;
+    String userHome = System.getProperty("user.home");
+    String ideaConfigRootPath = (isMac ?
+      userHome + File.separator + "Library" + File.separator + "Application Support" :
+      userHome
+    );
+    final VirtualFile ideaConfigRoot = VirtualFileUtils.getVirtualFile(ideaConfigRootPath);
+    final String ideaConfigFolderPrefix = (isMac ?
+      "IntelliJIdea" :
+      ".IntelliJIdea"
+    );
+    List<VirtualFile> existingIdeaConfigs = ListSequence.fromList(new ArrayList<VirtualFile>());
+    for (VirtualFile child : ideaConfigRoot.getChildren()) {
+      if (child.isDirectory() && child.getName().startsWith(ideaConfigFolderPrefix)) {
+        ListSequence.fromList(existingIdeaConfigs).addElement(child);
+      }
+    }
+    if (ListSequence.fromList(existingIdeaConfigs).count() == 0) {
+      JOptionPane.showMessageDialog(InstallIDEAPlugin_Action.this.frame, "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
+      return null;
+    } else if (ListSequence.fromList(existingIdeaConfigs).count() == 1) {
+      return VirtualFileUtils.toFile(ListSequence.fromList(existingIdeaConfigs).first());
+    }
+
+    FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, false, false, false, false) {
+      @Override
+      public boolean isFileVisible(VirtualFile file, boolean b) {
+        if (!(super.isFileVisible(file, b))) {
+          return false;
+        }
+        return ideaConfigRoot.equals(file.getParent()) && file.getName().startsWith(ideaConfigFolderPrefix);
+      }
+    };
+    descriptor.setTitle("Select IntelliJ IDEA configuration folder");
+    descriptor.setRoot(ideaConfigRoot);
+
+    String oldShowHiddenValue = PropertiesComponent.getInstance().getValue("FileChooser.showHiddens");
+    PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", Boolean.TRUE.toString());
+    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, InstallIDEAPlugin_Action.this.frame);
+    VirtualFile[] files = dialog.choose(ideaConfigRoot, null);
+    PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", oldShowHiddenValue);
+    assert files.length <= 1;
+    return (files.length == 0 ?
+      null :
+      VirtualFileUtils.toFile(files[0])
+    );
   }
 }

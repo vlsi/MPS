@@ -70,14 +70,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     }
     // myState.solveInequalities();
   }
-
+     /*
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
     synchronized (TYPECHECKING_LOCK) {
       return myState.typeOf(node, null);
     }
   }
-
+     */
   /*
 @Override
 public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -92,10 +92,14 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
     if (refreshTypes) {
       myState.clear(true);
       myNodeTypesComponent.checkNode(myRootNode, true);
-      myState.solveInequalities();
-      myState.expandAll();
-      myState.checkNonConcreteWhenConcretes();
+      solveAndExpand();
     }
+  }
+
+  public void solveAndExpand() {
+    myState.solveInequalities();
+    myState.expandAll();
+    myState.checkNonConcreteWhenConcretes();
   }
 
   @Override
@@ -269,8 +273,11 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   protected SNode getTypeOf_generationMode(SNode node) {
-    checkRoot();
-    return getTypeOf(node, myTypeChecker);
+    try {
+      return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    } finally {
+      myNodeTypesComponent.dispose();
+    }
   }
 
   @Override

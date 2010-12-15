@@ -15,6 +15,9 @@ import com.intellij.openapi.actionSystem.Anchor;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 
 public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
+  public Vcs_ApplicationPlugin() {
+  }
+
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.vcs";
