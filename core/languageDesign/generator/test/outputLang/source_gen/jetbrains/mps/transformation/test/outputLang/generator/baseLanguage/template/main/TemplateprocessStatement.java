@@ -376,7 +376,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
     environment.weaveNode(outputContextNode, "statement", tnodepart1, weaveTf1, contextWithParams.getInput());
     Collection<SNode> tlistpart2 = applyPart2(environment, contextWithParams);
     SNodePointer weaveTf2 = weaveTfConst_slzep9_a0i0g;
-    for (SNode nodeToWeave : tlistpart2) {
+    for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart2)) {
       environment.weaveNode(outputContextNode, "statement", nodeToWeave, weaveTf2, contextWithParams.getInput());
     }
     return TemplateUtil.asList(tnodepart0, tnodepart1, tlistpart2);

@@ -251,6 +251,10 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodePointer templateNode, SNode inputNode) {
+    if(outputNodeToWeave == null) {
+      return;
+    }
+
     // check child
     RoleValidationStatus status = generator.validateChild(contextParentNode, childRole, outputNodeToWeave);
     if (status != null) {

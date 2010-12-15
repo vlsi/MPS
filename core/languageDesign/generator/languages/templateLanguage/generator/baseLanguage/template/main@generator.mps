@@ -30280,9 +30280,6 @@
                 </node>
               </node>
             </node>
-            <node role="iterable" roleId="tpee.1144226360166" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1368513600865902713">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1368513600865828055" resolveInfo="part" />
-            </node>
             <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1368513600865902721" />
             <node role="nodeMacro$attribute" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1368513600865902728">
               <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1368513600865902729">
@@ -30405,6 +30402,13 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node role="iterable" roleId="tpee.1144226360166" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="461908365231268427">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuxb.~TemplateUtil%dasNotNull(java%dlang%dIterable)%cjava%dlang%dIterable" resolveInfo="asNotNull" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xuxb.~TemplateUtil" resolveInfo="TemplateUtil" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="461908365231268433">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1368513600865828055" resolveInfo="part" />
               </node>
             </node>
           </node>
