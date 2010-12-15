@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Core_ProjectPlugin.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin" />
-  <unitInfo fileName="Core_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" />
+  <unitInfo fileName="Core_ProjectPlugin.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin" />
   <unitInfo fileName="CoreActions_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup" />
   <unitInfo fileName="FindModelUsages_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup" />
   <unitInfo fileName="FindLanguageUsages_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup" />
+  <unitInfo fileName="Core_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" />
   <unitInfo fileName="LanguageChecksPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.LanguageChecksPlugin_CustomProjectPlugin" />
   <unitInfo fileName="FindModelUsages_Action.java" startLine="24" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action" />
   <unitInfo fileName="FindLanguageUsages_Action.java" startLine="24" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Behavior_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin" />
-  <unitInfo fileName="Behavior_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ApplicationPlugin" />
+  <unitInfo fileName="Behavior_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin" />
   <unitInfo fileName="BehaviourPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup" />
+  <unitInfo fileName="Behavior_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ApplicationPlugin" />
   <unitInfo fileName="BehaviorCodeOverrideImplementMenuGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" />
   <unitInfo fileName="OverrideBehaviorMethod_Action.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action" />
   <unitInfo fileName="ImplementBehaviorMethod_Action.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.ImplementBehaviorMethod_Action" />
@@ -10,9 +10,9 @@
     <nodeInfo nodeId="1910641662758482649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BehaviourPopup_ActionGroup.java" startLine="19" startPosition="9" endLine="20" endPosition="266" />
   </root>
   <root nodeId="7562825466847533959">
-    <nodeInfo nodeId="7562825466847533965" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideBehaviorMethod_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="29" />
-    <nodeInfo nodeId="7562825466847534044" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideBehaviorMethod_Action.java" startLine="26" startPosition="29" endLine="27" endPosition="38" />
-    <nodeInfo nodeId="7562825466847534071" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="OverrideBehaviorMethod_Action.java" startLine="27" startPosition="38" endLine="28" endPosition="45" />
+    <nodeInfo nodeId="7562825466847533965" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selectedNode" fileName="OverrideBehaviorMethod_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="29" />
+    <nodeInfo nodeId="7562825466847534044" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="editorContext" fileName="OverrideBehaviorMethod_Action.java" startLine="26" startPosition="29" endLine="27" endPosition="38" />
+    <nodeInfo nodeId="7562825466847534071" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="operationContext" fileName="OverrideBehaviorMethod_Action.java" startLine="27" startPosition="38" endLine="28" endPosition="45" />
     <nodeInfo nodeId="7562825466847533968" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="OverrideBehaviorMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="168" />
     <nodeInfo nodeId="7562825466847536295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideBehaviorMethod_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="89" />
     <nodeInfo nodeId="7562825466847536307" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="OverrideBehaviorMethod_Action.java" startLine="91" startPosition="89" endLine="92" endPosition="84" />
@@ -20,9 +20,9 @@
     <scopeInfo nodeId="7562825466847533964" fileName="OverrideBehaviorMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="168" />
   </root>
   <root nodeId="7562825466847536367">
-    <nodeInfo nodeId="7562825466847536371" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementBehaviorMethod_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="29" />
-    <nodeInfo nodeId="7562825466847536374" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementBehaviorMethod_Action.java" startLine="26" startPosition="29" endLine="27" endPosition="38" />
-    <nodeInfo nodeId="7562825466847536375" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ImplementBehaviorMethod_Action.java" startLine="27" startPosition="38" endLine="28" endPosition="45" />
+    <nodeInfo nodeId="7562825466847536371" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selectedNode" fileName="ImplementBehaviorMethod_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="29" />
+    <nodeInfo nodeId="7562825466847536374" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="editorContext" fileName="ImplementBehaviorMethod_Action.java" startLine="26" startPosition="29" endLine="27" endPosition="38" />
+    <nodeInfo nodeId="7562825466847536375" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="operationContext" fileName="ImplementBehaviorMethod_Action.java" startLine="27" startPosition="38" endLine="28" endPosition="45" />
     <nodeInfo nodeId="7562825466847536378" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ImplementBehaviorMethod_Action.java" startLine="42" startPosition="52" endLine="43" endPosition="239" />
     <nodeInfo nodeId="7562825466847536395" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementBehaviorMethod_Action.java" startLine="90" startPosition="9" endLine="91" endPosition="90" />
     <nodeInfo nodeId="7562825466847536403" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementBehaviorMethod_Action.java" startLine="91" startPosition="90" endLine="92" endPosition="85" />

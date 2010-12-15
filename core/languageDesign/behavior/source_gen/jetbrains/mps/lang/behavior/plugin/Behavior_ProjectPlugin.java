@@ -5,4 +5,6 @@ package jetbrains.mps.lang.behavior.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Behavior_ProjectPlugin extends BaseProjectPlugin {
+  public Behavior_ProjectPlugin() {
+  }
 }
