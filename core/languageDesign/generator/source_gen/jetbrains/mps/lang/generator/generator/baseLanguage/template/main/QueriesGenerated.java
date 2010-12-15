@@ -1769,6 +1769,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
   }
 
+  public static boolean ifMacro_Condition_8439346252333565680(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "generatorMessage", true) != null);
+  }
+
   public static boolean ifMacro_Condition_3846207671016008896(final IOperationContext operationContext, final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "case", true)).first(), "caseConsequence", true));
     return name.startsWith("tnode");
@@ -2858,7 +2862,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0jx(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0kx(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -3247,7 +3251,7 @@ public class QueriesGenerated {
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0jx(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0kx(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
