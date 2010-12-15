@@ -22,8 +22,6 @@ public interface QueryExecutionContext {
 
   boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException;
 
-  void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException;
-
   SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
   void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
@@ -53,4 +51,6 @@ public interface QueryExecutionContext {
   Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException;
 
   SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context);
+
+  void executeScript(TemplateMappingScript mappingScript, SModel model);
 }

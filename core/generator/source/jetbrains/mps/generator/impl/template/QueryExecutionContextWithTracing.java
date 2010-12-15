@@ -61,16 +61,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("mapping script", mappingScript.getNode()), true);
-      wrapped.executeMappingScript(mappingScript, model);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
   public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("map-src node macro", mapSrcNodeOrListMacro), true);
@@ -221,6 +211,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       tracer.push(taskName("context for weaving", rule.getRuleNode().getNode()), true);
       return wrapped.getContextNode(rule, environment, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+    try {
+      tracer.push(taskName("mapping script", mappingScript.getScriptNode().getNode()), true);
+      wrapped.executeScript(mappingScript, model);
     } finally {
       tracer.pop();
     }
