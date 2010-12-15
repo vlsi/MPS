@@ -21,6 +21,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.KeyStroke;
+import javax.swing.JComponent;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import com.intellij.openapi.application.ApplicationManager;
@@ -113,6 +117,12 @@ public class EvaluationPanel extends JPanel {
     } else {
       add(splitPane);
     }
+
+    myEditor.getComponenet().registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent p0) {
+        evaluate();
+      }
+    }, KeyStroke.getKeyStroke("ctrl ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myHighlighter.addAdditionalEditor(myEditor.getEditor());
   }
