@@ -84,14 +84,6 @@ public class StackFrameContext extends EvaluationContext {
     return AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
   }
 
-  public JavaUiState getUiState() {
-    return myUiState;
-  }
-
-  public void setUiState(JavaUiState uiState) {
-    myUiState = uiState;
-  }
-
   @NotNull
   public Map<String, SNode> getVariables(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
     Map<String, SNode> result = MapSequence.fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
@@ -159,37 +151,37 @@ public class StackFrameContext extends EvaluationContext {
     // TODO generics 
     if (type instanceof PrimitiveType) {
       if (type instanceof BooleanType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0a0b0j().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0a0b0h().createNode();
       }
       if (type instanceof ByteType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0b0b0j().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0b0b0h().createNode();
       }
       if (type instanceof ShortType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0c0b0j().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0c0b0h().createNode();
       }
       if (type instanceof LongType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0d0b0j().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0d0b0h().createNode();
       }
       if (type instanceof IntegerType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0e0b0j().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0e0b0h().createNode();
       }
       if (type instanceof DoubleType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0f0b0j().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0f0b0h().createNode();
       }
       if (type instanceof FloatType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0g0b0j().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0g0b0h().createNode();
       }
       if (type instanceof CharType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0h0b0j().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0h0b0h().createNode();
       }
     } else if (type instanceof ArrayType) {
-      return new StackFrameContext.QuotationClass_4zsmpx_a0a0a1a9().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType(), createClassifierType));
+      return new StackFrameContext.QuotationClass_4zsmpx_a0a0a1a7().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType(), createClassifierType));
     }
     return createClassifierType.invoke(type.name());
   }
 
-  public static class QuotationClass_4zsmpx_a0a0a0b0j {
-    public QuotationClass_4zsmpx_a0a0a0b0j() {
+  public static class QuotationClass_4zsmpx_a0a0a0b0h {
+    public QuotationClass_4zsmpx_a0a0a0b0h() {
     }
 
     public SNode createNode() {
@@ -205,8 +197,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0b0b0j {
-    public QuotationClass_4zsmpx_a0a0b0b0j() {
+  public static class QuotationClass_4zsmpx_a0a0b0b0h {
+    public QuotationClass_4zsmpx_a0a0b0b0h() {
     }
 
     public SNode createNode() {
@@ -222,8 +214,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0c0b0j {
-    public QuotationClass_4zsmpx_a0a0c0b0j() {
+  public static class QuotationClass_4zsmpx_a0a0c0b0h {
+    public QuotationClass_4zsmpx_a0a0c0b0h() {
     }
 
     public SNode createNode() {
@@ -239,8 +231,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0d0b0j {
-    public QuotationClass_4zsmpx_a0a0d0b0j() {
+  public static class QuotationClass_4zsmpx_a0a0d0b0h {
+    public QuotationClass_4zsmpx_a0a0d0b0h() {
     }
 
     public SNode createNode() {
@@ -256,8 +248,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0e0b0j {
-    public QuotationClass_4zsmpx_a0a0e0b0j() {
+  public static class QuotationClass_4zsmpx_a0a0e0b0h {
+    public QuotationClass_4zsmpx_a0a0e0b0h() {
     }
 
     public SNode createNode() {
@@ -273,8 +265,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0f0b0j {
-    public QuotationClass_4zsmpx_a0a0f0b0j() {
+  public static class QuotationClass_4zsmpx_a0a0f0b0h {
+    public QuotationClass_4zsmpx_a0a0f0b0h() {
     }
 
     public SNode createNode() {
@@ -290,8 +282,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0g0b0j {
-    public QuotationClass_4zsmpx_a0a0g0b0j() {
+  public static class QuotationClass_4zsmpx_a0a0g0b0h {
+    public QuotationClass_4zsmpx_a0a0g0b0h() {
     }
 
     public SNode createNode() {
@@ -307,8 +299,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0h0b0j {
-    public QuotationClass_4zsmpx_a0a0h0b0j() {
+  public static class QuotationClass_4zsmpx_a0a0h0b0h {
+    public QuotationClass_4zsmpx_a0a0h0b0h() {
     }
 
     public SNode createNode() {
@@ -324,8 +316,8 @@ public class StackFrameContext extends EvaluationContext {
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0a1a9 {
-    public QuotationClass_4zsmpx_a0a0a1a9() {
+  public static class QuotationClass_4zsmpx_a0a0a1a7 {
+    public QuotationClass_4zsmpx_a0a0a1a7() {
     }
 
     public SNode createNode(Object parameter_5) {
