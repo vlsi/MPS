@@ -38,6 +38,9 @@ import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vfs.*;
+import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.openapi.wm.ToolWindowId;
+import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
@@ -316,20 +319,27 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     }, "navigate", "");
   }
 
-  public void selectNode(@NotNull VirtualFile file, boolean changeView) {
-    MPSTreeNode nodeToSelect = getNode(file);
+  public void selectNode(@NotNull final VirtualFile file, final boolean changeView) {
+    ToolWindowManager windowManager = ToolWindowManager.getInstance(getProject());
+    ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
+    projectViewToolWindow.activate(new Runnable() {
+      public void run() {
+      myProjectView.changeView(getId());
+        MPSTreeNode nodeToSelect = getNode(file);
 
-    if (nodeToSelect != null) {
-      TreePath treePath = new TreePath(nodeToSelect.getPath());
-      getTree().setSelectionPath(treePath);
-      getTree().scrollPathToVisible(treePath);
-      getTree().selectNode(nodeToSelect);
-      if (changeView) {
-        myProjectView.changeView(getId());
+        if (nodeToSelect != null) {
+          TreePath treePath = new TreePath(nodeToSelect.getPath());
+          getTree().setSelectionPath(treePath);
+          getTree().scrollPathToVisible(treePath);
+          getTree().selectNode(nodeToSelect);
+          if (changeView) {
+            myProjectView.changeView(getId());
+          }
+        } else {
+          LOG.info("Can not find file " + file + " in tree.");
+        }
       }
-    } else {
-      LOG.info("Can not find file " + file + " in tree.");
-    }
+    }, false);
   }
 
   @Nullable
