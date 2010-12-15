@@ -9,6 +9,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Modeling_ApplicationPlugin extends BaseApplicationPlugin {
+  public Modeling_ApplicationPlugin() {
+  }
+
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     this.addCustomPart(res, new EditorExtensions_CustomApplicationPlugin());

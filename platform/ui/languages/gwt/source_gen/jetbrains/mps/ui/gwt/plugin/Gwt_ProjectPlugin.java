@@ -5,4 +5,6 @@ package jetbrains.mps.ui.gwt.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Gwt_ProjectPlugin extends BaseProjectPlugin {
+  public Gwt_ProjectPlugin() {
+  }
 }

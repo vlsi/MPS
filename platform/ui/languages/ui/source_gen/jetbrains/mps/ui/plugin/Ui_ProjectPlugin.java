@@ -5,4 +5,6 @@ package jetbrains.mps.ui.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Ui_ProjectPlugin extends BaseProjectPlugin {
+  public Ui_ProjectPlugin() {
+  }
 }

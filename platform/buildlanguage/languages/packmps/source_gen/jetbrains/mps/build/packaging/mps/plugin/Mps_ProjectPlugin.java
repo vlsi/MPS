@@ -5,4 +5,6 @@ package jetbrains.mps.build.packaging.mps.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Mps_ProjectPlugin extends BaseProjectPlugin {
+  public Mps_ProjectPlugin() {
+  }
 }

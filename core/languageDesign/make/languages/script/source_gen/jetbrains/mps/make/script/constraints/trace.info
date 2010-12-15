@@ -1,18 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="RelayQueryExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.make.script.constraints.RelayQueryExpression_Constraints" />
-  <unitInfo fileName="ResultStatement_Constraints.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.script.constraints.ResultStatement_Constraints" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.make.script.constraints.ConstraintsDescriptor" />
-  <root nodeId="1977954644795375516">
-    <nodeInfo nodeId="1977954644795375519" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RelayQueryExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="241" />
-    <scopeInfo nodeId="1977954644795375518" fileName="RelayQueryExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="241" />
-  </root>
-  <root nodeId="1977954644795408665">
-    <nodeInfo nodeId="1977954644795408669" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ResultStatement_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="289" />
-    <nodeInfo nodeId="1977954644795408679" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ResultStatement_Constraints.java" startLine="12" startPosition="289" endLine="13" endPosition="191" />
-    <scopeInfo nodeId="1977954644795408667" fileName="ResultStatement_Constraints.java" startLine="11" startPosition="114" endLine="13" endPosition="191">
-      <varInfo nodeId="1977954644795408670" varName="anc" />
-    </scopeInfo>
-  </root>
-</debugInfo>
+<debugInfo />
 
