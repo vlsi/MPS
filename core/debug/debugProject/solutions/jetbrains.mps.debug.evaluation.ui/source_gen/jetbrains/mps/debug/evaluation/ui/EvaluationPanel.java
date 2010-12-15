@@ -85,10 +85,10 @@ public class EvaluationPanel extends JPanel {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        EvaluationPanel.this.myEditor = new EmbeddableEditor(new ModuleContext(EvaluationPanel.this.myEvaluationModel.getModule(), EvaluationPanel.this.myEvaluationModel.getModule().getMPSProject().getProject()), EvaluationPanel.this.myEvaluationModel.getModule(), EvaluationPanel.this.myEvaluationModel.getRootToShow(), myEvaluationModel.getNodeToShow(), true);
+        myEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject().getProject()), myEvaluationModel.getModule(), myEvaluationModel.getRootToShow(), myEvaluationModel.getNodeToShow(), true);
 
-        for (Language language : EvaluationPanel.this.myEvaluationModel.getRequiredLanguages()) {
-          EvaluationPanel.this.myEditor.addLanguage(language);
+        for (Language language : myEvaluationModel.getRequiredLanguages()) {
+          myEditor.addLanguage(language);
         }
       }
     });
@@ -114,7 +114,7 @@ public class EvaluationPanel extends JPanel {
       add(splitPane);
     }
 
-    this.myHighlighter.addAdditionalEditor(myEditor.getEditor());
+    myHighlighter.addAdditionalEditor(myEditor.getEditor());
   }
 
   public void setErrorTextListener(EvaluationPanel.IErrorTextListener listener) {
