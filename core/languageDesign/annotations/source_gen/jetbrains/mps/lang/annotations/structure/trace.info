@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="Annotations_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.annotations.structure.Annotations_Language" />
-  <unitInfo fileName="PropertyAttributeConcept.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept" />
-  <unitInfo fileName="LinkAttributeConcept.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.annotations.structure.LinkAttributeConcept" />
-  <unitInfo fileName="AttributeConcept.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.annotations.structure.AttributeConcept" />
-</debugInfo>
-

@@ -19,7 +19,6 @@ import jetbrains.mps.baseLanguage.closures.structure.Closures_Language;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.lang.actions.structure.Actions_Language;
-import jetbrains.mps.lang.annotations.structure.Annotations_Language;
 import jetbrains.mps.lang.constraints.structure.Constraints_Language;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.dataFlow.structure.DataFlow_Language;
@@ -104,10 +103,6 @@ public class BootstrapLanguages {
 
   public static Language quotationLanguage() {
     return Quotation_Language.get();
-  }
-
-  public static Language annotationsLanguage() {
-    return Annotations_Language.get();
   }
 
   public static Language patternsLanguage() {

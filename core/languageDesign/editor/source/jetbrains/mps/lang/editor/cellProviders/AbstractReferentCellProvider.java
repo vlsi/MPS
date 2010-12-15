@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
-import jetbrains.mps.lang.annotations.structure.LinkAttributeConcept;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteEasily;
@@ -86,7 +86,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   // gets a kind of attributes possibly hanging on this provider's role
   public Class getRoleAttributeClass() {
-    return LinkAttributeConcept.class;
+    return AttributeKind.Reference.class;
   }
 
   public EditorCell createEditorCell(EditorContext context) {

@@ -21,7 +21,6 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
@@ -354,13 +353,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         add(group);
       }
       SModel model = getSModel();
-      Condition<SNode> condition = new Condition<SNode>() {
-        public boolean met(SNode object) {
-          return !(SNodeOperations.isInstanceOf(object, AttributeConcept.concept));
-        }
-      };
-      AndCondition<SNode> cond = new AndCondition<SNode>(condition, myNodesCondition);
-      Iterable<SNode> iter = new ConditionalIterable(model.roots(), cond);
+      Iterable<SNode> iter = new ConditionalIterable(model.roots(), myNodesCondition);
 
       List<SNode> filteredRoots = new ArrayList<SNode>();
       for (SNode node : iter) {
