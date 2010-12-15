@@ -15,15 +15,24 @@
  */
 package jetbrains.mps.debug.evaluation.ui;
 
+import com.intellij.execution.ExecutionManager;
+import com.intellij.execution.executors.DefaultDebugExecutor;
+import com.intellij.execution.ui.RunContentDescriptor;
+import com.intellij.execution.ui.layout.impl.RunnerContentUi;
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.tabs.TabInfo;
 import com.intellij.ui.tabs.impl.JBTabsImpl;
+import jetbrains.mps.debug.api.integration.DebuggerContent;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.IWatchListener;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -31,6 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WatchesPanel extends JPanel {
+  private static final Logger LOG = Logger.getLogger(WatchesPanel.class);
   private final List<EvaluationPanel> myPanels = new ArrayList<EvaluationPanel>();
   private final JBTabsImpl myTabsPane;
   private final SessionStopDisposer mySessionStopDisposer;
@@ -50,6 +60,9 @@ public class WatchesPanel extends JPanel {
         TabInfo info = new TabInfo(evaluationPanel);
         info.setText("This is a watch.");
         myTabsPane.addTab(info);
+
+        // todo does not work
+//        focusWatches(project, debugSession);
       }
     });
 
@@ -66,6 +79,17 @@ public class WatchesPanel extends JPanel {
     };
 
     add(myTabsPane, BorderLayout.CENTER);
+  }
+
+  private void focusWatches(Project project, DebugSession debugSession) {
+    RunContentDescriptor contentDescriptor = ExecutionManager.getInstance(project).getContentManager().findContentDescriptor(DefaultDebugExecutor.getDebugExecutorInstance(), debugSession.getProcessHandler());
+    RunnerContentUi ui = RunnerContentUi.KEY.getData(DataManager.getInstance().getDataContext(contentDescriptor.getComponent()));
+    if (ui == null) {
+      LOG.warning("Could not find ui.");
+      return;
+    }
+    Content watches = ui.findContent(DebuggerContent.WATCHES);
+    ui.select(watches, true);
   }
 
   private void dispose() {

@@ -103,7 +103,7 @@ public class DebugContentBuilder implements Disposable {
 
     new DebuggerToolPanel(myProject, myExecutionResult.getProcessHandler(), ui);
 
-    Content consoleContent = ui.createContent("Console", console.getComponent(), "Console", IconLoader.getIcon("/debugger/console.png"), console.getPreferredFocusableComponent());
+    Content consoleContent = ui.createContent("Console2.0", console.getComponent(), "Console", IconLoader.getIcon("/debugger/console.png"), console.getPreferredFocusableComponent());
     consoleContent.setSearchComponent(console.getComponent());
     consoleContent.setCloseable(false);
     ui.addContent(consoleContent, 1, PlaceInGrid.center, false);

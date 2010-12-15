@@ -4,6 +4,7 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.RunnerLayoutUi;
 import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.ide.ui.ListCellRendererWrapper;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.components.JBList;
@@ -14,6 +15,7 @@ import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
+import jetbrains.mps.debug.api.integration.DebuggerContent;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
@@ -53,13 +55,13 @@ public class DebuggerToolPanel {
     framesPanel.add(createThreadsComponent(), BorderLayout.NORTH);
     framesPanel.add(createStackFrameComponent(), BorderLayout.CENTER);
 
-    Content framesContent = ui.createContent("Frames", framesPanel, "Frames", Icons.FRAMES, null);
+    Content framesContent = ui.createContent(DebuggerContent.FRAMES, framesPanel, "Frames", Icons.FRAMES, null);
     framesContent.setCloseable(false);
     ui.addContent(framesContent, 0, PlaceInGrid.left, false);
 
     JComponent variablesPanel = createVariablesPanel(project);
 
-    Content variablesContent = ui.createContent("Variables", variablesPanel, "Variables", Icons.VARIABLES, null);
+    Content variablesContent = ui.createContent(DebuggerContent.VARIABLES, variablesPanel, "Variables", Icons.VARIABLES, null);
     variablesContent.setCloseable(false);
     ui.addContent(variablesContent, 0, PlaceInGrid.center, false);
 
@@ -67,18 +69,16 @@ public class DebuggerToolPanel {
     if (evaluationProvider != null) {
       JComponent watches = evaluationProvider.createWatchesPanel();
       if (watches != null) {
-        Content watchesContent = ui.createContent("Watches", watches, "Watches", Icons.WATCHES, null);
+        Content watchesContent = ui.createContent(DebuggerContent.WATCHES, watches, "Watches", Icons.WATCHES, null);
         watchesContent.setCloseable(false);
-        ui.addContent(watchesContent, 0, PlaceInGrid.right, false);
+        ui.addContent(watchesContent, 0, PlaceInGrid.right, true);
       }
     }
   }
 
   private JComponent createVariablesPanel(Project project) {
     myVariablesTree = new VariablesTree(project, myDebugSession.getUiState());
-    JScrollPane scrollPane = new JBScrollPane(myVariablesTree);
-    scrollPane.setBorder(new TitledBorder("Variables"));
-    return scrollPane;
+    return new JBScrollPane(myVariablesTree);
   }
 
   private JComponent createThreadsComponent() {
