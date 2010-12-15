@@ -182,7 +182,7 @@
   </roots>
   <root id="1071489090640">
     <node role="conceptProperty" roleId="1105725339613" type="tpce.StringConceptProperty" typeId="1105725638761" id="1194565364187">
-      <property name="value" nameId="1105725733873" value="concept" />
+      <property name="value" nameId="1105725733873" value="Concept" />
       <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="1096454100552">
@@ -288,7 +288,7 @@
       <link role="target" roleId="1071599976176" targetNodeId="1083171877298" resolveInfo="EnumerationMemberDeclaration" />
     </node>
     <node role="conceptProperty" roleId="1105725339613" type="tpce.StringConceptProperty" typeId="1105725638761" id="1194565666568">
-      <property name="value" nameId="1105725733873" value="enum data type" />
+      <property name="value" nameId="1105725733873" value="Enum Data Type" />
       <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
@@ -299,7 +299,7 @@
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" />
     </node>
     <node role="conceptProperty" roleId="1105725339613" type="tpce.StringConceptProperty" typeId="1105725638761" id="1194565683319">
-      <property name="value" nameId="1105725733873" value="constrained data type" />
+      <property name="value" nameId="1105725733873" value="Constrained Data Type" />
       <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
@@ -524,7 +524,7 @@
       <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.1137473994950" />
     </node>
     <node role="conceptProperty" roleId="1105725339613" type="tpce.StringConceptProperty" typeId="1105725638761" id="1194565744884">
-      <property name="value" nameId="1105725733873" value="annotation link" />
+      <property name="value" nameId="1105725733873" value="Annotation Link" />
       <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
@@ -604,7 +604,7 @@
       <link role="target" roleId="1071599976176" targetNodeId="1169127622168" resolveInfo="InterfaceConceptReference" />
     </node>
     <node role="conceptProperty" roleId="1105725339613" type="tpce.StringConceptProperty" typeId="1105725638761" id="1169126267841">
-      <property name="value" nameId="1105725733873" value="interface concept" />
+      <property name="value" nameId="1105725733873" value="Interface Concept" />
       <link role="conceptPropertyDeclaration" roleId="1105725439818" targetNodeId="tpck.1137473891462" />
     </node>
   </root>
