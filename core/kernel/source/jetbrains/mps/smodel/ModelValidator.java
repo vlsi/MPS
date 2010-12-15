@@ -1,6 +1,8 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,7 @@ public class ModelValidator {
     }
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(myModel.importedLanguages());
+    langsToCheck.addAll(IterableUtil.asCollection(myModel.getModelDepsManager().getAllImportedLanguages()));
     langsToCheck.addAll(myModel.engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
