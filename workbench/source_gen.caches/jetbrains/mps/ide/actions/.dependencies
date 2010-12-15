@@ -2271,21 +2271,30 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.InstallIDEAPlugin_Action" file="InstallIDEAPlugin_Action.java">
-    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="javax.swing.JOptionPane" />
+    <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserFactory" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDialog" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="java.io.File" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
