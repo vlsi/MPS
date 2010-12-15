@@ -18,7 +18,7 @@ public class AddLanguageDesingDevKitToLanguages_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(AddLanguageDesingDevKitToLanguages_Action.class);
 
   public AddLanguageDesingDevKitToLanguages_Action() {
-    super("Add Language DesignDevkit to All Languages", "", ICON);
+    super("Add Language Design Devkit to All Languages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -54,7 +54,6 @@ public class AddLanguageDesingDevKitToLanguages_Action extends GeneratedAction {
     try {
       for (Language l : ListSequence.fromList(MPSModuleRepository.getInstance().getAllLanguages())) {
         l.addUsedDevkit(LanguageDesign_DevKit.MODULE_REFERENCE);
-        l.save();
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
