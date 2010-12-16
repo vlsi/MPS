@@ -16,7 +16,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   private String myManagerClass;
 
   private final Object myUpdatersLock = new Object();
-  private Set<ModelUpdater> myUpdaters = new HashSet<ModelUpdater>();
+  private Set<ModelUpdater> myUpdaters = null;
 
   //todo left for compatibility. Should be removed
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
@@ -34,9 +34,11 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
 
   private void updateAfterLoad(SModel model) {
     synchronized (myUpdatersLock) {
-      Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
-      for (ModelUpdater updater : updCopy) {
-        updater.updateModel(this, model);
+      if (myUpdaters != null) {
+        Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
+        for (ModelUpdater updater : updCopy) {
+          updater.updateModel(this, model);
+        }
       }
       myNeedsReloading = false;
     }
@@ -44,6 +46,9 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
 
   public void addModelUpdater(ModelUpdater updater) {
     synchronized (myUpdatersLock) {
+      if (myUpdaters == null) {
+        myUpdaters = new HashSet<ModelUpdater>(1);
+      }
       myUpdaters.add(updater);
     }
   }
@@ -51,6 +56,9 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   public void removeModelUpdater(ModelUpdater updater) {
     synchronized (myUpdatersLock) {
       myUpdaters.remove(updater);
+      if (myUpdaters.isEmpty()) {
+        myUpdaters = null;
+      }
     }
   }
 
