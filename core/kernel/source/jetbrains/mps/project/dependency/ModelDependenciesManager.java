@@ -36,6 +36,7 @@ public class ModelDependenciesManager {
     result.addAll(myModel.importedLanguages());
     for (ModuleReference dk : myModel.importedDevkits()) {
       DevKit devkit = MPSModuleRepository.getInstance().getDevKit(dk);
+      if (devkit == null) continue;
       for (Language l : devkit.getAllExportedLanguages()) {
         result.add(l.getModuleReference());
       }
