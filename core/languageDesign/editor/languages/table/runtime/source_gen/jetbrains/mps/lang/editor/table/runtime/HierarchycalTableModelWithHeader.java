@@ -41,13 +41,13 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
   @Override
   public void deleteRow(int row) {
     assert row >= 1;
-    super.deleteRow(row);
+    super.deleteRow(row - 1);
   }
 
   @Override
   public void insertRow(int row) {
     assert row >= 1;
-    super.insertRow(row);
+    super.insertRow(row - 1);
   }
 
   private List<SNode> getHeaderCells() {

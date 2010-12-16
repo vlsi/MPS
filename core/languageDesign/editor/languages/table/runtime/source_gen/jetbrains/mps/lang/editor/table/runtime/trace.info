@@ -531,9 +531,9 @@
     <nodeInfo nodeId="4762511436389569903" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="32" startPosition="30" endLine="33" endPosition="37" />
     <nodeInfo nodeId="4762511436389569932" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="37" startPosition="33" endLine="38" endPosition="59" />
     <nodeInfo nodeId="832961390883561610" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="42" startPosition="34" endLine="43" endPosition="20" />
-    <nodeInfo nodeId="832961390883561604" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="43" startPosition="20" endLine="44" endPosition="25" />
+    <nodeInfo nodeId="832961390883561604" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="43" startPosition="20" endLine="44" endPosition="29" />
     <nodeInfo nodeId="832961390883561630" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="48" startPosition="34" endLine="49" endPosition="20" />
-    <nodeInfo nodeId="832961390883561601" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="49" startPosition="20" endLine="50" endPosition="25" />
+    <nodeInfo nodeId="832961390883561601" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="49" startPosition="20" endLine="50" endPosition="29" />
     <nodeInfo nodeId="832961390883505613" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="53" startPosition="40" endLine="54" endPosition="85" />
     <nodeInfo nodeId="4762511436389569875" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="HierarchycalTableModelWithHeader.java" startLine="24" startPosition="23" endLine="27" endPosition="5" />
     <nodeInfo nodeId="832961390883505603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeaderCells#()Ljava/util/List;" fileName="HierarchycalTableModelWithHeader.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
@@ -547,8 +547,8 @@
     <scopeInfo nodeId="4762511436389569901" fileName="HierarchycalTableModelWithHeader.java" startLine="32" startPosition="30" endLine="33" endPosition="37" />
     <scopeInfo nodeId="4762511436389569925" fileName="HierarchycalTableModelWithHeader.java" startLine="37" startPosition="33" endLine="38" endPosition="59" />
     <scopeInfo nodeId="832961390883505606" fileName="HierarchycalTableModelWithHeader.java" startLine="53" startPosition="40" endLine="54" endPosition="85" />
-    <scopeInfo nodeId="832961390883561600" fileName="HierarchycalTableModelWithHeader.java" startLine="42" startPosition="34" endLine="44" endPosition="25" />
-    <scopeInfo nodeId="832961390883561593" fileName="HierarchycalTableModelWithHeader.java" startLine="48" startPosition="34" endLine="50" endPosition="25" />
+    <scopeInfo nodeId="832961390883561600" fileName="HierarchycalTableModelWithHeader.java" startLine="42" startPosition="34" endLine="44" endPosition="29" />
+    <scopeInfo nodeId="832961390883561593" fileName="HierarchycalTableModelWithHeader.java" startLine="48" startPosition="34" endLine="50" endPosition="29" />
     <scopeInfo nodeId="6332812368705026203" fileName="HierarchycalTableModelWithHeader.java" startLine="15" startPosition="185" endLine="18" endPosition="203" />
     <scopeInfo nodeId="832961390883505603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeaderCells#()Ljava/util/List;" fileName="HierarchycalTableModelWithHeader.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="6332812368705026200" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HierarchycalTableModelWithHeader#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="HierarchycalTableModelWithHeader.java" startLine="14" startPosition="0" endLine="19" endPosition="3">
