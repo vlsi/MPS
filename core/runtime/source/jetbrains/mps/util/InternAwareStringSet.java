@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.util;
 
+import gnu.trove.THashSet;
+
 import java.util.Collection;
 import java.util.HashSet;
 
-public class InternAwareStringSet extends HashSet<String> {
+public class InternAwareStringSet extends THashSet<String> {
   public InternAwareStringSet() {
   }
 
