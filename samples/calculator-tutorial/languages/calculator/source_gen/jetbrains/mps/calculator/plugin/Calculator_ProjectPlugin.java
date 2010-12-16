@@ -5,4 +5,6 @@ package jetbrains.mps.calculator.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Calculator_ProjectPlugin extends BaseProjectPlugin {
+  public Calculator_ProjectPlugin() {
+  }
 }
