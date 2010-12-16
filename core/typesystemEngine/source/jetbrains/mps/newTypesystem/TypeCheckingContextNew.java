@@ -39,7 +39,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   private State myState;
   private SNode myRootNode;
-  private NodeTypesComponentNew myNodeTypesComponent;
   private TypeChecker myTypeChecker;
   private SubTyping mySubTyping;
   private boolean myChecked = false;
@@ -91,7 +90,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   public void checkRoot(final boolean refreshTypes) {
     if (refreshTypes) {
       myState.clear(true);
-      myNodeTypesComponent.checkNode(myRootNode, true);
+      ((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
       solveAndExpand();
     }
   }
@@ -272,6 +271,11 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
 
   @Override
+  public void addDependencyForCurrent(SNode node) {
+    getNodeTypesComponent().addDependencyForCurrent(node);
+  }
+
+  @Override
   protected SNode getTypeOf_generationMode(SNode node) {
     try {
       return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
@@ -282,8 +286,13 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
-    checkRoot();
-    return getTypeOf(node, typeChecker);
+    Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
+    if (pair.o2) {
+      return pair.o1;
+    }
+    SNode resultType = getNodeTypesComponent().computeTypesForNodeDuringResolving(node);
+    typeChecker.putTypeComputedForCompletion(node, resultType);
+    return resultType;
   }
 
   @Override

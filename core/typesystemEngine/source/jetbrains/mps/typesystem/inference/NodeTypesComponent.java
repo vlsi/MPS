@@ -343,7 +343,7 @@ public class NodeTypesComponent {
     }
   }
 
-  private boolean loadTypesystemRules(SNode root) {
+  protected boolean loadTypesystemRules(SNode root) {
     SModel model = root.getModel();
     RulesManager rulesManager = myTypeChecker.getRulesManager();
     if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
@@ -364,7 +364,7 @@ public class NodeTypesComponent {
     computeTypes(myRootNode, refreshTypes, true, new ArrayList<SNode>(0), false);
   }
 
-  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
@@ -501,7 +501,7 @@ public class NodeTypesComponent {
     return null;
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
+  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
@@ -718,7 +718,7 @@ public class NodeTypesComponent {
     return myNodesToTypesMap;
   }
 
-  private boolean applyRulesToNode(SNode node) {
+  protected boolean applyRulesToNode(SNode node) {
     Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
     if (newRules != null) {

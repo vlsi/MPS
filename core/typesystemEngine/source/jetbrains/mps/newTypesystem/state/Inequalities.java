@@ -91,11 +91,11 @@ public class Inequalities {
 
   public void solveInequalities() {
     List<InequalityBlock> inequalities = getInequalitiesToSolve();
-    int counter = 0;
-    while (!inequalities.isEmpty() && counter < 5) {
+    int size = 0;
+    while (!inequalities.isEmpty() && size != inequalities.size()) {
+      size = inequalities.size();
       iteration(inequalities);
       inequalities = getInequalitiesToSolve();
-      counter++;
     }
   }
 
@@ -133,7 +133,7 @@ public class Inequalities {
     }
     List<SNode> sortedNodes = sort(inputsToOutputs, nodes);
 
-   // System.out.println(sortedNodes);
+  //  System.out.println(sortedNodes);
     for (SNode node : sortedNodes) {
       //todo shallow concrete
       //todo switch input <--> output if input is deeply concrete?
