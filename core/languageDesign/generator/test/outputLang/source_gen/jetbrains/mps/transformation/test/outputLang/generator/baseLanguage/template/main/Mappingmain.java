@@ -284,6 +284,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         environment.getTracer().pushOutputNode(tnode3);
         environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a5a4b);
       }
+      environment.registerLabel(context.getInput(), tnode3, "sd");
       Collection<SNode> tlist4 = TemplateUtil.asList(tlist1, tnode3);
       return tlist4;
     }
@@ -1181,7 +1182,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       Collection<SNode> result = new TemplateRootCustom().apply(environment, context);
-      environment.registerLabel(null, result, "rootcustom");
+      environment.registerLabel(context.getInput(), result, "rootcustom");
       return result;
     }
   }

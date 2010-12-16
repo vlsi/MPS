@@ -15,20 +15,20 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateProcessor;
+import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.lang.generator.structure.TemplateFragment;
 import jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Evgeny Gryaznov, 12/13/10
@@ -65,8 +65,31 @@ public class TemplateDeclarationInterpreted implements TemplateDeclaration {
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext applyContext = myArguments.length == 0 ? context : context.subContext(getArgumentsAsMap());
 
-    return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
-      .processTemplateNode(null, myTemplateNode, applyContext);
+    if(myTemplateNode.isInstanceOfConcept(jetbrains.mps.lang.generator.structure.TemplateDeclaration.concept)) {
+      List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments((jetbrains.mps.lang.generator.structure.TemplateDeclaration) myTemplateNode.getAdapter());
+      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, myTemplateNode, context.getInput(), null, environment.getGenerator())) {
+        environment.getGenerator().showErrorMessage(context.getInput(), myTemplateNode, "error processing template declaration");
+        return null;
+      }
+
+      environment.getTracer().pushTemplateNode(new SNodePointer(myTemplateNode));
+
+      Collection<SNode> outputNodes = new ArrayList<SNode>();
+      for (TemplateFragment fragment : fragments) {
+        SNode templateForInclude = fragment.getParent().getNode();
+        String mappingName = GeneratorUtil.getMappingName(fragment, null);
+        TemplateProcessor p = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
+        try {
+          outputNodes.addAll(p.processTemplateNode(mappingName, templateForInclude, context.subContext(mappingName)));
+        } catch(TemplateProcessingFailureException ex) {
+          /* ignore */
+        }
+      }
+      return outputNodes;
+    } else {
+      return new TemplateProcessor(environment.getGenerator(), environment.getReductionContext())
+        .processTemplateNode(null, myTemplateNode, applyContext);
+    }
   }
 
   public static TemplateDeclaration create(SNode templateNode, Object[] arguments) {

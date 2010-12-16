@@ -19,7 +19,7 @@ import java.util.*;
  */
 public class GenerationPlan {
 
-  private static boolean USE_GENERATED = true;
+  private static boolean USE_GENERATED = false;
 
   private List<Generator> myGenerators;
   private List<TemplateModel> myTemplateModels;

@@ -136,6 +136,10 @@ public class QueriesGenerated {
     return "context" + ++((int[]) _context.getVariable("varindex"))[0];
   }
 
+  public static Object propertyMacro_GetPropertyValue_5898140574782661229(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_5070605274413823668(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -146,6 +150,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5070605274413823778(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "context" + ++((int[]) _context.getVariable("varindex"))[0];
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1669041086427295498(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_5070605274413825597(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -818,6 +826,15 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true));
   }
 
+  public static Object referenceMacro_GetReferent_5898140574782692882(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
+  }
+
+  public static Object referenceMacro_GetReferent_1830209218526504981(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    String name = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
+    return name;
+  }
+
   public static Object referenceMacro_GetReferent_5070605274413825727(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     String name = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
     return name;
@@ -1286,20 +1303,16 @@ public class QueriesGenerated {
     }).count() <= ((Integer) _context.getVariable("macrosToSkip"));
   }
 
-  public static boolean ifMacro_Condition_6304885153124990682(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6304885153124996297(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null);
   }
 
-  public static boolean ifMacro_Condition_6304885153124996297(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5898140574782661240(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null);
   }
 
   public static boolean ifMacro_Condition_5070605274413823686(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).isNotEmpty();
-  }
-
-  public static boolean ifMacro_Condition_5070605274413823749(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null);
   }
 
   public static boolean ifMacro_Condition_5070605274413823790(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1308,6 +1321,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_5070605274413825720(final IOperationContext operationContext, final IfMacroContext _context) {
     return false;
+  }
+
+  public static boolean ifMacro_Condition_1669041086427295482(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null);
   }
 
   public static boolean ifMacro_Condition_7664108699562529990(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1338,11 +1355,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0bl(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0fl(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0cl(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0gl(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2862,7 +2879,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0kx(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0ox(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -3237,21 +3254,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0bl(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0fl(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0cl(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0gl(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0kx(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0ox(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

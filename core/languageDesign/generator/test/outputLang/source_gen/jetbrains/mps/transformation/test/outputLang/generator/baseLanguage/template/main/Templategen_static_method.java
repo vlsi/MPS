@@ -358,6 +358,7 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
       environment.getTracer().pushOutputNode(tnode2);
       environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a2a1);
     }
+    environment.registerLabel(context.getInput(), tnode2, "testlabel");
     return tnode2;
   }
 
