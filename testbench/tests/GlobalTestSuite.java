@@ -383,8 +383,17 @@ jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Te
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class,
 jetbrains.mps.lang.editor.table.test.Create_StateMachine_Test.class,
-jetbrains.mps.lang.editor.table.test.Create_HierarchycalTable_Test.class,
-jetbrains.mps.lang.editor.table.test.Create_Table_Test.class})
+jetbrains.mps.lang.editor.table.test.genericTable.Create_Test.class,
+jetbrains.mps.lang.editor.table.test.genericTable.DeleteRow_Test.class,
+jetbrains.mps.lang.editor.table.test.genericTable.EditCell_Test.class,
+jetbrains.mps.lang.editor.table.test.genericTable.InsertRow_Test.class,
+jetbrains.mps.lang.editor.table.test.hierarchycalTable.Create_Test.class,
+jetbrains.mps.lang.editor.table.test.hierarchycalTable.DeleteHeaderCell_Test.class,
+jetbrains.mps.lang.editor.table.test.hierarchycalTable.DeleteRow_Test.class,
+jetbrains.mps.lang.editor.table.test.hierarchycalTable.EditCell_Test.class,
+jetbrains.mps.lang.editor.table.test.hierarchycalTable.EditHeaderCell_Test.class,
+jetbrains.mps.lang.editor.table.test.hierarchycalTable.InsertFirstRow_Test.class,
+jetbrains.mps.lang.editor.table.test.hierarchycalTable.InsertRow_Test.class})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
