@@ -523,6 +523,7 @@ public final class SNode {
   }
 
   private int getPropertyIndex(String propertyName) {
+    if (myProperties == null) return -1;
     for (int i = 0; i < myProperties.length; i += 2) {
       if (ObjectUtils.equals(myProperties[i], propertyName)) return i;
     }
@@ -590,6 +591,10 @@ public final class SNode {
   private void removeProperty(int index) {
     String[] oldProperties = myProperties;
     int newLength = oldProperties.length - 2;
+    if (newLength == 0) {
+      myProperties = null;
+      return;
+    }
     myProperties = new String[newLength];
     System.arraycopy(oldProperties, 0, myProperties, 0, index);
     System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
@@ -1958,11 +1963,4 @@ public final class SNode {
     return isInstanceOfConcept(conceptFqName);
   }
 
-  private static class PropertiesMap implements Map<String, String> {
-    private String[] myProperties;
-
-    public PropertiesMap(String[] properties) {
-      myProperties = properties;
-    }
-  }
 }
