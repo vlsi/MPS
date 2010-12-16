@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.test.runtime" uuid="707c4fde-f79a-44b5-b3d7-b5cef8844ccf" extenallyVisible="true" compileInMPS="false" java-stubs-enabled="true" generatorOutputPath="${solution_descriptor}/tests_gen">
+<solution name="jetbrains.mps.lang.test.runtime" uuid="707c4fde-f79a-44b5-b3d7-b5cef8844ccf" compileInMPS="false" java-stubs-enabled="true" generatorOutputPath="${solution_descriptor}/tests_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
@@ -27,6 +27,7 @@
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
     <usedLanguage>c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</usedLanguage>
     <usedLanguage>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</usedLanguage>
+    <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>
   </usedLanguages>
 </solution>
 

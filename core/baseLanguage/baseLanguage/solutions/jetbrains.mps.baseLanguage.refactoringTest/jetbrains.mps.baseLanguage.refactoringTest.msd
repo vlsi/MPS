@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.test" uuid="9c8b4b95-5d89-4201-ad78-0b2db3a22768" extenallyVisible="true" compileInMPS="false" java-stubs-enabled="false">
+<solution name="jetbrains.mps.baseLanguage.test" uuid="9c8b4b95-5d89-4201-ad78-0b2db3a22768" compileInMPS="false" java-stubs-enabled="false">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
@@ -29,6 +29,9 @@
     <usedLanguage>3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)</usedLanguage>
     <usedLanguage>c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</usedLanguage>
     <usedLanguage>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</usedLanguage>
+    <usedLanguage>a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)</usedLanguage>
+    <usedLanguage>7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)</usedLanguage>
+    <usedLanguage>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</usedLanguage>
   </usedLanguages>
 </solution>
 
