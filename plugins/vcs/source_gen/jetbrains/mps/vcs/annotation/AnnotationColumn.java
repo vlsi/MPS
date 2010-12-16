@@ -121,7 +121,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private ViewActionGroup myViewActionGroup;
   private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
   private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
-  private LeftEditorHighlighter myLeftEditorHighlighter;
   private boolean myShowAdditionalInfo = false;
 
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
@@ -177,7 +176,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myViewActionGroup = new ViewActionGroup(this, myAspectSubcolumns);
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
-    myLeftEditorHighlighter = leftEditorHighlighter;
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
     myVcs = vcs;
@@ -449,8 +447,17 @@ __switch__:
   public void dispose() {
     myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
-    ChangesManager.getInstance(getProject()).getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
-    AnnotationManager.getInstance(getProject()).columnDisposed(getEditorComponent());
+    final ChangesManager changesManager = ChangesManager.getInstance(getProject());
+    changesManager.getCommandQueue().runTask(new Runnable() {
+      public void run() {
+        changesManager.getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
+      }
+    });
+  }
+
+  public void close() {
+    getLeftEditorHighlighter().removeLeftColumn(this);
+    dispose();
   }
 
   private int findPseudoLineByY(int y) {
@@ -484,7 +491,7 @@ __switch__:
     final int fileLine = findFileLineByY(event.getY());
     ListSequence.fromList(actions).addElement(new BaseAction("Close Annotations") {
       protected void doExecute(AnActionEvent e) {
-        AnnotationManager.getInstance(getProject()).removeColumn(getEditorComponent());
+        close();
       }
     });
     ListSequence.fromList(actions).addElement(Separator.getInstance());
@@ -534,7 +541,7 @@ __switch__:
   public void invalidateLayout() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        myLeftEditorHighlighter.relayout(false);
+        getLeftEditorHighlighter().relayout(false);
       }
     });
   }
@@ -596,7 +603,13 @@ __switch__:
     }
 
     public void onAnnotationChanged() {
-      AnnotationManager.getInstance(getProject()).reannotate(getEditorComponent());
+      final EditorComponent editor = getEditorComponent();
+      close();
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          AnnotationHelper.annotate(editor);
+        }
+      });
     }
   }
 
