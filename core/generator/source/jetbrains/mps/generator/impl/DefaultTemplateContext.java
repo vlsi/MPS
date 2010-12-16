@@ -75,7 +75,7 @@ public class DefaultTemplateContext implements TemplateContext {
     this.variables = variables;
     this.pattern = null;
     this.myInputName = null;
-    this.myInputNode = null;
+    this.myInputNode = parent.getInput();
   }
 
   public DefaultTemplateContext getParent() {
