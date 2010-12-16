@@ -23,7 +23,7 @@ public class DeleteRow_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("3617401949667730229", "3617401949667730251");
+      final IEditor editor = TestBody.this.initEditor("3617401949667730229", "3216977149571398663");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
     }

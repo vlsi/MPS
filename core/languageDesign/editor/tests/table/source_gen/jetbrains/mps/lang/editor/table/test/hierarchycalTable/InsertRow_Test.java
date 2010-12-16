@@ -23,7 +23,7 @@ public class InsertRow_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("1287176538047819564", "1287176538047819598");
+      final IEditor editor = TestBody.this.initEditor("1287176538047819564", "1278807831494979234");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
