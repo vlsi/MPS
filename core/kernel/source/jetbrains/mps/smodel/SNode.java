@@ -76,7 +76,6 @@ public final class SNode {
   private String myConceptFqName;
 
   private INodeAdapter myAdapter;
-  private boolean myDisposed;
 
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     myModel = model;
@@ -856,7 +855,7 @@ public final class SNode {
     UnregisteredNodes.instance().put(this);
     myRegisteredInModelFlag = false;
 
-    if (myAdapter != null) {
+    if (myAdapter != null && !(isDisposed())) {
       UnregisteredNodesWithAdapters.getInstance().add(this);
     }
 
@@ -890,7 +889,7 @@ public final class SNode {
 
     UnregisteredNodes.instance().remove(this);
 
-    if (myAdapter != null) {
+    if (myAdapter != null && !(isDisposed())) {
       UnregisteredNodesWithAdapters.getInstance().remove(this);
     }
 
@@ -908,17 +907,16 @@ public final class SNode {
     //myChildren = null;
     //myReferences = null;
     //myProperties = null;
-    myAdapter = null;
+    myAdapter = DisposedNodeAdapter.get();
     myUserObjects = null;
-    myDisposed = true;
   }
 
   public boolean isDisposed() {
-    return myDisposed;
+    return myAdapter==DisposedNodeAdapter.get();
   }
 
   public boolean shouldHaveBeenDisposed() {
-    return myDisposed || myModel.isDisposed();
+    return isDisposed()|| myModel.isDisposed();
   }
 
   public boolean isDetached() {
