@@ -35,7 +35,7 @@ public class LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstrain
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    if (SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false) != null) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       return result;
     }
     SNode classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getEnclosingNode());
@@ -54,6 +54,10 @@ public class LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstrain
       }
       for (SNode method : instanceMethodDeclarations) {
         SetSequence.fromSet(names).addElement(SPropertyOperations.getString(method, "name"));
+      }
+      SNode method = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+      if (method != null && SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+        return result;
       }
       classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
