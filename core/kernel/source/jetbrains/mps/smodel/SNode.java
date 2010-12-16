@@ -69,6 +69,7 @@ public final class SNode {
 
   private String[] myProperties = null;
 
+  private boolean myDisposed = false;
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private SNodeId myId;
@@ -77,7 +78,7 @@ public final class SNode {
 
   private String myConceptFqName;
 
-  private INodeAdapter myAdapter;
+  private BaseAdapter myAdapter;
 
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     myModel = model;
@@ -896,7 +897,7 @@ public final class SNode {
     UnregisteredNodes.instance().put(this);
     myRegisteredInModelFlag = false;
 
-    if (myAdapter != null && !(isDisposed())) {
+    if (myAdapter != null) {
       UnregisteredNodesWithAdapters.getInstance().add(this);
     }
 
@@ -930,7 +931,7 @@ public final class SNode {
 
     UnregisteredNodes.instance().remove(this);
 
-    if (myAdapter != null && !(isDisposed())) {
+    if (myAdapter != null) {
       UnregisteredNodesWithAdapters.getInstance().remove(this);
     }
 
@@ -948,12 +949,13 @@ public final class SNode {
     //myChildren = null;
     //myReferences = null;
     //myProperties = null;
-    myAdapter = DisposedNodeAdapter.get();
+    myDisposed = true;
+    myAdapter = null;
     myUserObjects = null;
   }
 
   public boolean isDisposed() {
-    return myAdapter == DisposedNodeAdapter.get();
+    return myDisposed;
   }
 
   public boolean shouldHaveBeenDisposed() {
@@ -1722,46 +1724,37 @@ public final class SNode {
   //------------adapters-------------
 
   public BaseAdapter getAdapter() {
-    ModelAccess.assertLegalRead(this);
+     ModelAccess.assertLegalRead(this);
+     BaseAdapter adapter = myAdapter;
+     if (adapter != null) return adapter;
+     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
+     if (c == null) return new BaseConcept(this);
 
-    INodeAdapter adapter = myAdapter;
-    if (adapter != null && !(adapter instanceof BaseAdapter)) {
-      LOG.error("Accessing disposed node", new Throwable());
-      return null;
-    }
+     synchronized (this) {
+       adapter = myAdapter;
+       if (adapter != null) return adapter;
+       try {
+         adapter = (BaseAdapter) c.newInstance(this);
+         assert adapter.getNode() == this;
 
-    if (adapter != null) return (BaseAdapter) adapter;
-    Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-    if (c == null) return new BaseConcept(this);
+         if (!myRegisteredInModelFlag) {
+           UnregisteredNodesWithAdapters.getInstance().add(this);
+         }
+         myAdapter = adapter;
+         return adapter;
+       } catch (IllegalAccessException e) {
+         LOG.error(e);
+       } catch (InvocationTargetException e) {
+         LOG.error(e);
+       } catch (InstantiationException e) {
+         LOG.error(e);
+       } catch (Throwable t) {
+         LOG.error(t);
+       }
+     }
+     return new BaseConcept(this);
+   }
 
-    synchronized (this) {
-      adapter = myAdapter;
-      if (adapter != null && !(adapter instanceof BaseAdapter)) {
-        LOG.error("Accessing disposed node", new Throwable());
-        return null;
-      }
-      if (adapter != null) return (BaseAdapter) adapter;
-      try {
-        adapter = (BaseAdapter) c.newInstance(this);
-        assert adapter.getNode() == this;
-
-        if (!myRegisteredInModelFlag) {
-          UnregisteredNodesWithAdapters.getInstance().add(this);
-        }
-        myAdapter = adapter;
-        return (BaseAdapter) adapter;
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      } catch (InstantiationException e) {
-        LOG.error(e);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-    return new BaseConcept(this);
-  }
 
   void clearAdapter() {
     myAdapter = null;
