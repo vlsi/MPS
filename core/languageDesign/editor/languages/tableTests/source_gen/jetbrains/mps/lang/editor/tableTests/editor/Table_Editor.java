@@ -103,8 +103,8 @@ public class Table_Editor extends DefaultNodeEditor {
         };
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.getTable(node, editorContext));
-    editorCell.setCellId("Table_3p37vj_c0");
+    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.getTable(node, editorContext), "Table_3p37vj_c0");
+    editorCell.setCellId("Table_3p37vj_c0_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

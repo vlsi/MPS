@@ -24,11 +24,13 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 
 public class EditorCell_Table extends EditorCell_Collection {
   private TableModel myModel;
+  private String myUniquePrefix;
 
-  public EditorCell_Table(EditorContext editorContext, SNode node, CellLayout cellLayout, TableModel model) {
+  public EditorCell_Table(EditorContext editorContext, SNode node, CellLayout cellLayout, TableModel model, String uniquePrefix) {
     super(editorContext, node, new CellLayout_Vertical(), null);
     setGridLayout(true);
     myModel = model;
+    myUniquePrefix = uniquePrefix;
     this.setSelectable(false);
     this.getStyle().set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
     createChildrenCells();
@@ -37,6 +39,8 @@ public class EditorCell_Table extends EditorCell_Collection {
   public void createChildrenCells() {
     for (int row = 0; row < myModel.getRowsNumber(); row++) {
       EditorCell_Collection rowCell = this.createRowCell(row);
+      String rowId = myUniquePrefix + "_row_" + row;
+      rowCell.setCellId(rowId);
       final int finalRow = row;
       for (int column = 0; column < myModel.getColumnsNumber(); column++) {
         final int finalColumn = column;
@@ -56,6 +60,9 @@ public class EditorCell_Table extends EditorCell_Collection {
             }
           });
         }
+        if (editorCell.getCellId() == null) {
+          editorCell.setCellId(rowId + "_column_" + column);
+        }
         editorCell.setLeftGap(4);
         editorCell.setRightGap(4);
 
@@ -68,6 +75,7 @@ public class EditorCell_Table extends EditorCell_Collection {
           myModel.insertRow(finalRow + 1);
         }
       });
+      lastCell.setCellId(rowId + "_lastCell");
       rowCell.addEditorCell(lastCell);
       this.addEditorCell(rowCell);
     }
@@ -110,7 +118,7 @@ public class EditorCell_Table extends EditorCell_Collection {
     return rowCell;
   }
 
-  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model) {
-    return new EditorCell_Table(editorContext, node, new CellLayout_Table(), model);
+  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
+    return new EditorCell_Table(editorContext, node, new CellLayout_Table(), model, uniquePrefix);
   }
 }

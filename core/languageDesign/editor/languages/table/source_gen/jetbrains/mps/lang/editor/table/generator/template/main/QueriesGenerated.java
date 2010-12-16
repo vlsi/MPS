@@ -4,16 +4,20 @@ package jetbrains.mps.lang.editor.table.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
-import jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil;
 
 public class QueriesGenerated {
+  public static Object propertyMacro_GetPropertyValue_3216977149571365620(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return QueriesUtil.getUnicName(EditorCellModel_Behavior.call_createCellId_1216737839993(_context.getNode(), _context), SNodeOperations.getContainingRoot(_context.getNode()), _context);
+  }
+
   public static Object propertyMacro_GetPropertyValue_6189378527250534452(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
   }

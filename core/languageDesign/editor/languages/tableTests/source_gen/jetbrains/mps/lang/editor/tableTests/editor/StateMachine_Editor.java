@@ -122,8 +122,8 @@ public class StateMachine_Editor extends DefaultNodeEditor {
         };
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.getTable(node, editorContext));
-    editorCell.setCellId("Table_qpt50r_c0");
+    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.getTable(node, editorContext), "Table_qpt50r_c0");
+    editorCell.setCellId("Table_qpt50r_c0_0");
     return editorCell;
   }
 }
