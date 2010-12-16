@@ -88,19 +88,19 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(SNode node, EditorContext editorContext) {
-    if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
-      return Color.BLUE;
-    } else {
-      return Color.GRAY;
-    }
-  }
-
   private static int _StyleParameter_QueryFunction_2kc2ry_a0b0(SNode node, EditorContext editorContext) {
     if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
       return MPSFonts.BOLD_ITALIC;
     } else {
       return MPSFonts.ITALIC;
+    }
+  }
+
+  private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(SNode node, EditorContext editorContext) {
+    if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
+      return Color.BLUE;
+    } else {
+      return Color.GRAY;
     }
   }
 }

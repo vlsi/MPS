@@ -15,11 +15,11 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
@@ -217,6 +217,23 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_j8ahcr_b0d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("modelAcessor");
+    provider.setNoTargetText("<no modelAcessor>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createProperty_j8ahcr_b1d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("nullText");
@@ -241,21 +258,12 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_j8ahcr_b0d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("modelAcessor");
-    provider.setNoTargetText("<no modelAcessor>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
+  private static int _StyleParameter_QueryFunction_j8ahcr_a4b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_j8ahcr_a5b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
   private static Color _StyleParameter_QueryFunction_j8ahcr_a1b0(SNode node, EditorContext editorContext) {
@@ -268,13 +276,5 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
 
   private static Color _StyleParameter_QueryFunction_j8ahcr_a3b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_j8ahcr_a5b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
-  }
-
-  private static int _StyleParameter_QueryFunction_j8ahcr_a4b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 }

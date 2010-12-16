@@ -85,7 +85,7 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     }
     LookRegexp_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LookRegexp_Editor.LookRegexp_Editor_replaceWith_LookRegexp_cellMenu_a0a0(), new LookRegexp_Editor.LookRegexp_customReplace_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LookRegexp_Editor.ReplaceWith_LookRegexp_cellMenu_a0a0(), new LookRegexp_Editor.LookRegexp_customReplace_cellMenu_b0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -120,8 +120,8 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class LookRegexp_Editor_replaceWith_LookRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public LookRegexp_Editor_replaceWith_LookRegexp_cellMenu_a0a0() {
+  public static class ReplaceWith_LookRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_LookRegexp_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {
