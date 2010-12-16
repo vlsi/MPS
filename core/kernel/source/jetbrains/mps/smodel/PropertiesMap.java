@@ -72,7 +72,7 @@ class PropertiesMap implements Map<String, String> {
   public Set<String> keySet() {
     return new AbstractSet<String>() {
       public Iterator<String> iterator() {
-        return new ArrayWithHolesIterator(0, 2);
+        return new ArrayWithHolesIterator(-2, 2);
       }
 
       public int size() {
@@ -84,7 +84,7 @@ class PropertiesMap implements Map<String, String> {
   public Collection<String> values() {
     return new AbstractSet<String>() {
       public Iterator<String> iterator() {
-        return new ArrayWithHolesIterator(1, 2);
+        return new ArrayWithHolesIterator(-1, 2);
       }
 
       public int size() {
