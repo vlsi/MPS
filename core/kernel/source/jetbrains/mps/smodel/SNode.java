@@ -75,7 +75,7 @@ public final class SNode {
 
   private String myConceptFqName;
 
-  private BaseAdapter myAdapter;
+  private INodeAdapter myAdapter;
   private boolean myDisposed;
 
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
@@ -1684,14 +1684,24 @@ public final class SNode {
 
   public BaseAdapter getAdapter() {
     ModelAccess.assertLegalRead(this);
-    BaseAdapter adapter = myAdapter;
-    if (adapter != null) return adapter;
+
+    INodeAdapter adapter = myAdapter;
+    if (adapter != null && !(adapter instanceof BaseAdapter)) {
+      LOG.error("Accessing disposed node", new Throwable());
+      return null;
+    }
+
+    if (adapter != null) return (BaseAdapter) adapter;
     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
     if (c == null) return new BaseConcept(this);
 
     synchronized (this) {
       adapter = myAdapter;
-      if (adapter != null) return adapter;
+      if (adapter != null && !(adapter instanceof BaseAdapter)) {
+        LOG.error("Accessing disposed node", new Throwable());
+        return null;
+      }
+      if (adapter != null) return (BaseAdapter) adapter;
       try {
         adapter = (BaseAdapter) c.newInstance(this);
         assert adapter.getNode() == this;
@@ -1700,7 +1710,7 @@ public final class SNode {
           UnregisteredNodesWithAdapters.getInstance().add(this);
         }
         myAdapter = adapter;
-        return adapter;
+        return (BaseAdapter) adapter;
       } catch (IllegalAccessException e) {
         LOG.error(e);
       } catch (InvocationTargetException e) {
