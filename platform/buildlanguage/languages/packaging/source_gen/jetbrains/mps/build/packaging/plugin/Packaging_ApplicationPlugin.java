@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
+  public Packaging_ApplicationPlugin() {
+  }
+
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.build.packaging";
