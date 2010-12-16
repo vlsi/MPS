@@ -15,8 +15,8 @@ import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatcha
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
-import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.ProxyEqualsUtil;
+import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 
 public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
@@ -64,9 +64,9 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
       result.add(new SNodeWatchables.MyWatchable_model(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
       result.add(new SNodeWatchables.MyWatchable_concept(JavaObjectValue.fromJDIValue(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
 
-      IArrayValueProxy properties = ((IArrayValueProxy) value.getFieldValue("myProperties"));
+      IObjectValueProxy properties = ((IObjectValueProxy) value.getFieldValue("myProperties"));
       if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
-        for (IObjectValueProxy property : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) ((IObjectValueProxy) value.invokeMethod("getProperties", "()Ljava/util/Map;")).invokeMethod("entrySet", "()Ljava/util/Set;")))) {
+        for (IObjectValueProxy property : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) properties.invokeMethod("entrySet", "()Ljava/util/Set;")))) {
           result.add(new SNodeWatchables.MyWatchable_property(JavaObjectValue.fromJDIValue(property.getJDIValue(), getThreadReference()), "property"));
         }
       }
