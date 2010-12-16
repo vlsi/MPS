@@ -1,36 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="Dates_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.Dates_ProjectPlugin" />
-  <unitInfo fileName="Dates_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.Dates_ApplicationPlugin" />
-  <unitInfo fileName="DateLangGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup_ActionGroup" />
-  <unitInfo fileName="ConvertDateTimeOperations_Action.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action" />
-  <root nodeId="1213192856943">
-    <nodeInfo nodeId="1213192903807" fileName="ConvertDateTimeOperations_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="23" />
-    <nodeInfo nodeId="1213193060214" fileName="ConvertDateTimeOperations_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="188" />
-    <nodeInfo nodeId="1213193278475" fileName="ConvertDateTimeOperations_Action.java" startLine="66" startPosition="53" endLine="67" endPosition="135" />
-    <nodeInfo nodeId="1213193286116" fileName="ConvertDateTimeOperations_Action.java" startLine="67" startPosition="135" endLine="68" endPosition="132" />
-    <nodeInfo nodeId="1213193302679" fileName="ConvertDateTimeOperations_Action.java" startLine="68" startPosition="132" endLine="69" endPosition="134" />
-    <nodeInfo nodeId="1213193066691" fileName="ConvertDateTimeOperations_Action.java" startLine="70" startPosition="7" endLine="71" endPosition="186" />
-    <nodeInfo nodeId="1213193321878" fileName="ConvertDateTimeOperations_Action.java" startLine="72" startPosition="52" endLine="73" endPosition="133" />
-    <nodeInfo nodeId="1213193380883" fileName="ConvertDateTimeOperations_Action.java" startLine="73" startPosition="133" endLine="74" endPosition="131" />
-    <nodeInfo nodeId="1213193396664" fileName="ConvertDateTimeOperations_Action.java" startLine="74" startPosition="131" endLine="75" endPosition="133" />
-    <nodeInfo nodeId="1213193071419" fileName="ConvertDateTimeOperations_Action.java" startLine="65" startPosition="188" endLine="70" endPosition="7" />
-    <nodeInfo nodeId="1213193104030" fileName="ConvertDateTimeOperations_Action.java" startLine="71" startPosition="186" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="1213193071420" fileName="ConvertDateTimeOperations_Action.java" startLine="66" startPosition="53" endLine="69" endPosition="134">
-      <varInfo nodeId="1213193278476" varName="minusExpression" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213193104031" fileName="ConvertDateTimeOperations_Action.java" startLine="72" startPosition="52" endLine="75" endPosition="133">
-      <varInfo nodeId="1213193321879" varName="plusExpression" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213193071419" fileName="ConvertDateTimeOperations_Action.java" startLine="65" startPosition="188" endLine="70" endPosition="7">
-      <varInfo nodeId="1213193071423" varName="operation" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213193104030" fileName="ConvertDateTimeOperations_Action.java" startLine="71" startPosition="186" endLine="76" endPosition="7">
-      <varInfo nodeId="1213193104034" varName="operation" />
-    </scopeInfo>
-  </root>
-  <root nodeId="1213193418223">
-    <nodeInfo nodeId="1213194365498" fileName="DateLangGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="159" />
-  </root>
-</debugInfo>
+<debugInfo />
 
