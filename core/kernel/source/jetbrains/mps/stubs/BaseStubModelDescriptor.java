@@ -1,5 +1,6 @@
 package jetbrains.mps.stubs;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.*;
@@ -35,7 +36,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   private void updateAfterLoad(SModel model) {
     synchronized (myUpdatersLock) {
       if (myUpdaters != null) {
-        Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
+        Set<ModelUpdater> updCopy = new THashSet<ModelUpdater>(myUpdaters);
         for (ModelUpdater updater : updCopy) {
           updater.updateModel(this, model);
         }
@@ -47,7 +48,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   public void addModelUpdater(ModelUpdater updater) {
     synchronized (myUpdatersLock) {
       if (myUpdaters == null) {
-        myUpdaters = new HashSet<ModelUpdater>(1);
+        myUpdaters = new THashSet<ModelUpdater>(1);
       }
       myUpdaters.add(updater);
     }
