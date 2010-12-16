@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.library.BootstrapLanguages_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 
@@ -57,7 +58,10 @@ public class RemoveBootstrapLanguagesDevKitFromLanguageModels_Action extends Gen
     try {
       for (Language l : ListSequence.fromList(MPSModuleRepository.getInstance().getAllLanguages())) {
         for (EditableSModelDescriptor aspect : SetSequence.fromSet(l.getAspectModelDescriptors())) {
-          aspect.getSModel().deleteDevKit(BootstrapLanguages_DevKit.MODULE_REFERENCE);
+          SModel sModel = aspect.getSModel();
+          if (sModel.importedDevkits().contains(BootstrapLanguages_DevKit.MODULE_REFERENCE)) {
+            sModel.deleteDevKit(BootstrapLanguages_DevKit.MODULE_REFERENCE);
+          }
         }
       }
       SModelRepository.getInstance().saveAll();
