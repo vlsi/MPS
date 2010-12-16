@@ -36,8 +36,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SModelRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
+  private static SModelRepository ourInstance = null;
   public static SModelRepository getInstance() {
-    return ApplicationManager.getApplication().getComponent(SModelRepository.class);
+    if (ourInstance ==null){
+      ourInstance = ApplicationManager.getApplication().getComponent(SModelRepository.class);
+    }
+    return ourInstance;
   }
 
   private final Map<String, EditableSModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, EditableSModelDescriptor>();
