@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.Set;
@@ -31,8 +32,8 @@ public abstract class Macros {
 
   public static final String MPS_HOME = "${mps_home}";
 
-  public final String expandPath(String path, IFile anchorFile) {
-    if (path == null) return null;
+  public final String expandPath(@Nullable String path, @Nullable IFile anchorFile) {
+    if (path == null || !path.startsWith("${")) return path; // No macros to expand
 
     // This is a support for paths with macros which were saved in Windows before MPS beta.
     // Path with macros should always be stored with slashes.
@@ -48,7 +49,7 @@ public abstract class Macros {
     return expandPath_internal(path, anchorFile);
   }
 
-  public final String shrinkPath(String absolutePath, IFile anchorFile) {
+  public final String shrinkPath(@Nullable String absolutePath, @Nullable IFile anchorFile) {
     if (absolutePath == null) return null;
 
     //this is to support undefined path vars
