@@ -3,9 +3,16 @@
   <unitInfo fileName="Create_Table_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.test.Create_Table_Test$TestBody" />
   <unitInfo fileName="Create_StateMachine_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.test.Create_StateMachine_Test$TestBody" />
   <unitInfo fileName="Create_HierarchycalTable_Test.java" startLine="22" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.test.Create_HierarchycalTable_Test$TestBody" />
+  <unitInfo fileName="Edit_TableCell_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.table.test.Edit_TableCell_Test$TestBody" />
   <unitInfo fileName="Create_Table_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.test.Create_Table_Test" />
   <unitInfo fileName="Create_StateMachine_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.test.Create_StateMachine_Test" />
   <unitInfo fileName="Create_HierarchycalTable_Test.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.table.test.Create_HierarchycalTable_Test" />
+  <unitInfo fileName="Edit_TableCell_Test.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.table.test.Edit_TableCell_Test" />
+  <root nodeId="2618230671010804953">
+    <nodeInfo nodeId="2618230671010913705" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Edit_TableCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" />
+    <nodeInfo nodeId="2618230671010913710" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Edit_TableCell_Test.java" startLine="28" startPosition="119" endLine="29" endPosition="65" />
+    <nodeInfo nodeId="2618230671010913707" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="Edit_TableCell_Test.java" startLine="29" startPosition="65" endLine="30" endPosition="0" />
+  </root>
   <root nodeId="9089116272976986456">
     <nodeInfo nodeId="9089116272976986486" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Create_HierarchycalTable_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="66" />
     <nodeInfo nodeId="9089116272976986487" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Create_HierarchycalTable_Test.java" startLine="28" startPosition="66" endLine="29" endPosition="122" />
