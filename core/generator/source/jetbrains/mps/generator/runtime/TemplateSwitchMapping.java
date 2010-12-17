@@ -34,7 +34,7 @@ public interface TemplateSwitchMapping {
 
   Iterable<TemplateReductionRule> getReductionRules();
 
-  Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException;
+  Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationException;
 
   void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context);
 }

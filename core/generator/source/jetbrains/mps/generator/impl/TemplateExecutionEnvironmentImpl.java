@@ -109,7 +109,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return outputNodes == null ? Collections.<SNode>emptyList() : outputNodes;
   }
 
-  public Collection<SNode> trySwitch(SNodePointer switch_, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
+  public Collection<SNode> trySwitch(SNodePointer switch_, String mappingName, TemplateContext context) throws GenerationException {
     Collection<SNode> collection = generator.tryToReduce(context, switch_, mappingName, reductionContext);
     if(collection != null) {
       return collection;
