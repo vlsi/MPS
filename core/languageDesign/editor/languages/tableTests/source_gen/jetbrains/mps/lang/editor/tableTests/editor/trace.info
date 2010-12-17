@@ -13,9 +13,9 @@
   <unitInfo fileName="HierarchycalTable_Editor.java" startLine="25" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.HierarchycalTable_Editor" />
   <unitInfo fileName="EventReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EventReference_Editor" />
   <unitInfo fileName="StateReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.StateReference_Editor" />
-  <unitInfo fileName="Transition_Editor.java" startLine="17" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Transition_Editor" />
   <unitInfo fileName="Table_Editor.java" startLine="27" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor" />
   <unitInfo fileName="StateMachine_Editor.java" startLine="27" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor" />
+  <unitInfo fileName="Transition_Editor.java" startLine="18" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Transition_Editor" />
   <unitInfo fileName="UltimateContainer_Editor.java" startLine="22" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.UltimateContainer_Editor" />
   <root nodeId="2882388703616228151">
     <nodeInfo nodeId="2882388703616283570" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Table_Editor.java" startLine="79" startPosition="56" endLine="80" endPosition="190" />
