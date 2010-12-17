@@ -169,7 +169,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5070605274413823491(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Template" + SPropertyOperations.getString(_context.getNode(), "name");
+    return GenUtil.asIdentifier("Template" + SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_99767819676237359(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -336,11 +336,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_747214206848678950(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Template" + SPropertyOperations.getString(_context.getNode(), "name");
+    return GenUtil.asIdentifier("Template" + SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4429320018138031261(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Mapping" + SPropertyOperations.getString(_context.getNode(), "name");
+    return GenUtil.asIdentifier("Mapping" + SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_9196441569928351552(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -596,7 +596,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1940510396026567414(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Switch" + SPropertyOperations.getString(_context.getNode(), "name");
+    return GenUtil.asIdentifier("Switch" + SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_3876694689067951568(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -814,7 +814,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_9196441569928602697(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "Script" + SPropertyOperations.getString(_context.getNode(), "name");
+    return GenUtil.asIdentifier("Script" + SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object referenceMacro_GetReferent_1217272831785(final IOperationContext operationContext, final ReferenceMacroContext _context) {
