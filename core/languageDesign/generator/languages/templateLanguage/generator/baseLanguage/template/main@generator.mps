@@ -9059,7 +9059,7 @@
                             <property name="makeUnique" nameId="tp68.8835849473318867199" value="true" />
                             <node role="expression" roleId="tp68.1238251454130" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4155486055398088639">
                               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4155486055398088640">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4155486055398088641" />
                               </node>
                               <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="4155486055398088642">
@@ -9172,6 +9172,9 @@
                                   </node>
                                 </node>
                               </node>
+                            </node>
+                            <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1052049375997152875">
+                              <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="8285036680620300369" resolveInfo="contextVar" />
                             </node>
                             <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1520710884206584292" />
                             <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentQueryExpression" typeId="tpf8.4035562641222585520" id="1520710884206584294">
@@ -9360,7 +9363,7 @@
                         <property name="makeUnique" nameId="tp68.8835849473318867199" value="true" />
                         <node role="expression" roleId="tp68.1238251454130" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4155486055398088651">
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4155486055398088652">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4155486055398088653" />
                           </node>
                           <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="4155486055398088654">
@@ -9473,6 +9476,9 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                        <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1052049375997152877">
+                          <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="8285036680620300369" resolveInfo="contextVar" />
                         </node>
                         <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1520710884206584382" />
                         <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentQueryExpression" typeId="tpf8.4035562641222585520" id="1520710884206584383">
@@ -14566,6 +14572,9 @@
                                 </node>
                               </node>
                             </node>
+                            <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1052049375997144866">
+                              <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="344761564571002700" resolveInfo="contextVar" />
+                            </node>
                             <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentQueryExpression" typeId="tpf8.4035562641222585520" id="1520710884206582529">
                               <node role="query" roleId="tpf8.4035562641222618754" type="tpf8.TemplateArgumentQuery" typeId="tpf8.4035562641222622437" id="1520710884206582530">
                                 <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1520710884206582531">
@@ -14828,6 +14837,9 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                        <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1052049375997144868">
+                          <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="344761564571002700" resolveInfo="contextVar" />
                         </node>
                         <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentQueryExpression" typeId="tpf8.4035562641222585520" id="1520710884206582465">
                           <node role="query" roleId="tpf8.4035562641222618754" type="tpf8.TemplateArgumentQuery" typeId="tpf8.4035562641222622437" id="1520710884206582466">
@@ -20829,6 +20841,9 @@
                 <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1520710884206584408">
                   <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="2226924809855981250" resolveInfo="contextVar" />
                 </node>
+                <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1052049375997184473">
+                  <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="2226924809855981250" resolveInfo="contextVar" />
+                </node>
                 <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentQueryExpression" typeId="tpf8.4035562641222585520" id="1520710884206584410">
                   <node role="query" roleId="tpf8.4035562641222618754" type="tpf8.TemplateArgumentQuery" typeId="tpf8.4035562641222622437" id="1520710884206584411">
                     <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1520710884206584412">
@@ -22668,7 +22683,7 @@
                       <property name="makeUnique" nameId="tp68.8835849473318867199" value="true" />
                       <node role="expression" roleId="tp68.1238251454130" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="59720043761728355">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="59720043761728356">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="59720043761728357" />
                         </node>
                         <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="59720043761728358">
@@ -22765,6 +22780,9 @@
                 <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="1520710884206584391">
                   <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5577795813925668050" resolveInfo="reduce_TemplateInvocation" />
                   <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1520710884206584392">
+                    <property name="value" nameId="tpee.1070475926801" value="context" />
+                  </node>
+                  <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1052049375997152879">
                     <property name="value" nameId="tpee.1070475926801" value="context" />
                   </node>
                   <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1520710884206584394" />
@@ -25560,6 +25578,7 @@
                 <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="1520710884206584270">
                   <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5577795813925668050" resolveInfo="reduce_TemplateInvocation" />
                   <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1520710884206584271" />
+                  <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1052049375997152873" />
                   <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1520710884206584273" />
                   <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentQueryExpression" typeId="tpf8.4035562641222585520" id="1520710884206584275">
                     <node role="query" roleId="tpf8.4035562641222618754" type="tpf8.TemplateArgumentQuery" typeId="tpf8.4035562641222622437" id="1520710884206584276">
@@ -30597,6 +30616,10 @@
       <property name="name" nameId="tpck.1169194664001" value="contextVar" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tpee.StringType" typeId="tpee.1225271177708" id="5577795813925668054" />
     </node>
+    <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="1052049375997143741">
+      <property name="name" nameId="tpck.1169194664001" value="outerContextVar" />
+      <node role="type" roleId="tpf8.1805153994415893199" type="tpee.StringType" typeId="tpee.1225271177708" id="1052049375997144864" />
+    </node>
     <node role="parameter" roleId="tpf8.1805153994415891175" type="tpf8.TemplateParameterDeclaration" typeId="tpf8.1805153994415891174" id="5577795813925668055">
       <property name="name" nameId="tpck.1169194664001" value="arguments" />
       <node role="type" roleId="tpf8.1805153994415893199" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="5577795813925668131">
@@ -30706,8 +30729,8 @@
                     </node>
                     <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="5577795813925668112">
                       <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5412006700504157831" resolveInfo="reduce_Argument" />
-                      <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="5577795813925668113">
-                        <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="5577795813925668052" resolveInfo="contextVar" />
+                      <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1052049375997184474">
+                        <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="1052049375997143741" resolveInfo="outerContextVar" />
                       </node>
                     </node>
                   </node>
@@ -30880,8 +30903,8 @@
                         </node>
                         <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="1520710884206584194">
                           <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5412006700504157831" resolveInfo="reduce_Argument" />
-                          <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1520710884206584200">
-                            <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="5577795813925668052" resolveInfo="contextVar" />
+                          <node role="actualArgument" roleId="tpf8.1722980698497626405" type="tpf8.TemplateArgumentParameterExpression" typeId="tpf8.5005282049925926521" id="1052049375997184475">
+                            <link role="parameter" roleId="tpf8.5005282049925926522" targetNodeId="1052049375997143741" resolveInfo="outerContextVar" />
                           </node>
                         </node>
                       </node>
