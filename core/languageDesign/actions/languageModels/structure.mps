@@ -20,7 +20,7 @@
   <roots>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1112056943463">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\actions.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/actions.png" />
       <property name="name" nameId="yvnu.1169194664001:0" value="NodeSubstituteActions" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" />
     </node>
@@ -32,7 +32,7 @@
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1138079416598">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\rightTransform.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/rightTransform.png" />
       <property name="name" nameId="yvnu.1169194664001:0" value="SideTransformHintSubstituteActions" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" />
     </node>
@@ -56,7 +56,7 @@
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1158700664498">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\nodeFactories.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/nodeFactories.png" />
       <property name="name" nameId="yvnu.1169194664001:0" value="NodeFactories" />
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1158700725281">

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="PropertyAttributeConcept_Editor.java" startLine="12" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.annotations.editor.PropertyAttributeConcept_Editor" />
-  <unitInfo fileName="LinkAttributeConcept_Editor.java" startLine="12" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.annotations.editor.LinkAttributeConcept_Editor" />
-  <unitInfo fileName="AttributeConcept_Editor.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.annotations.editor.AttributeConcept_Editor" />
-</debugInfo>
-

@@ -83,7 +83,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(FOLDING_AREA_PAINTERS_COMPARATOR);
   private BracketsPainter myBracketsPainter;
 
-  private List<AbstractLeftColumn> myTextColumns = new ArrayList<AbstractLeftColumn>();
+  private List<AbstractLeftColumn> myLeftColumns = new ArrayList<AbstractLeftColumn>();
 
   private BookmarkListener myListener;
   private BookmarkManager myBookmarkManager = null;
@@ -193,7 +193,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       painter.dispose();
     }
-    for (AbstractLeftColumn column : myTextColumns) {
+    for (AbstractLeftColumn column : myLeftColumns) {
       column.dispose();
     }
     BookmarkManager bookmarkManager = getBookmarkManager();
@@ -215,20 +215,24 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     repaint();
   }
 
-  public void addTextColumn(AbstractLeftColumn column) {
-    myTextColumns.add(column);
+  public void addLeftColumn(AbstractLeftColumn column) {
+    myLeftColumns.add(column);
     recalculateTextColumnWidth();
     recalculateIconRenderersWidth();
     updateSeparatorLinePosition();
     repaint();
   }
 
-  public void removeTextColumn(AbstractLeftColumn column) {
-    myTextColumns.remove(column);
+  public void removeLeftColumn(AbstractLeftColumn column) {
+    myLeftColumns.remove(column);
     recalculateTextColumnWidth();
     recalculateIconRenderersWidth();
     updateSeparatorLinePosition();
     repaint();
+  }
+
+  public List<AbstractLeftColumn> getLeftColumns() {
+    return myLeftColumns;
   }
 
   @Override
@@ -298,7 +302,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     if (clipBounds.x > myTextColumnWidth) {
       return;
     }
-    for (AbstractLeftColumn column : myTextColumns) {
+    for (AbstractLeftColumn column : myLeftColumns) {
       if (clipBounds.x > column.getX() + column.getWidth()) {
         continue;
       }
@@ -527,7 +531,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   private void recalculateTextColumnWidth() {
     int offset = 0;
-    for (AbstractLeftColumn column : myTextColumns) {
+    for (AbstractLeftColumn column : myLeftColumns) {
       column.setX(offset);
       column.relayout();
       offset += column.getWidth();
@@ -743,7 +747,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   private AbstractLeftColumn getTextColumnByX(int x) {
-    for (AbstractLeftColumn column : myTextColumns) {
+    for (AbstractLeftColumn column : myLeftColumns) {
       int columnX = column.getX();
       if (columnX <= x && columnX + column.getWidth() > x) {
         return column;

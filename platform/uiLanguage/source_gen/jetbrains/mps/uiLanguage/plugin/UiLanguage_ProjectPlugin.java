@@ -13,6 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.IEditor;
 
 public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {
+  public UiLanguage_ProjectPlugin() {
+  }
+
   public void initEditors(Project project) {
     MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
     opener.registerOpenHandler(new MPSEditorOpenHandler() {

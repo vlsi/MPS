@@ -94,7 +94,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnaryRegexp_Editor.UnaryRegexp_Editor_replaceWith_UnaryRegexp_cellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnaryRegexp_Editor.ReplaceWith_UnaryRegexp_cellMenu_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -113,8 +113,8 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     return UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(node);
   }
 
-  public static class UnaryRegexp_Editor_replaceWith_UnaryRegexp_cellMenu_a0d0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public UnaryRegexp_Editor_replaceWith_UnaryRegexp_cellMenu_a0d0() {
+  public static class ReplaceWith_UnaryRegexp_cellMenu_a0d0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_UnaryRegexp_cellMenu_a0d0() {
     }
 
     public String getReplacementConceptName() {

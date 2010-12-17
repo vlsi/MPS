@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -491,6 +492,10 @@ public class SModel {
   }
 
   //---------imports manipulation--------
+
+  public ModelDependenciesManager getModelDepsManager(){
+    return new ModelDependenciesManager(this);
+  }
 
   //language
 

@@ -12,6 +12,9 @@ import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.project.MPSProject;
 
 public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
+  public BaseLanguage_ProjectPlugin() {
+  }
+
   public List<BaseGeneratedTool> initAllTools(Project project) {
     List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
     ListSequence.fromList(tools).addElement(new AnalyzeStacktrace_Tool(project));

@@ -28,7 +28,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174643105530">
       <property name="name" nameId="tpck.1169194664001" value="InferenceRule" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\rule.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/rule.png" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />
     </node>
@@ -91,7 +91,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1175147670730">
       <property name="name" nameId="tpck.1169194664001" value="SubtypingRule" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\subtyping.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/subtyping.png" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
     </node>
@@ -194,7 +194,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1188811367543">
       <property name="name" nameId="tpck.1169194664001" value="ComparisonRule" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\comparison.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/comparison.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1193662402729">
@@ -221,13 +221,13 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1195214364922">
       <property name="name" nameId="tpck.1169194664001" value="NonTypesystemRule" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\nontypesystem.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/nontypesystem.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201607707634">
       <property name="name" nameId="tpck.1169194664001" value="InequationReplacementRule" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\replacement.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/replacement.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201618299781">

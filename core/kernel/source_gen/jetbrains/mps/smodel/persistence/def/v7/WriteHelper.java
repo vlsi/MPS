@@ -126,7 +126,7 @@ public class WriteHelper {
   }
 
   public String genRoleId(@NotNull SReference ref) {
-    return genReferenceId(SLinkOperations.findLinkDeclaration(ref));
+    return genReferenceId(ref.getSourceNode().getLinkDeclaration(ref.getRole()));
   }
 
   public String genName(@NotNull SNode node, @NotNull String prop) {

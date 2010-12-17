@@ -21,7 +21,7 @@ public class ModuleRepository_Tool extends GeneratedTool {
   private JPanel myPanel;
 
   public ModuleRepository_Tool(Project project) {
-    super(project, "Module Repository Viewer", -1, IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\project.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, false);
+    super(project, "Module Repository Viewer", -1, IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/project.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
   public void makeAvailable() {

@@ -460,6 +460,18 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"));
   }
 
+  private static int _StyleParameter_QueryFunction_wgj6gq_a3c0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_wgj6gq_a5c0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_wgj6gq_a4c0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
   private static Color _StyleParameter_QueryFunction_wgj6gq_a0c0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
@@ -470,18 +482,6 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
 
   private static Color _StyleParameter_QueryFunction_wgj6gq_a2c0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_wgj6gq_a4c0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_wgj6gq_a5c0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
-  }
-
-  private static int _StyleParameter_QueryFunction_wgj6gq_a3c0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
   public static class _Inline_wgj6gq_a2a extends InlineCellProvider {

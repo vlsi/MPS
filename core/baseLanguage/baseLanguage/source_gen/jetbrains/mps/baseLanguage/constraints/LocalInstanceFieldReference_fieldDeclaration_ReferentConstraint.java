@@ -37,7 +37,7 @@ public class LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint ext
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    if (SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false) != null) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       return result;
     }
     List<SNode> param = new ParameterScope(_context.getEnclosingNode()).getNodes();
@@ -64,6 +64,10 @@ public class LocalInstanceFieldReference_fieldDeclaration_ReferentConstraint ext
           ListSequence.fromList(result).addElement(field);
           SetSequence.fromSet(names).addElement(SPropertyOperations.getString(field, "name"));
         }
+      }
+      SNode method = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+      if (method != null && SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+        return result;
       }
       classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }

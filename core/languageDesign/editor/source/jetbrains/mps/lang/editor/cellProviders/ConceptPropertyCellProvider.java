@@ -17,9 +17,9 @@ package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptProperty;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.EditorManager.NoAttribute;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -71,7 +71,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   }
 
   public Class getRoleAttributeClass() {
-    return NoAttribute.class;
+    return AttributeKind.Nothing.class;
   }
 
 

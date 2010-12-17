@@ -14,7 +14,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class ShowTodoViewer_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png", "jetbrains.mps.baseLanguage"), true);
   private static Logger LOG = Logger.getLogger(ShowTodoViewer_Action.class);
 
   private Project project;

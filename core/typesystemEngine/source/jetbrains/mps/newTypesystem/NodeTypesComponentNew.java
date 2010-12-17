@@ -54,70 +54,41 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
     myTypeCheckingContext = typeCheckingContext;
   }
 
-  private boolean loadTypeSystemRules(SNode root) {
-    SModel model = root.getModel();
-    RulesManager rulesManager = myTypeChecker.getRulesManager();
-    if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
-      return true;
-    }
-    List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());
-    boolean isLoadedAnyLanguage = false;
-    for (Language language : languages) {
-      boolean b = rulesManager.loadLanguage(language);
-      isLoadedAnyLanguage = isLoadedAnyLanguage || b;
-    }
-    rulesManager.markModelHasLoadedRules(model.getSModelReference());
-    return isLoadedAnyLanguage;
+  @Override
+  public void solveInequationsAndExpandTypes() {
+    ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
   }
 
   public void checkNode(SNode node, boolean refresh) {
     if (!checked || refresh) {
       for (SNode desc : node.getDescendants()) {
-        loadTypeSystemRules(desc);
+        loadTypesystemRules(desc);
         applyRulesToNode(desc);
       }
       checked = true;
 
     }
   }
-
-  private boolean applyRulesToNode(SNode node) {
-    Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
-    boolean result = false;
-    if (newRules != null) {
-      for (Pair<InferenceRule_Runtime, IsApplicableStatus> rule : newRules) {
-        applyRuleToNode(node, rule.o1, rule.o2);
-      }
-    }
-    return result;
-  }
-
-  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
-    try {
-      rule.applyRule(node, myTypeCheckingContext, status);
-    } catch (Throwable t) {
-      LOG.error("an error occurred while applying rule to node " + node, t, node);
-    }
-  }
-
+                /*
   @Override
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
     return computeTypesForNode_special_new(initialNode, new ArrayList<SNode>(0), false);
   }
+                  */
 
   @Override
-  public SNode getType(SNode node) {
-    if (myFullyCheckedNodes.contains(node)) {
-      return myTypeCheckingContext.getTypeDontCheck(node);
-    }
-    return null;
+  public SNode getRawTypeFromContext(SNode node) {
+    return myTypeCheckingContext.getTypeDontCheck(node);
   }
 
-  private SNode computeTypesForNode_special_new(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
+  @Override
+  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
     try {
+      myIsSpecial = true;
+
       while (node != null) {
         List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
         if (prevNode != null) {
@@ -140,9 +111,9 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
     } finally {
       myIsSpecial = false;
     }
-    return type;
+    return type;  
   }
-
+            /*
   private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
     try {
 
@@ -161,7 +132,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
         if (!myHoleIsAType) {
           myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
         }
-      }     */
+      }     */           /*
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
       ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
      
@@ -208,9 +179,12 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
       newFrontier = new LinkedHashSet<SNode>();
     }
   }
-
-
-  
+                    */
+  @Override
+  public void clear() {
+    super.clear();
+    myTypeCheckingContext.clear();
+  }
 
 
 }

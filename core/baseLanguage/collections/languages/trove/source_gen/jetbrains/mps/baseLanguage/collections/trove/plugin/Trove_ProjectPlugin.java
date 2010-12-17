@@ -5,4 +5,6 @@ package jetbrains.mps.baseLanguage.collections.trove.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Trove_ProjectPlugin extends BaseProjectPlugin {
+  public Trove_ProjectPlugin() {
+  }
 }

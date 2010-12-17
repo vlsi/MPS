@@ -418,13 +418,16 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           owners[0] = checker.getOwner(node, editor);
           EditorContext editorContext = editor.getEditorContext();
           if (editorContext != null) {
-            try {
-              messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce, editorContext));
-              messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
-            } catch (IndexNotReadyException ex) {
-              highlightManager.clearForOwner(owners[0], false);
-              checker.clear(node, editor);
-              throw ex;
+            IOperationContext operationContext = editor.getOperationContext();
+            if (operationContext.isValid()) {
+              try {
+                messages.addAll(checker.createMessages(node, operationContext, events, wasCheckedOnce, editorContext));
+                messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
+              } catch (IndexNotReadyException ex) {
+                highlightManager.clearForOwner(owners[0], false);
+                checker.clear(node, editor);
+                throw ex;
+              }
             }
           }
         }

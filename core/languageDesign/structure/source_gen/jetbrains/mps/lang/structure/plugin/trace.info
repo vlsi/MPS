@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
+  <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
   <unitInfo fileName="StructureView_Tool.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.StructureView_Tool" />
   <unitInfo fileName="Structure_ActionGroup.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ActionGroup" />
   <unitInfo fileName="ShowHelp_ActionGroup.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup" />
@@ -12,10 +12,10 @@
   <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="284" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Actions_Tab" />
   <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="327" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Refactorings_Tab" />
   <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="370" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Intentions_Tab" />
-  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="26" startPosition="35" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin$1" />
+  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="29" startPosition="35" endLine="73" endPosition="5" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin$1" />
   <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="97" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Editor_Tab" />
   <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="413" startPosition="0" endLine="459" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Find_Usages_Tab" />
-  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="23" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
+  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="23" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
   <unitInfo fileName="ShowDefaultHelp_Action.java" startLine="16" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action" />
   <unitInfo fileName="ShowConceptStructure_Action.java" startLine="18" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowConceptStructure_Action" />
   <unitInfo fileName="ShowHelpForRoot_Action.java" startLine="15" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action" />
@@ -25,18 +25,18 @@
   <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="495" startPosition="0" endLine="668" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Generator_Tab" />
   <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="49" startPosition="0" endLine="704" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor" />
   <root nodeId="1216648908320">
-    <nodeInfo nodeId="1216649120171" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="StructureView_Tool.java" startLine="11" startPosition="55" endLine="12" endPosition="45" />
+    <nodeInfo nodeId="1216649120171" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" fileName="StructureView_Tool.java" startLine="11" startPosition="55" endLine="12" endPosition="45" />
     <nodeInfo nodeId="1217360996397" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StructureView_Tool.java" startLine="19" startPosition="24" endLine="20" endPosition="71" />
     <nodeInfo nodeId="1216649387543" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureView_Tool.java" startLine="23" startPosition="52" endLine="24" endPosition="47" />
     <nodeInfo nodeId="1216649364123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StructureView_Tool.java" startLine="27" startPosition="36" endLine="28" endPosition="62" />
-    <nodeInfo nodeId="1216649373054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="StructureView_Tool.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <nodeInfo nodeId="1216649373054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStructureView#()Ljetbrains/mps/lang/structure/plugin/StructureViewComponent;" fileName="StructureView_Tool.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1216649373056" fileName="StructureView_Tool.java" startLine="23" startPosition="52" endLine="24" endPosition="47" />
     <scopeInfo nodeId="1216648908322" fileName="StructureView_Tool.java" startLine="27" startPosition="36" endLine="28" endPosition="62" />
-    <scopeInfo nodeId="1216649373054" fileName="StructureView_Tool.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1216649373054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStructureView#()Ljetbrains/mps/lang/structure/plugin/StructureViewComponent;" fileName="StructureView_Tool.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
   </root>
   <root nodeId="1216650700674">
-    <nodeInfo nodeId="1216650700696" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowConceptStructure_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="21" />
-    <nodeInfo nodeId="1217420649030" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowConceptStructure_Action.java" startLine="22" startPosition="21" endLine="23" endPosition="26" />
+    <nodeInfo nodeId="1216650700696" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" fileName="ShowConceptStructure_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="21" />
+    <nodeInfo nodeId="1217420649030" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" fileName="ShowConceptStructure_Action.java" startLine="22" startPosition="21" endLine="23" endPosition="26" />
     <nodeInfo nodeId="1216651728625" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowConceptStructure_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="148" />
     <nodeInfo nodeId="1216650710477" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowConceptStructure_Action.java" startLine="76" startPosition="148" endLine="77" endPosition="238" />
     <nodeInfo nodeId="1216651738459" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowConceptStructure_Action.java" startLine="77" startPosition="238" endLine="78" endPosition="31" />
@@ -46,17 +46,17 @@
     <nodeInfo nodeId="2510134983999435171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Structure_ActionGroup.java" startLine="20" startPosition="142" endLine="21" endPosition="84" />
   </root>
   <root nodeId="2465654535473033482">
-    <nodeInfo nodeId="2510134983999478940" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForNode_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="33" />
-    <nodeInfo nodeId="2510134983999478942" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForNode_Action.java" startLine="19" startPosition="33" endLine="20" endPosition="25" />
-    <nodeInfo nodeId="2465654535473033485" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForNode_Action.java" startLine="20" startPosition="25" endLine="21" endPosition="21" />
+    <nodeInfo nodeId="2510134983999478940" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" fileName="ShowHelpForNode_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="33" />
+    <nodeInfo nodeId="2510134983999478942" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" fileName="ShowHelpForNode_Action.java" startLine="19" startPosition="33" endLine="20" endPosition="25" />
+    <nodeInfo nodeId="2465654535473033485" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" fileName="ShowHelpForNode_Action.java" startLine="20" startPosition="25" endLine="21" endPosition="21" />
     <nodeInfo nodeId="2465654535473044241" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowHelpForNode_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="244" />
     <nodeInfo nodeId="2510134983999478948" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowHelpForNode_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="67" />
     <scopeInfo nodeId="2465654535473044240" fileName="ShowHelpForNode_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="244" />
   </root>
   <root nodeId="2510134983999308902">
-    <nodeInfo nodeId="2510134983999308903" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowDefaultHelp_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="25" />
-    <nodeInfo nodeId="2510134983999308904" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowDefaultHelp_Action.java" startLine="20" startPosition="25" endLine="21" endPosition="33" />
-    <nodeInfo nodeId="2510134983999308905" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowDefaultHelp_Action.java" startLine="21" startPosition="33" endLine="22" endPosition="21" />
+    <nodeInfo nodeId="2510134983999308903" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" fileName="ShowDefaultHelp_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="25" />
+    <nodeInfo nodeId="2510134983999308904" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" fileName="ShowDefaultHelp_Action.java" startLine="20" startPosition="25" endLine="21" endPosition="33" />
+    <nodeInfo nodeId="2510134983999308905" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" fileName="ShowDefaultHelp_Action.java" startLine="21" startPosition="33" endLine="22" endPosition="21" />
     <nodeInfo nodeId="2510134983999481148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDefaultHelp_Action.java" startLine="37" startPosition="7" endLine="38" endPosition="176" />
     <nodeInfo nodeId="2510134983999479105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDefaultHelp_Action.java" startLine="39" startPosition="34" endLine="40" endPosition="86" />
     <nodeInfo nodeId="2510134983999479121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDefaultHelp_Action.java" startLine="40" startPosition="86" endLine="41" endPosition="17" />
@@ -100,7 +100,7 @@
     <nodeInfo nodeId="2510134983999478878" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="HelpHelper.java" startLine="76" startPosition="12" endLine="77" endPosition="120" />
     <nodeInfo nodeId="2510134983999478894" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="HelpHelper.java" startLine="81" startPosition="50" endLine="82" endPosition="152" />
     <nodeInfo nodeId="2510134983999478914" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="HelpHelper.java" startLine="85" startPosition="50" endLine="86" endPosition="117" />
-    <nodeInfo nodeId="2510134983999481170" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="HelpHelper.java" startLine="93" startPosition="0" endLine="94" endPosition="26" />
+    <nodeInfo nodeId="2510134983999481170" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" fileName="HelpHelper.java" startLine="93" startPosition="0" endLine="94" endPosition="26" />
     <nodeInfo nodeId="2510134983999481188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="HelpHelper.java" startLine="96" startPosition="27" endLine="97" endPosition="25" />
     <nodeInfo nodeId="2510134983999481183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="HelpHelper.java" startLine="100" startPosition="29" endLine="101" endPosition="25" />
     <nodeInfo nodeId="2510134983999432497" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="HelpHelper.java" startLine="66" startPosition="10" endLine="68" endPosition="5" />
@@ -112,19 +112,19 @@
     <nodeInfo nodeId="2510134983999434226" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="HelpHelper.java" startLine="48" startPosition="60" endLine="51" endPosition="5" />
     <nodeInfo nodeId="2510134983999434254" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="HelpHelper.java" startLine="55" startPosition="90" endLine="58" endPosition="5" />
     <nodeInfo nodeId="2510134983999432476" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="HelpHelper.java" startLine="61" startPosition="64" endLine="64" endPosition="7" />
-    <nodeInfo nodeId="2510134983999435108" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="HelpHelper.java" startLine="95" startPosition="0" endLine="98" endPosition="5" />
-    <nodeInfo nodeId="2510134983999478888" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="HelpHelper.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="2510134983999478908" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="HelpHelper.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <nodeInfo nodeId="2510134983999481178" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="HelpHelper.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <nodeInfo nodeId="2510134983999435108" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HelpType#(Ljava/lang/String;)V" fileName="HelpHelper.java" startLine="95" startPosition="0" endLine="98" endPosition="5" />
+    <nodeInfo nodeId="2510134983999478888" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showHelpForRoot#(Ljetbrains/mps/smodel/SNode;)V" fileName="HelpHelper.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="2510134983999478908" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showHelpForNode#(Ljetbrains/mps/smodel/SNode;)V" fileName="HelpHelper.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <nodeInfo nodeId="2510134983999481178" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" fileName="HelpHelper.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
     <nodeInfo nodeId="2510134983999478493" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="HelpHelper.java" startLine="31" startPosition="91" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="2510134983999431959" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="HelpHelper.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <nodeInfo nodeId="2510134983999432359" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="HelpHelper.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="2510134983999431959" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="helpForNodeIsAvailable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="HelpHelper.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="2510134983999432359" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="helpForRootIsAvailable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="HelpHelper.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
     <nodeInfo nodeId="2510134983999478852" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="HelpHelper.java" startLine="71" startPosition="94" endLine="78" endPosition="5" />
     <nodeInfo nodeId="2510134983999432451" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="HelpHelper.java" startLine="58" startPosition="5" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="2510134983999478844" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="HelpHelper.java" startLine="70" startPosition="0" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="2510134983999478455" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="HelpHelper.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="2510134983999435082" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="HelpHelper.java" startLine="16" startPosition="25" endLine="29" endPosition="0" />
-    <nodeInfo nodeId="2510134983999432434" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="HelpHelper.java" startLine="54" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="2510134983999478844" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showHelpForAspect#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;)V" fileName="HelpHelper.java" startLine="70" startPosition="0" endLine="80" endPosition="0" />
+    <nodeInfo nodeId="2510134983999478455" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showHelpFor#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/SNode;)V" fileName="HelpHelper.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="2510134983999435082" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultHelpFor#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/structure/plugin/HelpHelper/HelpType;" fileName="HelpHelper.java" startLine="16" startPosition="25" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="2510134983999432434" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="helpForAspectIsAvailable#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="HelpHelper.java" startLine="54" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="2510134983999435132" fileName="HelpHelper.java" startLine="18" startPosition="39" endLine="19" endPosition="38" />
     <scopeInfo nodeId="2510134983999435141" fileName="HelpHelper.java" startLine="21" startPosition="39" endLine="22" endPosition="43" />
     <scopeInfo nodeId="2510134983999435152" fileName="HelpHelper.java" startLine="24" startPosition="64" endLine="25" endPosition="40" />
@@ -145,26 +145,26 @@
       <varInfo nodeId="2510134983999478862" varName="aspect" />
       <varInfo nodeId="2510134983999478855" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="2510134983999435108" fileName="HelpHelper.java" startLine="95" startPosition="0" endLine="98" endPosition="5">
+    <scopeInfo nodeId="2510134983999435108" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HelpType#(Ljava/lang/String;)V" fileName="HelpHelper.java" startLine="95" startPosition="0" endLine="98" endPosition="5">
       <varInfo nodeId="2510134983999481167" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="2510134983999431962" fileName="HelpHelper.java" startLine="41" startPosition="60" endLine="45" endPosition="121" />
     <scopeInfo nodeId="2510134983999432362" fileName="HelpHelper.java" startLine="48" startPosition="60" endLine="52" endPosition="156" />
-    <scopeInfo nodeId="2510134983999478888" fileName="HelpHelper.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="2510134983999478888" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showHelpForRoot#(Ljetbrains/mps/smodel/SNode;)V" fileName="HelpHelper.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="2510134983999478891" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2510134983999478908" fileName="HelpHelper.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="2510134983999478908" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showHelpForNode#(Ljetbrains/mps/smodel/SNode;)V" fileName="HelpHelper.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="2510134983999478911" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2510134983999481178" fileName="HelpHelper.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="2510134983999481178" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" fileName="HelpHelper.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
     <scopeInfo nodeId="2510134983999432457" fileName="HelpHelper.java" startLine="59" startPosition="37" endLine="65" endPosition="78">
       <varInfo nodeId="2510134983999432468" varName="aspect" />
       <varInfo nodeId="2510134983999432459" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="2510134983999431959" fileName="HelpHelper.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="2510134983999431959" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="helpForNodeIsAvailable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="HelpHelper.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="2510134983999432312" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2510134983999432359" fileName="HelpHelper.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="2510134983999432359" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="helpForRootIsAvailable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="HelpHelper.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="2510134983999432371" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2510134983999478851" fileName="HelpHelper.java" startLine="71" startPosition="94" endLine="78" endPosition="5" />
@@ -172,22 +172,22 @@
       <varInfo nodeId="2510134983999478476" varName="defaultHelp" />
     </scopeInfo>
     <scopeInfo nodeId="2510134983999435085" fileName="HelpHelper.java" startLine="17" startPosition="121" endLine="27" endPosition="16" />
-    <scopeInfo nodeId="2510134983999478844" fileName="HelpHelper.java" startLine="70" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2510134983999478844" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showHelpForAspect#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;)V" fileName="HelpHelper.java" startLine="70" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="2510134983999478849" varName="contextModel" />
       <varInfo nodeId="2510134983999478847" varName="contextModule" />
     </scopeInfo>
-    <scopeInfo nodeId="2510134983999478455" fileName="HelpHelper.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="2510134983999478455" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showHelpFor#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/SNode;)V" fileName="HelpHelper.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="2510134983999478463" varName="node" />
       <varInfo nodeId="2510134983999478461" varName="contextModel" />
       <varInfo nodeId="2510134983999478459" varName="contextModule" />
     </scopeInfo>
-    <scopeInfo nodeId="2510134983999435082" fileName="HelpHelper.java" startLine="16" startPosition="25" endLine="29" endPosition="0">
+    <scopeInfo nodeId="2510134983999435082" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultHelpFor#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/structure/plugin/HelpHelper/HelpType;" fileName="HelpHelper.java" startLine="16" startPosition="25" endLine="29" endPosition="0">
       <varInfo nodeId="2510134983999435092" varName="node" />
       <varInfo nodeId="2510134983999435089" varName="contextModel" />
       <varInfo nodeId="2510134983999435087" varName="contextModule" />
     </scopeInfo>
     <scopeInfo nodeId="2510134983999432437" fileName="HelpHelper.java" startLine="55" startPosition="90" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="2510134983999432434" fileName="HelpHelper.java" startLine="54" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="2510134983999432434" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="helpForAspectIsAvailable#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="HelpHelper.java" startLine="54" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="2510134983999432565" varName="model" />
       <varInfo nodeId="2510134983999432555" varName="module" />
     </scopeInfo>
@@ -195,39 +195,39 @@
     <unitInfo nodeId="2510134983999358074" fileName="HelpHelper.java" startLine="16" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.HelpHelper" />
   </root>
   <root nodeId="2510134983999478954">
-    <nodeInfo nodeId="2510134983999478962" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForRoot_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="33" />
-    <nodeInfo nodeId="2510134983999478963" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForRoot_Action.java" startLine="19" startPosition="33" endLine="20" endPosition="25" />
-    <nodeInfo nodeId="2510134983999478964" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForRoot_Action.java" startLine="20" startPosition="25" endLine="21" endPosition="21" />
+    <nodeInfo nodeId="2510134983999478962" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" fileName="ShowHelpForRoot_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="33" />
+    <nodeInfo nodeId="2510134983999478963" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" fileName="ShowHelpForRoot_Action.java" startLine="19" startPosition="33" endLine="20" endPosition="25" />
+    <nodeInfo nodeId="2510134983999478964" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" fileName="ShowHelpForRoot_Action.java" startLine="20" startPosition="25" endLine="21" endPosition="21" />
     <nodeInfo nodeId="2510134983999478969" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowHelpForRoot_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="249" />
     <nodeInfo nodeId="2510134983999478957" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowHelpForRoot_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="67" />
     <scopeInfo nodeId="2510134983999478968" fileName="ShowHelpForRoot_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="249" />
   </root>
   <root nodeId="2510134983999478992">
-    <nodeInfo nodeId="2510134983999479000" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForAspect_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="33" />
-    <nodeInfo nodeId="2510134983999479001" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForAspect_Action.java" startLine="19" startPosition="33" endLine="20" endPosition="25" />
-    <nodeInfo nodeId="2510134983999479002" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ShowHelpForAspect_Action.java" startLine="20" startPosition="25" endLine="21" endPosition="21" />
+    <nodeInfo nodeId="2510134983999479000" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" fileName="ShowHelpForAspect_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="33" />
+    <nodeInfo nodeId="2510134983999479001" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" fileName="ShowHelpForAspect_Action.java" startLine="19" startPosition="33" endLine="20" endPosition="25" />
+    <nodeInfo nodeId="2510134983999479002" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" fileName="ShowHelpForAspect_Action.java" startLine="20" startPosition="25" endLine="21" endPosition="21" />
     <nodeInfo nodeId="2510134983999479007" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowHelpForAspect_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="295" />
     <nodeInfo nodeId="2510134983999478995" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowHelpForAspect_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="110" />
     <scopeInfo nodeId="2510134983999479006" fileName="ShowHelpForAspect_Action.java" startLine="34" startPosition="52" endLine="35" endPosition="295" />
   </root>
   <root nodeId="6388164970935847739">
-    <nodeInfo nodeId="6388164970935848630" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="27" startPosition="71" endLine="28" endPosition="30" />
-    <nodeInfo nodeId="6388164970935848636" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Structure_ProjectPlugin.java" startLine="29" startPosition="106" endLine="30" endPosition="170" />
-    <nodeInfo nodeId="6388164970935848649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Structure_ProjectPlugin.java" startLine="32" startPosition="31" endLine="33" endPosition="72" />
-    <nodeInfo nodeId="6388164970935848660" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="35" startPosition="31" endLine="36" endPosition="22" />
-    <nodeInfo nodeId="6388164970935848665" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Structure_ProjectPlugin.java" startLine="37" startPosition="9" endLine="38" endPosition="82" />
-    <nodeInfo nodeId="6388164970935848667" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Structure_ProjectPlugin.java" startLine="38" startPosition="82" endLine="39" endPosition="102" />
-    <nodeInfo nodeId="6388164970935848669" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Structure_ProjectPlugin.java" startLine="39" startPosition="102" endLine="40" endPosition="72" />
-    <nodeInfo nodeId="6388164970935848671" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="40" startPosition="72" endLine="41" endPosition="89" />
-    <nodeInfo nodeId="6388164970935848679" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="41" startPosition="89" endLine="42" endPosition="99" />
-    <nodeInfo nodeId="6388164970935848690" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="43" startPosition="42" endLine="44" endPosition="22" />
-    <nodeInfo nodeId="6388164970935848697" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="46" startPosition="59" endLine="47" endPosition="22" />
-    <nodeInfo nodeId="6388164970935848706" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="48" startPosition="9" endLine="49" endPosition="62" />
-    <nodeInfo nodeId="6388164970935848712" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="49" startPosition="62" endLine="50" endPosition="61" />
-    <nodeInfo nodeId="6388164970935848720" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Structure_ProjectPlugin.java" startLine="51" startPosition="46" endLine="52" endPosition="68" />
-    <nodeInfo nodeId="6388164970935848734" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="54" startPosition="39" endLine="55" endPosition="22" />
-    <nodeInfo nodeId="6388164970935848745" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="57" startPosition="68" endLine="58" endPosition="22" />
-    <nodeInfo nodeId="6388164970935848747" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="59" startPosition="9" endLine="60" endPosition="24" />
+    <nodeInfo nodeId="6388164970935848630" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="30" startPosition="71" endLine="31" endPosition="30" />
+    <nodeInfo nodeId="6388164970935848636" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Structure_ProjectPlugin.java" startLine="32" startPosition="106" endLine="33" endPosition="170" />
+    <nodeInfo nodeId="6388164970935848649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Structure_ProjectPlugin.java" startLine="35" startPosition="31" endLine="36" endPosition="72" />
+    <nodeInfo nodeId="6388164970935848660" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="38" startPosition="31" endLine="39" endPosition="22" />
+    <nodeInfo nodeId="6388164970935848665" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Structure_ProjectPlugin.java" startLine="40" startPosition="9" endLine="41" endPosition="82" />
+    <nodeInfo nodeId="6388164970935848667" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Structure_ProjectPlugin.java" startLine="41" startPosition="82" endLine="42" endPosition="102" />
+    <nodeInfo nodeId="6388164970935848669" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Structure_ProjectPlugin.java" startLine="42" startPosition="102" endLine="43" endPosition="72" />
+    <nodeInfo nodeId="6388164970935848671" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="43" startPosition="72" endLine="44" endPosition="89" />
+    <nodeInfo nodeId="6388164970935848679" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="44" startPosition="89" endLine="45" endPosition="99" />
+    <nodeInfo nodeId="6388164970935848690" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="46" startPosition="42" endLine="47" endPosition="22" />
+    <nodeInfo nodeId="6388164970935848697" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="49" startPosition="59" endLine="50" endPosition="22" />
+    <nodeInfo nodeId="6388164970935848706" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="51" startPosition="9" endLine="52" endPosition="62" />
+    <nodeInfo nodeId="6388164970935848712" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Structure_ProjectPlugin.java" startLine="52" startPosition="62" endLine="53" endPosition="61" />
+    <nodeInfo nodeId="6388164970935848720" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Structure_ProjectPlugin.java" startLine="54" startPosition="46" endLine="55" endPosition="68" />
+    <nodeInfo nodeId="6388164970935848734" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="57" startPosition="39" endLine="58" endPosition="22" />
+    <nodeInfo nodeId="6388164970935848745" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="60" startPosition="68" endLine="61" endPosition="22" />
+    <nodeInfo nodeId="6388164970935848747" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_ProjectPlugin.java" startLine="62" startPosition="9" endLine="63" endPosition="24" />
     <nodeInfo nodeId="6388164970935847747" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="72" startPosition="24" endLine="73" endPosition="103" />
     <nodeInfo nodeId="6388164970935847743" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="84" startPosition="38" endLine="85" endPosition="18" />
     <nodeInfo nodeId="6388164970935847778" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="103" startPosition="24" endLine="104" endPosition="96" />
@@ -353,14 +353,14 @@
     <nodeInfo nodeId="6388164970935848596" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="687" startPosition="38" endLine="688" endPosition="194" />
     <nodeInfo nodeId="4555902841936838801" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="699" startPosition="47" endLine="700" endPosition="222" />
     <nodeInfo nodeId="6388164970935848444" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="636" startPosition="12" endLine="638" endPosition="7" />
-    <nodeInfo nodeId="6388164970935848634" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="28" startPosition="30" endLine="31" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848647" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="31" startPosition="9" endLine="34" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848658" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="34" startPosition="9" endLine="37" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848688" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="42" startPosition="99" endLine="45" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848695" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="45" startPosition="9" endLine="48" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848718" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="50" startPosition="61" endLine="53" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848732" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="53" startPosition="9" endLine="56" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848739" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="56" startPosition="9" endLine="59" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848634" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="31" startPosition="30" endLine="34" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848647" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="34" startPosition="9" endLine="37" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848658" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="37" startPosition="9" endLine="40" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848688" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="45" startPosition="99" endLine="48" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848695" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="48" startPosition="9" endLine="51" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848718" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="53" startPosition="61" endLine="56" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848732" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="56" startPosition="9" endLine="59" endPosition="9" />
+    <nodeInfo nodeId="6388164970935848739" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Structure_ProjectPlugin.java" startLine="59" startPosition="9" endLine="62" endPosition="9" />
     <nodeInfo nodeId="6388164970935847905" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="238" startPosition="52" endLine="241" endPosition="11" />
     <nodeInfo nodeId="6388164970935847913" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="241" startPosition="11" endLine="244" endPosition="11" />
     <nodeInfo nodeId="6388164970935847944" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="249" startPosition="209" endLine="252" endPosition="13" />
@@ -374,12 +374,12 @@
     <nodeInfo nodeId="4555902841936837930" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="162" startPosition="201" endLine="166" endPosition="8" />
     <nodeInfo nodeId="6388164970935847843" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="197" startPosition="195" endLine="201" endPosition="8" />
     <nodeInfo nodeId="6388164970935848136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="479" startPosition="197" endLine="483" endPosition="8" />
-    <nodeInfo nodeId="2165772098013669690" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="210" endLine="520" endPosition="0" />
+    <nodeInfo nodeId="2165772098013669690" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="210" endLine="520" endPosition="0" />
     <nodeInfo nodeId="6388164970935848215" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="544" startPosition="175" endLine="548" endPosition="11" />
     <nodeInfo nodeId="6388164970935848605" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="688" startPosition="194" endLine="692" endPosition="8" />
     <nodeInfo nodeId="2165772098013669644" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="515" startPosition="67" endLine="520" endPosition="10" />
-    <nodeInfo nodeId="6388164970935848305" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="59" endLine="579" endPosition="0" />
-    <nodeInfo nodeId="2955040059201570638" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="71" endLine="594" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848305" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="59" endLine="579" endPosition="0" />
+    <nodeInfo nodeId="2955040059201570638" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="71" endLine="594" endPosition="0" />
     <nodeInfo nodeId="6388164970935848399" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="27" endLine="604" endPosition="11" />
     <nodeInfo nodeId="6388164970935848213" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="543" startPosition="42" endLine="549" endPosition="9" />
     <nodeInfo nodeId="6388164970935848266" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="556" startPosition="87" endLine="562" endPosition="13" />
@@ -388,29 +388,29 @@
     <nodeInfo nodeId="2955040059201580708" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="612" startPosition="32" endLine="618" endPosition="13" />
     <nodeInfo nodeId="6388164970935848443" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="631" startPosition="66" endLine="638" endPosition="7" />
     <nodeInfo nodeId="6388164970935848540" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="651" startPosition="16" endLine="658" endPosition="11" />
-    <nodeInfo nodeId="6388164970935848397" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="59" endLine="606" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848397" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="59" endLine="606" endPosition="0" />
     <nodeInfo nodeId="6388164970935848396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="597" startPosition="58" endLine="606" endPosition="9" />
     <nodeInfo nodeId="6388164970935847924" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="246" startPosition="70" endLine="256" endPosition="11" />
     <nodeInfo nodeId="6388164970935848237" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="550" startPosition="33" endLine="563" endPosition="11" />
     <nodeInfo nodeId="6388164970935848337" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="581" startPosition="69" endLine="595" endPosition="7" />
     <nodeInfo nodeId="6388164970935848235" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="549" startPosition="9" endLine="564" endPosition="9" />
     <nodeInfo nodeId="6388164970935848493" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="643" startPosition="94" endLine="658" endPosition="11" />
-    <nodeInfo nodeId="2955040059201580645" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="71" endLine="628" endPosition="0" />
+    <nodeInfo nodeId="2955040059201580645" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="71" endLine="628" endPosition="0" />
     <nodeInfo nodeId="2955040059201580644" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="609" startPosition="87" endLine="628" endPosition="11" />
-    <nodeInfo nodeId="6388164970935848479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="640" startPosition="69" endLine="660" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="640" startPosition="69" endLine="660" endPosition="0" />
     <nodeInfo nodeId="6388164970935848478" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="639" startPosition="65" endLine="660" endPosition="9" />
     <nodeInfo nodeId="2955040059201578741" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="607" startPosition="0" endLine="629" endPosition="7" />
     <nodeInfo nodeId="6388164970935848207" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="541" startPosition="133" endLine="565" endPosition="7" />
-    <nodeInfo nodeId="6388164970935847882" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptDeclaration_TabbedEditor.java" startLine="233" startPosition="72" endLine="260" endPosition="0" />
+    <nodeInfo nodeId="6388164970935847882" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" fileName="ConceptDeclaration_TabbedEditor.java" startLine="233" startPosition="72" endLine="260" endPosition="0" />
     <nodeInfo nodeId="6388164970935847877" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="232" startPosition="174" endLine="260" endPosition="33" />
-    <scopeInfo nodeId="6388164970935848635" fileName="Structure_ProjectPlugin.java" startLine="29" startPosition="106" endLine="30" endPosition="170" />
-    <scopeInfo nodeId="6388164970935848648" fileName="Structure_ProjectPlugin.java" startLine="32" startPosition="31" endLine="33" endPosition="72" />
-    <scopeInfo nodeId="6388164970935848659" fileName="Structure_ProjectPlugin.java" startLine="35" startPosition="31" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="6388164970935848689" fileName="Structure_ProjectPlugin.java" startLine="43" startPosition="42" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="6388164970935848696" fileName="Structure_ProjectPlugin.java" startLine="46" startPosition="59" endLine="47" endPosition="22" />
-    <scopeInfo nodeId="6388164970935848719" fileName="Structure_ProjectPlugin.java" startLine="51" startPosition="46" endLine="52" endPosition="68" />
-    <scopeInfo nodeId="6388164970935848733" fileName="Structure_ProjectPlugin.java" startLine="54" startPosition="39" endLine="55" endPosition="22" />
-    <scopeInfo nodeId="6388164970935848744" fileName="Structure_ProjectPlugin.java" startLine="57" startPosition="68" endLine="58" endPosition="22" />
+    <scopeInfo nodeId="6388164970935848635" fileName="Structure_ProjectPlugin.java" startLine="32" startPosition="106" endLine="33" endPosition="170" />
+    <scopeInfo nodeId="6388164970935848648" fileName="Structure_ProjectPlugin.java" startLine="35" startPosition="31" endLine="36" endPosition="72" />
+    <scopeInfo nodeId="6388164970935848659" fileName="Structure_ProjectPlugin.java" startLine="38" startPosition="31" endLine="39" endPosition="22" />
+    <scopeInfo nodeId="6388164970935848689" fileName="Structure_ProjectPlugin.java" startLine="46" startPosition="42" endLine="47" endPosition="22" />
+    <scopeInfo nodeId="6388164970935848696" fileName="Structure_ProjectPlugin.java" startLine="49" startPosition="59" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="6388164970935848719" fileName="Structure_ProjectPlugin.java" startLine="54" startPosition="46" endLine="55" endPosition="68" />
+    <scopeInfo nodeId="6388164970935848733" fileName="Structure_ProjectPlugin.java" startLine="57" startPosition="39" endLine="58" endPosition="22" />
+    <scopeInfo nodeId="6388164970935848744" fileName="Structure_ProjectPlugin.java" startLine="60" startPosition="68" endLine="61" endPosition="22" />
     <scopeInfo nodeId="6388164970935847746" fileName="ConceptDeclaration_TabbedEditor.java" startLine="72" startPosition="24" endLine="73" endPosition="103" />
     <scopeInfo nodeId="6388164970935847742" fileName="ConceptDeclaration_TabbedEditor.java" startLine="84" startPosition="38" endLine="85" endPosition="18" />
     <scopeInfo nodeId="6388164970935847777" fileName="ConceptDeclaration_TabbedEditor.java" startLine="103" startPosition="24" endLine="104" endPosition="96" />
@@ -464,7 +464,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848498" fileName="ConceptDeclaration_TabbedEditor.java" startLine="644" startPosition="116" endLine="646" endPosition="106" />
     <scopeInfo nodeId="6388164970935848403" fileName="ConceptDeclaration_TabbedEditor.java" startLine="600" startPosition="47" endLine="603" endPosition="13" />
-    <scopeInfo nodeId="6388164970935848404" fileName="ConceptDeclaration_TabbedEditor.java" startLine="600" startPosition="47" endLine="603" endPosition="13">
+    <scopeInfo nodeId="6388164970935848404" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="600" startPosition="47" endLine="603" endPosition="13">
       <varInfo nodeId="6388164970935848418" varName="confAdapter" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848452" fileName="ConceptDeclaration_TabbedEditor.java" startLine="632" startPosition="56" endLine="635" endPosition="56">
@@ -477,7 +477,7 @@
       <varInfo nodeId="6388164970935847761" varName="scope" />
       <varInfo nodeId="6388164970935847755" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="2165772098013669690" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="210" endLine="520" endPosition="0" />
+    <scopeInfo nodeId="2165772098013669690" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="ConceptDeclaration_TabbedEditor.java" startLine="516" startPosition="210" endLine="520" endPosition="0" />
     <scopeInfo nodeId="6388164970935848214" fileName="ConceptDeclaration_TabbedEditor.java" startLine="544" startPosition="175" endLine="548" endPosition="11" />
     <scopeInfo nodeId="6388164970935848267" fileName="ConceptDeclaration_TabbedEditor.java" startLine="557" startPosition="140" endLine="561" endPosition="15">
       <varInfo nodeId="6388164970935848269" varName="conceptToAdd" />
@@ -492,22 +492,22 @@
     <scopeInfo nodeId="6388164970935848126" fileName="ConceptDeclaration_TabbedEditor.java" startLine="478" startPosition="38" endLine="483" endPosition="8">
       <varInfo nodeId="6388164970935848128" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848305" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="59" endLine="579" endPosition="0" />
-    <scopeInfo nodeId="2955040059201570638" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="71" endLine="594" endPosition="0" />
+    <scopeInfo nodeId="6388164970935848305" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="574" startPosition="59" endLine="579" endPosition="0" />
+    <scopeInfo nodeId="2955040059201570638" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="589" startPosition="71" endLine="594" endPosition="0" />
     <scopeInfo nodeId="6388164970935848398" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="27" endLine="604" endPosition="11" />
-    <scopeInfo nodeId="6388164970935848399" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="27" endLine="604" endPosition="11">
+    <scopeInfo nodeId="6388164970935848399" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="599" startPosition="27" endLine="604" endPosition="11">
       <varInfo nodeId="6388164970935848401" varName="generator" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848595" fileName="ConceptDeclaration_TabbedEditor.java" startLine="687" startPosition="38" endLine="692" endPosition="8">
       <varInfo nodeId="6388164970935848597" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848213" fileName="ConceptDeclaration_TabbedEditor.java" startLine="543" startPosition="42" endLine="549" endPosition="9">
+    <scopeInfo nodeId="6388164970935848213" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="543" startPosition="42" endLine="549" endPosition="9">
       <varInfo nodeId="6388164970935848228" varName="genFragment" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848266" fileName="ConceptDeclaration_TabbedEditor.java" startLine="556" startPosition="87" endLine="562" endPosition="13">
+    <scopeInfo nodeId="6388164970935848266" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="556" startPosition="87" endLine="562" endPosition="13">
       <varInfo nodeId="6388164970935848288" varName="nodeToAdd" />
     </scopeInfo>
-    <scopeInfo nodeId="2955040059201580708" fileName="ConceptDeclaration_TabbedEditor.java" startLine="612" startPosition="32" endLine="618" endPosition="13">
+    <scopeInfo nodeId="2955040059201580708" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="612" startPosition="32" endLine="618" endPosition="13">
       <varInfo nodeId="2955040059201580710" varName="generator" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848541" fileName="ConceptDeclaration_TabbedEditor.java" startLine="651" startPosition="18" endLine="657" endPosition="106">
@@ -521,7 +521,7 @@
       <varInfo nodeId="6388164970935848169" varName="scope" />
       <varInfo nodeId="2165772098013669489" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848397" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="59" endLine="606" endPosition="0" />
+    <scopeInfo nodeId="6388164970935848397" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="598" startPosition="59" endLine="606" endPosition="0" />
     <scopeInfo nodeId="6388164970935848244" fileName="ConceptDeclaration_TabbedEditor.java" startLine="551" startPosition="96" endLine="562" endPosition="13">
       <varInfo nodeId="6388164970935848246" varName="language" />
       <varInfo nodeId="6388164970935848259" varName="structureModel" />
@@ -531,7 +531,7 @@
       <varInfo nodeId="6388164970935848340" varName="dialog" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848236" fileName="ConceptDeclaration_TabbedEditor.java" startLine="550" startPosition="33" endLine="563" endPosition="11" />
-    <scopeInfo nodeId="6388164970935848237" fileName="ConceptDeclaration_TabbedEditor.java" startLine="550" startPosition="33" endLine="563" endPosition="11">
+    <scopeInfo nodeId="6388164970935848237" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptDeclaration_TabbedEditor.java" startLine="550" startPosition="33" endLine="563" endPosition="11">
       <varInfo nodeId="6388164970935848290" varName="moduleRef" />
     </scopeInfo>
     <scopeInfo nodeId="2955040059201580646" fileName="ConceptDeclaration_TabbedEditor.java" startLine="611" startPosition="29" endLine="626" endPosition="61">
@@ -541,9 +541,9 @@
     <scopeInfo nodeId="6388164970935848480" fileName="ConceptDeclaration_TabbedEditor.java" startLine="641" startPosition="27" endLine="658" endPosition="11">
       <varInfo nodeId="6388164970935848482" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2955040059201580645" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="71" endLine="628" endPosition="0" />
+    <scopeInfo nodeId="2955040059201580645" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="610" startPosition="71" endLine="628" endPosition="0" />
     <scopeInfo nodeId="2955040059201578742" fileName="ConceptDeclaration_TabbedEditor.java" startLine="608" startPosition="54" endLine="628" endPosition="11" />
-    <scopeInfo nodeId="6388164970935848479" fileName="ConceptDeclaration_TabbedEditor.java" startLine="640" startPosition="69" endLine="660" endPosition="0" />
+    <scopeInfo nodeId="6388164970935848479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ConceptDeclaration_TabbedEditor.java" startLine="640" startPosition="69" endLine="660" endPosition="0" />
     <scopeInfo nodeId="6388164970935848208" fileName="ConceptDeclaration_TabbedEditor.java" startLine="542" startPosition="36" endLine="564" endPosition="9">
       <varInfo nodeId="6388164970935848210" varName="isNeedRootTemplate" />
     </scopeInfo>
@@ -551,7 +551,7 @@
       <varInfo nodeId="6388164970935847894" varName="bConceptRef" />
       <varInfo nodeId="6388164970935847885" varName="aConceptRef" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935847882" fileName="ConceptDeclaration_TabbedEditor.java" startLine="233" startPosition="72" endLine="260" endPosition="0" />
+    <scopeInfo nodeId="6388164970935847882" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" fileName="ConceptDeclaration_TabbedEditor.java" startLine="233" startPosition="72" endLine="260" endPosition="0" />
     <scopeInfo nodeId="6388164970935847868" fileName="ConceptDeclaration_TabbedEditor.java" startLine="231" startPosition="45" endLine="260" endPosition="33">
       <varInfo nodeId="6388164970935847870" varName="rules" />
     </scopeInfo>
@@ -560,7 +560,7 @@
       <varInfo nodeId="6388164970935848194" varName="result" />
       <varInfo nodeId="2599560207114353742" varName="isInterface" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848629" fileName="Structure_ProjectPlugin.java" startLine="27" startPosition="71" endLine="60" endPosition="24">
+    <scopeInfo nodeId="6388164970935848629" fileName="Structure_ProjectPlugin.java" startLine="30" startPosition="71" endLine="63" endPosition="24">
       <varInfo nodeId="6388164970935848631" varName="baseNode" />
       <varInfo nodeId="6388164970935848680" varName="mainModelDescriptor" />
       <varInfo nodeId="6388164970935848707" varName="baseModule" />
@@ -618,8 +618,8 @@
     <nodeInfo nodeId="3743889475335181246" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="ConceptEditorHelper.java" startLine="103" startPosition="89" endLine="104" endPosition="66" />
     <nodeInfo nodeId="2600311093289626510" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptEditorHelper.java" startLine="104" startPosition="66" endLine="105" endPosition="20" />
     <nodeInfo nodeId="1214823353927928383" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptEditorHelper.java" startLine="110" startPosition="47" endLine="111" endPosition="136" />
-    <nodeInfo nodeId="2600311093289626348" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ConceptEditorHelper.java" startLine="120" startPosition="65" endLine="121" endPosition="29" />
-    <nodeInfo nodeId="3989978367392598227" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ConceptEditorHelper.java" startLine="121" startPosition="29" endLine="122" endPosition="40" />
+    <nodeInfo nodeId="2600311093289626348" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tab" fileName="ConceptEditorHelper.java" startLine="120" startPosition="65" endLine="121" endPosition="29" />
+    <nodeInfo nodeId="3989978367392598227" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="listenNonRootEvents" fileName="ConceptEditorHelper.java" startLine="121" startPosition="29" endLine="122" endPosition="40" />
     <nodeInfo nodeId="2600311093289626351" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="124" startPosition="79" endLine="125" endPosition="21" />
     <nodeInfo nodeId="3989978367392598230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="125" startPosition="21" endLine="126" endPosition="53" />
     <nodeInfo nodeId="2600311093289626070" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptEditorHelper.java" startLine="129" startPosition="60" endLine="130" endPosition="76" />
@@ -654,8 +654,8 @@
     <nodeInfo nodeId="2600311093289626293" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="ConceptEditorHelper.java" startLine="191" startPosition="28" endLine="192" endPosition="16" />
     <nodeInfo nodeId="2600311093289626296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptEditorHelper.java" startLine="195" startPosition="28" endLine="196" endPosition="15" />
     <nodeInfo nodeId="2600311093289626300" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="197" startPosition="7" endLine="198" endPosition="46" />
-    <nodeInfo nodeId="2600311093289609255" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ConceptEditorHelper.java" startLine="202" startPosition="66" endLine="203" endPosition="30" />
-    <nodeInfo nodeId="3989978367392571400" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ConceptEditorHelper.java" startLine="203" startPosition="30" endLine="204" endPosition="40" />
+    <nodeInfo nodeId="2600311093289609255" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="tab" fileName="ConceptEditorHelper.java" startLine="202" startPosition="66" endLine="203" endPosition="30" />
+    <nodeInfo nodeId="3989978367392571400" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="listenNonRootEvents" fileName="ConceptEditorHelper.java" startLine="203" startPosition="30" endLine="204" endPosition="40" />
     <nodeInfo nodeId="2600311093289609258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="206" startPosition="81" endLine="207" endPosition="21" />
     <nodeInfo nodeId="3989978367392571403" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="207" startPosition="21" endLine="208" endPosition="53" />
     <nodeInfo nodeId="2600311093289609186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="211" startPosition="60" endLine="212" endPosition="84" />
@@ -666,12 +666,12 @@
     <nodeInfo nodeId="2600311093289609243" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptEditorHelper.java" startLine="230" startPosition="34" endLine="231" endPosition="15" />
     <nodeInfo nodeId="2600311093289609248" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ConceptEditorHelper.java" startLine="232" startPosition="7" endLine="233" endPosition="0" />
     <nodeInfo nodeId="2600311093289609249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="233" startPosition="0" endLine="234" endPosition="24" />
-    <nodeInfo nodeId="2600311093289603764" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ConceptEditorHelper.java" startLine="238" startPosition="77" endLine="239" endPosition="32" />
-    <nodeInfo nodeId="2600311093289603768" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ConceptEditorHelper.java" startLine="239" startPosition="32" endLine="240" endPosition="36" />
+    <nodeInfo nodeId="2600311093289603764" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" fileName="ConceptEditorHelper.java" startLine="238" startPosition="77" endLine="239" endPosition="32" />
+    <nodeInfo nodeId="2600311093289603768" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAspect" fileName="ConceptEditorHelper.java" startLine="239" startPosition="32" endLine="240" endPosition="36" />
     <nodeInfo nodeId="2600311093289603777" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="242" startPosition="69" endLine="243" endPosition="33" />
     <nodeInfo nodeId="2600311093289603786" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="243" startPosition="33" endLine="244" endPosition="29" />
     <nodeInfo nodeId="2600311093289603754" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptEditorHelper.java" startLine="247" startPosition="58" endLine="248" endPosition="134" />
-    <nodeInfo nodeId="822887956173266267" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ConceptEditorHelper.java" startLine="252" startPosition="81" endLine="253" endPosition="32" />
+    <nodeInfo nodeId="822887956173266267" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" fileName="ConceptEditorHelper.java" startLine="252" startPosition="81" endLine="253" endPosition="32" />
     <nodeInfo nodeId="822887956173266298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptEditorHelper.java" startLine="255" startPosition="50" endLine="256" endPosition="33" />
     <nodeInfo nodeId="822887956173287417" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptEditorHelper.java" startLine="261" startPosition="73" endLine="262" endPosition="22" />
     <nodeInfo nodeId="822887956173287421" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptEditorHelper.java" startLine="264" startPosition="7" endLine="265" endPosition="19" />
@@ -689,42 +689,42 @@
     <nodeInfo nodeId="3989978367392571888" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptEditorHelper.java" startLine="215" startPosition="52" endLine="218" endPosition="7" />
     <nodeInfo nodeId="2600311093289609233" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptEditorHelper.java" startLine="226" startPosition="45" endLine="229" endPosition="7" />
     <nodeInfo nodeId="2600311093289609241" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptEditorHelper.java" startLine="229" startPosition="7" endLine="232" endPosition="7" />
-    <nodeInfo nodeId="822887956173266294" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ConceptEditorHelper.java" startLine="254" startPosition="0" endLine="257" endPosition="5" />
+    <nodeInfo nodeId="822887956173266294" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorCondition#(Ljetbrains/mps/smodel/Language;)V" fileName="ConceptEditorHelper.java" startLine="254" startPosition="0" endLine="257" endPosition="5" />
     <nodeInfo nodeId="822887956173267614" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptEditorHelper.java" startLine="260" startPosition="90" endLine="263" endPosition="9" />
-    <nodeInfo nodeId="6388164970935848750" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="40" startPosition="34" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848750" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getScope#(Ljetbrains/mps/ide/tabbedEditor/ILazyTab;)Ljetbrains/mps/smodel/IScope;" fileName="ConceptEditorHelper.java" startLine="40" startPosition="34" endLine="44" endPosition="0" />
     <nodeInfo nodeId="1214823353927928392" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptEditorHelper.java" startLine="111" startPosition="136" endLine="115" endPosition="10" />
-    <nodeInfo nodeId="2600311093289626059" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ConceptEditorHelper.java" startLine="123" startPosition="0" endLine="127" endPosition="5" />
+    <nodeInfo nodeId="2600311093289626059" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultitabbedListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseMultiTab;Z)V" fileName="ConceptEditorHelper.java" startLine="123" startPosition="0" endLine="127" endPosition="5" />
     <nodeInfo nodeId="2600311093289626115" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptEditorHelper.java" startLine="138" startPosition="102" endLine="142" endPosition="7" />
     <nodeInfo nodeId="3989978367392598314" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptEditorHelper.java" startLine="167" startPosition="100" endLine="171" endPosition="9" />
     <nodeInfo nodeId="2600311093289626280" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptEditorHelper.java" startLine="189" startPosition="100" endLine="193" endPosition="9" />
-    <nodeInfo nodeId="2600311093289609171" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ConceptEditorHelper.java" startLine="205" startPosition="0" endLine="209" endPosition="5" />
-    <nodeInfo nodeId="2600311093289609180" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="210" startPosition="0" endLine="214" endPosition="0" />
-    <nodeInfo nodeId="2600311093289609214" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="221" startPosition="0" endLine="225" endPosition="0" />
-    <nodeInfo nodeId="2600311093289583834" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ConceptEditorHelper.java" startLine="241" startPosition="0" endLine="245" endPosition="5" />
-    <nodeInfo nodeId="2600311093289603748" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="246" startPosition="0" endLine="250" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848945" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
-    <nodeInfo nodeId="822887956173266237" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="89" startPosition="0" endLine="94" endPosition="0" />
-    <nodeInfo nodeId="6388164970935849246" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="2600311093289609171" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SingletabbedListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseSingleTab;Z)V" fileName="ConceptEditorHelper.java" startLine="205" startPosition="0" endLine="209" endPosition="5" />
+    <nodeInfo nodeId="2600311093289609180" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceAdded#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" fileName="ConceptEditorHelper.java" startLine="210" startPosition="0" endLine="214" endPosition="0" />
+    <nodeInfo nodeId="2600311093289609214" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" fileName="ConceptEditorHelper.java" startLine="221" startPosition="0" endLine="225" endPosition="0" />
+    <nodeInfo nodeId="2600311093289583834" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelCondition#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/LanguageAspect;)V" fileName="ConceptEditorHelper.java" startLine="241" startPosition="0" endLine="245" endPosition="5" />
+    <nodeInfo nodeId="2600311093289603748" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="ConceptEditorHelper.java" startLine="246" startPosition="0" endLine="250" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848945" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addMultitabbedListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseMultiTab;Ljetbrains/mps/smodel/LanguageAspect;Z)V" fileName="ConceptEditorHelper.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
+    <nodeInfo nodeId="822887956173266237" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addGeneratorListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseMultiTab;)V" fileName="ConceptEditorHelper.java" startLine="89" startPosition="0" endLine="94" endPosition="0" />
+    <nodeInfo nodeId="6388164970935849246" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addSingletabbedListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseSingleTab;Ljetbrains/mps/smodel/LanguageAspect;Z)V" fileName="ConceptEditorHelper.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
     <nodeInfo nodeId="822887956173267603" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="259" startPosition="58" endLine="264" endPosition="7" />
     <nodeInfo nodeId="6388164970935848780" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptEditorHelper.java" startLine="47" startPosition="127" endLine="53" endPosition="7" />
     <nodeInfo nodeId="3989978367392598306" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="166" startPosition="39" endLine="172" endPosition="7" />
     <nodeInfo nodeId="2600311093289626274" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="188" startPosition="39" endLine="194" endPosition="7" />
-    <nodeInfo nodeId="3989978367392571413" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="214" startPosition="0" endLine="221" endPosition="0" />
+    <nodeInfo nodeId="3989978367392571413" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childAdded#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" fileName="ConceptEditorHelper.java" startLine="214" startPosition="0" endLine="221" endPosition="0" />
     <nodeInfo nodeId="6388164970935848776" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="46" startPosition="71" endLine="54" endPosition="5" />
-    <nodeInfo nodeId="6388164970935848820" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="57" startPosition="0" endLine="65" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848862" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
-    <nodeInfo nodeId="2600311093289626495" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="99" startPosition="0" endLine="107" endPosition="0" />
-    <nodeInfo nodeId="1214823353927928381" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="109" startPosition="84" endLine="117" endPosition="0" />
-    <nodeInfo nodeId="2600311093289626207" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="144" startPosition="0" endLine="152" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848820" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAvailableConceptAspects#(Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="ConceptEditorHelper.java" startLine="57" startPosition="0" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848862" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewConceptAspectInstance#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SNode;" fileName="ConceptEditorHelper.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="2600311093289626495" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguageForTab#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)Ljetbrains/mps/smodel/Language;" fileName="ConceptEditorHelper.java" startLine="99" startPosition="0" endLine="107" endPosition="0" />
+    <nodeInfo nodeId="1214823353927928381" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Comparable;" fileName="ConceptEditorHelper.java" startLine="109" startPosition="84" endLine="117" endPosition="0" />
+    <nodeInfo nodeId="2600311093289626207" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodesMap#()Ljava/util/Map;" fileName="ConceptEditorHelper.java" startLine="144" startPosition="0" endLine="152" endPosition="0" />
     <nodeInfo nodeId="1214823353927928376" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptEditorHelper.java" startLine="108" startPosition="100" endLine="117" endPosition="30" />
-    <nodeInfo nodeId="822887956173266273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="258" startPosition="0" endLine="267" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848891" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="73" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="2600311093289609227" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="225" startPosition="0" endLine="236" endPosition="0" />
-    <nodeInfo nodeId="1214823353927923286" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="107" startPosition="0" endLine="119" endPosition="0" />
-    <nodeInfo nodeId="6388164970935848764" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="44" startPosition="0" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="2600311093289626064" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="128" startPosition="0" endLine="144" endPosition="0" />
-    <nodeInfo nodeId="2600311093289626240" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="178" startPosition="0" endLine="200" endPosition="0" />
-    <nodeInfo nodeId="3989978367392598190" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConceptEditorHelper.java" startLine="152" startPosition="0" endLine="178" endPosition="0" />
+    <nodeInfo nodeId="822887956173266273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="ConceptEditorHelper.java" startLine="258" startPosition="0" endLine="267" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848891" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewConceptAspectInstance#(Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ide/tabbedEditor/ILazyTab;)Ljetbrains/mps/smodel/SNode;" fileName="ConceptEditorHelper.java" startLine="73" startPosition="0" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="2600311093289609227" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reinitIfNeeded#(Ljetbrains/mps/smodel/SNode;)V" fileName="ConceptEditorHelper.java" startLine="225" startPosition="0" endLine="236" endPosition="0" />
+    <nodeInfo nodeId="1214823353927923286" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sortRootsByConcept#(Ljava/util/List;[Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="ConceptEditorHelper.java" startLine="107" startPosition="0" endLine="119" endPosition="0" />
+    <nodeInfo nodeId="6388164970935848764" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAvailableConceptAspects#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="ConceptEditorHelper.java" startLine="44" startPosition="0" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="2600311093289626064" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceAdded#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" fileName="ConceptEditorHelper.java" startLine="128" startPosition="0" endLine="144" endPosition="0" />
+    <nodeInfo nodeId="2600311093289626240" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" fileName="ConceptEditorHelper.java" startLine="178" startPosition="0" endLine="200" endPosition="0" />
+    <nodeInfo nodeId="3989978367392598190" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childAdded#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" fileName="ConceptEditorHelper.java" startLine="152" startPosition="0" endLine="178" endPosition="0" />
     <scopeInfo nodeId="6388164970935848753" fileName="ConceptEditorHelper.java" startLine="41" startPosition="47" endLine="42" endPosition="66" />
     <scopeInfo nodeId="6388164970935848790" fileName="ConceptEditorHelper.java" startLine="50" startPosition="233" endLine="51" endPosition="62" />
     <scopeInfo nodeId="6388164970935848918" fileName="ConceptEditorHelper.java" startLine="79" startPosition="21" endLine="80" endPosition="38" />
@@ -762,39 +762,39 @@
     <scopeInfo nodeId="2600311093289626286" fileName="ConceptEditorHelper.java" startLine="190" startPosition="30" endLine="192" endPosition="16" />
     <scopeInfo nodeId="2600311093289609174" fileName="ConceptEditorHelper.java" startLine="206" startPosition="81" endLine="208" endPosition="53" />
     <scopeInfo nodeId="2600311093289583837" fileName="ConceptEditorHelper.java" startLine="242" startPosition="69" endLine="244" endPosition="29" />
-    <scopeInfo nodeId="2600311093289626222" fileName="ConceptEditorHelper.java" startLine="146" startPosition="108" endLine="149" endPosition="7" />
-    <scopeInfo nodeId="822887956173266294" fileName="ConceptEditorHelper.java" startLine="254" startPosition="0" endLine="257" endPosition="5">
+    <scopeInfo nodeId="2600311093289626222" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="146" startPosition="108" endLine="149" endPosition="7" />
+    <scopeInfo nodeId="822887956173266294" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorCondition#(Ljetbrains/mps/smodel/Language;)V" fileName="ConceptEditorHelper.java" startLine="254" startPosition="0" endLine="257" endPosition="5">
       <varInfo nodeId="822887956173266310" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="822887956173267606" fileName="ConceptEditorHelper.java" startLine="260" startPosition="90" endLine="263" endPosition="9" />
-    <scopeInfo nodeId="6388164970935848750" fileName="ConceptEditorHelper.java" startLine="40" startPosition="34" endLine="44" endPosition="0">
+    <scopeInfo nodeId="6388164970935848750" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getScope#(Ljetbrains/mps/ide/tabbedEditor/ILazyTab;)Ljetbrains/mps/smodel/IScope;" fileName="ConceptEditorHelper.java" startLine="40" startPosition="34" endLine="44" endPosition="0">
       <varInfo nodeId="6388164970935848762" varName="tab" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848781" fileName="ConceptEditorHelper.java" startLine="48" startPosition="161" endLine="52" endPosition="9">
       <varInfo nodeId="6388164970935848783" varName="candidate" />
     </scopeInfo>
-    <scopeInfo nodeId="2600311093289626059" fileName="ConceptEditorHelper.java" startLine="123" startPosition="0" endLine="127" endPosition="5">
+    <scopeInfo nodeId="2600311093289626059" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MultitabbedListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseMultiTab;Z)V" fileName="ConceptEditorHelper.java" startLine="123" startPosition="0" endLine="127" endPosition="5">
       <varInfo nodeId="2600311093289626346" varName="tab" />
       <varInfo nodeId="3989978367392598224" varName="listenNonRootEvents" />
     </scopeInfo>
     <scopeInfo nodeId="3989978367392598313" fileName="ConceptEditorHelper.java" startLine="167" startPosition="100" endLine="171" endPosition="9" />
     <scopeInfo nodeId="2600311093289626279" fileName="ConceptEditorHelper.java" startLine="189" startPosition="100" endLine="193" endPosition="9" />
-    <scopeInfo nodeId="2600311093289609171" fileName="ConceptEditorHelper.java" startLine="205" startPosition="0" endLine="209" endPosition="5">
+    <scopeInfo nodeId="2600311093289609171" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SingletabbedListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseSingleTab;Z)V" fileName="ConceptEditorHelper.java" startLine="205" startPosition="0" endLine="209" endPosition="5">
       <varInfo nodeId="2600311093289609253" varName="tab" />
       <varInfo nodeId="3989978367392562217" varName="listenNonRootEvents" />
     </scopeInfo>
-    <scopeInfo nodeId="2600311093289609180" fileName="ConceptEditorHelper.java" startLine="210" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="2600311093289609180" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceAdded#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" fileName="ConceptEditorHelper.java" startLine="210" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="2600311093289609183" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="3989978367392571418" fileName="ConceptEditorHelper.java" startLine="215" startPosition="52" endLine="219" endPosition="44" />
-    <scopeInfo nodeId="2600311093289609214" fileName="ConceptEditorHelper.java" startLine="221" startPosition="0" endLine="225" endPosition="0">
+    <scopeInfo nodeId="2600311093289609214" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" fileName="ConceptEditorHelper.java" startLine="221" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="2600311093289609217" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2600311093289583834" fileName="ConceptEditorHelper.java" startLine="241" startPosition="0" endLine="245" endPosition="5">
+    <scopeInfo nodeId="2600311093289583834" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelCondition#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/LanguageAspect;)V" fileName="ConceptEditorHelper.java" startLine="241" startPosition="0" endLine="245" endPosition="5">
       <varInfo nodeId="2600311093289603774" varName="aspect" />
       <varInfo nodeId="2600311093289603772" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="2600311093289603748" fileName="ConceptEditorHelper.java" startLine="246" startPosition="0" endLine="250" endPosition="0">
+    <scopeInfo nodeId="2600311093289603748" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="ConceptEditorHelper.java" startLine="246" startPosition="0" endLine="250" endPosition="0">
       <varInfo nodeId="2600311093289603751" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848822" fileName="ConceptEditorHelper.java" startLine="58" startPosition="91" endLine="63" endPosition="18">
@@ -805,15 +805,15 @@
     <scopeInfo nodeId="6388164970935848865" fileName="ConceptEditorHelper.java" startLine="66" startPosition="105" endLine="71" endPosition="25">
       <varInfo nodeId="6388164970935848867" varName="conceptAspect" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848945" fileName="ConceptEditorHelper.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="6388164970935848945" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addMultitabbedListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseMultiTab;Ljetbrains/mps/smodel/LanguageAspect;Z)V" fileName="ConceptEditorHelper.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="6388164970935848949" varName="aspect" />
       <varInfo nodeId="6388164970935848947" varName="tab" />
       <varInfo nodeId="3989978367392598375" varName="listenNonRootEvents" />
     </scopeInfo>
-    <scopeInfo nodeId="822887956173266237" fileName="ConceptEditorHelper.java" startLine="89" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="822887956173266237" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addGeneratorListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseMultiTab;)V" fileName="ConceptEditorHelper.java" startLine="89" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="822887956173266241" varName="tab" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935849246" fileName="ConceptEditorHelper.java" startLine="94" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="6388164970935849246" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addSingletabbedListener#(Ljetbrains/mps/plugins/pluginparts/tabbedEditor/BaseSingleTab;Ljetbrains/mps/smodel/LanguageAspect;Z)V" fileName="ConceptEditorHelper.java" startLine="94" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="6388164970935849250" varName="aspect" />
       <varInfo nodeId="6388164970935849248" varName="tab" />
       <varInfo nodeId="3989978367392598380" varName="listenNonRootEvents" />
@@ -828,22 +828,22 @@
     <scopeInfo nodeId="2600311093289626212" fileName="ConceptEditorHelper.java" startLine="145" startPosition="60" endLine="150" endPosition="22">
       <varInfo nodeId="2600311093289626214" varName="nodesMap" />
     </scopeInfo>
-    <scopeInfo nodeId="822887956173267603" fileName="ConceptEditorHelper.java" startLine="259" startPosition="58" endLine="264" endPosition="7" />
+    <scopeInfo nodeId="822887956173267603" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="259" startPosition="58" endLine="264" endPosition="7" />
     <scopeInfo nodeId="6388164970935848779" fileName="ConceptEditorHelper.java" startLine="47" startPosition="127" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="3989978367392598306" fileName="ConceptEditorHelper.java" startLine="166" startPosition="39" endLine="172" endPosition="7" />
-    <scopeInfo nodeId="2600311093289626274" fileName="ConceptEditorHelper.java" startLine="188" startPosition="39" endLine="194" endPosition="7" />
+    <scopeInfo nodeId="3989978367392598306" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="166" startPosition="39" endLine="172" endPosition="7" />
+    <scopeInfo nodeId="2600311093289626274" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="188" startPosition="39" endLine="194" endPosition="7" />
     <scopeInfo nodeId="822887956173266278" fileName="ConceptEditorHelper.java" startLine="259" startPosition="58" endLine="265" endPosition="19" />
-    <scopeInfo nodeId="3989978367392571413" fileName="ConceptEditorHelper.java" startLine="214" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="3989978367392571413" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childAdded#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" fileName="ConceptEditorHelper.java" startLine="214" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="3989978367392571416" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848776" fileName="ConceptEditorHelper.java" startLine="46" startPosition="71" endLine="54" endPosition="5">
+    <scopeInfo nodeId="6388164970935848776" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptEditorHelper.java" startLine="46" startPosition="71" endLine="54" endPosition="5">
       <varInfo nodeId="6388164970935848777" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848820" fileName="ConceptEditorHelper.java" startLine="57" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="6388164970935848820" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAvailableConceptAspects#(Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="ConceptEditorHelper.java" startLine="57" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="6388164970935848860" varName="node" />
       <varInfo nodeId="6388164970935848858" varName="aspect" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848862" fileName="ConceptEditorHelper.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="6388164970935848862" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewConceptAspectInstance#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SNode;" fileName="ConceptEditorHelper.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="6388164970935848889" varName="model" />
       <varInfo nodeId="6388164970935848887" varName="concept" />
       <varInfo nodeId="6388164970935848885" varName="applicableNode" />
@@ -852,33 +852,33 @@
       <varInfo nodeId="6388164970935848911" varName="md" />
       <varInfo nodeId="6388164970935848896" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="2600311093289626495" fileName="ConceptEditorHelper.java" startLine="99" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="2600311093289626495" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguageForTab#(Ljetbrains/mps/ide/tabbedEditor/AbstractLazyTab;)Ljetbrains/mps/smodel/Language;" fileName="ConceptEditorHelper.java" startLine="99" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="2600311093289626498" varName="tab" />
     </scopeInfo>
-    <scopeInfo nodeId="1214823353927928381" fileName="ConceptEditorHelper.java" startLine="109" startPosition="84" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="2600311093289626207" fileName="ConceptEditorHelper.java" startLine="144" startPosition="0" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="1214823353927928381" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Comparable;" fileName="ConceptEditorHelper.java" startLine="109" startPosition="84" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="2600311093289626207" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodesMap#()Ljava/util/Map;" fileName="ConceptEditorHelper.java" startLine="144" startPosition="0" endLine="152" endPosition="0" />
     <scopeInfo nodeId="2600311093289609232" fileName="ConceptEditorHelper.java" startLine="226" startPosition="45" endLine="234" endPosition="24" />
     <scopeInfo nodeId="1214823353927923289" fileName="ConceptEditorHelper.java" startLine="108" startPosition="100" endLine="117" endPosition="30" />
-    <scopeInfo nodeId="822887956173266273" fileName="ConceptEditorHelper.java" startLine="258" startPosition="0" endLine="267" endPosition="0">
+    <scopeInfo nodeId="822887956173266273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="ConceptEditorHelper.java" startLine="258" startPosition="0" endLine="267" endPosition="0">
       <varInfo nodeId="822887956173266276" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="6388164970935848768" fileName="ConceptEditorHelper.java" startLine="45" startPosition="91" endLine="55" endPosition="18">
       <varInfo nodeId="6388164970935848770" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848891" fileName="ConceptEditorHelper.java" startLine="73" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="6388164970935848891" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createNewConceptAspectInstance#(Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ide/tabbedEditor/ILazyTab;)Ljetbrains/mps/smodel/SNode;" fileName="ConceptEditorHelper.java" startLine="73" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="6388164970935848942" varName="lazyTab" />
       <varInfo nodeId="6388164970935848940" varName="concept" />
       <varInfo nodeId="6388164970935848936" varName="aspect" />
       <varInfo nodeId="6388164970935848938" varName="applicableNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2600311093289609227" fileName="ConceptEditorHelper.java" startLine="225" startPosition="0" endLine="236" endPosition="0">
+    <scopeInfo nodeId="2600311093289609227" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reinitIfNeeded#(Ljetbrains/mps/smodel/SNode;)V" fileName="ConceptEditorHelper.java" startLine="225" startPosition="0" endLine="236" endPosition="0">
       <varInfo nodeId="2600311093289609230" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1214823353927923286" fileName="ConceptEditorHelper.java" startLine="107" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="1214823353927923286" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sortRootsByConcept#(Ljava/util/List;[Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="ConceptEditorHelper.java" startLine="107" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="1214823353927928306" varName="roots" />
       <varInfo nodeId="1214823353927928294" varName="conceptOrder" />
     </scopeInfo>
-    <scopeInfo nodeId="6388164970935848764" fileName="ConceptEditorHelper.java" startLine="44" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="6388164970935848764" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAvailableConceptAspects#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="ConceptEditorHelper.java" startLine="44" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="6388164970935848818" varName="node" />
       <varInfo nodeId="6388164970935848816" varName="structureModel" />
     </scopeInfo>
@@ -887,21 +887,21 @@
       <varInfo nodeId="2600311093289626071" varName="root" />
       <varInfo nodeId="2600311093289626099" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="2600311093289626064" fileName="ConceptEditorHelper.java" startLine="128" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="2600311093289626064" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceAdded#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" fileName="ConceptEditorHelper.java" startLine="128" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="2600311093289626067" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="2600311093289626245" fileName="ConceptEditorHelper.java" startLine="179" startPosition="50" endLine="198" endPosition="46">
       <varInfo nodeId="2600311093289626247" varName="root" />
       <varInfo nodeId="2600311093289626271" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="2600311093289626240" fileName="ConceptEditorHelper.java" startLine="178" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="2600311093289626240" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" fileName="ConceptEditorHelper.java" startLine="178" startPosition="0" endLine="200" endPosition="0">
       <varInfo nodeId="2600311093289626243" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="3989978367392598195" fileName="ConceptEditorHelper.java" startLine="153" startPosition="52" endLine="176" endPosition="82">
       <varInfo nodeId="3989978367392598277" varName="child" />
       <varInfo nodeId="3989978367392598303" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="3989978367392598190" fileName="ConceptEditorHelper.java" startLine="152" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="3989978367392598190" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childAdded#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" fileName="ConceptEditorHelper.java" startLine="152" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="3989978367392598193" varName="event" />
     </scopeInfo>
     <unitInfo nodeId="1214823353927928381" fileName="ConceptEditorHelper.java" startLine="109" startPosition="49" endLine="117" endPosition="5" unitName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper$1" />

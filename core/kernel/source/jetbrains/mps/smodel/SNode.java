@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.constraints.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
@@ -48,6 +49,7 @@ public final class SNode {
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
+  private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
   public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
@@ -65,8 +67,9 @@ public final class SNode {
   private SNode myPrevSibling;  // notNull, myFirstChild.myPrevSibling = the last child
   private SReference[] myReferences = SReference.EMPTY_ARRAY;
 
-  private Map<String, String> myProperties;
+  private String[] myProperties = null;
 
+  private boolean myDisposed = false;
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private SNodeId myId;
@@ -76,7 +79,6 @@ public final class SNode {
   private String myConceptFqName;
 
   private BaseAdapter myAdapter;
-  private boolean myDisposed;
 
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     myModel = model;
@@ -405,18 +407,19 @@ public final class SNode {
 
     fireNodeReadAccess();
     if (myProperties == null) return Collections.emptyMap();
-    return Collections.unmodifiableMap(myProperties);
+    return new PropertiesMap(myProperties);
   }
 
   public void putProperties(SNode fromNode) {
     ModelChange.assertLegalNodeChange(this);
 
     if (fromNode == null || fromNode.myProperties == null) return;
-    if (myProperties == null) {
-      myProperties = new ListMap<String, String>();
-    }
 
-    myProperties.putAll(fromNode.myProperties);
+    String[] addedProps = fromNode.myProperties;
+    String[] oldProperties = myProperties == null ? EMPTY_STRING_ARRAY : myProperties;
+    myProperties = new String[oldProperties.length + addedProps.length];
+    System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
+    System.arraycopy(addedProps, 0, myProperties, oldProperties.length, addedProps.length);
   }
 
   public Set<String> getPropertyNames() {
@@ -425,7 +428,9 @@ public final class SNode {
     fireNodeReadAccess();
     Set<String> result = getPropertyNamesFromAttributes();
     if (myProperties != null) {
-      result.addAll(myProperties.keySet());
+      for (int i = 0; i < myProperties.length; i += 2) {
+        result.add(myProperties[i]);
+      }
     }
     return result;
   }
@@ -509,14 +514,29 @@ public final class SNode {
     if (ourMemberAccessModifier != null) {
       propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
     }
-    return myProperties.get(propertyName);
+    return getProperty_simple(propertyName);
+  }
+
+  private String getProperty_simple(String propertyName) {
+    int index = getPropertyIndex(propertyName);
+    if (index == -1) return null;
+    return myProperties[index + 1];
+  }
+
+  private int getPropertyIndex(String propertyName) {
+    if (myProperties == null) return -1;
+    for (int i = 0; i < myProperties.length; i += 2) {
+      if (ObjectUtils.equals(myProperties[i], propertyName)) return i;
+    }
+    return -1;
   }
 
   void changePropertyName(String oldPropertyName, String newPropertyName) {
     //todo make undo?
     if (myProperties == null) return;
-    String value = myProperties.remove(oldPropertyName);
-    myProperties.put(newPropertyName, value);
+    int index = getPropertyIndex(oldPropertyName);
+    if (index == -1) return;
+    myProperties[index] = newPropertyName;
   }
 
   public void setProperty(final String propertyName, String propertyValue) {
@@ -545,18 +565,19 @@ public final class SNode {
         }
       }
     }
-    if (myProperties == null) {
-      myProperties = new ListMap<String, String>();
-    }
     if (ourMemberAccessModifier != null) {
       propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
     }
-    final String propertyName_ = propertyName;
-    final String oldValue = myProperties.get(propertyName_);
+    int index = getPropertyIndex(propertyName);
+    final String oldValue = index == -1 ? null : myProperties[index + 1];
+    if (propertyValue == null && oldValue == null) return;
+
     if (propertyValue == null) {
-      myProperties.remove(propertyName_);
+      removeProperty(index);
+    } else if (oldValue == null) {
+      addProperty(propertyName, propertyValue);
     } else {
-      myProperties.put(propertyName_, propertyValue);
+      myProperties[index + 1] = propertyValue;
     }
 
     if (UndoHelper.getInstance().needRegisterUndo(getModel())) {
@@ -564,8 +585,28 @@ public final class SNode {
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
-      getModel().firePropertyChangedEvent(this, propertyName_, oldValue, propertyValue);
+      getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
+  }
+
+  private void removeProperty(int index) {
+    String[] oldProperties = myProperties;
+    int newLength = oldProperties.length - 2;
+    if (newLength == 0) {
+      myProperties = null;
+      return;
+    }
+    myProperties = new String[newLength];
+    System.arraycopy(oldProperties, 0, myProperties, 0, index);
+    System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
+  }
+
+  private void addProperty(String propertyName, String propertyValue) {
+    String[] oldProperties = myProperties == null ? EMPTY_STRING_ARRAY : myProperties;
+    myProperties = new String[oldProperties.length + 2];
+    System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
+    myProperties[myProperties.length - 2] = propertyName;
+    myProperties[myProperties.length - 1] = propertyValue;
   }
 
   final public SNode getParent() {
@@ -908,9 +949,9 @@ public final class SNode {
     //myChildren = null;
     //myReferences = null;
     //myProperties = null;
+    myDisposed = true;
     myAdapter = null;
     myUserObjects = null;
-    myDisposed = true;
   }
 
   public boolean isDisposed() {
@@ -918,7 +959,7 @@ public final class SNode {
   }
 
   public boolean shouldHaveBeenDisposed() {
-    return myDisposed || myModel.isDisposed();
+    return isDisposed() || myModel.isDisposed();
   }
 
   public boolean isDetached() {
@@ -1221,11 +1262,11 @@ public final class SNode {
     try {
       if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(getConceptFqName())) {
         // !!! use *safe* getRole !!!
-        String role = myProperties == null ? null : myProperties.get("role");
+        String role = myProperties == null ? null : getProperty_simple("role");
         nameText = (role == null) ? "<no role>" : '"' + role + '"';
       } else {
         // !!! use *safe* getName !!!
-        String name = myProperties == null ? null : myProperties.get("name");
+        String name = myProperties == null ? null : getProperty_simple("name");
         nameText = (name == null) ? "<no name>" : '"' + name + '"';
       }
       // !!! use *safe* getId !!!
@@ -1683,36 +1724,37 @@ public final class SNode {
   //------------adapters-------------
 
   public BaseAdapter getAdapter() {
-    ModelAccess.assertLegalRead(this);
-    BaseAdapter adapter = myAdapter;
-    if (adapter != null) return adapter;
-    Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-    if (c == null) return new BaseConcept(this);
+     ModelAccess.assertLegalRead(this);
+     BaseAdapter adapter = myAdapter;
+     if (adapter != null) return adapter;
+     Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
+     if (c == null) return new BaseConcept(this);
 
-    synchronized (this) {
-      adapter = myAdapter;
-      if (adapter != null) return adapter;
-      try {
-        adapter = (BaseAdapter) c.newInstance(this);
-        assert adapter.getNode() == this;
+     synchronized (this) {
+       adapter = myAdapter;
+       if (adapter != null) return adapter;
+       try {
+         adapter = (BaseAdapter) c.newInstance(this);
+         assert adapter.getNode() == this;
 
-        if (!myRegisteredInModelFlag) {
-          UnregisteredNodesWithAdapters.getInstance().add(this);
-        }
-        myAdapter = adapter;
-        return adapter;
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      } catch (InstantiationException e) {
-        LOG.error(e);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-    return new BaseConcept(this);
-  }
+         if (!myRegisteredInModelFlag) {
+           UnregisteredNodesWithAdapters.getInstance().add(this);
+         }
+         myAdapter = adapter;
+         return adapter;
+       } catch (IllegalAccessException e) {
+         LOG.error(e);
+       } catch (InvocationTargetException e) {
+         LOG.error(e);
+       } catch (InstantiationException e) {
+         LOG.error(e);
+       } catch (Throwable t) {
+         LOG.error(t);
+       }
+     }
+     return new BaseConcept(this);
+   }
+
 
   void clearAdapter() {
     myAdapter = null;

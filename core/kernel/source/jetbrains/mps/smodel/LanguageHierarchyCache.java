@@ -37,7 +37,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LanguageHierarchyCache implements ApplicationComponent {
-  private static final InternAwareStringSet EMPTY_INTERN_AWARE_STRING_SET = new InternAwareStringSet();
+  private static final InternAwareStringSet EMPTY_INTERN_AWARE_STRING_SET = new InternAwareStringSet(0);
 
   public static LanguageHierarchyCache getInstance() {
     return ApplicationManager.getApplication().getComponent(LanguageHierarchyCache.class);

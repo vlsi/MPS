@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Custommps_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.Custommps_ProjectPlugin" />
+  <unitInfo fileName="Custommps_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.Custommps_ProjectPlugin" />
   <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="28" startPosition="47" endLine="32" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$3" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="150" startPosition="42" endLine="154" endPosition="13" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$3" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="277" startPosition="45" endLine="281" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$4" />
@@ -15,10 +15,10 @@
   <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="25" startPosition="74" endLine="35" endPosition="3" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$2" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="315" startPosition="35" endLine="325" endPosition="9" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$7" />
   <unitInfo fileName="DefaultCustomMpsApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Factory" />
-  <unitInfo fileName="Custommps_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.Custommps_ApplicationPlugin" />
   <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="35" startPosition="18" endLine="50" endPosition="3" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$3" />
   <unitInfo fileName="ForeignConfigurations.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ForeignConfigurations" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="382" startPosition="0" endLine="399" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyState" />
+  <unitInfo fileName="Custommps_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.Custommps_ApplicationPlugin" />
   <unitInfo fileName="ProjectAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="400" startPosition="0" endLine="423" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyExecutionResult" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="424" startPosition="0" endLine="449" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyExecutionConsole" />

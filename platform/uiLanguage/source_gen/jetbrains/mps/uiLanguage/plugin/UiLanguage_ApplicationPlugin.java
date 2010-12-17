@@ -5,4 +5,6 @@ package jetbrains.mps.uiLanguage.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 
 public class UiLanguage_ApplicationPlugin extends BaseApplicationPlugin {
+  public UiLanguage_ApplicationPlugin() {
+  }
 }

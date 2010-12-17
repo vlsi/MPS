@@ -5,4 +5,6 @@ package jetbrains.mps.baseLanguage.dates.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Dates_ProjectPlugin extends BaseProjectPlugin {
+  public Dates_ProjectPlugin() {
+  }
 }

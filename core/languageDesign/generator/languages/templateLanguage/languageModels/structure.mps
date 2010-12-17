@@ -33,14 +33,14 @@
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1092059087312">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\templateFragment.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/templateFragment.png" />
       <property name="name" nameId="yvnu.1169194664001:0" value="TemplateDeclaration" />
       <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="template" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" />
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1095416546421">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\mappingConf.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/mappingConf.png" />
       <property name="name" nameId="yvnu.1169194664001:0" value="MappingConfiguration" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" />
     </node>
@@ -51,7 +51,7 @@
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1112730859144">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\switch.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/switch.png" />
       <property name="name" nameId="yvnu.1169194664001:0" value="TemplateSwitch" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" />
     </node>
@@ -295,7 +295,7 @@
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1195499912406">
       <property name="name" nameId="yvnu.1169194664001:0" value="MappingScript" />
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\generatorScript.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/generatorScript.png" />
       <property name="virtualPackage" nameId="yvnu.1193676396447:0" value="script" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" resolveInfo="BaseConcept" />
     </node>

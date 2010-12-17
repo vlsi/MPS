@@ -1833,7 +1833,7 @@
               <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.PlusExpression" typeId="yvor.1068581242875:3" id="2444892561513959381">
                 <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.PlusExpression" typeId="yvor.1068581242875:3" id="2444892561513959377">
                   <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="2444892561513959367">
-                    <property name="value" nameId="yvor.1070475926801:3" value="${language_descriptor}\\icons\\" />
+                    <property name="value" nameId="yvor.1070475926801:3" value="${language_descriptor}/icons/" />
                   </node>
                   <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.ParameterReference" typeId="yvor.1068581242874:3" id="2444892561513962031">
                     <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="2444892561513959375:0" resolveInfo="name" />

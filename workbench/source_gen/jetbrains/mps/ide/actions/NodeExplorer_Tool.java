@@ -22,7 +22,7 @@ public class NodeExplorer_Tool extends GeneratedTool {
   private JPanel myPanel;
 
   public NodeExplorer_Tool(Project project) {
-    super(project, "Node Explorer", -1, IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}\\workbench\\source\\jetbrains\\mps\\ide\\projectPane\\nodes\\default.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, false);
+    super(project, "Node Explorer", -1, IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/default.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
   public NodeExplorerComponent getNodeExplorer() {

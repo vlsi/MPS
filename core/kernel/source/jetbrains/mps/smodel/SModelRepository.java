@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import gnu.trove.THashSet;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -36,8 +37,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SModelRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
+  private static SModelRepository ourInstance = null;
   public static SModelRepository getInstance() {
-    return ApplicationManager.getApplication().getComponent(SModelRepository.class);
+    if (ourInstance ==null){
+      ourInstance = ApplicationManager.getApplication().getComponent(SModelRepository.class);
+    }
+    return ourInstance;
   }
 
   private final Map<String, EditableSModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, EditableSModelDescriptor>();
@@ -45,8 +50,8 @@ public class SModelRepository implements ApplicationComponent {
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
-  private final Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
-  private final Set<SModelDescriptor> myModelsWithNoOwners = new LinkedHashSet<SModelDescriptor>();
+  private final Set<SModelDescriptor> myModelDescriptors = new THashSet<SModelDescriptor>();
+  private final Set<SModelDescriptor> myModelsWithNoOwners = new THashSet<SModelDescriptor>();
   private final ManyToManyMap<SModelDescriptor, ModelOwner> myModelsToOwners = new ManyToManyMap<SModelDescriptor, ModelOwner>();
 
   private final Object myListenersLock = new Object();

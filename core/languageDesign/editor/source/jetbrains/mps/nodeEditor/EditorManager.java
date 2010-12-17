@@ -16,10 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ui.LightColors;
-import jetbrains.mps.lang.annotations.structure.AttributeConcept;
-import jetbrains.mps.lang.annotations.structure.LinkAttributeConcept;
-import jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -92,21 +90,20 @@ public class EditorManager {
   }
   
   public EditorCell getCurrentAttributedPropertyCell() {
-    return getCurrentAttributedCellWithRole(PropertyAttributeConcept.class);
+    return getCurrentAttributedCellWithRole(AttributeKind.Property.class);
   }
 
   public EditorCell getCurrentAttributedLinkCell() {
-    return getCurrentAttributedCellWithRole(LinkAttributeConcept.class);
+    return getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
   }
 
   public EditorCell getCurrentAttributedNodeCell() {
-    return getCurrentAttributedCellWithRole(AttributeConcept.class);
+    return getCurrentAttributedCellWithRole(AttributeKind.Node.class);
   }
 
-  // use parameter attributeClass carefully, it is a "kind" of an attribute rather than an exact class of an attribute
-  public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeClass, EditorCell cellWithRole) {
+  public EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
-    EditorCell attributeCell = context.createRoleAttributeCell(attributeClass, cellWithRole, roleAttribute);
+    EditorCell attributeCell = context.createRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
     if (cellWithRole.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
       attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
@@ -114,11 +111,11 @@ public class EditorManager {
     return attributeCell;
   }
 
-  /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, EditorContext context, SNode roleAttribute) {
-    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeClass);
+  /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute) {
+    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
-      myAttributedClassesToAttributedCellStacksMap.put(attributeClass, stack);
+      myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
     }
     stack.push(cellWithRole);
     EditorCell result = createEditorCell(context, null, ReferencedNodeContext.createNodeContext(roleAttribute));
@@ -128,14 +125,14 @@ public class EditorManager {
   }
 
   public EditorCell createNodeAttributeCell(EditorContext context, SNode attribute, EditorCell nodeCell) {
-    return createRoleAttributeCell(context, attribute, AttributeConcept.class, nodeCell);
+    return createRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell);
   }
 
-  public EditorCell getCurrentAttributedCellWithRole(Class attributeClass) {
-    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeClass);
+  public EditorCell getCurrentAttributedCellWithRole(Class attributeKind) {
+    Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
-      myAttributedClassesToAttributedCellStacksMap.put(attributeClass, stack);
+      myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
     }
     return stack.isEmpty() ? null : stack.peek();
   }
@@ -449,10 +446,6 @@ public class EditorManager {
       editor = new DefaultNodeEditor();
     }
     return editor;
-  }
-
-  public static class NoAttribute {
-
   }
 
   private static class STHintCellInfo extends DefaultCellInfo {

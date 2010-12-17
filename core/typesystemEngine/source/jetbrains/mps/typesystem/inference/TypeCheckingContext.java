@@ -36,7 +36,7 @@ public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
   @NotNull
-  private final NodeTypesComponent myNodeTypesComponent;
+  protected NodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
 

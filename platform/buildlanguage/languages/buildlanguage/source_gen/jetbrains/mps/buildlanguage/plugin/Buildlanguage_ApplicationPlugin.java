@@ -5,4 +5,6 @@ package jetbrains.mps.buildlanguage.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 
 public class Buildlanguage_ApplicationPlugin extends BaseApplicationPlugin {
+  public Buildlanguage_ApplicationPlugin() {
+  }
 }

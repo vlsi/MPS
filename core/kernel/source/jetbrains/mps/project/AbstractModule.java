@@ -118,6 +118,10 @@ public abstract class AbstractModule implements IModule {
 
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    for (Dependency dep:descriptor.getDependencies()) {
+      if (ObjectUtils.equals(dep.getModuleRef(),moduleRef)) return;
+    }
+
     Dependency dep = new Dependency();
     dep.setModuleRef(moduleRef);
     dep.setReexport(reexport);
@@ -137,6 +141,8 @@ public abstract class AbstractModule implements IModule {
 
   public void addUsedDevkit(ModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor.getUsedDevkits().contains(devkitRef)) return;
+
     descriptor.getUsedDevkits().add(devkitRef);
     setModuleDescriptor(descriptor, true);
     save();

@@ -175,6 +175,14 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static int _StyleParameter_QueryFunction_fs6ae3_a3b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_fs6ae3_a4b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
   private static Color _StyleParameter_QueryFunction_fs6ae3_a0b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
@@ -185,13 +193,5 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
 
   private static Color _StyleParameter_QueryFunction_fs6ae3_a2b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_fs6ae3_a4b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
-  }
-
-  private static int _StyleParameter_QueryFunction_fs6ae3_a3b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 }

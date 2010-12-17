@@ -71,7 +71,7 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
       ModelDependencies dependencies = handler.getResult();
       if(dependencies != null) {
         return dependencies;
-      }
+     }
       throw new IOException("empty result");
     } catch(SAXParseException ex) {
       throw new IOException(ex);

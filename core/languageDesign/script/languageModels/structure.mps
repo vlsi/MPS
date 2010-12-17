@@ -11,7 +11,7 @@
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1177457067821">
       <property name="rootable" nameId="yvnr.1096454100552:0" value="true" />
       <property name="name" nameId="yvnu.1169194664001:0" value="MigrationScript" />
-      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}\icons\migrationScript.png" />
+      <property name="iconPath" nameId="yvnr.1160488491229:0" value="${language_descriptor}/icons/migrationScript.png" />
       <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvnu.1133920641626:0" />
     </node>
     <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="1177457850499">

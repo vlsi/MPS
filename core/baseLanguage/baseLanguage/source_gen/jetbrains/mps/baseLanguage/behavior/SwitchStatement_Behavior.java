@@ -15,8 +15,8 @@ public class SwitchStatement_Behavior {
     if (!(ignoreMayBeThrowables)) {
       Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(thisNode, "expression", true));
     }
-    for (SNode casse : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true))) {
-      SwitchCase_Behavior.call_collectUncautchedThrowables_4313092516461872703(casse, throwables, ignoreMayBeThrowables);
+    for (SNode caseNode : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true))) {
+      SwitchCase_Behavior.call_collectUncaughtThrowables_4313092516461872703(caseNode, throwables, ignoreMayBeThrowables);
     }
     if ((SLinkOperations.getTarget(thisNode, "defaultBlock", true) != null)) {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "defaultBlock", true), throwables, ignoreMayBeThrowables);

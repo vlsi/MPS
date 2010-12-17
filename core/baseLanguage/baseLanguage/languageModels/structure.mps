@@ -34,7 +34,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886292">
       <property name="name" nameId="tpck.1169194664001" value="ParameterDeclaration" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\parameter.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parameter.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="method" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     </node>
@@ -98,7 +98,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068581242863">
       <property name="name" nameId="tpck.1169194664001" value="LocalVariableDeclaration" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\variable.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/variable.png" />
       <property name="build" value="1" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
     </node>
@@ -302,7 +302,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1107135704075">
       <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}\icons\parameter.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parameter.png" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunction" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>

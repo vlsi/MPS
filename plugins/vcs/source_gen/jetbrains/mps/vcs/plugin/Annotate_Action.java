@@ -7,10 +7,9 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.vcs.annotation.AnnotationManager;
+import jetbrains.mps.vcs.annotation.AnnotationHelper;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class Annotate_Action extends GeneratedAction {
@@ -18,7 +17,6 @@ public class Annotate_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(Annotate_Action.class);
 
   private EditorComponent editor;
-  private Project project;
 
   public Annotate_Action() {
     super("Annotate", "", ICON);
@@ -32,7 +30,7 @@ public class Annotate_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return AnnotationManager.getInstance(Annotate_Action.this.project).isAnnotateable(Annotate_Action.this.editor);
+    return AnnotationHelper.isAnnotateable(Annotate_Action.this.editor);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -57,22 +55,17 @@ public class Annotate_Action extends GeneratedAction {
     if (this.editor == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
-      return false;
-    }
     return true;
   }
 
   protected void cleanup() {
     super.cleanup();
     this.editor = null;
-    this.project = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      AnnotationManager.getInstance(Annotate_Action.this.project).annotate(Annotate_Action.this.editor);
+      AnnotationHelper.annotate(Annotate_Action.this.editor);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Annotate", t);

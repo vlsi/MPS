@@ -15,23 +15,15 @@
  */
 package jetbrains.mps.util;
 
-import java.util.Collection;
-import java.util.HashSet;
+import gnu.trove.THashSet;
 
-public class InternAwareStringSet extends HashSet<String> {
+public class InternAwareStringSet extends THashSet<String> {
   public InternAwareStringSet() {
-  }
-
-  public InternAwareStringSet(Collection<? extends String> c) {
-    super(c);
-  }
-
-  public InternAwareStringSet(int initialCapacity, float loadFactor) {
-    super(initialCapacity, loadFactor);
+    super(2, (float) 0.8);
   }
 
   public InternAwareStringSet(int initialCapacity) {
-    super(initialCapacity);
+    super(initialCapacity, (float) 0.8);
   }
 
   public boolean add(String s) {

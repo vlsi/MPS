@@ -16,12 +16,12 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
 import jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteEasily;
@@ -80,7 +80,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
   // gets a kind of attributes possibly hanging on this provider's role
   public Class getRoleAttributeClass() {
-    return PropertyAttributeConcept.class;
+    return AttributeKind.Property.class;
   }
 
   public NodeSubstituteInfo createDefaultSubstituteInfo() {

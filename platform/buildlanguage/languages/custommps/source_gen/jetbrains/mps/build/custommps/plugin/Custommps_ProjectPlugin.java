@@ -5,4 +5,6 @@ package jetbrains.mps.build.custommps.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Custommps_ProjectPlugin extends BaseProjectPlugin {
+  public Custommps_ProjectPlugin() {
+  }
 }

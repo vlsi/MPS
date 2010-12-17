@@ -128,10 +128,6 @@ public class Styles_StyleSheet {
     return style;
   }
 
-  private static boolean _StyleParameter_QueryFunction_kkd5s1_a3j(SNode node, EditorContext editorContext) {
-    return true;
-  }
-
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(SNode node, EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
@@ -160,5 +156,9 @@ public class Styles_StyleSheet {
       return false;
     }
     return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+  }
+
+  private static boolean _StyleParameter_QueryFunction_kkd5s1_a3j(SNode node, EditorContext editorContext) {
+    return true;
   }
 }

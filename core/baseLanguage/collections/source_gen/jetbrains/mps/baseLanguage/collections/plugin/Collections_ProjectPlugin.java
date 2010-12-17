@@ -5,4 +5,6 @@ package jetbrains.mps.baseLanguage.collections.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Collections_ProjectPlugin extends BaseProjectPlugin {
+  public Collections_ProjectPlugin() {
+  }
 }
