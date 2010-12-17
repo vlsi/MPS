@@ -221,7 +221,9 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
   @NotNull
   /*package*/ List<EditorComponentChangesHighligher.ChangeEditorMessage> getEditorMessages() {
-    return Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values()).toListSequence();
+    synchronized (myChangesMessages) {
+      return Sequence.fromIterable(MapSequence.fromMap(myChangesMessages).values()).toListSequence();
+    }
   }
 
   public void setEnabled(boolean enabled) {
