@@ -554,17 +554,6 @@
           <property name="value" nameId="2qyu.2882388703616155301" value="$1 2$" />
         </node>
       </node>
-      <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="1278807831494979177">
-        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="1278807831494979178">
-          <property name="value" nameId="2qyu.2882388703616155301" value="$2 0$" />
-        </node>
-        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="1278807831494979179">
-          <property name="value" nameId="2qyu.2882388703616155301" value="$2 1$" />
-        </node>
-        <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="1278807831494979180">
-          <property name="value" nameId="2qyu.2882388703616155301" value="$2 2$" />
-        </node>
-      </node>
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="1278807831494979181">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="1278807831494979182">
           <property name="value" nameId="2qyu.2882388703616155301" value="$3 0$" />
