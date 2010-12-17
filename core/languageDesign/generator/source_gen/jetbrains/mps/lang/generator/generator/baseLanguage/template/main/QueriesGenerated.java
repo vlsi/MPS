@@ -745,6 +745,10 @@ public class QueriesGenerated {
     return Long.toString(((SNodeId.Regular) _context.getNode().getSNodeId()).getId()) + "L";
   }
 
+  public static Object propertyMacro_GetPropertyValue_5289988192764625417(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Long.toString(((SNodeId.Regular) _context.getNode().getSNodeId()).getId()) + "L";
+  }
+
   public static Object propertyMacro_GetPropertyValue_5577795813925496728(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).count();
   }
@@ -754,6 +758,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5577795813925497656(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((SNodeId.Foreign) _context.getNode().getSNodeId()).getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5289988192764625640(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((SNodeId.Foreign) _context.getNode().getSNodeId()).getId();
   }
 
@@ -1235,7 +1243,15 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "templDeclarationClass"), "constructor", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_5289988192764625573(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "templDeclarationClass"), "constructor", true)).first();
+  }
+
   public static Object referenceMacro_GetReferent_5577795813925496743(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "templDeclarationClass"), "constructor", true)).first();
+  }
+
+  public static Object referenceMacro_GetReferent_5289988192764625737(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "templDeclarationClass"), "constructor", true)).first();
   }
 
@@ -1355,11 +1371,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0fl(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0jl(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0gl(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0kl(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2053,11 +2069,23 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return it.getSNodeId() instanceof SNodeId.Foreign;
       }
+    }).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.core.structure.INamedConcept")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null;
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it.getSNodeId() instanceof SNodeId.Foreign;
+      }
     }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_5577795813925497600(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.core.structure.INamedConcept")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null;
+      }
+    }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_9191117361655150285(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2879,7 +2907,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0ox(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0sx(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -3059,12 +3087,36 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_5289988192764625433(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.core.structure.INamedConcept")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null;
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it.getSNodeId() instanceof SNodeId.Regular;
+      }
+    });
+  }
+
   public static Iterable sourceNodesQuery_5577795813925496780(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
   public static Iterable sourceNodesQuery_5577795813925496807(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it.getSNodeId() instanceof SNodeId.Foreign;
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_5289988192764625681(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.core.structure.INamedConcept")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null;
+      }
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it.getSNodeId() instanceof SNodeId.Foreign;
       }
@@ -3254,21 +3306,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0fl(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0jl(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0gl(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0kl(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0ox(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0sx(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
