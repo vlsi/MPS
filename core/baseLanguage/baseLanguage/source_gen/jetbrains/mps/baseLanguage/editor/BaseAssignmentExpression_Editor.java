@@ -17,6 +17,16 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModel;
 
 public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -88,7 +98,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_a0b0(), new BaseAssignmentExpression_Editor.BaseAssignmentExpression_generic_cellMenu_b0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -105,6 +115,55 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression";
+    }
+  }
+
+  public static class BaseAssignmentExpression_generic_cellMenu_b0b0 extends AbstractCellMenuPart_Generic_Group {
+    public BaseAssignmentExpression_generic_cellMenu_b0b0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      // hack before actions are refactored 
+      List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
+        protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
+          SNode sourceNode = (SNode) oldChild;
+          SNode result = (SNode) newChild;
+          SNode parent = (SNode) parentNode;
+          SNodeOperations.replaceWithAnother(sourceNode, result);
+          SLinkOperations.setTarget(result, "leftExpression", SLinkOperations.getTarget(sourceNode, "lValue", true), true);
+          SLinkOperations.setTarget(result, "rightExpression", SLinkOperations.getTarget(sourceNode, "rValue", true), true);
+          return result;
+        }
+      }, operationContext);
+      return actions;
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((INodeSubstituteAction) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(INodeSubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((INodeSubstituteAction) parameterObject);
+    }
+
+    public String getMatchingText_internal(INodeSubstituteAction parameterObject) {
+      return parameterObject.getMatchingText(null);
+    }
+
+    public String getDescriptionText(Object parameterObject) {
+      return this.getDescriptionText_internal((INodeSubstituteAction) parameterObject);
+    }
+
+    public String getDescriptionText_internal(INodeSubstituteAction parameterObject) {
+      return parameterObject.getDescriptionText(null);
     }
   }
 }
