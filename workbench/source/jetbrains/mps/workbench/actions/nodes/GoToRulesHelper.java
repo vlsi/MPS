@@ -18,15 +18,11 @@ package jetbrains.mps.workbench.actions.nodes;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.typesystem.structure.AbstractRule;
-import jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition;
-import jetbrains.mps.lang.typesystem.structure.ConceptReference;
-import jetbrains.mps.lang.typesystem.structure.PatternCondition;
+import jetbrains.mps.lang.typesystem.structure.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.ConditionalIterator;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
@@ -38,7 +34,6 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class GoToRulesHelper {
@@ -64,51 +59,67 @@ public class GoToRulesHelper {
   public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IScope scope, final boolean exactConcept) {
     Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
     List<SNode> rules = new ArrayList<SNode>();
+    List<AbstractRule> overriding = new ArrayList<AbstractRule>();
     if (language != null && LanguageAspect.TYPESYSTEM.get(language) != null) {
       SModelDescriptor helginsDescriptor = LanguageAspect.TYPESYSTEM.get(language);
       if (helginsDescriptor != null) {
         Condition<SNode> cond = new Condition<SNode>() {
           public boolean met(SNode n) {
-            INodeAdapter object = BaseAdapter.fromNode(n);
-            if (!(object instanceof AbstractRule)) return false;
-
-            AbstractRule rule = (AbstractRule) object;
-            if (exactConcept) {
-              return maybeApplicableExact(conceptDeclaration, rule.getApplicableNode(), scope);
-            } else {
-              return maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), scope);
-            }
+            return isApplicable(n, conceptDeclaration, false);
           }
         };
         Iterable<SNode> iter = new ConditionalIterable<SNode>(helginsDescriptor.getSModel().roots(),cond);
-        for (SNode node:iter){
+        for (SNode node : iter){
           rules.add(node);
+          if (node.getAdapter() instanceof InferenceRule) {
+            InferenceRule inferenceRule = (InferenceRule) node.getAdapter();
+            if (inferenceRule.getOverrides()) {
+              overriding.add(inferenceRule);
+            }
+          }
+        }
+      }
+    }
+    for (AbstractRule overridingRule : overriding) {
+      AbstractConceptDeclaration subConcept = getApplicableConcept(overridingRule.getApplicableNode());
+      for (SNode ruleNode : new ArrayList<SNode>(rules)) {
+        if (ruleNode.getAdapter().getClass() == overridingRule.getClass() && isApplicable(ruleNode, subConcept, true)) {
+           rules.remove(ruleNode);
         }
       }
     }
     return rules;
   }
 
-  private static boolean maybeApplicable_new(AbstractConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
+  private static boolean isApplicable(SNode ruleNode, AbstractConceptDeclaration conceptDeclaration, boolean skipExact) {
+    INodeAdapter object = BaseAdapter.fromNode(ruleNode);
+    if (!(object instanceof AbstractRule)) return false;
+    AbstractRule rule = (AbstractRule) object;
     if (conceptDeclaration == null) {
       return false;
     }
-    if (applicableNode instanceof jetbrains.mps.lang.typesystem.structure.ConceptReference) {
-      jetbrains.mps.lang.typesystem.structure.ConceptReference conceptReference =
-        (jetbrains.mps.lang.typesystem.structure.ConceptReference) applicableNode;
-      return SModelUtil_new.isAssignableConcept(conceptDeclaration, conceptReference.getConcept());
-    } else if (applicableNode instanceof PatternCondition) {
-      BaseConcept baseConcept = ((PatternCondition) applicableNode).getPattern().getPatternNode();
-      if (baseConcept == null) return false;
-      return SModelUtil_new.isAssignableConcept(conceptDeclaration, baseConcept.getConceptDeclarationAdapter());
+    AbstractConceptDeclaration applicableConcept = getApplicableConcept(rule.getApplicableNode());
+    if (applicableConcept == null) {
+      return false;
     }
-    return false;
+    if (skipExact && conceptDeclaration == applicableConcept) {
+      return false;
+    }
+    return SModelUtil_new.isAssignableConcept(conceptDeclaration, applicableConcept);
   }
 
-  private static boolean maybeApplicableExact(AbstractConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
-    if (conceptDeclaration == null) return false;
-    if (!(applicableNode instanceof ConceptReference)) return false;
-    return conceptDeclaration == ((ConceptReference) applicableNode).getConcept();
+  private static AbstractConceptDeclaration getApplicableConcept(ApplicableNodeCondition applicableNode) {
+     if (applicableNode instanceof jetbrains.mps.lang.typesystem.structure.ConceptReference) {
+       jetbrains.mps.lang.typesystem.structure.ConceptReference conceptReference =
+        (jetbrains.mps.lang.typesystem.structure.ConceptReference) applicableNode;
+       return conceptReference.getConcept();
+     } else if (applicableNode instanceof PatternCondition) {
+      BaseConcept baseConcept = ((PatternCondition) applicableNode).getPattern().getPatternNode();
+      if (baseConcept == null) return null;
+      return baseConcept.getConceptDeclarationAdapter();
+     } else {
+       return null;
+     }
   }
 
   private static class MyMenu extends JPopupMenu {
