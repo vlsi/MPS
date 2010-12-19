@@ -27,7 +27,6 @@ public class MoveTransitionToAnotherRow_Test extends BaseTransformationTest {
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       BaseEditorTestBody.typeString(editorComponent, "another");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
