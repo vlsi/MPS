@@ -27,7 +27,7 @@ public class ProgressLine extends JPanel implements TestView {
     this.myState = testState;
     this.add(this.myStateLabel);
     final JPanel progress = new JPanel(new GridBagLayout());
-    progress.add(this.myProgressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
+    progress.add(this.myProgressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(2, 0, 0, 2), 0, 0));
     this.myProgressBar.setColor(ColorProgressBar.GREEN);
     this.add(progress);
     this.myTestsBuilt = true;

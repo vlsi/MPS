@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.util;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
+
 import java.util.*;
 
 public class ManyToManyMap<F, S> {
-  private Map<F, Set<S>> myFToS = new LinkedHashMap<F, Set<S>>();
-  private Map<S, Set<F>> mySToF = new LinkedHashMap<S, Set<F>>();
+  private Map<F, Set<S>> myFToS = new THashMap<F, Set<S>>();
+  private Map<S, Set<F>> mySToF = new THashMap<S, Set<F>>();
 
   public void clearFirst(F f) {
     if (!myFToS.containsKey(f)) return;
@@ -30,17 +33,17 @@ public class ManyToManyMap<F, S> {
 
   public void clearSecond(S s) {
     if (!mySToF.containsKey(s)) return;
-    for (F f : new HashSet<F>(mySToF.get(s))) {
+    for (F f : new THashSet<F>(mySToF.get(s))) {
       removeLink(f, s);
     }
   }
 
   public void addLink(F f, S s) {
     if (!myFToS.containsKey(f)) {
-      myFToS.put(f, new HashSet<S>(1));
+      myFToS.put(f, new THashSet<S>(1));
     }
     if (!mySToF.containsKey(s)) {
-      mySToF.put(s, new HashSet<F>(1));
+      mySToF.put(s, new THashSet<F>(1));
     }
     myFToS.get(f).add(s);
     mySToF.get(s).add(f);
@@ -93,5 +96,10 @@ public class ManyToManyMap<F, S> {
 
   public boolean containsSecond(S s) {
     return mySToF.containsKey(s);
+  }
+
+  public void clear() {
+    myFToS.clear();
+    mySToF.clear();
   }
 }

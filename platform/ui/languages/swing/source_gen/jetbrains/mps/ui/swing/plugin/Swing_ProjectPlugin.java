@@ -5,4 +5,6 @@ package jetbrains.mps.ui.swing.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Swing_ProjectPlugin extends BaseProjectPlugin {
+  public Swing_ProjectPlugin() {
+  }
 }

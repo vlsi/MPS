@@ -471,23 +471,27 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
         for (SModelTreeNode modelTreeNode : ListSequence.fromList(MapSequence.fromMap(mySModelDescriptorsToTreeNodes).get(modelDescriptor))) {
           Set<TreeMessage> wereMessages = modelTreeNode.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
           if (EXTRA_CHECKS_ENABLED && !(wereMessages.isEmpty()) && fileStatus == FileStatus.NOT_CHANGED) {
-            SModel model = modelDescriptor.getSModel();
-            if (model != null && !(model.isDisposed())) {
-              for (final SNode node : Sequence.fromIterable(model.nodes())) {
-                myChangeCountForNode.zeroizeKey(node);
-                myPropertyChangeCountForNode.zeroizeKey(node);
-                myReferenceChangeCountForNode.zeroizeKey(node);
-                ThreadUtils.runInUIThreadNoWait(new Runnable() {
-                  public void run() {
-                    ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node)).visitAll(new IVisitor<SNodeTreeNode>() {
-                      public void visit(SNodeTreeNode tn) {
-                        tn.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                SModel model = modelDescriptor.getSModel();
+                if (model != null && !(model.isDisposed())) {
+                  for (final SNode node : Sequence.fromIterable(model.nodes())) {
+                    myChangeCountForNode.zeroizeKey(node);
+                    myPropertyChangeCountForNode.zeroizeKey(node);
+                    myReferenceChangeCountForNode.zeroizeKey(node);
+                    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+                      public void run() {
+                        ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node)).visitAll(new IVisitor<SNodeTreeNode>() {
+                          public void visit(SNodeTreeNode tn) {
+                            tn.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
+                          }
+                        });
                       }
                     });
                   }
-                });
+                }
               }
-            }
+            });
           }
           if (color != null) {
             modelTreeNode.addTreeMessage(new TreeMessage(color, null, ProjectTreeChangesHighlighter.this));
@@ -664,8 +668,7 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
       unregisterTreeNode(treeNode);
     }
 
-    public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
-
+    public void treeNodeUpdated(MPSTreeNode node, MPSTree tree) {
     }
   }
 }

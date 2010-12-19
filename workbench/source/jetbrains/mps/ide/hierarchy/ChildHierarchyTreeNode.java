@@ -23,17 +23,16 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTreeNode<T> {
 
   private boolean myInitialized = false;
+  private Set<T> myVisited;
 
-  public ChildHierarchyTreeNode(T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
+  public ChildHierarchyTreeNode(T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree, Set<T> visited) {
     super(declaration, operationContext, tree);
+    myVisited = new HashSet<T>(visited);
     setColor(new Color(0x40, 0x00, 0x90));
     setText(calculateText());
   }
@@ -46,15 +45,19 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         try {
-          List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) getUserObject()));
+          T node = (T) getUserObject();
+          List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren(node, myVisited));
           Collections.sort(descendants, new Comparator<T>() {
             public int compare(T o1, T o2) {
               return ("" + o1.toString()).compareTo(o2.toString());
             }
           });
 
+          Set<T> visited = new HashSet<T>(myVisited);
+          visited.add(node);
           for (T descendant : descendants) {
-            ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, getOperationContext(), myHierarchyTree);
+            ChildHierarchyTreeNode<T> childHierarchyTreeNode =
+              new ChildHierarchyTreeNode<T>(descendant, getOperationContext(), myHierarchyTree, visited);
             add(childHierarchyTreeNode);
           }
         } catch (CircularHierarchyException ex) {

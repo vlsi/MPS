@@ -85,7 +85,7 @@ public class GeneratorUtil {
 
   /*package*/
 
-  static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
+  public static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
     // FIXME rewrite
     List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
     for (INodeAdapter subnode : template.getDescendants()) {
@@ -125,7 +125,7 @@ public class GeneratorUtil {
 
   /*package*/
 
-  static boolean checkIfOneOrMaryAdjacentFragments(List<TemplateFragment> fragments, SNode templateContainer, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+  public static boolean checkIfOneOrMaryAdjacentFragments(List<TemplateFragment> fragments, SNode templateContainer, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     if (fragments.isEmpty()) {
       generator.showErrorMessage(inputNode, templateContainer, ruleNode, "couldn't process template: no template fragments found");
       return false;

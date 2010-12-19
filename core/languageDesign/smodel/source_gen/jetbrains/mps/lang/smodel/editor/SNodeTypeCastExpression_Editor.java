@@ -12,10 +12,10 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -64,12 +64,14 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_x0l1fn_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("leftExpression");
-    provider.setNoTargetText("<no leftExpression>");
+  private EditorCell createRefCell_x0l1fn_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("concept");
+    provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new SNodeTypeCastExpression_Editor._Inline_x0l1fn_a3a());
     editorCell = provider.createEditorCell(editorContext);
+    SNodeTypeCastExpression_Concept_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -81,14 +83,12 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_x0l1fn_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("concept");
-    provider.setNoTargetText("<no concept>");
+  private EditorCell createRefNode_x0l1fn_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("leftExpression");
+    provider.setNoTargetText("<no leftExpression>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SNodeTypeCastExpression_Editor._Inline_x0l1fn_a3a());
     editorCell = provider.createEditorCell(editorContext);
-    SNodeTypeCastExpression_Concept_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

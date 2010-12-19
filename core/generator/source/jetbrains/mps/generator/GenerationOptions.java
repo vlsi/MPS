@@ -19,6 +19,7 @@ public class GenerationOptions {
   private final boolean myRebuildAll;
 
   private final IncrementalGenerationStrategy myIncrementalStrategy;
+  private boolean myKeepOutputModel;
 
   private final boolean myGenerateInParallel;
   private final int myNumberOfThreads;
@@ -34,7 +35,8 @@ public class GenerationOptions {
   private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll,
                            boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                            boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
-                           @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy) {
+                           @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
+                           boolean keepOutputModel) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
@@ -47,6 +49,7 @@ public class GenerationOptions {
     myKeepModelsWithWarnings = keepModelsWithWarnings;
     myGenerationTracer = generationTracer;
     myIncrementalStrategy = incrementalStrategy;
+    myKeepOutputModel = keepOutputModel;
   }
 
   public boolean isSaveTransientModels() {
@@ -108,6 +111,10 @@ public class GenerationOptions {
     return new OptionsBuilder();
   }
 
+  public boolean isKeepOutputModel() {
+    return myKeepOutputModel;
+  }
+
   /**
    * Options builder
    * Usage:
@@ -129,6 +136,7 @@ public class GenerationOptions {
     private int myNumberOfModelsToKeep = 16;
 
     private IGenerationTracer myGenerationTracer = NullGenerationTracer.INSTANCE;
+    private boolean myKeepOutputModel;
 
     private OptionsBuilder() {
     }
@@ -136,7 +144,7 @@ public class GenerationOptions {
     public GenerationOptions create() {
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
-        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer, myIncrementalStrategy);
+        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer, myIncrementalStrategy, myKeepOutputModel);
     }
 
     public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
@@ -176,6 +184,11 @@ public class GenerationOptions {
     public OptionsBuilder tracing(int tracingMode, IGenerationTracer generationTracer) {
       myTracingMode = tracingMode;
       myGenerationTracer = generationTracer;
+      return this;
+    }
+
+    public OptionsBuilder keepOutputModel (boolean keepOutputModel) {
+      myKeepOutputModel = keepOutputModel;
       return this;
     }
   }

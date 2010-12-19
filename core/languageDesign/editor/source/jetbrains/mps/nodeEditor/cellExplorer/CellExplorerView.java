@@ -191,8 +191,7 @@ public class CellExplorerView extends BaseProjectTool {
     public CellTreeNode(EditorCell cell) {
       super(cell, null);
       myCell = cell;
-
-      updatePresentation();
+      setNodeIdentifier(calculateNodeIdentifier());
     }
 
     protected void doUpdatePresentation() {
@@ -212,7 +211,6 @@ public class CellExplorerView extends BaseProjectTool {
         setIcon(Icons.CELL_DEFAULT_ICON);
       }
 
-      setNodeIdentifier(calculateNodeIdentifier());
       setAdditionalText("[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "], baseLine = " + myCell.getBaseline() + ", ascent = " + myCell.getAscent() + ", descent = " + myCell.getDescent());
     }
 

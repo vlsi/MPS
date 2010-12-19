@@ -18,11 +18,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -204,13 +204,13 @@ public class JavaNodeRunConfiguration_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createProperty_oxce8e_b1b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("generate");
-    provider.setNoTargetText("<no generate>");
+  private EditorCell createRefCell_oxce8e_b0d1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("conceptDeclaration");
+    provider.setNoTargetText("<no conceptDeclaration>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new JavaNodeRunConfiguration_Editor._Inline_oxce8e_a1a3b1a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_generate");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -239,13 +239,13 @@ public class JavaNodeRunConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_oxce8e_b0d1b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("conceptDeclaration");
-    provider.setNoTargetText("<no conceptDeclaration>");
+  private EditorCell createProperty_oxce8e_b1b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("generate");
+    provider.setNoTargetText("<no generate>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new JavaNodeRunConfiguration_Editor._Inline_oxce8e_a1a3b1a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_generate");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -509,7 +509,7 @@ public class UsagesTree extends MPSTree {
   }
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (treeNode.getUserObject() == null) {
           return;

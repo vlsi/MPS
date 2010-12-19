@@ -241,7 +241,6 @@ class ModelChangesTree extends MPSTree {
         }
       });
       myModel = model;
-      updatePresentation();
     }
 
     protected void doUpdatePresentation() {

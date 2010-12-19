@@ -2,10 +2,11 @@ package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
+import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -39,40 +40,10 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkCondition(createRootRule);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkCondition(condition, inputRootNode, ruleNode);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.checkConditionForIfMacro(inputNode, ifMacro, context);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      wrapped.executeMappingScript(mappingScript, model);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -149,16 +120,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.getContextNodeForWeavingingRule(inputNode, rule);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
   public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
@@ -197,6 +158,62 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.tryToApply(rule, environment, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.isApplicable(rule, environment, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    if(rule instanceof TemplateRootMappingRuleInterpreted) {
+      return wrapped.applyRule(rule, environment, context);
+    }
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.applyRule(rule, environment, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
+    if(rule instanceof TemplateCreateRootRuleInterpreted) {
+      return wrapped.applyRule(rule, environment);
+    }
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.applyRule(rule, environment);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.getContextNode(rule, environment, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      wrapped.executeScript(mappingScript, model);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

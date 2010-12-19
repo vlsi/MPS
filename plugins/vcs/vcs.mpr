@@ -10,7 +10,9 @@
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="vcs" moduleRef="jetbrains.mps.vcs" />
+    </genConfs>
   </component>
   <component name="ProjectModuleManager">
     <modules />

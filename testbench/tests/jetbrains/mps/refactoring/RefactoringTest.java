@@ -18,8 +18,6 @@ package jetbrains.mps.refactoring;
 import jetbrains.mps.BaseMPSTest;
 
 import java.io.File;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 public class RefactoringTest extends BaseMPSTest {
   private static final String TEST_REFACTORING_PATH = "testbench/modules/testRefactoring";
@@ -33,9 +31,6 @@ public class RefactoringTest extends BaseMPSTest {
   }
 
   public void testRenameLinkRefactoring_Hierarchy() {
-    if (Calendar.getInstance().before(new GregorianCalendar(2010, Calendar.DECEMBER, 12))) {
-      return;
-    }
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenameLinkRefactoringTester_Hierarchy"));
   }
 

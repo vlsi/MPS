@@ -114,7 +114,9 @@ public class StructureViewComponent {
     public SNodeTreeNode(SNode node) {
       super(myContext);
       myNode = node;
-      updatePresentation();
+      setNodeIdentifier(myNode.getId());
+      setText(myNode.getName());
+      setIcon(IconManager.getIconFor(myNode));
     }
 
     protected void doUpdatePresentation() {
@@ -123,10 +125,6 @@ public class StructureViewComponent {
       } else {
         setColor(Color.BLACK);
       }
-
-      setIcon(IconManager.getIconFor(myNode));
-      setNodeIdentifier(myNode.getId());
-      setText(myNode.getName());
     }
 
     public void doubleClick() {

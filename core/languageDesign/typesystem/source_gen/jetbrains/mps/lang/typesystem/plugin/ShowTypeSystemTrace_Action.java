@@ -87,7 +87,7 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
       typeCheckingContext = ShowTypeSystemTrace_Action.this.editorComponent.getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
         TypeCheckingContextNew t = (TypeCheckingContextNew) typeCheckingContext;
-        new ShowTypeSystemTrace(t, ShowTypeSystemTrace_Action.this.context, ShowTypeSystemTrace_Action.this.frame, null);
+        new ShowTypeSystemTrace(t, ShowTypeSystemTrace_Action.this.context, ShowTypeSystemTrace_Action.this.frame, ShowTypeSystemTrace_Action.this.node);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);

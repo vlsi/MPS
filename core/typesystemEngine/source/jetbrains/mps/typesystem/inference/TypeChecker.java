@@ -22,6 +22,7 @@ import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -150,7 +151,7 @@ public class TypeChecker implements ApplicationComponent {
     return new ConcurrentSubtypingCache();
   }
 
-  /* package */ Pair<SNode, Boolean> getTypeComputedForCompletion(SNode node) {
+  public Pair<SNode, Boolean> getTypeComputedForCompletion(SNode node) {
     if (myComputedTypesForCompletion != null && myComputedTypesForCompletion.containsKey(node)) {
       return new Pair<SNode, Boolean>(myComputedTypesForCompletion.get(node), true);
     } else {
@@ -158,7 +159,7 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  /* package */ void putTypeComputedForCompletion(SNode node, SNode type) {
+  public void putTypeComputedForCompletion(SNode node, SNode type) {
     if (myComputedTypesForCompletion != null) {
       myComputedTypesForCompletion.put(node, type);
     }

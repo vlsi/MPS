@@ -10,6 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Core_ProjectPlugin extends BaseProjectPlugin {
+  public Core_ProjectPlugin() {
+  }
+
   public List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
     List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
     {

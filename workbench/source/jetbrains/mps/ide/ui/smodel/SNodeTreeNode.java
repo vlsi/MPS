@@ -57,7 +57,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myNode = node;
     myRole = role;
     myCondition = condition;
-    updatePresentation();
+
+    if (myNode == null) {
+      setNodeIdentifier("null");
+    } else {
+      setNodeIdentifier(myNode.getId());
+    }
   }
 
   protected final void doUpdatePresentation() {
@@ -90,12 +95,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
     if (myNode != null) {
       setIcon(IconManager.getIconFor(myNode));
-    }
-
-    if (myNode == null) {
-      setNodeIdentifier("null");
-    } else {
-      setNodeIdentifier(myNode.getId());
     }
 
     if (SNodeOperations.isUnknown(myNode)) {

@@ -33,6 +33,7 @@ import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.library.Library;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
@@ -176,7 +177,7 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected void finishMake(Set<Library> compiledLibraries, @NotNull jetbrains.mps.make.CompilationResult result) {
+  protected void finishMake(Set<Library> compiledLibraries, @NotNull MPSCompilationResult result) {
     String testName = myBuildServerMessageFormat.escapeBuildMessage("make " + compiledLibraries);
     if (!result.isOk()) {
       System.out.println(myBuildServerMessageFormat.formatTestFailure(testName, "Compilation Errors", result.toString()));

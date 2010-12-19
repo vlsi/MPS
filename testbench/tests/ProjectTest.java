@@ -47,7 +47,6 @@ public class ProjectTest {
       "/core/baseLanguage/tuples/tuples.mpr",
       "/core/baseLanguage/runConfigurations/runConfigurations.mpr",
       "/core/languageDesign/actions/actions.mpr",
-      "/core/languageDesign/annotations/annotations.mpr",
       "/core/languageDesign/behavior/behavior.mpr",
       "/core/languageDesign/constraints/constraints.mpr",
       "/core/languageDesign/core/core.mpr",
@@ -92,6 +91,8 @@ public class ProjectTest {
       "/platform/money/MoneyLang.mpr",
       //"/platform/contracts/contracts.mpr",
       "/workbench/ideSolution/ide.mpr",
+
+      "/plugins/vcs/vcs.mpr",
 
       //  Samples
       "/samples/complexLanguage/Complex.mpr",

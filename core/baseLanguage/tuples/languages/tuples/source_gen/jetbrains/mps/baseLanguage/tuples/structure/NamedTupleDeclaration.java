@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -16,6 +17,7 @@ public class NamedTupleDeclaration extends Classifier {
   public static final String CPR_RightBracket = "rightBracket";
   public static final String EXTENDED = "extended";
   public static final String COMPONENT = "component";
+  public static final String IMPLEMENTS = "implements";
 
   public NamedTupleDeclaration(SNode node) {
     super(node);
@@ -47,6 +49,26 @@ public class NamedTupleDeclaration extends Classifier {
 
   public void insertComponent(NamedTupleComponentDeclaration prev, NamedTupleComponentDeclaration node) {
     this.insertChild(prev, NamedTupleDeclaration.COMPONENT, node);
+  }
+
+  public int getImplementsesCount() {
+    return this.getChildCount(NamedTupleDeclaration.IMPLEMENTS);
+  }
+
+  public Iterator<ClassifierType> implementses() {
+    return this.children(ClassifierType.class, NamedTupleDeclaration.IMPLEMENTS);
+  }
+
+  public List<ClassifierType> getImplementses() {
+    return this.getChildren(ClassifierType.class, NamedTupleDeclaration.IMPLEMENTS);
+  }
+
+  public void addImplements(ClassifierType node) {
+    this.addChild(NamedTupleDeclaration.IMPLEMENTS, node);
+  }
+
+  public void insertImplements(ClassifierType prev, ClassifierType node) {
+    this.insertChild(prev, NamedTupleDeclaration.IMPLEMENTS, node);
   }
 
   public static NamedTupleDeclaration newInstance(SModel sm, boolean init) {

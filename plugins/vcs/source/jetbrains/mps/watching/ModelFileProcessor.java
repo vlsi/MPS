@@ -15,15 +15,16 @@
  */
 package jetbrains.mps.watching;
 
+import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.logging.Logger;
 
 import java.io.File;
 
@@ -37,13 +38,12 @@ class ModelFileProcessor extends EventProcessor {
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
-    if (!event.isFromRefresh()) {
-      return;
-    }
-    EditableSModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
-    LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + (model != null ? " Needs reloading " + model.needsReloading() : ""));
-    if ((model != null) && (model.needsReloading())) {
-      reloadSession.addChangedModel(model);
+    if (event.isFromRefresh() || event.getRequestor() instanceof FileDocumentManager) {
+      EditableSModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
+      LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + (model != null ? " Needs reloading " + model.needsReloading() : ""));
+      if ((model != null) && (model.needsReloading())) {
+        reloadSession.addChangedModel(model);
+      }
     }
   }
 

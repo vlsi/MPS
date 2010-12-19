@@ -4,6 +4,7 @@ package jetbrains.mps.internal.make.runtime.script;
 
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.facet.ITarget;
 
 public class InvalidScript implements IScript {
@@ -14,6 +15,10 @@ public class InvalidScript implements IScript {
   }
 
   public IResult execute() {
+    throw new IllegalStateException("Invalid script");
+  }
+
+  public IResult execute(Iterable<? extends IResource> input) {
     throw new IllegalStateException("Invalid script");
   }
 

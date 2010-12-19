@@ -28,7 +28,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.make.CompilationResult;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -149,7 +149,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         String info = "compiling in JetBrains MPS...";
         progressHelper.setText2(info);
         info(info);
-        CompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressIndicator());
+        MPSCompilationResult compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressIndicator());
         progressHelper.finishTask();
         if (compilationResult == null || compilationResult.getErrors() > 0) {
           compiledSuccessfully = false;

@@ -31,7 +31,7 @@ import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
-import jetbrains.mps.make.CompilationResult;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
@@ -213,7 +213,7 @@ public abstract class MpsWorker {
     info(sb.toString());
   }
 
-  protected void finishMake(Set<Library> compiledLibraries, @NotNull CompilationResult result) {
+  protected void finishMake(Set<Library> compiledLibraries, @NotNull MPSCompilationResult result) {
     if (!result.isOk()) {
       error(result.toString());
       throw new RuntimeException(result.toString());

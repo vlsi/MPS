@@ -31,11 +31,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScopeEditor extends BaseEditor<ScopeOptions> {
-  private static final String GLOBAL_SCOPE = "Global scope";
-  private static final String PROJECT_SCOPE = "Project scope";
-  private static final String MODULE_SCOPE = "Module scope";
-  private static final String MODEL_SCOPE = "Model scope ";
-  private static final String BOOTSTRAP_SCOPE = "Bootstrap scope ";
+  private static final String GLOBAL_SCOPE = "Global";
+  private static final String PROJECT_SCOPE = "Project";
+  private static final String MODULE_SCOPE = "Module";
+  private static final String MODEL_SCOPE = "Model";
+  private static final String BOOTSTRAP_SCOPE = "Bootstrap";
 
   private JRadioButton myGlobalScopeButton;
   private JRadioButton myProjectScopeButton;

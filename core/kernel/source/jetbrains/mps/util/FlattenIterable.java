@@ -22,7 +22,7 @@ public class FlattenIterable<T> implements Iterable<T> {
 
   @Override
   public Iterator<T> iterator() {
-    return new Iterator() {
+    return new Iterator<T>() {
       Iterator<Iterable<T>> currentOuter;
       Iterator<T> currentInner;
       T next;
@@ -38,7 +38,7 @@ public class FlattenIterable<T> implements Iterable<T> {
       }
 
       @Override
-      public Object next() {
+      public T next() {
         T curr = next;
         next = nextInternal();
         return curr;

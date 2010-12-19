@@ -85,6 +85,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     }
+    TryStatement_FinallyBlock_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -98,6 +99,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.MATCHING_LABEL, "finally");
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    TryStatement_FinallyBlock_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -109,9 +111,9 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.MATCHING_LABEL, "finally");
-      style.set(StyleAttributes.EDITABLE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    TryStatement_FinallyBlock_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

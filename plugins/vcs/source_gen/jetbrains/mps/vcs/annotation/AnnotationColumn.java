@@ -121,7 +121,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private ViewActionGroup myViewActionGroup;
   private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
   private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
-  private LeftEditorHighlighter myLeftEditorHighlighter;
   private boolean myShowAdditionalInfo = false;
 
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, AbstractVcs vcs, VirtualFile modelVirtualFile) {
@@ -177,7 +176,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myViewActionGroup = new ViewActionGroup(this, myAspectSubcolumns);
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
-    myLeftEditorHighlighter = leftEditorHighlighter;
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = model.getModelDescriptor();
     myVcs = vcs;
@@ -234,36 +232,42 @@ public class AnnotationColumn extends AbstractLeftColumn {
         synchronized (myCurrentPseudoLinesLock) {
           assureCurrentPseudoLinesCalculated();
           for (int pseudoLine = 0; pseudoLine < ListSequence.fromList(myPseudoLinesY).count(); pseudoLine++) {
+            if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
+              continue;
+            }
+
             int fileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
-            if (!(SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine))) {
-              if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
-                String author = myAuthorAnnotationAspect.getValue(fileLine);
-                graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
-                int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
-                  getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
-                  ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
-                );
-                graphics.fillRect(0, ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
-              }
+            int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
+              getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
+              ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
+            );
+            if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
+              String author = myAuthorAnnotationAspect.getValue(fileLine);
+              graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
+              graphics.fillRect(0, ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
+            }
 
-              graphics.setColor(ANNOTATION_COLOR);
-              if (myRevisionRange.isFileLineHighlighted(fileLine)) {
-                graphics.setFont(myFont.deriveFont(Font.BOLD));
-              } else {
-                graphics.setFont(myFont);
+            graphics.setColor(ANNOTATION_COLOR);
+            if (myRevisionRange.isFileLineHighlighted(fileLine)) {
+              graphics.setFont(myFont.deriveFont(Font.BOLD));
+            } else {
+              graphics.setFont(myFont);
+            }
+            FontMetrics metrics = graphics.getFontMetrics();
+            if (height < metrics.getHeight()) {
+              continue;
+            }
+            for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns).where(new IWhereFilter<AnnotationAspectSubcolumn>() {
+              public boolean accept(AnnotationAspectSubcolumn s) {
+                return myShowAdditionalInfo || s.isEnabled();
               }
-              for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
-                if (subcolumn.isEnabled() || myShowAdditionalInfo) {
-                  String text = subcolumn.getTextForFileLine(fileLine);
-                  int textX = MapSequence.fromMap(subcolumnToX).get(subcolumn);
-                  FontMetrics metrics = graphics.getFontMetrics();
-                  if (subcolumn.isRightAligned()) {
-                    textX += subcolumn.getWidth() - metrics.stringWidth(text);
-                  }
-                  graphics.drawString(text, textX, metrics.getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
-                }
+            })) {
+              String text = subcolumn.getTextForFileLine(fileLine);
+              int textX = MapSequence.fromMap(subcolumnToX).get(subcolumn);
+              if (subcolumn.isRightAligned()) {
+                textX += subcolumn.getWidth() - metrics.stringWidth(text);
               }
-
+              graphics.drawString(text, textX, metrics.getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
             }
           }
         }
@@ -449,8 +453,17 @@ __switch__:
   public void dispose() {
     myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
-    ChangesManager.getInstance(getProject()).getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
-    AnnotationManager.getInstance(getProject()).columnDisposed(getEditorComponent());
+    final ChangesManager changesManager = ChangesManager.getInstance(getProject());
+    changesManager.getCommandQueue().runTask(new Runnable() {
+      public void run() {
+        changesManager.getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
+      }
+    });
+  }
+
+  public void close() {
+    getLeftEditorHighlighter().removeLeftColumn(this);
+    dispose();
   }
 
   private int findPseudoLineByY(int y) {
@@ -484,7 +497,7 @@ __switch__:
     final int fileLine = findFileLineByY(event.getY());
     ListSequence.fromList(actions).addElement(new BaseAction("Close Annotations") {
       protected void doExecute(AnActionEvent e) {
-        AnnotationManager.getInstance(getProject()).removeColumn(getEditorComponent());
+        close();
       }
     });
     ListSequence.fromList(actions).addElement(Separator.getInstance());
@@ -534,7 +547,7 @@ __switch__:
   public void invalidateLayout() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        myLeftEditorHighlighter.relayout(false);
+        getLeftEditorHighlighter().relayout(false);
       }
     });
   }
@@ -596,7 +609,13 @@ __switch__:
     }
 
     public void onAnnotationChanged() {
-      AnnotationManager.getInstance(getProject()).reannotate(getEditorComponent());
+      final EditorComponent editor = getEditorComponent();
+      close();
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          AnnotationHelper.annotate(editor);
+        }
+      });
     }
   }
 

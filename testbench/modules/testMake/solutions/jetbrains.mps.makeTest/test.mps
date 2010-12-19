@@ -1672,15 +1672,15 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116382576">
             <property name="name:3" value="cr" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="7196776143116382577">
-              <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3788808196639446404">
-                <link role="classifier:3" targetNodeId="24.~CompilationResult" resolveInfo="CompilationResult" />
+              <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6230892064087990846">
+                <link role="classifier:3" targetNodeId="24.~MPSCompilationResult" resolveInfo="MPSCompilationResult" />
               </node>
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382579">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer:3" id="7196776143116382580">
                 <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7196776143116382581" />
-                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3788808196639446405">
-                  <link role="classifier:3" targetNodeId="24.~CompilationResult" resolveInfo="CompilationResult" />
+                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6230892064087990847">
+                  <link role="classifier:3" targetNodeId="24.~MPSCompilationResult" resolveInfo="MPSCompilationResult" />
                 </node>
               </node>
             </node>
@@ -1706,7 +1706,7 @@
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382594">
-                      <link role="baseMethodDeclaration:3" targetNodeId="24.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.make.CompilationResult" resolveInfo="make" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="24.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.make.MPSCompilationResult" resolveInfo="make" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7196776143116382595">
                         <link role="baseMethodDeclaration:3" targetNodeId="8.~Collections.singleton(java.lang.Object):java.util.Set" resolveInfo="singleton" />
                         <link role="classConcept:3" targetNodeId="8.~Collections" resolveInfo="Collections" />
@@ -1779,7 +1779,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382622">
-              <link role="baseMethodDeclaration:3" targetNodeId="24.~CompilationResult.isOk():boolean" resolveInfo="isOk" />
+              <link role="baseMethodDeclaration:3" targetNodeId="24.~MPSCompilationResult.isOk():boolean" resolveInfo="isOk" />
             </node>
           </node>
         </node>
@@ -1847,7 +1847,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382646">
-              <link role="baseMethodDeclaration:3" targetNodeId="24.~CompilationResult.isOk():boolean" resolveInfo="isOk" />
+              <link role="baseMethodDeclaration:3" targetNodeId="24.~MPSCompilationResult.isOk():boolean" resolveInfo="isOk" />
             </node>
           </node>
         </node>

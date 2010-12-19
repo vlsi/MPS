@@ -591,7 +591,7 @@ __switch__:
       return;
     }
     IFile modelFile = ((EditableSModelDescriptor) myModelDescriptor).getModelFile();
-    if (modelFile == null) {
+    if (modelFile == null || !(modelFile.exists())) {
       return;
     }
     VirtualFile modelVFile = VirtualFileUtils.getVirtualFile(modelFile);

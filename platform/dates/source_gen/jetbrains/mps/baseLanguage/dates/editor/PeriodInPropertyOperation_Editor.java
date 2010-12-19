@@ -10,11 +10,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class PeriodInPropertyOperation_Editor extends DefaultNodeEditor {
@@ -58,13 +58,13 @@ public class PeriodInPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_u0w6r4_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("absolute");
-    provider.setNoTargetText("<no absolute>");
+  private EditorCell createRefCell_u0w6r4_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("datetimeProperty");
+    provider.setNoTargetText("<no datetimeProperty>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new PeriodInPropertyOperation_Editor._Inline_u0w6r4_a2a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_absolute");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -93,13 +93,13 @@ public class PeriodInPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_u0w6r4_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("datetimeProperty");
-    provider.setNoTargetText("<no datetimeProperty>");
+  private EditorCell createProperty_u0w6r4_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("absolute");
+    provider.setNoTargetText("<no absolute>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PeriodInPropertyOperation_Editor._Inline_u0w6r4_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_absolute");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

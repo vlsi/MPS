@@ -118,7 +118,8 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_findApplicableTypesystemRules_6409339300305625028(SNode thisNode, IScope scope) {
-    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), scope, false);
+    List<SNode> helginsRules = GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), scope, false);
+    return (List<SNode>) helginsRules;
   }
 
   public static List<SNode> call_findAllAspects_7754459869734028917(SNode thisNode, IScope scope) {

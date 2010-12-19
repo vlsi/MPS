@@ -30,9 +30,10 @@ public class GeneratedQueriesOpener {
   public static boolean openQueryMethod(IOperationContext context, SNode node) {
     String modelName = node.getModel().getModelDescriptor().getLongName();
 
-    Class cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getModel().getModelDescriptor());
-
-    if (cls == null) {
+    Class cls;
+    try {
+      cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getModel().getModelDescriptor(), true);
+    } catch (ClassNotFoundException e) {
       return false;
     }
 

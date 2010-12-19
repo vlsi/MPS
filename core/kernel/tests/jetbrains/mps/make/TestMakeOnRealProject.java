@@ -99,7 +99,7 @@ public class TestMakeOnRealProject {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        CompilationResult result = new ModuleMaker().make(toCompile, new EmptyProgressIndicator());
+        MPSCompilationResult result = new ModuleMaker().make(toCompile, new EmptyProgressIndicator());
         Assert.assertTrue("Compilation is not ok!", result.isOk());
       }
     });

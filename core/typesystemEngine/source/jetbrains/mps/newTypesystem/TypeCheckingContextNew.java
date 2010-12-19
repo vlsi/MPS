@@ -19,6 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.state.WhenConcreteBlock;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.util.Pair;
@@ -38,7 +39,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
 
   private State myState;
   private SNode myRootNode;
-  private NodeTypesComponentNew myNodeTypesComponent;
   private TypeChecker myTypeChecker;
   private SubTyping mySubTyping;
   private boolean myChecked = false;
@@ -61,24 +61,6 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     operation.undo(myState);
   }
 
-  public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {
-    myState.addInequality(left.getNode(), right.getNode(), true, true, equationInfo);
-  }
-
-  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck,
-                                             String errorString, String ruleModel, String ruleId, boolean checkOnly,
-                                             int inequationPriority, QuickFixProvider intentionProvider) {
-    myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
-      ruleId, inequationPriority, intentionProvider));
-  }
-
-  @Override
-  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority, QuickFixProvider intentionProvider) {
-    myState.addInequality(node2, node1, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
-      ruleId, inequationPriority, intentionProvider));
-  }
-
-
   @Override
   public void checkRoot() {
     if (!myChecked) {
@@ -87,12 +69,14 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     }
     // myState.solveInequalities();
   }
-
+     /*
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
-    return myState.typeOf(node, null);
+    synchronized (TYPECHECKING_LOCK) {
+      return myState.typeOf(node, null);
+    }
   }
-
+     */
   /*
 @Override
 public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -106,33 +90,50 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   public void checkRoot(final boolean refreshTypes) {
     if (refreshTypes) {
       myState.clear(true);
-      myNodeTypesComponent.checkNode(myRootNode, true);
-      myState.solveInequalities();
-      myState.expandAll();
-      myState.checkInequalities();
-      myState.checkNonConcreteWhenConcretes();
+      ((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
+      solveAndExpand();
     }
+  }
+
+  public void solveAndExpand() {
+    myState.solveInequalities();
+    myState.expandAll();
+    myState.checkNonConcreteWhenConcretes();
   }
 
   @Override
   public void createLessThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node1, node2, true, checkOnly, equationInfo);
+    myState.addInequality(node1, node2, true, checkOnly, equationInfo, true);
   }
 
   @Override
   public void createLessThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node1, node2, false, checkOnly, equationInfo);
+    myState.addInequality(node1, node2, false, checkOnly, equationInfo, true);
   }
 
   @Override
   public void createGreaterThanInequation(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
-    myState.addInequality(node2, node1, true, checkOnly, equationInfo);
+    myState.addInequality(node2, node1, true, checkOnly, equationInfo, false);
   }
 
   @Override
   public void createEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
     myState.addEquation(node1, node2, equationInfo);
   }
+
+  public void createLessThanInequationStrong(SNode node1, SNode node2, SNode nodeToCheck,
+                                             String errorString, String ruleModel, String ruleId, boolean checkOnly,
+                                             int inequationPriority, QuickFixProvider intentionProvider) {
+    myState.addInequality(node1, node2, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
+      ruleId, inequationPriority, intentionProvider), true);
+  }
+
+  @Override
+  public void createGreaterThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId, boolean checkOnly, int inequationPriority, QuickFixProvider intentionProvider) {
+    myState.addInequality(node2, node1, false, checkOnly, new EquationInfo(nodeToCheck, errorString, ruleModel,
+      ruleId, inequationPriority, intentionProvider), false);
+  }
+
 
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
@@ -167,15 +168,12 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId) {
-    //super.whenConcrete(argument, r, nodeModel, nodeId);    //To change body of overridden methods use File | Settings | File Templates.
-
-    myState.addWhenConcrete(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(r, nodeModel, nodeId, argument), argument, false);
+    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, false));
   }
 
   @Override
   public void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId, boolean isShallow, boolean skipError) {
-
-    myState.addWhenConcrete(new jetbrains.mps.newTypesystem.state.WhenConcreteEntry(r, nodeModel, nodeId, skipError, argument), argument, isShallow);
+    myState.addBlock(new WhenConcreteBlock(myState, r, nodeModel, nodeId, argument, isShallow));
   }
 
   public jetbrains.mps.newTypesystem.state.State getState() {
@@ -206,6 +204,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   @Override
   public void clear() {
     myState.clear(true);
+    myChecked = false;
   }
 
   @Override
@@ -272,15 +271,28 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
 
   @Override
+  public void addDependencyForCurrent(SNode node) {
+    getNodeTypesComponent().addDependencyForCurrent(node);
+  }
+
+  @Override
   protected SNode getTypeOf_generationMode(SNode node) {
-    checkRoot();
-    return getTypeOf(node, myTypeChecker);
+    try {
+      return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    } finally {
+      myNodeTypesComponent.dispose();
+    }
   }
 
   @Override
   protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
-    checkRoot();
-    return getTypeOf(node, typeChecker);
+    Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
+    if (pair.o2) {
+      return pair.o1;
+    }
+    SNode resultType = getNodeTypesComponent().computeTypesForNodeDuringResolving(node);
+    typeChecker.putTypeComputedForCompletion(node, resultType);
+    return resultType;
   }
 
   @Override

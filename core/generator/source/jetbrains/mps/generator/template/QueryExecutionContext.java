@@ -20,13 +20,7 @@ public interface QueryExecutionContext {
 
   boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
 
-  boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException;
-
-  boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException;
-
   boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException;
-
-  void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException;
 
   SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
@@ -42,8 +36,6 @@ public interface QueryExecutionContext {
 
   SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode, @NotNull TemplateContext context);
 
-  SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule);
-
   Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context);
 
   void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor);
@@ -51,4 +43,14 @@ public interface QueryExecutionContext {
   SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper);
 
   Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+
+  boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+
+  Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+
+  Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException;
+
+  SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context);
+
+  void executeScript(TemplateMappingScript mappingScript, SModel model);
 }

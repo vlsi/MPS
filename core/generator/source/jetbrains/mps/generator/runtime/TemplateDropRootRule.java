@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.SNodePointer;
-
 /**
  * Evgeny Gryaznov, Nov 29, 2010
  */
-public interface TemplateDropRootRule {
+public interface TemplateDropRootRule extends TemplateRuleWithCondition {
 
-  SNodePointer getRuleNode();
+  String getApplicableConcept();
 }

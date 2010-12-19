@@ -165,6 +165,16 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
 
     public GroupTreeNode(IOperationContext operationContext, @NotNull GroupKind<D, T> kind, @NotNull T group, Collection<D> data) {
       super(new GroupData(group, kind, data), operationContext);
+
+      GroupData groupData = (GroupData) getUserObject();
+      setNodeIdentifier(getText());
+
+      setText(groupData.getText());
+      Icon icon = groupData.getIcon(false);
+      if (icon != null) {
+        setIcon(icon);
+      }
+
       myData = data;
 
       GroupKind<D, Object> subGroupKind = kind.getSubGroupKind();
@@ -187,19 +197,6 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
             }
           }
         }
-      }
-
-      updatePresentation();
-    }
-
-    @Override
-    protected void updatePresentation() {
-      GroupData groupData = (GroupData) getUserObject();
-      setText(groupData.getText());
-      setNodeIdentifier(getText());
-      Icon icon = groupData.getIcon(false);
-      if (icon != null) {
-        setIcon(icon);
       }
     }
   }

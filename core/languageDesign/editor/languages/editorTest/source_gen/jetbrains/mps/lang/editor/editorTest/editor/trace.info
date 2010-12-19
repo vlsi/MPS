@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeId="5110219550149792115">
-    <nodeInfo nodeId="5110219550149792149" fileName="SideTranformWrapper_Editor.java" startLine="95" startPosition="111" endLine="96" endPosition="61" />
-    <scopeInfo nodeId="5110219550149792148" fileName="SideTranformWrapper_Editor.java" startLine="95" startPosition="111" endLine="96" endPosition="61" />
-  </root>
-  <root nodeId="5110219550150152699">
-    <nodeInfo nodeId="5110219550150152703" fileName="SideTransformWrapperActionMap.java" startLine="28" startPosition="75" endLine="29" endPosition="60" />
-    <scopeInfo nodeId="5110219550150152702" fileName="SideTransformWrapperActionMap.java" startLine="28" startPosition="75" endLine="29" endPosition="60" />
-  </root>
-</debugInfo>
+<debugInfo />
 

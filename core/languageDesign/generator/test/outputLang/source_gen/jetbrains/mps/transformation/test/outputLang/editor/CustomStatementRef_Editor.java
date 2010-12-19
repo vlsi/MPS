@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class CustomStatementRef_Editor extends DefaultNodeEditor {
@@ -44,13 +44,13 @@ public class CustomStatementRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_eklijf_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("ii");
-    provider.setNoTargetText("<no ii>");
+  private EditorCell createRefCell_eklijf_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("myStatement");
+    provider.setNoTargetText("<no myStatement>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new CustomStatementRef_Editor._Inline_eklijf_a1a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_ii");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -62,13 +62,13 @@ public class CustomStatementRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_eklijf_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("myStatement");
-    provider.setNoTargetText("<no myStatement>");
+  private EditorCell createProperty_eklijf_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("ii");
+    provider.setNoTargetText("<no ii>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomStatementRef_Editor._Inline_eklijf_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_ii");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

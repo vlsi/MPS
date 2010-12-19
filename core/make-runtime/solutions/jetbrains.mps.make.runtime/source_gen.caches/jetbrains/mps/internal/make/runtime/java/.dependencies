@@ -19,6 +19,13 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.java.FileContent" />
   </dependency>
+  <dependency className="jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer" file="IAuxProjectPeer.java">
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
+  </dependency>
+  <dependency className="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" file="IJavaCompiler.java">
+    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+  </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.JavaGenerationHandler" file="JavaGenerationHandler.java">
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="java.io.IOException" />
@@ -39,7 +46,7 @@
     <classNode dependClassName="jetbrains.mps.ide.progress.util.ModelsProgressUtil" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" />
-    <classNode dependClassName="jetbrains.mps.make.CompilationResult" />
+    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
     <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />

@@ -47,7 +47,12 @@ public class TypeExpandedOperation extends TypeAssignedOperation {
   }
 
   @Override
+  public void doRedo(State state) {
+    state.getNodeMaps().assignNodeTypeDontChangeSource(myNode, myType);
+  }
+
+  @Override
   public void doUndo(State state) {
-    state.getNodeMaps().assignNodeType(myNode, myOldType);
+    state.getNodeMaps().assignNodeTypeDontChangeSource(myNode, myOldType);
   }
 }

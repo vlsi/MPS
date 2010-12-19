@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.smodel.persistence.def.v6;
 
+import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v3.HashProvider3;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
@@ -36,13 +34,8 @@ public class ModelPersistence6 extends ModelPersistence5 {
     return new ModelReader6();
   }
 
-  public IHashProvider getHashProvider() {
-    return new HashProvider3();
-  }
-
-  public XMLSAXHandler<SModel> getModelReaderHandler(ModelLoadingState state) {
-    Handler6 handler = new Handler6();
-    return handler.setPartialLoading(state) ? handler : null;
+  public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state) {
+    return new ModelReader6Handler(state);
   }
 
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {

@@ -16,6 +16,8 @@
 package jetbrains.mps.reloading;
 
 import com.intellij.util.containers.EmptyIterable;
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.*;
@@ -33,8 +35,8 @@ import java.util.*;
  */
 public class FileClassPathItem extends RealClassPathItem {
   private String myClassPath;
-  private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
-  private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
+  private Map<String, Set<String>> mySubpackagesCache = new THashMap<String, Set<String>>();
+  private Map<String, Set<String>> myAvailableClassesCache = new THashMap<String, Set<String>>();
 
   protected FileClassPathItem(String classPath) {
     myClassPath = classPath;
@@ -131,7 +133,7 @@ public class FileClassPathItem extends RealClassPathItem {
 
     Set<String> result = mySubpackagesCache.get(namespace);
     if (result == null) return new EmptyIterable<String>();
-    return result;
+    return Collections.unmodifiableSet(result);
   }
 
   private void buildCacheFor(String namespace) {
@@ -146,15 +148,17 @@ public class FileClassPathItem extends RealClassPathItem {
         String name = file.getName();
         if (name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
           if (classes == null) {
-            classes = new HashSet<String>(files.length);
+            classes = new THashSet<String>(files.length);
           }
-          classes.add(name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length()));
+          String classname = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
+          classes.add(InternUtil.intern(classname));
         } else {
           if (file.isDirectory()) {
             if (subpacks == null) {
-              subpacks = new HashSet<String>();
+              subpacks = new THashSet<String>();
             }
-            subpacks.add(namespace.length() > 0 ? namespace + "." + name : name);
+            String fqName = namespace.length() > 0 ? namespace + "." + name : name;
+            subpacks.add(InternUtil.intern(fqName));
           }
         }
       }

@@ -36,7 +36,7 @@
     <nodeInfo nodeId="1238854160582" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="27" startPosition="76" endLine="30" endPosition="5" />
     <nodeInfo nodeId="1238854056178" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="30" startPosition="5" endLine="36" endPosition="5" />
     <scopeInfo nodeId="1238854160583" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="28" startPosition="76" endLine="29" endPosition="201" />
-    <scopeInfo nodeId="1238854160582" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="27" startPosition="76" endLine="30" endPosition="5">
+    <scopeInfo nodeId="1238854160582" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="27" startPosition="76" endLine="30" endPosition="5">
       <varInfo nodeId="1238854160586" varName="mbr" />
     </scopeInfo>
     <scopeInfo nodeId="1238854056178" fileName="typeof_IndexedTupleLiteral_InferenceRule.java" startLine="31" startPosition="5" endLine="35" endPosition="365" />
@@ -73,7 +73,7 @@
     <nodeInfo nodeId="1238854545571" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="75" startPosition="9" endLine="76" endPosition="34" />
     <nodeInfo nodeId="1238854545571" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="76" startPosition="34" endLine="77" endPosition="34" />
     <nodeInfo nodeId="1238854545571" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="77" startPosition="34" endLine="78" endPosition="135" />
-    <nodeInfo nodeId="1238854598691" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="77" startPosition="34" endLine="78" endPosition="135" />
+    <nodeInfo nodeId="1238854598691" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="77" startPosition="34" endLine="78" endPosition="135" />
     <nodeInfo nodeId="1238854545571" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="38" startPosition="20" endLine="41" endPosition="9" />
     <nodeInfo nodeId="1238854545571" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="41" startPosition="9" endLine="44" endPosition="9" />
     <nodeInfo nodeId="1238854492399" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="indexedTuple_assignableTo_indexedTuple_InequationReplacementRule.java" startLine="60" startPosition="35" endLine="63" endPosition="5" />
@@ -134,7 +134,7 @@
     <nodeInfo nodeId="1238864299354" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="58" startPosition="219" endLine="64" endPosition="15" />
     <nodeInfo nodeId="1238857999186" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="34" startPosition="5" endLine="41" endPosition="5" />
     <nodeInfo nodeId="1238864283553" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="56" startPosition="13" endLine="65" endPosition="13" />
-    <nodeInfo nodeId="1238864005360" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="68" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="1238864005360" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="68" endLine="67" endPosition="0" />
     <nodeInfo nodeId="1238864005360" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="49" startPosition="217" endLine="67" endPosition="130" />
     <nodeInfo nodeId="1238864005360" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="47" startPosition="8" endLine="68" endPosition="7" />
     <nodeInfo nodeId="1238863666749" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="41" startPosition="5" endLine="69" endPosition="5" />
@@ -146,7 +146,7 @@
       <varInfo nodeId="1238864556765" varName="mtypes" />
     </scopeInfo>
     <scopeInfo nodeId="1238864005361" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="51" startPosition="29" endLine="65" endPosition="13" />
-    <scopeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="68" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1238864005360" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="50" startPosition="68" endLine="67" endPosition="0" />
     <scopeInfo nodeId="1238864005360" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="48" startPosition="7" endLine="67" endPosition="130" />
     <scopeInfo nodeId="1238863666750" fileName="typeof_IndexedTupleMemberAccessExpression_InferenceRule.java" startLine="42" startPosition="118" endLine="68" endPosition="7">
       <varInfo nodeId="1238864106021" varName="index" />
@@ -180,7 +180,7 @@
     <nodeInfo nodeId="1239901165879" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="72" startPosition="52" endLine="73" endPosition="217" />
     <nodeInfo nodeId="1239901165879" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="73" startPosition="217" endLine="74" endPosition="421" />
     <nodeInfo nodeId="1239901043357" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="75" startPosition="5" endLine="76" endPosition="97" />
-    <nodeInfo nodeId="2912004279740801475" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="306" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="2912004279740801475" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Integer;" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="306" endLine="40" endPosition="0" />
     <nodeInfo nodeId="1239968096090" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="60" startPosition="54" endLine="66" endPosition="9" />
     <nodeInfo nodeId="1239901165879" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="69" startPosition="5" endLine="75" endPosition="5" />
     <nodeInfo nodeId="1901065672425830131" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="47" startPosition="225" endLine="54" endPosition="7" />
@@ -190,7 +190,7 @@
     <nodeInfo nodeId="1239967949947" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="56" startPosition="48" endLine="69" endPosition="5" />
     <scopeInfo nodeId="2912004279740801476" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="37" startPosition="52" endLine="38" endPosition="101" />
     <scopeInfo nodeId="1239579091243" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="40" startPosition="10" endLine="43" endPosition="255" />
-    <scopeInfo nodeId="2912004279740801475" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="306" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="2912004279740801475" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/Integer;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Integer;" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="36" startPosition="306" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1239968096090" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="61" startPosition="9" endLine="65" endPosition="186" />
     <scopeInfo nodeId="1239901165879" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="70" startPosition="5" endLine="74" endPosition="421" />
     <scopeInfo nodeId="1901065672425830131" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="48" startPosition="7" endLine="53" endPosition="281" />
@@ -198,11 +198,11 @@
     <scopeInfo nodeId="1239894693061" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="46" startPosition="107" endLine="54" endPosition="7">
       <varInfo nodeId="1239900488864" varName="matchedType" />
     </scopeInfo>
-    <scopeInfo nodeId="1239894693058" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="45" startPosition="90" endLine="55" endPosition="5" />
+    <scopeInfo nodeId="1239894693058" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="45" startPosition="90" endLine="55" endPosition="5" />
     <scopeInfo nodeId="1239967949950" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="57" startPosition="169" endLine="68" endPosition="115">
       <varInfo nodeId="1239967995592" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="56" startPosition="48" endLine="69" endPosition="5" />
+    <scopeInfo nodeId="1239967949947" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="56" startPosition="48" endLine="69" endPosition="5" />
     <scopeInfo nodeId="1239579059908" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="35" startPosition="120" endLine="76" endPosition="97">
       <varInfo nodeId="1239895282058" varName="PTYPES" />
       <varInfo nodeId="1239900353091" varName="mmap" />
@@ -325,13 +325,13 @@
     <scopeInfo nodeId="3504058432724729040" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="43" startPosition="109" endLine="45" endPosition="61">
       <varInfo nodeId="3504058432724729121" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="1239974188214" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="30" startPosition="197" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1239974188214" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="30" startPosition="197" endLine="34" endPosition="5" />
     <scopeInfo nodeId="3504058432724729014" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="50" startPosition="30" endLine="54" endPosition="9">
       <varInfo nodeId="3504058432724729093" varName="idx" />
     </scopeInfo>
     <scopeInfo nodeId="1239579829277" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="57" startPosition="5" endLine="61" endPosition="251" />
     <scopeInfo nodeId="3862929002918414716" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="35" startPosition="5" endLine="40" endPosition="415" />
-    <scopeInfo nodeId="3504058432724729013" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="49" startPosition="89" endLine="55" endPosition="7">
+    <scopeInfo nodeId="3504058432724729013" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="49" startPosition="89" endLine="55" endPosition="7">
       <varInfo nodeId="3504058432724729017" varName="tvr" />
     </scopeInfo>
     <scopeInfo nodeId="3504058432724729052" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="46" startPosition="12" endLine="55" endPosition="7">
@@ -365,12 +365,12 @@
     <nodeInfo nodeId="1239972928930" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="16" endLine="47" endPosition="11" />
     <nodeInfo nodeId="1239972928902" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="37" startPosition="68" endLine="47" endPosition="11" />
     <nodeInfo nodeId="1239972928894" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="35" startPosition="103" endLine="48" endPosition="9" />
-    <nodeInfo nodeId="1239722441220" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="281" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1239722441220" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="281" endLine="51" endPosition="0" />
     <nodeInfo nodeId="1239722401063" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="29" startPosition="79" endLine="51" endPosition="46" />
     <scopeInfo nodeId="1239972928912" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="40" startPosition="59" endLine="41" endPosition="122" />
     <scopeInfo nodeId="1239972928937" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="44" startPosition="83" endLine="45" endPosition="57" />
     <scopeInfo nodeId="1239972928931" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="18" endLine="46" endPosition="13" />
-    <scopeInfo nodeId="1239972928932" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="18" endLine="46" endPosition="13" />
+    <scopeInfo nodeId="1239972928932" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="18" endLine="46" endPosition="13" />
     <scopeInfo nodeId="1239972928903" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="38" startPosition="110" endLine="42" endPosition="13">
       <varInfo nodeId="1239972928905" varName="idx" />
     </scopeInfo>
@@ -380,7 +380,7 @@
     <scopeInfo nodeId="1239722441221" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="31" startPosition="38" endLine="49" endPosition="69">
       <varInfo nodeId="1239973336434" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="1239722441220" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="281" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1239722441220" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="30" startPosition="281" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1239722373119" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="27" startPosition="113" endLine="51" endPosition="46">
       <varInfo nodeId="1239972432013" varName="queue" />
       <varInfo nodeId="1239972674656" varName="pts" />
@@ -430,7 +430,7 @@
     <nodeInfo nodeId="4292022102258809122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="41" startPosition="66" endLine="42" endPosition="285" />
     <nodeInfo nodeId="1240403562736" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="45" startPosition="14" endLine="46" endPosition="9" />
     <nodeInfo nodeId="4292022102258803079" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="48" startPosition="5" endLine="49" endPosition="0" />
-    <nodeInfo nodeId="1240403672572" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="34" startPosition="187" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="1240403672572" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="34" startPosition="187" endLine="38" endPosition="0" />
     <nodeInfo nodeId="4292022102258809122" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="38" startPosition="15" endLine="43" endPosition="13" />
     <nodeInfo nodeId="1240403665721" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="33" startPosition="46" endLine="44" endPosition="11" />
     <nodeInfo nodeId="1240403562736" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="32" startPosition="185" endLine="46" endPosition="9" />
@@ -438,7 +438,7 @@
     <nodeInfo nodeId="4292022102258807890" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="28" startPosition="123" endLine="48" endPosition="5" />
     <scopeInfo nodeId="1240403672573" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="35" startPosition="46" endLine="36" endPosition="66" />
     <scopeInfo nodeId="4292022102258809122" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="39" startPosition="13" endLine="42" endPosition="285" />
-    <scopeInfo nodeId="1240403672572" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="34" startPosition="187" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1240403672572" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="34" startPosition="187" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1240403665722" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="38" startPosition="15" endLine="43" endPosition="13" />
     <scopeInfo nodeId="1240403562739" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="33" startPosition="46" endLine="44" endPosition="11" />
     <scopeInfo nodeId="1240403562736" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="30" startPosition="7" endLine="46" endPosition="9" />
@@ -468,14 +468,14 @@
     <scopeInfo nodeId="5264858465808082871" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="39" startPosition="87" endLine="41" endPosition="137">
       <varInfo nodeId="974579920306770546" varName="javatype" />
     </scopeInfo>
-    <scopeInfo nodeId="5264858465808082870" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="38" startPosition="60" endLine="42" endPosition="9">
+    <scopeInfo nodeId="5264858465808082870" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="38" startPosition="60" endLine="42" endPosition="9">
       <varInfo nodeId="5264858465808082874" varName="comptype" />
     </scopeInfo>
     <scopeInfo nodeId="5264858465808079305" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="36" startPosition="71" endLine="42" endPosition="9">
       <varInfo nodeId="5264858465808082896" varName="supertype" />
     </scopeInfo>
     <scopeInfo nodeId="5264858465808079286" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="35" startPosition="108" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="5264858465808079285" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="34" startPosition="224" endLine="44" endPosition="5">
+    <scopeInfo nodeId="5264858465808079285" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="34" startPosition="224" endLine="44" endPosition="5">
       <varInfo nodeId="5264858465808079289" varName="ct" />
     </scopeInfo>
     <scopeInfo nodeId="5264858465808079240" fileName="Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.java" startLine="31" startPosition="120" endLine="45" endPosition="18">
@@ -494,8 +494,8 @@
     <nodeInfo nodeId="7367153454745473486" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="45" startPosition="17" endLine="46" endPosition="58" />
     <nodeInfo nodeId="7367153454745473486" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="46" startPosition="58" endLine="47" endPosition="64" />
     <nodeInfo nodeId="7367153454745473486" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="47" startPosition="64" endLine="48" endPosition="262" />
-    <nodeInfo nodeId="7367153454745473498" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="37" startPosition="103" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="7367153454745473524" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="41" startPosition="44" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="7367153454745473498" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="37" startPosition="103" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="7367153454745473524" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="41" startPosition="44" endLine="45" endPosition="0" />
     <nodeInfo nodeId="7367153454745473434" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="29" startPosition="196" endLine="34" endPosition="7" />
     <nodeInfo nodeId="7367153454745473486" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="36" startPosition="26" endLine="49" endPosition="11" />
     <nodeInfo nodeId="7367153454745566191" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="35" startPosition="105" endLine="50" endPosition="9" />
@@ -505,11 +505,11 @@
     <scopeInfo nodeId="7367153454745473525" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="42" startPosition="44" endLine="43" endPosition="108" />
     <scopeInfo nodeId="7367153454745473434" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="30" startPosition="66" endLine="33" endPosition="304" />
     <scopeInfo nodeId="7367153454745473486" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="45" startPosition="17" endLine="48" endPosition="262" />
-    <scopeInfo nodeId="7367153454745473498" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="37" startPosition="103" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7367153454745473524" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="41" startPosition="44" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="7367153454745473498" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="37" startPosition="103" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7367153454745473524" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="41" startPosition="44" endLine="45" endPosition="0" />
     <scopeInfo nodeId="7367153454745566192" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="36" startPosition="26" endLine="49" endPosition="11" />
     <scopeInfo nodeId="7367153454745473479" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="35" startPosition="105" endLine="50" endPosition="9" />
-    <scopeInfo nodeId="7367153454745473476" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="7367153454745473476" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="34" startPosition="7" endLine="51" endPosition="7" />
     <scopeInfo nodeId="7367153454745440816" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="28" startPosition="117" endLine="51" endPosition="7">
       <varInfo nodeId="7367153454745473467" varName="allExtends" />
     </scopeInfo>
@@ -523,17 +523,17 @@
     <nodeInfo nodeId="8197465398807016917" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="33" startPosition="79" endLine="34" endPosition="54" />
     <nodeInfo nodeId="8197465398807016917" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="34" startPosition="54" endLine="35" endPosition="60" />
     <nodeInfo nodeId="8197465398807016917" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="35" startPosition="60" endLine="36" endPosition="265" />
-    <nodeInfo nodeId="2912004279740806091" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="26" startPosition="263" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="2912004279740806091" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="26" startPosition="263" endLine="30" endPosition="0" />
     <nodeInfo nodeId="8197465398807016909" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="25" startPosition="130" endLine="30" endPosition="24" />
     <nodeInfo nodeId="8197465398807016917" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="32" startPosition="91" endLine="37" endPosition="7" />
     <nodeInfo nodeId="8197465398807015776" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="30" startPosition="24" endLine="38" endPosition="5" />
     <scopeInfo nodeId="2912004279740806092" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="27" startPosition="51" endLine="28" endPosition="66" />
     <scopeInfo nodeId="8197465398807016917" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="33" startPosition="79" endLine="36" endPosition="265" />
-    <scopeInfo nodeId="2912004279740806091" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="26" startPosition="263" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="2912004279740806091" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="26" startPosition="263" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8197465398807015780" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="31" startPosition="91" endLine="37" endPosition="7">
       <varInfo nodeId="8197465398807016937" varName="tupleComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="8197465398807015776" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="30" startPosition="24" endLine="38" endPosition="5">
+    <scopeInfo nodeId="8197465398807015776" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="30" startPosition="24" endLine="38" endPosition="5">
       <varInfo nodeId="8197465398807015778" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="8197465398807013608" fileName="check_TupleComponentIsInScope_NonTypesystemRule.java" startLine="25" startPosition="130" endLine="38" endPosition="5">

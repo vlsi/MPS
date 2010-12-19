@@ -11,6 +11,9 @@ import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 
 public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
+  public BaseLanguage_ApplicationPlugin() {
+  }
+
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.baseLanguage";
@@ -36,7 +39,6 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     this.addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
-    this.addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
     return res;
   }
 

@@ -15,11 +15,11 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.generictasks.behavior.TaskCall_Behavior;
@@ -190,15 +190,14 @@ public class TaskCall_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createProperty_fr7f84_b0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("shortDescription");
-    provider.setNoTargetText("<no shortDescription>");
-    provider.setAllowsEmptyTarget(true);
+  private EditorCell createRefCell_fr7f84_a1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("declaration");
+    provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new TaskCall_Editor._Inline_fr7f84_a0b0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_shortDescription");
-    BuildLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
+    BuildLanguageStyle_StyleSheet.getTask(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -210,14 +209,14 @@ public class TaskCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_fr7f84_c1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("id");
-    provider.setNoTargetText("");
-    provider.setAllowsEmptyTarget(true);
+  private EditorCell createRefCell_fr7f84_b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("declaration");
+    provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new TaskCall_Editor._Inline_fr7f84_a1b0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_id");
+    BuildLanguageStyle_StyleSheet.getDepractaedAttributeName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -246,14 +245,15 @@ public class TaskCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_fr7f84_a1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("declaration");
-    provider.setNoTargetText("<no declaration>");
+  private EditorCell createProperty_fr7f84_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("shortDescription");
+    provider.setNoTargetText("<no shortDescription>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TaskCall_Editor._Inline_fr7f84_a0b0());
     editorCell = provider.createEditorCell(editorContext);
-    BuildLanguageStyle_StyleSheet.getTask(editorCell).apply(editorCell);
+    editorCell.setCellId("property_shortDescription");
+    BuildLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -265,14 +265,14 @@ public class TaskCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_fr7f84_b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("declaration");
-    provider.setNoTargetText("<no declaration>");
+  private EditorCell createProperty_fr7f84_c1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("id");
+    provider.setNoTargetText("");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TaskCall_Editor._Inline_fr7f84_a1b0());
     editorCell = provider.createEditorCell(editorContext);
-    BuildLanguageStyle_StyleSheet.getDepractaedAttributeName(editorCell).apply(editorCell);
+    editorCell.setCellId("property_id");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

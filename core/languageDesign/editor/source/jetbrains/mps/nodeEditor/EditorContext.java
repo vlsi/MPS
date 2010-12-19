@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -307,14 +308,14 @@ public class EditorContext {
     }
   }
 
-  public EditorCell createRoleAttributeCell(Class attributeClass, EditorCell cellWithRole, SNode roleAttribute) {
+  public EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute) {
     if (myCurrentRefNodeContext != null) {
-      if (attributeClass != jetbrains.mps.lang.annotations.structure.LinkAttributeConcept.class && myCurrentRefNodeContext.hasRoles())
+      if (attributeKind != AttributeKind.Reference.class && myCurrentRefNodeContext.hasRoles())
         //Do not show attributes on reference cells.
         return cellWithRole;
     }
     
-    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeClass, cellWithRole, this, roleAttribute);
+    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, cellWithRole, this, roleAttribute);
   }
 
   public List<SNode> getSelectedNodes() {

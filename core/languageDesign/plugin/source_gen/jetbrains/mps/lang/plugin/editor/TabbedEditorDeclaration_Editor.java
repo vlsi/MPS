@@ -15,11 +15,11 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -169,14 +169,13 @@ public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createProperty_r7bgrp_b0a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
+  private EditorCell createRefCell_r7bgrp_b0b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("mainConcept");
+    provider.setNoTargetText("<no mainConcept>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new TabbedEditorDeclaration_Editor._Inline_r7bgrp_a1a1b0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
-    BaseLanguageStyle_StyleSheet.getClassName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -205,13 +204,14 @@ public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_r7bgrp_b0b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("mainConcept");
-    provider.setNoTargetText("<no mainConcept>");
+  private EditorCell createProperty_r7bgrp_b0a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TabbedEditorDeclaration_Editor._Inline_r7bgrp_a1a1b0());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_name");
+    BaseLanguageStyle_StyleSheet.getClassName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

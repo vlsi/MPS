@@ -1,6 +1,8 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
+import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
@@ -49,40 +51,10 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("check condition: create root", createRootRule.getNode()), true);
-      return wrapped.checkCondition(createRootRule);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
-  public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("check condition: drop root", ruleNode), true);
-      return wrapped.checkCondition(condition, inputRootNode, ruleNode);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("check if condition", ifMacro.getNode()), true);
       return wrapped.checkConditionForIfMacro(inputNode, ifMacro, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
-  public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("mapping script", mappingScript.getNode()), true);
-      wrapped.executeMappingScript(mappingScript, model);
     } finally {
       tracer.pop();
     }
@@ -149,16 +121,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
-    try {
-      tracer.push(taskName("context for weaving", rule.getNode()), true);
-      return wrapped.getContextNodeForWeavingingRule(inputNode, rule);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
   public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     try {
       tracer.push(taskName("referent target", refMacro.getNode()), true);
@@ -203,6 +165,62 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       tracer.push(taskName("trying to apply rule", rule.getRuleNode().getNode()), true);
       return wrapped.tryToApply(rule, environment, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    try {
+      tracer.push(taskName("check condition", rule.getRuleNode().getNode()), true);
+      return wrapped.isApplicable(rule, environment, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    if(rule instanceof TemplateRootMappingRuleInterpreted) {
+      return wrapped.applyRule(rule, environment, context);
+    }
+    try {
+      tracer.push(taskName("root mapping rule", rule.getRuleNode().getNode()), true);
+      return wrapped.applyRule(rule, environment,context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
+    if(rule instanceof TemplateCreateRootRuleInterpreted) {
+      return wrapped.applyRule(rule, environment);
+    }
+    try {
+      tracer.push(taskName("create root rule", rule.getRuleNode().getNode()), true);
+      return wrapped.applyRule(rule, environment);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+    try {
+      tracer.push(taskName("context for weaving", rule.getRuleNode().getNode()), true);
+      return wrapped.getContextNode(rule, environment, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+    try {
+      tracer.push(taskName("mapping script", mappingScript.getScriptNode().getNode()), true);
+      wrapped.executeScript(mappingScript, model);
     } finally {
       tracer.pop();
     }

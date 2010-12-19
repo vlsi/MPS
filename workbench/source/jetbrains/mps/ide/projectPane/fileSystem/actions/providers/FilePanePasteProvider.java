@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.actions.providers;
 
+import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -24,8 +25,6 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
@@ -42,10 +41,7 @@ public class FilePanePasteProvider implements PasteProvider {
 
   @Nullable
   private CopyPasteFilesData getData(DataContext dataContext) {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    if (cb == null) return null;
-
-    Transferable content = cb.getContents(null);
+    Transferable content = CopyPasteManagerEx.getInstanceEx().getSystemClipboardContents();
     if (content == null) return null;
 
     CopyPasteFilesData files = null;

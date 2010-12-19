@@ -5,4 +5,6 @@ package jetbrains.mps.ui.swt.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Swt_ProjectPlugin extends BaseProjectPlugin {
+  public Swt_ProjectPlugin() {
+  }
 }

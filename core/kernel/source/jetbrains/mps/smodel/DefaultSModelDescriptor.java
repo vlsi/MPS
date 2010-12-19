@@ -18,9 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.StructureModificationData;
-import jetbrains.mps.refactoring.StructureModificationHistory;
-import jetbrains.mps.refactoring.StructureModificationProcessor;
+import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -46,7 +44,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private Map<String, String> myMetadata;
 
   private final Object myRefactoringHistoryLock = new Object();
-  private StructureModificationHistory myStructureModificationHistory;
+  private StructureModificationLog myStructureModificationLog;
   private int myPersistenceVersion = -1;
 
   private long myLastChange;
@@ -86,12 +84,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   protected ModelLoadResult initialLoad() {
     ModelLoadResult result = load(ModelLoadingState.ROOTS_LOADED);
-    if (StructureModificationProcessor.hasRefactoringsToPlay(result.getModel())) {
-      if (result.getState() != ModelLoadingState.FULLY_LOADED) {
-        result = load(ModelLoadingState.FULLY_LOADED);
-      }
-      updateOnLoad(result.getModel());
-    }
+    tryFixingVersion();
+    updateDiskTimestamp();
     return result;
   }
 
@@ -118,13 +112,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult load(ModelLoadingState loadingState) {
     return ((BaseMPSModelRootManager) myModelRootManager).loadModel(this, loadingState);
-  }
-
-  private void updateOnLoad(SModel result) {
-    StructureModificationProcessor.updateModelOnLoad(result);
-    tryFixingVersion();
-    myStructureModificationHistory = null;
-    updateDiskTimestamp();
   }
 
   public IFile getModelFile() {
@@ -180,7 +167,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     myMetadata = dr.getMetadata();
 
     ModelLoadResult result = load(getLoadingState());
-    replaceModel(result.getModel());
+    replaceModel(result.getModel(), getLoadingState());
     updateLastChange();
   }
 
@@ -189,28 +176,21 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   @NotNull
-  public StructureModificationHistory getStructureModificationHistory() {
+  public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
-      if (myStructureModificationHistory == null) {
-        SModel model = mySModel;
-        if (model != null && myPersistenceVersion >= 0 && myPersistenceVersion < 5) {
-          //noinspection deprecation
-          myStructureModificationHistory = model.getRefactoringHistory();
-        }
-        if (myStructureModificationHistory == null) {
-          myStructureModificationHistory = myModelRootManager.loadModelRefactorings(this);
-        }
-        if (myStructureModificationHistory == null) {
-          myStructureModificationHistory = new StructureModificationHistory();
-        }
+      if (myStructureModificationLog == null) {
+        myStructureModificationLog = myModelRootManager.loadModelRefactorings(this);
+      }
+      if (myStructureModificationLog == null) {
+        myStructureModificationLog = new StructureModificationLog();
       }
     }
-    return myStructureModificationHistory;
+    return myStructureModificationLog;
   }
 
-  public void saveStructureModificationHistory(@NotNull StructureModificationHistory history) {
-    myStructureModificationHistory = history;
-    myModelRootManager.saveModelRefactorings(this, history);
+  public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
+    myStructureModificationLog = log;
+    myModelRootManager.saveModelRefactorings(this, log);
   }
 
   public long lastChangeTime() {
@@ -275,7 +255,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return FileSystem.getInstance().isPackaged(getModelFile());
   }
 
-  public void replaceModel(SModel newModel) {
+  //this method should be called only with a fully loaded model as parameter
+  public void replaceModel(@NotNull SModel newModel) {
+    replaceModel(newModel, ModelLoadingState.FULLY_LOADED);
+  }
+
+  private void replaceModel(SModel newModel, ModelLoadingState state) {
     ModelAccess.assertLegalWrite();
     if (newModel == mySModel) return;
     final SModel oldSModel = mySModel;
@@ -283,9 +268,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       oldSModel.setModelDescriptor(null);
     }
     mySModel = newModel;
-    setLoadingState(mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED);
+    setLoadingState(state);
 
-    myStructureModificationHistory = null;
+    myStructureModificationLog = null;
     if (mySModel != null) {
       mySModel.setModelDescriptor(this);
     }
@@ -389,13 +374,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private void tryFixingVersion() {
     if (getVersion() != -1) return;
 
-    int maxVersion = -1;
-    for (StructureModificationData data : getStructureModificationHistory().getDataList()) {
-      maxVersion = Math.max(maxVersion, data.getModelVersion());
-    }
-
-    if (maxVersion != -1) {
-      setVersion(maxVersion);
+    int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
+    myStructureModificationLog = null;  // we don't need to keep log in memory
+    if (latestVersion != -1) {
+      setVersion(latestVersion);
       LOG.error("Metadata file for model " + getSModelReference().getSModelFqName() + " wasn't present. Recreated a new one.");
     }
   }

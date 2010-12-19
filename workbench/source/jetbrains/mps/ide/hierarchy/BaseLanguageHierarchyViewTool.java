@@ -41,7 +41,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
       super(abstractHierarchyView, aClass, isParentHierarchy);
     }
 
-    protected Set<Classifier> getParents(Classifier node) {
+    protected Set<Classifier> getParents(Classifier node, Set<Classifier> visited) {
       HashSet<Classifier> result = new HashSet<Classifier>();
       if (node instanceof ClassConcept) {
         ClassConcept classConcept = (ClassConcept) node;
@@ -89,7 +89,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
       return null;
     }
 
-    protected Set<Classifier> getDescendants(Classifier node) {
+    protected Set<Classifier> getDescendants(Classifier node, Set<Classifier> visited) {
       Set<SReference> usages = myUsagesManager.findUsages(node.getNode(), GlobalScope.getInstance(), IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
       Set<Classifier> result = new HashSet<Classifier>();
       for (SReference usage : usages) {

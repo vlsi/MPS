@@ -17,11 +17,11 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -215,14 +215,13 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_l06mua_c0c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("comment");
-    provider.setNoTargetText("<none>");
-    provider.setAllowsEmptyTarget(true);
+  private EditorCell createRefCell_l06mua_c1c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("mappingLabel");
+    provider.setNoTargetText("<no label>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new LoopMacro_Editor._Inline_l06mua_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_comment");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -254,13 +253,14 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_l06mua_c1c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("mappingLabel");
-    provider.setNoTargetText("<no label>");
+  private EditorCell createProperty_l06mua_c0c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("comment");
+    provider.setNoTargetText("<none>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LoopMacro_Editor._Inline_l06mua_a2b2a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_comment");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

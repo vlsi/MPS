@@ -17,7 +17,6 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.SystemInfo;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -61,7 +60,7 @@ public class CommonPaths {
   private static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
 
-    if (!SystemInfo.isMac) {
+    if (!com.intellij.openapi.util.SystemInfo.isMac) {
       result.add("rt.jar");
     } else {
       result.add("classes.jar");

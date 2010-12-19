@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Refactoring_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin" />
-  <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
+  <unitInfo fileName="Refactoring_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin" />
+  <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
   <unitInfo fileName="ModelRefactorings_ActionGroup.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.ModelRefactorings_ActionGroup" />
   <unitInfo fileName="NodeRefactoring_ActionGroup.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup" />
   <root nodeId="1229259662341">
@@ -17,21 +17,21 @@
     <scopeInfo nodeId="278927758244377660" fileName="NodeRefactoring_ActionGroup.java" startLine="33" startPosition="95" endLine="34" endPosition="29" />
     <scopeInfo nodeId="1909926480506229858" fileName="NodeRefactoring_ActionGroup.java" startLine="38" startPosition="99" endLine="39" endPosition="103" />
     <scopeInfo nodeId="278927758244377642" fileName="NodeRefactoring_ActionGroup.java" startLine="32" startPosition="58" endLine="35" endPosition="13" />
-    <scopeInfo nodeId="278927758244377639" fileName="NodeRefactoring_ActionGroup.java" startLine="31" startPosition="490" endLine="36" endPosition="11" />
+    <scopeInfo nodeId="278927758244377639" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeRefactoring_ActionGroup.java" startLine="31" startPosition="490" endLine="36" endPosition="11" />
     <scopeInfo nodeId="7163273296928998115" fileName="NodeRefactoring_ActionGroup.java" startLine="30" startPosition="59" endLine="36" endPosition="11">
       <varInfo nodeId="278927758244377646" varName="old" />
     </scopeInfo>
     <scopeInfo nodeId="5003188907306244662" fileName="NodeRefactoring_ActionGroup.java" startLine="28" startPosition="100" endLine="40" endPosition="9" />
-    <scopeInfo nodeId="5003188907306244657" fileName="NodeRefactoring_ActionGroup.java" startLine="26" startPosition="9" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="5003188907306244657" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeRefactoring_ActionGroup.java" startLine="26" startPosition="9" endLine="41" endPosition="7" />
   </root>
   <root nodeId="7464679235281555550">
     <nodeInfo nodeId="7464679235281555561" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="RefactoringHelper.java" startLine="11" startPosition="78" endLine="12" endPosition="152" />
     <nodeInfo nodeId="7464679235281555579" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RefactoringHelper.java" startLine="12" startPosition="152" endLine="13" endPosition="18" />
-    <nodeInfo nodeId="7464679235281555556" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="RefactoringHelper.java" startLine="10" startPosition="32" endLine="15" endPosition="0" />
+    <nodeInfo nodeId="7464679235281555556" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getActionForRefactoring#(Ljetbrains/mps/refactoring/framework/IRefactoring;)Ljetbrains/mps/workbench/action/BaseAction;" fileName="RefactoringHelper.java" startLine="10" startPosition="32" endLine="15" endPosition="0" />
     <scopeInfo nodeId="7464679235281555559" fileName="RefactoringHelper.java" startLine="11" startPosition="78" endLine="13" endPosition="18">
       <varInfo nodeId="7464679235281555562" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="7464679235281555556" fileName="RefactoringHelper.java" startLine="10" startPosition="32" endLine="15" endPosition="0">
+    <scopeInfo nodeId="7464679235281555556" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getActionForRefactoring#(Ljetbrains/mps/refactoring/framework/IRefactoring;)Ljetbrains/mps/workbench/action/BaseAction;" fileName="RefactoringHelper.java" startLine="10" startPosition="32" endLine="15" endPosition="0">
       <varInfo nodeId="7464679235281555575" varName="refactoring" />
     </scopeInfo>
     <unitInfo nodeId="7464679235281555550" fileName="RefactoringHelper.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.RefactoringHelper" />
@@ -42,7 +42,7 @@
     <nodeInfo nodeId="8880521689750912048" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelRefactorings_ActionGroup.java" startLine="21" startPosition="9" endLine="26" endPosition="7" />
     <scopeInfo nodeId="8880521689750912092" fileName="ModelRefactorings_ActionGroup.java" startLine="23" startPosition="100" endLine="24" endPosition="105" />
     <scopeInfo nodeId="8880521689750912051" fileName="ModelRefactorings_ActionGroup.java" startLine="22" startPosition="100" endLine="25" endPosition="9" />
-    <scopeInfo nodeId="8880521689750912048" fileName="ModelRefactorings_ActionGroup.java" startLine="21" startPosition="9" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="8880521689750912048" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelRefactorings_ActionGroup.java" startLine="21" startPosition="9" endLine="26" endPosition="7" />
   </root>
 </debugInfo>
 

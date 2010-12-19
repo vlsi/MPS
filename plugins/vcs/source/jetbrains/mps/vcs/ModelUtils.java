@@ -16,6 +16,7 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
@@ -30,7 +31,7 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import org.jdom.Document;
-import org.jdom.JDOMException;
+import org.xml.sax.InputSource;
 
 import java.io.*;
 
@@ -138,58 +139,65 @@ public class ModelUtils {
     return models;
   }
 
-  public static SModel readModel(byte[] bytes, String path) throws IOException {
-    final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
-    try {
-      if (bytes.length == 0) {
-        return new SModel(SModelReference.fromString(modelNameAndStereotype[0] + "@" + modelNameAndStereotype[1]));
+  public static SModel readModel(final byte[] bytes, String path) throws IOException {
+    return readModel(bytes.length == 0 ? null : new InputSourceFactory() {
+      public InputSource create() throws IOException {
+        return new InputSource(new ByteArrayInputStream(bytes));
       }
-      final Document document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
-      return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        public SModel compute() {
-          return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
-        }
-      });
-    } catch (Exception t) {
-      throw new ReadException(t);
-    }
+    }, path);
   }
 
-  public static SModel readModel(String content, String path) throws IOException {
-    final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
-    try {
-      if (content.isEmpty()) {
-        return new SModel(SModelReference.fromString(modelNameAndStereotype[0] + "@" + modelNameAndStereotype[1]));
+  public static SModel readModel(final String content, String path) throws IOException {
+    return readModel(content.isEmpty() ? null : new InputSourceFactory() {
+      public InputSource create() throws IOException {
+        return new InputSource(new StringReader(content));
       }
-      final Document document = JDOMUtil.loadDocument(new StringReader(content));
-      return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        public SModel compute() {
-          return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
-        }
-      });
-    } catch (Exception t) {
-      throw new ReadException(t);
-    }
+    }, path);
   }
 
-  public static SModel readModel(String path) throws JDOMException, IOException {
-    final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
-    final Document document = JDOMUtil.loadDocument(new FileInputStream(path));
-    return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-      public SModel compute() {
-        return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
+  public static SModel readModel(final String path) throws IOException {
+    return readModel(new InputSourceFactory() {
+      public InputSource create() throws IOException {
+        return new InputSource(new FileInputStream(path));
       }
-    });
+    }, path);
   }
 
-  public static String[] getModelNameAndStereotype(String modelPath) {
-    int index = modelPath.lastIndexOf("/");
-    String shortName = modelPath;
-    if (index != -1) shortName = modelPath.substring(index + 1);
+  private static SModel readModel(final InputSourceFactory inputSourceFactory, String path) throws IOException {
+    int index = path.lastIndexOf("/");
+    String shortName = path;
+    if (index != -1) shortName = path.substring(index + 1);
     index = shortName.lastIndexOf("\\");
     if (index != -1) shortName = shortName.substring(index + 1);
 
-    return new String[]{ModelPersistence.extractModelName(shortName), ModelPersistence.extractModelStereotype(shortName)};
+    final String modelName = ModelPersistence.extractModelName(shortName);
+    final String modelStereotype = ModelPersistence.extractModelStereotype(shortName);
+
+    try {
+      if (inputSourceFactory == null) {
+        return new SModel(SModelReference.fromString(modelName + "@" + modelStereotype));
+      }
+      final Ref<IOException> ex = new Ref<IOException>();
+      SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+        @Override
+        public SModel compute() {
+          try {
+            return ModelPersistence.readModel(ModelPersistence.getPersistenceVersion(inputSourceFactory.create()),
+              inputSourceFactory.create(), modelName, modelStereotype);
+          } catch (IOException e) {
+            ex.set(e);
+            return null;
+          }
+        }
+      });
+      if (model == null) {
+        throw ex.get();
+      } else {
+        return model;
+      }
+    } catch (Exception t) {
+      throw new ReadException(t);
+    }
   }
 
   public static File[] findZipFileNameForModelFile(final String modelFilePath) {
@@ -200,5 +208,9 @@ public class ModelUtils {
         return fullName.contains(modelFilePath) && fullName.endsWith(".zip");
       }
     });
+  }
+
+  private interface InputSourceFactory {
+    InputSource create() throws IOException;
   }
 }

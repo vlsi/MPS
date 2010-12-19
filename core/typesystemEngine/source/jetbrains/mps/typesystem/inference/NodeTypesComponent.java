@@ -59,8 +59,8 @@ public class NodeTypesComponent {
 
   private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
 
-  private Set<SNode> myFullyCheckedNodes = new HashSet<SNode>(); //nodes which are checked with their children
-  private Set<SNode> myPartlyCheckedNodes = new HashSet<SNode>(); // nodes which are checked themselves but not children
+  protected Set<SNode> myFullyCheckedNodes = new HashSet<SNode>(); //nodes which are checked with their children
+  protected Set<SNode> myPartlyCheckedNodes = new HashSet<SNode>(); // nodes which are checked themselves but not children
 
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
     = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
@@ -125,11 +125,11 @@ public class NodeTypesComponent {
   private boolean myInvalidationResult = false;
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
-  private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
+  protected Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
-  private boolean myIsSpecial = false;
+  protected boolean myIsSpecial = false;
 
   boolean myIsNonTypesystemCheckingInProgress = false;
 
@@ -343,7 +343,7 @@ public class NodeTypesComponent {
     }
   }
 
-  private boolean loadTypesystemRules(SNode root) {
+  protected boolean loadTypesystemRules(SNode root) {
     SModel model = root.getModel();
     RulesManager rulesManager = myTypeChecker.getRulesManager();
     if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
@@ -364,7 +364,7 @@ public class NodeTypesComponent {
     computeTypes(myRootNode, refreshTypes, true, new ArrayList<SNode>(0), false);
   }
 
-  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
@@ -501,7 +501,7 @@ public class NodeTypesComponent {
     return null;
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
+  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
@@ -718,7 +718,7 @@ public class NodeTypesComponent {
     return myNodesToTypesMap;
   }
 
-  private boolean applyRulesToNode(SNode node) {
+  protected boolean applyRulesToNode(SNode node) {
     Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
     if (newRules != null) {

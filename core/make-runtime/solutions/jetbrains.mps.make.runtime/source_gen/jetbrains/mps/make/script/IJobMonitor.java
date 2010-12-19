@@ -6,12 +6,16 @@ package jetbrains.mps.make.script;
 public interface IJobMonitor {
   public boolean pleaseStop();
   public IProgress currentProgress();
+  public void reportFeedback(IFeedback fdbk);
   public static class Stub implements IJobMonitor {
     public Stub() {
     }
 
     public IProgress currentProgress() {
       return null;
+    }
+
+    public void reportFeedback(IFeedback fdbk) {
     }
 
     public boolean pleaseStop() {

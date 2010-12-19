@@ -33,11 +33,9 @@
         </group>
       </group>
 
-
       <group id="Runner.View.Toolbar">
         <reference ref="Runner.MoveViewToGrid"/>
         <reference ref="Runner.MoveViewToTab"/>
-        <reference ref="Runner.DetachCell"/>
         <reference ref="Runner.AttachCell"/>
         <reference ref="Runner.MinimizeView"/>
         <reference ref="Runner.CloseView"/>
@@ -162,5 +160,6 @@
 
     <group id="ConsoleView.PopupMenu"/>
 
+    <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
   </actions>
 </component>

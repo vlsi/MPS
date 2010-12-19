@@ -20,6 +20,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_2360002718792651973(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -33,6 +37,10 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1977954644795375338(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return (SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.make.script.structure.ConfigDefinition"}, false, false) == null);
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_3668957831723381945(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false) != null);
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7077360340906499515(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -89,5 +97,63 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
     return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_3668957831723381944(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.ReportFeedbackStatement");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+          public Object calculate() {
+            return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "Feedback"));
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h().createNode(SEnumOperations.getEnumMemberValue((item)));
+              }
+
+              public String getMatchingText(String pattern) {
+                return "report " + (item);
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.ReportFeedbackStatement", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.setProperty("feedback", (String) parameter_5);
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode_1.addChild("message", quotedNode1_4);
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

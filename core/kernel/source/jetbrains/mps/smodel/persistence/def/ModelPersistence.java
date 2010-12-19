@@ -19,10 +19,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.ModelDigestHelper;
-import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.refactoring.StructureModificationHistory;
 import jetbrains.mps.smodel.BaseSModelDescriptor.ModelLoadResult;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
@@ -52,7 +50,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.HashMap;
@@ -125,6 +122,12 @@ public class ModelPersistence {
     return myModelPersistenceFactory[persistenceID];
   }
   //--------read--------
+
+  public static DescriptorLoadResult loadDescriptor(InputSource source) {
+    final DescriptorLoadResult result = new DescriptorLoadResult();
+    loadDescriptor(result, source);
+    return result;
+  }
 
   public static void loadDescriptor(final DescriptorLoadResult result, InputSource source) {
     DefaultHandler handler = new DefaultHandler() {
@@ -202,21 +205,17 @@ public class ModelPersistence {
   public static ModelLoadResult readModel(int version, InputSource source, String name, String stereotype, ModelLoadingState state) {
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
       // first try to use SAX parser
-      XMLSAXHandler<SModel> handler = getModelPersistence(version).getModelReaderHandler(state);
-      if (handler == null && state != ModelLoadingState.FULLY_LOADED) { // try SAX parser for full load
-        state = ModelLoadingState.FULLY_LOADED;
-        handler = getModelPersistence(version).getModelReaderHandler(state);
-      }
+      XMLSAXHandler<ModelLoadResult> handler = getModelPersistence(version).getModelReaderHandler(state);
       if (handler != null) {
         try {
-          JDOMUtil.createSAXParser().parse(source, (DefaultHandler) handler);
+          JDOMUtil.createSAXParser().parse(source, handler);
         } catch (BreakParseSAXException e) {
           //this is normal for ROOTS_LOADED
         } catch (Throwable t) {
           LOG.error(t);
           return new ModelLoadResult(new StubModel(new SModelReference(name, stereotype)), ModelLoadingState.NOT_LOADED);
         }
-        return new ModelLoadResult(handler.getResult(), state);
+        return handler.getResult();
       }
       // then try to use DOM reader
       IModelReader reader = getModelPersistence(version).getModelReader();
@@ -228,19 +227,20 @@ public class ModelPersistence {
     return handleNullReaderForPersistence(name);
   }
 
+  public static int getPersistenceVersion(@NotNull InputSource inputSource) {
+    return loadDescriptor(inputSource).getPersistenceVersion();
+  }
+
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) {
-    DescriptorLoadResult loadResult = new DescriptorLoadResult();
-    loadDescriptor(loadResult, new InputSource(new StringReader(content)));
-
-    int version = loadResult.getPersistenceVersion();
+    int version = getPersistenceVersion(new InputSource(new StringReader(content)));
 
     if (0 <= version && version <= PersistenceSettings.MAX_VERSION) {
       XMLSAXHandler<List<LineContent>> handler = getModelPersistence(version).getLineToContentMapReaderHandler();
       if (handler != null) {
         try {
           SAXParser parser = JDOMUtil.createSAXParser();
-          parser.parse(new ByteArrayInputStream(content.getBytes("UTF-8")), (DefaultHandler) handler);
+          parser.parse(new InputSource(new StringReader(content)), handler);
           return handler.getResult();
         } catch (Throwable t) {
           LOG.error(t);
@@ -328,13 +328,13 @@ public class ModelPersistence {
 
   // upgrades model persistence and saves model
   public static void upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
-    if (fromVersion < 5 && toVersion >= 5) {
-      StructureModificationHistory refactorings = model.getRefactoringHistory();
-      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
-        RefactoringsPersistence.save(file, refactorings);
-      }
-      model.setRefactoringHistory(null);
-    }
+//    if (fromVersion < 5 && toVersion >= 5) {
+//      StructureModificationHistory refactorings = model.getRefactoringHistory();
+//      if (refactorings != null && !refactorings.getDataList().isEmpty()) {
+//        RefactoringsPersistence.save(file, refactorings);
+//      }
+//      model.setRefactoringHistory(null);
+//    }
     model.setPersistenceVersion(toVersion);
     Document document = saveModel(model, toVersion);
     try {

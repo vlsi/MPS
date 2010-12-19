@@ -115,12 +115,12 @@
     <node type="tp4k.ToolDeclaration" typeId="tp4k.1203071677434" id="1209126436954">
       <property name="name" nameId="tpck.1169194664001" value="TodoViewer" />
       <property name="caption" nameId="tp4k.6547237850567462620" value="TODO" />
-      <property name="icon" nameId="tp4k.6547237850567462766" value="${language_descriptor}\source\jetbrains\mps\baseLanguage\plugin\todo.png" />
+      <property name="icon" nameId="tp4k.6547237850567462766" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1217597602946">
       <property name="name" nameId="tpck.1169194664001" value="ShowTodoViewer" />
       <property name="caption" nameId="tp4k.1205250923097" value="Show Todo Tool" />
-      <property name="iconPath" nameId="tp4k.1203083803952" value="${language_descriptor}\source\jetbrains\mps\baseLanguage\plugin\todo.png" />
+      <property name="iconPath" nameId="tp4k.1203083803952" value="${language_descriptor}/source/jetbrains/mps/baseLanguage/plugin/todo.png" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
@@ -12991,31 +12991,9 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3836499504550260219">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3836499504550260231">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3836499504550260232">
-            <property name="text" nameId="tpee.6329021646629104958" value="Returning" />
-          </node>
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="3836499504550260233">
-            <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3836499504550260234">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3836499504550260235">
-                <property name="value" nameId="tpee.1068580123138" value="false" />
-              </node>
-            </node>
-          </node>
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3836499504550260236">
-            <property name="text" nameId="tpee.6329021646629104958" value="to hide these messages from" />
-          </node>
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.StatementCommentPart" typeId="tpee.6329021646629175143" id="3836499504550260237">
-            <node role="commentedStatement" roleId="tpee.6329021646629175144" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3836499504550260238">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.AbstractClassifierReference" typeId="tpee.7812779912047922391" id="3836499504550260239">
-                <link role="classifier" roleId="tpee.7812779912047934386" targetNodeId="a0xp.~MessagesGutter" resolveInfo="MessagesGutter" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3836499504550260225">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3836499504550260229">
-            <property name="value" nameId="tpee.1068580123138" value="false" />
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3982223387891493197">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
           </node>
         </node>
       </node>
@@ -13142,6 +13120,18 @@
               <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5p1m.~Cursor" resolveInfo="Cursor" />
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5p1m.~Cursor%dHAND_CURSOR" resolveInfo="HAND_CURSOR" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3982223387891493198">
+      <property name="name" nameId="tpck.1169194664001" value="showInGutter" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3982223387891493199" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3982223387891493200" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3982223387891493201">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3982223387891493204">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3982223387891493206">
+            <property name="value" nameId="tpee.1068580123138" value="true" />
           </node>
         </node>
       </node>

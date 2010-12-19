@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2566197375814061436">
-    <nodeInfo nodeId="2566197375814064481" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="ClassifierUpdater.java" startLine="89" startPosition="32" endLine="90" endPosition="78" />
+    <nodeInfo nodeId="2566197375814064481" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" fileName="ClassifierUpdater.java" startLine="89" startPosition="32" endLine="90" endPosition="78" />
     <nodeInfo nodeId="2566197375814082296" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ClassifierUpdater.java" startLine="96" startPosition="38" endLine="97" endPosition="55" />
     <nodeInfo nodeId="2566197375814082314" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierUpdater.java" startLine="98" startPosition="26" endLine="99" endPosition="81" />
     <nodeInfo nodeId="2566197375814082308" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierUpdater.java" startLine="100" startPosition="14" endLine="101" endPosition="39" />
@@ -327,7 +327,7 @@
     <nodeInfo nodeId="2566197375814064432" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ClassifierUpdater.java" startLine="725" startPosition="101" endLine="726" endPosition="91" />
     <nodeInfo nodeId="2566197375814064442" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierUpdater.java" startLine="726" startPosition="91" endLine="727" endPosition="84" />
     <nodeInfo nodeId="2566197375814064455" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ClassifierUpdater.java" startLine="730" startPosition="67" endLine="731" endPosition="56" />
-    <nodeInfo nodeId="2566197375814061438" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ClassifierUpdater.java" startLine="91" startPosition="0" endLine="93" endPosition="3" />
+    <nodeInfo nodeId="2566197375814061438" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierUpdater#()V" fileName="ClassifierUpdater.java" startLine="91" startPosition="0" endLine="93" endPosition="3" />
     <nodeInfo nodeId="2566197375814082306" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ClassifierUpdater.java" startLine="100" startPosition="12" endLine="102" endPosition="7" />
     <nodeInfo nodeId="2566197375814082211" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ClassifierUpdater.java" startLine="109" startPosition="12" endLine="111" endPosition="7" />
     <nodeInfo nodeId="2566197375814082348" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ClassifierUpdater.java" startLine="127" startPosition="12" endLine="129" endPosition="7" />
@@ -396,7 +396,7 @@
     <nodeInfo nodeId="2566197375814063846" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierUpdater.java" startLine="583" startPosition="5" endLine="587" endPosition="24" />
     <nodeInfo nodeId="2566197375814064214" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="673" startPosition="5" endLine="677" endPosition="5" />
     <nodeInfo nodeId="2566197375814064279" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="686" startPosition="78" endLine="690" endPosition="7" />
-    <nodeInfo nodeId="2566197375814064451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="729" startPosition="0" endLine="733" endPosition="0" />
+    <nodeInfo nodeId="2566197375814064451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelReferenceFor#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModelReference;" fileName="ClassifierUpdater.java" startLine="729" startPosition="0" endLine="733" endPosition="0" />
     <nodeInfo nodeId="2566197375814082302" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="97" startPosition="55" endLine="102" endPosition="7" />
     <nodeInfo nodeId="2566197375814082207" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="106" startPosition="52" endLine="111" endPosition="7" />
     <nodeInfo nodeId="2566197375814082344" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="124" startPosition="48" endLine="129" endPosition="7" />
@@ -404,9 +404,9 @@
     <nodeInfo nodeId="2566197375814062672" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="323" startPosition="52" endLine="328" endPosition="7" />
     <nodeInfo nodeId="2566197375814064042" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="637" startPosition="12" endLine="642" endPosition="7" />
     <nodeInfo nodeId="2566197375814061767" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="157" startPosition="117" endLine="163" endPosition="5" />
-    <nodeInfo nodeId="2566197375814061886" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="186" startPosition="0" endLine="192" endPosition="0" />
-    <nodeInfo nodeId="2566197375814062123" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="192" startPosition="0" endLine="198" endPosition="0" />
-    <nodeInfo nodeId="2566197375814063404" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="477" startPosition="0" endLine="483" endPosition="0" />
+    <nodeInfo nodeId="2566197375814061886" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTypeVariableReference#(Ljetbrains/mps/baseLanguage/structure/GenericDeclaration;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/structure/TypeVariableReference;" fileName="ClassifierUpdater.java" startLine="186" startPosition="0" endLine="192" endPosition="0" />
+    <nodeInfo nodeId="2566197375814062123" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAnnotations#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="192" startPosition="0" endLine="198" endPosition="0" />
+    <nodeInfo nodeId="2566197375814063404" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAnnotationsToParameter#(Ljetbrains/mps/baseLanguage/structure/ParameterDeclaration;Ljava/util/List;)V" fileName="ClassifierUpdater.java" startLine="477" startPosition="0" endLine="483" endPosition="0" />
     <nodeInfo nodeId="2566197375814063463" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="488" startPosition="56" endLine="494" endPosition="5" />
     <nodeInfo nodeId="2566197375814063508" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="498" startPosition="69" endLine="504" endPosition="5" />
     <nodeInfo nodeId="2566197375814063531" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="504" startPosition="5" endLine="510" endPosition="5" />
@@ -425,7 +425,7 @@
     <nodeInfo nodeId="2566197375814064185" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="667" startPosition="5" endLine="673" endPosition="5" />
     <nodeInfo nodeId="2566197375814063953" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="618" startPosition="5" endLine="625" endPosition="5" />
     <nodeInfo nodeId="2566197375814063986" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="625" startPosition="5" endLine="632" endPosition="5" />
-    <nodeInfo nodeId="2566197375814062147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="198" startPosition="0" endLine="206" endPosition="0" />
+    <nodeInfo nodeId="2566197375814062147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateExtendsForInterface#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Interface;)V" fileName="ClassifierUpdater.java" startLine="198" startPosition="0" endLine="206" endPosition="0" />
     <nodeInfo nodeId="2566197375814062719" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ClassifierUpdater.java" startLine="331" startPosition="58" endLine="339" endPosition="7" />
     <nodeInfo nodeId="2566197375814062949" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ClassifierUpdater.java" startLine="376" startPosition="58" endLine="384" endPosition="7" />
     <nodeInfo nodeId="2566197375814063179" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ClassifierUpdater.java" startLine="422" startPosition="58" endLine="430" endPosition="7" />
@@ -434,44 +434,44 @@
     <nodeInfo nodeId="2566197375814064264" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="684" startPosition="45" endLine="692" endPosition="5" />
     <nodeInfo nodeId="2566197375814061699" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="143" startPosition="65" endLine="152" endPosition="7" />
     <nodeInfo nodeId="2566197375814061811" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="165" startPosition="73" endLine="174" endPosition="7" />
-    <nodeInfo nodeId="2566197375814061858" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="177" startPosition="0" endLine="186" endPosition="0" />
+    <nodeInfo nodeId="2566197375814061858" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findTypeVariableDeclaration#(Ljetbrains/mps/baseLanguage/structure/GenericDeclaration;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/structure/TypeVariableDeclaration;" fileName="ClassifierUpdater.java" startLine="177" startPosition="0" endLine="186" endPosition="0" />
     <nodeInfo nodeId="1507995828870743836" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="279" startPosition="44" endLine="288" endPosition="13" />
-    <nodeInfo nodeId="2566197375814064349" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="708" startPosition="0" endLine="718" endPosition="0" />
-    <nodeInfo nodeId="2566197375814063269" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="440" startPosition="0" endLine="451" endPosition="0" />
+    <nodeInfo nodeId="2566197375814064349" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAnnotationMethodReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/stubs/javastub/asm/ASMClassType;Ljava/lang/String;)V" fileName="ClassifierUpdater.java" startLine="708" startPosition="0" endLine="718" endPosition="0" />
+    <nodeInfo nodeId="2566197375814063269" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isGeneratedEnumMethod#(Ljetbrains/mps/stubs/javastub/asm/ASMMethod;)Z" fileName="ClassifierUpdater.java" startLine="440" startPosition="0" endLine="451" endPosition="0" />
     <nodeInfo nodeId="2566197375814063687" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="546" startPosition="5" endLine="557" endPosition="5" />
     <nodeInfo nodeId="2566197375814064019" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="632" startPosition="5" endLine="643" endPosition="5" />
-    <nodeInfo nodeId="2566197375814064304" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="697" startPosition="0" endLine="708" endPosition="0" />
-    <nodeInfo nodeId="2566197375814064396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="718" startPosition="0" endLine="729" endPosition="0" />
+    <nodeInfo nodeId="2566197375814064304" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addClassifierReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/stubs/javastub/asm/ASMClassType;)V" fileName="ClassifierUpdater.java" startLine="697" startPosition="0" endLine="708" endPosition="0" />
+    <nodeInfo nodeId="2566197375814064396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEnumConstReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/stubs/javastub/asm/ASMEnumValue;)V" fileName="ClassifierUpdater.java" startLine="718" startPosition="0" endLine="729" endPosition="0" />
     <nodeInfo nodeId="2566197375814061797" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="163" startPosition="5" endLine="175" endPosition="5" />
     <nodeInfo nodeId="1507995828870743554" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="277" startPosition="32" endLine="289" endPosition="11" />
     <nodeInfo nodeId="2566197375814062522" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="297" startPosition="41" endLine="309" endPosition="5" />
     <nodeInfo nodeId="2566197375814064130" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="655" startPosition="5" endLine="667" endPosition="5" />
-    <nodeInfo nodeId="2566197375814063336" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="451" startPosition="0" endLine="464" endPosition="0" />
-    <nodeInfo nodeId="2566197375814063370" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="464" startPosition="0" endLine="477" endPosition="0" />
+    <nodeInfo nodeId="2566197375814063336" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVisibility#(Ljetbrains/mps/stubs/javastub/asm/ASMMethod;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/Visibility;" fileName="ClassifierUpdater.java" startLine="451" startPosition="0" endLine="464" endPosition="0" />
+    <nodeInfo nodeId="2566197375814063370" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVisibility#(Ljetbrains/mps/stubs/javastub/asm/ASMField;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/Visibility;" fileName="ClassifierUpdater.java" startLine="464" startPosition="0" endLine="477" endPosition="0" />
     <nodeInfo nodeId="2566197375814061675" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="139" startPosition="83" endLine="153" endPosition="5" />
-    <nodeInfo nodeId="2566197375814063427" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="483" startPosition="0" endLine="497" endPosition="0" />
+    <nodeInfo nodeId="2566197375814063427" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAnnotation#(Ljetbrains/mps/stubs/javastub/asm/ASMAnnotation;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/AnnotationInstance;" fileName="ClassifierUpdater.java" startLine="483" startPosition="0" endLine="497" endPosition="0" />
     <nodeInfo nodeId="8782008374435591535" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="275" startPosition="9" endLine="290" endPosition="9" />
-    <nodeInfo nodeId="2566197375814064243" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="682" startPosition="0" endLine="697" endPosition="0" />
-    <nodeInfo nodeId="2566197375814062183" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="206" startPosition="0" endLine="222" endPosition="0" />
-    <nodeInfo nodeId="2566197375814062508" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="295" startPosition="0" endLine="311" endPosition="0" />
-    <nodeInfo nodeId="2566197375814061665" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="138" startPosition="0" endLine="155" endPosition="0" />
+    <nodeInfo nodeId="2566197375814064243" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTypeParameters#(Ljava/util/List;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/Classifier;Ljetbrains/mps/baseLanguage/structure/ClassifierType;)V" fileName="ClassifierUpdater.java" startLine="682" startPosition="0" endLine="697" endPosition="0" />
+    <nodeInfo nodeId="2566197375814062183" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateExtendsAndImplements#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/ClassConcept;)V" fileName="ClassifierUpdater.java" startLine="206" startPosition="0" endLine="222" endPosition="0" />
+    <nodeInfo nodeId="2566197375814062508" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAnnotationMethods#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Annotation;)V" fileName="ClassifierUpdater.java" startLine="295" startPosition="0" endLine="311" endPosition="0" />
+    <nodeInfo nodeId="2566197375814061665" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTypeVariables#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="138" startPosition="0" endLine="155" endPosition="0" />
     <nodeInfo nodeId="2566197375814062270" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="224" startPosition="34" endLine="245" endPosition="5" />
-    <nodeInfo nodeId="2566197375814061746" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="155" startPosition="0" endLine="177" endPosition="0" />
-    <nodeInfo nodeId="2566197375814062256" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="222" startPosition="0" endLine="247" endPosition="0" />
+    <nodeInfo nodeId="2566197375814061746" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTypeVariables#(Ljetbrains/mps/stubs/javastub/asm/ASMMethod;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="155" startPosition="0" endLine="177" endPosition="0" />
+    <nodeInfo nodeId="2566197375814062256" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateInstanceFields#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/ClassConcept;)V" fileName="ClassifierUpdater.java" startLine="222" startPosition="0" endLine="247" endPosition="0" />
     <nodeInfo nodeId="2566197375814062408" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ClassifierUpdater.java" startLine="266" startPosition="12" endLine="292" endPosition="7" />
     <nodeInfo nodeId="2566197375814062404" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="259" startPosition="7" endLine="292" endPosition="7" />
     <nodeInfo nodeId="2566197375814062615" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="313" startPosition="34" endLine="347" endPosition="5" />
-    <nodeInfo nodeId="2566197375814062601" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="311" startPosition="0" endLine="349" endPosition="0" />
+    <nodeInfo nodeId="2566197375814062601" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateConstructors#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/ClassConcept;)V" fileName="ClassifierUpdater.java" startLine="311" startPosition="0" endLine="349" endPosition="0" />
     <nodeInfo nodeId="2566197375814082192" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierUpdater.java" startLine="95" startPosition="69" endLine="136" endPosition="5" />
     <nodeInfo nodeId="2566197375814062823" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="351" startPosition="34" endLine="392" endPosition="5" />
     <nodeInfo nodeId="2566197375814063053" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="396" startPosition="34" endLine="438" endPosition="5" />
-    <nodeInfo nodeId="2566197375814082184" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="94" startPosition="0" endLine="138" endPosition="0" />
+    <nodeInfo nodeId="2566197375814082184" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateClassifier#(Ljetbrains/mps/baseLanguage/structure/Classifier;Ljetbrains/mps/stubs/javastub/asm/ASMClass;)V" fileName="ClassifierUpdater.java" startLine="94" startPosition="0" endLine="138" endPosition="0" />
     <nodeInfo nodeId="2566197375814062376" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="249" startPosition="34" endLine="293" endPosition="5" />
-    <nodeInfo nodeId="2566197375814062809" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="349" startPosition="0" endLine="394" endPosition="0" />
-    <nodeInfo nodeId="2566197375814063039" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="394" startPosition="0" endLine="440" endPosition="0" />
-    <nodeInfo nodeId="2566197375814062362" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="247" startPosition="0" endLine="295" endPosition="0" />
-    <nodeInfo nodeId="2566197375814063869" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="590" startPosition="0" endLine="682" endPosition="0" />
-    <nodeInfo nodeId="2566197375814063500" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierUpdater.java" startLine="497" startPosition="0" endLine="590" endPosition="0" />
+    <nodeInfo nodeId="2566197375814062809" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateInstanceMethods#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="349" startPosition="0" endLine="394" endPosition="0" />
+    <nodeInfo nodeId="2566197375814063039" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateStaticMethods#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/ClassConcept;)V" fileName="ClassifierUpdater.java" startLine="394" startPosition="0" endLine="440" endPosition="0" />
+    <nodeInfo nodeId="2566197375814062362" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateStaticFields#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="247" startPosition="0" endLine="295" endPosition="0" />
+    <nodeInfo nodeId="2566197375814063869" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTypeByASMType#(Ljetbrains/mps/stubs/javastub/asm/ASMType;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/Classifier;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/Type;" fileName="ClassifierUpdater.java" startLine="590" startPosition="0" endLine="682" endPosition="0" />
+    <nodeInfo nodeId="2566197375814063500" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnnotationValue#(Ljava/lang/Object;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/Expression;" fileName="ClassifierUpdater.java" startLine="497" startPosition="0" endLine="590" endPosition="0" />
     <scopeInfo nodeId="2566197375814061441" fileName="ClassifierUpdater.java" startLine="92" startPosition="30" endLine="92" endPosition="30" />
     <scopeInfo nodeId="2566197375814082313" fileName="ClassifierUpdater.java" startLine="98" startPosition="26" endLine="99" endPosition="81" />
     <scopeInfo nodeId="2566197375814082307" fileName="ClassifierUpdater.java" startLine="100" startPosition="14" endLine="101" endPosition="39" />
@@ -540,7 +540,7 @@
     <scopeInfo nodeId="2566197375814064368" fileName="ClassifierUpdater.java" startLine="710" startPosition="47" endLine="711" endPosition="13" />
     <scopeInfo nodeId="2566197375814064413" fileName="ClassifierUpdater.java" startLine="720" startPosition="47" endLine="721" endPosition="13" />
     <scopeInfo nodeId="2566197375814064454" fileName="ClassifierUpdater.java" startLine="730" startPosition="67" endLine="731" endPosition="56" />
-    <scopeInfo nodeId="2566197375814061438" fileName="ClassifierUpdater.java" startLine="91" startPosition="0" endLine="93" endPosition="3" />
+    <scopeInfo nodeId="2566197375814061438" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierUpdater#()V" fileName="ClassifierUpdater.java" startLine="91" startPosition="0" endLine="93" endPosition="3" />
     <scopeInfo nodeId="2566197375814062167" fileName="ClassifierUpdater.java" startLine="201" startPosition="52" endLine="203" endPosition="49">
       <varInfo nodeId="2566197375814062169" varName="classifierType" />
     </scopeInfo>
@@ -557,10 +557,10 @@
       <varInfo nodeId="2566197375814064220" varName="w" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814064283" fileName="ClassifierUpdater.java" startLine="687" startPosition="25" endLine="689" endPosition="14" />
-    <scopeInfo nodeId="2566197375814061728" fileName="ClassifierUpdater.java" startLine="148" startPosition="9" endLine="151" endPosition="9">
+    <scopeInfo nodeId="2566197375814061728" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="148" startPosition="9" endLine="151" endPosition="9">
       <varInfo nodeId="2566197375814061732" varName="act" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814061840" fileName="ClassifierUpdater.java" startLine="170" startPosition="9" endLine="173" endPosition="9">
+    <scopeInfo nodeId="2566197375814061840" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="170" startPosition="9" endLine="173" endPosition="9">
       <varInfo nodeId="2566197375814061844" varName="act" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814061869" fileName="ClassifierUpdater.java" startLine="179" startPosition="101" endLine="182" endPosition="7" />
@@ -568,16 +568,16 @@
       <varInfo nodeId="2566197375814061895" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814062130" fileName="ClassifierUpdater.java" startLine="193" startPosition="63" endLine="196" endPosition="5" />
-    <scopeInfo nodeId="2566197375814062131" fileName="ClassifierUpdater.java" startLine="193" startPosition="63" endLine="196" endPosition="5">
+    <scopeInfo nodeId="2566197375814062131" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="193" startPosition="63" endLine="196" endPosition="5">
       <varInfo nodeId="2566197375814062135" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062223" fileName="ClassifierUpdater.java" startLine="213" startPosition="5" endLine="216" endPosition="5">
+    <scopeInfo nodeId="2566197375814062223" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="213" startPosition="5" endLine="216" endPosition="5">
       <varInfo nodeId="2566197375814062227" varName="itype" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062343" fileName="ClassifierUpdater.java" startLine="240" startPosition="49" endLine="243" endPosition="7">
+    <scopeInfo nodeId="2566197375814062343" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="240" startPosition="49" endLine="243" endPosition="7">
       <varInfo nodeId="2566197375814062347" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062456" fileName="ClassifierUpdater.java" startLine="272" startPosition="51" endLine="275" endPosition="9">
+    <scopeInfo nodeId="2566197375814062456" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="272" startPosition="51" endLine="275" endPosition="9">
       <varInfo nodeId="2566197375814062460" varName="annotation" />
     </scopeInfo>
     <scopeInfo nodeId="1507995828870743837" fileName="ClassifierUpdater.java" startLine="280" startPosition="43" endLine="283" endPosition="48">
@@ -589,38 +589,38 @@
     <scopeInfo nodeId="2566197375814062678" fileName="ClassifierUpdater.java" startLine="324" startPosition="56" endLine="327" endPosition="72">
       <varInfo nodeId="2566197375814062680" varName="typeVariableDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062774" fileName="ClassifierUpdater.java" startLine="339" startPosition="7" endLine="342" endPosition="7">
+    <scopeInfo nodeId="2566197375814062774" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="339" startPosition="7" endLine="342" endPosition="7">
       <varInfo nodeId="2566197375814062778" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062788" fileName="ClassifierUpdater.java" startLine="342" startPosition="7" endLine="345" endPosition="7">
+    <scopeInfo nodeId="2566197375814062788" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="342" startPosition="7" endLine="345" endPosition="7">
       <varInfo nodeId="2566197375814062792" varName="exception" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063004" fileName="ClassifierUpdater.java" startLine="384" startPosition="7" endLine="387" endPosition="7">
+    <scopeInfo nodeId="2566197375814063004" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="384" startPosition="7" endLine="387" endPosition="7">
       <varInfo nodeId="2566197375814063008" varName="exception" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063020" fileName="ClassifierUpdater.java" startLine="387" startPosition="7" endLine="390" endPosition="7">
+    <scopeInfo nodeId="2566197375814063020" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="387" startPosition="7" endLine="390" endPosition="7">
       <varInfo nodeId="2566197375814063024" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063234" fileName="ClassifierUpdater.java" startLine="430" startPosition="7" endLine="433" endPosition="7">
+    <scopeInfo nodeId="2566197375814063234" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="430" startPosition="7" endLine="433" endPosition="7">
       <varInfo nodeId="2566197375814063238" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063248" fileName="ClassifierUpdater.java" startLine="433" startPosition="7" endLine="436" endPosition="7">
+    <scopeInfo nodeId="2566197375814063248" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="433" startPosition="7" endLine="436" endPosition="7">
       <varInfo nodeId="2566197375814063252" varName="exception" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814063412" fileName="ClassifierUpdater.java" startLine="478" startPosition="100" endLine="481" endPosition="5" />
-    <scopeInfo nodeId="2566197375814063413" fileName="ClassifierUpdater.java" startLine="478" startPosition="100" endLine="481" endPosition="5">
+    <scopeInfo nodeId="2566197375814063413" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="478" startPosition="100" endLine="481" endPosition="5">
       <varInfo nodeId="2566197375814063415" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814064294" fileName="ClassifierUpdater.java" startLine="692" startPosition="5" endLine="695" endPosition="5">
+    <scopeInfo nodeId="2566197375814064294" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="692" startPosition="5" endLine="695" endPosition="5">
       <varInfo nodeId="2566197375814064296" varName="tvr" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814061773" fileName="ClassifierUpdater.java" startLine="158" startPosition="59" endLine="162" endPosition="48">
       <varInfo nodeId="2566197375814061775" varName="typeVariableDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062161" fileName="ClassifierUpdater.java" startLine="200" startPosition="36" endLine="204" endPosition="5">
+    <scopeInfo nodeId="2566197375814062161" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="200" startPosition="36" endLine="204" endPosition="5">
       <varInfo nodeId="2566197375814062165" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062234" fileName="ClassifierUpdater.java" startLine="216" startPosition="5" endLine="220" endPosition="5">
+    <scopeInfo nodeId="2566197375814062234" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="216" startPosition="5" endLine="220" endPosition="5">
       <varInfo nodeId="2566197375814062238" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814063469" fileName="ClassifierUpdater.java" startLine="489" startPosition="40" endLine="493" endPosition="29">
@@ -684,10 +684,10 @@
       <varInfo nodeId="2566197375814064191" varName="e" />
       <varInfo nodeId="2566197375814064197" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814064451" fileName="ClassifierUpdater.java" startLine="729" startPosition="0" endLine="733" endPosition="0">
+    <scopeInfo nodeId="2566197375814064451" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelReferenceFor#(Ljava/lang/String;)Ljetbrains/mps/smodel/SModelReference;" fileName="ClassifierUpdater.java" startLine="729" startPosition="0" endLine="733" endPosition="0">
       <varInfo nodeId="2566197375814064458" varName="packageName" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814061866" fileName="ClassifierUpdater.java" startLine="178" startPosition="104" endLine="183" endPosition="5">
+    <scopeInfo nodeId="2566197375814061866" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="178" startPosition="104" endLine="183" endPosition="5">
       <varInfo nodeId="2566197375814061867" varName="tvd" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814062154" fileName="ClassifierUpdater.java" startLine="199" startPosition="72" endLine="204" endPosition="5">
@@ -697,7 +697,7 @@
       <varInfo nodeId="2566197375814062477" varName="enumClass" />
       <varInfo nodeId="2566197375814062483" varName="enumConstantDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062672" fileName="ClassifierUpdater.java" startLine="323" startPosition="52" endLine="328" endPosition="7">
+    <scopeInfo nodeId="2566197375814062672" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="323" startPosition="52" endLine="328" endPosition="7">
       <varInfo nodeId="2566197375814062676" varName="tv" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814063957" fileName="ClassifierUpdater.java" startLine="619" startPosition="39" endLine="624" endPosition="20">
@@ -710,15 +710,15 @@
       <varInfo nodeId="2566197375814063992" varName="varArgType" />
       <varInfo nodeId="2566197375814063998" varName="componentType" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814061767" fileName="ClassifierUpdater.java" startLine="157" startPosition="117" endLine="163" endPosition="5">
+    <scopeInfo nodeId="2566197375814061767" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="157" startPosition="117" endLine="163" endPosition="5">
       <varInfo nodeId="2566197375814061771" varName="tv" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814061865" fileName="ClassifierUpdater.java" startLine="178" startPosition="104" endLine="184" endPosition="16" />
-    <scopeInfo nodeId="2566197375814061886" fileName="ClassifierUpdater.java" startLine="186" startPosition="0" endLine="192" endPosition="0">
+    <scopeInfo nodeId="2566197375814061886" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTypeVariableReference#(Ljetbrains/mps/baseLanguage/structure/GenericDeclaration;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/structure/TypeVariableReference;" fileName="ClassifierUpdater.java" startLine="186" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="2566197375814061891" varName="name" />
       <varInfo nodeId="2566197375814061889" varName="genDecl" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062123" fileName="ClassifierUpdater.java" startLine="192" startPosition="0" endLine="198" endPosition="0">
+    <scopeInfo nodeId="2566197375814062123" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAnnotations#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="192" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="2566197375814062128" varName="cls" />
       <varInfo nodeId="2566197375814062126" varName="ac" />
     </scopeInfo>
@@ -734,14 +734,14 @@
       <varInfo nodeId="2566197375814063194" varName="parameterDeclaration" />
       <varInfo nodeId="2566197375814063187" varName="paramType" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063404" fileName="ClassifierUpdater.java" startLine="477" startPosition="0" endLine="483" endPosition="0">
+    <scopeInfo nodeId="2566197375814063404" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAnnotationsToParameter#(Ljetbrains/mps/baseLanguage/structure/ParameterDeclaration;Ljava/util/List;)V" fileName="ClassifierUpdater.java" startLine="477" startPosition="0" endLine="483" endPosition="0">
       <varInfo nodeId="2566197375814063407" varName="pd" />
       <varInfo nodeId="2566197375814063409" varName="annotations" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063463" fileName="ClassifierUpdater.java" startLine="488" startPosition="56" endLine="494" endPosition="5">
+    <scopeInfo nodeId="2566197375814063463" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="488" startPosition="56" endLine="494" endPosition="5">
       <varInfo nodeId="2566197375814063467" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063704" fileName="ClassifierUpdater.java" startLine="549" startPosition="57" endLine="555" endPosition="7">
+    <scopeInfo nodeId="2566197375814063704" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="549" startPosition="57" endLine="555" endPosition="7">
       <varInfo nodeId="2566197375814063706" varName="o" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814063731" fileName="ClassifierUpdater.java" startLine="558" startPosition="40" endLine="564" endPosition="17">
@@ -765,21 +765,21 @@
     <scopeInfo nodeId="2566197375814082289" fileName="ClassifierUpdater.java" startLine="96" startPosition="38" endLine="104" endPosition="40">
       <varInfo nodeId="2566197375814082297" varName="annotation" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062147" fileName="ClassifierUpdater.java" startLine="198" startPosition="0" endLine="206" endPosition="0">
+    <scopeInfo nodeId="2566197375814062147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateExtendsForInterface#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Interface;)V" fileName="ClassifierUpdater.java" startLine="198" startPosition="0" endLine="206" endPosition="0">
       <varInfo nodeId="2566197375814062152" varName="intfc" />
       <varInfo nodeId="2566197375814062150" varName="ac" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062719" fileName="ClassifierUpdater.java" startLine="331" startPosition="58" endLine="339" endPosition="7">
+    <scopeInfo nodeId="2566197375814062719" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ClassifierUpdater.java" startLine="331" startPosition="58" endLine="339" endPosition="7">
       <varInfo nodeId="2566197375814062771" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062949" fileName="ClassifierUpdater.java" startLine="376" startPosition="58" endLine="384" endPosition="7">
+    <scopeInfo nodeId="2566197375814062949" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ClassifierUpdater.java" startLine="376" startPosition="58" endLine="384" endPosition="7">
       <varInfo nodeId="2566197375814063001" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063179" fileName="ClassifierUpdater.java" startLine="422" startPosition="58" endLine="430" endPosition="7">
+    <scopeInfo nodeId="2566197375814063179" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ClassifierUpdater.java" startLine="422" startPosition="58" endLine="430" endPosition="7">
       <varInfo nodeId="2566197375814063231" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814063274" fileName="ClassifierUpdater.java" startLine="441" startPosition="54" endLine="449" endPosition="17" />
-    <scopeInfo nodeId="2566197375814064264" fileName="ClassifierUpdater.java" startLine="684" startPosition="45" endLine="692" endPosition="5">
+    <scopeInfo nodeId="2566197375814064264" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="684" startPosition="45" endLine="692" endPosition="5">
       <varInfo nodeId="2566197375814064266" varName="tv" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814064313" fileName="ClassifierUpdater.java" startLine="698" startPosition="92" endLine="706" endPosition="89">
@@ -791,7 +791,7 @@
       <varInfo nodeId="2566197375814064425" varName="targetRef" />
       <varInfo nodeId="2566197375814064417" varName="classType" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814061858" fileName="ClassifierUpdater.java" startLine="177" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="2566197375814061858" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findTypeVariableDeclaration#(Ljetbrains/mps/baseLanguage/structure/GenericDeclaration;Ljava/lang/String;)Ljetbrains/mps/baseLanguage/structure/TypeVariableDeclaration;" fileName="ClassifierUpdater.java" startLine="177" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="2566197375814061863" varName="name" />
       <varInfo nodeId="2566197375814061861" varName="genDecl" />
     </scopeInfo>
@@ -817,13 +817,13 @@
       <varInfo nodeId="2566197375814064136" varName="e" />
       <varInfo nodeId="2566197375814064168" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814064349" fileName="ClassifierUpdater.java" startLine="708" startPosition="0" endLine="718" endPosition="0">
+    <scopeInfo nodeId="2566197375814064349" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAnnotationMethodReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/stubs/javastub/asm/ASMClassType;Ljava/lang/String;)V" fileName="ClassifierUpdater.java" startLine="708" startPosition="0" endLine="718" endPosition="0">
       <varInfo nodeId="2566197375814064356" varName="annotationType" />
       <varInfo nodeId="2566197375814064352" varName="sourceNode" />
       <varInfo nodeId="2566197375814064354" varName="role" />
       <varInfo nodeId="2566197375814064358" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063269" fileName="ClassifierUpdater.java" startLine="440" startPosition="0" endLine="451" endPosition="0">
+    <scopeInfo nodeId="2566197375814063269" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isGeneratedEnumMethod#(Ljetbrains/mps/stubs/javastub/asm/ASMMethod;)Z" fileName="ClassifierUpdater.java" startLine="440" startPosition="0" endLine="451" endPosition="0">
       <varInfo nodeId="2566197375814063272" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814063434" fileName="ClassifierUpdater.java" startLine="484" startPosition="87" endLine="495" endPosition="18">
@@ -831,12 +831,12 @@
       <varInfo nodeId="2566197375814063456" varName="values" />
       <varInfo nodeId="2566197375814063441" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814064304" fileName="ClassifierUpdater.java" startLine="697" startPosition="0" endLine="708" endPosition="0">
+    <scopeInfo nodeId="2566197375814064304" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addClassifierReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/stubs/javastub/asm/ASMClassType;)V" fileName="ClassifierUpdater.java" startLine="697" startPosition="0" endLine="708" endPosition="0">
       <varInfo nodeId="2566197375814064307" varName="sourceNode" />
       <varInfo nodeId="2566197375814064309" varName="role" />
       <varInfo nodeId="2566197375814064311" varName="clsType" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814064396" fileName="ClassifierUpdater.java" startLine="718" startPosition="0" endLine="729" endPosition="0">
+    <scopeInfo nodeId="2566197375814064396" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEnumConstReference#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/stubs/javastub/asm/ASMEnumValue;)V" fileName="ClassifierUpdater.java" startLine="718" startPosition="0" endLine="729" endPosition="0">
       <varInfo nodeId="2566197375814064399" varName="sourceNode" />
       <varInfo nodeId="2566197375814064401" varName="role" />
       <varInfo nodeId="2566197375814064403" varName="enumValue" />
@@ -847,10 +847,10 @@
     <scopeInfo nodeId="2566197375814061681" fileName="ClassifierUpdater.java" startLine="140" startPosition="56" endLine="152" endPosition="7">
       <varInfo nodeId="2566197375814061683" varName="typeVariableDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814061797" fileName="ClassifierUpdater.java" startLine="163" startPosition="5" endLine="175" endPosition="5">
+    <scopeInfo nodeId="2566197375814061797" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="163" startPosition="5" endLine="175" endPosition="5">
       <varInfo nodeId="2566197375814061801" varName="tv" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062522" fileName="ClassifierUpdater.java" startLine="297" startPosition="41" endLine="309" endPosition="5">
+    <scopeInfo nodeId="2566197375814062522" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="297" startPosition="41" endLine="309" endPosition="5">
       <varInfo nodeId="2566197375814062526" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814064256" fileName="ClassifierUpdater.java" startLine="683" startPosition="150" endLine="695" endPosition="5">
@@ -864,40 +864,40 @@
     <scopeInfo nodeId="2566197375814062515" fileName="ClassifierUpdater.java" startLine="296" startPosition="80" endLine="309" endPosition="5">
       <varInfo nodeId="2566197375814062517" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063336" fileName="ClassifierUpdater.java" startLine="451" startPosition="0" endLine="464" endPosition="0">
+    <scopeInfo nodeId="2566197375814063336" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVisibility#(Ljetbrains/mps/stubs/javastub/asm/ASMMethod;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/Visibility;" fileName="ClassifierUpdater.java" startLine="451" startPosition="0" endLine="464" endPosition="0">
       <varInfo nodeId="2566197375814063341" varName="model" />
       <varInfo nodeId="2566197375814063339" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063370" fileName="ClassifierUpdater.java" startLine="464" startPosition="0" endLine="477" endPosition="0">
+    <scopeInfo nodeId="2566197375814063370" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVisibility#(Ljetbrains/mps/stubs/javastub/asm/ASMField;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/Visibility;" fileName="ClassifierUpdater.java" startLine="464" startPosition="0" endLine="477" endPosition="0">
       <varInfo nodeId="2566197375814063373" varName="f" />
       <varInfo nodeId="2566197375814063375" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814061674" fileName="ClassifierUpdater.java" startLine="139" startPosition="83" endLine="153" endPosition="5" />
-    <scopeInfo nodeId="2566197375814061675" fileName="ClassifierUpdater.java" startLine="139" startPosition="83" endLine="153" endPosition="5">
+    <scopeInfo nodeId="2566197375814061675" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="139" startPosition="83" endLine="153" endPosition="5">
       <varInfo nodeId="2566197375814061679" varName="tv" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063427" fileName="ClassifierUpdater.java" startLine="483" startPosition="0" endLine="497" endPosition="0">
+    <scopeInfo nodeId="2566197375814063427" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAnnotation#(Ljetbrains/mps/stubs/javastub/asm/ASMAnnotation;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/AnnotationInstance;" fileName="ClassifierUpdater.java" startLine="483" startPosition="0" endLine="497" endPosition="0">
       <varInfo nodeId="2566197375814063430" varName="annotation" />
       <varInfo nodeId="2566197375814063432" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814064243" fileName="ClassifierUpdater.java" startLine="682" startPosition="0" endLine="697" endPosition="0">
+    <scopeInfo nodeId="2566197375814064243" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTypeParameters#(Ljava/util/List;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/Classifier;Ljetbrains/mps/baseLanguage/structure/ClassifierType;)V" fileName="ClassifierUpdater.java" startLine="682" startPosition="0" endLine="697" endPosition="0">
       <varInfo nodeId="2566197375814064254" varName="result" />
       <varInfo nodeId="2566197375814064246" varName="typeParameters" />
       <varInfo nodeId="2566197375814064252" varName="classifier" />
       <varInfo nodeId="2566197375814064250" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062183" fileName="ClassifierUpdater.java" startLine="206" startPosition="0" endLine="222" endPosition="0">
+    <scopeInfo nodeId="2566197375814062183" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateExtendsAndImplements#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/ClassConcept;)V" fileName="ClassifierUpdater.java" startLine="206" startPosition="0" endLine="222" endPosition="0">
       <varInfo nodeId="2566197375814062188" varName="cls" />
       <varInfo nodeId="2566197375814062186" varName="ac" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062508" fileName="ClassifierUpdater.java" startLine="295" startPosition="0" endLine="311" endPosition="0">
+    <scopeInfo nodeId="2566197375814062508" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateAnnotationMethods#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Annotation;)V" fileName="ClassifierUpdater.java" startLine="295" startPosition="0" endLine="311" endPosition="0">
       <varInfo nodeId="2566197375814062513" varName="annotation" />
       <varInfo nodeId="2566197375814062511" varName="refCls" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814082194" fileName="ClassifierUpdater.java" startLine="105" startPosition="47" endLine="122" endPosition="35">
       <varInfo nodeId="2566197375814082202" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814061665" fileName="ClassifierUpdater.java" startLine="138" startPosition="0" endLine="155" endPosition="0">
+    <scopeInfo nodeId="2566197375814061665" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTypeVariables#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="138" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="2566197375814061672" varName="result" />
       <varInfo nodeId="2566197375814061670" varName="model" />
       <varInfo nodeId="2566197375814061668" varName="cls" />
@@ -908,10 +908,10 @@
     <scopeInfo nodeId="2566197375814062276" fileName="ClassifierUpdater.java" startLine="225" startPosition="55" endLine="244" endPosition="25">
       <varInfo nodeId="2566197375814062298" varName="decl" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062270" fileName="ClassifierUpdater.java" startLine="224" startPosition="34" endLine="245" endPosition="5">
+    <scopeInfo nodeId="2566197375814062270" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="224" startPosition="34" endLine="245" endPosition="5">
       <varInfo nodeId="2566197375814062274" varName="field" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814061746" fileName="ClassifierUpdater.java" startLine="155" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="2566197375814061746" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTypeVariables#(Ljetbrains/mps/stubs/javastub/asm/ASMMethod;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="155" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="2566197375814061753" varName="result" />
       <varInfo nodeId="2566197375814061751" varName="model" />
       <varInfo nodeId="2566197375814061755" varName="cls" />
@@ -920,7 +920,7 @@
     <scopeInfo nodeId="2566197375814062263" fileName="ClassifierUpdater.java" startLine="223" startPosition="72" endLine="245" endPosition="5">
       <varInfo nodeId="2566197375814062265" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062256" fileName="ClassifierUpdater.java" startLine="222" startPosition="0" endLine="247" endPosition="0">
+    <scopeInfo nodeId="2566197375814062256" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateInstanceFields#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/ClassConcept;)V" fileName="ClassifierUpdater.java" startLine="222" startPosition="0" endLine="247" endPosition="0">
       <varInfo nodeId="2566197375814062259" varName="refCls" />
       <varInfo nodeId="2566197375814062261" varName="cls" />
     </scopeInfo>
@@ -932,13 +932,13 @@
       <varInfo nodeId="2566197375814062706" varName="parameterType" />
       <varInfo nodeId="2566197375814062631" varName="constructor" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062615" fileName="ClassifierUpdater.java" startLine="313" startPosition="34" endLine="347" endPosition="5">
+    <scopeInfo nodeId="2566197375814062615" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="313" startPosition="34" endLine="347" endPosition="5">
       <varInfo nodeId="2566197375814062619" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814062608" fileName="ClassifierUpdater.java" startLine="312" startPosition="66" endLine="347" endPosition="5">
       <varInfo nodeId="2566197375814062610" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062601" fileName="ClassifierUpdater.java" startLine="311" startPosition="0" endLine="349" endPosition="0">
+    <scopeInfo nodeId="2566197375814062601" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateConstructors#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/ClassConcept;)V" fileName="ClassifierUpdater.java" startLine="311" startPosition="0" endLine="349" endPosition="0">
       <varInfo nodeId="2566197375814062606" varName="cls" />
       <varInfo nodeId="2566197375814062604" varName="ac" />
     </scopeInfo>
@@ -953,38 +953,38 @@
       <varInfo nodeId="2566197375814063091" varName="methodDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814082191" fileName="ClassifierUpdater.java" startLine="95" startPosition="69" endLine="136" endPosition="5" />
-    <scopeInfo nodeId="2566197375814062823" fileName="ClassifierUpdater.java" startLine="351" startPosition="34" endLine="392" endPosition="5">
+    <scopeInfo nodeId="2566197375814062823" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="351" startPosition="34" endLine="392" endPosition="5">
       <varInfo nodeId="2566197375814062827" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814062382" fileName="ClassifierUpdater.java" startLine="250" startPosition="51" endLine="292" endPosition="7" />
     <scopeInfo nodeId="2566197375814062816" fileName="ClassifierUpdater.java" startLine="350" startPosition="67" endLine="392" endPosition="5">
       <varInfo nodeId="2566197375814062818" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063053" fileName="ClassifierUpdater.java" startLine="396" startPosition="34" endLine="438" endPosition="5">
+    <scopeInfo nodeId="2566197375814063053" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="396" startPosition="34" endLine="438" endPosition="5">
       <varInfo nodeId="2566197375814063057" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814063046" fileName="ClassifierUpdater.java" startLine="395" startPosition="67" endLine="438" endPosition="5">
       <varInfo nodeId="2566197375814063048" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814082184" fileName="ClassifierUpdater.java" startLine="94" startPosition="0" endLine="138" endPosition="0">
+    <scopeInfo nodeId="2566197375814082184" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateClassifier#(Ljetbrains/mps/baseLanguage/structure/Classifier;Ljetbrains/mps/stubs/javastub/asm/ASMClass;)V" fileName="ClassifierUpdater.java" startLine="94" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="2566197375814082187" varName="clsfr" />
       <varInfo nodeId="2566197375814082189" varName="ac" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062376" fileName="ClassifierUpdater.java" startLine="249" startPosition="34" endLine="293" endPosition="5">
+    <scopeInfo nodeId="2566197375814062376" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierUpdater.java" startLine="249" startPosition="34" endLine="293" endPosition="5">
       <varInfo nodeId="2566197375814062380" varName="field" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814062369" fileName="ClassifierUpdater.java" startLine="248" startPosition="64" endLine="293" endPosition="5">
       <varInfo nodeId="2566197375814062371" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062809" fileName="ClassifierUpdater.java" startLine="349" startPosition="0" endLine="394" endPosition="0">
+    <scopeInfo nodeId="2566197375814062809" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateInstanceMethods#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="349" startPosition="0" endLine="394" endPosition="0">
       <varInfo nodeId="2566197375814062814" varName="cls" />
       <varInfo nodeId="2566197375814062812" varName="ac" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063039" fileName="ClassifierUpdater.java" startLine="394" startPosition="0" endLine="440" endPosition="0">
+    <scopeInfo nodeId="2566197375814063039" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateStaticMethods#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/ClassConcept;)V" fileName="ClassifierUpdater.java" startLine="394" startPosition="0" endLine="440" endPosition="0">
       <varInfo nodeId="2566197375814063044" varName="cls" />
       <varInfo nodeId="2566197375814063042" varName="ac" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814062362" fileName="ClassifierUpdater.java" startLine="247" startPosition="0" endLine="295" endPosition="0">
+    <scopeInfo nodeId="2566197375814062362" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateStaticFields#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierUpdater.java" startLine="247" startPosition="0" endLine="295" endPosition="0">
       <varInfo nodeId="2566197375814062367" varName="cls" />
       <varInfo nodeId="2566197375814062365" varName="ac" />
     </scopeInfo>
@@ -992,22 +992,22 @@
       <varInfo nodeId="2566197375814064227" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814063507" fileName="ClassifierUpdater.java" startLine="498" startPosition="69" endLine="588" endPosition="16" />
-    <scopeInfo nodeId="2566197375814063869" fileName="ClassifierUpdater.java" startLine="590" startPosition="0" endLine="682" endPosition="0">
+    <scopeInfo nodeId="2566197375814063869" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTypeByASMType#(Ljetbrains/mps/stubs/javastub/asm/ASMType;Ljetbrains/mps/baseLanguage/structure/BaseMethodDeclaration;Ljetbrains/mps/baseLanguage/structure/Classifier;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/Type;" fileName="ClassifierUpdater.java" startLine="590" startPosition="0" endLine="682" endPosition="0">
       <varInfo nodeId="2566197375814063878" varName="model" />
       <varInfo nodeId="2566197375814063876" varName="classifier" />
       <varInfo nodeId="2566197375814063874" varName="method" />
       <varInfo nodeId="2566197375814063872" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="2566197375814063500" fileName="ClassifierUpdater.java" startLine="497" startPosition="0" endLine="590" endPosition="0">
+    <scopeInfo nodeId="2566197375814063500" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnnotationValue#(Ljava/lang/Object;Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/Expression;" fileName="ClassifierUpdater.java" startLine="497" startPosition="0" endLine="590" endPosition="0">
       <varInfo nodeId="2566197375814063505" varName="model" />
       <varInfo nodeId="2566197375814063503" varName="value" />
     </scopeInfo>
     <unitInfo nodeId="2566197375814061436" fileName="ClassifierUpdater.java" startLine="89" startPosition="0" endLine="734" endPosition="0" unitName="jetbrains.mps.stubs.javastub.ClassifierUpdater" />
   </root>
   <root nodeId="4558608847800740951">
-    <nodeInfo nodeId="4350187567640399888" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ClassifierLoader.java" startLine="25" startPosition="31" endLine="26" endPosition="34" />
-    <nodeInfo nodeId="4350187567640399891" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ClassifierLoader.java" startLine="26" startPosition="34" endLine="27" endPosition="25" />
-    <nodeInfo nodeId="2566197375814082441" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ClassifierLoader.java" startLine="27" startPosition="25" endLine="28" endPosition="38" />
+    <nodeInfo nodeId="4350187567640399888" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCpItem" fileName="ClassifierLoader.java" startLine="25" startPosition="31" endLine="26" endPosition="34" />
+    <nodeInfo nodeId="4350187567640399891" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" fileName="ClassifierLoader.java" startLine="26" startPosition="34" endLine="27" endPosition="25" />
+    <nodeInfo nodeId="2566197375814082441" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUpdater" fileName="ClassifierLoader.java" startLine="27" startPosition="25" endLine="28" endPosition="38" />
     <nodeInfo nodeId="4350187567640399935" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierLoader.java" startLine="30" startPosition="91" endLine="31" endPosition="20" />
     <nodeInfo nodeId="4350187567640399942" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierLoader.java" startLine="31" startPosition="20" endLine="32" endPosition="22" />
     <nodeInfo nodeId="2566197375814082456" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierLoader.java" startLine="32" startPosition="22" endLine="33" endPosition="24" />
@@ -1056,18 +1056,18 @@
     <nodeInfo nodeId="4350187567640419114" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierLoader.java" startLine="79" startPosition="7" endLine="82" endPosition="7" />
     <nodeInfo nodeId="4350187567640399714" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierLoader.java" startLine="84" startPosition="40" endLine="87" endPosition="7" />
     <nodeInfo nodeId="4350187567640399814" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierLoader.java" startLine="101" startPosition="67" endLine="104" endPosition="5" />
-    <nodeInfo nodeId="3670640979273648271" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierLoader.java" startLine="37" startPosition="65" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="3670640979273648271" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)V" fileName="ClassifierLoader.java" startLine="37" startPosition="65" endLine="41" endPosition="0" />
     <nodeInfo nodeId="4350187567640399619" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ClassifierLoader.java" startLine="49" startPosition="40" endLine="53" endPosition="7" />
-    <nodeInfo nodeId="4558608847800740953" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ClassifierLoader.java" startLine="29" startPosition="0" endLine="34" endPosition="3" />
+    <nodeInfo nodeId="4558608847800740953" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierLoader#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/reloading/IClassPathItem;Ljetbrains/mps/stubs/javastub/ClassifierUpdater;)V" fileName="ClassifierLoader.java" startLine="29" startPosition="0" endLine="34" endPosition="3" />
     <nodeInfo nodeId="3670640979273648268" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierLoader.java" startLine="36" startPosition="47" endLine="41" endPosition="7" />
-    <nodeInfo nodeId="3670640979273648321" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierLoader.java" startLine="90" startPosition="67" endLine="95" endPosition="0" />
+    <nodeInfo nodeId="3670640979273648321" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)V" fileName="ClassifierLoader.java" startLine="90" startPosition="67" endLine="95" endPosition="0" />
     <nodeInfo nodeId="3670640979273648318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassifierLoader.java" startLine="89" startPosition="69" endLine="95" endPosition="9" />
-    <nodeInfo nodeId="4350187567640399576" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierLoader.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="4350187567640399576" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadRootClassifier#(Ljava/lang/String;)V" fileName="ClassifierLoader.java" startLine="35" startPosition="0" endLine="43" endPosition="0" />
     <nodeInfo nodeId="4350187567640399821" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ClassifierLoader.java" startLine="104" startPosition="5" endLine="115" endPosition="5" />
-    <nodeInfo nodeId="4350187567640399603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierLoader.java" startLine="43" startPosition="0" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="4350187567640399795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierLoader.java" startLine="98" startPosition="0" endLine="120" endPosition="0" />
+    <nodeInfo nodeId="4350187567640399603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifier#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="ClassifierLoader.java" startLine="43" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="4350187567640399795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassifierForClass#(Ljava/lang/String;Ljetbrains/mps/smodel/SModel;Lorg/objectweb/asm/ClassReader;)Ljetbrains/mps/baseLanguage/structure/Classifier;" fileName="ClassifierLoader.java" startLine="98" startPosition="0" endLine="120" endPosition="0" />
     <nodeInfo nodeId="4350187567640399678" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierLoader.java" startLine="65" startPosition="73" endLine="96" endPosition="5" />
-    <nodeInfo nodeId="4350187567640399674" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ClassifierLoader.java" startLine="64" startPosition="0" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="4350187567640399674" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateInnerClassifiers#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierLoader.java" startLine="64" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="3670640979273648272" fileName="ClassifierLoader.java" startLine="38" startPosition="35" endLine="39" endPosition="27" />
     <scopeInfo nodeId="4350187567640399607" fileName="ClassifierLoader.java" startLine="45" startPosition="50" endLine="46" endPosition="13" />
     <scopeInfo nodeId="4350187567640399642" fileName="ClassifierLoader.java" startLine="54" startPosition="23" endLine="55" endPosition="13" />
@@ -1084,15 +1084,15 @@
     <scopeInfo nodeId="4350187567640399862" fileName="ClassifierLoader.java" startLine="113" startPosition="48" endLine="114" endPosition="18" />
     <scopeInfo nodeId="3670640979273648322" fileName="ClassifierLoader.java" startLine="91" startPosition="37" endLine="93" endPosition="102" />
     <scopeInfo nodeId="4558608847800740956" fileName="ClassifierLoader.java" startLine="30" startPosition="91" endLine="33" endPosition="24" />
-    <scopeInfo nodeId="3670640979273648271" fileName="ClassifierLoader.java" startLine="37" startPosition="65" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4558608847800740953" fileName="ClassifierLoader.java" startLine="29" startPosition="0" endLine="34" endPosition="3">
+    <scopeInfo nodeId="3670640979273648271" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)V" fileName="ClassifierLoader.java" startLine="37" startPosition="65" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4558608847800740953" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierLoader#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/reloading/IClassPathItem;Ljetbrains/mps/stubs/javastub/ClassifierUpdater;)V" fileName="ClassifierLoader.java" startLine="29" startPosition="0" endLine="34" endPosition="3">
       <varInfo nodeId="2566197375814082453" varName="updater" />
       <varInfo nodeId="4350187567640399930" varName="model" />
       <varInfo nodeId="4350187567640399932" varName="cpItem" />
     </scopeInfo>
     <scopeInfo nodeId="4350187567640399580" fileName="ClassifierLoader.java" startLine="36" startPosition="47" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="3670640979273648321" fileName="ClassifierLoader.java" startLine="90" startPosition="67" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="4350187567640399576" fileName="ClassifierLoader.java" startLine="35" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="3670640979273648321" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)V" fileName="ClassifierLoader.java" startLine="90" startPosition="67" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4350187567640399576" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadRootClassifier#(Ljava/lang/String;)V" fileName="ClassifierLoader.java" startLine="35" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="4350187567640399578" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4350187567640399605" fileName="ClassifierLoader.java" startLine="44" startPosition="92" endLine="62" endPosition="36">
@@ -1106,11 +1106,11 @@
       <varInfo nodeId="4350187567640399806" varName="result" />
       <varInfo nodeId="4350187567640399810" varName="kind" />
     </scopeInfo>
-    <scopeInfo nodeId="4350187567640399603" fileName="ClassifierLoader.java" startLine="43" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="4350187567640399603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifier#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="ClassifierLoader.java" startLine="43" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="4350187567640399671" varName="name" />
       <varInfo nodeId="3670640979273626088" varName="adder" />
     </scopeInfo>
-    <scopeInfo nodeId="4350187567640399795" fileName="ClassifierLoader.java" startLine="98" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="4350187567640399795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassifierForClass#(Ljava/lang/String;Ljetbrains/mps/smodel/SModel;Lorg/objectweb/asm/ClassReader;)Ljetbrains/mps/baseLanguage/structure/Classifier;" fileName="ClassifierLoader.java" startLine="98" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="4350187567640399800" varName="model" />
       <varInfo nodeId="4350187567640399802" varName="reader" />
       <varInfo nodeId="4350187567640399798" varName="fqName" />
@@ -1122,10 +1122,10 @@
       <varInfo nodeId="4350187567640399696" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4350187567640399677" fileName="ClassifierLoader.java" startLine="65" startPosition="73" endLine="96" endPosition="5" />
-    <scopeInfo nodeId="4350187567640399678" fileName="ClassifierLoader.java" startLine="65" startPosition="73" endLine="96" endPosition="5">
+    <scopeInfo nodeId="4350187567640399678" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassifierLoader.java" startLine="65" startPosition="73" endLine="96" endPosition="5">
       <varInfo nodeId="4350187567640399679" varName="cn" />
     </scopeInfo>
-    <scopeInfo nodeId="4350187567640399674" fileName="ClassifierLoader.java" startLine="64" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="4350187567640399674" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateInnerClassifiers#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/baseLanguage/structure/Classifier;)V" fileName="ClassifierLoader.java" startLine="64" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="4350187567640399793" varName="cls" />
       <varInfo nodeId="4350187567640399791" varName="ac" />
     </scopeInfo>
@@ -1134,10 +1134,10 @@
     <unitInfo nodeId="4558608847800740951" fileName="ClassifierLoader.java" startLine="25" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.stubs.javastub.ClassifierLoader" />
   </root>
   <root nodeId="7241381882860001930">
-    <nodeInfo nodeId="7241381882860002266" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="ASMModelLoader.java" startLine="9" startPosition="29" endLine="10" endPosition="75" />
-    <nodeInfo nodeId="4163040004507702758" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="ASMModelLoader.java" startLine="10" startPosition="75" endLine="11" endPosition="51" />
-    <nodeInfo nodeId="7241381882860002271" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ASMModelLoader.java" startLine="12" startPosition="0" endLine="13" endPosition="34" />
-    <nodeInfo nodeId="7241381882860002277" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ASMModelLoader.java" startLine="13" startPosition="34" endLine="14" endPosition="25" />
+    <nodeInfo nodeId="7241381882860002266" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" fileName="ASMModelLoader.java" startLine="9" startPosition="29" endLine="10" endPosition="75" />
+    <nodeInfo nodeId="4163040004507702758" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SKIP_PRIVATE" fileName="ASMModelLoader.java" startLine="10" startPosition="75" endLine="11" endPosition="51" />
+    <nodeInfo nodeId="7241381882860002271" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCpItem" fileName="ASMModelLoader.java" startLine="12" startPosition="0" endLine="13" endPosition="34" />
+    <nodeInfo nodeId="7241381882860002277" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" fileName="ASMModelLoader.java" startLine="13" startPosition="34" endLine="14" endPosition="25" />
     <nodeInfo nodeId="5050730786286138318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMModelLoader.java" startLine="16" startPosition="69" endLine="17" endPosition="29" />
     <nodeInfo nodeId="5050730786286138324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMModelLoader.java" startLine="17" startPosition="29" endLine="18" endPosition="20" />
     <nodeInfo nodeId="7241381882860002331" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ASMModelLoader.java" startLine="22" startPosition="9" endLine="23" endPosition="42" />
@@ -1146,22 +1146,22 @@
     <nodeInfo nodeId="4350187567640399918" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMModelLoader.java" startLine="28" startPosition="9" endLine="29" endPosition="40" />
     <nodeInfo nodeId="7241381882860002314" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMModelLoader.java" startLine="31" startPosition="27" endLine="32" endPosition="32" />
     <nodeInfo nodeId="1654569470761175047" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMModelLoader.java" startLine="25" startPosition="57" endLine="28" endPosition="9" />
-    <nodeInfo nodeId="7241381882860002280" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ASMModelLoader.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="7241381882860002280" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMModelLoader#(Ljetbrains/mps/reloading/IClassPathItem;Ljetbrains/mps/smodel/SModel;)V" fileName="ASMModelLoader.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
     <nodeInfo nodeId="7241381882860002345" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ASMModelLoader.java" startLine="24" startPosition="97" endLine="30" endPosition="7" />
     <nodeInfo nodeId="7241381882860002311" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="ASMModelLoader.java" startLine="21" startPosition="29" endLine="33" endPosition="5" />
-    <nodeInfo nodeId="7241381882860002307" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ASMModelLoader.java" startLine="20" startPosition="0" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="7241381882860002307" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#()V" fileName="ASMModelLoader.java" startLine="20" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="1654569470761175048" fileName="ASMModelLoader.java" startLine="26" startPosition="68" endLine="27" endPosition="19" />
     <scopeInfo nodeId="7241381882860002312" fileName="ASMModelLoader.java" startLine="31" startPosition="0" endLine="32" endPosition="32">
       <varInfo nodeId="7241381882860002320" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860002313" fileName="ASMModelLoader.java" startLine="31" startPosition="27" endLine="32" endPosition="32" />
     <scopeInfo nodeId="7241381882860002288" fileName="ASMModelLoader.java" startLine="16" startPosition="69" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="7241381882860002280" fileName="ASMModelLoader.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
+    <scopeInfo nodeId="7241381882860002280" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMModelLoader#(Ljetbrains/mps/reloading/IClassPathItem;Ljetbrains/mps/smodel/SModel;)V" fileName="ASMModelLoader.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
       <varInfo nodeId="7241381882860002286" varName="model" />
       <varInfo nodeId="7241381882860002282" varName="classPathItem" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860002349" fileName="ASMModelLoader.java" startLine="25" startPosition="57" endLine="29" endPosition="40" />
-    <scopeInfo nodeId="7241381882860002345" fileName="ASMModelLoader.java" startLine="24" startPosition="97" endLine="30" endPosition="7">
+    <scopeInfo nodeId="7241381882860002345" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ASMModelLoader.java" startLine="24" startPosition="97" endLine="30" endPosition="7">
       <varInfo nodeId="7241381882860002347" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860002322" fileName="ASMModelLoader.java" startLine="22" startPosition="9" endLine="30" endPosition="7">
@@ -1169,7 +1169,7 @@
       <varInfo nodeId="7241381882860002332" varName="pack" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860002310" fileName="ASMModelLoader.java" startLine="21" startPosition="29" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="7241381882860002307" fileName="ASMModelLoader.java" startLine="20" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7241381882860002307" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#()V" fileName="ASMModelLoader.java" startLine="20" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="7241381882860001930" fileName="ASMModelLoader.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.stubs.javastub.ASMModelLoader" />
   </root>
   <root nodeId="7241381882860008238">
@@ -1214,7 +1214,7 @@
     <nodeInfo nodeId="7241381882860008623" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ASMNodeId.java" startLine="111" startPosition="73" endLine="112" endPosition="50" />
     <nodeInfo nodeId="7241381882860008635" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMNodeId.java" startLine="113" startPosition="32" endLine="114" endPosition="53" />
     <nodeInfo nodeId="7241381882860008648" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ASMNodeId.java" startLine="115" startPosition="31" endLine="116" endPosition="23" />
-    <nodeInfo nodeId="7241381882860008240" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ASMNodeId.java" startLine="23" startPosition="24" endLine="25" endPosition="3" />
+    <nodeInfo nodeId="7241381882860008240" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMNodeId#()V" fileName="ASMNodeId.java" startLine="23" startPosition="24" endLine="25" endPosition="3" />
     <nodeInfo nodeId="7241381882860008328" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ASMNodeId.java" startLine="45" startPosition="10" endLine="47" endPosition="5" />
     <nodeInfo nodeId="7241381882860008441" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMNodeId.java" startLine="68" startPosition="50" endLine="71" endPosition="5" />
     <nodeInfo nodeId="7241381882860008505" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMNodeId.java" startLine="83" startPosition="5" endLine="86" endPosition="5" />
@@ -1226,18 +1226,18 @@
     <nodeInfo nodeId="7241381882860008586" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMNodeId.java" startLine="101" startPosition="5" endLine="104" endPosition="5" />
     <nodeInfo nodeId="7241381882860008601" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMNodeId.java" startLine="104" startPosition="5" endLine="107" endPosition="5" />
     <nodeInfo nodeId="7241381882860008643" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMNodeId.java" startLine="114" startPosition="53" endLine="117" endPosition="7" />
-    <nodeInfo nodeId="7241381882860008243" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ASMNodeId.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="7241381882860008256" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ASMNodeId.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <nodeInfo nodeId="7241381882860008279" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ASMNodeId.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="7241381882860008243" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createId#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="7241381882860008256" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createId#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/stubs/javastub/asm/ASMField;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="7241381882860008279" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFieldId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <nodeInfo nodeId="7241381882860008359" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMNodeId.java" startLine="50" startPosition="19" endLine="54" endPosition="5" />
     <nodeInfo nodeId="7241381882860008324" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMNodeId.java" startLine="42" startPosition="19" endLine="47" endPosition="5" />
     <nodeInfo nodeId="7241381882860008630" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="ASMNodeId.java" startLine="112" startPosition="50" endLine="118" endPosition="5" />
-    <nodeInfo nodeId="7241381882860008428" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ASMNodeId.java" startLine="66" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="7241381882860008428" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="shortNameFromSlashedLongName#(Ljava/lang/String;)Ljava/lang/String;" fileName="ASMNodeId.java" startLine="66" startPosition="0" endLine="74" endPosition="0" />
     <nodeInfo nodeId="7241381882860008461" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ASMNodeId.java" startLine="75" startPosition="48" endLine="83" endPosition="5" />
-    <nodeInfo nodeId="7241381882860008386" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ASMNodeId.java" startLine="57" startPosition="0" endLine="66" endPosition="0" />
-    <nodeInfo nodeId="7241381882860008614" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ASMNodeId.java" startLine="110" startPosition="0" endLine="120" endPosition="0" />
-    <nodeInfo nodeId="7241381882860008298" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ASMNodeId.java" startLine="38" startPosition="0" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="7241381882860008455" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ASMNodeId.java" startLine="74" startPosition="0" endLine="110" endPosition="0" />
+    <nodeInfo nodeId="7241381882860008386" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAnnotationMethodId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="57" startPosition="0" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="7241381882860008614" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="appendList#(Ljava/lang/StringBuilder;Ljava/util/List;)V" fileName="ASMNodeId.java" startLine="110" startPosition="0" endLine="120" endPosition="0" />
+    <nodeInfo nodeId="7241381882860008298" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createId#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/stubs/javastub/asm/ASMMethod;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="38" startPosition="0" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="7241381882860008455" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="asString#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)Ljava/lang/String;" fileName="ASMNodeId.java" startLine="74" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="7241381882860008242" fileName="ASMNodeId.java" startLine="24" startPosition="22" endLine="24" endPosition="22" />
     <scopeInfo nodeId="7241381882860008248" fileName="ASMNodeId.java" startLine="27" startPosition="54" endLine="28" endPosition="104" />
     <scopeInfo nodeId="7241381882860008263" fileName="ASMNodeId.java" startLine="31" startPosition="64" endLine="32" endPosition="138" />
@@ -1254,16 +1254,16 @@
     <scopeInfo nodeId="7241381882860008590" fileName="ASMNodeId.java" startLine="102" startPosition="39" endLine="103" endPosition="78" />
     <scopeInfo nodeId="7241381882860008605" fileName="ASMNodeId.java" startLine="105" startPosition="43" endLine="106" endPosition="17" />
     <scopeInfo nodeId="7241381882860008647" fileName="ASMNodeId.java" startLine="115" startPosition="31" endLine="116" endPosition="23" />
-    <scopeInfo nodeId="7241381882860008240" fileName="ASMNodeId.java" startLine="23" startPosition="24" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="7241381882860008240" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMNodeId#()V" fileName="ASMNodeId.java" startLine="23" startPosition="24" endLine="25" endPosition="3" />
     <scopeInfo nodeId="7241381882860008364" fileName="ASMNodeId.java" startLine="51" startPosition="36" endLine="53" endPosition="60" />
-    <scopeInfo nodeId="7241381882860008243" fileName="ASMNodeId.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="7241381882860008243" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createId#(Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="7241381882860008246" varName="fqClassName" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860008256" fileName="ASMNodeId.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="7241381882860008256" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createId#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/stubs/javastub/asm/ASMField;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="7241381882860008261" varName="field" />
       <varInfo nodeId="7241381882860008259" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860008279" fileName="ASMNodeId.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="7241381882860008279" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createFieldId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="7241381882860008282" varName="fqClassName" />
       <varInfo nodeId="7241381882860008284" varName="fieldName" />
     </scopeInfo>
@@ -1280,26 +1280,26 @@
     <scopeInfo nodeId="7241381882860008622" fileName="ASMNodeId.java" startLine="111" startPosition="73" endLine="118" endPosition="5">
       <varInfo nodeId="7241381882860008624" varName="iterator" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860008428" fileName="ASMNodeId.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="7241381882860008428" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="shortNameFromSlashedLongName#(Ljava/lang/String;)Ljava/lang/String;" fileName="ASMNodeId.java" startLine="66" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="7241381882860008431" varName="slashedLongName" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860008386" fileName="ASMNodeId.java" startLine="57" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="7241381882860008386" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAnnotationMethodId#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="57" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7241381882860008389" varName="fqClassName" />
       <varInfo nodeId="7241381882860008391" varName="methodName" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860008614" fileName="ASMNodeId.java" startLine="110" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="7241381882860008614" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="appendList#(Ljava/lang/StringBuilder;Ljava/util/List;)V" fileName="ASMNodeId.java" startLine="110" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="7241381882860008617" varName="sb" />
       <varInfo nodeId="7241381882860008619" varName="types" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860008305" fileName="ASMNodeId.java" startLine="39" startPosition="66" endLine="55" endPosition="74">
       <varInfo nodeId="7241381882860008307" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860008298" fileName="ASMNodeId.java" startLine="38" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="7241381882860008298" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createId#(Ljetbrains/mps/stubs/javastub/asm/ASMClass;Ljetbrains/mps/stubs/javastub/asm/ASMMethod;)Ljetbrains/mps/smodel/SNodeId;" fileName="ASMNodeId.java" startLine="38" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="7241381882860008301" varName="cls" />
       <varInfo nodeId="7241381882860008303" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="7241381882860008460" fileName="ASMNodeId.java" startLine="75" startPosition="48" endLine="108" endPosition="59" />
-    <scopeInfo nodeId="7241381882860008455" fileName="ASMNodeId.java" startLine="74" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="7241381882860008455" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="asString#(Ljetbrains/mps/stubs/javastub/asm/ASMType;)Ljava/lang/String;" fileName="ASMNodeId.java" startLine="74" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="7241381882860008458" varName="type" />
     </scopeInfo>
     <unitInfo nodeId="7241381882860008238" fileName="ASMNodeId.java" startLine="23" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.stubs.javastub.ASMNodeId" />

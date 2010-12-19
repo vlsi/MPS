@@ -15,34 +15,27 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.NodeRangeSelection;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.List;
-import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
 
-public class CellAction_CutNode extends EditorCellAction {
+public class CellAction_CutNode extends CellAction_CopyNode {
 
   public boolean canExecute(EditorContext context) {
-    return context.getNodeEditorComponent().getSelectedCell() != null;
+    return super.canExecute(context);
+    // todo: what about read-only models?
   }
 
   public void execute(EditorContext context) {
-    List<SNode> nodeList = new LinkedList<SNode>();
-    EditorComponent editorComponent = context.getNodeEditorComponent();
-    NodeRangeSelection cellRangeSelection = editorComponent.getNodeRangeSelection();
-    if (cellRangeSelection.isActive()) {
-      nodeList.addAll(cellRangeSelection.getNodes());
-     } else {
-      nodeList.add(editorComponent.getSelectedCell().getSNode());
-    }
-
-    CopyPasteUtil.copyNodesToClipboard(nodeList);
-    for (SNode node : nodeList) {
+    _3<List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
+    if (tuple == null) return;
+    CopyPasteUtil.copyNodesAndTextToClipboard(tuple._0(), tuple._1(), tuple._2());
+    for (SNode node : tuple._0()) {
       node.delete();
     }
   }

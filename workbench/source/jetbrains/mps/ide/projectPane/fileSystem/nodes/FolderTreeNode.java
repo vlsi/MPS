@@ -36,7 +36,6 @@ public class FolderTreeNode extends AbstractFileTreeNode {
 
   public FolderTreeNode(Project project, @NotNull VirtualFile folder) {
     this(project, folder, false);
-    updatePresentation();
   }
 
   public FolderTreeNode(Project project, @NotNull VirtualFile folder, boolean showFullPath) {

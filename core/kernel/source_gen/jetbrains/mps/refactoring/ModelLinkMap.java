@@ -95,7 +95,7 @@ public class ModelLinkMap {
       public void invoke(SNode node) {
         String modelName = newPtr.getModelReference().getLongName();
         String name = NameUtil.shortNameFromLongName(node.getConceptFqName());
-        HackSNodeUtil.setConceptFqName(node, NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
+        HackSNodeUtil.setConceptFqName(node, NameUtil.longNameFromNamespaceAndShortName(modelName, name));
       }
     });
     move(myNodeRoleMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {

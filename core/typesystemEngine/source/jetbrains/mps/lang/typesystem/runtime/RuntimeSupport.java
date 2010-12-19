@@ -46,5 +46,4 @@ public class RuntimeSupport {
     EquationManager equationManager = typeCheckingContext == null ? null : typeCheckingContext.getEquationManager();
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, equationManager);
   }
-
 }

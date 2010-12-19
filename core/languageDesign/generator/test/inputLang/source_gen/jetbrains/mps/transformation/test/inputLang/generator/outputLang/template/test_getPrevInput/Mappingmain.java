@@ -14,17 +14,17 @@ import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.smodel.SNode;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer rootMappingRule_417xrn_a0a0a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202255161953");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a1a1a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202255161953");
+  private static SNodePointer rootMappingRule_417xrn_b0b0a0a4a = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202255161953");
   private static SNodePointer rootMappingRule_417xrn_a0a0b = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338801828");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a1a1b = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338801828");
+  private static SNodePointer rootMappingRule_417xrn_b0b0a0a4b = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338801828");
 
   private final Collection<TemplateRootMappingRule> rootRules;
   private final TemplateModel myModel;
@@ -35,11 +35,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public String getName() {
-    return null;
+    return "main";
   }
 
   public TemplateModel getModel() {
-    return null;
+    return this.myModel;
   }
 
   public SNodePointer getMappingNode() {
@@ -67,11 +67,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public Collection<TemplateMappingScript> getPostScripts() {
-    return null;
+    return Collections.emptySet();
   }
 
   public Collection<TemplateMappingScript> getPreScripts() {
-    return null;
+    return Collections.emptySet();
   }
 
   public class RootMappingRule0 implements TemplateRootMappingRule {
@@ -80,14 +80,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public SNodePointer getRuleNode() {
       return rootMappingRule_417xrn_a0a0a;
-    }
-
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      final String mappingName = "ROOT INPUT";
-      if (!(QueriesGenerated.baseMappingRule_Condition_1202255161954(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a1a1a, environment.getGenerator())))) {
-        return null;
-      }
-      return new TemplateOutputRoot_1().apply(environment, context);
     }
 
     public boolean applyToInheritors() {
@@ -100,6 +92,19 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public boolean keepSourceRoot() {
       return false;
+    }
+
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202255161954(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a4a, environment.getGenerator())))) {
+        return false;
+      }
+      return true;
+    }
+
+    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      Collection<SNode> result = new TemplateOutputRoot_1().apply(environment, context);
+      environment.registerLabel(context.getInput(), result, "ROOT INPUT");
+      return result;
     }
   }
 
@@ -111,14 +116,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return rootMappingRule_417xrn_a0a0b;
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      final String mappingName = "ROOT INPUT";
-      if (!(QueriesGenerated.baseMappingRule_Condition_1202338801829(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a1a1b, environment.getGenerator())))) {
-        return null;
-      }
-      return new TemplateOutputRoot_2().apply(environment, context);
-    }
-
     public boolean applyToInheritors() {
       return false;
     }
@@ -129,6 +126,19 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public boolean keepSourceRoot() {
       return false;
+    }
+
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1202338801829(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a4b, environment.getGenerator())))) {
+        return false;
+      }
+      return true;
+    }
+
+    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      Collection<SNode> result = new TemplateOutputRoot_2().apply(environment, context);
+      environment.registerLabel(context.getInput(), result, "ROOT INPUT");
+      return result;
     }
   }
 }

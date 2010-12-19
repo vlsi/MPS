@@ -13,11 +13,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -117,14 +117,13 @@ public class RunModuleConfigCreator_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createProperty_2e5ul8_b0a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
+  private EditorCell createRefCell_2e5ul8_d0a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("rcType");
+    provider.setNoTargetText("<no rcType>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new RunModuleConfigCreator_Editor._Inline_2e5ul8_a3a0a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
-    BaseLanguageStyle_StyleSheet.getClassName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -153,13 +152,14 @@ public class RunModuleConfigCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_2e5ul8_d0a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("rcType");
-    provider.setNoTargetText("<no rcType>");
+  private EditorCell createProperty_2e5ul8_b0a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RunModuleConfigCreator_Editor._Inline_2e5ul8_a3a0a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_name");
+    BaseLanguageStyle_StyleSheet.getClassName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

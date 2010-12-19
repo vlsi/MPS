@@ -16,13 +16,16 @@
 package jetbrains.mps.project.structure.project.testconfigurations;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenParameters;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -53,7 +56,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       Solution solution = (Solution) module;
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
+      for (SModelDescriptor sm : solution.getEditableUserModels()) {
         if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, ProjectOperationContext.get(project), false, true)) {
           continue;
         }
@@ -62,17 +65,14 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
           continue;
         }
 
-
-        if (SModelStereotype.isUserModel(sm) && (sm instanceof EditableSModelDescriptor)) {
-          models.add(sm);
-        }
+        models.add(sm);
       }
 
       return new GenParameters(models, solution);
     } else if (module instanceof Language) {
       Language lang = (Language) module;
 
-      List<SModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(lang);
+      List<SModelDescriptor> inputModels = lang.getEditableUserModels();
 
       Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {

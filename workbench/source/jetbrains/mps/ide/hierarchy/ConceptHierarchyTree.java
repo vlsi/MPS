@@ -14,16 +14,14 @@ import java.util.Set;
 
 public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptDeclaration> {
   private LanguageHierarchyCache myCache;
-  private Set<AbstractConceptDeclaration> myVisitedDescendants = new HashSet<AbstractConceptDeclaration>();
-  private Set<AbstractConceptDeclaration> myVisitedParents = new HashSet<AbstractConceptDeclaration>();
 
   public ConceptHierarchyTree(LanguageHierarchyCache cache, AbstractHierarchyView<AbstractConceptDeclaration> abstractHierarchyView, boolean isParentHierarchy) {
     super(abstractHierarchyView, AbstractConceptDeclaration.class, isParentHierarchy);
     myCache = cache;
   }
 
-  protected Set<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration node) throws CircularHierarchyException {
-    if (myVisitedParents.contains(node)) {
+  protected Set<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> visited) throws CircularHierarchyException {
+    if (visited.contains(node)) {
       throw new CircularHierarchyException(node, "circular concept hierarchy");
     }
     Set<String> parents = myCache.getParentsNames(NameUtil.nodeFQName(node));
@@ -31,7 +29,6 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
     for (String s : parents) {
       result.add(SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance()));
     }
-    myVisitedParents.add(node);
     return result;
   }
 
@@ -48,8 +45,8 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
     }
   }
 
-  protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration) throws CircularHierarchyException {
-    if (myVisitedDescendants.contains(conceptDeclaration)) {
+  protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration, Set<AbstractConceptDeclaration> visited) throws CircularHierarchyException {
+    if (visited.contains(conceptDeclaration)) {
       throw new CircularHierarchyException(conceptDeclaration, "circular concept hierarchy");
     }
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
@@ -57,18 +54,10 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptD
       AbstractConceptDeclaration abstractConceptDeclaration = SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());
       result.add(abstractConceptDeclaration);
     }
-    myVisitedDescendants.add(conceptDeclaration);
     return result;
   }
 
   protected String noNodeString() {
     return "(no concept)";
-  }
-
-  @Override
-  protected MPSTreeNode rebuild() {
-    myVisitedDescendants.clear();
-    myVisitedParents.clear();
-    return super.rebuild();
   }
 }

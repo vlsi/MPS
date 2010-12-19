@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.descriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -35,5 +36,5 @@ public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable
 
   boolean isPackaged();
 
-  void replaceModel(SModel newModel);
+  void replaceModel(@NotNull SModel newModel);
 }

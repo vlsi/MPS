@@ -20,7 +20,8 @@ public class WatchableNode extends AbstractWatchableNode {
   public WatchableNode(IOperationContext context, @NotNull IWatchable watchable) {
     super(context, watchable.getNode());
     myWatchable = watchable;
-    updatePresentation();
+    setNodeIdentifier(calculateNodeId());
+    setIcon(getNodeIcon());
   }
 
   protected void doUpdate() {
@@ -30,15 +31,6 @@ public class WatchableNode extends AbstractWatchableNode {
 
   public boolean isInitialized() {
     return myInitialized;
-  }
-
-  protected void doUpdatePresentation() {
-    updatePresentationInternal();
-  }
-
-  private void updatePresentationInternal() {
-    setNodeIdentifier(calculateNodeId());
-    setIcon(getNodeIcon());
   }
 
   protected Icon getNodeIcon() {

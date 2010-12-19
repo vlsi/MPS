@@ -62,8 +62,6 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
         }
       }
     }
-
-    updatePresentation();
   }
 
   @Override

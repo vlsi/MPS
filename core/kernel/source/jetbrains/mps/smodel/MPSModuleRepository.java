@@ -38,8 +38,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class MPSModuleRepository implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
+  private static MPSModuleRepository ourInstance = null;
   public static MPSModuleRepository getInstance() {
-    return ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
+    if (ourInstance ==null){
+      ourInstance = ApplicationManager.getApplication().getComponent(MPSModuleRepository.class);
+    }
+    return ourInstance;
   }
 
   private Map<String, IModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, IModule>();

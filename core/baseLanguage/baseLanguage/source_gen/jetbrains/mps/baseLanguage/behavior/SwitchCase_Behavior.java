@@ -10,7 +10,7 @@ public class SwitchCase_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void call_collectUncautchedThrowables_4313092516461872703(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+  public static void call_collectUncaughtThrowables_4313092516461872703(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if (!(ignoreMayBeThrowables)) {
       Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(thisNode, "expression", true));
     }

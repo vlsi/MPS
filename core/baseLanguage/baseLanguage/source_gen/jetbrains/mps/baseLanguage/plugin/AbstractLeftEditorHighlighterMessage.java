@@ -26,8 +26,7 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
 
   @Override
   public boolean isValid(EditorComponent component) {
-    // Returning <node> to hide these messages from <node> 
-    return false;
+    return true;
   }
 
   @Override
@@ -45,5 +44,9 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
 
   public Cursor getMouseOwerCursor() {
     return Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+  }
+
+  public boolean showInGutter() {
+    return true;
   }
 }

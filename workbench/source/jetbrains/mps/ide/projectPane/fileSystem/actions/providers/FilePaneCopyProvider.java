@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.actions.providers;
 
+import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
-
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
 
 public class FilePaneCopyProvider implements CopyProvider, CutProvider {
   public void performCopy(DataContext dataContext) {
@@ -34,8 +32,7 @@ public class FilePaneCopyProvider implements CopyProvider, CutProvider {
   }
 
   private void perform(DataContext dataContext, boolean cut) {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    cb.setContents(new VirtualFileTransferable(getData(dataContext, cut)), null);
+    CopyPasteManagerEx.getInstanceEx().setContents(new VirtualFileTransferable(getData(dataContext, cut)));
   }
 
   private CopyPasteFilesData getData(DataContext dataContext, boolean cut) {

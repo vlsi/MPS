@@ -108,7 +108,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   private Collection<Conflictable> showMergeDialog(List<Conflictable> conflictableList) {
-    Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
+    final Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
     Map<VirtualFile, Conflictable> fileToConflictable = new LinkedHashMap<VirtualFile, Conflictable>();
     Set<Conflictable> toReload = new HashSet<Conflictable>();
 
@@ -137,8 +137,14 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
 
     ModelChangesWatcher.instance().suspendTasksProcessing();
-    for (Project project : toMerge.keySet()) {
-      List<VirtualFile> virtualFileList = AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project));
+    for (final Project project : toMerge.keySet()) {
+      final List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          virtualFileList.addAll(AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project)));
+        }
+      }, ModalityState.defaultModalityState());
       for (VirtualFile vfile : virtualFileList) {
         Conflictable conflictable = fileToConflictable.get(vfile);
         if (conflictable != null) {
@@ -153,6 +159,11 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   private class MyTaskQueue extends TaskQueue<Conflictable> {
     public MyTaskQueue(ProjectManager manager, ModelChangesWatcher watcher, VirtualFileManager virtualFileManager) {
       super(manager, watcher, virtualFileManager);
+    }
+
+    @Override
+    protected boolean isProcessingAllowed() {
+      return super.isProcessingAllowed() && !ModelAccess.instance().canRead();
     }
 
     protected void processTask(final List<Conflictable> tasks) {

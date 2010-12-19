@@ -18,20 +18,18 @@ package jetbrains.mps.newTypesystem;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -56,50 +54,136 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
     myTypeCheckingContext = typeCheckingContext;
   }
 
-  private boolean loadTypeSystemRules(SNode root) {
-    SModel model = root.getModel();
-    RulesManager rulesManager = myTypeChecker.getRulesManager();
-    if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
-      return true;
-    }
-    List<Language> languages = SModelOperations.getLanguages(model, GlobalScope.getInstance());
-    boolean isLoadedAnyLanguage = false;
-    for (Language language : languages) {
-      boolean b = rulesManager.loadLanguage(language);
-      isLoadedAnyLanguage = isLoadedAnyLanguage || b;
-    }
-    rulesManager.markModelHasLoadedRules(model.getSModelReference());
-    return isLoadedAnyLanguage;
+  @Override
+  public void solveInequationsAndExpandTypes() {
+    ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
   }
 
   public void checkNode(SNode node, boolean refresh) {
     if (!checked || refresh) {
       for (SNode desc : node.getDescendants()) {
-        loadTypeSystemRules(desc);
+        loadTypesystemRules(desc);
         applyRulesToNode(desc);
       }
       checked = true;
 
     }
   }
+                /*
+  @Override
+  public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
+    return computeTypesForNode_special_new(initialNode, new ArrayList<SNode>(0), false);
+  }
+                  */
 
-  private boolean applyRulesToNode(SNode node) {
-    Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
-    boolean result = false;
-    if (newRules != null) {
-      for (Pair<InferenceRule_Runtime, IsApplicableStatus> rule : newRules) {
-        applyRuleToNode(node, rule.o1, rule.o2);
-      }
-    }
-    return result;
+  @Override
+  public SNode getRawTypeFromContext(SNode node) {
+    return myTypeCheckingContext.getTypeDontCheck(node);
   }
 
-  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
+  @Override
+  protected SNode computeTypesForNode_special(SNode initialNode, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
+    SNode type = null;
+    SNode prevNode = null;
+    SNode node = initialNode;
     try {
-      rule.applyRule(node, myTypeCheckingContext, status);
-    } catch (Throwable t) {
-      LOG.error("an error occurred while applying rule to node " + node, t, node);
+      myIsSpecial = true;
+
+      while (node != null) {
+        List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
+        if (prevNode != null) {
+          additionalNodes.add(prevNode);
+        }
+        computeTypes(node, true, false, additionalNodes, inferenceMode);
+        type = getType(initialNode);
+        if (type == null || TypesUtil.hasVariablesInside(type)) {
+          if (node.isRoot()) {
+            computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
+            type = getType(initialNode);
+            return type;
+          }
+          prevNode = node;
+          node = node.getParent();
+        } else {
+          return type;
+        }
+      }
+    } finally {
+      myIsSpecial = false;
     }
+    return type;  
+  }
+            /*
+  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
+    try {
+
+      if (refreshTypes) {
+        clear();
+      }
+      if (!loadTypeSystemRules(nodeToCheck)) {
+        return;
+      }    /*
+
+      if (inferenceMode) {
+        getEquationManager().setInferenceMode();
+      }    /*
+      if (myIsSmartCompletion) {
+        myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
+        if (!myHoleIsAType) {
+          myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
+        }
+      }     */           /*
+      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
+      ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
+     
+    } finally {
+     // clearEquationManager();
+     // myInvalidationWasPerformed = false;
+    }
+  }
+
+
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
+    if (node == null) return;
+    Set<SNode> frontier = new LinkedHashSet<SNode>();
+    Set<SNode> newFrontier = new LinkedHashSet<SNode>();
+    frontier.add(node);
+    frontier.addAll(additionalNodes);
+    while (!(frontier.isEmpty())) {
+      myCurrentFrontiers.push(newFrontier);
+      for (SNode sNode : frontier) {
+
+        if (myFullyCheckedNodes.contains(sNode)) {
+          continue;
+        }
+        Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
+        if (myIsSpecial) {
+          candidatesForFrontier.addAll(myTypeChecker.getRulesManager().getDependencies(sNode));
+        }
+        if (forceChildrenCheck) {
+          candidatesForFrontier.addAll(sNode.getChildren());
+        }
+        for (SNode candidate : candidatesForFrontier) {
+          newFrontier.add(candidate);
+        }
+        if (!myPartlyCheckedNodes.contains(sNode)) {
+
+          boolean typeAffected = applyRulesToNode(sNode);
+          myPartlyCheckedNodes.add(sNode);
+        }
+        myFullyCheckedNodes.add(sNode);
+      }
+      Set<SNode> newFrontierPopped = myCurrentFrontiers.pop();
+      assert newFrontierPopped == newFrontier;
+      frontier = newFrontier;
+      newFrontier = new LinkedHashSet<SNode>();
+    }
+  }
+                    */
+  @Override
+  public void clear() {
+    super.clear();
+    myTypeCheckingContext.clear();
   }
 
 

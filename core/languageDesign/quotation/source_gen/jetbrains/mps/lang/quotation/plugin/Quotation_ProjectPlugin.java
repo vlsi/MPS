@@ -5,4 +5,6 @@ package jetbrains.mps.lang.quotation.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Quotation_ProjectPlugin extends BaseProjectPlugin {
+  public Quotation_ProjectPlugin() {
+  }
 }

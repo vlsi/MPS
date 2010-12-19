@@ -57,56 +57,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
-    CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
-    if (conditionFunction == null) {
-      return true;
-    }
-    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
-    try {
-      return (Boolean) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new CreateRootRuleContext(createRootRule.getNode(), generator),
-        createRootRule.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(createRootRule), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(createRootRule), "cannot find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(createRootRule), t);
-    }
-    return false;
-  }
-
-  @Override
-  public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
-    if (condition == null) {
-      // condition is not required
-      return true;
-    }
-
-    String methodName = TemplateFunctionMethodName.dropRootRule_Condition(condition.getNode());
-    try {
-      return (Boolean) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new DropRootRuleContext(inputRootNode, ruleNode, generator),
-        ruleNode.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "cannot find condition method '" + methodName + "' : evaluate to TRUE");
-    } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(BaseAdapter.fromAdapter(condition), "cannot find condition method '" + methodName + "' : evaluate to TRUE");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
-    }
-    // in this case 'true' is better default
-    return true;
-  }
-
-  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     IfMacro_Condition function = ifMacro.getConditionFunction();
     if (function == null) {
@@ -130,31 +80,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     }
 
     return false;
-  }
-
-  @Override
-  public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
-    MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
-    if (codeBlock == null) {
-      generator.getLogger().warning(mappingScript.getNode(), "cannot run script '" + mappingScript.getName() + "' : no code-block");
-      return;
-    }
-
-    String methodName = TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock.getNode());
-    try {
-      QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new MappingScriptContext(model, mappingScript.getNode(), generator),
-        mappingScript.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(mappingScript.getNode(), "cannot run script '" + mappingScript.getName() + "' : no generated code found");
-    } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(mappingScript.getNode(), "cannot run script '" + mappingScript.getName() + "' : no generated code found");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
-    }
   }
 
   @Override
@@ -327,28 +252,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
-    Weaving_MappingRule_ContextNodeQuery query = rule.getContextNodeQuery();
-    if (query != null) {
-      String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(query.getNode());
-      try {
-        return (SNode) QueryMethodGenerated.invoke(
-          methodName,
-          generator.getGeneratorSessionContext(),
-          new WeavingMappingRuleContext(inputNode, rule.getNode(), generator),
-          query.getModel());
-      } catch (NoSuchMethodException e) {
-        generator.getLogger().warning(BaseAdapter.fromAdapter(rule), "cannot find context node query '" + methodName + "' : evaluate to null");
-        return null;
-      } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, rule.getNode(), "cannot evaluate rule context query");
-        generator.getLogger().handleException(e);
-      }
-    }
-    return null;
-  }
-
-  @Override
   public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     ReferenceMacro_GetReferent function = refMacro.getReferentFunction();
     if (function == null) {
@@ -384,6 +287,31 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     return rule.tryToApply(environment, context);
+  }
+
+  @Override
+  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return rule.isApplicable(environment, context);
+  }
+
+  @Override
+  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return rule.apply(environment, context);
+  }
+
+  @Override
+  public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
+    return rule.apply(environment);
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+    return rule.getContextNode(environment, context);
+  }
+
+  @Override
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+    mappingScript.apply(model, generator);
   }
 
   @Override

@@ -63,6 +63,13 @@ public class MessagesGutter extends JPanel {
       public void run() {
         GutterStatus status = GutterStatus.OK;
         for (EditorMessage message : myMessages) {
+          // for MPS-10768: Gutter marker is red although no errors are present
+          if (!message.isValid(myEditorComponent)) continue;
+          // also a possible source of leaks is found:
+          // an invalid message which keeps undisposed node which is "in air";
+          // however there possibly are very little of such nodes and such messages are cleared after the next check.
+          //
+          // isValid is used incorrectly by AbstractLeftEditorHighlighterMessage so we can't clear all "invalid" messages.
           if (message.getStatus() == MessageStatus.WARNING) {
             status = GutterStatus.WARNING;
           }

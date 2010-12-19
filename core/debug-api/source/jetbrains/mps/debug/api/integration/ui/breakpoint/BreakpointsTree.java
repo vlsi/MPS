@@ -326,21 +326,16 @@ public class BreakpointsTree extends BreakpointsView {
   }
 
   private class BreakpointTreeNode extends MPSTreeNode {
-
     public BreakpointTreeNode(IOperationContext operationContext, BreakpointNodeData breakpoint) {
       super(breakpoint, operationContext);
-      updatePresentation();
-    }
 
-    @Override
-    protected void updatePresentation() {
       BreakpointNodeData bp = (BreakpointNodeData) getUserObject();
+      setNodeIdentifier(getText());
+
       setIcon(bp.getIcon(true));
       setText(bp.getText());
-      setNodeIdentifier(getText());
     }
 
-    @Override
     public boolean isLeaf() {
       return true;
     }

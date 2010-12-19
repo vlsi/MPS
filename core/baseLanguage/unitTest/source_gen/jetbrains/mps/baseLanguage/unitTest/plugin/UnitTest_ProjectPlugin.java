@@ -10,6 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class UnitTest_ProjectPlugin extends BaseProjectPlugin {
+  public UnitTest_ProjectPlugin() {
+  }
+
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
     List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
     ListSequence.fromList(components).addElement(new JUnitTestActionOptions_PreferencesComponent(project));

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <debugInfo>
   <unitInfo fileName="TableComponentStyleClassItem_Editor.java" startLine="68" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.TableComponentStyleClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_13" />
   <unitInfo fileName="ScriptKindClassItem_Editor.java" startLine="68" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ScriptKindClassItem_Editor$ReplaceWith_StyleClassItem_cellMenu_a0a0_12" />
@@ -819,4 +820,7 @@
     <scopeInfo nodeId="625126330682984089" fileName="CellModel_ReferencePresentation_Editor.java" startLine="77" startPosition="110" endLine="78" endPosition="88" />
   </root>
 </debugInfo>
+=======
+<debugInfo />
+>>>>>>> origin/master
 

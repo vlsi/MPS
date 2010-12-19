@@ -4,6 +4,8 @@ package jetbrains.mps.lang.plugin.generator.baseLanguage.template.util;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.smodel.Generator;
 
 public class PluginNameUtils {
   public static String getModuleShortName(IModule module) {
@@ -19,5 +21,18 @@ public class PluginNameUtils {
 
   public static String getApplicationPluginName(IModule module) {
     return getModuleShortName(module) + "_ApplicationPlugin";
+  }
+
+  public static String getPluginInitializerName(IModule module) {
+    return getModuleShortName(module) + "_PluginInitializer";
+  }
+
+  public static IModule getOriginalModule(TemplateQueryContext context) {
+    IModule originalModule = ((TemplateQueryContext) context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    assert originalModule != null;
+    if (originalModule instanceof Generator) {
+      originalModule = ((Generator) originalModule).getSourceLanguage();
+    }
+    return originalModule;
   }
 }

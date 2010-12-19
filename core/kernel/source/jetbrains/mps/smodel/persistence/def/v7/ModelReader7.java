@@ -17,6 +17,8 @@ package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.refactoring.ModelLinkMap;
+import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
@@ -33,6 +35,7 @@ public class ModelReader7 implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader7.class);
 
   private ReadHelper myHelper;
+  private ModelLinkMap myLinkMap;
 
   @Override
   public int getVersion() {
@@ -46,6 +49,7 @@ public class ModelReader7 implements IModelReader {
     SModel model = new SModel(modelReference,new RegularNodeIdMap());
     model.setPersistenceVersion(getVersion());
     myHelper = new ReadHelper(modelReference);
+    myLinkMap = new ModelLinkMap(model);
 
     model.setLoading(true);
 
@@ -93,6 +97,7 @@ public class ModelReader7 implements IModelReader {
       readChildren(node, root);
     }
 
+    new StructureModificationProcessor(myLinkMap, model).updateModelOnLoad();
     model.setLoading(false);
     return model;
   }
@@ -111,14 +116,14 @@ public class ModelReader7 implements IModelReader {
       }
       node.setId(id);
     }
-//    myHelper.addTypeLoc(nodeElement.getAttributeValue(ModelPersistence.TYPE_ID), node);
+    myLinkMap.addTypeLocation(myHelper.readLinkId(nodeElement.getAttributeValue(ModelPersistence.TYPE_ID)), node);
 
     for (Element element : (List<Element>) nodeElement.getChildren(ModelPersistence.PROPERTY)) {
       String propertyName = myHelper.readName(element.getAttributeValue(ModelPersistence.NAME));
       String propertyValue = element.getAttributeValue(ModelPersistence.VALUE);
       if (propertyValue != null) {
         node.setProperty(propertyName, propertyValue, false);
-//        myHelper.addNameLoc(element.getAttributeValue(ModelPersistence.NAME_ID), node, propertyName);
+        myLinkMap.addNameLocation(myHelper.readLinkId(element.getAttributeValue(ModelPersistence.NAME_ID)), node, propertyName);
       }
     }
 
@@ -133,14 +138,14 @@ public class ModelReader7 implements IModelReader {
       }
       if (ptr.getNodeId() == null) {
         DynamicReference ref = new DynamicReference(role, node, ptr.getModelReference(), resolveInfo);
-//        myHelper.addDynRefLoc(ptr.getModelReference(), ref);
+        myLinkMap.addDynamicReference(ptr.getModelReference(), ref);
         node.addReference(ref);
-//      myHelper.addRoleLoc(link.getAttributeValue(ModelPersistence.ROLE_ID), ref);
+        myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
       } else {
         StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ptr.getNodeId(), resolveInfo);
-//        myHelper.addRefLoc(ptr, ref);
+        myLinkMap.addRoleLocation(ptr, ref);
         node.addReference(ref);
-//      myHelper.addRoleLoc(link.getAttributeValue(ModelPersistence.ROLE_ID), ref);
+        myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
       }
     }
 
@@ -158,7 +163,7 @@ public class ModelReader7 implements IModelReader {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
       } else {
         node.addChild(role, childNode);
-//        myHelper.addRoleLoc(child.getAttributeValue(ModelPersistence.ROLE_ID), childNode);
+        myLinkMap.addRoleLocation(myHelper.readLinkId(child.getAttributeValue(ModelPersistence.ROLE_ID)), childNode);
       }
     }
   }

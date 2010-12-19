@@ -45,8 +45,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     myNodePointer = new SNodePointer(declaration);
     myHierarchyTree = tree;
     setUserObject(declaration);
-
-    updatePresentation();
+    setNodeIdentifier(calculateNodeIdentifier());
   }
 
   protected void doUpdatePresentation() {
@@ -55,7 +54,6 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     if (node == null) return;
 
     setIcon(IconManager.getIconFor(node));
-    setNodeIdentifier(calculateNodeIdentifier());
     setAdditionalText(calculateAdditionalText());
     setAutoExpandable(false);
   }

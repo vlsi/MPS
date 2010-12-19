@@ -65,7 +65,6 @@ public class PluginUtil {
 
   public static List<Solution> getBootstrapPluginModules() {
     Solution ide = MPSModuleRepository.getInstance().getSolution(IDE_MODULE_ID);
-
     return Collections.singletonList(ide);
   }
 
@@ -95,6 +94,25 @@ public class PluginUtil {
       LOG.error(t);
       return null;
     }
+  }
+
+  private static Collection<BaseApplicationPlugin> myStandaloneAppPlugins = new ArrayList<BaseApplicationPlugin>();
+  private static Collection<BaseProjectPlugin> myStandaloneProjPlugins = new ArrayList<BaseProjectPlugin>();
+
+  public static void addStandaloneAppPlugin(BaseApplicationPlugin plugin) {
+    myStandaloneAppPlugins.add(plugin);
+  }
+
+  public static void addStandaloneProjPlugin(BaseProjectPlugin plugin) {
+    myStandaloneProjPlugins.add(plugin);
+  }
+
+  public static Collection<BaseApplicationPlugin> getStandaloneAppPlugins() {
+    return myStandaloneAppPlugins;
+  }
+
+  public static Collection<BaseProjectPlugin> getStandaloneProjPlugins() {
+    return myStandaloneProjPlugins;
   }
 
   private static abstract class PluginCreator<T> {
@@ -137,7 +155,7 @@ public class PluginUtil {
 
     public String getPlugin(Solution s) {
       if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ProjectPlugin.class.getName();
-      return NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName()))+"_ProjectPlugin";
+      return NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
     }
   }
 
@@ -152,7 +170,7 @@ public class PluginUtil {
 
     public String getPlugin(Solution s) {
       if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ApplicationPlugin.class.getName();
-      return NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName()))+"_ApplicationPlugin";
+      return NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";
     }
   }
 }

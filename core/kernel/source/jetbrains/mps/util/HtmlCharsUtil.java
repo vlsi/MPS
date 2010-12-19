@@ -45,8 +45,4 @@ public class HtmlCharsUtil {
     }
     return builder.toString();
   }
-
-  public static void main(String[] args) {
-    System.err.print(asHtml("<node> type", true));
-  }
 }

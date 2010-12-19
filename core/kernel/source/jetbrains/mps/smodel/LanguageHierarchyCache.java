@@ -28,10 +28,7 @@ import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -40,20 +37,22 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LanguageHierarchyCache implements ApplicationComponent {
+  private static final InternAwareStringSet EMPTY_INTERN_AWARE_STRING_SET = new InternAwareStringSet(0);
+
   public static LanguageHierarchyCache getInstance() {
     return ApplicationManager.getApplication().getComponent(LanguageHierarchyCache.class);
   }
 
-  private ConcurrentMap<String, Set<String>> myAncestorsNamesMap = new ConcurrentHashMap<String, Set<String>>();
+  private ConcurrentMap<String, InternAwareStringSet> myAncestorsNamesMap = new ConcurrentHashMap<String, InternAwareStringSet>();
 
-  private Object myParentsNamesLock = new Object();
-  private Map<String, Set<String>> myParentsNamesMap = new HashMap<String, Set<String>>();
+  private final Object myParentsNamesLock = new Object();
+  private Map<String, InternAwareStringSet> myParentsNamesMap = new HashMap<String, InternAwareStringSet>();
 
-  private Object myDescendantsLock = new Object();
-  private Map<String, Set<String>> myDirectDescendantsCache = new HashMap<String, Set<String>>();
+  private final Object myDescendantsLock = new Object();
+  private Map<String, InternAwareStringSet> myDirectDescendantsCache = new HashMap<String, InternAwareStringSet>();
   private boolean myDescendantsCachesAreValid = false;
 
-  private Object myLanguageLock = new Object();
+  private final Object myLanguageLock = new Object();
   private Map<Language, LanguageConceptsCache> myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
 
   private CopyOnWriteArrayList<CacheChangeListener> myCacheChangeListeners = new CopyOnWriteArrayList<CacheChangeListener>();
@@ -123,11 +122,11 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   public void invalidateCache() {
     synchronized (myDescendantsLock) {
-      myDirectDescendantsCache = new HashMap<String, Set<String>>();
+      myDirectDescendantsCache = new HashMap<String, InternAwareStringSet>();
       myDescendantsCachesAreValid = false;
     }
     synchronized (myParentsNamesLock) {
-      myParentsNamesMap = new HashMap<String, Set<String>>();
+      myParentsNamesMap = new HashMap<String, InternAwareStringSet>();
     }
     myAncestorsNamesMap.clear();
     synchronized (myLanguageLock) {
@@ -140,15 +139,15 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   public Set<String> getParentsNames(final String conceptFqName) {
     fireReadAccessPerformed();
     synchronized (myParentsNamesLock) {
-      Set<String> result = myParentsNamesMap.get(conceptFqName);
+      InternAwareStringSet result = myParentsNamesMap.get(conceptFqName);
       if (result == null) {
-        result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<String>>() {
-          public Set<String> compute() {
+        result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<InternAwareStringSet>() {
+          public InternAwareStringSet compute() {
             AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
             if (declaration == null) {
-              return Collections.emptySet();
+              return EMPTY_INTERN_AWARE_STRING_SET;
             }
-            Set<String> result = new LinkedHashSet<String>();
+            InternAwareStringSet result = new InternAwareStringSet();
             if (declaration instanceof ConceptDeclaration) {
               ConceptDeclaration cd = (ConceptDeclaration) declaration;
               if (cd.getExtends() != null) {
@@ -169,7 +168,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             return result;
           }
         });
-        myParentsNamesMap.put(conceptFqName, result);
+        myParentsNamesMap.put(InternUtil.intern(conceptFqName), result);
       }
       return Collections.unmodifiableSet(result);
     }
@@ -185,13 +184,12 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   private Set<String> getAncestorsNames_internal(final String conceptFqName) {
     fireReadAccessPerformed();
-    Set<String> result = myAncestorsNamesMap.get(conceptFqName);
-    if (result != null) {
-      return result;
-    }
-    Set<String> set = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<String>>() {
-      public Set<String> compute() {
-        Set<String> res = new HashSet<String>();
+    InternAwareStringSet result = myAncestorsNamesMap.get(conceptFqName);
+    if (result != null) return result;
+
+    InternAwareStringSet set = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<InternAwareStringSet>() {
+      public InternAwareStringSet compute() {
+        InternAwareStringSet res = new InternAwareStringSet();
         collectAncestorNames(conceptFqName, res);
         return res;
       }
@@ -203,7 +201,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private void collectAncestorNames(String conceptFqName, Set<String> result) {
     if (result.contains(conceptFqName)) return;
 
-    result.add(InternUtil.intern(conceptFqName));
+    result.add(conceptFqName);
 
     AbstractConceptDeclaration declaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (declaration == null) {
@@ -243,20 +241,18 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     }
   }
 
-  public Set<String> getDescendantsOfConcept(String congeptFQName) {
+  public Set<String> getDescendantsOfConcept(String conceptFQName) {
     fireReadAccessPerformed();
     Set<String> children;
     synchronized (myDescendantsLock) {
       if (!myDescendantsCachesAreValid) {
         NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
-          @Override
           public void run() {
             rebuildDescendantsCaches();
           }
         });
-
       }
-      children = myDirectDescendantsCache.get(congeptFQName);
+      children = myDirectDescendantsCache.get(conceptFQName);
     }
     return children == null ? Collections.<String>emptySet() : Collections.unmodifiableSet(children);
   }
@@ -278,7 +274,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
   private void addToCache(String nodeFQName) {
     for (String parentFQName : getParentsNames(nodeFQName)) {
       if (!myDirectDescendantsCache.containsKey(parentFQName)) {
-        myDirectDescendantsCache.put(parentFQName, new LinkedHashSet<String>());
+        myDirectDescendantsCache.put(parentFQName, new InternAwareStringSet());
       }
       myDirectDescendantsCache.get(parentFQName).add(nodeFQName);
     }
@@ -291,7 +287,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
         for (Language language : myModuleRepository.getAllLanguages()) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
-          
+
           Condition<SNode> cond = new Condition<SNode>() {
             public boolean met(SNode node) {
               return node.isInstanceOfConcept(AbstractConceptDeclaration.concept);

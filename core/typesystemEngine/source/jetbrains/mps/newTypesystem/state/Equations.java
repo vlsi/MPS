@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.state;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.newTypesystem.EquationErrorReporterNew;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
@@ -40,7 +41,7 @@ public class Equations {
   @StateObject
   private final Map<SNode, SNode> myRepresentatives = new HashMap<SNode, SNode>();
 
-  //seems to be useless to use as a part of state but in such case it is a possible source of side effects
+  //todo: seems to be useless to use as a part of state but in such case it is a possible source of side effects
   private final Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
   private final State myState;
 
@@ -71,7 +72,7 @@ public class Equations {
   }
 
   public SNode getRepresentative(final SNode node) {
-    if (node == null || TypesUtil.isShallowConcrete(node)) {
+    if (node == null || !TypesUtil.isVariable(node)) {
       return node;
     }
     SNode nameRepresentative = getNameRepresentative(node);
@@ -109,8 +110,12 @@ public class Equations {
     if (lRepresentative == null || rRepresentative == null || lRepresentative.equals(rRepresentative)) {
       return;
     }
-    if (TypesUtil.isVariable(lRepresentative) || TypesUtil.isVariable(rRepresentative)) {
+    if (TypesUtil.isVariable(lRepresentative)) {
       processEquation(lRepresentative, rRepresentative, info);
+      return;
+    }
+    if (TypesUtil.isVariable(rRepresentative)) {
+      processEquation(rRepresentative, lRepresentative, info);
       return;
     }
     if (!compareTypes(lRepresentative, rRepresentative, info)) {
@@ -129,10 +134,8 @@ public class Equations {
   }
 
   private void processEquation(SNode var, SNode type, EquationInfo info) {
-    SNode parent = type;
-    SNode child = var;
-    SNode source = myState.getNodeMaps().getNode(child);
-    myState.executeOperation(new EquationAddedOperation(child, parent, source, info));
+    SNode source = myState.getNodeMaps().getNode(var);
+    myState.executeOperation(new EquationAddedOperation(var, type, source, info));
   }
 
   public Set<SNode> expandSet(Set<SNode> set) {
@@ -157,6 +160,7 @@ public class Equations {
         reportRecursiveType(type);
       }
       variablesMet.add(type);
+      return type;
     }
     if (type != node) {
       SNode result = expandNode(type, variablesMet);
@@ -198,33 +202,6 @@ public class Equations {
         }
       }
     }
-  }
-
-  private void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
-    IErrorReporter errorReporter;
-    SNode nodeWithError = null;
-    QuickFixProvider intentionProvider = null;
-    String errorString = null;
-    String ruleModel = null;
-    String ruleId = null;
-    if (info != null) {
-      nodeWithError = info.getNodeWithError();
-      intentionProvider = info.getIntentionProvider();
-      errorString = info.getErrorString();
-      ruleModel = info.getRuleModel();
-      ruleId = info.getRuleId();
-    }
-    if (errorString != null) {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
-    } else {
-      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "incompatible types: ",
-        right, " and ", left, "", ruleModel, ruleId);
-    }
-    errorReporter.setIntentionProvider(intentionProvider);
-    if (info != null) {
-      errorReporter.setAdditionalRulesIds(info.getAdditionalRulesIds());
-    }
-    myState.addError(nodeWithError, errorReporter, info);
   }
 
   void reportRecursiveType(SNode node) {

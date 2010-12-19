@@ -26,7 +26,6 @@
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="debugTests" />
     <orderEntry type="module" module-name="actions" />
-    <orderEntry type="module" module-name="annotations" />
     <orderEntry type="module" module-name="baseLanguage" />
     <orderEntry type="module" module-name="baseLanguageInternal" />
     <orderEntry type="module" module-name="behavior" />

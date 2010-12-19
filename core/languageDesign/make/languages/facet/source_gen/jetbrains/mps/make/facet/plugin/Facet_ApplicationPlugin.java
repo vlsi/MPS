@@ -11,6 +11,9 @@ import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 
 public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
+  public Facet_ApplicationPlugin() {
+  }
+
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.make.facet";

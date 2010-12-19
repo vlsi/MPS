@@ -22,16 +22,11 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
     }
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
-  }
-
   public void setState(TestState state) {
     this.state = state;
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        BaseTestTreeNode.this.updatePresentation();
-        BaseTestTreeNode.this.updateNodePresentationInTree();
+        renewPresentation();
       }
     });
   }

@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Ide_ProjectPlugin extends BaseProjectPlugin {
+  public Ide_ProjectPlugin() {
+  }
+
   public List<BaseGeneratedTool> initAllTools(Project project) {
     List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
     ListSequence.fromList(tools).addElement(new ModelCheckerTool_Tool(project));

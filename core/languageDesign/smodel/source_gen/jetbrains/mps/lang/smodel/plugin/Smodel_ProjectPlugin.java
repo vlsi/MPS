@@ -5,4 +5,6 @@ package jetbrains.mps.lang.smodel.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Smodel_ProjectPlugin extends BaseProjectPlugin {
+  public Smodel_ProjectPlugin() {
+  }
 }

@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -64,7 +67,23 @@ public class TemplateModelInterpreted implements TemplateModel {
   }
 
   @Override
+  public TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments) {
+    assert template.getModelReference().equals(getSModelReference());
+    SNode templateNode = myModel.getNodeById(template.getNodeId());
+    if(templateNode == null || !jetbrains.mps.lang.generator.structure.TemplateDeclaration.concept.equals(templateNode.getConceptFqName())) {
+      return null;
+    }
+
+    return TemplateDeclarationInterpreted.create(templateNode, arguments);
+  }
+
+  @Override
   public String getLongName() {
     return myModel.getLongName();
+  }
+
+  @Override
+  public SModelReference getSModelReference() {
+    return myModel.getSModelReference();
   }
 }

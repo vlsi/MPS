@@ -370,6 +370,7 @@ jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaion
 jetbrains.mps.refactoring.RefactoringTest.class,
 jetbrains.mps.persistence.PersistenceTest.class,
 jetbrains.mps.vfs.VfsTest.class,
+jetbrains.mps.PackagedLanguageTest.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Map_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.ListOperations_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.skip_take_test.SkipTakePage_Test.class,

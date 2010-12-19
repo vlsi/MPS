@@ -4,7 +4,6 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import org.jdom.Document;
-import java.util.List;
 import org.jdom.Element;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class HistoryWriter {
   public static final String MODIFICATION_HISTORY = "history";
-  public static final String MODIFICATION_ELEMENT = "StuctureModification";
+  public static final String MODIFICATION_ELEMENT = "StructureModification";
   public static final String DEPENDENCIES = "dependencies";
   public static final String DEPEND_MODEL = "model";
   public static final String MODEL_INDEX = "index";
@@ -26,17 +25,18 @@ public class HistoryWriter {
   public static final String RENAME_NODE = "rename";
   public static final String NODE_ID = "id";
   public static final String NEW_ID = "to";
-  public static final String NEW_NAME = "name";
-  public static final String NEW_ROLE = "role";
+  public static final String RENAME_TYPE = "type";
+  public static final String OLD_VALUE = "from";
+  public static final String NEW_VALUE = "to";
 
   private WriteHelper myHelper;
 
   public HistoryWriter() {
   }
 
-  public Document saveHistory(List<StructureModification> history) {
+  public Document saveHistory(StructureModificationLog history) {
     final Element root = new Element(MODIFICATION_HISTORY);
-    ListSequence.fromList(history).visitAll(new IVisitor<StructureModification>() {
+    ListSequence.fromList(history.getHistory()).visitAll(new IVisitor<StructureModification>() {
       public void visit(StructureModification it) {
         root.addContent(saveModification(it));
       }
@@ -97,12 +97,11 @@ public class HistoryWriter {
   public Element saveRenameNode(StructureModification.RenameNode data) {
     Element elem = new Element(RENAME_NODE);
     elem.setAttribute(NODE_ID, genId(data.oldID));
-    if (data.newName != null) {
-      elem.setAttribute(NEW_NAME, data.newName);
+    elem.setAttribute(RENAME_TYPE, data.type.name());
+    if (data.oldValue != null) {
+      elem.setAttribute(OLD_VALUE, data.oldValue);
     }
-    if (data.newRole != null) {
-      elem.setAttribute(NEW_ROLE, data.newRole);
-    }
+    elem.setAttribute(NEW_VALUE, data.newValue);
     return elem;
   }
 

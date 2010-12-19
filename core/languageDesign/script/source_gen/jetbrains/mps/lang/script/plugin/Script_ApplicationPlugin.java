@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Script_ApplicationPlugin extends BaseApplicationPlugin {
+  public Script_ApplicationPlugin() {
+  }
+
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.script";

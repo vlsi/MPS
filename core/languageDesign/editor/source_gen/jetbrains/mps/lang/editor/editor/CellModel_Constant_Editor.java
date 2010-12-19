@@ -311,6 +311,22 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
 
+  private static int _StyleParameter_QueryFunction_8hdu2g_a4b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontSize_1221216397365(node);
+  }
+
+  private static int _StyleParameter_QueryFunction_8hdu2g_a3b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
   private static Color _StyleParameter_QueryFunction_8hdu2g_a0b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
@@ -321,21 +337,5 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
 
   private static Color _StyleParameter_QueryFunction_8hdu2g_a2b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
-  }
-
-  private static int _StyleParameter_QueryFunction_8hdu2g_a3b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
-  }
-
-  private static int _StyleParameter_QueryFunction_8hdu2g_a4b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_getFontSize_1221216397365(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 }

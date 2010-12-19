@@ -5,4 +5,6 @@ package jetbrains.mps.ui.internal.testdata.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Testdata_ProjectPlugin extends BaseProjectPlugin {
+  public Testdata_ProjectPlugin() {
+  }
 }

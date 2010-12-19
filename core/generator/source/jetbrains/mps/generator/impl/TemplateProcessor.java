@@ -357,7 +357,14 @@ public class TemplateProcessor {
           TemplateSwitchMapping tswitch = myGenerator.getSwitch(switchPtr);
           if(tswitch != null) {
             TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, myGenerator.getOperationContext(), myGenerator.getGenerationTracer());
-            collection = tswitch.applyDefault(environment, switchPtr, mappingName, switchContext);
+            try {
+              collection = tswitch.applyDefault(environment, switchPtr, mappingName, switchContext);
+            } catch (GenerationException e) {
+              if(e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
+              if(e instanceof GenerationFailureException) throw (GenerationFailureException) e;
+              if(e instanceof DismissTopMappingRuleException) throw (DismissTopMappingRuleException) e;
+              myGenerator.showErrorMessage(null, tswitch.getSwitchNode().getNode(), "internal error in switch.applyDefault: " + e.toString());
+            }
           }
 
           // no switch-case found for the inputNode - continue with templateNode under the $switch$

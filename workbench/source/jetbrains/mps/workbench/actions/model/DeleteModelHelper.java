@@ -33,6 +33,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
@@ -107,6 +108,13 @@ public class DeleteModelHelper {
       public Object getData(@NonNls String dataId) {
         if (dataId.equals(MPSDataKeys.PROJECT.getName())) return project;
         else if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) return modelDescriptor;
+        else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
+          Object operationContext = myRealContext.getData(dataId);
+          if (operationContext == null) {
+            operationContext = ProjectOperationContext.get(project);
+          }
+          return operationContext;
+        }
         else return myRealContext.getData(dataId);
       }
     };

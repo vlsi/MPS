@@ -215,7 +215,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
         for (final VFileEvent event : events) {
           String filePath = event.getPath();
-          VirtualFile file = VirtualFileUtils.getVirtualFile(filePath);
+          VirtualFile file = event.getFile();
           if (file == null) continue;
           if (file.isDirectory() && file.exists() && (file.getChildren() != null) && file.isInLocalFileSystem()) {
             if (isUnderSignificantRoots(VirtualFileUtils.toFile(file))) {
@@ -256,8 +256,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
           myReloadSession = new ReloadSession(getReloadListeners());
         }
 
-        final ReloadSession reloadSession = myReloadSession;
-
         // collecting changed models, modules etc.
         for (final VFileEvent event : events) {
           String path = event.getPath();
@@ -271,13 +269,13 @@ public class ModelChangesWatcher implements ApplicationComponent {
                 public boolean process(File file) {
                   processAfterEvent(file.getAbsolutePath(),
                     new VFileEventDecorator(event, file.getAbsolutePath()),
-                    reloadSession);
+                    myReloadSession);
                   return true;
                 }
               });
             }
           }
-          processAfterEvent(path, event, reloadSession);
+          processAfterEvent(path, event, myReloadSession);
         }
 
         if (myBans == 0) {

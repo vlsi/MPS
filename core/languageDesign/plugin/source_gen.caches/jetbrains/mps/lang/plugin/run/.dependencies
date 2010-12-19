@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.plugin.run.DefaultOsProcessHandler" file="DefaultOsProcessHandler.java">
-    <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessTerminatedListener" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
-    <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessTerminatedListener" />
+    <classNode dependClassName="java.lang.Process" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode extendsClassName="com.intellij.execution.process.OSProcessHandler" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.run.DefaultProcessHandler" file="DefaultProcessHandler.java">
-    <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessTerminatedListener" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleView" />
     <classNode dependClassName="com.intellij.execution.ui.ConsoleViewContentType" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
-    <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessAdapter" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessEvent" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessTerminatedListener" />
+    <classNode dependClassName="java.lang.Process" />
+    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode dependClassName="java.nio.charset.Charset" />
     <classNode extendsClassName="com.intellij.execution.process.DefaultJavaProcessHandler" />
   </dependency>

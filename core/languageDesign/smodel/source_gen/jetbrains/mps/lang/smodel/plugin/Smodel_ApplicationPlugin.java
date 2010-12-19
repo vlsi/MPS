@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Smodel_ApplicationPlugin extends BaseApplicationPlugin {
+  public Smodel_ApplicationPlugin() {
+  }
+
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.smodel";

@@ -14,10 +14,10 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -87,13 +87,13 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_il97sk_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("applyImmediately");
-    provider.setNoTargetText("<no applyImmediately>");
+  private EditorCell createRefCell_il97sk_a0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("quickFix");
+    provider.setNoTargetText("<no quickFix>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new TypesystemIntention_Editor._Inline_il97sk_a0a0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_applyImmediately");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -105,13 +105,13 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_il97sk_a0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("quickFix");
-    provider.setNoTargetText("<no quickFix>");
+  private EditorCell createProperty_il97sk_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("applyImmediately");
+    provider.setNoTargetText("<no applyImmediately>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TypesystemIntention_Editor._Inline_il97sk_a0a0());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_applyImmediately");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

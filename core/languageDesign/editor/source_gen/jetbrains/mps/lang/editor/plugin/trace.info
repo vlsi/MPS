@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <debugInfo>
   <unitInfo fileName="Editor_ProjectPlugin.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" />
   <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ApplicationPlugin" />
@@ -217,4 +218,7 @@
     <unitInfo nodeId="98380422618925937" fileName="ExtractComponentUtil.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.ExtractComponentUtil" />
   </root>
 </debugInfo>
+=======
+<debugInfo />
+>>>>>>> origin/master
 

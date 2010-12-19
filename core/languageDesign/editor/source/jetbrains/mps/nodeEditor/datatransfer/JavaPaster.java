@@ -1,19 +1,18 @@
 package jetbrains.mps.nodeEditor.datatransfer;
 
-import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
+import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.javaParser.ConversionFailedException;
 import jetbrains.mps.javaParser.FeatureKind;
 import jetbrains.mps.javaParser.JavaCompiler;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JOptionPane;
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -42,11 +41,14 @@ public class JavaPaster {
   }
 
   public String getStringFromClipboard() {
-    Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
-    if (cb == null) {
-      return null;
+    Transferable contents = null;
+    for (Transferable trf: CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+      if (trf != null && trf.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+        contents = trf;
+      }
+      break; // look up only the first one
     }
-    Transferable contents = cb.getContents(null);
+
     if (contents == null) return null;
     if (contents.isDataFlavorSupported(DataFlavor.stringFlavor)) {
       try {

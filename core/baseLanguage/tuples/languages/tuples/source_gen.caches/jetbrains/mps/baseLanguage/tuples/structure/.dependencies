@@ -73,6 +73,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Classifier" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassifierType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />

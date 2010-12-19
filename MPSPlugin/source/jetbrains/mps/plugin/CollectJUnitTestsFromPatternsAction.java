@@ -20,8 +20,6 @@ import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
-import com.intellij.psi.impl.PsiElementFactoryImpl;
-import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.ui.DocumentAdapter;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.Icons;
@@ -130,7 +128,6 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
       }
     }
 
-    if (!suiteClasses.isEmpty()) {
       final WriteAction<String> action = new WriteAction<String>() {
         @Override
         protected void run(Result<String> stringResult) throws Throwable {
@@ -145,19 +142,30 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
           sb.append("})");
 
           try {
-            PsiElementFactoryImpl fact = new PsiElementFactoryImpl((PsiManagerEx) PsiManagerEx.getInstance(project));
+            PsiJavaParserFacade javaParserFacade = JavaPsiFacade.getInstance(project).getParserFacade();
+            PsiAnnotation newann = javaParserFacade.createAnnotationFromText(sb.toString(), pc.getParent());
 
-            PsiAnnotation ann = fact.createAnnotationFromText(sb.toString(), pc.getParent());
-
-            pc.getParent().addBefore(ann, pc);
+            PsiAnnotation oldann = null;
+            for (PsiAnnotation ann: pc.getModifierList().getAnnotations()) {
+              if (String.valueOf (ann.getQualifiedName()).contains("SuiteClasses")) {
+                oldann = ann;
+                break;
+              }
+            }
+            if (oldann != null) {
+                oldann.replace(newann);
+            }
+            else {
+                pc.getParent().addBefore(newann, pc);
+            }
           } catch (Exception ex) {
             stringResult.setResult(ex.toString());
           }
         }
       };
 
+    if (!suiteClasses.isEmpty()) {
       CommandProcessor.getInstance().executeCommand(project, new Runnable() {
-        @Override
         public void run() {
           String error = action.execute().getResultObject();
           if (error != null) {

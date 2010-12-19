@@ -23,8 +23,9 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086883");
+  private static SNodePointer conseq_417xrn_a0a0a4a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100169");
   private static SNodePointer rootMappingRule_417xrn_a0a0b = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086885");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a0a1b = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086885");
+  private static SNodePointer rootMappingRule_417xrn_b0b0a0a4b = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086885");
 
   private final Collection<TemplateReductionRule> rules;
   private final Collection<TemplateRootMappingRule> rootRules;
@@ -37,11 +38,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public String getName() {
-    return null;
+    return "main";
   }
 
   public TemplateModel getModel() {
-    return null;
+    return this.myModel;
   }
 
   public SNodePointer getMappingNode() {
@@ -69,11 +70,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public Collection<TemplateMappingScript> getPostScripts() {
-    return null;
+    return Collections.emptySet();
   }
 
   public Collection<TemplateMappingScript> getPreScripts() {
-    return null;
+    return Collections.emptySet();
   }
 
   public class ReductionRule0 implements TemplateReductionRule {
@@ -109,7 +110,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100169"));
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4a);
       Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
       return tlist1;
     }
@@ -123,13 +124,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return rootMappingRule_417xrn_a0a0b;
     }
 
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_3893401255414129777(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a1b, environment.getGenerator())))) {
-        return null;
-      }
-      return new TemplateOutputRoot().apply(environment, context);
-    }
-
     public boolean applyToInheritors() {
       return false;
     }
@@ -140,6 +134,18 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public boolean keepSourceRoot() {
       return false;
+    }
+
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      if (!(QueriesGenerated.baseMappingRule_Condition_3893401255414129777(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a4b, environment.getGenerator())))) {
+        return false;
+      }
+      return true;
+    }
+
+    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      Collection<SNode> result = new TemplateOutputRoot().apply(environment, context);
+      return result;
     }
   }
 }

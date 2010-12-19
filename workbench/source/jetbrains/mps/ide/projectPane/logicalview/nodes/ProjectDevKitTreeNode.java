@@ -39,17 +39,12 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     myShortNameOnly = shortNameOnly;
     myDevKit = devkit;
 
-    updatePresentation();
+    setNodeIdentifier(calculateNodeIdentifier());
+    setIcon(Icons.DEVKIT_ICON);
   }
 
   public Object getUserObject() {
     return myDevKit;
-  }
-
-  protected void doUpdatePresentation() {
-    super.doUpdatePresentation();
-    setIcon(Icons.DEVKIT_ICON);
-    setNodeIdentifier(calculateNodeIdentifier());
   }
 
   public IModule getModule() {

@@ -18,6 +18,10 @@
     <component>
         <implementation-class>jetbrains.mps.plugin.PluginStateMonitor</implementation-class>
     </component>
+    <component>
+      <interface-class>jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer</interface-class>
+      <implementation-class>jetbrains.mps.plugin.IDEAProjectPeer</implementation-class>
+    </component>
   </project-components>
 
   <actions>

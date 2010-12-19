@@ -31,9 +31,9 @@
     <scopeInfo nodeId="1206463297023" fileName="OverridingMethods_Finder.java" startLine="46" startPosition="45" endLine="47" endPosition="32" />
     <scopeInfo nodeId="1200413471961" fileName="OverridingMethods_Finder.java" startLine="38" startPosition="181" endLine="41" endPosition="9" />
     <scopeInfo nodeId="1200413446952" fileName="OverridingMethods_Finder.java" startLine="37" startPosition="190" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="1200413471959" fileName="OverridingMethods_Finder.java" startLine="37" startPosition="190" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="1200413471959" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverridingMethods_Finder.java" startLine="37" startPosition="190" endLine="42" endPosition="7" />
     <scopeInfo nodeId="1200309609800" fileName="OverridingMethods_Finder.java" startLine="36" startPosition="102" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="1200413446949" fileName="OverridingMethods_Finder.java" startLine="36" startPosition="102" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1200413446949" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverridingMethods_Finder.java" startLine="36" startPosition="102" endLine="43" endPosition="5" />
   </root>
   <root nodeId="1200310248824">
     <nodeInfo nodeId="1200411695012" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ImplementingClasses_Finder.java" startLine="32" startPosition="102" endLine="33" endPosition="150" />
@@ -61,16 +61,16 @@
     <scopeInfo nodeId="1206537247477" fileName="ImplementingClasses_Finder.java" startLine="59" startPosition="192" endLine="60" endPosition="67" />
     <scopeInfo nodeId="1206463247327" fileName="ImplementingClasses_Finder.java" startLine="64" startPosition="45" endLine="65" endPosition="34" />
     <scopeInfo nodeId="3745452943051260866" fileName="ImplementingClasses_Finder.java" startLine="50" startPosition="118" endLine="52" endPosition="66" />
-    <scopeInfo nodeId="1200427341277" fileName="ImplementingClasses_Finder.java" startLine="36" startPosition="65" endLine="39" endPosition="5">
+    <scopeInfo nodeId="1200427341277" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ImplementingClasses_Finder.java" startLine="36" startPosition="65" endLine="39" endPosition="5">
       <varInfo nodeId="1200427341281" varName="derivedInterface" />
     </scopeInfo>
-    <scopeInfo nodeId="1206537282893" fileName="ImplementingClasses_Finder.java" startLine="45" startPosition="95" endLine="48" endPosition="11" />
-    <scopeInfo nodeId="1206537247474" fileName="ImplementingClasses_Finder.java" startLine="58" startPosition="53" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="1206537282893" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ImplementingClasses_Finder.java" startLine="45" startPosition="95" endLine="48" endPosition="11" />
+    <scopeInfo nodeId="1206537247474" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ImplementingClasses_Finder.java" startLine="58" startPosition="53" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1200411794366" fileName="ImplementingClasses_Finder.java" startLine="44" startPosition="130" endLine="48" endPosition="11" />
     <scopeInfo nodeId="1206537184281" fileName="ImplementingClasses_Finder.java" startLine="57" startPosition="80" endLine="61" endPosition="5" />
     <scopeInfo nodeId="1200411794364" fileName="ImplementingClasses_Finder.java" startLine="42" startPosition="136" endLine="49" endPosition="9" />
     <scopeInfo nodeId="1200411794357" fileName="ImplementingClasses_Finder.java" startLine="41" startPosition="57" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="1200411794356" fileName="ImplementingClasses_Finder.java" startLine="40" startPosition="7" endLine="54" endPosition="5">
+    <scopeInfo nodeId="1200411794356" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ImplementingClasses_Finder.java" startLine="40" startPosition="7" endLine="54" endPosition="5">
       <varInfo nodeId="1200411794380" varName="interfaceNode" />
     </scopeInfo>
     <scopeInfo nodeId="1200310248828" fileName="ImplementingClasses_Finder.java" startLine="32" startPosition="102" endLine="54" endPosition="5">
@@ -96,7 +96,7 @@
     <scopeInfo nodeId="1200312349593" fileName="DerivedInterfaces_Finder.java" startLine="43" startPosition="32" endLine="44" endPosition="64" />
     <scopeInfo nodeId="1206463217816" fileName="DerivedInterfaces_Finder.java" startLine="50" startPosition="45" endLine="51" endPosition="32" />
     <scopeInfo nodeId="1200312291070" fileName="DerivedInterfaces_Finder.java" startLine="38" startPosition="147" endLine="41" endPosition="9" />
-    <scopeInfo nodeId="1200312291069" fileName="DerivedInterfaces_Finder.java" startLine="37" startPosition="76" endLine="42" endPosition="7">
+    <scopeInfo nodeId="1200312291069" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DerivedInterfaces_Finder.java" startLine="37" startPosition="76" endLine="42" endPosition="7">
       <varInfo nodeId="1200312291096" varName="nodeUsage" />
     </scopeInfo>
     <scopeInfo nodeId="1200312247965" fileName="DerivedInterfaces_Finder.java" startLine="36" startPosition="62" endLine="46" endPosition="15">
@@ -123,7 +123,7 @@
     <scopeInfo nodeId="1200315820166" fileName="DerivedClasses_Finder.java" startLine="38" startPosition="157" endLine="39" endPosition="136" />
     <scopeInfo nodeId="1200315820197" fileName="DerivedClasses_Finder.java" startLine="41" startPosition="32" endLine="42" endPosition="64" />
     <scopeInfo nodeId="1206463208960" fileName="DerivedClasses_Finder.java" startLine="48" startPosition="45" endLine="49" endPosition="29" />
-    <scopeInfo nodeId="1200315820165" fileName="DerivedClasses_Finder.java" startLine="37" startPosition="76" endLine="40" endPosition="7">
+    <scopeInfo nodeId="1200315820165" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DerivedClasses_Finder.java" startLine="37" startPosition="76" endLine="40" endPosition="7">
       <varInfo nodeId="1200315820194" varName="classNode" />
     </scopeInfo>
     <scopeInfo nodeId="1200315820153" fileName="DerivedClasses_Finder.java" startLine="36" startPosition="62" endLine="44" endPosition="15">
@@ -176,16 +176,16 @@
     <scopeInfo nodeId="1206537426837" fileName="AllMethodUsages_Finder.java" startLine="72" startPosition="12" endLine="73" endPosition="230" />
     <scopeInfo nodeId="1206537426845" fileName="AllMethodUsages_Finder.java" startLine="76" startPosition="56" endLine="77" endPosition="68" />
     <scopeInfo nodeId="1206463276864" fileName="AllMethodUsages_Finder.java" startLine="81" startPosition="45" endLine="82" endPosition="47" />
-    <scopeInfo nodeId="1206537426844" fileName="AllMethodUsages_Finder.java" startLine="75" startPosition="7" endLine="78" endPosition="5">
+    <scopeInfo nodeId="1206537426844" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AllMethodUsages_Finder.java" startLine="75" startPosition="7" endLine="78" endPosition="5">
       <varInfo nodeId="1206537426857" varName="methodDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1206454288720" fileName="AllMethodUsages_Finder.java" startLine="56" startPosition="176" endLine="60" endPosition="62" />
     <scopeInfo nodeId="1206537426816" fileName="AllMethodUsages_Finder.java" startLine="67" startPosition="119" endLine="71" endPosition="65" />
     <scopeInfo nodeId="1200422478133" fileName="AllMethodUsages_Finder.java" startLine="44" startPosition="119" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1200420377472" fileName="AllMethodUsages_Finder.java" startLine="55" startPosition="56" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="1206454288717" fileName="AllMethodUsages_Finder.java" startLine="55" startPosition="56" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="1206454288717" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AllMethodUsages_Finder.java" startLine="55" startPosition="56" endLine="61" endPosition="7" />
     <scopeInfo nodeId="1200317943495" fileName="AllMethodUsages_Finder.java" startLine="32" startPosition="43" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="1200420377471" fileName="AllMethodUsages_Finder.java" startLine="54" startPosition="7" endLine="62" endPosition="5">
+    <scopeInfo nodeId="1200420377471" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AllMethodUsages_Finder.java" startLine="54" startPosition="7" endLine="62" endPosition="5">
       <varInfo nodeId="1200420377475" varName="methodDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1206537426292" fileName="AllMethodUsages_Finder.java" startLine="65" startPosition="80" endLine="78" endPosition="5">
@@ -221,10 +221,10 @@
     <scopeInfo nodeId="1206537111493" fileName="FieldUsages_Finder.java" startLine="59" startPosition="186" endLine="60" endPosition="62" />
     <scopeInfo nodeId="1206463233017" fileName="FieldUsages_Finder.java" startLine="65" startPosition="45" endLine="66" endPosition="26" />
     <scopeInfo nodeId="1206537147100" fileName="FieldUsages_Finder.java" startLine="49" startPosition="77" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="1206537167248" fileName="FieldUsages_Finder.java" startLine="49" startPosition="77" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="1206537167248" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="FieldUsages_Finder.java" startLine="49" startPosition="77" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1206537064530" fileName="FieldUsages_Finder.java" startLine="58" startPosition="119" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="1206537111490" fileName="FieldUsages_Finder.java" startLine="58" startPosition="119" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="1206537147097" fileName="FieldUsages_Finder.java" startLine="48" startPosition="7" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="1206537111490" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="FieldUsages_Finder.java" startLine="58" startPosition="119" endLine="61" endPosition="7" />
+    <scopeInfo nodeId="1206537147097" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="FieldUsages_Finder.java" startLine="48" startPosition="7" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1206537006735" fileName="FieldUsages_Finder.java" startLine="56" startPosition="80" endLine="62" endPosition="5" />
     <scopeInfo nodeId="1200405628547" fileName="FieldUsages_Finder.java" startLine="32" startPosition="43" endLine="39" endPosition="16" />
     <scopeInfo nodeId="1200405628559" fileName="FieldUsages_Finder.java" startLine="42" startPosition="102" endLine="53" endPosition="5">
@@ -254,13 +254,13 @@
     <scopeInfo nodeId="1200497698937" fileName="OverridingFields_Finder.java" startLine="53" startPosition="323" endLine="54" endPosition="60" />
     <scopeInfo nodeId="1206463287421" fileName="OverridingFields_Finder.java" startLine="60" startPosition="45" endLine="61" endPosition="31" />
     <scopeInfo nodeId="1200497698916" fileName="OverridingFields_Finder.java" startLine="52" startPosition="67" endLine="55" endPosition="9" />
-    <scopeInfo nodeId="1200497698914" fileName="OverridingFields_Finder.java" startLine="51" startPosition="7" endLine="56" endPosition="7" />
+    <scopeInfo nodeId="1200497698914" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverridingFields_Finder.java" startLine="51" startPosition="7" endLine="56" endPosition="7" />
     <scopeInfo nodeId="1200420731718" fileName="OverridingFields_Finder.java" startLine="34" startPosition="43" endLine="41" endPosition="16" />
     <scopeInfo nodeId="1200497698881" fileName="OverridingFields_Finder.java" startLine="45" startPosition="190" endLine="56" endPosition="7">
       <varInfo nodeId="1200497698891" varName="fieldsOfSameKind" />
     </scopeInfo>
     <scopeInfo nodeId="1200420731720" fileName="OverridingFields_Finder.java" startLine="44" startPosition="102" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="1200497698878" fileName="OverridingFields_Finder.java" startLine="44" startPosition="102" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="1200497698878" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="OverridingFields_Finder.java" startLine="44" startPosition="102" endLine="57" endPosition="5" />
   </root>
   <root nodeId="1200425321273">
     <nodeInfo nodeId="1200425581842" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="34" startPosition="43" endLine="35" endPosition="216" />
@@ -271,7 +271,7 @@
     <nodeInfo nodeId="1206463270027" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="56" startPosition="45" endLine="57" endPosition="35" />
     <nodeInfo nodeId="1200503699300" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="39" startPosition="70" endLine="42" endPosition="5" />
     <nodeInfo nodeId="1204901463932" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="106" endLine="51" endPosition="9" />
-    <nodeInfo nodeId="3636996958059114128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="124" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="3636996958059114128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="124" endLine="47" endPosition="0" />
     <nodeInfo nodeId="1200425863012" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="9" endLine="52" endPosition="7" />
     <nodeInfo nodeId="1200425862976" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="42" startPosition="5" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1200425321275" fileName="InterfaceMethodImplementations_Finder.java" startLine="34" startPosition="43" endLine="35" endPosition="216" />
@@ -279,12 +279,12 @@
     <scopeInfo nodeId="3636996958059114129" fileName="InterfaceMethodImplementations_Finder.java" startLine="44" startPosition="37" endLine="45" endPosition="93" />
     <scopeInfo nodeId="1204901463933" fileName="InterfaceMethodImplementations_Finder.java" startLine="49" startPosition="96" endLine="50" endPosition="62" />
     <scopeInfo nodeId="1206463267275" fileName="InterfaceMethodImplementations_Finder.java" startLine="56" startPosition="45" endLine="57" endPosition="35" />
-    <scopeInfo nodeId="1200503699300" fileName="InterfaceMethodImplementations_Finder.java" startLine="39" startPosition="70" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="1200503699300" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="39" startPosition="70" endLine="42" endPosition="5" />
     <scopeInfo nodeId="1200425863014" fileName="InterfaceMethodImplementations_Finder.java" startLine="48" startPosition="106" endLine="51" endPosition="9" />
-    <scopeInfo nodeId="3636996958059114128" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="124" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3636996958059114128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="InterfaceMethodImplementations_Finder.java" startLine="43" startPosition="124" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1200425862979" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="9" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="1200425863012" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="9" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="1200425862976" fileName="InterfaceMethodImplementations_Finder.java" startLine="42" startPosition="5" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="1200425863012" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="47" startPosition="9" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="1200425862976" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceMethodImplementations_Finder.java" startLine="42" startPosition="5" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1200425662194" fileName="InterfaceMethodImplementations_Finder.java" startLine="38" startPosition="102" endLine="53" endPosition="5">
       <varInfo nodeId="1200503349565" varName="implementorsAndAncestorsList" />
     </scopeInfo>
@@ -332,12 +332,12 @@
     <scopeInfo nodeId="1206453838176" fileName="ParameterUsages_Finder.java" startLine="44" startPosition="177" endLine="45" endPosition="67" />
     <scopeInfo nodeId="1206537384340" fileName="ParameterUsages_Finder.java" startLine="56" startPosition="71" endLine="57" endPosition="266" />
     <scopeInfo nodeId="1206463308207" fileName="ParameterUsages_Finder.java" startLine="61" startPosition="45" endLine="62" endPosition="30" />
-    <scopeInfo nodeId="1206453838173" fileName="ParameterUsages_Finder.java" startLine="43" startPosition="244" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="1206537384337" fileName="ParameterUsages_Finder.java" startLine="55" startPosition="7" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="1206453838173" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterUsages_Finder.java" startLine="43" startPosition="244" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="1206537384337" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterUsages_Finder.java" startLine="55" startPosition="7" endLine="58" endPosition="5" />
     <scopeInfo nodeId="1201108565457" fileName="ParameterUsages_Finder.java" startLine="42" startPosition="71" endLine="46" endPosition="7">
       <varInfo nodeId="1201108733509" varName="parameterNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1201108565454" fileName="ParameterUsages_Finder.java" startLine="41" startPosition="7" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="1201108565454" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterUsages_Finder.java" startLine="41" startPosition="7" endLine="47" endPosition="5" />
     <scopeInfo nodeId="1206537383899" fileName="ParameterUsages_Finder.java" startLine="50" startPosition="80" endLine="58" endPosition="5">
       <varInfo nodeId="1206537384327" varName="overridingMethods" />
       <varInfo nodeId="1206537384297" varName="nodeParentMethod" />
@@ -373,7 +373,7 @@
     <nodeInfo nodeId="1204127398242" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConstructorUsages_Finder.java" startLine="60" startPosition="13" endLine="63" endPosition="13" />
     <nodeInfo nodeId="1204122736299" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConstructorUsages_Finder.java" startLine="76" startPosition="124" endLine="79" endPosition="13" />
     <nodeInfo nodeId="1204122742105" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConstructorUsages_Finder.java" startLine="80" startPosition="11" endLine="83" endPosition="11" />
-    <nodeInfo nodeId="1227876797642" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ConstructorUsages_Finder.java" startLine="46" startPosition="165" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="1227876797642" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ConstructorUsages_Finder.java" startLine="46" startPosition="165" endLine="50" endPosition="0" />
     <nodeInfo nodeId="1204127398190" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ConstructorUsages_Finder.java" startLine="53" startPosition="200" endLine="60" endPosition="13" />
     <nodeInfo nodeId="1204122736277" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ConstructorUsages_Finder.java" startLine="73" startPosition="196" endLine="80" endPosition="11" />
     <nodeInfo nodeId="1204127398188" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConstructorUsages_Finder.java" startLine="52" startPosition="133" endLine="64" endPosition="11" />
@@ -391,8 +391,8 @@
     <scopeInfo nodeId="1204122736300" fileName="ConstructorUsages_Finder.java" startLine="77" startPosition="189" endLine="78" endPosition="38" />
     <scopeInfo nodeId="1204122742106" fileName="ConstructorUsages_Finder.java" startLine="81" startPosition="32" endLine="82" endPosition="69" />
     <scopeInfo nodeId="1206463190533" fileName="ConstructorUsages_Finder.java" startLine="89" startPosition="45" endLine="90" endPosition="32" />
-    <scopeInfo nodeId="1204121482996" fileName="ConstructorUsages_Finder.java" startLine="39" startPosition="82" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1227876797642" fileName="ConstructorUsages_Finder.java" startLine="46" startPosition="165" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1204121482996" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConstructorUsages_Finder.java" startLine="39" startPosition="82" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="1227876797642" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ConstructorUsages_Finder.java" startLine="46" startPosition="165" endLine="50" endPosition="0" />
     <scopeInfo nodeId="1204127398191" fileName="ConstructorUsages_Finder.java" startLine="54" startPosition="137" endLine="59" endPosition="15">
       <varInfo nodeId="1204127398193" varName="actualArgument" />
       <varInfo nodeId="1204127398203" varName="formalArgument" />
@@ -401,10 +401,10 @@
       <varInfo nodeId="1204122736280" varName="actualArgument" />
       <varInfo nodeId="1204122736290" varName="formalArgument" />
     </scopeInfo>
-    <scopeInfo nodeId="1204127398190" fileName="ConstructorUsages_Finder.java" startLine="53" startPosition="200" endLine="60" endPosition="13">
+    <scopeInfo nodeId="1204127398190" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ConstructorUsages_Finder.java" startLine="53" startPosition="200" endLine="60" endPosition="13">
       <varInfo nodeId="1204127398226" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1204122736277" fileName="ConstructorUsages_Finder.java" startLine="73" startPosition="196" endLine="80" endPosition="11">
+    <scopeInfo nodeId="1204122736277" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="ConstructorUsages_Finder.java" startLine="73" startPosition="196" endLine="80" endPosition="11">
       <varInfo nodeId="1204122736313" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1204127398189" fileName="ConstructorUsages_Finder.java" startLine="53" startPosition="200" endLine="63" endPosition="13" />
@@ -417,12 +417,12 @@
       <varInfo nodeId="1204127398185" varName="thisConstructor" />
     </scopeInfo>
     <scopeInfo nodeId="1204121678255" fileName="ConstructorUsages_Finder.java" startLine="70" startPosition="27" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="1204121808317" fileName="ConstructorUsages_Finder.java" startLine="70" startPosition="27" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="1204121808317" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConstructorUsages_Finder.java" startLine="70" startPosition="27" endLine="85" endPosition="7" />
     <scopeInfo nodeId="1204127076384" fileName="ConstructorUsages_Finder.java" startLine="45" startPosition="199" endLine="65" endPosition="9" />
-    <scopeInfo nodeId="1204127350109" fileName="ConstructorUsages_Finder.java" startLine="45" startPosition="199" endLine="65" endPosition="9" />
+    <scopeInfo nodeId="1204127350109" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConstructorUsages_Finder.java" startLine="45" startPosition="199" endLine="65" endPosition="9" />
     <scopeInfo nodeId="1204127040741" fileName="ConstructorUsages_Finder.java" startLine="44" startPosition="272" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="1204127076381" fileName="ConstructorUsages_Finder.java" startLine="44" startPosition="272" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="1204127040738" fileName="ConstructorUsages_Finder.java" startLine="43" startPosition="39" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="1204127076381" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConstructorUsages_Finder.java" startLine="44" startPosition="272" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="1204127040738" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConstructorUsages_Finder.java" startLine="43" startPosition="39" endLine="67" endPosition="5" />
     <scopeInfo nodeId="1204121124767" fileName="ConstructorUsages_Finder.java" startLine="37" startPosition="102" endLine="86" endPosition="5">
       <varInfo nodeId="1204125931627" varName="enumNode" />
     </scopeInfo>
@@ -439,7 +439,7 @@
     <scopeInfo nodeId="1206463323013" fileName="StraightDerivedClasses_Finder.java" startLine="40" startPosition="45" endLine="41" endPosition="34" />
     <scopeInfo nodeId="1204123335973" fileName="StraightDerivedClasses_Finder.java" startLine="31" startPosition="138" endLine="36" endPosition="7" />
     <scopeInfo nodeId="1204122859727" fileName="StraightDerivedClasses_Finder.java" startLine="30" startPosition="102" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1204123335972" fileName="StraightDerivedClasses_Finder.java" startLine="30" startPosition="102" endLine="37" endPosition="5">
+    <scopeInfo nodeId="1204123335972" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StraightDerivedClasses_Finder.java" startLine="30" startPosition="102" endLine="37" endPosition="5">
       <varInfo nodeId="1204123336001" varName="nodeUsage" />
     </scopeInfo>
   </root>
@@ -489,14 +489,14 @@
     <scopeInfo nodeId="1216391847837" fileName="BaseMethod_Finder.java" startLine="52" startPosition="28" endLine="55" endPosition="201" />
     <scopeInfo nodeId="1216393234200" fileName="BaseMethod_Finder.java" startLine="63" startPosition="21" endLine="66" endPosition="9" />
     <scopeInfo nodeId="1216393234219" fileName="BaseMethod_Finder.java" startLine="74" startPosition="69" endLine="77" endPosition="9" />
-    <scopeInfo nodeId="1216400655028" fileName="BaseMethod_Finder.java" startLine="79" startPosition="5" endLine="82" endPosition="5" />
+    <scopeInfo nodeId="1216400655028" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethod_Finder.java" startLine="79" startPosition="5" endLine="82" endPosition="5" />
     <scopeInfo nodeId="1216393234209" fileName="BaseMethod_Finder.java" startLine="67" startPosition="14" endLine="72" endPosition="9" />
-    <scopeInfo nodeId="1216393234216" fileName="BaseMethod_Finder.java" startLine="73" startPosition="7" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="1216393234216" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethod_Finder.java" startLine="73" startPosition="7" endLine="78" endPosition="7" />
     <scopeInfo nodeId="1204898641597" fileName="BaseMethod_Finder.java" startLine="36" startPosition="43" endLine="43" endPosition="16" />
     <scopeInfo nodeId="1216393013712" fileName="BaseMethod_Finder.java" startLine="61" startPosition="64" endLine="78" endPosition="7">
       <varInfo nodeId="1216393234196" varName="classMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1216393013709" fileName="BaseMethod_Finder.java" startLine="60" startPosition="67" endLine="79" endPosition="5" />
+    <scopeInfo nodeId="1216393013709" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethod_Finder.java" startLine="60" startPosition="67" endLine="79" endPosition="5" />
     <scopeInfo nodeId="1204898641599" fileName="BaseMethod_Finder.java" startLine="46" startPosition="102" endLine="82" endPosition="5">
       <varInfo nodeId="1216393165136" varName="isStatic" />
       <varInfo nodeId="1216400588562" varName="results" />
@@ -521,11 +521,11 @@
     <scopeInfo nodeId="1216398069081" fileName="InterfaceAncestors_Finder.java" startLine="35" startPosition="103" endLine="36" endPosition="13" />
     <scopeInfo nodeId="1204902212208" fileName="InterfaceAncestors_Finder.java" startLine="42" startPosition="184" endLine="43" endPosition="69" />
     <scopeInfo nodeId="1206463258072" fileName="InterfaceAncestors_Finder.java" startLine="48" startPosition="45" endLine="49" endPosition="22" />
-    <scopeInfo nodeId="1204902212205" fileName="InterfaceAncestors_Finder.java" startLine="41" startPosition="63" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="1204902212205" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceAncestors_Finder.java" startLine="41" startPosition="63" endLine="44" endPosition="7" />
     <scopeInfo nodeId="1204902118530" fileName="InterfaceAncestors_Finder.java" startLine="39" startPosition="114" endLine="44" endPosition="7">
       <varInfo nodeId="1216398221896" varName="ancestorNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1204902118525" fileName="InterfaceAncestors_Finder.java" startLine="38" startPosition="25" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1204902118525" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InterfaceAncestors_Finder.java" startLine="38" startPosition="25" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1204899453046" fileName="InterfaceAncestors_Finder.java" startLine="34" startPosition="102" endLine="45" endPosition="5">
       <varInfo nodeId="1204899912019" varName="current" />
     </scopeInfo>
@@ -551,9 +551,9 @@
     <scopeInfo nodeId="1216386130660" fileName="BaseMethodUsages_Finder.java" startLine="54" startPosition="61" endLine="55" endPosition="57" />
     <scopeInfo nodeId="1216386272408" fileName="BaseMethodUsages_Finder.java" startLine="59" startPosition="45" endLine="60" endPosition="32" />
     <scopeInfo nodeId="1216386159395" fileName="BaseMethodUsages_Finder.java" startLine="44" startPosition="61" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="1216386170455" fileName="BaseMethodUsages_Finder.java" startLine="44" startPosition="61" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="1216386130657" fileName="BaseMethodUsages_Finder.java" startLine="53" startPosition="56" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="1216386159393" fileName="BaseMethodUsages_Finder.java" startLine="43" startPosition="157" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="1216386170455" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodUsages_Finder.java" startLine="44" startPosition="61" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="1216386130657" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodUsages_Finder.java" startLine="53" startPosition="56" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="1216386159393" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BaseMethodUsages_Finder.java" startLine="43" startPosition="157" endLine="48" endPosition="5" />
     <scopeInfo nodeId="1216385900929" fileName="BaseMethodUsages_Finder.java" startLine="51" startPosition="80" endLine="56" endPosition="5">
       <varInfo nodeId="1216395373526" varName="baseMethods" />
     </scopeInfo>
@@ -579,10 +579,10 @@
     <scopeInfo nodeId="1216392459938" fileName="ImplementedInterfaces_Finder.java" startLine="37" startPosition="208" endLine="40" endPosition="212">
       <varInfo nodeId="1216392593418" varName="interfaceNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1216392878454" fileName="ImplementedInterfaces_Finder.java" startLine="42" startPosition="5" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1216392878454" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ImplementedInterfaces_Finder.java" startLine="42" startPosition="5" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1216392203371" fileName="ImplementedInterfaces_Finder.java" startLine="36" startPosition="63" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="1216392459935" fileName="ImplementedInterfaces_Finder.java" startLine="36" startPosition="63" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="1216392203368" fileName="ImplementedInterfaces_Finder.java" startLine="35" startPosition="55" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="1216392459935" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ImplementedInterfaces_Finder.java" startLine="36" startPosition="63" endLine="41" endPosition="7" />
+    <scopeInfo nodeId="1216392203368" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ImplementedInterfaces_Finder.java" startLine="35" startPosition="55" endLine="42" endPosition="5" />
     <scopeInfo nodeId="1216392046441" fileName="ImplementedInterfaces_Finder.java" startLine="32" startPosition="102" endLine="45" endPosition="5">
       <varInfo nodeId="1216392185707" varName="result" />
       <varInfo nodeId="1216392709434" varName="classNodes" />
@@ -599,7 +599,7 @@
     <scopeInfo nodeId="1227970620176" fileName="ExactMethodUsages_Finder.java" startLine="37" startPosition="54" endLine="40" endPosition="9" />
     <scopeInfo nodeId="1227527192373" fileName="ExactMethodUsages_Finder.java" startLine="36" startPosition="161" endLine="41" endPosition="7" />
     <scopeInfo nodeId="1227527031009" fileName="ExactMethodUsages_Finder.java" startLine="35" startPosition="102" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1227527192369" fileName="ExactMethodUsages_Finder.java" startLine="35" startPosition="102" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="1227527192369" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExactMethodUsages_Finder.java" startLine="35" startPosition="102" endLine="42" endPosition="5" />
   </root>
   <root nodeId="1237738696198">
     <nodeInfo nodeId="1237738784324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClassUsages_Finder.java" startLine="31" startPosition="158" endLine="32" endPosition="57" />
@@ -615,12 +615,12 @@
     <scopeInfo nodeId="1237742045354" fileName="ClassUsages_Finder.java" startLine="35" startPosition="172" endLine="36" endPosition="59" />
     <scopeInfo nodeId="1237742095140" fileName="ClassUsages_Finder.java" startLine="43" startPosition="108" endLine="44" endPosition="62" />
     <scopeInfo nodeId="1237742072286" fileName="ClassUsages_Finder.java" startLine="48" startPosition="45" endLine="49" endPosition="26" />
-    <scopeInfo nodeId="1237738774628" fileName="ClassUsages_Finder.java" startLine="30" startPosition="102" endLine="33" endPosition="5" />
+    <scopeInfo nodeId="1237738774628" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassUsages_Finder.java" startLine="30" startPosition="102" endLine="33" endPosition="5" />
     <scopeInfo nodeId="1237742023497" fileName="ClassUsages_Finder.java" startLine="34" startPosition="108" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1237742045352" fileName="ClassUsages_Finder.java" startLine="34" startPosition="108" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="1237742095137" fileName="ClassUsages_Finder.java" startLine="42" startPosition="53" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1237742045352" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassUsages_Finder.java" startLine="34" startPosition="108" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="1237742095137" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassUsages_Finder.java" startLine="42" startPosition="53" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1237742080789" fileName="ClassUsages_Finder.java" startLine="41" startPosition="80" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1237742023494" fileName="ClassUsages_Finder.java" startLine="33" startPosition="5" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="1237742023494" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClassUsages_Finder.java" startLine="33" startPosition="5" endLine="38" endPosition="5" />
     <scopeInfo nodeId="1237738696200" fileName="ClassUsages_Finder.java" startLine="30" startPosition="102" endLine="38" endPosition="5" />
   </root>
   <root nodeId="4151347580001021181">
@@ -631,10 +631,10 @@
     <nodeInfo nodeId="4151347580001030944" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="37" endLine="48" endPosition="57" />
     <nodeInfo nodeId="4717960406884169463" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="DerivedMethods_Finder.java" startLine="54" startPosition="45" endLine="55" endPosition="108" />
     <nodeInfo nodeId="4717960406884170482" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DerivedMethods_Finder.java" startLine="58" startPosition="41" endLine="59" endPosition="61" />
-    <nodeInfo nodeId="4151347580001030863" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="124" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="4151347580001030936" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="41" endLine="50" endPosition="0" />
-    <nodeInfo nodeId="4717960406884169459" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="123" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="4717960406884170478" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="45" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="4151347580001030863" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="124" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="4151347580001030936" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="41" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="4717960406884169459" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="123" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="4717960406884170478" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="45" endLine="61" endPosition="0" />
     <nodeInfo nodeId="4151347580001030746" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DerivedMethods_Finder.java" startLine="41" startPosition="128" endLine="50" endPosition="9" />
     <nodeInfo nodeId="4717960406884169447" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DerivedMethods_Finder.java" startLine="52" startPosition="199" endLine="61" endPosition="13" />
     <nodeInfo nodeId="4717960406884169435" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="110" endLine="62" endPosition="9" />
@@ -645,15 +645,15 @@
     <scopeInfo nodeId="4151347580001030937" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="37" endLine="48" endPosition="57" />
     <scopeInfo nodeId="4717960406884169460" fileName="DerivedMethods_Finder.java" startLine="54" startPosition="45" endLine="55" endPosition="108" />
     <scopeInfo nodeId="4717960406884170479" fileName="DerivedMethods_Finder.java" startLine="58" startPosition="41" endLine="59" endPosition="61" />
-    <scopeInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="124" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="41" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="123" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="45" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="4151347580001030863" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="124" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="4151347580001030936" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="41" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="4717960406884169459" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="123" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="4717960406884170478" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="45" endLine="61" endPosition="0" />
     <scopeInfo nodeId="4717960406884169438" fileName="DerivedMethods_Finder.java" startLine="52" startPosition="199" endLine="61" endPosition="13" />
     <scopeInfo nodeId="4717960406884169424" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="110" endLine="62" endPosition="9" />
-    <scopeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="110" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="4717960406884169435" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="110" endLine="62" endPosition="9" />
     <scopeInfo nodeId="4151347580001030694" fileName="DerivedMethods_Finder.java" startLine="41" startPosition="128" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="40" startPosition="38" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="4151347580001030692" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="DerivedMethods_Finder.java" startLine="40" startPosition="38" endLine="64" endPosition="5" />
     <scopeInfo nodeId="4151347580001021183" fileName="DerivedMethods_Finder.java" startLine="38" startPosition="108" endLine="64" endPosition="5">
       <varInfo nodeId="4151347580001040947" varName="instanceMethod" />
       <varInfo nodeId="4151347580001030664" varName="classifier" />

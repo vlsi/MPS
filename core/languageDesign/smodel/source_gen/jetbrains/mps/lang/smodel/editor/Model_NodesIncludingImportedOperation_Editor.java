@@ -11,10 +11,10 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
@@ -65,11 +65,12 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  private EditorCell createRefNode_llx455_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("scope");
-    provider.setNoTargetText("<no scope>");
+  private EditorCell createRefCell_llx455_e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("concept");
+    provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new Model_NodesIncludingImportedOperation_Editor._Inline_llx455_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -82,12 +83,11 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  private EditorCell createRefCell_llx455_e0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("concept");
-    provider.setNoTargetText("<no concept>");
+  private EditorCell createRefNode_llx455_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("scope");
+    provider.setNoTargetText("<no scope>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Model_NodesIncludingImportedOperation_Editor._Inline_llx455_a4a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

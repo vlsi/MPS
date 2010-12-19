@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.reloading;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.ReadUtil;
 
 import java.io.File;
@@ -40,7 +43,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private String myPrefix;
   private File myFile;
 
-  private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
+  private Map<String, ZipEntry> myEntries = new THashMap<String, ZipEntry>();
   private MyCache myCache = new MyCache();
 
   private static final HashSet<String> DEFAULT_VALUE = new HashSet<String>(0);
@@ -219,13 +222,10 @@ public class JarFileClassPathItem extends RealClassPathItem {
         }
 
         buildPackageCaches(pack);
-        myCache.addClass(pack, className);
+        myCache.addClass(InternUtil.intern(pack), InternUtil.intern(className));
 
-        if (pack.length() > 0) {
-          myEntries.put(pack + "." + className, entry);
-        } else {
-          myEntries.put(className, entry);
-        }
+        String fullClassName =pack.length() > 0? pack + "." + className:className;
+        myEntries.put(InternUtil.intern(fullClassName), entry);
       }
     }
   }
@@ -233,7 +233,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private void buildPackageCaches(String namespace) {
     String parent = getParentPackage(namespace);
     if (parent.equals(namespace)) return;
-    myCache.addPackage(namespace, parent);
+    myCache.addPackage(InternUtil.intern(namespace), InternUtil.intern(parent));
     buildPackageCaches(parent);
   }
 
@@ -245,8 +245,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   //do not touch this class if you are not sure in your changes - this can lead to excess memory consumption (see #53513)
   private static class MyCache {
-    private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
-    private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
+    private Map<String, Set<String>> myClasses = new THashMap<String, Set<String>>();
+    private Map<String, Set<String>> mySubpackages = new THashMap<String, Set<String>>();
 
     public Set<String> getClassesSetFor(String pack) {
       if (!myClasses.containsKey(pack)) {
@@ -264,14 +264,14 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
     public void addClass(String pack, String className) {
       if (!myClasses.containsKey(pack)) {
-        myClasses.put(pack, new HashSet<String>(2));
+        myClasses.put(pack, new THashSet<String>(2));
       }
       myClasses.get(pack).add(className);
     }
 
     public void addPackage(String namespace, String pack) {
       if (!mySubpackages.containsKey(pack)) {
-        mySubpackages.put(pack, new HashSet<String>(2));
+        mySubpackages.put(pack, new THashSet<String>(2));
       }
       mySubpackages.get(pack).add(namespace);
     }

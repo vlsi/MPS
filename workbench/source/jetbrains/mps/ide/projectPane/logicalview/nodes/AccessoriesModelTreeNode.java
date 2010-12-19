@@ -34,7 +34,6 @@ public class AccessoriesModelTreeNode extends TextTreeNode {
     super("accessories");
     myProjectLanguageTreeNode = projectLanguageTreeNode;
     setIcon(Icons.LIB_ICON);
-    updatePresentation();
   }
 
   public List<String> validate() {

@@ -42,16 +42,14 @@ public class QueryMethodGenerated implements ApplicationComponent {
   private static ConcurrentMap<String, Constructor> ourAdaptorsConstructors = new ConcurrentHashMap<String, Constructor>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
 
-  public static IModule findModuleForModel(SModel sourceModel) {
-    SModelDescriptor smd = sourceModel.getModelDescriptor();
-
-    for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
-      if (owner instanceof Generator && SModelStereotype.isGeneratorModel(smd)) {
+  public static IModule findModuleForModel(SModelDescriptor sourceModel) {
+    for (ModelOwner owner : SModelRepository.getInstance().getOwners(sourceModel)) {
+      if (owner instanceof Generator && SModelStereotype.isGeneratorModel(sourceModel)) {
         Generator g = (Generator) owner;
         return g;
       }
 
-      if (owner instanceof Language && ((Language) owner).getAspectModelDescriptors().contains(smd)) {
+      if (owner instanceof Language && ((Language) owner).getAspectModelDescriptors().contains(sourceModel)) {
         return (IModule) owner;
       }
     }
@@ -69,33 +67,30 @@ public class QueryMethodGenerated implements ApplicationComponent {
     return ourClassesReportedAsNotFound.add(className);
   }
 
-  public static Class getQueriesGeneratedClassFor(SModelDescriptor sm) {
+  public static Class getQueriesGeneratedClassFor(SModelDescriptor sm, boolean suppressErrorLogging) throws ClassNotFoundException {
     String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getSModelReference());
     String queriesClassName = packageName + ".QueriesGenerated";
-    IModule module = findModuleForModel(sm.getSModel());
+    IModule module = findModuleForModel(sm);
     assert module != null;
-    return module.getClass(queriesClassName);
+    Class queriesClass = module.getClass(queriesClassName);
+
+    if (queriesClass == null) {
+      if (!suppressErrorLogging) {
+        if (needReport(queriesClassName)) {
+          LOG.error("couldn't find class 'QueriesGenerated' for model '" + sm.getSModelReference() + "' : TRY TO GENERATE");
+        }
+      }
+      throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleFqName());
+    }
+
+    return queriesClass;
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
     Map<String,Method> methods = ourMethods.get(sourceModel.getSModelReference());
 
     if(methods == null) {
-      String queriesClassName = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference()) + ".QueriesGenerated";
-      Class queriesClass;
-      IModule module = findModuleForModel(sourceModel);
-      assert module != null;
-
-      queriesClass = module.getClass(queriesClassName);
-
-      if (queriesClass == null) {
-        if (!suppressErrorLogging) {
-          if (needReport(queriesClassName)) {
-            LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getSModelReference() + "' : TRY TO GENERATE");
-          }
-        }
-        throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleFqName());
-      }
+      Class queriesClass = getQueriesGeneratedClassFor(sourceModel.getModelDescriptor(), suppressErrorLogging);
 
       methods = ourMethods.get(sourceModel.getSModelReference());
       if(methods == null) {

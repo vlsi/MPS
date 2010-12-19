@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -76,12 +76,14 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createRefNode_g3syp0_c0a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("before");
-    provider.setNoTargetText("<no before>");
+  private EditorCell createRefCell_g3syp0_d0a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("uiObject");
+    provider.setNoTargetText("<no uiObject>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new InsertUIObjectStatement_Editor._Inline_g3syp0_a3a0a());
     editorCell = provider.createEditorCell(editorContext);
+    UI_StyleSheet.getUIObject(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -93,14 +95,12 @@ public class InsertUIObjectStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_g3syp0_d0a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("uiObject");
-    provider.setNoTargetText("<no uiObject>");
+  private EditorCell createRefNode_g3syp0_c0a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("before");
+    provider.setNoTargetText("<no before>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InsertUIObjectStatement_Editor._Inline_g3syp0_a3a0a());
     editorCell = provider.createEditorCell(editorContext);
-    UI_StyleSheet.getUIObject(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

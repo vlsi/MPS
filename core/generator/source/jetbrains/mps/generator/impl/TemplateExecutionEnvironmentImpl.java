@@ -18,8 +18,11 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.lang.structure.structure.Cardinality;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,7 +39,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   private final IOperationContext operationContext;
   private final IGenerationTracer tracer;
 
-  public TemplateExecutionEnvironmentImpl(TemplateGenerator generator, ReductionContext reductionContext, IOperationContext operationContext, IGenerationTracer tracer) {
+  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull ReductionContext reductionContext, IOperationContext operationContext, @NotNull IGenerationTracer tracer) {
     this.generator = generator;
     this.reductionContext = reductionContext;
     this.operationContext = operationContext;
@@ -59,6 +62,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return tracer;
   }
 
+  @NotNull
   public ReductionContext getReductionContext() {
     return reductionContext;
   }
@@ -105,7 +109,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return outputNodes == null ? Collections.<SNode>emptyList() : outputNodes;
   }
 
-  public Collection<SNode> trySwitch(SNodePointer switch_, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
+  public Collection<SNode> trySwitch(SNodePointer switch_, String mappingName, TemplateContext context) throws GenerationException {
     Collection<SNode> collection = generator.tryToReduce(context, switch_, mappingName, reductionContext);
     if(collection != null) {
       return collection;
@@ -123,6 +127,51 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     // no switch-case found for the inputNode - continue with templateNode under the $switch$
     return null;
   }
+
+  @Override
+  public Collection<SNode> applyTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException {
+    TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
+    if(templateModel == null) {
+      generator.getLogger().error(templateNode.getNode(), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
+        GeneratorUtil.describeIfExists(context.getInput(), "input"),
+        GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
+        GeneratorUtil.describeIfExists(templateDeclaration.getNode(), "template declaration"));
+      return Collections.emptyList();
+    }
+
+    TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
+    if(templateDeclarationInstance == null) {
+      generator.getLogger().error(templateNode.getNode(), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
+        GeneratorUtil.describeIfExists(context.getInput(), "input"),
+        GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
+        GeneratorUtil.describeIfExists(templateDeclaration.getNode(), "template declaration"));
+      return Collections.emptyList();
+    }
+
+    return templateDeclarationInstance.apply(this, context);
+  }
+
+  @Override
+  public Collection<SNode> weaveTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException {
+    TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
+    if(templateModel == null) {
+      generator.getLogger().error(templateNode.getNode(), "template model not found: cannot apply template declaration, try to check & regenerate affected generators",
+        GeneratorUtil.describeIfExists(context.getInput(), "input"),
+        GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
+        GeneratorUtil.describeIfExists(templateDeclaration.getNode(), "template declaration"));
+      return Collections.emptyList();
+    }
+
+    TemplateDeclaration templateDeclarationInstance = templateModel.loadTemplate(templateDeclaration, arguments);
+    if(templateDeclarationInstance == null || !(templateDeclarationInstance instanceof TemplateDeclarationWeavingAware)) {
+      generator.getLogger().error(templateNode.getNode(), "declaration not found: cannot apply template declaration, try to check & regenerate affected generators",
+        GeneratorUtil.describeIfExists(context.getInput(), "input"),
+        GeneratorUtil.describeIfExists(templateNode.getNode(), "template"),
+        GeneratorUtil.describeIfExists(templateDeclaration.getNode(), "template declaration"));
+      return Collections.emptyList();
+    }
+
+    return ((TemplateDeclarationWeavingAware)templateDeclarationInstance).weave(this, context, outputContextNode);  }
 
 
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
@@ -198,5 +247,35 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
     generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, reductionContext);
+  }
+
+  @Override
+  public void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodePointer templateNode, SNode inputNode) {
+    if(outputNodeToWeave == null) {
+      return;
+    }
+
+    // check child
+    RoleValidationStatus status = generator.validateChild(contextParentNode, childRole, outputNodeToWeave);
+    if (status != null) {
+      status.reportProblem(false, "",
+        GeneratorUtil.describe(inputNode, "input"),
+        GeneratorUtil.describe(templateNode.getNode(), "template"));
+    }
+
+    // add
+    LinkDeclaration childLinkDeclaration = contextParentNode.getLinkDeclaration(childRole);
+    if (childLinkDeclaration == null) {
+      // there should have been warning about that
+      contextParentNode.addChild(childRole, outputNodeToWeave);
+    } else {
+      // if singular child then don't add more that 1 child
+      Cardinality cardinality = childLinkDeclaration.getSourceCardinality();
+      if (cardinality == Cardinality._0__1 || cardinality == Cardinality._1) {
+        contextParentNode.setChild(childRole, outputNodeToWeave);
+      } else {
+        contextParentNode.addChild(childRole, outputNodeToWeave);
+      }
+    }
   }
 }

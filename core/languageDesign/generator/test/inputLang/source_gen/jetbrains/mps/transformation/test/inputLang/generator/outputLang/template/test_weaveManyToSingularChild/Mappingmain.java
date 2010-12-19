@@ -14,16 +14,18 @@ import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer rootMappingRule_417xrn_a0a0a = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
-  private static SNodePointer rootMappingRule_417xrn_b0b0a1a1a = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
+  private static SNodePointer rootMappingRule_417xrn_b0b0a0a4a = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
   private static SNodePointer weavingRule_417xrn_a0a0b = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738863683");
+  private static SNodePointer weavingConseq_417xrn_a0a0a5b = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738992786");
 
   private final Collection<TemplateRootMappingRule> rootRules;
   private final Collection<TemplateWeavingRule> weavings;
@@ -36,11 +38,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public String getName() {
-    return null;
+    return "main";
   }
 
   public TemplateModel getModel() {
-    return null;
+    return this.myModel;
   }
 
   public SNodePointer getMappingNode() {
@@ -68,11 +70,11 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
 
   public Collection<TemplateMappingScript> getPostScripts() {
-    return null;
+    return Collections.emptySet();
   }
 
   public Collection<TemplateMappingScript> getPreScripts() {
-    return null;
+    return Collections.emptySet();
   }
 
   public class RootMappingRule0 implements TemplateRootMappingRule {
@@ -81,14 +83,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public SNodePointer getRuleNode() {
       return rootMappingRule_417xrn_a0a0a;
-    }
-
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      final String mappingName = "generated_root";
-      if (!(QueriesGenerated.baseMappingRule_Condition_1218738676457(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a1a1a, environment.getGenerator())))) {
-        return null;
-      }
-      return new Templatemap_outputNode().apply(environment, context);
     }
 
     public boolean applyToInheritors() {
@@ -102,6 +96,19 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public boolean keepSourceRoot() {
       return false;
     }
+
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1218738676457(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rootMappingRule_417xrn_b0b0a0a4a, environment.getGenerator())))) {
+        return false;
+      }
+      return true;
+    }
+
+    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+      Collection<SNode> result = new Templatemap_outputNode().apply(environment, context);
+      environment.registerLabel(context.getInput(), result, "generated_root");
+      return result;
+    }
   }
 
   public class WeavingRule0 implements TemplateWeavingRule {
@@ -110,6 +117,31 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public SNodePointer getRuleNode() {
       return weavingRule_417xrn_a0a0b;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1218738876108(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a0b, environment.getGenerator())))) {
+        return false;
+      }
+      return true;
+    }
+
+    public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_1218738863685(environment.getOperationContext(), new WeavingMappingRuleContext(context.getInput(), weavingRule_417xrn_a0a0b, environment.getGenerator()));
+    }
+
+    public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
+      environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a0a5b);
+      Collection<SNode> tlist1 = new Templateweave_InputNode_A().weave(environment, context, outputContextNode);
+      return !(tlist1.isEmpty());
     }
   }
 }

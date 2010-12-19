@@ -49,8 +49,21 @@ public class TypesUtil {
     return node != null && RuntimeTypeVariable.concept.equals(node.getConceptFqName());
   }
 
-  public static boolean isShallowConcrete(SNode node) {
-    return !isVariable(node);
+  public static boolean hasVariablesInside(SNode node) {
+    if (isVariable(node)) {
+      return true;
+    }
+    for (SNode child : node.getChildren()) {
+      if (hasVariablesInside(child)) {
+        return true;
+      }
+    }
+    for (SNode referent : node.getReferents()) {
+      if (referent != null && referent.getConceptFqName().equals(RuntimeTypeVariable.concept)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {

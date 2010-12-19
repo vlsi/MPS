@@ -42,13 +42,18 @@ public interface TemplateExecutionEnvironment {
 
   IGenerationTracer getTracer();
 
+  @NotNull
   ReductionContext getReductionContext();
 
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
   Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
-  Collection<SNode> trySwitch(SNodePointer _switch, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException;
+  Collection<SNode> trySwitch(SNodePointer _switch, String mappingName, TemplateContext context) throws GenerationException;
+
+  Collection<SNode> applyTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
+
+  Collection<SNode> weaveTemplate(@NotNull SNodePointer templateDeclaration, @NotNull SNodePointer templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException;
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
 
@@ -68,4 +73,6 @@ public interface TemplateExecutionEnvironment {
   SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
   void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
+
+  void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodePointer templateNode, SNode inputNode);
 }

@@ -15,12 +15,18 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Evgeny Gryaznov, Nov 29, 2010
  */
-public interface TemplateWeavingRule {
+public interface TemplateWeavingRule extends TemplateRuleWithCondition {
 
-  SNodePointer getRuleNode();
+  String getApplicableConcept();
+
+  boolean applyToInheritors();
+
+  SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context);
+
+  boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException;
 }

@@ -49,7 +49,6 @@ public class NodeMaps {
   }
 
   public void addNodeToType(SNode node, SNode type, EquationInfo info) {
-    myTypesToNodes.put(type, node);
     myState.executeOperation(new TypeAssignedOperation(node, type, info));
   }
 
@@ -70,6 +69,12 @@ public class NodeMaps {
     myState.assertIsInStateChangeAction();
     SNode type = myNodesToTypes.remove(node);
     myTypesToNodes.remove(type);
+  }
+
+  @StateMethod
+  public void assignNodeTypeDontChangeSource(SNode node, SNode type) {
+    myState.assertIsInStateChangeAction();
+    myNodesToTypes.put(node, type);
   }
 
   @StateMethod
@@ -155,7 +160,7 @@ public class NodeMaps {
   }
 
   public void expandAll() {
-    for (SNode node : myNodesToTypes.keySet()) {
+    for (SNode node : new HashSet<SNode>(myNodesToTypes.keySet())) {
       SNode var = myNodesToTypes.get(node);
       SNode type = myState.getEquations().expandNode(var);
       updateNodeToType(node, type, null);

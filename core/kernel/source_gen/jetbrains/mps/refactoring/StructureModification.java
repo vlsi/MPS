@@ -9,9 +9,12 @@ import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class StructureModification {
   private Map<SModelReference, Integer> myDependencies = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
@@ -22,6 +25,16 @@ public class StructureModification {
 
   public void addDependencyModel(SModelReference modelRef, int version) {
     MapSequence.fromMap(myDependencies).put(modelRef, version);
+  }
+
+  public void addDependencyModel(SModelReference modelRef) {
+    if (!(MapSequence.fromMap(myDependencies).containsKey(modelRef))) {
+      EditableSModelDescriptor model = as_hr78sn_a0a0a0a1(SModelRepository.getInstance().getModelDescriptor(modelRef), EditableSModelDescriptor.class);
+      MapSequence.fromMap(myDependencies).put(modelRef, (model == null ?
+        -1 :
+        model.getVersion()
+      ));
+    }
   }
 
   public void setDependencies(Map<SModelReference, Integer> dependencies) {
@@ -46,8 +59,16 @@ public class StructureModification {
     return updated.value;
   }
 
+  private static <T> T as_hr78sn_a0a0a0a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
   public static interface Entry {
     public boolean apply(ModelLinkMap linkMap);
+    public Iterable<SModelReference> getDependentModels();
   }
 
   public static class MoveNode implements StructureModification.Entry {
@@ -63,26 +84,50 @@ public class StructureModification {
     public boolean apply(ModelLinkMap linkMap) {
       return linkMap.moveNode(oldID, newID);
     }
+
+    public Iterable<SModelReference> getDependentModels() {
+      return Sequence.fromArray(new SModelReference[]{oldID.getModelReference(), newID.getModelReference()});
+    }
   }
 
   public static class RenameNode implements StructureModification.Entry {
     public SNodePointer oldID;
-    public String newName;
-    public String newRole;
+    public StructureModification.RenameNode.RenameType type;
+    public String oldValue;
+    public String newValue;
 
-    public RenameNode(SNodePointer id) {
+    public RenameNode(SNodePointer id, StructureModification.RenameNode.RenameType type, String newValue, String oldValue) {
       oldID = id;
+      this.type = type;
+      this.oldValue = oldValue;
+      this.newValue = newValue;
     }
 
     public boolean apply(ModelLinkMap linkMap) {
-      boolean result = false;
-      if (newName != null) {
-        result |= linkMap.setName(oldID, newName);
+      switch (type) {
+        case CONCEPT:
+        case PROPERTY:
+          return linkMap.setName(oldID, newValue);
+        case CHILD:
+        case REFERENCE:
+          return linkMap.setRole(oldID, newValue);
+        default:
+          return false;
       }
-      if (newRole != null) {
-        result |= linkMap.setRole(oldID, newRole);
+    }
+
+    public Iterable<SModelReference> getDependentModels() {
+      return Sequence.fromArray(new SModelReference[]{oldID.getModelReference()});
+    }
+
+    public static     enum RenameType {
+      CONCEPT(),
+      PROPERTY(),
+      CHILD(),
+      REFERENCE();
+
+      RenameType() {
       }
-      return result;
     }
   }
 
@@ -95,6 +140,10 @@ public class StructureModification {
 
     public boolean apply(ModelLinkMap linkMap) {
       return linkMap.updateModelReference(oldModel, newModel);
+    }
+
+    public Iterable<SModelReference> getDependentModels() {
+      return Sequence.fromArray(new SModelReference[]{oldModel, newModel});
     }
   }
 }

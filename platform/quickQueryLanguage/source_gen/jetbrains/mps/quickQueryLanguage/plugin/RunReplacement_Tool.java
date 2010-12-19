@@ -22,7 +22,7 @@ public class RunReplacement_Tool extends GeneratedTool {
   private List<ReplacementView> myViews = ListSequence.fromList(new ArrayList<ReplacementView>());
 
   public RunReplacement_Tool(Project project) {
-    super(project, "Replacement", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\icons\\replace.png", "jetbrains.mps.quickQueryLanguage"), true), ToolWindowAnchor.BOTTOM, false);
+    super(project, "Replacement", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/replace.png", "jetbrains.mps.quickQueryLanguage"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
   public void closeTab(ReplacementView view) {

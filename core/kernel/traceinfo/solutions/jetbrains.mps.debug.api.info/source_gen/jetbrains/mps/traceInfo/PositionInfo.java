@@ -4,6 +4,7 @@ package jetbrains.mps.traceInfo;
 
 import org.jdom.Element;
 import org.jdom.DataConversionException;
+import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Attribute;
 
@@ -30,9 +31,9 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public PositionInfo(Element element) throws DataConversionException {
-    this.myNodeId = check_1myh1n_a0a0b(element.getAttribute(PositionInfo.NODE_ID));
-    this.myConceptFqName = check_1myh1n_a0b0b(element.getAttribute(PositionInfo.CONCEPT_FQ_NAME));
-    this.myFileName = check_1myh1n_a0c0b(element.getAttribute(PositionInfo.FILE_NAME));
+    this.myNodeId = InternUtil.intern(check_1myh1n_a0a0a1(element.getAttribute(NODE_ID)));
+    this.myConceptFqName = InternUtil.intern(check_1myh1n_a0a1a1(element.getAttribute(CONCEPT_FQ_NAME)));
+    this.myFileName = InternUtil.intern(check_1myh1n_a0a2a1(element.getAttribute(FILE_NAME)));
     this.myStartLine = element.getAttribute(PositionInfo.START_LINE).getIntValue();
     this.myStartPosition = element.getAttribute(PositionInfo.START_POSITION).getIntValue();
     this.myEndLine = element.getAttribute(PositionInfo.END_LINE).getIntValue();
@@ -71,11 +72,11 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public void setFileName(String fileName) {
-    this.myFileName = fileName;
+    this.myFileName = InternUtil.intern(fileName);
   }
 
-  public void setNodeId(String nodeIf) {
-    this.myNodeId = nodeIf;
+  public void setNodeId(String nodeId) {
+    this.myNodeId = InternUtil.intern(nodeId);
   }
 
   public void setStartLine(int startLine) {
@@ -170,24 +171,24 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public void setConceptFqName(String conceptFqName) {
-    myConceptFqName = conceptFqName;
+    myConceptFqName = InternUtil.intern(conceptFqName);
   }
 
-  private static String check_1myh1n_a0a0b(Attribute p) {
+  private static String check_1myh1n_a0a0a1(Attribute p) {
     if (null == p) {
       return null;
     }
     return p.getValue();
   }
 
-  private static String check_1myh1n_a0b0b(Attribute p) {
+  private static String check_1myh1n_a0a1a1(Attribute p) {
     if (null == p) {
       return null;
     }
     return p.getValue();
   }
 
-  private static String check_1myh1n_a0c0b(Attribute p) {
+  private static String check_1myh1n_a0a2a1(Attribute p) {
     if (null == p) {
       return null;
     }

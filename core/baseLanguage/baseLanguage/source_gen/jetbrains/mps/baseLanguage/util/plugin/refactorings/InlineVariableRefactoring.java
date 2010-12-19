@@ -18,6 +18,9 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingReadsAnalyzer;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public abstract class InlineVariableRefactoring {
+  public InlineVariableRefactoring() {
+  }
+
   public abstract boolean checkRefactoring(Frame frame);
 
   public abstract SNode doRefactoring();

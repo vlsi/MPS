@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
+import org.apache.commons.lang.ObjectUtils;
 
 @ImmutableObject
 public class SModelFqName implements Comparable<Object> {
@@ -38,7 +39,6 @@ public class SModelFqName implements Comparable<Object> {
 
   private final String myLongName;
   private final String myStereotype;
-  private final String myUIDString;
 
   public SModelFqName(String namePrefix, String shortName, String stereotype) {
     this(namePrefix + "." + shortName, stereotype);
@@ -49,22 +49,21 @@ public class SModelFqName implements Comparable<Object> {
     if (stereotype == null) stereotype = "";
     myLongName = InternUtil.intern(longName);
     myStereotype = InternUtil.intern(stereotype);
-    myUIDString = InternUtil.intern(myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype));
   }
 
   public boolean equals(Object o) {
     if (o == this) return true;
     if (!(o instanceof SModelFqName)) return false;
     SModelFqName otherUID = (SModelFqName) o;
-    return otherUID.myUIDString.equals(myUIDString);
+    return ObjectUtils.equals(otherUID.myLongName, myLongName) && ObjectUtils.equals(otherUID.myStereotype, myStereotype);
   }
 
   public int hashCode() {
-    return myUIDString.hashCode();
+    return myLongName.hashCode() * 37 + myStereotype.hashCode();
   }
 
   public String toString() {
-    return myUIDString;
+    return myLongName + (myStereotype.length() == 0 ? "" : "@" + myStereotype);
   }
 
   public String getLongName() {

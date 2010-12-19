@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.Collection;
 
 /**
@@ -24,7 +27,11 @@ public interface TemplateModel {
 
   String getLongName();
 
+  SModelReference getSModelReference();
+
   Collection<TemplateSwitchMapping> getSwitches();
 
   Collection<TemplateMappingConfiguration> getConfigurations();
+
+  TemplateDeclaration loadTemplate(SNodePointer template, Object... arguments);
 }

@@ -36,7 +36,7 @@ public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
   @NotNull
-  private final NodeTypesComponent myNodeTypesComponent;
+  protected NodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
 
@@ -428,6 +428,18 @@ public class TypeCheckingContext {
       node1,
       equationInfo,
       true,
+      checkOnly);
+  }
+
+  public void createGreaterThanInequationStrong(SNode node1,
+                                          SNode node2,
+                                          boolean checkOnly,
+                                          EquationInfo equationInfo) {
+    getNodeTypesComponent().getEquationManager().addInequation(
+      node2,
+      node1,
+      equationInfo,
+      false,
       checkOnly);
   }
 

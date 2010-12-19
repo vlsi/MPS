@@ -41,19 +41,15 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     super(new ModuleContext(solution, project));
     myShortNameOnly = shortNameOnly;
     mySolution = solution;
-    updatePresentation();
+
+    IFile descriptorFile = mySolution.getDescriptorFile();
+    String id = descriptorFile == null ? mySolution.getModuleFqName() : descriptorFile.getAbsolutePath();
+    setNodeIdentifier(id);
+    setIcon(Icons.SOLUTION_ICON);
   }
 
   public Object getUserObject() {
     return mySolution;
-  }
-
-  protected void doUpdatePresentation() {
-    super.doUpdatePresentation();
-    setIcon(Icons.SOLUTION_ICON);
-    IFile descriptorFile = mySolution.getDescriptorFile();
-    String id = descriptorFile == null ? mySolution.getModuleFqName() : descriptorFile.getAbsolutePath();
-    setNodeIdentifier(id);
   }
 
   public IModule getModule() {

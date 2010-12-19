@@ -16,7 +16,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
@@ -119,6 +118,15 @@ public class StubReloadManager implements ApplicationComponent {
       }
 
       solution.setSolutionDescriptor(sd, false);
+
+      StubPath fakePath = new StubPath("", d.getManager());
+      BaseStubModelRootManager manager = createStubManager(solution, fakePath);
+      if (manager != null) {
+        for (Language l : manager.getLanguagesToImport()) {
+          sd.getUsedLanguages().add(l.getModuleReference());
+        }
+        solution.setSolutionDescriptor(sd, false);
+      }
     }
   }
 

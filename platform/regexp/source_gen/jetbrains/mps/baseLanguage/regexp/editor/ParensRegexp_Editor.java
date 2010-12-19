@@ -46,7 +46,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     ParensRegexp_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ParensRegexp_Editor.ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu_a0a0(), new ParensRegexp_Editor.ParensRegexp_customReplace_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ParensRegexp_Editor.ReplaceWith_ParensRegexp_cellMenu_a0a0(), new ParensRegexp_Editor.ParensRegexp_customReplace_cellMenu_b0a0()}));
     return editorCell;
   }
 
@@ -103,8 +103,8 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu_a0a0() {
+  public static class ReplaceWith_ParensRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ParensRegexp_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

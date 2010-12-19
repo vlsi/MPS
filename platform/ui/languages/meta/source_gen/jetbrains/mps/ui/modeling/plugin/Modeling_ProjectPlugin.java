@@ -13,6 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.IEditor;
 
 public class Modeling_ProjectPlugin extends BaseProjectPlugin {
+  public Modeling_ProjectPlugin() {
+  }
+
   public void initEditors(Project project) {
     MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
     opener.registerOpenHandler(new MPSEditorOpenHandler() {

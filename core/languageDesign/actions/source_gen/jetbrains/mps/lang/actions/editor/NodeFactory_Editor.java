@@ -11,12 +11,12 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class NodeFactory_Editor extends DefaultNodeEditor {
@@ -150,18 +150,13 @@ public class NodeFactory_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5y8bki_c0b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("description");
-    provider.setNoTargetText("<none>");
-    provider.setAllowsEmptyTarget(true);
+  private EditorCell createRefCell_5y8bki_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("applicableConcept");
+    provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new NodeFactory_Editor._Inline_5y8bki_a1a0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_description");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -190,13 +185,18 @@ public class NodeFactory_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5y8bki_b0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("applicableConcept");
-    provider.setNoTargetText("<choose concept>");
+  private EditorCell createProperty_5y8bki_c0b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("description");
+    provider.setNoTargetText("<none>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeFactory_Editor._Inline_5y8bki_a1a0());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_description");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

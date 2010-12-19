@@ -5,6 +5,25 @@ package pattern_gen;
 
 public class RootCustom {
   public RootCustom() {
+    // in ctor 2681305894288275125 
+    // in ctor 4146564171992399882 
+    // in ctor 4146564171992399888 
+    // in ctor 2681305894288275132 
+    // in ctor 2681305894288275179 
+    // in ctor 2681305894288379455 
+    // in ctor 2681305894288379457 
+    // in ctor 3571912445010045823 
+    // in ctor 6266395626233624824 
+    // in ctor 5857536350883158504 
+    // in ctor 6266395626233719470 
+    // in ctor 6509983489804965801 
+    // in ctor 2163819695913718896 
+    // in ctor 2163819695913721858 
+    // in ctor 5857536350883158508 
+    // in ctor 7870321878390043349 
+    // in ctor 6509983489804965645 
+    // in ctor 6010543442198725792 
+    // in ctor 3571912445010045826 
   }
 
   public void main() {
@@ -21,6 +40,7 @@ public class RootCustom {
           res = !(!(res) || !((i - e > qq)));
         }
       }
+      // Block 
 
       {
         // extraWorktrue extraWork 
@@ -54,5 +74,81 @@ public class RootCustom {
       int ya1;
       int ya2 = ya1 * 2;
     }
+  }
+
+  public static void statement2681305894288275125() {
+    // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
+  }
+
+  public static void statement4146564171992399882() {
+    // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
+  }
+
+  public static void statement4146564171992399888() {
+    // jetbrains.mps.baseLanguage.structure.ExpressionStatement 
+  }
+
+  public static void statement2681305894288275132() {
+    // jetbrains.mps.baseLanguage.structure.ExpressionStatement 
+  }
+
+  public static void statement2681305894288275179() {
+    // jetbrains.mps.baseLanguage.structure.ExpressionStatement 
+  }
+
+  public static void statement2681305894288379455() {
+    // jetbrains.mps.baseLanguage.structure.Statement 
+  }
+
+  public static void statement2681305894288379457() {
+    // jetbrains.mps.baseLanguage.structure.IfStatement 
+  }
+
+  public static void statement3571912445010045823() {
+    // jetbrains.mps.baseLanguage.structure.BlockStatement 
+  }
+
+  public static void statement6266395626233624824() {
+    // jetbrains.mps.baseLanguage.structure.Statement 
+  }
+
+  public static void statement5857536350883158504() {
+    // jetbrains.mps.transformation.test.outputLang.structure.CustomStatement 
+  }
+
+  public static void statement6266395626233719470() {
+    // jetbrains.mps.transformation.test.outputLang.structure.CustomStatement 
+  }
+
+  public static void statement6509983489804965801() {
+    // jetbrains.mps.transformation.test.outputLang.structure.CustomStatement 
+  }
+
+  public static void statement2163819695913718896() {
+    // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
+  }
+
+  public static void statement2163819695913721858() {
+    // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
+  }
+
+  public static void statement5857536350883158508() {
+    // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
+  }
+
+  public static void statement7870321878390043349() {
+    // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
+  }
+
+  public static void statement6509983489804965645() {
+    // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
+  }
+
+  public static void statement6010543442198725792() {
+    // jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement 
+  }
+
+  public static void statement3571912445010045826() {
+    // jetbrains.mps.baseLanguage.structure.SingleLineComment 
   }
 }

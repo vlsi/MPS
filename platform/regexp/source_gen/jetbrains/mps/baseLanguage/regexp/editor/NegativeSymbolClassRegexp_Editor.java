@@ -45,7 +45,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new NegativeSymbolClassRegexp_Editor.NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new NegativeSymbolClassRegexp_Editor.ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0()}));
     return editorCell;
   }
 
@@ -117,8 +117,8 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu_a0a0() {
+  public static class ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0() {
     }
 
     public String getReplacementConceptName() {

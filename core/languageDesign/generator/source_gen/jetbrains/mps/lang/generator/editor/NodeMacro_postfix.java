@@ -21,8 +21,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.generator.structure.NodeMacro_AnnotationLink;
@@ -109,15 +109,13 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createProperty_crgygw_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("comment");
-    provider.setNoTargetText("<no comment>");
-    provider.setAllowsEmptyTarget(true);
+  private EditorCell createRefCell_crgygw_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("mappingLabel");
+    provider.setNoTargetText("<no mappingLabel>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline_crgygw_a1a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_comment");
-    Styles_StyleSheet.getMacroDescriptionText(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -129,13 +127,15 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createRefCell_crgygw_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("mappingLabel");
-    provider.setNoTargetText("<no mappingLabel>");
+  private EditorCell createProperty_crgygw_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("comment");
+    provider.setNoTargetText("<no comment>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline_crgygw_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_comment");
+    Styles_StyleSheet.getMacroDescriptionText(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

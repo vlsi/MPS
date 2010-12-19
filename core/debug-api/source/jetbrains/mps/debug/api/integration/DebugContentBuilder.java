@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.debug.api.integration;
 
+import com.intellij.debugger.ui.DebuggerContentInfo;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.RunProfile;
@@ -26,6 +27,8 @@ import com.intellij.execution.ui.ExecutionConsoleEx;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.execution.ui.RunnerLayoutUi;
 import com.intellij.execution.ui.actions.CloseAction;
+import com.intellij.execution.ui.layout.LayoutAttractionPolicy;
+import com.intellij.execution.ui.layout.LayoutViewOptions;
 import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -44,7 +47,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
-import javax.swing.JTabbedPane;
 import java.util.ArrayList;
 
 public class DebugContentBuilder implements Disposable {
@@ -79,7 +81,6 @@ public class DebugContentBuilder implements Disposable {
     ExecutionConsole console = myExecutionResult.getExecutionConsole();
     String runnerType = console instanceof ExecutionConsoleEx ? JAVA_RUNNER + "." + ((ExecutionConsoleEx) console).getExecutionConsoleId() : JAVA_RUNNER;
     RunnerLayoutUi ui = RunnerLayoutUi.Factory.getInstance(myProject).create(runnerType, myExecutor.getId(), profile.getName(), this);
-    ui.getOptions().setMoveToGridActionEnabled(false).setMinimizeActionEnabled(false);
 
     if (ApplicationManager.getApplication().isUnitTestMode()) {
       return createDescriptorInternal(ui, profile);
@@ -98,15 +99,14 @@ public class DebugContentBuilder implements Disposable {
   }
 
   private void buildUi(RunnerLayoutUi ui, ExecutionConsole console) {
-    // TODO create ui
-    JTabbedPane pane = new JTabbedPane();
-    pane.add("Console", console.getComponent());
-    pane.add("Debugger", new DebuggerToolPanel(myProject, myExecutionResult.getProcessHandler()));
+    ui.getOptions().setMoveToGridActionEnabled(true).setMinimizeActionEnabled(true);
 
-    // TODO should we create one content for everything, or special content for each tab
-    // TODO why should we create content?
-    Content content = ui.createContent("Console", pane, "Console", IconLoader.getIcon("/debugger/console.png"), console.getPreferredFocusableComponent());
-    ui.addContent(content, 0, PlaceInGrid.bottom, false);
+    new DebuggerToolPanel(myProject, myExecutionResult.getProcessHandler(), ui);
+
+    Content consoleContent = ui.createContent("Console", console.getComponent(), "Console", IconLoader.getIcon("/debugger/console.png"), console.getPreferredFocusableComponent());
+    consoleContent.setSearchComponent(console.getComponent());
+    consoleContent.setCloseable(false);
+    ui.addContent(consoleContent, 1, PlaceInGrid.center, false);
   }
 
   private ActionGroup createActionToolbar(RunnerLayoutUi ui, RunContentDescriptor contentDescriptor) {

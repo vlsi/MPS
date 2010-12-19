@@ -11,11 +11,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -65,12 +65,14 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  private EditorCell createRefNode_8agmue_e0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("operationContext");
-    provider.setNoTargetText("<no operationContext>");
+  private EditorCell createRefCell_8agmue_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("referenceLink");
+    provider.setNoTargetText("<no reference role>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new Node_GetReferentSearchScopeOperation_Editor._Inline_8agmue_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -82,14 +84,12 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  private EditorCell createRefCell_8agmue_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("referenceLink");
-    provider.setNoTargetText("<no reference role>");
+  private EditorCell createRefNode_8agmue_e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("operationContext");
+    provider.setNoTargetText("<no operationContext>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_GetReferentSearchScopeOperation_Editor._Inline_8agmue_a2a());
     editorCell = provider.createEditorCell(editorContext);
-    SharedStyles_StyleSheet.getReferenceOnConceptualFeature(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

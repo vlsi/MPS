@@ -5,4 +5,6 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Facet_ProjectPlugin extends BaseProjectPlugin {
+  public Facet_ProjectPlugin() {
+  }
 }

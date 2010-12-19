@@ -16,25 +16,17 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.ModelGenerationStatusListener;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.*;
-import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
+import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
-import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.tree.DefaultTreeModel;
@@ -102,28 +94,22 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
     setUserObject(modelDescriptor);
+    if (myModelDescriptor != null) {
+      setNodeIdentifier(myModelDescriptor.toString());
+    } else {
+      setNodeIdentifier("");
+    }
+    setText(calculateText());
     setIcon(myIcon);
-    updatePresentation();
   }
 
   public Icon getDefaultIcon() {
     return myIcon;
   }
 
-  protected void doUpdatePresentation() {
-    if (myModelDescriptor != null) {
-      setNodeIdentifier(myModelDescriptor.toString());
-    } else {
-      setNodeIdentifier("");
-    }
-
-    setText(calculateText());
-  }
-
   public boolean hasModelsUnder() {
     return !getSubfolderSModelTreeNodes().isEmpty();
   }
-
 
   //do not use!
   public DependencyRecorder<SNodeTreeNode> getDependencyRecorder() {
@@ -268,13 +254,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return new CreateRootNodeGroup(plain);
   }
 
-  public String calculateText() {
+  private String calculateText() {
     SModelReference reference;
 
     if (getSModelDescriptor() != null) {
       reference = getSModelDescriptor().getSModelReference();
-    } else {
+    } else if (getSModel() != null) {
       reference = getSModel().getSModelReference();
+    } else {
+      return "";
     }
 
     String name = calculatePresentationText(reference);
@@ -365,13 +353,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         add(group);
       }
       SModel model = getSModel();
-      Condition<SNode> condition = new Condition<SNode>() {
-        public boolean met(SNode object) {
-          return !(SNodeOperations.isInstanceOf(object, AttributeConcept.concept));
-        }
-      };
-      AndCondition<SNode> cond = new AndCondition<SNode>(condition, myNodesCondition);
-      Iterable<SNode> iter = new ConditionalIterable(model.roots(), cond);
+      Iterable<SNode> iter = new ConditionalIterable(model.roots(), myNodesCondition);
 
       List<SNode> filteredRoots = new ArrayList<SNode>();
       for (SNode node : iter) {

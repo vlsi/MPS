@@ -25,6 +25,9 @@
 
   <application-components>
     <component>
+      <implementation-class>jetbrains.mps.vcs.plugin.Vcs_PluginInitializer</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.watching.ModelChangesWatcher</implementation-class>
     </component>
     <component>
@@ -81,13 +84,8 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsProjectConfiguration</implementation-class>
-      <skipForDefaultProject/>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.annotation.AnnotationManager</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-  </project-components>
+</project-components>
 
   <actions>
     <group id="EditorFixAddition">

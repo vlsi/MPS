@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.runtime;
 
+import jetbrains.mps.util.InternAwareStringSet;
+import jetbrains.mps.util.InternUtil;
+
 import java.util.*;
 
 public class RuntimeEnvironment<T> {
   private final Object myLock = new Object();
 
   private Map<T, RBundle<T>> myBundles = new HashMap<T, RBundle<T>>();
-  private Set<String> myLoadFromParentPrefixes = new HashSet<String>();
+  private Set<String> myLoadFromParentPrefixes = new InternAwareStringSet();
 
   private Map<String, Class> myClassesFromParent = new HashMap<String, Class>();
   private Map<String, T> myLoadedClasses = new HashMap<String, T>();
@@ -56,7 +59,7 @@ public class RuntimeEnvironment<T> {
       //it's ok
     }
 
-    myClassesFromParent.put(name, result);
+    myClassesFromParent.put(InternUtil.intern(name), result);
     return result;
   }
 
@@ -239,7 +242,7 @@ public class RuntimeEnvironment<T> {
           System.out.println(s);
         }
       } else {
-        myLoadedClasses.put(name, id);
+        myLoadedClasses.put(InternUtil.intern(name), id);
       }
     }
   }

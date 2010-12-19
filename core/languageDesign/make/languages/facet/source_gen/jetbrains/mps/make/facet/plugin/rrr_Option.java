@@ -5,7 +5,7 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.make.script.IOption;
 
 public enum rrr_Option implements IOption {
-  SURE_fi61u2_a0b0d("Rrrrr!"),
+  SURE_fi61u2_a0b0c("Rrrrr!"),
   __VOID__("__VOID__");
 
   private String text;

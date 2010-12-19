@@ -14,11 +14,11 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -57,13 +57,13 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_mnefyf_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("conceptReference");
-    provider.setNoTargetText("<no conceptReference>");
+  private EditorCell createRefCell_mnefyf_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("link");
+    provider.setNoTargetText("<no link>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new SimpleRule_VarRef_Editor._Inline_mnefyf_a3a());
     editorCell = provider.createEditorCell(editorContext);
-    SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,13 +75,13 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_mnefyf_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("link");
-    provider.setNoTargetText("<no link>");
+  private EditorCell createRefNode_mnefyf_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("conceptReference");
+    provider.setNoTargetText("<no conceptReference>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleRule_VarRef_Editor._Inline_mnefyf_a3a());
     editorCell = provider.createEditorCell(editorContext);
+    SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

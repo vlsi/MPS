@@ -2,79 +2,79 @@
 <model modelUID="r:600c053c-afd8-419c-b24b-2550d269af72(jetbrains.mps.debug.apiLang.editor)">
   <persistence version="7" />
   <language namespace="fbc14279-5e2a-4c87-a5d1-5f7061e6c456(jetbrains.mps.debug.apiLang)" />
-  <devkit namespace="e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)" />
-  <import index="647x" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" />
-  <import index="yvnu" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="yvnl" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
+  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
+  <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debug.apiLang.structure)" version="0" />
+  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
-    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="1270798772176070201">
-      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="647x.3157158168562217892:0" resolveInfo="DebugInfoProvider" />
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1270798772176070201">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.3157158168562217892" resolveInfo="DebugInfoProvider" />
     </node>
-    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="2566194812862845914">
-      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="647x.3157158168562219319:0" resolveInfo="BreakpointableNodeItem" />
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2566194812862845914">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.3157158168562219319" resolveInfo="BreakpointableNodeItem" />
     </node>
-    <node type="yvnl.ConceptEditorDeclaration" typeId="yvnl.1071666914219:32" id="5789575999242884601">
-      <link role="conceptDeclaration" roleId="yvnl.1166049300910:32" targetNodeId="647x.5789575999242884574:0" resolveInfo="ConceptDeclarationReference" />
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5789575999242884601">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="86gq.5789575999242884574" resolveInfo="ConceptDeclarationReference" />
     </node>
   </roots>
   <root id="1270798772176070201">
-    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="1270798772176070203">
-      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="2566194812862947709">
-        <property name="text" nameId="yvnl.1073389577007:32" value="Debug Information Provider" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1270798772176070203">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2566194812862947709">
+        <property name="text" nameId="tpc2.1073389577007" value="Debug Information Provider" />
       </node>
-      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="2566194812862947711" />
-      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="1270798772176070207">
-        <property name="text" nameId="yvnl.1073389577007:32" value="Breakpoints Creators" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2566194812862947711" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1270798772176070207">
+        <property name="text" nameId="tpc2.1073389577007" value="Breakpoints Creators" />
       </node>
-      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNodeList" typeId="yvnl.1073390211982:32" id="1270798772176070210">
-        <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="647x.1270798772176052787:0" />
-        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="1270798772176070212">
-          <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1270798772176070210">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="86gq.1270798772176052787" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1270798772176070212">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
-        <node role="cellLayout" roleId="yvnl.1140524464360:32" type="yvnl.CellLayout_Vertical" typeId="yvnl.1106270571710:32" id="2566194812862947706" />
+        <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="2566194812862947706" />
       </node>
-      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Vertical" typeId="yvnl.1106270571710:32" id="1270798772176070205" />
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1270798772176070205" />
     </node>
   </root>
   <root id="2566194812862845914">
-    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="5789575999242884578">
-      <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Vertical" typeId="yvnl.1106270571710:32" id="5789575999242884579" />
-      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="5789575999242884580">
-        <property name="text" nameId="yvnl.1073389577007:32" value="for concepts:" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5789575999242884578">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="5789575999242884579" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5789575999242884580">
+        <property name="text" nameId="tpc2.1073389577007" value="for concepts:" />
       </node>
-      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="5789575999242884582">
-        <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Indent" typeId="yvnl.1198256887712:32" id="5789575999242884587" />
-        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="5789575999242884583">
-          <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5789575999242884582">
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="5789575999242884587" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="5789575999242884583">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
-        <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNodeList" typeId="yvnl.1073390211982:32" id="5789575999242884588">
-          <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="647x.5789575999242884576:0" />
-          <node role="cellLayout" roleId="yvnl.1140524464360:32" type="yvnl.CellLayout_Vertical" typeId="yvnl.1106270571710:32" id="5789575999242884590" />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="5789575999242884588">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="86gq.5789575999242884576" />
+          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="5789575999242884590" />
         </node>
-        <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="5789575999242884585" />
+        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="5789575999242884585" />
       </node>
-      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Constant" typeId="yvnl.1073389577006:32" id="5789575999242884592">
-        <property name="text" nameId="yvnl.1073389577007:32" value="create breakpoint:" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5789575999242884592">
+        <property name="text" nameId="tpc2.1073389577007" value="create breakpoint:" />
       </node>
-      <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Collection" typeId="yvnl.1073389446423:32" id="5789575999242884594">
-        <node role="styleItem" roleId="yvnl.1219418656006:32" type="yvnl.SelectableStyleSheetItem" typeId="yvnl.1186414928363:32" id="5789575999242884595">
-          <property name="flag" nameId="yvnl.1186414551515:32" value="false" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5789575999242884594">
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="5789575999242884595">
+          <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
-        <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_Indent" typeId="yvnl.1198256887712:32" id="5789575999242884598" />
-        <node role="childCellModel" roleId="yvnl.1073389446424:32" type="yvnl.CellModel_RefNode" typeId="yvnl.1073389882823:32" id="5789575999242884600">
-          <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="647x.3157158168562219320:0" />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="5789575999242884598" />
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5789575999242884600">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="86gq.3157158168562219320" />
         </node>
-        <node role="cellLayout" roleId="yvnl.1106270802874:32" type="yvnl.CellLayout_Horizontal" typeId="yvnl.1106270549637:32" id="5789575999242884597" />
+        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="5789575999242884597" />
       </node>
     </node>
   </root>
   <root id="5789575999242884601">
-    <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_RefCell" typeId="yvnl.1088013125922:32" id="5789575999242884603">
-      <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="647x.5789575999242884575:0" />
-      <node role="editorComponent" roleId="yvnl.1088186146602:32" type="yvnl.InlineEditorComponent" typeId="yvnl.1088185857835:32" id="5789575999242884604">
-        <node role="cellModel" roleId="yvnl.1080736633877:32" type="yvnl.CellModel_Property" typeId="yvnl.1073389658414:32" id="5789575999242884606">
-          <property name="readOnly" nameId="yvnl.1140017977771:32" value="true" />
-          <link role="relationDeclaration" roleId="yvnl.1140103550593:32" targetNodeId="yvnu.1169194664001:0" resolveInfo="name" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="5789575999242884603">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="86gq.5789575999242884575" />
+      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="5789575999242884604">
+        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5789575999242884606">
+          <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         </node>
       </node>
     </node>

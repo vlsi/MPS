@@ -302,11 +302,6 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       if (contextNode == null) {
         return;
       }
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.annotations.structure.AttributeConcept")) {
-        SNode attributedNode = SLinkOperations.getTarget((SNodeOperations.cast(contextNode, "jetbrains.mps.lang.annotations.structure.AttributeConcept")), "attributedNode", false);
-        attributedNode.setAttribute(null);
-        return;
-      }
       SModel model = SNodeOperations.getModel(contextNode);
       if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) != null) {
         contextNode.setAttribute(null);

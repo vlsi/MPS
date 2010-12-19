@@ -11,7 +11,6 @@ import java.util.Set;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.make.resources.ResourcePool;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -32,7 +31,6 @@ public class ScriptBuilder {
   private Map<IFacet.Name, IFacet> facetsView = MapSequence.fromMap(new HashMap<IFacet.Name, IFacet>());
   private Set<ITarget.Name> requestedTargets = SetSequence.fromSet(new HashSet<ITarget.Name>());
   private ITarget.Name defaultTarget;
-  private ResourcePool pool;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
   private _FunctionTypes._void_P1_E0<? super IParametersPool> init;
   private IMonitors mons;
@@ -81,11 +79,6 @@ public class ScriptBuilder {
     return this;
   }
 
-  public ScriptBuilder withResources(ResourcePool pool) {
-    this.pool = pool;
-    return this;
-  }
-
   public ScriptBuilder withInit(_FunctionTypes._void_P1_E0<? super IParametersPool> init) {
     this.init = init;
     return this;
@@ -114,7 +107,9 @@ public class ScriptBuilder {
     if (ListSequence.fromList(errors).isNotEmpty()) {
       return new InvalidScript(errors);
     }
-    Script sc = new Script(tr, defaultTarget, init, mons);
+    Script sc = new Script(tr, defaultTarget);
+    sc.setInit(init);
+    sc.setMonitors(mons);
     sc.validate();
     return sc;
   }

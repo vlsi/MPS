@@ -47,11 +47,12 @@ public class SubTyping {
   }
 
   private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, boolean checkOnly) {
+    //todo use replacement rules
     if (LatticeUtil.isJoin(superType)) {
       for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
-        if (myState.isConcrete(argument) && isSubTypeByReplacementRules(subType, argument)) {
-          return true;
-        }
+  //      if (myState.isConcrete(argument) && isSubTypeByReplacementRules(subType, argument)) {
+  //        return true;
+   //     }
         if (isSubType(subType, argument, info, isWeak, checkOnly)) {
           return true;
         }
@@ -59,9 +60,9 @@ public class SubTyping {
     }
     if (LatticeUtil.isMeet(subType)) {
       for (SNode argument : LatticeUtil.getMeetArguments(subType)) {
-        if (myState.isConcrete(argument) && isSubTypeByReplacementRules(argument, superType)) {
-          return true;
-        }
+   //     if (myState.isConcrete(argument) && isSubTypeByReplacementRules(argument, superType)) {
+    //      return true;
+     //   }
         if (isSubType(argument, superType, info, isWeak, checkOnly)) {
           return true;
         }
@@ -211,6 +212,7 @@ public class SubTyping {
   }
 
   private Set<SNode> eliminateSubOrSuperTypes(Set<SNode> types, boolean sub) {
+    //todo fix bug & optimize
     types = eliminateEqual(types);
     Set<SNode> result = new HashSet<SNode>();
     Set<SNode> toRemove = new HashSet<SNode>();
@@ -255,9 +257,9 @@ public class SubTyping {
   public SNode createMeet(Set<SNode> types) {
 
     if (types.size() > 1) {
-      System.out.println("meet" + types);
-      types = eliminateSubOrSuperTypes(types, true);
-      System.out.println(types);
+     // System.out.println("meet" + types);
+      types = eliminateSubOrSuperTypes(types, false);
+     // System.out.println(types);
 
     }
 
@@ -269,9 +271,9 @@ public class SubTyping {
   public SNode createLCS(Set<SNode> types) {
 
     if (types.size() > 1) {
-      System.out.println("lcs" + types);
-      types = eliminateSubOrSuperTypes(types, false);
-      System.out.println(types);
+    //  System.out.println("lcs" + types);
+      types = eliminateSubOrSuperTypes(types, true);
+    //  System.out.println(types);
     }
     return types.iterator().next();
 

@@ -225,15 +225,17 @@ public class IconManager {
   }
 
   public static Icon getIconFor(SModelDescriptor modelDescriptor) {
-    LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
-    if (aspect != null) {
-      return getIconForAspect(aspect);
-    } else if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
-      return Icons.TEMPLATES_MODEL_ICON;
-    } else if (Language.isLanguageOwnedAccessoryModel(modelDescriptor)) {
-      return Icons.ACCESSORY_MODEL_ICON;
-    } else if (SModelStereotype.isTestModel(modelDescriptor)) {
-      return Icons.TEST_MODEL_ICON;
+    if (modelDescriptor != null) {
+      LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
+      if (aspect != null) {
+        return getIconForAspect(aspect);
+      } else if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
+        return Icons.TEMPLATES_MODEL_ICON;
+      } else if (Language.isLanguageOwnedAccessoryModel(modelDescriptor)) {
+        return Icons.ACCESSORY_MODEL_ICON;
+      } else if (SModelStereotype.isTestModel(modelDescriptor)) {
+        return Icons.TEST_MODEL_ICON;
+      }
     }
     return Icons.MODEL_ICON;
   }

@@ -4629,7 +4629,7 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="1086097794003883228">
-        <property name="keys" nameId="tp5g.1227184461946" value="-" />
+        <property name="keys" nameId="tp5g.1227184461946" value="- " />
       </node>
     </node>
   </root>

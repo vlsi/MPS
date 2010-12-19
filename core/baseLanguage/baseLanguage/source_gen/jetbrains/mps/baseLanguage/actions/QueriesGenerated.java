@@ -3938,6 +3938,31 @@ __switch__:
     return result;
   }
 
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ExpressionStatement_5373778178059764413(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement");
+      Iterable<SNode> concepts;
+      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
+      for (final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SLinkOperations.setTarget(result, "expression", SLinkOperations.getTarget(_context.getSourceNode(), "expression", true), true);
+            return result;
+          }
+        });
+      }
+    }
+    return result;
+  }
+
   public static void removeSideTransformActionsByCondition_1228923203001(final IOperationContext operationContext, final RemoveSideTransformActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {

@@ -67,7 +67,7 @@ public class ModuleMaker {
     }
   }
 
-  public jetbrains.mps.make.CompilationResult make(Set<IModule> modules, @NotNull final ProgressIndicator indicator) {
+  public MPSCompilationResult make(Set<IModule> modules, @NotNull final ProgressIndicator indicator) {
     indicator.pushState();
     try {
       indicator.setText("Compiling...");
@@ -90,19 +90,19 @@ public class ModuleMaker {
         if (indicator.isCanceled()) break;
 
         indicator.setText2("Compiling modules " + cycle + "...");
-        jetbrains.mps.make.CompilationResult result = compile(cycle);
+        MPSCompilationResult result = compile(cycle);
         errorCount += result.getErrors();
         warnCount += result.getWarnings();
         compiled = compiled || result.isCompiledAnything();
       }
 
-      return new jetbrains.mps.make.CompilationResult(errorCount, warnCount, false, compiled);
+      return new MPSCompilationResult(errorCount, warnCount, false, compiled);
     } finally {
       indicator.popState();
     }
   }
 
-  private jetbrains.mps.make.CompilationResult compile(Set<IModule> modules) {
+  private MPSCompilationResult compile(Set<IModule> modules) {
     boolean hasAnythingToCompile = false;
 
     for (IModule m : modules) {
@@ -112,7 +112,7 @@ public class ModuleMaker {
     }
 
     if (!hasAnythingToCompile) {
-      return new jetbrains.mps.make.CompilationResult(0, 0, false, false);
+      return new MPSCompilationResult(0, 0, false, false);
     }
 
     JavaCompiler compiler = new JavaCompiler();
@@ -171,7 +171,7 @@ public class ModuleMaker {
       module.updateClassPath();
     }
 
-    return new jetbrains.mps.make.CompilationResult(listener.getErrorCount(), 0, false);
+    return new MPSCompilationResult(listener.getErrorCount(), 0, false);
   }
 
   private String getName(char[][] compoundName) {

@@ -12,12 +12,12 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class BaseMappingRule_premise extends AbstractCellProvider {
@@ -121,13 +121,16 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createProperty_v63wqt_b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("applyToConceptInheritors");
-    provider.setNoTargetText("<no applyToConceptInheritors>");
+  private EditorCell createRefCell_v63wqt_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("applicableConcept");
+    provider.setNoTargetText("<choose applicable concept>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new BaseMappingRule_premise._Inline_v63wqt_a1a0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_applyToConceptInheritors");
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -156,16 +159,13 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createRefCell_v63wqt_b0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("applicableConcept");
-    provider.setNoTargetText("<choose applicable concept>");
+  private EditorCell createProperty_v63wqt_b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("applyToConceptInheritors");
+    provider.setNoTargetText("<no applyToConceptInheritors>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BaseMappingRule_premise._Inline_v63wqt_a1a0());
     editorCell = provider.createEditorCell(editorContext);
-    if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
-    }
+    editorCell.setCellId("property_applyToConceptInheritors");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

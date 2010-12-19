@@ -939,6 +939,9 @@ public class QueriesGenerated {
     if (":<<=:".equals(alias)) {
       return "createLessThanInequationStrong";
     }
+    if (":>>=:".equals(alias)) {
+      return "createGreaterThanInequationStrong";
+    }
     if (":~:".equals(alias)) {
       return "createComparableEquation";
     }
@@ -2000,7 +2003,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1214927805253(final IOperationContext operationContext, final IfMacroContext _context) {
     String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
-    return ":<=:".equals(alias) || ":>=:".equals(alias) || ":<<=:".equals(alias);
+    return ":<=:".equals(alias) || ":>=:".equals(alias) || ":<<=:".equals(alias) || ":>>=:".equals(alias);
   }
 
   public static boolean ifMacro_Condition_3302086321378840160(final IOperationContext operationContext, final IfMacroContext _context) {
