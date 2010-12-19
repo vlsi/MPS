@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_Behavior" file="CellModel_HierarchycalTable_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
   </dependency>
 </dependenciesRoot>
 

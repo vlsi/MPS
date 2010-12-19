@@ -1,229 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellActionMapDeclaration_Constraints" file="CellActionMapDeclaration_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeARootContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellKeyMapDeclaration_Constraints" file="CellKeyMapDeclaration_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeARootContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint" file="CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint" file="CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellMenuComponent_Constraints" file="CellMenuComponent_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeARootContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_Component_editorComponent_ReferentConstraint" file="CellModel_Component_editorComponent_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_Property_propertyDeclaration_ReferentConstraint" file="CellModel_Property_propertyDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_linkDeclaration_ReferentConstraint" file="CellModel_RefCell_linkDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_linkDeclaration_ReferentConstraint" file="CellModel_RefNodeList_linkDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_linkDeclaration_ReferentConstraint" file="CellModel_RefNode_linkDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_ReferencePresentation_Constraints" file="CellModel_ReferencePresentation_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_property_ReferentConstraint" file="CellModel_TransactionalProperty_property_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_relationDeclaration_ReferentConstraint" file="CellModel_WithRole_relationDeclaration_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.ConceptEditorDeclaration_Constraints" file="ConceptEditorDeclaration_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeARootContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.ConceptEditorDeclaration_name_PropertyConstraint" file="ConceptEditorDeclaration_name_PropertyConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyGetter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.RGBColor_value_PropertyConstraint" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_property_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_linkDeclaration_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_linkDeclaration_ReferentConstraint" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_linkDeclaration_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_relationDeclaration_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_link_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_Component_editorComponent_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_Property_propertyDeclaration_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_RefCell_linkDeclaration_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_RefNodeList_linkDeclaration_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_RefNode_linkDeclaration_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_TransactionalProperty_property_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellModel_WithRole_relationDeclaration_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.lang.editor.constraints.ConceptEditorDeclaration_name_PropertyConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_link_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.RGBColor_value_PropertyConstraint" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.constraints.CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.EditorComponentDeclaration_Constraints" file="EditorComponentDeclaration_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeARootContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.NavigatableReferenceStyleClassItem_link_ReferentConstraint" file="NavigatableReferenceStyleClassItem_link_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.RGBColor_value_PropertyConstraint" file="RGBColor_value_PropertyConstraint.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyValidator" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.StyleClassItem_Constraints" file="StyleClassItem_Constraints.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.constraints.StyleSheet_Constraints" file="StyleSheet_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeARootContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
   </dependency>
 </dependenciesRoot>
 
