@@ -80,6 +80,10 @@ public class Transition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jj4qz_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from:");
     editorCell.setCellId("Constant_jj4qz_a0a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -87,6 +91,10 @@ public class Transition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jj4qz_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to:");
     editorCell.setCellId("Constant_jj4qz_a1a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -94,6 +102,10 @@ public class Transition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jj4qz_a2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "triggered by:");
     editorCell.setCellId("Constant_jj4qz_a2a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
