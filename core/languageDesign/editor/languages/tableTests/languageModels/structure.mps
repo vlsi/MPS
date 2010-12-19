@@ -31,17 +31,17 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="763922957008729147">
       <property name="name" nameId="tpck.1169194664001" value="Event" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="genericStateMachine" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7943979732673457898" resolveInfo="AbstractStateMachineElement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="763922957008729149">
       <property name="name" nameId="tpck.1169194664001" value="Transition" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="genericStateMachine" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7943979732673457898" resolveInfo="AbstractStateMachineElement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="763922957008729154">
       <property name="name" nameId="tpck.1169194664001" value="State" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="genericStateMachine" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7943979732673457898" resolveInfo="AbstractStateMachineElement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="763922957008729156">
       <property name="name" nameId="tpck.1169194664001" value="StateReference" />
@@ -61,6 +61,11 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5508804114499095504">
       <property name="name" nameId="tpck.1169194664001" value="UltimateContainer" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7943979732673457898">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="genericStateMachine" />
+      <property name="name" nameId="tpck.1169194664001" value="AbstractStateMachineElement" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
@@ -212,6 +217,11 @@
       <property name="role" nameId="tpce.1071599776563" value="tables" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2882388703616155296" resolveInfo="Table" />
+    </node>
+  </root>
+  <root id="7943979732673457898">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7943979732673457900">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
     </node>
   </root>
 </model>

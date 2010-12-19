@@ -24,6 +24,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="hierarchycalTable" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="2qyu.8506335436194701777" resolveInfo="HierarchycalTable" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="7943979732673457913">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="genericStateMachine" />
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="2qyu.7943979732673457898" resolveInfo="AbstractStateMachineElement" />
+    </node>
   </roots>
   <root id="2882388703616228638">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="2882388703616228639">
@@ -699,6 +703,29 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="7943979732673457913">
+    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7943979732673457916">
+      <property name="name" nameId="tpck.1169194664001" value="getStateMachine" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7943979732673457917" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7943979732673457920">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="2qyu.763922957008726945" resolveInfo="StateMachine" />
+      </node>
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7943979732673457919">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7943979732673457921">
+          <node role="expression" roleId="tpee.1068580123156" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="7943979732673457928">
+            <link role="concept" roleId="tp25.1140138128738" targetNodeId="2qyu.763922957008726945" resolveInfo="StateMachine" />
+            <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7943979732673457923">
+              <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="7943979732673457922" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="7943979732673457927" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="7943979732673457914">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7943979732673457915" />
     </node>
   </root>
 </model>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AbstractStateMachineElement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_Behavior" />
   <unitInfo fileName="HierarchycalTable_Behavior.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_Behavior" />
   <unitInfo fileName="Table_Behavior.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Table_Behavior" />
   <unitInfo fileName="StateMachine_Behavior.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_Behavior" />
@@ -73,6 +74,11 @@
     <scopeInfo nodeId="7483705179651302810" fileName="StateMachine_Behavior.java" startLine="12" startPosition="43" endLine="41" endPosition="5">
       <varInfo nodeId="7483705179651302812" varName="count" />
     </scopeInfo>
+  </root>
+  <root nodeId="7943979732673457913">
+    <nodeInfo nodeId="7943979732673457921" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="132" />
+    <scopeInfo nodeId="7943979732673457915" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="7943979732673457919" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="132" />
   </root>
   <root nodeId="8506335436194799574">
     <nodeInfo nodeId="2422839104779457221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="HierarchycalTable_Behavior.java" startLine="14" startPosition="101" endLine="15" endPosition="121" />

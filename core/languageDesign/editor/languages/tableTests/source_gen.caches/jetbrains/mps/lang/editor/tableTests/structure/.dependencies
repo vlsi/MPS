@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement" file="AbstractStateMachineElement.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.tableTests.structure.DataCell" file="DataCell.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -11,6 +19,7 @@
   <dependency className="jetbrains.mps.lang.editor.tableTests.structure.Event" file="Event.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -52,6 +61,7 @@
   <dependency className="jetbrains.mps.lang.editor.tableTests.structure.State" file="State.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -100,6 +110,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.tableTests.structure.Transition" file="Transition.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.structure.EventReference" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.structure.StateReference" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
