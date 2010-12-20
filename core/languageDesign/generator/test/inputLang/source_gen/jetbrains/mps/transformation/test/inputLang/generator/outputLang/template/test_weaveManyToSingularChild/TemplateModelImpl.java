@@ -54,7 +54,14 @@ public class TemplateModelImpl implements TemplateModel {
           // TODO report `wrong arguments count` 
           return null;
         }
-        return new Templateweave_InputNode_A();
+        return new Templateweave__InputNode__A();
+      }
+      if (idValue == 1218738789586L) {
+        if (arguments.length != 0) {
+          // TODO report `wrong arguments count` 
+          return null;
+        }
+        return new Templatemap__outputNode();
       }
     }
     return null;

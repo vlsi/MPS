@@ -14,14 +14,14 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import java.util.Collections;
 
-public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
-  private static SNodePointer reductionRule_lzrtm3_a0a2a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310367");
-  private static SNodePointer conseq_lzrtm3_a0a0a4a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311962");
+public class Switchswitch__InputNode__A implements TemplateSwitchMapping {
+  private static SNodePointer reductionRule_t87kqm_a0a2a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310367");
+  private static SNodePointer conseq_t87kqm_a0a0a4a = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311962");
 
   private final Iterable<TemplateReductionRule> rules;
 
-  public Switchswitch_InputNode_A() {
-    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switchswitch_InputNode_A.ReductionRule0());
+  public Switchswitch__InputNode__A() {
+    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switchswitch__InputNode__A.ReductionRule0());
   }
 
   public SNodePointer getSwitchNode() {
@@ -56,25 +56,25 @@ public class Switchswitch_InputNode_A implements TemplateSwitchMapping {
     }
 
     public SNodePointer getRuleNode() {
-      return reductionRule_lzrtm3_a0a2a;
+      return reductionRule_t87kqm_a0a2a;
     }
 
     public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
 
-      environment.getTracer().pushRule(reductionRule_lzrtm3_a0a2a);
+      environment.getTracer().pushRule(reductionRule_t87kqm_a0a2a);
       try {
         return apply(context, environment.getEnvironment(context.getInput(), this));
       } catch (AbandonRuleInputException e) {
         return Collections.emptyList();
       } finally {
-        environment.getTracer().closeRule(reductionRule_lzrtm3_a0a2a);
+        environment.getTracer().closeRule(reductionRule_t87kqm_a0a2a);
       }
 
     }
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
-      environment.getTracer().pushRuleConsequence(conseq_lzrtm3_a0a0a4a);
-      Collection<SNode> tlist1 = new Templatereduce_InputNode_A_switch().apply(environment, context);
+      environment.getTracer().pushRuleConsequence(conseq_t87kqm_a0a0a4a);
+      Collection<SNode> tlist1 = new Templatereduce__InputNode__A__switch().apply(environment, context);
       return tlist1;
     }
   }

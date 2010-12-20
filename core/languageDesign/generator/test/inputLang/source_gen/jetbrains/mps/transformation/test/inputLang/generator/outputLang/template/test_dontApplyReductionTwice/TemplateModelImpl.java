@@ -47,6 +47,16 @@ public class TemplateModelImpl implements TemplateModel {
       return null;
     }
     SNodeId id = template.getNodeId();
+    if (id instanceof SNodeId.Regular) {
+      long idValue = ((SNodeId.Regular) id).getId();
+      if (idValue == 1209605205934L) {
+        if (arguments.length != 0) {
+          // TODO report `wrong arguments count` 
+          return null;
+        }
+        return new TemplateoutputRoot();
+      }
+    }
     return null;
   }
 }

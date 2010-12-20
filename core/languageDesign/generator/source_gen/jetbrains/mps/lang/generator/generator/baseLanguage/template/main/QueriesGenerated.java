@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeId;
@@ -32,6 +33,7 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
@@ -217,7 +219,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183502(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("propertyValue");
+    return NameUtil.escapeString(_context.getNode().getProperty("propertyValue"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183606(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -368,7 +370,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_99767819676502791(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "context" + ((int[]) _context.getVariable("varindex"))[0];
+    String name = "context" + ((int[]) _context.getVariable("varindex"))[0];
+    _context.putTransientObject(MultiTuple.<String,SNode>from("contextvar", _context.getNode()), name);
+    return name;
   }
 
   public static Object propertyMacro_GetPropertyValue_99767819676502956(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -825,6 +829,18 @@ public class QueriesGenerated {
     return GenUtil.asIdentifier("Script" + SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
+  public static Object propertyMacro_GetPropertyValue_6389702176794111045(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String n = "applyNode" + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("toExtract"))).indexOf(_context.getNode());
+    _context.putTransientObject(MultiTuple.<String,SNode>from("meth", _context.getNode()), n);
+    return n;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6389702176794341064(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String name = "tlist" + ++((int[]) _context.getVariable("varindex"))[0];
+    _context.putTransientObject(_context.getNode(), name);
+    return name;
+  }
+
   public static Object referenceMacro_GetReferent_1217272831785(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     // method parameter 
     return "_context";
@@ -1140,11 +1156,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8626372016104475444(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String) _context.getTransientObject(_context.getNode());
+    return ((String) _context.getVariable("varname"));
   }
 
   public static Object referenceMacro_GetReferent_8626372016104475500(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String) _context.getTransientObject(_context.getNode());
+    return ((String) _context.getVariable("varname"));
   }
 
   public static Object referenceMacro_GetReferent_2321430363679348809(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1299,6 +1315,10 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.mappingScript_CodeBlock(SLinkOperations.getTarget(_context.getNode(), "codeBlock", true));
   }
 
+  public static Object referenceMacro_GetReferent_6389702176794341089(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ((String) _context.getVariable("methName"));
+  }
+
   public static boolean ifMacro_Condition_8530225126180766850(final IOperationContext operationContext, final IfMacroContext _context) {
     return GenUtil.isGeneratable(_context.getOriginalInputModel());
   }
@@ -1311,7 +1331,15 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true) != null);
   }
 
-  public static boolean ifMacro_Condition_8285036680620300523(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6389702176794336635(final IOperationContext operationContext, final IfMacroContext _context) {
+    if (((Integer) _context.getVariable("macrosToSkip")) == 0 && ((int[]) _context.getVariable("varindex"))[0] > 0) {
+      String methName = (String) _context.getTransientObject(MultiTuple.<String,SNode>from("meth", _context.getNode()));
+      return methName != null;
+    }
+    return false;
+  }
+
+  public static boolean ifMacro_Condition_6389702176794336734(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SNodeOperations.getChildren(_context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.NodeMacro");
@@ -1371,11 +1399,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0jl(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0nl(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0kl(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0ol(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1958,13 +1986,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8626372016104475454(final IOperationContext operationContext, final IfMacroContext _context) {
-    String var = (String) _context.getTransientObject(_context.getNode());
-    return var != null && var.startsWith("tnode");
+    return ((String) _context.getVariable("varname")) != null && ((String) _context.getVariable("varname")).startsWith("tnode");
   }
 
   public static boolean ifMacro_Condition_8626372016104475477(final IOperationContext operationContext, final IfMacroContext _context) {
-    String var = (String) _context.getTransientObject(_context.getNode());
-    return var != null && var.startsWith("tlist");
+    return ((String) _context.getVariable("varname")) != null && ((String) _context.getVariable("varname")).startsWith("tlist");
   }
 
   public static boolean ifMacro_Condition_2321430363679348283(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2253,7 +2279,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "pattern", true);
   }
 
-  public static SNode sourceNodeQuery_8285036680620300579(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6389702176794336771(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(ListSequence.fromList(SNodeOperations.getChildren(_context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.NodeMacro");
@@ -2364,10 +2390,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true);
   }
 
-  public static SNode sourceNodeQuery_8371596541809145627(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true);
-  }
-
   public static SNode sourceNodeQuery_8371596541809530209(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode typeNode = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SLinkOperations.getTarget(_context.getNode(), "query", true));
     if (SNodeOperations.isInstanceOf(typeNode, "jetbrains.mps.baseLanguage.structure.Type")) {
@@ -2389,10 +2411,6 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_418849768498945717(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true);
-  }
-
-  public static SNode sourceNodeQuery_8294566892413665808(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true);
   }
 
@@ -2419,10 +2437,6 @@ public class QueriesGenerated {
     if ((SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true) == null)) {
       _context.showErrorMessage(_context.getNode(), "no consequence in pattern rule");
     }
-    return SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true);
-  }
-
-  public static SNode sourceNodeQuery_8371596541809114439(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true);
   }
 
@@ -2475,8 +2489,13 @@ public class QueriesGenerated {
     return new int[]{0};
   }
 
-  public static Object templateArgumentQuery_8285036680620300571(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_6389702176794336763(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((Integer) _context.getVariable("macrosToSkip")) + 1;
+  }
+
+  public static Object templateArgumentQuery_6389702176794341072(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    String methName = (String) _context.getTransientObject(MultiTuple.<String,SNode>from("meth", _context.getNode()));
+    return methName;
   }
 
   public static Object templateArgumentQuery_3818613486877139978(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -2488,6 +2507,22 @@ public class QueriesGenerated {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
     }
     return ((String) _context.getVariable("contextVar"));
+  }
+
+  public static Object templateArgumentQuery_6389702176794275053(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).<SNode>translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SNodeOperations.getDescendants(it, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", false, new String[]{});
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "mapperFunction", true) == null);
+      }
+    }).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.getParent(it);
+      }
+    }).distinct();
   }
 
   public static Object templateArgumentQuery_5070605274413823801(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -2577,8 +2612,24 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "includeTemplate", false);
   }
 
+  public static Object templateArgumentQuery_6389702176794129777(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "mapperFunction", true) == null);
+      }
+    }).<SNode>select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.getParent(it);
+      }
+    }).distinct();
+  }
+
   public static Object templateArgumentQuery_747214206848667636(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return new int[]{0};
+  }
+
+  public static Object templateArgumentQuery_621922975518066501(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (String) _context.getTransientObject(_context.getNode());
   }
 
   public static Object templateArgumentQuery_4155486055398088999(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -2610,7 +2661,7 @@ public class QueriesGenerated {
 
   public static Object templateArgumentQuery_99767819676503024(final IOperationContext operationContext, final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
-      return "context" + ((int[]) _context.getVariable("varindex"))[0];
+      return (String) _context.getTransientObject(MultiTuple.<String,SNode>from("contextvar", _context.getNode()));
     }
     return ((String) _context.getVariable("contextVar"));
   }
@@ -2738,6 +2789,10 @@ public class QueriesGenerated {
     return new int[]{0};
   }
 
+  public static Object templateArgumentQuery_621922975518109131(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
+  }
+
   public static Object templateArgumentQuery_8371596541809530183(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
@@ -2754,6 +2809,10 @@ public class QueriesGenerated {
     return new int[]{0};
   }
 
+  public static Object templateArgumentQuery_621922975518073432(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "defaultConsequence", true));
+  }
+
   public static Object templateArgumentQuery_1520710884206584276(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "templateNode", false);
   }
@@ -2766,12 +2825,24 @@ public class QueriesGenerated {
     return new int[]{0};
   }
 
+  public static Object templateArgumentQuery_621922975518105039(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
+  }
+
   public static Object templateArgumentQuery_965589097447685629(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
   public static Object templateArgumentQuery_965589097447685640(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "template", false);
+  }
+
+  public static Object templateArgumentQuery_6389702176794111094(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return new int[]{0};
+  }
+
+  public static Object templateArgumentQuery_621922975518066483(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return (String) _context.getTransientObject(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_6220262973299791769(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2907,7 +2978,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0sx(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0cy(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -3167,6 +3238,10 @@ public class QueriesGenerated {
     );
   }
 
+  public static Iterable sourceNodesQuery_6389702176794111038(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ((Iterable<SNode>) _context.getVariable("toExtract"));
+  }
+
   public static void mapSrcMacro_post_mapper_5070605274413823725(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     String name = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
     if (name.startsWith("tnode")) {
@@ -3306,21 +3381,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0jl(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0nl(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0kl(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0ol(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0sx(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0cy(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
