@@ -76,11 +76,11 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     TableModelCreator creator = new TableModelCreator() {
       public TableModel getTable(final SNode node, EditorContext editorContext) {
         return new AbstractTableModel() {
-          public int getColumnsNumber() {
+          public int getColumnCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).count();
           }
 
-          public int getRowsNumber() {
+          public int getRowCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).count();
           }
 

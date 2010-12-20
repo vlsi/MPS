@@ -80,11 +80,11 @@ public class Table_Editor extends DefaultNodeEditor {
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).getElement(row), "cells", true)).getElement(column);
           }
 
-          public int getRowsNumber() {
+          public int getRowCount() {
             return ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).count();
           }
 
-          public int getColumnsNumber() {
+          public int getColumnCount() {
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count();
           }
 

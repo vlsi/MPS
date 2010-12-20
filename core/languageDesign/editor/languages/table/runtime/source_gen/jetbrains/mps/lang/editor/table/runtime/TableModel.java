@@ -5,8 +5,8 @@ package jetbrains.mps.lang.editor.table.runtime;
 import jetbrains.mps.smodel.SNode;
 
 public interface TableModel {
-  public int getColumnsNumber();
-  public int getRowsNumber();
+  public int getColumnCount();
+  public int getRowCount();
   public void deleteRow(int row);
   public SNode getValueAt(int row, int column);
   public void createElement(int row, int column);

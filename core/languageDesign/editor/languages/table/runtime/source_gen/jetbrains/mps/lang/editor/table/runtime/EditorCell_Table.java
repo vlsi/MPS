@@ -37,12 +37,12 @@ public class EditorCell_Table extends EditorCell_Collection {
   }
 
   public void createChildrenCells() {
-    for (int row = 0; row < myModel.getRowsNumber(); row++) {
+    for (int row = 0; row < myModel.getRowCount(); row++) {
       EditorCell_Collection rowCell = this.createRowCell(row);
       String rowId = myUniquePrefix + "_row_" + row;
       rowCell.setCellId(rowId);
       final int finalRow = row;
-      for (int column = 0; column < myModel.getColumnsNumber(); column++) {
+      for (int column = 0; column < myModel.getColumnCount(); column++) {
         final int finalColumn = column;
         SNode value = myModel.getValueAt(row, column);
         EditorCell editorCell;

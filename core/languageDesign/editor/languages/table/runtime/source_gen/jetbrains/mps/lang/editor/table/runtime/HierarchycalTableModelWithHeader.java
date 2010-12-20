@@ -29,12 +29,12 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
   }
 
   @Override
-  public int getRowsNumber() {
-    return super.getRowsNumber() + 1;
+  public int getRowCount() {
+    return super.getRowCount() + 1;
   }
 
   @Override
-  public int getColumnsNumber() {
+  public int getColumnCount() {
     return ListSequence.fromList(getHeaderCells()).count();
   }
 

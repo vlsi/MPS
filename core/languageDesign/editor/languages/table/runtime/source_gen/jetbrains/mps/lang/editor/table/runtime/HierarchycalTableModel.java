@@ -34,12 +34,12 @@ public class HierarchycalTableModel extends AbstractTableModel {
     return ListSequence.fromList(getColumns(ListSequence.fromList(getRows()).getElement(row))).getElement(column);
   }
 
-  public int getRowsNumber() {
+  public int getRowCount() {
     return ListSequence.fromList(getRows()).count();
 
   }
 
-  public int getColumnsNumber() {
+  public int getColumnCount() {
     return myColumnsNumber;
   }
 
@@ -53,7 +53,7 @@ public class HierarchycalTableModel extends AbstractTableModel {
   public void insertRow(int row) {
     assert row >= 0;
     SNode newRow = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false)), null);
-    for (int i = 0; i < getColumnsNumber(); i++) {
+    for (int i = 0; i < getColumnCount(); i++) {
       newRow.addChild(SPropertyOperations.getString(myCellsLinkDeclaration, "role"), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myCellsLinkDeclaration, "target", false)), null));
     }
     List<SNode> rows = getRows();
