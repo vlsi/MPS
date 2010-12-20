@@ -18,6 +18,7 @@ package jetbrains.mps.plugins.pluginparts.actions;
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.MPSActions;
 
 public abstract class GeneratedActionGroup extends BaseGroup {
   protected GeneratedActionGroup(String name) {
@@ -28,6 +29,25 @@ public abstract class GeneratedActionGroup extends BaseGroup {
     super(text, id);
   }
 
+  protected void addAction(ActionStub creator) {
+    add(MPSActions.getInstance().acquireAction(creator));
+  }
+
+  public void insertGroupIntoAnother(String toId, String labelName) {
+    DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
+    if (gTo == null) return;
+
+    if (labelName != null) {
+      Constraints constraints = new Constraints(Anchor.AFTER, labelName);
+      gTo.add(this, constraints);
+    } else {
+      gTo.add(this);
+    }
+  }
+
+  //----------deprecated
+
+  @Deprecated
   protected void addAction(String actionClassName, String moduleName, Object... params) {
     AnAction action = ActionFactory.getInstance().acquireRegisteredAction(actionClassName, moduleName, params);
     if (action != null) {
@@ -35,24 +55,11 @@ public abstract class GeneratedActionGroup extends BaseGroup {
     }
   }
 
+  @Deprecated
   protected void addGroup(String groupClassName, String moduleName, Object... params) {
     AnAction group = ActionFactory.getInstance().acquireRegisteredGroup(groupClassName, moduleName, params);
     if (group != null) {
       this.add(group);
-    }
-  }
-
-  public void insertGroupIntoAnother(String toId, String labelName) {
-    DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
-    if (gTo == null) {
-      return;
-    }
-    if (labelName != null) {
-      Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-      gTo.add(this, constraints);
-    } else
-    {
-      gTo.add(this);
     }
   }
 }
