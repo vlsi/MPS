@@ -22,10 +22,12 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IParametersPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.Project;
@@ -33,9 +35,8 @@ import jetbrains.mps.make.script.IMonitors;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.Progressive;
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -142,12 +143,19 @@ public class MakeOrBuild_Action extends GeneratedAction {
           return relayStrat.relayQuery(query, MakeOrBuild_Action.this.context);
         }
       };
+      final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(null);
+      final _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet = new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
+        public ProgressIndicator invoke() {
+          return pind.value;
+        }
+      };
       final IScript scr = scb.withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
         public void invoke(IParametersPool pool) {
-          Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
+          Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
           vars._0(MakeOrBuild_Action.this.context.getProject());
           vars._1(MakeOrBuild_Action.this.context);
           vars._2(MakeOrBuild_Action.this.cleanMake);
+          vars._3(pindGet);
         }
       }).withMonitors(new IMonitors.Stub(cmon, jmon) {
         @Override
@@ -155,11 +163,13 @@ public class MakeOrBuild_Action extends GeneratedAction {
           IdeEventQueue.getInstance().flushQueue();
           ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
             public void run(ProgressIndicator realInd) {
+              pind.value = new JobMonitorProgressIndicator(jmon);
               code.invoke(jmon);
             }
           }, "Script", true, MakeOrBuild_Action.this.context.getProject());
         }
       }).toScript();
+
 
       if (!(scr.isValid())) {
         return;

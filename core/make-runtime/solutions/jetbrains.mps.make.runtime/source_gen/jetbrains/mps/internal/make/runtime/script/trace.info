@@ -139,38 +139,43 @@
     <nodeInfo nodeId="1977954644795799379" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="113" startPosition="45" endLine="114" endPosition="72" />
     <nodeInfo nodeId="4648565975300837029" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="114" startPosition="72" endLine="115" endPosition="19" />
     <nodeInfo nodeId="4648565975300837044" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="120" startPosition="35" endLine="121" endPosition="21" />
-    <nodeInfo nodeId="3294363946766343868" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="125" startPosition="62" endLine="126" endPosition="49" />
-    <nodeInfo nodeId="5700060015085058389" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="126" startPosition="49" endLine="127" endPosition="83" />
-    <nodeInfo nodeId="5700060015085276259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="131" startPosition="48" endLine="132" endPosition="54" />
-    <nodeInfo nodeId="5700060015085276271" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="135" startPosition="63" endLine="136" endPosition="34" />
-    <nodeInfo nodeId="6609730755980129346" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="139" startPosition="13" endLine="140" endPosition="38" />
-    <nodeInfo nodeId="2878100257845884875" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="142" startPosition="57" endLine="143" endPosition="45" />
-    <nodeInfo nodeId="7082294419595139184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="143" startPosition="45" endLine="144" endPosition="74" />
-    <nodeInfo nodeId="2878100257845884884" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="144" startPosition="74" endLine="145" endPosition="21" />
-    <nodeInfo nodeId="7752758284337357890" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Script.java" startLine="146" startPosition="13" endLine="147" endPosition="55" />
-    <nodeInfo nodeId="1291978361072209327" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="148" startPosition="11" endLine="149" endPosition="37" />
-    <nodeInfo nodeId="5321687232879533760" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Script.java" startLine="149" startPosition="37" endLine="150" endPosition="41" />
-    <nodeInfo nodeId="1291978361072214371" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="150" startPosition="41" endLine="151" endPosition="55" />
-    <nodeInfo nodeId="8057264969877304293" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Script.java" startLine="152" startPosition="40" endLine="153" endPosition="33" />
-    <nodeInfo nodeId="1291978361072217533" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="158" startPosition="11" endLine="159" endPosition="47" />
-    <nodeInfo nodeId="4648565975300837063" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="164" startPosition="15" endLine="165" endPosition="19" />
-    <nodeInfo nodeId="3294363946766343907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="169" startPosition="7" endLine="170" endPosition="42" />
-    <nodeInfo nodeId="1291978361072217567" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="170" startPosition="42" endLine="171" endPosition="19" />
-    <nodeInfo nodeId="1253487822935825641" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="174" startPosition="28" endLine="175" endPosition="78" />
-    <nodeInfo nodeId="6872280991287272285" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cache" fileName="Script.java" startLine="178" startPosition="58" endLine="179" endPosition="103" />
-    <nodeInfo nodeId="6872280991287272255" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="185" startPosition="62" endLine="186" endPosition="69" />
-    <nodeInfo nodeId="6872280991287272336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="186" startPosition="69" endLine="187" endPosition="53" />
-    <nodeInfo nodeId="6872280991287272322" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="188" startPosition="7" endLine="189" endPosition="62" />
-    <nodeInfo nodeId="5646063728432304756" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="197" startPosition="89" endLine="198" endPosition="62" />
-    <nodeInfo nodeId="5646063728432304762" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="201" startPosition="95" endLine="202" endPosition="45" />
-    <nodeInfo nodeId="7082294419595117122" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="result" fileName="Script.java" startLine="206" startPosition="60" endLine="207" endPosition="27" />
-    <nodeInfo nodeId="7082294419595117176" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="output" fileName="Script.java" startLine="207" startPosition="27" endLine="208" endPosition="49" />
-    <nodeInfo nodeId="7082294419595117125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="210" startPosition="83" endLine="211" endPosition="27" />
-    <nodeInfo nodeId="7082294419595117180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="211" startPosition="27" endLine="212" endPosition="27" />
-    <nodeInfo nodeId="7082294419595117161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="216" startPosition="41" endLine="217" endPosition="42" />
-    <nodeInfo nodeId="7082294419595117146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="220" startPosition="34" endLine="221" endPosition="34" />
-    <nodeInfo nodeId="6872280991287272233" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParametersPool#()V" fileName="Script.java" startLine="180" startPosition="0" endLine="182" endPosition="5" />
-    <nodeInfo nodeId="5646063728432304731" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Monitors#()V" fileName="Script.java" startLine="193" startPosition="47" endLine="195" endPosition="5" />
+    <nodeInfo nodeId="2665699225834935327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="124" startPosition="45" endLine="125" endPosition="130" />
+    <nodeInfo nodeId="3294363946766343868" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="126" startPosition="62" endLine="127" endPosition="49" />
+    <nodeInfo nodeId="2665699225834935324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="127" startPosition="49" endLine="128" endPosition="80" />
+    <nodeInfo nodeId="5700060015085058389" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="128" startPosition="80" endLine="129" endPosition="83" />
+    <nodeInfo nodeId="5700060015085276259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="133" startPosition="48" endLine="134" endPosition="54" />
+    <nodeInfo nodeId="5700060015085276271" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="137" startPosition="63" endLine="138" endPosition="34" />
+    <nodeInfo nodeId="6609730755980129346" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="141" startPosition="13" endLine="142" endPosition="38" />
+    <nodeInfo nodeId="2878100257845884875" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="144" startPosition="57" endLine="145" endPosition="45" />
+    <nodeInfo nodeId="7082294419595139184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="145" startPosition="45" endLine="146" endPosition="74" />
+    <nodeInfo nodeId="2878100257845884884" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="146" startPosition="74" endLine="147" endPosition="21" />
+    <nodeInfo nodeId="7752758284337357890" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Script.java" startLine="148" startPosition="13" endLine="149" endPosition="55" />
+    <nodeInfo nodeId="1291978361072209327" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="150" startPosition="11" endLine="151" endPosition="37" />
+    <nodeInfo nodeId="5321687232879533760" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Script.java" startLine="151" startPosition="37" endLine="152" endPosition="41" />
+    <nodeInfo nodeId="1291978361072214371" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="152" startPosition="41" endLine="153" endPosition="55" />
+    <nodeInfo nodeId="8057264969877304293" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="Script.java" startLine="154" startPosition="40" endLine="155" endPosition="33" />
+    <nodeInfo nodeId="1291978361072217533" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="160" startPosition="11" endLine="161" endPosition="47" />
+    <nodeInfo nodeId="4648565975300837063" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="166" startPosition="15" endLine="167" endPosition="19" />
+    <nodeInfo nodeId="2665699225834936038" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="168" startPosition="11" endLine="169" endPosition="76" />
+    <nodeInfo nodeId="2665699225834935384" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="169" startPosition="76" endLine="170" endPosition="71" />
+    <nodeInfo nodeId="2665699225834937468" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="171" startPosition="9" endLine="172" endPosition="53" />
+    <nodeInfo nodeId="3294363946766343907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="174" startPosition="7" endLine="175" endPosition="42" />
+    <nodeInfo nodeId="1291978361072217567" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="175" startPosition="42" endLine="176" endPosition="19" />
+    <nodeInfo nodeId="1253487822935825641" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="179" startPosition="28" endLine="180" endPosition="78" />
+    <nodeInfo nodeId="6872280991287272285" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cache" fileName="Script.java" startLine="183" startPosition="58" endLine="184" endPosition="103" />
+    <nodeInfo nodeId="6872280991287272255" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="190" startPosition="62" endLine="191" endPosition="69" />
+    <nodeInfo nodeId="6872280991287272336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="191" startPosition="69" endLine="192" endPosition="53" />
+    <nodeInfo nodeId="6872280991287272322" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="193" startPosition="7" endLine="194" endPosition="62" />
+    <nodeInfo nodeId="5646063728432304756" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="202" startPosition="89" endLine="203" endPosition="62" />
+    <nodeInfo nodeId="5646063728432304762" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="206" startPosition="95" endLine="207" endPosition="45" />
+    <nodeInfo nodeId="7082294419595117122" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="result" fileName="Script.java" startLine="211" startPosition="60" endLine="212" endPosition="27" />
+    <nodeInfo nodeId="7082294419595117176" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="output" fileName="Script.java" startLine="212" startPosition="27" endLine="213" endPosition="49" />
+    <nodeInfo nodeId="7082294419595117125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="215" startPosition="83" endLine="216" endPosition="27" />
+    <nodeInfo nodeId="7082294419595117180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="216" startPosition="27" endLine="217" endPosition="27" />
+    <nodeInfo nodeId="7082294419595117161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="221" startPosition="41" endLine="222" endPosition="42" />
+    <nodeInfo nodeId="7082294419595117146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Script.java" startLine="225" startPosition="34" endLine="226" endPosition="34" />
+    <nodeInfo nodeId="6872280991287272233" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParametersPool#()V" fileName="Script.java" startLine="185" startPosition="0" endLine="187" endPosition="5" />
+    <nodeInfo nodeId="5646063728432304731" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Monitors#()V" fileName="Script.java" startLine="198" startPosition="47" endLine="200" endPosition="5" />
     <nodeInfo nodeId="6168415856807657571" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="78" startPosition="59" endLine="81" endPosition="5" />
     <nodeInfo nodeId="2340850238541825520" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="98" startPosition="29" endLine="101" endPosition="5" />
     <nodeInfo nodeId="5646063728432304710" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="102" startPosition="30" endLine="105" endPosition="5" />
@@ -185,35 +190,35 @@
     <nodeInfo nodeId="6168415856807657551" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allTargets#()Ljava/lang/Iterable;" fileName="Script.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
     <nodeInfo nodeId="6168415856807657585" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/Object;Ljava/lang/String;)V" fileName="Script.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
     <nodeInfo nodeId="6168415856807657637" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="90" startPosition="15" endLine="94" endPosition="5" />
-    <nodeInfo nodeId="5700060015085276257" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/facet/ITarget;)Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="130" startPosition="92" endLine="134" endPosition="0" />
-    <nodeInfo nodeId="5700060015085276269" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/script/IResult;)Ljava/lang/Iterable;" fileName="Script.java" startLine="134" startPosition="76" endLine="138" endPosition="0" />
-    <nodeInfo nodeId="8057264969877304298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="153" startPosition="33" endLine="157" endPosition="15" />
-    <nodeInfo nodeId="3294363946766343886" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="160" startPosition="58" endLine="164" endPosition="15" />
-    <nodeInfo nodeId="1253487822935825624" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="173" startPosition="0" endLine="177" endPosition="0" />
-    <nodeInfo nodeId="6872280991287272310" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="184" startPosition="64" endLine="188" endPosition="7" />
-    <nodeInfo nodeId="5646063728432304739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="Script.java" startLine="196" startPosition="0" endLine="200" endPosition="0" />
-    <nodeInfo nodeId="5646063728432304747" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="Script.java" startLine="200" startPosition="0" endLine="204" endPosition="0" />
-    <nodeInfo nodeId="7082294419595117111" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubsOutputResult#(Ljetbrains/mps/make/script/IResult;Ljava/lang/Iterable;)V" fileName="Script.java" startLine="209" startPosition="0" endLine="213" endPosition="5" />
-    <nodeInfo nodeId="7082294419595117137" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSucessful#()Z" fileName="Script.java" startLine="219" startPosition="0" endLine="223" endPosition="0" />
+    <nodeInfo nodeId="5700060015085276257" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/facet/ITarget;)Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="132" startPosition="92" endLine="136" endPosition="0" />
+    <nodeInfo nodeId="5700060015085276269" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/script/IResult;)Ljava/lang/Iterable;" fileName="Script.java" startLine="136" startPosition="76" endLine="140" endPosition="0" />
+    <nodeInfo nodeId="8057264969877304298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="155" startPosition="33" endLine="159" endPosition="15" />
+    <nodeInfo nodeId="3294363946766343886" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="162" startPosition="58" endLine="166" endPosition="15" />
+    <nodeInfo nodeId="1253487822935825624" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
+    <nodeInfo nodeId="6872280991287272310" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="189" startPosition="64" endLine="193" endPosition="7" />
+    <nodeInfo nodeId="5646063728432304739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="Script.java" startLine="201" startPosition="0" endLine="205" endPosition="0" />
+    <nodeInfo nodeId="5646063728432304747" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="Script.java" startLine="205" startPosition="0" endLine="209" endPosition="0" />
+    <nodeInfo nodeId="7082294419595117111" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubsOutputResult#(Ljetbrains/mps/make/script/IResult;Ljava/lang/Iterable;)V" fileName="Script.java" startLine="214" startPosition="0" endLine="218" endPosition="5" />
+    <nodeInfo nodeId="7082294419595117137" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSucessful#()Z" fileName="Script.java" startLine="224" startPosition="0" endLine="228" endPosition="0" />
     <nodeInfo nodeId="1977954644795671622" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="111" startPosition="43" endLine="116" endPosition="11" />
-    <nodeInfo nodeId="2878100257845884865" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="141" startPosition="36" endLine="146" endPosition="13" />
-    <nodeInfo nodeId="7082294419595117132" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="output#()Ljava/lang/Iterable;" fileName="Script.java" startLine="214" startPosition="0" endLine="219" endPosition="0" />
-    <nodeInfo nodeId="7082294419595117189" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="151" startPosition="55" endLine="158" endPosition="11" />
-    <nodeInfo nodeId="1291978361072217542" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="159" startPosition="47" endLine="166" endPosition="11" />
+    <nodeInfo nodeId="2878100257845884865" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="143" startPosition="36" endLine="148" endPosition="13" />
+    <nodeInfo nodeId="7082294419595117132" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="output#()Ljava/lang/Iterable;" fileName="Script.java" startLine="219" startPosition="0" endLine="224" endPosition="0" />
+    <nodeInfo nodeId="7082294419595117189" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="153" startPosition="55" endLine="160" endPosition="11" />
+    <nodeInfo nodeId="1291978361072217542" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="161" startPosition="47" endLine="168" endPosition="11" />
     <nodeInfo nodeId="6168415856807657560" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultTarget#()Ljetbrains/mps/make/facet/ITarget;" fileName="Script.java" startLine="76" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="7752758284337357879" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="140" startPosition="38" endLine="148" endPosition="11" />
-    <nodeInfo nodeId="6872280991287272245" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameters#(Ljetbrains/mps/make/facet/ITarget/Name;Ljava/lang/Class;)null" fileName="Script.java" startLine="183" startPosition="0" endLine="191" endPosition="0" />
+    <nodeInfo nodeId="7752758284337357879" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Script.java" startLine="142" startPosition="38" endLine="150" endPosition="11" />
+    <nodeInfo nodeId="6872280991287272245" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameters#(Ljetbrains/mps/make/facet/ITarget/Name;Ljava/lang/Class;)null" fileName="Script.java" startLine="188" startPosition="0" endLine="196" endPosition="0" />
     <nodeInfo nodeId="1977954644795665061" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Script.java" startLine="108" startPosition="47" endLine="117" endPosition="9" />
     <nodeInfo nodeId="4648565975300837021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IConfigMonitor;)V" fileName="Script.java" startLine="107" startPosition="80" endLine="119" endPosition="0" />
-    <nodeInfo nodeId="1291978361072223855" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="127" startPosition="83" endLine="139" endPosition="13" />
+    <nodeInfo nodeId="1291978361072223855" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Script.java" startLine="129" startPosition="83" endLine="141" endPosition="13" />
     <nodeInfo nodeId="6168415856807657489" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validate#()V" fileName="Script.java" startLine="51" startPosition="0" endLine="64" endPosition="0" />
     <nodeInfo nodeId="4648565975300837014" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="106" startPosition="97" endLine="119" endPosition="7" />
-    <nodeInfo nodeId="1291978361072209315" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Script.java" startLine="124" startPosition="45" endLine="167" endPosition="9" />
-    <nodeInfo nodeId="4648565975300837055" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IJobMonitor;)V" fileName="Script.java" startLine="123" startPosition="74" endLine="169" endPosition="0" />
-    <nodeInfo nodeId="4648565975300837048" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="122" startPosition="5" endLine="169" endPosition="7" />
-    <nodeInfo nodeId="6168415856807657603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;)Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="88" startPosition="0" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="6872280991287272236" fileName="Script.java" startLine="181" startPosition="29" endLine="181" endPosition="29" />
-    <scopeInfo nodeId="5646063728432304734" fileName="Script.java" startLine="194" startPosition="23" endLine="194" endPosition="23" />
+    <nodeInfo nodeId="1291978361072209315" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Script.java" startLine="125" startPosition="130" endLine="171" endPosition="9" />
+    <nodeInfo nodeId="4648565975300837055" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IJobMonitor;)V" fileName="Script.java" startLine="123" startPosition="74" endLine="174" endPosition="0" />
+    <nodeInfo nodeId="4648565975300837048" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Script.java" startLine="122" startPosition="5" endLine="174" endPosition="7" />
+    <nodeInfo nodeId="6168415856807657603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;)Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="88" startPosition="0" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="6872280991287272236" fileName="Script.java" startLine="186" startPosition="29" endLine="186" endPosition="29" />
+    <scopeInfo nodeId="5646063728432304734" fileName="Script.java" startLine="199" startPosition="23" endLine="199" endPosition="23" />
     <scopeInfo nodeId="1253487822935825548" fileName="Script.java" startLine="44" startPosition="81" endLine="45" endPosition="21" />
     <scopeInfo nodeId="1253487822935825573" fileName="Script.java" startLine="48" startPosition="43" endLine="49" endPosition="25" />
     <scopeInfo nodeId="5566937012378944709" fileName="Script.java" startLine="65" startPosition="28" endLine="66" endPosition="27" />
@@ -224,25 +229,25 @@
     <scopeInfo nodeId="2340850238541825521" fileName="Script.java" startLine="99" startPosition="23" endLine="100" endPosition="24" />
     <scopeInfo nodeId="5646063728432304711" fileName="Script.java" startLine="103" startPosition="23" endLine="104" endPosition="35" />
     <scopeInfo nodeId="4648565975300837033" fileName="Script.java" startLine="120" startPosition="35" endLine="121" endPosition="21" />
-    <scopeInfo nodeId="5700060015085276258" fileName="Script.java" startLine="131" startPosition="48" endLine="132" endPosition="54" />
-    <scopeInfo nodeId="5700060015085276270" fileName="Script.java" startLine="135" startPosition="63" endLine="136" endPosition="34" />
-    <scopeInfo nodeId="1253487822935825630" fileName="Script.java" startLine="174" startPosition="28" endLine="175" endPosition="78" />
-    <scopeInfo nodeId="5646063728432304746" fileName="Script.java" startLine="197" startPosition="89" endLine="198" endPosition="62" />
-    <scopeInfo nodeId="5646063728432304754" fileName="Script.java" startLine="201" startPosition="95" endLine="202" endPosition="45" />
-    <scopeInfo nodeId="7082294419595117136" fileName="Script.java" startLine="216" startPosition="41" endLine="217" endPosition="42" />
-    <scopeInfo nodeId="7082294419595117140" fileName="Script.java" startLine="220" startPosition="34" endLine="221" endPosition="34" />
+    <scopeInfo nodeId="5700060015085276258" fileName="Script.java" startLine="133" startPosition="48" endLine="134" endPosition="54" />
+    <scopeInfo nodeId="5700060015085276270" fileName="Script.java" startLine="137" startPosition="63" endLine="138" endPosition="34" />
+    <scopeInfo nodeId="1253487822935825630" fileName="Script.java" startLine="179" startPosition="28" endLine="180" endPosition="78" />
+    <scopeInfo nodeId="5646063728432304746" fileName="Script.java" startLine="202" startPosition="89" endLine="203" endPosition="62" />
+    <scopeInfo nodeId="5646063728432304754" fileName="Script.java" startLine="206" startPosition="95" endLine="207" endPosition="45" />
+    <scopeInfo nodeId="7082294419595117136" fileName="Script.java" startLine="221" startPosition="41" endLine="222" endPosition="42" />
+    <scopeInfo nodeId="7082294419595117140" fileName="Script.java" startLine="225" startPosition="34" endLine="226" endPosition="34" />
     <scopeInfo nodeId="6168415856807657656" fileName="Script.java" startLine="39" startPosition="74" endLine="41" endPosition="47" />
     <scopeInfo nodeId="6168415856807657498" fileName="Script.java" startLine="54" startPosition="54" endLine="56" endPosition="79" />
     <scopeInfo nodeId="6168415856807657522" fileName="Script.java" startLine="58" startPosition="34" endLine="60" endPosition="64" />
     <scopeInfo nodeId="6168415856807657638" fileName="Script.java" startLine="91" startPosition="23" endLine="93" endPosition="56" />
-    <scopeInfo nodeId="6872280991287272233" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParametersPool#()V" fileName="Script.java" startLine="180" startPosition="0" endLine="182" endPosition="5" />
-    <scopeInfo nodeId="6872280991287272347" fileName="Script.java" startLine="185" startPosition="62" endLine="187" endPosition="53">
+    <scopeInfo nodeId="6872280991287272233" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParametersPool#()V" fileName="Script.java" startLine="185" startPosition="0" endLine="187" endPosition="5" />
+    <scopeInfo nodeId="6872280991287272347" fileName="Script.java" startLine="190" startPosition="62" endLine="192" endPosition="53">
       <varInfo nodeId="6872280991287272256" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="5646063728432304731" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Monitors#()V" fileName="Script.java" startLine="193" startPosition="47" endLine="195" endPosition="5" />
-    <scopeInfo nodeId="7082294419595117114" fileName="Script.java" startLine="210" startPosition="83" endLine="212" endPosition="27" />
+    <scopeInfo nodeId="5646063728432304731" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Monitors#()V" fileName="Script.java" startLine="198" startPosition="47" endLine="200" endPosition="5" />
+    <scopeInfo nodeId="7082294419595117114" fileName="Script.java" startLine="215" startPosition="83" endLine="217" endPosition="27" />
     <scopeInfo nodeId="1977954644795671623" fileName="Script.java" startLine="112" startPosition="60" endLine="115" endPosition="19" />
-    <scopeInfo nodeId="2878100257845884866" fileName="Script.java" startLine="142" startPosition="57" endLine="145" endPosition="21" />
+    <scopeInfo nodeId="2878100257845884866" fileName="Script.java" startLine="144" startPosition="57" endLine="147" endPosition="21" />
     <scopeInfo nodeId="6168415856807657653" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Script#(Ljetbrains/mps/internal/make/runtime/script/TargetRange;Ljetbrains/mps/make/facet/ITarget/Name;)V" fileName="Script.java" startLine="38" startPosition="0" endLine="42" endPosition="3">
       <varInfo nodeId="6168415856807657671" varName="defaultTargetName" />
       <varInfo nodeId="6168415856807657669" varName="targetRange" />
@@ -260,33 +265,33 @@
       <varInfo nodeId="6168415856807657601" varName="message" />
       <varInfo nodeId="6168415856807657599" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="5700060015085276257" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/facet/ITarget;)Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="130" startPosition="92" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="5700060015085276269" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/script/IResult;)Ljava/lang/Iterable;" fileName="Script.java" startLine="134" startPosition="76" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="1253487822935825624" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="173" startPosition="0" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="5646063728432304739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="Script.java" startLine="196" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="5700060015085276257" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/make/facet/ITarget;)Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="132" startPosition="92" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="5700060015085276269" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/make/script/IResult;)Ljava/lang/Iterable;" fileName="Script.java" startLine="136" startPosition="76" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="1253487822935825624" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
+    <scopeInfo nodeId="5646063728432304739" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="Script.java" startLine="201" startPosition="0" endLine="205" endPosition="0">
       <varInfo nodeId="5646063728432304740" varName="code" />
     </scopeInfo>
-    <scopeInfo nodeId="5646063728432304747" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="Script.java" startLine="200" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="5646063728432304747" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="Script.java" startLine="205" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="5646063728432304750" varName="code" />
     </scopeInfo>
-    <scopeInfo nodeId="7082294419595117111" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubsOutputResult#(Ljetbrains/mps/make/script/IResult;Ljava/lang/Iterable;)V" fileName="Script.java" startLine="209" startPosition="0" endLine="213" endPosition="5">
+    <scopeInfo nodeId="7082294419595117111" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubsOutputResult#(Ljetbrains/mps/make/script/IResult;Ljava/lang/Iterable;)V" fileName="Script.java" startLine="214" startPosition="0" endLine="218" endPosition="5">
       <varInfo nodeId="7082294419595117119" varName="result" />
       <varInfo nodeId="7082294419595117153" varName="output" />
     </scopeInfo>
-    <scopeInfo nodeId="7082294419595117137" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSucessful#()Z" fileName="Script.java" startLine="219" startPosition="0" endLine="223" endPosition="0" />
+    <scopeInfo nodeId="7082294419595117137" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSucessful#()Z" fileName="Script.java" startLine="224" startPosition="0" endLine="228" endPosition="0" />
     <scopeInfo nodeId="6168415856807657563" fileName="Script.java" startLine="77" startPosition="34" endLine="82" endPosition="15">
       <varInfo nodeId="6168415856807657565" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="7082294419595117190" fileName="Script.java" startLine="152" startPosition="40" endLine="157" endPosition="15" />
-    <scopeInfo nodeId="1291978361072217543" fileName="Script.java" startLine="160" startPosition="58" endLine="165" endPosition="19" />
-    <scopeInfo nodeId="6872280991287272254" fileName="Script.java" startLine="184" startPosition="64" endLine="189" endPosition="62" />
-    <scopeInfo nodeId="7082294419595117132" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="output#()Ljava/lang/Iterable;" fileName="Script.java" startLine="214" startPosition="0" endLine="219" endPosition="0" />
-    <scopeInfo nodeId="7752758284337357880" fileName="Script.java" startLine="141" startPosition="36" endLine="147" endPosition="55" />
+    <scopeInfo nodeId="7082294419595117190" fileName="Script.java" startLine="154" startPosition="40" endLine="159" endPosition="15" />
+    <scopeInfo nodeId="1291978361072217543" fileName="Script.java" startLine="162" startPosition="58" endLine="167" endPosition="19" />
+    <scopeInfo nodeId="6872280991287272254" fileName="Script.java" startLine="189" startPosition="64" endLine="194" endPosition="62" />
+    <scopeInfo nodeId="7082294419595117132" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="output#()Ljava/lang/Iterable;" fileName="Script.java" startLine="219" startPosition="0" endLine="224" endPosition="0" />
+    <scopeInfo nodeId="7752758284337357880" fileName="Script.java" startLine="143" startPosition="36" endLine="149" endPosition="55" />
     <scopeInfo nodeId="1977954644795665064" fileName="Script.java" startLine="109" startPosition="62" endLine="116" endPosition="11">
       <varInfo nodeId="1977954644795665108" varName="cfg" />
     </scopeInfo>
     <scopeInfo nodeId="6168415856807657560" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="defaultTarget#()Ljetbrains/mps/make/facet/ITarget;" fileName="Script.java" startLine="76" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="6872280991287272245" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameters#(Ljetbrains/mps/make/facet/ITarget/Name;Ljava/lang/Class;)null" fileName="Script.java" startLine="183" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="6872280991287272245" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parameters#(Ljetbrains/mps/make/facet/ITarget/Name;Ljava/lang/Class;)null" fileName="Script.java" startLine="188" startPosition="0" endLine="196" endPosition="0">
       <varInfo nodeId="6872280991287272251" varName="cls" />
       <varInfo nodeId="6872280991287272249" varName="target" />
     </scopeInfo>
@@ -295,32 +300,32 @@
     <scopeInfo nodeId="6168415856807657492" fileName="Script.java" startLine="52" startPosition="26" endLine="62" endPosition="21" />
     <scopeInfo nodeId="4648565975300837021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IConfigMonitor;)V" fileName="Script.java" startLine="107" startPosition="80" endLine="119" endPosition="0" />
     <scopeInfo nodeId="6168415856807657489" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validate#()V" fileName="Script.java" startLine="51" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1291978361072209318" fileName="Script.java" startLine="125" startPosition="62" endLine="166" endPosition="11">
+    <scopeInfo nodeId="1291978361072209318" fileName="Script.java" startLine="126" startPosition="62" endLine="170" endPosition="71">
       <varInfo nodeId="1291978361072223856" varName="input" />
       <varInfo nodeId="5700060015085058390" varName="impre" />
       <varInfo nodeId="1291978361072214372" varName="jr" />
       <varInfo nodeId="1291978361072209328" varName="job" />
     </scopeInfo>
-    <scopeInfo nodeId="1291978361072209315" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Script.java" startLine="124" startPosition="45" endLine="167" endPosition="9" />
-    <scopeInfo nodeId="4648565975300837056" fileName="Script.java" startLine="124" startPosition="45" endLine="167" endPosition="9" />
-    <scopeInfo nodeId="4648565975300837055" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IJobMonitor;)V" fileName="Script.java" startLine="123" startPosition="74" endLine="169" endPosition="0" />
-    <scopeInfo nodeId="6168415856807657610" fileName="Script.java" startLine="89" startPosition="75" endLine="171" endPosition="19">
+    <scopeInfo nodeId="1291978361072209315" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Script.java" startLine="125" startPosition="130" endLine="171" endPosition="9" />
+    <scopeInfo nodeId="4648565975300837056" fileName="Script.java" startLine="124" startPosition="45" endLine="172" endPosition="53" />
+    <scopeInfo nodeId="4648565975300837055" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/make/script/IJobMonitor;)V" fileName="Script.java" startLine="123" startPosition="74" endLine="174" endPosition="0" />
+    <scopeInfo nodeId="6168415856807657610" fileName="Script.java" startLine="89" startPosition="75" endLine="176" endPosition="19">
       <varInfo nodeId="1291978361072217524" varName="results" />
       <varInfo nodeId="6872280991287272357" varName="pool" />
       <varInfo nodeId="5646063728432304705" varName="mons" />
       <varInfo nodeId="1291978361072209307" varName="toExecute" />
     </scopeInfo>
-    <scopeInfo nodeId="6168415856807657603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;)Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="88" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="6168415856807657603" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;)Ljetbrains/mps/make/script/IResult;" fileName="Script.java" startLine="88" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="1253487822935825635" varName="scriptInput" />
     </scopeInfo>
-    <unitInfo nodeId="5700060015085276257" fileName="Script.java" startLine="130" startPosition="61" endLine="134" endPosition="13" unitName="jetbrains.mps.internal.make.runtime.script.Script$3" />
-    <unitInfo nodeId="5700060015085276269" fileName="Script.java" startLine="134" startPosition="40" endLine="138" endPosition="13" unitName="jetbrains.mps.internal.make.runtime.script.Script$3" />
+    <unitInfo nodeId="5700060015085276257" fileName="Script.java" startLine="132" startPosition="61" endLine="136" endPosition="13" unitName="jetbrains.mps.internal.make.runtime.script.Script$3" />
+    <unitInfo nodeId="5700060015085276269" fileName="Script.java" startLine="136" startPosition="40" endLine="140" endPosition="13" unitName="jetbrains.mps.internal.make.runtime.script.Script$3" />
     <unitInfo nodeId="4648565975300837021" fileName="Script.java" startLine="107" startPosition="34" endLine="119" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.Script$1" />
-    <unitInfo nodeId="5646063728432304729" fileName="Script.java" startLine="193" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script$Monitors" />
-    <unitInfo nodeId="6872280991287272231" fileName="Script.java" startLine="178" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script$ParametersPool" />
-    <unitInfo nodeId="7082294419595117109" fileName="Script.java" startLine="206" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script$SubsOutputResult" />
-    <unitInfo nodeId="4648565975300837055" fileName="Script.java" startLine="123" startPosition="31" endLine="169" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.Script$2" />
-    <unitInfo nodeId="6168415856807657480" fileName="Script.java" startLine="29" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script" />
+    <unitInfo nodeId="5646063728432304729" fileName="Script.java" startLine="198" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script$Monitors" />
+    <unitInfo nodeId="6872280991287272231" fileName="Script.java" startLine="183" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script$ParametersPool" />
+    <unitInfo nodeId="7082294419595117109" fileName="Script.java" startLine="211" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script$SubsOutputResult" />
+    <unitInfo nodeId="4648565975300837055" fileName="Script.java" startLine="123" startPosition="31" endLine="174" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.script.Script$2" />
+    <unitInfo nodeId="6168415856807657480" fileName="Script.java" startLine="29" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.Script" />
   </root>
   <root nodeId="6168415856807657684">
     <nodeInfo nodeId="6168415856807657685" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" fileName="ScriptBuilder.java" startLine="28" startPosition="28" endLine="29" endPosition="68" />
@@ -892,207 +897,223 @@
     <nodeInfo nodeId="7797884084018581584" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TOTAL" fileName="LoggingProgressStrategy.java" startLine="13" startPosition="101" endLine="14" endPosition="41" />
     <nodeInfo nodeId="7797884084018535584" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="last" fileName="LoggingProgressStrategy.java" startLine="15" startPosition="0" endLine="16" endPosition="60" />
     <nodeInfo nodeId="7797884084018581833" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="current" fileName="LoggingProgressStrategy.java" startLine="16" startPosition="60" endLine="17" endPosition="28" />
-    <nodeInfo nodeId="7797884084018607164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="19" startPosition="36" endLine="20" endPosition="46" />
-    <nodeInfo nodeId="7797884084018607159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="23" startPosition="38" endLine="24" endPosition="48" />
-    <nodeInfo nodeId="7797884084018607126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="27" startPosition="35" endLine="28" endPosition="45" />
-    <nodeInfo nodeId="7797884084018582065" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="32" startPosition="36" endLine="33" endPosition="140" />
-    <nodeInfo nodeId="7797884084018581839" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="33" startPosition="140" endLine="34" endPosition="62" />
-    <nodeInfo nodeId="7797884084018600981" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" fileName="LoggingProgressStrategy.java" startLine="40" startPosition="67" endLine="41" endPosition="11" />
-    <nodeInfo nodeId="7797884084018600985" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="41" startPosition="11" endLine="42" endPosition="22" />
-    <nodeInfo nodeId="7797884084018581852" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="45" startPosition="38" endLine="46" endPosition="19" />
-    <nodeInfo nodeId="7797884084018582113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="49" startPosition="65" endLine="50" endPosition="94" />
-    <nodeInfo nodeId="7797884084018557326" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="50" startPosition="94" endLine="51" endPosition="49" />
-    <nodeInfo nodeId="7797884084018591000" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="51" startPosition="49" endLine="52" endPosition="16" />
-    <nodeInfo nodeId="7797884084018535781" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="55" startPosition="75" endLine="56" endPosition="74" />
-    <nodeInfo nodeId="7797884084018557120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="56" startPosition="74" endLine="57" endPosition="81" />
-    <nodeInfo nodeId="7797884084018589412" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="60" startPosition="73" endLine="61" endPosition="49" />
-    <nodeInfo nodeId="7797884084018589539" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="61" startPosition="49" endLine="62" endPosition="20" />
-    <nodeInfo nodeId="7797884084018582028" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="prev" fileName="LoggingProgressStrategy.java" startLine="72" startPosition="58" endLine="73" endPosition="62" />
-    <nodeInfo nodeId="7797884084018533791" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" fileName="LoggingProgressStrategy.java" startLine="73" startPosition="62" endLine="74" endPosition="24" />
-    <nodeInfo nodeId="7797884084018533800" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="estimate" fileName="LoggingProgressStrategy.java" startLine="74" startPosition="24" endLine="75" endPosition="25" />
-    <nodeInfo nodeId="7797884084018581984" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="total" fileName="LoggingProgressStrategy.java" startLine="75" startPosition="25" endLine="76" endPosition="22" />
-    <nodeInfo nodeId="7797884084018535660" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="done" fileName="LoggingProgressStrategy.java" startLine="76" startPosition="22" endLine="77" endPosition="25" />
-    <nodeInfo nodeId="7797884084018582038" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="79" startPosition="124" endLine="80" endPosition="23" />
-    <nodeInfo nodeId="7797884084018533794" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="80" startPosition="23" endLine="81" endPosition="23" />
-    <nodeInfo nodeId="7797884084018533803" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="81" startPosition="23" endLine="82" endPosition="31" />
-    <nodeInfo nodeId="7797884084018582223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="82" startPosition="31" endLine="83" endPosition="27" />
-    <nodeInfo nodeId="7797884084018581975" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="LoggingProgressStrategy.java" startLine="87" startPosition="26" endLine="88" endPosition="69" />
-    <nodeInfo nodeId="7797884084018581966" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="LoggingProgressStrategy.java" startLine="90" startPosition="24" endLine="91" endPosition="68" />
-    <nodeInfo nodeId="7797884084018581932" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="92" startPosition="7" endLine="93" endPosition="81" />
-    <nodeInfo nodeId="7797884084018535735" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="LoggingProgressStrategy.java" startLine="97" startPosition="21" endLine="98" endPosition="65" />
-    <nodeInfo nodeId="7797884084018598345" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="99" startPosition="7" endLine="100" endPosition="43" />
-    <nodeInfo nodeId="7797884084018582258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="104" startPosition="25" endLine="105" endPosition="30" />
-    <nodeInfo nodeId="7797884084018582396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="106" startPosition="27" endLine="107" endPosition="102" />
-    <nodeInfo nodeId="7797884084018535688" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="108" startPosition="9" endLine="109" endPosition="23" />
-    <nodeInfo nodeId="7797884084018581879" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="113" startPosition="41" endLine="114" endPosition="36" />
-    <nodeInfo nodeId="7797884084018559939" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="117" startPosition="27" endLine="118" endPosition="42" />
-    <nodeInfo nodeId="7797884084018598219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="121" startPosition="31" endLine="122" endPosition="74" />
-    <nodeInfo nodeId="7797884084018598254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="122" startPosition="74" endLine="123" endPosition="62" />
-    <nodeInfo nodeId="7797884084018598231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="124" startPosition="27" endLine="125" endPosition="58" />
-    <nodeInfo nodeId="7797884084018598238" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="125" startPosition="58" endLine="126" endPosition="23" />
-    <nodeInfo nodeId="7797884084018598244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="127" startPosition="7" endLine="128" endPosition="82" />
-    <nodeInfo nodeId="7797884084018598315" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="131" startPosition="87" endLine="132" endPosition="62" />
-    <nodeInfo nodeId="7797884084018598328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="134" startPosition="49" endLine="135" endPosition="21" />
-    <nodeInfo nodeId="7797884084018598335" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="136" startPosition="9" endLine="137" endPosition="23" />
-    <nodeInfo nodeId="7797884084018598341" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="138" startPosition="7" endLine="139" endPosition="17" />
-    <nodeInfo nodeId="7797884084018582197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="147" startPosition="67" endLine="148" endPosition="46" />
-    <nodeInfo nodeId="7797884084018581775" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="151" startPosition="41" endLine="152" endPosition="28" />
-    <nodeInfo nodeId="7797884084018581783" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="155" startPosition="49" endLine="156" endPosition="32" />
-    <nodeInfo nodeId="7797884084018581804" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="159" startPosition="27" endLine="160" endPosition="29" />
-    <nodeInfo nodeId="7797884084018607141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="164" startPosition="31" endLine="165" endPosition="35" />
-    <nodeInfo nodeId="7797884084018607135" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="warning#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="165" startPosition="35" endLine="166" endPosition="37" />
-    <nodeInfo nodeId="7797884084018607108" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="166" startPosition="37" endLine="167" endPosition="34" />
-    <nodeInfo nodeId="7797884084018581726" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LastProgress#()V" fileName="LoggingProgressStrategy.java" startLine="143" startPosition="50" endLine="145" endPosition="5" />
-    <nodeInfo nodeId="7797884084018581973" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="86" startPosition="67" endLine="89" endPosition="7" />
-    <nodeInfo nodeId="7797884084018581964" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="89" startPosition="7" endLine="92" endPosition="7" />
-    <nodeInfo nodeId="7797884084018535733" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="96" startPosition="49" endLine="99" endPosition="7" />
-    <nodeInfo nodeId="7797884084018582403" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="105" startPosition="30" endLine="108" endPosition="9" />
-    <nodeInfo nodeId="7797884084018598326" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="133" startPosition="32" endLine="136" endPosition="9" />
-    <nodeInfo nodeId="7797884084018607153" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="18" startPosition="82" endLine="22" endPosition="0" />
-    <nodeInfo nodeId="7797884084018607147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="warning#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="7797884084018607120" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="7797884084018533744" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingProgressStrategy#()V" fileName="LoggingProgressStrategy.java" startLine="31" startPosition="0" endLine="35" endPosition="3" />
-    <nodeInfo nodeId="7797884084018581710" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="LoggingProgressStrategy.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <nodeInfo nodeId="7797884084018533742" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="65" startPosition="65" endLine="69" endPosition="6" />
-    <nodeInfo nodeId="7797884084018533766" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
-    <nodeInfo nodeId="7797884084018559935" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="LoggingProgressStrategy.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
-    <nodeInfo nodeId="7797884084018598226" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LoggingProgressStrategy.java" startLine="123" startPosition="62" endLine="127" endPosition="7" />
-    <nodeInfo nodeId="7797884084018582187" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
-    <nodeInfo nodeId="7797884084018581737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
-    <nodeInfo nodeId="7797884084018581743" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="LoggingProgressStrategy.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
-    <nodeInfo nodeId="7797884084018581757" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="LoggingProgressStrategy.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
-    <nodeInfo nodeId="7797884084018535675" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="progress#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;)V" fileName="LoggingProgressStrategy.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="7797884084018559952" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finish#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;)V" fileName="LoggingProgressStrategy.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="7797884084018533776" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="begin#(Ljava/lang/String;II)Ljetbrains/mps/make/script/IProgress;" fileName="LoggingProgressStrategy.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="7797884084018533755" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogReportingProgress#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="78" startPosition="0" endLine="84" endPosition="5" />
-    <nodeInfo nodeId="7797884084018598319" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LoggingProgressStrategy.java" startLine="132" startPosition="62" endLine="138" endPosition="7" />
-    <nodeInfo nodeId="7797884084018600974" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingProgressStrategy#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/Log;)V" fileName="LoggingProgressStrategy.java" startLine="36" startPosition="0" endLine="43" endPosition="3" />
-    <nodeInfo nodeId="7797884084018533742" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_8gc367_a0a0b0g0#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="LoggingProgressStrategy.java" startLine="64" startPosition="0" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="7797884084018533770" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="LoggingProgressStrategy.java" startLine="95" startPosition="0" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="7797884084018582250" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="103" startPosition="41" endLine="110" endPosition="7" />
-    <nodeInfo nodeId="7797884084018559927" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="85" startPosition="0" endLine="95" endPosition="0" />
-    <nodeInfo nodeId="7797884084018582234" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primDone#(I)V" fileName="LoggingProgressStrategy.java" startLine="102" startPosition="0" endLine="112" endPosition="0" />
-    <nodeInfo nodeId="7797884084018598213" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fullName#()Ljava/lang/String;" fileName="LoggingProgressStrategy.java" startLine="120" startPosition="0" endLine="130" endPosition="0" />
-    <nodeInfo nodeId="7797884084018598309" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchingOrTotal#(Ljava/lang/String;)Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;" fileName="LoggingProgressStrategy.java" startLine="130" startPosition="0" endLine="141" endPosition="0" />
-    <nodeInfo nodeId="7797884084018600982" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="logger" fileName="LoggingProgressStrategy.java" startLine="17" startPosition="28" endLine="30" endPosition="4" />
-    <scopeInfo nodeId="7797884084018581729" fileName="LoggingProgressStrategy.java" startLine="144" startPosition="27" endLine="144" endPosition="27" />
-    <scopeInfo nodeId="7797884084018607158" fileName="LoggingProgressStrategy.java" startLine="19" startPosition="36" endLine="20" endPosition="46" />
-    <scopeInfo nodeId="7797884084018607152" fileName="LoggingProgressStrategy.java" startLine="23" startPosition="38" endLine="24" endPosition="48" />
-    <scopeInfo nodeId="7797884084018607125" fileName="LoggingProgressStrategy.java" startLine="27" startPosition="35" endLine="28" endPosition="45" />
-    <scopeInfo nodeId="7797884084018581713" fileName="LoggingProgressStrategy.java" startLine="45" startPosition="38" endLine="46" endPosition="19" />
-    <scopeInfo nodeId="7797884084018581974" fileName="LoggingProgressStrategy.java" startLine="87" startPosition="26" endLine="88" endPosition="69" />
-    <scopeInfo nodeId="7797884084018581965" fileName="LoggingProgressStrategy.java" startLine="90" startPosition="24" endLine="91" endPosition="68" />
-    <scopeInfo nodeId="7797884084018535734" fileName="LoggingProgressStrategy.java" startLine="97" startPosition="21" endLine="98" endPosition="65" />
-    <scopeInfo nodeId="7797884084018582404" fileName="LoggingProgressStrategy.java" startLine="106" startPosition="27" endLine="107" endPosition="102" />
-    <scopeInfo nodeId="7797884084018533769" fileName="LoggingProgressStrategy.java" startLine="113" startPosition="41" endLine="114" endPosition="36" />
-    <scopeInfo nodeId="7797884084018559938" fileName="LoggingProgressStrategy.java" startLine="117" startPosition="27" endLine="118" endPosition="42" />
-    <scopeInfo nodeId="7797884084018598327" fileName="LoggingProgressStrategy.java" startLine="134" startPosition="49" endLine="135" endPosition="21" />
-    <scopeInfo nodeId="7797884084018582196" fileName="LoggingProgressStrategy.java" startLine="147" startPosition="67" endLine="148" endPosition="46" />
-    <scopeInfo nodeId="7797884084018581742" fileName="LoggingProgressStrategy.java" startLine="151" startPosition="41" endLine="152" endPosition="28" />
-    <scopeInfo nodeId="7797884084018581748" fileName="LoggingProgressStrategy.java" startLine="155" startPosition="49" endLine="156" endPosition="32" />
-    <scopeInfo nodeId="7797884084018581760" fileName="LoggingProgressStrategy.java" startLine="159" startPosition="27" endLine="160" endPosition="29" />
-    <scopeInfo nodeId="7797884084018607141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="164" startPosition="31" endLine="165" endPosition="35">
+    <nodeInfo nodeId="4277212308181635809" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="lastInfo" fileName="LoggingProgressStrategy.java" startLine="17" startPosition="28" endLine="18" endPosition="33" />
+    <nodeInfo nodeId="7797884084018607164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="20" startPosition="36" endLine="21" endPosition="46" />
+    <nodeInfo nodeId="7797884084018607159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="24" startPosition="38" endLine="25" endPosition="48" />
+    <nodeInfo nodeId="7797884084018607126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="28" startPosition="35" endLine="29" endPosition="45" />
+    <nodeInfo nodeId="7797884084018582065" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="33" startPosition="36" endLine="34" endPosition="140" />
+    <nodeInfo nodeId="7797884084018581839" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="34" startPosition="140" endLine="35" endPosition="62" />
+    <nodeInfo nodeId="7797884084018600981" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" fileName="LoggingProgressStrategy.java" startLine="41" startPosition="67" endLine="42" endPosition="11" />
+    <nodeInfo nodeId="7797884084018600985" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="42" startPosition="11" endLine="43" endPosition="22" />
+    <nodeInfo nodeId="7797884084018581852" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="46" startPosition="38" endLine="47" endPosition="19" />
+    <nodeInfo nodeId="7797884084018582113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="50" startPosition="65" endLine="51" endPosition="94" />
+    <nodeInfo nodeId="4277212308181635852" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="52" startPosition="27" endLine="53" endPosition="28" />
+    <nodeInfo nodeId="4277212308181635861" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="53" startPosition="28" endLine="54" endPosition="22" />
+    <nodeInfo nodeId="7797884084018557326" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="55" startPosition="5" endLine="56" endPosition="49" />
+    <nodeInfo nodeId="7797884084018591000" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="56" startPosition="49" endLine="57" endPosition="16" />
+    <nodeInfo nodeId="7797884084018535781" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="60" startPosition="75" endLine="61" endPosition="74" />
+    <nodeInfo nodeId="4277212308181635794" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="61" startPosition="74" endLine="62" endPosition="39" />
+    <nodeInfo nodeId="4277212308181635820" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="63" startPosition="21" endLine="64" endPosition="65" />
+    <nodeInfo nodeId="7797884084018557120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="65" startPosition="12" endLine="66" endPosition="62" />
+    <nodeInfo nodeId="4277212308181635869" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="71" startPosition="27" endLine="72" endPosition="28" />
+    <nodeInfo nodeId="4277212308181635874" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="72" startPosition="28" endLine="73" endPosition="22" />
+    <nodeInfo nodeId="7797884084018589412" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="74" startPosition="5" endLine="75" endPosition="49" />
+    <nodeInfo nodeId="7797884084018582028" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="prev" fileName="LoggingProgressStrategy.java" startLine="89" startPosition="58" endLine="90" endPosition="62" />
+    <nodeInfo nodeId="7797884084018533791" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" fileName="LoggingProgressStrategy.java" startLine="90" startPosition="62" endLine="91" endPosition="24" />
+    <nodeInfo nodeId="7797884084018533800" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="estimate" fileName="LoggingProgressStrategy.java" startLine="91" startPosition="24" endLine="92" endPosition="25" />
+    <nodeInfo nodeId="7797884084018581984" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="total" fileName="LoggingProgressStrategy.java" startLine="92" startPosition="25" endLine="93" endPosition="22" />
+    <nodeInfo nodeId="7797884084018535660" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="done" fileName="LoggingProgressStrategy.java" startLine="93" startPosition="22" endLine="94" endPosition="25" />
+    <nodeInfo nodeId="7797884084018582038" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="96" startPosition="124" endLine="97" endPosition="23" />
+    <nodeInfo nodeId="7797884084018533794" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="97" startPosition="23" endLine="98" endPosition="23" />
+    <nodeInfo nodeId="7797884084018533803" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="98" startPosition="23" endLine="99" endPosition="31" />
+    <nodeInfo nodeId="7797884084018582223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="99" startPosition="31" endLine="100" endPosition="27" />
+    <nodeInfo nodeId="7797884084018581975" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="LoggingProgressStrategy.java" startLine="104" startPosition="26" endLine="105" endPosition="69" />
+    <nodeInfo nodeId="7797884084018581966" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="LoggingProgressStrategy.java" startLine="107" startPosition="24" endLine="108" endPosition="68" />
+    <nodeInfo nodeId="7797884084018581932" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="109" startPosition="7" endLine="110" endPosition="81" />
+    <nodeInfo nodeId="7797884084018535735" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="LoggingProgressStrategy.java" startLine="114" startPosition="21" endLine="115" endPosition="65" />
+    <nodeInfo nodeId="7797884084018598345" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="116" startPosition="7" endLine="117" endPosition="43" />
+    <nodeInfo nodeId="7797884084018582258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="121" startPosition="25" endLine="122" endPosition="30" />
+    <nodeInfo nodeId="7797884084018582396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="123" startPosition="27" endLine="124" endPosition="102" />
+    <nodeInfo nodeId="7797884084018535688" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="125" startPosition="9" endLine="126" endPosition="23" />
+    <nodeInfo nodeId="7797884084018581879" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="130" startPosition="41" endLine="131" endPosition="36" />
+    <nodeInfo nodeId="7797884084018559939" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="134" startPosition="27" endLine="135" endPosition="42" />
+    <nodeInfo nodeId="7797884084018598219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="138" startPosition="31" endLine="139" endPosition="74" />
+    <nodeInfo nodeId="7797884084018598254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="139" startPosition="74" endLine="140" endPosition="62" />
+    <nodeInfo nodeId="7797884084018598231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="141" startPosition="27" endLine="142" endPosition="58" />
+    <nodeInfo nodeId="7797884084018598238" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="142" startPosition="58" endLine="143" endPosition="23" />
+    <nodeInfo nodeId="7797884084018598244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="144" startPosition="7" endLine="145" endPosition="82" />
+    <nodeInfo nodeId="7797884084018598315" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LoggingProgressStrategy.java" startLine="148" startPosition="87" endLine="149" endPosition="62" />
+    <nodeInfo nodeId="7797884084018598328" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="151" startPosition="49" endLine="152" endPosition="21" />
+    <nodeInfo nodeId="7797884084018598335" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="153" startPosition="9" endLine="154" endPosition="23" />
+    <nodeInfo nodeId="7797884084018598341" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="155" startPosition="7" endLine="156" endPosition="17" />
+    <nodeInfo nodeId="7797884084018582197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="164" startPosition="67" endLine="165" endPosition="46" />
+    <nodeInfo nodeId="7797884084018581775" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="168" startPosition="41" endLine="169" endPosition="28" />
+    <nodeInfo nodeId="7797884084018581783" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="172" startPosition="49" endLine="173" endPosition="32" />
+    <nodeInfo nodeId="7797884084018581804" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="176" startPosition="27" endLine="177" endPosition="29" />
+    <nodeInfo nodeId="7797884084018607141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="181" startPosition="31" endLine="182" endPosition="35" />
+    <nodeInfo nodeId="7797884084018607135" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="warning#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="182" startPosition="35" endLine="183" endPosition="37" />
+    <nodeInfo nodeId="7797884084018607108" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="183" startPosition="37" endLine="184" endPosition="34" />
+    <nodeInfo nodeId="4277212308181635840" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="LoggingProgressStrategy.java" startLine="65" startPosition="10" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="7797884084018581726" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LastProgress#()V" fileName="LoggingProgressStrategy.java" startLine="160" startPosition="50" endLine="162" endPosition="5" />
+    <nodeInfo nodeId="7797884084018581973" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="103" startPosition="67" endLine="106" endPosition="7" />
+    <nodeInfo nodeId="7797884084018581964" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="106" startPosition="7" endLine="109" endPosition="7" />
+    <nodeInfo nodeId="7797884084018535733" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="113" startPosition="49" endLine="116" endPosition="7" />
+    <nodeInfo nodeId="7797884084018582403" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="122" startPosition="30" endLine="125" endPosition="9" />
+    <nodeInfo nodeId="7797884084018598326" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="150" startPosition="32" endLine="153" endPosition="9" />
+    <nodeInfo nodeId="7797884084018607153" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="19" startPosition="82" endLine="23" endPosition="0" />
+    <nodeInfo nodeId="7797884084018607147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="warning#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="7797884084018607120" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <nodeInfo nodeId="7797884084018533744" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingProgressStrategy#()V" fileName="LoggingProgressStrategy.java" startLine="32" startPosition="0" endLine="36" endPosition="3" />
+    <nodeInfo nodeId="7797884084018581710" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="LoggingProgressStrategy.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="4277212308181635843" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="51" startPosition="94" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="4277212308181635867" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="70" startPosition="73" endLine="74" endPosition="5" />
+    <nodeInfo nodeId="7797884084018589539" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LoggingProgressStrategy.java" startLine="75" startPosition="49" endLine="79" endPosition="6" />
+    <nodeInfo nodeId="7797884084018533742" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LoggingProgressStrategy.java" startLine="82" startPosition="65" endLine="86" endPosition="6" />
+    <nodeInfo nodeId="7797884084018533766" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <nodeInfo nodeId="7797884084018559935" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="LoggingProgressStrategy.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
+    <nodeInfo nodeId="7797884084018598226" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LoggingProgressStrategy.java" startLine="140" startPosition="62" endLine="144" endPosition="7" />
+    <nodeInfo nodeId="7797884084018582187" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="163" startPosition="0" endLine="167" endPosition="0" />
+    <nodeInfo nodeId="7797884084018581737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="167" startPosition="0" endLine="171" endPosition="0" />
+    <nodeInfo nodeId="7797884084018581743" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="LoggingProgressStrategy.java" startLine="171" startPosition="0" endLine="175" endPosition="0" />
+    <nodeInfo nodeId="7797884084018581757" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="LoggingProgressStrategy.java" startLine="175" startPosition="0" endLine="179" endPosition="0" />
+    <nodeInfo nodeId="4277212308181635805" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="62" startPosition="39" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="7797884084018533755" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogReportingProgress#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="95" startPosition="0" endLine="101" endPosition="5" />
+    <nodeInfo nodeId="7797884084018598319" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="LoggingProgressStrategy.java" startLine="149" startPosition="62" endLine="155" endPosition="7" />
+    <nodeInfo nodeId="7797884084018600974" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingProgressStrategy#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/Log;)V" fileName="LoggingProgressStrategy.java" startLine="37" startPosition="0" endLine="44" endPosition="3" />
+    <nodeInfo nodeId="7797884084018533742" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_8gc367_a0a0b0g0#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="LoggingProgressStrategy.java" startLine="81" startPosition="0" endLine="88" endPosition="0" />
+    <nodeInfo nodeId="7797884084018533770" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="LoggingProgressStrategy.java" startLine="112" startPosition="0" endLine="119" endPosition="0" />
+    <nodeInfo nodeId="7797884084018582250" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LoggingProgressStrategy.java" startLine="120" startPosition="41" endLine="127" endPosition="7" />
+    <nodeInfo nodeId="7797884084018533776" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="begin#(Ljava/lang/String;II)Ljetbrains/mps/make/script/IProgress;" fileName="LoggingProgressStrategy.java" startLine="49" startPosition="0" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="7797884084018535675" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="progress#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;)V" fileName="LoggingProgressStrategy.java" startLine="59" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="7797884084018559927" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="102" startPosition="0" endLine="112" endPosition="0" />
+    <nodeInfo nodeId="7797884084018582234" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primDone#(I)V" fileName="LoggingProgressStrategy.java" startLine="119" startPosition="0" endLine="129" endPosition="0" />
+    <nodeInfo nodeId="7797884084018598213" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fullName#()Ljava/lang/String;" fileName="LoggingProgressStrategy.java" startLine="137" startPosition="0" endLine="147" endPosition="0" />
+    <nodeInfo nodeId="7797884084018598309" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchingOrTotal#(Ljava/lang/String;)Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;" fileName="LoggingProgressStrategy.java" startLine="147" startPosition="0" endLine="158" endPosition="0" />
+    <nodeInfo nodeId="7797884084018559952" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finish#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;)V" fileName="LoggingProgressStrategy.java" startLine="69" startPosition="0" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="7797884084018600982" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="logger" fileName="LoggingProgressStrategy.java" startLine="18" startPosition="33" endLine="31" endPosition="4" />
+    <scopeInfo nodeId="7797884084018581729" fileName="LoggingProgressStrategy.java" startLine="161" startPosition="27" endLine="161" endPosition="27" />
+    <scopeInfo nodeId="7797884084018607158" fileName="LoggingProgressStrategy.java" startLine="20" startPosition="36" endLine="21" endPosition="46" />
+    <scopeInfo nodeId="7797884084018607152" fileName="LoggingProgressStrategy.java" startLine="24" startPosition="38" endLine="25" endPosition="48" />
+    <scopeInfo nodeId="7797884084018607125" fileName="LoggingProgressStrategy.java" startLine="28" startPosition="35" endLine="29" endPosition="45" />
+    <scopeInfo nodeId="7797884084018581713" fileName="LoggingProgressStrategy.java" startLine="46" startPosition="38" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="4277212308181635806" fileName="LoggingProgressStrategy.java" startLine="63" startPosition="21" endLine="64" endPosition="65" />
+    <scopeInfo nodeId="4277212308181635841" fileName="LoggingProgressStrategy.java" startLine="65" startPosition="12" endLine="66" endPosition="62" />
+    <scopeInfo nodeId="7797884084018581974" fileName="LoggingProgressStrategy.java" startLine="104" startPosition="26" endLine="105" endPosition="69" />
+    <scopeInfo nodeId="7797884084018581965" fileName="LoggingProgressStrategy.java" startLine="107" startPosition="24" endLine="108" endPosition="68" />
+    <scopeInfo nodeId="7797884084018535734" fileName="LoggingProgressStrategy.java" startLine="114" startPosition="21" endLine="115" endPosition="65" />
+    <scopeInfo nodeId="7797884084018582404" fileName="LoggingProgressStrategy.java" startLine="123" startPosition="27" endLine="124" endPosition="102" />
+    <scopeInfo nodeId="7797884084018533769" fileName="LoggingProgressStrategy.java" startLine="130" startPosition="41" endLine="131" endPosition="36" />
+    <scopeInfo nodeId="7797884084018559938" fileName="LoggingProgressStrategy.java" startLine="134" startPosition="27" endLine="135" endPosition="42" />
+    <scopeInfo nodeId="7797884084018598327" fileName="LoggingProgressStrategy.java" startLine="151" startPosition="49" endLine="152" endPosition="21" />
+    <scopeInfo nodeId="7797884084018582196" fileName="LoggingProgressStrategy.java" startLine="164" startPosition="67" endLine="165" endPosition="46" />
+    <scopeInfo nodeId="7797884084018581742" fileName="LoggingProgressStrategy.java" startLine="168" startPosition="41" endLine="169" endPosition="28" />
+    <scopeInfo nodeId="7797884084018581748" fileName="LoggingProgressStrategy.java" startLine="172" startPosition="49" endLine="173" endPosition="32" />
+    <scopeInfo nodeId="7797884084018581760" fileName="LoggingProgressStrategy.java" startLine="176" startPosition="27" endLine="177" endPosition="29" />
+    <scopeInfo nodeId="7797884084018607141" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="181" startPosition="31" endLine="182" endPosition="35">
       <varInfo nodeId="7797884084018607145" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018607135" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="warning#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="165" startPosition="35" endLine="166" endPosition="37">
+    <scopeInfo nodeId="7797884084018607135" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="warning#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="182" startPosition="35" endLine="183" endPosition="37">
       <varInfo nodeId="7797884084018607139" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018607108" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="166" startPosition="37" endLine="167" endPosition="34">
+    <scopeInfo nodeId="7797884084018607108" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="183" startPosition="37" endLine="184" endPosition="34">
       <varInfo nodeId="7797884084018607112" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018533747" fileName="LoggingProgressStrategy.java" startLine="32" startPosition="36" endLine="34" endPosition="62" />
-    <scopeInfo nodeId="7797884084018600977" fileName="LoggingProgressStrategy.java" startLine="40" startPosition="67" endLine="42" endPosition="22" />
-    <scopeInfo nodeId="7797884084018535678" fileName="LoggingProgressStrategy.java" startLine="55" startPosition="75" endLine="57" endPosition="81">
-      <varInfo nodeId="7797884084018535782" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="7797884084018559955" fileName="LoggingProgressStrategy.java" startLine="60" startPosition="73" endLine="62" endPosition="20" />
-    <scopeInfo nodeId="7797884084018598230" fileName="LoggingProgressStrategy.java" startLine="124" startPosition="27" endLine="126" endPosition="23" />
-    <scopeInfo nodeId="7797884084018581726" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LastProgress#()V" fileName="LoggingProgressStrategy.java" startLine="143" startPosition="50" endLine="145" endPosition="5" />
-    <scopeInfo nodeId="7797884084018533779" fileName="LoggingProgressStrategy.java" startLine="49" startPosition="65" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="7797884084018607153" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="18" startPosition="82" endLine="22" endPosition="0">
+    <scopeInfo nodeId="7797884084018533747" fileName="LoggingProgressStrategy.java" startLine="33" startPosition="36" endLine="35" endPosition="62" />
+    <scopeInfo nodeId="7797884084018600977" fileName="LoggingProgressStrategy.java" startLine="41" startPosition="67" endLine="43" endPosition="22" />
+    <scopeInfo nodeId="4277212308181635844" fileName="LoggingProgressStrategy.java" startLine="52" startPosition="27" endLine="54" endPosition="22" />
+    <scopeInfo nodeId="4277212308181635868" fileName="LoggingProgressStrategy.java" startLine="71" startPosition="27" endLine="73" endPosition="22" />
+    <scopeInfo nodeId="7797884084018598230" fileName="LoggingProgressStrategy.java" startLine="141" startPosition="27" endLine="143" endPosition="23" />
+    <scopeInfo nodeId="7797884084018581726" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LastProgress#()V" fileName="LoggingProgressStrategy.java" startLine="160" startPosition="50" endLine="162" endPosition="5" />
+    <scopeInfo nodeId="7797884084018607153" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="error#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="19" startPosition="82" endLine="23" endPosition="0">
       <varInfo nodeId="7797884084018607156" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018607147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="warning#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="7797884084018607147" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="warning#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="7797884084018607150" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018607120" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="7797884084018607120" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="info#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="7797884084018607123" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018533744" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingProgressStrategy#()V" fileName="LoggingProgressStrategy.java" startLine="31" startPosition="0" endLine="35" endPosition="3" />
-    <scopeInfo nodeId="7797884084018581710" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="LoggingProgressStrategy.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7797884084018533742" fileName="LoggingProgressStrategy.java" startLine="65" startPosition="65" endLine="69" endPosition="6" />
-    <scopeInfo nodeId="7797884084018533758" fileName="LoggingProgressStrategy.java" startLine="79" startPosition="124" endLine="83" endPosition="27" />
-    <scopeInfo nodeId="7797884084018533775" fileName="LoggingProgressStrategy.java" startLine="96" startPosition="49" endLine="100" endPosition="43" />
-    <scopeInfo nodeId="7797884084018533766" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="112" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="7797884084018533744" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingProgressStrategy#()V" fileName="LoggingProgressStrategy.java" startLine="32" startPosition="0" endLine="36" endPosition="3" />
+    <scopeInfo nodeId="7797884084018581710" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="LoggingProgressStrategy.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="7797884084018533742" fileName="LoggingProgressStrategy.java" startLine="82" startPosition="65" endLine="86" endPosition="6" />
+    <scopeInfo nodeId="7797884084018533758" fileName="LoggingProgressStrategy.java" startLine="96" startPosition="124" endLine="100" endPosition="27" />
+    <scopeInfo nodeId="7797884084018533775" fileName="LoggingProgressStrategy.java" startLine="113" startPosition="49" endLine="117" endPosition="43" />
+    <scopeInfo nodeId="7797884084018533766" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="129" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="7797884084018559925" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018559935" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="LoggingProgressStrategy.java" startLine="116" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="7797884084018598325" fileName="LoggingProgressStrategy.java" startLine="133" startPosition="32" endLine="137" endPosition="23" />
-    <scopeInfo nodeId="7797884084018582187" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="146" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="7797884084018559935" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="LoggingProgressStrategy.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="7797884084018598325" fileName="LoggingProgressStrategy.java" startLine="150" startPosition="32" endLine="154" endPosition="23" />
+    <scopeInfo nodeId="7797884084018582187" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="163" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="7797884084018582194" varName="ofTotal" />
       <varInfo nodeId="7797884084018582190" varName="name" />
       <varInfo nodeId="7797884084018582192" varName="estimate" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018581737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="150" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="7797884084018581737" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="LoggingProgressStrategy.java" startLine="167" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="7797884084018581740" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018581743" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="LoggingProgressStrategy.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="7797884084018581743" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="LoggingProgressStrategy.java" startLine="171" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="7797884084018581744" varName="done" />
       <varInfo nodeId="7797884084018582132" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018581757" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="LoggingProgressStrategy.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="7797884084018535675" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="progress#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;)V" fileName="LoggingProgressStrategy.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="7797884084018535679" varName="wrk" />
-    </scopeInfo>
-    <scopeInfo nodeId="7797884084018559952" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finish#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;)V" fileName="LoggingProgressStrategy.java" startLine="59" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="7797884084018598353" varName="wrk" />
-    </scopeInfo>
-    <scopeInfo nodeId="7797884084018582252" fileName="LoggingProgressStrategy.java" startLine="104" startPosition="25" endLine="109" endPosition="23" />
-    <scopeInfo nodeId="7797884084018533776" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="begin#(Ljava/lang/String;II)Ljetbrains/mps/make/script/IProgress;" fileName="LoggingProgressStrategy.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="7797884084018582214" varName="total" />
-      <varInfo nodeId="7797884084018533781" varName="name" />
-      <varInfo nodeId="7797884084018533783" varName="estimate" />
-    </scopeInfo>
-    <scopeInfo nodeId="7797884084018533755" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogReportingProgress#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="78" startPosition="0" endLine="84" endPosition="5">
+    <scopeInfo nodeId="7797884084018581757" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="LoggingProgressStrategy.java" startLine="175" startPosition="0" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="7797884084018582252" fileName="LoggingProgressStrategy.java" startLine="121" startPosition="25" endLine="126" endPosition="23" />
+    <scopeInfo nodeId="7797884084018533755" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LogReportingProgress#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="95" startPosition="0" endLine="101" endPosition="5">
       <varInfo nodeId="7797884084018582219" varName="ofTotal" />
       <varInfo nodeId="7797884084018533786" varName="name" />
       <varInfo nodeId="7797884084018533788" varName="estimate" />
       <varInfo nodeId="7797884084018582032" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018600974" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingProgressStrategy#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/Log;)V" fileName="LoggingProgressStrategy.java" startLine="36" startPosition="0" endLine="43" endPosition="3">
+    <scopeInfo nodeId="7797884084018600974" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LoggingProgressStrategy#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/Log;)V" fileName="LoggingProgressStrategy.java" startLine="37" startPosition="0" endLine="44" endPosition="3">
       <varInfo nodeId="7797884084018600978" varName="log" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018533742" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_8gc367_a0a0b0g0#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="LoggingProgressStrategy.java" startLine="64" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="7797884084018559934" fileName="LoggingProgressStrategy.java" startLine="86" startPosition="67" endLine="93" endPosition="81" />
-    <scopeInfo nodeId="7797884084018533770" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="LoggingProgressStrategy.java" startLine="95" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="7797884084018533779" fileName="LoggingProgressStrategy.java" startLine="50" startPosition="65" endLine="57" endPosition="16" />
+    <scopeInfo nodeId="7797884084018535678" fileName="LoggingProgressStrategy.java" startLine="60" startPosition="75" endLine="67" endPosition="5">
+      <varInfo nodeId="4277212308181635795" varName="prg" />
+      <varInfo nodeId="7797884084018535782" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="7797884084018533742" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_8gc367_a0a0b0g0#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="LoggingProgressStrategy.java" startLine="81" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="7797884084018559934" fileName="LoggingProgressStrategy.java" startLine="103" startPosition="67" endLine="110" endPosition="81" />
+    <scopeInfo nodeId="7797884084018533770" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="LoggingProgressStrategy.java" startLine="112" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="7797884084018533771" varName="done" />
       <varInfo nodeId="7797884084018582137" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018582237" fileName="LoggingProgressStrategy.java" startLine="103" startPosition="41" endLine="110" endPosition="7" />
-    <scopeInfo nodeId="7797884084018598218" fileName="LoggingProgressStrategy.java" startLine="121" startPosition="31" endLine="128" endPosition="82">
+    <scopeInfo nodeId="7797884084018582237" fileName="LoggingProgressStrategy.java" startLine="120" startPosition="41" endLine="127" endPosition="7" />
+    <scopeInfo nodeId="7797884084018598218" fileName="LoggingProgressStrategy.java" startLine="138" startPosition="31" endLine="145" endPosition="82">
       <varInfo nodeId="7797884084018598220" varName="names" />
       <varInfo nodeId="7797884084018598255" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018598314" fileName="LoggingProgressStrategy.java" startLine="131" startPosition="87" endLine="139" endPosition="17">
+    <scopeInfo nodeId="7797884084018598314" fileName="LoggingProgressStrategy.java" startLine="148" startPosition="87" endLine="156" endPosition="17">
       <varInfo nodeId="7797884084018598316" varName="wrk" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018559927" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="85" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="7797884084018559955" fileName="LoggingProgressStrategy.java" startLine="70" startPosition="73" endLine="79" endPosition="6" />
+    <scopeInfo nodeId="7797884084018533776" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="begin#(Ljava/lang/String;II)Ljetbrains/mps/make/script/IProgress;" fileName="LoggingProgressStrategy.java" startLine="49" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="7797884084018582214" varName="total" />
+      <varInfo nodeId="7797884084018533781" varName="name" />
+      <varInfo nodeId="7797884084018533783" varName="estimate" />
+    </scopeInfo>
+    <scopeInfo nodeId="7797884084018535675" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="progress#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;)V" fileName="LoggingProgressStrategy.java" startLine="59" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="7797884084018535679" varName="wrk" />
+    </scopeInfo>
+    <scopeInfo nodeId="7797884084018559927" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="LoggingProgressStrategy.java" startLine="102" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="7797884084018581927" varName="ofTotal" />
       <varInfo nodeId="7797884084018559930" varName="name" />
       <varInfo nodeId="7797884084018559932" varName="estimate" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018582234" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primDone#(I)V" fileName="LoggingProgressStrategy.java" startLine="102" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="7797884084018582234" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primDone#(I)V" fileName="LoggingProgressStrategy.java" startLine="119" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="7797884084018582244" varName="primDone" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018598213" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fullName#()Ljava/lang/String;" fileName="LoggingProgressStrategy.java" startLine="120" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="7797884084018598309" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchingOrTotal#(Ljava/lang/String;)Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;" fileName="LoggingProgressStrategy.java" startLine="130" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="7797884084018598213" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fullName#()Ljava/lang/String;" fileName="LoggingProgressStrategy.java" startLine="137" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="7797884084018598309" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchingOrTotal#(Ljava/lang/String;)Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;" fileName="LoggingProgressStrategy.java" startLine="147" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="7797884084018598310" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="7797884084018607106" fileName="LoggingProgressStrategy.java" startLine="164" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy$Log" />
-    <unitInfo nodeId="7797884084018607118" fileName="LoggingProgressStrategy.java" startLine="18" startPosition="51" endLine="30" endPosition="3" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy$1" />
-    <unitInfo nodeId="7797884084018581724" fileName="LoggingProgressStrategy.java" startLine="143" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy$LastProgress" />
-    <unitInfo nodeId="7797884084018533753" fileName="LoggingProgressStrategy.java" startLine="72" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy$LogReportingProgress" />
-    <unitInfo nodeId="7797884084018533742" fileName="LoggingProgressStrategy.java" startLine="12" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy" />
+    <scopeInfo nodeId="7797884084018559952" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finish#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/LogReportingProgress;)V" fileName="LoggingProgressStrategy.java" startLine="69" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="7797884084018598353" varName="wrk" />
+    </scopeInfo>
+    <unitInfo nodeId="7797884084018607106" fileName="LoggingProgressStrategy.java" startLine="181" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy$Log" />
+    <unitInfo nodeId="7797884084018607118" fileName="LoggingProgressStrategy.java" startLine="19" startPosition="51" endLine="31" endPosition="3" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy$1" />
+    <unitInfo nodeId="7797884084018581724" fileName="LoggingProgressStrategy.java" startLine="160" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy$LastProgress" />
+    <unitInfo nodeId="7797884084018533753" fileName="LoggingProgressStrategy.java" startLine="89" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy$LogReportingProgress" />
+    <unitInfo nodeId="7797884084018533742" fileName="LoggingProgressStrategy.java" startLine="12" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy" />
   </root>
   <root nodeId="7797884084018670112">
     <nodeInfo nodeId="7797884084018670212" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" fileName="LoggingFeedbackStrategy.java" startLine="8" startPosition="38" endLine="9" endPosition="101" />

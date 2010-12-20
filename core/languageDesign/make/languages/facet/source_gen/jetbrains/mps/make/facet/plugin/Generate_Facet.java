@@ -13,12 +13,13 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -31,9 +32,7 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GeneratorManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -83,20 +82,16 @@ public class Generate_Facet implements IFacet {
           Iterable<IResource> _output_fi61u2_a0a = null;
           switch (0) {
             case 0:
-              Logger logger = Logger.getLogger("jetbrains.mps.make.Generator");
               if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).project() == null) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("project is null")));
-                logger.error("project is null");
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
               if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext() == null) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("operationContext is null")));
-                logger.error("operationContext is null");
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
               if (pool.parameters(Target_fi61u2_a.this.getName(), Generate_Facet.Target_fi61u2_a.Variables.class).cleanMake() == null) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no cleanMake")));
-                logger.error("no cleanMake");
                 return new IResult.FAILURE(_output_fi61u2_a0a);
               }
             default:
@@ -146,13 +141,13 @@ public class Generate_Facet implements IFacet {
       return cls.cast(new Variables());
     }
 
-    public static class Variables extends MultiTuple._3<Project, IOperationContext, Boolean> {
+    public static class Variables extends MultiTuple._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> {
       public Variables() {
         super();
       }
 
-      public Variables(Project project, IOperationContext operationContext, Boolean cleanMake) {
-        super(project, operationContext, cleanMake);
+      public Variables(Project project, IOperationContext operationContext, Boolean cleanMake, _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet) {
+        super(project, operationContext, cleanMake, pindGet);
       }
 
       public Project project(Project value) {
@@ -167,6 +162,10 @@ public class Generate_Facet implements IFacet {
         return super._2(value);
       }
 
+      public _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet(_FunctionTypes._return_P0_E0<? extends ProgressIndicator> value) {
+        return super._3(value);
+      }
+
       public Project project() {
         return super._0();
       }
@@ -179,8 +178,12 @@ public class Generate_Facet implements IFacet {
         return super._2();
       }
 
+      public _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet() {
+        return super._3();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public Generate_Facet.Target_fi61u2_a.Variables assignFrom(Tuples._3<Project, IOperationContext, Boolean> from) {
+      public Generate_Facet.Target_fi61u2_a.Variables assignFrom(Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressIndicator>> from) {
         return (Generate_Facet.Target_fi61u2_a.Variables) super.assign(from);
       }
     }
@@ -412,25 +415,30 @@ public class Generate_Facet implements IFacet {
               if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {
                 pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(GenerationTracer.class).discardTracing();
               }
-              ProgressIndicator pind = new EmptyProgressIndicator();
 
               GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
+                  monitor.currentProgress().doneWork("Generation", 1);
                   _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }
               });
-
+              monitor.currentProgress().beginWork("Generation", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
+                public Integer combine(Integer s, IResource it) {
+                  return s + Sequence.fromIterable(((MResource) it).models()).count();
+                }
+              }), monitor.currentProgress().workLeft());
               generationOk = gm.generateModels(Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
                 public Iterable<SModelDescriptor> translate(IResource in) {
                   return ((MResource) in).models();
                 }
-              }).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pind, new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()) {
+              }).toListSequence(), pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).operationContext(), gh, pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).pindGet().invoke(), new DefaultMessageHandler(pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project()) {
                 @Override
                 public void clear() {
-                  // XPEH BAM 
+                  // don't clear the messages 
                 }
               }, pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).generationOptions().create());
+              monitor.currentProgress().finishWork("Generation");
               if (!(generationOk)) {
                 return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }

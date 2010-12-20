@@ -15,6 +15,7 @@ public class LoggingProgressStrategy {
 
   private LoggingProgressStrategy.LogReportingProgress last;
   private IProgress current;
+  private String lastInfo = null;
   private LoggingProgressStrategy.Log logger = new LoggingProgressStrategy.Log() {
     public void error(String text) {
       LoggingProgressStrategy.LOG.error(text);
@@ -48,18 +49,34 @@ public class LoggingProgressStrategy {
 
   private IProgress begin(String name, int estimate, int total) {
     this.last = new LoggingProgressStrategy.LogReportingProgress(last, name, estimate, total);
+    if (lastInfo != null) {
+      logger.info(lastInfo);
+      lastInfo = null;
+    }
     logger.info(last.fullName() + " -- started");
     return last;
   }
 
   private void progress(LoggingProgressStrategy.LogReportingProgress wrk) {
     double p = ((double) Math.min(wrk.estimate, wrk.done)) / wrk.estimate;
-    logger.info(wrk.fullName() + " -- done " + ((int) Math.ceil(p * 100)) + "%");
+    int prg = (int) Math.ceil(p * 100);
+    if (prg == 100) {
+      this.lastInfo = wrk.fullName() + " -- done " + (prg) + "%";
+    } else {
+      logger.info(wrk.fullName() + " -- done " + (prg) + "%");
+    }
   }
 
   private void finish(LoggingProgressStrategy.LogReportingProgress wrk) {
+    if (lastInfo != null) {
+      logger.info(lastInfo);
+      lastInfo = null;
+    }
     logger.info(wrk.fullName() + " -- finished");
-    this.last = wrk;
+    this.last = (wrk.prev != null ?
+      wrk.prev :
+      wrk
+    );
   }
 
   private static boolean eq_8gc367_a0a0b0g0(Object a, Object b) {

@@ -122,8 +122,10 @@ public class Script implements IScript {
     }
     mons.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(IJobMonitor monit) {
+        monit.currentProgress().beginWork("Script", Sequence.fromIterable(toExecute).count(), monit.currentProgress().workLeft());
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.info("Executing " + trg.getName());
+          monit.currentProgress().beginWork(trg.getName().toString(), 10000, 1);
           Iterable<ITarget> impre = targetRange.immediatePrecursors(trg.getName());
           Iterable<IResource> input = (Iterable<IResource>) ((Sequence.fromIterable(impre).isEmpty() ?
             scriptInput :
@@ -164,7 +166,10 @@ public class Script implements IScript {
             ));
             return;
           }
+          monit.currentProgress().doneWork(trg.getName().toString(), 10000);
+          monit.currentProgress().finishWork(trg.getName().toString());
         }
+        monit.currentProgress().finishWork("Script");
       }
     });
     LOG.info("Finished executing script");

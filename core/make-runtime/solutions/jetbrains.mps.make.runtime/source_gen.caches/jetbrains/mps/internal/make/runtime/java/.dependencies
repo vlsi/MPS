@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.internal.make.runtime.java.FileProcessor" file="FileProcessor.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.io.BufferedOutputStream" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="org.jdom.Element" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="java.io.OutputStreamWriter" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
-    <classNode dependClassName="org.jdom.Document" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.BufferedOutputStream" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="java.io.OutputStreamWriter" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.java.FileContent" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer" file="IAuxProjectPeer.java">
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.IJavaCompiler" file="IJavaCompiler.java">
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.JavaGenerationHandler" file="JavaGenerationHandler.java">
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.ide.progress.ITaskProgressHelper" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationCanceledException" />
+    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
+    <classNode dependClassName="jetbrains.mps.ide.progress.util.ModelsProgressUtil" />
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.generator.IGeneratorLogger" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerator" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
-    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
-    <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.progress.util.ModelsProgressUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.progress.ITaskProgressHelper" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationCanceledException" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode extendsClassName="jetbrains.mps.generator.generationTypes.GenerationHandlerBase" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" file="JavaStreamHandler.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.generator.generationTypes.StreamHandler" />
   </dependency>
 </dependenciesRoot>

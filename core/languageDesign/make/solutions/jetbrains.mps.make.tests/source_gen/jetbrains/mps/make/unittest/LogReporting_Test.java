@@ -23,15 +23,14 @@ public class LogReporting_Test extends MockTestCase {
         oneOf(logger).info(with(equal("\u221e -- done 1%")));
         oneOf(logger).info(with(equal("\u221e/Top -- done 40%")));
         oneOf(logger).info(with(equal("\u221e/Top/Mid -- done 20%")));
-        oneOf(logger).info(with(equal("\u221e/Top/Mid/Bot -- started")));
+        oneOf(logger).info(with(equal("\u221e/Top/Mid -- finished")));
+        oneOf(logger).info(with(equal("\u221e/Top/Bot -- started")));
         oneOf(logger).info(with(equal("\u221e -- done 1%")));
-        oneOf(logger).info(with(equal("\u221e/Top -- done 60%")));
-        oneOf(logger).info(with(equal("\u221e/Top/Mid -- done 60%")));
-        oneOf(logger).info(with(equal("\u221e/Top/Mid/Bot -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/Top -- done 70%")));
+        oneOf(logger).info(with(equal("\u221e/Top/Bot -- done 50%")));
         oneOf(logger).info(with(equal("\u221e -- done 1%")));
-        oneOf(logger).info(with(equal("\u221e/Top -- done 80%")));
-        oneOf(logger).info(with(equal("\u221e/Top/Mid -- done 100%")));
-        oneOf(logger).info(with(equal("\u221e/Top/Mid/Bot -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/Top -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/Top/Bot -- done 100%")));
         oneOf(logger).info(with(equal("\u221e/Top -- finished")));
       }
     });
@@ -41,6 +40,7 @@ public class LogReporting_Test extends MockTestCase {
     pro.doneWork("Top", 3);
     pro.beginWork("Mid", 10, 5);
     pro.doneWork("Mid", 2);
+    pro.finishWork("Mid");
     pro.beginWork("Bot", 10, 10);
     pro.doneWork("Bot", 5);
     pro.doneWork("Bot", 5);
