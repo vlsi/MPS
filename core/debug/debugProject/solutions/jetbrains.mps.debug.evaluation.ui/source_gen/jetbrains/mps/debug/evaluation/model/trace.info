@@ -1022,52 +1022,5 @@
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="319" startPosition="0" endLine="349" endPosition="0" unitName="jetbrains.mps.debug.evaluation.model.StackFrameContext$QuotationClass_4zsmpx_a0a0a1a7" />
     <unitInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="48" startPosition="0" endLine="350" endPosition="0" unitName="jetbrains.mps.debug.evaluation.model.StackFrameContext" />
   </root>
-  <root nodeId="9031758500691423959">
-    <nodeInfo nodeId="9031758500691502965" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVariables" fileName="SimpleContext.java" startLine="14" startPosition="54" endLine="15" endPosition="128" />
-    <nodeInfo nodeId="9031758500691503001" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThisClassifierType" fileName="SimpleContext.java" startLine="15" startPosition="128" endLine="16" endPosition="43" />
-    <nodeInfo nodeId="9031758500691503005" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticContextType" fileName="SimpleContext.java" startLine="16" startPosition="43" endLine="17" endPosition="42" />
-    <nodeInfo nodeId="9031758500691503081" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="SimpleContext.java" startLine="19" startPosition="156" endLine="20" endPosition="19" />
-    <nodeInfo nodeId="9031758500691503025" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SimpleContext.java" startLine="20" startPosition="19" endLine="21" endPosition="55" />
-    <nodeInfo nodeId="9031758500691503038" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SimpleContext.java" startLine="21" startPosition="55" endLine="22" endPosition="47" />
-    <nodeInfo nodeId="9031758500691503045" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SimpleContext.java" startLine="22" startPosition="47" endLine="23" endPosition="44" />
-    <nodeInfo nodeId="9031758500691503051" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SimpleContext.java" startLine="27" startPosition="122" endLine="28" endPosition="32" />
-    <nodeInfo nodeId="9031758500691503053" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SimpleContext.java" startLine="32" startPosition="121" endLine="33" endPosition="31" />
-    <nodeInfo nodeId="9031758500691502973" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SimpleContext.java" startLine="37" startPosition="126" endLine="38" endPosition="23" />
-    <nodeInfo nodeId="9031758500691502963" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SimpleContext.java" startLine="42" startPosition="34" endLine="43" endPosition="16" />
-    <nodeInfo nodeId="9031758500691503083" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SimpleContext.java" startLine="46" startPosition="164" endLine="47" endPosition="200" />
-    <nodeInfo nodeId="9031758500691503059" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromEvaluationContext#(Ljetbrains/mps/debug/evaluation/model/EvaluationContext;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/debug/evaluation/model/SimpleContext;" fileName="SimpleContext.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <nodeInfo nodeId="9031758500691502929" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThisClassifierType#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/smodel/SNode;" fileName="SimpleContext.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="9031758500691502938" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStaticContextType#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/smodel/SNode;" fileName="SimpleContext.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="9031758500691502947" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariables#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/util/Map;" fileName="SimpleContext.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="9031758500691502958" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationNode#()Ljetbrains/mps/smodel/SNode;" fileName="SimpleContext.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <nodeInfo nodeId="9031758500691423961" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleContext#(Ljetbrains/mps/debug/runtime/JavaUiState;Ljava/util/Map;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="SimpleContext.java" startLine="18" startPosition="0" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="9031758500691502937" fileName="SimpleContext.java" startLine="27" startPosition="122" endLine="28" endPosition="32" />
-    <scopeInfo nodeId="9031758500691502946" fileName="SimpleContext.java" startLine="32" startPosition="121" endLine="33" endPosition="31" />
-    <scopeInfo nodeId="9031758500691502957" fileName="SimpleContext.java" startLine="37" startPosition="126" endLine="38" endPosition="23" />
-    <scopeInfo nodeId="9031758500691502962" fileName="SimpleContext.java" startLine="42" startPosition="34" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="9031758500691503062" fileName="SimpleContext.java" startLine="46" startPosition="164" endLine="47" endPosition="200" />
-    <scopeInfo nodeId="9031758500691423964" fileName="SimpleContext.java" startLine="19" startPosition="156" endLine="23" endPosition="44" />
-    <scopeInfo nodeId="9031758500691503059" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromEvaluationContext#(Ljetbrains/mps/debug/evaluation/model/EvaluationContext;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/debug/evaluation/model/SimpleContext;" fileName="SimpleContext.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="9031758500691503100" varName="createClassifierType" />
-      <varInfo nodeId="9031758500691503064" varName="context" />
-    </scopeInfo>
-    <scopeInfo nodeId="9031758500691502929" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThisClassifierType#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/smodel/SNode;" fileName="SimpleContext.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="9031758500691502930" varName="createClassifierType" />
-    </scopeInfo>
-    <scopeInfo nodeId="9031758500691502938" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStaticContextType#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/smodel/SNode;" fileName="SimpleContext.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="9031758500691502941" varName="createClassifierType" />
-    </scopeInfo>
-    <scopeInfo nodeId="9031758500691502947" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariables#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/util/Map;" fileName="SimpleContext.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="9031758500691502952" varName="createClassifierType" />
-    </scopeInfo>
-    <scopeInfo nodeId="9031758500691502958" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationNode#()Ljetbrains/mps/smodel/SNode;" fileName="SimpleContext.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="9031758500691423961" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleContext#(Ljetbrains/mps/debug/runtime/JavaUiState;Ljava/util/Map;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="SimpleContext.java" startLine="18" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="9031758500691503019" varName="thisClassfifierType" />
-      <varInfo nodeId="9031758500691503077" varName="uiState" />
-      <varInfo nodeId="9031758500691503022" varName="staticContextType" />
-      <varInfo nodeId="9031758500691503012" varName="variables" />
-    </scopeInfo>
-    <unitInfo nodeId="9031758500691423959" fileName="SimpleContext.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.debug.evaluation.model.SimpleContext" />
-  </root>
 </debugInfo>
 
