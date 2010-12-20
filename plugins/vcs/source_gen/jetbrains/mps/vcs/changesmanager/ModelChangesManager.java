@@ -1392,7 +1392,9 @@ __switch__:
               }) == 0) {
                 addChange(new AddRootChange(e.getRoot().getConceptFqName(), e.getRoot().getSNodeId()), e.getRoot());
               }
-              recursivelyChildAdded(e.getRoot());
+              if (!(isNewModel())) {
+                recursivelyChildAdded(e.getRoot());
+              }
             }
           });
           fireChangeUpdateFinished();
