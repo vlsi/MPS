@@ -60,11 +60,11 @@
     </scopeInfo>
   </root>
   <root nodeId="1206444812617">
-    <nodeInfo nodeId="1206444830682" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ApplicableTypesInfo.java" startLine="6" startPosition="34" endLine="7" endPosition="44" />
-    <nodeInfo nodeId="1206444853421" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" fileName="ApplicableTypesInfo.java" startLine="7" startPosition="44" endLine="8" endPosition="48" />
-    <nodeInfo nodeId="1206444910904" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ApplicableTypesInfo.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
+    <nodeInfo nodeId="1206444830682" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myApplicableToList" fileName="ApplicableTypesInfo.java" startLine="6" startPosition="34" endLine="7" endPosition="44" />
+    <nodeInfo nodeId="1206444853421" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myApplicableToSequence" fileName="ApplicableTypesInfo.java" startLine="7" startPosition="44" endLine="8" endPosition="48" />
+    <nodeInfo nodeId="1206444910904" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ApplicableTypesInfo#()V" fileName="ApplicableTypesInfo.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
     <scopeInfo nodeId="1206444910907" fileName="ApplicableTypesInfo.java" startLine="10" startPosition="32" endLine="10" endPosition="32" />
-    <scopeInfo nodeId="1206444910904" fileName="ApplicableTypesInfo.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="1206444910904" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ApplicableTypesInfo#()V" fileName="ApplicableTypesInfo.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
     <unitInfo nodeId="1206444812617" fileName="ApplicableTypesInfo.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.actions.ApplicableTypesInfo" />
   </root>
   <root nodeId="1224446760828">
@@ -406,11 +406,11 @@
     <scopeInfo nodeId="1241475109761" fileName="QueriesGenerated.java" startLine="326" startPosition="217" endLine="327" endPosition="142" />
     <scopeInfo nodeId="1241475132044" fileName="QueriesGenerated.java" startLine="336" startPosition="217" endLine="337" endPosition="142" />
     <scopeInfo nodeId="1241475146957" fileName="QueriesGenerated.java" startLine="346" startPosition="217" endLine="347" endPosition="142" />
-    <scopeInfo nodeId="1241474968055" fileName="QueriesGenerated.java" startLine="305" startPosition="277" endLine="308" endPosition="7" />
-    <scopeInfo nodeId="1241474990606" fileName="QueriesGenerated.java" startLine="315" startPosition="277" endLine="318" endPosition="7" />
-    <scopeInfo nodeId="1241475109759" fileName="QueriesGenerated.java" startLine="325" startPosition="277" endLine="328" endPosition="7" />
-    <scopeInfo nodeId="1241475132042" fileName="QueriesGenerated.java" startLine="335" startPosition="277" endLine="338" endPosition="7" />
-    <scopeInfo nodeId="1241475146955" fileName="QueriesGenerated.java" startLine="345" startPosition="277" endLine="348" endPosition="7" />
+    <scopeInfo nodeId="1241474968055" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="305" startPosition="277" endLine="308" endPosition="7" />
+    <scopeInfo nodeId="1241474990606" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="315" startPosition="277" endLine="318" endPosition="7" />
+    <scopeInfo nodeId="1241475109759" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="325" startPosition="277" endLine="328" endPosition="7" />
+    <scopeInfo nodeId="1241475132042" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="335" startPosition="277" endLine="338" endPosition="7" />
+    <scopeInfo nodeId="1241475146955" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="345" startPosition="277" endLine="348" endPosition="7" />
     <scopeInfo nodeId="1241475175249" fileName="QueriesGenerated.java" startLine="354" startPosition="132" endLine="357" endPosition="267" />
     <scopeInfo nodeId="1241475277521" fileName="QueriesGenerated.java" startLine="362" startPosition="132" endLine="365" endPosition="267" />
     <scopeInfo nodeId="1241475282914" fileName="QueriesGenerated.java" startLine="370" startPosition="132" endLine="373" endPosition="267" />

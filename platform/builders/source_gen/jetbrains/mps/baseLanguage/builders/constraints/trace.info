@@ -30,7 +30,7 @@
     <scopeInfo nodeId="2679357232283880353" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="45" startPosition="212" endLine="50" endPosition="7">
       <varInfo nodeId="2679357232283880415" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="2679357232283880352" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="44" startPosition="49" endLine="51" endPosition="5">
+    <scopeInfo nodeId="2679357232283880352" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="44" startPosition="49" endLine="51" endPosition="5">
       <varInfo nodeId="2679357232283880356" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="2679357232283837713" fileName="BeanPropertyBuilder_setter_ReferentConstraint.java" startLine="38" startPosition="132" endLine="52" endPosition="19">
@@ -59,10 +59,10 @@
       <varInfo nodeId="3436597452201051239" varName="extdecl" />
     </scopeInfo>
     <scopeInfo nodeId="3436597452201051214" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="37" startPosition="210" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="3436597452201051221" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="37" startPosition="210" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="3436597452201051211" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="36" startPosition="122" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="3436597452201051221" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="37" startPosition="210" endLine="43" endPosition="9" />
+    <scopeInfo nodeId="3436597452201051211" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="36" startPosition="122" endLine="44" endPosition="7" />
     <scopeInfo nodeId="3436597452201051169" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="35" startPosition="158" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="3436597452201051168" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="34" startPosition="194" endLine="45" endPosition="5">
+    <scopeInfo nodeId="3436597452201051168" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="34" startPosition="194" endLine="45" endPosition="5">
       <varInfo nodeId="3436597452201051171" varName="dcl" />
     </scopeInfo>
     <scopeInfo nodeId="5389689214217448673" fileName="SimpleBuilderPropertyBuilder_declaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="46" endPosition="18">
@@ -85,10 +85,10 @@
     <scopeInfo nodeId="7782956297805865599" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="36" startPosition="122" endLine="37" endPosition="152" />
     <scopeInfo nodeId="7782956297805865575" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="35" startPosition="79" endLine="38" endPosition="9" />
     <scopeInfo nodeId="6211769134875412307" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="34" startPosition="101" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="7782956297805865574" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="34" startPosition="101" endLine="39" endPosition="7">
+    <scopeInfo nodeId="7782956297805865574" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="34" startPosition="101" endLine="39" endPosition="7">
       <varInfo nodeId="7782956297805865578" varName="dcl" />
     </scopeInfo>
-    <scopeInfo nodeId="6211769134875412306" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="33" startPosition="156" endLine="40" endPosition="5">
+    <scopeInfo nodeId="6211769134875412306" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="33" startPosition="156" endLine="40" endPosition="5">
       <varInfo nodeId="6211769134875412310" varName="builders" />
     </scopeInfo>
     <scopeInfo nodeId="6211769134875412274" fileName="SimpleBuilderDeclaration_extends_ReferentConstraint.java" startLine="31" startPosition="132" endLine="41" endPosition="18">
@@ -120,7 +120,7 @@
     <nodeInfo nodeId="8969040284892333740" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="12" endLine="55" endPosition="36" />
     <nodeInfo nodeId="8969040284892333720" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="10" endLine="56" endPosition="5" />
     <nodeInfo nodeId="7782956297805865828" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="47" startPosition="11" endLine="50" endPosition="9" />
-    <nodeInfo nodeId="7782956297805865810" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="254" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="7782956297805865810" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="254" endLine="47" endPosition="0" />
     <nodeInfo nodeId="7782956297805865746" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="42" startPosition="0" endLine="51" endPosition="7" />
     <nodeInfo nodeId="8969040284892333192" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="36" startPosition="111" endLine="56" endPosition="5" />
     <scopeInfo nodeId="8969040284892333193" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="37" startPosition="118" endLine="38" endPosition="232" />
@@ -128,8 +128,8 @@
     <scopeInfo nodeId="7782956297805865829" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="48" startPosition="292" endLine="49" endPosition="152" />
     <scopeInfo nodeId="8969040284892333721" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="54" startPosition="12" endLine="55" endPosition="36" />
     <scopeInfo nodeId="7782956297805865747" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="47" startPosition="11" endLine="50" endPosition="9" />
-    <scopeInfo nodeId="7782956297805865810" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="254" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="7782956297805865746" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="42" startPosition="0" endLine="51" endPosition="7">
+    <scopeInfo nodeId="7782956297805865810" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="43" startPosition="254" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7782956297805865746" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="42" startPosition="0" endLine="51" endPosition="7">
       <varInfo nodeId="7782956297805865750" varName="dcl" />
     </scopeInfo>
     <scopeInfo nodeId="8969040284892333326" fileName="SimpleBuilder_declaration_ReferentConstraint.java" startLine="39" startPosition="418" endLine="53" endPosition="20">

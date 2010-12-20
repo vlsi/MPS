@@ -32,7 +32,7 @@
     <scopeInfo nodeId="178770917832652118" fileName="Analyzer_Behavior.java" startLine="23" startPosition="88" endLine="28" endPosition="102">
       <varInfo nodeId="178770917832652121" varName="longName" />
     </scopeInfo>
-    <scopeInfo nodeId="4130591939054438356" fileName="Analyzer_Behavior.java" startLine="36" startPosition="48" endLine="41" endPosition="5">
+    <scopeInfo nodeId="4130591939054438356" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Analyzer_Behavior.java" startLine="36" startPosition="48" endLine="41" endPosition="5">
       <varInfo nodeId="4130591939054438357" varName="rule" />
     </scopeInfo>
     <scopeInfo nodeId="4130591939054429270" fileName="Analyzer_Behavior.java" startLine="35" startPosition="79" endLine="42" endPosition="18">

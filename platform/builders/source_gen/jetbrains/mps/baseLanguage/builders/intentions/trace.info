@@ -17,7 +17,7 @@
     <nodeInfo nodeId="5219429592916237385" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConvertToBeanBuilder_Intention.java" startLine="41" startPosition="136" endLine="44" endPosition="5" />
     <scopeInfo nodeId="5219429592916136230" fileName="ConvertToBeanBuilder_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="37" />
     <scopeInfo nodeId="5219429592916237386" fileName="ConvertToBeanBuilder_Intention.java" startLine="42" startPosition="80" endLine="43" endPosition="105" />
-    <scopeInfo nodeId="5219429592916237385" fileName="ConvertToBeanBuilder_Intention.java" startLine="41" startPosition="136" endLine="44" endPosition="5">
+    <scopeInfo nodeId="5219429592916237385" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConvertToBeanBuilder_Intention.java" startLine="41" startPosition="136" endLine="44" endPosition="5">
       <varInfo nodeId="5219429592916237389" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="5219429592916136232" fileName="ConvertToBeanBuilder_Intention.java" startLine="38" startPosition="76" endLine="48" endPosition="75">

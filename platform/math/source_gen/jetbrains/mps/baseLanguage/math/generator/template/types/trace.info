@@ -444,8 +444,8 @@
       <varInfo nodeId="1331994661796617704" varName="ce" />
       <varInfo nodeId="1331994661796617695" varName="parentType" />
     </scopeInfo>
-    <scopeInfo nodeId="4107669262321384473" fileName="QueriesGenerated.java" startLine="211" startPosition="26" endLine="217" endPosition="7" />
-    <scopeInfo nodeId="4107669262321384524" fileName="QueriesGenerated.java" startLine="226" startPosition="26" endLine="232" endPosition="7" />
+    <scopeInfo nodeId="4107669262321384473" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="211" startPosition="26" endLine="217" endPosition="7" />
+    <scopeInfo nodeId="4107669262321384524" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="226" startPosition="26" endLine="232" endPosition="7" />
     <scopeInfo nodeId="4253775830168107358" fileName="QueriesGenerated.java" startLine="618" startPosition="136" endLine="624" endPosition="16">
       <varInfo nodeId="4253775830168296102" varName="myType" />
       <varInfo nodeId="4253775830168296114" varName="parentType" />

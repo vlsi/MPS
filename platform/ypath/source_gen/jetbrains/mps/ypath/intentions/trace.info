@@ -42,7 +42,7 @@
       <varInfo nodeId="4234084459084291772" varName="pr" />
     </scopeInfo>
     <scopeInfo nodeId="4234084459084291709" fileName="replace_whereBlock_with_closure_Intention.java" startLine="56" startPosition="211" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="4234084459084291706" fileName="replace_whereBlock_with_closure_Intention.java" startLine="55" startPosition="170" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="4234084459084291706" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="replace_whereBlock_with_closure_Intention.java" startLine="55" startPosition="170" endLine="61" endPosition="5" />
     <scopeInfo nodeId="4234084459084260643" fileName="replace_whereBlock_with_closure_Intention.java" startLine="50" startPosition="76" endLine="63" endPosition="62">
       <varInfo nodeId="4234084459084291790" varName="cp" />
       <varInfo nodeId="4234084459084260678" varName="cl" />

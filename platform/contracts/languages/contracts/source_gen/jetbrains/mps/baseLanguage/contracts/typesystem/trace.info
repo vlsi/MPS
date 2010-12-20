@@ -31,7 +31,7 @@
     <nodeInfo nodeId="9188095865417809961" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_ContractThisExpression_InferenceRule.java" startLine="29" startPosition="53" endLine="32" endPosition="5" />
     <nodeInfo nodeId="2329648364425265341" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_ContractThisExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="38" endPosition="5" />
     <scopeInfo nodeId="9188095865417809962" fileName="typeof_ContractThisExpression_InferenceRule.java" startLine="30" startPosition="115" endLine="31" endPosition="192" />
-    <scopeInfo nodeId="9188095865417809961" fileName="typeof_ContractThisExpression_InferenceRule.java" startLine="29" startPosition="53" endLine="32" endPosition="5">
+    <scopeInfo nodeId="9188095865417809961" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="typeof_ContractThisExpression_InferenceRule.java" startLine="29" startPosition="53" endLine="32" endPosition="5">
       <varInfo nodeId="9188095865417809974" varName="typeVariableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="2329648364425265341" fileName="typeof_ContractThisExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="37" endPosition="389" />
