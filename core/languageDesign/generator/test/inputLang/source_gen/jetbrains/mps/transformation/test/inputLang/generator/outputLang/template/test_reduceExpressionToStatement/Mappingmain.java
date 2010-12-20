@@ -129,7 +129,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
             environment.getTracer().pushOutputNode(tnode2);
             environment.getTracer().closeTemplateNode(templateNode_417xrn_a0a0a1a3a2a4a);
           }
-          tnode1.addChild("expression", tnode2);
+          if (tnode2 != null) {
+            tnode1.addChild("expression", tnode2);
+          }
           // TODO validate child 
         }
       } finally {

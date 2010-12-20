@@ -167,8 +167,7 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
       super(new GroupData(group, kind, data), operationContext);
 
       GroupData groupData = (GroupData) getUserObject();
-      setNodeIdentifier(getText());
-
+      setNodeIdentifier(groupData.getText());
       setText(groupData.getText());
       Icon icon = groupData.getIcon(false);
       if (icon != null) {

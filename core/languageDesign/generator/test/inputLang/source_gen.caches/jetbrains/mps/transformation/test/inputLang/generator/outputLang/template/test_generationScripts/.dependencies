@@ -48,16 +48,20 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest_postMappingScript" file="Scripttest_postMappingScript.java">
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.QueriesGenerated" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
+    <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingScript" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.Scripttest_preMappingScript" file="Scripttest_preMappingScript.java">
+    <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.QueriesGenerated" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
+    <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingScript" />
   </dependency>
@@ -90,19 +94,18 @@
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.TemplateOutputRoot_by_MappingRule" file="TemplateOutputRoot_by_MappingRule.java">
-    <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
-    <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts.QueriesGenerated" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
   </dependency>
 </dependenciesRoot>

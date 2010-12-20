@@ -71,7 +71,9 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
           environment.getTracer().pushOutputNode(tnode3);
           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a2a1);
         }
-        tnode2.addChild("visibility", tnode3);
+        if (tnode3 != null) {
+          tnode2.addChild("visibility", tnode3);
+        }
         // TODO validate child 
       }
       {
@@ -109,21 +111,27 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
                           environment.getTracer().pushOutputNode(tnode8);
                           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a3a1a3a1a3a1a5a2a1);
                         }
-                        tnode7.addChild("expression", tnode8);
+                        if (tnode8 != null) {
+                          tnode7.addChild("expression", tnode8);
+                        }
                         // TODO validate child 
                       }
                     } finally {
                       environment.getTracer().pushOutputNode(tnode7);
                       environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a3a1a3a1a5a2a1);
                     }
-                    tnode6.addChild("statement", tnode7);
+                    if (tnode7 != null) {
+                      tnode6.addChild("statement", tnode7);
+                    }
                     // TODO validate child 
                   }
                 } finally {
                   environment.getTracer().pushOutputNode(tnode6);
                   environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a3a1a5a2a1);
                 }
-                tnode5.addChild("ifTrue", tnode6);
+                if (tnode6 != null) {
+                  tnode5.addChild("ifTrue", tnode6);
+                }
                 // TODO validate child 
               }
               {
@@ -143,7 +151,9 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
                       environment.getTracer().pushOutputNode(tnode10);
                       environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a4a1a3a1a5a2a1);
                     }
-                    tnode9.addChild("leftExpression", tnode10);
+                    if (tnode10 != null) {
+                      tnode9.addChild("leftExpression", tnode10);
+                    }
                     // TODO validate child 
                   }
                   {
@@ -157,21 +167,27 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
                       environment.getTracer().pushOutputNode(tnode11);
                       environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a4a1a3a1a5a2a1);
                     }
-                    tnode9.addChild("rightExpression", tnode11);
+                    if (tnode11 != null) {
+                      tnode9.addChild("rightExpression", tnode11);
+                    }
                     // TODO validate child 
                   }
                 } finally {
                   environment.getTracer().pushOutputNode(tnode9);
                   environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a3a1a5a2a1);
                 }
-                tnode5.addChild("condition", tnode9);
+                if (tnode9 != null) {
+                  tnode5.addChild("condition", tnode9);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode5);
               environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a5a2a1);
             }
-            tnode4.addChild("statement", tnode5);
+            if (tnode5 != null) {
+              tnode4.addChild("statement", tnode5);
+            }
             // TODO validate child 
           }
           {
@@ -197,7 +213,9 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
                       environment.getTracer().pushOutputNode(tnode14);
                       environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a3a1a4a1a5a2a1);
                     }
-                    tnode13.addChild("leftExpression", tnode14);
+                    if (tnode14 != null) {
+                      tnode13.addChild("leftExpression", tnode14);
+                    }
                     // TODO validate child 
                   }
                   {
@@ -224,7 +242,9 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
                               environment.getTracer().pushOutputNode(tnode17);
                               environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a4a1a4a1a3a1a4a1a5a2a1);
                             }
-                            tnode16.addChild("rightExpression", tnode17);
+                            if (tnode17 != null) {
+                              tnode16.addChild("rightExpression", tnode17);
+                            }
                             // TODO validate child 
                           }
                           {
@@ -238,42 +258,54 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
                               environment.getTracer().pushOutputNode(tnode18);
                               environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a4a1a4a1a3a1a4a1a5a2a1);
                             }
-                            tnode16.addChild("leftExpression", tnode18);
+                            if (tnode18 != null) {
+                              tnode16.addChild("leftExpression", tnode18);
+                            }
                             // TODO validate child 
                           }
                         } finally {
                           environment.getTracer().pushOutputNode(tnode16);
                           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a4a1a3a1a4a1a5a2a1);
                         }
-                        tnode15.addChild("actualArgument", tnode16);
+                        if (tnode16 != null) {
+                          tnode15.addChild("actualArgument", tnode16);
+                        }
                         // TODO validate child 
                       }
                     } finally {
                       environment.getTracer().pushOutputNode(tnode15);
                       environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a3a1a4a1a5a2a1);
                     }
-                    tnode13.addChild("rightExpression", tnode15);
+                    if (tnode15 != null) {
+                      tnode13.addChild("rightExpression", tnode15);
+                    }
                     // TODO validate child 
                   }
                 } finally {
                   environment.getTracer().pushOutputNode(tnode13);
                   environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a4a1a5a2a1);
                 }
-                tnode12.addChild("expression", tnode13);
+                if (tnode13 != null) {
+                  tnode12.addChild("expression", tnode13);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode12);
               environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a5a2a1);
             }
-            tnode4.addChild("statement", tnode12);
+            if (tnode12 != null) {
+              tnode4.addChild("statement", tnode12);
+            }
             // TODO validate child 
           }
         } finally {
           environment.getTracer().pushOutputNode(tnode4);
           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a5a2a1);
         }
-        tnode2.addChild("body", tnode4);
+        if (tnode4 != null) {
+          tnode2.addChild("body", tnode4);
+        }
         // TODO validate child 
       }
       {
@@ -286,7 +318,9 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
           environment.getTracer().pushOutputNode(tnode19);
           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a6a2a1);
         }
-        tnode2.addChild("returnType", tnode19);
+        if (tnode19 != null) {
+          tnode2.addChild("returnType", tnode19);
+        }
         // TODO validate child 
       }
       {
@@ -306,20 +340,25 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
               environment.getTracer().pushOutputNode(tnode21);
               environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a7a2a1);
             }
-            tnode20.addChild("type", tnode21);
+            if (tnode21 != null) {
+              tnode20.addChild("type", tnode21);
+            }
             // TODO validate child 
           }
         } finally {
           environment.getTracer().pushOutputNode(tnode20);
           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a7a2a1);
         }
-        tnode2.addChild("parameter", tnode20);
+        if (tnode20 != null) {
+          tnode2.addChild("parameter", tnode20);
+        }
         // TODO validate child 
       }
     } finally {
       environment.getTracer().pushOutputNode(tnode2);
       environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a2a1);
     }
+    environment.registerLabel(context.getInput(), tnode2, "testlabel");
     return tnode2;
   }
 
@@ -340,7 +379,9 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
           environment.getTracer().pushOutputNode(tnode23);
           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a2);
         }
-        tnode22.addChild("returnType", tnode23);
+        if (tnode23 != null) {
+          tnode22.addChild("returnType", tnode23);
+        }
         // TODO validate child 
       }
       {
@@ -353,7 +394,9 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
           environment.getTracer().pushOutputNode(tnode24);
           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a5a1a2);
         }
-        tnode22.addChild("visibility", tnode24);
+        if (tnode24 != null) {
+          tnode22.addChild("visibility", tnode24);
+        }
         // TODO validate child 
       }
       {
@@ -398,28 +441,36 @@ public class Templategen_static_method implements TemplateDeclarationWeavingAwar
                       environment.getTracer().pushOutputNode(tnode28);
                       environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a4a1a3a1a3a1a6a1a2);
                     }
-                    tnode27.addChild("actualArgument", tnode28);
+                    if (tnode28 != null) {
+                      tnode27.addChild("actualArgument", tnode28);
+                    }
                     // TODO validate child 
                   }
                 } finally {
                   environment.getTracer().pushOutputNode(tnode27);
                   environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a3a1a6a1a2);
                 }
-                tnode26.addChild("expression", tnode27);
+                if (tnode27 != null) {
+                  tnode26.addChild("expression", tnode27);
+                }
                 // TODO validate child 
               }
             } finally {
               environment.getTracer().pushOutputNode(tnode26);
               environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a3a1a6a1a2);
             }
-            tnode25.addChild("statement", tnode26);
+            if (tnode26 != null) {
+              tnode25.addChild("statement", tnode26);
+            }
             // TODO validate child 
           }
         } finally {
           environment.getTracer().pushOutputNode(tnode25);
           environment.getTracer().closeTemplateNode(templateNode_1s1jok_a0a0a1a6a1a2);
         }
-        tnode22.addChild("body", tnode25);
+        if (tnode25 != null) {
+          tnode22.addChild("body", tnode25);
+        }
         // TODO validate child 
       }
     } finally {

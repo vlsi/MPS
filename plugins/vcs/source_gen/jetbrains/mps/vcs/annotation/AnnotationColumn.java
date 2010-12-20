@@ -232,36 +232,42 @@ public class AnnotationColumn extends AbstractLeftColumn {
         synchronized (myCurrentPseudoLinesLock) {
           assureCurrentPseudoLinesCalculated();
           for (int pseudoLine = 0; pseudoLine < ListSequence.fromList(myPseudoLinesY).count(); pseudoLine++) {
+            if (SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine)) {
+              continue;
+            }
+
             int fileLine = ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
-            if (!(SetSequence.fromSet(myCurrentPseudoLines).contains(pseudoLine))) {
-              if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
-                String author = myAuthorAnnotationAspect.getValue(fileLine);
-                graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
-                int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
-                  getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
-                  ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
-                );
-                graphics.fillRect(0, ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
-              }
+            int height = (pseudoLine == ListSequence.fromList(myPseudoLinesY).count() - 1 ?
+              getEditorComponent().getHeight() - ListSequence.fromList(myPseudoLinesY).last() :
+              ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine + 1) - ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine)
+            );
+            if (myAuthorAnnotationAspect != null && ViewAction.isSet(ViewAction.COLORS)) {
+              String author = myAuthorAnnotationAspect.getValue(fileLine);
+              graphics.setColor(MapSequence.fromMap(myAuthorsToColors).get(author));
+              graphics.fillRect(0, ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine), getWidth(), height);
+            }
 
-              graphics.setColor(ANNOTATION_COLOR);
-              if (myRevisionRange.isFileLineHighlighted(fileLine)) {
-                graphics.setFont(myFont.deriveFont(Font.BOLD));
-              } else {
-                graphics.setFont(myFont);
+            graphics.setColor(ANNOTATION_COLOR);
+            if (myRevisionRange.isFileLineHighlighted(fileLine)) {
+              graphics.setFont(myFont.deriveFont(Font.BOLD));
+            } else {
+              graphics.setFont(myFont);
+            }
+            FontMetrics metrics = graphics.getFontMetrics();
+            if (height < metrics.getHeight()) {
+              continue;
+            }
+            for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns).where(new IWhereFilter<AnnotationAspectSubcolumn>() {
+              public boolean accept(AnnotationAspectSubcolumn s) {
+                return myShowAdditionalInfo || s.isEnabled();
               }
-              for (AnnotationAspectSubcolumn subcolumn : ListSequence.fromList(myAspectSubcolumns)) {
-                if (subcolumn.isEnabled() || myShowAdditionalInfo) {
-                  String text = subcolumn.getTextForFileLine(fileLine);
-                  int textX = MapSequence.fromMap(subcolumnToX).get(subcolumn);
-                  FontMetrics metrics = graphics.getFontMetrics();
-                  if (subcolumn.isRightAligned()) {
-                    textX += subcolumn.getWidth() - metrics.stringWidth(text);
-                  }
-                  graphics.drawString(text, textX, metrics.getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
-                }
+            })) {
+              String text = subcolumn.getTextForFileLine(fileLine);
+              int textX = MapSequence.fromMap(subcolumnToX).get(subcolumn);
+              if (subcolumn.isRightAligned()) {
+                textX += subcolumn.getWidth() - metrics.stringWidth(text);
               }
-
+              graphics.drawString(text, textX, metrics.getAscent() + ListSequence.fromList(myPseudoLinesY).getElement(pseudoLine));
             }
           }
         }

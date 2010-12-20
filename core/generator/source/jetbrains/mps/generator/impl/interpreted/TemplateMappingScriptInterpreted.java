@@ -17,11 +17,14 @@ package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 /**
  * Evgeny Gryaznov, Nov 30, 2010
@@ -59,7 +62,25 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
 
   @Override
   public void apply(SModel model, ITemplateGenerator generator) {
-     // TODO
+    SNode codeBlock = scriptNode.getChild(MappingScript.CODE_BLOCK);
+    if (codeBlock == null) {
+      generator.getLogger().warning(scriptNode, "cannot run script '" + scriptNode.getName() + "' : no code-block");
+      return;
+    }
+
+    String methodName = TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
+    try {
+      QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new MappingScriptContext(model, scriptNode, generator),
+        scriptNode.getModel(),
+        true);
+    } catch (ClassNotFoundException e) {
+      generator.getLogger().warning(scriptNode, "cannot run script '" + scriptNode.getName() + "' : no generated code found");
+    } catch (NoSuchMethodException e) {
+      generator.getLogger().warning(scriptNode, "cannot run script '" + scriptNode.getName() + "' : no generated code found");
+    }
   }
 
   @Deprecated

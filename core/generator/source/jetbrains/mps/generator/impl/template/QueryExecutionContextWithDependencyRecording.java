@@ -50,16 +50,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      wrapped.executeMappingScript(mappingScript, model);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
   public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
@@ -214,6 +204,16 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.getContextNode(rule, environment, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      wrapped.executeScript(mappingScript, model);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

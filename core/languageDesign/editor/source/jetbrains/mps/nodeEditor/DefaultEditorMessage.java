@@ -188,4 +188,9 @@ public class DefaultEditorMessage implements EditorMessage {
   public int getPriority() {
     return DEFAULT_MESSAGE_PRIORITY;
   }
+
+  @Override
+  public boolean showInGutter() {
+    return true;
+  }
 }

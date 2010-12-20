@@ -144,7 +144,7 @@ public class Templatereduce_InputNode_A implements TemplateDeclarationWeavingAwa
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     Collection<SNode> tlistpart0 = applyPart0(environment, context);
     SNodePointer weaveTf0 = weaveTfConst_9iqmnb_a0b0g;
-    for (SNode nodeToWeave : tlistpart0) {
+    for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart0)) {
       environment.weaveNode(outputContextNode, "outputChild", nodeToWeave, weaveTf0, context.getInput());
     }
     SNode tnodepart1 = applyPart1(environment, context);
@@ -152,12 +152,12 @@ public class Templatereduce_InputNode_A implements TemplateDeclarationWeavingAwa
     environment.weaveNode(outputContextNode, "outputChild", tnodepart1, weaveTf1, context.getInput());
     Collection<SNode> tlistpart2 = applyPart2(environment, context);
     SNodePointer weaveTf2 = weaveTfConst_9iqmnb_a0h0g;
-    for (SNode nodeToWeave : tlistpart2) {
+    for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart2)) {
       environment.weaveNode(outputContextNode, "outputChild", nodeToWeave, weaveTf2, context.getInput());
     }
     Collection<SNode> tlistpart3 = applyPart3(environment, context);
     SNodePointer weaveTf3 = weaveTfConst_9iqmnb_a0k0g;
-    for (SNode nodeToWeave : tlistpart3) {
+    for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart3)) {
       environment.weaveNode(outputContextNode, "outputChild", nodeToWeave, weaveTf3, context.getInput());
     }
     return TemplateUtil.asList(tlistpart0, tnodepart1, tlistpart2, tlistpart3);

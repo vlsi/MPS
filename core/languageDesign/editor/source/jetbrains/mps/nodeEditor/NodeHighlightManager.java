@@ -227,7 +227,9 @@ public class NodeHighlightManager implements EditorMessageOwner {
       addMessage(message);
       rebuildMessages();
     }
-    myEditor.getMessagesGutter().add(message);
+    if (message.showInGutter()) {
+      myEditor.getMessagesGutter().add(message);
+    }
   }
 
   public void unmarkSingleMessage(EditorMessage message) {

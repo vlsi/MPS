@@ -6,13 +6,16 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class Scripttest_preMappingScript implements TemplateMappingScript {
+  private static SNodePointer mappingScriptNode = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195509228077");
+
   public Scripttest_preMappingScript() {
   }
 
   public SNodePointer getScriptNode() {
-    return new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195509228077");
+    return mappingScriptNode;
   }
 
   public String getLongName() {
@@ -28,5 +31,6 @@ public class Scripttest_preMappingScript implements TemplateMappingScript {
   }
 
   public void apply(SModel model, ITemplateGenerator generator) {
+    QueriesGenerated.mappingScript_CodeBlock_1195509228078(generator.getGeneratorSessionContext(), new MappingScriptContext(model, mappingScriptNode, generator));
   }
 }

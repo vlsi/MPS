@@ -103,7 +103,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       Collection<SNode> result = new TemplateOutputRoot_1().apply(environment, context);
-      environment.registerLabel(null, result, "ROOT INPUT");
+      environment.registerLabel(context.getInput(), result, "ROOT INPUT");
       return result;
     }
   }
@@ -137,7 +137,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       Collection<SNode> result = new TemplateOutputRoot_2().apply(environment, context);
-      environment.registerLabel(null, result, "ROOT INPUT");
+      environment.registerLabel(context.getInput(), result, "ROOT INPUT");
       return result;
     }
   }

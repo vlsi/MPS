@@ -65,4 +65,6 @@ public interface EditorMessage {
   Color getColorInGutter();
 
   int getPriority();
+
+  boolean showInGutter();
 }

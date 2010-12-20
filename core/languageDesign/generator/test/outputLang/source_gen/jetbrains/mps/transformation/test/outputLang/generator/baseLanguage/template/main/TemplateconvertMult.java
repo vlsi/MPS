@@ -14,7 +14,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
@@ -60,11 +59,11 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
             try {
               environment.getTracer().pushMacro(copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2);
               final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2, context, environment.getGenerator()));
-              tlist3 = environment.copyNodes(Collections.singletonList(copySrcInput3), copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2, null, context);
+              tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2, null, context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2);
             }
-            for (SNode child4 : tlist3) {
+            for (SNode child4 : TemplateUtil.asNotNull(tlist3)) {
               tnode2.addChild("lValue", child4);
             }
             // TODO validate child 
@@ -74,11 +73,11 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
             try {
               environment.getTracer().pushMacro(copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2);
               final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_4146564171992617085(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2, context, environment.getGenerator()));
-              tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2, null, context);
+              tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2, null, context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2);
             }
-            for (SNode child6 : tlist5) {
+            for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild("rValue", child6);
             }
             // TODO validate child 
@@ -87,7 +86,9 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
           environment.getTracer().pushOutputNode(tnode2);
           environment.getTracer().closeTemplateNode(templateNode_eum2xg_a0a0a1a3a1a2);
         }
-        tnode1.addChild("expression", tnode2);
+        if (tnode2 != null) {
+          tnode1.addChild("expression", tnode2);
+        }
         // TODO validate child 
       }
     } finally {

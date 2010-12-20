@@ -83,31 +83,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
-    MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
-    if (codeBlock == null) {
-      generator.getLogger().warning(mappingScript.getNode(), "cannot run script '" + mappingScript.getName() + "' : no code-block");
-      return;
-    }
-
-    String methodName = TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock.getNode());
-    try {
-      QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new MappingScriptContext(model, mappingScript.getNode(), generator),
-        mappingScript.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.getLogger().warning(mappingScript.getNode(), "cannot run script '" + mappingScript.getName() + "' : no generated code found");
-    } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(mappingScript.getNode(), "cannot run script '" + mappingScript.getName() + "' : no generated code found");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
-    }
-  }
-
-  @Override
   public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_MapperFunction mapperFunction;
@@ -332,6 +307,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
     return rule.getContextNode(environment, context);
+  }
+
+  @Override
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+    mappingScript.apply(model, generator);
   }
 
   @Override

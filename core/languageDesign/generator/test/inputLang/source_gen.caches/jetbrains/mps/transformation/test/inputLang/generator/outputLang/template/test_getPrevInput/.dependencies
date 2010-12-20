@@ -64,11 +64,10 @@
     <classNode dependClassName="jetbrains.mps.generator.template.MapSrcMacroPostProcContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.PostProcessor" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
-    <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
+    <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

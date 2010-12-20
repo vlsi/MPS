@@ -387,6 +387,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="202556268008706871">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="202556268009070745">
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="202556268009070746">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="486728252986442693" resolveInfo="a" />
+            </node>
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="202556268009070747">
+              <property name="value" nameId="tpee.1068580320021" value="5" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="486728252986442693">
         <property name="name" nameId="tpck.1169194664001" value="a" />

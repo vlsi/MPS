@@ -9,9 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templateweave_InputNode_A implements TemplateDeclarationWeavingAware {
   private static SNodePointer templateNode_xxay57_a0a0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740073391");
@@ -30,7 +30,7 @@ public class Templateweave_InputNode_A implements TemplateDeclarationWeavingAwar
     try {
       environment.getTracer().pushTemplateNode(templateNode_xxay57_a0a0a1a1);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218740073391");
-      tnode1.setProperty("text", (String) QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "_text_", propertyMacro_xxay57_c0b0b0a2a1a1, context, environment.getGenerator())));
+      tnode1.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "_text_", propertyMacro_xxay57_c0b0b0a2a1a1, context, environment.getGenerator()))));
 
     } finally {
       environment.getTracer().pushOutputNode(tnode1);

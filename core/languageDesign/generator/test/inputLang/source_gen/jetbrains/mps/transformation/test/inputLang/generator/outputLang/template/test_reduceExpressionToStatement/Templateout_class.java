@@ -11,7 +11,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templateout_class implements TemplateDeclaration {
@@ -54,7 +53,9 @@ public class Templateout_class implements TemplateDeclaration {
               environment.getTracer().pushOutputNode(tnode3);
               environment.getTracer().closeTemplateNode(templateNode_b1jp4m_a0a0a1a4a1a4a1a1);
             }
-            tnode2.addChild("returnType", tnode3);
+            if (tnode3 != null) {
+              tnode2.addChild("returnType", tnode3);
+            }
             // TODO validate child 
           }
           {
@@ -67,7 +68,9 @@ public class Templateout_class implements TemplateDeclaration {
               environment.getTracer().pushOutputNode(tnode4);
               environment.getTracer().closeTemplateNode(templateNode_b1jp4m_a0a0a1a5a1a4a1a1);
             }
-            tnode2.addChild("visibility", tnode4);
+            if (tnode4 != null) {
+              tnode2.addChild("visibility", tnode4);
+            }
             // TODO validate child 
           }
           {
@@ -75,11 +78,11 @@ public class Templateout_class implements TemplateDeclaration {
             try {
               environment.getTracer().pushMacro(copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1);
               final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_1209150187921(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1, context, environment.getGenerator()));
-              tlist5 = environment.copyNodes(Collections.singletonList(copySrcInput5), copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1, null, context);
+              tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1, null, context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_b1jp4m_a0a0a1a6a1a4a1a1);
             }
-            for (SNode child6 : tlist5) {
+            for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
               tnode2.addChild("body", child6);
             }
             // TODO validate child 
@@ -88,7 +91,9 @@ public class Templateout_class implements TemplateDeclaration {
           environment.getTracer().pushOutputNode(tnode2);
           environment.getTracer().closeTemplateNode(templateNode_b1jp4m_a0a0a1a4a1a1);
         }
-        tnode1.addChild("method", tnode2);
+        if (tnode2 != null) {
+          tnode1.addChild("method", tnode2);
+        }
         // TODO validate child 
       }
       {
@@ -101,7 +106,9 @@ public class Templateout_class implements TemplateDeclaration {
           environment.getTracer().pushOutputNode(tnode7);
           environment.getTracer().closeTemplateNode(templateNode_b1jp4m_a0a0a1a5a1a1);
         }
-        tnode1.addChild("visibility", tnode7);
+        if (tnode7 != null) {
+          tnode1.addChild("visibility", tnode7);
+        }
         // TODO validate child 
       }
     } finally {

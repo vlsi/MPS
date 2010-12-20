@@ -31,10 +31,12 @@ import jetbrains.mps.debug.runtime.SuspendContextCommand;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.traceInfo.PositionInfo;
 import org.jetbrains.annotations.NotNull;
 
 public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(MethodBreakpoint.class);
+  @NotNull
   private final BreakpointLocation myLocation;
   private String myMethodName = null;
   private String myJniSignature = null;
@@ -89,7 +91,11 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
 
   private boolean updateMethodNameAndSignature() {
     if (myMethodName != null && myJniSignature != null) return true;
-    String propertyString = myLocation.getTargetCodePosition().getPropertyString();
+    PositionInfo targetCodePosition = myLocation.getTargetCodePosition();
+    if (targetCodePosition == null) {
+      return false;
+    }
+    String propertyString = targetCodePosition.getPropertyString();
     if (propertyString == null) {
       return false;
     }

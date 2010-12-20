@@ -387,7 +387,11 @@ public class GenerationSession {
         myLogger.info(preMappingScript.getScriptNode().getNode(), "pre-process " + preMappingScript.getLongName());
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
-      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(((TemplateMappingScriptInterpreted)preMappingScript).getNode(), currentInputModel);
+      try {
+        templateGenerator.getDefaultExecutionContext(null).executeScript(preMappingScript, currentInputModel);
+      } catch (Exception t) {
+        throw new GenerationFailureException("error executing script " + preMappingScript.getLongName(), preMappingScript.getScriptNode().getNode(), t);
+      }
       preProcessed = true;
     }
     if (needToCloneInputModel) {
@@ -436,7 +440,11 @@ public class GenerationSession {
         myLogger.info(postMappingScript.getScriptNode().getNode(), "post-process " + postMappingScript.getLongName());
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel, myGenerationOptions, myDependenciesBuilder, ttrace);
-      templateGenerator.getDefaultExecutionContext(null).executeMappingScript(((TemplateMappingScriptInterpreted)postMappingScript).getNode(), currentModel);
+      try {
+        templateGenerator.getDefaultExecutionContext(null).executeScript(postMappingScript, currentModel);
+      } catch (Exception t) {
+        throw new GenerationFailureException("error executing script " + postMappingScript.getLongName(), postMappingScript.getScriptNode().getNode(), t);
+      }
       postProcessed = true;
     }
     if (needToCloneModel) {

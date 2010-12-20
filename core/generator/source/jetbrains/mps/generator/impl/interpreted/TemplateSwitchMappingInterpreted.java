@@ -73,7 +73,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
   }
 
   @Override
-  public Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
+  public Collection<SNode> applyDefault(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingName, TemplateContext context) throws GenerationException {
     SNode defaultConsequence = mySwitch.getChild(TemplateSwitch.DEFAULT_CONSEQUENCE);
     if (defaultConsequence == null) {
       SNodePointer modifies = getModifiesSwitch();
