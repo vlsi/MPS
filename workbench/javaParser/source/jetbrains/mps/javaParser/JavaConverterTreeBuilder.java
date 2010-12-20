@@ -75,19 +75,6 @@ public class JavaConverterTreeBuilder {
 
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
 
-  private static Map<Character, String> ourEscapeMap = new HashMap<Character, String>();
-
-  static {
-    ourEscapeMap.put('\b', "\\b");
-    ourEscapeMap.put('\t', "\\t");
-    ourEscapeMap.put('\n', "\\n");
-    ourEscapeMap.put('\f', "\\f");
-    ourEscapeMap.put('\r', "\\r");
-    ourEscapeMap.put('\"', "\\\"");
-    ourEscapeMap.put('\'', "\\'");
-    ourEscapeMap.put('\\', "\\\\");
-  }
-
   public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expression) {
     jetbrains.mps.baseLanguage.structure.Expression result = null;
     if (expression instanceof Literal && expression.constant != null
@@ -171,11 +158,8 @@ public class JavaConverterTreeBuilder {
   jetbrains.mps.baseLanguage.structure.CharConstant processConstant(CharConstant x) {
     jetbrains.mps.baseLanguage.structure.CharConstant result =
       jetbrains.mps.baseLanguage.structure.CharConstant.newInstance(myCurrentModel);
-    if (ourEscapeMap.containsKey(x.charValue())) {
-      result.setCharConstant(ourEscapeMap.get(x.charValue()));
-    } else {
-      result.setCharConstant(x.charValue() + "");
-    }
+    String value = NameUtil.convertToMetaChar(x.charValue());
+    result.setCharConstant(value);
     return result;
   }
 

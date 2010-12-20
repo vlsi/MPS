@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.quotation.generator.baseLanguage.template.util.QuotationUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -59,7 +60,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1196351886795(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("propertyValue");
+    String value = _context.getNode().getProperty("propertyValue");
+    return NameUtil.convertToMetaString(value);
   }
 
   public static Object propertyMacro_GetPropertyValue_1196871487518(final IOperationContext operationContext, final PropertyMacroContext _context) {
