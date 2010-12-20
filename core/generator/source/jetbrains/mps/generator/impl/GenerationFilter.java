@@ -443,7 +443,10 @@ public class GenerationFilter {
       }
       // reversed
       if (rd.isDependsOnConditionals()) {
-        graph.get(CONDITIONALS_ID).add(id);
+        Set<String> r = graph.get(CONDITIONALS_ID);
+        if (r != null) {
+          r.add(id);
+        }
       }
       for (String s : rd.getLocal()) {
         Set<String> r = graph.get(s);
