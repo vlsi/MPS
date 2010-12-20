@@ -68,8 +68,9 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void watch(AbstractEvaluationModel evaluationModel) {
-    myWatches.add(evaluationModel.copy()); //todo set another context here
-    fireWatchAdded(evaluationModel);
+    final AbstractEvaluationModel copy = evaluationModel.copy();
+    myWatches.add(copy);
+    fireWatchAdded(copy);
   }
 
   public DebugSession getDebugSession() {

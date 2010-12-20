@@ -19,14 +19,14 @@
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.ui.EvaluationPanel" file="EvaluationPanel.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.debug.api.integration.ui.WatchableNode" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="javax.swing.JTabbedPane" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException" />
@@ -34,6 +34,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.SuspendContext" />
@@ -55,7 +56,6 @@
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.AbstractAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="jetbrains.mps.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />

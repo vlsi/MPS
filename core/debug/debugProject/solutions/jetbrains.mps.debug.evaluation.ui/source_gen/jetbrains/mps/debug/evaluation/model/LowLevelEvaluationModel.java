@@ -4,18 +4,11 @@ package jetbrains.mps.debug.evaluation.model;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
-import java.util.Map;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import java.util.Set;
 import jetbrains.mps.project.StubPath;
@@ -26,31 +19,38 @@ import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.stubs.StubReloadManager;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.traceInfo.TraceInfoManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.LinkedHashMap;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelOperations;
 
 public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private static final Logger LOG = Logger.getLogger(LowLevelEvaluationModel.class);
 
   private AbstractClassifiersScope myScope;
-  private final Map<String, SNode> myUsedVars = MapSequence.fromMap(new HashMap<String, SNode>());
 
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
     this(project, session, module, new StackFrameContext(session.getUiState()));
@@ -59,13 +59,6 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context) {
     super(project, session, module, context);
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SLinkOperations.setNewChild(myEvaluator, "evaluatedStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
-        SLinkOperations.setNewChild(SLinkOperations.getTarget(myEvaluator, "evaluatedStatement", true), AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
-        SPropertyOperations.set(myEvaluator, "isRuntime", "" + (true));
-      }
-    });
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         IClassPathItem classPath = myEvaluationContext.getClassPathItem();
@@ -140,8 +133,8 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   @Override
-  public void setModel(EditableSModelDescriptor model) {
-    super.setModel(model);
+  public Tuples._2<SNode, SNode> createNodesToShow(SModelDescriptor model) {
+    Tuples._2<SNode, SNode> nodes = super.createNodesToShow(model);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -149,25 +142,15 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       }
     });
     createVars();
+    return nodes;
+  }
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        // re-resolve references 
-        // todo only needed in watch 
-        for (SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(myEvaluator, "jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", false, new String[]{}))) {
-          SReference sReference = ref.getReference(LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(SLinkOperations.findLinkDeclaration("jetbrains.mps.debug.evaluation.structure.LowLevelVariableReference", "variableDeclaration")));
-          if (sReference == null) {
-            continue;
-          }
-          for (SNode var : ListSequence.fromList(SLinkOperations.getTargets(myEvaluator, "variables", true))) {
-            if (SPropertyOperations.getString(var, "name").equals(sReference.getResolveInfo())) {
-              SLinkOperations.setTarget(ref, "baseVariableDeclaration", var, false);
-              break;
-            }
-          }
-        }
-      }
-    });
+  @Override
+  protected SNode createEvaluator(SModelDescriptor model) {
+    SNode evaluatorConcept = super.createEvaluator(model);
+    SLinkOperations.setNewChild(evaluatorConcept, "evaluatedStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
+    SLinkOperations.setNewChild(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatement", true), AttributesRolesUtil.childRoleFromAttributeRole("toEvaluateAnnotation"), "jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation");
+    return evaluatorConcept;
   }
 
   private void importStubForFqName(String fqName) {
@@ -205,17 +188,23 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         }
       };
       Map<String, SNode> contextVariables = myEvaluationContext.getVariables(createClassifierType);
+
+      Map<String, SNode> declaredVariables = MapSequence.fromMap(new LinkedHashMap<String, SNode>(16, (float) 0.75, false));
+      for (SNode var : ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true))) {
+        MapSequence.fromMap(declaredVariables).put(SPropertyOperations.getString(var, "name"), var);
+      }
+
       final Set<SNode> foundVars = SetSequence.fromSet(new HashSet<SNode>());
       for (String variable : SetSequence.fromSet(MapSequence.fromMap(contextVariables).keySet())) {
         String name = variable;
         SNode lowLevelVarNode;
-        if (!(MapSequence.fromMap(myUsedVars).containsKey(name))) {
+        if (!(MapSequence.fromMap(declaredVariables).containsKey(name))) {
           lowLevelVarNode = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.LowLevelVariable", null);
           SPropertyOperations.set(lowLevelVarNode, "name", name);
           ListSequence.fromList(SLinkOperations.getTargets(evaluatorConcept, "variables", true)).addElement(lowLevelVarNode);
-          MapSequence.fromMap(myUsedVars).put(name, lowLevelVarNode);
+          MapSequence.fromMap(declaredVariables).put(name, lowLevelVarNode);
         } else {
-          lowLevelVarNode = MapSequence.fromMap(myUsedVars).get(name);
+          lowLevelVarNode = MapSequence.fromMap(declaredVariables).get(name);
         }
         SNode deducedType = MapSequence.fromMap(contextVariables).get(name);
         if (deducedType == null) {
@@ -227,7 +216,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       }
 
       // now mark vars which are currently out of scope 
-      Sequence.fromIterable(MapSequence.fromMap(myUsedVars).values()).visitAll(new IVisitor<SNode>() {
+      Sequence.fromIterable(MapSequence.fromMap(declaredVariables).values()).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SPropertyOperations.set(it, "isOutOfScope", "" + (!(SetSequence.fromSet(foundVars).contains(it))));
         }
@@ -243,13 +232,34 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   public LowLevelEvaluationModel copy() {
-    final Wrappers._T<LowLevelEvaluationModel> model = new Wrappers._T<LowLevelEvaluationModel>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        model.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule);
-        copyInto(model.value);
+    final Wrappers._T<LowLevelEvaluationModel> evaluationModel = new Wrappers._T<LowLevelEvaluationModel>();
+    final SNode evaluator = myEvaluator;
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<LowLevelEvaluationModel>() {
+      public LowLevelEvaluationModel invoke() {
+        return evaluationModel.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule) {
+          @Override
+          protected SNode createEvaluator(SModelDescriptor model) {
+            SNode newEvaluator = CopyUtil.copyAndPreserveId(evaluator, true);
+            SPropertyOperations.set(newEvaluator, "isRuntime", "" + (false));
+            model.getSModel().addRoot(newEvaluator);
+            SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
+            return newEvaluator;
+          }
+
+          private SNode clone(SModelDescriptor model, SNode fromNode) {
+            SNode result = new SNode(model.getSModel(), fromNode.getConceptFqName());
+            result.putProperties(fromNode);
+            result.putUserObjects(fromNode);
+            for (SNode ch : ListSequence.fromList(fromNode.getChildren(true))) {
+              String role = ch.getRole_();
+              assert role != null;
+              result.addChild(role, clone(model, ch));
+            }
+            return result;
+          }
+        };
       }
-    });
-    return model.value;
+    }));
+    return evaluationModel.value;
   }
 }

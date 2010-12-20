@@ -18,13 +18,13 @@ import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
@@ -74,16 +74,6 @@ public abstract class AbstractEvaluationModel {
     }
     myAuxModule = auxModule;
     myEvaluationContext = context;
-
-    // creating evaluator node 
-    final Wrappers._T<SNode> evaluatorConcept = new Wrappers._T<SNode>();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        evaluatorConcept.value = SConceptOperations.createNewNode("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", null);
-        SPropertyOperations.set(evaluatorConcept.value, "isRuntime", "" + AbstractEvaluationModel.IS_DEVELOPER_MODE);
-      }
-    });
-    this.myEvaluator = evaluatorConcept.value;
   }
 
   protected SModel getLocationModel() {
@@ -102,15 +92,6 @@ public abstract class AbstractEvaluationModel {
     return myAuxModule;
   }
 
-  public void setModel(EditableSModelDescriptor model) {
-    myAuxModel = model;
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        myAuxModel.getSModel().addRoot(AbstractEvaluationModel.this.myEvaluator);
-      }
-    });
-  }
-
   public List<Language> getRequiredLanguages() {
     return myLanguages;
   }
@@ -120,6 +101,26 @@ public abstract class AbstractEvaluationModel {
 
   @NotNull
   public abstract SNode getNodeToShow();
+
+  public Tuples._2<SNode, SNode> createNodesToShow(final SModelDescriptor model) {
+    myAuxModel = model;
+    // creating evaluator node 
+    myEvaluator = createEvaluator(model);
+
+    model.getSModel().runLoadingAction(new Runnable() {
+      public void run() {
+        model.getSModel().addRoot(myEvaluator);
+      }
+    });
+
+    return MultiTuple.<SNode,SNode>from(getRootToShow(), getNodeToShow());
+  }
+
+  protected SNode createEvaluator(SModelDescriptor model) {
+    SNode evaluator = (SNode) new SNode(model.getSModel(), INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept")));
+    SPropertyOperations.set(evaluator, "isRuntime", "" + !(IS_DEVELOPER_MODE));
+    return evaluator;
+  }
 
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(myGenerationListeners).addElement(listener);
@@ -192,10 +193,6 @@ public abstract class AbstractEvaluationModel {
     } catch (Throwable t) {
       throw new EvaluationException(t);
     }
-  }
-
-  protected void copyInto(AbstractEvaluationModel model) {
-    model.myEvaluator = SNodeOperations.copyNode(myEvaluator);
   }
 
   public abstract AbstractEvaluationModel copy();
