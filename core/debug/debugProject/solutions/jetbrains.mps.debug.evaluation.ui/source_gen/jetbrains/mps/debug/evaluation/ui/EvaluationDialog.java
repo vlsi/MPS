@@ -13,8 +13,6 @@ import java.awt.Dimension;
 import jetbrains.mps.debug.runtime.DebugSession;
 import java.awt.BorderLayout;
 import com.intellij.openapi.application.ApplicationManager;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
 
 public class EvaluationDialog extends BaseDialog {
@@ -48,12 +46,7 @@ public class EvaluationDialog extends BaseDialog {
         });
       }
     };
-    addWindowListener(new WindowAdapter() {
-      @Override
-      public void windowClosed(WindowEvent event) {
-        dispose();
-      }
-    });
+    // <node> 
   }
 
   public JComponent getMainComponent() {
