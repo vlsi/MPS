@@ -130,7 +130,7 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     if (breakpoint instanceof ILocationBreakpoint) {
       ILocationBreakpoint locationBreakpoint = (ILocationBreakpoint) breakpoint;
       BreakpointLocation location = locationBreakpoint.getLocation();
-      if (location.getNodePointer() == null || location.getModelReference() == null) {
+      if (location.getNodePointer().getNodeId() == null || location.getModelReference() == null) {
         return null;
       }
     }
