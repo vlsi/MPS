@@ -457,7 +457,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6277721878946535353(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString_def(_context.getNode(), "keymap", "Mac OS X");
+    return SPropertyOperations.getString_def(_context.getNode(), "keymap", "$default");
   }
 
   public static Object propertyMacro_GetPropertyValue_5003188907304823222(final IOperationContext operationContext, final PropertyMacroContext _context) {

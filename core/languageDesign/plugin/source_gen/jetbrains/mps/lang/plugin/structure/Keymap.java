@@ -44,7 +44,7 @@ public enum Keymap {
   }
 
   public static Keymap getDefault() {
-    return Keymap.Mac_OS_X;
+    return Keymap.Default;
   }
 
   public static Keymap parseValue(String value) {
