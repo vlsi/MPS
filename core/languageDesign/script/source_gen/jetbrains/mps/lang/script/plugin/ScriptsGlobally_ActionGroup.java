@@ -16,12 +16,14 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.ide.actions.Tools_ActionGroup;
 
 public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ScriptsGlobally_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsGlobally";
+  public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsGlobally_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
   private List<AnAction> myAllActions;
@@ -53,7 +55,17 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
       ScriptsGlobally_ActionGroup.this.add(menuBuilder.create_ByBuildPopup());
       ScriptsGlobally_ActionGroup.this.add(menuBuilder.create_ByLanguagePopup());
       // 
-      ScriptsGlobally_ActionGroup.this.addAction("jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action", "jetbrains.mps.lang.script", menuBuilder.getAllScripts(), false);
+      {
+        GeneratedAction newAction = new RunMigrationScripts_Action(menuBuilder.getAllScripts(), false);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.script@transient35"));
+          oldAction = newAction;
+        }
+        ScriptsGlobally_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
@@ -64,9 +76,5 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Tools_ActionGroup.ID, null);
   }
 }

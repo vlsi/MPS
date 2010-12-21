@@ -89,8 +89,8 @@ public class AddToFavorites_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(AddToFavorites_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(name_State((String) this.name));
     res.append("!");

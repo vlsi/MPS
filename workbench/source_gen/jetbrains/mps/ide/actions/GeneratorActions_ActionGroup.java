@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions";
+  public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup";
   public static final String LABEL_ID_generatorNew = ID + "generatorNew";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_scripts = ID + "scripts";
@@ -18,21 +22,91 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       GeneratorActions_ActionGroup.this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", true);
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", false);
+      {
+        GeneratedAction newAction = new GenerateTemplateQueries_Action(true);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GeneratorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GenerateTemplateQueries_Action(false);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GeneratorActions_ActionGroup.this.addAction(oldAction);
+
+      }
       GeneratorActions_ActionGroup.this.addSeparator();
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new ShowModuleDependencies_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GeneratorActions_ActionGroup.this.addAction(oldAction);
+
+      }
       GeneratorActions_ActionGroup.this.addSeparator();
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteGenerator_Action", "jetbrains.mps.ide");
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new DeleteGenerator_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GeneratorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new CopyModuleName_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GeneratorActions_ActionGroup.this.addAction(oldAction);
+
+      }
       GeneratorActions_ActionGroup.this.addSeparator();
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModule_Action", "jetbrains.mps.ide", "Generator");
+      {
+        GeneratedAction newAction = new CheckModule_Action("Generator");
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GeneratorActions_ActionGroup.this.addAction(oldAction);
+
+      }
       GeneratorActions_ActionGroup.this.addSeparator();
       GeneratorActions_ActionGroup.this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_favorites);
       GeneratorActions_ActionGroup.this.addSeparator();
       GeneratorActions_ActionGroup.this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_scripts);
       GeneratorActions_ActionGroup.this.addSeparator();
-      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GeneratorProperties_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new GeneratorProperties_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GeneratorActions_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -4,11 +4,14 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectPaneProjectAddition_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition";
+  public static final String ID = "jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup";
 
   public ProjectPaneProjectAddition_ActionGroup() {
     super("ProjectPaneProjectAddition", ID);
@@ -16,13 +19,19 @@ public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup
     this.setPopup(false);
     try {
       ProjectPaneProjectAddition_ActionGroup.this.addSeparator();
-      ProjectPaneProjectAddition_ActionGroup.this.addAction("jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action", "jetbrains.mps.build.packaging");
+      {
+        GeneratedAction newAction = new GenerateBuildForProjectAction_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging@transient9"));
+          oldAction = newAction;
+        }
+        ProjectPaneProjectAddition_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, null);
   }
 }

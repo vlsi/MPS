@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Tools_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Tools";
+  public static final String ID = "jetbrains.mps.ide.actions.Tools_ActionGroup";
   public static final String LABEL_ID_customTools = ID + "customTools";
 
   public Tools_ActionGroup() {
@@ -15,26 +19,102 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleRepository_Action", "jetbrains.mps.ide");
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModelRepository_Action", "jetbrains.mps.ide");
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action", "jetbrains.mps.ide");
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModelChecker_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new ShowModuleRepository_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowModelRepository_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowBookmarks_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowModelChecker_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+
+      }
       Tools_ActionGroup.this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       Tools_ActionGroup.this.addSeparator();
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReloadAll_Action", "jetbrains.mps.ide");
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReloadStubs_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new ReloadAll_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ReloadStubs_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+
+      }
       Tools_ActionGroup.this.addSeparator();
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.InstallIDEAPlugin_Action", "jetbrains.mps.ide");
-      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameAspects_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new InstallIDEAPlugin_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new RenameAspects_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+
+      }
       Tools_ActionGroup.this.addSeparator();
       Tools_ActionGroup.this.addGroup("jetbrains.mps.ide.actions.ToolsUpgrade_ActionGroup", "jetbrains.mps.ide");
       Tools_ActionGroup.this.addGroup("jetbrains.mps.ide.actions.ToolsInternal_ActionGroup", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("ToolsMenu", null);
   }
 }

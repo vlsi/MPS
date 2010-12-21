@@ -4,19 +4,53 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ChangesStrip_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ChangesStrip_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.ChangesStrip";
+  public static final String ID = "jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup";
 
   public ChangesStrip_ActionGroup() {
     super("ChangesStrip", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToNextChange_Action", "jetbrains.mps.vcs");
-      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action", "jetbrains.mps.vcs");
-      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.RollbackChanges_Action", "jetbrains.mps.vcs");
+      {
+        GeneratedAction newAction = new GoToNextChange_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          oldAction = newAction;
+        }
+        ChangesStrip_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToPreviousChange_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          oldAction = newAction;
+        }
+        ChangesStrip_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new RollbackChanges_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          oldAction = newAction;
+        }
+        ChangesStrip_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

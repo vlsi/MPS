@@ -116,8 +116,8 @@ public class GenerateModel_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(GenerateModel_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(generationHandler_State((IGenerationHandler) this.generationHandler));
     res.append("!");

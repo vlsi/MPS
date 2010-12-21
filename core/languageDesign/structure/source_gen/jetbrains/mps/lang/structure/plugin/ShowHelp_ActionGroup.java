@@ -4,28 +4,66 @@ package jetbrains.mps.lang.structure.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ShowHelp_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ShowHelp_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.structure.plugin.ShowHelp";
+  public static final String ID = "jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup";
 
   public ShowHelp_ActionGroup() {
     super("ShowHelp", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action", "jetbrains.mps.lang.structure");
-      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForNode_Action", "jetbrains.mps.lang.structure");
-      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action", "jetbrains.mps.lang.structure");
-      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForAspect_Action", "jetbrains.mps.lang.structure");
+      {
+        GeneratedAction newAction = new ShowDefaultHelp_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure@transient37"));
+          oldAction = newAction;
+        }
+        ShowHelp_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowHelpForNode_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure@transient37"));
+          oldAction = newAction;
+        }
+        ShowHelp_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowHelpForRoot_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure@transient37"));
+          oldAction = newAction;
+        }
+        ShowHelp_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowHelpForAspect_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure@transient37"));
+          oldAction = newAction;
+        }
+        ShowHelp_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);
   }
 }

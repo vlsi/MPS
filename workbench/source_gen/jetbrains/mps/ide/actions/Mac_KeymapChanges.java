@@ -33,6 +33,6 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
   }
 
   public String getScheme() {
-    return "Mac OS X";
+    return "$default";
   }
 }

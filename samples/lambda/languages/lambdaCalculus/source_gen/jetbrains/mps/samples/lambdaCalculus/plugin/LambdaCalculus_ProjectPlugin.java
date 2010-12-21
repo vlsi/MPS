@@ -5,4 +5,6 @@ package jetbrains.mps.samples.lambdaCalculus.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class LambdaCalculus_ProjectPlugin extends BaseProjectPlugin {
+  public LambdaCalculus_ProjectPlugin() {
+  }
 }

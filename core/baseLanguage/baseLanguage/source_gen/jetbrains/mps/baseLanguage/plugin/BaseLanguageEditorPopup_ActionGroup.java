@@ -4,29 +4,68 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageEditorPopup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup";
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup";
 
   public BaseLanguageEditorPopup_ActionGroup() {
     super("BaseLanguageEditorPopup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action", "jetbrains.mps.baseLanguage", ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"));
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowMembers_Action", "jetbrains.mps.baseLanguage");
+      {
+        GeneratedAction newAction = new GoToOverridingMethod_Action(ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"));
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage@transient41"));
+          oldAction = newAction;
+        }
+        BaseLanguageEditorPopup_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToOverridenMethod_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage@transient41"));
+          oldAction = newAction;
+        }
+        BaseLanguageEditorPopup_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToInheritedClassifier_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage@transient41"));
+          oldAction = newAction;
+        }
+        BaseLanguageEditorPopup_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowMembers_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage@transient41"));
+          oldAction = newAction;
+        }
+        BaseLanguageEditorPopup_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

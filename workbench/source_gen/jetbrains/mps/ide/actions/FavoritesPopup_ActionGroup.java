@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class FavoritesPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FavoritesPopup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopup";
+  public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopup_ActionGroup";
   public static final String LABEL_ID_addToFavorites = ID + "addToFavorites";
 
   public FavoritesPopup_ActionGroup() {
@@ -17,13 +21,19 @@ public class FavoritesPopup_ActionGroup extends GeneratedActionGroup {
     try {
       FavoritesPopup_ActionGroup.this.addAnchor(FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
       FavoritesPopup_ActionGroup.this.addSeparator();
-      FavoritesPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddToNewFavoritesList_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new AddToNewFavoritesList_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        FavoritesPopup_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(FavoritesPopupWrapper_ActionGroup.ID, null);
   }
 }

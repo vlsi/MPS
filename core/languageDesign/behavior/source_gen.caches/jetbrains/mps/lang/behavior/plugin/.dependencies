@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" file="BehaviorCodeOverrideImplementMenuGroup_ActionGroup.java">
-    <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.plugin.ImplementBehaviorMethod_Action" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.plugin.Behavior_ApplicationPlugin" file="Behavior_ApplicationPlugin.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.plugin.ImplementBehaviorMethod_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin" file="Behavior_ProjectPlugin.java">
@@ -22,8 +29,12 @@
   <dependency className="jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup" file="BehaviourPopup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />

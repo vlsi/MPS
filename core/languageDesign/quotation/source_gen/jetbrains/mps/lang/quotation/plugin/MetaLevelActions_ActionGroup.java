@@ -4,24 +4,33 @@ package jetbrains.mps.lang.quotation.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class MetaLevelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(MetaLevelActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.quotation.plugin.MetaLevelActions";
+  public static final String ID = "jetbrains.mps.lang.quotation.plugin.MetaLevelActions_ActionGroup";
 
   public MetaLevelActions_ActionGroup() {
     super("MetaLevelActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      MetaLevelActions_ActionGroup.this.addAction("jetbrains.mps.lang.quotation.plugin.ShowMetaLevel_Action", "jetbrains.mps.lang.quotation");
+      {
+        GeneratedAction newAction = new ShowMetaLevel_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.quotation@transient33"));
+          oldAction = newAction;
+        }
+        MetaLevelActions_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, null);
   }
 }

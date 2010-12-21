@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="DataFlow_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ProjectPlugin" />
-  <unitInfo fileName="DataFlow_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ApplicationPlugin" />
-  <unitInfo fileName="DFAActions_ActionGroup.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup" />
+  <unitInfo fileName="DataFlow_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ApplicationPlugin" />
   <unitInfo fileName="PrintDFAResult_Action.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action" />
   <unitInfo fileName="PrintInitializationInformation_Action.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action" />
   <unitInfo fileName="PrintReachingDefinintionsInformation_Action.java" startLine="19" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action" />
+  <unitInfo fileName="DFAActions_ActionGroup.java" startLine="12" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup" />
   <unitInfo fileName="ShowDFA_Action.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action" />
   <root nodeId="1206459480619">
     <nodeInfo nodeId="1206459493888" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" fileName="PrintDFAResult_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="21" />
@@ -13,10 +13,50 @@
     <nodeInfo nodeId="1206459869568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PrintDFAResult_Action.java" startLine="64" startPosition="103" endLine="65" endPosition="49" />
   </root>
   <root nodeId="1206459820010">
-    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="135" />
-    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="18" startPosition="135" endLine="19" endPosition="151" />
-    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="19" startPosition="151" endLine="20" endPosition="157" />
-    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="20" startPosition="157" endLine="21" endPosition="128" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="21" startPosition="7" endLine="22" endPosition="64" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="22" startPosition="64" endLine="23" endPosition="66" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="23" startPosition="66" endLine="24" endPosition="72" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="128" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="26" startPosition="128" endLine="27" endPosition="32" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="28" startPosition="9" endLine="29" endPosition="57" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="DFAActions_ActionGroup.java" startLine="29" startPosition="57" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="32" startPosition="7" endLine="33" endPosition="80" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="33" startPosition="80" endLine="34" endPosition="66" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="34" startPosition="66" endLine="35" endPosition="72" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="36" startPosition="32" endLine="37" endPosition="128" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="37" startPosition="128" endLine="38" endPosition="32" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="39" startPosition="9" endLine="40" endPosition="57" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="DFAActions_ActionGroup.java" startLine="40" startPosition="57" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="43" startPosition="7" endLine="44" endPosition="86" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="44" startPosition="86" endLine="45" endPosition="66" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="45" startPosition="66" endLine="46" endPosition="72" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="47" startPosition="32" endLine="48" endPosition="128" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="48" startPosition="128" endLine="49" endPosition="32" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="50" startPosition="9" endLine="51" endPosition="57" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="DFAActions_ActionGroup.java" startLine="51" startPosition="57" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="54" startPosition="7" endLine="55" endPosition="57" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="55" startPosition="57" endLine="56" endPosition="66" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DFAActions_ActionGroup.java" startLine="56" startPosition="66" endLine="57" endPosition="72" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="58" startPosition="32" endLine="59" endPosition="128" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="59" startPosition="128" endLine="60" endPosition="32" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DFAActions_ActionGroup.java" startLine="61" startPosition="9" endLine="62" endPosition="57" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="DFAActions_ActionGroup.java" startLine="62" startPosition="57" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DFAActions_ActionGroup.java" startLine="24" startPosition="72" endLine="28" endPosition="9" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DFAActions_ActionGroup.java" startLine="35" startPosition="72" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DFAActions_ActionGroup.java" startLine="46" startPosition="72" endLine="50" endPosition="9" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DFAActions_ActionGroup.java" startLine="57" startPosition="72" endLine="61" endPosition="9" />
+    <nodeInfo nodeId="1206459839831" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="DFAActions_ActionGroup.java" startLine="20" startPosition="9" endLine="31" endPosition="7" />
+    <nodeInfo nodeId="1211452084362" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="DFAActions_ActionGroup.java" startLine="31" startPosition="7" endLine="42" endPosition="7" />
+    <nodeInfo nodeId="1207220194607" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="DFAActions_ActionGroup.java" startLine="42" startPosition="7" endLine="53" endPosition="7" />
+    <nodeInfo nodeId="1206642561766" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="DFAActions_ActionGroup.java" startLine="53" startPosition="7" endLine="64" endPosition="7" />
+    <scopeInfo nodeId="1206459839831" fileName="DFAActions_ActionGroup.java" startLine="25" startPosition="32" endLine="27" endPosition="32" />
+    <scopeInfo nodeId="1211452084362" fileName="DFAActions_ActionGroup.java" startLine="36" startPosition="32" endLine="38" endPosition="32" />
+    <scopeInfo nodeId="1207220194607" fileName="DFAActions_ActionGroup.java" startLine="47" startPosition="32" endLine="49" endPosition="32" />
+    <scopeInfo nodeId="1206642561766" fileName="DFAActions_ActionGroup.java" startLine="58" startPosition="32" endLine="60" endPosition="32" />
+    <scopeInfo nodeId="1206459839831" fileName="DFAActions_ActionGroup.java" startLine="21" startPosition="7" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1211452084362" fileName="DFAActions_ActionGroup.java" startLine="32" startPosition="7" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1207220194607" fileName="DFAActions_ActionGroup.java" startLine="43" startPosition="7" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1206642561766" fileName="DFAActions_ActionGroup.java" startLine="54" startPosition="7" endLine="63" endPosition="0" />
   </root>
   <root nodeId="1206642260578">
     <nodeInfo nodeId="1217420648826" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" fileName="ShowDFA_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="36" />

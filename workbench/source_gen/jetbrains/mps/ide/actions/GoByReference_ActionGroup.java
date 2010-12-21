@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class GoByReference_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GoByReference_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.GoByReference";
+  public static final String ID = "jetbrains.mps.ide.actions.GoByReference_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
   private List<AnAction> myAllActions;
@@ -99,9 +99,5 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goByRef);
   }
 }

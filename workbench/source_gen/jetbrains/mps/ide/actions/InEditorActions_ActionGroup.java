@@ -4,32 +4,132 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class InEditorActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(InEditorActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.InEditorActions";
+  public static final String ID = "jetbrains.mps.ide.actions.InEditorActions_ActionGroup";
 
   public InEditorActions_ActionGroup() {
     super("InEditorActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LocalHome_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LocalEnd_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectLocalHome_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectLocalEnd_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RootHome_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RootEnd_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Home_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.End_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectUp_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectDown_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new LocalHome_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new LocalEnd_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new SelectLocalHome_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new SelectLocalEnd_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new RootHome_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new RootEnd_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new Home_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new End_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new SelectUp_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new SelectDown_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        InEditorActions_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("EditorActions", null);
   }
 }

@@ -4,24 +4,33 @@ package jetbrains.mps.calculator.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class NodeActionsAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeActionsAddition_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.calculator.plugin.NodeActionsAddition";
+  public static final String ID = "jetbrains.mps.calculator.plugin.NodeActionsAddition_ActionGroup";
 
   public NodeActionsAddition_ActionGroup() {
     super("NodeActionsAddition", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      NodeActionsAddition_ActionGroup.this.addAction("jetbrains.mps.calculator.plugin.ExecuteCalculator_Action", "jetbrains.mps.calculator");
+      {
+        GeneratedAction newAction = new ExecuteCalculator_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.calculator@transient0"));
+          oldAction = newAction;
+        }
+        NodeActionsAddition_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, null);
   }
 }

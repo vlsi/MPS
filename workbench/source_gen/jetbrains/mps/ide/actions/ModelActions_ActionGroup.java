@@ -4,12 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 public class ModelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.ModelActions";
+  public static final String ID = "jetbrains.mps.ide.actions.ModelActions_ActionGroup";
   public static final String LABEL_ID_newActions = ID + "newActions";
   public static final String LABEL_ID_showHelp = ID + "showHelp";
   public static final String LABEL_ID_modelUsages = ID + "modelUsages";
@@ -26,34 +30,204 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_newActions);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJavaClass_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new PasteNode_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new PasteAsJavaClass_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModels_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CloneModel_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModelName_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new DeleteModels_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new CloneModel_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new CopyModelName_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GetModelContentsFromSource_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new GetModelContentsFromSource_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModelImports_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddMissingImports_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new OptimizeModelImports_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new AddMissingImports_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowReferencesToMissingStuff_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_showHelp);
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModel_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new CheckModel_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_modelUsages);
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_generateActions);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", GeneratorFacade.getInstance().getDefaultGenerationHandler(), false);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new OutputViewGenerationHandler(), false);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new GenerateModel_Action(GeneratorFacade.getInstance().getDefaultGenerationHandler(), false);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GenerateModel_Action(GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GenerateModel_Action(new OutputViewGenerationHandler(), false);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowMappingsPartitioning_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RevertMemoryChanges_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SaveModel_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new RevertMemoryChanges_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new SaveModel_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_refactoring);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModel_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new UpgradeModelPersistenceInModel_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_favorites);
       ModelActions_ActionGroup.this.addSeparator();
@@ -63,7 +237,17 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_scripts);
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ModelProperties_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new ModelProperties_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ModelActions_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

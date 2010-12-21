@@ -4,25 +4,44 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Goto_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class GoToVCS_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GoToVCS_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.GoToVCS";
+  public static final String ID = "jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup";
 
   public GoToVCS_ActionGroup() {
     super("GoToVCS", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToNextChange_Action", "jetbrains.mps.vcs");
-      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action", "jetbrains.mps.vcs");
+      {
+        GeneratedAction newAction = new GoToNextChange_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          oldAction = newAction;
+        }
+        GoToVCS_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToPreviousChange_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          oldAction = newAction;
+        }
+        GoToVCS_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoVCS);
   }
 }

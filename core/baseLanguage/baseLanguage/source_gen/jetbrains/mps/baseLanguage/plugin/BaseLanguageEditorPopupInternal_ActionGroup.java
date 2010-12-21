@@ -4,11 +4,10 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class BaseLanguageEditorPopupInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageEditorPopupInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal";
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup";
 
   public BaseLanguageEditorPopupInternal_ActionGroup() {
     super("BaseLanguageEditorPopupInternal", ID);
@@ -18,9 +17,5 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends GeneratedAction
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, null);
   }
 }

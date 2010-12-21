@@ -4,23 +4,33 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class LanguageRefactoring_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageRefactoring_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.LanguageRefactoring";
+  public static final String ID = "jetbrains.mps.ide.actions.LanguageRefactoring_ActionGroup";
 
   public LanguageRefactoring_ActionGroup() {
     super("Refactoring", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      LanguageRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameLanguage_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new RenameLanguage_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        LanguageRefactoring_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_refactoring);
   }
 }

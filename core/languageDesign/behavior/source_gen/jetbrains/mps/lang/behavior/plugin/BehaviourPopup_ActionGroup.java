@@ -4,26 +4,36 @@ package jetbrains.mps.lang.behavior.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BehaviourPopup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.behavior.plugin.BehaviourPopup";
+  public static final String ID = "jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup";
 
   public BehaviourPopup_ActionGroup() {
     super("BehaviourPopup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BehaviourPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action", "jetbrains.mps.baseLanguage", ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
+      {
+        GeneratedAction newAction = new GoToOverridingMethod_Action(ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.behavior@transient24"));
+          oldAction = newAction;
+        }
+        BehaviourPopup_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

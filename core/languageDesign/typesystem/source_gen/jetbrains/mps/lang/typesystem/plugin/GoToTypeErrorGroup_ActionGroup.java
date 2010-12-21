@@ -18,11 +18,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
 public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GoToTypeErrorGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup";
+  public static final String ID = "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
   private List<AnAction> myAllActions;
@@ -59,9 +62,29 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       GoToTypeErrorGroup_ActionGroup.this.removeAll();
       jetbrains.mps.util.Pair<String, String> firstId = new jetbrains.mps.util.Pair<String, String>(error.getRuleModel(), error.getRuleId());
       for (jetbrains.mps.util.Pair<String, String> id : error.getAdditionalRulesIds()) {
-        GoToTypeErrorGroup_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", "jetbrains.mps.lang.typesystem", id, false);
+        {
+          GeneratedAction newAction = new GoToTypeErrorRule_InGroup_Action(id, false);
+          ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+          AnAction oldAction = manager.getAction(newAction.getActionId());
+          if (oldAction == null) {
+            manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem@transient40"));
+            oldAction = newAction;
+          }
+          GoToTypeErrorGroup_ActionGroup.this.addAction(oldAction);
+
+        }
       }
-      GoToTypeErrorGroup_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", "jetbrains.mps.lang.typesystem", firstId, true);
+      {
+        GeneratedAction newAction = new GoToTypeErrorRule_InGroup_Action(firstId, true);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem@transient40"));
+          oldAction = newAction;
+        }
+        GoToTypeErrorGroup_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
@@ -72,10 +95,5 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, null);
-    this.insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, null);
   }
 }

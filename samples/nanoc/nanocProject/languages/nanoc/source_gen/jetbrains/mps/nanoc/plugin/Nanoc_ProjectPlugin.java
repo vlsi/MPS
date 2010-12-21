@@ -10,6 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Nanoc_ProjectPlugin extends BaseProjectPlugin {
+  public Nanoc_ProjectPlugin() {
+  }
+
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
     List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
     ListSequence.fromList(components).addElement(new ProgramsLocationComponent_PreferencesComponent(project));

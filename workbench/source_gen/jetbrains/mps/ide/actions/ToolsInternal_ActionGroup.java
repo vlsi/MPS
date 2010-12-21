@@ -4,32 +4,133 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ToolsInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Internal";
+  public static final String ID = "jetbrains.mps.ide.actions.ToolsInternal_ActionGroup";
 
   public ToolsInternal_ActionGroup() {
     super("Internal", ID);
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveTransientModels_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DumpKeyStrokes_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeImportsInGlobalScope_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixDependenciesEverywhere_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveLanguageDesignDevKitFromModels_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveBootstrapLanguagesDevKitFromLanguageModels_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddGeneralPurposeDevKitToLanguageModels_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddLanguageDesingDevKitToLanguages_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindlAllBrokenReferences_Action", "jetbrains.mps.ide");
-      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LoadNonStubModels_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new RemoveTransientModels_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new DumpKeyStrokes_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new OptimizeImportsInGlobalScope_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new FixDependenciesEverywhere_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new RemoveLanguageDesignDevKitFromModels_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new RemoveBootstrapLanguagesDevKitFromLanguageModels_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new AddGeneralPurposeDevKitToLanguageModels_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new AddLanguageDesingDevKitToLanguages_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new FindlAllBrokenReferences_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new LoadNonStubModels_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ToolsInternal_ActionGroup.this.addAction(oldAction);
+
+      }
       ToolsInternal_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
   }
 }

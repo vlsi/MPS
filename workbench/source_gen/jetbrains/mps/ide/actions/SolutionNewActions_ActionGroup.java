@@ -4,24 +4,44 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class SolutionNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionNewActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions";
+  public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions_ActionGroup";
 
   public SolutionNewActions_ActionGroup() {
     super("New", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      SolutionNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action", "jetbrains.mps.ide");
-      SolutionNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new NewModel_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        SolutionNewActions_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new NewModelFromSource_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        SolutionNewActions_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
   }
 }

@@ -4,7 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import com.intellij.ide.actions.GotoActionAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.actions.GotoFileAction;
 import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
@@ -14,7 +18,7 @@ import jetbrains.mps.workbench.actions.goTo.GoToDevkitAction;
 
 public class Goto_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Goto_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Goto";
+  public static final String ID = "jetbrains.mps.ide.actions.Goto_ActionGroup";
   public static final String LABEL_ID_gotoVCS = ID + "gotoVCS";
 
   public Goto_ActionGroup() {
@@ -22,27 +26,133 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToAction_Action", "jetbrains.mps.ide", new GotoActionAction());
+      {
+        GeneratedAction newAction = new GoToAction_Action(new GotoActionAction());
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
       Goto_ActionGroup.this.addAnchor(Goto_ActionGroup.LABEL_ID_gotoVCS);
       Goto_ActionGroup.this.addSeparator();
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToFile_Action", "jetbrains.mps.ide", new GotoFileAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRootNode_Action", "jetbrains.mps.ide", new GoToRootNodeAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNodeById_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new GoToFile_Action(new GotoFileAction());
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToRootNode_Action(new GoToRootNodeAction());
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToNodeById_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
       Goto_ActionGroup.this.addSeparator();
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRules_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new GoToConceptDeclaration_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToEditorDeclaration_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToRules_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
       Goto_ActionGroup.this.addSeparator();
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToModel_Action", "jetbrains.mps.ide", new GoToModelAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToLanguage_Action", "jetbrains.mps.ide", new GoToLanguageAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToSolution_Action", "jetbrains.mps.ide", new GoToSolutionAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToDevkit_Action", "jetbrains.mps.ide", new GoToDevkitAction());
+      {
+        GeneratedAction newAction = new GoToModel_Action(new GoToModelAction());
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToLanguage_Action(new GoToLanguageAction());
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToSolution_Action(new GoToSolutionAction());
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GoToDevkit_Action(new GoToDevkitAction());
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Goto_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("GoToMenu", null);
   }
 }

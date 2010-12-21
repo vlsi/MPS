@@ -63,8 +63,8 @@ public class RegenerateProject_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(RegenerateProject_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(action_State((AnAction) this.action));
     res.append("!");

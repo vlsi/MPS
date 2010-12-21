@@ -4,27 +4,45 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class GenerateModule_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GenerateModule_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.GenerateModule";
+  public static final String ID = "jetbrains.mps.ide.actions.GenerateModule_ActionGroup";
 
   public GenerateModule_ActionGroup() {
     super("GenerateModule", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GenerateModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RegenerateModule_Action", "jetbrains.mps.ide", new GenerateAllModelsInModuleAction(true));
-      GenerateModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModule_Action", "jetbrains.mps.ide", new GenerateAllModelsInModuleAction(false));
+      {
+        GeneratedAction newAction = new RegenerateModule_Action(new GenerateAllModelsInModuleAction(true));
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GenerateModule_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GenerateModule_Action(new GenerateAllModelsInModuleAction(false));
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        GenerateModule_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
-    this.insertGroupIntoAnother(Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
   }
 }

@@ -4,25 +4,44 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(TypesystemEditorPopupInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal";
+  public static final String ID = "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup";
 
   public TypesystemEditorPopupInternal_ActionGroup() {
     super("TypesystemEditorPopupInternal", ID);
     this.setIsInternal(true);
     this.setPopup(false);
     try {
-      TypesystemEditorPopupInternal_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action", "jetbrains.mps.lang.typesystem");
-      TypesystemEditorPopupInternal_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action", "jetbrains.mps.lang.typesystem");
+      {
+        GeneratedAction newAction = new ShowInequationsForCell_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem@transient40"));
+          oldAction = newAction;
+        }
+        TypesystemEditorPopupInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowTypeSystemTrace_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem@transient40"));
+          oldAction = newAction;
+        }
+        TypesystemEditorPopupInternal_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, null);
   }
 }

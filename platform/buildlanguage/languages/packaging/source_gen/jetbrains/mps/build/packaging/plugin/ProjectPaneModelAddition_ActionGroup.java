@@ -4,24 +4,33 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ProjectPaneModelAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectPaneModelAddition_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.build.packaging.plugin.ProjectPaneModelAddition";
+  public static final String ID = "jetbrains.mps.build.packaging.plugin.ProjectPaneModelAddition_ActionGroup";
 
   public ProjectPaneModelAddition_ActionGroup() {
     super("ProjectPaneModelAddition", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ProjectPaneModelAddition_ActionGroup.this.addAction("jetbrains.mps.build.packaging.plugin.GenerateBuildAction_Action", "jetbrains.mps.build.packaging");
+      {
+        GeneratedAction newAction = new GenerateBuildAction_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging@transient9"));
+          oldAction = newAction;
+        }
+        ProjectPaneModelAddition_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, null);
   }
 }

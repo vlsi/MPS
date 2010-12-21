@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class FileActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FileActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.FileActions";
+  public static final String ID = "jetbrains.mps.ide.actions.FileActions_ActionGroup";
   public static final String LABEL_ID_abstractFileActions = ID + "abstractFileActions";
 
   public FileActions_ActionGroup() {

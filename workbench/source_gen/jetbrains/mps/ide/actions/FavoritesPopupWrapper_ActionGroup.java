@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FavoritesPopupWrapper_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopupWrapper";
+  public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
   private List<AnAction> myAllActions;
@@ -54,9 +54,5 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_popup);
   }
 }

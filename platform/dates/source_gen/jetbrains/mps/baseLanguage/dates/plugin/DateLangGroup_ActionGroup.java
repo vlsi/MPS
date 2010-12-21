@@ -4,24 +4,33 @@ package jetbrains.mps.baseLanguage.dates.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class DateLangGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DateLangGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup";
+  public static final String ID = "jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup_ActionGroup";
 
   public DateLangGroup_ActionGroup() {
     super("DateLangGroup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      DateLangGroup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action", "jetbrains.mps.baseLanguage.dates");
+      {
+        GeneratedAction newAction = new ConvertDateTimeOperations_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage.dates@transient11"));
+          oldAction = newAction;
+        }
+        DateLangGroup_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, null);
   }
 }

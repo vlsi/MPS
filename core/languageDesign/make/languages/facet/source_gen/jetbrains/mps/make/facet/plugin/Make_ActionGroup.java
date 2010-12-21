@@ -4,31 +4,44 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Generate_ActionGroup;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Make_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Make_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.make.facet.plugin.Make";
+  public static final String ID = "jetbrains.mps.make.facet.plugin.Make_ActionGroup";
 
   public Make_ActionGroup() {
     super("Make", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Make_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeOrBuild_Action", "jetbrains.mps.make.facet", true);
-      Make_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeOrBuild_Action", "jetbrains.mps.make.facet", false);
+      {
+        GeneratedAction newAction = new MakeOrBuild_Action(true);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.make.facet@transient31"));
+          oldAction = newAction;
+        }
+        Make_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new MakeOrBuild_Action(false);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.make.facet@transient31"));
+          oldAction = newAction;
+        }
+        Make_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
   }
 }

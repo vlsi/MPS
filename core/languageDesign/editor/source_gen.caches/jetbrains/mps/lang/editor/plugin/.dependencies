@@ -46,11 +46,16 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup" file="EditorActions_ActionGroup.java">
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.plugin.ExtractComponent_Action" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.plugin.CopyThisDown_Action" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.plugin.DeleteLine_Action" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" file="EditorLangPlugin_CustomProjectPlugin.java">
@@ -61,12 +66,14 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.plugin.Editor_ApplicationPlugin" file="Editor_ApplicationPlugin.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.plugin.ExtractComponent_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.plugin.CopyThisDown_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.plugin.DeleteLine_Action" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" file="Editor_ProjectPlugin.java">

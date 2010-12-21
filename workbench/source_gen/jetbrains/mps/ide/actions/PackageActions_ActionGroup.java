@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class PackageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(PackageActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.PackageActions";
+  public static final String ID = "jetbrains.mps.ide.actions.PackageActions_ActionGroup";
   public static final String LABEL_ID_newActions = ID + "newActions";
 
   public PackageActions_ActionGroup() {
@@ -17,9 +21,29 @@ public class PackageActions_ActionGroup extends GeneratedActionGroup {
     try {
       PackageActions_ActionGroup.this.addAnchor(PackageActions_ActionGroup.LABEL_ID_newActions);
       PackageActions_ActionGroup.this.addSeparator();
-      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new PasteNode_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        PackageActions_ActionGroup.this.addAction(oldAction);
+
+      }
       PackageActions_ActionGroup.this.addSeparator();
-      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenamePackage_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new RenamePackage_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        PackageActions_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

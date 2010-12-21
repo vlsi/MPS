@@ -96,8 +96,8 @@ public class NewLanguage_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(NewLanguage_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(folder_State((String) this.folder));
     res.append("!");

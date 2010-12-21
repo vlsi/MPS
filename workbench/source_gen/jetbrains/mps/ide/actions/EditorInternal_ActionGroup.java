@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.EditorInternal";
+  public static final String ID = "jetbrains.mps.ide.actions.EditorInternal_ActionGroup";
   public static final String LABEL_ID_VCS = ID + "VCS";
 
   public EditorInternal_ActionGroup() {
@@ -15,24 +19,99 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.TestNodePath_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CellProperties_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerationIntentions_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SurroundWithIntentions_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowCellInExplorer_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new TestNodePath_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        EditorInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new CellProperties_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        EditorInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new GenerationIntentions_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        EditorInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new SurroundWithIntentions_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        EditorInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ShowCellInExplorer_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        EditorInternal_ActionGroup.this.addAction(oldAction);
+
+      }
       EditorInternal_ActionGroup.this.addSeparator();
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PrintNodeID_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightCellDependencies_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.PrintNodePosition_Action", "jetbrains.mps.baseLanguage");
+      {
+        GeneratedAction newAction = new PrintNodeID_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        EditorInternal_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new HighlightCellDependencies_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        EditorInternal_ActionGroup.this.addAction(oldAction);
+
+      }
       EditorInternal_ActionGroup.this.addAnchor(EditorInternal_ActionGroup.LABEL_ID_VCS);
       EditorInternal_ActionGroup.this.addSeparator();
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguagePaths_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new LanguagePaths_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        EditorInternal_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

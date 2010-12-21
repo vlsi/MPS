@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Generate_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Generate";
+  public static final String ID = "jetbrains.mps.ide.actions.Generate_ActionGroup";
   public static final String LABEL_ID_saveTransientModels = ID + "saveTransientModels";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_generateModel = ID + "generateModel";
@@ -18,7 +22,17 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_saveTransientModels);
-      Generate_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new CheckModelsBeforeGeneration_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        Generate_ActionGroup.this.addAction(oldAction);
+
+      }
       Generate_ActionGroup.this.addSeparator();
       Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModule);
       Generate_ActionGroup.this.addSeparator();
@@ -26,9 +40,5 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("GenerateMenu", null);
   }
 }

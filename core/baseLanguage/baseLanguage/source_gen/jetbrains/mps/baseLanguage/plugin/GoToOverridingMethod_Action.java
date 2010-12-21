@@ -173,8 +173,8 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(GoToOverridingMethod_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(finderClasses_State((List<String>) this.finderClasses));
     res.append("!");

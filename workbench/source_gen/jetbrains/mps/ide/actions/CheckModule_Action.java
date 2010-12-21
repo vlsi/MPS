@@ -104,8 +104,8 @@ public class CheckModule_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(CheckModule_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(moduleType_State((String) this.moduleType));
     res.append("!");

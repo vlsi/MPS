@@ -4,11 +4,10 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup;
 
 public class BaseLanguageNodeActionsInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageNodeActionsInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal";
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup";
 
   public BaseLanguageNodeActionsInternal_ActionGroup() {
     super("BaseLanguageNodeActionsInternal", ID);
@@ -18,9 +17,5 @@ public class BaseLanguageNodeActionsInternal_ActionGroup extends GeneratedAction
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, null);
   }
 }

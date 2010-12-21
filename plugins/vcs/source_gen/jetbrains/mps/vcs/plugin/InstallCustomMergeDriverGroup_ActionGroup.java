@@ -4,10 +4,14 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class InstallCustomMergeDriverGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(InstallCustomMergeDriverGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup";
+  public static final String ID = "jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup";
 
   public InstallCustomMergeDriverGroup_ActionGroup() {
     super("InstallCustomMergeDriverGroup", ID);
@@ -15,13 +19,19 @@ public class InstallCustomMergeDriverGroup_ActionGroup extends GeneratedActionGr
     this.setPopup(false);
     try {
       InstallCustomMergeDriverGroup_ActionGroup.this.addSeparator();
-      InstallCustomMergeDriverGroup_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action", "jetbrains.mps.vcs");
+      {
+        GeneratedAction newAction = new InstallCustomMergeDriver_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          oldAction = newAction;
+        }
+        InstallCustomMergeDriverGroup_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("VcsGlobalGroup", null);
   }
 }

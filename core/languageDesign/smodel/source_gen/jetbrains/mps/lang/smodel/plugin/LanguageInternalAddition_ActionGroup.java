@@ -4,11 +4,14 @@ package jetbrains.mps.lang.smodel.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class LanguageInternalAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageInternalAddition_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.smodel.plugin.LanguageInternalAddition";
+  public static final String ID = "jetbrains.mps.lang.smodel.plugin.LanguageInternalAddition_ActionGroup";
 
   public LanguageInternalAddition_ActionGroup() {
     super("SModel Internal", ID);
@@ -16,13 +19,19 @@ public class LanguageInternalAddition_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(false);
     try {
-      LanguageInternalAddition_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.plugin.CheckLangForJavaStubModels_Action", "jetbrains.mps.lang.smodel");
+      {
+        GeneratedAction newAction = new CheckLangForJavaStubModels_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.smodel@transient36"));
+          oldAction = newAction;
+        }
+        LanguageInternalAddition_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_javastub_usages);
   }
 }

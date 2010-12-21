@@ -4,17 +4,31 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ReferenceNodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ReferenceNodeActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.ReferenceNodeActions";
+  public static final String ID = "jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup";
 
   public ReferenceNodeActions_ActionGroup() {
     super("ReferenceNodeActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ReferenceNodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteReferenceAction_Action", "jetbrains.mps.ide");
+      {
+        GeneratedAction newAction = new DeleteReferenceAction_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          oldAction = newAction;
+        }
+        ReferenceNodeActions_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

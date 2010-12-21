@@ -4,24 +4,33 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class CoreActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(CoreActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.core.plugin.CoreActions";
+  public static final String ID = "jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup";
 
   public CoreActions_ActionGroup() {
     super("CoreActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      CoreActions_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action", "jetbrains.mps.lang.core");
+      {
+        GeneratedAction newAction = new ShowNodeMessages_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.core@transient26"));
+          oldAction = newAction;
+        }
+        CoreActions_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

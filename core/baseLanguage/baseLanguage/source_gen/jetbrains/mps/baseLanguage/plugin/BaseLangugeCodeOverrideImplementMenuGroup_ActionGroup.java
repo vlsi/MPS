@@ -4,25 +4,44 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Code_ActionGroup;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup";
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup";
 
   public BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup() {
     super("BaseLangugeCodeOverrideImplementMenuGroup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.OverrideMethod_Action", "jetbrains.mps.baseLanguage");
-      BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ImplementMethod_Action", "jetbrains.mps.baseLanguage");
+      {
+        GeneratedAction newAction = new OverrideMethod_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage@transient41"));
+          oldAction = newAction;
+        }
+        BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.this.addAction(oldAction);
+
+      }
+      {
+        GeneratedAction newAction = new ImplementMethod_Action();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getActionId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage@transient41"));
+          oldAction = newAction;
+        }
+        BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.this.addAction(oldAction);
+
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
   }
 }

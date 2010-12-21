@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class NamespaceActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NamespaceActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.NamespaceActions";
+  public static final String ID = "jetbrains.mps.ide.actions.NamespaceActions_ActionGroup";
   public static final String LABEL_ID_namespaceInternal = ID + "namespaceInternal";
 
   public NamespaceActions_ActionGroup() {

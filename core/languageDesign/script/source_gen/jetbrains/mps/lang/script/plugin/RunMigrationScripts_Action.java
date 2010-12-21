@@ -106,8 +106,8 @@ public class RunMigrationScripts_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(RunMigrationScripts_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(scripts_State((List<MigrationScript>) this.scripts));
     res.append("!");

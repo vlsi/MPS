@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class Code_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Code_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Code";
+  public static final String ID = "jetbrains.mps.ide.actions.Code_ActionGroup";
   public static final String LABEL_ID_overrideImplement = ID + "overrideImplement";
   public static final String LABEL_ID_comments = ID + "comments";
 
@@ -23,9 +23,5 @@ public class Code_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("CodeMenu", null);
   }
 }
