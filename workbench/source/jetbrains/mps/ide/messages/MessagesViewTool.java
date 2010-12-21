@@ -30,6 +30,7 @@ import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.MessageView;
+import jetbrains.mps.baseLanguage.plugin.AnalyzeStacktraceDialog;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
@@ -56,6 +57,8 @@ import java.awt.Cursor;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -347,6 +350,24 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         });
       }
     }
+    if(myList.getSelectedIndices().length == 1) {
+      Throwable exc = null;
+      for (Object message : myList.getSelectedValues()) {
+        exc = ((Message) message).getException();
+      }
+      if (exc != null) {
+        final Throwable toShow = exc;
+        group.add(new BaseAction("Show Exception") {
+          {
+            setExecuteOutsideCommand(true);
+          }
+
+          protected void doExecute(AnActionEvent e) {
+            showException(toShow);
+          }
+        });
+      }
+    }
     group.addSeparator();
 
     group.add(new BaseAction("Clear") {
@@ -360,6 +381,16 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     });
 
     return group;
+  }
+
+  private void showException(Throwable toShow) {
+    JFrame frame = WindowManager.getInstance().getFrame(getProject());
+    StringWriter writer = new StringWriter();
+    toShow.printStackTrace(new PrintWriter(writer));
+    StringSelection contents = new StringSelection(writer.toString());
+    CopyPasteManagerEx.getInstanceEx().setContents(contents);
+    AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(frame, null, getProject());
+    dialog.showDialog();
   }
 
   private void submitToTracker(Object[] msgs) {

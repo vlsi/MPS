@@ -25,6 +25,8 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -236,7 +238,9 @@ public class ProjectTestHelper {
         case ERROR:
 
           if (msg.getException() != null) {
-            myGenerationErrors.add(msg.getException().toString());
+            StringWriter writer = new StringWriter();
+            msg.getException().printStackTrace(new PrintWriter(writer));
+            myGenerationErrors.add(writer.getBuffer().toString());
           } else {
             myGenerationErrors.add(msg.getText());
           }
