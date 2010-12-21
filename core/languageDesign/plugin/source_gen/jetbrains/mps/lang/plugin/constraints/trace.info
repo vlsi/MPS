@@ -30,7 +30,8 @@
   <unitInfo fileName="ActionDataParameterDeclaration_key_ReferentConstraint.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionDataParameterDeclaration_key_ReferentConstraint" />
   <unitInfo fileName="ActionParameterReference_parameter_ReferentConstraint.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionParameterReference_parameter_ReferentConstraint" />
   <unitInfo fileName="PropertyRefExpression_propertyDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.PropertyRefExpression_propertyDeclaration_ReferentConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ActionInstance_action_ReferentConstraint.java" startLine="20" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ActionInstance_action_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="BaseProjectOperation_Constraints.java" startLine="19" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.BaseProjectOperation_Constraints" />
   <unitInfo fileName="ProjectOperation_Constraints.java" startLine="19" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.ProjectOperation_Constraints" />
   <unitInfo fileName="RunConfigPropertyInstance_property_ReferentConstraint.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.constraints.RunConfigPropertyInstance_property_ReferentConstraint" />
@@ -171,6 +172,20 @@
   <root nodeId="678887849223527751">
     <nodeInfo nodeId="678887849223536786" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExecuteSpecific_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="145" />
     <scopeInfo nodeId="678887849223527753" fileName="ExecuteSpecific_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="145" />
+  </root>
+  <root nodeId="7029281142617299475">
+    <nodeInfo nodeId="2555604323322937047" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ActionInstance_action_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="167" />
+    <nodeInfo nodeId="2555604323322937025" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionInstance_action_ReferentConstraint.java" startLine="35" startPosition="39" endLine="36" endPosition="113" />
+    <nodeInfo nodeId="7029281142617299479" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionInstance_action_ReferentConstraint.java" startLine="38" startPosition="24" endLine="39" endPosition="92" />
+    <nodeInfo nodeId="2555604323322937021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionInstance_action_ReferentConstraint.java" startLine="34" startPosition="273" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="2555604323322937006" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ActionInstance_action_ReferentConstraint.java" startLine="33" startPosition="167" endLine="38" endPosition="24" />
+    <scopeInfo nodeId="2555604323322937022" fileName="ActionInstance_action_ReferentConstraint.java" startLine="35" startPosition="39" endLine="36" endPosition="113" />
+    <scopeInfo nodeId="2555604323322937021" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="ActionInstance_action_ReferentConstraint.java" startLine="34" startPosition="273" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7029281142617299478" fileName="ActionInstance_action_ReferentConstraint.java" startLine="32" startPosition="132" endLine="39" endPosition="92">
+      <varInfo nodeId="2555604323322937007" varName="abstractImported" />
+      <varInfo nodeId="2555604323322937048" varName="ownActions" />
+    </scopeInfo>
+    <unitInfo nodeId="2555604323322937021" fileName="ActionInstance_action_ReferentConstraint.java" startLine="34" startPosition="250" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.plugin.constraints.ActionInstance_action_ReferentConstraint$1" />
   </root>
   <root nodeId="7066926174333292960">
     <nodeInfo nodeId="3361586479359798774" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="RunConfigPropertyInstance_name_PropertyConstraint.java" startLine="26" startPosition="71" endLine="27" endPosition="18" />
