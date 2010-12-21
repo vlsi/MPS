@@ -9,12 +9,12 @@
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-d210pk8xi3k369xbgop6hfgbxsjqja5" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-8k1sxwf2dhtqj8obc82ssh7dvv21du6" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-1eiutr47vnebymw2mmk35ctjlat3y7s" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-4xqnbmx8ul76ss6y4fxy5bb17j59337" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="154gff2oz8ic9z8luw930oeyspru374" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="2l06wooqg1j17nle5qpz980ro02urw7" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="7ex0a66yy3ou4m5xglhnvwlx7x6egzm" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="3bc6r7gx4ubvdlo5yxefsqc7m167wez" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="4jbqhc77erj1tx3roks2h1dwe1ed0ya" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-ai2zhrbclyfejkod0hujl3hg76371st" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="1t4auolhna8xkhiffehom11rts5d1jl" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="b91qmznnj1pllawmkgy1rg1q02i6e8z" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-21dqhspiyiuotvcn7y0ch8ndkmlxwx1" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="6a1x8d7yt2ne3mn7le5xka3t6fn5ae5" />
@@ -25,7 +25,8 @@
   <dep model="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)" hash="-4areyteyn49jowaiwcqh4f5pxu2t1q2" />
   <dep model="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" hash="-42pfcwq9dz0tsf22cozuj5b9u5ip7xx" />
   <dep model="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)" hash="a3sbeedjxrb41c61dk1wt4tebxn55xn" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-8f82d4cxe4v2yq62yrd2l42vbyf0710" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ajvf5lxae1xhsojrbc5w19vapmo22hn" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-w4v2hybfz6t3v7z0m1emqq4a4h00cb" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-ar0tag66nzayvuhus5tvt93hf3ysy78" />
   <common hash="-4areyteyn49jowaiwcqh4f5pxu2t1q2">
     <dep root="1195164863269" />
@@ -56,6 +57,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
     <file name="TemplateModelImpl.java" />

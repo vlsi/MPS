@@ -141,7 +141,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a0a5b);
       Collection<SNode> tlist1 = new Templateweave__InputNode__A().weave(environment, context, outputContextNode);
-      return !(tlist1.isEmpty());
+      return !(!(tlist1 != null) || !(!(tlist1.isEmpty())));
     }
   }
 }

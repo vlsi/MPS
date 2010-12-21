@@ -1240,7 +1240,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           }
         }
       }
-      return !(tlist1.isEmpty());
+      return !(!(tlist1 != null) || !(!(tlist1.isEmpty())));
     }
   }
 }
