@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.plugins.applicationplugins;
 
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.Anchor;
+import com.intellij.openapi.actionSystem.Constraints;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -25,33 +29,27 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class BaseApplicationPlugin{
-  private HashMap<String, BaseGroup> myGroups = new HashMap<String, BaseGroup>();
+public abstract class BaseApplicationPlugin {
   private List<BaseCustomApplicationPlugin> myCustomParts;
 
-  protected List<BaseGroup> initGroups() {
-    return new ArrayList<BaseGroup>();
-  }
-
   public void createGroups() {
-    List<BaseGroup> groups = initGroups();
-    for (BaseGroup group : groups) {
-      myGroups.put(group.getId(), group);
-    }
+
   }
 
   public final void adjustGroups() {
     adjustInterfaceGroups();
-    for (BaseGroup group : myGroups.values()) {
-      group.adjust();
-    }
+    adjustRegularGroups();
   }
 
   public void adjustInterfaceGroups() {
 
   }
 
-  public final void createCustomParts(){
+  public void adjustRegularGroups(){
+
+  }
+
+  public final void createCustomParts() {
     myCustomParts = initCustomParts();
   }
 
@@ -61,7 +59,7 @@ public abstract class BaseApplicationPlugin{
 
   public void createKeymaps() {
     List<BaseKeymapChanges> myKeymaps = initKeymaps();
-    for (BaseKeymapChanges keymap:myKeymaps){
+    for (BaseKeymapChanges keymap : myKeymaps) {
       ActionFactory.getInstance().registerKeymap(keymap);
     }
   }
@@ -78,11 +76,21 @@ public abstract class BaseApplicationPlugin{
     }
   }
 
-  public Collection<BaseGroup> getGroups() {
-    return myGroups.values();
+  protected void insertInterfaceGroupIntoAnother(String toId, String whatId, String labelName) {
+    DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
+    DefaultActionGroup gWhat = (DefaultActionGroup) ActionManager.getInstance().getAction(whatId);
+    if (gTo == null || gWhat == null) {
+      return;
+    }
+    if (labelName != null) {
+      Constraints constraints = new Constraints(Anchor.AFTER, labelName);
+      gTo.add(gWhat, constraints);
+    } else {
+      gTo.add(gWhat);
+    }
   }
 
-  protected BaseGroup getGroup(String id) {
-    return myGroups.get(id);
+  protected void insertGroupIntoAnother(String toId, String whatId, String labelName) {
+    //todo
   }
 }

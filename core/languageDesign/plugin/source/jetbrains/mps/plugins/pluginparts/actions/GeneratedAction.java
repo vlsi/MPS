@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 
 public abstract class GeneratedAction extends BaseAction {
-  protected GeneratedAction() {
+  public GeneratedAction() {
   }
 
   protected GeneratedAction(String text) {

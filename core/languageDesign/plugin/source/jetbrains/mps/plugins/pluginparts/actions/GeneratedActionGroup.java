@@ -33,6 +33,10 @@ public abstract class GeneratedActionGroup extends BaseGroup {
     add(MPSActions.getInstance().acquireAction(creator));
   }
 
+
+  //----------deprecated
+
+  @Deprecated
   public void insertGroupIntoAnother(String toId, String labelName) {
     DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
     if (gTo == null) return;
@@ -44,8 +48,6 @@ public abstract class GeneratedActionGroup extends BaseGroup {
       gTo.add(this);
     }
   }
-
-  //----------deprecated
 
   @Deprecated
   protected void addAction(String actionClassName, String moduleName, Object... params) {

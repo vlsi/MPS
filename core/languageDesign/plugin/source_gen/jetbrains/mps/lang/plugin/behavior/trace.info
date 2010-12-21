@@ -51,9 +51,9 @@
   <unitInfo fileName="ActionParameter_Behavior.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior" />
   <unitInfo fileName="ParametrizedExecuteProcess_Behavior.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParametrizedExecuteProcess_Behavior" />
   <unitInfo fileName="RunConfigCreator_Behavior.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.RunConfigCreator_Behavior" />
+  <unitInfo fileName="ActionGroupDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior" />
   <unitInfo fileName="MultitabbedEditorTab_Behavior.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.MultitabbedEditorTab_Behavior" />
   <unitInfo fileName="SingletabbedEditorTab_Behavior.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SingletabbedEditorTab_Behavior" />
-  <unitInfo fileName="ActionGroupDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior" />
   <unitInfo fileName="ParametrizedExecuteConsole_Behavior.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParametrizedExecuteConsole_Behavior$QuotationClass_n7vuic_a0a0b" />
   <unitInfo fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.AbstractEnhancedConceptFunction_Behavior" />
   <unitInfo fileName="ParametrizedExecuteConsole_Behavior.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParametrizedExecuteConsole_Behavior" />
@@ -196,19 +196,17 @@
     <nodeInfo nodeId="1213877494272" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="18" />
     <nodeInfo nodeId="1213877494277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="26" startPosition="76" endLine="27" endPosition="182" />
     <nodeInfo nodeId="1213877494291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="30" startPosition="83" endLine="31" endPosition="146" />
-    <nodeInfo nodeId="1213877494309" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="34" startPosition="65" endLine="35" endPosition="116" />
-    <nodeInfo nodeId="1213877494326" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="38" startPosition="72" endLine="39" endPosition="105" />
-    <nodeInfo nodeId="1213877494332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="39" startPosition="105" endLine="40" endPosition="68" />
-    <nodeInfo nodeId="1213877494339" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="40" startPosition="68" endLine="41" endPosition="16" />
-    <nodeInfo nodeId="5003188907305392409" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="44" startPosition="98" endLine="45" endPosition="54" />
+    <nodeInfo nodeId="1213877494326" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="34" startPosition="72" endLine="35" endPosition="105" />
+    <nodeInfo nodeId="1213877494332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="35" startPosition="105" endLine="36" endPosition="68" />
+    <nodeInfo nodeId="1213877494339" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="36" startPosition="68" endLine="37" endPosition="16" />
+    <nodeInfo nodeId="5003188907305392409" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="40" startPosition="98" endLine="41" endPosition="54" />
     <nodeInfo nodeId="1213877494257" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ActionGroupDeclaration_Behavior.java" startLine="19" startPosition="138" endLine="22" endPosition="5" />
     <scopeInfo nodeId="1213877494241" fileName="ActionGroupDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1213877494258" fileName="ActionGroupDeclaration_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="147" />
     <scopeInfo nodeId="1213877494276" fileName="ActionGroupDeclaration_Behavior.java" startLine="26" startPosition="76" endLine="27" endPosition="182" />
     <scopeInfo nodeId="1213877494290" fileName="ActionGroupDeclaration_Behavior.java" startLine="30" startPosition="83" endLine="31" endPosition="146" />
-    <scopeInfo nodeId="1213877494308" fileName="ActionGroupDeclaration_Behavior.java" startLine="34" startPosition="65" endLine="35" endPosition="116" />
-    <scopeInfo nodeId="5003188907305392404" fileName="ActionGroupDeclaration_Behavior.java" startLine="44" startPosition="98" endLine="45" endPosition="54" />
-    <scopeInfo nodeId="1213877494325" fileName="ActionGroupDeclaration_Behavior.java" startLine="38" startPosition="72" endLine="41" endPosition="16">
+    <scopeInfo nodeId="5003188907305392404" fileName="ActionGroupDeclaration_Behavior.java" startLine="40" startPosition="98" endLine="41" endPosition="54" />
+    <scopeInfo nodeId="1213877494325" fileName="ActionGroupDeclaration_Behavior.java" startLine="34" startPosition="72" endLine="37" endPosition="16">
       <varInfo nodeId="1213877494327" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="1213877494244" fileName="ActionGroupDeclaration_Behavior.java" startLine="17" startPosition="74" endLine="23" endPosition="18">
