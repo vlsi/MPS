@@ -72,7 +72,7 @@ public abstract class BaseApplicationPlugin {
     //groups are disposed in ActionFactory
     //keymaps are unregistered in ActionFactory
     for (BaseCustomApplicationPlugin part : myCustomParts) {
-      part.dispose();
+      part.dispose ();
     }
   }
 
