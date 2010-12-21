@@ -91,6 +91,7 @@ public abstract class BaseApplicationPlugin {
   }
 
   protected void insertGroupIntoAnother(String toId, String whatId, String labelName) {
-    //todo
+    insertInterfaceGroupIntoAnother(toId,whatId,labelName);
+    //todo with this method, we can use Idea's ActionStubs
   }
 }
