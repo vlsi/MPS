@@ -886,7 +886,7 @@
     <nodeInfo nodeId="3836499504550260278" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="37" startPosition="5" endLine="38" endPosition="17" />
     <nodeInfo nodeId="3836499504550260311" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="41" startPosition="34" endLine="42" endPosition="21" />
     <nodeInfo nodeId="3836499504550260321" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="45" startPosition="38" endLine="46" endPosition="58" />
-    <nodeInfo nodeId="3982223387891493204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="49" startPosition="33" endLine="50" endPosition="16" />
+    <nodeInfo nodeId="3982223387891493204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="49" startPosition="33" endLine="50" endPosition="17" />
     <nodeInfo nodeId="3836499504550259661" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractLeftEditorHighlighterMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;)V" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="17" startPosition="0" endLine="21" endPosition="3" />
     <nodeInfo nodeId="3836499504550260198" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <nodeInfo nodeId="3836499504550260251" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="33" startPosition="48" endLine="37" endPosition="5" />
@@ -899,7 +899,7 @@
     <scopeInfo nodeId="3836499504550260219" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="28" startPosition="53" endLine="29" endPosition="16" />
     <scopeInfo nodeId="3836499504550260310" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="41" startPosition="34" endLine="42" endPosition="21" />
     <scopeInfo nodeId="3836499504550260317" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="45" startPosition="38" endLine="46" endPosition="58" />
-    <scopeInfo nodeId="3982223387891493201" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="49" startPosition="33" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="3982223387891493201" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="49" startPosition="33" endLine="50" endPosition="17" />
     <scopeInfo nodeId="3836499504550259664" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="18" startPosition="101" endLine="20" endPosition="24" />
     <scopeInfo nodeId="3836499504550260252" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="34" startPosition="66" endLine="36" endPosition="116">
       <varInfo nodeId="3836499504550260254" varName="other" />
