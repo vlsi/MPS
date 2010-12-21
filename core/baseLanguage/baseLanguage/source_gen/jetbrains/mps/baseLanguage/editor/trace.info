@@ -112,6 +112,7 @@
   <unitInfo fileName="IfStatement_elseBlockStatement_delete.java" startLine="21" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.IfStatement_elseBlockStatement_delete$IfStatement_elseBlockStatement_delete_DELETE" />
   <unitInfo fileName="LocalVariableDeclaration_delete_name.java" startLine="40" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_delete_name.LocalVariableDeclaration_delete_name_DELETE$QuotationClass_f3i3w9_a1a1a0a1a" />
   <unitInfo fileName="VariableDeclaration_NameCellComponent.java" startLine="80" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent$VariableDeclaration_name_postfixCellMenu_a0a" />
+  <unitInfo fileName="EscapeOperation_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.EscapeOperation_Editor" />
   <unitInfo fileName="LoopLabel_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.LoopLabel_Editor" />
   <unitInfo fileName="BLBottomType_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.BLBottomType_Editor" />
   <unitInfo fileName="StringBooleanOperation_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.editor.StringBooleanOperation_Editor" />

@@ -49,6 +49,7 @@
   <unitInfo fileName="PlaceholderMethodDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration" />
   <unitInfo fileName="ImplicitAnnotationInstanceValue.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" />
   <unitInfo fileName="AdditionalForLoopVariable.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable" />
+  <unitInfo fileName="EscapeOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.EscapeOperation" />
   <unitInfo fileName="BLBottomType.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BLBottomType" />
   <unitInfo fileName="PrefixDecrementExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression" />
   <unitInfo fileName="PrefixIncrementExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression" />
