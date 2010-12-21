@@ -35,63 +35,61 @@ public class Launcher {
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "true");
 
-    Bootstrap.main(args, "jetbrains.mps.MPSMainImpl", "start", getAdditionalMPSClasspath());
+
+    ArrayList<URL> paths = new ArrayList<URL>();
+    addLanguagesClassPath(paths);
+
+    StringBuilder cp = new StringBuilder(System.getProperty("idea.additional.classpath", ""));
+    for (URL p : paths) {
+      if (cp.length() != 0) {
+        cp.append(File.pathSeparatorChar);
+      }
+      cp.append(new File(p.toURI()).getAbsolutePath());
+    }
+    System.setProperty("idea.additional.classpath", cp.toString());
+
+    Bootstrap.main(args, "jetbrains.mps.MPSMainImpl", "start");
   }
 
-  private static List<URL> getAdditionalMPSClasspath() {
-    List<URL> result = new ArrayList<URL>();
+  private static void addLanguagesClassPath(List<URL> classPath) {
     String homePath = PathManager.getHomePath();
     try {
       Class<Bootstrap> clazz = Bootstrap.class;
       String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
       URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
 
-      addMPSBootstrapJars(result, homePath, selfRootUrl);
-      if (result.isEmpty()) {
+      File baseLanguageFolder = new File(homePath + File.separator + "core" + File.separator + "baseLanguage");
+      ClassloaderUtil.addLibraries(classPath, baseLanguageFolder, selfRootUrl);
+
+      File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
+      ClassloaderUtil.addLibraries(classPath, languageDesignFolder, selfRootUrl);
+
+      File acp = new File(homePath + File.separator + "build" + File.separator + "idea.additional.classpath.txt");
+      if (classPath.isEmpty() && acp.exists()) {
         // we're probably running from the sources, let's add the class dirs to the classpath
-        addMPSBootstrapClassFolders(result, homePath, selfRootUrl);
+        readPaths(classPath, acp, homePath, selfRootUrl);
       }
-    } catch (MalformedURLException e) {
+    }
+    catch (MalformedURLException e) {
 
     }
-    return result;
   }
 
-  private static void addMPSBootstrapJars(List<URL> classPath, String homePath, URL selfRootUrl) throws MalformedURLException {
-    File ideaPatchJar = new File(homePath + File.separator + "lib" + File.separator + "idea-patch.jar");
-    if (ideaPatchJar.exists()) {
-      classPath.add(ideaPatchJar.toURI().toURL());
-    }
-
-    File mpsJar = new File(homePath + File.separator + "lib" + File.separator + "mps.jar");
-    if (mpsJar.exists()) {
-      classPath.add(mpsJar.toURI().toURL());
-    }
-
-    File baseLanguageFolder = new File(homePath + File.separator + "core" + File.separator + "baseLanguage");
-    ClassloaderUtil.addLibraries(classPath, baseLanguageFolder, selfRootUrl);
-
-    File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
-    ClassloaderUtil.addLibraries(classPath, languageDesignFolder, selfRootUrl);
-  }
-
-  private static void addMPSBootstrapClassFolders(List<URL> classPath, String homePath, URL selfRootUrl) throws MalformedURLException {
-    File acp = new File(homePath + File.separator + "build" + File.separator + "idea.additional.classpath.txt");
-    if (acp.exists()) {
-      try {
-        Scanner sc;
-        for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine();) {
-          File dir = new File(homePath, sc.nextLine());
-          if (dir.isDirectory()) {
-            final URL url = dir.toURI().toURL();
-            if (!selfRootUrl.equals(url)) {
-              classPath.add(url);
-            }
+  private static void readPaths(List<URL> classPath, File paths, String homePath, final URL selfRootUrl) throws MalformedURLException {
+    try {
+      Scanner sc;
+      for (sc = new Scanner(paths, "UTF-8"); sc.hasNextLine();) {
+        File dir = new File(homePath, sc.nextLine());
+        if (dir.isDirectory()) {
+          final URL url = dir.toURI().toURL();
+          if (!selfRootUrl.equals(url)) {
+            classPath.add(url);
           }
         }
-        sc.close();
-      } catch (FileNotFoundException ignore) {
       }
+      sc.close();
+    } catch (FileNotFoundException ignore) {
     }
   }
+
 }

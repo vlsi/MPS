@@ -203,6 +203,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations" />
     <mkdir dir="${deploy.dir}/MPS/core/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.constraints" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.editor.editorTest" />
