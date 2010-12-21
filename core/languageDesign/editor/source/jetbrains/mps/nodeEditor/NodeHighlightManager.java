@@ -54,6 +54,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
    */
   private Map<EditorCell, List<EditorMessage>> myMessagesCache;
   public ReloadAdapter myHandler;
+  private RebuildListener myRebuildListener;
   private Set<EditorMessageIconRenderer> myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
   private boolean myRebuildIconRenderersCacheFlag;
 
@@ -65,7 +66,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
       }
     };
 
-    edtitor.addRebuildListener(new RebuildListener() {
+    edtitor.addRebuildListener(myRebuildListener = new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
         synchronized (myMessagesLock) {
           if (myMessagesCache == null) {
@@ -376,6 +377,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public void dispose() {
     ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
+    myEditor.removeRebuildListener(myRebuildListener);
   }
 
   public EditorCell getCell(EditorMessage change) {
