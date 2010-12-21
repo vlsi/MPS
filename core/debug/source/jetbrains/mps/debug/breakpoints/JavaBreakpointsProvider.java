@@ -22,10 +22,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi;
-import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
-import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.debug.api.breakpoints.*;
 import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.breakpoints.ExceptionBreakpoint.ExceptionBreakpointInfo;
 import jetbrains.mps.smodel.ModelAccess;
@@ -129,6 +126,14 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
   @Override
   @Nullable
   public Element saveToState(@NotNull JavaBreakpoint breakpoint) {
+    // MPS-11065 exception while saving breakpoints
+    if (breakpoint instanceof ILocationBreakpoint) {
+      ILocationBreakpoint locationBreakpoint = (ILocationBreakpoint) breakpoint;
+      BreakpointLocation location = locationBreakpoint.getLocation();
+      if (location.getNodePointer() == null || location.getModelReference() == null) {
+        return null;
+      }
+    }
     switch (breakpoint.getKind()) {
       case EXCEPTION_BREAKPOINT:
         return XmlSerializer.serialize(new ExceptionBreakpointInfo((ExceptionBreakpoint) breakpoint));
