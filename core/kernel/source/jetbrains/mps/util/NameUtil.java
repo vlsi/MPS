@@ -51,7 +51,6 @@ public class NameUtil {
     ESCAPE_MAP.put('\f', "\\f");
     ESCAPE_MAP.put('\r', "\\r");
     ESCAPE_MAP.put('\"', "\\\"");
-    ESCAPE_MAP.put('\'', "\\'");
     ESCAPE_MAP.put('\\', "\\\\");
 
     String[] preps = {
@@ -370,7 +369,7 @@ public class NameUtil {
     return cls.getName();
   }
 
-  public static String convertToMetaString(String s) {
+  public static String escapeString(String s) {
     if (s == null) return null;
     StringBuilder stringBuilder = new StringBuilder();
     int length = s.length();
@@ -385,7 +384,10 @@ public class NameUtil {
     return stringBuilder.toString();
   }
 
-  public static String convertToMetaChar(char c) {
+  public static String escapeChar(char c) {
+    if (c == '\'') {
+      return "\\'";
+    }
     if (ESCAPE_MAP.containsKey(c)) {
       return ESCAPE_MAP.get(c);
     }

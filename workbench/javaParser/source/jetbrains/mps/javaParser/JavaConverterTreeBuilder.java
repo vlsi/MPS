@@ -51,7 +51,6 @@ import org.eclipse.jdt.internal.compiler.lookup.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -158,7 +157,7 @@ public class JavaConverterTreeBuilder {
   jetbrains.mps.baseLanguage.structure.CharConstant processConstant(CharConstant x) {
     jetbrains.mps.baseLanguage.structure.CharConstant result =
       jetbrains.mps.baseLanguage.structure.CharConstant.newInstance(myCurrentModel);
-    String value = NameUtil.convertToMetaChar(x.charValue());
+    String value = NameUtil.escapeChar(x.charValue());
     result.setCharConstant(value);
     return result;
   }
@@ -195,7 +194,7 @@ public class JavaConverterTreeBuilder {
 
   StringLiteral processConstant(StringConstant x) {
     StringLiteral result = StringLiteral.newInstance(myCurrentModel);
-    result.setValue(NameUtil.convertToMetaString(x.stringValue()));
+    result.setValue(NameUtil.escapeString(x.stringValue()));
     return result;
   }
 

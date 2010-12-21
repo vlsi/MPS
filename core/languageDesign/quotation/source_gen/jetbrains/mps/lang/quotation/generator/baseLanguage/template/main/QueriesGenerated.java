@@ -61,7 +61,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1196351886795(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String value = _context.getNode().getProperty("propertyValue");
-    return NameUtil.convertToMetaString(value);
+    return NameUtil.escapeString(value);
   }
 
   public static Object propertyMacro_GetPropertyValue_1196871487518(final IOperationContext operationContext, final PropertyMacroContext _context) {
