@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
-  private PluginId myId = PluginId.getId("jetbrains.mps.ide");
+  public PluginId myId = PluginId.getId("jetbrains.mps.ide");
 
   public Ide_ApplicationPlugin() {
   }
