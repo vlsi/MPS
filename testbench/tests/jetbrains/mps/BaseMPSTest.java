@@ -38,14 +38,13 @@ public class BaseMPSTest extends TestCase {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
           public void run() {
-
+            ModelAccess.instance().flushEventQueue();
           }
         });
       } catch (Exception e) {
         e.printStackTrace();
       }
     }
-    ModelAccess.instance().flushEventQueue();
   }
 
   protected void assertGenerates(File project, boolean runnable, String... configurations) {
