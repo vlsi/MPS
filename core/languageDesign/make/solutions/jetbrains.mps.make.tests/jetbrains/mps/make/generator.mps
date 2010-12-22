@@ -2855,7 +2855,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4760658420913386654" resolveInfo="strat" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9000373783400862091">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.7797884084018581710" resolveInfo="currentProgress" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.5589305777382267707" resolveInfo="currentProgress" />
                             </node>
                           </node>
                         </node>

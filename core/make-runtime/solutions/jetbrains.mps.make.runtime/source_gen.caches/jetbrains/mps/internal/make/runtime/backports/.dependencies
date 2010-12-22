@@ -15,5 +15,10 @@
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode extendsClassName="com.intellij.openapi.progress.ProgressIndicator" />
   </dependency>
+  <dependency className="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy" file="ProgressIndicatorProgressStrategy.java">
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode extendsClassName="jetbrains.mps.internal.make.runtime.script.AbstractProgressStrategy" />
+  </dependency>
 </dependenciesRoot>
 

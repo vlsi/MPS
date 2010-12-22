@@ -14,7 +14,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
 import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
-import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
+import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
@@ -123,7 +123,7 @@ public class MakeOrBuild_Action extends GeneratedAction {
     try {
       ScriptBuilder scb = new ScriptBuilder();
       final UIQueryRelayStrategy relayStrat = new UIQueryRelayStrategy();
-      final LoggingProgressStrategy logStrat = new LoggingProgressStrategy();
+      final ProgressIndicatorProgressStrategy progStrat = new ProgressIndicatorProgressStrategy();
       final LoggingFeedbackStrategy feedbackStrat = new LoggingFeedbackStrategy();
       final IJobMonitor jmon = new IJobMonitor() {
         public boolean pleaseStop() {
@@ -131,7 +131,7 @@ public class MakeOrBuild_Action extends GeneratedAction {
         }
 
         public IProgress currentProgress() {
-          return logStrat.currentProgress();
+          return progStrat.currentProgress();
         }
 
         public void reportFeedback(IFeedback fdbk) {
@@ -163,6 +163,7 @@ public class MakeOrBuild_Action extends GeneratedAction {
           IdeEventQueue.getInstance().flushQueue();
           ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive() {
             public void run(ProgressIndicator realInd) {
+              progStrat.setProgressIndicator(realInd);
               pind.value = new JobMonitorProgressIndicator(jmon);
               code.invoke(jmon);
             }

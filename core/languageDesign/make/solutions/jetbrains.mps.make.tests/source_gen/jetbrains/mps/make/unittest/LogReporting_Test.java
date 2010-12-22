@@ -26,7 +26,7 @@ public class LogReporting_Test extends MockTestCase {
         oneOf(logger).info(with(equal("\u221e/Top/Mid -- finished")));
         oneOf(logger).info(with(equal("\u221e/Top/Bot -- started")));
         oneOf(logger).info(with(equal("\u221e -- done 1%")));
-        oneOf(logger).info(with(equal("\u221e/Top -- done 70%")));
+        oneOf(logger).info(with(equal("\u221e/Top -- done 90%")));
         oneOf(logger).info(with(equal("\u221e/Top/Bot -- done 50%")));
         oneOf(logger).info(with(equal("\u221e -- done 1%")));
         oneOf(logger).info(with(equal("\u221e/Top -- done 100%")));
