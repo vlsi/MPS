@@ -23,7 +23,7 @@ public class CreateTransition_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("8017670888383389087", "8017670888383431977");
+      final IEditor editor = TestBody.this.initEditor("8017670888383389087", "8207994269122295113");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
