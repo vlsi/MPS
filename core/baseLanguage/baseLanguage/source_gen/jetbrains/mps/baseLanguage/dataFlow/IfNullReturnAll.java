@@ -9,6 +9,8 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
@@ -26,20 +28,33 @@ public class IfNullReturnAll extends DataFlowConstructor {
 
   public void performActions(Program o, SNode node) {
     SNode ifTrue = SLinkOperations.getTarget(node, "ifTrue", true);
-    if (ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
-      for (SNode expression : NullableUtil.getOrConditions(node)) {
-        if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
-          SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
-          if (notNullNode != null) {
-            {
-              Object object = expression;
-              if (((Program) o).contains(object)) {
-                int position = ((Program) (o)).getEnd(object);
-                Instruction instruction = new notNullInstruction(notNullNode);
-                instruction.setSource(node);
-                ((Program) (o)).insert(instruction, position, true);
-              }
+    List<SNode> vars = new ArrayList<SNode>();
+    for (SNode expression : NullableUtil.getOrConditions(node)) {
+      if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+        SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
+        if (notNullNode != null) {
+          ListSequence.fromList(vars).addElement(notNullNode);
+          {
+            Object object = expression;
+            if (((Program) o).contains(object)) {
+              int position = ((Program) (o)).getEnd(object);
+              Instruction instruction = new notNullInstruction(notNullNode);
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true);
             }
+          }
+        }
+      }
+    }
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))) {
+      for (SNode var : vars) {
+        {
+          Object object = SLinkOperations.getTarget(node, "ifTrue", true);
+          if (((Program) o).contains(object)) {
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
+            Instruction instruction = new nullableInstruction(var);
+            instruction.setSource(node);
+            ((Program) (o)).insert(instruction, position, true);
           }
         }
       }

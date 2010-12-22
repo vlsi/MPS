@@ -23,6 +23,10 @@ public class NullableUtil {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
       return;
     }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+      getOrExpressions(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true), result);
+      return;
+    }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
       SNode or = SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.OrExpression");
       getOrExpressions(SLinkOperations.getTarget(or, "leftExpression", true), result);
@@ -39,6 +43,10 @@ public class NullableUtil {
 
   public static void getAndExpressions(SNode expression, List<SNode> result) {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
+      return;
+    }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+      getAndExpressions(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true), result);
       return;
     }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
