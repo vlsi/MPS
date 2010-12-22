@@ -99,7 +99,7 @@ public abstract class StructuralProgramBuilder<N> {
 
   public void insertInstruction(Instruction instruction, int position) {
     updateLabelsOnInsert(position);
-    myProgram.insert(instruction, position, false);
+    myProgram.insert(instruction, position, false, false);
   }
 
   private NopInstruction emitNopCommon() {

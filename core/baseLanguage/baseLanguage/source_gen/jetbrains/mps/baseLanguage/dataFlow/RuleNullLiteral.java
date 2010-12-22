@@ -26,10 +26,11 @@ public class RuleNullLiteral extends DataFlowConstructor {
     {
       Object object = node;
       if (((Program) o).contains(object)) {
+        boolean before = false;
         int position = ((Program) (o)).getEnd(object);
         Instruction instruction = new nullInstruction(node);
         instruction.setSource(node);
-        ((Program) (o)).insert(instruction, position, true);
+        ((Program) (o)).insert(instruction, position, true, before);
       }
     }
   }

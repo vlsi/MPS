@@ -29,10 +29,11 @@ public class RuleAfterDotExpression extends DataFlowConstructor {
       {
         Object object = SLinkOperations.getTarget(node, "operand", true);
         if (((Program) o).contains(object)) {
+          boolean before = false;
           int position = ((Program) (o)).getEnd(object);
           Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "operand", true));
           instruction.setSource(node);
-          ((Program) (o)).insert(instruction, position, true);
+          ((Program) (o)).insert(instruction, position, true, before);
         }
       }
     }

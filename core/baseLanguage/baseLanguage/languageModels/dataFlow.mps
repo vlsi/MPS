@@ -284,7 +284,7 @@
       <link role="analyzer" roleId="bj1v.4130591939054429248" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     </node>
     <node type="bj1v.Rule" typeId="bj1v.430844094082168520" id="1265678854311102657">
-      <property name="name" nameId="tpck.1169194664001" value="IfNullReturnAll" />
+      <property name="name" nameId="tpck.1169194664001" value="IfEqualsNullAll" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nullable" />
       <link role="analyzer" roleId="bj1v.4130591939054429248" targetNodeId="6868777471677432036" resolveInfo="Nullable" />
     </node>

@@ -31,10 +31,11 @@ public class ForLoopNotNull extends DataFlowConstructor {
         {
           Object object = SLinkOperations.getTarget(node, "body", true);
           if (((Program) o).contains(object)) {
+            boolean before = true;
             int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "body", true));
             Instruction instruction = new notNullInstruction(notNull);
             instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       }

@@ -37,10 +37,11 @@ public class IfNullReturnAll extends DataFlowConstructor {
           {
             Object object = expression;
             if (((Program) o).contains(object)) {
+              boolean before = false;
               int position = ((Program) (o)).getEnd(object);
               Instruction instruction = new notNullInstruction(notNullNode);
               instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true);
+              ((Program) (o)).insert(instruction, position, true, before);
             }
           }
         }
@@ -51,10 +52,11 @@ public class IfNullReturnAll extends DataFlowConstructor {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);
           if (((Program) o).contains(object)) {
+            boolean before = true;
             int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
             Instruction instruction = new nullableInstruction(var);
             instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       }
