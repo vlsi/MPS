@@ -2486,7 +2486,7 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static SNode sourceNodeQuery_1520710884206584246(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8124707847641033598(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("template"));
   }
 
