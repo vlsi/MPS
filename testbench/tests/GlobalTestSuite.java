@@ -395,6 +395,7 @@ jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test.class
 jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertFirstRow_Test.class,
 jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRow_Test.class,
 jetbrains.mps.lang.editor.table.stateMachine.test.Create_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.CreateNewTransition_Test.class,
 jetbrains.mps.lang.editor.table.stateMachine.test.MoveTransitionToAnotherColumn_Test.class,
 jetbrains.mps.lang.editor.table.stateMachine.test.MoveTransitionToAnotherRow_Test.class})
 @RunWith(WatchingSuite.class)

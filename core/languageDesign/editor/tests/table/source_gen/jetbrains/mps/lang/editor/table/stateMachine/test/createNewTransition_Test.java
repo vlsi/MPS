@@ -12,11 +12,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class createNewTransition_Test extends BaseTransformationTest {
+public class CreateNewTransition_Test extends BaseTransformationTest {
   @Test
-  public void test_createNewTransition() throws Throwable {
+  public void test_CreateNewTransition() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)");
-    this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.createNewTransition_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.CreateNewTransition_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
