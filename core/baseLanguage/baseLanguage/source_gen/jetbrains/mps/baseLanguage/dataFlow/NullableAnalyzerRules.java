@@ -51,7 +51,7 @@ public class NullableAnalyzerRules {
     myConceptRules.add(new RuleMethodCall());
     myConceptRules.add(new RuleNullLiteral());
     myConceptRules.add(new RuleVariableDeclaration());
-    myConceptRules.add(new IfNullReturnAll());
+    myConceptRules.add(new IfEqualsNullAll());
     myConceptRules.add(new RuleTernaryOperation());
     myConceptRules.add(new IfNotNullAll());
     myConceptRules.add(new ForLoopNotNull());

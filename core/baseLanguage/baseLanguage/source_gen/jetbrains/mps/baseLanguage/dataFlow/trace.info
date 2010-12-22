@@ -69,7 +69,7 @@
   <unitInfo fileName="IfNotNullAll.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" />
   <unitInfo fileName="RuleMethodCall.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
   <unitInfo fileName="RuleVariableDeclaration.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
-  <unitInfo fileName="IfNullReturnAll.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfNullReturnAll" />
+  <unitInfo fileName="IfEqualsNullAll.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" />
   <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DFABuilders" />
   <unitInfo fileName="RuleTernaryOperation.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
   <unitInfo fileName="NullableAnalyzerRunner.java" startLine="37" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner$NullableAnalyzer" />
@@ -713,49 +713,49 @@
     <scopeInfo nodeId="1239714962886" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="36" />
   </root>
   <root nodeId="1265678854311102657">
-    <nodeInfo nodeId="1265678854311140224" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="29" startPosition="53" endLine="30" endPosition="67" />
-    <nodeInfo nodeId="1228615757308591726" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="30" startPosition="67" endLine="31" endPosition="46" />
-    <nodeInfo nodeId="1228615757308591709" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="33" startPosition="110" endLine="34" endPosition="149" />
-    <nodeInfo nodeId="1228615757308591735" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfNullReturnAll.java" startLine="35" startPosition="34" endLine="36" endPosition="62" />
-    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="37" startPosition="11" endLine="38" endPosition="39" />
-    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="39" startPosition="49" endLine="40" endPosition="37" />
-    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="40" startPosition="37" endLine="41" endPosition="60" />
-    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="41" startPosition="60" endLine="42" endPosition="76" />
-    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfNullReturnAll.java" startLine="42" startPosition="76" endLine="43" endPosition="42" />
-    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfNullReturnAll.java" startLine="43" startPosition="42" endLine="44" endPosition="74" />
-    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="52" startPosition="9" endLine="53" endPosition="74" />
-    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="54" startPosition="47" endLine="55" endPosition="34" />
-    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="55" startPosition="34" endLine="56" endPosition="101" />
-    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfNullReturnAll.java" startLine="56" startPosition="101" endLine="57" endPosition="67" />
-    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfNullReturnAll.java" startLine="57" startPosition="67" endLine="58" endPosition="40" />
-    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfNullReturnAll.java" startLine="58" startPosition="40" endLine="59" endPosition="72" />
-    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfNullReturnAll.java" startLine="38" startPosition="39" endLine="45" endPosition="13" />
-    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfNullReturnAll.java" startLine="53" startPosition="74" endLine="60" endPosition="11" />
-    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="IfNullReturnAll.java" startLine="36" startPosition="62" endLine="46" endPosition="11" />
-    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="IfNullReturnAll.java" startLine="51" startPosition="30" endLine="61" endPosition="9" />
-    <nodeInfo nodeId="1228615757308596549" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IfNullReturnAll.java" startLine="50" startPosition="277" endLine="62" endPosition="7" />
-    <nodeInfo nodeId="1228615757308591715" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfNullReturnAll.java" startLine="34" startPosition="149" endLine="47" endPosition="9" />
-    <nodeInfo nodeId="1265678854311140235" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfNullReturnAll.java" startLine="49" startPosition="5" endLine="63" endPosition="5" />
-    <nodeInfo nodeId="1228615757308591703" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfNullReturnAll.java" startLine="32" startPosition="65" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="1228615757308591697" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IfNullReturnAll.java" startLine="31" startPosition="46" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="1228615757308591717" fileName="IfNullReturnAll.java" startLine="39" startPosition="49" endLine="44" endPosition="74" />
-    <scopeInfo nodeId="1228615757308596556" fileName="IfNullReturnAll.java" startLine="54" startPosition="47" endLine="59" endPosition="72" />
-    <scopeInfo nodeId="1228615757308591717" fileName="IfNullReturnAll.java" startLine="37" startPosition="11" endLine="45" endPosition="13" />
-    <scopeInfo nodeId="1228615757308596556" fileName="IfNullReturnAll.java" startLine="52" startPosition="9" endLine="60" endPosition="11" />
-    <scopeInfo nodeId="1228615757308596550" fileName="IfNullReturnAll.java" startLine="51" startPosition="30" endLine="61" endPosition="9" />
-    <scopeInfo nodeId="1228615757308591716" fileName="IfNullReturnAll.java" startLine="35" startPosition="34" endLine="46" endPosition="11" />
-    <scopeInfo nodeId="1228615757308596549" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IfNullReturnAll.java" startLine="50" startPosition="277" endLine="62" endPosition="7">
+    <nodeInfo nodeId="1265678854311140224" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="29" startPosition="53" endLine="30" endPosition="67" />
+    <nodeInfo nodeId="1228615757308591726" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="30" startPosition="67" endLine="31" endPosition="46" />
+    <nodeInfo nodeId="1228615757308591709" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="33" startPosition="110" endLine="34" endPosition="149" />
+    <nodeInfo nodeId="1228615757308591735" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfEqualsNullAll.java" startLine="35" startPosition="34" endLine="36" endPosition="62" />
+    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="37" startPosition="11" endLine="38" endPosition="39" />
+    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="39" startPosition="49" endLine="40" endPosition="37" />
+    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="40" startPosition="37" endLine="41" endPosition="60" />
+    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="41" startPosition="60" endLine="42" endPosition="76" />
+    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfEqualsNullAll.java" startLine="42" startPosition="76" endLine="43" endPosition="42" />
+    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfEqualsNullAll.java" startLine="43" startPosition="42" endLine="44" endPosition="74" />
+    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="52" startPosition="9" endLine="53" endPosition="74" />
+    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="54" startPosition="47" endLine="55" endPosition="34" />
+    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="55" startPosition="34" endLine="56" endPosition="101" />
+    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IfEqualsNullAll.java" startLine="56" startPosition="101" endLine="57" endPosition="67" />
+    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfEqualsNullAll.java" startLine="57" startPosition="67" endLine="58" endPosition="40" />
+    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IfEqualsNullAll.java" startLine="58" startPosition="40" endLine="59" endPosition="72" />
+    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfEqualsNullAll.java" startLine="38" startPosition="39" endLine="45" endPosition="13" />
+    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfEqualsNullAll.java" startLine="53" startPosition="74" endLine="60" endPosition="11" />
+    <nodeInfo nodeId="1228615757308591717" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="IfEqualsNullAll.java" startLine="36" startPosition="62" endLine="46" endPosition="11" />
+    <nodeInfo nodeId="1228615757308596556" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="IfEqualsNullAll.java" startLine="51" startPosition="30" endLine="61" endPosition="9" />
+    <nodeInfo nodeId="1228615757308596549" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IfEqualsNullAll.java" startLine="50" startPosition="277" endLine="62" endPosition="7" />
+    <nodeInfo nodeId="1228615757308591715" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfEqualsNullAll.java" startLine="34" startPosition="149" endLine="47" endPosition="9" />
+    <nodeInfo nodeId="1265678854311140235" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfEqualsNullAll.java" startLine="49" startPosition="5" endLine="63" endPosition="5" />
+    <nodeInfo nodeId="1228615757308591703" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IfEqualsNullAll.java" startLine="32" startPosition="65" endLine="48" endPosition="7" />
+    <nodeInfo nodeId="1228615757308591697" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IfEqualsNullAll.java" startLine="31" startPosition="46" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="1228615757308591717" fileName="IfEqualsNullAll.java" startLine="39" startPosition="49" endLine="44" endPosition="74" />
+    <scopeInfo nodeId="1228615757308596556" fileName="IfEqualsNullAll.java" startLine="54" startPosition="47" endLine="59" endPosition="72" />
+    <scopeInfo nodeId="1228615757308591717" fileName="IfEqualsNullAll.java" startLine="37" startPosition="11" endLine="45" endPosition="13" />
+    <scopeInfo nodeId="1228615757308596556" fileName="IfEqualsNullAll.java" startLine="52" startPosition="9" endLine="60" endPosition="11" />
+    <scopeInfo nodeId="1228615757308596550" fileName="IfEqualsNullAll.java" startLine="51" startPosition="30" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="1228615757308591716" fileName="IfEqualsNullAll.java" startLine="35" startPosition="34" endLine="46" endPosition="11" />
+    <scopeInfo nodeId="1228615757308596549" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IfEqualsNullAll.java" startLine="50" startPosition="277" endLine="62" endPosition="7">
       <varInfo nodeId="1228615757308596552" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1265678854311140236" fileName="IfNullReturnAll.java" startLine="50" startPosition="277" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="1228615757308591708" fileName="IfNullReturnAll.java" startLine="33" startPosition="110" endLine="47" endPosition="9">
+    <scopeInfo nodeId="1265678854311140236" fileName="IfEqualsNullAll.java" startLine="50" startPosition="277" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="1228615757308591708" fileName="IfEqualsNullAll.java" startLine="33" startPosition="110" endLine="47" endPosition="9">
       <varInfo nodeId="1228615757308591710" varName="notNullNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1228615757308591702" fileName="IfNullReturnAll.java" startLine="32" startPosition="65" endLine="48" endPosition="7" />
-    <scopeInfo nodeId="1228615757308591697" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IfNullReturnAll.java" startLine="31" startPosition="46" endLine="49" endPosition="5">
+    <scopeInfo nodeId="1228615757308591702" fileName="IfEqualsNullAll.java" startLine="32" startPosition="65" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="1228615757308591697" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="IfEqualsNullAll.java" startLine="31" startPosition="46" endLine="49" endPosition="5">
       <varInfo nodeId="1228615757308591698" varName="expression" />
     </scopeInfo>
-    <scopeInfo nodeId="1265678854311102660" fileName="IfNullReturnAll.java" startLine="29" startPosition="53" endLine="63" endPosition="5">
+    <scopeInfo nodeId="1265678854311102660" fileName="IfEqualsNullAll.java" startLine="29" startPosition="53" endLine="63" endPosition="5">
       <varInfo nodeId="1228615757308591727" varName="vars" />
       <varInfo nodeId="1265678854311140225" varName="ifTrue" />
     </scopeInfo>

@@ -335,22 +335,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" file="IfNotNullAll.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.nullableInstruction" />
-    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.dataFlow.IfNullReturnAll" file="IfNullReturnAll.java">
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" file="IfEqualsNullAll.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
@@ -366,6 +351,21 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" file="IfNotNullAll.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.nullableInstruction" />
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.IfStatement_DataFlow" file="IfStatement_DataFlow.java">
@@ -434,9 +434,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.WhileNotNull" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" />
     <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfNotNullAll" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleVariableDeclaration" />
@@ -447,7 +446,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleTernaryOperation" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleMethodCall" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfNullReturnAll" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.IfEqualsNullAll" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsNull" />
     <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />

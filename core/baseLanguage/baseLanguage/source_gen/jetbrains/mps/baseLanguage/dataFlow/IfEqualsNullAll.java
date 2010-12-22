@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
-public class IfNullReturnAll extends DataFlowConstructor {
-  public IfNullReturnAll() {
+public class IfEqualsNullAll extends DataFlowConstructor {
+  public IfEqualsNullAll() {
   }
 
   public boolean isApplicable(SNode node) {
