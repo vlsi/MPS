@@ -2201,7 +2201,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1520710884206584117(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.getModel(((SNode) _context.getVariable("template"))) == SNodeOperations.getModel(_context.getNode());
+    boolean directRef = SNodeOperations.getModel(((SNode) _context.getVariable("template"))) == SNodeOperations.getModel(_context.getNode());
+    if (directRef && !(SNodeOperations.isInstanceOf(((SNode) _context.getVariable("template")), "jetbrains.mps.lang.generator.structure.TemplateDeclaration"))) {
+      // check template 
+      if (SLinkOperations.getTarget(((SNode) _context.getVariable("template")), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) == null) {
+        _context.showErrorMessage(_context.getNode(), "cannot refer template root without template annotation");
+        return false;
+      }
+    }
+    return directRef;
   }
 
   public static boolean ifMacro_Condition_1520710884206584166(final IOperationContext operationContext, final IfMacroContext _context) {
