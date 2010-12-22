@@ -23,7 +23,7 @@
       <property name="name" nameId="tpck.1169194664001" value="MoveTransitionToAnotherRow" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8017670888383389085">
-      <property name="name" nameId="tpck.1169194664001" value="CreateNewTransition" />
+      <property name="name" nameId="tpck.1169194664001" value="CreateTransition" />
     </node>
   </roots>
   <root id="6170050146384276051">
