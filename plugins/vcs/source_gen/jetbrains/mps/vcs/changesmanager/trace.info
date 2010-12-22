@@ -631,7 +631,7 @@
     <nodeInfo nodeId="7675522084224247887" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSUtils.java" startLine="31" startPosition="56" endLine="34" endPosition="7" />
     <nodeInfo nodeId="8246992813612317715" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSUtils.java" startLine="35" startPosition="79" endLine="38" endPosition="7" />
     <nodeInfo nodeId="3958959855415944362" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSUtils.java" startLine="39" startPosition="86" endLine="42" endPosition="7" />
-    <nodeInfo nodeId="83742232301382756" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="VCSUtils.java" startLine="44" startPosition="31" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="83742232301382756" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VCSUtils.java" startLine="44" startPosition="31" endLine="47" endPosition="7" />
     <nodeInfo nodeId="7675522084224244289" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="VCSUtils.java" startLine="25" startPosition="99" endLine="49" endPosition="5" />
     <nodeInfo nodeId="3090835573635150394" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBaseVersionContent#(Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/project/Project;)Ljava/lang/String;" fileName="VCSUtils.java" startLine="23" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="7523553402533213941" fileName="VCSUtils.java" startLine="21" startPosition="22" endLine="21" endPosition="22" />
@@ -1338,9 +1338,9 @@
     <nodeInfo nodeId="3722815385094360910" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SimpleCommandQueue.java" startLine="78" startPosition="13" endLine="79" endPosition="21" />
     <nodeInfo nodeId="3722815385094360918" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SimpleCommandQueue.java" startLine="81" startPosition="37" endLine="82" endPosition="80" />
     <nodeInfo nodeId="3722815385094377523" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SimpleCommandQueue.java" startLine="25" startPosition="10" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="3722815385094288887" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleCommandQueue.java" startLine="46" startPosition="45" endLine="49" endPosition="7" />
+    <nodeInfo nodeId="3722815385094288887" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SimpleCommandQueue.java" startLine="46" startPosition="45" endLine="49" endPosition="7" />
     <nodeInfo nodeId="6669546492594083167" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleCommandQueue.java" startLine="63" startPosition="20" endLine="66" endPosition="9" />
-    <nodeInfo nodeId="3722815385094360918" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SimpleCommandQueue.java" startLine="80" startPosition="31" endLine="83" endPosition="11" />
+    <nodeInfo nodeId="3722815385094360918" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SimpleCommandQueue.java" startLine="80" startPosition="31" endLine="83" endPosition="11" />
     <nodeInfo nodeId="3722815385094205363" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleCommandQueue#(Ljava/lang/String;)V" fileName="SimpleCommandQueue.java" startLine="16" startPosition="0" endLine="20" endPosition="3" />
     <nodeInfo nodeId="3722815385094288782" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="SimpleCommandQueue.java" startLine="30" startPosition="47" endLine="34" endPosition="5" />
     <nodeInfo nodeId="6669546492594067000" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" fileName="SimpleCommandQueue.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
@@ -2344,7 +2344,7 @@
     <nodeInfo nodeId="6204261414007568272" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" fileName="RootNodeFileStatusManager.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
     <nodeInfo nodeId="5962623969496448657" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="RootNodeFileStatusManager.java" startLine="46" startPosition="83" endLine="49" endPosition="5" />
     <nodeInfo nodeId="5962623969496448660" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="RootNodeFileStatusManager.java" startLine="52" startPosition="86" endLine="55" endPosition="5" />
-    <nodeInfo nodeId="3722815385094384699" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="RootNodeFileStatusManager.java" startLine="73" startPosition="37" endLine="76" endPosition="17" />
+    <nodeInfo nodeId="3722815385094384699" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="RootNodeFileStatusManager.java" startLine="73" startPosition="37" endLine="76" endPosition="17" />
     <nodeInfo nodeId="3722815385094378532" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="RootNodeFileStatusManager.java" startLine="107" startPosition="7" endLine="110" endPosition="5" />
     <nodeInfo nodeId="3722815385094384451" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="RootNodeFileStatusManager.java" startLine="135" startPosition="7" endLine="138" endPosition="5" />
     <nodeInfo nodeId="6204261414007568296" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootNodeFileStatusManager#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/ChangesManager;)V" fileName="RootNodeFileStatusManager.java" startLine="32" startPosition="0" endLine="36" endPosition="3" />
@@ -3278,16 +3278,16 @@
     <nodeInfo nodeId="5962623969496447542" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="ModelChangesManager.java" startLine="135" startPosition="67" endLine="138" endPosition="5" />
     <nodeInfo nodeId="5962623969496447558" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="ModelChangesManager.java" startLine="141" startPosition="70" endLine="144" endPosition="5" />
     <nodeInfo nodeId="3187554551048019021" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="ModelChangesManager.java" startLine="148" startPosition="48" endLine="151" endPosition="5" />
-    <nodeInfo nodeId="3187554551048036636" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="159" startPosition="29" endLine="162" endPosition="9" />
+    <nodeInfo nodeId="3187554551048036636" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="159" startPosition="29" endLine="162" endPosition="9" />
     <nodeInfo nodeId="3187554551048036395" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="172" startPosition="29" endLine="175" endPosition="9" />
-    <nodeInfo nodeId="3187554551048035436" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="185" startPosition="29" endLine="188" endPosition="9" />
-    <nodeInfo nodeId="7542415519011390366" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="198" startPosition="29" endLine="201" endPosition="9" />
-    <nodeInfo nodeId="7542415519011395027" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="211" startPosition="29" endLine="214" endPosition="9" />
+    <nodeInfo nodeId="3187554551048035436" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="185" startPosition="29" endLine="188" endPosition="9" />
+    <nodeInfo nodeId="7542415519011390366" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="198" startPosition="29" endLine="201" endPosition="9" />
+    <nodeInfo nodeId="7542415519011395027" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="211" startPosition="29" endLine="214" endPosition="9" />
     <nodeInfo nodeId="6105600802953124476" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="227" startPosition="71" endLine="230" endPosition="5" />
     <nodeInfo nodeId="4373338147090813408" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="235" startPosition="69" endLine="238" endPosition="5" />
     <nodeInfo nodeId="3913480212906642511" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="242" startPosition="49" endLine="245" endPosition="5" />
     <nodeInfo nodeId="3913480212906643301" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="257" startPosition="70" endLine="260" endPosition="5" />
-    <nodeInfo nodeId="3367145324776993279" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="270" startPosition="56" endLine="273" endPosition="7" />
+    <nodeInfo nodeId="3367145324776993279" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="270" startPosition="56" endLine="273" endPosition="7" />
     <nodeInfo nodeId="8303122470448996053" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="276" startPosition="59" endLine="279" endPosition="5" />
     <nodeInfo nodeId="399572749666385472" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="279" startPosition="5" endLine="282" endPosition="5" />
     <nodeInfo nodeId="5235541930885971714" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="282" startPosition="5" endLine="285" endPosition="5" />
@@ -3315,11 +3315,11 @@
     <nodeInfo nodeId="1142852935921022217" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="606" startPosition="26" endLine="609" endPosition="5" />
     <nodeInfo nodeId="1281598945698463531" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="609" startPosition="5" endLine="612" endPosition="5" />
     <nodeInfo nodeId="5449562650807997377" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="612" startPosition="5" endLine="615" endPosition="5" />
-    <nodeInfo nodeId="83742232301382749" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="618" startPosition="96" endLine="621" endPosition="9" />
+    <nodeInfo nodeId="83742232301382749" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="618" startPosition="96" endLine="621" endPosition="9" />
     <nodeInfo nodeId="1281598945698463551" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="622" startPosition="7" endLine="625" endPosition="7" />
     <nodeInfo nodeId="1281598945698463601" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="639" startPosition="0" endLine="642" endPosition="7" />
-    <nodeInfo nodeId="1281598945698463662" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="654" startPosition="35" endLine="657" endPosition="7" />
-    <nodeInfo nodeId="3767959966756100127" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="666" startPosition="24" endLine="669" endPosition="13" />
+    <nodeInfo nodeId="1281598945698463662" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="654" startPosition="35" endLine="657" endPosition="7" />
+    <nodeInfo nodeId="3767959966756100127" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="666" startPosition="24" endLine="669" endPosition="13" />
     <nodeInfo nodeId="5260985045910033383" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="687" startPosition="34" endLine="690" endPosition="9" />
     <nodeInfo nodeId="1998279847126832470" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="711" startPosition="34" endLine="714" endPosition="9" />
     <nodeInfo nodeId="1390130991678041247" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="720" startPosition="91" endLine="723" endPosition="5" />
@@ -3331,7 +3331,7 @@
     <nodeInfo nodeId="762570481842487007" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="842" startPosition="5" endLine="845" endPosition="5" />
     <nodeInfo nodeId="5890845648943338" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="887" startPosition="52" endLine="890" endPosition="9" />
     <nodeInfo nodeId="5494534766666272288" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="891" startPosition="52" endLine="894" endPosition="9" />
-    <nodeInfo nodeId="5687497293128274385" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="949" startPosition="16" endLine="952" endPosition="11" />
+    <nodeInfo nodeId="5687497293128274385" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ModelChangesManager.java" startLine="949" startPosition="16" endLine="952" endPosition="11" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="958" startPosition="70" endLine="961" endPosition="5" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="965" startPosition="70" endLine="968" endPosition="5" />
     <nodeInfo nodeId="8006781392765204425" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="972" startPosition="82" endLine="975" endPosition="5" />
@@ -3430,7 +3430,7 @@
     <nodeInfo nodeId="3464311049966838678" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelChangesManager.java" startLine="219" startPosition="75" endLine="224" endPosition="7" />
     <nodeInfo nodeId="2679789518736358751" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="246" startPosition="69" endLine="251" endPosition="5" />
     <nodeInfo nodeId="8279184985700098678" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ModelChangesManager.java" startLine="316" startPosition="186" endLine="321" endPosition="24" />
-    <nodeInfo nodeId="7437676040054230188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelChangesManager.java" startLine="334" startPosition="53" endLine="339" endPosition="14" />
+    <nodeInfo nodeId="7437676040054230188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelChangesManager.java" startLine="334" startPosition="34" endLine="339" endPosition="14" />
     <nodeInfo nodeId="4604734785880205957" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ModelChangesManager.java" startLine="493" startPosition="50" endLine="498" endPosition="15" />
     <nodeInfo nodeId="2370132037603420871" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ModelChangesManager.java" startLine="540" startPosition="146" endLine="545" endPosition="11" />
     <nodeInfo nodeId="399572749666384529" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ModelChangesManager.java" startLine="552" startPosition="48" endLine="557" endPosition="5" />
@@ -4024,7 +4024,7 @@
     <scopeInfo nodeId="7132911809917961388" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/vcs/diff/changes/SetNodeChange;)Ljava/lang/Boolean;" fileName="ModelChangesManager.java" startLine="1549" startPosition="111" endLine="1553" endPosition="0" />
     <scopeInfo nodeId="3464311049966838316" fileName="ModelChangesManager.java" startLine="219" startPosition="75" endLine="224" endPosition="7" />
     <scopeInfo nodeId="6105600802953097009" fileName="ModelChangesManager.java" startLine="227" startPosition="71" endLine="232" endPosition="125" />
-    <scopeInfo nodeId="7437676040054230187" fileName="ModelChangesManager.java" startLine="334" startPosition="53" endLine="339" endPosition="14" />
+    <scopeInfo nodeId="7437676040054230187" fileName="ModelChangesManager.java" startLine="334" startPosition="34" endLine="339" endPosition="14" />
     <scopeInfo nodeId="967641992124622440" fileName="ModelChangesManager.java" startLine="377" startPosition="58" endLine="382" endPosition="13">
       <varInfo nodeId="967641992124638820" varName="parent" />
     </scopeInfo>

@@ -63,7 +63,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
-    <classNode dependClassName="jetbrains.mps.vcs.MPSVCSManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListListener" />
@@ -81,7 +80,6 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeList" />
-    <classNode dependClassName="jetbrains.mps.vcs.VCSSettingsHolder" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.Change" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryListener" />
     <classNode dependClassName="java.lang.Override" />
@@ -99,7 +97,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.reloading.ReloadListener" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="jetbrains.mps.vcs.VcsSettingsHolder" />
     <classNode dependClassName="jetbrains.mps.smodel.GlobalSModelEventsManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
     <classNode extendsClassName="com.intellij.openapi.vcs.changes.ChangeListAdapter" />
     <classNode extendsClassName="jetbrains.mps.reloading.ReloadAdapter" />
