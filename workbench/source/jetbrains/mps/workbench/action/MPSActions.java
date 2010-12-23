@@ -65,8 +65,6 @@ public class MPSActions {
   }
 
   public void unregisterActions(PluginId pluginId) {
-    unregisterGroups(pluginId);
-
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
     for (String actionId : manager.getPluginActions(pluginId)) {
       manager.unregisterAction(actionId);
@@ -74,15 +72,13 @@ public class MPSActions {
     //todo remove shortcuts from all keymaps
   }
 
-  private void unregisterGroups(PluginId pluginId) {
+  public void unregisterGroups(List<BaseGroup> groups) {
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
 
     List<BaseGroup> mpsGroups = new ArrayList<BaseGroup>();
-    for (String actionId : manager.getPluginActions(pluginId)) {
-      AnAction action = manager.getAction(actionId);
-      if (action instanceof BaseGroup) {
-        mpsGroups.add((BaseGroup) action);
-      }
+    for (BaseGroup group : groups) {
+      mpsGroups.add(group);
+      manager.unregisterAction(group.getId());
     }
 
     //remove mps groups from IDEA groups

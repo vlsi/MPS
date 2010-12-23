@@ -33,9 +33,14 @@ import java.util.List;
 
 public abstract class BaseApplicationPlugin {
   private List<BaseCustomApplicationPlugin> myCustomParts;
+  private List<BaseGroup> myGroups = new ArrayList<BaseGroup>();
 
   public void createGroups() {
 
+  }
+
+  protected void addGroup(BaseGroup group){
+    myGroups.add(group);
   }
 
   public final void adjustGroups() {
@@ -76,6 +81,9 @@ public abstract class BaseApplicationPlugin {
     for (BaseCustomApplicationPlugin part : myCustomParts) {
       part.dispose ();
     }
+
+    MPSActions.getInstance().unregisterGroups(myGroups);
+    myGroups.clear();
     MPSActions.getInstance().unregisterActions(getId());
   }
 
