@@ -65,12 +65,6 @@ public class ShowConceptStructure_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       StructureView_Tool tool = ShowConceptStructure_Action.this.project.getComponent(ProjectPluginManager.class).getTool(StructureView_Tool.class);

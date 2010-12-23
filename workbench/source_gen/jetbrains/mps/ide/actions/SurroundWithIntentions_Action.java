@@ -83,12 +83,6 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedNode = null;
-    this.editorContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final EditorCell selectedCell = SurroundWithIntentions_Action.this.editorContext.getSelectedCell();

@@ -46,10 +46,6 @@ public class GoToLanguage_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GoToLanguage_Action.this.action.actionPerformed(event);

@@ -57,12 +57,6 @@ public class ShowModuleDependencies_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       DependencyViewer viewer = ShowModuleDependencies_Action.this.project.getComponent(DependencyViewer.class);

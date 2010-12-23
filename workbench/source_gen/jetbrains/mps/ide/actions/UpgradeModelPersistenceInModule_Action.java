@@ -57,12 +57,6 @@ public class UpgradeModelPersistenceInModule_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.mainFrame = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       PersistenceUpdater persistenceUpdater = new PersistenceUpdater();

@@ -68,12 +68,6 @@ public class AddToVcs_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.modules = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(AddToVcs_Action.this.project, AddToVcs_Action.this.modules);

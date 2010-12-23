@@ -66,12 +66,6 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.concept");

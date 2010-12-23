@@ -85,14 +85,6 @@ public class CloneRoot_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.ideaProject = null;
-    this.project = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       for (SNode node : ListSequence.fromList(CloneRoot_Action.this.nodes)) {

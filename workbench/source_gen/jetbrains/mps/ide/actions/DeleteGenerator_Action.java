@@ -75,13 +75,6 @@ public class DeleteGenerator_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.contxet = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final DeleteDialog dialog = new DeleteDialog(DeleteGenerator_Action.this.project, "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.");

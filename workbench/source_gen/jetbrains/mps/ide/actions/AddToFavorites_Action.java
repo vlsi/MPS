@@ -62,12 +62,6 @@ public class AddToFavorites_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.treeNodes = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       MPSFavoritesManager favoritesManager = AddToFavorites_Action.this.project.getComponent(MPSFavoritesManager.class);

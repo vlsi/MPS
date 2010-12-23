@@ -46,10 +46,6 @@ public class GoToRootNode_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GoToRootNode_Action.this.action.actionPerformed(event);

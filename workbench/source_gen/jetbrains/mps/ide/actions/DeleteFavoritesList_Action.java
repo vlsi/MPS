@@ -61,11 +61,6 @@ public class DeleteFavoritesList_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProjectView projectView = ProjectView.getInstance(DeleteFavoritesList_Action.this.project);

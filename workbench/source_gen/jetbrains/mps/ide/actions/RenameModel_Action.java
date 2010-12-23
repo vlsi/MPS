@@ -84,14 +84,6 @@ public class RenameModel_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.frame = null;
-    this.model = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<SModelRoot> root = new Wrappers._T<SModelRoot>();

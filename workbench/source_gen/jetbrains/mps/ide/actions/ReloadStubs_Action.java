@@ -59,11 +59,6 @@ public class ReloadStubs_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       LocalFileSystem.getInstance().refresh(false);

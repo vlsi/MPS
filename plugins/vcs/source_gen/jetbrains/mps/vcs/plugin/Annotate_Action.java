@@ -58,11 +58,6 @@ public class Annotate_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editor = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       AnnotationHelper.annotate(Annotate_Action.this.editor);

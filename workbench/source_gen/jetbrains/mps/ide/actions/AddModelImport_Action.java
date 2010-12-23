@@ -71,13 +71,6 @@ public class AddModelImport_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ImportHelper.addModelImport(AddModelImport_Action.this.project, AddModelImport_Action.this.module, AddModelImport_Action.this.model);

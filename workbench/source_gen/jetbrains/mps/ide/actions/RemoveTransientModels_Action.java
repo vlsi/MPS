@@ -52,11 +52,6 @@ public class RemoveTransientModels_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       RemoveTransientModels_Action.this.project.getComponent(MessagesViewTool.class).clear();

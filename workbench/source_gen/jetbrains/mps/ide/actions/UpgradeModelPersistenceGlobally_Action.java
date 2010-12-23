@@ -51,11 +51,6 @@ public class UpgradeModelPersistenceGlobally_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.mainFrame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       PersistenceUpdater persistenceUpdater = new PersistenceUpdater();

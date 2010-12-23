@@ -47,10 +47,6 @@ public class GenerateProject_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GenerateProject_Action.this.action.actionPerformed(event);

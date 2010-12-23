@@ -59,12 +59,6 @@ public class FileDelete_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedFile = null;
-    this.deleteProvider = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       FileDelete_Action.this.action.actionPerformed(event);

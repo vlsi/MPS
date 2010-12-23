@@ -67,12 +67,6 @@ public class ForceRefreshModelChanges_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<ModelChangesManager> modelChangesManager = new Wrappers._T<ModelChangesManager>();

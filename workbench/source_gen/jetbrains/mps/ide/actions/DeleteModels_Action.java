@@ -74,14 +74,6 @@ public class DeleteModels_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.project = null;
-    this.contextModule = null;
-    this.models = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final DeleteDialog dialog = new DeleteDialog(DeleteModels_Action.this.project, "Delete Models", "Are you sure you want to delete selected models?");

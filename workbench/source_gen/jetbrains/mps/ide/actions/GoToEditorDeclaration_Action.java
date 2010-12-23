@@ -119,18 +119,6 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.ideaProject = null;
-    this.project = null;
-    this.frame = null;
-    this.editor = null;
-    this.context = null;
-    this.scope = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<Language> l = new Wrappers._T<Language>();

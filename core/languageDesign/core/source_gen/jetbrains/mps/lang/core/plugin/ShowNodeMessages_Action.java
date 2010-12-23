@@ -76,14 +76,6 @@ public class ShowNodeMessages_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.node = null;
-    this.editorComponent = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<EditorMessage> messages = ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node);

@@ -92,13 +92,6 @@ public class CutNode_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.project = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CopyPasteUtil.copyNodesToClipboard(CutNode_Action.this.nodes);

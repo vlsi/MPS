@@ -50,11 +50,6 @@ public class PrintNodeID_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       System.out.println("ID = " + PrintNodeID_Action.this.node.getId());

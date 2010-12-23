@@ -70,12 +70,6 @@ public class DevkitProperties_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final DevKit devkit = ((DevKit) DevkitProperties_Action.this.module);

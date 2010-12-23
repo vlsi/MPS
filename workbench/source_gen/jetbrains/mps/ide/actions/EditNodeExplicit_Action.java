@@ -70,12 +70,6 @@ public class EditNodeExplicit_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       MPSEditorOpener opener = EditNodeExplicit_Action.this.context.getComponent(MPSEditorOpener.class);

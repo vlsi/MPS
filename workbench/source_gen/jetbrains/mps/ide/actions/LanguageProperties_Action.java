@@ -70,12 +70,6 @@ public class LanguageProperties_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Language language = (Language) LanguageProperties_Action.this.module;

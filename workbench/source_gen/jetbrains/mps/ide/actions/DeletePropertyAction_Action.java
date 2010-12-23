@@ -63,11 +63,6 @@ public class DeletePropertyAction_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       TreeNode parent = DeletePropertyAction_Action.this.node.getParent();

@@ -51,11 +51,6 @@ public class Home_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorCell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Home_Action.this.editorCell.executeAction(CellActionType.HOME);

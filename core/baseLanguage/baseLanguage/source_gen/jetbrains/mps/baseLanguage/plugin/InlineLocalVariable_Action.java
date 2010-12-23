@@ -86,14 +86,6 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.editorContext = null;
-    this.frame = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<InlineVariableRefactoring> ref = new Wrappers._T<InlineVariableRefactoring>();

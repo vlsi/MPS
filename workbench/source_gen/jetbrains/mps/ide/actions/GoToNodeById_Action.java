@@ -72,14 +72,6 @@ public class GoToNodeById_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.frame = null;
-    this.context = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       String value = JOptionPane.showInputDialog(GoToNodeById_Action.this.frame, "Enter node ID:", "Find node in model " + GoToNodeById_Action.this.model.getLongName(), JOptionPane.QUESTION_MESSAGE);

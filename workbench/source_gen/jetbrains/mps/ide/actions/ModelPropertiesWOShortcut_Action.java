@@ -65,13 +65,6 @@ public class ModelPropertiesWOShortcut_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-    this.context = null;
-    this.place = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       StandardDialogs.createModelPropertiesDialog(ModelPropertiesWOShortcut_Action.this.model, ModelPropertiesWOShortcut_Action.this.context).showDialog();

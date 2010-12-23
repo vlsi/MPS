@@ -68,13 +68,6 @@ public class FindModelUsages_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.scope = null;
-    this.context = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SearchQuery[] query = new SearchQuery[1];

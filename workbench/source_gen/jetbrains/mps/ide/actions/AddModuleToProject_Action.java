@@ -74,12 +74,6 @@ public class AddModuleToProject_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.modules = null;
-    this.mpsProject = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       for (IModule module : ListSequence.fromList(AddModuleToProject_Action.this.modules)) {

@@ -87,13 +87,6 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.project = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GenerationTracer tracer = ShowGenerationTrace_Action.this.getGenTracer();

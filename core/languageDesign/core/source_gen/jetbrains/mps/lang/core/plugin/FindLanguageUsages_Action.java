@@ -75,13 +75,6 @@ public class FindLanguageUsages_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-    this.context = null;
-    this.scope = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SearchQuery[] query = new SearchQuery[1];

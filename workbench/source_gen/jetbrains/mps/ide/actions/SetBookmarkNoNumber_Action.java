@@ -57,12 +57,6 @@ public class SetBookmarkNoNumber_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       BookmarkManager bookmarkManager = SetBookmarkNoNumber_Action.this.project.getComponent(BookmarkManager.class);

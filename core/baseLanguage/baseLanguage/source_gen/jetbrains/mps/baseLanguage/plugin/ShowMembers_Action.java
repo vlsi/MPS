@@ -78,13 +78,6 @@ public class ShowMembers_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.frame = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>();

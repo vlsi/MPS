@@ -98,15 +98,6 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.node = null;
-    this.project = null;
-    this.context = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       VcsActionsHelper.showRootDifference(ShowDiffererenesWithCurrentRevision_Action.this.frame, ShowDiffererenesWithCurrentRevision_Action.this.context, ShowDiffererenesWithCurrentRevision_Action.this.model.getSModel(), ShowDiffererenesWithCurrentRevision_Action.this.node, ShowDiffererenesWithCurrentRevision_Action.this.project);

@@ -46,10 +46,6 @@ public class SelectInActionAdapter_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SelectInActionAdapter_Action.this.selectInAction.actionPerformed(event);

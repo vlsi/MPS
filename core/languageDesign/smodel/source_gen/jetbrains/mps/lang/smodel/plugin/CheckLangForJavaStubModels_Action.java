@@ -73,12 +73,6 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Language language = ((Language) CheckLangForJavaStubModels_Action.this.module);

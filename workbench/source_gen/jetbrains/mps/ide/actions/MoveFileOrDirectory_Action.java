@@ -72,13 +72,6 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedFile = null;
-    this.project = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       String path = MoveFileOrDirectory_Action.this.selectedFile.getParent().getPath();

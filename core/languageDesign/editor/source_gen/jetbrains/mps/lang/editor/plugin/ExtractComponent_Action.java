@@ -75,13 +75,6 @@ public class ExtractComponent_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.editorContext = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ExtractComponentUtil.extractComponent(ExtractComponent_Action.this.node, ExtractComponent_Action.this.editorContext);

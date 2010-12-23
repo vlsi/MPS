@@ -51,11 +51,6 @@ public class RemoveAllBookmarks_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       RemoveAllBookmarks_Action.this.project.getComponent(BookmarkManager.class).clearBookmarks();

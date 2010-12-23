@@ -93,14 +93,6 @@ public class NewRuntimeModule_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.contextModule = null;
-    this.frame = null;
-    this.project = null;
-    this.treeNode = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());

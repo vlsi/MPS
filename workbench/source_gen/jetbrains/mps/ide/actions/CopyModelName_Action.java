@@ -51,11 +51,6 @@ public class CopyModelName_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CopyPasteUtil.copyTextToClipboard(CopyModelName_Action.this.model.getLongName());

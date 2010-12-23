@@ -66,12 +66,6 @@ public class Collapse_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorContext = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Collapse_Action.this.getAction().execute(Collapse_Action.this.editorContext);

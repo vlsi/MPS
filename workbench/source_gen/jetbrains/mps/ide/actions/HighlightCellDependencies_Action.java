@@ -62,12 +62,6 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-    this.editorCell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NodeHighlightManager highlightManager = HighlightCellDependencies_Action.this.editorComponent.getHighlightManager();

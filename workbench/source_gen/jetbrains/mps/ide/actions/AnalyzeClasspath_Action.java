@@ -57,12 +57,6 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ClassPathViewerTool tool = AnalyzeClasspath_Action.this.context.getComponent(ClassPathViewerTool.class);

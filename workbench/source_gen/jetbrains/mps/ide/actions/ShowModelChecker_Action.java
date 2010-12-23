@@ -60,11 +60,6 @@ public class ShowModelChecker_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ModelCheckerTool_Tool tool = ShowModelChecker_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);

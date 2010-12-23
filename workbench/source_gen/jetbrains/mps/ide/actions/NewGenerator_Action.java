@@ -74,13 +74,6 @@ public class NewGenerator_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.module = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Frame localFrame = NewGenerator_Action.this.frame;

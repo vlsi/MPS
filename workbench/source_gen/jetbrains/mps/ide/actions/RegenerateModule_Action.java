@@ -47,10 +47,6 @@ public class RegenerateModule_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       RegenerateModule_Action.this.action.actionPerformed(event);

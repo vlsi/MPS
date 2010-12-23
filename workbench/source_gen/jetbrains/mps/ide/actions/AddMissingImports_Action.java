@@ -57,12 +57,6 @@ public class AddMissingImports_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.modelDescriptor = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new MissingDependenciesFixer(AddMissingImports_Action.this.context, AddMissingImports_Action.this.modelDescriptor).fix();

@@ -67,12 +67,6 @@ public class GeneratorProperties_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Generator generator = (Generator) GeneratorProperties_Action.this.module;

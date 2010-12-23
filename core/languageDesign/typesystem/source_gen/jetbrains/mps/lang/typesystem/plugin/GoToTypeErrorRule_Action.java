@@ -70,13 +70,6 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.operationContext = null;
-    this.node = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IErrorReporter error = GoToTypeErrorRule_Action.this.editorComponent.getTypeCheckingContext().getTypeMessageDontCheck(GoToTypeErrorRule_Action.this.node);

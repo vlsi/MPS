@@ -79,13 +79,6 @@ public class RenameVariable_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.frame = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<SNode> varDeclNode = new Wrappers._T<SNode>();

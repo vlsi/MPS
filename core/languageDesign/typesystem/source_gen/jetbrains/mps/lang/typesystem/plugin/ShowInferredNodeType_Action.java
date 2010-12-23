@@ -64,13 +64,6 @@ public class ShowInferredNodeType_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.frame = null;
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<SNode> type = new Wrappers._T<SNode>();

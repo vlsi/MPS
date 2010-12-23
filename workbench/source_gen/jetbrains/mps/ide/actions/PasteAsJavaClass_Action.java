@@ -57,12 +57,6 @@ public class PasteAsJavaClass_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.operationContext = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new JavaPaster().pasteJavaAsClass(PasteAsJavaClass_Action.this.model.getSModel(), PasteAsJavaClass_Action.this.operationContext);

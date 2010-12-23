@@ -67,13 +67,6 @@ public class NewLanguage_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.ideaProject = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NewLanguageDialog dialog = new NewLanguageDialog(NewLanguage_Action.this.frame);

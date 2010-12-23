@@ -82,13 +82,6 @@ public class CloneModel_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-    this.context = null;
-    this.selSize = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<CloneModelDialog> dialog = new Wrappers._T<CloneModelDialog>();

@@ -82,14 +82,6 @@ public class IntroduceField_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.component = null;
-    this.context = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final IntroduceFieldRefactoring introducer = new IntroduceFieldRefactoring();

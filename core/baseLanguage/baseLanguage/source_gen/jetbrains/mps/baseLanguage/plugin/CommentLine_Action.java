@@ -79,12 +79,6 @@ public class CommentLine_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedNode = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode singleLineComment = CommentLine_Action.this.getSingleLineComment();

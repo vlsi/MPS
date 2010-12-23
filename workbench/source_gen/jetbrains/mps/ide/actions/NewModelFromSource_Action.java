@@ -106,15 +106,6 @@ public class NewModelFromSource_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.project = null;
-    this.context = null;
-    this.module = null;
-    this.treeNode = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (NewModelFromSource_Action.this.module.getSModelRoots().size() == 0) {

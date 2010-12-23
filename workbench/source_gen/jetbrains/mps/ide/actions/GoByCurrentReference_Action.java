@@ -99,21 +99,13 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-    this.cell = null;
-    this.context = null;
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
       String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
       String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
-      if (neq_1m2c1e_a0e0a0f(stubSter, targetSter)) {
+      if (neq_1m2c1e_a0e0a0e(stubSter, targetSter)) {
         GoByCurrentReference_Action.this.open(targetNode);
       } else {
         SNode node = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
@@ -205,7 +197,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
   }
 
-  private static boolean neq_1m2c1e_a0e0a0f(Object a, Object b) {
+  private static boolean neq_1m2c1e_a0e0a0e(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

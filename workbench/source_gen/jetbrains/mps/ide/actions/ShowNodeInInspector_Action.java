@@ -64,12 +64,6 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.editor = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       InspectorEditorComponent inspector = (InspectorEditorComponent) ShowNodeInInspector_Action.this.editor;

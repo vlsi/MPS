@@ -83,13 +83,6 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.context = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IModule module = GetModelContentsFromSource_Action.this.model.getModule();

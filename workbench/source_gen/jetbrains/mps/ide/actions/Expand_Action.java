@@ -72,13 +72,6 @@ public class Expand_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorCell = null;
-    this.editorContext = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Expand_Action.this.getAction().execute(Expand_Action.this.editorContext);

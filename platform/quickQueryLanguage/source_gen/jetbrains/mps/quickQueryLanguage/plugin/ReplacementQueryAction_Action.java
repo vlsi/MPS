@@ -54,12 +54,6 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.langModule = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryAction_Action.this.context), (Language) ReplacementQueryAction_Action.this.langModule);

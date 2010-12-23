@@ -73,15 +73,6 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.frame = null;
-    this.context = null;
-    this.models = null;
-    this.modules = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IScope scope = AbstractMigrationScriptHelper.createMigrationScope(RunMigrationScripts_Action.this.models, RunMigrationScripts_Action.this.modules, RunMigrationScripts_Action.this.selectionOnly);

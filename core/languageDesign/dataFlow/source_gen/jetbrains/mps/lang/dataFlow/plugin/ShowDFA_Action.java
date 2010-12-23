@@ -67,13 +67,6 @@ public class ShowDFA_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.context = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(ShowDFA_Action.this.node);

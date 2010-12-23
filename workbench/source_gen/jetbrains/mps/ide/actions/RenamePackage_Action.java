@@ -71,12 +71,6 @@ public class RenamePackage_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.ppNode = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<Set<SNode>> nodes = new Wrappers._T<Set<SNode>>();

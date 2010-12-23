@@ -71,13 +71,6 @@ public class AddLanguageImport_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ImportHelper.addLanguageImport(AddLanguageImport_Action.this.project, AddLanguageImport_Action.this.module, AddLanguageImport_Action.this.model);

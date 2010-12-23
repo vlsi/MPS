@@ -58,11 +58,6 @@ public class PrintReachingDefinintionsInformation_Action extends GeneratedAction
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(PrintReachingDefinintionsInformation_Action.this.node);

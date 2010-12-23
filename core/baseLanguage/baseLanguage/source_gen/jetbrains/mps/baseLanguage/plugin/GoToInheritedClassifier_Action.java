@@ -108,16 +108,6 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.classifierNode = null;
-    this.editorComponent = null;
-    this.editorContext = null;
-    this.context = null;
-    this.frame = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());

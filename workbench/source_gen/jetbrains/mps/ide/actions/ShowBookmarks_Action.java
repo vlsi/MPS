@@ -51,11 +51,6 @@ public class ShowBookmarks_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ShowBookmarks_Action.this.project.getComponent(BookmarksTool.class).openTool(true);

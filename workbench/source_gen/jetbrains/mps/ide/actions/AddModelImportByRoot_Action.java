@@ -80,14 +80,6 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-    this.model = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       EditorCell selectedCell = AddModelImportByRoot_Action.this.editorComponent.getSelectedCell();

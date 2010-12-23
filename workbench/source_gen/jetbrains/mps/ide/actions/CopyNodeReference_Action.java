@@ -65,11 +65,6 @@ public class CopyNodeReference_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       StringBuilder builder = new StringBuilder();

@@ -70,12 +70,6 @@ public class ExportThreads_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);

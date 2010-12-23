@@ -91,14 +91,6 @@ public class NewSubTestModel_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.ideaProject = null;
-    this.context = null;
-    this.model = null;
-    this.treeNode = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<SModelDescriptor> result = new Wrappers._T<SModelDescriptor>();

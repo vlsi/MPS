@@ -77,13 +77,6 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.context = null;
-    this.editorCell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode classNode = ShowClassInHierarchy_Action.this.getContextClassifier();

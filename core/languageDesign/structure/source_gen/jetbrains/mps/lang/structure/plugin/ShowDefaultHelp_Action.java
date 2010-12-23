@@ -64,13 +64,6 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.module = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HelpHelper.showHelpFor(ShowDefaultHelp_Action.this.module, ShowDefaultHelp_Action.this.model, ShowDefaultHelp_Action.this.node);

@@ -51,11 +51,6 @@ public class GoToBookmark3_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GoToBookmark3_Action.this.project.getComponent(BookmarkManager.class).navigateToBookmark(3);

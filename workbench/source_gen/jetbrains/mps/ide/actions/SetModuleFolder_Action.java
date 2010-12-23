@@ -77,14 +77,6 @@ public class SetModuleFolder_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.ideaProject = null;
-    this.project = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProjectPane pane = ProjectPane.getInstance(SetModuleFolder_Action.this.ideaProject);

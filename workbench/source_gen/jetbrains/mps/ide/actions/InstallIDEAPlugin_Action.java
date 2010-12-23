@@ -65,11 +65,6 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");

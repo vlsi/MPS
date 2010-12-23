@@ -60,13 +60,6 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.context = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(AnalyzeStacktrace_Action.this.frame, AnalyzeStacktrace_Action.this.context, AnalyzeStacktrace_Action.this.project);

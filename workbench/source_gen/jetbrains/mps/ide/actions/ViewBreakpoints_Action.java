@@ -55,11 +55,6 @@ public class ViewBreakpoints_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final BreakpointsBrowserDialog dialog = new BreakpointsBrowserDialog(ViewBreakpoints_Action.this.context);

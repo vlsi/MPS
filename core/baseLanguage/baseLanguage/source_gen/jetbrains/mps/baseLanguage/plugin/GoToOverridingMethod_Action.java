@@ -118,16 +118,6 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.methodNode = null;
-    this.editorComponent = null;
-    this.editorContext = null;
-    this.context = null;
-    this.frame = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final List<String> finders = ListSequence.fromList(new ArrayList<String>());

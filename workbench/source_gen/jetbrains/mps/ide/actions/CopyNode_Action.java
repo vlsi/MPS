@@ -79,11 +79,6 @@ public class CopyNode_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CopyPasteUtil.copyNodesToClipboard(CopyNode_Action.this.nodes);

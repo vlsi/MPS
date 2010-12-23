@@ -75,13 +75,6 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.scope = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SearchQuery query = new SearchQuery(ShowReferencesToMissingStuff_Action.this.model.getSModel(), GlobalScope.getInstance());

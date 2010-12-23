@@ -82,14 +82,6 @@ public class IntroduceConstant_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.context = null;
-    this.component = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<IntroduceConstantRefactoring> refactoring = new Wrappers._T<IntroduceConstantRefactoring>();

@@ -84,14 +84,6 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.context = null;
-    this.module = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<GenParameters> params = new Wrappers._T<GenParameters>(null);

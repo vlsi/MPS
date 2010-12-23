@@ -63,12 +63,6 @@ public class FindlAllBrokenReferences_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.operationContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();

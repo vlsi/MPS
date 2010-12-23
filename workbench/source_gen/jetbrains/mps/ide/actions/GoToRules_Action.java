@@ -79,14 +79,6 @@ public class GoToRules_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.frame = null;
-    this.context = null;
-    this.cell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GoToRulesHelper.go(GoToRules_Action.this.frame, GoToRules_Action.this.cell, GoToRules_Action.this.context, ((AbstractConceptDeclaration) SNodeOperations.getAdapter(GoToRules_Action.this.node)));

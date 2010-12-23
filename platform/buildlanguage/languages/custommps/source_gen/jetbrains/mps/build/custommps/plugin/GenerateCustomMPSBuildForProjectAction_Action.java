@@ -56,12 +56,6 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.mpsProject = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CustomMPSBuildGenerator buildGenerator = new CustomMPSBuildGenerator(GenerateCustomMPSBuildForProjectAction_Action.this.project);

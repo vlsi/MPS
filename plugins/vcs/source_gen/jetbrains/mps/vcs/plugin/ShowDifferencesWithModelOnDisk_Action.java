@@ -69,12 +69,6 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.modelDescriptor = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SModel memory = ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getSModel();

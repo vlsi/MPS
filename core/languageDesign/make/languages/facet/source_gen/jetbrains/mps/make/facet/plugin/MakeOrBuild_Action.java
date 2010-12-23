@@ -109,15 +109,6 @@ public class MakeOrBuild_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.models = null;
-    this.cmodel = null;
-    this.modules = null;
-    this.cmodule = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ScriptBuilder scb = new ScriptBuilder();
@@ -211,11 +202,11 @@ public class MakeOrBuild_Action extends GeneratedAction {
           public Iterator<SModelDescriptor> iterator() {
             return new YieldingIterator<SModelDescriptor>() {
               private int __CP__ = 0;
-              private SModelDescriptor _5__yield_rl5vzw_a0a0a0a0a0a0h;
-              private Iterator<SModelDescriptor> _5__yield_rl5vzw_a0a0a0a0a0a0h_it;
+              private SModelDescriptor _5__yield_rl5vzw_a0a0a0a0a0a0g;
+              private Iterator<SModelDescriptor> _5__yield_rl5vzw_a0a0a0a0a0a0g_it;
               private Iterable<SModelDescriptor> _11_modelsFromModules;
-              private SModelDescriptor _12__yield_rl5vzw_d0a0a0a0a0h;
-              private Iterator<SModelDescriptor> _12__yield_rl5vzw_d0a0a0a0a0h_it;
+              private SModelDescriptor _12__yield_rl5vzw_d0a0a0a0a0g;
+              private Iterator<SModelDescriptor> _12__yield_rl5vzw_d0a0a0a0a0g_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -226,23 +217,23 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 5:
-                      this._5__yield_rl5vzw_a0a0a0a0a0a0h_it = Sequence.fromIterable(MakeOrBuild_Action.this.models).iterator();
+                      this._5__yield_rl5vzw_a0a0a0a0a0a0g_it = Sequence.fromIterable(MakeOrBuild_Action.this.models).iterator();
                     case 6:
-                      if (!(this._5__yield_rl5vzw_a0a0a0a0a0a0h_it.hasNext())) {
+                      if (!(this._5__yield_rl5vzw_a0a0a0a0a0a0g_it.hasNext())) {
                         this.__CP__ = 4;
                         break;
                       }
-                      this._5__yield_rl5vzw_a0a0a0a0a0a0h = this._5__yield_rl5vzw_a0a0a0a0a0a0h_it.next();
+                      this._5__yield_rl5vzw_a0a0a0a0a0a0g = this._5__yield_rl5vzw_a0a0a0a0a0a0g_it.next();
                       this.__CP__ = 7;
                       break;
                     case 12:
-                      this._12__yield_rl5vzw_d0a0a0a0a0h_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
+                      this._12__yield_rl5vzw_d0a0a0a0a0g_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
                     case 13:
-                      if (!(this._12__yield_rl5vzw_d0a0a0a0a0h_it.hasNext())) {
+                      if (!(this._12__yield_rl5vzw_d0a0a0a0a0g_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._12__yield_rl5vzw_d0a0a0a0a0h = this._12__yield_rl5vzw_d0a0a0a0a0h_it.next();
+                      this._12__yield_rl5vzw_d0a0a0a0a0g = this._12__yield_rl5vzw_d0a0a0a0a0g_it.next();
                       this.__CP__ = 14;
                       break;
                     case 2:
@@ -257,7 +248,7 @@ __switch__:
                       break;
                     case 8:
                       this.__CP__ = 6;
-                      this.yield(_5__yield_rl5vzw_a0a0a0a0a0a0h);
+                      this.yield(_5__yield_rl5vzw_a0a0a0a0a0a0g);
                       return true;
                     case 10:
                       this.__CP__ = 4;
@@ -265,7 +256,7 @@ __switch__:
                       return true;
                     case 15:
                       this.__CP__ = 13;
-                      this.yield(_12__yield_rl5vzw_d0a0a0a0a0h);
+                      this.yield(_12__yield_rl5vzw_d0a0a0a0a0g);
                       return true;
                     case 0:
                       this.__CP__ = 2;

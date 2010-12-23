@@ -66,12 +66,6 @@ public class RebuildModule_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Set<IModule> modules = CollectionUtil.set(RebuildModule_Action.this.module);

@@ -63,13 +63,6 @@ public class ShowNodeInExplorer_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.project = null;
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NodeExplorer_Tool tool = ShowNodeInExplorer_Action.this.project.getComponent(ProjectPluginManager.class).getTool(NodeExplorer_Tool.class);

@@ -55,11 +55,6 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<SNode> minusPeriodOperations = SModelOperations.getNodes(ConvertDateTimeOperations_Action.this.model, "jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusPeriodOperation");

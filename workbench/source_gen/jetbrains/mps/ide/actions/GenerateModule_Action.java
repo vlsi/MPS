@@ -47,10 +47,6 @@ public class GenerateModule_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GenerateModule_Action.this.action.actionPerformed(event);

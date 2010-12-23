@@ -77,14 +77,6 @@ public class CheckModel_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-    this.models = null;
-    this.project = null;
-    this.operationContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (CheckModel_Action.this.models.size() > 1) {

@@ -60,11 +60,6 @@ public class CleanAllModules_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProgressManager.getInstance().run(new Task.Modal(CleanAllModules_Action.this.project, "Cleaning", true) {

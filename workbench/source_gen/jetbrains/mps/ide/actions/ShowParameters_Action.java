@@ -79,13 +79,6 @@ public class ShowParameters_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editor = null;
-    this.cell = null;
-    this.editorContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Point p = new Point(ShowParameters_Action.this.cell.getX() + ShowParameters_Action.this.cell.getWidth(), ShowParameters_Action.this.cell.getY() + ShowParameters_Action.this.cell.getHeight());

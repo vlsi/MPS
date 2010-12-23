@@ -77,14 +77,6 @@ public class ShowMappingsPartitioning_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.frame = null;
-    this.scope = null;
-    this.models = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       PartitioningHelper.showMappingPartitioning(ShowMappingsPartitioning_Action.this.project, ShowMappingsPartitioning_Action.this.frame, ShowMappingsPartitioning_Action.this.scope, ShowMappingsPartitioning_Action.this.models);

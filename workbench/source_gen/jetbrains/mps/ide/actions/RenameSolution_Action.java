@@ -65,12 +65,6 @@ public class RenameSolution_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new RenameSolutionDialog(RenameSolution_Action.this.frame, ((Solution) RenameSolution_Action.this.module)).showDialog();

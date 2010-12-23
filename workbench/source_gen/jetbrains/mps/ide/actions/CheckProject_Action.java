@@ -59,12 +59,6 @@ public class CheckProject_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.operationContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CheckProject_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkProject(CheckProject_Action.this.project, CheckProject_Action.this.operationContext, true);

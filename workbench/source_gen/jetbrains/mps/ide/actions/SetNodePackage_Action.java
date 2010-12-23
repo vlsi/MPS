@@ -98,13 +98,6 @@ public class SetNodePackage_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.frame = null;
-    this.scope = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<List<String>> packages = new Wrappers._T<List<String>>();

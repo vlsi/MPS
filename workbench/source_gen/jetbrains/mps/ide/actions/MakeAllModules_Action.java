@@ -59,11 +59,6 @@ public class MakeAllModules_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());

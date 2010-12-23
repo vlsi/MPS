@@ -84,15 +84,6 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.context = null;
-    this.module = null;
-    this.project = null;
-    this.treeNode = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Language language = ((Language) NewAccessoryModel_Action.this.module);

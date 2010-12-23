@@ -80,14 +80,6 @@ public class CheckModule_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-    this.modules = null;
-    this.project = null;
-    this.operationContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (CheckModule_Action.this.modules.size() > 1) {

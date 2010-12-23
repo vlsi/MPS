@@ -73,14 +73,6 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.context = null;
-    this.frame = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       TypeCheckingContext typeCheckingContext;

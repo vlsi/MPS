@@ -57,12 +57,6 @@ public class CellProperties_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.cell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new CellPropertiesWindow(CellProperties_Action.this.cell, CellProperties_Action.this.frame);

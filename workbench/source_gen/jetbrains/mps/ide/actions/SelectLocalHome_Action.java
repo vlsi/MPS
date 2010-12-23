@@ -66,13 +66,6 @@ public class SelectLocalHome_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorCell = null;
-    this.editorComponent = null;
-    this.editorContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (SelectLocalHome_Action.this.editorCell instanceof EditorCell_Label && !(SelectLocalHome_Action.this.editorCell.isFirstCaretPosition()) && ((EditorCell_Label) SelectLocalHome_Action.this.editorCell).isFirstPositionAllowed()) {

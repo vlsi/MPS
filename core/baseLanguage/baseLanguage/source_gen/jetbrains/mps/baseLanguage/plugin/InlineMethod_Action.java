@@ -94,15 +94,6 @@ public class InlineMethod_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.frame = null;
-    this.project = null;
-    this.operationContext = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       InlineMethodDialog dialog = new InlineMethodDialog(InlineMethod_Action.this.node, InlineMethod_Action.this.project, InlineMethod_Action.this.operationContext);

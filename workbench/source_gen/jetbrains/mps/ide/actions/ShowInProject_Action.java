@@ -65,13 +65,6 @@ public class ShowInProject_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.context = null;
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProjectPane pane = ProjectPane.getInstance(ShowInProject_Action.this.project);

@@ -85,13 +85,6 @@ public class RunTestInMPS_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-    this.node = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());

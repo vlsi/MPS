@@ -93,13 +93,6 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.project = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       MappingConfigFinder finder = new MappingConfigFinder(((Generator) GoToUsageInMappingConfig_Action.this.module), SNodeOperations.getContainingRoot(GoToUsageInMappingConfig_Action.this.node));

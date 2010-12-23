@@ -80,14 +80,6 @@ public class RenameNamespace_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.ideaProject = null;
-    this.project = null;
-    this.frame = null;
-    this.treeNode = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NamespaceTextNode node = ((NamespaceTextNode) RenameNamespace_Action.this.treeNode);

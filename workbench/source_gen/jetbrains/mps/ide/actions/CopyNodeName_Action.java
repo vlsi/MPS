@@ -58,11 +58,6 @@ public class CopyNodeName_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CopyPasteUtil.copyTextToClipboard(CopyNodeName_Action.this.node.getModel().getLongName() + "." + CopyNodeName_Action.this.node.getName());

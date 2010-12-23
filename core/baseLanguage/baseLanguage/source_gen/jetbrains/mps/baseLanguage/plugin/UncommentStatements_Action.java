@@ -71,12 +71,6 @@ public class UncommentStatements_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.getAncestor(UncommentStatements_Action.this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);

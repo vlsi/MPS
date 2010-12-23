@@ -59,11 +59,6 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       for (IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {

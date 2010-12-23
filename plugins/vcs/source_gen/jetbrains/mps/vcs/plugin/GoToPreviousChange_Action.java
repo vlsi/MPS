@@ -61,12 +61,6 @@ public class GoToPreviousChange_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorContext = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       EditorChangesHighlighter.getInstance(GoToPreviousChange_Action.this.project).goToPreviousChange(GoToPreviousChange_Action.this.editorContext);

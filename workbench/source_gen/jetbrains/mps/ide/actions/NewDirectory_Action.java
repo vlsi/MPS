@@ -65,12 +65,6 @@ public class NewDirectory_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedFile = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final VirtualFile dir = (NewDirectory_Action.this.selectedFile.isDirectory() ?

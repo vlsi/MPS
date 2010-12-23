@@ -56,10 +56,6 @@ public class LanguagePaths_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<Language> languages = MPSModuleRepository.getInstance().getAllLanguages();

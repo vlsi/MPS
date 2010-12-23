@@ -55,12 +55,6 @@ public class GenerateBuildForProjectAction_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.mpsProject = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final GenerateBuildWizard wizard = new GenerateBuildWizard("Generate Build For Project", GenerateBuildForProjectAction_Action.this.project, new BuildGeneratorImpl(GenerateBuildForProjectAction_Action.this.project));

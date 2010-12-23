@@ -50,11 +50,6 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedCell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NodeSubstituteInfo substituteInfo = ShowInequationsForCell_Action.this.selectedCell.getSubstituteInfo();

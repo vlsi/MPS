@@ -103,8 +103,26 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
         Tools_ActionGroup.this.addAction(oldAction);
       }
       Tools_ActionGroup.this.addSeparator();
-      Tools_ActionGroup.this.addGroup("jetbrains.mps.ide.actions.ToolsUpgrade_ActionGroup", "jetbrains.mps.ide");
-      Tools_ActionGroup.this.addGroup("jetbrains.mps.ide.actions.ToolsInternal_ActionGroup", "jetbrains.mps.ide");
+      {
+        GeneratedActionGroup newAction = new ToolsUpgrade_ActionGroup();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getId(), newAction, PluginId.getId("jetbrains.mps.ide"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+      }
+      {
+        GeneratedActionGroup newAction = new ToolsInternal_ActionGroup();
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        AnAction oldAction = manager.getAction(newAction.getId());
+        if (oldAction == null) {
+          manager.registerAction(newAction.getId(), newAction, PluginId.getId("jetbrains.mps.ide"));
+          oldAction = newAction;
+        }
+        Tools_ActionGroup.this.addAction(oldAction);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

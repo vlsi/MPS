@@ -77,14 +77,6 @@ public class ModelProperties_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-    this.context = null;
-    this.size = null;
-    this.place = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       StandardDialogs.createModelPropertiesDialog(ModelProperties_Action.this.model, ModelProperties_Action.this.context).showDialog();

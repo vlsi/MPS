@@ -77,14 +77,6 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.frame = null;
-    this.mpsProject = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<String> report = new Wrappers._T<String>();

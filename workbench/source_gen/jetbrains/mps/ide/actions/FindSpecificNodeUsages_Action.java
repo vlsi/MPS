@@ -103,16 +103,6 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.project = null;
-    this.frame = null;
-    this.context = null;
-    this.model = null;
-    this.cell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       // get node 

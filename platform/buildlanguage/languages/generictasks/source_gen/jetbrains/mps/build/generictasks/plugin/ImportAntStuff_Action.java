@@ -57,11 +57,6 @@ public class ImportAntStuff_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Language language = ((Language) ImportAntStuff_Action.this.module);

@@ -79,13 +79,6 @@ public class ImplementMethod_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedNode = null;
-    this.editorContext = null;
-    this.operationContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Project project = ImplementMethod_Action.this.operationContext.getProject();

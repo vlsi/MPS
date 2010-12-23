@@ -85,15 +85,6 @@ public class HighlightInstances_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.editorComponent = null;
-    this.editorCell = null;
-    this.scope = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NodeHighlightManager highlightManager = HighlightInstances_Action.this.editorComponent.getHighlightManager();

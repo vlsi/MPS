@@ -52,11 +52,6 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       BookmarkManager bookmarkManager = ShowBookmarksDialog_Action.this.project.getComponent(BookmarkManager.class);

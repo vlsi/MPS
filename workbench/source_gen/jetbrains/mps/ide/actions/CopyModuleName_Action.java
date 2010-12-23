@@ -51,11 +51,6 @@ public class CopyModuleName_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CopyPasteUtil.copyTextToClipboard(CopyModuleName_Action.this.module.getModuleFqName());

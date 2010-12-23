@@ -71,13 +71,6 @@ public class RenameLanguage_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.frame = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new RenameLanguageDialog(RenameLanguage_Action.this.frame, RenameLanguage_Action.this.project, ((Language) RenameLanguage_Action.this.module)).showDialog();

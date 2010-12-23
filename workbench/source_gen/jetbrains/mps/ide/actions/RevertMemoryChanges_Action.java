@@ -58,11 +58,6 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ((EditableSModelDescriptor) RevertMemoryChanges_Action.this.model).reloadFromDisk();

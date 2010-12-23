@@ -76,12 +76,6 @@ public class GenerateFiles_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.ppNodes = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IOperationContext projectContext = ProjectOperationContext.get(GenerateFiles_Action.this.project);

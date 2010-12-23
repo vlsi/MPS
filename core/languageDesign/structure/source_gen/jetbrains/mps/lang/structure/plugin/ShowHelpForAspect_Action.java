@@ -68,13 +68,6 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.model = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HelpHelper.showHelpForAspect(ShowHelpForAspect_Action.this.module, ShowHelpForAspect_Action.this.model);

@@ -64,12 +64,6 @@ public class ShowMetaLevel_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.currentNode = null;
-    this.component = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       int metaLevel = BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(ShowMetaLevel_Action.this.currentNode);

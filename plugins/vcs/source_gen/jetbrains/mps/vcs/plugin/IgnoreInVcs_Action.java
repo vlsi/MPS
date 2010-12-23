@@ -61,12 +61,6 @@ public class IgnoreInVcs_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.modules = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(IgnoreInVcs_Action.this.project, IgnoreInVcs_Action.this.modules);

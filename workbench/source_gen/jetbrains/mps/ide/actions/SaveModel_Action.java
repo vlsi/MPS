@@ -58,11 +58,6 @@ public class SaveModel_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ((EditableSModelDescriptor) SaveModel_Action.this.model).save();

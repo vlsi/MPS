@@ -58,11 +58,6 @@ public class FindPrevious_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       FindPrevious_Action.this.editorComponent.getSearchPanel().goToPrevious();

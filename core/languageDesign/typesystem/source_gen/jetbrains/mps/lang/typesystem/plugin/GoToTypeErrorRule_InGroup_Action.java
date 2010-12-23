@@ -65,12 +65,6 @@ public class GoToTypeErrorRule_InGroup_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.operationContext = null;
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GoToTypeErrorRuleUtil.goToRuleById(GoToTypeErrorRule_InGroup_Action.this.operationContext, new Pair<String, String>(GoToTypeErrorRule_InGroup_Action.this.errorId.o1, GoToTypeErrorRule_InGroup_Action.this.errorId.o2));

@@ -66,12 +66,6 @@ public class FoldSelection_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorContext = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       FoldSelection_Action.this.getAction().execute(FoldSelection_Action.this.editorContext);

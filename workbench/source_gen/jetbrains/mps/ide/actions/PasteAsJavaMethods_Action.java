@@ -58,12 +58,6 @@ public class PasteAsJavaMethods_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.operationContext = null;
-    this.anchorNode = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new JavaPaster().pasteJava(PasteAsJavaMethods_Action.this.anchorNode, PasteAsJavaMethods_Action.this.operationContext, FeatureKind.METHOD);

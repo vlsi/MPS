@@ -50,11 +50,6 @@ public class ShowTodoViewer_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ShowTodoViewer_Action.this.project.getComponent(ProjectPluginManager.class).getTool(TodoViewer_Tool.class).openToolLater(true);

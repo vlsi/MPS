@@ -59,12 +59,6 @@ public class ShowCellInExplorer_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.cell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ShowCellInExplorer_Action.this.context.getComponent(CellExplorerView.class).showCell(ShowCellInExplorer_Action.this.cell);

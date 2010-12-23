@@ -81,12 +81,6 @@ public class CommentStatements_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(CommentStatements_Action.this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");

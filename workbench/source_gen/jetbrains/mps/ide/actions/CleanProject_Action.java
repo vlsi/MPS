@@ -72,13 +72,6 @@ public class CleanProject_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.ideaProject = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Set<IModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<IModule>());

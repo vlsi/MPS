@@ -86,14 +86,6 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.context = null;
-    this.editorCell = null;
-    this.editor = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);

@@ -67,13 +67,6 @@ public class PrintNodePosition_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.model = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       DebugInfo result = TraceInfoCache.getInstance().get(PrintNodePosition_Action.this.model);

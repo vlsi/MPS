@@ -87,13 +87,6 @@ public class DeleteModules_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.modules = null;
-    this.selSize = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       String message = "Are you sure you want to delete selected modules? This operation is not undoable.";

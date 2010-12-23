@@ -5742,6 +5742,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Tools_ActionGroup" file="Tools_ActionGroup.java">
+    <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ReloadStubs_Action" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowModelChecker_Action" />
@@ -5753,6 +5754,7 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowModelRepository_Action" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ToolsUpgrade_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.InstallIDEAPlugin_Action" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ReloadAll_Action" />

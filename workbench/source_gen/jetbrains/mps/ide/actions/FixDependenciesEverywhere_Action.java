@@ -57,11 +57,6 @@ public class FixDependenciesEverywhere_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       for (SModelDescriptor model : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {

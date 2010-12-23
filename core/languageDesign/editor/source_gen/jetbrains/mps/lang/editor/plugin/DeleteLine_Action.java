@@ -75,12 +75,6 @@ public class DeleteLine_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-    this.currentCell = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (DeleteLine_Action.this.currentCell instanceof EditorCell_Collection) {

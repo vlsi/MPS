@@ -90,15 +90,6 @@ public class PasteNode_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.pack = null;
-    this.context = null;
-    this.contextModel = null;
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData();

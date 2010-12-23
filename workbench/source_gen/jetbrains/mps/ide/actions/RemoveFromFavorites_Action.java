@@ -71,12 +71,6 @@ public class RemoveFromFavorites_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.treeNodes = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<Object> objects = FavoritesUtil.getObjects(RemoveFromFavorites_Action.this.treeNodes);

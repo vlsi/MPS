@@ -51,11 +51,6 @@ public class ShowModuleRepository_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ModuleRepository_Tool tool = ShowModuleRepository_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModuleRepository_Tool.class);

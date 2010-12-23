@@ -68,13 +68,6 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedFile = null;
-    this.project = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       String oldName = RenameFileOrDirectory_Action.this.selectedFile.getName();

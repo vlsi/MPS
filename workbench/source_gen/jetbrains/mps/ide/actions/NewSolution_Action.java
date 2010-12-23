@@ -68,13 +68,6 @@ public class NewSolution_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.ideaProject = null;
-    this.frame = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NewSolutionDialog dialog = new NewSolutionDialog(NewSolution_Action.this.frame);

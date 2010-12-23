@@ -66,12 +66,6 @@ public class MakeModule_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Set<IModule> modules = CollectionUtil.set(MakeModule_Action.this.module);

@@ -100,15 +100,6 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedNode = null;
-    this.editorComponent = null;
-    this.editorContext = null;
-    this.operationContext = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<Set<Tuples._2<SNode, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNode, SNode>>>();

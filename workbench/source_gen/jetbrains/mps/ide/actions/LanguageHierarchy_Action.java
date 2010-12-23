@@ -69,12 +69,6 @@ public class LanguageHierarchy_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Language language = (Language) LanguageHierarchy_Action.this.module;

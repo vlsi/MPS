@@ -65,13 +65,6 @@ public class ShowHelpForRoot_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.model = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HelpHelper.showHelpForRoot(ShowHelpForRoot_Action.this.node);

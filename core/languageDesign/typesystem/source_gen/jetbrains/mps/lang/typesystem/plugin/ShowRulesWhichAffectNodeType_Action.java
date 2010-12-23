@@ -65,12 +65,6 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.operationContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();

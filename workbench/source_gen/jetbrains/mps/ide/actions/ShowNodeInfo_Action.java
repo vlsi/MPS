@@ -71,14 +71,6 @@ public class ShowNodeInfo_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.editor = null;
-    this.cell = null;
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Point point = new Point(ShowNodeInfo_Action.this.cell.getX() + ShowNodeInfo_Action.this.cell.getWidth(), ShowNodeInfo_Action.this.cell.getY());

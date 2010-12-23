@@ -54,12 +54,6 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.langModule = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IOperationContext newContext = new FindInstancesContext(new FindInstancesContext(FindInstancesByCondition_Action.this.context));

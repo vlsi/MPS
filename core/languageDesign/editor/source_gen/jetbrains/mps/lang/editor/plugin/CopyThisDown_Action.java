@@ -76,12 +76,6 @@ public class CopyThisDown_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.inputNodes = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (ListSequence.fromList(CopyThisDown_Action.this.inputNodes).count() == 1) {

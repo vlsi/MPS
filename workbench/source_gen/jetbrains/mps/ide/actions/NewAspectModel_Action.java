@@ -71,12 +71,6 @@ public class NewAspectModel_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-    this.ideaProject = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) NewAspectModel_Action.this.module));

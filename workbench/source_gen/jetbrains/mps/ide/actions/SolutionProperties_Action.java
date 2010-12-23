@@ -70,12 +70,6 @@ public class SolutionProperties_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.module = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Solution solution = (Solution) SolutionProperties_Action.this.module;

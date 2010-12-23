@@ -63,13 +63,6 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedCell = null;
-    this.editorComponent = null;
-    this.project = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ToggleBreakpoint_Action.this.project.getComponent(BreakpointManagerComponent.class).toggleBreakpoint(ToggleBreakpoint_Action.this.selectedCell);

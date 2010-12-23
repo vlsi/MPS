@@ -91,14 +91,6 @@ public class ExtractMethod_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.frame = null;
-    this.context = null;
-    this.editorComponent = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<ExtractMethodRefactoringParameters> params = new Wrappers._T<ExtractMethodRefactoringParameters>();

@@ -60,11 +60,6 @@ public class QuickCreate_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);

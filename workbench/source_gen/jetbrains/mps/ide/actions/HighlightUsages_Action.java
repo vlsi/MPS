@@ -73,13 +73,6 @@ public class HighlightUsages_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-    this.editorCell = null;
-    this.model = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ModelAccess.instance().runReadAction(new Runnable() {

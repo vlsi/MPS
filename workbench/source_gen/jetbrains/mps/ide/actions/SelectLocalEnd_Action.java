@@ -66,13 +66,6 @@ public class SelectLocalEnd_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorCell = null;
-    this.editorComponent = null;
-    this.editorContext = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (SelectLocalEnd_Action.this.editorCell instanceof EditorCell_Label && !(SelectLocalEnd_Action.this.editorCell.isLastCaretPosition()) && ((EditorCell_Label) SelectLocalEnd_Action.this.editorCell).isLastPositionAllowed()) {

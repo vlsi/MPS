@@ -50,10 +50,6 @@ public class RemoveBootstrapLanguagesDevKitFromLanguageModels_Action extends Gen
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       for (Language l : ListSequence.fromList(MPSModuleRepository.getInstance().getAllLanguages())) {

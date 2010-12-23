@@ -46,10 +46,6 @@ public class GoToFile_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GoToFile_Action.this.action.actionPerformed(event);

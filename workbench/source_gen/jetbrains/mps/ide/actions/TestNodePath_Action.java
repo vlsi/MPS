@@ -57,11 +57,6 @@ public class TestNodePath_Action extends GeneratedAction {
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode root = SNodeOperations.getContainingRoot(TestNodePath_Action.this.node);
