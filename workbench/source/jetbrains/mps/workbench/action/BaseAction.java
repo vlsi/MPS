@@ -106,15 +106,11 @@ public abstract class BaseAction extends AnAction implements DumbAware {
           disable(e.getPresentation());
           return;
         }
-        try {
-          if (!collectActionData(e)) {
-            disable(e.getPresentation());
-            return;
-          }
-          doUpdate(e);
-        } finally {
-          cleanup();
+        if (!collectActionData(e)) {
+          disable(e.getPresentation());
+          return;
         }
+        doUpdate(e);
       }
     });
   }
@@ -178,10 +174,6 @@ public abstract class BaseAction extends AnAction implements DumbAware {
    */
   protected boolean collectActionData(AnActionEvent e) {
     return true;
-  }
-
-  protected void cleanup() {
-
   }
 
   /**
