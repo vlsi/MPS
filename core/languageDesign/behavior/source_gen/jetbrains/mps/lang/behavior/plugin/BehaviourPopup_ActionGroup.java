@@ -26,7 +26,7 @@ public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.behavior@transient24"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.behavior"));
           oldAction = newAction;
         }
         BehaviourPopup_ActionGroup.this.addAction(oldAction);

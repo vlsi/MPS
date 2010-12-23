@@ -23,7 +23,7 @@ public class ShowHelp_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure@transient37"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure"));
           oldAction = newAction;
         }
         ShowHelp_ActionGroup.this.addAction(oldAction);
@@ -33,7 +33,7 @@ public class ShowHelp_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure@transient37"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure"));
           oldAction = newAction;
         }
         ShowHelp_ActionGroup.this.addAction(oldAction);
@@ -43,7 +43,7 @@ public class ShowHelp_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure@transient37"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure"));
           oldAction = newAction;
         }
         ShowHelp_ActionGroup.this.addAction(oldAction);
@@ -53,7 +53,7 @@ public class ShowHelp_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure@transient37"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.structure"));
           oldAction = newAction;
         }
         ShowHelp_ActionGroup.this.addAction(oldAction);

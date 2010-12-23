@@ -23,7 +23,7 @@ public class VCSModelActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs"));
           oldAction = newAction;
         }
         VCSModelActions_ActionGroup.this.addAction(oldAction);
@@ -33,7 +33,7 @@ public class VCSModelActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs"));
           oldAction = newAction;
         }
         VCSModelActions_ActionGroup.this.addAction(oldAction);

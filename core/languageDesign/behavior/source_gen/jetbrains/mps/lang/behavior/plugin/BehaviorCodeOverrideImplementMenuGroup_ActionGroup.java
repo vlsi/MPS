@@ -23,7 +23,7 @@ public class BehaviorCodeOverrideImplementMenuGroup_ActionGroup extends Generate
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.behavior@transient24"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.behavior"));
           oldAction = newAction;
         }
         BehaviorCodeOverrideImplementMenuGroup_ActionGroup.this.addAction(oldAction);
@@ -33,7 +33,7 @@ public class BehaviorCodeOverrideImplementMenuGroup_ActionGroup extends Generate
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.behavior@transient24"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.behavior"));
           oldAction = newAction;
         }
         BehaviorCodeOverrideImplementMenuGroup_ActionGroup.this.addAction(oldAction);

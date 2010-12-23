@@ -23,7 +23,7 @@ public class ProjectAddition_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.custommps@transient6"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.custommps"));
           oldAction = newAction;
         }
         ProjectAddition_ActionGroup.this.addAction(oldAction);

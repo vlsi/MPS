@@ -23,7 +23,7 @@ public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGr
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.quickQueryLanguage@transient13"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.quickQueryLanguage"));
           oldAction = newAction;
         }
         FindInstancesByConditionGroup_ActionGroup.this.addAction(oldAction);
@@ -33,7 +33,7 @@ public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGr
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.quickQueryLanguage@transient13"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.quickQueryLanguage"));
           oldAction = newAction;
         }
         FindInstancesByConditionGroup_ActionGroup.this.addAction(oldAction);

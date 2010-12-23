@@ -24,7 +24,7 @@ public class LanguageInternalAddition_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.smodel@transient36"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.smodel"));
           oldAction = newAction;
         }
         LanguageInternalAddition_ActionGroup.this.addAction(oldAction);

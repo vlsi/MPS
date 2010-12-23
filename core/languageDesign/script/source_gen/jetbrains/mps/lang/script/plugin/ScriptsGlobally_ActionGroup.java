@@ -60,7 +60,7 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.script@transient35"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.script"));
           oldAction = newAction;
         }
         ScriptsGlobally_ActionGroup.this.addAction(oldAction);

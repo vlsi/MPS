@@ -23,7 +23,7 @@ public class PrintNodePosition_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage@transient41"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage"));
           oldAction = newAction;
         }
         PrintNodePosition_ActionGroup.this.addAction(oldAction);

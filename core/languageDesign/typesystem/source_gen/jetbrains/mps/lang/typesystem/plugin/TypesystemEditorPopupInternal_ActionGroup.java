@@ -23,7 +23,7 @@ public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGr
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem@transient40"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem"));
           oldAction = newAction;
         }
         TypesystemEditorPopupInternal_ActionGroup.this.addAction(oldAction);
@@ -33,7 +33,7 @@ public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGr
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem@transient40"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem"));
           oldAction = newAction;
         }
         TypesystemEditorPopupInternal_ActionGroup.this.addAction(oldAction);

@@ -24,7 +24,7 @@ public class InstallCustomMergeDriverGroup_ActionGroup extends GeneratedActionGr
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs@transient53"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.vcs"));
           oldAction = newAction;
         }
         InstallCustomMergeDriverGroup_ActionGroup.this.addAction(oldAction);

@@ -23,7 +23,7 @@ public class MetaLevelActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.quotation@transient33"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.quotation"));
           oldAction = newAction;
         }
         MetaLevelActions_ActionGroup.this.addAction(oldAction);

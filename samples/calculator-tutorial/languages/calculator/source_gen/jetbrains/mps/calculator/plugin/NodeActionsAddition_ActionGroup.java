@@ -23,7 +23,7 @@ public class NodeActionsAddition_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.calculator@transient0"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.calculator"));
           oldAction = newAction;
         }
         NodeActionsAddition_ActionGroup.this.addAction(oldAction);

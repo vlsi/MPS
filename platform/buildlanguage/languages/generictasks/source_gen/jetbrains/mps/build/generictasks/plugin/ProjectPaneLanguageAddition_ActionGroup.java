@@ -23,7 +23,7 @@ public class ProjectPaneLanguageAddition_ActionGroup extends GeneratedActionGrou
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.generictasks@transient7"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.generictasks"));
           oldAction = newAction;
         }
         ProjectPaneLanguageAddition_ActionGroup.this.addAction(oldAction);

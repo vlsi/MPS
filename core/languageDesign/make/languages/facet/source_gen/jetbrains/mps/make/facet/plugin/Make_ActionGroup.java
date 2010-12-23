@@ -23,7 +23,7 @@ public class Make_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.make.facet@transient31"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.make.facet"));
           oldAction = newAction;
         }
         Make_ActionGroup.this.addAction(oldAction);
@@ -33,7 +33,7 @@ public class Make_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.make.facet@transient31"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.make.facet"));
           oldAction = newAction;
         }
         Make_ActionGroup.this.addAction(oldAction);
