@@ -19,10 +19,12 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.Anchor;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.workbench.action.MPSActions;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -74,6 +76,7 @@ public abstract class BaseApplicationPlugin {
     for (BaseCustomApplicationPlugin part : myCustomParts) {
       part.dispose ();
     }
+    MPSActions.getInstance().unregisterActions(getId());
   }
 
   protected void insertInterfaceGroupIntoAnother(String toId, String whatId, String labelName) {
@@ -94,4 +97,6 @@ public abstract class BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother(toId,whatId,labelName);
     //todo with this method, we can use Idea's ActionStubs
   }
+
+  protected abstract PluginId getId();
 }
