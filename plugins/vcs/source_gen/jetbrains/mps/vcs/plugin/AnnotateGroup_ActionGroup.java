@@ -27,7 +27,6 @@ public class AnnotateGroup_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         AnnotateGroup_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

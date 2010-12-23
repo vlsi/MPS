@@ -10,4 +10,8 @@ public class UiLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public UiLanguage_ApplicationPlugin() {
   }
+
+  public PluginId getId() {
+    return myId;
+  }
 }

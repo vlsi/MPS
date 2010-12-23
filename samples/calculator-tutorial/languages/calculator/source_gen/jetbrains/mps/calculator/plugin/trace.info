@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Calculator_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.calculator.plugin.Calculator_ProjectPlugin" />
-  <unitInfo fileName="Calculator_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.calculator.plugin.Calculator_ApplicationPlugin" />
-  <unitInfo fileName="NodeActionsAddition_ActionGroup.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.calculator.plugin.NodeActionsAddition_ActionGroup" />
+  <unitInfo fileName="NodeActionsAddition_ActionGroup.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.calculator.plugin.NodeActionsAddition_ActionGroup" />
+  <unitInfo fileName="Calculator_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.calculator.plugin.Calculator_ApplicationPlugin" />
   <unitInfo fileName="ExecuteCalculator_Action.java" startLine="16" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.calculator.plugin.ExecuteCalculator_Action" />
   <root nodeId="1241364911745">
     <nodeInfo nodeId="1241364981992" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="calcNode" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="25" />
@@ -70,11 +70,10 @@
     <nodeInfo nodeId="1241366421400" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeActionsAddition_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="124" />
     <nodeInfo nodeId="1241366421400" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeActionsAddition_ActionGroup.java" startLine="26" startPosition="124" endLine="27" endPosition="32" />
     <nodeInfo nodeId="1241366421400" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeActionsAddition_ActionGroup.java" startLine="28" startPosition="9" endLine="29" endPosition="66" />
-    <nodeInfo nodeId="1241366421400" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="NodeActionsAddition_ActionGroup.java" startLine="29" startPosition="66" endLine="30" endPosition="0" />
     <nodeInfo nodeId="1241366421400" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="NodeActionsAddition_ActionGroup.java" startLine="24" startPosition="72" endLine="28" endPosition="9" />
-    <nodeInfo nodeId="1241366421400" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="NodeActionsAddition_ActionGroup.java" startLine="20" startPosition="9" endLine="31" endPosition="7" />
+    <nodeInfo nodeId="1241366421400" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="NodeActionsAddition_ActionGroup.java" startLine="20" startPosition="9" endLine="30" endPosition="7" />
     <scopeInfo nodeId="1241366421400" fileName="NodeActionsAddition_ActionGroup.java" startLine="25" startPosition="32" endLine="27" endPosition="32" />
-    <scopeInfo nodeId="1241366421400" fileName="NodeActionsAddition_ActionGroup.java" startLine="21" startPosition="7" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1241366421400" fileName="NodeActionsAddition_ActionGroup.java" startLine="21" startPosition="7" endLine="29" endPosition="66" />
   </root>
 </debugInfo>
 

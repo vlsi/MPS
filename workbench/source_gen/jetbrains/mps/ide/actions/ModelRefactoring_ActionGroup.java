@@ -23,11 +23,10 @@ public class ModelRefactoring_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         ModelRefactoring_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -71,7 +71,6 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
             oldAction = newAction;
           }
           GoToTypeErrorGroup_ActionGroup.this.addAction(oldAction);
-
         }
       }
       {
@@ -83,7 +82,6 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         GoToTypeErrorGroup_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

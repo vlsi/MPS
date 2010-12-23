@@ -26,22 +26,20 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         DebugTool_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new Pause_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         DebugTool_ActionGroup.this.addAction(oldAction);
-
       }
       DebugTool_ActionGroup.this.addAnchor(DebugTool_ActionGroup.LABEL_ID_StopAction);
       DebugTool_ActionGroup.this.addSeparator();
@@ -50,33 +48,30 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         DebugTool_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ExportThreads_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         DebugTool_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ViewBreakpoints_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         DebugTool_ActionGroup.this.addAction(oldAction);
-
       }
       DebugTool_ActionGroup.this.addAnchor(DebugTool_ActionGroup.LABEL_ID_MuteAction);
       DebugTool_ActionGroup.this.addSeparator();

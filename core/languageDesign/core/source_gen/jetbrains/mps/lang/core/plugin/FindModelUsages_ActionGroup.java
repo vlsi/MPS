@@ -27,7 +27,6 @@ public class FindModelUsages_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         FindModelUsages_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

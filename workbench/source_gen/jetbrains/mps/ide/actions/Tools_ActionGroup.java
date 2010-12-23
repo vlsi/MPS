@@ -24,44 +24,40 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         Tools_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowModelRepository_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         Tools_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowBookmarks_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         Tools_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowModelChecker_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         Tools_ActionGroup.this.addAction(oldAction);
-
       }
       Tools_ActionGroup.this.addAnchor(Tools_ActionGroup.LABEL_ID_customTools);
       Tools_ActionGroup.this.addSeparator();
@@ -70,22 +66,20 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         Tools_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ReloadStubs_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         Tools_ActionGroup.this.addAction(oldAction);
-
       }
       Tools_ActionGroup.this.addSeparator();
       {
@@ -93,22 +87,20 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         Tools_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new RenameAspects_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         Tools_ActionGroup.this.addAction(oldAction);
-
       }
       Tools_ActionGroup.this.addSeparator();
       Tools_ActionGroup.this.addGroup("jetbrains.mps.ide.actions.ToolsUpgrade_ActionGroup", "jetbrains.mps.ide");

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Testdata_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.plugin.Testdata_ProjectPlugin" />
-  <unitInfo fileName="Testdata_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.plugin.Testdata_ApplicationPlugin" />
+  <unitInfo fileName="Testdata_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.plugin.Testdata_ApplicationPlugin" />
   <unitInfo fileName="EditorExtension_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ui.internal.testdata.plugin.EditorExtension_CustomApplicationPlugin" />
   <root nodeId="6661832029303965031">
     <nodeInfo nodeId="6661832029303965032" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="11" startPosition="0" endLine="12" endPosition="39" />

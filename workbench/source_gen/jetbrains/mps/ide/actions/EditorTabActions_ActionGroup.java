@@ -26,11 +26,10 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
       EditorTabActions_ActionGroup.this.addSeparator();
       {
@@ -38,44 +37,40 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new GoToEditorDeclaration_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new GoToRules_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowNodeInExplorer_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
       EditorTabActions_ActionGroup.this.addSeparator();
       {
@@ -83,22 +78,20 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new FastFindNodeUsages_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
       EditorTabActions_ActionGroup.this.addAnchor(EditorTabActions_ActionGroup.LABEL_ID_find_instances);
       EditorTabActions_ActionGroup.this.addSeparator();
@@ -107,11 +100,10 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
       EditorTabActions_ActionGroup.this.addAnchor(EditorTabActions_ActionGroup.LABEL_ID_structure);
       EditorTabActions_ActionGroup.this.addAnchor(EditorTabActions_ActionGroup.LABEL_ID_diff);
@@ -121,11 +113,10 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient5"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide@transient23"));
           oldAction = newAction;
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

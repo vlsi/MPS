@@ -13,6 +13,10 @@ public class Dates_ApplicationPlugin extends BaseApplicationPlugin {
   public Dates_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 

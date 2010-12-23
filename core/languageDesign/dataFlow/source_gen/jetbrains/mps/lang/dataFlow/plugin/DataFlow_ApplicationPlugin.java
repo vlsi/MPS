@@ -13,6 +13,10 @@ public class DataFlow_ApplicationPlugin extends BaseApplicationPlugin {
   public DataFlow_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 

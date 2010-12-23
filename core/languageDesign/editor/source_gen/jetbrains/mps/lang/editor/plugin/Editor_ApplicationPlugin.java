@@ -14,6 +14,10 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
   public Editor_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 

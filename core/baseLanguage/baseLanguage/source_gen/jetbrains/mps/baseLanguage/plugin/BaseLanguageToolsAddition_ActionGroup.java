@@ -27,7 +27,6 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
           oldAction = newAction;
         }
         BaseLanguageToolsAddition_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new AnalyzeStacktrace_Action();
@@ -38,7 +37,6 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
           oldAction = newAction;
         }
         BaseLanguageToolsAddition_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

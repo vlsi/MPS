@@ -27,7 +27,6 @@ public class PrintNodePosition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         PrintNodePosition_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

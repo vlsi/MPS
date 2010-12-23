@@ -27,7 +27,6 @@ public class BehaviorCodeOverrideImplementMenuGroup_ActionGroup extends Generate
           oldAction = newAction;
         }
         BehaviorCodeOverrideImplementMenuGroup_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ImplementBehaviorMethod_Action();
@@ -38,7 +37,6 @@ public class BehaviorCodeOverrideImplementMenuGroup_ActionGroup extends Generate
           oldAction = newAction;
         }
         BehaviorCodeOverrideImplementMenuGroup_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -27,7 +27,6 @@ public class BaseLangaugeCodeCommentsMenuGroup_ActionGroup extends GeneratedActi
           oldAction = newAction;
         }
         BaseLangaugeCodeCommentsMenuGroup_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new UncommentStatements_Action();
@@ -38,7 +37,6 @@ public class BaseLangaugeCodeCommentsMenuGroup_ActionGroup extends GeneratedActi
           oldAction = newAction;
         }
         BaseLangaugeCodeCommentsMenuGroup_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new CommentLine_Action();
@@ -49,7 +47,6 @@ public class BaseLangaugeCodeCommentsMenuGroup_ActionGroup extends GeneratedActi
           oldAction = newAction;
         }
         BaseLangaugeCodeCommentsMenuGroup_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

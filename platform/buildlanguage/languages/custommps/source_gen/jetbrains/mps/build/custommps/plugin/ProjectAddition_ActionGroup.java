@@ -23,11 +23,10 @@ public class ProjectAddition_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.custommps@transient7"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.custommps@transient6"));
           oldAction = newAction;
         }
         ProjectAddition_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

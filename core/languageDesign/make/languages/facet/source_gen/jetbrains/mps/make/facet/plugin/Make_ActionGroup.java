@@ -27,7 +27,6 @@ public class Make_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         Make_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new MakeOrBuild_Action(false);
@@ -38,7 +37,6 @@ public class Make_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         Make_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

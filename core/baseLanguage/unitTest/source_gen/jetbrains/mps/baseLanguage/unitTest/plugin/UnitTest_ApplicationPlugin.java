@@ -10,4 +10,8 @@ public class UnitTest_ApplicationPlugin extends BaseApplicationPlugin {
 
   public UnitTest_ApplicationPlugin() {
   }
+
+  public PluginId getId() {
+    return myId;
+  }
 }

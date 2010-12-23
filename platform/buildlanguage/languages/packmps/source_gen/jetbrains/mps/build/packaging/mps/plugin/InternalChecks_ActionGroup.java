@@ -23,33 +23,30 @@ public class InternalChecks_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps@transient10"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps@transient9"));
           oldAction = newAction;
         }
         InternalChecks_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new CheckCoreRuntimeDeps_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps@transient10"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps@transient9"));
           oldAction = newAction;
         }
         InternalChecks_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new CheckIncludedLanguages_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps@transient10"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps@transient9"));
           oldAction = newAction;
         }
         InternalChecks_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

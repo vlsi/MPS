@@ -23,22 +23,20 @@ public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGr
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.quickQueryLanguage@transient14"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.quickQueryLanguage@transient13"));
           oldAction = newAction;
         }
         FindInstancesByConditionGroup_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ReplacementQueryAction_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.quickQueryLanguage@transient14"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.quickQueryLanguage@transient13"));
           oldAction = newAction;
         }
         FindInstancesByConditionGroup_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

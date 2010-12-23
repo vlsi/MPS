@@ -14,6 +14,10 @@ public class Behavior_ApplicationPlugin extends BaseApplicationPlugin {
   public Behavior_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 

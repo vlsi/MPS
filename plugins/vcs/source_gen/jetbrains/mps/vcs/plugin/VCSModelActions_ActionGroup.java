@@ -27,7 +27,6 @@ public class VCSModelActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         VCSModelActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ReRunMergeFromBackup_Action();
@@ -38,7 +37,6 @@ public class VCSModelActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         VCSModelActions_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

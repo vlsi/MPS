@@ -27,7 +27,6 @@ public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGr
           oldAction = newAction;
         }
         TypesystemEditorPopupInternal_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowTypeSystemTrace_Action();
@@ -38,7 +37,6 @@ public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGr
           oldAction = newAction;
         }
         TypesystemEditorPopupInternal_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

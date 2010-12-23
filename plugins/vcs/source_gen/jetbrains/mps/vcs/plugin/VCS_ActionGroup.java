@@ -27,7 +27,6 @@ public class VCS_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         VCS_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new IgnoreInVcs_Action();
@@ -38,7 +37,6 @@ public class VCS_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         VCS_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

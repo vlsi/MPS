@@ -29,7 +29,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         BaseLanguageEditorPopup_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new GoToOverridenMethod_Action();
@@ -40,7 +39,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         BaseLanguageEditorPopup_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new GoToInheritedClassifier_Action();
@@ -51,7 +49,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         BaseLanguageEditorPopup_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowMembers_Action();
@@ -62,7 +59,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         BaseLanguageEditorPopup_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

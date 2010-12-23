@@ -11,9 +11,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
-  public PluginId myId = PluginId.getId("jetbrains.mps.ide");
+  private PluginId myId = PluginId.getId("jetbrains.mps.ide");
 
   public Ide_ApplicationPlugin() {
+  }
+
+  public PluginId getId() {
+    return myId;
   }
 
   public void createGroups() {

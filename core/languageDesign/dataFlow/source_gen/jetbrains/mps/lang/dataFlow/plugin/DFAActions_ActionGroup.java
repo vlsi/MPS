@@ -27,7 +27,6 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         DFAActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new PrintInitializationInformation_Action();
@@ -38,7 +37,6 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         DFAActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new PrintReachingDefinintionsInformation_Action();
@@ -49,7 +47,6 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         DFAActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowDFA_Action();
@@ -60,7 +57,6 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         DFAActions_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

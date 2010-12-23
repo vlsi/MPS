@@ -10,4 +10,8 @@ public class LambdaCalculus_ApplicationPlugin extends BaseApplicationPlugin {
 
   public LambdaCalculus_ApplicationPlugin() {
   }
+
+  public PluginId getId() {
+    return myId;
+  }
 }

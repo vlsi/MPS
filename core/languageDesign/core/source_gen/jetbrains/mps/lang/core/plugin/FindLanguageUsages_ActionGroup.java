@@ -27,7 +27,6 @@ public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         FindLanguageUsages_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new FindLanguageConceptsUsages_Action();
@@ -38,7 +37,6 @@ public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         FindLanguageUsages_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

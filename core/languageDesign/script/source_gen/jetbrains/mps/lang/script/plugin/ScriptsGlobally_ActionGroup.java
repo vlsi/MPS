@@ -64,7 +64,6 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         ScriptsGlobally_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -24,6 +24,10 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   public BaseLanguage_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 

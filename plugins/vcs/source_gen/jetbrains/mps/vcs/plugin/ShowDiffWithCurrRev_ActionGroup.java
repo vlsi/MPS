@@ -27,7 +27,6 @@ public class ShowDiffWithCurrRev_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         ShowDiffWithCurrRev_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

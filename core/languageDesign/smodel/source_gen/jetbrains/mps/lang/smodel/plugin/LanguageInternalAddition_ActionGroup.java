@@ -28,7 +28,6 @@ public class LanguageInternalAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         LanguageInternalAddition_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

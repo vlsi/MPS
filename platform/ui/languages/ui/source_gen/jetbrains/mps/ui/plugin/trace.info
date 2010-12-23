@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Ui_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.plugin.Ui_ProjectPlugin" />
-  <unitInfo fileName="Ui_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ui.plugin.Ui_ApplicationPlugin" />
   <unitInfo fileName="Variants_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.plugin.Variants_CustomApplicationPlugin" />
+  <unitInfo fileName="Ui_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.plugin.Ui_ApplicationPlugin" />
   <root nodeId="8117382572454923102">
     <nodeInfo nodeId="8117382572454923263" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGS" fileName="Variants.java" startLine="16" startPosition="23" endLine="17" endPosition="161" />
     <nodeInfo nodeId="8117382572454923274" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" fileName="Variants.java" startLine="17" startPosition="161" endLine="18" endPosition="42" />

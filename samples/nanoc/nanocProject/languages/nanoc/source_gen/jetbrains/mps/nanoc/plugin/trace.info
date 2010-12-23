@@ -8,7 +8,7 @@
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="292" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$MyState" />
   <unitInfo fileName="SourceNanocConfiguration_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Factory" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.TraceInfoInitializer_CustomApplicationPlugin" />
-  <unitInfo fileName="Nanoc_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Nanoc_ApplicationPlugin" />
+  <unitInfo fileName="Nanoc_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.Nanoc_ApplicationPlugin" />
   <unitInfo fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.DebugInfoProvider_CustomApplicationPlugin" />
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="146" startPosition="52" endLine="169" endPosition="13" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$2" />
   <unitInfo fileName="SourceNanocConfiguration_Configuration.java" startLine="305" startPosition="0" endLine="328" endPosition="0" unitName="jetbrains.mps.nanoc.plugin.SourceNanocConfiguration_Configuration$MyExecutionResult" />

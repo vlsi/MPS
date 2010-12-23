@@ -13,6 +13,10 @@ public class Generictasks_ApplicationPlugin extends BaseApplicationPlugin {
   public Generictasks_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 

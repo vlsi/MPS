@@ -9,8 +9,8 @@
   <unitInfo fileName="FacetManifest.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.FacetManifest" />
   <unitInfo fileName="MResource.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MResource" />
   <unitInfo fileName="Facets_CustomApplicationPlugin.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
-  <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
-  <unitInfo fileName="Make_ActionGroup.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_ActionGroup" />
+  <unitInfo fileName="Make_ActionGroup.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_ActionGroup" />
+  <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
   <unitInfo fileName="GResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.GResource" />
   <unitInfo fileName="Make_Facet.java" startLine="17" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet" />
   <unitInfo fileName="TextGen_Facet.java" startLine="29" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
@@ -965,22 +965,20 @@
     <nodeInfo nodeId="8163946392710004059" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="125" />
     <nodeInfo nodeId="8163946392710004059" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="26" startPosition="125" endLine="27" endPosition="32" />
     <nodeInfo nodeId="8163946392710004059" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="28" startPosition="9" endLine="29" endPosition="51" />
-    <nodeInfo nodeId="8163946392710004059" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="Make_ActionGroup.java" startLine="29" startPosition="51" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Make_ActionGroup.java" startLine="32" startPosition="7" endLine="33" endPosition="66" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Make_ActionGroup.java" startLine="33" startPosition="66" endLine="34" endPosition="66" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Make_ActionGroup.java" startLine="34" startPosition="66" endLine="35" endPosition="72" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="36" startPosition="32" endLine="37" endPosition="125" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="37" startPosition="125" endLine="38" endPosition="32" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="39" startPosition="9" endLine="40" endPosition="51" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="Make_ActionGroup.java" startLine="40" startPosition="51" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Make_ActionGroup.java" startLine="31" startPosition="7" endLine="32" endPosition="66" />
+    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Make_ActionGroup.java" startLine="32" startPosition="66" endLine="33" endPosition="66" />
+    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Make_ActionGroup.java" startLine="33" startPosition="66" endLine="34" endPosition="72" />
+    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="35" startPosition="32" endLine="36" endPosition="125" />
+    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="36" startPosition="125" endLine="37" endPosition="32" />
+    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Make_ActionGroup.java" startLine="38" startPosition="9" endLine="39" endPosition="51" />
     <nodeInfo nodeId="8163946392710004059" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Make_ActionGroup.java" startLine="24" startPosition="72" endLine="28" endPosition="9" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Make_ActionGroup.java" startLine="35" startPosition="72" endLine="39" endPosition="9" />
-    <nodeInfo nodeId="8163946392710004059" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Make_ActionGroup.java" startLine="20" startPosition="9" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Make_ActionGroup.java" startLine="31" startPosition="7" endLine="42" endPosition="7" />
+    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="Make_ActionGroup.java" startLine="34" startPosition="72" endLine="38" endPosition="9" />
+    <nodeInfo nodeId="8163946392710004059" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Make_ActionGroup.java" startLine="20" startPosition="9" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="3439781066828844368" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="Make_ActionGroup.java" startLine="30" startPosition="7" endLine="40" endPosition="7" />
     <scopeInfo nodeId="8163946392710004059" fileName="Make_ActionGroup.java" startLine="25" startPosition="32" endLine="27" endPosition="32" />
-    <scopeInfo nodeId="3439781066828844368" fileName="Make_ActionGroup.java" startLine="36" startPosition="32" endLine="38" endPosition="32" />
-    <scopeInfo nodeId="8163946392710004059" fileName="Make_ActionGroup.java" startLine="21" startPosition="7" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="3439781066828844368" fileName="Make_ActionGroup.java" startLine="32" startPosition="7" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="3439781066828844368" fileName="Make_ActionGroup.java" startLine="35" startPosition="32" endLine="37" endPosition="32" />
+    <scopeInfo nodeId="8163946392710004059" fileName="Make_ActionGroup.java" startLine="21" startPosition="7" endLine="29" endPosition="51" />
+    <scopeInfo nodeId="3439781066828844368" fileName="Make_ActionGroup.java" startLine="31" startPosition="7" endLine="39" endPosition="51" />
   </root>
   <root nodeId="8163946392710004061">
     <nodeInfo nodeId="8475112955686237129" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeOrBuild_Action.java" startLine="270" startPosition="27" endLine="270" endPosition="27" />

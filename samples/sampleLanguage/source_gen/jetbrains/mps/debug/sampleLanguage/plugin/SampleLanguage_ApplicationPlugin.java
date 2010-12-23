@@ -10,4 +10,8 @@ public class SampleLanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public SampleLanguage_ApplicationPlugin() {
   }
+
+  public PluginId getId() {
+    return myId;
+  }
 }

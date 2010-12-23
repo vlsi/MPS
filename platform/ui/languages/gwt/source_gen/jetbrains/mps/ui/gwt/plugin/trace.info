@@ -3,7 +3,7 @@
   <unitInfo fileName="Gwt_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.gwt.plugin.Gwt_ProjectPlugin" />
   <unitInfo fileName="Variant_CustomApplicationPlugin.java" startLine="35" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ui.gwt.plugin.Variant_CustomApplicationPlugin$QuotationClass_ks96zg_a0a0a0a0b0a0a0a0a0" />
   <unitInfo fileName="EditorExtension_CustomApplicationPlugin.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ui.gwt.plugin.EditorExtension_CustomApplicationPlugin" />
-  <unitInfo fileName="Gwt_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ui.gwt.plugin.Gwt_ApplicationPlugin" />
+  <unitInfo fileName="Gwt_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.gwt.plugin.Gwt_ApplicationPlugin" />
   <unitInfo fileName="Variant_CustomApplicationPlugin.java" startLine="21" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ui.gwt.plugin.Variant_CustomApplicationPlugin" />
   <root nodeId="6661832029303965099">
     <nodeInfo nodeId="6661832029303965100" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" fileName="EditorExtension_CustomApplicationPlugin.java" startLine="11" startPosition="0" endLine="12" endPosition="39" />

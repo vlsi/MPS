@@ -27,7 +27,6 @@ public class NodeActionsAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         NodeActionsAddition_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

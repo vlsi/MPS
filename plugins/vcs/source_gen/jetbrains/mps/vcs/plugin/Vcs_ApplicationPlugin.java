@@ -23,6 +23,10 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   public Vcs_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 

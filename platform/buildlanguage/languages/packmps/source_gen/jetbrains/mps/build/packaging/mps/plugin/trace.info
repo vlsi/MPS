@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Mps_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.Mps_ProjectPlugin" />
-  <unitInfo fileName="Mps_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.Mps_ApplicationPlugin" />
+  <unitInfo fileName="Mps_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.Mps_ApplicationPlugin" />
   <unitInfo fileName="CheckSamples_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckSamples_Action" />
   <unitInfo fileName="CheckIncludedLanguages_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckIncludedLanguages_Action" />
   <unitInfo fileName="CheckCoreRuntimeDeps_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckCoreRuntimeDeps_Action" />
-  <unitInfo fileName="InternalChecks_ActionGroup.java" startLine="12" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.InternalChecks_ActionGroup" />
+  <unitInfo fileName="InternalChecks_ActionGroup.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.InternalChecks_ActionGroup" />
   <root nodeId="3583849467507913695">
     <nodeInfo nodeId="3583849467508048985" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckCoreRuntimeDeps_Action.java" startLine="48" startPosition="9" endLine="49" endPosition="39" />
   </root>
@@ -19,36 +19,33 @@
     <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="21" startPosition="7" endLine="22" endPosition="62" />
     <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="22" startPosition="62" endLine="23" endPosition="66" />
     <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="23" startPosition="66" endLine="24" endPosition="72" />
-    <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="134" />
-    <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="26" startPosition="134" endLine="27" endPosition="32" />
+    <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="133" />
+    <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="26" startPosition="133" endLine="27" endPosition="32" />
     <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="28" startPosition="9" endLine="29" endPosition="61" />
-    <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InternalChecks_ActionGroup.java" startLine="29" startPosition="61" endLine="30" endPosition="0" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="32" startPosition="7" endLine="33" endPosition="70" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="33" startPosition="70" endLine="34" endPosition="66" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="34" startPosition="66" endLine="35" endPosition="72" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="36" startPosition="32" endLine="37" endPosition="134" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="37" startPosition="134" endLine="38" endPosition="32" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="39" startPosition="9" endLine="40" endPosition="61" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InternalChecks_ActionGroup.java" startLine="40" startPosition="61" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="43" startPosition="7" endLine="44" endPosition="72" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="44" startPosition="72" endLine="45" endPosition="66" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="45" startPosition="66" endLine="46" endPosition="72" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="47" startPosition="32" endLine="48" endPosition="134" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="48" startPosition="134" endLine="49" endPosition="32" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="50" startPosition="9" endLine="51" endPosition="61" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InternalChecks_ActionGroup.java" startLine="51" startPosition="61" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="31" startPosition="7" endLine="32" endPosition="70" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="32" startPosition="70" endLine="33" endPosition="66" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="33" startPosition="66" endLine="34" endPosition="72" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="35" startPosition="32" endLine="36" endPosition="133" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="36" startPosition="133" endLine="37" endPosition="32" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="38" startPosition="9" endLine="39" endPosition="61" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="41" startPosition="7" endLine="42" endPosition="72" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="42" startPosition="72" endLine="43" endPosition="66" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InternalChecks_ActionGroup.java" startLine="43" startPosition="66" endLine="44" endPosition="72" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="45" startPosition="32" endLine="46" endPosition="133" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="46" startPosition="133" endLine="47" endPosition="32" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InternalChecks_ActionGroup.java" startLine="48" startPosition="9" endLine="49" endPosition="61" />
     <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InternalChecks_ActionGroup.java" startLine="24" startPosition="72" endLine="28" endPosition="9" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InternalChecks_ActionGroup.java" startLine="35" startPosition="72" endLine="39" endPosition="9" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InternalChecks_ActionGroup.java" startLine="46" startPosition="72" endLine="50" endPosition="9" />
-    <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InternalChecks_ActionGroup.java" startLine="20" startPosition="9" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InternalChecks_ActionGroup.java" startLine="31" startPosition="7" endLine="42" endPosition="7" />
-    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InternalChecks_ActionGroup.java" startLine="42" startPosition="7" endLine="53" endPosition="7" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InternalChecks_ActionGroup.java" startLine="34" startPosition="72" endLine="38" endPosition="9" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InternalChecks_ActionGroup.java" startLine="44" startPosition="72" endLine="48" endPosition="9" />
+    <nodeInfo nodeId="3583849467507913937" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InternalChecks_ActionGroup.java" startLine="20" startPosition="9" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="3583849467507913938" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InternalChecks_ActionGroup.java" startLine="30" startPosition="7" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="3583849467507913939" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InternalChecks_ActionGroup.java" startLine="40" startPosition="7" endLine="50" endPosition="7" />
     <scopeInfo nodeId="3583849467507913937" fileName="InternalChecks_ActionGroup.java" startLine="25" startPosition="32" endLine="27" endPosition="32" />
-    <scopeInfo nodeId="3583849467507913938" fileName="InternalChecks_ActionGroup.java" startLine="36" startPosition="32" endLine="38" endPosition="32" />
-    <scopeInfo nodeId="3583849467507913939" fileName="InternalChecks_ActionGroup.java" startLine="47" startPosition="32" endLine="49" endPosition="32" />
-    <scopeInfo nodeId="3583849467507913937" fileName="InternalChecks_ActionGroup.java" startLine="21" startPosition="7" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="3583849467507913938" fileName="InternalChecks_ActionGroup.java" startLine="32" startPosition="7" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="3583849467507913939" fileName="InternalChecks_ActionGroup.java" startLine="43" startPosition="7" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="3583849467507913938" fileName="InternalChecks_ActionGroup.java" startLine="35" startPosition="32" endLine="37" endPosition="32" />
+    <scopeInfo nodeId="3583849467507913939" fileName="InternalChecks_ActionGroup.java" startLine="45" startPosition="32" endLine="47" endPosition="32" />
+    <scopeInfo nodeId="3583849467507913937" fileName="InternalChecks_ActionGroup.java" startLine="21" startPosition="7" endLine="29" endPosition="61" />
+    <scopeInfo nodeId="3583849467507913938" fileName="InternalChecks_ActionGroup.java" startLine="31" startPosition="7" endLine="39" endPosition="61" />
+    <scopeInfo nodeId="3583849467507913939" fileName="InternalChecks_ActionGroup.java" startLine="41" startPosition="7" endLine="49" endPosition="61" />
   </root>
 </debugInfo>
 

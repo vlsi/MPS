@@ -27,7 +27,6 @@ public class EditorInternalVCS_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         EditorInternalVCS_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ForceRefreshModelChanges_Action();
@@ -38,7 +37,6 @@ public class EditorInternalVCS_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         EditorInternalVCS_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

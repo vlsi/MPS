@@ -27,7 +27,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         RefactoringAddition_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ExtractMethod_Action();
@@ -38,7 +37,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         RefactoringAddition_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new InlineMethod_Action();
@@ -49,7 +47,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         RefactoringAddition_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new IntroduceVariable_Action();
@@ -60,7 +57,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         RefactoringAddition_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new IntroduceField_Action();
@@ -71,7 +67,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         RefactoringAddition_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new IntroduceConstant_Action();
@@ -82,7 +77,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         RefactoringAddition_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new RenameVariable_Action();
@@ -93,7 +87,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         RefactoringAddition_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

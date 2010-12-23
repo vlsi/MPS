@@ -27,7 +27,6 @@ public class BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup extends Gener
           oldAction = newAction;
         }
         BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ImplementMethod_Action();
@@ -38,7 +37,6 @@ public class BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup extends Gener
           oldAction = newAction;
         }
         BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

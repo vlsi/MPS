@@ -28,7 +28,6 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         TypesystemActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new GoToTypeErrorRule_Action();
@@ -39,7 +38,6 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         TypesystemActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowRulesWhichAffectNodeType_Action();
@@ -50,7 +48,6 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         TypesystemActions_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new ShowInferredNodeType_Action();
@@ -61,7 +58,6 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         TypesystemActions_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -10,4 +10,8 @@ public class Buildlanguage_ApplicationPlugin extends BaseApplicationPlugin {
 
   public Buildlanguage_ApplicationPlugin() {
   }
+
+  public PluginId getId() {
+    return myId;
+  }
 }

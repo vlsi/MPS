@@ -27,7 +27,6 @@ public class ChangesStrip_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         ChangesStrip_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new GoToPreviousChange_Action();
@@ -38,7 +37,6 @@ public class ChangesStrip_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         ChangesStrip_ActionGroup.this.addAction(oldAction);
-
       }
       {
         GeneratedAction newAction = new RollbackChanges_Action();
@@ -49,7 +47,6 @@ public class ChangesStrip_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         ChangesStrip_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

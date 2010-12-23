@@ -14,6 +14,10 @@ public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
   public Packaging_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 

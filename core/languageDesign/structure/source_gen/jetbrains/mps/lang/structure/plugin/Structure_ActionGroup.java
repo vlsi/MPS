@@ -28,7 +28,6 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         Structure_ActionGroup.this.addAction(oldAction);
-
       }
       Structure_ActionGroup.this.addAnchor(Structure_ActionGroup.LABEL_ID_showHelp);
     } catch (Throwable t) {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Generictasks_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.Generictasks_ProjectPlugin" />
-  <unitInfo fileName="Generictasks_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.Generictasks_ApplicationPlugin" />
-  <unitInfo fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.ProjectPaneLanguageAddition_ActionGroup" />
+  <unitInfo fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.ProjectPaneLanguageAddition_ActionGroup" />
+  <unitInfo fileName="Generictasks_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.Generictasks_ApplicationPlugin" />
   <unitInfo fileName="ImportAntStuff_Action.java" startLine="16" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.ImportAntStuff_Action" />
   <root nodeId="353793545803155581">
     <nodeInfo nodeId="353793545803155644" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" fileName="ImportAntStuff_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="25" />
@@ -64,11 +64,10 @@
     <nodeInfo nodeId="353793545803155728" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="132" />
     <nodeInfo nodeId="353793545803155728" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="26" startPosition="132" endLine="27" endPosition="32" />
     <nodeInfo nodeId="353793545803155728" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="28" startPosition="9" endLine="29" endPosition="74" />
-    <nodeInfo nodeId="353793545803155728" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="29" startPosition="74" endLine="30" endPosition="0" />
     <nodeInfo nodeId="353793545803155728" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="24" startPosition="72" endLine="28" endPosition="9" />
-    <nodeInfo nodeId="353793545803155728" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="20" startPosition="9" endLine="31" endPosition="7" />
+    <nodeInfo nodeId="353793545803155728" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="20" startPosition="9" endLine="30" endPosition="7" />
     <scopeInfo nodeId="353793545803155728" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="25" startPosition="32" endLine="27" endPosition="32" />
-    <scopeInfo nodeId="353793545803155728" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="21" startPosition="7" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="353793545803155728" fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="21" startPosition="7" endLine="29" endPosition="74" />
   </root>
 </debugInfo>
 

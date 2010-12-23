@@ -15,6 +15,10 @@ public class Testdata_ApplicationPlugin extends BaseApplicationPlugin {
   public Testdata_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     this.addCustomPart(res, new EditorExtension_CustomApplicationPlugin());

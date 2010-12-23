@@ -27,7 +27,6 @@ public class CoreActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         CoreActions_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

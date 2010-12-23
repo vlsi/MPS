@@ -27,7 +27,6 @@ public class EditorInternalAddition_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         EditorInternalAddition_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

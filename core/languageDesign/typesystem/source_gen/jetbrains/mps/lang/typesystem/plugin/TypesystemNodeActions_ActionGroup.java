@@ -27,7 +27,6 @@ public class TypesystemNodeActions_ActionGroup extends GeneratedActionGroup {
           oldAction = newAction;
         }
         TypesystemNodeActions_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

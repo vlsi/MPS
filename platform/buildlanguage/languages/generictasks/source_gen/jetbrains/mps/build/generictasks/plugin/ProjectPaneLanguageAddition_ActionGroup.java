@@ -23,11 +23,10 @@ public class ProjectPaneLanguageAddition_ActionGroup extends GeneratedActionGrou
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.generictasks@transient8"));
+          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.generictasks@transient7"));
           oldAction = newAction;
         }
         ProjectPaneLanguageAddition_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

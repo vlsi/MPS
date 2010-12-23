@@ -15,6 +15,10 @@ public class Collections_ApplicationPlugin extends BaseApplicationPlugin {
   public Collections_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     this.addCustomPart(res, new Collections_CustomApplicationPlugin());

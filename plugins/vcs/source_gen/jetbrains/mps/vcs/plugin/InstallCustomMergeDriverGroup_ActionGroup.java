@@ -28,7 +28,6 @@ public class InstallCustomMergeDriverGroup_ActionGroup extends GeneratedActionGr
           oldAction = newAction;
         }
         InstallCustomMergeDriverGroup_ActionGroup.this.addAction(oldAction);
-
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

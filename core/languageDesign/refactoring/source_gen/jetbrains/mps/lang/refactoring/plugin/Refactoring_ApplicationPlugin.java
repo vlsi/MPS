@@ -15,6 +15,10 @@ public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
   public Refactoring_ApplicationPlugin() {
   }
 
+  public PluginId getId() {
+    return myId;
+  }
+
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
