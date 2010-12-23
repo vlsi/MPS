@@ -4509,9 +4509,6 @@
             <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="4707157387247557949">
               <link role="6.baseMethodDeclaration:3" targetNodeId="4707157387247556841" resolveInfo="getNodeParent" />
             </node>
-            <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4707157387247557950">
-              <link role="6.variableDeclaration:3" targetNodeId="4707157387247557772" resolveInfo="myOldChildId" />
-            </node>
           </node>
         </node>
       </node>

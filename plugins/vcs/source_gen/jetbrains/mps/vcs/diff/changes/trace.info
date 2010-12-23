@@ -709,7 +709,7 @@
     <nodeInfo nodeId="4707157387247557917" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SetNodeChange.java" startLine="49" startPosition="20" endLine="50" endPosition="13" />
     <nodeInfo nodeId="4707157387247557918" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SetNodeChange.java" startLine="51" startPosition="5" endLine="52" endPosition="33" />
     <nodeInfo nodeId="4707157387247557937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SetNodeChange.java" startLine="54" startPosition="20" endLine="55" endPosition="31" />
-    <nodeInfo nodeId="4707157387247557947" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SetNodeChange.java" startLine="61" startPosition="42" endLine="62" endPosition="56" />
+    <nodeInfo nodeId="4707157387247557947" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SetNodeChange.java" startLine="61" startPosition="42" endLine="62" endPosition="42" />
     <nodeInfo nodeId="4707157387247557956" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SetNodeChange.java" startLine="65" startPosition="34" endLine="66" endPosition="24" />
     <nodeInfo nodeId="4707157387247557962" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SetNodeChange.java" startLine="70" startPosition="32" endLine="71" endPosition="69" />
     <nodeInfo nodeId="4707157387247557979" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SetNodeChange.java" startLine="76" startPosition="34" endLine="77" endPosition="31" />
@@ -734,7 +734,7 @@
     <scopeInfo nodeId="4707157387247557878" fileName="SetNodeChange.java" startLine="39" startPosition="32" endLine="40" endPosition="53" />
     <scopeInfo nodeId="4707157387247557916" fileName="SetNodeChange.java" startLine="49" startPosition="20" endLine="50" endPosition="13" />
     <scopeInfo nodeId="4707157387247557936" fileName="SetNodeChange.java" startLine="54" startPosition="20" endLine="55" endPosition="31" />
-    <scopeInfo nodeId="4707157387247557946" fileName="SetNodeChange.java" startLine="61" startPosition="42" endLine="62" endPosition="56" />
+    <scopeInfo nodeId="4707157387247557946" fileName="SetNodeChange.java" startLine="61" startPosition="42" endLine="62" endPosition="42" />
     <scopeInfo nodeId="4707157387247557955" fileName="SetNodeChange.java" startLine="65" startPosition="34" endLine="66" endPosition="24" />
     <scopeInfo nodeId="4707157387247557961" fileName="SetNodeChange.java" startLine="70" startPosition="32" endLine="71" endPosition="69" />
     <scopeInfo nodeId="4707157387247557978" fileName="SetNodeChange.java" startLine="76" startPosition="34" endLine="77" endPosition="31" />
