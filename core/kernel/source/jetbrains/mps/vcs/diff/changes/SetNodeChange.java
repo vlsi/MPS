@@ -71,7 +71,7 @@ public class SetNodeChange extends NewNodeChange {
 
   @Override
   public List<SNodeId> getDependencies() {
-    return Arrays.asList(getNodeParent(), myOldChildId);
+    return Arrays.asList(getNodeParent());
   }
 
   public SNodeId getOldChildId() {
