@@ -8,6 +8,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 
 public class DebugTool_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DebugTool_ActionGroup.class);
@@ -41,7 +42,12 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
         }
         DebugTool_ActionGroup.this.addAction(oldAction);
       }
-      DebugTool_ActionGroup.this.addAnchor(DebugTool_ActionGroup.LABEL_ID_StopAction);
+      {
+        LabelledAnchor action = new LabelledAnchor(DebugTool_ActionGroup.LABEL_ID_StopAction);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        DebugTool_ActionGroup.this.addAction(action);
+      }
       DebugTool_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new EvaluateExpression_Action();
@@ -73,7 +79,12 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
         }
         DebugTool_ActionGroup.this.addAction(oldAction);
       }
-      DebugTool_ActionGroup.this.addAnchor(DebugTool_ActionGroup.LABEL_ID_MuteAction);
+      {
+        LabelledAnchor action = new LabelledAnchor(DebugTool_ActionGroup.LABEL_ID_MuteAction);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        DebugTool_ActionGroup.this.addAction(action);
+      }
       DebugTool_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -11,6 +11,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
@@ -634,8 +635,11 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Code_ActionGroup" file="Code_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.CollapseAll_Action" file="CollapseAll_Action.java">
@@ -844,6 +848,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ExportThreads_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Pause_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.DefaultMakeTask" file="DefaultMakeTask.java">
@@ -1001,6 +1006,7 @@
   <dependency className="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" file="DevkitActions_ActionGroup.java">
     <classNode dependClassName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyModuleName_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddModuleToProject_Action" />
     <classNode dependClassName="java.lang.String" />
@@ -1091,6 +1097,7 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddModelImport_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.QuickCreate_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddModelImportByRoot_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyNodeReference_Action" />
@@ -1105,6 +1112,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowCellInExplorer_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.HighlightCellDependencies_Action" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -1136,6 +1144,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowNodeInfo_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowInProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowImplementations_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowNodeInInspector_Action" />
@@ -1163,6 +1172,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -1336,6 +1346,7 @@
   <dependency className="jetbrains.mps.ide.actions.FavoritesPopup_ActionGroup" file="FavoritesPopup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
@@ -1347,6 +1358,7 @@
   <dependency className="jetbrains.mps.ide.actions.Favorites_ActionGroup" file="Favorites_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RenameFavoritesList_Action" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
@@ -1359,8 +1371,11 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.FileActions_ActionGroup" file="FileActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.FileDelete_Action" file="FileDelete_Action.java">
@@ -1535,8 +1550,11 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.FolderActions_ActionGroup" file="FolderActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Folding_ActionGroup" file="Folding_ActionGroup.java">
@@ -1783,6 +1801,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
@@ -1823,19 +1842,20 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" file="GeneratorActions_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ShowModuleDependencies_Action" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorProperties_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.CheckModule_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GenerateTemplateQueries_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.DeleteGenerator_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyModuleName_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorProperties_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ShowModuleDependencies_Action" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.DeleteGenerator_Action" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.CheckModule_Action" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GenerateTemplateQueries_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup" file="GeneratorNewActions_ActionGroup.java">
@@ -2311,6 +2331,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToAction_Action" />
     <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToLanguageAction" />
     <classNode dependClassName="com.intellij.ide.actions.GotoActionAction" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToConceptDeclaration_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToNodeById_Action" />
@@ -2785,6 +2806,7 @@
   <dependency className="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" file="LanguageActions_ActionGroup.java">
     <classNode dependClassName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyModuleName_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RebuildModule_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowModuleDependencies_Action" />
@@ -2839,6 +2861,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.NewModelFromSource_Action" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewGenerator_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.LanguageNewCustomPartActions_ActionGroup" file="LanguageNewCustomPartActions_ActionGroup.java">
@@ -3107,6 +3130,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.PasteNode_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SaveModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelProperties_Action" />
@@ -3356,6 +3380,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewSubTestModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewSubModel_Action" />
@@ -3444,8 +3469,11 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ModuleActions_ActionGroup" file="ModuleActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ModuleChecker" file="ModuleChecker.java">
@@ -3503,8 +3531,11 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NamespaceActions_ActionGroup" file="NamespaceActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup" file="NamespaceInternalActions_ActionGroup.java">
@@ -3870,35 +3901,36 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NodeActions_ActionGroup" file="NodeActions_ActionGroup.java">
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditNodeExplicit_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToConceptDeclaration_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ShowNodeInExplorer_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditNode_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRules_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.DeleteNode_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ShowErrorMessage_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ShowClassInHierarchy_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyNodeReference_Action" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CopyNodeName_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToEditorDeclaration_Action" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.CloneRoot_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.PasteNode_Action" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ShowGenerationTrace_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.CopyNode_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ExpandNode_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.CutNode_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action" />
-    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRules_Action" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SetNodePackage_Action" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ShowClassInHierarchy_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GoToEditorDeclaration_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GoToConceptDeclaration_Action" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ShowGenerationTrace_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ExpandNode_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.CutNode_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.DeleteNode_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditNodeExplicit_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.CopyNode_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowGenerationTraceback_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.CloneRoot_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ShowErrorMessage_Action" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditNode_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ShowNodeInExplorer_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.PasteNode_Action" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NodeExplorer_Tool" file="NodeExplorer_Tool.java">
@@ -4070,6 +4102,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.RenamePackage_Action" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.PackageNewActions_ActionGroup" file="PackageNewActions_ActionGroup.java">
@@ -4209,6 +4242,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" file="ProjectActions_ActionGroup.java">
     <classNode dependClassName="jetbrains.mps.ide.actions.CleanProject_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MakeProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSProjectPaths_Action" />
@@ -5484,6 +5518,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.SolutionProperties_Action" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RebuildModule_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowModuleDependencies_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddModuleToProject_Action" />
     <classNode dependClassName="java.lang.String" />
@@ -5744,6 +5779,7 @@
   <dependency className="jetbrains.mps.ide.actions.Tools_ActionGroup" file="Tools_ActionGroup.java">
     <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ReloadStubs_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowModelChecker_Action" />
     <classNode dependClassName="java.lang.String" />

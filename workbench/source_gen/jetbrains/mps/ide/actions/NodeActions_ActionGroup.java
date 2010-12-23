@@ -8,6 +8,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 
 public class NodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeActions_ActionGroup.class);
@@ -219,7 +220,12 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
         }
         NodeActions_ActionGroup.this.addAction(oldAction);
       }
-      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_find_instances);
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_find_instances);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
       NodeActions_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new ShowConceptInHierarchy_Action();
@@ -231,7 +237,12 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
         }
         NodeActions_ActionGroup.this.addAction(oldAction);
       }
-      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_structure);
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_structure);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
       {
         GeneratedAction newAction = new ShowClassInHierarchy_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -242,7 +253,12 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
         }
         NodeActions_ActionGroup.this.addAction(oldAction);
       }
-      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_diff);
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_diff);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
       NodeActions_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new ShowErrorMessage_Action();
@@ -255,7 +271,12 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
         NodeActions_ActionGroup.this.addAction(oldAction);
       }
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_favorites);
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_favorites);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
       NodeActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

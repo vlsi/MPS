@@ -4,10 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
@@ -27,9 +28,19 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_generateModule);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_generateModule);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       {
         GeneratedAction newAction = new CheckModule_Action("Language");
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -164,10 +175,25 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
         LanguageActions_ActionGroup.this.addAction(oldAction);
       }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_find_usages);
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_find_instances);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_find_usages);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_find_instances);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_refactoring);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_refactoring);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       {
         GeneratedAction newAction = new UpgradeModelPersistenceInModule_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -179,13 +205,33 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
         LanguageActions_ActionGroup.this.addAction(oldAction);
       }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_favorites);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_favorites);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_vcs);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_vcs);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_scripts);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_scripts);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
-      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_find_javastub_usages);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_find_javastub_usages);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageActions_ActionGroup.this.addAction(action);
+      }
       LanguageActions_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new LanguageHierarchy_Action();

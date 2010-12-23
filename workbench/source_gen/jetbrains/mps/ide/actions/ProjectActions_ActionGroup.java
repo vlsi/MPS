@@ -4,11 +4,12 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.workbench.actions.module.GenerateAllModulesInProjectAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
@@ -21,7 +22,12 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
+      {
+        LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ProjectActions_ActionGroup.this.addAction(action);
+      }
       ProjectActions_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new RegenerateProject_Action(new GenerateAllModulesInProjectAction(true));
@@ -83,7 +89,12 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
         }
         ProjectActions_ActionGroup.this.addAction(oldAction);
       }
-      ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_runConfig);
+      {
+        LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_runConfig);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ProjectActions_ActionGroup.this.addAction(action);
+      }
       ProjectActions_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new UpgradeModelPersistenceInProject_Action();

@@ -4,10 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.ide.actions.SelectInAction;
 
 public class EditorPopup_ActionGroup extends GeneratedActionGroup {
@@ -25,7 +26,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_goByRef);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_goByRef);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       {
         GeneratedAction newAction = new GoByCurrentReference_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -107,7 +113,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         }
         EditorPopup_ActionGroup.this.addAction(oldAction);
       }
-      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_structure);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_structure);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       EditorPopup_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new PasteAsJavaStatements_Action();
@@ -130,7 +141,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         EditorPopup_ActionGroup.this.addAction(oldAction);
       }
       EditorPopup_ActionGroup.this.addSeparator();
-      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_folding);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_folding);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       EditorPopup_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new GoToConceptDeclaration_Action();
@@ -163,7 +179,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         EditorPopup_ActionGroup.this.addAction(oldAction);
       }
       EditorPopup_ActionGroup.this.addSeparator();
-      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_generateModel);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_generateModel);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       {
         GeneratedAction newAction = new GoToUsageInMappingConfig_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -216,7 +237,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         }
         EditorPopup_ActionGroup.this.addAction(oldAction);
       }
-      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_find_instances);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_find_instances);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       EditorPopup_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new CloneRoot_Action();
@@ -259,7 +285,12 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
         EditorPopup_ActionGroup.this.addAction(oldAction);
       }
       EditorPopup_ActionGroup.this.addSeparator();
-      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_vcs);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorPopup_ActionGroup.LABEL_ID_vcs);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorPopup_ActionGroup.this.addAction(action);
+      }
       EditorPopup_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -4,10 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed;
 
 public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
@@ -22,9 +23,19 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_new);
+      {
+        LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_new);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        AbstractFileActions_ActionGroup.this.addAction(action);
+      }
       AbstractFileActions_ActionGroup.this.addSeparator();
-      AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+      {
+        LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        AbstractFileActions_ActionGroup.this.addAction(action);
+      }
       {
         GeneratedAction newAction = new RenameFileOrDirectory_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -56,7 +67,12 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
         AbstractFileActions_ActionGroup.this.addAction(oldAction);
       }
       AbstractFileActions_ActionGroup.this.addSeparator();
-      AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
+      {
+        LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        AbstractFileActions_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

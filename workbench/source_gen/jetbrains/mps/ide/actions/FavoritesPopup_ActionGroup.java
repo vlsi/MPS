@@ -4,10 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public class FavoritesPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FavoritesPopup_ActionGroup.class);
@@ -19,7 +20,12 @@ public class FavoritesPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      FavoritesPopup_ActionGroup.this.addAnchor(FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
+      {
+        LabelledAnchor action = new LabelledAnchor(FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        FavoritesPopup_ActionGroup.this.addAction(action);
+      }
       FavoritesPopup_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new AddToNewFavoritesList_Action();

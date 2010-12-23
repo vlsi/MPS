@@ -8,6 +8,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 
 public class Structure_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Structure_ActionGroup.class);
@@ -29,7 +30,12 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
         }
         Structure_ActionGroup.this.addAction(oldAction);
       }
-      Structure_ActionGroup.this.addAnchor(Structure_ActionGroup.LABEL_ID_showHelp);
+      {
+        LabelledAnchor action = new LabelledAnchor(Structure_ActionGroup.LABEL_ID_showHelp);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.lang.structure"));
+        Structure_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

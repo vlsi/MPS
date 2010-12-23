@@ -4,10 +4,11 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
@@ -24,9 +25,19 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_solutionNew);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_solutionNew);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       {
         GeneratedAction newAction = new GenerateTextFromSolution_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -172,7 +183,12 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         SolutionActions_ActionGroup.this.addAction(oldAction);
       }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_refactoring);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_refactoring);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       {
         GeneratedAction newAction = new UpgradeModelPersistenceInModule_Action();
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -184,11 +200,26 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         SolutionActions_ActionGroup.this.addAction(oldAction);
       }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_favorites);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_favorites);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_vcs);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_vcs);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_scripts);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_scripts);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new SolutionProperties_Action();

@@ -4,6 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ModuleActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModuleActions_ActionGroup.class);
@@ -15,7 +18,12 @@ public class ModuleActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ModuleActions_ActionGroup.this.addAnchor(ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
+      {
+        LabelledAnchor action = new LabelledAnchor(ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ModuleActions_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

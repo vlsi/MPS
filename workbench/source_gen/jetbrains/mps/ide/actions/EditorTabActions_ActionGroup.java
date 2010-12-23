@@ -8,6 +8,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 
 public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorTabActions_ActionGroup.class);
@@ -93,7 +94,12 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
       }
-      EditorTabActions_ActionGroup.this.addAnchor(EditorTabActions_ActionGroup.LABEL_ID_find_instances);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorTabActions_ActionGroup.LABEL_ID_find_instances);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorTabActions_ActionGroup.this.addAction(action);
+      }
       EditorTabActions_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new ShowConceptInHierarchy_Action();
@@ -105,8 +111,18 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
         }
         EditorTabActions_ActionGroup.this.addAction(oldAction);
       }
-      EditorTabActions_ActionGroup.this.addAnchor(EditorTabActions_ActionGroup.LABEL_ID_structure);
-      EditorTabActions_ActionGroup.this.addAnchor(EditorTabActions_ActionGroup.LABEL_ID_diff);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorTabActions_ActionGroup.LABEL_ID_structure);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorTabActions_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorTabActions_ActionGroup.LABEL_ID_diff);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorTabActions_ActionGroup.this.addAction(action);
+      }
       EditorTabActions_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new ShowErrorMessage_Action();

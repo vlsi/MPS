@@ -8,6 +8,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.LabelledAnchor;
 
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
@@ -90,7 +91,12 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
         }
         EditorInternal_ActionGroup.this.addAction(oldAction);
       }
-      EditorInternal_ActionGroup.this.addAnchor(EditorInternal_ActionGroup.LABEL_ID_VCS);
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_VCS);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorInternal_ActionGroup.this.addAction(action);
+      }
       EditorInternal_ActionGroup.this.addSeparator();
       {
         GeneratedAction newAction = new LanguagePaths_Action();
