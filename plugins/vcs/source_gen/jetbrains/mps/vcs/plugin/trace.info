@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Vcs_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ProjectPlugin" />
-  <unitInfo fileName="EditorInternalVCS_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.vcs.plugin.EditorInternalVCS_ActionGroup" />
   <unitInfo fileName="ChangesStrip_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup" />
   <unitInfo fileName="Vcs_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" />
   <unitInfo fileName="AnnotateGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.plugin.AnnotateGroup_ActionGroup" />
@@ -11,6 +10,7 @@
   <unitInfo fileName="ShowDiffWithCurrRev_ActionGroup.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup" />
   <unitInfo fileName="main_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.vcs.plugin.main_CustomApplicationPlugin" />
   <unitInfo fileName="VCS_ActionGroup.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VCS_ActionGroup" />
+  <unitInfo fileName="EditorInternalVCS_ActionGroup.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.vcs.plugin.EditorInternalVCS_ActionGroup" />
   <unitInfo fileName="Vcs_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
   <unitInfo fileName="DumpChangesManager_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.vcs.plugin.DumpChangesManager_Action" />
   <unitInfo fileName="Annotate_Action.java" startLine="15" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Annotate_Action" />
@@ -21,6 +21,8 @@
   <unitInfo fileName="AddToVcs_Action.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.vcs.plugin.AddToVcs_Action" />
   <unitInfo fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
   <unitInfo fileName="ForceRefreshModelChanges_Action.java" startLine="20" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action" />
+  <unitInfo fileName="ShowDifference_Action.java" startLine="24" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifference_Action" />
+  <unitInfo fileName="SaveModelDifference_Action.java" startLine="28" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.plugin.SaveModelDifference_Action" />
   <unitInfo fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="26" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffererenesWithCurrentRevision_Action" />
   <unitInfo fileName="ReRunMergeFromBackup_Action.java" startLine="30" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
   <unitInfo fileName="InstallCustomMergeDriver_Action.java" startLine="38" startPosition="0" endLine="277" endPosition="0" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action" />
@@ -82,8 +84,10 @@
     <nodeInfo nodeId="6763225944573505215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToVCS_ActionGroup.java" startLine="18" startPosition="112" endLine="19" endPosition="116" />
   </root>
   <root nodeId="6763225944573505219">
-    <nodeInfo nodeId="6763225944573505222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorInternalVCS_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="126" />
-    <nodeInfo nodeId="6763225944573505223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorInternalVCS_ActionGroup.java" startLine="17" startPosition="126" endLine="18" endPosition="132" />
+    <nodeInfo nodeId="6763225944573505222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorInternalVCS_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="126" />
+    <nodeInfo nodeId="6763225944573505223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorInternalVCS_ActionGroup.java" startLine="18" startPosition="126" endLine="19" endPosition="132" />
+    <nodeInfo nodeId="8884499385719173389" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorInternalVCS_ActionGroup.java" startLine="19" startPosition="132" endLine="20" endPosition="127" />
+    <nodeInfo nodeId="8884499385719173391" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorInternalVCS_ActionGroup.java" startLine="20" startPosition="127" endLine="21" endPosition="122" />
   </root>
   <root nodeId="6763225944573505229">
     <nodeInfo nodeId="6763225944573505230" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" fileName="DumpChangesManager_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="26" />
@@ -156,7 +160,7 @@
     <nodeInfo nodeId="7545884443035896092" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="49" startPosition="114" endLine="52" endPosition="5" />
     <nodeInfo nodeId="7545884443035896103" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="52" startPosition="5" endLine="55" endPosition="5" />
     <nodeInfo nodeId="7545884443035896120" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="56" startPosition="104" endLine="59" endPosition="5" />
-    <nodeInfo nodeId="7545884443035896341" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="110" startPosition="33" endLine="113" endPosition="11" />
+    <nodeInfo nodeId="7545884443035896341" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="110" startPosition="33" endLine="113" endPosition="11" />
     <nodeInfo nodeId="7545884443035896149" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="127" startPosition="129" endLine="130" endPosition="5" />
     <nodeInfo nodeId="7545884443035896295" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/Comparable;" fileName="ReRunMergeFromBackup_Action.java" startLine="100" startPosition="171" endLine="104" endPosition="0" />
     <nodeInfo nodeId="7545884443035896173" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackupFiles#()[Ljava/io/File;" fileName="ReRunMergeFromBackup_Action.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
@@ -312,7 +316,7 @@
     <nodeInfo nodeId="7545884443035907127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VcsActionsHelper.java" startLine="165" startPosition="93" endLine="166" endPosition="95" />
     <nodeInfo nodeId="7545884443035907150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VcsActionsHelper.java" startLine="171" startPosition="57" endLine="172" endPosition="56" />
     <nodeInfo nodeId="7545884443035907162" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsActionsHelper#()V" fileName="VcsActionsHelper.java" startLine="42" startPosition="0" endLine="44" endPosition="3" />
-    <nodeInfo nodeId="7590932940322140496" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsActionsHelper.java" startLine="60" startPosition="30" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="7590932940322140496" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="VcsActionsHelper.java" startLine="60" startPosition="30" endLine="63" endPosition="7" />
     <nodeInfo nodeId="7545884443035906991" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="VcsActionsHelper.java" startLine="54" startPosition="59" endLine="58" endPosition="0" />
     <nodeInfo nodeId="7545884443035907042" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="VcsActionsHelper.java" startLine="71" startPosition="59" endLine="75" endPosition="0" />
     <nodeInfo nodeId="7545884443035907078" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsActionsHelper.java" startLine="105" startPosition="27" endLine="109" endPosition="23" />
@@ -486,6 +490,38 @@
     <scopeInfo nodeId="7545884443035924793" fileName="AddToVcs_Action.java" startLine="38" startPosition="52" endLine="39" endPosition="16" />
     <scopeInfo nodeId="7545884443035924765" fileName="AddToVcs_Action.java" startLine="80" startPosition="62" endLine="82" endPosition="15" />
   </root>
+  <root nodeId="7937505068349121004">
+    <nodeInfo nodeId="7937505068349134364" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" fileName="ShowDifference_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="26" />
+    <nodeInfo nodeId="7937505068349134374" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifference_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="116" />
+    <nodeInfo nodeId="7937505068349134398" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifference_Action.java" startLine="70" startPosition="116" endLine="71" endPosition="74" />
+    <nodeInfo nodeId="7937505068349134406" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifference_Action.java" startLine="71" startPosition="74" endLine="72" endPosition="52" />
+    <nodeInfo nodeId="7937505068349134648" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDifference_Action.java" startLine="74" startPosition="39" endLine="75" endPosition="50" />
+    <nodeInfo nodeId="7937505068349134669" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDifference_Action.java" startLine="79" startPosition="39" endLine="80" endPosition="50" />
+    <nodeInfo nodeId="7937505068349134682" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifference_Action.java" startLine="84" startPosition="27" endLine="85" endPosition="82" />
+    <nodeInfo nodeId="7937505068349134690" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifference_Action.java" startLine="85" startPosition="82" endLine="86" endPosition="82" />
+    <nodeInfo nodeId="7937505068349135231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDifference_Action.java" startLine="87" startPosition="131" endLine="88" endPosition="39" />
+    <nodeInfo nodeId="7937505068349135219" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ShowDifference_Action.java" startLine="86" startPosition="82" endLine="89" endPosition="11" />
+    <nodeInfo nodeId="7937505068349134646" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" fileName="ShowDifference_Action.java" startLine="73" startPosition="126" endLine="77" endPosition="0" />
+    <nodeInfo nodeId="7937505068349134667" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" fileName="ShowDifference_Action.java" startLine="78" startPosition="126" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="7937505068349134636" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifference_Action.java" startLine="72" startPosition="52" endLine="77" endPosition="9" />
+    <nodeInfo nodeId="7937505068349134657" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifference_Action.java" startLine="77" startPosition="9" endLine="82" endPosition="9" />
+    <nodeInfo nodeId="5358304762455271838" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ShowDifference_Action.java" startLine="83" startPosition="59" endLine="91" endPosition="0" />
+    <nodeInfo nodeId="5358304762455271837" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDifference_Action.java" startLine="82" startPosition="9" endLine="91" endPosition="9" />
+    <scopeInfo nodeId="7937505068349134647" fileName="ShowDifference_Action.java" startLine="74" startPosition="39" endLine="75" endPosition="50" />
+    <scopeInfo nodeId="7937505068349134668" fileName="ShowDifference_Action.java" startLine="79" startPosition="39" endLine="80" endPosition="50" />
+    <scopeInfo nodeId="7937505068349135222" fileName="ShowDifference_Action.java" startLine="87" startPosition="131" endLine="88" endPosition="39" />
+    <scopeInfo nodeId="7937505068349135219" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ShowDifference_Action.java" startLine="86" startPosition="82" endLine="89" endPosition="11" />
+    <scopeInfo nodeId="7937505068349134646" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" fileName="ShowDifference_Action.java" startLine="73" startPosition="126" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="7937505068349134667" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;)Z" fileName="ShowDifference_Action.java" startLine="78" startPosition="126" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="5358304762455271839" fileName="ShowDifference_Action.java" startLine="84" startPosition="27" endLine="89" endPosition="11">
+      <varInfo nodeId="7937505068349134691" varName="newModel" />
+      <varInfo nodeId="7937505068349134683" varName="oldModel" />
+    </scopeInfo>
+    <scopeInfo nodeId="5358304762455271838" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ShowDifference_Action.java" startLine="83" startPosition="59" endLine="91" endPosition="0" />
+    <unitInfo nodeId="7937505068349134646" fileName="ShowDifference_Action.java" startLine="73" startPosition="104" endLine="77" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ShowDifference_Action$1" />
+    <unitInfo nodeId="7937505068349134667" fileName="ShowDifference_Action.java" startLine="78" startPosition="104" endLine="82" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ShowDifference_Action$2" />
+    <unitInfo nodeId="5358304762455271838" fileName="ShowDifference_Action.java" startLine="83" startPosition="47" endLine="91" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ShowDifference_Action$3" />
+  </root>
   <root nodeId="8076150362379026983">
     <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="218" startPosition="31" endLine="218" endPosition="31" />
     <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="221" startPosition="31" endLine="221" endPosition="31" />
@@ -555,8 +591,8 @@
     <nodeInfo nodeId="2890452262040416089" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="269" startPosition="9" endLine="270" endPosition="17" />
     <nodeInfo nodeId="2890452262040415915" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="270" startPosition="17" endLine="271" endPosition="18" />
     <nodeInfo nodeId="5407760271366641038" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="272" startPosition="29" endLine="273" endPosition="19" />
-    <nodeInfo nodeId="8461255328188996336" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="117" startPosition="33" endLine="120" endPosition="11" />
-    <nodeInfo nodeId="8461255328188996324" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="127" startPosition="37" endLine="130" endPosition="15" />
+    <nodeInfo nodeId="8461255328188996336" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="117" startPosition="33" endLine="120" endPosition="11" />
+    <nodeInfo nodeId="8461255328188996324" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="127" startPosition="37" endLine="130" endPosition="15" />
     <nodeInfo nodeId="5407760271366640947" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="184" startPosition="66" endLine="187" endPosition="5" />
     <nodeInfo nodeId="2890452262040415932" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="258" startPosition="11" endLine="261" endPosition="11" />
     <nodeInfo nodeId="8076150362379150525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="56" startPosition="192" endLine="60" endPosition="0" />
@@ -718,6 +754,54 @@
   </root>
   <root nodeId="8807724076671140453">
     <nodeInfo nodeId="8807724076671140459" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotateGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="112" />
+  </root>
+  <root nodeId="8813828754313731207">
+    <nodeInfo nodeId="8787728265821844757" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="node" fileName="SaveModelDifference_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="21" />
+    <nodeInfo nodeId="7937505068349111947" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" fileName="SaveModelDifference_Action.java" startLine="32" startPosition="21" endLine="33" endPosition="26" />
+    <nodeInfo nodeId="7937505068349111970" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="21" />
+    <nodeInfo nodeId="7937505068349111982" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="80" startPosition="21" endLine="81" endPosition="74" />
+    <nodeInfo nodeId="7937505068349114997" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="81" startPosition="74" endLine="82" endPosition="19" />
+    <nodeInfo nodeId="7937505068349115006" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="83" startPosition="20" endLine="84" endPosition="62" />
+    <nodeInfo nodeId="7937505068349115028" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="SaveModelDifference_Action.java" startLine="85" startPosition="34" endLine="86" endPosition="16" />
+    <nodeInfo nodeId="7937505068349112929" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="87" startPosition="9" endLine="88" endPosition="17" />
+    <nodeInfo nodeId="1230532164457307222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="89" startPosition="7" endLine="90" endPosition="22" />
+    <nodeInfo nodeId="7937505068349115029" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="SaveModelDifference_Action.java" startLine="90" startPosition="22" endLine="91" endPosition="0" />
+    <nodeInfo nodeId="8787728265821850821" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="92" startPosition="11" endLine="93" endPosition="88" />
+    <nodeInfo nodeId="5358304762455219936" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="95" startPosition="29" endLine="96" endPosition="95" />
+    <nodeInfo nodeId="7937505068349079398" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="98" startPosition="11" endLine="99" endPosition="116" />
+    <nodeInfo nodeId="7937505068349079410" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="99" startPosition="116" endLine="100" endPosition="118" />
+    <nodeInfo nodeId="7937505068349079418" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="100" startPosition="118" endLine="101" endPosition="90" />
+    <nodeInfo nodeId="7937505068349079427" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="101" startPosition="90" endLine="102" endPosition="96" />
+    <nodeInfo nodeId="7937505068349115042" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SaveModelDifference_Action.java" startLine="102" startPosition="96" endLine="103" endPosition="148" />
+    <nodeInfo nodeId="7937505068349115049" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="103" startPosition="148" endLine="104" endPosition="39" />
+    <nodeInfo nodeId="7937505068349115063" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="104" startPosition="39" endLine="105" endPosition="19" />
+    <nodeInfo nodeId="7937505068349116810" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="105" startPosition="19" endLine="106" endPosition="161" />
+    <nodeInfo nodeId="7937505068349079478" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="108" startPosition="35" endLine="109" endPosition="27" />
+    <nodeInfo nodeId="7937505068349115013" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SaveModelDifference_Action.java" startLine="84" startPosition="62" endLine="87" endPosition="9" />
+    <nodeInfo nodeId="7937505068349079478" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SaveModelDifference_Action.java" startLine="107" startPosition="29" endLine="110" endPosition="9" />
+    <nodeInfo nodeId="5358304762455219940" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="SaveModelDifference_Action.java" startLine="94" startPosition="61" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="5358304762455219939" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SaveModelDifference_Action.java" startLine="93" startPosition="88" endLine="98" endPosition="11" />
+    <nodeInfo nodeId="7937505068349111974" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="SaveModelDifference_Action.java" startLine="82" startPosition="19" endLine="89" endPosition="7" />
+    <nodeInfo nodeId="7937505068349079396" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="SaveModelDifference_Action.java" startLine="91" startPosition="0" endLine="111" endPosition="7" />
+    <scopeInfo nodeId="7937505068349115014" fileName="SaveModelDifference_Action.java" startLine="85" startPosition="34" endLine="86" endPosition="16" />
+    <scopeInfo nodeId="5358304762455219941" fileName="SaveModelDifference_Action.java" startLine="95" startPosition="29" endLine="96" endPosition="95" />
+    <scopeInfo nodeId="7937505068349079478" fileName="SaveModelDifference_Action.java" startLine="108" startPosition="35" endLine="109" endPosition="27" />
+    <scopeInfo nodeId="7937505068349079474" fileName="SaveModelDifference_Action.java" startLine="107" startPosition="0" endLine="110" endPosition="9">
+      <varInfo nodeId="7937505068349079475" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7937505068349079477" fileName="SaveModelDifference_Action.java" startLine="107" startPosition="29" endLine="110" endPosition="9" />
+    <scopeInfo nodeId="7937505068349079478" fileName="SaveModelDifference_Action.java" startLine="107" startPosition="29" endLine="110" endPosition="9" />
+    <scopeInfo nodeId="5358304762455219940" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="SaveModelDifference_Action.java" startLine="94" startPosition="61" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="7937505068349111976" fileName="SaveModelDifference_Action.java" startLine="83" startPosition="20" endLine="88" endPosition="17" />
+    <scopeInfo nodeId="7937505068349079397" fileName="SaveModelDifference_Action.java" startLine="92" startPosition="11" endLine="106" endPosition="161">
+      <varInfo nodeId="7937505068349079428" varName="content" />
+      <varInfo nodeId="7937505068349079419" varName="revisionNumber" />
+      <varInfo nodeId="8787728265821850822" varName="model" />
+      <varInfo nodeId="7937505068349079411" varName="vcs" />
+      <varInfo nodeId="7937505068349115043" varName="fw" />
+      <varInfo nodeId="7937505068349079399" varName="file" />
+    </scopeInfo>
+    <unitInfo nodeId="5358304762455219940" fileName="SaveModelDifference_Action.java" startLine="94" startPosition="49" endLine="98" endPosition="9" unitName="jetbrains.mps.vcs.plugin.SaveModelDifference_Action$1" />
   </root>
   <root nodeId="994404492881088225">
     <nodeInfo nodeId="994404492881108790" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriverGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="68" />
