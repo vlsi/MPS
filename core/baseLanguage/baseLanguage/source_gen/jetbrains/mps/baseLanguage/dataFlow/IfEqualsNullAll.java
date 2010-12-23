@@ -34,26 +34,16 @@ public class IfEqualsNullAll extends DataFlowConstructor {
         SNode notNullNode = NullableUtil.getOtherThanNull(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
         if (notNullNode != null) {
           ListSequence.fromList(vars).addElement(notNullNode);
-          {
-            Object object = expression;
-            if (((Program) o).contains(object)) {
-              boolean before = false;
-              int position = ((Program) (o)).getEnd(object);
-              Instruction instruction = new notNullInstruction(notNullNode);
-              instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true, before);
-            }
-          }
         }
       }
     }
     if (!(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))) {
       for (SNode var : vars) {
         {
-          Object object = SLinkOperations.getTarget(node, "ifTrue", true);
+          Object object = SLinkOperations.getTarget(node, "condition", true);
           if (((Program) o).contains(object)) {
-            boolean before = true;
-            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
+            boolean before = false;
+            int position = ((Program) (o)).getEnd(object);
             Instruction instruction = new nullableInstruction(var);
             instruction.setSource(node);
             ((Program) (o)).insert(instruction, position, true, before);
@@ -61,5 +51,18 @@ public class IfEqualsNullAll extends DataFlowConstructor {
         }
       }
     }
+    for (SNode var : vars) {
+      {
+        Object object = SNodeOperations.getParent(var);
+        if (((Program) o).contains(object)) {
+          boolean before = false;
+          int position = ((Program) (o)).getEnd(object);
+          Instruction instruction = new notNullInstruction(var);
+          instruction.setSource(node);
+          ((Program) (o)).insert(instruction, position, true, before);
+        }
+      }
+    }
+
   }
 }
