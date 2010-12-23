@@ -38,11 +38,17 @@ public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin 
       ReplacementQueryAction_Action action = new ReplacementQueryAction_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, new FindInstancesByConditionAndNodeGroup_ActionGroup(), myId);
-    manager.registerAction(FindInstancesByConditionGroup_ActionGroup.ID, new FindInstancesByConditionGroup_ActionGroup(), myId);
+    {
+      FindInstancesByConditionAndNodeGroup_ActionGroup group = new FindInstancesByConditionAndNodeGroup_ActionGroup();
+      manager.registerAction(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      FindInstancesByConditionGroup_ActionGroup group = new FindInstancesByConditionGroup_ActionGroup();
+      manager.registerAction(FindInstancesByConditionGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

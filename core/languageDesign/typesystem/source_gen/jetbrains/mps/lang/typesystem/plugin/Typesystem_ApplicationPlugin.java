@@ -46,13 +46,27 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
       ShowTypeSystemTrace_Action action = new ShowTypeSystemTrace_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(GoToTypeErrorGroup_ActionGroup.ID, new GoToTypeErrorGroup_ActionGroup(), myId);
-    manager.registerAction(TypesystemActions_ActionGroup.ID, new TypesystemActions_ActionGroup(), myId);
-    manager.registerAction(TypesystemEditorPopupInternal_ActionGroup.ID, new TypesystemEditorPopupInternal_ActionGroup(), myId);
-    manager.registerAction(TypesystemNodeActions_ActionGroup.ID, new TypesystemNodeActions_ActionGroup(), myId);
+    {
+      GoToTypeErrorGroup_ActionGroup group = new GoToTypeErrorGroup_ActionGroup();
+      manager.registerAction(GoToTypeErrorGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      TypesystemActions_ActionGroup group = new TypesystemActions_ActionGroup();
+      manager.registerAction(TypesystemActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      TypesystemEditorPopupInternal_ActionGroup group = new TypesystemEditorPopupInternal_ActionGroup();
+      manager.registerAction(TypesystemEditorPopupInternal_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      TypesystemNodeActions_ActionGroup group = new TypesystemNodeActions_ActionGroup();
+      manager.registerAction(TypesystemNodeActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

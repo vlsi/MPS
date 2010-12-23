@@ -3,8 +3,8 @@
   <unitInfo fileName="QuickQueryLanguage_ProjectPlugin.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ProjectPlugin" />
   <unitInfo fileName="FindInstancesByConditionAndNodeGroup_ActionGroup.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup" />
   <unitInfo fileName="FindInstancesByConditionGroup_ActionGroup.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup" />
-  <unitInfo fileName="QuickQueryLanguage_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ApplicationPlugin" />
   <unitInfo fileName="RunReplacement_Tool.java" startLine="21" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" />
+  <unitInfo fileName="QuickQueryLanguage_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ApplicationPlugin" />
   <unitInfo fileName="ReplacementQueryAction_Action.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action" />
   <unitInfo fileName="FindInstancesByCondition_Action.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action" />
   <unitInfo fileName="ReplacementQueryActionWithNode_Action.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action" />

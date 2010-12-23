@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Mps_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.Mps_ProjectPlugin" />
-  <unitInfo fileName="Mps_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.Mps_ApplicationPlugin" />
+  <unitInfo fileName="Mps_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.Mps_ApplicationPlugin" />
   <unitInfo fileName="CheckSamples_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckSamples_Action" />
   <unitInfo fileName="CheckIncludedLanguages_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckIncludedLanguages_Action" />
   <unitInfo fileName="CheckCoreRuntimeDeps_Action.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.packaging.mps.plugin.CheckCoreRuntimeDeps_Action" />

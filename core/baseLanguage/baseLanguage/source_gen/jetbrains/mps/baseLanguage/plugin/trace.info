@@ -68,9 +68,9 @@
   <unitInfo fileName="InlineLocalVariable_Action.java" startLine="19" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action" />
   <unitInfo fileName="TraceInfoInitializer_CustomApplicationPlugin.java" startLine="20" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TraceInfoInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="GoToOverridenMethod_Action.java" startLine="34" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
-  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
   <unitInfo fileName="GoToInheritedClassifier_Action.java" startLine="34" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
   <unitInfo fileName="GoToOverridingMethod_Action.java" startLine="37" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
+  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="61" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration" />
   <root nodeId="1108208212555615250">
     <nodeInfo nodeId="1108208212555649458" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selectedNode" fileName="GoToOverridenMethod_Action.java" startLine="37" startPosition="0" endLine="38" endPosition="29" />

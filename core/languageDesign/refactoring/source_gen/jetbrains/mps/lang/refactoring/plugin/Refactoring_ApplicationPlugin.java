@@ -22,11 +22,17 @@ public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(ModelRefactorings_ActionGroup.ID, new ModelRefactorings_ActionGroup(), myId);
-    manager.registerAction(NodeRefactoring_ActionGroup.ID, new NodeRefactoring_ActionGroup(), myId);
+    {
+      ModelRefactorings_ActionGroup group = new ModelRefactorings_ActionGroup();
+      manager.registerAction(ModelRefactorings_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      NodeRefactoring_ActionGroup group = new NodeRefactoring_ActionGroup();
+      manager.registerAction(NodeRefactoring_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

@@ -29,11 +29,17 @@ public class Behavior_ApplicationPlugin extends BaseApplicationPlugin {
       OverrideBehaviorMethod_Action action = new OverrideBehaviorMethod_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.ID, new BehaviorCodeOverrideImplementMenuGroup_ActionGroup(), myId);
-    manager.registerAction(BehaviourPopup_ActionGroup.ID, new BehaviourPopup_ActionGroup(), myId);
+    {
+      BehaviorCodeOverrideImplementMenuGroup_ActionGroup group = new BehaviorCodeOverrideImplementMenuGroup_ActionGroup();
+      manager.registerAction(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      BehaviourPopup_ActionGroup group = new BehaviourPopup_ActionGroup();
+      manager.registerAction(BehaviourPopup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

@@ -24,10 +24,12 @@ public class Calculator_ApplicationPlugin extends BaseApplicationPlugin {
       ExecuteCalculator_Action action = new ExecuteCalculator_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(NodeActionsAddition_ActionGroup.ID, new NodeActionsAddition_ActionGroup(), myId);
+    {
+      NodeActionsAddition_ActionGroup group = new NodeActionsAddition_ActionGroup();
+      manager.registerAction(NodeActionsAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

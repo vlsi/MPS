@@ -24,10 +24,12 @@ public class Generictasks_ApplicationPlugin extends BaseApplicationPlugin {
       ImportAntStuff_Action action = new ImportAntStuff_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(ProjectPaneLanguageAddition_ActionGroup.ID, new ProjectPaneLanguageAddition_ActionGroup(), myId);
+    {
+      ProjectPaneLanguageAddition_ActionGroup group = new ProjectPaneLanguageAddition_ActionGroup();
+      manager.registerAction(ProjectPaneLanguageAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

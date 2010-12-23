@@ -42,11 +42,17 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
       ShowHelpForRoot_Action action = new ShowHelpForRoot_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(ShowHelp_ActionGroup.ID, new ShowHelp_ActionGroup(), myId);
-    manager.registerAction(Structure_ActionGroup.ID, new Structure_ActionGroup(), myId);
+    {
+      ShowHelp_ActionGroup group = new ShowHelp_ActionGroup();
+      manager.registerAction(ShowHelp_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Structure_ActionGroup group = new Structure_ActionGroup();
+      manager.registerAction(Structure_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

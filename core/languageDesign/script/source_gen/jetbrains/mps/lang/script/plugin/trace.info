@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Script_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.Script_ProjectPlugin" />
-  <unitInfo fileName="Script_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.Script_ApplicationPlugin" />
+  <unitInfo fileName="Script_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.Script_ApplicationPlugin" />
   <unitInfo fileName="ScriptsForSelection_ActionGroup.java" startLine="24" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup" />
   <unitInfo fileName="ScriptsGlobally_ActionGroup.java" startLine="24" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.ScriptsGlobally_ActionGroup" />
   <unitInfo fileName="RunMigrationScripts_Action.java" startLine="21" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action" />

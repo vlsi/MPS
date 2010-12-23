@@ -78,17 +78,47 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
       ShowDiffererenesWithCurrentRevision_Action action = new ShowDiffererenesWithCurrentRevision_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(AnnotateGroup_ActionGroup.ID, new AnnotateGroup_ActionGroup(), myId);
-    manager.registerAction(ChangesStrip_ActionGroup.ID, new ChangesStrip_ActionGroup(), myId);
-    manager.registerAction(EditorInternalVCS_ActionGroup.ID, new EditorInternalVCS_ActionGroup(), myId);
-    manager.registerAction(GoToVCS_ActionGroup.ID, new GoToVCS_ActionGroup(), myId);
-    manager.registerAction(InstallCustomMergeDriverGroup_ActionGroup.ID, new InstallCustomMergeDriverGroup_ActionGroup(), myId);
-    manager.registerAction(ShowDiffWithCurrRev_ActionGroup.ID, new ShowDiffWithCurrRev_ActionGroup(), myId);
-    manager.registerAction(VCSModelActions_ActionGroup.ID, new VCSModelActions_ActionGroup(), myId);
-    manager.registerAction(VCS_ActionGroup.ID, new VCS_ActionGroup(), myId);
+    {
+      AnnotateGroup_ActionGroup group = new AnnotateGroup_ActionGroup();
+      manager.registerAction(AnnotateGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ChangesStrip_ActionGroup group = new ChangesStrip_ActionGroup();
+      manager.registerAction(ChangesStrip_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      EditorInternalVCS_ActionGroup group = new EditorInternalVCS_ActionGroup();
+      manager.registerAction(EditorInternalVCS_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      GoToVCS_ActionGroup group = new GoToVCS_ActionGroup();
+      manager.registerAction(GoToVCS_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      InstallCustomMergeDriverGroup_ActionGroup group = new InstallCustomMergeDriverGroup_ActionGroup();
+      manager.registerAction(InstallCustomMergeDriverGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ShowDiffWithCurrRev_ActionGroup group = new ShowDiffWithCurrRev_ActionGroup();
+      manager.registerAction(ShowDiffWithCurrRev_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      VCSModelActions_ActionGroup group = new VCSModelActions_ActionGroup();
+      manager.registerAction(VCSModelActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      VCS_ActionGroup group = new VCS_ActionGroup();
+      manager.registerAction(VCS_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustInterfaceGroups() {

@@ -775,72 +775,322 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
       ViewBreakpoints_Action action = new ViewBreakpoints_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(AbstractFileActions_ActionGroup.ID, new AbstractFileActions_ActionGroup(), myId);
-    manager.registerAction(AccessoriesGroupActions_ActionGroup.ID, new AccessoriesGroupActions_ActionGroup(), myId);
-    manager.registerAction(AddToFavoritesGroup_ActionGroup.ID, new AddToFavoritesGroup_ActionGroup(), myId);
-    manager.registerAction(Bookmarks_ActionGroup.ID, new Bookmarks_ActionGroup(), myId);
-    manager.registerAction(Breakpoints_ActionGroup.ID, new Breakpoints_ActionGroup(), myId);
-    manager.registerAction(Build_ActionGroup.ID, new Build_ActionGroup(), myId);
-    manager.registerAction(Code_ActionGroup.ID, new Code_ActionGroup(), myId);
-    manager.registerAction(CreateRootNode_ActionGroup.ID, new CreateRootNode_ActionGroup(), myId);
-    manager.registerAction(DebugRunMenu_ActionGroup.ID, new DebugRunMenu_ActionGroup(), myId);
-    manager.registerAction(DebugTool_ActionGroup.ID, new DebugTool_ActionGroup(), myId);
-    manager.registerAction(DevkitActions_ActionGroup.ID, new DevkitActions_ActionGroup(), myId);
-    manager.registerAction(Edit_ActionGroup.ID, new Edit_ActionGroup(), myId);
-    manager.registerAction(EditorInternal_ActionGroup.ID, new EditorInternal_ActionGroup(), myId);
-    manager.registerAction(EditorLeftPanelMenu_ActionGroup.ID, new EditorLeftPanelMenu_ActionGroup(), myId);
-    manager.registerAction(EditorPopup_ActionGroup.ID, new EditorPopup_ActionGroup(), myId);
-    manager.registerAction(EditorTabActions_ActionGroup.ID, new EditorTabActions_ActionGroup(), myId);
-    manager.registerAction(FavoritesPopupWrapper_ActionGroup.ID, new FavoritesPopupWrapper_ActionGroup(), myId);
-    manager.registerAction(FavoritesPopup_ActionGroup.ID, new FavoritesPopup_ActionGroup(), myId);
-    manager.registerAction(Favorites_ActionGroup.ID, new Favorites_ActionGroup(), myId);
-    manager.registerAction(FileActions_ActionGroup.ID, new FileActions_ActionGroup(), myId);
-    manager.registerAction(FileSystemNewActions_ActionGroup.ID, new FileSystemNewActions_ActionGroup(), myId);
-    manager.registerAction(FolderActions_ActionGroup.ID, new FolderActions_ActionGroup(), myId);
-    manager.registerAction(Folding_ActionGroup.ID, new Folding_ActionGroup(), myId);
-    manager.registerAction(GenerateFavorites_ActionGroup.ID, new GenerateFavorites_ActionGroup(), myId);
-    manager.registerAction(GenerateModels_ActionGroup.ID, new GenerateModels_ActionGroup(), myId);
-    manager.registerAction(GenerateModule_ActionGroup.ID, new GenerateModule_ActionGroup(), myId);
-    manager.registerAction(Generate_ActionGroup.ID, new Generate_ActionGroup(), myId);
-    manager.registerAction(GeneratorActions_ActionGroup.ID, new GeneratorActions_ActionGroup(), myId);
-    manager.registerAction(GeneratorNewActions_ActionGroup.ID, new GeneratorNewActions_ActionGroup(), myId);
-    manager.registerAction(GoByReference_ActionGroup.ID, new GoByReference_ActionGroup(), myId);
-    manager.registerAction(Goto_ActionGroup.ID, new Goto_ActionGroup(), myId);
-    manager.registerAction(InEditorActions_ActionGroup.ID, new InEditorActions_ActionGroup(), myId);
-    manager.registerAction(JUnitTestCaseActions_ActionGroup.ID, new JUnitTestCaseActions_ActionGroup(), myId);
-    manager.registerAction(JUnitTestMethodActions_ActionGroup.ID, new JUnitTestMethodActions_ActionGroup(), myId);
-    manager.registerAction(LanguageActions_ActionGroup.ID, new LanguageActions_ActionGroup(), myId);
-    manager.registerAction(LanguageNewActions_ActionGroup.ID, new LanguageNewActions_ActionGroup(), myId);
-    manager.registerAction(LanguageNewCustomPartActions_ActionGroup.ID, new LanguageNewCustomPartActions_ActionGroup(), myId);
-    manager.registerAction(LanguageRefactoring_ActionGroup.ID, new LanguageRefactoring_ActionGroup(), myId);
-    manager.registerAction(ModelActionsInternal_ActionGroup.ID, new ModelActionsInternal_ActionGroup(), myId);
-    manager.registerAction(ModelActions_ActionGroup.ID, new ModelActions_ActionGroup(), myId);
-    manager.registerAction(ModelNewActions_ActionGroup.ID, new ModelNewActions_ActionGroup(), myId);
-    manager.registerAction(ModelRefactoring_ActionGroup.ID, new ModelRefactoring_ActionGroup(), myId);
-    manager.registerAction(ModuleActions_ActionGroup.ID, new ModuleActions_ActionGroup(), myId);
-    manager.registerAction(NamespaceActions_ActionGroup.ID, new NamespaceActions_ActionGroup(), myId);
-    manager.registerAction(NamespaceInternalActions_ActionGroup.ID, new NamespaceInternalActions_ActionGroup(), myId);
-    manager.registerAction(NodeActionsInternal_ActionGroup.ID, new NodeActionsInternal_ActionGroup(), myId);
-    manager.registerAction(NodeActions_ActionGroup.ID, new NodeActions_ActionGroup(), myId);
-    manager.registerAction(PackageActions_ActionGroup.ID, new PackageActions_ActionGroup(), myId);
-    manager.registerAction(PackageNewActions_ActionGroup.ID, new PackageNewActions_ActionGroup(), myId);
-    manager.registerAction(ProjectActions_ActionGroup.ID, new ProjectActions_ActionGroup(), myId);
-    manager.registerAction(ProjectNewActions_ActionGroup.ID, new ProjectNewActions_ActionGroup(), myId);
-    manager.registerAction(PropertyNodeActions_ActionGroup.ID, new PropertyNodeActions_ActionGroup(), myId);
-    manager.registerAction(ReferenceNodeActions_ActionGroup.ID, new ReferenceNodeActions_ActionGroup(), myId);
-    manager.registerAction(RuntimeFolderActions_ActionGroup.ID, new RuntimeFolderActions_ActionGroup(), myId);
-    manager.registerAction(SaveTransientModels_ActionGroup.ID, new SaveTransientModels_ActionGroup(), myId);
-    manager.registerAction(Search_ActionGroup.ID, new Search_ActionGroup(), myId);
-    manager.registerAction(SolutionActions_ActionGroup.ID, new SolutionActions_ActionGroup(), myId);
-    manager.registerAction(SolutionNewActions_ActionGroup.ID, new SolutionNewActions_ActionGroup(), myId);
-    manager.registerAction(SolutionRefactoring_ActionGroup.ID, new SolutionRefactoring_ActionGroup(), myId);
-    manager.registerAction(ToolsInternal_ActionGroup.ID, new ToolsInternal_ActionGroup(), myId);
-    manager.registerAction(ToolsUpgrade_ActionGroup.ID, new ToolsUpgrade_ActionGroup(), myId);
-    manager.registerAction(Tools_ActionGroup.ID, new Tools_ActionGroup(), myId);
-    manager.registerAction(TransientModulesActions_ActionGroup.ID, new TransientModulesActions_ActionGroup(), myId);
+    {
+      AbstractFileActions_ActionGroup group = new AbstractFileActions_ActionGroup();
+      manager.registerAction(AbstractFileActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      AccessoriesGroupActions_ActionGroup group = new AccessoriesGroupActions_ActionGroup();
+      manager.registerAction(AccessoriesGroupActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      AddToFavoritesGroup_ActionGroup group = new AddToFavoritesGroup_ActionGroup();
+      manager.registerAction(AddToFavoritesGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Bookmarks_ActionGroup group = new Bookmarks_ActionGroup();
+      manager.registerAction(Bookmarks_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Breakpoints_ActionGroup group = new Breakpoints_ActionGroup();
+      manager.registerAction(Breakpoints_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Build_ActionGroup group = new Build_ActionGroup();
+      manager.registerAction(Build_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Code_ActionGroup group = new Code_ActionGroup();
+      manager.registerAction(Code_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      CreateRootNode_ActionGroup group = new CreateRootNode_ActionGroup();
+      manager.registerAction(CreateRootNode_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      DebugRunMenu_ActionGroup group = new DebugRunMenu_ActionGroup();
+      manager.registerAction(DebugRunMenu_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      DebugTool_ActionGroup group = new DebugTool_ActionGroup();
+      manager.registerAction(DebugTool_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      DevkitActions_ActionGroup group = new DevkitActions_ActionGroup();
+      manager.registerAction(DevkitActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Edit_ActionGroup group = new Edit_ActionGroup();
+      manager.registerAction(Edit_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      EditorInternal_ActionGroup group = new EditorInternal_ActionGroup();
+      manager.registerAction(EditorInternal_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      EditorLeftPanelMenu_ActionGroup group = new EditorLeftPanelMenu_ActionGroup();
+      manager.registerAction(EditorLeftPanelMenu_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      EditorPopup_ActionGroup group = new EditorPopup_ActionGroup();
+      manager.registerAction(EditorPopup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      EditorTabActions_ActionGroup group = new EditorTabActions_ActionGroup();
+      manager.registerAction(EditorTabActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      FavoritesPopupWrapper_ActionGroup group = new FavoritesPopupWrapper_ActionGroup();
+      manager.registerAction(FavoritesPopupWrapper_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      FavoritesPopup_ActionGroup group = new FavoritesPopup_ActionGroup();
+      manager.registerAction(FavoritesPopup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Favorites_ActionGroup group = new Favorites_ActionGroup();
+      manager.registerAction(Favorites_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      FileActions_ActionGroup group = new FileActions_ActionGroup();
+      manager.registerAction(FileActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      FileSystemNewActions_ActionGroup group = new FileSystemNewActions_ActionGroup();
+      manager.registerAction(FileSystemNewActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      FolderActions_ActionGroup group = new FolderActions_ActionGroup();
+      manager.registerAction(FolderActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Folding_ActionGroup group = new Folding_ActionGroup();
+      manager.registerAction(Folding_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      GenerateFavorites_ActionGroup group = new GenerateFavorites_ActionGroup();
+      manager.registerAction(GenerateFavorites_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      GenerateModels_ActionGroup group = new GenerateModels_ActionGroup();
+      manager.registerAction(GenerateModels_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      GenerateModule_ActionGroup group = new GenerateModule_ActionGroup();
+      manager.registerAction(GenerateModule_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Generate_ActionGroup group = new Generate_ActionGroup();
+      manager.registerAction(Generate_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      GeneratorActions_ActionGroup group = new GeneratorActions_ActionGroup();
+      manager.registerAction(GeneratorActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      GeneratorNewActions_ActionGroup group = new GeneratorNewActions_ActionGroup();
+      manager.registerAction(GeneratorNewActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      GoByReference_ActionGroup group = new GoByReference_ActionGroup();
+      manager.registerAction(GoByReference_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Goto_ActionGroup group = new Goto_ActionGroup();
+      manager.registerAction(Goto_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      InEditorActions_ActionGroup group = new InEditorActions_ActionGroup();
+      manager.registerAction(InEditorActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      JUnitTestCaseActions_ActionGroup group = new JUnitTestCaseActions_ActionGroup();
+      manager.registerAction(JUnitTestCaseActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      JUnitTestMethodActions_ActionGroup group = new JUnitTestMethodActions_ActionGroup();
+      manager.registerAction(JUnitTestMethodActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      LanguageActions_ActionGroup group = new LanguageActions_ActionGroup();
+      manager.registerAction(LanguageActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      LanguageNewActions_ActionGroup group = new LanguageNewActions_ActionGroup();
+      manager.registerAction(LanguageNewActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      LanguageNewCustomPartActions_ActionGroup group = new LanguageNewCustomPartActions_ActionGroup();
+      manager.registerAction(LanguageNewCustomPartActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      LanguageRefactoring_ActionGroup group = new LanguageRefactoring_ActionGroup();
+      manager.registerAction(LanguageRefactoring_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ModelActionsInternal_ActionGroup group = new ModelActionsInternal_ActionGroup();
+      manager.registerAction(ModelActionsInternal_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ModelActions_ActionGroup group = new ModelActions_ActionGroup();
+      manager.registerAction(ModelActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ModelNewActions_ActionGroup group = new ModelNewActions_ActionGroup();
+      manager.registerAction(ModelNewActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ModelRefactoring_ActionGroup group = new ModelRefactoring_ActionGroup();
+      manager.registerAction(ModelRefactoring_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ModuleActions_ActionGroup group = new ModuleActions_ActionGroup();
+      manager.registerAction(ModuleActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      NamespaceActions_ActionGroup group = new NamespaceActions_ActionGroup();
+      manager.registerAction(NamespaceActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      NamespaceInternalActions_ActionGroup group = new NamespaceInternalActions_ActionGroup();
+      manager.registerAction(NamespaceInternalActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      NodeActionsInternal_ActionGroup group = new NodeActionsInternal_ActionGroup();
+      manager.registerAction(NodeActionsInternal_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      NodeActions_ActionGroup group = new NodeActions_ActionGroup();
+      manager.registerAction(NodeActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      PackageActions_ActionGroup group = new PackageActions_ActionGroup();
+      manager.registerAction(PackageActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      PackageNewActions_ActionGroup group = new PackageNewActions_ActionGroup();
+      manager.registerAction(PackageNewActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ProjectActions_ActionGroup group = new ProjectActions_ActionGroup();
+      manager.registerAction(ProjectActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ProjectNewActions_ActionGroup group = new ProjectNewActions_ActionGroup();
+      manager.registerAction(ProjectNewActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      PropertyNodeActions_ActionGroup group = new PropertyNodeActions_ActionGroup();
+      manager.registerAction(PropertyNodeActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ReferenceNodeActions_ActionGroup group = new ReferenceNodeActions_ActionGroup();
+      manager.registerAction(ReferenceNodeActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      RuntimeFolderActions_ActionGroup group = new RuntimeFolderActions_ActionGroup();
+      manager.registerAction(RuntimeFolderActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      SaveTransientModels_ActionGroup group = new SaveTransientModels_ActionGroup();
+      manager.registerAction(SaveTransientModels_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Search_ActionGroup group = new Search_ActionGroup();
+      manager.registerAction(Search_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      SolutionActions_ActionGroup group = new SolutionActions_ActionGroup();
+      manager.registerAction(SolutionActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      SolutionNewActions_ActionGroup group = new SolutionNewActions_ActionGroup();
+      manager.registerAction(SolutionNewActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      SolutionRefactoring_ActionGroup group = new SolutionRefactoring_ActionGroup();
+      manager.registerAction(SolutionRefactoring_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ToolsInternal_ActionGroup group = new ToolsInternal_ActionGroup();
+      manager.registerAction(ToolsInternal_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ToolsUpgrade_ActionGroup group = new ToolsUpgrade_ActionGroup();
+      manager.registerAction(ToolsUpgrade_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      Tools_ActionGroup group = new Tools_ActionGroup();
+      manager.registerAction(Tools_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      TransientModulesActions_ActionGroup group = new TransientModulesActions_ActionGroup();
+      manager.registerAction(TransientModulesActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustInterfaceGroups() {

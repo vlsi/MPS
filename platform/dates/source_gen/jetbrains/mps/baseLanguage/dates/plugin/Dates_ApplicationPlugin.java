@@ -24,10 +24,12 @@ public class Dates_ApplicationPlugin extends BaseApplicationPlugin {
       ConvertDateTimeOperations_Action action = new ConvertDateTimeOperations_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(DateLangGroup_ActionGroup.ID, new DateLangGroup_ActionGroup(), myId);
+    {
+      DateLangGroup_ActionGroup group = new DateLangGroup_ActionGroup();
+      manager.registerAction(DateLangGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

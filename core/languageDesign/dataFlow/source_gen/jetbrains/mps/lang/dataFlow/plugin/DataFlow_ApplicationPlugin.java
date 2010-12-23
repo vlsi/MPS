@@ -36,10 +36,12 @@ public class DataFlow_ApplicationPlugin extends BaseApplicationPlugin {
       ShowDFA_Action action = new ShowDFA_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(DFAActions_ActionGroup.ID, new DFAActions_ActionGroup(), myId);
+    {
+      DFAActions_ActionGroup group = new DFAActions_ActionGroup();
+      manager.registerAction(DFAActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

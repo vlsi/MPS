@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="DataFlow_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ProjectPlugin" />
-  <unitInfo fileName="DataFlow_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ApplicationPlugin" />
+  <unitInfo fileName="DataFlow_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ApplicationPlugin" />
   <unitInfo fileName="DFAActions_ActionGroup.java" startLine="12" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup" />
   <unitInfo fileName="PrintDFAResult_Action.java" startLine="15" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action" />
   <unitInfo fileName="PrintInitializationInformation_Action.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action" />

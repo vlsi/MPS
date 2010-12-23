@@ -107,19 +107,57 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
       UncommentStatements_Action action = new UncommentStatements_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(AnalyzersActions_ActionGroup.ID, new AnalyzersActions_ActionGroup(), myId);
-    manager.registerAction(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, new BaseLangaugeCodeCommentsMenuGroup_ActionGroup(), myId);
-    manager.registerAction(BaseLanguageEditorPopupInternal_ActionGroup.ID, new BaseLanguageEditorPopupInternal_ActionGroup(), myId);
-    manager.registerAction(BaseLanguageEditorPopup_ActionGroup.ID, new BaseLanguageEditorPopup_ActionGroup(), myId);
-    manager.registerAction(BaseLanguageModelActionsInternal_ActionGroup.ID, new BaseLanguageModelActionsInternal_ActionGroup(), myId);
-    manager.registerAction(BaseLanguageNodeActionsInternal_ActionGroup.ID, new BaseLanguageNodeActionsInternal_ActionGroup(), myId);
-    manager.registerAction(BaseLanguageToolsAddition_ActionGroup.ID, new BaseLanguageToolsAddition_ActionGroup(), myId);
-    manager.registerAction(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, new BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup(), myId);
-    manager.registerAction(PrintNodePosition_ActionGroup.ID, new PrintNodePosition_ActionGroup(), myId);
-    manager.registerAction(RefactoringAddition_ActionGroup.ID, new RefactoringAddition_ActionGroup(), myId);
+    {
+      AnalyzersActions_ActionGroup group = new AnalyzersActions_ActionGroup();
+      manager.registerAction(AnalyzersActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      BaseLangaugeCodeCommentsMenuGroup_ActionGroup group = new BaseLangaugeCodeCommentsMenuGroup_ActionGroup();
+      manager.registerAction(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      BaseLanguageEditorPopupInternal_ActionGroup group = new BaseLanguageEditorPopupInternal_ActionGroup();
+      manager.registerAction(BaseLanguageEditorPopupInternal_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      BaseLanguageEditorPopup_ActionGroup group = new BaseLanguageEditorPopup_ActionGroup();
+      manager.registerAction(BaseLanguageEditorPopup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      BaseLanguageModelActionsInternal_ActionGroup group = new BaseLanguageModelActionsInternal_ActionGroup();
+      manager.registerAction(BaseLanguageModelActionsInternal_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      BaseLanguageNodeActionsInternal_ActionGroup group = new BaseLanguageNodeActionsInternal_ActionGroup();
+      manager.registerAction(BaseLanguageNodeActionsInternal_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      BaseLanguageToolsAddition_ActionGroup group = new BaseLanguageToolsAddition_ActionGroup();
+      manager.registerAction(BaseLanguageToolsAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup group = new BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup();
+      manager.registerAction(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      PrintNodePosition_ActionGroup group = new PrintNodePosition_ActionGroup();
+      manager.registerAction(PrintNodePosition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      RefactoringAddition_ActionGroup group = new RefactoringAddition_ActionGroup();
+      manager.registerAction(RefactoringAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

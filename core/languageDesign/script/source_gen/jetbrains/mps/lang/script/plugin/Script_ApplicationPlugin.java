@@ -24,11 +24,17 @@ public class Script_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(ScriptsForSelection_ActionGroup.ID, new ScriptsForSelection_ActionGroup(), myId);
-    manager.registerAction(ScriptsGlobally_ActionGroup.ID, new ScriptsGlobally_ActionGroup(), myId);
+    {
+      ScriptsForSelection_ActionGroup group = new ScriptsForSelection_ActionGroup();
+      manager.registerAction(ScriptsForSelection_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ScriptsGlobally_ActionGroup group = new ScriptsGlobally_ActionGroup();
+      manager.registerAction(ScriptsGlobally_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

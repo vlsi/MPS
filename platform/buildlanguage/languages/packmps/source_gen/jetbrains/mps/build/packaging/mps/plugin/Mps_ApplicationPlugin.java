@@ -32,10 +32,12 @@ public class Mps_ApplicationPlugin extends BaseApplicationPlugin {
       CheckSamples_Action action = new CheckSamples_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(InternalChecks_ActionGroup.ID, new InternalChecks_ActionGroup(), myId);
+    {
+      InternalChecks_ActionGroup group = new InternalChecks_ActionGroup();
+      manager.registerAction(InternalChecks_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

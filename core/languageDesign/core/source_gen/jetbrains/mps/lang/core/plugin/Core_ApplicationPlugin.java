@@ -38,12 +38,22 @@ public class Core_ApplicationPlugin extends BaseApplicationPlugin {
       ShowNodeMessages_Action action = new ShowNodeMessages_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(CoreActions_ActionGroup.ID, new CoreActions_ActionGroup(), myId);
-    manager.registerAction(FindLanguageUsages_ActionGroup.ID, new FindLanguageUsages_ActionGroup(), myId);
-    manager.registerAction(FindModelUsages_ActionGroup.ID, new FindModelUsages_ActionGroup(), myId);
+    {
+      CoreActions_ActionGroup group = new CoreActions_ActionGroup();
+      manager.registerAction(CoreActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      FindLanguageUsages_ActionGroup group = new FindLanguageUsages_ActionGroup();
+      manager.registerAction(FindLanguageUsages_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      FindModelUsages_ActionGroup group = new FindModelUsages_ActionGroup();
+      manager.registerAction(FindModelUsages_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

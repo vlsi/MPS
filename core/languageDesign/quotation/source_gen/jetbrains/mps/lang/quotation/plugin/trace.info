@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Quotation_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ProjectPlugin" />
   <unitInfo fileName="MetaLevelActions_ActionGroup.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.MetaLevelActions_ActionGroup" />
-  <unitInfo fileName="Quotation_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ApplicationPlugin" />
+  <unitInfo fileName="Quotation_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ApplicationPlugin" />
   <unitInfo fileName="ShowMetaLevel_Action.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.ShowMetaLevel_Action" />
   <root nodeId="3981318653438276869">
     <nodeInfo nodeId="3981318653438278529" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="currentNode" fileName="ShowMetaLevel_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="28" />

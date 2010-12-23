@@ -24,10 +24,12 @@ public class Quotation_ApplicationPlugin extends BaseApplicationPlugin {
       ShowMetaLevel_Action action = new ShowMetaLevel_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(MetaLevelActions_ActionGroup.ID, new MetaLevelActions_ActionGroup(), myId);
+    {
+      MetaLevelActions_ActionGroup group = new MetaLevelActions_ActionGroup();
+      manager.registerAction(MetaLevelActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

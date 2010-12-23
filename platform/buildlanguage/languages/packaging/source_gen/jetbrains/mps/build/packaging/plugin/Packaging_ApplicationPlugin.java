@@ -29,11 +29,17 @@ public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
       GenerateBuildForProjectAction_Action action = new GenerateBuildForProjectAction_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(ProjectPaneModelAddition_ActionGroup.ID, new ProjectPaneModelAddition_ActionGroup(), myId);
-    manager.registerAction(ProjectPaneProjectAddition_ActionGroup.ID, new ProjectPaneProjectAddition_ActionGroup(), myId);
+    {
+      ProjectPaneModelAddition_ActionGroup group = new ProjectPaneModelAddition_ActionGroup();
+      manager.registerAction(ProjectPaneModelAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
+    {
+      ProjectPaneProjectAddition_ActionGroup group = new ProjectPaneProjectAddition_ActionGroup();
+      manager.registerAction(ProjectPaneProjectAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

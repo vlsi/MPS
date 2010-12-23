@@ -287,7 +287,7 @@
   <unitInfo fileName="NodeActions_ActionGroup.java" startLine="12" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
   <unitInfo fileName="EditorPopup_ActionGroup.java" startLine="13" startPosition="0" endLine="269" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
   <unitInfo fileName="Bookmarks_ActionGroup.java" startLine="12" startPosition="0" endLine="269" endPosition="0" unitName="jetbrains.mps.ide.actions.Bookmarks_ActionGroup" />
-  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="924" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
+  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="1174" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
   <root nodeId="1015639512126924602">
     <nodeInfo nodeId="8179751258861420936" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="needClean" fileName="DefaultMakeTask.java" startLine="18" startPosition="49" endLine="19" endPosition="28" />
     <nodeInfo nodeId="8179751258861420940" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modules" fileName="DefaultMakeTask.java" startLine="19" startPosition="28" endLine="20" endPosition="83" />

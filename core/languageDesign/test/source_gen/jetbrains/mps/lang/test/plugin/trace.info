@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="Test_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.Test_ProjectPlugin" />
   <unitInfo fileName="EditorInternalAddition_ActionGroup.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.EditorInternalAddition_ActionGroup" />
-  <unitInfo fileName="Test_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.Test_ApplicationPlugin" />
+  <unitInfo fileName="Test_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.Test_ApplicationPlugin" />
   <unitInfo fileName="RunTestInMPS_Action.java" startLine="26" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.test.plugin.RunTestInMPS_Action" />
   <root nodeId="1224594241712">
     <nodeInfo nodeId="1224594431777" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" fileName="RunTestInMPS_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="23" />

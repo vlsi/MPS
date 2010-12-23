@@ -187,7 +187,7 @@
     <nodeInfo nodeId="3068114543317979261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MoveConcepts.java" startLine="151" startPosition="53" endLine="152" endPosition="96" />
     <nodeInfo nodeId="3068114543317979271" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MoveConcepts.java" startLine="153" startPosition="7" endLine="154" endPosition="77" />
     <nodeInfo nodeId="3068114543317979277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MoveConcepts.java" startLine="154" startPosition="77" endLine="155" endPosition="73" />
-    <nodeInfo nodeId="3068114543317979281" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MoveConcepts.java" startLine="155" startPosition="73" endLine="156" endPosition="59" />
+    <nodeInfo nodeId="3068114543317979281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MoveConcepts.java" startLine="155" startPosition="73" endLine="156" endPosition="59" />
     <nodeInfo nodeId="3068114543317979288" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MoveConcepts.java" startLine="158" startPosition="56" endLine="159" endPosition="78" />
     <nodeInfo nodeId="3068114543317979292" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MoveConcepts.java" startLine="159" startPosition="78" endLine="160" endPosition="99" />
     <nodeInfo nodeId="3068114543317979300" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MoveConcepts.java" startLine="161" startPosition="50" endLine="162" endPosition="91" />

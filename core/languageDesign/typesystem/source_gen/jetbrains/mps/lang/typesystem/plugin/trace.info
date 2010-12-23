@@ -4,9 +4,9 @@
   <unitInfo fileName="TypesystemPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemPlugin_CustomProjectPlugin" />
   <unitInfo fileName="TypesystemNodeActions_ActionGroup.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup" />
   <unitInfo fileName="TypesystemEditorPopupInternal_ActionGroup.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup" />
-  <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
   <unitInfo fileName="TypesystemActions_ActionGroup.java" startLine="12" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup" />
   <unitInfo fileName="ShowInequationsForCell_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowInequationsForCell_Action" />
+  <unitInfo fileName="Typesystem_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.Typesystem_ApplicationPlugin" />
   <unitInfo fileName="ShowRulesWhichAffectNodeType_Action.java" startLine="21" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action" />
   <unitInfo fileName="GoToTypeErrorRule_Action.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action" />
   <unitInfo fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="26" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup" />

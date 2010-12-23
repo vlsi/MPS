@@ -24,10 +24,12 @@ public class Smodel_ApplicationPlugin extends BaseApplicationPlugin {
       CheckLangForJavaStubModels_Action action = new CheckLangForJavaStubModels_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(LanguageInternalAddition_ActionGroup.ID, new LanguageInternalAddition_ActionGroup(), myId);
+    {
+      LanguageInternalAddition_ActionGroup group = new LanguageInternalAddition_ActionGroup();
+      manager.registerAction(LanguageInternalAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

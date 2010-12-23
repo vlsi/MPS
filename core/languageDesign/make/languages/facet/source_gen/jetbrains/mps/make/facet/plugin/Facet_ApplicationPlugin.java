@@ -27,10 +27,12 @@ public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(Make_ActionGroup.ID, new Make_ActionGroup(), myId);
+    {
+      Make_ActionGroup group = new Make_ActionGroup();
+      manager.registerAction(Make_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

@@ -24,10 +24,12 @@ public class Test_ApplicationPlugin extends BaseApplicationPlugin {
       RunTestInMPS_Action action = new RunTestInMPS_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(EditorInternalAddition_ActionGroup.ID, new EditorInternalAddition_ActionGroup(), myId);
+    {
+      EditorInternalAddition_ActionGroup group = new EditorInternalAddition_ActionGroup();
+      manager.registerAction(EditorInternalAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

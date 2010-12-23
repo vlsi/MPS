@@ -33,10 +33,12 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
       ExtractComponent_Action action = new ExtractComponent_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(EditorActions_ActionGroup.ID, new EditorActions_ActionGroup(), myId);
+    {
+      EditorActions_ActionGroup group = new EditorActions_ActionGroup();
+      manager.registerAction(EditorActions_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {

@@ -24,10 +24,12 @@ public class Custommps_ApplicationPlugin extends BaseApplicationPlugin {
       GenerateCustomMPSBuildForProjectAction_Action action = new GenerateCustomMPSBuildForProjectAction_Action();
       manager.registerAction(action.getActionId(), action, myId);
     }
-    // parameterized actions 
-
     // groups 
-    manager.registerAction(ProjectAddition_ActionGroup.ID, new ProjectAddition_ActionGroup(), myId);
+    {
+      ProjectAddition_ActionGroup group = new ProjectAddition_ActionGroup();
+      manager.registerAction(ProjectAddition_ActionGroup.ID, group, myId);
+      addGroup(group);
+    }
   }
 
   public void adjustRegularGroups() {
