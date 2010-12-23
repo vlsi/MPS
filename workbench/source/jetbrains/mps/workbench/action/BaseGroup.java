@@ -107,10 +107,6 @@ public class BaseGroup extends DefaultActionGroup {
     addPlaceToActionList(actionList, place, condition);
   }
 
-  public void adjust() {
-
-  }
-
   protected void doUpdate(AnActionEvent e) {
 
   }
