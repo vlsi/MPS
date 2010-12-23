@@ -4,6 +4,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="1" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="32" modelUID="r:e7eb8d2d-304d-447e-8625-ba74a8b15edf(jetbrains.mps.vcs.ui)" version="-1" />
+  <import index="14" modelUID="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" version="-1" />
   <import index="2" modelUID="f:java_stub#com.intellij.util.containers(com.intellij.util.containers@java_stub)" version="-1" implicit="yes" />
   <import index="3" modelUID="f:java_stub#com.intellij.openapi.vcs.checkout(com.intellij.openapi.vcs.checkout@java_stub)" version="-1" implicit="yes" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
@@ -16,13 +17,11 @@
   <import index="11" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" implicit="yes" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" implicit="yes" />
   <import index="13" modelUID="f:java_stub#com.intellij.openapi.vcs.history(com.intellij.openapi.vcs.history@java_stub)" version="-1" implicit="yes" />
-  <import index="14" modelUID="r:df1b052a-af27-4b87-80fc-1492fa2192be(jetbrains.mps.vcs.diff.ui)" version="-1" implicit="yes" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.vcs(jetbrains.mps.vcs@java_stub)" version="-1" implicit="yes" />
   <import index="16" modelUID="f:java_stub#com.intellij.openapi.roots.impl(com.intellij.openapi.roots.impl@java_stub)" version="-1" implicit="yes" />
   <import index="17" modelUID="f:java_stub#com.intellij.ide.impl(com.intellij.ide.impl@java_stub)" version="-1" implicit="yes" />
   <import index="18" modelUID="f:java_stub#com.intellij.openapi.util.io(com.intellij.openapi.util.io@java_stub)" version="-1" implicit="yes" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" implicit="yes" />
-  <import index="20" modelUID="f:java_stub#jetbrains.mps.vcs.diff.ui(jetbrains.mps.vcs.diff.ui@java_stub)" version="-1" implicit="yes" />
   <import index="21" modelUID="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.queue)" version="-1" implicit="yes" />
   <import index="22" modelUID="f:java_stub#com.intellij.openapi.vcs.checkin(com.intellij.openapi.vcs.checkin@java_stub)" version="-1" implicit="yes" />
   <import index="23" modelUID="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" implicit="yes" />
@@ -7822,7 +7821,7 @@
               <node role="4.statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="3613324658897714356">
                 <node role="4.throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3613324658897714357">
                   <node role="4.creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3613324658897714358">
-                    <link role="4.baseMethodDeclaration:3" targetNodeId="20.~ModelDiffTool$ReadException.&lt;init&gt;(java.lang.Exception)" />
+                    <link role="4.baseMethodDeclaration:3" targetNodeId="14.4707157387247570721" resolveInfo="ReadException" />
                     <node role="4.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3613324658897714359">
                       <link role="4.variableDeclaration:3" targetNodeId="3613324658897714360" resolveInfo="t" />
                     </node>
