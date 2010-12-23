@@ -19,7 +19,6 @@
   <import index="14" modelUID="f:java_stub#javax.swing.event(javax.swing.event@java_stub)" version="-1" implicit="yes" />
   <import index="15" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" implicit="yes" />
   <import index="16" modelUID="f:java_stub#com.intellij.openapi.ui.popup(com.intellij.openapi.ui.popup@java_stub)" version="-1" implicit="yes" />
-  <import index="17" modelUID="f:java_stub#jetbrains.mps.vcs(jetbrains.mps.vcs@java_stub)" version="-1" implicit="yes" />
   <import index="18" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" implicit="yes" />
   <import index="19" modelUID="f:java_stub#com.intellij.ui(com.intellij.ui@java_stub)" version="-1" implicit="yes" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" implicit="yes" />
@@ -1348,9 +1347,6 @@
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413804">
         <link role="6.annotation:3" targetNodeId="18.~Nls" />
       </node>
-      <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413805">
-        <link role="6.annotation:3" targetNodeId="5.~Override" />
-      </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247413806">
       <property name="4.name:0" value="getIcon" />
@@ -1362,9 +1358,6 @@
         <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4707157387247413810">
           <node role="6.expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4707157387247413811" />
         </node>
-      </node>
-      <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413812">
-        <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247413813">
@@ -1378,9 +1371,6 @@
           <node role="6.expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4707157387247413818" />
         </node>
       </node>
-      <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413819">
-        <link role="6.annotation:3" targetNodeId="5.~Override" />
-      </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247413820">
       <property name="4.name:0" value="createComponent" />
@@ -1392,9 +1382,6 @@
         <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4707157387247413824">
           <node role="6.expression:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="4707157387247413825" />
         </node>
-      </node>
-      <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413826">
-        <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247413827">
@@ -1417,14 +1404,11 @@
                 <link role="6.baseMethodDeclaration:3" targetNodeId="4707157387247413870" resolveInfo="getConfiguration" />
               </node>
               <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247413838">
-                <link role="6.baseMethodDeclaration:3" targetNodeId="17.~MPSVcsProjectConfiguration.isIgnoreGeneratedFiles():boolean" />
+                <link role="6.baseMethodDeclaration:3" targetNodeId="28.3613324658897713264" resolveInfo="isIgnoreGeneratedFiles" />
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413839">
-        <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247413840">
@@ -1438,7 +1422,7 @@
               <link role="6.baseMethodDeclaration:3" targetNodeId="4707157387247413870" resolveInfo="getConfiguration" />
             </node>
             <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247413847">
-              <link role="6.baseMethodDeclaration:3" targetNodeId="17.~MPSVcsProjectConfiguration.setIgnoreGeneratedFiles(boolean):void" />
+              <link role="6.baseMethodDeclaration:3" targetNodeId="28.3613324658897713272" resolveInfo="setIgnoreGeneratedFiles" />
               <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247413848">
                 <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4707157387247413849">
                   <link role="6.variableDeclaration:3" targetNodeId="4707157387247413752" resolveInfo="myIgnoreGeneratedFilesCheckBox" />
@@ -1450,9 +1434,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413851">
-        <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
       <node role="6.throwsItem:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247413852">
         <link role="6.classifier:3" targetNodeId="13.~ConfigurationException" />
@@ -1475,15 +1456,12 @@
                   <link role="6.baseMethodDeclaration:3" targetNodeId="4707157387247413870" resolveInfo="getConfiguration" />
                 </node>
                 <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247413863">
-                  <link role="6.baseMethodDeclaration:3" targetNodeId="17.~MPSVcsProjectConfiguration.isIgnoreGeneratedFiles():boolean" />
+                  <link role="6.baseMethodDeclaration:3" targetNodeId="28.3613324658897713264" resolveInfo="isIgnoreGeneratedFiles" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413864">
-        <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247413865">
@@ -1491,15 +1469,12 @@
       <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247413866" />
       <node role="6.returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4707157387247413867" />
       <node role="6.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247413868" />
-      <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247413869">
-        <link role="6.annotation:3" targetNodeId="5.~Override" />
-      </node>
     </node>
     <node role="6.method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4707157387247413870">
       <property name="4.name:0" value="getConfiguration" />
       <node role="6.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4707157387247413871" />
-      <node role="6.returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247413872">
-        <link role="6.classifier:3" targetNodeId="17.~MPSVcsProjectConfiguration" />
+      <node role="6.returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2830770817632678515">
+        <link role="6.classifier:3" targetNodeId="28.3613324658897713212" resolveInfo="MPSVcsProjectConfiguration" />
       </node>
       <node role="6.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247413873">
         <node role="6.statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4707157387247413874">
@@ -1509,8 +1484,8 @@
             </node>
             <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247413877">
               <link role="6.baseMethodDeclaration:3" targetNodeId="2.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" />
-              <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="4707157387247413878">
-                <link role="6.classifier:3" targetNodeId="17.~MPSVcsProjectConfiguration" />
+              <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="2830770817632678520">
+                <link role="6.classifier:3" targetNodeId="28.3613324658897713212" resolveInfo="MPSVcsProjectConfiguration" />
               </node>
             </node>
           </node>

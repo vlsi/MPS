@@ -28,42 +28,34 @@ public class VcsGeneratedFilesConfigurable extends JPanel implements Configurabl
   }
 
   @Nls
-  @Override
   public String getDisplayName() {
     return "Generated Files";
   }
 
-  @Override
   public Icon getIcon() {
     return null;
   }
 
-  @Override
   public String getHelpTopic() {
     return null;
   }
 
-  @Override
   public JComponent createComponent() {
     return this;
   }
 
-  @Override
   public boolean isModified() {
     return myIgnoreGeneratedFilesCheckBox.isSelected() != getConfiguration().isIgnoreGeneratedFiles();
   }
 
-  @Override
   public void apply() throws ConfigurationException {
     getConfiguration().setIgnoreGeneratedFiles(myIgnoreGeneratedFilesCheckBox.isSelected());
   }
 
-  @Override
   public void reset() {
     myIgnoreGeneratedFilesCheckBox.setSelected(getConfiguration().isIgnoreGeneratedFiles());
   }
 
-  @Override
   public void disposeUIResources() {
   }
 

@@ -60,7 +60,6 @@
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="org.jetbrains.annotations.Nls" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />

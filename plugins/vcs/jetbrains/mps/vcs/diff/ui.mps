@@ -46,7 +46,6 @@
   <import index="40" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" implicit="yes" />
   <import index="41" modelUID="f:java_stub#com.intellij.openapi.diff(com.intellij.openapi.diff@java_stub)" version="-1" implicit="yes" />
   <import index="42" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" implicit="yes" />
-  <import index="43" modelUID="f:java_stub#jetbrains.mps.vcs.diff(jetbrains.mps.vcs.diff@java_stub)" version="-1" implicit="yes" />
   <import index="45" modelUID="f:java_stub#com.intellij.openapi.fileTypes(com.intellij.openapi.fileTypes@java_stub)" version="-1" implicit="yes" />
   <import index="46" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" implicit="yes" />
   <import index="47" modelUID="f:java_stub#com.intellij.ide.actions(com.intellij.ide.actions@java_stub)" version="-1" implicit="yes" />
@@ -56,7 +55,6 @@
   <import index="51" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" implicit="yes" />
   <import index="52" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" implicit="yes" />
   <import index="53" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" implicit="yes" />
-  <import index="56" modelUID="f:java_stub#jetbrains.mps.vcs.diff.changes(jetbrains.mps.vcs.diff.changes@java_stub)" version="-1" implicit="yes" />
   <root_stubs>
     <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247567127">
       <property name="29.name:0" value="NewMergeView" />
@@ -705,8 +703,8 @@
                                     <node role="4.returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4707157387247567486" />
                                     <node role="4.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4707157387247567487">
                                       <property name="29.name:0" value="conflict" />
-                                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247567488">
-                                        <link role="4.classifier:3" targetNodeId="43.~Conflict" />
+                                      <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2830770817632114927">
+                                        <link role="4.classifier:3" targetNodeId="54.4707157387247632367" resolveInfo="Conflict" />
                                       </node>
                                     </node>
                                     <node role="4.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247567534">
@@ -735,11 +733,11 @@
                                                     <link role="4.variableDeclaration:3" targetNodeId="4707157387247567487" resolveInfo="conflict" />
                                                   </node>
                                                   <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247567547">
-                                                    <link role="4.baseMethodDeclaration:3" targetNodeId="43.~Conflict.getChange2():jetbrains.mps.vcs.diff.changes.Change" />
+                                                    <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247632397" resolveInfo="getChange2" />
                                                   </node>
                                                 </node>
                                                 <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247567548">
-                                                  <link role="4.baseMethodDeclaration:3" targetNodeId="56.~Change.getAffectedNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getAffectedNodeId" />
+                                                  <link role="4.baseMethodDeclaration:3" targetNodeId="39.4707157387247556975" resolveInfo="getAffectedNodeId" />
                                                 </node>
                                               </node>
                                             </node>
@@ -771,11 +769,11 @@
                                                         <link role="4.variableDeclaration:3" targetNodeId="4707157387247567487" resolveInfo="conflict" />
                                                       </node>
                                                       <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247567563">
-                                                        <link role="4.baseMethodDeclaration:3" targetNodeId="43.~Conflict.getChange2():jetbrains.mps.vcs.diff.changes.Change" />
+                                                        <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247632397" resolveInfo="getChange2" />
                                                       </node>
                                                     </node>
                                                     <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247567564">
-                                                      <link role="4.baseMethodDeclaration:3" targetNodeId="56.~Change.getAffectedNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getAffectedNodeId" />
+                                                      <link role="4.baseMethodDeclaration:3" targetNodeId="39.4707157387247556975" resolveInfo="getAffectedNodeId" />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -833,11 +831,11 @@
                                                     <link role="4.variableDeclaration:3" targetNodeId="4707157387247567487" resolveInfo="conflict" />
                                                   </node>
                                                   <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247567586">
-                                                    <link role="4.baseMethodDeclaration:3" targetNodeId="43.~Conflict.getChange1():jetbrains.mps.vcs.diff.changes.Change" />
+                                                    <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247632391" resolveInfo="getChange1" />
                                                   </node>
                                                 </node>
                                                 <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247567587">
-                                                  <link role="4.baseMethodDeclaration:3" targetNodeId="56.~Change.getAffectedNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getAffectedNodeId" />
+                                                  <link role="4.baseMethodDeclaration:3" targetNodeId="39.4707157387247556975" resolveInfo="getAffectedNodeId" />
                                                 </node>
                                               </node>
                                             </node>
@@ -869,11 +867,11 @@
                                                         <link role="4.variableDeclaration:3" targetNodeId="4707157387247567487" resolveInfo="conflict" />
                                                       </node>
                                                       <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247567602">
-                                                        <link role="4.baseMethodDeclaration:3" targetNodeId="43.~Conflict.getChange1():jetbrains.mps.vcs.diff.changes.Change" />
+                                                        <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247632391" resolveInfo="getChange1" />
                                                       </node>
                                                     </node>
                                                     <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247567603">
-                                                      <link role="4.baseMethodDeclaration:3" targetNodeId="56.~Change.getAffectedNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getAffectedNodeId" />
+                                                      <link role="4.baseMethodDeclaration:3" targetNodeId="39.4707157387247556975" resolveInfo="getAffectedNodeId" />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -12868,15 +12866,15 @@
         <node role="4.statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4707157387247572209">
           <node role="4.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4707157387247572210">
             <property name="29.name:0" value="mrequest" />
-            <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247572211">
-              <link role="4.classifier:3" targetNodeId="43.~ModelMergeRequest" />
+            <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2830770817632678485">
+              <link role="4.classifier:3" targetNodeId="54.4707157387247632445" resolveInfo="ModelMergeRequest" />
             </node>
             <node role="4.initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4707157387247572212">
               <node role="4.expression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247572213">
                 <link role="4.variableDeclaration:3" targetNodeId="4707157387247572206" resolveInfo="request" />
               </node>
-              <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247572214">
-                <link role="4.classifier:3" targetNodeId="43.~ModelMergeRequest" />
+              <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2830770817632678488">
+                <link role="4.classifier:3" targetNodeId="54.4707157387247632445" resolveInfo="ModelMergeRequest" />
               </node>
             </node>
           </node>
@@ -13020,7 +13018,7 @@
                         <link role="4.variableDeclaration:3" targetNodeId="4707157387247572210" resolveInfo="mrequest" />
                       </node>
                       <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247572270">
-                        <link role="4.baseMethodDeclaration:3" targetNodeId="43.~ModelMergeRequest.getFile():com.intellij.openapi.vfs.VirtualFile" />
+                        <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247632481" resolveInfo="getFile" />
                       </node>
                     </node>
                     <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247572271">
@@ -13055,7 +13053,7 @@
                         <link role="4.variableDeclaration:3" targetNodeId="4707157387247572210" resolveInfo="mrequest" />
                       </node>
                       <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247572282">
-                        <link role="4.baseMethodDeclaration:3" targetNodeId="43.~ModelMergeRequest.getFile():com.intellij.openapi.vfs.VirtualFile" />
+                        <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247632481" resolveInfo="getFile" />
                       </node>
                     </node>
                     <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247572283">
@@ -13090,7 +13088,7 @@
                         <link role="4.variableDeclaration:3" targetNodeId="4707157387247572210" resolveInfo="mrequest" />
                       </node>
                       <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247572294">
-                        <link role="4.baseMethodDeclaration:3" targetNodeId="43.~ModelMergeRequest.getFile():com.intellij.openapi.vfs.VirtualFile" />
+                        <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247632481" resolveInfo="getFile" />
                       </node>
                     </node>
                     <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247572295">
@@ -13327,7 +13325,7 @@
                       <link role="4.variableDeclaration:3" targetNodeId="4707157387247572210" resolveInfo="mrequest" />
                     </node>
                     <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247572339">
-                      <link role="4.baseMethodDeclaration:3" targetNodeId="43.~ModelMergeRequest.resolved(byte[]):void" />
+                      <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247632488" resolveInfo="resolved" />
                       <node role="4.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247572340">
                         <link role="4.variableDeclaration:3" targetNodeId="4707157387247572329" resolveInfo="bytes" />
                       </node>
@@ -13378,8 +13376,8 @@
               <node role="4.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247572359">
                 <link role="4.variableDeclaration:3" targetNodeId="4707157387247572344" resolveInfo="request" />
               </node>
-              <node role="4.classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247572360">
-                <link role="4.classifier:3" targetNodeId="43.~ModelMergeRequest" />
+              <node role="4.classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2830770817632678489">
+                <link role="4.classifier:3" targetNodeId="54.4707157387247632445" resolveInfo="ModelMergeRequest" />
               </node>
             </node>
           </node>
