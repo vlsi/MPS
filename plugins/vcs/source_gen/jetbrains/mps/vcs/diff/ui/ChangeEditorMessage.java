@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;

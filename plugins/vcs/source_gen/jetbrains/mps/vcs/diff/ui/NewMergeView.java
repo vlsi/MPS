@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import java.util.List;
-import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;

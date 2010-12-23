@@ -18,14 +18,14 @@ import javax.swing.JScrollPane;
 import java.awt.Component;
 import jetbrains.mps.vcs.diff.DiffBuilder;
 import java.util.List;
-import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.vcs.diff.changes.AddNodeChange;
-import jetbrains.mps.vcs.diff.changes.SetNodeChange;
-import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.AddNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
 import java.awt.Color;
 
 /*package*/ class ModelDifferenceViewWithEditor extends JPanel implements EditorMessageOwner {

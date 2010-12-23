@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.io.PrintStream;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.vcs.VcsSettingsHolder;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import java.util.Collection;

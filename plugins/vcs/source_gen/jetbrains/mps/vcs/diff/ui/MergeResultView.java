@@ -26,11 +26,11 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.vcs.diff.changes.NewNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
 
 /*package*/ class MergeResultView extends JPanel {
   private MPSTree myResultTree;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.changes)">
+<model modelUID="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.oldchanges)">
   <persistence version="6" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <import index="1" modelUID="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.changes)" version="-1" implicit="yes" />
+  <import index="1" modelUID="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.oldchanges)" version="-1" implicit="yes" />
   <import index="2" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" implicit="yes" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" implicit="yes" />
@@ -406,6 +406,9 @@
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247556222">
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632686607">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247556223">
@@ -1026,6 +1029,9 @@
         </node>
       </node>
     </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687539">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247556486">
     <property name="3.name:0" value="AddRootChange" />
@@ -1155,6 +1161,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632686609">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247556540">
@@ -1443,6 +1452,9 @@
         </node>
       </node>
     </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687545">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247556660">
     <property name="3.name:0" value="UsedLanguagesChange" />
@@ -1729,6 +1741,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687544">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247556780">
@@ -2164,6 +2179,9 @@
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
     </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687540">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247556966">
     <property name="6.abstractClass:3" value="true" />
@@ -2312,6 +2330,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632686606">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247557037">
@@ -2831,6 +2852,9 @@
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
     </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687542">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass:3" id="4707157387247557258">
     <property name="3.name:0" value="ChangeType" />
@@ -2980,6 +3004,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687534">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247557317">
@@ -3624,6 +3651,9 @@
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
     </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687535">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247557593">
     <property name="3.name:0" value="AddNodeChange" />
@@ -4061,6 +4091,9 @@
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247557768">
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632686608">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247557769">
@@ -4595,6 +4628,9 @@
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
     </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687541">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247557984">
     <property name="3.name:0" value="DeleteReferenceChange" />
@@ -4746,6 +4782,9 @@
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247558047">
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687536">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247558048">
@@ -5017,6 +5056,9 @@
         </node>
       </node>
     </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687538">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247558163">
     <property name="3.name:0" value="SubstituteNodeChange" />
@@ -5193,6 +5235,9 @@
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247558231">
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687546">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247558232">
@@ -5438,6 +5483,9 @@
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247558332">
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687537">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247558333">
@@ -5768,6 +5816,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632686610">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247558473">
@@ -6877,6 +6928,9 @@
       <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4707157387247558940">
         <link role="6.annotation:3" targetNodeId="5.~Override" />
       </node>
+    </node>
+    <node role="6.annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2830770817632687543">
+      <link role="6.annotation:3" targetNodeId="5.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </node>
 </model>
