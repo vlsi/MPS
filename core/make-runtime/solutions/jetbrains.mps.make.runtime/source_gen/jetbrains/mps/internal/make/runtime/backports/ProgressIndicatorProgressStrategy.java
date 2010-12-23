@@ -24,7 +24,6 @@ public class ProgressIndicatorProgressStrategy extends AbstractProgressStrategy 
   protected void begunWork(AbstractProgressStrategy.Work wrk) {
     pind.setText(wrk.name());
     pind.setText2(wrk.namePrefix());
-    System.out.println("**** begun " + wrk.name() + " " + wrk.namePrefix());
   }
 
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {

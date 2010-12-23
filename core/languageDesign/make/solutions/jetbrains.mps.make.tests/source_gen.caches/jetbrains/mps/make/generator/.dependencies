@@ -79,6 +79,7 @@
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="java.lang.reflect.Constructor" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ScriptBuilder" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.make.unittest.MockTestCase" />
   </dependency>
   <dependency className="jetbrains.mps.make.generator.Maker_Facet" file="Maker_Facet.java">

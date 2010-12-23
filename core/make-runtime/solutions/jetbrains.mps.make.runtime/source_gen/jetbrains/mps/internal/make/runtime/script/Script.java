@@ -92,10 +92,10 @@ public class Script implements IScript {
       LOG.error("attempt to execute invalid script");
       throw new IllegalStateException("invalid script");
     }
-    LOG.info("Beginning to execute script");
+    LOG.debug("Beginning to execute script");
     final CompositeResult results = new CompositeResult();
     final Script.ParametersPool pool = new Script.ParametersPool();
-    LOG.info("Initializing");
+    LOG.debug("Initializing");
     if (init != null) {
       init.invoke(pool);
     }
@@ -107,10 +107,10 @@ public class Script implements IScript {
     mons.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
       public void invoke(IConfigMonitor cmon) {
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
-          LOG.info("Configuring " + trg.getName());
+          LOG.debug("Configuring " + trg.getName());
           IConfig cfg = trg.createConfig();
           if (cfg != null && !(cfg.configure(cmon, pool))) {
-            LOG.info("Configuration failed");
+            LOG.debug("Configuration failed");
             results.addResult(trg.getName(), new IResult.FAILURE(null));
             return;
           }
@@ -122,10 +122,10 @@ public class Script implements IScript {
     }
     mons.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(IJobMonitor monit) {
-        monit.currentProgress().beginWork("Script", Sequence.fromIterable(toExecute).count(), monit.currentProgress().workLeft());
+        String scriptName = "Script";
+        monit.currentProgress().beginWork(scriptName, Sequence.fromIterable(toExecute).count(), monit.currentProgress().workLeft());
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
-          LOG.info("Executing " + trg.getName());
-          monit.currentProgress().beginWork(trg.getName().toString(), 10000, 1);
+          LOG.debug("Executing " + trg.getName());
           Iterable<ITarget> impre = targetRange.immediatePrecursors(trg.getName());
           Iterable<IResource> input = (Iterable<IResource>) ((Sequence.fromIterable(impre).isEmpty() ?
             scriptInput :
@@ -139,15 +139,16 @@ public class Script implements IScript {
               }
             }).distinct().toListSequence()
           ));
-          LOG.info("Input: " + input);
+          LOG.debug("Input: " + input);
           if (trg.requiresInput()) {
             if (Sequence.fromIterable(input).isEmpty()) {
-              LOG.info("No input. Stopping");
+              LOG.debug("No input. Stopping");
               results.addResult(trg.getName(), new IResult.FAILURE(null));
               return;
             }
             // TODO: check for appropriate input class 
           }
+          monit.currentProgress().beginWork(trg.getName().toString(), 100, 1);
           IJob job = trg.createJob();
           // TODO: catch possible errors 
           IResult jr = job.execute(input, monit, pool);
@@ -160,19 +161,19 @@ public class Script implements IScript {
           }
           results.addResult(trg.getName(), jr);
           if (!(jr.isSucessful()) || monit.pleaseStop()) {
-            LOG.info((jr.isSucessful() ?
+            LOG.debug((jr.isSucessful() ?
               "Stop requested" :
               "Execution failed"
             ));
             return;
           }
-          monit.currentProgress().doneWork(trg.getName().toString(), 10000);
           monit.currentProgress().finishWork(trg.getName().toString());
+          monit.currentProgress().doneWork(scriptName, 1);
         }
-        monit.currentProgress().finishWork("Script");
+        monit.currentProgress().finishWork(scriptName);
       }
     });
-    LOG.info("Finished executing script");
+    LOG.debug("Finished executing script");
     return results;
   }
 
