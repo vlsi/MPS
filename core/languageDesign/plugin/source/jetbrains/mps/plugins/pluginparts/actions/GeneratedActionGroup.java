@@ -21,10 +21,6 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.MPSActions;
 
 public abstract class GeneratedActionGroup extends BaseGroup {
-  protected GeneratedActionGroup(String name) {
-    super(name);
-  }
-
   protected GeneratedActionGroup(String text, String id) {
     super(text, id);
   }
@@ -32,7 +28,6 @@ public abstract class GeneratedActionGroup extends BaseGroup {
   protected void addAction(ActionStub creator) {
     add(MPSActions.getInstance().acquireAction(creator));
   }
-
 
   //----------deprecated
 
