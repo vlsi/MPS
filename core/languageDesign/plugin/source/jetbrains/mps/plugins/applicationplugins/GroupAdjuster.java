@@ -69,7 +69,7 @@ public class GroupAdjuster {
     List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
     DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-    for (String id : manager.getPluginActions(((Ide_ApplicationPlugin) idePlugin).myId)) {
+    for (String id : manager.getPluginActions(idePlugin.getId())) {
       AnAction action = manager.getAction(id);
       if (!(action instanceof BaseGroup)) continue;
       BaseGroup group = ((BaseGroup) action);
