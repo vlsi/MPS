@@ -37,11 +37,11 @@
       <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.VcsSettingsHolder</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.VCSSettingsHolder</implementation-class>
     </component>
     <component>
       <interface-class>jetbrains.mps.vcs.VCSHandler</interface-class>
-      <implementation-class>jetbrains.mps.vcs.RealVcsHandler</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.RealVCSHandler</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.ToolsAppComponent</implementation-class>
@@ -58,7 +58,7 @@
       <implementation-class>jetbrains.mps.vcs.ModuleVcsPathPresenter</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.vcs.MPSVcsManager</implementation-class>
+      <implementation-class>jetbrains.mps.vcs.MPSVCSManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.VcsRootsManager</implementation-class>

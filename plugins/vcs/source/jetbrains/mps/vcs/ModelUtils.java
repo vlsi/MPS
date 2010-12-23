@@ -1,0 +1,216 @@
+/*
+ * Copyright 2003-2010 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.vcs;
+
+import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.Ref;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.UnzipUtil;
+import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import org.jdom.Document;
+import org.xml.sax.InputSource;
+
+import java.io.*;
+
+public class ModelUtils {
+  private static final Logger LOG = Logger.getLogger(ModelUtils.class);
+
+  public static byte[] modelToBytes(final SModel result) {
+    Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
+      public Document compute() {
+        return ModelPersistence.saveModel(result,result.getPersistenceVersion());
+      }
+    });
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try {
+      JDOMUtil.writeDocument(document, baos);
+      return baos.toByteArray();
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+    return new byte[0];
+  }
+
+  public static void replaceWithNewModelFromBytes(final VirtualFile modelFile, final byte[] bytesToReplaceWith) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        OutputStream outputStream = null;
+        try {
+          outputStream = modelFile.getOutputStream(this);
+          outputStream.write(bytesToReplaceWith);
+        } catch (IOException e) {
+          LOG.error(e);
+        } finally {
+          if (outputStream != null) {
+            try {
+              outputStream.close();
+            } catch (IOException e) {
+            }
+          }
+        }
+
+        replaceModelWithBytes(modelFile, bytesToReplaceWith);
+        modelFile.refresh(true, false);
+      }
+    });
+  }
+
+  public static void replaceModelWithBytes(VirtualFile modelFile, byte[] bytesToReplaceWith) {
+    final EditableSModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(modelFile));
+    if (modelDescriptor == null) return;
+
+    try {
+      SModel model = readModel(bytesToReplaceWith, modelFile.getPath());
+      modelDescriptor.replaceModel(model);
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+  }
+
+  public static SModel[] loadZippedModels(File zipfile, Version[] versions) throws IOException {
+    return loadZippedModels(zipfile, versions, true);
+  }
+
+  public static SModel[] loadZippedModels(File zipfile, Version[] versions, boolean useZipName) throws IOException {
+    File tmpdir = jetbrains.mps.util.FileUtil.createTmpDir();
+    UnzipUtil.unzip(zipfile, tmpdir);
+
+    String zipfilename = zipfile.getName();
+    String name = zipfilename.substring(0, zipfilename.length() - "zip".length());
+    String prefix = tmpdir + File.separator + name;
+
+    SModel[] models = new SModel[versions.length];
+    int index = 0;
+
+    for (final Version v : versions) {
+      File file;
+      if (useZipName) {
+        file = new File(prefix + v.getSuffix());
+      } else {
+        File[] files = tmpdir.listFiles(new FilenameFilter() {
+          @Override
+          public boolean accept(File dir, String name) {
+            return name.endsWith(v.getSuffix());
+          }
+        });
+        LOG.assertLog((files != null) && (files.length == 1));
+        file = files[0];
+      }
+
+      ByteArrayOutputStream baos = new ByteArrayOutputStream();
+      FileInputStream fis = new FileInputStream(file);
+      while (true) {
+        int i = fis.read();
+        if (i == -1) {
+          break;
+        }
+        baos.write(i);
+      }
+
+      models[index] = readModel(baos.toByteArray(), file.getAbsolutePath());
+      index++;
+    }
+
+    FileUtil.delete(tmpdir);
+
+    return models;
+  }
+
+  public static SModel readModel(final byte[] bytes, String path) throws IOException {
+    return readModel(bytes.length == 0 ? null : new InputSourceFactory() {
+      public InputSource create() throws IOException {
+        return new InputSource(new ByteArrayInputStream(bytes));
+      }
+    }, path);
+  }
+
+  public static SModel readModel(final String content, String path) throws IOException {
+    return readModel(content.isEmpty() ? null : new InputSourceFactory() {
+      public InputSource create() throws IOException {
+        return new InputSource(new StringReader(content));
+      }
+    }, path);
+  }
+
+  public static SModel readModel(final String path) throws IOException {
+    return readModel(new InputSourceFactory() {
+      public InputSource create() throws IOException {
+        return new InputSource(new FileInputStream(path));
+      }
+    }, path);
+  }
+
+  private static SModel readModel(final InputSourceFactory inputSourceFactory, String path) throws IOException {
+    int index = path.lastIndexOf("/");
+    String shortName = path;
+    if (index != -1) shortName = path.substring(index + 1);
+    index = shortName.lastIndexOf("\\");
+    if (index != -1) shortName = shortName.substring(index + 1);
+
+    final String modelName = ModelPersistence.extractModelName(shortName);
+    final String modelStereotype = ModelPersistence.extractModelStereotype(shortName);
+
+    try {
+      if (inputSourceFactory == null) {
+        return new SModel(SModelReference.fromString(modelName + "@" + modelStereotype));
+      }
+      final Ref<IOException> ex = new Ref<IOException>();
+      SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+        @Override
+        public SModel compute() {
+          try {
+            return ModelPersistence.readModel(ModelPersistence.getPersistenceVersion(inputSourceFactory.create()),
+              inputSourceFactory.create(), modelName, modelStereotype);
+          } catch (IOException e) {
+            ex.set(e);
+            return null;
+          }
+        }
+      });
+      if (model == null) {
+        throw ex.get();
+      } else {
+        return model;
+      }
+    } catch (Exception t) {
+      throw new ReadException(t);
+    }
+  }
+
+  public static File[] findZipFileNameForModelFile(final String modelFilePath) {
+    File parentFile = new File(modelFilePath).getParentFile();
+    return parentFile.listFiles(new FilenameFilter() {
+      public boolean accept(File dir, String name) {
+        String fullName = dir.getPath() + File.separator + name;
+        return fullName.contains(modelFilePath) && fullName.endsWith(".zip");
+      }
+    });
+  }
+
+  private interface InputSourceFactory {
+    InputSource create() throws IOException;
+  }
+}

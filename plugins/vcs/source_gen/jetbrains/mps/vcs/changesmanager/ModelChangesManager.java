@@ -331,7 +331,7 @@ public class ModelChangesManager {
     return removeChanges(changeClass, condition, false);
   }
 
-  private int removeAllChanges() {
+  private <C extends Change> int removeAllChanges() {
     return removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
       public Boolean invoke(Change change) {
         return true;
