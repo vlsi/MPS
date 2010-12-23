@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,9 +58,10 @@ public class EvaluationAuxModule extends AbstractModule {
     this.myInvocationContext = invocationContext;
   }
 
+  @Nullable
   public Class getClass(String fqName) {
     if (this.myInvocationContext == null) {
-      throw new IllegalStateException();
+      return null;
     }
     return this.myInvocationContext.getClass(fqName);
   }
