@@ -258,7 +258,7 @@ public class TypeContextManager implements ApplicationComponent {
       root = node.getTopmostAncestor();
     }
     if (useNewTypeSystem) {
-      return new TypeCheckingContextNew(root, myTypeChecker); //todo should be resolving
+      return new TypeCheckingContextNew(root, myTypeChecker, true); //todo should be resolving
     }
     return new TypeCheckingContext(root, myTypeChecker, true);
   }

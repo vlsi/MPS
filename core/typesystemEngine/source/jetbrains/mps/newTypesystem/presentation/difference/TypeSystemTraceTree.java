@@ -231,9 +231,9 @@ public class TypeSystemTraceTree extends MPSTree {
     State state = myTypeCheckingContextNew.getState();
     AbstractOperation rootDifference = myTypeCheckingContextNew.getOperation();
     Object difference = node.getUserObject();
-    state.clear(false);
-    state.executeOperationsBeforeAnchor(rootDifference, difference);
-    new ShowTypeSystemState(state, myOperationContext, myFrame);
+    State copy = new State(state.getTypeCheckingContext());
+    copy.executeOperationsBeforeAnchor(rootDifference, difference);
+    new ShowTypeSystemState(copy, myOperationContext, myFrame);
     state.reset();
   }
 

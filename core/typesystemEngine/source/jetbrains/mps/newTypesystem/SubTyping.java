@@ -15,14 +15,17 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.*;
+import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeOperations;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.typesystem.inference.util.LatticeUtil;
+import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,10 +34,18 @@ import java.util.*;
 public class SubTyping {
   private TypeChecker myTypeChecker;
   private State myState;
+  private final Equations myEquations;
+
+  public SubTyping(State state, TypeChecker typeChecker) {
+    myTypeChecker = typeChecker;
+    myState = state;
+    myEquations = myState == null ? null : myState.getEquations();
+  }
 
   public SubTyping(State state) {
     myTypeChecker = state.getTypeCheckingContext().getTypeChecker();
     myState = state;
+    myEquations = myState.getEquations();
   }
 
   public boolean isSubTypeByReplacementRules(SNode subType, SNode superType) {
@@ -73,9 +84,9 @@ public class SubTyping {
 
   private boolean subOrSuperType(SNode left, SNode right, boolean sub) {
     if (sub) {
-      return isInSuperTypes(left, right, null, true, true);
+      return isSubType(left, right);
     } else {
-      return isInSuperTypes(right, left, null, true, true);
+      return isSubType(right, left);
     }
   }
 
@@ -87,13 +98,17 @@ public class SubTyping {
     if (meetsAndJoins(subType, superType, info, isWeak, checkOnly)) {
       return true;
     }
-    if (TypesUtil.match(subType, superType, myState.getEquations(), info, checkOnly)) {
+
+    if (TypesUtil.match(subType, superType, myEquations, info, checkOnly)) {
       return true;
     }
     return isInSuperTypes(subType, superType, info, isWeak, checkOnly);
   }
-
   private boolean isInSuperTypes(SNode subType, SNode superType, @Nullable EquationInfo info, boolean isWeak, boolean checkOnly) {
+    return isInSuperTypes(subType, new NodeMatcher(superType, myEquations, info, checkOnly), info, isWeak);
+  }
+
+  private boolean isInSuperTypes(SNode subType, INodeMatcher superType, @Nullable EquationInfo info, boolean isWeak) {
     if (subType == null) {
       return false;
     }
@@ -109,11 +124,13 @@ public class SubTyping {
       //collecting a set of frontier's ancestors
       Set<SNode> ancestors = new HashSet<SNode>();
       for (SNode node : frontier) {
-        Set<SNode> result = collectImmediateSuperTypes(node, isWeak, myState.getTypeCheckingContext(), superType.getConceptFqName());
+
+        TypeCheckingContextNew typeCheckingContextNew = myState == null ? null : myState.getTypeCheckingContext();
+        Set<SNode> result = collectImmediateSuperTypes(node, isWeak, typeCheckingContextNew, superType.getConceptFQName());
         for (SNode test : result) {
           boolean found = false;
           for (SNode anc : yetPassed) {
-            if (TypesUtil.match(anc, test, myState.getEquations(), info, checkOnly)) {
+            if (TypesUtil.match(anc, test, myEquations, info, true)) {
               found = true;
             }
           }
@@ -133,8 +150,8 @@ public class SubTyping {
 
       //boolean wasMatch = false;
       for (SNode ancestor : ancestorsSorted) {
-        if (TypesUtil.match(ancestor, superType, myState.getEquations(), info, false)) {
-          return true;
+        if (superType.matchesWith(ancestor)) {
+          return true;                     //TypesUtil.match(ancestor, superType, myState.getEquations(), info, false)
         }
       }
       /*  if (wasMatch) {  //there were vars, some may be supposed to be equated with several different types;
@@ -321,4 +338,123 @@ public class SubTyping {
     return false;
   }
 
+
+    public SNode coerceSubtyping(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
+    if (subtype == null) return null;
+    if (pattern.match(subtype)) return subtype;
+    if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
+      List<SNode> children = subtype.getChildren("argument");
+      for (SNode child : children) {
+        SNode result = coerceSubtyping(child, pattern, isWeak, state);
+        if (result != null) return result;
+      }
+      return null;
+    }
+
+    if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
+      List<SNode> children = subtype.getChildren("argument");
+
+      SNode lcs = createLCS(new LinkedHashSet<SNode>(children));
+      SNode result = coerceSubtyping(lcs, pattern, isWeak, state);
+      return result;
+    }
+
+    //asking the cache
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      public SNode compute() {
+
+        SubtypingCache cache = myTypeChecker.getSubtypingCache();
+        if (cache != null) {
+          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
+          if (nodePair.o1) {
+            return nodePair.o2;
+          }
+        }
+        cache = myTypeChecker.getGlobalSubtypingCache();
+        if (cache != null) {
+          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
+          if (nodePair.o1) {
+            return nodePair.o2;
+          }
+        }
+
+        CoercionMatcher coercionMatcher = new CoercionMatcher(pattern);
+        boolean success = isInSuperTypes(subtype, coercionMatcher, null, isWeak);
+        SNode result;
+        if (!success) {
+          result = null;
+        } else {
+          result = coercionMatcher.getResult();
+        }
+
+        //writing to the cache
+        SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
+        if (subtypingCache != null) {
+          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
+        }
+        subtypingCache = myTypeChecker.getGlobalSubtypingCache();
+        if (subtypingCache != null) {
+          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
+        }
+
+        return result;
+      }
+    });
+  }
+
+  public SNode coerceSubTyping(SNode subtype, final IMatchingPattern pattern, State state) {
+    return coerceSubtyping(subtype, pattern, true, state);
+  }
+
+  private static class CoercionMatcher implements INodeMatcher {
+    private final IMatchingPattern myPattern;
+    private SNode myResult;
+
+    public CoercionMatcher(IMatchingPattern pattern) {
+      myPattern = pattern;
+    }
+
+
+    public boolean matchesWith(SNode nodeToMatch) {
+      boolean b = myPattern.match(nodeToMatch);
+      if (b) {
+        myResult = nodeToMatch;
+      }
+      return b;
+    }
+
+    public SNode getResult() {
+      return myResult;
+    }
+
+    public IMatchingPattern getMatchingPattern() {
+      return myPattern;
+    }
+
+    public String getConceptFQName() {
+      return myPattern.getConceptFQName();
+    }
+  }
+
+   private static class NodeMatcher implements INodeMatcher {
+    private final SNode myNode;
+    private final Equations myEquations;
+    private final EquationInfo myInfo;
+    private final boolean checkOnly;
+
+    public NodeMatcher(SNode node, Equations equations, EquationInfo info, boolean checkOnly) {
+      myNode = node;
+      myEquations = equations;
+      myInfo = info;
+      this.checkOnly = checkOnly;
+    }
+
+    public boolean matchesWith(SNode nodeToMatch) {
+      return TypesUtil.match(nodeToMatch, myNode, myEquations, myInfo, checkOnly);
+    }
+
+    public String getConceptFQName() {
+      return myNode.getConceptFqName();
+    }
+  }
 }
