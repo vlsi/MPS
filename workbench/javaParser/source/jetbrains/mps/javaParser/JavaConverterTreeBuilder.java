@@ -592,15 +592,15 @@ public class JavaConverterTreeBuilder {
     SNode sourceNode;
     jetbrains.mps.baseLanguage.structure.Expression result;
     ReferenceBinding declaredClassBinding = getDeclaredClassBinding(fieldBinding);
+    SNodePointer classifierPointer = myTypesProvider.createClassifierPointer(declaredClassBinding);
     if (fieldBinding.isStatic()) {
-      INodeAdapter fieldAdapter = myTypesProvider.getRaw(fieldBinding.original());
-      if (fieldAdapter instanceof EnumConstantDeclaration) {
+      if (BaseAdapter.isInstance(classifierPointer.getNode(), EnumClass.class)) {
         //enum constant reference
         EnumConstantReference enumConstantReference = EnumConstantReference.newInstance(myCurrentModel);
         role = EnumConstantReference.ENUM_CONSTANT_DECLARATION;
         sourceNode = enumConstantReference.getNode();
         enumConstantReference.getNode().addReference(
-          myTypesProvider.createClassifierReference(declaredClassBinding, EnumConstantReference.ENUM_CLASS, sourceNode));
+          SReference.create(EnumConstantReference.ENUM_CLASS, sourceNode, classifierPointer));
         result = enumConstantReference;
       } else if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
         //unqualified static field reference
@@ -613,7 +613,7 @@ public class JavaConverterTreeBuilder {
         sourceNode = sfr.getNode();
         role = StaticFieldReference.VARIABLE_DECLARATION;
         sfr.getNode().addReference(
-          myTypesProvider.createClassifierReference(declaredClassBinding, StaticFieldReference.CLASSIFIER, sourceNode));
+          SReference.create(StaticFieldReference.CLASSIFIER, sourceNode, classifierPointer));
         result = sfr;
       }
     } else {
@@ -686,7 +686,34 @@ public class JavaConverterTreeBuilder {
     return thisExpression;
   }
 
+  jetbrains.mps.baseLanguage.structure.Expression processValuesExpression(SyntheticMethodBinding binding) {
+    EnumValuesExpression expression = EnumValuesExpression.newInstance(myCurrentModel);
+    SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, EnumValuesExpression.ENUM_CLASS, expression.getNode());
+    expression.getNode().addReference(classifierReference);
+    return expression;
+  }
+
+  jetbrains.mps.baseLanguage.structure.Expression processValueOfExpression(SyntheticMethodBinding binding, MessageSend x) {
+    EnumValueOfExpression expression = EnumValueOfExpression.newInstance(myCurrentModel);
+    SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, EnumValueOfExpression.ENUM_CLASS, expression.getNode());
+    expression.getNode().addReference(classifierReference);
+    if (x.arguments != null) {
+      expression.setValue(processExpressionRefl(x.arguments[0]));
+    }
+    return expression;
+  }
+
   jetbrains.mps.baseLanguage.structure.Expression processExpression(MessageSend x) {
+    if (x.binding instanceof SyntheticMethodBinding) {
+      SyntheticMethodBinding syntheticMethodBinding = (SyntheticMethodBinding) x.binding;
+      if (syntheticMethodBinding.purpose == SyntheticMethodBinding.EnumValues) {
+        return processValuesExpression(syntheticMethodBinding);
+      }
+      if (syntheticMethodBinding.purpose == SyntheticMethodBinding.EnumValueOf) {
+        return processValueOfExpression(syntheticMethodBinding, x);
+      }
+    }
+
 
     IMethodCall methodCall = null;
     jetbrains.mps.baseLanguage.structure.Expression result;

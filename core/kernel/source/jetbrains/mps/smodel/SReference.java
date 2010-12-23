@@ -98,6 +98,10 @@ public abstract class SReference {
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
   }
 
+  public static SReference create(String role, SNode sourceNode, SNodePointer pointer) {
+    return create(role, sourceNode, pointer.getModelReference(), pointer.getNodeId());
+  }
+
 
   //
   // error logging
