@@ -8368,6 +8368,20 @@
         </node>
       </node>
     </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8993438115830921669">
+      <property name="name" nameId="tpck.1169194664001" value="getId" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8993438115830994302">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="gf5w.~PluginId" resolveInfo="PluginId" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8993438115830921671" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8993438115830921672">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8993438115830994303">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8993438115830994305">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6291350464112430611" resolveInfo="myId" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1215266495125">
       <property name="name" nameId="tpck.1169194664001" value="createGroups" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1215266495126" />
@@ -11167,7 +11181,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7029281142617571994" resolveInfo="newAction" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7029281142617572025">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1239982442737" resolveInfo="getActionId" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g2cz.~BaseAction%dgetActionId()%cjava%dlang%dString" resolveInfo="getActionId" />
                         </node>
                       </node>
                     </node>
@@ -11188,7 +11202,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7029281142617571994" resolveInfo="newAction" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7029281142617572710">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1239982442737" resolveInfo="getActionId" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g2cz.~BaseAction%dgetActionId()%cjava%dlang%dString" resolveInfo="getActionId" />
                           </node>
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7029281142617572712">
@@ -11288,7 +11302,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7029281142617571949" />
             </node>
             <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="7029281142617571950" />
           </node>
