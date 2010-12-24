@@ -42,7 +42,17 @@ public class NameUtil {
 
   private static final ObjectCache<String, String> ourCompactNamespaceCache = new ObjectCache<String, String>(1000);
 
+  private static final Map<Character, String> ESCAPE_MAP = new HashMap<Character, String>();
+
   static {
+    ESCAPE_MAP.put('\b', "\\b");
+    ESCAPE_MAP.put('\t', "\\t");
+    ESCAPE_MAP.put('\n', "\\n");
+    ESCAPE_MAP.put('\f', "\\f");
+    ESCAPE_MAP.put('\r', "\\r");
+    ESCAPE_MAP.put('\"', "\\\"");
+    ESCAPE_MAP.put('\\', "\\\\");
+
     String[] preps = {
       "about", "above", "across", "after", "against", "along", "among", "around", "at",
       "before", "behind", "below", "beneath", "beside", "between", "by", "down",
@@ -359,10 +369,31 @@ public class NameUtil {
     return cls.getName();
   }
 
-  public static String convertToMetaString(String s) {
+  public static String escapeString(String s) {
     if (s == null) return null;
-    return s.replace("\\", "\\\\").replace("\"", "\\\"");
+    StringBuilder stringBuilder = new StringBuilder();
+    int length = s.length();
+    for (int idx = 0; idx < length; idx++) {
+      char ch = s.charAt(idx);
+      if (ESCAPE_MAP.containsKey(ch)) {
+        stringBuilder.append(ESCAPE_MAP.get(ch));
+      } else {
+        stringBuilder.append(ch);
+      }
+    }
+    return stringBuilder.toString();
   }
+
+  public static String escapeChar(char c) {
+    if (c == '\'') {
+      return "\\'";
+    }
+    if (ESCAPE_MAP.containsKey(c)) {
+      return ESCAPE_MAP.get(c);
+    }
+    return c + "";
+  }
+
 
   public static String toSystemDependentPath(String path) {
     path = path.replace('\\', File.separatorChar);

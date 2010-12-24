@@ -32,19 +32,21 @@ public class IfNotNullAll extends DataFlowConstructor {
           {
             Object object = condition;
             if (((Program) o).contains(object)) {
+              boolean before = false;
               int position = ((Program) (o)).getEnd(object);
               Instruction instruction = new notNullInstruction(notNullNode);
               instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true);
+              ((Program) (o)).insert(instruction, position, true, before);
             }
           }
           {
             Object object = node;
             if (((Program) o).contains(object)) {
+              boolean before = false;
               int position = ((Program) (o)).getEnd(object);
               Instruction instruction = new nullableInstruction(notNullNode);
               instruction.setSource(node);
-              ((Program) (o)).insert(instruction, position, true);
+              ((Program) (o)).insert(instruction, position, true, before);
             }
           }
         }

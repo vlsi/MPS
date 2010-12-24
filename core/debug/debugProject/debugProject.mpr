@@ -37,6 +37,7 @@
     <genConfs>
       <genConfModule name="evaluation" moduleRef="jetbrains.mps.debug.evaluation" />
       <genConfModule name="ui" moduleRef="jetbrains.mps.debug.evaluation.ui" />
+      <genConfModule name="tests" moduleRef="jetbrains.mps.debug.tests" />
     </genConfs>
   </component>
   <component name="ProjectModuleManager">

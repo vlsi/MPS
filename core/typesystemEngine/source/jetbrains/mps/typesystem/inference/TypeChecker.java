@@ -22,6 +22,7 @@ import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -69,11 +70,17 @@ public class TypeChecker implements ApplicationComponent {
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 
+  private static final boolean useNewTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
+
   public TypeChecker(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
 
     mySubtypingManager = new SubtypingManager(this);
-    myRuntimeSupport = new RuntimeSupport(this);
+    if (useNewTypeSystem) {
+      myRuntimeSupport = new RuntimeSupport(this);
+    } else {
+      myRuntimeSupport = new RuntimeSupport(this);
+    }
     myRulesManager = new RulesManager(this);
   }
 

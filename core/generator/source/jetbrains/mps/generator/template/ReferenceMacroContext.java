@@ -34,7 +34,7 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   public ReferenceMacroContext(SNode node, SNode outputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;
-    myRole = macroNode.getRole_();
+    myRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(macroNode.getRole_());
   }
 
   public ReferenceMacroContext(SNode node, SNode outputNode, @NotNull SNodePointer macroNode, @NotNull String role, TemplateContext context, @NotNull ITemplateGenerator generator) {
@@ -53,8 +53,7 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
     List<SNode> outputNodes = this.getAllOutputNodesByInputNodeAndMappingLabel(inputNode, label);
     SNode referenceSourceNode = getOutputNode();
-    String attributeRole = myRole;
-    String referenceRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(attributeRole);
+    String referenceRole = myRole;
     ISearchScope referenceScope = SNodeOperations.getReferentSearchScope(referenceSourceNode, referenceRole, operationContext);
     for (SNode outputNode : outputNodes) {
       if (SearchScopeOperations.containsNode(referenceScope, outputNode)) {

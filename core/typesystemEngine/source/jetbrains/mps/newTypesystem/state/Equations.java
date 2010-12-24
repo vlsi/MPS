@@ -28,8 +28,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
+import org.apache.commons.collections.map.UnmodifiableMap;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,7 +41,7 @@ import java.util.*;
  */
 public class Equations {
   @StateObject
-  private final Map<SNode, SNode> myRepresentatives = new HashMap<SNode, SNode>();
+  private final Map<SNode, SNode> myRepresentatives = new LinkedHashMap<SNode, SNode>();
 
   //todo: seems to be useless to use as a part of state but in such case it is a possible source of side effects
   private final Map<String, SNode> myNamesToNodes = new HashMap<String, SNode>();
@@ -138,14 +140,6 @@ public class Equations {
     myState.executeOperation(new EquationAddedOperation(var, type, source, info));
   }
 
-  public Set<SNode> expandSet(Set<SNode> set) {
-    Set<SNode> result = new HashSet<SNode>();
-    for (SNode node : set) {
-      result.add(expandNode(node));
-    }
-    return result;
-  }
-
   public SNode expandNode(SNode node) {
     return expandNode(node, new HashSet<SNode>());
   }
@@ -226,6 +220,10 @@ public class Equations {
     }
     Collections.sort(result);
     return result;
+  }
+
+  public UnmodifiableMap getRepresentatives() {
+    return (UnmodifiableMap)myRepresentatives;
   }
 
 }

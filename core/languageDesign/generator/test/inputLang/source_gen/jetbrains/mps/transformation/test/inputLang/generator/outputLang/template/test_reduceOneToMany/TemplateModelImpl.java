@@ -23,7 +23,7 @@ public class TemplateModelImpl implements TemplateModel {
 
   public TemplateModelImpl() {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switchswitch_InputNode_A(), new SwitchbetterSwitch(), new Switchbetter_switch2(), new Switchbetter_switch3());
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new Switchswitch__InputNode__A(), new SwitchbetterSwitch(), new Switchbetter__switch2(), new Switchbetter__switch3());
   }
 
   public String getLongName() {
@@ -54,21 +54,28 @@ public class TemplateModelImpl implements TemplateModel {
           // TODO report `wrong arguments count` 
           return null;
         }
-        return new Templatereduce_InputNode_A();
+        return new Templatereduce__InputNode__A();
       }
       if (idValue == 1892993302480251689L) {
         if (arguments.length != 0) {
           // TODO report `wrong arguments count` 
           return null;
         }
-        return new Templatereduce_InputNode_A_included();
+        return new Templatereduce__InputNode__A__included();
       }
       if (idValue == 1892993302480311955L) {
         if (arguments.length != 0) {
           // TODO report `wrong arguments count` 
           return null;
         }
-        return new Templatereduce_InputNode_A_switch();
+        return new Templatereduce__InputNode__A__switch();
+      }
+      if (idValue == 3893401255414086886L) {
+        if (arguments.length != 0) {
+          // TODO report `wrong arguments count` 
+          return null;
+        }
+        return new TemplateOutputRoot();
       }
     }
     return null;

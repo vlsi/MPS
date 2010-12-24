@@ -17,7 +17,7 @@
     <nodeInfo nodeId="4217760266503650649" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstructionReference_DefaultSearchScope.java" startLine="33" startPosition="5" endLine="34" endPosition="18" />
     <nodeInfo nodeId="4217760266503650634" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5" />
     <scopeInfo nodeId="4217760266503650637" fileName="InstructionReference_DefaultSearchScope.java" startLine="31" startPosition="167" endLine="32" endPosition="130" />
-    <scopeInfo nodeId="4217760266503650634" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5">
+    <scopeInfo nodeId="4217760266503650634" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InstructionReference_DefaultSearchScope.java" startLine="30" startPosition="48" endLine="33" endPosition="5">
       <varInfo nodeId="4217760266503650635" varName="analyzer" />
     </scopeInfo>
     <scopeInfo nodeId="4217760266503650627" fileName="InstructionReference_DefaultSearchScope.java" startLine="29" startPosition="132" endLine="34" endPosition="18">

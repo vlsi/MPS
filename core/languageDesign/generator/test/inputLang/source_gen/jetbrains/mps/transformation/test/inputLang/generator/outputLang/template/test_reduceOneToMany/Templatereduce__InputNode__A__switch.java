@@ -12,13 +12,13 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
-public class Templatereduce_InputNode_A_switch implements TemplateDeclarationWeavingAware {
-  private static SNodePointer templateNode_3wjedu_a0a0a1a1 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311958");
-  private static SNodePointer templateNode_3wjedu_a0a0a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311960");
-  private static SNodePointer weaveTfConst_3wjedu_a0b0e = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311959");
-  private static SNodePointer weaveTfConst_3wjedu_a0e0e = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311961");
+public class Templatereduce__InputNode__A__switch implements TemplateDeclarationWeavingAware {
+  private static SNodePointer templateNode_mkvwhw_a0a0a1a1 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311958");
+  private static SNodePointer templateNode_mkvwhw_a0a0a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311960");
+  private static SNodePointer weaveTfConst_mkvwhw_a0b0e = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311959");
+  private static SNodePointer weaveTfConst_mkvwhw_a0e0e = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311961");
 
-  public Templatereduce_InputNode_A_switch() {
+  public Templatereduce__InputNode__A__switch() {
   }
 
   public SNodePointer getTemplateNode() {
@@ -28,13 +28,13 @@ public class Templatereduce_InputNode_A_switch implements TemplateDeclarationWea
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
-      environment.getTracer().pushTemplateNode(templateNode_3wjedu_a0a0a1a1);
+      environment.getTracer().pushTemplateNode(templateNode_mkvwhw_a0a0a1a1);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311958");
       tnode1.setProperty("text", "child switch #1");
 
     } finally {
       environment.getTracer().pushOutputNode(tnode1);
-      environment.getTracer().closeTemplateNode(templateNode_3wjedu_a0a0a1a1);
+      environment.getTracer().closeTemplateNode(templateNode_mkvwhw_a0a0a1a1);
     }
     return tnode1;
   }
@@ -42,13 +42,13 @@ public class Templatereduce_InputNode_A_switch implements TemplateDeclarationWea
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode2 = new SNode(environment.getOutputModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", false);
     try {
-      environment.getTracer().pushTemplateNode(templateNode_3wjedu_a0a0a1a2);
+      environment.getTracer().pushTemplateNode(templateNode_mkvwhw_a0a0a1a2);
       environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311960");
       tnode2.setProperty("text", "child switch #2");
 
     } finally {
       environment.getTracer().pushOutputNode(tnode2);
-      environment.getTracer().closeTemplateNode(templateNode_3wjedu_a0a0a1a2);
+      environment.getTracer().closeTemplateNode(templateNode_mkvwhw_a0a0a1a2);
     }
     return tnode2;
   }
@@ -59,10 +59,10 @@ public class Templatereduce_InputNode_A_switch implements TemplateDeclarationWea
 
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
-    SNodePointer weaveTf0 = weaveTfConst_3wjedu_a0b0e;
+    SNodePointer weaveTf0 = weaveTfConst_mkvwhw_a0b0e;
     environment.weaveNode(outputContextNode, "outputChild", tnodepart0, weaveTf0, context.getInput());
     SNode tnodepart1 = applyPart1(environment, context);
-    SNodePointer weaveTf1 = weaveTfConst_3wjedu_a0e0e;
+    SNodePointer weaveTf1 = weaveTfConst_mkvwhw_a0e0e;
     environment.weaveNode(outputContextNode, "outputChild", tnodepart1, weaveTf1, context.getInput());
     return TemplateUtil.asList(tnodepart0, tnodepart1);
   }

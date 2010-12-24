@@ -35,8 +35,7 @@ public class ForeignReferencesConvertor {
     ourAllowedClassifierConcepts.add(Annotation.concept);
   }
 
-  public SReference createFromForeignId(SNode sourceNode, String role,
-                                        SModelReference modelReference, SNodeId nodeId, FeatureKind targetKind) {
+  public SNodePointer createFromForeignId(SModelReference modelReference, SNodeId nodeId, FeatureKind targetKind) {
 
     SModelDescriptor regularModel = regularModelReferenceFromForeign(modelReference);
     if (regularModel == null) {
@@ -62,10 +61,9 @@ public class ForeignReferencesConvertor {
       }
     }
     if (target == null) {
-      return SReference.create(role, sourceNode, modelReference, nodeId);
+      return new SNodePointer(modelReference, nodeId);
     }
-    return SReference.create(role, sourceNode, target.getNode());
-
+    return new SNodePointer(target.getNode());
   }
 
   private SModelDescriptor regularModelReferenceFromForeign(SModelReference foreingModelReference) {

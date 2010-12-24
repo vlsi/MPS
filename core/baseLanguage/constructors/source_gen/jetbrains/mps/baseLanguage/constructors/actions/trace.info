@@ -19,7 +19,7 @@
     <scopeInfo nodeId="1592896280557720185" fileName="QueriesGenerated.java" startLine="53" startPosition="71" endLine="54" endPosition="152" />
     <scopeInfo nodeId="1592896280557742906" fileName="QueriesGenerated.java" startLine="69" startPosition="61" endLine="70" endPosition="148" />
     <scopeInfo nodeId="1592896280557742928" fileName="QueriesGenerated.java" startLine="77" startPosition="64" endLine="78" endPosition="81" />
-    <scopeInfo nodeId="1592896280557720182" fileName="QueriesGenerated.java" startLine="52" startPosition="68" endLine="55" endPosition="13" />
+    <scopeInfo nodeId="1592896280557720182" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="QueriesGenerated.java" startLine="52" startPosition="68" endLine="55" endPosition="13" />
     <scopeInfo nodeId="1592896280557600195" fileName="QueriesGenerated.java" startLine="63" startPosition="98" endLine="66" endPosition="29">
       <varInfo nodeId="1592896280557742930" varName="usage" />
     </scopeInfo>

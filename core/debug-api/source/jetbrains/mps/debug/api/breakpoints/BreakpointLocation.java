@@ -45,6 +45,7 @@ public class BreakpointLocation {
     return myNodePointer.getNode();
   }
 
+  @Nullable
   public PositionInfo getTargetCodePosition() {
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(myNodePointer.getModel());
     if (debugInfo == null) {

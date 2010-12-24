@@ -42,6 +42,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
   private TypeCheckingContext myTypeCheckingContext;
+  private Set<SNode> myCheckedNodes = new HashSet<SNode>();
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponentNew.class);
   boolean checked = false;
@@ -62,11 +63,22 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   public void checkNode(SNode node, boolean refresh) {
     if (!checked || refresh) {
       for (SNode desc : node.getDescendants()) {
-        loadTypesystemRules(desc);
-        applyRulesToNode(desc);
+        check(desc);
       }
       checked = true;
+    }
+  }
 
+  private void check(SNode node) {
+    if(node == null) return;
+    myCheckedNodes.add(node);
+    loadTypesystemRules(node);
+    applyRulesToNode(node); 
+  }
+
+  public void checkIfNotChecked(SNode node) {
+    if (!myCheckedNodes.contains(node)) {
+      check(node);
     }
   }
                 /*
@@ -99,7 +111,8 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
         if (type == null || TypesUtil.hasVariablesInside(type)) {
           if (node.isRoot()) {
             computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
-            type = getType(initialNode);
+            checkNode(node, true);
+            type = getRawTypeFromContext(initialNode);
             return type;
           }
           prevNode = node;
@@ -183,6 +196,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   @Override
   public void clear() {
     super.clear();
+    myCheckedNodes.clear();
     myTypeCheckingContext.clear();
   }
 

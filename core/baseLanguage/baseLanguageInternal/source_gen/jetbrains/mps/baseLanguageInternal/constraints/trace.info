@@ -25,7 +25,7 @@
     <scopeInfo nodeId="5822086619725599136" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="60" startPosition="32" endLine="61" endPosition="152" />
     <scopeInfo nodeId="5822086619725599144" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="62" startPosition="12" endLine="63" endPosition="80" />
     <scopeInfo nodeId="5822086619725599181" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="40" startPosition="148" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="5822086619725599180" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="39" startPosition="6" endLine="44" endPosition="5">
+    <scopeInfo nodeId="5822086619725599180" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="39" startPosition="6" endLine="44" endPosition="5">
       <varInfo nodeId="5822086619725599184" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="5822086619725599111" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="56" startPosition="129" endLine="64" endPosition="5" />

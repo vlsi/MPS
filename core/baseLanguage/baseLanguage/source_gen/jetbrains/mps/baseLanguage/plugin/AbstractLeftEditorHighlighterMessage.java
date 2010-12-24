@@ -47,6 +47,6 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
   }
 
   public boolean showInGutter() {
-    return true;
+    return false;
   }
 }

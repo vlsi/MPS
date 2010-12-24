@@ -4,4 +4,6 @@ package jetbrains.mps.samples.matrixLanguage.generator.baseLanguage.template.mai
 
 
 public class _FieldOperations {
+  public _FieldOperations() {
+  }
 }

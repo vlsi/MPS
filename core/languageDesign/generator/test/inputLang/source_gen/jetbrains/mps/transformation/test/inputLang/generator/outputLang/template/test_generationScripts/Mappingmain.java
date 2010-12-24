@@ -49,8 +49,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1());
     createRules = TemplateUtil.<TemplateCreateRootRule>asCollection(new Mappingmain.CreateRootRule0());
     rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mappingmain.RootMappingRule0());
-    preScripts = TemplateUtil.<TemplateMappingScript>asCollection(new Scripttest_preMappingScript());
-    postScripts = TemplateUtil.<TemplateMappingScript>asCollection(new Scripttest_postMappingScript());
+    preScripts = TemplateUtil.<TemplateMappingScript>asCollection(new Scripttest__preMappingScript());
+    postScripts = TemplateUtil.<TemplateMappingScript>asCollection(new Scripttest__postMappingScript());
   }
 
   public String getName() {
@@ -226,7 +226,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      Collection<SNode> result = new TemplateOutputRoot_by_MappingRule().apply(environment, context);
+      Collection<SNode> result = new TemplateOutputRoot__by__MappingRule().apply(environment, context);
       return result;
     }
   }
@@ -247,7 +247,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationException {
-      Collection<SNode> result = new TemplateOutputRoot_By_RootRule().apply(environment, new DefaultTemplateContext(null));
+      Collection<SNode> result = new TemplateOutputRoot__By__RootRule().apply(environment, new DefaultTemplateContext(null));
       return result;
     }
   }

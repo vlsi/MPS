@@ -920,6 +920,10 @@
       <property name="name" nameId="tpck.1169194664001" value="TryStatement_FinallyBlock_Actions" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1153952380246" resolveInfo="TryStatement" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1461424660015405640">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1461424660015405635" resolveInfo="EscapeOperation" />
+    </node>
   </roots>
   <root id="1073416106125">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1229447107349">
@@ -17584,6 +17588,12 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="1461424660015405640">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="1461424660015668136">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+      <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215188818086" resolveInfo="CompactKeyWord" />
     </node>
   </root>
 </model>

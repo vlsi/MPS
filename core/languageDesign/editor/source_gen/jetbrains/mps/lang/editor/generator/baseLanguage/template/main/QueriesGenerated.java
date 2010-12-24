@@ -153,7 +153,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_996730828436724784(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.convertToMetaString(SPropertyOperations.getString(_context.getNode(), "text"));
+    return NameUtil.escapeString(SPropertyOperations.getString(_context.getNode(), "text"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1182981596975(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -320,7 +320,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1210375134581(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.convertToMetaString(SPropertyOperations.getString(_context.getNode(), "text"));
+    return NameUtil.escapeString(SPropertyOperations.getString(_context.getNode(), "text"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1197583752545(final IOperationContext operationContext, final PropertyMacroContext _context) {

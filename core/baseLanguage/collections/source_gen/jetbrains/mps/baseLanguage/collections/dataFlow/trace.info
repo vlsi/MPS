@@ -60,10 +60,10 @@
     <nodeInfo nodeId="1207323178465" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForEachStatement_DataFlow.java" startLine="18" startPosition="86" endLine="19" endPosition="101" />
     <nodeInfo nodeId="1207060341794" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForEachStatement_DataFlow.java" startLine="19" startPosition="101" endLine="20" endPosition="101" />
     <nodeInfo nodeId="1207323226796" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForEachStatement_DataFlow.java" startLine="22" startPosition="25" endLine="23" endPosition="101" />
-    <nodeInfo nodeId="1207323226795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="ForEachStatement_DataFlow.java" startLine="21" startPosition="63" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="1207323226795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ForEachStatement_DataFlow.java" startLine="21" startPosition="63" endLine="25" endPosition="0" />
     <nodeInfo nodeId="1207323226795" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForEachStatement_DataFlow.java" startLine="20" startPosition="101" endLine="25" endPosition="7" />
     <scopeInfo nodeId="1207323226795" fileName="ForEachStatement_DataFlow.java" startLine="22" startPosition="25" endLine="23" endPosition="101" />
-    <scopeInfo nodeId="1207323226795" fileName="ForEachStatement_DataFlow.java" startLine="21" startPosition="63" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1207323226795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ForEachStatement_DataFlow.java" startLine="21" startPosition="63" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1207060282354" fileName="ForEachStatement_DataFlow.java" startLine="15" startPosition="102" endLine="25" endPosition="7" />
     <unitInfo nodeId="1207323226795" fileName="ForEachStatement_DataFlow.java" startLine="21" startPosition="51" endLine="25" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ForEachStatement_DataFlow$1" />
   </root>
@@ -178,7 +178,7 @@
     <nodeInfo nodeId="1238663477804" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractContainerCreator_DataFlow.java" startLine="18" startPosition="5" endLine="21" endPosition="5" />
     <scopeInfo nodeId="1237723938018" fileName="AbstractContainerCreator_DataFlow.java" startLine="16" startPosition="96" endLine="17" endPosition="54" />
     <scopeInfo nodeId="1238663477805" fileName="AbstractContainerCreator_DataFlow.java" startLine="19" startPosition="82" endLine="20" endPosition="107" />
-    <scopeInfo nodeId="1237723938012" fileName="AbstractContainerCreator_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+    <scopeInfo nodeId="1237723938012" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractContainerCreator_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1237723938016" varName="expression" />
     </scopeInfo>
     <scopeInfo nodeId="1237723936044" fileName="AbstractContainerCreator_DataFlow.java" startLine="15" startPosition="102" endLine="21" endPosition="5" />
@@ -269,7 +269,7 @@
     <nodeInfo nodeId="8844961370230999982" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="MapInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
     <scopeInfo nodeId="8844961370230999986" fileName="MapInitializer_DataFlow.java" startLine="16" startPosition="89" endLine="17" endPosition="49" />
     <scopeInfo nodeId="8844961370230999981" fileName="MapInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="8844961370230999982" fileName="MapInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+    <scopeInfo nodeId="8844961370230999982" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="MapInitializer_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="8844961370230999984" varName="entry" />
     </scopeInfo>
   </root>

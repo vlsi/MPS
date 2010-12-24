@@ -12,7 +12,7 @@
     <nodeInfo nodeId="1216727098943" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClosureLiteral_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
     <scopeInfo nodeId="1216727098944" fileName="ClosureLiteral_DataFlow.java" startLine="17" startPosition="159" endLine="18" endPosition="42" />
     <scopeInfo nodeId="1216646381343" fileName="ClosureLiteral_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="1216727098943" fileName="ClosureLiteral_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5">
+    <scopeInfo nodeId="1216727098943" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClosureLiteral_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5">
       <varInfo nodeId="1216727098947" varName="var" />
     </scopeInfo>
   </root>
@@ -21,7 +21,7 @@
     <nodeInfo nodeId="1225800681510" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InvokeFunctionOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
     <scopeInfo nodeId="1225800681514" fileName="InvokeFunctionOperation_DataFlow.java" startLine="16" startPosition="87" endLine="17" endPosition="45" />
     <scopeInfo nodeId="1225800111841" fileName="InvokeFunctionOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="1225800681510" fileName="InvokeFunctionOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+    <scopeInfo nodeId="1225800681510" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="InvokeFunctionOperation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1225800681512" varName="p" />
     </scopeInfo>
   </root>
@@ -30,7 +30,7 @@
     <nodeInfo nodeId="1235748288792" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CompactInvokeFunctionExpression_DataFlow.java" startLine="17" startPosition="87" endLine="18" endPosition="45" />
     <nodeInfo nodeId="1235748288785" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CompactInvokeFunctionExpression_DataFlow.java" startLine="16" startPosition="105" endLine="19" endPosition="5" />
     <scopeInfo nodeId="1235748288791" fileName="CompactInvokeFunctionExpression_DataFlow.java" startLine="17" startPosition="87" endLine="18" endPosition="45" />
-    <scopeInfo nodeId="1235748288785" fileName="CompactInvokeFunctionExpression_DataFlow.java" startLine="16" startPosition="105" endLine="19" endPosition="5">
+    <scopeInfo nodeId="1235748288785" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CompactInvokeFunctionExpression_DataFlow.java" startLine="16" startPosition="105" endLine="19" endPosition="5">
       <varInfo nodeId="1235748288789" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="1235748287120" fileName="CompactInvokeFunctionExpression_DataFlow.java" startLine="15" startPosition="102" endLine="19" endPosition="5" />
@@ -48,7 +48,7 @@
     <nodeInfo nodeId="7366956077673440045" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ClosureControlStatement_DataFlow.java" startLine="17" startPosition="94" endLine="18" endPosition="46" />
     <nodeInfo nodeId="7366956077673440023" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClosureControlStatement_DataFlow.java" startLine="16" startPosition="111" endLine="19" endPosition="5" />
     <scopeInfo nodeId="7366956077673440024" fileName="ClosureControlStatement_DataFlow.java" startLine="17" startPosition="94" endLine="18" endPosition="46" />
-    <scopeInfo nodeId="7366956077673440023" fileName="ClosureControlStatement_DataFlow.java" startLine="16" startPosition="111" endLine="19" endPosition="5">
+    <scopeInfo nodeId="7366956077673440023" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ClosureControlStatement_DataFlow.java" startLine="16" startPosition="111" endLine="19" endPosition="5">
       <varInfo nodeId="7366956077673440027" varName="ap" />
     </scopeInfo>
     <scopeInfo nodeId="7366956077673440012" fileName="ClosureControlStatement_DataFlow.java" startLine="15" startPosition="102" endLine="19" endPosition="5" />

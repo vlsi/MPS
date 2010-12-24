@@ -5,7 +5,7 @@
     <output-test url="file://$MODULE_DIR$/testclasses" />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="library" exported="" name="idea-patch" level="project" />
+    <orderEntry type="module" module-name="idea-patch" exported="" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="IDEA-plaform" level="project" />
     <orderEntry type="module" module-name="MPSSupport" exported="" />

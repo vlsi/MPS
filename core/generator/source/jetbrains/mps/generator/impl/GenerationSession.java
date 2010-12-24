@@ -179,7 +179,7 @@ public class GenerationSession {
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
     } catch (Exception e) {
       myLogger.handleException(e);
-      myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + e);
+      myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed (see exception)");
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
     } finally {
       if (myNewCache != null) {

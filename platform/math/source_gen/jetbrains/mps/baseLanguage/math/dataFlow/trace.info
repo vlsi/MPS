@@ -63,7 +63,7 @@
     <nodeInfo nodeId="3417571330832093640" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="MatrixConstructor_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
     <scopeInfo nodeId="3417571330832093643" fileName="MatrixConstructor_DataFlow.java" startLine="17" startPosition="114" endLine="18" endPosition="48" />
     <scopeInfo nodeId="3417571330832093638" fileName="MatrixConstructor_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="3417571330832093640" fileName="MatrixConstructor_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="3417571330832093640" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="MatrixConstructor_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
   </root>
   <root nodeId="4253775830167790686">
     <nodeInfo nodeId="4253775830167790689" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MathFuncExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="102" />

@@ -51,7 +51,6 @@ import org.eclipse.jdt.internal.compiler.lookup.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -74,19 +73,6 @@ public class JavaConverterTreeBuilder {
   private TypesProvider myTypesProvider;
 
   private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
-
-  private static Map<Character, String> ourEscapeMap = new HashMap<Character, String>();
-
-  static {
-    ourEscapeMap.put('\b', "\\b");
-    ourEscapeMap.put('\t', "\\t");
-    ourEscapeMap.put('\n', "\\n");
-    ourEscapeMap.put('\f', "\\f");
-    ourEscapeMap.put('\r', "\\r");
-    ourEscapeMap.put('\"', "\\\"");
-    ourEscapeMap.put('\'', "\\'");
-    ourEscapeMap.put('\\', "\\\\");
-  }
 
   public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expression) {
     jetbrains.mps.baseLanguage.structure.Expression result = null;
@@ -171,11 +157,8 @@ public class JavaConverterTreeBuilder {
   jetbrains.mps.baseLanguage.structure.CharConstant processConstant(CharConstant x) {
     jetbrains.mps.baseLanguage.structure.CharConstant result =
       jetbrains.mps.baseLanguage.structure.CharConstant.newInstance(myCurrentModel);
-    if (ourEscapeMap.containsKey(x.charValue())) {
-      result.setCharConstant(ourEscapeMap.get(x.charValue()));
-    } else {
-      result.setCharConstant(x.charValue() + "");
-    }
+    String value = NameUtil.escapeChar(x.charValue());
+    result.setCharConstant(value);
     return result;
   }
 
@@ -211,7 +194,7 @@ public class JavaConverterTreeBuilder {
 
   StringLiteral processConstant(StringConstant x) {
     StringLiteral result = StringLiteral.newInstance(myCurrentModel);
-    result.setValue(NameUtil.convertToMetaString(x.stringValue()));
+    result.setValue(NameUtil.escapeString(x.stringValue()));
     return result;
   }
 
@@ -609,15 +592,15 @@ public class JavaConverterTreeBuilder {
     SNode sourceNode;
     jetbrains.mps.baseLanguage.structure.Expression result;
     ReferenceBinding declaredClassBinding = getDeclaredClassBinding(fieldBinding);
+    SNodePointer classifierPointer = myTypesProvider.createClassifierPointer(declaredClassBinding);
     if (fieldBinding.isStatic()) {
-      INodeAdapter fieldAdapter = myTypesProvider.getRaw(fieldBinding.original());
-      if (fieldAdapter instanceof EnumConstantDeclaration) {
+      if (BaseAdapter.isInstance(classifierPointer.getNode(), EnumClass.class)) {
         //enum constant reference
         EnumConstantReference enumConstantReference = EnumConstantReference.newInstance(myCurrentModel);
         role = EnumConstantReference.ENUM_CONSTANT_DECLARATION;
         sourceNode = enumConstantReference.getNode();
         enumConstantReference.getNode().addReference(
-          myTypesProvider.createClassifierReference(declaredClassBinding, EnumConstantReference.ENUM_CLASS, sourceNode));
+          SReference.create(EnumConstantReference.ENUM_CLASS, sourceNode, classifierPointer));
         result = enumConstantReference;
       } else if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
         //unqualified static field reference
@@ -630,7 +613,7 @@ public class JavaConverterTreeBuilder {
         sourceNode = sfr.getNode();
         role = StaticFieldReference.VARIABLE_DECLARATION;
         sfr.getNode().addReference(
-          myTypesProvider.createClassifierReference(declaredClassBinding, StaticFieldReference.CLASSIFIER, sourceNode));
+          SReference.create(StaticFieldReference.CLASSIFIER, sourceNode, classifierPointer));
         result = sfr;
       }
     } else {
@@ -703,7 +686,34 @@ public class JavaConverterTreeBuilder {
     return thisExpression;
   }
 
+  jetbrains.mps.baseLanguage.structure.Expression processValuesExpression(SyntheticMethodBinding binding) {
+    EnumValuesExpression expression = EnumValuesExpression.newInstance(myCurrentModel);
+    SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, EnumValuesExpression.ENUM_CLASS, expression.getNode());
+    expression.getNode().addReference(classifierReference);
+    return expression;
+  }
+
+  jetbrains.mps.baseLanguage.structure.Expression processValueOfExpression(SyntheticMethodBinding binding, MessageSend x) {
+    EnumValueOfExpression expression = EnumValueOfExpression.newInstance(myCurrentModel);
+    SReference classifierReference = myTypesProvider.createClassifierReference(binding.declaringClass, EnumValueOfExpression.ENUM_CLASS, expression.getNode());
+    expression.getNode().addReference(classifierReference);
+    if (x.arguments != null) {
+      expression.setValue(processExpressionRefl(x.arguments[0]));
+    }
+    return expression;
+  }
+
   jetbrains.mps.baseLanguage.structure.Expression processExpression(MessageSend x) {
+    if (x.binding instanceof SyntheticMethodBinding) {
+      SyntheticMethodBinding syntheticMethodBinding = (SyntheticMethodBinding) x.binding;
+      if (syntheticMethodBinding.purpose == SyntheticMethodBinding.EnumValues) {
+        return processValuesExpression(syntheticMethodBinding);
+      }
+      if (syntheticMethodBinding.purpose == SyntheticMethodBinding.EnumValueOf) {
+        return processValueOfExpression(syntheticMethodBinding, x);
+      }
+    }
+
 
     IMethodCall methodCall = null;
     jetbrains.mps.baseLanguage.structure.Expression result;
