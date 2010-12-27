@@ -4,7 +4,6 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 
@@ -19,27 +18,12 @@ public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      GenerateBuildAction_Action action = new GenerateBuildAction_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GenerateBuildForProjectAction_Action action = new GenerateBuildForProjectAction_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new GenerateBuildAction_Action());
+    addAction(new GenerateBuildForProjectAction_Action());
     // groups 
-    {
-      ProjectPaneModelAddition_ActionGroup group = new ProjectPaneModelAddition_ActionGroup();
-      manager.registerAction(ProjectPaneModelAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ProjectPaneProjectAddition_ActionGroup group = new ProjectPaneProjectAddition_ActionGroup();
-      manager.registerAction(ProjectPaneProjectAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new ProjectPaneModelAddition_ActionGroup());
+    addGroup(new ProjectPaneProjectAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {

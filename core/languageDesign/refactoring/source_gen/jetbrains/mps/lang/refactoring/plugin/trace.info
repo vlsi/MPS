@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="Refactoring_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin" />
   <unitInfo fileName="ModelRefactorings_ActionGroup.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.ModelRefactorings_ActionGroup" />
+  <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
   <unitInfo fileName="NodeRefactoring_ActionGroup.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup" />
-  <unitInfo fileName="Refactoring_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.refactoring.plugin.Refactoring_ApplicationPlugin" />
   <root nodeId="1229259662341">
     <nodeInfo nodeId="278927758244366461" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="NodeRefactoring_ActionGroup.java" startLine="26" startPosition="100" endLine="27" endPosition="17" />
     <nodeInfo nodeId="278927758244377645" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeRefactoring_ActionGroup.java" startLine="28" startPosition="59" endLine="29" endPosition="490" />

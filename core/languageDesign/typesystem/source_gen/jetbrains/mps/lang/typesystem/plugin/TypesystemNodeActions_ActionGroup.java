@@ -23,7 +23,8 @@ public class TypesystemNodeActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.typesystem"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.typesystem");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         TypesystemNodeActions_ActionGroup.this.addAction(oldAction);

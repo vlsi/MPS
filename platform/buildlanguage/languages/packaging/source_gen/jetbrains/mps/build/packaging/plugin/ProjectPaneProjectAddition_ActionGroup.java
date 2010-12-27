@@ -24,7 +24,8 @@ public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.build.packaging");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         ProjectPaneProjectAddition_ActionGroup.this.addAction(oldAction);

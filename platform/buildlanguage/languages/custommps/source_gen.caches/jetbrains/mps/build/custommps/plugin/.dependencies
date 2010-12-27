@@ -43,7 +43,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.plugin.Custommps_ApplicationPlugin" file="Custommps_ApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="jetbrains.mps.build.custommps.plugin.GenerateCustomMPSBuildForProjectAction_Action" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup" />

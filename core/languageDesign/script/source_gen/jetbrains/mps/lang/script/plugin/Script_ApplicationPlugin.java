@@ -4,7 +4,6 @@ package jetbrains.mps.lang.script.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
@@ -22,19 +21,10 @@ public class Script_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
     // groups 
-    {
-      ScriptsForSelection_ActionGroup group = new ScriptsForSelection_ActionGroup();
-      manager.registerAction(ScriptsForSelection_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ScriptsGlobally_ActionGroup group = new ScriptsGlobally_ActionGroup();
-      manager.registerAction(ScriptsGlobally_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new ScriptsForSelection_ActionGroup());
+    addGroup(new ScriptsGlobally_ActionGroup());
   }
 
   public void adjustRegularGroups() {

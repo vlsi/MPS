@@ -67,7 +67,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />

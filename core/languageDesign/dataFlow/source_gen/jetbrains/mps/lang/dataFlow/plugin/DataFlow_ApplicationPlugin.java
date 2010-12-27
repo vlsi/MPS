@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class DataFlow_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,30 +17,13 @@ public class DataFlow_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      PrintDFAResult_Action action = new PrintDFAResult_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      PrintInitializationInformation_Action action = new PrintInitializationInformation_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      PrintReachingDefinintionsInformation_Action action = new PrintReachingDefinintionsInformation_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowDFA_Action action = new ShowDFA_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new PrintDFAResult_Action());
+    addAction(new PrintInitializationInformation_Action());
+    addAction(new PrintReachingDefinintionsInformation_Action());
+    addAction(new ShowDFA_Action());
     // groups 
-    {
-      DFAActions_ActionGroup group = new DFAActions_ActionGroup();
-      manager.registerAction(DFAActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new DFAActions_ActionGroup());
   }
 
   public void adjustRegularGroups() {

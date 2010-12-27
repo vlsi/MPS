@@ -20,7 +20,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.Make_ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
     <classNode dependClassName="java.util.ArrayList" />

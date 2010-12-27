@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
@@ -29,97 +28,28 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      AddToVcs_Action action = new AddToVcs_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      Annotate_Action action = new Annotate_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DumpChangesManager_Action action = new DumpChangesManager_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ForceRefreshModelChanges_Action action = new ForceRefreshModelChanges_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToNextChange_Action action = new GoToNextChange_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToPreviousChange_Action action = new GoToPreviousChange_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      IgnoreInVcs_Action action = new IgnoreInVcs_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      InstallCustomMergeDriver_Action action = new InstallCustomMergeDriver_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ReRunMergeFromBackup_Action action = new ReRunMergeFromBackup_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RollbackChanges_Action action = new RollbackChanges_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowDifferencesWithModelOnDisk_Action action = new ShowDifferencesWithModelOnDisk_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowDiffererenesWithCurrentRevision_Action action = new ShowDiffererenesWithCurrentRevision_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new AddToVcs_Action());
+    addAction(new Annotate_Action());
+    addAction(new DumpChangesManager_Action());
+    addAction(new ForceRefreshModelChanges_Action());
+    addAction(new GoToNextChange_Action());
+    addAction(new GoToPreviousChange_Action());
+    addAction(new IgnoreInVcs_Action());
+    addAction(new InstallCustomMergeDriver_Action());
+    addAction(new ReRunMergeFromBackup_Action());
+    addAction(new RollbackChanges_Action());
+    addAction(new ShowDifferencesWithModelOnDisk_Action());
+    addAction(new ShowDiffererenesWithCurrentRevision_Action());
     // groups 
-    {
-      AnnotateGroup_ActionGroup group = new AnnotateGroup_ActionGroup();
-      manager.registerAction(AnnotateGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ChangesStrip_ActionGroup group = new ChangesStrip_ActionGroup();
-      manager.registerAction(ChangesStrip_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      EditorInternalVCS_ActionGroup group = new EditorInternalVCS_ActionGroup();
-      manager.registerAction(EditorInternalVCS_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      GoToVCS_ActionGroup group = new GoToVCS_ActionGroup();
-      manager.registerAction(GoToVCS_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      InstallCustomMergeDriverGroup_ActionGroup group = new InstallCustomMergeDriverGroup_ActionGroup();
-      manager.registerAction(InstallCustomMergeDriverGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ShowDiffWithCurrRev_ActionGroup group = new ShowDiffWithCurrRev_ActionGroup();
-      manager.registerAction(ShowDiffWithCurrRev_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      VCSModelActions_ActionGroup group = new VCSModelActions_ActionGroup();
-      manager.registerAction(VCSModelActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      VCS_ActionGroup group = new VCS_ActionGroup();
-      manager.registerAction(VCS_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new AnnotateGroup_ActionGroup());
+    addGroup(new ChangesStrip_ActionGroup());
+    addGroup(new EditorInternalVCS_ActionGroup());
+    addGroup(new GoToVCS_ActionGroup());
+    addGroup(new InstallCustomMergeDriverGroup_ActionGroup());
+    addGroup(new ShowDiffWithCurrRev_ActionGroup());
+    addGroup(new VCSModelActions_ActionGroup());
+    addGroup(new VCS_ActionGroup());
   }
 
   public void adjustInterfaceGroups() {

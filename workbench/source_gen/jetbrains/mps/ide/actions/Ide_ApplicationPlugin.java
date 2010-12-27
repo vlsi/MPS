@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -21,1076 +20,259 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      AddAccessoryModel_Action action = new AddAccessoryModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AddGeneralPurposeDevKitToLanguageModels_Action action = new AddGeneralPurposeDevKitToLanguageModels_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AddLanguageDesingDevKitToLanguages_Action action = new AddLanguageDesingDevKitToLanguages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AddLanguageImport_Action action = new AddLanguageImport_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AddMissingImports_Action action = new AddMissingImports_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AddModelImportByRoot_Action action = new AddModelImportByRoot_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AddModelImport_Action action = new AddModelImport_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AddModuleToProject_Action action = new AddModuleToProject_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AddToNewFavoritesList_Action action = new AddToNewFavoritesList_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      AnalyzeClasspath_Action action = new AnalyzeClasspath_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CellProperties_Action action = new CellProperties_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CheckModel_Action action = new CheckModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CheckModelsBeforeGeneration_Action action = new CheckModelsBeforeGeneration_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CheckProject_Action action = new CheckProject_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CleanAllModules_Action action = new CleanAllModules_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CleanModule_Action action = new CleanModule_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CleanProject_Action action = new CleanProject_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CloneModel_Action action = new CloneModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CloneRoot_Action action = new CloneRoot_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CollapseAll_Action action = new CollapseAll_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      Collapse_Action action = new Collapse_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CopyModelName_Action action = new CopyModelName_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CopyModuleName_Action action = new CopyModuleName_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CopyNodeName_Action action = new CopyNodeName_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CopyNodeReference_Action action = new CopyNodeReference_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CopyNode_Action action = new CopyNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CutNode_Action action = new CutNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DeleteFavoritesList_Action action = new DeleteFavoritesList_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DeleteGenerator_Action action = new DeleteGenerator_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DeleteModels_Action action = new DeleteModels_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DeleteModules_Action action = new DeleteModules_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DeleteNode_Action action = new DeleteNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DeletePropertyAction_Action action = new DeletePropertyAction_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DeleteReferenceAction_Action action = new DeleteReferenceAction_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DevkitProperties_Action action = new DevkitProperties_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DumpKeyStrokes_Action action = new DumpKeyStrokes_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      EditNodeExplicit_Action action = new EditNodeExplicit_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      EditNode_Action action = new EditNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      End_Action action = new End_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      EvaluateExpression_Action action = new EvaluateExpression_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ExpandAll_Action action = new ExpandAll_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ExpandNode_Action action = new ExpandNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      Expand_Action action = new Expand_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ExportThreads_Action action = new ExportThreads_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FastFindNodeUsages_Action action = new FastFindNodeUsages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FindNext_Action action = new FindNext_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FindPrevious_Action action = new FindPrevious_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FindSpecificNodeUsages_Action action = new FindSpecificNodeUsages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      Find_Action action = new Find_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FindlAllBrokenReferences_Action action = new FindlAllBrokenReferences_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FixDependenciesEverywhere_Action action = new FixDependenciesEverywhere_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FixVirtualPackges_Action action = new FixVirtualPackges_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FoldSelection_Action action = new FoldSelection_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GenerateFiles_Action action = new GenerateFiles_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GenerateTextFromSolution_Action action = new GenerateTextFromSolution_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GenerationIntentions_Action action = new GenerationIntentions_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GeneratorProperties_Action action = new GeneratorProperties_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GetModelContentsFromSource_Action action = new GetModelContentsFromSource_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GetModuleContentsFromSource_Action action = new GetModuleContentsFromSource_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoByCurrentReference_Action action = new GoByCurrentReference_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark0_Action action = new GoToBookmark0_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark1_Action action = new GoToBookmark1_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark2_Action action = new GoToBookmark2_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark3_Action action = new GoToBookmark3_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark4_Action action = new GoToBookmark4_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark5_Action action = new GoToBookmark5_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark6_Action action = new GoToBookmark6_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark7_Action action = new GoToBookmark7_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark8_Action action = new GoToBookmark8_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToBookmark9_Action action = new GoToBookmark9_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToConceptDeclaration_Action action = new GoToConceptDeclaration_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToEditorDeclaration_Action action = new GoToEditorDeclaration_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToNodeById_Action action = new GoToNodeById_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToRules_Action action = new GoToRules_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToUsageInMappingConfig_Action action = new GoToUsageInMappingConfig_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      HighlightCellDependencies_Action action = new HighlightCellDependencies_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      HighlightInstances_Action action = new HighlightInstances_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      HighlightUsages_Action action = new HighlightUsages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      Home_Action action = new Home_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      InstallIDEAPlugin_Action action = new InstallIDEAPlugin_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      LanguageHierarchy_Action action = new LanguageHierarchy_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      LanguagePaths_Action action = new LanguagePaths_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      LanguageProperties_Action action = new LanguageProperties_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      LoadNonStubModels_Action action = new LoadNonStubModels_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      LocalEnd_Action action = new LocalEnd_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      LocalHome_Action action = new LocalHome_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      MPSProjectPaths_Action action = new MPSProjectPaths_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      MakeAllModules_Action action = new MakeAllModules_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      MakeModule_Action action = new MakeModule_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      MakeProject_Action action = new MakeProject_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ModelPropertiesWOShortcut_Action action = new ModelPropertiesWOShortcut_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ModelProperties_Action action = new ModelProperties_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      MoveFileOrDirectory_Action action = new MoveFileOrDirectory_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewAccessoryModel_Action action = new NewAccessoryModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewDevKit_Action action = new NewDevKit_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewDirectory_Action action = new NewDirectory_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewFile_Action action = new NewFile_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewGenerator_Action action = new NewGenerator_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewModelFromSource_Action action = new NewModelFromSource_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewModel_Action action = new NewModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewRuntimeModule_Action action = new NewRuntimeModule_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewSubModel_Action action = new NewSubModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      NewSubTestModel_Action action = new NewSubTestModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      OptimizeImportsInGlobalScope_Action action = new OptimizeImportsInGlobalScope_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      OptimizeModelImports_Action action = new OptimizeModelImports_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      OptimizeModuleImports_Action action = new OptimizeModuleImports_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      OptimizeProjectImports_Action action = new OptimizeProjectImports_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      PasteAsJavaClass_Action action = new PasteAsJavaClass_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      PasteAsJavaMethods_Action action = new PasteAsJavaMethods_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      PasteAsJavaStatements_Action action = new PasteAsJavaStatements_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      PasteNode_Action action = new PasteNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      Pause_Action action = new Pause_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      PrintNodeID_Action action = new PrintNodeID_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      QuickCreate_Action action = new QuickCreate_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RebuildAllModules_Action action = new RebuildAllModules_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RebuildModule_Action action = new RebuildModule_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RebuildProject_Action action = new RebuildProject_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ReloadAll_Action action = new ReloadAll_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ReloadStubs_Action action = new ReloadStubs_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RemoveAllBookmarks_Action action = new RemoveAllBookmarks_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RemoveBootstrapLanguagesDevKitFromLanguageModels_Action action = new RemoveBootstrapLanguagesDevKitFromLanguageModels_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RemoveFromFavorites_Action action = new RemoveFromFavorites_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RemoveLanguageDesignDevKitFromModels_Action action = new RemoveLanguageDesignDevKitFromModels_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RemoveModuleFromProject_Action action = new RemoveModuleFromProject_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RemoveTransientModels_Action action = new RemoveTransientModels_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenameAspects_Action action = new RenameAspects_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenameFavoritesList_Action action = new RenameFavoritesList_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenameFileOrDirectory_Action action = new RenameFileOrDirectory_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenameLanguage_Action action = new RenameLanguage_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenameModel_Action action = new RenameModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenameNamespace_Action action = new RenameNamespace_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenamePackage_Action action = new RenamePackage_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenameSolution_Action action = new RenameSolution_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      Resume_Action action = new Resume_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RevertMemoryChanges_Action action = new RevertMemoryChanges_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RootEnd_Action action = new RootEnd_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RootHome_Action action = new RootHome_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SaveModel_Action action = new SaveModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SelectDown_Action action = new SelectDown_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SelectLocalEnd_Action action = new SelectLocalEnd_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SelectLocalHome_Action action = new SelectLocalHome_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SelectUp_Action action = new SelectUp_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark0_Action action = new SetBookmark0_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark1_Action action = new SetBookmark1_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark2_Action action = new SetBookmark2_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark3_Action action = new SetBookmark3_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark4_Action action = new SetBookmark4_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark5_Action action = new SetBookmark5_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark6_Action action = new SetBookmark6_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark7_Action action = new SetBookmark7_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark8_Action action = new SetBookmark8_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmark9_Action action = new SetBookmark9_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetBookmarkNoNumber_Action action = new SetBookmarkNoNumber_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetModuleFolder_Action action = new SetModuleFolder_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SetNodePackage_Action action = new SetNodePackage_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowBookmarksDialog_Action action = new ShowBookmarksDialog_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowBookmarks_Action action = new ShowBookmarks_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowCellInExplorer_Action action = new ShowCellInExplorer_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowClassInHierarchy_Action action = new ShowClassInHierarchy_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowConceptInHierarchy_Action action = new ShowConceptInHierarchy_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowErrorMessage_Action action = new ShowErrorMessage_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowGenerationTrace_Action action = new ShowGenerationTrace_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowGenerationTraceback_Action action = new ShowGenerationTraceback_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowImplementations_Action action = new ShowImplementations_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowInProject_Action action = new ShowInProject_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowMappingsPartitioning_Action action = new ShowMappingsPartitioning_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowModelChecker_Action action = new ShowModelChecker_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowModelRepository_Action action = new ShowModelRepository_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowModuleDependencies_Action action = new ShowModuleDependencies_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowModuleRepository_Action action = new ShowModuleRepository_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowNodeInExplorer_Action action = new ShowNodeInExplorer_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowNodeInInspector_Action action = new ShowNodeInInspector_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowNodeInfo_Action action = new ShowNodeInfo_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowParameters_Action action = new ShowParameters_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowReferencesToMissingStuff_Action action = new ShowReferencesToMissingStuff_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SolutionProperties_Action action = new SolutionProperties_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      StepInto_Action action = new StepInto_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      StepOut_Action action = new StepOut_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      StepOver_Action action = new StepOver_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      SurroundWithIntentions_Action action = new SurroundWithIntentions_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      TestNodePath_Action action = new TestNodePath_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ToggleBreakpoint_Action action = new ToggleBreakpoint_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      UpgradeModelPersistenceGlobally_Action action = new UpgradeModelPersistenceGlobally_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      UpgradeModelPersistenceInModel_Action action = new UpgradeModelPersistenceInModel_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      UpgradeModelPersistenceInModule_Action action = new UpgradeModelPersistenceInModule_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      UpgradeModelPersistenceInProject_Action action = new UpgradeModelPersistenceInProject_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      UpgradeModulePersistenceGlobally_Action action = new UpgradeModulePersistenceGlobally_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ViewBreakpoints_Action action = new ViewBreakpoints_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new AddAccessoryModel_Action());
+    addAction(new AddGeneralPurposeDevKitToLanguageModels_Action());
+    addAction(new AddLanguageDesingDevKitToLanguages_Action());
+    addAction(new AddLanguageImport_Action());
+    addAction(new AddMissingImports_Action());
+    addAction(new AddModelImportByRoot_Action());
+    addAction(new AddModelImport_Action());
+    addAction(new AddModuleToProject_Action());
+    addAction(new AddToNewFavoritesList_Action());
+    addAction(new AnalyzeClasspath_Action());
+    addAction(new CellProperties_Action());
+    addAction(new CheckModel_Action());
+    addAction(new CheckModelsBeforeGeneration_Action());
+    addAction(new CheckProject_Action());
+    addAction(new CleanAllModules_Action());
+    addAction(new CleanModule_Action());
+    addAction(new CleanProject_Action());
+    addAction(new CloneModel_Action());
+    addAction(new CloneRoot_Action());
+    addAction(new CollapseAll_Action());
+    addAction(new Collapse_Action());
+    addAction(new CopyModelName_Action());
+    addAction(new CopyModuleName_Action());
+    addAction(new CopyNodeName_Action());
+    addAction(new CopyNodeReference_Action());
+    addAction(new CopyNode_Action());
+    addAction(new CutNode_Action());
+    addAction(new DeleteFavoritesList_Action());
+    addAction(new DeleteGenerator_Action());
+    addAction(new DeleteModels_Action());
+    addAction(new DeleteModules_Action());
+    addAction(new DeleteNode_Action());
+    addAction(new DeletePropertyAction_Action());
+    addAction(new DeleteReferenceAction_Action());
+    addAction(new DevkitProperties_Action());
+    addAction(new DumpKeyStrokes_Action());
+    addAction(new EditNodeExplicit_Action());
+    addAction(new EditNode_Action());
+    addAction(new End_Action());
+    addAction(new EvaluateExpression_Action());
+    addAction(new ExpandAll_Action());
+    addAction(new ExpandNode_Action());
+    addAction(new Expand_Action());
+    addAction(new ExportThreads_Action());
+    addAction(new FastFindNodeUsages_Action());
+    addAction(new FindNext_Action());
+    addAction(new FindPrevious_Action());
+    addAction(new FindSpecificNodeUsages_Action());
+    addAction(new Find_Action());
+    addAction(new FindlAllBrokenReferences_Action());
+    addAction(new FixDependenciesEverywhere_Action());
+    addAction(new FixVirtualPackges_Action());
+    addAction(new FoldSelection_Action());
+    addAction(new GenerateFiles_Action());
+    addAction(new GenerateTextFromSolution_Action());
+    addAction(new GenerationIntentions_Action());
+    addAction(new GeneratorProperties_Action());
+    addAction(new GetModelContentsFromSource_Action());
+    addAction(new GetModuleContentsFromSource_Action());
+    addAction(new GoByCurrentReference_Action());
+    addAction(new GoToBookmark0_Action());
+    addAction(new GoToBookmark1_Action());
+    addAction(new GoToBookmark2_Action());
+    addAction(new GoToBookmark3_Action());
+    addAction(new GoToBookmark4_Action());
+    addAction(new GoToBookmark5_Action());
+    addAction(new GoToBookmark6_Action());
+    addAction(new GoToBookmark7_Action());
+    addAction(new GoToBookmark8_Action());
+    addAction(new GoToBookmark9_Action());
+    addAction(new GoToConceptDeclaration_Action());
+    addAction(new GoToEditorDeclaration_Action());
+    addAction(new GoToNodeById_Action());
+    addAction(new GoToRules_Action());
+    addAction(new GoToUsageInMappingConfig_Action());
+    addAction(new HighlightCellDependencies_Action());
+    addAction(new HighlightInstances_Action());
+    addAction(new HighlightUsages_Action());
+    addAction(new Home_Action());
+    addAction(new InstallIDEAPlugin_Action());
+    addAction(new LanguageHierarchy_Action());
+    addAction(new LanguagePaths_Action());
+    addAction(new LanguageProperties_Action());
+    addAction(new LoadNonStubModels_Action());
+    addAction(new LocalEnd_Action());
+    addAction(new LocalHome_Action());
+    addAction(new MPSProjectPaths_Action());
+    addAction(new MakeAllModules_Action());
+    addAction(new MakeModule_Action());
+    addAction(new MakeProject_Action());
+    addAction(new ModelPropertiesWOShortcut_Action());
+    addAction(new ModelProperties_Action());
+    addAction(new MoveFileOrDirectory_Action());
+    addAction(new NewAccessoryModel_Action());
+    addAction(new NewDevKit_Action());
+    addAction(new NewDirectory_Action());
+    addAction(new NewFile_Action());
+    addAction(new NewGenerator_Action());
+    addAction(new NewModelFromSource_Action());
+    addAction(new NewModel_Action());
+    addAction(new NewRuntimeModule_Action());
+    addAction(new NewSubModel_Action());
+    addAction(new NewSubTestModel_Action());
+    addAction(new OptimizeImportsInGlobalScope_Action());
+    addAction(new OptimizeModelImports_Action());
+    addAction(new OptimizeModuleImports_Action());
+    addAction(new OptimizeProjectImports_Action());
+    addAction(new PasteAsJavaClass_Action());
+    addAction(new PasteAsJavaMethods_Action());
+    addAction(new PasteAsJavaStatements_Action());
+    addAction(new PasteNode_Action());
+    addAction(new Pause_Action());
+    addAction(new PrintNodeID_Action());
+    addAction(new QuickCreate_Action());
+    addAction(new RebuildAllModules_Action());
+    addAction(new RebuildModule_Action());
+    addAction(new RebuildProject_Action());
+    addAction(new ReloadAll_Action());
+    addAction(new ReloadStubs_Action());
+    addAction(new RemoveAllBookmarks_Action());
+    addAction(new RemoveBootstrapLanguagesDevKitFromLanguageModels_Action());
+    addAction(new RemoveFromFavorites_Action());
+    addAction(new RemoveLanguageDesignDevKitFromModels_Action());
+    addAction(new RemoveModuleFromProject_Action());
+    addAction(new RemoveTransientModels_Action());
+    addAction(new RenameAspects_Action());
+    addAction(new RenameFavoritesList_Action());
+    addAction(new RenameFileOrDirectory_Action());
+    addAction(new RenameLanguage_Action());
+    addAction(new RenameModel_Action());
+    addAction(new RenameNamespace_Action());
+    addAction(new RenamePackage_Action());
+    addAction(new RenameSolution_Action());
+    addAction(new Resume_Action());
+    addAction(new RevertMemoryChanges_Action());
+    addAction(new RootEnd_Action());
+    addAction(new RootHome_Action());
+    addAction(new SaveModel_Action());
+    addAction(new SelectDown_Action());
+    addAction(new SelectLocalEnd_Action());
+    addAction(new SelectLocalHome_Action());
+    addAction(new SelectUp_Action());
+    addAction(new SetBookmark0_Action());
+    addAction(new SetBookmark1_Action());
+    addAction(new SetBookmark2_Action());
+    addAction(new SetBookmark3_Action());
+    addAction(new SetBookmark4_Action());
+    addAction(new SetBookmark5_Action());
+    addAction(new SetBookmark6_Action());
+    addAction(new SetBookmark7_Action());
+    addAction(new SetBookmark8_Action());
+    addAction(new SetBookmark9_Action());
+    addAction(new SetBookmarkNoNumber_Action());
+    addAction(new SetModuleFolder_Action());
+    addAction(new SetNodePackage_Action());
+    addAction(new ShowBookmarksDialog_Action());
+    addAction(new ShowBookmarks_Action());
+    addAction(new ShowCellInExplorer_Action());
+    addAction(new ShowClassInHierarchy_Action());
+    addAction(new ShowConceptInHierarchy_Action());
+    addAction(new ShowErrorMessage_Action());
+    addAction(new ShowGenerationTrace_Action());
+    addAction(new ShowGenerationTraceback_Action());
+    addAction(new ShowImplementations_Action());
+    addAction(new ShowInProject_Action());
+    addAction(new ShowMappingsPartitioning_Action());
+    addAction(new ShowModelChecker_Action());
+    addAction(new ShowModelRepository_Action());
+    addAction(new ShowModuleDependencies_Action());
+    addAction(new ShowModuleRepository_Action());
+    addAction(new ShowNodeInExplorer_Action());
+    addAction(new ShowNodeInInspector_Action());
+    addAction(new ShowNodeInfo_Action());
+    addAction(new ShowParameters_Action());
+    addAction(new ShowReferencesToMissingStuff_Action());
+    addAction(new SolutionProperties_Action());
+    addAction(new StepInto_Action());
+    addAction(new StepOut_Action());
+    addAction(new StepOver_Action());
+    addAction(new SurroundWithIntentions_Action());
+    addAction(new TestNodePath_Action());
+    addAction(new ToggleBreakpoint_Action());
+    addAction(new UpgradeModelPersistenceGlobally_Action());
+    addAction(new UpgradeModelPersistenceInModel_Action());
+    addAction(new UpgradeModelPersistenceInModule_Action());
+    addAction(new UpgradeModelPersistenceInProject_Action());
+    addAction(new UpgradeModulePersistenceGlobally_Action());
+    addAction(new ViewBreakpoints_Action());
     // groups 
-    {
-      AbstractFileActions_ActionGroup group = new AbstractFileActions_ActionGroup();
-      manager.registerAction(AbstractFileActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      AccessoriesGroupActions_ActionGroup group = new AccessoriesGroupActions_ActionGroup();
-      manager.registerAction(AccessoriesGroupActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      AddToFavoritesGroup_ActionGroup group = new AddToFavoritesGroup_ActionGroup();
-      manager.registerAction(AddToFavoritesGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Bookmarks_ActionGroup group = new Bookmarks_ActionGroup();
-      manager.registerAction(Bookmarks_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Breakpoints_ActionGroup group = new Breakpoints_ActionGroup();
-      manager.registerAction(Breakpoints_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Build_ActionGroup group = new Build_ActionGroup();
-      manager.registerAction(Build_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Code_ActionGroup group = new Code_ActionGroup();
-      manager.registerAction(Code_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      CreateRootNode_ActionGroup group = new CreateRootNode_ActionGroup();
-      manager.registerAction(CreateRootNode_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      DebugRunMenu_ActionGroup group = new DebugRunMenu_ActionGroup();
-      manager.registerAction(DebugRunMenu_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      DebugTool_ActionGroup group = new DebugTool_ActionGroup();
-      manager.registerAction(DebugTool_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      DevkitActions_ActionGroup group = new DevkitActions_ActionGroup();
-      manager.registerAction(DevkitActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Edit_ActionGroup group = new Edit_ActionGroup();
-      manager.registerAction(Edit_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      EditorInternal_ActionGroup group = new EditorInternal_ActionGroup();
-      manager.registerAction(EditorInternal_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      EditorLeftPanelMenu_ActionGroup group = new EditorLeftPanelMenu_ActionGroup();
-      manager.registerAction(EditorLeftPanelMenu_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      EditorPopup_ActionGroup group = new EditorPopup_ActionGroup();
-      manager.registerAction(EditorPopup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      EditorTabActions_ActionGroup group = new EditorTabActions_ActionGroup();
-      manager.registerAction(EditorTabActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      FavoritesPopupWrapper_ActionGroup group = new FavoritesPopupWrapper_ActionGroup();
-      manager.registerAction(FavoritesPopupWrapper_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      FavoritesPopup_ActionGroup group = new FavoritesPopup_ActionGroup();
-      manager.registerAction(FavoritesPopup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Favorites_ActionGroup group = new Favorites_ActionGroup();
-      manager.registerAction(Favorites_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      FileActions_ActionGroup group = new FileActions_ActionGroup();
-      manager.registerAction(FileActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      FileSystemNewActions_ActionGroup group = new FileSystemNewActions_ActionGroup();
-      manager.registerAction(FileSystemNewActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      FolderActions_ActionGroup group = new FolderActions_ActionGroup();
-      manager.registerAction(FolderActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Folding_ActionGroup group = new Folding_ActionGroup();
-      manager.registerAction(Folding_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      GenerateFavorites_ActionGroup group = new GenerateFavorites_ActionGroup();
-      manager.registerAction(GenerateFavorites_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      GenerateModels_ActionGroup group = new GenerateModels_ActionGroup();
-      manager.registerAction(GenerateModels_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      GenerateModule_ActionGroup group = new GenerateModule_ActionGroup();
-      manager.registerAction(GenerateModule_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Generate_ActionGroup group = new Generate_ActionGroup();
-      manager.registerAction(Generate_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      GeneratorActions_ActionGroup group = new GeneratorActions_ActionGroup();
-      manager.registerAction(GeneratorActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      GeneratorNewActions_ActionGroup group = new GeneratorNewActions_ActionGroup();
-      manager.registerAction(GeneratorNewActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      GoByReference_ActionGroup group = new GoByReference_ActionGroup();
-      manager.registerAction(GoByReference_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Goto_ActionGroup group = new Goto_ActionGroup();
-      manager.registerAction(Goto_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      InEditorActions_ActionGroup group = new InEditorActions_ActionGroup();
-      manager.registerAction(InEditorActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      JUnitTestCaseActions_ActionGroup group = new JUnitTestCaseActions_ActionGroup();
-      manager.registerAction(JUnitTestCaseActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      JUnitTestMethodActions_ActionGroup group = new JUnitTestMethodActions_ActionGroup();
-      manager.registerAction(JUnitTestMethodActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      LanguageActions_ActionGroup group = new LanguageActions_ActionGroup();
-      manager.registerAction(LanguageActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      LanguageNewActions_ActionGroup group = new LanguageNewActions_ActionGroup();
-      manager.registerAction(LanguageNewActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      LanguageNewCustomPartActions_ActionGroup group = new LanguageNewCustomPartActions_ActionGroup();
-      manager.registerAction(LanguageNewCustomPartActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      LanguageRefactoring_ActionGroup group = new LanguageRefactoring_ActionGroup();
-      manager.registerAction(LanguageRefactoring_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ModelActionsInternal_ActionGroup group = new ModelActionsInternal_ActionGroup();
-      manager.registerAction(ModelActionsInternal_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ModelActions_ActionGroup group = new ModelActions_ActionGroup();
-      manager.registerAction(ModelActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ModelNewActions_ActionGroup group = new ModelNewActions_ActionGroup();
-      manager.registerAction(ModelNewActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ModelRefactoring_ActionGroup group = new ModelRefactoring_ActionGroup();
-      manager.registerAction(ModelRefactoring_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ModuleActions_ActionGroup group = new ModuleActions_ActionGroup();
-      manager.registerAction(ModuleActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      NamespaceActions_ActionGroup group = new NamespaceActions_ActionGroup();
-      manager.registerAction(NamespaceActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      NamespaceInternalActions_ActionGroup group = new NamespaceInternalActions_ActionGroup();
-      manager.registerAction(NamespaceInternalActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      NodeActionsInternal_ActionGroup group = new NodeActionsInternal_ActionGroup();
-      manager.registerAction(NodeActionsInternal_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      NodeActions_ActionGroup group = new NodeActions_ActionGroup();
-      manager.registerAction(NodeActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      PackageActions_ActionGroup group = new PackageActions_ActionGroup();
-      manager.registerAction(PackageActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      PackageNewActions_ActionGroup group = new PackageNewActions_ActionGroup();
-      manager.registerAction(PackageNewActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ProjectActions_ActionGroup group = new ProjectActions_ActionGroup();
-      manager.registerAction(ProjectActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ProjectNewActions_ActionGroup group = new ProjectNewActions_ActionGroup();
-      manager.registerAction(ProjectNewActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      PropertyNodeActions_ActionGroup group = new PropertyNodeActions_ActionGroup();
-      manager.registerAction(PropertyNodeActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ReferenceNodeActions_ActionGroup group = new ReferenceNodeActions_ActionGroup();
-      manager.registerAction(ReferenceNodeActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      RuntimeFolderActions_ActionGroup group = new RuntimeFolderActions_ActionGroup();
-      manager.registerAction(RuntimeFolderActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      SaveTransientModels_ActionGroup group = new SaveTransientModels_ActionGroup();
-      manager.registerAction(SaveTransientModels_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Search_ActionGroup group = new Search_ActionGroup();
-      manager.registerAction(Search_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      SolutionActions_ActionGroup group = new SolutionActions_ActionGroup();
-      manager.registerAction(SolutionActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      SolutionNewActions_ActionGroup group = new SolutionNewActions_ActionGroup();
-      manager.registerAction(SolutionNewActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      SolutionRefactoring_ActionGroup group = new SolutionRefactoring_ActionGroup();
-      manager.registerAction(SolutionRefactoring_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ToolsInternal_ActionGroup group = new ToolsInternal_ActionGroup();
-      manager.registerAction(ToolsInternal_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      ToolsUpgrade_ActionGroup group = new ToolsUpgrade_ActionGroup();
-      manager.registerAction(ToolsUpgrade_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Tools_ActionGroup group = new Tools_ActionGroup();
-      manager.registerAction(Tools_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      TransientModulesActions_ActionGroup group = new TransientModulesActions_ActionGroup();
-      manager.registerAction(TransientModulesActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new AbstractFileActions_ActionGroup());
+    addGroup(new AccessoriesGroupActions_ActionGroup());
+    addGroup(new AddToFavoritesGroup_ActionGroup());
+    addGroup(new Bookmarks_ActionGroup());
+    addGroup(new Breakpoints_ActionGroup());
+    addGroup(new Build_ActionGroup());
+    addGroup(new Code_ActionGroup());
+    addGroup(new CreateRootNode_ActionGroup());
+    addGroup(new DebugRunMenu_ActionGroup());
+    addGroup(new DebugTool_ActionGroup());
+    addGroup(new DevkitActions_ActionGroup());
+    addGroup(new Edit_ActionGroup());
+    addGroup(new EditorInternal_ActionGroup());
+    addGroup(new EditorLeftPanelMenu_ActionGroup());
+    addGroup(new EditorPopup_ActionGroup());
+    addGroup(new EditorTabActions_ActionGroup());
+    addGroup(new FavoritesPopupWrapper_ActionGroup());
+    addGroup(new FavoritesPopup_ActionGroup());
+    addGroup(new Favorites_ActionGroup());
+    addGroup(new FileActions_ActionGroup());
+    addGroup(new FileSystemNewActions_ActionGroup());
+    addGroup(new FolderActions_ActionGroup());
+    addGroup(new Folding_ActionGroup());
+    addGroup(new GenerateFavorites_ActionGroup());
+    addGroup(new GenerateModels_ActionGroup());
+    addGroup(new GenerateModule_ActionGroup());
+    addGroup(new Generate_ActionGroup());
+    addGroup(new GeneratorActions_ActionGroup());
+    addGroup(new GeneratorNewActions_ActionGroup());
+    addGroup(new GoByReference_ActionGroup());
+    addGroup(new Goto_ActionGroup());
+    addGroup(new InEditorActions_ActionGroup());
+    addGroup(new JUnitTestCaseActions_ActionGroup());
+    addGroup(new JUnitTestMethodActions_ActionGroup());
+    addGroup(new LanguageActions_ActionGroup());
+    addGroup(new LanguageNewActions_ActionGroup());
+    addGroup(new LanguageNewCustomPartActions_ActionGroup());
+    addGroup(new LanguageRefactoring_ActionGroup());
+    addGroup(new ModelActionsInternal_ActionGroup());
+    addGroup(new ModelActions_ActionGroup());
+    addGroup(new ModelNewActions_ActionGroup());
+    addGroup(new ModelRefactoring_ActionGroup());
+    addGroup(new ModuleActions_ActionGroup());
+    addGroup(new NamespaceActions_ActionGroup());
+    addGroup(new NamespaceInternalActions_ActionGroup());
+    addGroup(new NodeActionsInternal_ActionGroup());
+    addGroup(new NodeActions_ActionGroup());
+    addGroup(new PackageActions_ActionGroup());
+    addGroup(new PackageNewActions_ActionGroup());
+    addGroup(new ProjectActions_ActionGroup());
+    addGroup(new ProjectNewActions_ActionGroup());
+    addGroup(new PropertyNodeActions_ActionGroup());
+    addGroup(new ReferenceNodeActions_ActionGroup());
+    addGroup(new RuntimeFolderActions_ActionGroup());
+    addGroup(new SaveTransientModels_ActionGroup());
+    addGroup(new Search_ActionGroup());
+    addGroup(new SolutionActions_ActionGroup());
+    addGroup(new SolutionNewActions_ActionGroup());
+    addGroup(new SolutionRefactoring_ActionGroup());
+    addGroup(new ToolsInternal_ActionGroup());
+    addGroup(new ToolsUpgrade_ActionGroup());
+    addGroup(new Tools_ActionGroup());
+    addGroup(new TransientModulesActions_ActionGroup());
   }
 
   public void adjustInterfaceGroups() {

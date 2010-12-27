@@ -2487,6 +2487,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.CleanProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Collapse_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FoldSelection_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DeleteModules_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SelectLocalHome_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewFile_Action" />
@@ -2536,7 +2537,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowClassInHierarchy_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelPropertiesWOShortcut_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.RootHome_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ShowInProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LocalHome_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DeleteReferenceAction_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FileSystemNewActions_ActionGroup" />
@@ -2547,7 +2548,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguagePaths_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LocalEnd_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SetBookmark6_Action" />
@@ -2558,9 +2558,9 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.FileActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.XWin_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SetBookmark1_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.RootEnd_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddToNewFavoritesList_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.RootEnd_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SelectUp_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToUsageInMappingConfig_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowGenerationTraceback_Action" />
@@ -2598,10 +2598,9 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewDevKit_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToConceptDeclaration_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ShowInProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowNodeInfo_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.PrintNodeID_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.SelectDown_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddLanguageDesingDevKitToLanguages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.StepOut_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewRuntimeModule_Action" />
@@ -2638,7 +2637,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.RenameNamespace_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DeletePropertyAction_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.DumpKeyStrokes_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.RootHome_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DeleteFavoritesList_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.InstallIDEAPlugin_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToBookmark9_Action" />
@@ -2656,7 +2655,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.RenameAspects_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToBookmark6_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ExpandNode_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.DumpKeyStrokes_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RebuildModule_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoByReference_ActionGroup" />
@@ -2673,7 +2672,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToBookmark2_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RemoveAllBookmarks_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageHierarchy_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.SelectDown_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToBookmark1_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowBookmarks_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup" />

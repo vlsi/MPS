@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.dates.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
 
 public class Dates_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,18 +17,10 @@ public class Dates_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      ConvertDateTimeOperations_Action action = new ConvertDateTimeOperations_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new ConvertDateTimeOperations_Action());
     // groups 
-    {
-      DateLangGroup_ActionGroup group = new DateLangGroup_ActionGroup();
-      manager.registerAction(DateLangGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new DateLangGroup_ActionGroup());
   }
 
   public void adjustRegularGroups() {

@@ -418,11 +418,10 @@
     <classNode dependClassName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.main_CustomApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.vcs.plugin.VCS_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.EditorInternalVCS_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.plugin.VCS_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.RollbackChanges_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.Annotate_Action" />

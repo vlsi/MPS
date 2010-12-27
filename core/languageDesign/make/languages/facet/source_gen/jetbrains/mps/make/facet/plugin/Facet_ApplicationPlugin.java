@@ -4,7 +4,6 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.Generate_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
@@ -25,14 +24,9 @@ public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
     // groups 
-    {
-      Make_ActionGroup group = new Make_ActionGroup();
-      manager.registerAction(Make_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new Make_ActionGroup());
   }
 
   public void adjustRegularGroups() {

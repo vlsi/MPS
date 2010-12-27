@@ -11,6 +11,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
     addSimpleShortcut("jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action", getShortcut(" F1"));
+    // simple parameterized 
     // complex 
   }
 

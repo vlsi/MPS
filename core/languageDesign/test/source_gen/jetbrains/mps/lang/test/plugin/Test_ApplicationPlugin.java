@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class Test_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,18 +17,10 @@ public class Test_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      RunTestInMPS_Action action = new RunTestInMPS_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new RunTestInMPS_Action());
     // groups 
-    {
-      EditorInternalAddition_ActionGroup group = new EditorInternalAddition_ActionGroup();
-      manager.registerAction(EditorInternalAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new EditorInternalAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {

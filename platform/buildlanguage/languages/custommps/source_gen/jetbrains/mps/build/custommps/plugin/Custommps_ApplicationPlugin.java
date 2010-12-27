@@ -4,7 +4,6 @@ package jetbrains.mps.build.custommps.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup;
 
 public class Custommps_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,18 +17,10 @@ public class Custommps_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      GenerateCustomMPSBuildForProjectAction_Action action = new GenerateCustomMPSBuildForProjectAction_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new GenerateCustomMPSBuildForProjectAction_Action());
     // groups 
-    {
-      ProjectAddition_ActionGroup group = new ProjectAddition_ActionGroup();
-      manager.registerAction(ProjectAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new ProjectAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {

@@ -12,6 +12,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     // simple 
     addSimpleShortcut("jetbrains.mps.lang.behavior.plugin.ImplementBehaviorMethod_Action", getShortcut("ctrl I"));
     addSimpleShortcut("jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action", getShortcut("ctrl O"));
+    // simple parameterized 
     // complex 
   }
 

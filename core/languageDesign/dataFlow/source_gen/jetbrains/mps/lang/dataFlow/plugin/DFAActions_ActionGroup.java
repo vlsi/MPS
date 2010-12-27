@@ -23,7 +23,8 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.dataFlow"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.dataFlow");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         DFAActions_ActionGroup.this.addAction(oldAction);
@@ -33,7 +34,8 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.dataFlow"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.dataFlow");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         DFAActions_ActionGroup.this.addAction(oldAction);
@@ -43,7 +45,8 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.dataFlow"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.dataFlow");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         DFAActions_ActionGroup.this.addAction(oldAction);
@@ -53,7 +56,8 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.dataFlow"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.dataFlow");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         DFAActions_ActionGroup.this.addAction(oldAction);

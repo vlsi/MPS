@@ -11,10 +11,11 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
     addSimpleShortcut("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action", getShortcut("ctrl alt R"));
-    addSimpleShortcut("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", getShortcut("ctrl alt R"));
     addSimpleShortcut("jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action", getShortcut("ctrl shift T"));
     addSimpleShortcut("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action", getShortcut("ctrl alt shift T"));
     addSimpleShortcut("jetbrains.mps.lang.typesystem.plugin.ShowTypeSystemTrace_Action", getShortcut("ctrl shift Q"));
+    // simple parameterized 
+    addComplexShortcut("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt R")));
     // complex 
   }
 

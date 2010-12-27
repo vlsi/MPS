@@ -4,7 +4,6 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -24,40 +23,15 @@ public class Core_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      FindLanguageConceptsUsages_Action action = new FindLanguageConceptsUsages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FindLanguageUsages_Action action = new FindLanguageUsages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FindModelUsages_Action action = new FindModelUsages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowNodeMessages_Action action = new ShowNodeMessages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new FindLanguageConceptsUsages_Action());
+    addAction(new FindLanguageUsages_Action());
+    addAction(new FindModelUsages_Action());
+    addAction(new ShowNodeMessages_Action());
     // groups 
-    {
-      CoreActions_ActionGroup group = new CoreActions_ActionGroup();
-      manager.registerAction(CoreActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      FindLanguageUsages_ActionGroup group = new FindLanguageUsages_ActionGroup();
-      manager.registerAction(FindLanguageUsages_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      FindModelUsages_ActionGroup group = new FindModelUsages_ActionGroup();
-      manager.registerAction(FindModelUsages_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new CoreActions_ActionGroup());
+    addGroup(new FindLanguageUsages_ActionGroup());
+    addGroup(new FindModelUsages_ActionGroup());
   }
 
   public void adjustRegularGroups() {

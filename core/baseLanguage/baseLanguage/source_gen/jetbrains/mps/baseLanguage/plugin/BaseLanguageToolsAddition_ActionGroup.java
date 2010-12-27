@@ -23,7 +23,8 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.baseLanguage");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         BaseLanguageToolsAddition_ActionGroup.this.addAction(oldAction);
@@ -33,7 +34,8 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.baseLanguage");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         BaseLanguageToolsAddition_ActionGroup.this.addAction(oldAction);

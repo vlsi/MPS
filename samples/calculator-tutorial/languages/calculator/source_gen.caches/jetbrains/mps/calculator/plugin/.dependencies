@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.calculator.plugin.Calculator_ApplicationPlugin" file="Calculator_ApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.calculator.plugin.ExecuteCalculator_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="jetbrains.mps.calculator.plugin.NodeActionsAddition_ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />

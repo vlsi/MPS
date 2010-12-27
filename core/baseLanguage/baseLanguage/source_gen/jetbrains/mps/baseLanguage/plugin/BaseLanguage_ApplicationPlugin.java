@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
 import jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -30,135 +29,37 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      AnalyzeStacktrace_Action action = new AnalyzeStacktrace_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CommentLine_Action action = new CommentLine_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CommentStatements_Action action = new CommentStatements_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ExtractMethod_Action action = new ExtractMethod_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToInheritedClassifier_Action action = new GoToInheritedClassifier_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      GoToOverridenMethod_Action action = new GoToOverridenMethod_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ImplementMethod_Action action = new ImplementMethod_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      InlineLocalVariable_Action action = new InlineLocalVariable_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      InlineMethod_Action action = new InlineMethod_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      IntroduceConstant_Action action = new IntroduceConstant_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      IntroduceField_Action action = new IntroduceField_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      IntroduceVariable_Action action = new IntroduceVariable_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      OverrideMethod_Action action = new OverrideMethod_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      PrintNodePosition_Action action = new PrintNodePosition_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      RenameVariable_Action action = new RenameVariable_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowMembers_Action action = new ShowMembers_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowNullDFA_Action action = new ShowNullDFA_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowTodoViewer_Action action = new ShowTodoViewer_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      UncommentStatements_Action action = new UncommentStatements_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new AnalyzeStacktrace_Action());
+    addAction(new CommentLine_Action());
+    addAction(new CommentStatements_Action());
+    addAction(new ExtractMethod_Action());
+    addAction(new GoToInheritedClassifier_Action());
+    addAction(new GoToOverridenMethod_Action());
+    addAction(new ImplementMethod_Action());
+    addAction(new InlineLocalVariable_Action());
+    addAction(new InlineMethod_Action());
+    addAction(new IntroduceConstant_Action());
+    addAction(new IntroduceField_Action());
+    addAction(new IntroduceVariable_Action());
+    addAction(new OverrideMethod_Action());
+    addAction(new PrintNodePosition_Action());
+    addAction(new RenameVariable_Action());
+    addAction(new ShowMembers_Action());
+    addAction(new ShowNullDFA_Action());
+    addAction(new ShowTodoViewer_Action());
+    addAction(new UncommentStatements_Action());
     // groups 
-    {
-      AnalyzersActions_ActionGroup group = new AnalyzersActions_ActionGroup();
-      manager.registerAction(AnalyzersActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      BaseLangaugeCodeCommentsMenuGroup_ActionGroup group = new BaseLangaugeCodeCommentsMenuGroup_ActionGroup();
-      manager.registerAction(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      BaseLanguageEditorPopupInternal_ActionGroup group = new BaseLanguageEditorPopupInternal_ActionGroup();
-      manager.registerAction(BaseLanguageEditorPopupInternal_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      BaseLanguageEditorPopup_ActionGroup group = new BaseLanguageEditorPopup_ActionGroup();
-      manager.registerAction(BaseLanguageEditorPopup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      BaseLanguageModelActionsInternal_ActionGroup group = new BaseLanguageModelActionsInternal_ActionGroup();
-      manager.registerAction(BaseLanguageModelActionsInternal_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      BaseLanguageNodeActionsInternal_ActionGroup group = new BaseLanguageNodeActionsInternal_ActionGroup();
-      manager.registerAction(BaseLanguageNodeActionsInternal_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      BaseLanguageToolsAddition_ActionGroup group = new BaseLanguageToolsAddition_ActionGroup();
-      manager.registerAction(BaseLanguageToolsAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup group = new BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup();
-      manager.registerAction(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      PrintNodePosition_ActionGroup group = new PrintNodePosition_ActionGroup();
-      manager.registerAction(PrintNodePosition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      RefactoringAddition_ActionGroup group = new RefactoringAddition_ActionGroup();
-      manager.registerAction(RefactoringAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new AnalyzersActions_ActionGroup());
+    addGroup(new BaseLangaugeCodeCommentsMenuGroup_ActionGroup());
+    addGroup(new BaseLanguageEditorPopupInternal_ActionGroup());
+    addGroup(new BaseLanguageEditorPopup_ActionGroup());
+    addGroup(new BaseLanguageModelActionsInternal_ActionGroup());
+    addGroup(new BaseLanguageNodeActionsInternal_ActionGroup());
+    addGroup(new BaseLanguageToolsAddition_ActionGroup());
+    addGroup(new BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup());
+    addGroup(new PrintNodePosition_ActionGroup());
+    addGroup(new RefactoringAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {

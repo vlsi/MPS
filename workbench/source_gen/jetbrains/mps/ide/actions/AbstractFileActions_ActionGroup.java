@@ -41,7 +41,8 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         AbstractFileActions_ActionGroup.this.addAction(oldAction);
@@ -51,7 +52,8 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         AbstractFileActions_ActionGroup.this.addAction(oldAction);
@@ -61,7 +63,8 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.ide"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         AbstractFileActions_ActionGroup.this.addAction(oldAction);

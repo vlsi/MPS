@@ -4,7 +4,6 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -20,35 +19,14 @@ public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin 
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      FindInstancesByConditionAndNode_Action action = new FindInstancesByConditionAndNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      FindInstancesByCondition_Action action = new FindInstancesByCondition_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ReplacementQueryActionWithNode_Action action = new ReplacementQueryActionWithNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ReplacementQueryAction_Action action = new ReplacementQueryAction_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new FindInstancesByConditionAndNode_Action());
+    addAction(new FindInstancesByCondition_Action());
+    addAction(new ReplacementQueryActionWithNode_Action());
+    addAction(new ReplacementQueryAction_Action());
     // groups 
-    {
-      FindInstancesByConditionAndNodeGroup_ActionGroup group = new FindInstancesByConditionAndNodeGroup_ActionGroup();
-      manager.registerAction(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      FindInstancesByConditionGroup_ActionGroup group = new FindInstancesByConditionGroup_ActionGroup();
-      manager.registerAction(FindInstancesByConditionGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new FindInstancesByConditionAndNodeGroup_ActionGroup());
+    addGroup(new FindInstancesByConditionGroup_ActionGroup());
   }
 
   public void adjustRegularGroups() {

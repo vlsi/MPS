@@ -23,7 +23,8 @@ public class DateLangGroup_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.baseLanguage.dates"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.baseLanguage.dates");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         DateLangGroup_ActionGroup.this.addAction(oldAction);

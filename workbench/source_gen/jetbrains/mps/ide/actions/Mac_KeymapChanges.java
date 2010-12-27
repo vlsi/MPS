@@ -22,7 +22,6 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToBookmark7_Action", getShortcut("ctrl 7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToBookmark8_Action", getShortcut("ctrl 8"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToBookmark9_Action", getShortcut("ctrl 9"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToDevkit_Action", getShortcut("ctrl alt shift E"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Home_Action", getShortcut(" HOME"), getShortcut("meta LEFT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.LocalEnd_Action", getShortcut("alt RIGHT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.LocalHome_Action", getShortcut("alt LEFT"));
@@ -34,6 +33,8 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", getShortcut("ctrl Q"));
+    // simple parameterized 
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToDevkit_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift E")));
     // complex 
   }
 

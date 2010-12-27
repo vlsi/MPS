@@ -13,6 +13,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.CopyThisDown_Action", getShortcut("ctrl D"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.DeleteLine_Action", getShortcut("ctrl Y"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.ExtractComponent_Action", getShortcut("ctrl alt C"));
+    // simple parameterized 
     // complex 
   }
 

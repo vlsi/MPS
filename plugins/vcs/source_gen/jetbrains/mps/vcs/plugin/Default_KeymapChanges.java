@@ -12,6 +12,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     // simple 
     addSimpleShortcut("jetbrains.mps.vcs.plugin.GoToNextChange_Action", getShortcut("ctrl alt shift DOWN"));
     addSimpleShortcut("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action", getShortcut("ctrl alt shift UP"));
+    // simple parameterized 
     // complex 
   }
 

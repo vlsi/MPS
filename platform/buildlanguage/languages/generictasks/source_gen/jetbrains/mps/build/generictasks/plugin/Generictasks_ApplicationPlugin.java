@@ -4,7 +4,6 @@ package jetbrains.mps.build.generictasks.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 
 public class Generictasks_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,18 +17,10 @@ public class Generictasks_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      ImportAntStuff_Action action = new ImportAntStuff_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new ImportAntStuff_Action());
     // groups 
-    {
-      ProjectPaneLanguageAddition_ActionGroup group = new ProjectPaneLanguageAddition_ActionGroup();
-      manager.registerAction(ProjectPaneLanguageAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new ProjectPaneLanguageAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {

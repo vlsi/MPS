@@ -23,7 +23,8 @@ public class InternalChecks_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.build.packaging.mps");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         InternalChecks_ActionGroup.this.addAction(oldAction);
@@ -33,7 +34,8 @@ public class InternalChecks_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.build.packaging.mps");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         InternalChecks_ActionGroup.this.addAction(oldAction);
@@ -43,7 +45,8 @@ public class InternalChecks_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.build.packaging.mps"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.build.packaging.mps");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         InternalChecks_ActionGroup.this.addAction(oldAction);

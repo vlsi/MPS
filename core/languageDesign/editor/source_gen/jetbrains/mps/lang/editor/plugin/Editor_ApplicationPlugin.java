@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.Edit_ActionGroup;
 import java.util.List;
@@ -23,26 +22,12 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      CopyThisDown_Action action = new CopyThisDown_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      DeleteLine_Action action = new DeleteLine_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ExtractComponent_Action action = new ExtractComponent_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new CopyThisDown_Action());
+    addAction(new DeleteLine_Action());
+    addAction(new ExtractComponent_Action());
     // groups 
-    {
-      EditorActions_ActionGroup group = new EditorActions_ActionGroup();
-      manager.registerAction(EditorActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new EditorActions_ActionGroup());
   }
 
   public void adjustRegularGroups() {

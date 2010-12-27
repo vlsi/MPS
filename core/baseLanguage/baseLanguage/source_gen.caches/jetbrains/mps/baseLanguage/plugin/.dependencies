@@ -182,9 +182,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.PrintNodePosition_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IntroduceField_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action" />

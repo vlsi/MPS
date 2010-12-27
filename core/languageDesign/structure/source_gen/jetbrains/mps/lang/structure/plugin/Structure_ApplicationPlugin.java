@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
@@ -24,39 +23,15 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      ShowConceptStructure_Action action = new ShowConceptStructure_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowDefaultHelp_Action action = new ShowDefaultHelp_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowHelpForAspect_Action action = new ShowHelpForAspect_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowHelpForNode_Action action = new ShowHelpForNode_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowHelpForRoot_Action action = new ShowHelpForRoot_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new ShowConceptStructure_Action());
+    addAction(new ShowDefaultHelp_Action());
+    addAction(new ShowHelpForAspect_Action());
+    addAction(new ShowHelpForNode_Action());
+    addAction(new ShowHelpForRoot_Action());
     // groups 
-    {
-      ShowHelp_ActionGroup group = new ShowHelp_ActionGroup();
-      manager.registerAction(ShowHelp_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      Structure_ActionGroup group = new Structure_ActionGroup();
-      manager.registerAction(Structure_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new ShowHelp_ActionGroup());
+    addGroup(new Structure_ActionGroup());
   }
 
   public void adjustRegularGroups() {

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
@@ -24,53 +23,18 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      GoToTypeErrorRule_Action action = new GoToTypeErrorRule_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowInequationsForCell_Action action = new ShowInequationsForCell_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowInferredNodeType_Action action = new ShowInferredNodeType_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowNodeType_Action action = new ShowNodeType_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowRulesWhichAffectNodeType_Action action = new ShowRulesWhichAffectNodeType_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      ShowTypeSystemTrace_Action action = new ShowTypeSystemTrace_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new GoToTypeErrorRule_Action());
+    addAction(new ShowInequationsForCell_Action());
+    addAction(new ShowInferredNodeType_Action());
+    addAction(new ShowNodeType_Action());
+    addAction(new ShowRulesWhichAffectNodeType_Action());
+    addAction(new ShowTypeSystemTrace_Action());
     // groups 
-    {
-      GoToTypeErrorGroup_ActionGroup group = new GoToTypeErrorGroup_ActionGroup();
-      manager.registerAction(GoToTypeErrorGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      TypesystemActions_ActionGroup group = new TypesystemActions_ActionGroup();
-      manager.registerAction(TypesystemActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      TypesystemEditorPopupInternal_ActionGroup group = new TypesystemEditorPopupInternal_ActionGroup();
-      manager.registerAction(TypesystemEditorPopupInternal_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      TypesystemNodeActions_ActionGroup group = new TypesystemNodeActions_ActionGroup();
-      manager.registerAction(TypesystemNodeActions_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new GoToTypeErrorGroup_ActionGroup());
+    addGroup(new TypesystemActions_ActionGroup());
+    addGroup(new TypesystemEditorPopupInternal_ActionGroup());
+    addGroup(new TypesystemNodeActions_ActionGroup());
   }
 
   public void adjustRegularGroups() {

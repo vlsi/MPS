@@ -4,7 +4,6 @@ package jetbrains.mps.lang.behavior.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.Code_ActionGroup;
 import java.util.List;
@@ -23,27 +22,12 @@ public class Behavior_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      ImplementBehaviorMethod_Action action = new ImplementBehaviorMethod_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      OverrideBehaviorMethod_Action action = new OverrideBehaviorMethod_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new ImplementBehaviorMethod_Action());
+    addAction(new OverrideBehaviorMethod_Action());
     // groups 
-    {
-      BehaviorCodeOverrideImplementMenuGroup_ActionGroup group = new BehaviorCodeOverrideImplementMenuGroup_ActionGroup();
-      manager.registerAction(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      BehaviourPopup_ActionGroup group = new BehaviourPopup_ActionGroup();
-      manager.registerAction(BehaviourPopup_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new BehaviorCodeOverrideImplementMenuGroup_ActionGroup());
+    addGroup(new BehaviourPopup_ActionGroup());
   }
 
   public void adjustRegularGroups() {

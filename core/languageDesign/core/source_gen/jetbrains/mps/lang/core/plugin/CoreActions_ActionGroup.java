@@ -23,7 +23,8 @@ public class CoreActions_ActionGroup extends GeneratedActionGroup {
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         AnAction oldAction = manager.getAction(newAction.getActionId());
         if (oldAction == null) {
-          manager.registerAction(newAction.getActionId(), newAction, PluginId.getId("jetbrains.mps.lang.core"));
+          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.core");
+          manager.registerAction(newAction.getActionId(), newAction, pluginId);
           oldAction = newAction;
         }
         CoreActions_ActionGroup.this.addAction(oldAction);

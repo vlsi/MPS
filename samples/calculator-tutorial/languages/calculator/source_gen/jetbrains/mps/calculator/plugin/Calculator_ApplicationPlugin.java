@@ -4,7 +4,6 @@ package jetbrains.mps.calculator.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 
 public class Calculator_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,18 +17,10 @@ public class Calculator_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      ExecuteCalculator_Action action = new ExecuteCalculator_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new ExecuteCalculator_Action());
     // groups 
-    {
-      NodeActionsAddition_ActionGroup group = new NodeActionsAddition_ActionGroup();
-      manager.registerAction(NodeActionsAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new NodeActionsAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {

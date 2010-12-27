@@ -4,7 +4,6 @@ package jetbrains.mps.lang.refactoring.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup;
@@ -20,19 +19,10 @@ public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
     // groups 
-    {
-      ModelRefactorings_ActionGroup group = new ModelRefactorings_ActionGroup();
-      manager.registerAction(ModelRefactorings_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
-    {
-      NodeRefactoring_ActionGroup group = new NodeRefactoring_ActionGroup();
-      manager.registerAction(NodeRefactoring_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new ModelRefactorings_ActionGroup());
+    addGroup(new NodeRefactoring_ActionGroup());
   }
 
   public void adjustRegularGroups() {

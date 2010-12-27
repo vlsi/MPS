@@ -15,7 +15,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action", getShortcut("ctrl alt M"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action", getShortcut("ctrl alt B"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action", getShortcut("ctrl U"));
-    addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action", getShortcut("ctrl alt B"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.ImplementMethod_Action", getShortcut("ctrl I"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action", getShortcut("ctrl alt N"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.InlineMethod_Action", getShortcut("ctrl alt N"));
@@ -26,6 +25,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.RenameVariable_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.ShowMembers_Action", getShortcut("ctrl F12"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action", getShortcut("ctrl shift SLASH"));
+    // simple parameterized 
+    addComplexShortcut("jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt B")));
     // complex 
   }
 

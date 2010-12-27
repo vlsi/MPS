@@ -4,7 +4,6 @@ package jetbrains.mps.lang.smodel.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 
 public class Smodel_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,18 +17,10 @@ public class Smodel_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      CheckLangForJavaStubModels_Action action = new CheckLangForJavaStubModels_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new CheckLangForJavaStubModels_Action());
     // groups 
-    {
-      LanguageInternalAddition_ActionGroup group = new LanguageInternalAddition_ActionGroup();
-      manager.registerAction(LanguageInternalAddition_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new LanguageInternalAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {

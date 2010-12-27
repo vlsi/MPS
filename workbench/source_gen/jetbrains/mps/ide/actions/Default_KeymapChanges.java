@@ -36,19 +36,14 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.Expand_Action", getShortcut("ctrl ADD"), getShortcut("ctrl EQUALS"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Expand_Action", getShortcut("ctrl ADD"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", getShortcut("ctrl F7"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.FileDelete_Action", getShortcut(" DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindNext_Action", getShortcut(" F3"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindPrevious_Action", getShortcut("shift F3"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Find_Action", getShortcut("ctrl F"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FoldSelection_Action", getShortcut("ctrl PERIOD"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GenerateFilesFromModel_Action", getShortcut("ctrl shift F9"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GenerateModule_Action", getShortcut("ctrl F9"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GenerateTextFromModel_Action", getShortcut("ctrl alt shift F9"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GenerationIntentions_Action", getShortcut("alt INSERT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GeneratorProperties_Action", getShortcut("alt ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoByCurrentReference_Action", getShortcut("ctrl B"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToAction_Action", getShortcut("ctrl shift A"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToBookmark0_Action", getShortcut("ctrl 0"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToBookmark1_Action", getShortcut("ctrl 1"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToBookmark2_Action", getShortcut("ctrl 2"));
@@ -60,16 +55,9 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToBookmark8_Action", getShortcut("ctrl 8"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToBookmark9_Action", getShortcut("ctrl 9"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", getShortcut("ctrl shift S"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToDevkit_Action", getShortcut("ctrl alt shift D"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", getShortcut("ctrl shift E"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToFile_Action", getShortcut("ctrl shift N"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToLanguage_Action", getShortcut("ctrl alt shift L"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToModel_Action", getShortcut("ctrl alt shift M"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToNamedNode_Action", getShortcut("ctrl alt shift N"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToNodeById_Action", getShortcut("ctrl G"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToRootNode_Action", getShortcut("ctrl N"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToRules_Action", getShortcut("ctrl alt R"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToSolution_Action", getShortcut("ctrl alt shift S"));
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightCellDependencies_Action", getShortcut("ctrl alt shift F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightInstances_Action", getShortcut("ctrl shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightUsages_Action", getShortcut("ctrl shift F7"));
@@ -94,7 +82,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.RootHome_Action", getShortcut("ctrl HOME"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SelectDown_Action", getShortcut("ctrl DOWN"), getShortcut("ctrl shift W"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SelectDown_Action", getShortcut("ctrl DOWN"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.SelectInActionAdapter_Action", getShortcut("alt F1"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SelectLocalEnd_Action", getShortcut("ctrl shift RIGHT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SelectLocalHome_Action", getShortcut("ctrl shift LEFT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SelectUp_Action", getShortcut("ctrl UP"), getShortcut("ctrl W"));
@@ -127,6 +114,20 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.SurroundWithIntentions_Action", getShortcut("ctrl alt T"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ToggleBreakpoint_Action", getShortcut("ctrl F8"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ViewBreakpoints_Action", getShortcut("ctrl shift F8"));
+    // simple parameterized 
+    addComplexShortcut("jetbrains.mps.ide.actions.FileDelete_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut(" DELETE")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GenerateFilesFromModel_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl shift F9")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GenerateModule_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl F9")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GenerateTextFromModel_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift F9")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToAction_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl shift A")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToDevkit_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift D")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToFile_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl shift N")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToLanguage_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift L")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToModel_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift M")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToNamedNode_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift N")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToRootNode_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl N")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToSolution_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift S")));
+    addComplexShortcut("jetbrains.mps.ide.actions.SelectInActionAdapter_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("alt F1")));
     // complex 
   }
 

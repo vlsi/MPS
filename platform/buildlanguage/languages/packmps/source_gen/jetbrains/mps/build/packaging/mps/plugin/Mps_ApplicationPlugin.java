@@ -4,7 +4,6 @@ package jetbrains.mps.build.packaging.mps.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.Build_ActionGroup;
 
 public class Mps_ApplicationPlugin extends BaseApplicationPlugin {
@@ -18,26 +17,12 @@ public class Mps_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void createGroups() {
-    ActionManager manager = ActionManager.getInstance();
     // actions w/o parameters 
-    {
-      CheckCoreRuntimeDeps_Action action = new CheckCoreRuntimeDeps_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CheckIncludedLanguages_Action action = new CheckIncludedLanguages_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
-    {
-      CheckSamples_Action action = new CheckSamples_Action();
-      manager.registerAction(action.getActionId(), action, myId);
-    }
+    addAction(new CheckCoreRuntimeDeps_Action());
+    addAction(new CheckIncludedLanguages_Action());
+    addAction(new CheckSamples_Action());
     // groups 
-    {
-      InternalChecks_ActionGroup group = new InternalChecks_ActionGroup();
-      manager.registerAction(InternalChecks_ActionGroup.ID, group, myId);
-      addGroup(group);
-    }
+    addGroup(new InternalChecks_ActionGroup());
   }
 
   public void adjustRegularGroups() {

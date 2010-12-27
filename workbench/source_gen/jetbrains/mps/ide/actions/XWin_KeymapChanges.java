@@ -10,8 +10,9 @@ import javax.swing.KeyStroke;
 public class XWin_KeymapChanges extends BaseKeymapChanges {
   public XWin_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToDevkit_Action", getShortcut("ctrl shift D"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.GoToLanguage_Action", getShortcut("ctrl shift L"));
+    // simple parameterized 
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToDevkit_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl shift D")));
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToLanguage_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl shift L")));
     // complex 
   }
 
