@@ -30,10 +30,10 @@ public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(Generate_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", Generate_ActionGroup.LABEL_ID_generateModel);
-    insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", ModelActions_ActionGroup.LABEL_ID_generateActions);
-    insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", SolutionActions_ActionGroup.LABEL_ID_generateModule);
-    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_generateModule);
+    insertGroupIntoAnother(Make_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
+    insertGroupIntoAnother(Make_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
+    insertGroupIntoAnother(Make_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
+    insertGroupIntoAnother(Make_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

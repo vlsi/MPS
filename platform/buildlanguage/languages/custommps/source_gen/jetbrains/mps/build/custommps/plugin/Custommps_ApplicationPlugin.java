@@ -24,6 +24,6 @@ public class Custommps_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(ProjectPaneProjectAddition_ActionGroup.ID, "jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup", null);
+    insertGroupIntoAnother(ProjectAddition_ActionGroup.ID, ProjectPaneProjectAddition_ActionGroup.ID, null);
   }
 }

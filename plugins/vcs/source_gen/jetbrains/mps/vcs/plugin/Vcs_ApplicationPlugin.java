@@ -56,14 +56,14 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(Goto_ActionGroup.ID, "jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup", Goto_ActionGroup.LABEL_ID_gotoVCS);
-    insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup", ModelActions_ActionGroup.LABEL_ID_mpsvcs);
-    insertGroupIntoAnother(EditorTabActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup", EditorTabActions_ActionGroup.LABEL_ID_diff);
-    insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup", NodeActions_ActionGroup.LABEL_ID_diff);
-    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCS_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_vcs);
-    insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCS_ActionGroup", SolutionActions_ActionGroup.LABEL_ID_vcs);
-    insertGroupIntoAnother(EditorLeftPanelMenu_ActionGroup.ID, "jetbrains.mps.vcs.plugin.AnnotateGroup_ActionGroup", null);
-    insertGroupIntoAnother("VcsGlobalGroup", "jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup", null);
+    insertGroupIntoAnother(GoToVCS_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoVCS);
+    insertGroupIntoAnother(VCSModelActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_mpsvcs);
+    insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);
+    insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);
+    insertGroupIntoAnother(VCS_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_vcs);
+    insertGroupIntoAnother(VCS_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_vcs);
+    insertGroupIntoAnother(AnnotateGroup_ActionGroup.ID, EditorLeftPanelMenu_ActionGroup.ID, null);
+    insertGroupIntoAnother(InstallCustomMergeDriverGroup_ActionGroup.ID, "VcsGlobalGroup", null);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

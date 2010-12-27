@@ -31,8 +31,8 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup", null);
-    insertGroupIntoAnother(Edit_ActionGroup.ID, "jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup", Edit_ActionGroup.LABEL_ID_custom);
+    insertGroupIntoAnother(EditorActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(EditorActions_ActionGroup.ID, Edit_ActionGroup.ID, Edit_ActionGroup.LABEL_ID_custom);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

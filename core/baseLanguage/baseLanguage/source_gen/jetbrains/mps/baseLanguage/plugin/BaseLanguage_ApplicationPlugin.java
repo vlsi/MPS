@@ -63,16 +63,16 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup", null);
-    insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup", null);
-    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup", null);
-    insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup", null);
-    insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup", null);
-    insertGroupIntoAnother(Tools_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup", Tools_ActionGroup.LABEL_ID_customTools);
-    insertGroupIntoAnother(DFAActions_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup", null);
-    insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_overrideImplement);
-    insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_comments);
-    insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.PrintNodePosition_ActionGroup", null);
+    insertGroupIntoAnother(BaseLanguageModelActionsInternal_ActionGroup.ID, ModelActionsInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
+    insertGroupIntoAnother(BaseLanguageEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(BaseLanguageEditorPopupInternal_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(BaseLanguageNodeActionsInternal_ActionGroup.ID, NodeActionsInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(BaseLanguageToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
+    insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
+    insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
+    insertGroupIntoAnother(PrintNodePosition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {

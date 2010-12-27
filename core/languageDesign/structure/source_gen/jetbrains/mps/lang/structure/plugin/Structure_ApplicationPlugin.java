@@ -35,10 +35,10 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.structure.plugin.Structure_ActionGroup", EditorPopup_ActionGroup.LABEL_ID_structure);
-    insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.lang.structure.plugin.Structure_ActionGroup", NodeActions_ActionGroup.LABEL_ID_structure);
-    insertGroupIntoAnother(Structure_ActionGroup.ID, "jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup", Structure_ActionGroup.LABEL_ID_showHelp);
-    insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup", ModelActions_ActionGroup.LABEL_ID_showHelp);
+    insertGroupIntoAnother(Structure_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_structure);
+    insertGroupIntoAnother(Structure_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_structure);
+    insertGroupIntoAnother(ShowHelp_ActionGroup.ID, Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
+    insertGroupIntoAnother(ShowHelp_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

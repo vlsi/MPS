@@ -27,6 +27,6 @@ public class DataFlow_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup", null);
+    insertGroupIntoAnother(DFAActions_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
   }
 }
