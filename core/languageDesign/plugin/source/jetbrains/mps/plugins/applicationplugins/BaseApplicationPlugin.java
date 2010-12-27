@@ -108,7 +108,7 @@ public abstract class BaseApplicationPlugin {
     MPSActions.getInstance().unregisterActions(getId());
   }
 
-  protected void insertInterfaceGroupIntoAnother(String toId, String whatId, String labelName) {
+  protected void insertInterfaceGroupIntoAnother(String whatId, String toId, String labelName) {
     DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
     DefaultActionGroup gWhat = (DefaultActionGroup) ActionManager.getInstance().getAction(whatId);
     if (gTo == null || gWhat == null) {
@@ -122,8 +122,8 @@ public abstract class BaseApplicationPlugin {
     }
   }
 
-  protected void insertGroupIntoAnother(String toId, String whatId, String labelName) {
-    insertInterfaceGroupIntoAnother(toId, whatId, labelName);
+  protected void insertGroupIntoAnother(String whatId, String toId, String labelName) {
+    insertInterfaceGroupIntoAnother(whatId, toId, labelName);
     //todo with this method, we can use Idea's ActionStubs
   }
 
