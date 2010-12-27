@@ -23,4 +23,8 @@ public class BreakpointInfo {
     breakpoint.setCreationTime(myCreationTime);
     breakpoint.setEnabled(myIsEnabled);
   }
+
+  public boolean isValid() {
+    return myModelReference != null && !myModelReference.isEmpty() && myNodeId != null && !myNodeId.isEmpty();
+  }
 }

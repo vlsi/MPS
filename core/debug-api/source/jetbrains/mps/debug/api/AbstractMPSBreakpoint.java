@@ -19,10 +19,10 @@ public abstract class AbstractMPSBreakpoint extends AbstractBreakpoint implement
   private final BreakpointLocation myLocation;
   protected final Project myProject;
 
-  protected AbstractMPSBreakpoint(SNodePointer node, Project project) {
+  protected AbstractMPSBreakpoint(@NotNull SNodePointer nodePointer, Project project) {
     super(project);
     myProject = project;
-    myLocation = new BreakpointLocation(node);
+    myLocation = new BreakpointLocation(nodePointer);
   }
 
   @Override

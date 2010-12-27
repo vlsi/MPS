@@ -82,11 +82,12 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     switch (kind) {
       case LINE_BREAKPOINT:
         final JavaBreakpointInfo breakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
+        if (!breakpointInfo.isValid()) return null;
         LineBreakpoint breakpoint = ModelAccess.instance().runReadAction(new Computable<LineBreakpoint>() {
           @Override
           public LineBreakpoint compute() {
             SNodePointer pointer = new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId);
-            return new LineBreakpoint(pointer.getNode(), project);
+            return new LineBreakpoint(pointer, project);
           }
         });
         breakpointInfo.initBreakpoint(breakpoint);
@@ -98,11 +99,12 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
         return exceptionBreakpoint;
       case METHOD_BREAKPOINT:
         final JavaBreakpointInfo methodBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
+        if (!methodBreakpointInfo.isValid()) return null;
         MethodBreakpoint methodBreakpoint = ModelAccess.instance().runReadAction(new Computable<MethodBreakpoint>() {
           @Override
           public MethodBreakpoint compute() {
             SNodePointer pointer = new SNodePointer(methodBreakpointInfo.myModelReference, methodBreakpointInfo.myNodeId);
-            return new MethodBreakpoint(pointer.getNode(), project);
+            return new MethodBreakpoint(pointer, project);
           }
         });
         methodBreakpointInfo.initBreakpoint(methodBreakpoint);
@@ -110,11 +112,12 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
       //todo duplication
       case FIELD_BREAKPOINT:
         final JavaBreakpointInfo fieldBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
+        if (!fieldBreakpointInfo.isValid()) return null;
         FieldBreakpoint fieldBreakpoint = ModelAccess.instance().runReadAction(new Computable<FieldBreakpoint>() {
           @Override
           public FieldBreakpoint compute() {
             SNodePointer pointer = new SNodePointer(fieldBreakpointInfo.myModelReference, fieldBreakpointInfo.myNodeId);
-            return new FieldBreakpoint(pointer.getNode(), project);
+            return new FieldBreakpoint(pointer, project);
           }
         });
         fieldBreakpointInfo.initBreakpoint(fieldBreakpoint);
