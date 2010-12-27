@@ -41,7 +41,7 @@ public abstract class BaseApplicationPlugin {
 
   }
 
-  protected void addParameterizedAction(GeneratedAction action, Object... params) {
+  public void addParameterizedAction(GeneratedAction action, Object... params) {
     addAction(action);
 
     String shortId = action.getClass().getName();
