@@ -566,9 +566,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
     collectCellsWithY(this, y, candidates, false);
     for (EditorCell cell : candidates) {
-
-    }
-    for (EditorCell cell : candidates) {
       if (condition.met(cell)) {
         return cell;
       }
