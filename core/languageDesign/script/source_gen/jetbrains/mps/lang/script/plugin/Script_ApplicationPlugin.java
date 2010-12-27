@@ -28,10 +28,10 @@ public class Script_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup", ModelActions_ActionGroup.LABEL_ID_scripts);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_scripts);
-    this.insertGroupIntoAnother(GeneratorActions_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup", GeneratorActions_ActionGroup.LABEL_ID_scripts);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup", SolutionActions_ActionGroup.LABEL_ID_scripts);
-    this.insertGroupIntoAnother(Tools_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsGlobally_ActionGroup", null);
+    insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup", ModelActions_ActionGroup.LABEL_ID_scripts);
+    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_scripts);
+    insertGroupIntoAnother(GeneratorActions_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup", GeneratorActions_ActionGroup.LABEL_ID_scripts);
+    insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup", SolutionActions_ActionGroup.LABEL_ID_scripts);
+    insertGroupIntoAnother(Tools_ActionGroup.ID, "jetbrains.mps.lang.script.plugin.ScriptsGlobally_ActionGroup", null);
   }
 }

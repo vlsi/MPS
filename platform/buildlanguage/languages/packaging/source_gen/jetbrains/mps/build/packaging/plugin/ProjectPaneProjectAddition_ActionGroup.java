@@ -4,10 +4,6 @@ package jetbrains.mps.build.packaging.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectPaneProjectAddition_ActionGroup.class);
@@ -19,17 +15,7 @@ public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup
     this.setPopup(false);
     try {
       ProjectPaneProjectAddition_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new GenerateBuildForProjectAction_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.build.packaging");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        ProjectPaneProjectAddition_ActionGroup.this.addAction(oldAction);
-      }
+      ProjectPaneProjectAddition_ActionGroup.this.addAction("jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

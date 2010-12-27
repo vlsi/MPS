@@ -7,8 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.AnAction;
 
 public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
@@ -38,164 +36,24 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         SolutionActions_ActionGroup.this.addAction(action);
       }
-      {
-        GeneratedAction newAction = new GenerateTextFromSolution_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new CheckModule_Action("Solution");
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new OptimizeModuleImports_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new AnalyzeClasspath_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ShowModuleDependencies_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromSolution_Action");
+      SolutionActions_ActionGroup.this.addParameterizedAction(new CheckModule_Action("Solution"), PluginId.getId("jetbrains.mps.ide"), "Solution");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new AddModuleToProject_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new RemoveModuleFromProject_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new DeleteModules_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new CopyModuleName_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new GetModuleContentsFromSource_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new MakeModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new RebuildModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new CleanModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeModule_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildModule_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanModule_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new SetModuleFolder_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");
       SolutionActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_refactoring);
@@ -203,17 +61,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         SolutionActions_ActionGroup.this.addAction(action);
       }
-      {
-        GeneratedAction newAction = new UpgradeModelPersistenceInModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action");
       SolutionActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_favorites);
@@ -236,17 +84,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
         SolutionActions_ActionGroup.this.addAction(action);
       }
       SolutionActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new SolutionProperties_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        SolutionActions_ActionGroup.this.addAction(oldAction);
-      }
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SolutionProperties_Action");
       SolutionActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Quotation_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ProjectPlugin" />
+  <unitInfo fileName="MetaLevelActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.MetaLevelActions_ActionGroup" />
   <unitInfo fileName="Quotation_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.Quotation_ApplicationPlugin" />
-  <unitInfo fileName="MetaLevelActions_ActionGroup.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.MetaLevelActions_ActionGroup" />
   <unitInfo fileName="ShowMetaLevel_Action.java" startLine="17" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.quotation.plugin.ShowMetaLevel_Action" />
   <root nodeId="3981318653438276869">
     <nodeInfo nodeId="3981318653438278529" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="currentNode" fileName="ShowMetaLevel_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="28" />
@@ -11,17 +11,7 @@
     <nodeInfo nodeId="3981318653438301381" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowMetaLevel_Action.java" startLine="69" startPosition="120" endLine="70" endPosition="84" />
   </root>
   <root nodeId="3981318653438329584">
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="21" startPosition="7" endLine="22" endPosition="63" />
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="22" startPosition="63" endLine="23" endPosition="66" />
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="23" startPosition="66" endLine="24" endPosition="72" />
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="77" />
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="26" startPosition="77" endLine="27" endPosition="79" />
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="27" startPosition="79" endLine="28" endPosition="32" />
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="29" startPosition="9" endLine="30" endPosition="63" />
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="24" startPosition="72" endLine="29" endPosition="9" />
-    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="20" startPosition="9" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="3981318653438329587" fileName="MetaLevelActions_ActionGroup.java" startLine="25" startPosition="32" endLine="28" endPosition="32" />
-    <scopeInfo nodeId="3981318653438329587" fileName="MetaLevelActions_ActionGroup.java" startLine="21" startPosition="7" endLine="30" endPosition="63" />
+    <nodeInfo nodeId="3981318653438329587" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MetaLevelActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="110" />
   </root>
 </debugInfo>
 

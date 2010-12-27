@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class LanguageRefactoring_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageRefactoring_ActionGroup.class);
@@ -18,17 +14,7 @@ public class LanguageRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      {
-        GeneratedAction newAction = new RenameLanguage_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageRefactoring_ActionGroup.this.addAction(oldAction);
-      }
+      LanguageRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameLanguage_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

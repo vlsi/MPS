@@ -24,6 +24,6 @@ public class Test_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.lang.test.plugin.EditorInternalAddition_ActionGroup", null);
+    insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.lang.test.plugin.EditorInternalAddition_ActionGroup", null);
   }
 }

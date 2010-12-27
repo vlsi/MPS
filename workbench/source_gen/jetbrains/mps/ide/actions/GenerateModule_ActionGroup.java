@@ -4,10 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
 
 public class GenerateModule_ActionGroup extends GeneratedActionGroup {
@@ -19,28 +16,8 @@ public class GenerateModule_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new RegenerateModule_Action(new GenerateAllModelsInModuleAction(true));
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        GenerateModule_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GenerateModule_Action(new GenerateAllModelsInModuleAction(false));
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        GenerateModule_ActionGroup.this.addAction(oldAction);
-      }
+      GenerateModule_ActionGroup.this.addParameterizedAction(new RegenerateModule_Action(new GenerateAllModelsInModuleAction(true)), PluginId.getId("jetbrains.mps.ide"), new GenerateAllModelsInModuleAction(true));
+      GenerateModule_ActionGroup.this.addParameterizedAction(new GenerateModule_Action(new GenerateAllModelsInModuleAction(false)), PluginId.getId("jetbrains.mps.ide"), new GenerateAllModelsInModuleAction(false));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

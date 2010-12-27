@@ -31,8 +31,8 @@ public class Behavior_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup", null);
-    this.insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_overrideImplement);
+    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup", null);
+    insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_overrideImplement);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

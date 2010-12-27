@@ -7,8 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.AnAction;
 
 public class PackageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(PackageActions_ActionGroup.class);
@@ -27,29 +25,9 @@ public class PackageActions_ActionGroup extends GeneratedActionGroup {
         PackageActions_ActionGroup.this.addAction(action);
       }
       PackageActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new PasteNode_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        PackageActions_ActionGroup.this.addAction(oldAction);
-      }
+      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action");
       PackageActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new RenamePackage_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        PackageActions_ActionGroup.this.addAction(oldAction);
-      }
+      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenamePackage_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

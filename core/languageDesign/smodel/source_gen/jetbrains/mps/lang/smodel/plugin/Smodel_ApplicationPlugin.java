@@ -24,6 +24,6 @@ public class Smodel_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.lang.smodel.plugin.LanguageInternalAddition_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_find_javastub_usages);
+    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.lang.smodel.plugin.LanguageInternalAddition_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_find_javastub_usages);
   }
 }

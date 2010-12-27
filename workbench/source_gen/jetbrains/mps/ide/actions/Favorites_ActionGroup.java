@@ -7,8 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.AnAction;
 
 public class Favorites_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Favorites_ActionGroup.class);
@@ -28,39 +26,9 @@ public class Favorites_ActionGroup extends GeneratedActionGroup {
         Favorites_ActionGroup.this.addAction(action);
       }
       Favorites_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new RenameFavoritesList_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Favorites_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new RemoveFromFavorites_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Favorites_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new DeleteFavoritesList_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Favorites_ActionGroup.this.addAction(oldAction);
-      }
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameFavoritesList_Action");
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveFromFavorites_Action");
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteFavoritesList_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Favorites_ActionGroup.LABEL_ID_popup);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

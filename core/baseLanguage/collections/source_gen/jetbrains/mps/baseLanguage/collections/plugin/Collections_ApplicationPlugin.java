@@ -21,8 +21,8 @@ public class Collections_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    this.addCustomPart(res, new Collections_CustomApplicationPlugin());
-    this.addCustomPart(res, new SampleCustomContainers_CustomApplicationPlugin());
+    addCustomPart(res, new Collections_CustomApplicationPlugin());
+    addCustomPart(res, new SampleCustomContainers_CustomApplicationPlugin());
     return res;
   }
 

@@ -4,11 +4,10 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
+import com.intellij.openapi.actionSystem.AnAction;
 
 public class Tools_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Tools_ActionGroup.class);
@@ -20,50 +19,10 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new ShowModuleRepository_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ShowModelRepository_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ShowBookmarks_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ShowModelChecker_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleRepository_Action");
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModelRepository_Action");
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action");
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModelChecker_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Tools_ActionGroup.LABEL_ID_customTools);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -71,51 +30,11 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
         Tools_ActionGroup.this.addAction(action);
       }
       Tools_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new ReloadAll_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ReloadStubs_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReloadAll_Action");
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReloadStubs_Action");
       Tools_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new InstallIDEAPlugin_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new RenameAspects_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Tools_ActionGroup.this.addAction(oldAction);
-      }
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.InstallIDEAPlugin_Action");
+      Tools_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameAspects_Action");
       Tools_ActionGroup.this.addSeparator();
       {
         GeneratedActionGroup newAction = new ToolsUpgrade_ActionGroup();

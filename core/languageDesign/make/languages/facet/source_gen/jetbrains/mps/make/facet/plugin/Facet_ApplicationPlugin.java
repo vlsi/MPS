@@ -30,15 +30,15 @@ public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(Generate_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", Generate_ActionGroup.LABEL_ID_generateModel);
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", ModelActions_ActionGroup.LABEL_ID_generateActions);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", SolutionActions_ActionGroup.LABEL_ID_generateModule);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_generateModule);
+    insertGroupIntoAnother(Generate_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", Generate_ActionGroup.LABEL_ID_generateModel);
+    insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", ModelActions_ActionGroup.LABEL_ID_generateActions);
+    insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", SolutionActions_ActionGroup.LABEL_ID_generateModule);
+    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.make.facet.plugin.Make_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_generateModule);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    this.addCustomPart(res, new Facets_CustomApplicationPlugin());
+    addCustomPart(res, new Facets_CustomApplicationPlugin());
     return res;
   }
 

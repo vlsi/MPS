@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class GeneratorNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GeneratorNewActions_ActionGroup.class);
@@ -18,28 +14,8 @@ public class GeneratorNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      {
-        GeneratedAction newAction = new NewModel_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        GeneratorNewActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new NewModelFromSource_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        GeneratorNewActions_ActionGroup.this.addAction(oldAction);
-      }
+      GeneratorNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action");
+      GeneratorNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -4,11 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DevkitActions_ActionGroup.class);
@@ -20,84 +18,14 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new SetModuleFolder_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DevkitActions_ActionGroup.this.addAction(oldAction);
-      }
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");
       DevkitActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new AddModuleToProject_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DevkitActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new RemoveModuleFromProject_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DevkitActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new DeleteModules_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DevkitActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new AnalyzeClasspath_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DevkitActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new CopyModuleName_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DevkitActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new UpgradeModelPersistenceInModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DevkitActions_ActionGroup.this.addAction(oldAction);
-      }
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action");
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action");
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action");
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action");
       DevkitActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(DevkitActions_ActionGroup.LABEL_ID_favorites);
@@ -106,17 +34,7 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
         DevkitActions_ActionGroup.this.addAction(action);
       }
       DevkitActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new DevkitProperties_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DevkitActions_ActionGroup.this.addAction(oldAction);
-      }
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DevkitProperties_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

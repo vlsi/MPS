@@ -21,7 +21,7 @@ public class Ui_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    this.addCustomPart(res, new Variants_CustomApplicationPlugin());
+    addCustomPart(res, new Variants_CustomApplicationPlugin());
     return res;
   }
 

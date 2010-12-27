@@ -4,11 +4,9 @@ package jetbrains.mps.lang.structure.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Structure_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Structure_ActionGroup.class);
@@ -20,17 +18,7 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new ShowConceptStructure_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.structure");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Structure_ActionGroup.this.addAction(oldAction);
-      }
+      Structure_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowConceptStructure_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Structure_ActionGroup.LABEL_ID_showHelp);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

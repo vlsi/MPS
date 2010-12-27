@@ -7,8 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.AnAction;
 
 public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
@@ -41,152 +39,22 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         LanguageActions_ActionGroup.this.addAction(action);
       }
-      {
-        GeneratedAction newAction = new CheckModule_Action("Language");
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new OptimizeModuleImports_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new FixVirtualPackges_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new AnalyzeClasspath_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ShowModuleDependencies_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
+      LanguageActions_ActionGroup.this.addParameterizedAction(new CheckModule_Action("Language"), PluginId.getId("jetbrains.mps.ide"), "Language");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixVirtualPackges_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action");
       LanguageActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new AddModuleToProject_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new RemoveModuleFromProject_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new DeleteModules_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new CopyModuleName_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
       LanguageActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new MakeModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new RebuildModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new CleanModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeModule_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildModule_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanModule_Action");
       LanguageActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new SetModuleFolder_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");
       LanguageActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_find_usages);
@@ -207,17 +75,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         LanguageActions_ActionGroup.this.addAction(action);
       }
-      {
-        GeneratedAction newAction = new UpgradeModelPersistenceInModule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action");
       LanguageActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(LanguageActions_ActionGroup.LABEL_ID_favorites);
@@ -247,28 +105,8 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
         LanguageActions_ActionGroup.this.addAction(action);
       }
       LanguageActions_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new LanguageHierarchy_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new LanguageProperties_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        LanguageActions_ActionGroup.this.addAction(oldAction);
-      }
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageHierarchy_Action");
+      LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguageProperties_Action");
       LanguageActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

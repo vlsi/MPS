@@ -15,12 +15,12 @@
   <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="25" startPosition="74" endLine="35" endPosition="3" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$2" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="315" startPosition="35" endLine="325" endPosition="9" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$7" />
   <unitInfo fileName="DefaultCustomMpsApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Factory" />
+  <unitInfo fileName="ProjectAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" />
   <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="35" startPosition="18" endLine="50" endPosition="3" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$3" />
   <unitInfo fileName="ForeignConfigurations.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ForeignConfigurations" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="382" startPosition="0" endLine="399" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyState" />
   <unitInfo fileName="Custommps_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.Custommps_ApplicationPlugin" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="400" startPosition="0" endLine="423" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyExecutionResult" />
-  <unitInfo fileName="ProjectAddition_ActionGroup.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="424" startPosition="0" endLine="449" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyExecutionConsole" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="336" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MySettingsEditor" />
   <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="158" startPosition="52" endLine="207" endPosition="13" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$3" />
@@ -124,17 +124,7 @@
     <unitInfo nodeId="1241450650307" fileName="BuildToolsStep.java" startLine="19" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.BuildToolsStep" />
   </root>
   <root nodeId="1241455730164">
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ProjectAddition_ActionGroup.java" startLine="21" startPosition="7" endLine="22" endPosition="88" />
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ProjectAddition_ActionGroup.java" startLine="22" startPosition="88" endLine="23" endPosition="66" />
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ProjectAddition_ActionGroup.java" startLine="23" startPosition="66" endLine="24" endPosition="72" />
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ProjectAddition_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="78" />
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectAddition_ActionGroup.java" startLine="26" startPosition="78" endLine="27" endPosition="79" />
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectAddition_ActionGroup.java" startLine="27" startPosition="79" endLine="28" endPosition="32" />
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectAddition_ActionGroup.java" startLine="29" startPosition="9" endLine="30" endPosition="62" />
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ProjectAddition_ActionGroup.java" startLine="24" startPosition="72" endLine="29" endPosition="9" />
-    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ProjectAddition_ActionGroup.java" startLine="20" startPosition="9" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1241455730167" fileName="ProjectAddition_ActionGroup.java" startLine="25" startPosition="32" endLine="28" endPosition="32" />
-    <scopeInfo nodeId="1241455730167" fileName="ProjectAddition_ActionGroup.java" startLine="21" startPosition="7" endLine="30" endPosition="62" />
+    <nodeInfo nodeId="1241455730167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ProjectAddition_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="135" />
   </root>
   <root nodeId="1241460295003">
     <nodeInfo nodeId="1241460436577" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPathToBuildTools" fileName="CustomMPSBuildGenerator.java" startLine="26" startPosition="65" endLine="27" endPosition="41" />

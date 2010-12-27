@@ -19,9 +19,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction;
 import org.jetbrains.annotations.Nullable;
@@ -52,39 +50,9 @@ public class GenerateFavorites_ActionGroup extends GeneratedActionGroup {
       }
       TreeNode treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
       if (treeNode instanceof SNodeTreeNode) {
-        {
-          GeneratedAction newAction = new GenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(false));
-          ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-          AnAction oldAction = manager.getAction(newAction.getActionId());
-          if (oldAction == null) {
-            PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-            manager.registerAction(newAction.getActionId(), newAction, pluginId);
-            oldAction = newAction;
-          }
-          GenerateFavorites_ActionGroup.this.addAction(oldAction);
-        }
-        {
-          GeneratedAction newAction = new RegenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(true));
-          ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-          AnAction oldAction = manager.getAction(newAction.getActionId());
-          if (oldAction == null) {
-            PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-            manager.registerAction(newAction.getActionId(), newAction, pluginId);
-            oldAction = newAction;
-          }
-          GenerateFavorites_ActionGroup.this.addAction(oldAction);
-        }
-        {
-          GeneratedAction newAction = new GenerateTextFromModel_Action(new GenerateTextFromModelsAction());
-          ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-          AnAction oldAction = manager.getAction(newAction.getActionId());
-          if (oldAction == null) {
-            PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-            manager.registerAction(newAction.getActionId(), newAction, pluginId);
-            oldAction = newAction;
-          }
-          GenerateFavorites_ActionGroup.this.addAction(oldAction);
-        }
+        GenerateFavorites_ActionGroup.this.addParameterizedAction(new GenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(false)), PluginId.getId("jetbrains.mps.ide"), new GenerateFilesFromModelsAction(false));
+        GenerateFavorites_ActionGroup.this.addParameterizedAction(new RegenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(true)), PluginId.getId("jetbrains.mps.ide"), new GenerateFilesFromModelsAction(true));
+        GenerateFavorites_ActionGroup.this.addParameterizedAction(new GenerateTextFromModel_Action(new GenerateTextFromModelsAction()), PluginId.getId("jetbrains.mps.ide"), new GenerateTextFromModelsAction());
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

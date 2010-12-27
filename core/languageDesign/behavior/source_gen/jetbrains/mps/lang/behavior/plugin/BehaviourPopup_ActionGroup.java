@@ -4,12 +4,9 @@ package jetbrains.mps.lang.behavior.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
 
 public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
@@ -21,17 +18,7 @@ public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new GoToOverridingMethod_Action(ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.behavior");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        BehaviourPopup_ActionGroup.this.addAction(oldAction);
-      }
+      BehaviourPopup_ActionGroup.this.addParameterizedAction(new GoToOverridingMethod_Action(ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder")), PluginId.getId("jetbrains.mps.baseLanguage"), ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

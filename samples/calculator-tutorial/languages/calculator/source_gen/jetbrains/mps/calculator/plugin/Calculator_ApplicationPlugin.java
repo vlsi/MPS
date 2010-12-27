@@ -24,6 +24,6 @@ public class Calculator_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.calculator.plugin.NodeActionsAddition_ActionGroup", null);
+    insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.calculator.plugin.NodeActionsAddition_ActionGroup", null);
   }
 }

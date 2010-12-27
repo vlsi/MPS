@@ -27,7 +27,7 @@ public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.build.packaging.plugin.ProjectPaneModelAddition_ActionGroup", null);
-    this.insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, "jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup", null);
+    insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.build.packaging.plugin.ProjectPaneModelAddition_ActionGroup", null);
+    insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, "jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup", null);
   }
 }

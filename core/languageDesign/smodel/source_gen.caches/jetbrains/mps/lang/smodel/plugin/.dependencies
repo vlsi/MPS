@@ -32,13 +32,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.plugin.LanguageInternalAddition_ActionGroup" file="LanguageInternalAddition_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.plugin.CheckLangForJavaStubModels_Action" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.plugin.SNodeViewer_WrapperFactory" file="SNodeViewer_WrapperFactory.java">

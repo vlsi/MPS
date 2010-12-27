@@ -46,13 +46,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup" file="CoreActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" file="Core_ApplicationPlugin.java">
@@ -139,14 +134,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup" file="FindLanguageUsages_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.FindModelUsages_Action" file="FindModelUsages_Action.java">
@@ -174,13 +163,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup" file="FindModelUsages_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.LanguageChecker" file="LanguageChecker.java">

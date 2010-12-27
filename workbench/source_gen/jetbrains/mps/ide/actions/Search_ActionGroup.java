@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class Search_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Search_ActionGroup.class);
@@ -18,84 +14,14 @@ public class Search_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new Find_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Search_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new FindNext_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Search_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new FindPrevious_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Search_ActionGroup.this.addAction(oldAction);
-      }
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Find_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindNext_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindPrevious_Action");
       Search_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new FindSpecificNodeUsages_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Search_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new FastFindNodeUsages_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Search_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new HighlightUsages_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Search_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new HighlightInstances_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Search_ActionGroup.this.addAction(oldAction);
-      }
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightUsages_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

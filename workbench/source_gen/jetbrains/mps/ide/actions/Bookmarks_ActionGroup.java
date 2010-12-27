@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class Bookmarks_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Bookmarks_ActionGroup.class);
@@ -18,273 +14,33 @@ public class Bookmarks_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      {
-        GeneratedAction newAction = new ShowBookmarks_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action");
       Bookmarks_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new ShowBookmarksDialog_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action");
       Bookmarks_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new RemoveAllBookmarks_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveAllBookmarks_Action");
       Bookmarks_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new GoToBookmark0_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark1_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark2_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark3_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark4_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark5_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark6_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark7_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark8_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToBookmark9_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark0_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark1_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark2_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark3_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark4_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark5_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark6_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark7_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark8_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmark9_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new SetBookmarkNoNumber_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Bookmarks_ActionGroup.this.addAction(oldAction);
-      }
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark0_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark1_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark2_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark3_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark4_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark5_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark6_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark7_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark8_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark9_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark0_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark1_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark2_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark3_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark4_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark5_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark6_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark7_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark8_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark9_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

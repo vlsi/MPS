@@ -21,8 +21,8 @@ public class Nanoc_ApplicationPlugin extends BaseApplicationPlugin {
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    this.addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
-    this.addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
+    addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
+    addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
     return res;
   }
 

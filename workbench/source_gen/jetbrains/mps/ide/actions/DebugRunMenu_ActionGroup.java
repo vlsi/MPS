@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class DebugRunMenu_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DebugRunMenu_ActionGroup.class);
@@ -19,106 +15,16 @@ public class DebugRunMenu_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       DebugRunMenu_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new StepOver_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new StepInto_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new StepOut_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new Resume_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new Pause_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new EvaluateExpression_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ExportThreads_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepOver_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepInto_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepOut_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Resume_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Pause_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EvaluateExpression_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExportThreads_Action");
       DebugRunMenu_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new ToggleBreakpoint_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ViewBreakpoints_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugRunMenu_ActionGroup.this.addAction(oldAction);
-      }
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ToggleBreakpoint_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ViewBreakpoints_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

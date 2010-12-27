@@ -16,8 +16,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -54,17 +52,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
       ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByBuildPopup());
       ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByLanguagePopup());
       // 
-      {
-        GeneratedAction newAction = new RunMigrationScripts_Action(menuBuilder.getAllScripts(), true);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.script");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        ScriptsForSelection_ActionGroup.this.addAction(oldAction);
-      }
+      ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder.getAllScripts(), true), PluginId.getId("jetbrains.mps.lang.script"), menuBuilder.getAllScripts(), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

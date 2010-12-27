@@ -4,10 +4,6 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FindInstancesByConditionAndNodeGroup_ActionGroup.class);
@@ -18,28 +14,8 @@ public class FindInstancesByConditionAndNodeGroup_ActionGroup extends GeneratedA
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new FindInstancesByConditionAndNode_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.quickQueryLanguage");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        FindInstancesByConditionAndNodeGroup_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ReplacementQueryActionWithNode_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.quickQueryLanguage");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        FindInstancesByConditionAndNodeGroup_ActionGroup.this.addAction(oldAction);
-      }
+      FindInstancesByConditionAndNodeGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action");
+      FindInstancesByConditionAndNodeGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

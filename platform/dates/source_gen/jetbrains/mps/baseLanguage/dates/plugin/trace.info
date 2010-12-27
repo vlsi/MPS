@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Dates_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.Dates_ProjectPlugin" />
+  <unitInfo fileName="DateLangGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup_ActionGroup" />
   <unitInfo fileName="Dates_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.Dates_ApplicationPlugin" />
-  <unitInfo fileName="DateLangGroup_ActionGroup.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup_ActionGroup" />
   <unitInfo fileName="ConvertDateTimeOperations_Action.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action" />
   <root nodeId="1213192856943">
     <nodeInfo nodeId="1213192903807" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="model" fileName="ConvertDateTimeOperations_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="23" />
@@ -30,17 +30,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1213193418223">
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DateLangGroup_ActionGroup.java" startLine="21" startPosition="7" endLine="22" endPosition="75" />
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DateLangGroup_ActionGroup.java" startLine="22" startPosition="75" endLine="23" endPosition="66" />
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DateLangGroup_ActionGroup.java" startLine="23" startPosition="66" endLine="24" endPosition="72" />
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="DateLangGroup_ActionGroup.java" startLine="25" startPosition="32" endLine="26" endPosition="81" />
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DateLangGroup_ActionGroup.java" startLine="26" startPosition="81" endLine="27" endPosition="79" />
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DateLangGroup_ActionGroup.java" startLine="27" startPosition="79" endLine="28" endPosition="32" />
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DateLangGroup_ActionGroup.java" startLine="29" startPosition="9" endLine="30" endPosition="60" />
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DateLangGroup_ActionGroup.java" startLine="24" startPosition="72" endLine="29" endPosition="9" />
-    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="DateLangGroup_ActionGroup.java" startLine="20" startPosition="9" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1213194365498" fileName="DateLangGroup_ActionGroup.java" startLine="25" startPosition="32" endLine="28" endPosition="32" />
-    <scopeInfo nodeId="1213194365498" fileName="DateLangGroup_ActionGroup.java" startLine="21" startPosition="7" endLine="30" endPosition="60" />
+    <nodeInfo nodeId="1213194365498" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DateLangGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="123" />
   </root>
 </debugInfo>
 

@@ -63,22 +63,22 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup", null);
-    this.insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup", null);
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup", null);
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup", null);
-    this.insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup", null);
-    this.insertGroupIntoAnother(Tools_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup", Tools_ActionGroup.LABEL_ID_customTools);
-    this.insertGroupIntoAnother(DFAActions_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup", null);
-    this.insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_overrideImplement);
-    this.insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_comments);
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.PrintNodePosition_ActionGroup", null);
+    insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup", null);
+    insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup", null);
+    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup", null);
+    insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup", null);
+    insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup", null);
+    insertGroupIntoAnother(Tools_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup", Tools_ActionGroup.LABEL_ID_customTools);
+    insertGroupIntoAnother(DFAActions_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup", null);
+    insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_overrideImplement);
+    insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_comments);
+    insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.plugin.PrintNodePosition_ActionGroup", null);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    this.addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
-    this.addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
+    addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
+    addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
     return res;
   }
 

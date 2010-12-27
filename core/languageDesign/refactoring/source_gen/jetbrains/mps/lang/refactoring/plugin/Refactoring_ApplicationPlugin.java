@@ -26,8 +26,8 @@ public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup", null);
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup", null);
-    this.insertGroupIntoAnother(ModelRefactoring_ActionGroup.ID, "jetbrains.mps.lang.refactoring.plugin.ModelRefactorings_ActionGroup", null);
+    insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup", null);
+    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup", null);
+    insertGroupIntoAnother(ModelRefactoring_ActionGroup.ID, "jetbrains.mps.lang.refactoring.plugin.ModelRefactorings_ActionGroup", null);
   }
 }

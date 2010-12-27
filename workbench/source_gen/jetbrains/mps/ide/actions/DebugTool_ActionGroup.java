@@ -4,11 +4,9 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class DebugTool_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DebugTool_ActionGroup.class);
@@ -22,28 +20,8 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       DebugTool_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new Resume_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugTool_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new Pause_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugTool_ActionGroup.this.addAction(oldAction);
-      }
+      DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Resume_Action");
+      DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Pause_Action");
       {
         LabelledAnchor action = new LabelledAnchor(DebugTool_ActionGroup.LABEL_ID_StopAction);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
@@ -51,39 +29,9 @@ public class DebugTool_ActionGroup extends GeneratedActionGroup {
         DebugTool_ActionGroup.this.addAction(action);
       }
       DebugTool_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new EvaluateExpression_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugTool_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ExportThreads_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugTool_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ViewBreakpoints_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        DebugTool_ActionGroup.this.addAction(oldAction);
-      }
+      DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EvaluateExpression_Action");
+      DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExportThreads_Action");
+      DebugTool_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ViewBreakpoints_Action");
       {
         LabelledAnchor action = new LabelledAnchor(DebugTool_ActionGroup.LABEL_ID_MuteAction);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

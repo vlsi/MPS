@@ -4,10 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction;
 
@@ -20,39 +17,9 @@ public class GenerateModels_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new GenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(false));
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        GenerateModels_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new RegenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(true));
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        GenerateModels_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GenerateTextFromModel_Action(new GenerateTextFromModelsAction());
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        GenerateModels_ActionGroup.this.addAction(oldAction);
-      }
+      GenerateModels_ActionGroup.this.addParameterizedAction(new GenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(false)), PluginId.getId("jetbrains.mps.ide"), new GenerateFilesFromModelsAction(false));
+      GenerateModels_ActionGroup.this.addParameterizedAction(new RegenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(true)), PluginId.getId("jetbrains.mps.ide"), new GenerateFilesFromModelsAction(true));
+      GenerateModels_ActionGroup.this.addParameterizedAction(new GenerateTextFromModel_Action(new GenerateTextFromModelsAction()), PluginId.getId("jetbrains.mps.ide"), new GenerateTextFromModelsAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

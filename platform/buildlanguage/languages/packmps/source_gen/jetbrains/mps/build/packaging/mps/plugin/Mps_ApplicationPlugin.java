@@ -26,6 +26,6 @@ public class Mps_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(Build_ActionGroup.ID, "jetbrains.mps.build.packaging.mps.plugin.InternalChecks_ActionGroup", null);
+    insertGroupIntoAnother(Build_ActionGroup.ID, "jetbrains.mps.build.packaging.mps.plugin.InternalChecks_ActionGroup", null);
   }
 }

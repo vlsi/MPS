@@ -56,19 +56,19 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(Goto_ActionGroup.ID, "jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup", Goto_ActionGroup.LABEL_ID_gotoVCS);
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup", ModelActions_ActionGroup.LABEL_ID_mpsvcs);
-    this.insertGroupIntoAnother(EditorTabActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup", EditorTabActions_ActionGroup.LABEL_ID_diff);
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup", NodeActions_ActionGroup.LABEL_ID_diff);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCS_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_vcs);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCS_ActionGroup", SolutionActions_ActionGroup.LABEL_ID_vcs);
-    this.insertGroupIntoAnother(EditorLeftPanelMenu_ActionGroup.ID, "jetbrains.mps.vcs.plugin.AnnotateGroup_ActionGroup", null);
-    this.insertGroupIntoAnother("VcsGlobalGroup", "jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup", null);
+    insertGroupIntoAnother(Goto_ActionGroup.ID, "jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup", Goto_ActionGroup.LABEL_ID_gotoVCS);
+    insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup", ModelActions_ActionGroup.LABEL_ID_mpsvcs);
+    insertGroupIntoAnother(EditorTabActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup", EditorTabActions_ActionGroup.LABEL_ID_diff);
+    insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup", NodeActions_ActionGroup.LABEL_ID_diff);
+    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCS_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_vcs);
+    insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "jetbrains.mps.vcs.plugin.VCS_ActionGroup", SolutionActions_ActionGroup.LABEL_ID_vcs);
+    insertGroupIntoAnother(EditorLeftPanelMenu_ActionGroup.ID, "jetbrains.mps.vcs.plugin.AnnotateGroup_ActionGroup", null);
+    insertGroupIntoAnother("VcsGlobalGroup", "jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup", null);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    this.addCustomPart(res, new main_CustomApplicationPlugin());
+    addCustomPart(res, new main_CustomApplicationPlugin());
     return res;
   }
 

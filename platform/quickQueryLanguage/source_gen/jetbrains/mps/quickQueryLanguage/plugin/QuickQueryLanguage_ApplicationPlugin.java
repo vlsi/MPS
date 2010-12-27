@@ -30,8 +30,8 @@ public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin 
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_find_instances);
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup", NodeActions_ActionGroup.LABEL_ID_find_instances);
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup", EditorPopup_ActionGroup.LABEL_ID_find_instances);
+    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_find_instances);
+    insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup", NodeActions_ActionGroup.LABEL_ID_find_instances);
+    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup", EditorPopup_ActionGroup.LABEL_ID_find_instances);
   }
 }

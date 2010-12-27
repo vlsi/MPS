@@ -4,9 +4,6 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
 
 public class Make_ActionGroup extends GeneratedActionGroup {
@@ -18,28 +15,8 @@ public class Make_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      {
-        GeneratedAction newAction = new MakeOrBuild_Action(true);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.make.facet");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Make_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new MakeOrBuild_Action(false);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.make.facet");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        Make_ActionGroup.this.addAction(oldAction);
-      }
+      Make_ActionGroup.this.addParameterizedAction(new MakeOrBuild_Action(true), PluginId.getId("jetbrains.mps.make.facet"), true);
+      Make_ActionGroup.this.addParameterizedAction(new MakeOrBuild_Action(false), PluginId.getId("jetbrains.mps.make.facet"), false);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

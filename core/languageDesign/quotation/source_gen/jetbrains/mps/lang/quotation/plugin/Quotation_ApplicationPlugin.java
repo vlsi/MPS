@@ -24,6 +24,6 @@ public class Quotation_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.lang.quotation.plugin.MetaLevelActions_ActionGroup", null);
+    insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.lang.quotation.plugin.MetaLevelActions_ActionGroup", null);
   }
 }

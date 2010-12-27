@@ -4,10 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class ToolsUpgrade_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ToolsUpgrade_ActionGroup.class);
@@ -18,28 +14,8 @@ public class ToolsUpgrade_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      {
-        GeneratedAction newAction = new UpgradeModelPersistenceGlobally_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        ToolsUpgrade_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new UpgradeModulePersistenceGlobally_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        ToolsUpgrade_ActionGroup.this.addAction(oldAction);
-      }
+      ToolsUpgrade_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceGlobally_Action");
+      ToolsUpgrade_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModulePersistenceGlobally_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

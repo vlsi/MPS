@@ -78,26 +78,14 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup" file="AnalyzersActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup" file="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.CommentStatements_Action" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" file="BaseLanguageCustomPlugin_CustomProjectPlugin.java">
@@ -118,16 +106,10 @@
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" file="BaseLanguageEditorPopup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ShowMembers_Action" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
@@ -145,14 +127,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup" file="BaseLanguageToolsAddition_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" file="BaseLanguage_ApplicationPlugin.java">
@@ -219,14 +195,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup" file="BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.OverrideMethod_Action" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ImplementMethod_Action" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" file="CommentLine_Action.java">
@@ -829,31 +799,15 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.PrintNodePosition_ActionGroup" file="PrintNodePosition_ActionGroup.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.PrintNodePosition_Action" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" file="RefactoringAddition_ActionGroup.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IntroduceField_Action" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.InlineMethod_Action" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" file="RenameVariable_Action.java">

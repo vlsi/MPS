@@ -7,8 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed;
 
 public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
@@ -36,39 +34,9 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         AbstractFileActions_ActionGroup.this.addAction(action);
       }
-      {
-        GeneratedAction newAction = new RenameFileOrDirectory_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        AbstractFileActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new MoveFileOrDirectory_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        AbstractFileActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new FileDelete_Action(new FileDeleteActionFixed());
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        AbstractFileActions_ActionGroup.this.addAction(oldAction);
-      }
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameFileOrDirectory_Action");
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MoveFileOrDirectory_Action");
+      AbstractFileActions_ActionGroup.this.addParameterizedAction(new FileDelete_Action(new FileDeleteActionFixed()), PluginId.getId("jetbrains.mps.ide"), new FileDeleteActionFixed());
       AbstractFileActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);

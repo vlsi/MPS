@@ -38,11 +38,11 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup", null);
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup", null);
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup", null);
-    this.insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup", null);
-    this.insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup", null);
+    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup", null);
+    insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup", null);
+    insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup", null);
+    insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup", null);
+    insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

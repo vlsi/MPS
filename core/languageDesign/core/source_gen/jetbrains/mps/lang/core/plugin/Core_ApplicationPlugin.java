@@ -35,9 +35,9 @@ public class Core_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup", ModelActions_ActionGroup.LABEL_ID_modelUsages);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_find_usages);
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup", null);
+    insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup", ModelActions_ActionGroup.LABEL_ID_modelUsages);
+    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup", LanguageActions_ActionGroup.LABEL_ID_find_usages);
+    insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

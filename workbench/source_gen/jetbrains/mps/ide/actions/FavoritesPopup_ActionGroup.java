@@ -7,8 +7,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.action.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.AnAction;
 
 public class FavoritesPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FavoritesPopup_ActionGroup.class);
@@ -27,17 +25,7 @@ public class FavoritesPopup_ActionGroup extends GeneratedActionGroup {
         FavoritesPopup_ActionGroup.this.addAction(action);
       }
       FavoritesPopup_ActionGroup.this.addSeparator();
-      {
-        GeneratedAction newAction = new AddToNewFavoritesList_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        FavoritesPopup_ActionGroup.this.addAction(oldAction);
-      }
+      FavoritesPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddToNewFavoritesList_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

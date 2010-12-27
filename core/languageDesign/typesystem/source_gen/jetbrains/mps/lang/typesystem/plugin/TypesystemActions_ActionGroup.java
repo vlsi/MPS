@@ -4,10 +4,6 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.extensions.PluginId;
 
 public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(TypesystemActions_ActionGroup.class);
@@ -19,50 +15,10 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
     this.setMnemonic("T".charAt(0));
     this.setPopup(true);
     try {
-      {
-        GeneratedAction newAction = new ShowNodeType_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.typesystem");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        TypesystemActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new GoToTypeErrorRule_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.typesystem");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        TypesystemActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ShowRulesWhichAffectNodeType_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.typesystem");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        TypesystemActions_ActionGroup.this.addAction(oldAction);
-      }
-      {
-        GeneratedAction newAction = new ShowInferredNodeType_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.typesystem");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        TypesystemActions_ActionGroup.this.addAction(oldAction);
-      }
+      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action");
+      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action");
+      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action");
+      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowInferredNodeType_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

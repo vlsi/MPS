@@ -24,6 +24,6 @@ public class Generictasks_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.build.generictasks.plugin.ProjectPaneLanguageAddition_ActionGroup", null);
+    insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "jetbrains.mps.build.generictasks.plugin.ProjectPaneLanguageAddition_ActionGroup", null);
   }
 }

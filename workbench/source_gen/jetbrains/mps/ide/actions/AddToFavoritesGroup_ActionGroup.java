@@ -20,8 +20,6 @@ import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -62,17 +60,7 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
         if (pane != null && EqualUtil.equals(name, currentFavoritesList)) {
           continue;
         }
-        {
-          GeneratedAction newAction = new AddToFavorites_Action(name);
-          ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-          AnAction oldAction = manager.getAction(newAction.getActionId());
-          if (oldAction == null) {
-            PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-            manager.registerAction(newAction.getActionId(), newAction, pluginId);
-            oldAction = newAction;
-          }
-          AddToFavoritesGroup_ActionGroup.this.addAction(oldAction);
-        }
+        AddToFavoritesGroup_ActionGroup.this.addParameterizedAction(new AddToFavorites_Action(name), PluginId.getId("jetbrains.mps.ide"), name);
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -24,6 +24,6 @@ public class Dates_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    this.insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup_ActionGroup", null);
+    insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, "jetbrains.mps.baseLanguage.dates.plugin.DateLangGroup_ActionGroup", null);
   }
 }

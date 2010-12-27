@@ -76,7 +76,7 @@
     <nodeInfo nodeId="2602555614106556625" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelUtil.java" startLine="71" startPosition="62" endLine="74" endPosition="9" />
     <nodeInfo nodeId="1238267641602" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelUtil.java" startLine="103" startPosition="92" endLine="106" endPosition="7" />
     <nodeInfo nodeId="1238267713264" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelUtil.java" startLine="108" startPosition="88" endLine="111" endPosition="9" />
-    <nodeInfo nodeId="1238267943026" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SModelUtil.java" startLine="113" startPosition="5" endLine="116" endPosition="5" />
+    <nodeInfo nodeId="1238267943026" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelUtil.java" startLine="113" startPosition="5" endLine="116" endPosition="5" />
     <nodeInfo nodeId="1237995590726" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelUtil.java" startLine="121" startPosition="76" endLine="124" endPosition="5" />
     <nodeInfo nodeId="1237995590733" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelUtil.java" startLine="124" startPosition="5" endLine="127" endPosition="5" />
     <nodeInfo nodeId="8796902844914174217" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SModelUtil.java" startLine="131" startPosition="83" endLine="134" endPosition="9" />

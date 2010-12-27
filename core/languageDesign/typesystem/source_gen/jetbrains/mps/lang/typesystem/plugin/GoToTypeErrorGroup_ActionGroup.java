@@ -18,8 +18,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -62,29 +60,9 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       GoToTypeErrorGroup_ActionGroup.this.removeAll();
       jetbrains.mps.util.Pair<String, String> firstId = new jetbrains.mps.util.Pair<String, String>(error.getRuleModel(), error.getRuleId());
       for (jetbrains.mps.util.Pair<String, String> id : error.getAdditionalRulesIds()) {
-        {
-          GeneratedAction newAction = new GoToTypeErrorRule_InGroup_Action(id, false);
-          ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-          AnAction oldAction = manager.getAction(newAction.getActionId());
-          if (oldAction == null) {
-            PluginId pluginId = PluginId.getId("jetbrains.mps.lang.typesystem");
-            manager.registerAction(newAction.getActionId(), newAction, pluginId);
-            oldAction = newAction;
-          }
-          GoToTypeErrorGroup_ActionGroup.this.addAction(oldAction);
-        }
+        GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(id, false), PluginId.getId("jetbrains.mps.lang.typesystem"), id, false);
       }
-      {
-        GeneratedAction newAction = new GoToTypeErrorRule_InGroup_Action(firstId, true);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.lang.typesystem");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        GoToTypeErrorGroup_ActionGroup.this.addAction(oldAction);
-      }
+      GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(firstId, true), PluginId.getId("jetbrains.mps.lang.typesystem"), firstId, true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

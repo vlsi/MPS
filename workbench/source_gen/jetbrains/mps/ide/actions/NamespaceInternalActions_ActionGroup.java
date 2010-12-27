@@ -19,9 +19,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
 public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
@@ -61,30 +58,10 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
           NamespaceInternalActions_ActionGroup.this.addSeparator();
         }
       }
-      {
-        GeneratedAction newAction = new GenerateFiles_Action();
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        AnAction oldAction = manager.getAction(newAction.getActionId());
-        if (oldAction == null) {
-          PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-          manager.registerAction(newAction.getActionId(), newAction, pluginId);
-          oldAction = newAction;
-        }
-        NamespaceInternalActions_ActionGroup.this.addAction(oldAction);
-      }
+      NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action");
       if (ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceInternalActions_ActionGroup.this.addSeparator();
-        {
-          GeneratedAction newAction = new RenameNamespace_Action();
-          ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-          AnAction oldAction = manager.getAction(newAction.getActionId());
-          if (oldAction == null) {
-            PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-            manager.registerAction(newAction.getActionId(), newAction, pluginId);
-            oldAction = newAction;
-          }
-          NamespaceInternalActions_ActionGroup.this.addAction(oldAction);
-        }
+        NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

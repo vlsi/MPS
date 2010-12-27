@@ -2,14 +2,8 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup" file="FindInstancesByConditionAndNodeGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action" file="FindInstancesByConditionAndNode_Action.java">
@@ -31,14 +25,8 @@
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup" file="FindInstancesByConditionGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
-    <classNode dependClassName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action" file="FindInstancesByCondition_Action.java">

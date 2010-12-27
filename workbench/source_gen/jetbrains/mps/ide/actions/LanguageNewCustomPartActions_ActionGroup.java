@@ -5,9 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
-import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
 
 public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGroup {
@@ -20,17 +17,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
     this.setPopup(false);
     try {
       for (LanguageAspect aspect : LanguageAspect.values()) {
-        {
-          GeneratedAction newAction = new NewAspectModel_Action(aspect);
-          ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-          AnAction oldAction = manager.getAction(newAction.getActionId());
-          if (oldAction == null) {
-            PluginId pluginId = PluginId.getId("jetbrains.mps.ide");
-            manager.registerAction(newAction.getActionId(), newAction, pluginId);
-            oldAction = newAction;
-          }
-          LanguageNewCustomPartActions_ActionGroup.this.addAction(oldAction);
-        }
+        LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModel_Action(aspect), PluginId.getId("jetbrains.mps.ide"), aspect);
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
