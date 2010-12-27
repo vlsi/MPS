@@ -168,7 +168,7 @@ public class Script implements IScript {
             return;
           }
           monit.currentProgress().finishWork(trg.getName().toString());
-          monit.currentProgress().doneWork(scriptName, 1);
+          monit.currentProgress().advanceWork(scriptName, 1);
         }
         monit.currentProgress().finishWork(scriptName);
       }

@@ -418,7 +418,7 @@ public class Generate_Facet implements IFacet {
 
               GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
-                  monitor.currentProgress().doneWork("Generation", 1);
+                  monitor.currentProgress().advanceWork("Generation", 1);
                   _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }

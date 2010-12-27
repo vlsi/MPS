@@ -48,10 +48,10 @@ public class Generator_Test extends MockTestCase {
         exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Make").toString())), with(same(100)), with(any(Integer.class)));
 
         exactly(1).of(pstub).beginWork(with(equal("GENERATE")), with(same(100)), with(any(Integer.class)));
-        atMost(1).of(pstub).doneWork(with(equal("GENERATE")), with(same(50)));
+        atMost(1).of(pstub).advanceWork(with(equal("GENERATE")), with(same(50)));
         exactly(1).of(pstub).finishWork(with(equal("GENERATE")));
 
-        atMost(3).of(pstub).doneWork(with(equal("Script")), with(same(1)));
+        atMost(3).of(pstub).advanceWork(with(equal("Script")), with(same(1)));
         exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Make").toString())));
         exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Generate").toString())));
         exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Configure").toString())));
@@ -211,20 +211,20 @@ public class Generator_Test extends MockTestCase {
         org.jmock.Sequence seq = context.sequence("sequence");
         exactly(1).of(pstub).beginWork(with(equal("WORK")), with(same(100)), with(any(Integer.class)));
         inSequence(seq);
-        atMost(1).of(pstub).doneWork(with(equal("WORK")), with(same(50)));
+        atMost(1).of(pstub).advanceWork(with(equal("WORK")), with(same(50)));
         inSequence(seq);
         exactly(1).of(pstub).beginWork(with(equal("WORKWORK")), with(same(10)), with(any(Integer.class)));
         inSequence(seq);
-        atMost(1).of(pstub).doneWork(with(equal("WORKWORK")), with(same(5)));
+        atMost(1).of(pstub).advanceWork(with(equal("WORKWORK")), with(same(5)));
         inSequence(seq);
-        atMost(1).of(pstub).doneWork(with(equal("WORKWORK")), with(same(5)));
+        atMost(1).of(pstub).advanceWork(with(equal("WORKWORK")), with(same(5)));
         inSequence(seq);
         exactly(1).of(pstub).finishWork(with(equal("WORKWORK")));
         inSequence(seq);
         exactly(1).of(pstub).finishWork(with(equal("WORK")));
         inSequence(seq);
 
-        atMost(2).of(pstub).doneWork(with(equal("Script")), with(same(1)));
+        atMost(2).of(pstub).advanceWork(with(equal("Script")), with(same(1)));
         exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("Make").toString())));
         exactly(1).of(pstub).finishWork(with(equal(new ITarget.Name("work").toString())));
         exactly(1).of(pstub).finishWork(with(equal("Script")));

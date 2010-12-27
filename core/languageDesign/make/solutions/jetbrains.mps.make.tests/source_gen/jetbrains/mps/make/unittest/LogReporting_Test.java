@@ -37,13 +37,13 @@ public class LogReporting_Test extends MockTestCase {
     LoggingProgressStrategy strat = new LoggingProgressStrategy(logger);
     IProgress pro = strat.currentProgress();
     pro.beginWork("Top", 10, 1000);
-    pro.doneWork("Top", 3);
+    pro.advanceWork("Top", 3);
     pro.beginWork("Mid", 10, 5);
-    pro.doneWork("Mid", 2);
+    pro.advanceWork("Mid", 2);
     pro.finishWork("Mid");
     pro.beginWork("Bot", 10, 10);
-    pro.doneWork("Bot", 5);
-    pro.doneWork("Bot", 5);
+    pro.advanceWork("Bot", 5);
+    pro.advanceWork("Bot", 5);
     pro.finishWork("Top");
   }
 }

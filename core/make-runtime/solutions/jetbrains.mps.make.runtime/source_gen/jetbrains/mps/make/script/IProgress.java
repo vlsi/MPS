@@ -6,7 +6,8 @@ package jetbrains.mps.make.script;
 public interface IProgress {
   public int workLeft();
   public void beginWork(String name, int estimate, int ofTotal);
-  public void doneWork(String name, int done);
+  public void advanceWork(String name, int done);
+  public void advanceWork(String name, String comment, int done);
   public void finishWork(String name);
   public static class Stub implements IProgress {
     public Stub() {
@@ -15,7 +16,10 @@ public interface IProgress {
     public void finishWork(String name) {
     }
 
-    public void doneWork(String name, int done) {
+    public void advanceWork(String name, int done) {
+    }
+
+    public void advanceWork(String name, String comment, int done) {
     }
 
     public void beginWork(String name, int estimate, int ofTotal) {

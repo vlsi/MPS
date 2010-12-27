@@ -56,10 +56,10 @@ public class Worker_Facet implements IFacet {
           switch (0) {
             case 0:
               monitor.currentProgress().beginWork("WORK", 100, monitor.currentProgress().workLeft());
-              monitor.currentProgress().doneWork("WORK", 50);
+              monitor.currentProgress().advanceWork("WORK", 50);
               monitor.currentProgress().beginWork("WORKWORK", 10, monitor.currentProgress().workLeft() / 2);
-              monitor.currentProgress().doneWork("WORKWORK", 5);
-              monitor.currentProgress().doneWork("WORKWORK", 5);
+              monitor.currentProgress().advanceWork("WORKWORK", 5);
+              monitor.currentProgress().advanceWork("WORKWORK", 5);
               monitor.currentProgress().finishWork("WORKWORK");
               monitor.currentProgress().finishWork("WORK");
             default:

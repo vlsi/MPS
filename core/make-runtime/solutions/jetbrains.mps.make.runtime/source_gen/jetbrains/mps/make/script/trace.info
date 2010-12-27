@@ -270,48 +270,61 @@
   <root nodeId="7797884084018559880">
     <nodeInfo nodeId="7797884084018559916" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="IProgress.java" startLine="6" startPosition="28" endLine="7" endPosition="24" />
     <nodeInfo nodeId="7797884084018559904" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="IProgress.java" startLine="7" startPosition="24" endLine="8" endPosition="64" />
-    <nodeInfo nodeId="7797884084018559887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="IProgress.java" startLine="8" startPosition="64" endLine="9" endPosition="46" />
-    <nodeInfo nodeId="7797884084018559893" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="IProgress.java" startLine="9" startPosition="46" endLine="10" endPosition="38" />
-    <nodeInfo nodeId="9000373783400679513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IProgress.java" startLine="24" startPosition="27" endLine="25" endPosition="15" />
-    <nodeInfo nodeId="9000373783400679480" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" fileName="IProgress.java" startLine="11" startPosition="49" endLine="13" endPosition="5" />
-    <nodeInfo nodeId="9000373783400679485" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="IProgress.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <nodeInfo nodeId="9000373783400679491" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="IProgress.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <nodeInfo nodeId="9000373783400679499" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="IProgress.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <nodeInfo nodeId="9000373783400679509" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="IProgress.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="9000373783400679483" fileName="IProgress.java" startLine="12" startPosition="19" endLine="12" endPosition="19" />
-    <scopeInfo nodeId="9000373783400679490" fileName="IProgress.java" startLine="15" startPosition="41" endLine="15" endPosition="41" />
-    <scopeInfo nodeId="9000373783400679498" fileName="IProgress.java" startLine="18" startPosition="49" endLine="18" endPosition="49" />
-    <scopeInfo nodeId="9000373783400679508" fileName="IProgress.java" startLine="21" startPosition="67" endLine="21" endPosition="67" />
+    <nodeInfo nodeId="7797884084018559887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;I)V" fileName="IProgress.java" startLine="8" startPosition="64" endLine="9" endPosition="49" />
+    <nodeInfo nodeId="8530713690800023560" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;Ljava/lang/String;I)V" fileName="IProgress.java" startLine="9" startPosition="49" endLine="10" endPosition="65" />
+    <nodeInfo nodeId="7797884084018559893" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="IProgress.java" startLine="10" startPosition="65" endLine="11" endPosition="38" />
+    <nodeInfo nodeId="9000373783400679513" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IProgress.java" startLine="28" startPosition="27" endLine="29" endPosition="15" />
+    <nodeInfo nodeId="9000373783400679480" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" fileName="IProgress.java" startLine="12" startPosition="49" endLine="14" endPosition="5" />
+    <nodeInfo nodeId="9000373783400679485" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="IProgress.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <nodeInfo nodeId="9000373783400679491" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;I)V" fileName="IProgress.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <nodeInfo nodeId="8530713690800023571" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;Ljava/lang/String;I)V" fileName="IProgress.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="9000373783400679499" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="IProgress.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="9000373783400679509" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="IProgress.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="9000373783400679483" fileName="IProgress.java" startLine="13" startPosition="19" endLine="13" endPosition="19" />
+    <scopeInfo nodeId="9000373783400679490" fileName="IProgress.java" startLine="16" startPosition="41" endLine="16" endPosition="41" />
+    <scopeInfo nodeId="9000373783400679498" fileName="IProgress.java" startLine="19" startPosition="52" endLine="19" endPosition="52" />
+    <scopeInfo nodeId="8530713690800023580" fileName="IProgress.java" startLine="22" startPosition="68" endLine="22" endPosition="68" />
+    <scopeInfo nodeId="9000373783400679508" fileName="IProgress.java" startLine="25" startPosition="67" endLine="25" endPosition="67" />
     <scopeInfo nodeId="7797884084018559916" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="IProgress.java" startLine="6" startPosition="28" endLine="7" endPosition="24" />
     <scopeInfo nodeId="7797884084018559904" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="IProgress.java" startLine="7" startPosition="24" endLine="8" endPosition="64">
       <varInfo nodeId="7797884084018581882" varName="ofTotal" />
       <varInfo nodeId="7797884084018559908" varName="name" />
       <varInfo nodeId="7797884084018559910" varName="estimate" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018559887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="IProgress.java" startLine="8" startPosition="64" endLine="9" endPosition="46">
+    <scopeInfo nodeId="7797884084018559887" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;I)V" fileName="IProgress.java" startLine="8" startPosition="64" endLine="9" endPosition="49">
       <varInfo nodeId="7797884084018559888" varName="done" />
       <varInfo nodeId="7797884084018582129" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7797884084018559893" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="IProgress.java" startLine="9" startPosition="46" endLine="10" endPosition="38">
+    <scopeInfo nodeId="8530713690800023560" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;Ljava/lang/String;I)V" fileName="IProgress.java" startLine="9" startPosition="49" endLine="10" endPosition="65">
+      <varInfo nodeId="8530713690800023563" varName="done" />
+      <varInfo nodeId="8530713690800023561" varName="name" />
+      <varInfo nodeId="8530713690800023568" varName="comment" />
+    </scopeInfo>
+    <scopeInfo nodeId="7797884084018559893" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="IProgress.java" startLine="10" startPosition="65" endLine="11" endPosition="38">
       <varInfo nodeId="7797884084018559923" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="9000373783400679512" fileName="IProgress.java" startLine="24" startPosition="27" endLine="25" endPosition="15" />
-    <scopeInfo nodeId="9000373783400679480" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" fileName="IProgress.java" startLine="11" startPosition="49" endLine="13" endPosition="5" />
-    <scopeInfo nodeId="9000373783400679485" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="IProgress.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="9000373783400679512" fileName="IProgress.java" startLine="28" startPosition="27" endLine="29" endPosition="15" />
+    <scopeInfo nodeId="9000373783400679480" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#()V" fileName="IProgress.java" startLine="12" startPosition="49" endLine="14" endPosition="5" />
+    <scopeInfo nodeId="9000373783400679485" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="finishWork#(Ljava/lang/String;)V" fileName="IProgress.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="9000373783400679488" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="9000373783400679491" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doneWork#(Ljava/lang/String;I)V" fileName="IProgress.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="9000373783400679491" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;I)V" fileName="IProgress.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="9000373783400679494" varName="done" />
       <varInfo nodeId="9000373783400679492" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="9000373783400679499" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="IProgress.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="8530713690800023571" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advanceWork#(Ljava/lang/String;Ljava/lang/String;I)V" fileName="IProgress.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="8530713690800023576" varName="done" />
+      <varInfo nodeId="8530713690800023572" varName="name" />
+      <varInfo nodeId="8530713690800023574" varName="comment" />
+    </scopeInfo>
+    <scopeInfo nodeId="9000373783400679499" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beginWork#(Ljava/lang/String;II)V" fileName="IProgress.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="9000373783400679506" varName="ofTotal" />
       <varInfo nodeId="9000373783400679502" varName="name" />
       <varInfo nodeId="9000373783400679504" varName="estimate" />
     </scopeInfo>
-    <scopeInfo nodeId="9000373783400679509" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="IProgress.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <unitInfo nodeId="9000373783400679478" fileName="IProgress.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.make.script.IProgress$Stub" />
-    <unitInfo nodeId="7797884084018559880" fileName="IProgress.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.script.IProgress" />
+    <scopeInfo nodeId="9000373783400679509" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workLeft#()I" fileName="IProgress.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <unitInfo nodeId="9000373783400679478" fileName="IProgress.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.script.IProgress$Stub" />
+    <unitInfo nodeId="7797884084018559880" fileName="IProgress.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.script.IProgress" />
   </root>
   <root nodeId="8339029394034910088">
     <nodeInfo nodeId="8339029394035014642" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="relayQuery#(Ljetbrains/mps/make/script/IQuery;)null" fileName="IConfigMonitor.java" startLine="6" startPosition="33" endLine="7" endPosition="59" />

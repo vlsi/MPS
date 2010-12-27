@@ -43,7 +43,7 @@ public abstract class AbstractProgressStrategy {
     return current;
   }
 
-  private static boolean eq_idfyc1_a0a0b0k0(Object a, Object b) {
+  private static boolean eq_idfyc1_a0a0b0m0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -53,6 +53,7 @@ public abstract class AbstractProgressStrategy {
   public class Work implements IProgress {
     private AbstractProgressStrategy.Work prev;
     private String name;
+    private String comment;
     private int estimate;
     private int total;
     private int done = 0;
@@ -74,11 +75,15 @@ public abstract class AbstractProgressStrategy {
       begunWork(pushProgress(name, estimate, ofTotal));
     }
 
-    public void doneWork(String name, int done) {
+    public void advanceWork(String name, int done) {
+      advanceWork(name, null, done);
+    }
+
+    public void advanceWork(String name, String comment, int done) {
       if (done < 0) {
         throw new IllegalArgumentException("invalid done value");
       }
-      matchingOrTotal(name).primDone(done);
+      matchingOrTotal(name).primDone(done, comment);
     }
 
     public void finishWork(String name) {
@@ -109,6 +114,10 @@ public abstract class AbstractProgressStrategy {
       return ((double) Math.min(this.estimate, this.done)) / this.estimate;
     }
 
+    public String comment() {
+      return comment;
+    }
+
     private List<String> namePath() {
       List<String> names = ListSequence.fromList(new ArrayList<String>());
       AbstractProgressStrategy.Work wrk = this;
@@ -119,20 +128,21 @@ public abstract class AbstractProgressStrategy {
       return names;
     }
 
-    private void primDone(int primDone) {
+    private void primDone(int primDone, String comment) {
+      this.comment = comment;
       if (primDone > 0) {
         this.done += primDone;
         if (prev != null) {
-          prev.primDone((int) Math.floor(((double) Math.min(primDone, estimate)) * total / estimate));
+          prev.primDone((int) Math.floor(((double) Math.min(primDone, estimate)) * total / estimate), null);
         }
-        advancedWork(this);
       }
+      advancedWork(this);
     }
 
     private AbstractProgressStrategy.Work matchingOrTotal(String name) {
       AbstractProgressStrategy.Work wrk = this;
       while (wrk.prev != null) {
-        if (eq_idfyc1_a0a0b0k0(wrk.name, name)) {
+        if (eq_idfyc1_a0a0b0m0(wrk.name, name)) {
           return wrk;
         }
         wrk = wrk.prev;
@@ -153,8 +163,12 @@ public abstract class AbstractProgressStrategy {
       lastProgress().finishWork(name);
     }
 
-    public void doneWork(String name, int done) {
-      lastProgress().doneWork(name, done);
+    public void advanceWork(String name, int done) {
+      lastProgress().advanceWork(name, done);
+    }
+
+    public void advanceWork(String name, String comment, int done) {
+      lastProgress().advanceWork(name, done);
     }
 
     public int workLeft() {

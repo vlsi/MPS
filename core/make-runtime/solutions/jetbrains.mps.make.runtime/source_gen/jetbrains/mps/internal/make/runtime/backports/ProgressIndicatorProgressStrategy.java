@@ -23,11 +23,15 @@ public class ProgressIndicatorProgressStrategy extends AbstractProgressStrategy 
 
   protected void begunWork(AbstractProgressStrategy.Work wrk) {
     pind.setText(wrk.name());
-    pind.setText2(wrk.namePrefix());
+    pind.setText2("");
   }
 
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {
     pind.setFraction(wrk.doneRatio());
+    pind.setText2((wrk.comment() != null ?
+      wrk.comment() :
+      ""
+    ));
   }
 
   protected void finishedWork(AbstractProgressStrategy.Work wrk) {

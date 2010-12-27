@@ -33,7 +33,7 @@ public class JobMonitorProgressIndicator extends ProgressIndicatorAdapter {
   @Override
   public void setFraction(double d) {
     if (!(workStack.isEmpty())) {
-      jm.currentProgress().doneWork(workStack.peek(), (int) (WORK_AMOUNT * d));
+      jm.currentProgress().advanceWork(workStack.peek(), (int) (WORK_AMOUNT * d));
     }
   }
 
