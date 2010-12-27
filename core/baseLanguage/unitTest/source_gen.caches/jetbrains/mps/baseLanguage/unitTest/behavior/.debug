@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TestMethod_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_Behavior" />
+  <unitInfo fileName="ITestable_Behavior.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior" />
+  <unitInfo fileName="ITestMethod_Behavior.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior" />
+  <unitInfo fileName="BTestCase_Behavior.java" startLine="18" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_Behavior" />
+  <unitInfo fileName="ITestCase_Behavior.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior" />
   <root nodeId="1213877238815">
     <nodeInfo nodeId="1216135819363" fileName="TestMethod_Behavior.java" startLine="13" startPosition="73" endLine="14" endPosition="28" />
     <nodeInfo nodeId="1216136637489" fileName="TestMethod_Behavior.java" startLine="18" startPosition="74" endLine="19" endPosition="28" />
@@ -64,8 +69,8 @@
     <unitInfo nodeId="7851590951084442883" fileName="BTestCase_Behavior.java" startLine="31" startPosition="148" endLine="39" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.IWhereFilter$anonymous" />
   </root>
   <root nodeId="1215620458415">
-    <scopeInfo nodeId="1215620458417" fileName="ITestable_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1216045139517" fileName="ITestable_Behavior.java" startLine="18" startPosition="94" endLine="19" endPosition="35" />
+    <scopeInfo nodeId="1215620458417" fileName="ITestable_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1216045139517" fileName="ITestable_Behavior.java" startLine="20" startPosition="94" endLine="21" endPosition="35" />
   </root>
   <root nodeId="1216130717292">
     <nodeInfo nodeId="1229281657446" fileName="ITestCase_Behavior.java" startLine="30" startPosition="86" endLine="31" endPosition="71" />
