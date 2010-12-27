@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.DumbAware;
+import gnu.trove.THashMap;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -26,6 +27,7 @@ import javax.swing.Icon;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public abstract class BaseAction extends AnAction implements DumbAware {
@@ -110,25 +112,34 @@ public abstract class BaseAction extends AnAction implements DumbAware {
           disable(e.getPresentation());
           return;
         }
+        THashMap<String, Object> params = new THashMap<String, Object>();
+        if (!collectActionData(e, params)) {
+          disable(e.getPresentation());
+          return;
+        }
         doUpdate(e);
+        doUpdate(e, params);
       }
     });
   }
 
   public final void actionPerformed(final AnActionEvent e) {
     try {
+      final THashMap<String, Object> params = new THashMap<String, Object>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          collectActionData(e);
+          collectActionData(e, params);
         }
       });
       final ModelAccess access = ModelAccess.instance();
       if (myExecuteOutsideCommand) {
         doExecute(e);
+        doExecute(e, params);
       } else {
         access.runWriteActionInCommand(new Runnable() {
           public void run() {
             doExecute(e);
+            doExecute(e, params);
           }
         });
       }
@@ -172,7 +183,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
    * @param e
    * @return true if all action parameters collected, false otherwise
    */
-  protected boolean collectActionData(AnActionEvent e) {
+  protected boolean collectActionData(AnActionEvent e, Map<String, Object> params) {
     return true;
   }
 
@@ -186,7 +197,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     return "";
   }
 
-  protected void doUpdate(AnActionEvent e) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> params) {
     e.getPresentation().setVisible(true);
     e.getPresentation().setEnabled(true);
   }
@@ -195,5 +206,23 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     return getClass().getName();
   }
 
-  protected abstract void doExecute(AnActionEvent e);
+  protected void doExecute(AnActionEvent e, Map<String, Object> params){}
+
+//-----------------deprecated
+
+  @Deprecated
+  protected void doExecute(AnActionEvent e){}
+
+  @Deprecated
+  protected boolean collectActionData(AnActionEvent e) {
+    return true;
+  }
+
+  @Deprecated
+  protected void doUpdate(AnActionEvent e) {
+    e.getPresentation().setVisible(true);
+    e.getPresentation().setEnabled(true);
+  }
+
+
 }
