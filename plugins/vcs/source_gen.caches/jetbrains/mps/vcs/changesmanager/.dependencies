@@ -195,22 +195,6 @@
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.ChangeListener" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder" file="LongestCommonSubsequenceFinder.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.MPSTreeUtils" file="MPSTreeUtils.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.PropertiesTreeNode" />
@@ -233,7 +217,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddRootChange" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.LongestCommonSubsequenceFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.AttributesRolesUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -290,6 +273,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SModelUtils" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.util.LongestCommonSubsequenceFinder" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />

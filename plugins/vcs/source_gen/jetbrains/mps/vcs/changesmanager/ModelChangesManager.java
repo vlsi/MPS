@@ -59,6 +59,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.oldchanges.SubstituteNodeChange;
 import jetbrains.mps.smodel.CopyUtil;
