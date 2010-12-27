@@ -127,5 +127,17 @@ public abstract class BaseKeymapChanges {
 
   protected static abstract class ComplexShortcut {
     public abstract List<Shortcut> getShortcutsFor(Object... params);
+
+    public static class ParameterizedSimpleShortcut extends ComplexShortcut {
+      private final List<Shortcut> myShortcut;
+
+      public ParameterizedSimpleShortcut(Shortcut... shortcut) {
+        myShortcut = Arrays.asList(shortcut);
+      }
+
+      public List<Shortcut> getShortcutsFor(Object... params) {
+        return myShortcut;
+      }
+    }
   }
 }
