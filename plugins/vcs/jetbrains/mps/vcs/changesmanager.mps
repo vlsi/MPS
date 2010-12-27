@@ -84,7 +84,6 @@
   <import index="uigu" modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <import index="lcr" modelUID="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)" version="-1" implicit="yes" />
-  <import index="1bso" modelUID="r:e7eb8d2d-304d-447e-8625-ba74a8b15edf(jetbrains.mps.vcs.ui)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="23553604208246606">
       <property name="name" nameId="tpck.1169194664001" value="ChangesManager" />
@@ -6860,14 +6859,23 @@
                 </node>
               </node>
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1998279847126777990">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="unno.4972886494893373738" resolveInfo="findDifferentSubsequences" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="unno.4972886494893373483" resolveInfo="LongestCommonSubsequenceFinder" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1998279847126777991">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7654328074273895361" resolveInfo="baseChildrenIds" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4972886494893404990">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4972886494893402405">
+                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4972886494893402407">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="unno.4972886494893373484" resolveInfo="LongestCommonSubsequenceFinder" />
+                  <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4972886494893404985">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~SNodeId" resolveInfo="SNodeId" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4972886494893404987">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7654328074273895361" resolveInfo="baseChildrenIds" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4972886494893404989">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6552041766050874826" resolveInfo="currentChildrenIds" />
+                  </node>
+                </node>
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6552041766050874841">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6552041766050874826" resolveInfo="currentChildrenIds" />
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4972886494893404994">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="unno.4972886494893402275" resolveInfo="getDifferentSubsequences" />
               </node>
             </node>
           </node>

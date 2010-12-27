@@ -749,7 +749,7 @@ __switch__:
     // Step 2: find longest common subsequence of children 
     List<SNodeId> currentChildrenIds = SModelUtils.getNodeIds(currentChildren);
     List<SNodeId> baseChildrenIds = SModelUtils.getNodeIds(check_fh1co9_a0a21a93(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
-    List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = LongestCommonSubsequenceFinder.findDifferentSubsequences(baseChildrenIds, currentChildrenIds);
+    List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = new LongestCommonSubsequenceFinder<SNodeId>(baseChildrenIds, currentChildrenIds).getDifferentSubsequences();
 
     // Step 3: add new changes 
     List<Change> changesToAdd = ListSequence.fromList(new ArrayList<Change>());

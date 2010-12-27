@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
