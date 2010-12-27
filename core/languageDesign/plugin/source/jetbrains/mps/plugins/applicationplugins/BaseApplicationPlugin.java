@@ -37,26 +37,14 @@ public abstract class BaseApplicationPlugin {
   private List<BaseGroup> myGroups = new ArrayList<BaseGroup>();
   private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<BaseKeymapChanges>();
 
+  //----------plugin id------------
+
+  protected abstract PluginId getId();
+
+  //------actions and groups-------
+
   public void createGroups() {
 
-  }
-
-  public void addParameterizedAction(GeneratedAction action, Object... params) {
-    addAction(action);
-
-    String shortId = action.getClass().getName();
-    for (BaseKeymapChanges kc : myKeymapChanges) {
-      kc.parameterizedActionCreated(shortId, action.getActionId(), params);
-    }
-  }
-
-  protected void addAction(GeneratedAction action) {
-    myActionManager.registerAction(action.getActionId(), action, getId());
-  }
-
-  protected void addGroup(BaseGroup group) {
-    myActionManager.registerAction(group.getId(), group, getId());
-    myGroups.add(group);
   }
 
   public final void adjustGroups() {
@@ -70,42 +58,6 @@ public abstract class BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
 
-  }
-
-  public final void createCustomParts() {
-    myCustomParts = initCustomParts();
-  }
-
-  protected List<BaseCustomApplicationPlugin> initCustomParts() {
-    return new ArrayList<BaseCustomApplicationPlugin>();
-  }
-
-  public void createKeymaps() {
-    myKeymapChanges = initKeymaps();
-    for (BaseKeymapChanges change : myKeymapChanges) {
-      change.init();
-    }
-  }
-
-  protected List<BaseKeymapChanges> initKeymaps() {
-    return new ArrayList<BaseKeymapChanges>();
-  }
-
-  public final void dispose() {
-    //groups are disposed in ActionFactory
-    //keymaps are unregistered in ActionFactory
-    for (BaseCustomApplicationPlugin part : myCustomParts) {
-      part.dispose();
-    }
-
-    for (BaseKeymapChanges change : myKeymapChanges) {
-      change.dispose();
-    }
-    myKeymapChanges.clear();
-
-    MPSActions.getInstance().unregisterGroups(myGroups);
-    myGroups.clear();
-    MPSActions.getInstance().unregisterActions(getId());
   }
 
   protected void insertInterfaceGroupIntoAnother(String whatId, String toId, String labelName) {
@@ -127,5 +79,63 @@ public abstract class BaseApplicationPlugin {
     //todo with this method, we can use Idea's ActionStubs
   }
 
-  protected abstract PluginId getId();
+  public void addParameterizedAction(GeneratedAction action, Object... params) {
+    addAction(action);
+
+    String shortId = action.getClass().getName();
+    for (BaseKeymapChanges kc : myKeymapChanges) {
+      kc.parameterizedActionCreated(shortId, action.getActionId(), params);
+    }
+  }
+
+  protected void addAction(GeneratedAction action) {
+    myActionManager.registerAction(action.getActionId(), action, getId());
+  }
+
+  protected void addGroup(BaseGroup group) {
+    myActionManager.registerAction(group.getId(), group, getId());
+    myGroups.add(group);
+  }
+
+  //----------custom parts----------
+
+  public final void createCustomParts() {
+    myCustomParts = initCustomParts();
+  }
+
+  protected List<BaseCustomApplicationPlugin> initCustomParts() {
+    return new ArrayList<BaseCustomApplicationPlugin>();
+  }
+
+  //-------------keymaps------------
+
+  public void createKeymaps() {
+    myKeymapChanges = initKeymaps();
+    for (BaseKeymapChanges change : myKeymapChanges) {
+      change.init();
+    }
+  }
+
+  protected List<BaseKeymapChanges> initKeymaps() {
+    return new ArrayList<BaseKeymapChanges>();
+  }
+
+  //-------------common-------------
+
+  public final void dispose() {
+    //groups are disposed in ActionFactory
+    //keymaps are unregistered in ActionFactory
+    for (BaseCustomApplicationPlugin part : myCustomParts) {
+      part.dispose();
+    }
+
+    for (BaseKeymapChanges change : myKeymapChanges) {
+      change.dispose();
+    }
+    myKeymapChanges.clear();
+
+    MPSActions.getInstance().unregisterGroups(myGroups);
+    myGroups.clear();
+    MPSActions.getInstance().unregisterActions(getId());
+  }
 }
