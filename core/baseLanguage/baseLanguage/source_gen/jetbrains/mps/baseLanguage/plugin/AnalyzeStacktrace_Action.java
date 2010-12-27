@@ -25,11 +25,6 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     this.setMnemonic("s".charAt(0));
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());

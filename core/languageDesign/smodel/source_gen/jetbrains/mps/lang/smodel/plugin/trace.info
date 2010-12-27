@@ -12,46 +12,46 @@
   <unitInfo fileName="LanguageInternalAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.LanguageInternalAddition_ActionGroup" />
   <unitInfo fileName="Smodel_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.Smodel_ApplicationPlugin" />
   <unitInfo fileName="SNodeViewer_WrapperFactory.java" startLine="46" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.SNodeViewer_WrapperFactory$SNodeViewerWrapper" />
+  <unitInfo fileName="CheckLangForJavaStubModels_Action.java" startLine="29" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.CheckLangForJavaStubModels_Action" />
   <unitInfo fileName="SNodeViewer_WrapperFactory.java" startLine="22" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.SNodeViewer_WrapperFactory" />
-  <unitInfo fileName="CheckLangForJavaStubModels_Action.java" startLine="29" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.CheckLangForJavaStubModels_Action" />
   <unitInfo fileName="SNodeWatchables.java" startLine="9" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.smodel.plugin.SNodeWatchables" />
   <root nodeId="1240664643338">
-    <nodeInfo nodeId="1240664677518" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="86" />
-    <nodeInfo nodeId="1240664728640" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="94" />
-    <nodeInfo nodeId="1240669806599" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="77" startPosition="94" endLine="78" endPosition="78" />
-    <nodeInfo nodeId="1240669827312" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="78" startPosition="78" endLine="79" endPosition="79" />
-    <nodeInfo nodeId="1240668482632" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="82" startPosition="103" endLine="83" endPosition="147" />
-    <nodeInfo nodeId="1240669898377" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="83" startPosition="147" endLine="84" endPosition="66" />
-    <nodeInfo nodeId="1240669872142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="85" startPosition="99" endLine="86" endPosition="72" />
-    <nodeInfo nodeId="1240669908684" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="87" startPosition="20" endLine="88" endPosition="73" />
-    <nodeInfo nodeId="1240669985024" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="92" startPosition="7" endLine="93" endPosition="31" />
-    <nodeInfo nodeId="1240670015790" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="94" startPosition="68" endLine="95" endPosition="48" />
-    <nodeInfo nodeId="1240670030361" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="96" startPosition="7" endLine="97" endPosition="32" />
-    <nodeInfo nodeId="1240670025367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="98" startPosition="69" endLine="99" endPosition="49" />
-    <nodeInfo nodeId="1240665015108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="107" startPosition="9" endLine="108" endPosition="98" />
-    <nodeInfo nodeId="1240668510009" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="87" startPosition="18" endLine="89" endPosition="13" />
-    <nodeInfo nodeId="1240669991829" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="93" startPosition="31" endLine="96" endPosition="7" />
-    <nodeInfo nodeId="1240670025363" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="97" startPosition="32" endLine="100" endPosition="7" />
-    <nodeInfo nodeId="1240668300125" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="84" startPosition="66" endLine="89" endPosition="13" />
-    <nodeInfo nodeId="1240668546951" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="100" startPosition="7" endLine="107" endPosition="9" />
-    <nodeInfo nodeId="1240664957995" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="81" startPosition="116" endLine="90" endPosition="11" />
-    <nodeInfo nodeId="1240664759215" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="101" endLine="91" endPosition="9" />
-    <nodeInfo nodeId="1240664734869" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="79" startPosition="79" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="1240664671667" fileName="CheckLangForJavaStubModels_Action.java" startLine="44" startPosition="87" endLine="45" endPosition="86" />
-    <scopeInfo nodeId="1240668300126" fileName="CheckLangForJavaStubModels_Action.java" startLine="85" startPosition="99" endLine="86" endPosition="72" />
-    <scopeInfo nodeId="1240668510010" fileName="CheckLangForJavaStubModels_Action.java" startLine="87" startPosition="20" endLine="88" endPosition="73" />
-    <scopeInfo nodeId="1240669991832" fileName="CheckLangForJavaStubModels_Action.java" startLine="94" startPosition="68" endLine="95" endPosition="48" />
-    <scopeInfo nodeId="1240670025366" fileName="CheckLangForJavaStubModels_Action.java" startLine="98" startPosition="69" endLine="99" endPosition="49" />
-    <scopeInfo nodeId="1240669991829" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="93" startPosition="31" endLine="96" endPosition="7" />
-    <scopeInfo nodeId="1240670025363" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="97" startPosition="32" endLine="100" endPosition="7" />
-    <scopeInfo nodeId="1240664957997" fileName="CheckLangForJavaStubModels_Action.java" startLine="82" startPosition="103" endLine="89" endPosition="13">
+    <nodeInfo nodeId="1240664677518" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="39" startPosition="87" endLine="40" endPosition="86" />
+    <nodeInfo nodeId="1240664728640" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="94" />
+    <nodeInfo nodeId="1240669806599" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="72" startPosition="94" endLine="73" endPosition="78" />
+    <nodeInfo nodeId="1240669827312" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="73" startPosition="78" endLine="74" endPosition="79" />
+    <nodeInfo nodeId="1240668482632" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="77" startPosition="103" endLine="78" endPosition="147" />
+    <nodeInfo nodeId="1240669898377" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="78" startPosition="147" endLine="79" endPosition="66" />
+    <nodeInfo nodeId="1240669872142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="99" endLine="81" endPosition="72" />
+    <nodeInfo nodeId="1240669908684" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="82" startPosition="20" endLine="83" endPosition="73" />
+    <nodeInfo nodeId="1240669985024" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="87" startPosition="7" endLine="88" endPosition="31" />
+    <nodeInfo nodeId="1240670015790" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="89" startPosition="68" endLine="90" endPosition="48" />
+    <nodeInfo nodeId="1240670030361" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="91" startPosition="7" endLine="92" endPosition="32" />
+    <nodeInfo nodeId="1240670025367" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="49" />
+    <nodeInfo nodeId="1240665015108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="102" startPosition="9" endLine="103" endPosition="98" />
+    <nodeInfo nodeId="1240668510009" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="82" startPosition="18" endLine="84" endPosition="13" />
+    <nodeInfo nodeId="1240669991829" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="88" startPosition="31" endLine="91" endPosition="7" />
+    <nodeInfo nodeId="1240670025363" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="92" startPosition="32" endLine="95" endPosition="7" />
+    <nodeInfo nodeId="1240668300125" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="79" startPosition="66" endLine="84" endPosition="13" />
+    <nodeInfo nodeId="1240668546951" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="95" startPosition="7" endLine="102" endPosition="9" />
+    <nodeInfo nodeId="1240664957995" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="76" startPosition="116" endLine="85" endPosition="11" />
+    <nodeInfo nodeId="1240664759215" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="75" startPosition="101" endLine="86" endPosition="9" />
+    <nodeInfo nodeId="1240664734869" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="74" startPosition="79" endLine="87" endPosition="7" />
+    <scopeInfo nodeId="1240664671667" fileName="CheckLangForJavaStubModels_Action.java" startLine="39" startPosition="87" endLine="40" endPosition="86" />
+    <scopeInfo nodeId="1240668300126" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="99" endLine="81" endPosition="72" />
+    <scopeInfo nodeId="1240668510010" fileName="CheckLangForJavaStubModels_Action.java" startLine="82" startPosition="20" endLine="83" endPosition="73" />
+    <scopeInfo nodeId="1240669991832" fileName="CheckLangForJavaStubModels_Action.java" startLine="89" startPosition="68" endLine="90" endPosition="48" />
+    <scopeInfo nodeId="1240670025366" fileName="CheckLangForJavaStubModels_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="49" />
+    <scopeInfo nodeId="1240669991829" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="88" startPosition="31" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="1240670025363" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="92" startPosition="32" endLine="95" endPosition="7" />
+    <scopeInfo nodeId="1240664957997" fileName="CheckLangForJavaStubModels_Action.java" startLine="77" startPosition="103" endLine="84" endPosition="13">
       <varInfo nodeId="1240669898378" varName="modelName" />
       <varInfo nodeId="1240668482633" varName="langModelForStub" />
     </scopeInfo>
-    <scopeInfo nodeId="1240664759218" fileName="CheckLangForJavaStubModels_Action.java" startLine="81" startPosition="116" endLine="90" endPosition="11" />
-    <scopeInfo nodeId="1240664734918" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="101" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="1240664759215" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="101" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="1240664734869" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="79" startPosition="79" endLine="92" endPosition="7" />
+    <scopeInfo nodeId="1240664759218" fileName="CheckLangForJavaStubModels_Action.java" startLine="76" startPosition="116" endLine="85" endPosition="11" />
+    <scopeInfo nodeId="1240664734918" fileName="CheckLangForJavaStubModels_Action.java" startLine="75" startPosition="101" endLine="86" endPosition="9" />
+    <scopeInfo nodeId="1240664759215" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="75" startPosition="101" endLine="86" endPosition="9" />
+    <scopeInfo nodeId="1240664734869" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CheckLangForJavaStubModels_Action.java" startLine="74" startPosition="79" endLine="87" endPosition="7" />
   </root>
   <root nodeId="1240665064999">
     <nodeInfo nodeId="1240665075580" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LanguageInternalAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="128" />

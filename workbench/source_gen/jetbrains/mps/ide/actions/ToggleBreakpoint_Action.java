@@ -25,11 +25,6 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setEnabled(((Project) MapSequence.fromMap(_params).get("project")).getComponent(BreakpointManagerComponent.class).isDebuggable(((EditorCell) MapSequence.fromMap(_params).get("selectedCell"))));

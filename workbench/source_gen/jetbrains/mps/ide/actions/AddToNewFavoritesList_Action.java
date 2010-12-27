@@ -32,11 +32,6 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       if (FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")))) {

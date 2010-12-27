@@ -5,10 +5,10 @@
   <unitInfo fileName="FindInstancesByConditionGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup" />
   <unitInfo fileName="QuickQueryLanguage_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ApplicationPlugin" />
   <unitInfo fileName="RunReplacement_Tool.java" startLine="21" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" />
-  <unitInfo fileName="ReplacementQueryAction_Action.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action" />
-  <unitInfo fileName="FindInstancesByCondition_Action.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action" />
-  <unitInfo fileName="ReplacementQueryActionWithNode_Action.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action" />
-  <unitInfo fileName="FindInstancesByConditionAndNode_Action.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action" />
+  <unitInfo fileName="ReplacementQueryAction_Action.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action" />
+  <unitInfo fileName="FindInstancesByCondition_Action.java" startLine="17" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action" />
+  <unitInfo fileName="ReplacementQueryActionWithNode_Action.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action" />
+  <unitInfo fileName="FindInstancesByConditionAndNode_Action.java" startLine="19" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action" />
   <root nodeId="1219056224639">
     <nodeInfo nodeId="1220257798123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATED_QUERY_NAME" fileName="QueryExecutor.java" startLine="6" startPosition="28" endLine="7" endPosition="64" />
     <nodeInfo nodeId="1235926499683" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QueryExecutor#()V" fileName="QueryExecutor.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
@@ -17,18 +17,18 @@
     <unitInfo nodeId="1219056224639" fileName="QueryExecutor.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QueryExecutor" />
   </root>
   <root nodeId="1219235610174">
-    <nodeInfo nodeId="1219326492962" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FindInstancesByCondition_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="155" />
-    <nodeInfo nodeId="1219673140961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FindInstancesByCondition_Action.java" startLine="58" startPosition="155" endLine="59" endPosition="142" />
-    <nodeInfo nodeId="1219673140981" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByCondition_Action.java" startLine="59" startPosition="142" endLine="60" endPosition="26" />
+    <nodeInfo nodeId="1219326492962" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FindInstancesByCondition_Action.java" startLine="52" startPosition="9" endLine="53" endPosition="155" />
+    <nodeInfo nodeId="1219673140961" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FindInstancesByCondition_Action.java" startLine="53" startPosition="155" endLine="54" endPosition="142" />
+    <nodeInfo nodeId="1219673140981" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByCondition_Action.java" startLine="54" startPosition="142" endLine="55" endPosition="26" />
   </root>
   <root nodeId="1219235830420">
     <nodeInfo nodeId="1219235854657" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByConditionGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="138" />
     <nodeInfo nodeId="1219746852423" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByConditionGroup_ActionGroup.java" startLine="17" startPosition="138" endLine="18" endPosition="136" />
   </root>
   <root nodeId="1219321230528">
-    <nodeInfo nodeId="1219418619748" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FindInstancesByConditionAndNode_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="227" />
-    <nodeInfo nodeId="1219673014053" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByConditionAndNode_Action.java" startLine="72" startPosition="227" endLine="73" endPosition="91" />
-    <nodeInfo nodeId="1219418619756" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByConditionAndNode_Action.java" startLine="73" startPosition="91" endLine="74" endPosition="30" />
+    <nodeInfo nodeId="1219418619748" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="FindInstancesByConditionAndNode_Action.java" startLine="66" startPosition="9" endLine="67" endPosition="227" />
+    <nodeInfo nodeId="1219673014053" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByConditionAndNode_Action.java" startLine="67" startPosition="227" endLine="68" endPosition="91" />
+    <nodeInfo nodeId="1219418619756" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByConditionAndNode_Action.java" startLine="68" startPosition="91" endLine="69" endPosition="30" />
   </root>
   <root nodeId="1219322457890">
     <nodeInfo nodeId="1219322565280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="FindInstancesByConditionAndNodeGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="152" />
@@ -218,8 +218,8 @@
     <unitInfo nodeId="1219405656218" fileName="FindInstancesDialog.java" startLine="38" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesDialog" />
   </root>
   <root nodeId="1219746306448">
-    <nodeInfo nodeId="1219746611183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplacementQueryAction_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="211" />
-    <nodeInfo nodeId="1219746626710" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplacementQueryAction_Action.java" startLine="58" startPosition="211" endLine="59" endPosition="26" />
+    <nodeInfo nodeId="1219746611183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplacementQueryAction_Action.java" startLine="52" startPosition="9" endLine="53" endPosition="211" />
+    <nodeInfo nodeId="1219746626710" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplacementQueryAction_Action.java" startLine="53" startPosition="211" endLine="54" endPosition="26" />
   </root>
   <root nodeId="1219746404210">
     <nodeInfo nodeId="1219746458485" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditor" fileName="ReplaceDialog.java" startLine="35" startPosition="47" endLine="36" endPosition="36" />
@@ -353,9 +353,9 @@
     <unitInfo nodeId="1219746404210" fileName="ReplaceDialog.java" startLine="35" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplaceDialog" />
   </root>
   <root nodeId="1219749269092">
-    <nodeInfo nodeId="1219749451844" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplacementQueryActionWithNode_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="211" />
-    <nodeInfo nodeId="1219749481595" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplacementQueryActionWithNode_Action.java" startLine="72" startPosition="211" endLine="73" endPosition="87" />
-    <nodeInfo nodeId="1219749471429" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplacementQueryActionWithNode_Action.java" startLine="73" startPosition="87" endLine="74" endPosition="26" />
+    <nodeInfo nodeId="1219749451844" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReplacementQueryActionWithNode_Action.java" startLine="66" startPosition="9" endLine="67" endPosition="211" />
+    <nodeInfo nodeId="1219749481595" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplacementQueryActionWithNode_Action.java" startLine="67" startPosition="211" endLine="68" endPosition="87" />
+    <nodeInfo nodeId="1219749471429" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReplacementQueryActionWithNode_Action.java" startLine="68" startPosition="87" endLine="69" endPosition="26" />
   </root>
   <root nodeId="1219918588182">
     <nodeInfo nodeId="1219918860717" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUsagesView" fileName="ReplacementView.java" startLine="31" startPosition="30" endLine="32" endPosition="34" />

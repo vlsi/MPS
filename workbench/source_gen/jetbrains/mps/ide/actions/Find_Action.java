@@ -24,11 +24,6 @@ public class Find_Action extends GeneratedAction {
     this.setMnemonic("f".charAt(0));
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());

@@ -6,12 +6,12 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -40,11 +40,6 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     super("Go by Current Reference", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "";
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
@@ -101,7 +96,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
       String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
       String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
-      if (neq_1m2c1e_a0e0a0e(stubSter, targetSter)) {
+      if (neq_1m2c1e_a0e0a0d(stubSter, targetSter)) {
         GoByCurrentReference_Action.this.open(targetNode, _params);
       } else {
         SNode node = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
@@ -193,7 +188,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
   }
 
-  private static boolean neq_1m2c1e_a0e0a0e(Object a, Object b) {
+  private static boolean neq_1m2c1e_a0e0a0d(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

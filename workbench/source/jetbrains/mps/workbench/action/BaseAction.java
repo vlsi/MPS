@@ -179,8 +179,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     return getClass().getName();
   }
 
-  protected void doExecute(AnActionEvent e, Map<String, Object> params) {
-  }
+  protected abstract void doExecute(AnActionEvent e, Map<String, Object> params) ;
 
 //-----------------deprecated
 
@@ -189,4 +188,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
   protected String getKeyStroke() {
     return "";
   }
+
+
+
 }

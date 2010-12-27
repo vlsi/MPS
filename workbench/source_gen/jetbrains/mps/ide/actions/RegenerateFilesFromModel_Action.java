@@ -27,11 +27,6 @@ public class RegenerateFilesFromModel_Action extends GeneratedAction {
     this.addPlace(null);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       RegenerateFilesFromModel_Action.this.action.update(event);

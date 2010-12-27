@@ -5,9 +5,9 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
@@ -63,11 +63,6 @@ public class MakeOrBuild_Action extends GeneratedAction {
     this.cleanMake = cleanMake_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "";
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
@@ -199,11 +194,11 @@ public class MakeOrBuild_Action extends GeneratedAction {
           public Iterator<SModelDescriptor> iterator() {
             return new YieldingIterator<SModelDescriptor>() {
               private int __CP__ = 0;
-              private SModelDescriptor _5__yield_rl5vzw_a0a0a0a0a0a0g;
-              private Iterator<SModelDescriptor> _5__yield_rl5vzw_a0a0a0a0a0a0g_it;
+              private SModelDescriptor _5__yield_rl5vzw_a0a0a0a0a0a0f;
+              private Iterator<SModelDescriptor> _5__yield_rl5vzw_a0a0a0a0a0a0f_it;
               private Iterable<SModelDescriptor> _11_modelsFromModules;
-              private SModelDescriptor _12__yield_rl5vzw_d0a0a0a0a0g;
-              private Iterator<SModelDescriptor> _12__yield_rl5vzw_d0a0a0a0a0g_it;
+              private SModelDescriptor _12__yield_rl5vzw_d0a0a0a0a0f;
+              private Iterator<SModelDescriptor> _12__yield_rl5vzw_d0a0a0a0a0f_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -214,23 +209,23 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 5:
-                      this._5__yield_rl5vzw_a0a0a0a0a0a0g_it = Sequence.fromIterable(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))).iterator();
+                      this._5__yield_rl5vzw_a0a0a0a0a0a0f_it = Sequence.fromIterable(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))).iterator();
                     case 6:
-                      if (!(this._5__yield_rl5vzw_a0a0a0a0a0a0g_it.hasNext())) {
+                      if (!(this._5__yield_rl5vzw_a0a0a0a0a0a0f_it.hasNext())) {
                         this.__CP__ = 4;
                         break;
                       }
-                      this._5__yield_rl5vzw_a0a0a0a0a0a0g = this._5__yield_rl5vzw_a0a0a0a0a0a0g_it.next();
+                      this._5__yield_rl5vzw_a0a0a0a0a0a0f = this._5__yield_rl5vzw_a0a0a0a0a0a0f_it.next();
                       this.__CP__ = 7;
                       break;
                     case 12:
-                      this._12__yield_rl5vzw_d0a0a0a0a0g_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
+                      this._12__yield_rl5vzw_d0a0a0a0a0f_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
                     case 13:
-                      if (!(this._12__yield_rl5vzw_d0a0a0a0a0g_it.hasNext())) {
+                      if (!(this._12__yield_rl5vzw_d0a0a0a0a0f_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._12__yield_rl5vzw_d0a0a0a0a0g = this._12__yield_rl5vzw_d0a0a0a0a0g_it.next();
+                      this._12__yield_rl5vzw_d0a0a0a0a0f = this._12__yield_rl5vzw_d0a0a0a0a0f_it.next();
                       this.__CP__ = 14;
                       break;
                     case 2:
@@ -245,7 +240,7 @@ __switch__:
                       break;
                     case 8:
                       this.__CP__ = 6;
-                      this.yield(_5__yield_rl5vzw_a0a0a0a0a0a0g);
+                      this.yield(_5__yield_rl5vzw_a0a0a0a0a0a0f);
                       return true;
                     case 10:
                       this.__CP__ = 4;
@@ -253,7 +248,7 @@ __switch__:
                       return true;
                     case 15:
                       this.__CP__ = 13;
-                      this.yield(_12__yield_rl5vzw_d0a0a0a0a0g);
+                      this.yield(_12__yield_rl5vzw_d0a0a0a0a0f);
                       return true;
                     case 0:
                       this.__CP__ = 2;
