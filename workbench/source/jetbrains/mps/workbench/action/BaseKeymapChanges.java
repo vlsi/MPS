@@ -15,16 +15,102 @@
  */
 package jetbrains.mps.workbench.action;
 
+import com.intellij.openapi.actionSystem.Shortcut;
+import com.intellij.openapi.keymap.Keymap;
+import com.intellij.openapi.keymap.KeymapManager;
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
+import jetbrains.mps.logging.Logger;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.KeyStroke;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.Map.Entry;
 
 public abstract class BaseKeymapChanges {
+  private static final Logger LOG = Logger.getLogger(BaseKeymapChanges.class);
+
+  private Keymap myKeymap;
+
+  private Map<String, Set<Shortcut>> mySimpleShortcuts = new THashMap<String, Set<Shortcut>>();
+  private THashMap<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<String, Set<ComplexShortcut>>();
+
+  //todo transform into event
+  //shortId is an id w/o parameter ids
+  public void parameterizedActionCreated(String shortId, Object ... params){
+    Keymap keymap = getKeymap();
+    if (keymap==null) return;
+
+    Set<ComplexShortcut> complexShortcuts = myComplexShortcuts.get(shortId);
+    if (complexShortcuts == null) return;
+
+    for (ComplexShortcut cs:complexShortcuts){
+      for (Shortcut s: cs.getShortcutsFor(shortId, params)){
+        keymap.addShortcut(shortId,s);
+      }
+    }
+  }
+
+  public final void init() {
+    Keymap keymap = getKeymap();
+    if (keymap==null) return;
+
+    for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
+      String key = e.getKey();
+      for (Shortcut s : e.getValue()) {
+        keymap.addShortcut(key, s);
+      }
+    }
+  }
+
+  public final void dispose() {
+    Keymap keymap = getKeymap();
+    if (keymap==null) return;
+
+    for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
+      String key = e.getKey();
+      for (Shortcut s : e.getValue()) {
+        keymap.removeShortcut(key, s);
+      }
+    }
+  }
+
+  protected void addSimpleShortcut(String id, Shortcut s) {
+    Set<Shortcut> shortcuts = mySimpleShortcuts.get(id);
+    if (shortcuts == null) {
+      shortcuts = new THashSet<Shortcut>();
+      mySimpleShortcuts.put(id, shortcuts);
+    }
+    shortcuts.add(s);
+  }
+
+  protected void addComplexShortcut(String id, ComplexShortcut s) {
+    Set<ComplexShortcut> shortcuts = myComplexShortcuts.get(id);
+    if (shortcuts == null) {
+      shortcuts = new THashSet<ComplexShortcut>();
+      myComplexShortcuts.put(id, shortcuts);
+    }
+    shortcuts.add(s);
+  }
+
+  private Keymap getKeymap(){
+    if (myKeymap == null) {
+      myKeymap =  KeymapManager.getInstance().getKeymap(getScheme());
+      if (myKeymap == null) {
+        LOG.error("keymap " + getScheme() + " is not found");
+        return null;
+      }
+    }
+    return myKeymap;
+  }
+
+  private static abstract class ComplexShortcut{
+    public abstract List<Shortcut> getShortcutsFor(String id, Object ... params);
+  }
+
+
+  //-------------------------------------------todo delete following code after refactoring
   private Map<ActionDescriptor, ShortcutsGetter> myKeystrokes = new HashMap<ActionDescriptor, ShortcutsGetter>();
 
   public abstract String getScheme();

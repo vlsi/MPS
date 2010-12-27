@@ -18,8 +18,6 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import com.intellij.openapi.keymap.Keymap;
-import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.logging.Logger;
 
 import java.util.ArrayList;
@@ -44,24 +42,9 @@ public class MPSActions {
     AnAction action = ActionManager.getInstance().getAction(id);
     if (action != null) return action;
 
-    registerDefaultActionShortcut(actionStub);
-    //todo:keymaps
     ActionManager.getInstance().registerAction(id, actionStub, actionStub.getPluginId());
 
     return actionStub;
-  }
-
-  private void registerDefaultActionShortcut(ActionStub stub) {
-    Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
-    if (keymap == null) {
-      LOG.error("default keymap is not found");
-      return;
-    }
-
-    keymap.removeAllActionShortcuts(stub.getId());
-    for (Shortcut s : stub.getShortcutSet().getShortcuts()) {
-      keymap.addShortcut(stub.getId(), s);
-    }
   }
 
   public void unregisterActions(PluginId pluginId) {
