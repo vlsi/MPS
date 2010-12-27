@@ -64,7 +64,7 @@
     <scopeInfo nodeId="4315270135340745084" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="34" startPosition="7" endLine="39" endPosition="453" />
     <scopeInfo nodeId="4315270135340736361" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="24" startPosition="233" endLine="30" endPosition="13" />
     <scopeInfo nodeId="4315270135340745011" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="33" startPosition="116" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="4315270135340745010" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="32" startPosition="0" endLine="41" endPosition="5">
+    <scopeInfo nodeId="4315270135340745010" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="32" startPosition="0" endLine="41" endPosition="5">
       <varInfo nodeId="4315270135340745013" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="4315270135340734342" fileName="typeof_SimpleBuilder_InferenceRule.java" startLine="23" startPosition="120" endLine="41" endPosition="5" />

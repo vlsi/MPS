@@ -95,7 +95,12 @@ public class Program {
     myInstructions.add(instruction);
   }
 
+  @Deprecated
   public void insert(Instruction instruction, int position, boolean update) {
+    insert(instruction, position, update, true);
+  }
+
+  public void insert(Instruction instruction, int position, boolean update, boolean before) {
     instruction.setProgram(this);
     if (instruction.getSource() == null) {
       instruction.setSource(myInstructions.get(position-1).getSource());
@@ -116,7 +121,7 @@ public class Program {
     }
     myInstructions.add(position, instruction);
     if (update) {
-      updateJumpsOnInsert(position);
+      updateJumpsOnInsert(position, before);
     }
   }
 
@@ -390,7 +395,7 @@ public class Program {
       return myStarts.containsKey(o);
    }
 
-   public void updateJumpsOnInsert(int position) {
+   public void updateJumpsOnInsert(int position, boolean before) {
      for (Instruction i : myInstructions) {
        if (i instanceof IfJumpInstruction) {
          IfJumpInstruction ifJump = ((IfJumpInstruction)i);
@@ -398,7 +403,11 @@ public class Program {
          if (jumpTo > position) {
            ifJump.setJumpTo(jumpTo + 1);
          } else if (jumpTo == position) {
-           ifJump.updateJumps(jumpTo + 1);
+           if (before) {
+             ifJump.updateJumps(jumpTo + 1);
+           } else {
+             ifJump.setJumpTo(jumpTo + 1);
+           }
          }
        } else if (i instanceof JumpInstruction) {
          JumpInstruction jump = ((JumpInstruction)i);
@@ -407,6 +416,11 @@ public class Program {
            jump.setJumpTo(jumpTo + 1);
          } else if (jumpTo == position) {
            jump.updateJumps(jumpTo + 1);
+           if (before) {
+             jump.updateJumps(jumpTo + 1);
+           } else {
+             jump.setJumpTo(jumpTo + 1);
+           }
          }
        }
      }

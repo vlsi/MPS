@@ -83,14 +83,21 @@ public class TemplateModelImpl implements TemplateModel {
           // TODO report `wrong arguments count` 
           return null;
         }
-        return new Templategen_static_method();
+        return new Templategen__static__method();
       }
       if (idValue == 3571912445009934880L) {
         if (arguments.length != 0) {
           // TODO report `wrong arguments count` 
           return null;
         }
-        return new Templateweave_Statement();
+        return new Templateweave__Statement();
+      }
+      if (idValue == 4146564171992412775L) {
+        if (arguments.length != 0) {
+          // TODO report `wrong arguments count` 
+          return null;
+        }
+        return new TemplateRootCustom();
       }
     }
     return null;

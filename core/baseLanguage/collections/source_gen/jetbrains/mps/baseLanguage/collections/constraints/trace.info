@@ -55,7 +55,7 @@
     <nodeInfo nodeId="1227649243743" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="74" startPosition="225" endLine="75" endPosition="262" />
     <nodeInfo nodeId="1206112152122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="80" startPosition="52" endLine="81" endPosition="148" />
     <nodeInfo nodeId="1206112125822" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="81" startPosition="148" endLine="82" endPosition="113" />
-    <nodeInfo nodeId="1206112077155" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="SmartClosureParameterTypeUtil.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="1206112077155" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasResolveType#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SmartClosureParameterTypeUtil.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
     <nodeInfo nodeId="1206111352089" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="20" startPosition="105" endLine="26" endPosition="7" />
     <nodeInfo nodeId="1206111366159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="28" startPosition="106" endLine="34" endPosition="7" />
     <nodeInfo nodeId="1206111460144" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="40" startPosition="103" endLine="46" endPosition="9" />
@@ -67,10 +67,10 @@
     <nodeInfo nodeId="1204110267819" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="69" startPosition="10" endLine="77" endPosition="5" />
     <nodeInfo nodeId="1204071887537" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="61" startPosition="148" endLine="77" endPosition="5" />
     <nodeInfo nodeId="1204071322905" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="35" startPosition="10" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="1204071845484" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="SmartClosureParameterTypeUtil.java" startLine="58" startPosition="0" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="1204071845484" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="equateResolveType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="SmartClosureParameterTypeUtil.java" startLine="58" startPosition="0" endLine="79" endPosition="0" />
     <nodeInfo nodeId="1204071322881" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="27" startPosition="10" endLine="56" endPosition="5" />
     <nodeInfo nodeId="1204071322859" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SmartClosureParameterTypeUtil.java" startLine="19" startPosition="324" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="1204071240725" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="SmartClosureParameterTypeUtil.java" startLine="16" startPosition="44" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="1204071240725" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="equateInputType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="SmartClosureParameterTypeUtil.java" startLine="16" startPosition="44" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1206112102332" fileName="SmartClosureParameterTypeUtil.java" startLine="80" startPosition="52" endLine="82" endPosition="113">
       <varInfo nodeId="1206112152123" varName="bmc" />
     </scopeInfo>
@@ -80,7 +80,7 @@
     <scopeInfo nodeId="1206111479241" fileName="SmartClosureParameterTypeUtil.java" startLine="50" startPosition="7" endLine="54" endPosition="262" />
     <scopeInfo nodeId="1206111787726" fileName="SmartClosureParameterTypeUtil.java" startLine="63" startPosition="7" endLine="67" endPosition="262" />
     <scopeInfo nodeId="1227649243743" fileName="SmartClosureParameterTypeUtil.java" startLine="71" startPosition="7" endLine="75" endPosition="262" />
-    <scopeInfo nodeId="1206112077155" fileName="SmartClosureParameterTypeUtil.java" startLine="79" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="1206112077155" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasResolveType#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SmartClosureParameterTypeUtil.java" startLine="79" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1206112117242" varName="scpd" />
     </scopeInfo>
     <scopeInfo nodeId="1204071322860" fileName="SmartClosureParameterTypeUtil.java" startLine="20" startPosition="105" endLine="26" endPosition="7" />
@@ -97,14 +97,14 @@
     <scopeInfo nodeId="1204071845487" fileName="SmartClosureParameterTypeUtil.java" startLine="60" startPosition="116" endLine="77" endPosition="5">
       <varInfo nodeId="1204071875783" varName="bmc" />
     </scopeInfo>
-    <scopeInfo nodeId="1204071845484" fileName="SmartClosureParameterTypeUtil.java" startLine="58" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="1204071845484" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="equateResolveType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="SmartClosureParameterTypeUtil.java" startLine="58" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1206111554322" varName="InputType" />
       <varInfo nodeId="1204071856780" varName="scpd" />
     </scopeInfo>
     <scopeInfo nodeId="1204071240728" fileName="SmartClosureParameterTypeUtil.java" startLine="18" startPosition="114" endLine="56" endPosition="5">
       <varInfo nodeId="1204071322848" varName="vabs" />
     </scopeInfo>
-    <scopeInfo nodeId="1204071240725" fileName="SmartClosureParameterTypeUtil.java" startLine="16" startPosition="44" endLine="58" endPosition="0">
+    <scopeInfo nodeId="1204071240725" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="equateInputType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" fileName="SmartClosureParameterTypeUtil.java" startLine="16" startPosition="44" endLine="58" endPosition="0">
       <varInfo nodeId="1206111025993" varName="InputType" />
       <varInfo nodeId="1204071261824" varName="scpd" />
     </scopeInfo>
@@ -137,9 +137,9 @@
     <nodeInfo nodeId="6801639034384669190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SequenceOperation_Constraints.java" startLine="45" startPosition="12" endLine="46" endPosition="488" />
     <nodeInfo nodeId="6801639034384669121" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="SequenceOperation_Constraints.java" startLine="45" startPosition="10" endLine="47" endPosition="5" />
     <nodeInfo nodeId="6801639034384669018" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SequenceOperation_Constraints.java" startLine="37" startPosition="15" endLine="40" endPosition="13" />
-    <nodeInfo nodeId="6801639034384668239" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SequenceOperation_Constraints.java" startLine="24" startPosition="261" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="6801639034384669033" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SequenceOperation_Constraints.java" startLine="29" startPosition="163" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="6801639034384669044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="SequenceOperation_Constraints.java" startLine="33" startPosition="58" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="6801639034384668239" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SequenceOperation_Constraints.java" startLine="24" startPosition="261" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="6801639034384669033" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SequenceOperation_Constraints.java" startLine="29" startPosition="163" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="6801639034384669044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SequenceOperation_Constraints.java" startLine="33" startPosition="58" endLine="37" endPosition="0" />
     <nodeInfo nodeId="6801639034384669016" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SequenceOperation_Constraints.java" startLine="28" startPosition="13" endLine="41" endPosition="11" />
     <nodeInfo nodeId="6801639034384668220" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SequenceOperation_Constraints.java" startLine="23" startPosition="67" endLine="42" endPosition="9" />
     <nodeInfo nodeId="8439929903877326529" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SequenceOperation_Constraints.java" startLine="21" startPosition="162" endLine="43" endPosition="7" />
@@ -150,14 +150,14 @@
     <scopeInfo nodeId="6801639034384669019" fileName="SequenceOperation_Constraints.java" startLine="38" startPosition="102" endLine="39" endPosition="26" />
     <scopeInfo nodeId="6801639034384669122" fileName="SequenceOperation_Constraints.java" startLine="45" startPosition="12" endLine="46" endPosition="488" />
     <scopeInfo nodeId="6801639034384669017" fileName="SequenceOperation_Constraints.java" startLine="37" startPosition="15" endLine="40" endPosition="13" />
-    <scopeInfo nodeId="6801639034384668239" fileName="SequenceOperation_Constraints.java" startLine="24" startPosition="261" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6801639034384669033" fileName="SequenceOperation_Constraints.java" startLine="29" startPosition="163" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="33" startPosition="58" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6801639034384668239" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SequenceOperation_Constraints.java" startLine="24" startPosition="261" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="6801639034384669033" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SequenceOperation_Constraints.java" startLine="29" startPosition="163" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="6801639034384669044" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="SequenceOperation_Constraints.java" startLine="33" startPosition="58" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6801639034384669007" fileName="SequenceOperation_Constraints.java" startLine="28" startPosition="13" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="6801639034384669016" fileName="SequenceOperation_Constraints.java" startLine="28" startPosition="13" endLine="41" endPosition="11">
+    <scopeInfo nodeId="6801639034384669016" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SequenceOperation_Constraints.java" startLine="28" startPosition="13" endLine="41" endPosition="11">
       <varInfo nodeId="6801639034384669025" varName="exptype" />
     </scopeInfo>
-    <scopeInfo nodeId="6801639034384668220" fileName="SequenceOperation_Constraints.java" startLine="23" startPosition="67" endLine="42" endPosition="9">
+    <scopeInfo nodeId="6801639034384668220" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SequenceOperation_Constraints.java" startLine="23" startPosition="67" endLine="42" endPosition="9">
       <varInfo nodeId="6801639034384668224" varName="cld" />
     </scopeInfo>
     <scopeInfo nodeId="8439929903877326530" fileName="SequenceOperation_Constraints.java" startLine="22" startPosition="27" endLine="42" endPosition="9">
@@ -235,11 +235,11 @@
     <nodeInfo nodeId="1331913329176292787" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CustomContainerCreator_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="113" />
     <nodeInfo nodeId="9034802358628427418" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="34" endPosition="116" />
     <nodeInfo nodeId="9034802358628519924" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="37" startPosition="41" endLine="38" endPosition="207" />
-    <nodeInfo nodeId="9034802358628519915" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="36" startPosition="304" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="9034802358628519915" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="36" startPosition="304" endLine="40" endPosition="0" />
     <nodeInfo nodeId="9034802358628427427" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="34" startPosition="116" endLine="42" endPosition="6" />
     <scopeInfo nodeId="1331913329176292220" fileName="CustomContainerCreator_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="113" />
     <scopeInfo nodeId="9034802358628519916" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="37" startPosition="41" endLine="38" endPosition="207" />
-    <scopeInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="36" startPosition="304" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="9034802358628519915" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="36" startPosition="304" endLine="40" endPosition="0" />
     <scopeInfo nodeId="9034802358628295002" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="42" endPosition="6">
       <varInfo nodeId="9034802358628427419" varName="expr" />
     </scopeInfo>
@@ -262,11 +262,11 @@
     <nodeInfo nodeId="5192033827214037050" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractContainerCreator_Constraints.java" startLine="39" startPosition="42" endLine="40" endPosition="125" />
     <nodeInfo nodeId="2490518255521065421" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractContainerCreator_Constraints.java" startLine="43" startPosition="42" endLine="44" endPosition="149" />
     <nodeInfo nodeId="3358009230509359540" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractContainerCreator_Constraints.java" startLine="47" startPosition="5" endLine="48" endPosition="16" />
-    <nodeInfo nodeId="3358009230509400552" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AbstractContainerCreator_Constraints.java" startLine="23" startPosition="271" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="5192033827214156534" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AbstractContainerCreator_Constraints.java" startLine="29" startPosition="164" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="5192033827214156545" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AbstractContainerCreator_Constraints.java" startLine="33" startPosition="54" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="5192033827214037048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AbstractContainerCreator_Constraints.java" startLine="38" startPosition="119" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="2490518255521065002" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="AbstractContainerCreator_Constraints.java" startLine="42" startPosition="169" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="3358009230509400552" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="AbstractContainerCreator_Constraints.java" startLine="23" startPosition="271" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="5192033827214156534" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="AbstractContainerCreator_Constraints.java" startLine="29" startPosition="164" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="5192033827214156545" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="AbstractContainerCreator_Constraints.java" startLine="33" startPosition="54" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="5192033827214037048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="AbstractContainerCreator_Constraints.java" startLine="38" startPosition="119" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="2490518255521065002" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="AbstractContainerCreator_Constraints.java" startLine="42" startPosition="169" endLine="46" endPosition="0" />
     <nodeInfo nodeId="3358009230509400544" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractContainerCreator_Constraints.java" startLine="22" startPosition="301" endLine="27" endPosition="7" />
     <nodeInfo nodeId="5192033827214156524" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractContainerCreator_Constraints.java" startLine="28" startPosition="26" endLine="37" endPosition="9" />
     <nodeInfo nodeId="5192033827214037016" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractContainerCreator_Constraints.java" startLine="37" startPosition="9" endLine="46" endPosition="10" />
@@ -276,11 +276,11 @@
     <scopeInfo nodeId="5192033827214156546" fileName="AbstractContainerCreator_Constraints.java" startLine="34" startPosition="39" endLine="35" endPosition="157" />
     <scopeInfo nodeId="5192033827214037049" fileName="AbstractContainerCreator_Constraints.java" startLine="39" startPosition="42" endLine="40" endPosition="125" />
     <scopeInfo nodeId="2490518255521065003" fileName="AbstractContainerCreator_Constraints.java" startLine="43" startPosition="42" endLine="44" endPosition="149" />
-    <scopeInfo nodeId="3358009230509400552" fileName="AbstractContainerCreator_Constraints.java" startLine="23" startPosition="271" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5192033827214156534" fileName="AbstractContainerCreator_Constraints.java" startLine="29" startPosition="164" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5192033827214156545" fileName="AbstractContainerCreator_Constraints.java" startLine="33" startPosition="54" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="5192033827214037048" fileName="AbstractContainerCreator_Constraints.java" startLine="38" startPosition="119" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="2490518255521065002" fileName="AbstractContainerCreator_Constraints.java" startLine="42" startPosition="169" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="3358009230509400552" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="AbstractContainerCreator_Constraints.java" startLine="23" startPosition="271" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5192033827214156534" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="AbstractContainerCreator_Constraints.java" startLine="29" startPosition="164" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="5192033827214156545" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="AbstractContainerCreator_Constraints.java" startLine="33" startPosition="54" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5192033827214037048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="AbstractContainerCreator_Constraints.java" startLine="38" startPosition="119" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2490518255521065002" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="AbstractContainerCreator_Constraints.java" startLine="42" startPosition="169" endLine="46" endPosition="0" />
     <scopeInfo nodeId="3358009230509359530" fileName="AbstractContainerCreator_Constraints.java" startLine="28" startPosition="26" endLine="46" endPosition="10">
       <varInfo nodeId="5192033827214156525" varName="avlbFor" />
     </scopeInfo>
@@ -304,7 +304,7 @@
     <scopeInfo nodeId="6099516049395208562" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="87" endLine="29" endPosition="7">
       <varInfo nodeId="6099516049395208583" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6099516049395208561" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="24" startPosition="130" endLine="30" endPosition="5">
+    <scopeInfo nodeId="6099516049395208561" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="24" startPosition="130" endLine="30" endPosition="5">
       <varInfo nodeId="6099516049395208564" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="6099516049395208155" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="24" startPosition="130" endLine="31" endPosition="16" />

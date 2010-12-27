@@ -165,7 +165,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ModelAccess.instance().runReadInEDT(new Runnable() {
         @Override
         public void run() {
-          if (isProjectDisposed() || isNodeDisposed()) return;
+          if (isModuleDisposed() || isProjectDisposed() || isNodeDisposed()) return;
           rebuildEditorContent();
           myNodeSubstituteChooser.clearContent();
         }
@@ -1242,6 +1242,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   public NodeHighlightManager getHighlightManager() {
     return myHighlightManager;
+  }
+
+  protected void refreshHighlightManager() {
+    myHighlightManager.dispose();
+    myHighlightManager = new NodeHighlightManager(this);
   }
 
   public CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
@@ -2871,6 +2876,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         doCommitAll(cell);
       }
     }
+  }
+
+  /**
+   * It's possible that associated module was already removed from MPSModuleRepository (for example - transient models
+   * modules are currently removed from MPSModuleRepository before next code generation session). In this case currently
+   * open editor should be closed as a result of another notification processing. We need to suppress editor update
+   * process in this case because an editor is not in valid state right now.
+   */
+  private boolean isModuleDisposed() {
+    return myOperationContext != null && myOperationContext.getModule() == null;
   }
 
   private boolean isProjectDisposed() {

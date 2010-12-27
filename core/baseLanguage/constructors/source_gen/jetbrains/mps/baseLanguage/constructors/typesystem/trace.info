@@ -30,7 +30,7 @@
     <scopeInfo nodeId="2299894485109775406" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="31" startPosition="37" endLine="39" endPosition="9">
       <varInfo nodeId="7155962213902745777" varName="actualParam" />
     </scopeInfo>
-    <scopeInfo nodeId="2299894485109775405" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="30" startPosition="305" endLine="40" endPosition="7">
+    <scopeInfo nodeId="2299894485109775405" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="30" startPosition="305" endLine="40" endPosition="7">
       <varInfo nodeId="2299894485109775408" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="2299894485109627433" fileName="typeof_CustomConstructorUsage_InferenceRule.java" startLine="29" startPosition="119" endLine="40" endPosition="7">

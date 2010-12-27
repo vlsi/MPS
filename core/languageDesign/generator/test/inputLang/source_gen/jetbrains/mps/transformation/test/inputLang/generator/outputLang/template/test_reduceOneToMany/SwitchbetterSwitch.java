@@ -10,11 +10,8 @@ import java.util.Collection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
-import java.util.Collections;
 import jetbrains.mps.generator.runtime.GenerationException;
+import java.util.Collections;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 
@@ -41,7 +38,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
     return rules;
   }
 
-  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
+  public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
     environment.getTracer().pushRuleConsequence(conseq_duaj4c_a0a0a3);
     Collection<SNode> tlist1 = Collections.emptyList();
     return tlist1;
@@ -85,7 +82,7 @@ public class SwitchbetterSwitch implements TemplateSwitchMapping {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_duaj4c_a0a0a4a);
-      Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
+      Collection<SNode> tlist1 = new Templatereduce__InputNode__A().apply(environment, context);
       return tlist1;
     }
   }

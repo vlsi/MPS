@@ -17,22 +17,26 @@ package jetbrains.mps.debug.api.breakpoints;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class BreakpointLocation {
+  private static final Logger LOG = Logger.getLogger(BreakpointLocation.class);
   private final SNodePointer myNodePointer;
 
-  public BreakpointLocation(SNodePointer nodePointer) {
+  public BreakpointLocation(@NotNull SNodePointer nodePointer) {
     myNodePointer = nodePointer;
+    LOG.assertLog(nodePointer.getModelReference() != null && nodePointer.getNodeId() != null);
   }
 
-  public BreakpointLocation(SNode node) {
+  public BreakpointLocation(@NotNull SNode node) {
     myNodePointer = new SNodePointer(node);
   }
 

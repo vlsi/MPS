@@ -41,12 +41,12 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   private String myMethodName = null;
   private String myJniSignature = null;
 
-  public MethodBreakpoint(SNodePointer pointer, Project project) {
+  public MethodBreakpoint(SNodePointer nodePointer, Project project) {
     super(project);
-    myLocation = new BreakpointLocation(pointer);
+    myLocation = new BreakpointLocation(nodePointer);
   }
 
-  public MethodBreakpoint(SNode node, Project project) {
+  public MethodBreakpoint(@NotNull SNode node, Project project) {
     this(new SNodePointer(node), project);
   }
 

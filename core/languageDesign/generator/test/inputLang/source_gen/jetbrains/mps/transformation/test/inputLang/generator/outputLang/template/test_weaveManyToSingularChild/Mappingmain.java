@@ -105,7 +105,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
-      Collection<SNode> result = new Templatemap_outputNode().apply(environment, context);
+      Collection<SNode> result = new Templatemap__outputNode().apply(environment, context);
       environment.registerLabel(context.getInput(), result, "generated_root");
       return result;
     }
@@ -140,8 +140,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a0a5b);
-      Collection<SNode> tlist1 = new Templateweave_InputNode_A().weave(environment, context, outputContextNode);
-      return !(tlist1.isEmpty());
+      Collection<SNode> tlist1 = new Templateweave__InputNode__A().weave(environment, context, outputContextNode);
+      return !(!(tlist1 != null) || !(!(tlist1.isEmpty())));
     }
   }
 }

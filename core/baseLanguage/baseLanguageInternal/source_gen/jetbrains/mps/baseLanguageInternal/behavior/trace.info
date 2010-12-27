@@ -36,13 +36,13 @@
     <scopeInfo nodeId="5857910569715993680" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="49" startPosition="144" endLine="50" endPosition="91" />
     <scopeInfo nodeId="3585982959253822035" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="22" startPosition="108" endLine="25" endPosition="7" />
     <scopeInfo nodeId="8881995820265485545" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="31" startPosition="146" endLine="34" endPosition="7" />
-    <scopeInfo nodeId="5857910569715993679" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="48" startPosition="45" endLine="51" endPosition="5">
+    <scopeInfo nodeId="5857910569715993679" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="48" startPosition="45" endLine="51" endPosition="5">
       <varInfo nodeId="5857910569715993693" varName="es" />
     </scopeInfo>
-    <scopeInfo nodeId="3585982959253822034" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="21" startPosition="48" endLine="26" endPosition="5">
+    <scopeInfo nodeId="3585982959253822034" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="21" startPosition="48" endLine="26" endPosition="5">
       <varInfo nodeId="3585982959253822049" varName="bmd" />
     </scopeInfo>
-    <scopeInfo nodeId="8881995820265485544" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="30" startPosition="89" endLine="35" endPosition="5">
+    <scopeInfo nodeId="8881995820265485544" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="30" startPosition="89" endLine="35" endPosition="5">
       <varInfo nodeId="8881995820265485559" varName="es" />
     </scopeInfo>
     <scopeInfo nodeId="5857910569715993657" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="47" startPosition="75" endLine="52" endPosition="15">

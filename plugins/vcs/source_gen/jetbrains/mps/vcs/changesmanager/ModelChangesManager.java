@@ -924,8 +924,9 @@ __switch__:
           SNode anchorChild = null;
           if (deleteChange.getNextChildIndex() != 0) {
             anchorChild = check_fh1co9_a0a0b0a0a4a0c0vb(parent.getChildren(deleteChange.getRole()), deleteChange);
+            anchorChild = getModel().getNodeById(check_fh1co9_a0a0b0b0a0a4a0c0vb(anchorChild));
           }
-          parent.insertChild(getModel().getNodeById(check_fh1co9_a0a0a2a0a0e0a2a74(anchorChild)), deleteChange.getRole(), oldNode);
+          parent.insertChild(anchorChild, deleteChange.getRole(), oldNode);
         }
       }
     } else if (change instanceof SetPropertyChange) {
@@ -1031,7 +1032,7 @@ __switch__:
     return p.get(deleteChange.getNextChildIndex() - 1);
   }
 
-  private static SNodeId check_fh1co9_a0a0a2a0a0e0a2a74(SNode p) {
+  private static SNodeId check_fh1co9_a0a0b0b0a0a4a0c0vb(SNode p) {
     if (null == p) {
       return null;
     }
@@ -1392,7 +1393,9 @@ __switch__:
               }) == 0) {
                 addChange(new AddRootChange(e.getRoot().getConceptFqName(), e.getRoot().getSNodeId()), e.getRoot());
               }
-              recursivelyChildAdded(e.getRoot());
+              if (!(isNewModel())) {
+                recursivelyChildAdded(e.getRoot());
+              }
             }
           });
           fireChangeUpdateFinished();

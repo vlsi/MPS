@@ -49,7 +49,16 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myRootNode = rootNode;
     myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
     myTypeChecker = typeChecker;
-    mySubTyping = new SubTyping(myState);
+    mySubTyping = new SubTyping(myState, typeChecker);
+  }
+
+  public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker, boolean resolving) {
+    super(rootNode, typeChecker, resolving);
+    myState = new State(this);
+    myRootNode = rootNode;
+    myNodeTypesComponent = new NodeTypesComponentNew(myRootNode, typeChecker, this);
+    myTypeChecker = typeChecker;
+    mySubTyping = new SubTyping(myState, typeChecker);
   }
 
   public void rollBack() {
@@ -138,6 +147,18 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
+    if (node == null) return null;
+    SNode type = null;
+    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
+    if (currentTypesComponent != null) {
+      //--- for incremental algorithm:
+      currentTypesComponent.addNodeToFrontier(node);
+      currentTypesComponent.typeOfNodeCalled(node);
+      if (addDependency) {
+        currentTypesComponent.addDependcyOnCurrent(node);
+      }
+    }
+    //((NodeTypesComponentNew)myNodeTypesComponent).checkIfNotChecked(node);
     return myState.typeOf(node, info);
   }
 
@@ -163,7 +184,9 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public SNode getTypeDontCheck(SNode node) {
-    return myState.getNodeMaps().getType(node);
+    synchronized (TYPECHECKING_LOCK) {
+      return myState.getNodeMaps().getType(node);
+    }
   }
 
   @Override
@@ -290,7 +313,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
     if (pair.o2) {
       return pair.o1;
     }
-    SNode resultType = getNodeTypesComponent().computeTypesForNodeDuringResolving(node);
+    SNode resultType = myNodeTypesComponent.computeTypesForNodeDuringResolving(node);
     typeChecker.putTypeComputedForCompletion(node, resultType);
     return resultType;
   }

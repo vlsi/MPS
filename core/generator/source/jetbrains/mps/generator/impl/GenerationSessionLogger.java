@@ -104,7 +104,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
   }
 
   public void handleException(Throwable t) {
-    Message message = new Message(MessageKind.ERROR, t.getMessage());
+    Message message = new Message(MessageKind.ERROR, "An exception was encountered: " + t.getClass().getCanonicalName() + ": " + t.getMessage());
     message.setException(t);
     synchronized (myMessageHandler) {
       myMessageHandler.handle(message);

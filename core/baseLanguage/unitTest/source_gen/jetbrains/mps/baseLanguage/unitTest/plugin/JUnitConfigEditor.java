@@ -81,15 +81,17 @@ public class JUnitConfigEditor extends JPanel {
     IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
       public void run() {
         myThis.setProject(myThis.findProjectFromContext());
-        myThis.setProjectName(myThis.getProject().getProject().getName());
-        if (myThis.myProjectName_d3c0 != null) {
-          myThis.myProjectName_d3c0.setText(myThis.getProjectName());
-        }
-        if (myThis.myTestCases_d0 != null) {
-          myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
-        }
-        if (myThis.myTestMethods_e0 != null) {
-          myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
+        if (myThis.getProject() != null && myThis.getProject().getProject() != null) {
+          myThis.setProjectName(myThis.getProject().getProject().getName());
+          if (myThis.myProjectName_d3c0 != null) {
+            myThis.myProjectName_d3c0.setText(myThis.getProjectName());
+          }
+          if (myThis.myTestCases_d0 != null) {
+            myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
+          }
+          if (myThis.myTestMethods_e0 != null) {
+            myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
+          }
         }
       }
     });

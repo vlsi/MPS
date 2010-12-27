@@ -17,6 +17,7 @@ package jetbrains.mps;
 
 import jetbrains.mps.project.TestResult;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
+import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.TestCase;
 
 import javax.swing.SwingUtilities;
@@ -44,6 +45,7 @@ public class BaseMPSTest extends TestCase {
         e.printStackTrace();
       }
     }
+    ModelAccess.instance().flushEventQueue();
   }
 
   protected void assertGenerates(File project, boolean runnable, String... configurations) {

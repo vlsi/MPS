@@ -125,7 +125,7 @@
     <nodeInfo nodeId="1196269919358" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="52" startPosition="17" endLine="60" endPosition="17" />
     <nodeInfo nodeId="1196942458923" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="66" startPosition="91" endLine="79" endPosition="9" />
     <nodeInfo nodeId="1184839741784" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="65" startPosition="12" endLine="80" endPosition="7" />
-    <nodeInfo nodeId="1186145326892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="45" startPosition="97" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="1186145326892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="45" startPosition="97" endLine="62" endPosition="0" />
     <nodeInfo nodeId="1186145326892" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="44" startPosition="133" endLine="62" endPosition="120" />
     <nodeInfo nodeId="1186145326892" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="42" startPosition="11" endLine="63" endPosition="11" />
     <nodeInfo nodeId="1184842207805" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="34" startPosition="141" endLine="64" endPosition="9" />
@@ -146,7 +146,7 @@
     <scopeInfo nodeId="1184839741785" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="65" startPosition="14" endLine="79" endPosition="9">
       <varInfo nodeId="1196942439192" varName="treePath" />
     </scopeInfo>
-    <scopeInfo nodeId="1186145326892" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="45" startPosition="97" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1186145326892" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="45" startPosition="97" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1186145326892" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="43" startPosition="11" endLine="62" endPosition="120" />
     <scopeInfo nodeId="1184842207806" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="35" startPosition="112" endLine="63" endPosition="11" />
     <scopeInfo nodeId="1184839698355" fileName="typeof_TreePathOperationExpression_InferenceRule.java" startLine="34" startPosition="141" endLine="64" endPosition="9" />

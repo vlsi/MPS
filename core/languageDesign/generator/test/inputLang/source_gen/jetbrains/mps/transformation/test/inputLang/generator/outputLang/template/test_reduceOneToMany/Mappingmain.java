@@ -111,7 +111,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4a);
-      Collection<SNode> tlist1 = new Templatereduce_InputNode_A().apply(environment, context);
+      Collection<SNode> tlist1 = new Templatereduce__InputNode__A().apply(environment, context);
       return tlist1;
     }
   }

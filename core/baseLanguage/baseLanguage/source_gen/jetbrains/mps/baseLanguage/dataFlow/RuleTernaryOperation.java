@@ -34,38 +34,42 @@ public class RuleTernaryOperation extends DataFlowConstructor {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);
           if (((Program) o).contains(object)) {
+            boolean before = true;
             int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
             Instruction instruction = new nullInstruction(other);
             instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
         {
           Object object = SLinkOperations.getTarget(node, "ifFalse", true);
           if (((Program) o).contains(object)) {
+            boolean before = true;
             int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalse", true));
             Instruction instruction = new notNullInstruction(other);
             instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       } else {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);
           if (((Program) o).contains(object)) {
+            boolean before = true;
             int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
             Instruction instruction = new notNullInstruction(other);
             instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
         {
           Object object = SLinkOperations.getTarget(node, "ifFalse", true);
           if (((Program) o).contains(object)) {
+            boolean before = true;
             int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalse", true));
             Instruction instruction = new nullInstruction(other);
             instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true);
+            ((Program) (o)).insert(instruction, position, true, before);
           }
         }
       }

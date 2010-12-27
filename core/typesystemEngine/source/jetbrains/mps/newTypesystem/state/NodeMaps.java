@@ -104,7 +104,7 @@ public class NodeMaps {
       type = myState.createNewRuntimeTypesVariable();
       addNodeToType(node, type, info);
     }
-    return type;
+    return  myState.getRepresentative(type);
   }
 
   public void addNodeToError(SNode node, IErrorReporter error, EquationInfo info) {

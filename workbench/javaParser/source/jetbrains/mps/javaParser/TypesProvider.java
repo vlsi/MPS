@@ -222,8 +222,9 @@ public class TypesProvider {
       BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
       SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
-      SReference result = getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, FeatureKind.METHOD);
-      return result;
+      SNodePointer pointer =
+        getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.METHOD);
+      return SReference.create(role, sourceNode, pointer);
     }
     if (binding.declaringClass instanceof ParameterizedTypeBinding) {
       ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding.declaringClass;
@@ -231,7 +232,8 @@ public class TypesProvider {
         BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) parameterizedTypeBinding.genericType();
         SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
         SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
-        return getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, FeatureKind.METHOD);
+        SNodePointer pointer = getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.METHOD);
+        return SReference.create(role, sourceNode, pointer);
       }
     }
     LOG.error("can't create a reference to a method in a class of type " + binding.declaringClass.getClass());
@@ -246,12 +248,14 @@ public class TypesProvider {
   }
 
 
-  private SReference getRegularMPSNodeReferenceFromForeignId(SNode sourceNode, String role, SModelReference modelReference, SNodeId nodeId, FeatureKind targetKind) {
+  private SNodePointer getRegularMPSNodePointerFromForeignId(SModelReference modelReference, SNodeId nodeId,
+                                                             FeatureKind targetKind) {
     //foreign only
-    SReference reference = new ForeignReferencesConvertor().createFromForeignId(sourceNode, role, modelReference, nodeId, targetKind);
-    if (reference != null) return reference;
-    return SReference.create(role, sourceNode, modelReference, nodeId);
+    /*SNodePointer pointer = new ForeignReferencesConvertor().createFromForeignId(modelReference, nodeId, targetKind);
+    if (pointer != null) return pointer;
+    */
 
+    return new SNodePointer(modelReference, nodeId);
   }
 
   private SNodeId createMethodId(MethodBinding method, BinaryTypeBinding classBinding) {
@@ -351,20 +355,25 @@ public class TypesProvider {
   }
 
   public SReference createClassifierReference(ReferenceBinding aClass, String role, SNode sourceNode) {
+    SNodePointer classifierPointer = createClassifierPointer(aClass);
+    return SReference.create(role, sourceNode, classifierPointer);
+  }
+
+  public SNodePointer createClassifierPointer(ReferenceBinding aClass) {
     if (aClass instanceof BinaryTypeBinding) {
       SModelReference modelReference = modelReferenceFromBinaryClassBinding((BinaryTypeBinding) aClass);
       SNodeId nodeId = getClassifierNodeId((BinaryTypeBinding) aClass);
-      return getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, FeatureKind.CLASS);
+      return getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.CLASS);
     }
     if (aClass instanceof SourceTypeBinding) {
       INodeAdapter adapter = myReferentsCreator.myBindingMap.get(aClass);
       if (adapter != null) {
-        return SReference.create(role, sourceNode, adapter.getNode());
+        return new SNodePointer(adapter.getNode());
       }
     }
     if (aClass instanceof ParameterizedTypeBinding) {
       ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) aClass;
-      return createClassifierReference(parameterizedTypeBinding.genericType(), role, sourceNode);
+      return createClassifierPointer(parameterizedTypeBinding.genericType());
     }
     throw new JavaConverterException("no classifier for class " + new String(aClass.sourceName));
   }
@@ -383,7 +392,8 @@ public class TypesProvider {
       BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
       SNodeId nodeId = createFieldId(binding, binaryTypeBinding);
       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
-      return getRegularMPSNodeReferenceFromForeignId(sourceNode, role, modelReference, nodeId, FeatureKind.FIELD);
+      SNodePointer pointer = getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.FIELD);
+      return SReference.create(role, sourceNode, pointer);
     }
     return null;
   }

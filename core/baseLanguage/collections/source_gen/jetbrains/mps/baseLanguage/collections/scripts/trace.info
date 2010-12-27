@@ -328,7 +328,7 @@
     <nodeInfo nodeId="1237042060681" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ListMigrationUtil.java" startLine="127" startPosition="127" endLine="128" endPosition="18" />
     <nodeInfo nodeId="1237217720362" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ListMigrationUtil.java" startLine="130" startPosition="117" endLine="131" endPosition="18" />
     <nodeInfo nodeId="1237031067549" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ListMigrationUtil.java" startLine="132" startPosition="5" endLine="133" endPosition="17" />
-    <nodeInfo nodeId="1236863767060" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ListMigrationUtil.java" startLine="15" startPosition="32" endLine="17" endPosition="3" />
+    <nodeInfo nodeId="1236863767060" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListMigrationUtil#()V" fileName="ListMigrationUtil.java" startLine="15" startPosition="32" endLine="17" endPosition="3" />
     <nodeInfo nodeId="1240070040157" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ListMigrationUtil.java" startLine="19" startPosition="99" endLine="22" endPosition="5" />
     <nodeInfo nodeId="1237037981344" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ListMigrationUtil.java" startLine="23" startPosition="206" endLine="26" endPosition="5" />
     <nodeInfo nodeId="1240070297217" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ListMigrationUtil.java" startLine="30" startPosition="97" endLine="33" endPosition="5" />
@@ -356,18 +356,18 @@
     <nodeInfo nodeId="1236863766974" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ListMigrationUtil.java" startLine="143" startPosition="63" endLine="147" endPosition="6" />
     <nodeInfo nodeId="1237030579998" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ListMigrationUtil.java" startLine="98" startPosition="38" endLine="103" endPosition="9" />
     <nodeInfo nodeId="1237030697308" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ListMigrationUtil.java" startLine="103" startPosition="9" endLine="108" endPosition="9" />
-    <nodeInfo nodeId="1236863766974" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="135" startPosition="0" endLine="142" endPosition="0" />
-    <nodeInfo nodeId="1236863766974" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="142" startPosition="0" endLine="149" endPosition="0" />
+    <nodeInfo nodeId="1236863766974" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_gtz9m1_a0b0f#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="ListMigrationUtil.java" startLine="135" startPosition="0" endLine="142" endPosition="0" />
+    <nodeInfo nodeId="1236863766974" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_gtz9m1_a0a2a5#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="ListMigrationUtil.java" startLine="142" startPosition="0" endLine="149" endPosition="0" />
     <nodeInfo nodeId="1237030149959" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ListMigrationUtil.java" startLine="98" startPosition="38" endLine="108" endPosition="9" />
-    <nodeInfo nodeId="1237037981322" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="18" startPosition="0" endLine="29" endPosition="0" />
-    <nodeInfo nodeId="1237218573103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="1238772012592" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="40" startPosition="0" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="1237030023768" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="51" startPosition="0" endLine="62" endPosition="0" />
-    <nodeInfo nodeId="1238518113112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="62" startPosition="0" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="1237037981322" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForLists#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="18" startPosition="0" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="1237218573103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForSet#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="29" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="1238772012592" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForIterator#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="40" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1237030023768" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForAll#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="51" startPosition="0" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="1238518113112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForMap#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="62" startPosition="0" endLine="73" endPosition="0" />
     <nodeInfo nodeId="1237030149959" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="ListMigrationUtil.java" startLine="89" startPosition="88" endLine="109" endPosition="7" />
-    <nodeInfo nodeId="1237031067491" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="113" startPosition="0" endLine="135" endPosition="0" />
+    <nodeInfo nodeId="1237031067491" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForType#(Ljetbrains/mps/smodel/SNode;ILjava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="113" startPosition="0" endLine="135" endPosition="0" />
     <nodeInfo nodeId="1237030149959" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ListMigrationUtil.java" startLine="84" startPosition="5" endLine="110" endPosition="5" />
-    <nodeInfo nodeId="1237030149899" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="ListMigrationUtil.java" startLine="73" startPosition="0" endLine="113" endPosition="0" />
+    <nodeInfo nodeId="1237030149899" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableMethod#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="73" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="1236863767063" fileName="ListMigrationUtil.java" startLine="16" startPosition="30" endLine="16" endPosition="30" />
     <scopeInfo nodeId="1240070040158" fileName="ListMigrationUtil.java" startLine="20" startPosition="129" endLine="21" endPosition="19" />
     <scopeInfo nodeId="1237037981345" fileName="ListMigrationUtil.java" startLine="24" startPosition="200" endLine="25" endPosition="19" />
@@ -392,13 +392,13 @@
     <scopeInfo nodeId="1237031067540" fileName="ListMigrationUtil.java" startLine="124" startPosition="134" endLine="125" endPosition="18" />
     <scopeInfo nodeId="1237042060680" fileName="ListMigrationUtil.java" startLine="127" startPosition="127" endLine="128" endPosition="18" />
     <scopeInfo nodeId="1237217720361" fileName="ListMigrationUtil.java" startLine="130" startPosition="117" endLine="131" endPosition="18" />
-    <scopeInfo nodeId="1236863767060" fileName="ListMigrationUtil.java" startLine="15" startPosition="32" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1236863767060" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListMigrationUtil#()V" fileName="ListMigrationUtil.java" startLine="15" startPosition="32" endLine="17" endPosition="3" />
     <scopeInfo nodeId="1237030579999" fileName="ListMigrationUtil.java" startLine="99" startPosition="41" endLine="102" endPosition="11" />
     <scopeInfo nodeId="1237030697309" fileName="ListMigrationUtil.java" startLine="104" startPosition="45" endLine="107" endPosition="11" />
     <scopeInfo nodeId="1236863766974" fileName="ListMigrationUtil.java" startLine="136" startPosition="63" endLine="140" endPosition="7" />
     <scopeInfo nodeId="1236863766974" fileName="ListMigrationUtil.java" startLine="143" startPosition="63" endLine="147" endPosition="6" />
-    <scopeInfo nodeId="1236863766974" fileName="ListMigrationUtil.java" startLine="135" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="1236863766974" fileName="ListMigrationUtil.java" startLine="142" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="1236863766974" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_gtz9m1_a0b0f#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="ListMigrationUtil.java" startLine="135" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="1236863766974" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_gtz9m1_a0a2a5#(Ljava/lang/Object;Ljava/lang/Object;)Z" fileName="ListMigrationUtil.java" startLine="142" startPosition="0" endLine="149" endPosition="0" />
     <scopeInfo nodeId="1237037981332" fileName="ListMigrationUtil.java" startLine="19" startPosition="99" endLine="27" endPosition="68">
       <varInfo nodeId="1237037981334" varName="type" />
     </scopeInfo>
@@ -415,34 +415,34 @@
       <varInfo nodeId="1238518113124" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="1237030149970" fileName="ListMigrationUtil.java" startLine="98" startPosition="38" endLine="108" endPosition="9" />
-    <scopeInfo nodeId="1237037981322" fileName="ListMigrationUtil.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1237037981322" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForLists#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1237037981323" varName="node" />
       <varInfo nodeId="1237037981325" varName="name" />
       <varInfo nodeId="1237037981327" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="1237218573103" fileName="ListMigrationUtil.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1237218573103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForSet#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="29" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1237218573104" varName="node" />
       <varInfo nodeId="1237218573106" varName="name" />
       <varInfo nodeId="1237218573108" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="1238772012592" fileName="ListMigrationUtil.java" startLine="40" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1238772012592" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForIterator#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="40" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1238772012593" varName="node" />
       <varInfo nodeId="1238772012595" varName="name" />
       <varInfo nodeId="1238772012597" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="1237030023768" fileName="ListMigrationUtil.java" startLine="51" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="1237030023768" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForAll#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="51" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1237030088159" varName="node" />
       <varInfo nodeId="1237030088162" varName="name" />
       <varInfo nodeId="1237030088164" varName="params" />
     </scopeInfo>
-    <scopeInfo nodeId="1238518113112" fileName="ListMigrationUtil.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="1238518113112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForMap#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1238518113113" varName="node" />
       <varInfo nodeId="1238518113115" varName="name" />
       <varInfo nodeId="1238518113117" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="1237030149959" fileName="ListMigrationUtil.java" startLine="90" startPosition="20" endLine="108" endPosition="9" />
     <scopeInfo nodeId="1237031067495" fileName="ListMigrationUtil.java" startLine="114" startPosition="94" endLine="133" endPosition="17" />
-    <scopeInfo nodeId="1237031067491" fileName="ListMigrationUtil.java" startLine="113" startPosition="0" endLine="135" endPosition="0">
+    <scopeInfo nodeId="1237031067491" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableForType#(Ljetbrains/mps/smodel/SNode;ILjava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="113" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="1237031067493" varName="node" />
       <varInfo nodeId="1237031076908" varName="classifiers" />
       <varInfo nodeId="1237031314163" varName="params" />
@@ -454,7 +454,7 @@
     <scopeInfo nodeId="1237030149909" fileName="ListMigrationUtil.java" startLine="74" startPosition="98" endLine="111" endPosition="16">
       <varInfo nodeId="1237030149911" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1237030149899" fileName="ListMigrationUtil.java" startLine="73" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="1237030149899" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicableMethod#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/util/List;)Z" fileName="ListMigrationUtil.java" startLine="73" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="1237030149902" varName="node" />
       <varInfo nodeId="1237030149904" varName="name" />
       <varInfo nodeId="1237030149906" varName="params" />
@@ -462,9 +462,9 @@
     <unitInfo nodeId="1236863766974" fileName="ListMigrationUtil.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ListMigrationUtil" />
   </root>
   <root nodeId="1237030526913">
-    <nodeInfo nodeId="1237030526915" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="ParameterType.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
+    <nodeInfo nodeId="1237030526915" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterType#()V" fileName="ParameterType.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
     <scopeInfo nodeId="1237030526918" fileName="ParameterType.java" startLine="11" startPosition="19" endLine="11" endPosition="19" />
-    <scopeInfo nodeId="1237030526915" fileName="ParameterType.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="1237030526915" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParameterType#()V" fileName="ParameterType.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
     <unitInfo nodeId="1237030526913" fileName="ParameterType.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.scripts.ParameterType" />
   </root>
   <root nodeId="1238516564139">
@@ -554,12 +554,12 @@
     <scopeInfo nodeId="2521829804648637093" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="38" startPosition="59" endLine="39" endPosition="89" />
     <scopeInfo nodeId="2521829804648638210" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="60" startPosition="94" endLine="62" endPosition="33" />
     <scopeInfo nodeId="2521829804648638202" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="59" startPosition="82" endLine="63" endPosition="17" />
-    <scopeInfo nodeId="2521829804648638201" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15">
+    <scopeInfo nodeId="2521829804648638201" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15">
       <varInfo nodeId="2521829804648638203" varName="imd" />
     </scopeInfo>
     <scopeInfo nodeId="2521829804648670273" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="58" startPosition="39" endLine="64" endPosition="15" />
     <scopeInfo nodeId="2521829804648638181" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13" />
-    <scopeInfo nodeId="2521829804648670272" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13">
+    <scopeInfo nodeId="2521829804648670272" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="56" startPosition="44" endLine="65" endPosition="13">
       <varInfo nodeId="2521829804648670274" varName="iseq" />
     </scopeInfo>
     <scopeInfo nodeId="2521829804648638166" fileName="ISequence_methods_resolve_MigrationScript.java" startLine="54" startPosition="30" endLine="66" endPosition="11">

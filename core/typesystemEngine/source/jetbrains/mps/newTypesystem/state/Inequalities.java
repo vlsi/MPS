@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem.state;
 import jetbrains.mps.newTypesystem.SubTyping;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.*;
@@ -28,7 +29,6 @@ import java.util.*;
  * Date: Sep 10, 2010
  * Time: 5:26:43 PM
  */
- //todo implement solve inequalities (only)
 public class Inequalities {
   private final State myState;
 
@@ -99,15 +99,8 @@ public class Inequalities {
     }
   }
 
-  private void checkNonsenseInequality(InequalityBlock block) {
-    SNode left = myState.getRepresentative(block.getLeftNode());
-    SNode right = myState.getRepresentative(block.getRightNode());
-    if (left == right) {
-      
-    }
-  }
-
   private void iteration( List<InequalityBlock> inequalities) {
+     //todo switch input <--> output if input is deeply concrete?
     solveOnlyConcrete = false;
     Set<SNode> nodes = new LinkedHashSet<SNode>();
     ManyToManyMap<SNode, SNode> inputsToOutputs = new ManyToManyMap<SNode, SNode>();
@@ -136,7 +129,6 @@ public class Inequalities {
   //  System.out.println(sortedNodes);
     for (SNode node : sortedNodes) {
       //todo shallow concrete
-      //todo switch input <--> output if input is deeply concrete?
      if (!TypesUtil.isVariable(node)) {
        continue;
      }
@@ -152,20 +144,22 @@ public class Inequalities {
         if (right == left) {
           continue;
         }
-        if (left == node) {
+        if (left == node && !TypesUtil.isVariable(right)) {
           superTypes.add(right);
         }
-        if (right == node) {
+        if (right == node && !TypesUtil.isVariable(left)) {
           subTypes.add(left);
         } 
       }
       SubTyping subTyping = new SubTyping(myState);
       if (TypesUtil.isVariable(node)) {
         if (!subTypes.isEmpty()) {
-          myState.addEquation(node, subTyping.createMeet(subTypes), null);
+          EquationInfo info = new EquationInfo(node, "LCS");
+          myState.addEquation(node, subTyping.createLCS(subTypes), info);
         }
         if (!superTypes.isEmpty()) {
-          myState.addEquation(node, subTyping.createLCS(superTypes), null);
+          EquationInfo info = new EquationInfo(node, "meet");
+          myState.addEquation(node, subTyping.createMeet(superTypes),info);
         }
       } else {
 
@@ -174,58 +168,6 @@ public class Inequalities {
     }
 
   }
-
- /* private void solve(boolean shallow) {
-    for (int i = 1; i < 7; i++) {
-      //todo more sensible loop, this is for debug
-      iteration(shallow, true);
-      iteration(shallow, false);
-    }
-  }
-
-  private boolean iteration(boolean shallow, boolean sub) {
-
-    Map<SNode, Map<SNode, EquationInfo>> map = sub ? mySubToSuper : mySuperToSub;
-    SubTyping subTyping = new SubTyping(myState);
-    boolean stateChanged = false;
-    for (SNode node : new HashSet<SNode>(map.keySet())) {
-      Map<SNode, EquationInfo> otherMap = map.get(node);
-      if (otherMap == null) {
-        continue;
-      }
-      Set<SNode> concreteTypes = getConcrete(otherMap.keySet(), shallow);
-      if (concreteTypes == null || concreteTypes.isEmpty()) {
-        continue;
-      }
-      Set<SNode> expandedConcreteTypes = myState.getEquations().expandSet(concreteTypes);
-      if (TypesUtil.isVariable(node)) {
-        SNode type = sub ? subTyping.createMeet(expandedConcreteTypes) : subTyping.createLCS(expandedConcreteTypes);
-        for (SNode concreteType : expandedConcreteTypes) {
-          //  EquationInfo info = map.get(node).get(concreteType);
-          if (sub) {
-            removeAndTrack(node, concreteType);
-          } else {
-            removeAndTrack(concreteType, node);
-          }
-        }
-        myState.addEquation(node, type, null);
-      } else if (myState.isConcrete(node, shallow)) {
-        for (SNode concreteType : expandedConcreteTypes) {
-          EquationInfo info = map.get(node).get(concreteType);
-          if (sub) {
-            removeAndTrack(node, concreteType);
-            myState.addRelation(node, concreteType, myKind, info);
-          } else {
-            removeAndTrack(concreteType, node);
-            myState.addRelation(concreteType, node, myKind, info);
-          }
-        }
-      }
-      stateChanged = true;
-    }
-    return stateChanged;
-  }
-*/
 
   public void clear() {
     solveOnlyConcrete = true;

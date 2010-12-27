@@ -1100,6 +1100,11 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4609636120081351393">
       <property name="name" nameId="tpck.1169194664001" value="IWillBeClassifier" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1461424660015405635">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+      <property name="name" nameId="tpck.1169194664001" value="EscapeOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1225271315873" resolveInfo="BaseStringOperation" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4175,5 +4180,15 @@
   <root id="4957392803029437192" />
   <root id="8972672481958095232" />
   <root id="4609636120081351393" />
+  <root id="1461424660015405635">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1461424660015405637">
+      <property name="value" nameId="tpce.1105725733873" value="escape" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1461424660015405639">
+      <property name="value" nameId="tpce.1105725733873" value="escape quotation marks, back slashes, etc." />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </root>
 </model>
 

@@ -4,4 +4,6 @@ package jetbrains.mps.samples.matrixLanguage.typesystem;
 
 
 public class _FieldOperations {
+  public _FieldOperations() {
+  }
 }

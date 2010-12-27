@@ -214,16 +214,16 @@
     <unitInfo nodeId="4495133539197110684" fileName="DebugCollections.java" startLine="20" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.DebugCollections" />
   </root>
   <root nodeId="7020394447413472663">
-    <nodeInfo nodeId="7020394447413472676" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="UncaughtException.java" startLine="10" startPosition="42" endLine="11" endPosition="58" />
-    <nodeInfo nodeId="7020394447413472665" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UncaughtException#()V" fileName="UncaughtException.java" startLine="6" startPosition="32" endLine="8" endPosition="3" />
-    <nodeInfo nodeId="7020394447413472669" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" fileName="UncaughtException.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="7020394447413472668" fileName="UncaughtException.java" startLine="7" startPosition="30" endLine="7" endPosition="30" />
-    <scopeInfo nodeId="7020394447413472675" fileName="UncaughtException.java" startLine="10" startPosition="42" endLine="11" endPosition="58" />
-    <scopeInfo nodeId="7020394447413472665" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UncaughtException#()V" fileName="UncaughtException.java" startLine="6" startPosition="32" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="7020394447413472669" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" fileName="UncaughtException.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="7020394447413472676" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="UncaughtException.java" startLine="13" startPosition="42" endLine="14" endPosition="127" />
+    <nodeInfo nodeId="7020394447413472665" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UncaughtException#()V" fileName="UncaughtException.java" startLine="9" startPosition="32" endLine="11" endPosition="3" />
+    <nodeInfo nodeId="7020394447413472669" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" fileName="UncaughtException.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7020394447413472668" fileName="UncaughtException.java" startLine="10" startPosition="30" endLine="10" endPosition="30" />
+    <scopeInfo nodeId="7020394447413472675" fileName="UncaughtException.java" startLine="13" startPosition="42" endLine="14" endPosition="127" />
+    <scopeInfo nodeId="7020394447413472665" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UncaughtException#()V" fileName="UncaughtException.java" startLine="9" startPosition="32" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="7020394447413472669" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" fileName="UncaughtException.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="7020394447413472670" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="7020394447413472663" fileName="UncaughtException.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.UncaughtException" />
+    <unitInfo nodeId="7020394447413472663" fileName="UncaughtException.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.UncaughtException" />
   </root>
 </debugInfo>
 

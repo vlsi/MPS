@@ -28,7 +28,7 @@
     <scopeInfo nodeId="1238405584081" fileName="DecimalBinaryOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1238406290274">
-    <nodeInfo nodeId="2705856473428695571" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" fileName="MathUtil.java" startLine="22" startPosition="23" endLine="23" endPosition="599" />
+    <nodeInfo nodeId="2705856473428695571" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="operations" fileName="MathUtil.java" startLine="22" startPosition="23" endLine="23" endPosition="599" />
     <nodeInfo nodeId="1238406776198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MathUtil.java" startLine="25" startPosition="57" endLine="26" endPosition="431" />
     <nodeInfo nodeId="1238406803974" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MathUtil.java" startLine="26" startPosition="431" endLine="27" endPosition="308" />
     <nodeInfo nodeId="1238406330222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MathUtil.java" startLine="27" startPosition="308" endLine="28" endPosition="36" />
@@ -631,46 +631,46 @@
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MathUtil.java" startLine="1333" startPosition="9" endLine="1334" endPosition="31" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MathUtil.java" startLine="1335" startPosition="7" endLine="1336" endPosition="20" />
     <nodeInfo nodeId="2705856473428697966" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="303" startPosition="10" endLine="305" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="308" startPosition="50" endLine="310" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="325" startPosition="50" endLine="327" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="344" startPosition="50" endLine="346" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="363" startPosition="50" endLine="365" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="382" startPosition="50" endLine="384" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="401" startPosition="50" endLine="403" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="420" startPosition="50" endLine="422" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="439" startPosition="50" endLine="441" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="458" startPosition="50" endLine="460" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="477" startPosition="50" endLine="479" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="496" startPosition="59" endLine="498" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="541" startPosition="59" endLine="543" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="586" startPosition="59" endLine="588" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="631" startPosition="59" endLine="633" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="676" startPosition="59" endLine="678" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="722" startPosition="59" endLine="724" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="768" startPosition="59" endLine="770" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="814" startPosition="59" endLine="816" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="860" startPosition="53" endLine="862" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="877" startPosition="54" endLine="879" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="896" startPosition="54" endLine="898" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="915" startPosition="54" endLine="917" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="934" startPosition="54" endLine="936" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="953" startPosition="53" endLine="955" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1005" startPosition="54" endLine="1007" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1024" startPosition="54" endLine="1026" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1043" startPosition="54" endLine="1045" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1062" startPosition="54" endLine="1064" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1081" startPosition="54" endLine="1083" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1100" startPosition="54" endLine="1102" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1119" startPosition="54" endLine="1121" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1138" startPosition="54" endLine="1140" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1157" startPosition="52" endLine="1159" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1175" startPosition="52" endLine="1177" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1193" startPosition="52" endLine="1195" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1211" startPosition="52" endLine="1213" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1229" startPosition="52" endLine="1231" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1247" startPosition="52" endLine="1249" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1264" startPosition="54" endLine="1266" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="MathUtil.java" startLine="1302" startPosition="54" endLine="1304" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0#()V" fileName="MathUtil.java" startLine="308" startPosition="50" endLine="310" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a0#()V" fileName="MathUtil.java" startLine="325" startPosition="50" endLine="327" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a2a0#()V" fileName="MathUtil.java" startLine="344" startPosition="50" endLine="346" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a3a0#()V" fileName="MathUtil.java" startLine="363" startPosition="50" endLine="365" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a4a0#()V" fileName="MathUtil.java" startLine="382" startPosition="50" endLine="384" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a5a0#()V" fileName="MathUtil.java" startLine="401" startPosition="50" endLine="403" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a6a0#()V" fileName="MathUtil.java" startLine="420" startPosition="50" endLine="422" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a7a0#()V" fileName="MathUtil.java" startLine="439" startPosition="50" endLine="441" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a8a0#()V" fileName="MathUtil.java" startLine="458" startPosition="50" endLine="460" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a9a0#()V" fileName="MathUtil.java" startLine="477" startPosition="50" endLine="479" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0b0a0b#()V" fileName="MathUtil.java" startLine="496" startPosition="59" endLine="498" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0c0a0b#()V" fileName="MathUtil.java" startLine="541" startPosition="59" endLine="543" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0d0a0b#()V" fileName="MathUtil.java" startLine="586" startPosition="59" endLine="588" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0e0a0b#()V" fileName="MathUtil.java" startLine="631" startPosition="59" endLine="633" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0b0a0c#()V" fileName="MathUtil.java" startLine="676" startPosition="59" endLine="678" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0c0a0c#()V" fileName="MathUtil.java" startLine="722" startPosition="59" endLine="724" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0d0a0c#()V" fileName="MathUtil.java" startLine="768" startPosition="59" endLine="770" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0e0a0c#()V" fileName="MathUtil.java" startLine="814" startPosition="59" endLine="816" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0e0b0d#()V" fileName="MathUtil.java" startLine="860" startPosition="53" endLine="862" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a2a3#()V" fileName="MathUtil.java" startLine="877" startPosition="54" endLine="879" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0b2a3#()V" fileName="MathUtil.java" startLine="896" startPosition="54" endLine="898" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0c2a3#()V" fileName="MathUtil.java" startLine="915" startPosition="54" endLine="917" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0d2a3#()V" fileName="MathUtil.java" startLine="934" startPosition="54" endLine="936" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0c0c0d#()V" fileName="MathUtil.java" startLine="953" startPosition="53" endLine="955" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0a4#()V" fileName="MathUtil.java" startLine="1005" startPosition="54" endLine="1007" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0b0a4#()V" fileName="MathUtil.java" startLine="1024" startPosition="54" endLine="1026" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0c0a4#()V" fileName="MathUtil.java" startLine="1043" startPosition="54" endLine="1045" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0d0a4#()V" fileName="MathUtil.java" startLine="1062" startPosition="54" endLine="1064" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0e0a4#()V" fileName="MathUtil.java" startLine="1081" startPosition="54" endLine="1083" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0f0a4#()V" fileName="MathUtil.java" startLine="1100" startPosition="54" endLine="1102" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0g0a4#()V" fileName="MathUtil.java" startLine="1119" startPosition="54" endLine="1121" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0h0a4#()V" fileName="MathUtil.java" startLine="1138" startPosition="54" endLine="1140" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a0a6#()V" fileName="MathUtil.java" startLine="1157" startPosition="52" endLine="1159" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a1a6#()V" fileName="MathUtil.java" startLine="1175" startPosition="52" endLine="1177" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a2a6#()V" fileName="MathUtil.java" startLine="1193" startPosition="52" endLine="1195" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a3a6#()V" fileName="MathUtil.java" startLine="1211" startPosition="52" endLine="1213" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a4a6#()V" fileName="MathUtil.java" startLine="1229" startPosition="52" endLine="1231" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a2a7#()V" fileName="MathUtil.java" startLine="1247" startPosition="52" endLine="1249" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a3a7#()V" fileName="MathUtil.java" startLine="1264" startPosition="54" endLine="1266" endPosition="5" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a4a7#()V" fileName="MathUtil.java" startLine="1302" startPosition="54" endLine="1304" endPosition="5" />
     <nodeInfo nodeId="1238942028288" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MathUtil.java" startLine="37" startPosition="47" endLine="40" endPosition="11" />
     <nodeInfo nodeId="1238942028288" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MathUtil.java" startLine="41" startPosition="9" endLine="44" endPosition="9" />
     <nodeInfo nodeId="1238942028288" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MathUtil.java" startLine="49" startPosition="47" endLine="52" endPosition="11" />
@@ -751,7 +751,7 @@
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="315" startPosition="32" endLine="320" endPosition="7" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="867" startPosition="32" endLine="872" endPosition="7" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="1254" startPosition="32" endLine="1259" endPosition="7" />
-    <nodeInfo nodeId="1238406301498" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MathUtil.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="1238406301498" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applicable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="MathUtil.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
     <nodeInfo nodeId="1238942028288" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="35" startPosition="44" endLine="41" endPosition="9" />
     <nodeInfo nodeId="1238942028288" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="47" startPosition="44" endLine="53" endPosition="9" />
     <nodeInfo nodeId="1238942028288" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="59" startPosition="44" endLine="65" endPosition="9" />
@@ -822,9 +822,9 @@
     <nodeInfo nodeId="1238942053984" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="124" startPosition="7" endLine="136" endPosition="7" />
     <nodeInfo nodeId="2705856473428697725" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="227" startPosition="39" endLine="239" endPosition="7" />
     <nodeInfo nodeId="2705856473428697725" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="239" startPosition="7" endLine="251" endPosition="7" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="311" startPosition="0" endLine="323" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="863" startPosition="0" endLine="875" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1250" startPosition="0" endLine="1262" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="311" startPosition="0" endLine="323" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="863" startPosition="0" endLine="875" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1250" startPosition="0" endLine="1262" endPosition="0" />
     <nodeInfo nodeId="1300076822026748097" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="144" startPosition="42" endLine="157" endPosition="7" />
     <nodeInfo nodeId="1300076822026748097" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="157" startPosition="7" endLine="170" endPosition="7" />
     <nodeInfo nodeId="1300076822026748097" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="170" startPosition="7" endLine="183" endPosition="7" />
@@ -846,45 +846,45 @@
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="840" startPosition="9" endLine="853" endPosition="9" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="970" startPosition="241" endLine="983" endPosition="11" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="983" startPosition="11" endLine="996" endPosition="11" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1160" startPosition="0" endLine="1173" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1178" startPosition="0" endLine="1191" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1196" startPosition="0" endLine="1209" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1214" startPosition="0" endLine="1227" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1232" startPosition="0" endLine="1245" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1160" startPosition="0" endLine="1173" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1178" startPosition="0" endLine="1191" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1196" startPosition="0" endLine="1209" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1214" startPosition="0" endLine="1227" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1232" startPosition="0" endLine="1245" endPosition="0" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="1280" startPosition="249" endLine="1293" endPosition="11" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="1318" startPosition="249" endLine="1331" endPosition="11" />
     <nodeInfo nodeId="1300076822026746764" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="MathUtil.java" startLine="185" startPosition="20" endLine="199" endPosition="5" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="328" startPosition="0" endLine="342" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="347" startPosition="0" endLine="361" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="366" startPosition="0" endLine="380" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="385" startPosition="0" endLine="399" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="404" startPosition="0" endLine="418" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="423" startPosition="0" endLine="437" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="442" startPosition="0" endLine="456" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="461" startPosition="0" endLine="475" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="480" startPosition="0" endLine="494" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="880" startPosition="0" endLine="894" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="899" startPosition="0" endLine="913" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="918" startPosition="0" endLine="932" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="937" startPosition="0" endLine="951" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1008" startPosition="0" endLine="1022" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1027" startPosition="0" endLine="1041" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1046" startPosition="0" endLine="1060" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1065" startPosition="0" endLine="1079" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1084" startPosition="0" endLine="1098" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1103" startPosition="0" endLine="1117" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1122" startPosition="0" endLine="1136" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1141" startPosition="0" endLine="1155" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="328" startPosition="0" endLine="342" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="347" startPosition="0" endLine="361" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="366" startPosition="0" endLine="380" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="385" startPosition="0" endLine="399" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="404" startPosition="0" endLine="418" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="423" startPosition="0" endLine="437" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="442" startPosition="0" endLine="456" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="461" startPosition="0" endLine="475" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="480" startPosition="0" endLine="494" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="880" startPosition="0" endLine="894" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="899" startPosition="0" endLine="913" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="918" startPosition="0" endLine="932" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="937" startPosition="0" endLine="951" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1008" startPosition="0" endLine="1022" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1027" startPosition="0" endLine="1041" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1046" startPosition="0" endLine="1060" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1065" startPosition="0" endLine="1079" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1084" startPosition="0" endLine="1098" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1103" startPosition="0" endLine="1117" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1122" startPosition="0" endLine="1136" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1141" startPosition="0" endLine="1155" endPosition="0" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="1276" startPosition="43" endLine="1295" endPosition="9" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="1314" startPosition="43" endLine="1333" endPosition="9" />
     <nodeInfo nodeId="1300076822026748000" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="MathUtil.java" startLine="202" startPosition="57" endLine="222" endPosition="5" />
-    <nodeInfo nodeId="2705856473428697856" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MathUtil.java" startLine="286" startPosition="0" endLine="307" endPosition="0" />
-    <nodeInfo nodeId="1300076822026747996" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MathUtil.java" startLine="201" startPosition="0" endLine="224" endPosition="0" />
+    <nodeInfo nodeId="2705856473428697856" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="operConstant#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="286" startPosition="0" endLine="307" endPosition="0" />
+    <nodeInfo nodeId="1300076822026747996" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRoundingMode#(I)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="201" startPosition="0" endLine="224" endPosition="0" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="1273" startPosition="32" endLine="1297" endPosition="7" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="1311" startPosition="32" endLine="1335" endPosition="7" />
     <nodeInfo nodeId="2705856473428697725" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="MathUtil.java" startLine="225" startPosition="54" endLine="253" endPosition="20" />
-    <nodeInfo nodeId="2705856473428697721" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MathUtil.java" startLine="224" startPosition="0" endLine="255" endPosition="0" />
-    <nodeInfo nodeId="2705856473428697749" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MathUtil.java" startLine="255" startPosition="0" endLine="286" endPosition="0" />
+    <nodeInfo nodeId="2705856473428697721" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnboxedElementType#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="224" startPosition="0" endLine="255" endPosition="0" />
+    <nodeInfo nodeId="2705856473428697749" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIndex#(Ljetbrains/mps/smodel/SNode;)I" fileName="MathUtil.java" startLine="255" startPosition="0" endLine="286" endPosition="0" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="505" startPosition="32" endLine="536" endPosition="7" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="550" startPosition="32" endLine="581" endPosition="7" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="595" startPosition="32" endLine="626" endPosition="7" />
@@ -894,24 +894,24 @@
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="777" startPosition="32" endLine="809" endPosition="7" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="823" startPosition="32" endLine="855" endPosition="7" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="966" startPosition="43" endLine="998" endPosition="9" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1267" startPosition="0" endLine="1300" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="1305" startPosition="0" endLine="1338" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1267" startPosition="0" endLine="1300" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1305" startPosition="0" endLine="1338" endPosition="0" />
     <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MathUtil.java" startLine="963" startPosition="32" endLine="1000" endPosition="7" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="499" startPosition="0" endLine="539" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="544" startPosition="0" endLine="584" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="589" startPosition="0" endLine="629" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="634" startPosition="0" endLine="674" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="679" startPosition="0" endLine="720" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="725" startPosition="0" endLine="766" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="771" startPosition="0" endLine="812" endPosition="0" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="817" startPosition="0" endLine="858" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="499" startPosition="0" endLine="539" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="544" startPosition="0" endLine="584" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="589" startPosition="0" endLine="629" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="634" startPosition="0" endLine="674" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="679" startPosition="0" endLine="720" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="725" startPosition="0" endLine="766" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="771" startPosition="0" endLine="812" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="817" startPosition="0" endLine="858" endPosition="0" />
     <nodeInfo nodeId="1300076822026748097" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="MathUtil.java" startLine="142" startPosition="13" endLine="185" endPosition="20" />
-    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="MathUtil.java" startLine="956" startPosition="0" endLine="1003" endPosition="0" />
+    <nodeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="956" startPosition="0" endLine="1003" endPosition="0" />
     <nodeInfo nodeId="1238942028288" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="MathUtil.java" startLine="31" startPosition="43" endLine="83" endPosition="20" />
     <nodeInfo nodeId="1238942053984" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="MathUtil.java" startLine="86" startPosition="43" endLine="138" endPosition="20" />
-    <nodeInfo nodeId="1238942002669" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MathUtil.java" startLine="30" startPosition="0" endLine="85" endPosition="0" />
-    <nodeInfo nodeId="1238942053978" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MathUtil.java" startLine="85" startPosition="0" endLine="140" endPosition="0" />
-    <nodeInfo nodeId="1300076822026746759" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" fileName="MathUtil.java" startLine="140" startPosition="0" endLine="201" endPosition="0" />
+    <nodeInfo nodeId="1238942002669" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convert1#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="30" startPosition="0" endLine="85" endPosition="0" />
+    <nodeInfo nodeId="1238942053978" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convert2#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="85" startPosition="0" endLine="140" endPosition="0" />
+    <nodeInfo nodeId="1300076822026746759" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMathContext#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="140" startPosition="0" endLine="201" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="309" startPosition="41" endLine="309" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="326" startPosition="41" endLine="326" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="345" startPosition="41" endLine="345" endPosition="41" />
@@ -1059,65 +1059,65 @@
     <scopeInfo nodeId="1300076822026748097" fileName="MathUtil.java" startLine="153" startPosition="34" endLine="155" endPosition="16" />
     <scopeInfo nodeId="1300076822026748097" fileName="MathUtil.java" startLine="166" startPosition="34" endLine="168" endPosition="16" />
     <scopeInfo nodeId="1300076822026748097" fileName="MathUtil.java" startLine="179" startPosition="34" endLine="181" endPosition="16" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="308" startPosition="50" endLine="310" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="325" startPosition="50" endLine="327" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="344" startPosition="50" endLine="346" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="363" startPosition="50" endLine="365" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="382" startPosition="50" endLine="384" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="401" startPosition="50" endLine="403" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="420" startPosition="50" endLine="422" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="439" startPosition="50" endLine="441" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="458" startPosition="50" endLine="460" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="477" startPosition="50" endLine="479" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="496" startPosition="59" endLine="498" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0#()V" fileName="MathUtil.java" startLine="308" startPosition="50" endLine="310" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a0#()V" fileName="MathUtil.java" startLine="325" startPosition="50" endLine="327" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a2a0#()V" fileName="MathUtil.java" startLine="344" startPosition="50" endLine="346" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a3a0#()V" fileName="MathUtil.java" startLine="363" startPosition="50" endLine="365" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a4a0#()V" fileName="MathUtil.java" startLine="382" startPosition="50" endLine="384" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a5a0#()V" fileName="MathUtil.java" startLine="401" startPosition="50" endLine="403" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a6a0#()V" fileName="MathUtil.java" startLine="420" startPosition="50" endLine="422" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a7a0#()V" fileName="MathUtil.java" startLine="439" startPosition="50" endLine="441" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a8a0#()V" fileName="MathUtil.java" startLine="458" startPosition="50" endLine="460" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a9a0#()V" fileName="MathUtil.java" startLine="477" startPosition="50" endLine="479" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0b0a0b#()V" fileName="MathUtil.java" startLine="496" startPosition="59" endLine="498" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="514" startPosition="18" endLine="516" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="527" startPosition="18" endLine="529" endPosition="41" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="541" startPosition="59" endLine="543" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0c0a0b#()V" fileName="MathUtil.java" startLine="541" startPosition="59" endLine="543" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="559" startPosition="18" endLine="561" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="572" startPosition="18" endLine="574" endPosition="41" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="586" startPosition="59" endLine="588" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0d0a0b#()V" fileName="MathUtil.java" startLine="586" startPosition="59" endLine="588" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="604" startPosition="18" endLine="606" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="617" startPosition="18" endLine="619" endPosition="41" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="631" startPosition="59" endLine="633" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0e0a0b#()V" fileName="MathUtil.java" startLine="631" startPosition="59" endLine="633" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="649" startPosition="18" endLine="651" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="662" startPosition="18" endLine="664" endPosition="41" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="676" startPosition="59" endLine="678" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0b0a0c#()V" fileName="MathUtil.java" startLine="676" startPosition="59" endLine="678" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="695" startPosition="18" endLine="697" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="708" startPosition="18" endLine="710" endPosition="41" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="722" startPosition="59" endLine="724" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0c0a0c#()V" fileName="MathUtil.java" startLine="722" startPosition="59" endLine="724" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="741" startPosition="18" endLine="743" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="754" startPosition="18" endLine="756" endPosition="41" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="768" startPosition="59" endLine="770" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0d0a0c#()V" fileName="MathUtil.java" startLine="768" startPosition="59" endLine="770" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="787" startPosition="18" endLine="789" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="800" startPosition="18" endLine="802" endPosition="41" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="814" startPosition="59" endLine="816" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0c0e0a0c#()V" fileName="MathUtil.java" startLine="814" startPosition="59" endLine="816" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="833" startPosition="18" endLine="835" endPosition="41" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="846" startPosition="18" endLine="848" endPosition="41" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="860" startPosition="53" endLine="862" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="877" startPosition="54" endLine="879" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="896" startPosition="54" endLine="898" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="915" startPosition="54" endLine="917" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="934" startPosition="54" endLine="936" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="953" startPosition="53" endLine="955" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0e0b0d#()V" fileName="MathUtil.java" startLine="860" startPosition="53" endLine="862" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a2a3#()V" fileName="MathUtil.java" startLine="877" startPosition="54" endLine="879" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0b2a3#()V" fileName="MathUtil.java" startLine="896" startPosition="54" endLine="898" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0c2a3#()V" fileName="MathUtil.java" startLine="915" startPosition="54" endLine="917" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0d2a3#()V" fileName="MathUtil.java" startLine="934" startPosition="54" endLine="936" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0c0c0d#()V" fileName="MathUtil.java" startLine="953" startPosition="53" endLine="955" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="976" startPosition="20" endLine="978" endPosition="43" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="989" startPosition="20" endLine="991" endPosition="43" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1005" startPosition="54" endLine="1007" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1024" startPosition="54" endLine="1026" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1043" startPosition="54" endLine="1045" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1062" startPosition="54" endLine="1064" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1081" startPosition="54" endLine="1083" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1100" startPosition="54" endLine="1102" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1119" startPosition="54" endLine="1121" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1138" startPosition="54" endLine="1140" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1157" startPosition="52" endLine="1159" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1175" startPosition="52" endLine="1177" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1193" startPosition="52" endLine="1195" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1211" startPosition="52" endLine="1213" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1229" startPosition="52" endLine="1231" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1247" startPosition="52" endLine="1249" endPosition="5" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1264" startPosition="54" endLine="1266" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a0a4#()V" fileName="MathUtil.java" startLine="1005" startPosition="54" endLine="1007" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0b0a4#()V" fileName="MathUtil.java" startLine="1024" startPosition="54" endLine="1026" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0c0a4#()V" fileName="MathUtil.java" startLine="1043" startPosition="54" endLine="1045" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0d0a4#()V" fileName="MathUtil.java" startLine="1062" startPosition="54" endLine="1064" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0e0a4#()V" fileName="MathUtil.java" startLine="1081" startPosition="54" endLine="1083" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0f0a4#()V" fileName="MathUtil.java" startLine="1100" startPosition="54" endLine="1102" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0g0a4#()V" fileName="MathUtil.java" startLine="1119" startPosition="54" endLine="1121" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0h0a4#()V" fileName="MathUtil.java" startLine="1138" startPosition="54" endLine="1140" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a0a6#()V" fileName="MathUtil.java" startLine="1157" startPosition="52" endLine="1159" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a1a6#()V" fileName="MathUtil.java" startLine="1175" startPosition="52" endLine="1177" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a2a6#()V" fileName="MathUtil.java" startLine="1193" startPosition="52" endLine="1195" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a3a6#()V" fileName="MathUtil.java" startLine="1211" startPosition="52" endLine="1213" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a1a4a6#()V" fileName="MathUtil.java" startLine="1229" startPosition="52" endLine="1231" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a2a7#()V" fileName="MathUtil.java" startLine="1247" startPosition="52" endLine="1249" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a3a7#()V" fileName="MathUtil.java" startLine="1264" startPosition="54" endLine="1266" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1286" startPosition="20" endLine="1288" endPosition="43" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1302" startPosition="54" endLine="1304" endPosition="5" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_30uc9x_a0a0a4a7#()V" fileName="MathUtil.java" startLine="1302" startPosition="54" endLine="1304" endPosition="5" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1324" startPosition="20" endLine="1326" endPosition="43" />
     <scopeInfo nodeId="1238406301501" fileName="MathUtil.java" startLine="25" startPosition="57" endLine="28" endPosition="36">
       <varInfo nodeId="1238406776199" varName="operation_ok" />
@@ -1171,7 +1171,7 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1127" startPosition="7" endLine="1132" endPosition="31" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1146" startPosition="7" endLine="1151" endPosition="31" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1254" startPosition="32" endLine="1259" endPosition="7" />
-    <scopeInfo nodeId="1238406301498" fileName="MathUtil.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1238406301498" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applicable#(Ljetbrains/mps/smodel/SNode;)Z" fileName="MathUtil.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1238406315361" varName="contextParent" />
     </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1164" startPosition="32" endLine="1170" endPosition="7" />
@@ -1262,9 +1262,9 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1142" startPosition="31" endLine="1153" endPosition="20" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1281" startPosition="11" endLine="1292" endPosition="13" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1319" startPosition="11" endLine="1330" endPosition="13" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="311" startPosition="0" endLine="323" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="863" startPosition="0" endLine="875" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1250" startPosition="0" endLine="1262" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="311" startPosition="0" endLine="323" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="863" startPosition="0" endLine="875" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1250" startPosition="0" endLine="1262" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="508" startPosition="43" endLine="521" endPosition="9" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="521" startPosition="9" endLine="534" endPosition="9" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="553" startPosition="43" endLine="566" endPosition="9" />
@@ -1283,34 +1283,34 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="840" startPosition="9" endLine="853" endPosition="9" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="970" startPosition="241" endLine="983" endPosition="11" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="983" startPosition="11" endLine="996" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1160" startPosition="0" endLine="1173" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1178" startPosition="0" endLine="1191" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1196" startPosition="0" endLine="1209" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1214" startPosition="0" endLine="1227" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1232" startPosition="0" endLine="1245" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1160" startPosition="0" endLine="1173" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1178" startPosition="0" endLine="1191" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1196" startPosition="0" endLine="1209" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1214" startPosition="0" endLine="1227" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1232" startPosition="0" endLine="1245" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1280" startPosition="249" endLine="1293" endPosition="11" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1318" startPosition="249" endLine="1331" endPosition="11" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="328" startPosition="0" endLine="342" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="347" startPosition="0" endLine="361" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="366" startPosition="0" endLine="380" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="385" startPosition="0" endLine="399" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="404" startPosition="0" endLine="418" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="423" startPosition="0" endLine="437" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="442" startPosition="0" endLine="456" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="461" startPosition="0" endLine="475" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="480" startPosition="0" endLine="494" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="880" startPosition="0" endLine="894" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="899" startPosition="0" endLine="913" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="918" startPosition="0" endLine="932" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="937" startPosition="0" endLine="951" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1008" startPosition="0" endLine="1022" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1027" startPosition="0" endLine="1041" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1046" startPosition="0" endLine="1060" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1065" startPosition="0" endLine="1079" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1084" startPosition="0" endLine="1098" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1103" startPosition="0" endLine="1117" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1122" startPosition="0" endLine="1136" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1141" startPosition="0" endLine="1155" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="328" startPosition="0" endLine="342" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="347" startPosition="0" endLine="361" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="366" startPosition="0" endLine="380" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="385" startPosition="0" endLine="399" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="404" startPosition="0" endLine="418" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="423" startPosition="0" endLine="437" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="442" startPosition="0" endLine="456" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="461" startPosition="0" endLine="475" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="480" startPosition="0" endLine="494" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="880" startPosition="0" endLine="894" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="899" startPosition="0" endLine="913" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="918" startPosition="0" endLine="932" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="937" startPosition="0" endLine="951" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1008" startPosition="0" endLine="1022" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1027" startPosition="0" endLine="1041" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1046" startPosition="0" endLine="1060" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1065" startPosition="0" endLine="1079" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1084" startPosition="0" endLine="1098" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1103" startPosition="0" endLine="1117" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1122" startPosition="0" endLine="1136" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1141" startPosition="0" endLine="1155" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1277" startPosition="9" endLine="1294" endPosition="58" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1315" startPosition="9" endLine="1332" endPosition="58" />
     <scopeInfo nodeId="2705856473428697859" fileName="MathUtil.java" startLine="287" startPosition="48" endLine="305" endPosition="5">
@@ -1321,12 +1321,12 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1276" startPosition="43" endLine="1295" endPosition="9" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1314" startPosition="43" endLine="1333" endPosition="9" />
     <scopeInfo nodeId="1300076822026747999" fileName="MathUtil.java" startLine="202" startPosition="57" endLine="222" endPosition="5" />
-    <scopeInfo nodeId="2705856473428697856" fileName="MathUtil.java" startLine="286" startPosition="0" endLine="307" endPosition="0">
+    <scopeInfo nodeId="2705856473428697856" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="operConstant#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="286" startPosition="0" endLine="307" endPosition="0">
       <varInfo nodeId="2705856473428697973" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1274" startPosition="7" endLine="1296" endPosition="31" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1312" startPosition="7" endLine="1334" endPosition="31" />
-    <scopeInfo nodeId="1300076822026747996" fileName="MathUtil.java" startLine="201" startPosition="0" endLine="224" endPosition="0">
+    <scopeInfo nodeId="1300076822026747996" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRoundingMode#(I)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="201" startPosition="0" endLine="224" endPosition="0">
       <varInfo nodeId="1300076822026748055" varName="roundingMode" />
     </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1273" startPosition="32" endLine="1297" endPosition="7" />
@@ -1345,10 +1345,10 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="967" startPosition="9" endLine="997" endPosition="58" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1268" startPosition="49" endLine="1298" endPosition="20" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1306" startPosition="49" endLine="1336" endPosition="20" />
-    <scopeInfo nodeId="2705856473428697721" fileName="MathUtil.java" startLine="224" startPosition="0" endLine="255" endPosition="0">
+    <scopeInfo nodeId="2705856473428697721" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnboxedElementType#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="224" startPosition="0" endLine="255" endPosition="0">
       <varInfo nodeId="2705856473428697747" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2705856473428697749" fileName="MathUtil.java" startLine="255" startPosition="0" endLine="286" endPosition="0">
+    <scopeInfo nodeId="2705856473428697749" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIndex#(Ljetbrains/mps/smodel/SNode;)I" fileName="MathUtil.java" startLine="255" startPosition="0" endLine="286" endPosition="0">
       <varInfo nodeId="2705856473428697750" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="505" startPosition="32" endLine="536" endPosition="7" />
@@ -1360,8 +1360,8 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="777" startPosition="32" endLine="809" endPosition="7" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="823" startPosition="32" endLine="855" endPosition="7" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="966" startPosition="43" endLine="998" endPosition="9" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1267" startPosition="0" endLine="1300" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="1305" startPosition="0" endLine="1338" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1267" startPosition="0" endLine="1300" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="1305" startPosition="0" endLine="1338" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="964" startPosition="7" endLine="999" endPosition="31" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="500" startPosition="69" endLine="537" endPosition="20" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="545" startPosition="69" endLine="582" endPosition="20" />
@@ -1372,31 +1372,31 @@
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="726" startPosition="69" endLine="764" endPosition="20" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="772" startPosition="69" endLine="810" endPosition="20" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="818" startPosition="69" endLine="856" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="499" startPosition="0" endLine="539" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="544" startPosition="0" endLine="584" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="589" startPosition="0" endLine="629" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="634" startPosition="0" endLine="674" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="499" startPosition="0" endLine="539" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="544" startPosition="0" endLine="584" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="589" startPosition="0" endLine="629" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="634" startPosition="0" endLine="674" endPosition="0" />
     <scopeInfo nodeId="1300076822026748097" fileName="MathUtil.java" startLine="143" startPosition="8" endLine="184" endPosition="71" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="679" startPosition="0" endLine="720" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="725" startPosition="0" endLine="766" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="771" startPosition="0" endLine="812" endPosition="0" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="817" startPosition="0" endLine="858" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="679" startPosition="0" endLine="720" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="725" startPosition="0" endLine="766" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="771" startPosition="0" endLine="812" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="817" startPosition="0" endLine="858" endPosition="0" />
     <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="957" startPosition="70" endLine="1001" endPosition="20" />
-    <scopeInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="956" startPosition="0" endLine="1003" endPosition="0" />
+    <scopeInfo nodeId="1238406290274" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="956" startPosition="0" endLine="1003" endPosition="0" />
     <scopeInfo nodeId="1238942028288" fileName="MathUtil.java" startLine="32" startPosition="8" endLine="82" endPosition="18" />
     <scopeInfo nodeId="1238942053984" fileName="MathUtil.java" startLine="87" startPosition="8" endLine="137" endPosition="18" />
     <scopeInfo nodeId="1238942002672" fileName="MathUtil.java" startLine="31" startPosition="43" endLine="83" endPosition="20" />
     <scopeInfo nodeId="1238942053983" fileName="MathUtil.java" startLine="86" startPosition="43" endLine="138" endPosition="20" />
-    <scopeInfo nodeId="1238942002669" fileName="MathUtil.java" startLine="30" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="1238942002669" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convert1#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="30" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1238942033965" varName="bmc" />
     </scopeInfo>
-    <scopeInfo nodeId="1238942053978" fileName="MathUtil.java" startLine="85" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="1238942053978" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convert2#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="85" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="1238942053979" varName="bmc" />
     </scopeInfo>
     <scopeInfo nodeId="1300076822026746762" fileName="MathUtil.java" startLine="141" startPosition="50" endLine="199" endPosition="5">
       <varInfo nodeId="1904947163751464630" varName="mc" />
     </scopeInfo>
-    <scopeInfo nodeId="1300076822026746759" fileName="MathUtil.java" startLine="140" startPosition="0" endLine="201" endPosition="0">
+    <scopeInfo nodeId="1300076822026746759" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMathContext#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" fileName="MathUtil.java" startLine="140" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="1300076822026746819" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="1238406290274" fileName="MathUtil.java" startLine="308" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.MathUtil$QuotationClass_30uc9x_a0a0" />

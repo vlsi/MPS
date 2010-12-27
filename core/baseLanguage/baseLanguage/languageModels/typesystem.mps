@@ -922,6 +922,10 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="9035995549588750859">
       <property name="name" nameId="tpck.1169194664001" value="typeof_SwitchCase" />
     </node>
+    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1461424660015406123">
+      <property name="name" nameId="tpck.1169194664001" value="typeof_EscapeOperation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="string.expression" />
+    </node>
   </roots>
   <root id="1175495245176">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1175495245177">
@@ -2269,6 +2273,7 @@
         <node role="inequationGroup" roleId="tpd4.1320713984677695199" type="tpd4.DefaultGroupReference" typeId="tpd4.1320713984677695202" id="5970100369440882648" />
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateGreaterThanInequationStatement" typeId="tpd4.1174663239020" id="1183457358399">
+        <property name="checkOnly" nameId="tpd4.1206359757216" value="true" />
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1185790951938">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1183457358397">
             <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1203977954866">
@@ -29007,6 +29012,28 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="9035995549588750861">
       <property name="name" nameId="tpck.1169194664001" value="switchCase" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1163670641947" resolveInfo="SwitchCase" />
+    </node>
+  </root>
+  <root id="1461424660015406123">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1461424660015406124">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="1461424660015429875">
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1461424660015429879">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1461424660015429880">
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StringType" typeId="tpee.1225271177708" id="1461424660015429882" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1461424660015429878">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1461424660015429872">
+            <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1461424660015429874">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1461424660015406125" resolveInfo="escapeOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1461424660015406125">
+      <property name="name" nameId="tpck.1169194664001" value="escapeOperation" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1461424660015405635" resolveInfo="EscapeOperation" />
     </node>
   </root>
 </model>

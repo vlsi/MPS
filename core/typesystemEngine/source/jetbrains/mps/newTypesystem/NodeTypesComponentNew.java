@@ -42,6 +42,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
   private TypeCheckingContext myTypeCheckingContext;
+  private Set<SNode> myCheckedNodes = new HashSet<SNode>();
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponentNew.class);
   boolean checked = false;
@@ -62,11 +63,22 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   public void checkNode(SNode node, boolean refresh) {
     if (!checked || refresh) {
       for (SNode desc : node.getDescendants()) {
-        loadTypesystemRules(desc);
-        applyRulesToNode(desc);
+        check(desc);
       }
       checked = true;
+    }
+  }
 
+  private void check(SNode node) {
+    if(node == null) return;
+    myCheckedNodes.add(node);
+    loadTypesystemRules(node);
+    applyRulesToNode(node); 
+  }
+
+  public void checkIfNotChecked(SNode node) {
+    if (!myCheckedNodes.contains(node)) {
+      check(node);
     }
   }
                 /*
@@ -99,7 +111,8 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
         if (type == null || TypesUtil.hasVariablesInside(type)) {
           if (node.isRoot()) {
             computeTypes(node, true, true, new ArrayList<SNode>(0), inferenceMode); //the last possibility: check the whole root
-            type = getType(initialNode);
+            checkNode(node, true);
+            type = getRawTypeFromContext(initialNode);
             return type;
           }
           prevNode = node;
@@ -113,36 +126,19 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
     }
     return type;  
   }
-            /*
-  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
-    try {
 
-      if (refreshTypes) {
-        clear();
-      }
-      if (!loadTypeSystemRules(nodeToCheck)) {
-        return;
-      }    /*
-
-      if (inferenceMode) {
-        getEquationManager().setInferenceMode();
-      }    /*
-      if (myIsSmartCompletion) {
-        myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
-        if (!myHoleIsAType) {
-          myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
-        }
-      }     */           /*
-      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
-      ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
-     
-    } finally {
-     // clearEquationManager();
-     // myInvalidationWasPerformed = false;
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
+    if (refreshTypes) {
+      clear();
     }
+    if (!loadTypesystemRules(nodeToCheck)) {
+      return;
+    }
+    computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
+    ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
   }
 
-
+        /*
   private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
@@ -183,6 +179,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
   @Override
   public void clear() {
     super.clear();
+    myCheckedNodes.clear();
     myTypeCheckingContext.clear();
   }
 

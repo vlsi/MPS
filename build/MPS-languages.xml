@@ -200,14 +200,6 @@
       <zipfileset dir="core/languageDesign/actions/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.lang.annotations">
-    <mkdir dir="core/languageDesign/annotations/classes" />
-    <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.annotations.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/annotations/languages/annotations/annotations.mpl" prefix="module" />
-      <zipfileset dir="core/languageDesign/annotations/languages/annotations" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/annotations/classes" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.lang.behavior">
     <mkdir dir="core/languageDesign/behavior/classes" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.behavior.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">

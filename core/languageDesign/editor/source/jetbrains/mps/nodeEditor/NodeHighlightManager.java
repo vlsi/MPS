@@ -34,7 +34,7 @@ import java.util.Map.Entry;
 
 
 public class NodeHighlightManager implements EditorMessageOwner {
-  private static final Comparator<EditorMessage> EDITOR_MESSAGES_COPARATOR = new Comparator<EditorMessage>() {
+  private static final Comparator<EditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<EditorMessage>() {
     @Override
     public int compare(EditorMessage m1, EditorMessage m2) {
       return m1.getPriority() - m2.getPriority();
@@ -50,22 +50,23 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private ManyToManyMap<EditorMessage, SNode> myMessagesToNodes = new ManyToManyMap<EditorMessage, SNode>();
 
   /**
-   * all Chaches are synchronized using myMessagesLock 
+   * all Caches are synchronized using myMessagesLock
    */
   private Map<EditorCell, List<EditorMessage>> myMessagesCache;
   public ReloadAdapter myHandler;
+  private RebuildListener myRebuildListener;
   private Set<EditorMessageIconRenderer> myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
   private boolean myRebuildIconRenderersCacheFlag;
 
-  public NodeHighlightManager(@NotNull EditorComponent edtitor) {
-    myEditor = edtitor;
+  public NodeHighlightManager(@NotNull EditorComponent editor) {
+    myEditor = editor;
     myHandler = new ReloadAdapter() {
       public void unload() {
         clear();
       }
     };
 
-    edtitor.addRebuildListener(new RebuildListener() {
+    editor.addRebuildListener(myRebuildListener = new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
         synchronized (myMessagesLock) {
           if (myMessagesCache == null) {
@@ -154,7 +155,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
    */
   private List<EditorMessage> calculateMessages(EditorCell cell) {
     final SNode node = cell.getSNode();
-    final List<EditorMessage> result = new SortedList<EditorMessage>(EDITOR_MESSAGES_COPARATOR);
+    final List<EditorMessage> result = new SortedList<EditorMessage>(EDITOR_MESSAGES_COMPARATOR);
     if (node == null) return result;
     Set<EditorMessage> messageSet = myMessagesToNodes.getBySecond(node);
     for (EditorMessage message : messageSet) {
@@ -379,6 +380,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public void dispose() {
     ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
+    myEditor.removeRebuildListener(myRebuildListener);
   }
 
   public EditorCell getCell(EditorMessage change) {

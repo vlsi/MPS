@@ -37,7 +37,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358399", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358397", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_1176561507041), false, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(foreachStatement, "variable", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1183457358397", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_1176561507041), true, _info_12389875345);
     }
   }
 
