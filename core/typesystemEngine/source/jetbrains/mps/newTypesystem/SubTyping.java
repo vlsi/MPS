@@ -339,7 +339,7 @@ public class SubTyping {
   }
 
 
-    public SNode coerceSubtyping(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
+  public SNode coerceSubtyping(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
