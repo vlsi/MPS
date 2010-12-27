@@ -496,7 +496,7 @@ __switch__:
     List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
     final int fileLine = findFileLineByY(event.getY());
     ListSequence.fromList(actions).addElement(new BaseAction("Close Annotations") {
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         close();
       }
     });
@@ -505,7 +505,7 @@ __switch__:
     if (fileLine != -1) {
       ListSequence.fromList(actions).addElement(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
       ListSequence.fromList(actions).addElement(new BaseAction("Copy revision number") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
           CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
         }

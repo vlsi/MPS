@@ -34,6 +34,7 @@ import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GoToRootNodeAction extends BaseAction {
   private static boolean myUseCache = true;
@@ -42,7 +43,7 @@ public class GoToRootNodeAction extends BaseAction {
     myUseCache = useCache;
   }
 
-  public void doExecute(AnActionEvent e) {
+  public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 

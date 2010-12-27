@@ -41,6 +41,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
+import java.util.Map;
 
 
 class MergeResultView extends JPanel {
@@ -136,7 +137,7 @@ class MergeResultView extends JPanel {
       if (node != null && node.isRoot()) {
         BaseAction showRootDiffDialog = new BaseAction("Show Merge In MPS Editor") {
           @Override
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
             doubleClick();
           }
         };
@@ -288,7 +289,7 @@ class MergeResultView extends JPanel {
       String text = myMerger.getExcludedChanges().contains(myChange) ? "Include" : "Exclude";
 
       BaseAction action = new BaseAction(text) {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           if (myMerger.getExcludedChanges().contains(myChange)) {
             myMerger.includeChange(myChange);
           } else {

@@ -453,7 +453,7 @@ public class UsagesTree extends MPSTree {
       return null;
     }
     BaseAction includeAction = new BaseAction("Include") {
-      public void doExecute(AnActionEvent e) {
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesExclusion(false);
         e.getInputEvent().consume();
       }
@@ -465,7 +465,7 @@ public class UsagesTree extends MPSTree {
       }
     };
     BaseAction excludeAction = new BaseAction("Exclude") {
-      public void doExecute(AnActionEvent e) {
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesExclusion(true);
         e.getInputEvent().consume();
       }
@@ -477,7 +477,7 @@ public class UsagesTree extends MPSTree {
       }
     };
     BaseAction includeSelectedOnlyAction = new BaseAction("Include selected only") {
-      public void doExecute(AnActionEvent e) {
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesOnlyExclusion();
         e.getInputEvent().consume();
       }

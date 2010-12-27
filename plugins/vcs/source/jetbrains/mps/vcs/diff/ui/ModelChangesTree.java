@@ -444,7 +444,7 @@ class ModelChangesTree extends MPSTree {
           }
 
           @Override
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
             doubleClickOnNode(node);
           }
         };
@@ -452,7 +452,7 @@ class ModelChangesTree extends MPSTree {
 
         BaseAction showNodeInEditor = new BaseAction("Open in Editor") {
           @Override
-          protected void doUpdate(final AnActionEvent e) {
+          protected void doUpdate(final AnActionEvent e, Map<String, Object> _params) {
             ModelAccess.instance().runReadAction(new Runnable() {
               @Override
               public void run() {
@@ -470,7 +470,7 @@ class ModelChangesTree extends MPSTree {
           }
 
           @Override
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
             getOperationContext().getComponent(MPSEditorOpener.class).editNode(node, getOperationContext());
           }
         };

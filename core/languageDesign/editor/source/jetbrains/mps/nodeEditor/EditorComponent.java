@@ -949,7 +949,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       String description = pair.first.getDescription(pair.second, context);
       Icon icon = pair.first.getType().getIcon();
       BaseAction mpsAction = new BaseAction(description, "Execute intention", icon) {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           executeIntention(pair.first, pair.second, context);
         }
       };
@@ -1004,7 +1004,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               return action.getKeyStroke();
             }
 
-            protected void doExecute(AnActionEvent e) {
+            protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
               try {
                 myAction.execute(null, editorContext);
               } catch (Throwable t) {

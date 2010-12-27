@@ -17,6 +17,8 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
+import java.util.Map;
+
 public class LabelledAnchor extends BaseAction {
   private String myId;
 
@@ -29,12 +31,12 @@ public class LabelledAnchor extends BaseAction {
     return myId;
   }
 
-  protected void doUpdate(AnActionEvent e) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
     e.getPresentation().setEnabled(false);
     e.getPresentation().setVisible(false);
   }
 
-  public void doExecute(AnActionEvent e) {
+  public void doExecute(AnActionEvent e, Map<String, Object> _params) {
 
   }
 }

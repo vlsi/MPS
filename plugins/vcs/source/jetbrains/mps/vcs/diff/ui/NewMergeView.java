@@ -30,6 +30,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.util.List;
+import java.util.Map;
 
 import com.intellij.openapi.actionSystem.*;
 
@@ -145,7 +146,7 @@ public class NewMergeView extends JPanel {
     protected ActionGroup getActionGroupForChanges(final List<Change> changes) {
 
       BaseAction excludeAction = new BaseAction("Exclude") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           for (Change change : changes) {
             myMerger.excludeChange(change);
             getExcludetNodes().add(change.getAffectedNodeId());
@@ -161,7 +162,7 @@ public class NewMergeView extends JPanel {
       excludeAction.setDisableOnNoProject(false);
 
       BaseAction includeAction = new BaseAction("Include") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           for (Change change : changes) {
             myMerger.includeChange(change);
             getExcludetNodes().remove(change.getAffectedNodeId());

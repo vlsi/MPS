@@ -5,6 +5,8 @@ package jetbrains.mps.vcs.annotation;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
+import java.util.Map;
+
 /*package*/ class ShowAdditionalInfoAction extends BaseAction {
   private AnnotationColumn myAnnotationColumn;
 
@@ -12,12 +14,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
     myAnnotationColumn = annotationColumn;
   }
 
-  protected void doExecute(AnActionEvent event) {
+  protected void doExecute(AnActionEvent event, Map<String, Object> _params) {
     myAnnotationColumn.setShowAdditionalInfo(!(myAnnotationColumn.isShowAdditionalInfo()));
   }
 
   @Override
-  protected void doUpdate(AnActionEvent event) {
+  protected void doUpdate(AnActionEvent event, Map<String, Object> _params) {
     event.getPresentation().setText(((myAnnotationColumn.isShowAdditionalInfo() ?
       "Hide" :
       "Show"

@@ -37,6 +37,7 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseProjectTool {
   protected AbstractHierarchyTree<T> myHierarchyTree;
@@ -121,19 +122,19 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
     };
 
     BaseAction expandAllAction = new BaseAction("Expand all", "Expand all nodes", jetbrains.mps.ide.findusages.view.icons.Icons.EXPAND_ICON) {
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.expandAll();
       }
     };
 
     BaseAction collapseAllAction = new BaseAction("Collapse all", "Collapse all nodes", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON) {
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.collapseAll();
       }
     };
 
     BaseAction refreshAction = new BaseAction("Refresh", "Refresh", Icons.REFRESH_ICON) {
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.rebuildNow();
       }
     };
@@ -153,7 +154,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
 
   protected ActionGroup getHierarchyForFoundConceptActionGroup(final Class<T> aClass) {
     BaseAction action = new BaseAction("Show Hierarchy For Concept") {
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         List<SNode> nodes = new ArrayList<SNode>();
         for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
           if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) continue;

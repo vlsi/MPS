@@ -300,7 +300,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
           setExecuteOutsideCommand(true);
         }
 
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           StringBuilder sb = new StringBuilder();
           for (Object o : myList.getSelectedValues()) {
             sb.append(((Message) o).getText());
@@ -315,13 +315,13 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     group.add(new BaseAction("Show Help for This Message") {
       @Override
-      protected void doUpdate(AnActionEvent e) {
+      protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
         boolean enabled = getHelpUrlForCurrentMessage() != null;
         setEnabledState(e.getPresentation(), enabled);
       }
 
       @Override
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         showHelpForCurrentMessage();
       }
     });
@@ -344,7 +344,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
             setExecuteOutsideCommand(true);
           }
 
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
             submitToTracker(messages);
           }
         });
@@ -375,7 +375,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
         setExecuteOutsideCommand(true);
       }
 
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         clear();
       }
     });

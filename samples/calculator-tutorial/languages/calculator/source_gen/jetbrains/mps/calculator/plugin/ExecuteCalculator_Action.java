@@ -5,19 +5,19 @@ package jetbrains.mps.calculator.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExecuteCalculator_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ExecuteCalculator_Action.class);
-
-  private SNode calcNode;
 
   public ExecuteCalculator_Action() {
     super("Execute Calculator", "", ICON);
@@ -30,14 +30,14 @@ public class ExecuteCalculator_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return ExecuteCalculator_Action.this.getMainMethod() != null;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ExecuteCalculator_Action.this.getMainMethod(_params) != null;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -46,8 +46,8 @@ public class ExecuteCalculator_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
@@ -57,18 +57,18 @@ public class ExecuteCalculator_Action extends GeneratedAction {
           node = null;
         }
       }
-      this.calcNode = node;
+      MapSequence.fromMap(_params).put("calcNode", node);
     }
-    if (this.calcNode == null) {
+    if (MapSequence.fromMap(_params).get("calcNode") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       try {
-        final Method method = ExecuteCalculator_Action.this.getMainMethod();
+        final Method method = ExecuteCalculator_Action.this.getMainMethod(_params);
         Thread thread = new Thread(new Runnable() {
           public void run() {
             try {
@@ -88,14 +88,14 @@ public class ExecuteCalculator_Action extends GeneratedAction {
     }
   }
 
-  private Class getCalcClass() {
-    String className = SPropertyOperations.getString(ExecuteCalculator_Action.this.calcNode, "name");
-    String fqClassName = SNodeOperations.getModel(ExecuteCalculator_Action.this.calcNode).getLongName() + "." + className;
-    return SNodeOperations.getModel(ExecuteCalculator_Action.this.calcNode).getModelDescriptor().getModule().getClass(fqClassName);
+  private Class getCalcClass(final Map<String, Object> _params) {
+    String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), "name");
+    String fqClassName = SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getLongName() + "." + className;
+    return SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModelDescriptor().getModule().getClass(fqClassName);
   }
 
-  private Method getMainMethod() {
-    final Class c = ExecuteCalculator_Action.this.getCalcClass();
+  private Method getMainMethod(final Map<String, Object> _params) {
+    final Class c = ExecuteCalculator_Action.this.getCalcClass(_params);
     if (c == null) {
       return null;
     }

@@ -27,6 +27,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class RunMigrationScriptAction extends BaseAction {
   private MigrationScript myScript;
@@ -41,7 +42,7 @@ public class RunMigrationScriptAction extends BaseAction {
     myApplyToSelection = applyToSelection;
   }
 
-  protected void doExecute(AnActionEvent e) {
+  protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     IScope migrationScope = AbstractMigrationScriptHelper.createMigrationScope(myModels, myModules, myApplyToSelection);
     if (!migrationScope.getModelDescriptors().iterator().hasNext()) return;
     List<MigrationScript> scripts = new ArrayList<MigrationScript>();
@@ -49,8 +50,8 @@ public class RunMigrationScriptAction extends BaseAction {
     AbstractMigrationScriptHelper.doRunScripts(scripts, migrationScope, myContext);
   }
 
-  protected boolean collectActionData(AnActionEvent e) {
-    if (!super.collectActionData(e)) return false;
+  protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
+    if (!super.collectActionData(e, _params)) return false;
 
     myContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (myContext == null) return false;

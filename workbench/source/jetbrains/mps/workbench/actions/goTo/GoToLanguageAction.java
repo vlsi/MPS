@@ -35,9 +35,10 @@ import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GoToLanguageAction extends BaseAction {
-  public void doExecute(AnActionEvent e) {
+  public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 

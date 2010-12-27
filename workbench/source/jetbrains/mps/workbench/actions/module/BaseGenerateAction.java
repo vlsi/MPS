@@ -59,7 +59,7 @@ public abstract class BaseGenerateAction extends BaseAction {
 
   abstract String getObject();
 
-  protected void doUpdate(AnActionEvent e) {
+  protected void doUpdate(AnActionEvent e,Map<String, Object> _params) {
     for (IModule module : myModules) {
       if ((!(module instanceof Solution)) && (!(module instanceof Language)) && (!(module instanceof Generator))) {
         disable(e.getPresentation());
@@ -72,8 +72,8 @@ public abstract class BaseGenerateAction extends BaseAction {
     e.getPresentation().setText(newText);
   }
 
-  protected boolean collectActionData(AnActionEvent e) {
-    if (!super.collectActionData(e)) return false;
+  protected boolean collectActionData(AnActionEvent e,Map<String, Object> _params) {
+    if (!super.collectActionData(e,_params)) return false;
     myProject = e.getData(MPSDataKeys.PROJECT);
     myOperationContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (myOperationContext == null) return false;
@@ -88,7 +88,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     return BaseGenerateAction.class.getName() + "#" + myRebuildAll;
   }
 
-  protected void doExecute(AnActionEvent e) {
+  protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
 
     IOperationContext invocationContext = myOperationContext;
@@ -115,7 +115,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     final IOperationContext invocationContext1 = invocationContext;
     //noinspection ConstantConditions
     boolean checkSuccessful = myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
-      .checkModelsBeforeGenerationIfNeeded(invocationContext, (List) modelsToGenerate, new Runnable() {
+      .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
         public void run() {
           IGenerationHandler generationHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
           GeneratorFacade.getInstance().generateModels(

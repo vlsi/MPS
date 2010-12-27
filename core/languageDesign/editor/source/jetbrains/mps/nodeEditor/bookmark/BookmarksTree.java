@@ -34,6 +34,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
 import java.util.List;
+import java.util.Map;
 
 public class BookmarksTree extends MPSTree {
 
@@ -67,7 +68,7 @@ public class BookmarksTree extends MPSTree {
     MPSTreeNode root = new TextTreeNode("no bookmarks") {
       public ActionGroup getActionGroup() {
         BaseAction hierarchyAction = new BaseAction("Remove All Bookmarks") {
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
             myBookmarkManager.clearBookmarks();
           }
         };
@@ -152,7 +153,7 @@ public class BookmarksTree extends MPSTree {
 
     public ActionGroup getActionGroup() {
       BaseAction action = new BaseAction("Remove Bookmark") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           removeBookmark();
         }
       };
@@ -185,7 +186,7 @@ public class BookmarksTree extends MPSTree {
 
     public ActionGroup getActionGroup() {
       BaseAction action = new BaseAction("Remove Bookmark") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
          removeBookmark();
         }
       };

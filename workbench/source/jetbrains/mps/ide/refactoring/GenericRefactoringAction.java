@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GenericRefactoringAction extends BaseAction {
   private IRefactoring myRefactoring;
@@ -42,7 +43,7 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
 
-  protected void doExecute(AnActionEvent e) {
+  protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModelRepository.getInstance().saveAll();
@@ -131,7 +132,7 @@ public class GenericRefactoringAction extends BaseAction {
     return getEntities(e, oneEntity, MPSDataKeys.MODULE, MPSDataKeys.MODULES);
   }
 
-  protected void doUpdate(AnActionEvent e) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
     IRefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
     boolean oneEntity = !refTarget.allowMultipleTargets();
     List entities;

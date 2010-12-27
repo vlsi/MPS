@@ -249,7 +249,7 @@ public class IntentionsSupport {
 
     intentionActionGroup.add(new BaseAction("Go to Intention Declaration", "Go to declaration of this intention", icon) {
       @Override
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             SNode intentionNode = intentionsManager.getNodeByIntention(intention);
@@ -269,7 +269,7 @@ public class IntentionsSupport {
     final boolean enabled = !intentionsManager.intentionIsDisabled(intention);
     intentionActionGroup.add(new BaseAction((enabled ? "Disable" : "Enable") + " This Intention", (enabled ? "Disables" : "Enables") + " this intention type", icon) {
       @Override
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         if (enabled) {
           intentionsManager.disableIntention(intention);
         } else {

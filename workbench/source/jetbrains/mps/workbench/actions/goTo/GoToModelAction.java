@@ -27,7 +27,6 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
@@ -35,9 +34,10 @@ import jetbrains.mps.workbench.choose.models.BaseModelModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GoToModelAction extends BaseAction {
-  public void doExecute(AnActionEvent e) {
+  public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 
