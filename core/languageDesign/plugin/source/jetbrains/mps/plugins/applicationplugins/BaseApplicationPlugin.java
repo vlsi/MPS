@@ -34,6 +34,7 @@ import java.util.List;
 public abstract class BaseApplicationPlugin {
   private List<BaseCustomApplicationPlugin> myCustomParts;
   private List<BaseGroup> myGroups = new ArrayList<BaseGroup>();
+  private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<BaseKeymapChanges>();
 
   public void createGroups() {
 
@@ -65,9 +66,9 @@ public abstract class BaseApplicationPlugin {
   }
 
   public void createKeymaps() {
-    List<BaseKeymapChanges> myKeymaps = initKeymaps();
-    for (BaseKeymapChanges keymap : myKeymaps) {
-      ActionFactory.getInstance().registerKeymap(keymap);
+    myKeymapChanges = initKeymaps();
+    for (BaseKeymapChanges change:myKeymapChanges){
+      change.init();
     }
   }
 
@@ -81,6 +82,11 @@ public abstract class BaseApplicationPlugin {
     for (BaseCustomApplicationPlugin part : myCustomParts) {
       part.dispose ();
     }
+
+    for (BaseKeymapChanges change:myKeymapChanges){
+      change.dispose();
+    }
+    myKeymapChanges.clear();
 
     MPSActions.getInstance().unregisterGroups(myGroups);
     myGroups.clear();
