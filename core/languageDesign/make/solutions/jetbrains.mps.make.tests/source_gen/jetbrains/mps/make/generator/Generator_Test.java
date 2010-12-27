@@ -42,10 +42,10 @@ public class Generator_Test extends MockTestCase {
     final IProgress pstub = context.mock(IProgress.class);
     context.checking(new Expectations() {
       {
-        exactly(1).of(pstub).beginWork(with(equal("Script")), with(same(3)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Configure").toString())), with(same(100)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Generate").toString())), with(same(100)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Make").toString())), with(same(100)), with(any(Integer.class)));
+        exactly(1).of(pstub).beginWork(with(equal("Script")), with(equal(1020)), with(any(Integer.class)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Configure").toString())), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Generate").toString())), with(equal(1000)), with(equal(1000)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Make").toString())), with(equal(1000)), with(equal(10)));
 
         exactly(1).of(pstub).beginWork(with(equal("GENERATE")), with(same(100)), with(any(Integer.class)));
         atMost(1).of(pstub).advanceWork(with(equal("GENERATE")), with(same(50)));
@@ -203,9 +203,9 @@ public class Generator_Test extends MockTestCase {
     final IProgress pstub = context.mock(IProgress.class);
     context.checking(new Expectations() {
       {
-        exactly(1).of(pstub).beginWork(with(equal("Script")), with(same(2)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("work").toString())), with(same(100)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Make").toString())), with(same(100)), with(any(Integer.class)));
+        exactly(1).of(pstub).beginWork(with(equal("Script")), with(same(20)), with(any(Integer.class)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("work").toString())), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(new ITarget.Name("Make").toString())), with(equal(1000)), with(equal(10)));
 
 
         org.jmock.Sequence seq = context.sequence("sequence");
@@ -256,8 +256,9 @@ public class Generator_Test extends MockTestCase {
         oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- done 62%")));
         oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK/WORKWORK -- done 50%")));
         oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- done 74%")));
-        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK/WORKWORK -- done 100%")));
+        exactly(2).of(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK/WORKWORK -- done 100%")));
         oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK/WORKWORK -- finished")));
+        oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- done 100%")));
         oneOf(logger).info(with(equal("\u221e/Script/" + new ITarget.Name("work") + "/WORK -- finished")));
 
         allowing(logger).info(with(new BaseMatcher<String>() {
