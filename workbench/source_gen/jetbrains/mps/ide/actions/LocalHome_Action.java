@@ -26,7 +26,7 @@ public class LocalHome_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl LEFT";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

@@ -26,7 +26,7 @@ public class SelectDown_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl DOWN";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

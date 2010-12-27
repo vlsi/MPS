@@ -38,7 +38,7 @@ public class CloneRoot_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "shift F5";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

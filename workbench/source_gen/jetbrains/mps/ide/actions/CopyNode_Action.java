@@ -32,7 +32,7 @@ public class CopyNode_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl C";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

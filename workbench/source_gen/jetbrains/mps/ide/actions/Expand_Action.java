@@ -32,7 +32,7 @@ public class Expand_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl ADD";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

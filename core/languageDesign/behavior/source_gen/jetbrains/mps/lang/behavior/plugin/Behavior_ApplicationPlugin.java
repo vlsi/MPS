@@ -7,6 +7,10 @@ import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.Code_ActionGroup;
+import java.util.List;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Behavior_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.behavior");
@@ -45,5 +49,11 @@ public class Behavior_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup", null);
     this.insertGroupIntoAnother(Code_ActionGroup.ID, "jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup", Code_ActionGroup.LABEL_ID_overrideImplement);
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    return res;
   }
 }

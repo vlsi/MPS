@@ -31,7 +31,7 @@ public class CommentStatements_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift SLASH";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

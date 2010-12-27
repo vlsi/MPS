@@ -49,7 +49,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt T";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

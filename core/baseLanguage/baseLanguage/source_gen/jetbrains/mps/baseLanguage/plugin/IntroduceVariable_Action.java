@@ -35,7 +35,7 @@ public class IntroduceVariable_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt V";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

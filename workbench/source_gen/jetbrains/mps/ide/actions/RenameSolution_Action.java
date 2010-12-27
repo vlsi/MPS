@@ -29,7 +29,7 @@ public class RenameSolution_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "shift F6";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

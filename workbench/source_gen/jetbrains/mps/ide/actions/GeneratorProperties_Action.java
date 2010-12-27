@@ -31,7 +31,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt ENTER";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

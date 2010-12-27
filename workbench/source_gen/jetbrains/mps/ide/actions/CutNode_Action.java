@@ -37,7 +37,7 @@ public class CutNode_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl X";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

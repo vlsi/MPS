@@ -25,7 +25,7 @@ public class GoToModel_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt shift M";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

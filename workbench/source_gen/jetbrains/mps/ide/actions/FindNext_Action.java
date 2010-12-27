@@ -26,7 +26,7 @@ public class FindNext_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " F3";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

@@ -25,7 +25,7 @@ public class GoToNamedNode_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt shift N";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

@@ -28,7 +28,7 @@ public class StepOut_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "shift F8";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

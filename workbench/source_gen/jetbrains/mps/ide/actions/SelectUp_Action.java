@@ -26,7 +26,7 @@ public class SelectUp_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl UP";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

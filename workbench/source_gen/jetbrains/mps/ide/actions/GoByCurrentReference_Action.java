@@ -48,7 +48,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl B";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

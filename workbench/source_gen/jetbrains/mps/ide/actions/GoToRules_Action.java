@@ -34,7 +34,7 @@ public class GoToRules_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt R";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

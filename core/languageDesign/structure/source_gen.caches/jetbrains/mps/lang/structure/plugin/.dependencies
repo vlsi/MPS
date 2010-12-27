@@ -86,6 +86,13 @@
     <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
     <classNode extendsClassName="jetbrains.mps.util.Condition" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.plugin.Default_KeymapChanges" file="Default_KeymapChanges.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.plugin.HelpHelper" file="HelpHelper.java">
     <classNode dependClassName="com.intellij.ide.BrowserUtil" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
@@ -208,18 +215,23 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" file="Structure_ApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Structure_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowHelpForNode_Action" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowHelpForAspect_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Default_KeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Structure_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowHelpForAspect_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowHelpForNode_Action" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowConceptStructure_Action" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" file="Structure_ProjectPlugin.java">

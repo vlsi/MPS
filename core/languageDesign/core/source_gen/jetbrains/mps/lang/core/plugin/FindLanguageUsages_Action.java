@@ -37,7 +37,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt F7";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

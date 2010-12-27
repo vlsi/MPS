@@ -26,7 +26,7 @@ public class Home_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " HOME";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

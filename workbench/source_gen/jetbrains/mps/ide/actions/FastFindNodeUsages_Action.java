@@ -39,7 +39,7 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl F7";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

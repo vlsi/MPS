@@ -33,7 +33,7 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift Q";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

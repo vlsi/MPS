@@ -30,7 +30,7 @@ public class CopyNodeReference_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift C";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

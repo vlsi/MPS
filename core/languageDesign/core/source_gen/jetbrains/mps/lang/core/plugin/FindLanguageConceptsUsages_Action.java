@@ -38,7 +38,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt F8";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

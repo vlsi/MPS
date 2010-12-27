@@ -32,7 +32,7 @@ public class RemoveFromFavorites_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl DELETE";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

@@ -56,18 +56,23 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" file="Core_ApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.core.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
+    <classNode dependClassName="jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin" file="Core_ProjectPlugin.java">
@@ -78,6 +83,13 @@
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.LanguageChecksPlugin_CustomProjectPlugin" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.plugin.Default_KeymapChanges" file="Default_KeymapChanges.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action" file="FindLanguageConceptsUsages_Action.java">
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.IResultProvider" />

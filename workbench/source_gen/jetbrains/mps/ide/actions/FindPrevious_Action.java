@@ -26,7 +26,7 @@ public class FindPrevious_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "shift F3";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

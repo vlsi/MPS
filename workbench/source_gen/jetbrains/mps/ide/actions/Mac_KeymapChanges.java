@@ -38,7 +38,7 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
   }
 
   public String getScheme() {
-    return "$default";
+    return "Mac OS X";
   }
 
   public static Shortcut getShortcut(String stroke) {

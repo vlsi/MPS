@@ -30,7 +30,7 @@ public class ViewBreakpoints_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift F8";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

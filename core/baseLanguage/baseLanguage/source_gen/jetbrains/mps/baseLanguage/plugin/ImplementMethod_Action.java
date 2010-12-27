@@ -36,7 +36,7 @@ public class ImplementMethod_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl I";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

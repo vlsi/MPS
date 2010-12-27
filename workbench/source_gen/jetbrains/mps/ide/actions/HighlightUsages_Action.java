@@ -40,7 +40,7 @@ public class HighlightUsages_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift F7";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

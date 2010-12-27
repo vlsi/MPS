@@ -35,7 +35,7 @@ public class GoToNodeById_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl G";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

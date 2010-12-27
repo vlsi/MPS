@@ -30,7 +30,7 @@ public class ExpandAll_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift ADD";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

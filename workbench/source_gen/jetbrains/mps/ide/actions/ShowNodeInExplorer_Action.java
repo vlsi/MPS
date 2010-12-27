@@ -30,7 +30,7 @@ public class ShowNodeInExplorer_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt F12";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

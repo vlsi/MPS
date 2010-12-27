@@ -54,7 +54,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift E";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

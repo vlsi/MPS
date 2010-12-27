@@ -30,7 +30,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt F8";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

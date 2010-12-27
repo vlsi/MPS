@@ -29,7 +29,7 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " F1";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

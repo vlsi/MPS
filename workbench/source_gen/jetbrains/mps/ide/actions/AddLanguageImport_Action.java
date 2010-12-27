@@ -31,7 +31,7 @@ public class AddLanguageImport_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl L";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

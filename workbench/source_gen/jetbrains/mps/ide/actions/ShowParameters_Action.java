@@ -36,7 +36,7 @@ public class ShowParameters_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl P";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

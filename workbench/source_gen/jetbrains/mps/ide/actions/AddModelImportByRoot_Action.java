@@ -36,7 +36,7 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl R";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

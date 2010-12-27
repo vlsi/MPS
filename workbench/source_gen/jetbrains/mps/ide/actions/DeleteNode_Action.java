@@ -35,7 +35,7 @@ public class DeleteNode_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " DELETE";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

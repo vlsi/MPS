@@ -33,7 +33,7 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt shift F7";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

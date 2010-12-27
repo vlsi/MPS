@@ -30,7 +30,7 @@ public class GoToNextChange_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt shift DOWN";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

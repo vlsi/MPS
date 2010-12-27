@@ -36,7 +36,7 @@ public class OverrideBehaviorMethod_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl O";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

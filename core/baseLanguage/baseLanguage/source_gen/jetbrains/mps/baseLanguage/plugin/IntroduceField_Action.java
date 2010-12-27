@@ -35,7 +35,7 @@ public class IntroduceField_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt F";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

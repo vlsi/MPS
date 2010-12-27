@@ -25,7 +25,7 @@ public class GoToRootNode_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl N";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

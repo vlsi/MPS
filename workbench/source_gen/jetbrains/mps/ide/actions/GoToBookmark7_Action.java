@@ -26,7 +26,7 @@ public class GoToBookmark7_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl 7";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

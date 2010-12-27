@@ -28,7 +28,7 @@ public class SetBookmark4_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift 4";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

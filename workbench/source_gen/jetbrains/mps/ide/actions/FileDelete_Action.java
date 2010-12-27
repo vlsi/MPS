@@ -30,7 +30,7 @@ public class FileDelete_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " DELETE";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

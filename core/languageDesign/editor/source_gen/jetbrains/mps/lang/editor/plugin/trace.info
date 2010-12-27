@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Editor_ProjectPlugin.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" />
+  <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Default_KeymapChanges" />
   <unitInfo fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" />
-  <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ApplicationPlugin" />
   <unitInfo fileName="EditorActions_ActionGroup.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup" />
+  <unitInfo fileName="Editor_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ApplicationPlugin" />
   <unitInfo fileName="ExtractComponent_Action.java" startLine="16" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.ExtractComponent_Action" />
   <unitInfo fileName="CopyThisDown_Action.java" startLine="20" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.CopyThisDown_Action" />
   <unitInfo fileName="DeleteLine_Action.java" startLine="29" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.DeleteLine_Action" />

@@ -33,7 +33,7 @@ public class SelectLocalHome_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift LEFT";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

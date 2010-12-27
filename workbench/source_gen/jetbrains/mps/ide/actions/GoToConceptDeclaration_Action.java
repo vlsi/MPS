@@ -32,7 +32,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift S";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

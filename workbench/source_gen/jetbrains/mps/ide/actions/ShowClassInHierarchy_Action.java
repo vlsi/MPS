@@ -32,7 +32,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl H";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

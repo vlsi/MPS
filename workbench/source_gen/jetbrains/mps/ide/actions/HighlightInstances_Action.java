@@ -39,7 +39,7 @@ public class HighlightInstances_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift F6";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

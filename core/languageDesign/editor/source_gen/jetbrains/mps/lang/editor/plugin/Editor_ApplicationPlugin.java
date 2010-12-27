@@ -7,6 +7,10 @@ import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.Edit_ActionGroup;
+import java.util.List;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.editor");
@@ -44,5 +48,11 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup", null);
     this.insertGroupIntoAnother(Edit_ActionGroup.ID, "jetbrains.mps.lang.editor.plugin.EditorActions_ActionGroup", Edit_ActionGroup.LABEL_ID_custom);
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    return res;
   }
 }

@@ -26,7 +26,7 @@ public class RootEnd_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl END";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

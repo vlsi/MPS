@@ -41,7 +41,7 @@ public class DeleteLine_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl Y";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

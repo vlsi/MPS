@@ -34,7 +34,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt shift M";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

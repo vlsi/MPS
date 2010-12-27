@@ -39,7 +39,7 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt M";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

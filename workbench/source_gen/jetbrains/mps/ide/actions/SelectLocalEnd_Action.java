@@ -33,7 +33,7 @@ public class SelectLocalEnd_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift RIGHT";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

@@ -37,7 +37,7 @@ public class FindModelUsages_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt F7";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

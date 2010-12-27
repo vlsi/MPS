@@ -37,7 +37,7 @@ public class InlineMethod_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt N";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

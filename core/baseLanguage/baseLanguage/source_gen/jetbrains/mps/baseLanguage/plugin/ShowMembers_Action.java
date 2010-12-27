@@ -35,7 +35,7 @@ public class ShowMembers_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl F12";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

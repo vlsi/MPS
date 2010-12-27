@@ -8,6 +8,10 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import java.util.List;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.structure");
@@ -60,5 +64,11 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
     this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "jetbrains.mps.lang.structure.plugin.Structure_ActionGroup", NodeActions_ActionGroup.LABEL_ID_structure);
     this.insertGroupIntoAnother(Structure_ActionGroup.ID, "jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup", Structure_ActionGroup.LABEL_ID_showHelp);
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup", ModelActions_ActionGroup.LABEL_ID_showHelp);
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    return res;
   }
 }

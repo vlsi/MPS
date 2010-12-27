@@ -49,7 +49,7 @@ public class GenerationIntentions_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt INSERT";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

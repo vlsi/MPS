@@ -27,7 +27,7 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "shift F11";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

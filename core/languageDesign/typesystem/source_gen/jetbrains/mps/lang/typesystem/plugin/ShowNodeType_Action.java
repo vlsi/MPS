@@ -38,7 +38,7 @@ public class ShowNodeType_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift T";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

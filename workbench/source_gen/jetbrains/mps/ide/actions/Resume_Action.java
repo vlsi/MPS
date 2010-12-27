@@ -28,7 +28,7 @@ public class Resume_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " F9";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

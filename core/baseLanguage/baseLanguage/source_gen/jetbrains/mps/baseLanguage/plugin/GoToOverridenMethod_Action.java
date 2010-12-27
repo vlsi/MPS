@@ -49,7 +49,7 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl U";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

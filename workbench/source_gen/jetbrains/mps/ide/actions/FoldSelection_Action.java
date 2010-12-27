@@ -30,7 +30,7 @@ public class FoldSelection_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl PERIOD";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

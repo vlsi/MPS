@@ -28,7 +28,7 @@ public class ShowModelChecker_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt C";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

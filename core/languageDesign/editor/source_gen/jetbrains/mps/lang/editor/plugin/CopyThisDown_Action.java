@@ -32,7 +32,7 @@ public class CopyThisDown_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl D";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

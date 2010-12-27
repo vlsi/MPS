@@ -48,7 +48,7 @@ public class PasteNode_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl V";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

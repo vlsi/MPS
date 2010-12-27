@@ -30,7 +30,7 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl F8";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

@@ -29,7 +29,7 @@ public class CommentLine_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl SLASH";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

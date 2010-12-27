@@ -55,7 +55,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt B";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

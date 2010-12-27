@@ -8,6 +8,10 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
+import java.util.List;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.typesystem");
@@ -75,5 +79,11 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
     this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup", null);
     this.insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup", null);
     this.insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup", null);
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    return res;
   }
 }

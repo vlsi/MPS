@@ -25,7 +25,7 @@ public class GoToDevkit_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl alt shift D";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

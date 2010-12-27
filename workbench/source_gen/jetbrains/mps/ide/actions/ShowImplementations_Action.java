@@ -52,7 +52,7 @@ public class ShowImplementations_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift I";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {

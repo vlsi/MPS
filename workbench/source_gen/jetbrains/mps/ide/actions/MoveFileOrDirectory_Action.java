@@ -39,7 +39,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " F6";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

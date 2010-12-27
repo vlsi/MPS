@@ -30,7 +30,7 @@ public class Collapse_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl SUBTRACT";
+    return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {
