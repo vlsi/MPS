@@ -505,7 +505,7 @@ __switch__:
     if (fileLine != -1) {
       ListSequence.fromList(actions).addElement(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
       ListSequence.fromList(actions).addElement(new BaseAction("Copy revision number") {
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> params) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
           CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
         }

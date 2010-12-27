@@ -8,7 +8,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -21,6 +20,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
@@ -33,11 +33,6 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     super("Compare with the Same Repository Revision", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "";
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

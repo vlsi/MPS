@@ -4,26 +4,28 @@
   <unitInfo fileName="_Adapters.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.vcs.annotation._Adapters" />
   <unitInfo fileName="EditorUtils.java" startLine="12" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.vcs.annotation.EditorUtils" />
   <root nodeId="2610202811736147129">
-    <nodeInfo nodeId="2610202811736147130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnnotationColumn" fileName="ShowAdditionalInfoAction.java" startLine="8" startPosition="63" endLine="9" endPosition="46" />
-    <nodeInfo nodeId="2610202811736147138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowAdditionalInfoAction.java" startLine="11" startPosition="70" endLine="12" endPosition="42" />
-    <nodeInfo nodeId="2610202811736147151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowAdditionalInfoAction.java" startLine="15" startPosition="49" endLine="16" endPosition="91" />
-    <nodeInfo nodeId="2610202811736147134" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowAdditionalInfoAction#(Ljetbrains/mps/vcs/annotation/AnnotationColumn;)V" fileName="ShowAdditionalInfoAction.java" startLine="10" startPosition="0" endLine="13" endPosition="3" />
-    <nodeInfo nodeId="2610202811736147145" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="ShowAdditionalInfoAction.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <nodeInfo nodeId="2610202811736147165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowAdditionalInfoAction.java" startLine="20" startPosition="48" endLine="24" endPosition="29" />
-    <nodeInfo nodeId="2610202811736147159" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="ShowAdditionalInfoAction.java" startLine="18" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="2610202811736147137" fileName="ShowAdditionalInfoAction.java" startLine="11" startPosition="70" endLine="12" endPosition="42" />
-    <scopeInfo nodeId="2610202811736147150" fileName="ShowAdditionalInfoAction.java" startLine="15" startPosition="49" endLine="16" endPosition="91" />
-    <scopeInfo nodeId="2610202811736147134" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowAdditionalInfoAction#(Ljetbrains/mps/vcs/annotation/AnnotationColumn;)V" fileName="ShowAdditionalInfoAction.java" startLine="10" startPosition="0" endLine="13" endPosition="3">
+    <nodeInfo nodeId="2610202811736147130" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAnnotationColumn" fileName="ShowAdditionalInfoAction.java" startLine="9" startPosition="63" endLine="10" endPosition="46" />
+    <nodeInfo nodeId="2610202811736147138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowAdditionalInfoAction.java" startLine="12" startPosition="70" endLine="13" endPosition="42" />
+    <nodeInfo nodeId="2610202811736147151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowAdditionalInfoAction.java" startLine="16" startPosition="78" endLine="17" endPosition="91" />
+    <nodeInfo nodeId="2610202811736147134" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowAdditionalInfoAction#(Ljetbrains/mps/vcs/annotation/AnnotationColumn;)V" fileName="ShowAdditionalInfoAction.java" startLine="11" startPosition="0" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="2610202811736147145" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="ShowAdditionalInfoAction.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
+    <nodeInfo nodeId="2610202811736147165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowAdditionalInfoAction.java" startLine="21" startPosition="77" endLine="25" endPosition="29" />
+    <nodeInfo nodeId="2610202811736147159" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="ShowAdditionalInfoAction.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2610202811736147137" fileName="ShowAdditionalInfoAction.java" startLine="12" startPosition="70" endLine="13" endPosition="42" />
+    <scopeInfo nodeId="2610202811736147150" fileName="ShowAdditionalInfoAction.java" startLine="16" startPosition="78" endLine="17" endPosition="91" />
+    <scopeInfo nodeId="2610202811736147134" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowAdditionalInfoAction#(Ljetbrains/mps/vcs/annotation/AnnotationColumn;)V" fileName="ShowAdditionalInfoAction.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
       <varInfo nodeId="2610202811736147142" varName="annotationColumn" />
     </scopeInfo>
-    <scopeInfo nodeId="2610202811736147145" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="ShowAdditionalInfoAction.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="2610202811736147145" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="ShowAdditionalInfoAction.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="2610202811736147148" varName="event" />
+      <varInfo nodeId="2010440180771212715" varName="_params" />
     </scopeInfo>
-    <scopeInfo nodeId="2610202811736147164" fileName="ShowAdditionalInfoAction.java" startLine="20" startPosition="48" endLine="24" endPosition="29" />
-    <scopeInfo nodeId="2610202811736147159" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="ShowAdditionalInfoAction.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="2610202811736147164" fileName="ShowAdditionalInfoAction.java" startLine="21" startPosition="77" endLine="25" endPosition="29" />
+    <scopeInfo nodeId="2610202811736147159" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="ShowAdditionalInfoAction.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="2610202811736147162" varName="event" />
+      <varInfo nodeId="2010440180771196974" varName="_params" />
     </scopeInfo>
-    <unitInfo nodeId="2610202811736147129" fileName="ShowAdditionalInfoAction.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" />
+    <unitInfo nodeId="2610202811736147129" fileName="ShowAdditionalInfoAction.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.annotation.ShowAdditionalInfoAction" />
   </root>
   <root nodeId="2735498088651740382">
     <nodeInfo nodeId="2735498088651833552" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRevisionRange" fileName="HighlightRevisionSubcolumn.java" startLine="6" startPosition="80" endLine="7" endPosition="43" />
@@ -205,11 +207,11 @@
     <nodeInfo nodeId="6964398208146163570" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationColumn.java" startLine="489" startPosition="7" endLine="490" endPosition="84" />
     <nodeInfo nodeId="1396967583415229198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationColumn.java" startLine="495" startPosition="52" endLine="496" endPosition="78" />
     <nodeInfo nodeId="5841940560826277260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationColumn.java" startLine="496" startPosition="78" endLine="497" endPosition="55" />
-    <nodeInfo nodeId="700892246829335449" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="499" startPosition="49" endLine="500" endPosition="16" />
+    <nodeInfo nodeId="700892246829335449" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="499" startPosition="78" endLine="500" endPosition="16" />
     <nodeInfo nodeId="8411107316628833659" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="502" startPosition="7" endLine="503" endPosition="71" />
     <nodeInfo nodeId="4433480198085384911" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="503" startPosition="71" endLine="504" endPosition="65" />
     <nodeInfo nodeId="1396967583415229211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="505" startPosition="25" endLine="506" endPosition="109" />
-    <nodeInfo nodeId="1396967583415229243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationColumn.java" startLine="508" startPosition="51" endLine="509" endPosition="88" />
+    <nodeInfo nodeId="1396967583415229243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AnnotationColumn.java" startLine="508" startPosition="79" endLine="509" endPosition="88" />
     <nodeInfo nodeId="1396967583415229252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="509" startPosition="88" endLine="510" endPosition="96" />
     <nodeInfo nodeId="2610202811736143842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="513" startPosition="5" endLine="514" endPosition="71" />
     <nodeInfo nodeId="1814329055513132599" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="514" startPosition="71" endLine="515" endPosition="63" />
@@ -362,7 +364,7 @@
     <nodeInfo nodeId="8595271971828756925" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AnnotationColumn.java" startLine="407" startPosition="107" endLine="411" endPosition="11" />
     <nodeInfo nodeId="1017050162851025674" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AnnotationColumn.java" startLine="434" startPosition="45" endLine="438" endPosition="6" />
     <nodeInfo nodeId="8054337884878055984" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnnotationColumn.java" startLine="457" startPosition="61" endLine="461" endPosition="0" />
-    <nodeInfo nodeId="8411107316628745600" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="AnnotationColumn.java" startLine="498" startPosition="83" endLine="502" endPosition="0" />
+    <nodeInfo nodeId="8411107316628745600" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="AnnotationColumn.java" startLine="498" startPosition="83" endLine="502" endPosition="0" />
     <nodeInfo nodeId="4527744427438192197" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnnotationColumn.java" startLine="548" startPosition="47" endLine="552" endPosition="0" />
     <nodeInfo nodeId="8821895807217429756" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAdditionalInfo#()Z" fileName="AnnotationColumn.java" startLine="554" startPosition="0" endLine="558" endPosition="0" />
     <nodeInfo nodeId="7744421503924676666" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRevisions#()Ljava/util/List;" fileName="AnnotationColumn.java" startLine="563" startPosition="0" endLine="567" endPosition="0" />
@@ -396,7 +398,7 @@
     <nodeInfo nodeId="4277709331644247113" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" fileName="AnnotationColumn.java" startLine="463" startPosition="0" endLine="468" endPosition="0" />
     <nodeInfo nodeId="1017050162851028140" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" fileName="AnnotationColumn.java" startLine="484" startPosition="12" endLine="489" endPosition="7" />
     <nodeInfo nodeId="8411107316628743204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="497" startPosition="55" endLine="502" endPosition="7" />
-    <nodeInfo nodeId="1396967583415229237" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="AnnotationColumn.java" startLine="507" startPosition="88" endLine="512" endPosition="0" />
+    <nodeInfo nodeId="1396967583415229237" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="AnnotationColumn.java" startLine="507" startPosition="88" endLine="512" endPosition="0" />
     <nodeInfo nodeId="4527744427438192194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="547" startPosition="34" endLine="552" endPosition="7" />
     <nodeInfo nodeId="8821895807217429764" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowAdditionalInfo#(Z)V" fileName="AnnotationColumn.java" startLine="558" startPosition="0" endLine="563" endPosition="0" />
     <nodeInfo nodeId="700892246829337644" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationColumn.java" startLine="613" startPosition="14" endLine="618" endPosition="9" />
@@ -529,7 +531,7 @@
     <scopeInfo nodeId="6964398208146163476" fileName="AnnotationColumn.java" startLine="474" startPosition="98" endLine="475" endPosition="16" />
     <scopeInfo nodeId="1017050162851028101" fileName="AnnotationColumn.java" startLine="482" startPosition="27" endLine="483" endPosition="16" />
     <scopeInfo nodeId="1017050162851028128" fileName="AnnotationColumn.java" startLine="486" startPosition="77" endLine="487" endPosition="20" />
-    <scopeInfo nodeId="8411107316628745605" fileName="AnnotationColumn.java" startLine="499" startPosition="49" endLine="500" endPosition="16" />
+    <scopeInfo nodeId="8411107316628745605" fileName="AnnotationColumn.java" startLine="499" startPosition="78" endLine="500" endPosition="16" />
     <scopeInfo nodeId="1485564104001064084" fileName="AnnotationColumn.java" startLine="523" startPosition="18" endLine="524" endPosition="15" />
     <scopeInfo nodeId="1485564104001064094" fileName="AnnotationColumn.java" startLine="526" startPosition="18" endLine="527" endPosition="15" />
     <scopeInfo nodeId="1485564104001064112" fileName="AnnotationColumn.java" startLine="531" startPosition="28" endLine="532" endPosition="15" />
@@ -570,7 +572,7 @@
       <varInfo nodeId="8595271971828756943" varName="currentFileLine" />
     </scopeInfo>
     <scopeInfo nodeId="4277709331644247116" fileName="AnnotationColumn.java" startLine="464" startPosition="23" endLine="466" endPosition="14" />
-    <scopeInfo nodeId="1396967583415229242" fileName="AnnotationColumn.java" startLine="508" startPosition="51" endLine="510" endPosition="96">
+    <scopeInfo nodeId="1396967583415229242" fileName="AnnotationColumn.java" startLine="508" startPosition="79" endLine="510" endPosition="96">
       <varInfo nodeId="1396967583415229244" varName="asString" />
     </scopeInfo>
     <scopeInfo nodeId="8821895807217429767" fileName="AnnotationColumn.java" startLine="559" startPosition="65" endLine="561" endPosition="23" />
@@ -613,8 +615,9 @@
     <scopeInfo nodeId="8595271971828756925" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AnnotationColumn.java" startLine="407" startPosition="107" endLine="411" endPosition="11" />
     <scopeInfo nodeId="5833019287081248511" fileName="AnnotationColumn.java" startLine="434" startPosition="45" endLine="438" endPosition="6" />
     <scopeInfo nodeId="8054337884878055984" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnnotationColumn.java" startLine="457" startPosition="61" endLine="461" endPosition="0" />
-    <scopeInfo nodeId="8411107316628745600" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="AnnotationColumn.java" startLine="498" startPosition="83" endLine="502" endPosition="0">
+    <scopeInfo nodeId="8411107316628745600" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="AnnotationColumn.java" startLine="498" startPosition="83" endLine="502" endPosition="0">
       <varInfo nodeId="8411107316628745603" varName="e" />
+      <varInfo nodeId="2010440180771205941" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="4527744427438192197" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnnotationColumn.java" startLine="548" startPosition="47" endLine="552" endPosition="0" />
     <scopeInfo nodeId="8821895807217429756" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAdditionalInfo#()Z" fileName="AnnotationColumn.java" startLine="554" startPosition="0" endLine="558" endPosition="0" />
@@ -644,8 +647,9 @@
     <scopeInfo nodeId="8787943709088565826" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnnotationColumn.java" startLine="756" startPosition="86" endLine="760" endPosition="0" />
     <scopeInfo nodeId="7392461296859492441" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AnnotationColumn.java" startLine="766" startPosition="78" endLine="770" endPosition="0" />
     <scopeInfo nodeId="4277709331644247113" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" fileName="AnnotationColumn.java" startLine="463" startPosition="0" endLine="468" endPosition="0" />
-    <scopeInfo nodeId="1396967583415229237" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="AnnotationColumn.java" startLine="507" startPosition="88" endLine="512" endPosition="0">
+    <scopeInfo nodeId="1396967583415229237" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="AnnotationColumn.java" startLine="507" startPosition="88" endLine="512" endPosition="0">
       <varInfo nodeId="1396967583415229240" varName="e" />
+      <varInfo nodeId="2010440180771205948" varName="params" />
     </scopeInfo>
     <scopeInfo nodeId="4527744427438183811" fileName="AnnotationColumn.java" startLine="547" startPosition="34" endLine="552" endPosition="7" />
     <scopeInfo nodeId="8821895807217429764" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowAdditionalInfo#(Z)V" fileName="AnnotationColumn.java" startLine="558" startPosition="0" endLine="563" endPosition="0">
@@ -1157,7 +1161,7 @@
     <nodeInfo nodeId="7744421503924771777" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="36" startPosition="5" endLine="37" endPosition="20" />
     <nodeInfo nodeId="7744421503924771781" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="37" startPosition="20" endLine="38" endPosition="24" />
     <nodeInfo nodeId="7744421503924771785" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="38" startPosition="24" endLine="39" endPosition="23" />
-    <nodeInfo nodeId="7744421503924805781" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="41" startPosition="53" endLine="42" endPosition="41" />
+    <nodeInfo nodeId="7744421503924805781" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="41" startPosition="82" endLine="42" endPosition="41" />
     <nodeInfo nodeId="7744421503924805792" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="42" startPosition="41" endLine="43" endPosition="40" />
     <nodeInfo nodeId="7744421503924805824" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="43" startPosition="40" endLine="44" endPosition="36" />
     <nodeInfo nodeId="7744421503924771424" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VcsRevisionRange.java" startLine="49" startPosition="54" endLine="50" endPosition="133" />
@@ -1183,25 +1187,25 @@
     <nodeInfo nodeId="7744421503924771362" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="VcsRevisionRange.java" startLine="33" startPosition="104" endLine="36" endPosition="5" />
     <nodeInfo nodeId="7744421503924576834" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsRevisionRange.java" startLine="67" startPosition="66" endLine="70" endPosition="5" />
     <nodeInfo nodeId="7744421503924771230" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsRevisionRange.java" startLine="79" startPosition="24" endLine="82" endPosition="7" />
-    <nodeInfo nodeId="7744421503924676780" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VcsRevisionRange.java" startLine="86" startPosition="50" endLine="90" endPosition="8" />
+    <nodeInfo nodeId="7744421503924676780" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VcsRevisionRange.java" startLine="86" startPosition="79" endLine="90" endPosition="8" />
     <nodeInfo nodeId="7744421503924676806" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VcsRevisionRange.java" startLine="90" startPosition="8" endLine="94" endPosition="8" />
     <nodeInfo nodeId="7744421503924676590" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="94" startPosition="8" endLine="98" endPosition="9" />
     <nodeInfo nodeId="7744421503924771682" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VcsRevisionRange.java" startLine="116" startPosition="102" endLine="120" endPosition="10" />
     <nodeInfo nodeId="7744421503924771477" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsRevisionRange.java" startLine="50" startPosition="133" endLine="55" endPosition="5" />
     <nodeInfo nodeId="7744421503924676532" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsRevisionRange.java" startLine="59" startPosition="60" endLine="64" endPosition="5" />
     <nodeInfo nodeId="7744421503924676707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consume#(Lcom/intellij/openapi/vcs/history/VcsFileRevision;)V" fileName="VcsRevisionRange.java" startLine="104" startPosition="135" endLine="109" endPosition="0" />
-    <nodeInfo nodeId="7744421503924805774" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="VcsRevisionRange.java" startLine="40" startPosition="47" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="7744421503924805774" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="VcsRevisionRange.java" startLine="40" startPosition="47" endLine="46" endPosition="0" />
     <nodeInfo nodeId="7744421503924585249" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HiglightAction#(Z)V" fileName="VcsRevisionRange.java" startLine="77" startPosition="0" endLine="83" endPosition="5" />
-    <nodeInfo nodeId="7744421503924676695" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="103" startPosition="51" endLine="109" endPosition="15" />
+    <nodeInfo nodeId="7744421503924676695" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="103" startPosition="80" endLine="109" endPosition="15" />
     <nodeInfo nodeId="7744421503924771655" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="VcsRevisionRange.java" startLine="115" startPosition="12" endLine="121" endPosition="7" />
     <nodeInfo nodeId="7744421503924805767" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VcsRevisionRange.java" startLine="39" startPosition="23" endLine="46" endPosition="7" />
     <nodeInfo nodeId="7744421503924576834" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5bt2ri_a0a0a0a0c0#(Lcom/intellij/openapi/vcs/history/VcsFileRevision;)Ljava/util/Date;" fileName="VcsRevisionRange.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
     <nodeInfo nodeId="7744421503924771315" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFileLineHighlighted#(I)Z" fileName="VcsRevisionRange.java" startLine="48" startPosition="0" endLine="57" endPosition="0" />
     <nodeInfo nodeId="7744421503924675013" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="revisionToString#(Lcom/intellij/openapi/vcs/history/VcsFileRevision;)Ljava/lang/String;" fileName="VcsRevisionRange.java" startLine="57" startPosition="0" endLine="66" endPosition="0" />
-    <nodeInfo nodeId="7744421503924585476" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="VcsRevisionRange.java" startLine="102" startPosition="0" endLine="111" endPosition="0" />
+    <nodeInfo nodeId="7744421503924585476" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="VcsRevisionRange.java" startLine="102" startPosition="0" endLine="111" endPosition="0" />
     <nodeInfo nodeId="7744421503924771643" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsRevisionRange.java" startLine="112" startPosition="59" endLine="121" endPosition="7" />
     <nodeInfo nodeId="7744421503924771581" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isHiglighted#(Lcom/intellij/openapi/vcs/history/VcsFileRevision;)Z" fileName="VcsRevisionRange.java" startLine="111" startPosition="0" endLine="123" endPosition="0" />
-    <nodeInfo nodeId="7744421503924585466" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="VcsRevisionRange.java" startLine="84" startPosition="0" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="7744421503924585466" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="VcsRevisionRange.java" startLine="84" startPosition="0" endLine="102" endPosition="0" />
     <nodeInfo nodeId="7744421503924585221" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsRevisionRange#(Ljetbrains/mps/vcs/annotation/AnnotationColumn;Lcom/intellij/openapi/vcs/annotate/FileAnnotation;)V" fileName="VcsRevisionRange.java" startLine="26" startPosition="0" endLine="47" endPosition="3" />
     <scopeInfo nodeId="7744421503924771364" fileName="VcsRevisionRange.java" startLine="34" startPosition="88" endLine="35" endPosition="88" />
     <scopeInfo nodeId="7744421503924771478" fileName="VcsRevisionRange.java" startLine="51" startPosition="80" endLine="52" endPosition="91" />
@@ -1213,7 +1217,7 @@
     <scopeInfo nodeId="7744421503924771644" fileName="VcsRevisionRange.java" startLine="113" startPosition="31" endLine="114" endPosition="20" />
     <scopeInfo nodeId="7744421503924676712" fileName="VcsRevisionRange.java" startLine="105" startPosition="55" endLine="107" endPosition="38" />
     <scopeInfo nodeId="7744421503924771362" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="VcsRevisionRange.java" startLine="33" startPosition="104" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="7744421503924805779" fileName="VcsRevisionRange.java" startLine="41" startPosition="53" endLine="44" endPosition="36" />
+    <scopeInfo nodeId="7744421503924805779" fileName="VcsRevisionRange.java" startLine="41" startPosition="82" endLine="44" endPosition="36" />
     <scopeInfo nodeId="7744421503924576834" fileName="VcsRevisionRange.java" startLine="67" startPosition="66" endLine="71" endPosition="31" />
     <scopeInfo nodeId="7744421503924585252" fileName="VcsRevisionRange.java" startLine="78" startPosition="43" endLine="82" endPosition="7" />
     <scopeInfo nodeId="7744421503924676707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consume#(Lcom/intellij/openapi/vcs/history/VcsFileRevision;)V" fileName="VcsRevisionRange.java" startLine="104" startPosition="135" endLine="109" endPosition="0">
@@ -1222,8 +1226,9 @@
     <scopeInfo nodeId="7744421503924771656" fileName="VcsRevisionRange.java" startLine="115" startPosition="14" endLine="120" endPosition="10">
       <varInfo nodeId="7744421503924771671" varName="compareResult" />
     </scopeInfo>
-    <scopeInfo nodeId="7744421503924805774" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="VcsRevisionRange.java" startLine="40" startPosition="47" endLine="46" endPosition="0">
+    <scopeInfo nodeId="7744421503924805774" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="VcsRevisionRange.java" startLine="40" startPosition="47" endLine="46" endPosition="0">
       <varInfo nodeId="7744421503924805777" varName="event" />
+      <varInfo nodeId="2010440180771208205" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="7744421503924771318" fileName="VcsRevisionRange.java" startLine="49" startPosition="54" endLine="55" endPosition="5">
       <varInfo nodeId="7744421503924771425" varName="revision" />
@@ -1234,7 +1239,7 @@
     <scopeInfo nodeId="7744421503924585249" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HiglightAction#(Z)V" fileName="VcsRevisionRange.java" startLine="77" startPosition="0" endLine="83" endPosition="5">
       <varInfo nodeId="7744421503924585266" varName="before" />
     </scopeInfo>
-    <scopeInfo nodeId="7744421503924585481" fileName="VcsRevisionRange.java" startLine="103" startPosition="51" endLine="109" endPosition="15" />
+    <scopeInfo nodeId="7744421503924585481" fileName="VcsRevisionRange.java" startLine="103" startPosition="80" endLine="109" endPosition="15" />
     <scopeInfo nodeId="7744421503924576834" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5bt2ri_a0a0a0a0c0#(Lcom/intellij/openapi/vcs/history/VcsFileRevision;)Ljava/util/Date;" fileName="VcsRevisionRange.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="7744421503924771315" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFileLineHighlighted#(I)Z" fileName="VcsRevisionRange.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="7744421503924771320" varName="fileLine" />
@@ -1242,19 +1247,21 @@
     <scopeInfo nodeId="7744421503924675013" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="revisionToString#(Lcom/intellij/openapi/vcs/history/VcsFileRevision;)Ljava/lang/String;" fileName="VcsRevisionRange.java" startLine="57" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7744421503924675018" varName="revision" />
     </scopeInfo>
-    <scopeInfo nodeId="7744421503924585476" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="VcsRevisionRange.java" startLine="102" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="7744421503924585476" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="VcsRevisionRange.java" startLine="102" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="7744421503924585479" varName="event" />
+      <varInfo nodeId="2010440180771210459" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="7744421503924771583" fileName="VcsRevisionRange.java" startLine="112" startPosition="59" endLine="121" endPosition="7" />
     <scopeInfo nodeId="7744421503924771581" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isHiglighted#(Lcom/intellij/openapi/vcs/history/VcsFileRevision;)Z" fileName="VcsRevisionRange.java" startLine="111" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="7744421503924771585" varName="revision" />
     </scopeInfo>
-    <scopeInfo nodeId="7744421503924585471" fileName="VcsRevisionRange.java" startLine="86" startPosition="50" endLine="100" endPosition="102">
+    <scopeInfo nodeId="7744421503924585471" fileName="VcsRevisionRange.java" startLine="86" startPosition="79" endLine="100" endPosition="102">
       <varInfo nodeId="7744421503924676781" varName="text" />
       <varInfo nodeId="7744421503924676807" varName="description" />
     </scopeInfo>
-    <scopeInfo nodeId="7744421503924585466" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" fileName="VcsRevisionRange.java" startLine="84" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="7744421503924585466" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" fileName="VcsRevisionRange.java" startLine="84" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="7744421503924585469" varName="event" />
+      <varInfo nodeId="2010440180771194719" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="7744421503924585225" fileName="VcsRevisionRange.java" startLine="27" startPosition="83" endLine="46" endPosition="7" />
     <scopeInfo nodeId="7744421503924585221" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsRevisionRange#(Ljetbrains/mps/vcs/annotation/AnnotationColumn;Lcom/intellij/openapi/vcs/annotate/FileAnnotation;)V" fileName="VcsRevisionRange.java" startLine="26" startPosition="0" endLine="47" endPosition="3">

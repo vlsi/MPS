@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -15,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.VcsRoot;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import java.io.File;
@@ -45,11 +45,6 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
     super("Install Custom Merge Driver (for Git)...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "";
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

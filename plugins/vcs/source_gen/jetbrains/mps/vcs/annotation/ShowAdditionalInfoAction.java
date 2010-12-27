@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.annotation;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-
 import java.util.Map;
 
 /*package*/ class ShowAdditionalInfoAction extends BaseAction {

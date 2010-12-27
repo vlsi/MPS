@@ -27,11 +27,6 @@ public class RollbackChanges_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       IconUtil.useIcon(RollbackChanges_Action.this, event.getPresentation(), "icons/reset.png");

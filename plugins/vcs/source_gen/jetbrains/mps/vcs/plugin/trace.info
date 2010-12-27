@@ -12,19 +12,19 @@
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Default_KeymapChanges" />
   <unitInfo fileName="Vcs_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" />
   <unitInfo fileName="main_CustomApplicationPlugin.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.vcs.plugin.main_CustomApplicationPlugin" />
-  <unitInfo fileName="DumpChangesManager_Action.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.vcs.plugin.DumpChangesManager_Action" />
-  <unitInfo fileName="GoToPreviousChange_Action.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToPreviousChange_Action" />
-  <unitInfo fileName="GoToNextChange_Action.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToNextChange_Action" />
-  <unitInfo fileName="Annotate_Action.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Annotate_Action" />
-  <unitInfo fileName="RollbackChanges_Action.java" startLine="20" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.vcs.plugin.RollbackChanges_Action" />
-  <unitInfo fileName="IgnoreInVcs_Action.java" startLine="22" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.vcs.plugin.IgnoreInVcs_Action" />
-  <unitInfo fileName="AddToVcs_Action.java" startLine="22" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.vcs.plugin.AddToVcs_Action" />
-  <unitInfo fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="23" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
+  <unitInfo fileName="DumpChangesManager_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.vcs.plugin.DumpChangesManager_Action" />
+  <unitInfo fileName="GoToPreviousChange_Action.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToPreviousChange_Action" />
+  <unitInfo fileName="GoToNextChange_Action.java" startLine="20" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.vcs.plugin.GoToNextChange_Action" />
+  <unitInfo fileName="Annotate_Action.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Annotate_Action" />
+  <unitInfo fileName="RollbackChanges_Action.java" startLine="20" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.vcs.plugin.RollbackChanges_Action" />
+  <unitInfo fileName="IgnoreInVcs_Action.java" startLine="22" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.plugin.IgnoreInVcs_Action" />
+  <unitInfo fileName="AddToVcs_Action.java" startLine="22" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.vcs.plugin.AddToVcs_Action" />
+  <unitInfo fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="23" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
+  <unitInfo fileName="ForceRefreshModelChanges_Action.java" startLine="22" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action" />
   <unitInfo fileName="Vcs_ApplicationPlugin.java" startLine="20" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
-  <unitInfo fileName="ForceRefreshModelChanges_Action.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action" />
-  <unitInfo fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="28" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffererenesWithCurrentRevision_Action" />
-  <unitInfo fileName="ReRunMergeFromBackup_Action.java" startLine="32" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
-  <unitInfo fileName="InstallCustomMergeDriver_Action.java" startLine="40" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action" />
+  <unitInfo fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="28" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffererenesWithCurrentRevision_Action" />
+  <unitInfo fileName="ReRunMergeFromBackup_Action.java" startLine="32" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
+  <unitInfo fileName="InstallCustomMergeDriver_Action.java" startLine="40" startPosition="0" endLine="267" endPosition="0" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action" />
   <root nodeId="1596063027222054292">
     <nodeInfo nodeId="1596063027222054307" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="IconUtil.java" startLine="13" startPosition="74" endLine="14" endPosition="89" />
     <nodeInfo nodeId="1596063027222056030" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IconUtil.java" startLine="14" startPosition="89" endLine="15" endPosition="81" />
@@ -51,26 +51,26 @@
     <nodeInfo nodeId="6763225944573363026" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ChangesStrip_ActionGroup.java" startLine="18" startPosition="100" endLine="19" endPosition="97" />
   </root>
   <root nodeId="6763225944573363027">
-    <nodeInfo nodeId="1596063027222056018" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToNextChange_Action.java" startLine="36" startPosition="9" endLine="37" endPosition="103" />
-    <nodeInfo nodeId="6763225944573363045" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToNextChange_Action.java" startLine="37" startPosition="103" endLine="38" endPosition="47" />
-    <nodeInfo nodeId="6763225944573363052" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToNextChange_Action.java" startLine="38" startPosition="47" endLine="39" endPosition="227" />
-    <nodeInfo nodeId="6763225944573363030" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToNextChange_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="184" />
-    <scopeInfo nodeId="6763225944573363044" fileName="GoToNextChange_Action.java" startLine="36" startPosition="9" endLine="39" endPosition="227" />
+    <nodeInfo nodeId="1596063027222056018" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToNextChange_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="103" />
+    <nodeInfo nodeId="6763225944573363045" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToNextChange_Action.java" startLine="32" startPosition="103" endLine="33" endPosition="47" />
+    <nodeInfo nodeId="6763225944573363052" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToNextChange_Action.java" startLine="33" startPosition="47" endLine="34" endPosition="227" />
+    <nodeInfo nodeId="6763225944573363030" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToNextChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="184" />
+    <scopeInfo nodeId="6763225944573363044" fileName="GoToNextChange_Action.java" startLine="31" startPosition="9" endLine="34" endPosition="227" />
   </root>
   <root nodeId="6763225944573363067">
-    <nodeInfo nodeId="1596063027222135247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToPreviousChange_Action.java" startLine="36" startPosition="9" endLine="37" endPosition="111" />
-    <nodeInfo nodeId="6763225944573363085" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToPreviousChange_Action.java" startLine="37" startPosition="111" endLine="38" endPosition="47" />
-    <nodeInfo nodeId="6763225944573363092" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToPreviousChange_Action.java" startLine="38" startPosition="47" endLine="39" endPosition="231" />
-    <nodeInfo nodeId="6763225944573363072" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToPreviousChange_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="188" />
-    <scopeInfo nodeId="6763225944573363084" fileName="GoToPreviousChange_Action.java" startLine="36" startPosition="9" endLine="39" endPosition="231" />
+    <nodeInfo nodeId="1596063027222135247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToPreviousChange_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="111" />
+    <nodeInfo nodeId="6763225944573363085" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToPreviousChange_Action.java" startLine="32" startPosition="111" endLine="33" endPosition="47" />
+    <nodeInfo nodeId="6763225944573363092" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToPreviousChange_Action.java" startLine="33" startPosition="47" endLine="34" endPosition="231" />
+    <nodeInfo nodeId="6763225944573363072" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToPreviousChange_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="188" />
+    <scopeInfo nodeId="6763225944573363084" fileName="GoToPreviousChange_Action.java" startLine="31" startPosition="9" endLine="34" endPosition="231" />
   </root>
   <root nodeId="6763225944573363107">
-    <nodeInfo nodeId="434116226312812722" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RollbackChanges_Action.java" startLine="36" startPosition="9" endLine="37" endPosition="96" />
-    <nodeInfo nodeId="7076648626338595222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RollbackChanges_Action.java" startLine="37" startPosition="96" endLine="38" endPosition="47" />
-    <nodeInfo nodeId="7076648626338595229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RollbackChanges_Action.java" startLine="38" startPosition="47" endLine="39" endPosition="47" />
-    <nodeInfo nodeId="7076648626338595221" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="RollbackChanges_Action.java" startLine="39" startPosition="47" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="6763225944573363112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RollbackChanges_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="185" />
-    <scopeInfo nodeId="434116226312812721" fileName="RollbackChanges_Action.java" startLine="36" startPosition="9" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="434116226312812722" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RollbackChanges_Action.java" startLine="31" startPosition="9" endLine="32" endPosition="96" />
+    <nodeInfo nodeId="7076648626338595222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RollbackChanges_Action.java" startLine="32" startPosition="96" endLine="33" endPosition="47" />
+    <nodeInfo nodeId="7076648626338595229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RollbackChanges_Action.java" startLine="33" startPosition="47" endLine="34" endPosition="47" />
+    <nodeInfo nodeId="7076648626338595221" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="RollbackChanges_Action.java" startLine="34" startPosition="47" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="6763225944573363112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RollbackChanges_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="185" />
+    <scopeInfo nodeId="434116226312812721" fileName="RollbackChanges_Action.java" startLine="31" startPosition="9" endLine="35" endPosition="0" />
   </root>
   <root nodeId="6763225944573505210">
     <nodeInfo nodeId="6763225944573505213" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GoToVCS_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="91" />
@@ -81,25 +81,25 @@
     <nodeInfo nodeId="6763225944573505223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorInternalVCS_ActionGroup.java" startLine="17" startPosition="105" endLine="18" endPosition="111" />
   </root>
   <root nodeId="6763225944573505229">
-    <nodeInfo nodeId="6763225944573505233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DumpChangesManager_Action.java" startLine="55" startPosition="9" endLine="56" endPosition="104" />
+    <nodeInfo nodeId="6763225944573505233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DumpChangesManager_Action.java" startLine="50" startPosition="9" endLine="51" endPosition="104" />
   </root>
   <root nodeId="6763225944573505242">
-    <nodeInfo nodeId="5917128770759540768" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="39" startPosition="7" endLine="40" endPosition="104" />
-    <nodeInfo nodeId="6763225944573505294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="40" startPosition="104" endLine="41" endPosition="127" />
-    <nodeInfo nodeId="6763225944573505249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="73" startPosition="9" endLine="74" endPosition="106" />
-    <nodeInfo nodeId="6763225944573505252" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="74" startPosition="106" endLine="75" endPosition="86" />
-    <nodeInfo nodeId="6763225944573505269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="77" startPosition="27" endLine="78" endPosition="172" />
-    <nodeInfo nodeId="6763225944573505284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="79" startPosition="50" endLine="80" endPosition="51" />
-    <nodeInfo nodeId="6763225944573505282" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="78" startPosition="172" endLine="81" endPosition="11" />
-    <nodeInfo nodeId="6763225944573505267" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ForceRefreshModelChanges_Action.java" startLine="76" startPosition="132" endLine="83" endPosition="0" />
-    <nodeInfo nodeId="6763225944573505258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="75" startPosition="86" endLine="83" endPosition="9" />
-    <scopeInfo nodeId="6763225944573505283" fileName="ForceRefreshModelChanges_Action.java" startLine="79" startPosition="50" endLine="80" endPosition="51" />
-    <scopeInfo nodeId="6763225944573505293" fileName="ForceRefreshModelChanges_Action.java" startLine="39" startPosition="7" endLine="41" endPosition="127">
+    <nodeInfo nodeId="5917128770759540768" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="34" startPosition="7" endLine="35" endPosition="104" />
+    <nodeInfo nodeId="6763225944573505294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="35" startPosition="104" endLine="36" endPosition="127" />
+    <nodeInfo nodeId="6763225944573505249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="106" />
+    <nodeInfo nodeId="6763225944573505252" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="69" startPosition="106" endLine="70" endPosition="86" />
+    <nodeInfo nodeId="6763225944573505269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="72" startPosition="27" endLine="73" endPosition="172" />
+    <nodeInfo nodeId="6763225944573505284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="74" startPosition="50" endLine="75" endPosition="51" />
+    <nodeInfo nodeId="6763225944573505282" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="73" startPosition="172" endLine="76" endPosition="11" />
+    <nodeInfo nodeId="6763225944573505267" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ForceRefreshModelChanges_Action.java" startLine="71" startPosition="132" endLine="78" endPosition="0" />
+    <nodeInfo nodeId="6763225944573505258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ForceRefreshModelChanges_Action.java" startLine="70" startPosition="86" endLine="78" endPosition="9" />
+    <scopeInfo nodeId="6763225944573505283" fileName="ForceRefreshModelChanges_Action.java" startLine="74" startPosition="50" endLine="75" endPosition="51" />
+    <scopeInfo nodeId="6763225944573505293" fileName="ForceRefreshModelChanges_Action.java" startLine="34" startPosition="7" endLine="36" endPosition="127">
       <varInfo nodeId="5917128770759540769" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573505268" fileName="ForceRefreshModelChanges_Action.java" startLine="77" startPosition="27" endLine="81" endPosition="11" />
-    <scopeInfo nodeId="6763225944573505267" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ForceRefreshModelChanges_Action.java" startLine="76" startPosition="132" endLine="83" endPosition="0" />
-    <unitInfo nodeId="6763225944573505267" fileName="ForceRefreshModelChanges_Action.java" startLine="76" startPosition="120" endLine="83" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action$1" />
+    <scopeInfo nodeId="6763225944573505268" fileName="ForceRefreshModelChanges_Action.java" startLine="72" startPosition="27" endLine="76" endPosition="11" />
+    <scopeInfo nodeId="6763225944573505267" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ForceRefreshModelChanges_Action.java" startLine="71" startPosition="132" endLine="78" endPosition="0" />
+    <unitInfo nodeId="6763225944573505267" fileName="ForceRefreshModelChanges_Action.java" startLine="71" startPosition="120" endLine="78" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action$1" />
   </root>
   <root nodeId="6763225944573563931">
     <nodeInfo nodeId="6763225944573589040" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExt" fileName="main_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="15" endPosition="33" />
@@ -113,123 +113,123 @@
     <scopeInfo nodeId="6763225944573563933" fileName="main_CustomApplicationPlugin.java" startLine="21" startPosition="24" endLine="24" endPosition="102" />
   </root>
   <root nodeId="7545884443035896082">
-    <nodeInfo nodeId="7545884443035896085" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="47" startPosition="87" endLine="48" endPosition="129" />
-    <nodeInfo nodeId="7545884443035896094" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
-    <nodeInfo nodeId="7545884443035896105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="52" startPosition="112" endLine="53" endPosition="19" />
-    <nodeInfo nodeId="7545884443035896113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="111" />
-    <nodeInfo nodeId="7545884443035896122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="56" startPosition="23" endLine="57" endPosition="19" />
-    <nodeInfo nodeId="7545884443035896127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="43" />
-    <nodeInfo nodeId="7545884443035896297" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="94" startPosition="45" endLine="95" endPosition="34" />
-    <nodeInfo nodeId="7545884443035896310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="99" startPosition="13" endLine="100" endPosition="94" />
-    <nodeInfo nodeId="7545884443035896317" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="100" startPosition="94" endLine="101" endPosition="186" />
-    <nodeInfo nodeId="7545884443035896336" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="101" startPosition="186" endLine="102" endPosition="17" />
-    <nodeInfo nodeId="7545884443035896341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="104" startPosition="36" endLine="105" endPosition="28" />
-    <nodeInfo nodeId="7545884443035896344" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ReRunMergeFromBackup_Action.java" startLine="106" startPosition="11" endLine="107" endPosition="30" />
-    <nodeInfo nodeId="7545884443035896346" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="107" startPosition="30" endLine="108" endPosition="19" />
-    <nodeInfo nodeId="7545884443035896357" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="110" startPosition="7" endLine="111" endPosition="212" />
-    <nodeInfo nodeId="7545884443035896137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="119" startPosition="104" endLine="120" endPosition="162" />
-    <nodeInfo nodeId="7545884443035896151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="121" startPosition="28" endLine="122" endPosition="13" />
-    <nodeInfo nodeId="7545884443035896155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="123" startPosition="5" endLine="124" endPosition="172" />
-    <nodeInfo nodeId="7545884443035896178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="127" startPosition="68" endLine="128" endPosition="124" />
-    <nodeInfo nodeId="7545884443035896187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="131" startPosition="75" endLine="132" endPosition="57" />
-    <nodeInfo nodeId="7545884443035896193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="132" startPosition="57" endLine="133" endPosition="46" />
-    <nodeInfo nodeId="7545884443035896202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="136" startPosition="65" endLine="137" endPosition="118" />
-    <nodeInfo nodeId="7545884443035896222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="141" startPosition="145" endLine="142" endPosition="26" />
-    <nodeInfo nodeId="7545884443035896236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="12" endLine="144" endPosition="48" />
-    <nodeInfo nodeId="7545884443035896240" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="144" startPosition="48" endLine="145" endPosition="40" />
-    <nodeInfo nodeId="7545884443035896244" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="145" startPosition="40" endLine="146" endPosition="43" />
-    <nodeInfo nodeId="7545884443035896251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="146" startPosition="43" endLine="147" endPosition="217" />
-    <nodeInfo nodeId="7545884443035896262" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="148" startPosition="25" endLine="149" endPosition="20" />
-    <nodeInfo nodeId="7545884443035896269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="150" startPosition="51" endLine="151" endPosition="28" />
-    <nodeInfo nodeId="7545884443035896279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="152" startPosition="14" endLine="153" endPosition="27" />
-    <nodeInfo nodeId="7545884443035896277" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="152" startPosition="12" endLine="154" endPosition="7" />
-    <nodeInfo nodeId="7545884443035896092" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="48" startPosition="129" endLine="51" endPosition="5" />
-    <nodeInfo nodeId="7545884443035896103" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="51" startPosition="5" endLine="54" endPosition="5" />
-    <nodeInfo nodeId="7545884443035896120" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="55" startPosition="111" endLine="58" endPosition="5" />
-    <nodeInfo nodeId="7545884443035896341" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="103" startPosition="33" endLine="106" endPosition="11" />
-    <nodeInfo nodeId="7545884443035896149" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="120" startPosition="162" endLine="123" endPosition="5" />
-    <nodeInfo nodeId="7545884443035896295" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/Comparable;" fileName="ReRunMergeFromBackup_Action.java" startLine="93" startPosition="178" endLine="97" endPosition="0" />
-    <nodeInfo nodeId="7545884443035896173" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackupFiles#(Ljava/util/Map;)[Ljava/io/File;" fileName="ReRunMergeFromBackup_Action.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
-    <nodeInfo nodeId="7545884443035896200" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelFile#(Ljava/util/Map;)Ljetbrains/mps/vfs/IFile;" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <nodeInfo nodeId="7545884443035896284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="92" startPosition="9" endLine="97" endPosition="16" />
-    <nodeInfo nodeId="7545884443035896185" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHash#(Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)Ljava/lang/String;" fileName="ReRunMergeFromBackup_Action.java" startLine="130" startPosition="0" endLine="135" endPosition="0" />
-    <nodeInfo nodeId="7545884443035896260" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="147" startPosition="217" endLine="154" endPosition="7" />
-    <nodeInfo nodeId="7545884443035896134" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doMerge#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)V" fileName="ReRunMergeFromBackup_Action.java" startLine="118" startPosition="0" endLine="126" endPosition="0" />
-    <nodeInfo nodeId="7545884443035896308" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="66" endLine="109" endPosition="9" />
-    <nodeInfo nodeId="7545884443035896234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="10" endLine="155" endPosition="5" />
-    <nodeInfo nodeId="7545884443035896304" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="97" startPosition="16" endLine="110" endPosition="7" />
-    <nodeInfo nodeId="7545884443035896220" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="140" startPosition="109" endLine="155" endPosition="5" />
-    <nodeInfo nodeId="7545884443035896213" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="whichMineModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)Ljetbrains/mps/smodel/SModel;" fileName="ReRunMergeFromBackup_Action.java" startLine="139" startPosition="0" endLine="157" endPosition="0" />
-    <scopeInfo nodeId="7545884443035896093" fileName="ReRunMergeFromBackup_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="7545884443035896104" fileName="ReRunMergeFromBackup_Action.java" startLine="52" startPosition="112" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="7545884443035896121" fileName="ReRunMergeFromBackup_Action.java" startLine="56" startPosition="23" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="7545884443035896296" fileName="ReRunMergeFromBackup_Action.java" startLine="94" startPosition="45" endLine="95" endPosition="34" />
-    <scopeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="104" startPosition="36" endLine="105" endPosition="28" />
-    <scopeInfo nodeId="7545884443035896150" fileName="ReRunMergeFromBackup_Action.java" startLine="121" startPosition="28" endLine="122" endPosition="13" />
-    <scopeInfo nodeId="7545884443035896177" fileName="ReRunMergeFromBackup_Action.java" startLine="127" startPosition="68" endLine="128" endPosition="124" />
-    <scopeInfo nodeId="7545884443035896201" fileName="ReRunMergeFromBackup_Action.java" startLine="136" startPosition="65" endLine="137" endPosition="118" />
-    <scopeInfo nodeId="7545884443035896221" fileName="ReRunMergeFromBackup_Action.java" startLine="141" startPosition="145" endLine="142" endPosition="26" />
-    <scopeInfo nodeId="7545884443035896261" fileName="ReRunMergeFromBackup_Action.java" startLine="148" startPosition="25" endLine="149" endPosition="20" />
-    <scopeInfo nodeId="7545884443035896268" fileName="ReRunMergeFromBackup_Action.java" startLine="150" startPosition="51" endLine="151" endPosition="28" />
-    <scopeInfo nodeId="7545884443035896278" fileName="ReRunMergeFromBackup_Action.java" startLine="152" startPosition="14" endLine="153" endPosition="27" />
-    <scopeInfo nodeId="7545884443035896186" fileName="ReRunMergeFromBackup_Action.java" startLine="131" startPosition="75" endLine="133" endPosition="46">
+    <nodeInfo nodeId="7545884443035896085" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="42" startPosition="87" endLine="43" endPosition="129" />
+    <nodeInfo nodeId="7545884443035896094" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" />
+    <nodeInfo nodeId="7545884443035896105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="47" startPosition="112" endLine="48" endPosition="19" />
+    <nodeInfo nodeId="7545884443035896113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="111" />
+    <nodeInfo nodeId="7545884443035896122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="51" startPosition="23" endLine="52" endPosition="19" />
+    <nodeInfo nodeId="7545884443035896127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="53" startPosition="5" endLine="54" endPosition="43" />
+    <nodeInfo nodeId="7545884443035896297" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="89" startPosition="45" endLine="90" endPosition="34" />
+    <nodeInfo nodeId="7545884443035896310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="94" startPosition="13" endLine="95" endPosition="94" />
+    <nodeInfo nodeId="7545884443035896317" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="95" startPosition="94" endLine="96" endPosition="186" />
+    <nodeInfo nodeId="7545884443035896336" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="96" startPosition="186" endLine="97" endPosition="17" />
+    <nodeInfo nodeId="7545884443035896341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="99" startPosition="36" endLine="100" endPosition="28" />
+    <nodeInfo nodeId="7545884443035896344" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="ReRunMergeFromBackup_Action.java" startLine="101" startPosition="11" endLine="102" endPosition="30" />
+    <nodeInfo nodeId="7545884443035896346" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="102" startPosition="30" endLine="103" endPosition="19" />
+    <nodeInfo nodeId="7545884443035896357" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="105" startPosition="7" endLine="106" endPosition="212" />
+    <nodeInfo nodeId="7545884443035896137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="114" startPosition="104" endLine="115" endPosition="162" />
+    <nodeInfo nodeId="7545884443035896151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="116" startPosition="28" endLine="117" endPosition="13" />
+    <nodeInfo nodeId="7545884443035896155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="118" startPosition="5" endLine="119" endPosition="172" />
+    <nodeInfo nodeId="7545884443035896178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="122" startPosition="68" endLine="123" endPosition="124" />
+    <nodeInfo nodeId="7545884443035896187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="126" startPosition="75" endLine="127" endPosition="57" />
+    <nodeInfo nodeId="7545884443035896193" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="127" startPosition="57" endLine="128" endPosition="46" />
+    <nodeInfo nodeId="7545884443035896202" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="131" startPosition="65" endLine="132" endPosition="118" />
+    <nodeInfo nodeId="7545884443035896222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="136" startPosition="145" endLine="137" endPosition="26" />
+    <nodeInfo nodeId="7545884443035896236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="138" startPosition="12" endLine="139" endPosition="48" />
+    <nodeInfo nodeId="7545884443035896240" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="139" startPosition="48" endLine="140" endPosition="40" />
+    <nodeInfo nodeId="7545884443035896244" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="140" startPosition="40" endLine="141" endPosition="43" />
+    <nodeInfo nodeId="7545884443035896251" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="141" startPosition="43" endLine="142" endPosition="217" />
+    <nodeInfo nodeId="7545884443035896262" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="25" endLine="144" endPosition="20" />
+    <nodeInfo nodeId="7545884443035896269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="145" startPosition="51" endLine="146" endPosition="28" />
+    <nodeInfo nodeId="7545884443035896279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="147" startPosition="14" endLine="148" endPosition="27" />
+    <nodeInfo nodeId="7545884443035896277" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="147" startPosition="12" endLine="149" endPosition="7" />
+    <nodeInfo nodeId="7545884443035896092" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="43" startPosition="129" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="7545884443035896103" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="46" startPosition="5" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="7545884443035896120" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="50" startPosition="111" endLine="53" endPosition="5" />
+    <nodeInfo nodeId="7545884443035896341" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="33" endLine="101" endPosition="11" />
+    <nodeInfo nodeId="7545884443035896149" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="115" startPosition="162" endLine="118" endPosition="5" />
+    <nodeInfo nodeId="7545884443035896295" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/Comparable;" fileName="ReRunMergeFromBackup_Action.java" startLine="88" startPosition="178" endLine="92" endPosition="0" />
+    <nodeInfo nodeId="7545884443035896173" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackupFiles#(Ljava/util/Map;)[Ljava/io/File;" fileName="ReRunMergeFromBackup_Action.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="7545884443035896200" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelFile#(Ljava/util/Map;)Ljetbrains/mps/vfs/IFile;" fileName="ReRunMergeFromBackup_Action.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <nodeInfo nodeId="7545884443035896284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="87" startPosition="9" endLine="92" endPosition="16" />
+    <nodeInfo nodeId="7545884443035896185" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHash#(Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)Ljava/lang/String;" fileName="ReRunMergeFromBackup_Action.java" startLine="125" startPosition="0" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="7545884443035896260" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="142" startPosition="217" endLine="149" endPosition="7" />
+    <nodeInfo nodeId="7545884443035896134" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doMerge#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)V" fileName="ReRunMergeFromBackup_Action.java" startLine="113" startPosition="0" endLine="121" endPosition="0" />
+    <nodeInfo nodeId="7545884443035896308" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="93" startPosition="66" endLine="104" endPosition="9" />
+    <nodeInfo nodeId="7545884443035896234" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="138" startPosition="10" endLine="150" endPosition="5" />
+    <nodeInfo nodeId="7545884443035896304" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="92" startPosition="16" endLine="105" endPosition="7" />
+    <nodeInfo nodeId="7545884443035896220" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="109" endLine="150" endPosition="5" />
+    <nodeInfo nodeId="7545884443035896213" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="whichMineModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)Ljetbrains/mps/smodel/SModel;" fileName="ReRunMergeFromBackup_Action.java" startLine="134" startPosition="0" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896093" fileName="ReRunMergeFromBackup_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896104" fileName="ReRunMergeFromBackup_Action.java" startLine="47" startPosition="112" endLine="48" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896121" fileName="ReRunMergeFromBackup_Action.java" startLine="51" startPosition="23" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896296" fileName="ReRunMergeFromBackup_Action.java" startLine="89" startPosition="45" endLine="90" endPosition="34" />
+    <scopeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="99" startPosition="36" endLine="100" endPosition="28" />
+    <scopeInfo nodeId="7545884443035896150" fileName="ReRunMergeFromBackup_Action.java" startLine="116" startPosition="28" endLine="117" endPosition="13" />
+    <scopeInfo nodeId="7545884443035896177" fileName="ReRunMergeFromBackup_Action.java" startLine="122" startPosition="68" endLine="123" endPosition="124" />
+    <scopeInfo nodeId="7545884443035896201" fileName="ReRunMergeFromBackup_Action.java" startLine="131" startPosition="65" endLine="132" endPosition="118" />
+    <scopeInfo nodeId="7545884443035896221" fileName="ReRunMergeFromBackup_Action.java" startLine="136" startPosition="145" endLine="137" endPosition="26" />
+    <scopeInfo nodeId="7545884443035896261" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="25" endLine="144" endPosition="20" />
+    <scopeInfo nodeId="7545884443035896268" fileName="ReRunMergeFromBackup_Action.java" startLine="145" startPosition="51" endLine="146" endPosition="28" />
+    <scopeInfo nodeId="7545884443035896278" fileName="ReRunMergeFromBackup_Action.java" startLine="147" startPosition="14" endLine="148" endPosition="27" />
+    <scopeInfo nodeId="7545884443035896186" fileName="ReRunMergeFromBackup_Action.java" startLine="126" startPosition="75" endLine="128" endPosition="46">
       <varInfo nodeId="7545884443035896188" varName="currentBytes" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896309" fileName="ReRunMergeFromBackup_Action.java" startLine="99" startPosition="13" endLine="102" endPosition="17">
+    <scopeInfo nodeId="7545884443035896309" fileName="ReRunMergeFromBackup_Action.java" startLine="94" startPosition="13" endLine="97" endPosition="17">
       <varInfo nodeId="7545884443035896311" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="103" startPosition="33" endLine="106" endPosition="11" />
-    <scopeInfo nodeId="7545884443035896295" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/Comparable;" fileName="ReRunMergeFromBackup_Action.java" startLine="93" startPosition="178" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="7545884443035896173" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackupFiles#(Ljava/util/Map;)[Ljava/io/File;" fileName="ReRunMergeFromBackup_Action.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="7545884443035896200" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelFile#(Ljava/util/Map;)Ljetbrains/mps/vfs/IFile;" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="7545884443035896337" fileName="ReRunMergeFromBackup_Action.java" startLine="103" startPosition="0" endLine="108" endPosition="19">
+    <scopeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="33" endLine="101" endPosition="11" />
+    <scopeInfo nodeId="7545884443035896295" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/Comparable;" fileName="ReRunMergeFromBackup_Action.java" startLine="88" startPosition="178" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896173" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBackupFiles#(Ljava/util/Map;)[Ljava/io/File;" fileName="ReRunMergeFromBackup_Action.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896200" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelFile#(Ljava/util/Map;)Ljetbrains/mps/vfs/IFile;" fileName="ReRunMergeFromBackup_Action.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896337" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="0" endLine="103" endPosition="19">
       <varInfo nodeId="7545884443035896338" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896340" fileName="ReRunMergeFromBackup_Action.java" startLine="103" startPosition="33" endLine="108" endPosition="19" />
-    <scopeInfo nodeId="7545884443035896136" fileName="ReRunMergeFromBackup_Action.java" startLine="119" startPosition="104" endLine="124" endPosition="172">
+    <scopeInfo nodeId="7545884443035896340" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="33" endLine="103" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896136" fileName="ReRunMergeFromBackup_Action.java" startLine="114" startPosition="104" endLine="119" endPosition="172">
       <varInfo nodeId="7545884443035896138" varName="mineModel" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896185" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHash#(Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)Ljava/lang/String;" fileName="ReRunMergeFromBackup_Action.java" startLine="130" startPosition="0" endLine="135" endPosition="0">
+    <scopeInfo nodeId="7545884443035896185" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHash#(Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)Ljava/lang/String;" fileName="ReRunMergeFromBackup_Action.java" startLine="125" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="7545884443035896198" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896134" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doMerge#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)V" fileName="ReRunMergeFromBackup_Action.java" startLine="118" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="7545884443035896134" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doMerge#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)V" fileName="ReRunMergeFromBackup_Action.java" startLine="113" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="7545884443035896171" varName="repository" />
       <varInfo nodeId="7545884443035896169" varName="base" />
       <varInfo nodeId="7545884443035896167" varName="mine" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896307" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="66" endLine="109" endPosition="9" />
-    <scopeInfo nodeId="7545884443035896235" fileName="ReRunMergeFromBackup_Action.java" startLine="143" startPosition="12" endLine="154" endPosition="7">
+    <scopeInfo nodeId="7545884443035896307" fileName="ReRunMergeFromBackup_Action.java" startLine="93" startPosition="66" endLine="104" endPosition="9" />
+    <scopeInfo nodeId="7545884443035896235" fileName="ReRunMergeFromBackup_Action.java" startLine="138" startPosition="12" endLine="149" endPosition="7">
       <varInfo nodeId="7545884443035896252" varName="result" />
       <varInfo nodeId="7545884443035896237" varName="current" />
       <varInfo nodeId="7545884443035896245" varName="options" />
       <varInfo nodeId="7545884443035896241" varName="backup" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896084" fileName="ReRunMergeFromBackup_Action.java" startLine="47" startPosition="87" endLine="59" endPosition="43">
+    <scopeInfo nodeId="7545884443035896084" fileName="ReRunMergeFromBackup_Action.java" startLine="42" startPosition="87" endLine="54" endPosition="43">
       <varInfo nodeId="7545884443035896086" varName="manager" />
       <varInfo nodeId="7545884443035896114" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896304" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="97" startPosition="16" endLine="110" endPosition="7" />
-    <scopeInfo nodeId="7545884443035896219" fileName="ReRunMergeFromBackup_Action.java" startLine="140" startPosition="109" endLine="155" endPosition="5" />
-    <scopeInfo nodeId="7545884443035896213" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="whichMineModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)Ljetbrains/mps/smodel/SModel;" fileName="ReRunMergeFromBackup_Action.java" startLine="139" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="7545884443035896304" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ReRunMergeFromBackup_Action.java" startLine="92" startPosition="16" endLine="105" endPosition="7" />
+    <scopeInfo nodeId="7545884443035896219" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="109" endLine="150" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896213" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="whichMineModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljava/util/Map;)Ljetbrains/mps/smodel/SModel;" fileName="ReRunMergeFromBackup_Action.java" startLine="134" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="7545884443035896215" varName="currentModel" />
       <varInfo nodeId="7545884443035896217" varName="backUpModel" />
     </scopeInfo>
-    <unitInfo nodeId="7545884443035896295" fileName="ReRunMergeFromBackup_Action.java" startLine="93" startPosition="144" endLine="97" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action$1" />
+    <unitInfo nodeId="7545884443035896295" fileName="ReRunMergeFromBackup_Action.java" startLine="88" startPosition="144" endLine="92" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action$1" />
   </root>
   <root nodeId="7545884443035896373">
-    <nodeInfo nodeId="7545884443035896439" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="38" startPosition="87" endLine="39" endPosition="120" />
-    <nodeInfo nodeId="7545884443035896376" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="113" />
-    <nodeInfo nodeId="7545884443035896384" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="73" startPosition="113" endLine="74" endPosition="171" />
-    <nodeInfo nodeId="7545884443035896408" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="76" startPosition="27" endLine="77" endPosition="59" />
-    <nodeInfo nodeId="7545884443035896417" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="77" startPosition="59" endLine="78" endPosition="204" />
-    <nodeInfo nodeId="7545884443035896404" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="70" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="7545884443035896396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="74" startPosition="171" endLine="80" endPosition="34" />
-    <scopeInfo nodeId="7545884443035896438" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="38" startPosition="87" endLine="39" endPosition="120" />
-    <scopeInfo nodeId="7545884443035896407" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="76" startPosition="27" endLine="78" endPosition="204">
+    <nodeInfo nodeId="7545884443035896439" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="33" startPosition="87" endLine="34" endPosition="120" />
+    <nodeInfo nodeId="7545884443035896376" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="67" startPosition="9" endLine="68" endPosition="113" />
+    <nodeInfo nodeId="7545884443035896384" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="68" startPosition="113" endLine="69" endPosition="171" />
+    <nodeInfo nodeId="7545884443035896408" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="71" startPosition="27" endLine="72" endPosition="59" />
+    <nodeInfo nodeId="7545884443035896417" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="72" startPosition="59" endLine="73" endPosition="204" />
+    <nodeInfo nodeId="7545884443035896404" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="70" startPosition="70" endLine="75" endPosition="0" />
+    <nodeInfo nodeId="7545884443035896396" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="69" startPosition="171" endLine="75" endPosition="34" />
+    <scopeInfo nodeId="7545884443035896438" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="33" startPosition="87" endLine="34" endPosition="120" />
+    <scopeInfo nodeId="7545884443035896407" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="71" startPosition="27" endLine="73" endPosition="204">
       <varInfo nodeId="7545884443035896409" varName="titles" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896404" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="70" endLine="80" endPosition="0" />
-    <unitInfo nodeId="7545884443035896402" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="58" endLine="80" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action$1" />
+    <scopeInfo nodeId="7545884443035896404" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="70" startPosition="70" endLine="75" endPosition="0" />
+    <unitInfo nodeId="7545884443035896402" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="70" startPosition="58" endLine="75" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action$1" />
   </root>
   <root nodeId="7545884443035896622">
     <nodeInfo nodeId="7545884443035896626" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCSModelActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="115" />
@@ -300,7 +300,7 @@
     <nodeInfo nodeId="7545884443035907127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VcsActionsHelper.java" startLine="165" startPosition="93" endLine="166" endPosition="95" />
     <nodeInfo nodeId="7545884443035907150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VcsActionsHelper.java" startLine="171" startPosition="57" endLine="172" endPosition="56" />
     <nodeInfo nodeId="7545884443035907162" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VcsActionsHelper#()V" fileName="VcsActionsHelper.java" startLine="42" startPosition="0" endLine="44" endPosition="3" />
-    <nodeInfo nodeId="7590932940322140496" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsActionsHelper.java" startLine="60" startPosition="30" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="7590932940322140496" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="VcsActionsHelper.java" startLine="60" startPosition="30" endLine="63" endPosition="7" />
     <nodeInfo nodeId="7545884443035906991" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="VcsActionsHelper.java" startLine="54" startPosition="59" endLine="58" endPosition="0" />
     <nodeInfo nodeId="7545884443035907042" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="VcsActionsHelper.java" startLine="71" startPosition="59" endLine="75" endPosition="0" />
     <nodeInfo nodeId="7545884443035907078" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VcsActionsHelper.java" startLine="105" startPosition="27" endLine="109" endPosition="23" />
@@ -422,20 +422,20 @@
     <unitInfo nodeId="7545884443035906924" fileName="VcsActionsHelper.java" startLine="40" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
   </root>
   <root nodeId="7545884443035919781">
-    <nodeInfo nodeId="1596063027222135263" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="43" startPosition="87" endLine="44" endPosition="113" />
-    <nodeInfo nodeId="7545884443035919812" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="45" startPosition="112" endLine="46" endPosition="19" />
-    <nodeInfo nodeId="7545884443035919820" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="47" startPosition="5" endLine="48" endPosition="170" />
-    <nodeInfo nodeId="7545884443035919835" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="49" startPosition="196" endLine="50" endPosition="155" />
-    <nodeInfo nodeId="7545884443035919847" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="50" startPosition="155" endLine="51" endPosition="80" />
-    <nodeInfo nodeId="7545884443035919870" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="52" startPosition="5" endLine="53" endPosition="17" />
-    <nodeInfo nodeId="7545884443035919789" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="347" />
-    <nodeInfo nodeId="7545884443035919810" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="44" startPosition="113" endLine="47" endPosition="5" />
-    <nodeInfo nodeId="7545884443035919833" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="48" startPosition="170" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="7545884443035919811" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="45" startPosition="112" endLine="46" endPosition="19" />
-    <scopeInfo nodeId="7545884443035919834" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="49" startPosition="196" endLine="51" endPosition="80">
+    <nodeInfo nodeId="1596063027222135263" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="38" startPosition="87" endLine="39" endPosition="113" />
+    <nodeInfo nodeId="7545884443035919812" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="40" startPosition="112" endLine="41" endPosition="19" />
+    <nodeInfo nodeId="7545884443035919820" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="42" startPosition="5" endLine="43" endPosition="170" />
+    <nodeInfo nodeId="7545884443035919835" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="44" startPosition="196" endLine="45" endPosition="155" />
+    <nodeInfo nodeId="7545884443035919847" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="45" startPosition="155" endLine="46" endPosition="80" />
+    <nodeInfo nodeId="7545884443035919870" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="47" startPosition="5" endLine="48" endPosition="17" />
+    <nodeInfo nodeId="7545884443035919789" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="93" startPosition="9" endLine="94" endPosition="347" />
+    <nodeInfo nodeId="7545884443035919810" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="39" startPosition="113" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="7545884443035919833" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="43" startPosition="170" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="7545884443035919811" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="40" startPosition="112" endLine="41" endPosition="19" />
+    <scopeInfo nodeId="7545884443035919834" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="44" startPosition="196" endLine="46" endPosition="80">
       <varInfo nodeId="7545884443035919836" varName="fileStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035919809" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="43" startPosition="87" endLine="53" endPosition="17">
+    <scopeInfo nodeId="7545884443035919809" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="38" startPosition="87" endLine="48" endPosition="17">
       <varInfo nodeId="7545884443035919821" varName="virtualFile" />
     </scopeInfo>
   </root>
@@ -447,251 +447,251 @@
     <nodeInfo nodeId="7545884443035924710" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VCS_ActionGroup.java" startLine="17" startPosition="81" endLine="18" endPosition="84" />
   </root>
   <root nodeId="7545884443035924713">
-    <nodeInfo nodeId="7545884443035924716" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IgnoreInVcs_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="210" />
-    <nodeInfo nodeId="7545884443035924729" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IgnoreInVcs_Action.java" startLine="66" startPosition="62" endLine="67" endPosition="123" />
-    <nodeInfo nodeId="7545884443035924736" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IgnoreInVcs_Action.java" startLine="67" startPosition="123" endLine="68" endPosition="15" />
-    <nodeInfo nodeId="7545884443035924740" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IgnoreInVcs_Action.java" startLine="69" startPosition="7" endLine="70" endPosition="125" />
-    <nodeInfo nodeId="7545884443035924727" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IgnoreInVcs_Action.java" startLine="65" startPosition="210" endLine="69" endPosition="7" />
-    <scopeInfo nodeId="7545884443035924728" fileName="IgnoreInVcs_Action.java" startLine="66" startPosition="62" endLine="68" endPosition="15" />
+    <nodeInfo nodeId="7545884443035924716" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="IgnoreInVcs_Action.java" startLine="59" startPosition="9" endLine="60" endPosition="210" />
+    <nodeInfo nodeId="7545884443035924729" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IgnoreInVcs_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="123" />
+    <nodeInfo nodeId="7545884443035924736" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IgnoreInVcs_Action.java" startLine="62" startPosition="123" endLine="63" endPosition="15" />
+    <nodeInfo nodeId="7545884443035924740" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IgnoreInVcs_Action.java" startLine="64" startPosition="7" endLine="65" endPosition="125" />
+    <nodeInfo nodeId="7545884443035924727" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="IgnoreInVcs_Action.java" startLine="60" startPosition="210" endLine="64" endPosition="7" />
+    <scopeInfo nodeId="7545884443035924728" fileName="IgnoreInVcs_Action.java" startLine="61" startPosition="62" endLine="63" endPosition="15" />
   </root>
   <root nodeId="7545884443035924748">
-    <nodeInfo nodeId="7545884443035924794" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddToVcs_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="16" />
-    <nodeInfo nodeId="7545884443035924753" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddToVcs_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="210" />
-    <nodeInfo nodeId="7545884443035924766" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddToVcs_Action.java" startLine="73" startPosition="62" endLine="74" endPosition="122" />
-    <nodeInfo nodeId="7545884443035924773" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddToVcs_Action.java" startLine="74" startPosition="122" endLine="75" endPosition="15" />
-    <nodeInfo nodeId="7545884443035924777" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddToVcs_Action.java" startLine="76" startPosition="7" endLine="77" endPosition="143" />
-    <nodeInfo nodeId="7545884443035924784" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddToVcs_Action.java" startLine="77" startPosition="143" endLine="78" endPosition="104" />
-    <nodeInfo nodeId="7545884443035924764" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddToVcs_Action.java" startLine="72" startPosition="210" endLine="76" endPosition="7" />
-    <scopeInfo nodeId="7545884443035924793" fileName="AddToVcs_Action.java" startLine="37" startPosition="87" endLine="38" endPosition="16" />
-    <scopeInfo nodeId="7545884443035924765" fileName="AddToVcs_Action.java" startLine="73" startPosition="62" endLine="75" endPosition="15" />
+    <nodeInfo nodeId="7545884443035924794" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddToVcs_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="16" />
+    <nodeInfo nodeId="7545884443035924753" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddToVcs_Action.java" startLine="66" startPosition="9" endLine="67" endPosition="210" />
+    <nodeInfo nodeId="7545884443035924766" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddToVcs_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="122" />
+    <nodeInfo nodeId="7545884443035924773" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AddToVcs_Action.java" startLine="69" startPosition="122" endLine="70" endPosition="15" />
+    <nodeInfo nodeId="7545884443035924777" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AddToVcs_Action.java" startLine="71" startPosition="7" endLine="72" endPosition="143" />
+    <nodeInfo nodeId="7545884443035924784" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddToVcs_Action.java" startLine="72" startPosition="143" endLine="73" endPosition="104" />
+    <nodeInfo nodeId="7545884443035924764" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddToVcs_Action.java" startLine="67" startPosition="210" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="7545884443035924793" fileName="AddToVcs_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="16" />
+    <scopeInfo nodeId="7545884443035924765" fileName="AddToVcs_Action.java" startLine="68" startPosition="62" endLine="70" endPosition="15" />
   </root>
   <root nodeId="8076150362379026983">
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="213" startPosition="31" endLine="213" endPosition="31" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="216" startPosition="31" endLine="216" endPosition="31" />
-    <nodeInfo nodeId="8076150362379150529" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="57" startPosition="43" endLine="58" endPosition="48" />
-    <nodeInfo nodeId="8461255328188940344" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="99" />
-    <nodeInfo nodeId="8461255328188990174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="91" startPosition="51" endLine="92" endPosition="156" />
-    <nodeInfo nodeId="8461255328188990168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="92" startPosition="156" endLine="93" endPosition="15" />
-    <nodeInfo nodeId="6318286127860318752" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="94" startPosition="7" endLine="95" endPosition="45" />
-    <nodeInfo nodeId="8461255328188996191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="95" startPosition="45" endLine="96" endPosition="59" />
-    <nodeInfo nodeId="8461255328188987416" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="97" startPosition="32" endLine="98" endPosition="36" />
-    <nodeInfo nodeId="6318286127860318758" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="99" startPosition="61" endLine="100" endPosition="40" />
-    <nodeInfo nodeId="6318286127860318765" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="100" startPosition="40" endLine="101" endPosition="16" />
-    <nodeInfo nodeId="8461255328188996198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="103" startPosition="7" endLine="104" endPosition="17" />
-    <nodeInfo nodeId="8461255328188996214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="105" startPosition="38" endLine="106" endPosition="36" />
-    <nodeInfo nodeId="8461255328188996294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="107" startPosition="13" endLine="108" endPosition="61" />
-    <nodeInfo nodeId="8461255328188996232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="108" startPosition="61" endLine="109" endPosition="33" />
-    <nodeInfo nodeId="8461255328188996246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="109" startPosition="33" endLine="110" endPosition="170" />
-    <nodeInfo nodeId="8461255328188996286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="110" startPosition="170" endLine="111" endPosition="22" />
-    <nodeInfo nodeId="8461255328188996336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="113" startPosition="37" endLine="114" endPosition="58" />
-    <nodeInfo nodeId="8461255328188996328" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="115" startPosition="11" endLine="116" endPosition="195" />
-    <nodeInfo nodeId="8461255328188996350" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="116" startPosition="195" endLine="117" endPosition="17" />
-    <nodeInfo nodeId="8461255328188996310" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="120" startPosition="17" endLine="121" endPosition="26" />
-    <nodeInfo nodeId="8461255328188996324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="123" startPosition="41" endLine="124" endPosition="55" />
-    <nodeInfo nodeId="6318286127860318852" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InstallCustomMergeDriver_Action.java" startLine="129" startPosition="7" endLine="130" endPosition="0" />
-    <nodeInfo nodeId="6318286127860318853" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InstallCustomMergeDriver_Action.java" startLine="134" startPosition="8" endLine="135" endPosition="0" />
-    <nodeInfo nodeId="8461255328188999528" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="137" startPosition="45" endLine="138" endPosition="132" />
-    <nodeInfo nodeId="8461255328188999566" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="141" startPosition="59" endLine="142" endPosition="121" />
-    <nodeInfo nodeId="6318286127860318777" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="142" startPosition="121" endLine="143" endPosition="15" />
-    <nodeInfo nodeId="6318286127860318854" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InstallCustomMergeDriver_Action.java" startLine="144" startPosition="7" endLine="145" endPosition="0" />
-    <nodeInfo nodeId="994404492881108911" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="145" startPosition="0" endLine="146" endPosition="123" />
-    <nodeInfo nodeId="117045834910997633" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="148" startPosition="41" endLine="149" endPosition="34" />
-    <nodeInfo nodeId="994404492881108802" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="157" startPosition="43" endLine="158" endPosition="77" />
-    <nodeInfo nodeId="994404492881108868" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="160" startPosition="11" endLine="161" endPosition="159" />
-    <nodeInfo nodeId="2890452262040416023" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="170" startPosition="91" endLine="171" endPosition="77" />
-    <nodeInfo nodeId="2890452262040415961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="174" startPosition="77" endLine="175" endPosition="71" />
-    <nodeInfo nodeId="5407760271366640939" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="178" startPosition="96" endLine="179" endPosition="66" />
-    <nodeInfo nodeId="5407760271366640978" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="180" startPosition="65" endLine="181" endPosition="19" />
-    <nodeInfo nodeId="117045834911031145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="183" startPosition="9" endLine="184" endPosition="124" />
-    <nodeInfo nodeId="117045834911033351" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="185" startPosition="36" endLine="186" endPosition="72" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="InstallCustomMergeDriver_Action.java" startLine="191" startPosition="55" endLine="192" endPosition="41" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="199" startPosition="32" endLine="200" endPosition="58" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="200" startPosition="58" endLine="201" endPosition="39" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="203" startPosition="49" endLine="204" endPosition="44" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="204" startPosition="44" endLine="205" endPosition="34" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="206" startPosition="27" endLine="207" endPosition="42" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="207" startPosition="42" endLine="208" endPosition="32" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="209" startPosition="31" endLine="210" endPosition="42" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="210" startPosition="42" endLine="211" endPosition="63" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="211" startPosition="63" endLine="212" endPosition="38" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="213" startPosition="31" endLine="214" endPosition="42" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="214" startPosition="42" endLine="215" endPosition="32" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="216" startPosition="31" endLine="217" endPosition="42" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="217" startPosition="42" endLine="218" endPosition="32" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="219" startPosition="32" endLine="220" endPosition="41" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="222" startPosition="35" endLine="223" endPosition="33" />
-    <nodeInfo nodeId="5407760271366641021" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="229" startPosition="37" endLine="230" endPosition="19" />
-    <nodeInfo nodeId="117045834911033231" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InstallCustomMergeDriver_Action.java" startLine="231" startPosition="7" endLine="232" endPosition="0" />
-    <nodeInfo nodeId="2890452262040415601" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="232" startPosition="0" endLine="233" endPosition="108" />
-    <nodeInfo nodeId="2890452262040415636" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="238" startPosition="50" endLine="239" endPosition="76" />
-    <nodeInfo nodeId="2890452262040415919" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="246" startPosition="39" endLine="247" endPosition="34" />
-    <nodeInfo nodeId="2890452262040415892" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="249" startPosition="179" endLine="250" endPosition="128" />
-    <nodeInfo nodeId="2890452262040415925" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="250" startPosition="128" endLine="251" endPosition="29" />
-    <nodeInfo nodeId="2890452262040415937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="254" startPosition="27" endLine="255" endPosition="85" />
-    <nodeInfo nodeId="2890452262040416044" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="258" startPosition="9" endLine="259" endPosition="83" />
-    <nodeInfo nodeId="2890452262040416070" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="261" startPosition="40" endLine="262" endPosition="27" />
-    <nodeInfo nodeId="2890452262040416089" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="264" startPosition="9" endLine="265" endPosition="17" />
-    <nodeInfo nodeId="2890452262040415915" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="265" startPosition="17" endLine="266" endPosition="18" />
-    <nodeInfo nodeId="5407760271366641038" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="267" startPosition="29" endLine="268" endPosition="19" />
-    <nodeInfo nodeId="8461255328188996336" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="112" startPosition="33" endLine="115" endPosition="11" />
-    <nodeInfo nodeId="8461255328188996324" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="122" startPosition="37" endLine="125" endPosition="15" />
-    <nodeInfo nodeId="5407760271366640947" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="179" startPosition="66" endLine="182" endPosition="5" />
-    <nodeInfo nodeId="2890452262040415932" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="253" startPosition="11" endLine="256" endPosition="11" />
-    <nodeInfo nodeId="8076150362379150525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="56" startPosition="203" endLine="60" endPosition="0" />
-    <nodeInfo nodeId="8461255328188988795" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="90" startPosition="99" endLine="94" endPosition="7" />
-    <nodeInfo nodeId="8461255328188987451" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="98" startPosition="36" endLine="102" endPosition="9" />
-    <nodeInfo nodeId="6318286127860318844" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="130" startPosition="0" endLine="134" endPosition="8" />
-    <nodeInfo nodeId="8461255328188999526" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="136" startPosition="234" endLine="140" endPosition="0" />
-    <nodeInfo nodeId="8461255328188999555" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="140" startPosition="9" endLine="144" endPosition="7" />
-    <nodeInfo nodeId="117045834910997631" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsRoot;)Ljava/lang/String;" fileName="InstallCustomMergeDriver_Action.java" startLine="147" startPosition="309" endLine="151" endPosition="0" />
-    <nodeInfo nodeId="994404492881108798" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lcom/intellij/openapi/vcs/VcsRoot;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="156" startPosition="79" endLine="160" endPosition="0" />
-    <nodeInfo nodeId="117045834911031128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAlreadyInstalled#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/Map;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="169" startPosition="0" endLine="173" endPosition="0" />
-    <nodeInfo nodeId="2890452262040415954" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/Map;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="173" startPosition="0" endLine="177" endPosition="0" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="202" startPosition="31" endLine="206" endPosition="27" />
-    <nodeInfo nodeId="2890452262040415634" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="237" startPosition="86" endLine="241" endPosition="0" />
-    <nodeInfo nodeId="2890452262040415771" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="248" startPosition="80" endLine="252" endPosition="13" />
-    <nodeInfo nodeId="2890452262040416066" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="260" startPosition="74" endLine="264" endPosition="0" />
-    <nodeInfo nodeId="8076150362379146003" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="55" startPosition="87" endLine="60" endPosition="7" />
-    <nodeInfo nodeId="8461255328188999510" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="135" startPosition="0" endLine="140" endPosition="9" />
-    <nodeInfo nodeId="994404492881108791" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="155" startPosition="24" endLine="160" endPosition="11" />
-    <nodeInfo nodeId="2890452262040415630" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="236" startPosition="51" endLine="241" endPosition="15" />
-    <nodeInfo nodeId="2890452262040416059" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="259" startPosition="83" endLine="264" endPosition="9" />
-    <nodeInfo nodeId="2890452262040415751" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="247" startPosition="34" endLine="253" endPosition="11" />
-    <nodeInfo nodeId="8461255328188987391" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="96" startPosition="59" endLine="103" endPosition="7" />
-    <nodeInfo nodeId="8461255328188996317" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="119" startPosition="28" endLine="126" endPosition="13" />
-    <nodeInfo nodeId="117045834910997610" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="146" startPosition="123" endLine="154" endPosition="16" />
-    <nodeInfo nodeId="117045834911031104" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="154" startPosition="16" endLine="162" endPosition="7" />
-    <nodeInfo nodeId="2890452262040415618" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="235" startPosition="81" endLine="243" endPosition="0" />
-    <nodeInfo nodeId="8461255328188996301" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="118" startPosition="19" endLine="127" endPosition="11" />
-    <nodeInfo nodeId="5407760271366641100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="234" startPosition="19" endLine="243" endPosition="11" />
-    <nodeInfo nodeId="2890452262040415578" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="233" startPosition="108" endLine="244" endPosition="7" />
-    <nodeInfo nodeId="2890452262040415656" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="245" startPosition="73" endLine="258" endPosition="0" />
-    <nodeInfo nodeId="2890452262040415649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="244" startPosition="7" endLine="258" endPosition="9" />
-    <nodeInfo nodeId="8461255328188996297" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="106" startPosition="36" endLine="128" endPosition="9" />
-    <nodeInfo nodeId="6318286127860318767" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="104" startPosition="17" endLine="129" endPosition="7" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="196" startPosition="24" endLine="221" endPosition="23" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="194" startPosition="50" endLine="222" endPosition="35" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="InstallCustomMergeDriver_Action.java" startLine="193" startPosition="0" endLine="225" endPosition="0" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="190" startPosition="50" endLine="225" endPosition="18" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="InstallCustomMergeDriver_Action.java" startLine="189" startPosition="43" endLine="227" endPosition="0" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="188" startPosition="44" endLine="227" endPosition="14" />
-    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Iterable;" fileName="InstallCustomMergeDriver_Action.java" startLine="187" startPosition="98" endLine="229" endPosition="0" />
-    <nodeInfo nodeId="994404492881108882" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="186" startPosition="72" endLine="229" endPosition="37" />
-    <nodeInfo nodeId="994404492881108887" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="184" startPosition="124" endLine="231" endPosition="7" />
-    <nodeInfo nodeId="5407760271366641031" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="182" startPosition="5" endLine="269" endPosition="5" />
-    <nodeInfo nodeId="8461255328188996449" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/vfs/VirtualFile;ZLjava/util/Map;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="177" startPosition="0" endLine="271" endPosition="0" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="213" startPosition="31" endLine="213" endPosition="31" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="216" startPosition="31" endLine="216" endPosition="31" />
-    <scopeInfo nodeId="8076150362379150526" fileName="InstallCustomMergeDriver_Action.java" startLine="57" startPosition="43" endLine="58" endPosition="48" />
-    <scopeInfo nodeId="8461255328188996336" fileName="InstallCustomMergeDriver_Action.java" startLine="113" startPosition="37" endLine="114" endPosition="58" />
-    <scopeInfo nodeId="8461255328188996318" fileName="InstallCustomMergeDriver_Action.java" startLine="120" startPosition="17" endLine="121" endPosition="26" />
-    <scopeInfo nodeId="8461255328188996324" fileName="InstallCustomMergeDriver_Action.java" startLine="123" startPosition="41" endLine="124" endPosition="55" />
-    <scopeInfo nodeId="8461255328188999527" fileName="InstallCustomMergeDriver_Action.java" startLine="137" startPosition="45" endLine="138" endPosition="132" />
-    <scopeInfo nodeId="117045834910997632" fileName="InstallCustomMergeDriver_Action.java" startLine="148" startPosition="41" endLine="149" endPosition="34" />
-    <scopeInfo nodeId="994404492881108799" fileName="InstallCustomMergeDriver_Action.java" startLine="157" startPosition="43" endLine="158" endPosition="77" />
-    <scopeInfo nodeId="117045834911031130" fileName="InstallCustomMergeDriver_Action.java" startLine="170" startPosition="91" endLine="171" endPosition="77" />
-    <scopeInfo nodeId="2890452262040415956" fileName="InstallCustomMergeDriver_Action.java" startLine="174" startPosition="77" endLine="175" endPosition="71" />
-    <scopeInfo nodeId="5407760271366640948" fileName="InstallCustomMergeDriver_Action.java" startLine="180" startPosition="65" endLine="181" endPosition="19" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="219" startPosition="32" endLine="220" endPosition="41" />
-    <scopeInfo nodeId="2890452262040415635" fileName="InstallCustomMergeDriver_Action.java" startLine="238" startPosition="50" endLine="239" endPosition="76" />
-    <scopeInfo nodeId="2890452262040415933" fileName="InstallCustomMergeDriver_Action.java" startLine="254" startPosition="27" endLine="255" endPosition="85" />
-    <scopeInfo nodeId="2890452262040416067" fileName="InstallCustomMergeDriver_Action.java" startLine="261" startPosition="40" endLine="262" endPosition="27" />
-    <scopeInfo nodeId="5407760271366641033" fileName="InstallCustomMergeDriver_Action.java" startLine="267" startPosition="0" endLine="268" endPosition="19">
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="208" startPosition="31" endLine="208" endPosition="31" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="211" startPosition="31" endLine="211" endPosition="31" />
+    <nodeInfo nodeId="8076150362379150529" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="52" startPosition="43" endLine="53" endPosition="48" />
+    <nodeInfo nodeId="8461255328188940344" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="99" />
+    <nodeInfo nodeId="8461255328188990174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="86" startPosition="51" endLine="87" endPosition="156" />
+    <nodeInfo nodeId="8461255328188990168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="87" startPosition="156" endLine="88" endPosition="15" />
+    <nodeInfo nodeId="6318286127860318752" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="89" startPosition="7" endLine="90" endPosition="45" />
+    <nodeInfo nodeId="8461255328188996191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="90" startPosition="45" endLine="91" endPosition="59" />
+    <nodeInfo nodeId="8461255328188987416" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="92" startPosition="32" endLine="93" endPosition="36" />
+    <nodeInfo nodeId="6318286127860318758" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="94" startPosition="61" endLine="95" endPosition="40" />
+    <nodeInfo nodeId="6318286127860318765" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="95" startPosition="40" endLine="96" endPosition="16" />
+    <nodeInfo nodeId="8461255328188996198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="98" startPosition="7" endLine="99" endPosition="17" />
+    <nodeInfo nodeId="8461255328188996214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="100" startPosition="38" endLine="101" endPosition="36" />
+    <nodeInfo nodeId="8461255328188996294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="102" startPosition="13" endLine="103" endPosition="61" />
+    <nodeInfo nodeId="8461255328188996232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="103" startPosition="61" endLine="104" endPosition="33" />
+    <nodeInfo nodeId="8461255328188996246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="104" startPosition="33" endLine="105" endPosition="170" />
+    <nodeInfo nodeId="8461255328188996286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="105" startPosition="170" endLine="106" endPosition="22" />
+    <nodeInfo nodeId="8461255328188996336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="108" startPosition="37" endLine="109" endPosition="58" />
+    <nodeInfo nodeId="8461255328188996328" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="110" startPosition="11" endLine="111" endPosition="195" />
+    <nodeInfo nodeId="8461255328188996350" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="111" startPosition="195" endLine="112" endPosition="17" />
+    <nodeInfo nodeId="8461255328188996310" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="115" startPosition="17" endLine="116" endPosition="26" />
+    <nodeInfo nodeId="8461255328188996324" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="118" startPosition="41" endLine="119" endPosition="55" />
+    <nodeInfo nodeId="6318286127860318852" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InstallCustomMergeDriver_Action.java" startLine="124" startPosition="7" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="6318286127860318853" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InstallCustomMergeDriver_Action.java" startLine="129" startPosition="8" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="8461255328188999528" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="132" startPosition="45" endLine="133" endPosition="132" />
+    <nodeInfo nodeId="8461255328188999566" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="136" startPosition="59" endLine="137" endPosition="121" />
+    <nodeInfo nodeId="6318286127860318777" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="137" startPosition="121" endLine="138" endPosition="15" />
+    <nodeInfo nodeId="6318286127860318854" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InstallCustomMergeDriver_Action.java" startLine="139" startPosition="7" endLine="140" endPosition="0" />
+    <nodeInfo nodeId="994404492881108911" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="140" startPosition="0" endLine="141" endPosition="123" />
+    <nodeInfo nodeId="117045834910997633" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="143" startPosition="41" endLine="144" endPosition="34" />
+    <nodeInfo nodeId="994404492881108802" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="152" startPosition="43" endLine="153" endPosition="77" />
+    <nodeInfo nodeId="994404492881108868" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="155" startPosition="11" endLine="156" endPosition="159" />
+    <nodeInfo nodeId="2890452262040416023" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="165" startPosition="91" endLine="166" endPosition="77" />
+    <nodeInfo nodeId="2890452262040415961" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="169" startPosition="77" endLine="170" endPosition="71" />
+    <nodeInfo nodeId="5407760271366640939" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="173" startPosition="96" endLine="174" endPosition="66" />
+    <nodeInfo nodeId="5407760271366640978" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="175" startPosition="65" endLine="176" endPosition="19" />
+    <nodeInfo nodeId="117045834911031145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="178" startPosition="9" endLine="179" endPosition="124" />
+    <nodeInfo nodeId="117045834911033351" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="180" startPosition="36" endLine="181" endPosition="72" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="InstallCustomMergeDriver_Action.java" startLine="186" startPosition="55" endLine="187" endPosition="41" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="194" startPosition="32" endLine="195" endPosition="58" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="195" startPosition="58" endLine="196" endPosition="39" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="198" startPosition="49" endLine="199" endPosition="44" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="199" startPosition="44" endLine="200" endPosition="34" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="201" startPosition="27" endLine="202" endPosition="42" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="202" startPosition="42" endLine="203" endPosition="32" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="204" startPosition="31" endLine="205" endPosition="42" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="205" startPosition="42" endLine="206" endPosition="63" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="206" startPosition="63" endLine="207" endPosition="38" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="208" startPosition="31" endLine="209" endPosition="42" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="209" startPosition="42" endLine="210" endPosition="32" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="211" startPosition="31" endLine="212" endPosition="42" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="212" startPosition="42" endLine="213" endPosition="32" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="214" startPosition="32" endLine="215" endPosition="41" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="217" startPosition="35" endLine="218" endPosition="33" />
+    <nodeInfo nodeId="5407760271366641021" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="224" startPosition="37" endLine="225" endPosition="19" />
+    <nodeInfo nodeId="117045834911033231" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="InstallCustomMergeDriver_Action.java" startLine="226" startPosition="7" endLine="227" endPosition="0" />
+    <nodeInfo nodeId="2890452262040415601" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="227" startPosition="0" endLine="228" endPosition="108" />
+    <nodeInfo nodeId="2890452262040415636" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="233" startPosition="50" endLine="234" endPosition="76" />
+    <nodeInfo nodeId="2890452262040415919" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="241" startPosition="39" endLine="242" endPosition="34" />
+    <nodeInfo nodeId="2890452262040415892" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="244" startPosition="179" endLine="245" endPosition="128" />
+    <nodeInfo nodeId="2890452262040415925" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="245" startPosition="128" endLine="246" endPosition="29" />
+    <nodeInfo nodeId="2890452262040415937" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="249" startPosition="27" endLine="250" endPosition="85" />
+    <nodeInfo nodeId="2890452262040416044" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="253" startPosition="9" endLine="254" endPosition="83" />
+    <nodeInfo nodeId="2890452262040416070" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="256" startPosition="40" endLine="257" endPosition="27" />
+    <nodeInfo nodeId="2890452262040416089" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="259" startPosition="9" endLine="260" endPosition="17" />
+    <nodeInfo nodeId="2890452262040415915" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="260" startPosition="17" endLine="261" endPosition="18" />
+    <nodeInfo nodeId="5407760271366641038" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="262" startPosition="29" endLine="263" endPosition="19" />
+    <nodeInfo nodeId="8461255328188996336" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="107" startPosition="33" endLine="110" endPosition="11" />
+    <nodeInfo nodeId="8461255328188996324" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="117" startPosition="37" endLine="120" endPosition="15" />
+    <nodeInfo nodeId="5407760271366640947" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="174" startPosition="66" endLine="177" endPosition="5" />
+    <nodeInfo nodeId="2890452262040415932" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="248" startPosition="11" endLine="251" endPosition="11" />
+    <nodeInfo nodeId="8076150362379150525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="51" startPosition="203" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="8461255328188988795" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="85" startPosition="99" endLine="89" endPosition="7" />
+    <nodeInfo nodeId="8461255328188987451" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="93" startPosition="36" endLine="97" endPosition="9" />
+    <nodeInfo nodeId="6318286127860318844" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="125" startPosition="0" endLine="129" endPosition="8" />
+    <nodeInfo nodeId="8461255328188999526" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="131" startPosition="234" endLine="135" endPosition="0" />
+    <nodeInfo nodeId="8461255328188999555" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="135" startPosition="9" endLine="139" endPosition="7" />
+    <nodeInfo nodeId="117045834910997631" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsRoot;)Ljava/lang/String;" fileName="InstallCustomMergeDriver_Action.java" startLine="142" startPosition="309" endLine="146" endPosition="0" />
+    <nodeInfo nodeId="994404492881108798" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lcom/intellij/openapi/vcs/VcsRoot;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="151" startPosition="79" endLine="155" endPosition="0" />
+    <nodeInfo nodeId="117045834911031128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAlreadyInstalled#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/Map;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="164" startPosition="0" endLine="168" endPosition="0" />
+    <nodeInfo nodeId="2890452262040415954" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/Map;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="168" startPosition="0" endLine="172" endPosition="0" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="197" startPosition="31" endLine="201" endPosition="27" />
+    <nodeInfo nodeId="2890452262040415634" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="232" startPosition="86" endLine="236" endPosition="0" />
+    <nodeInfo nodeId="2890452262040415771" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="243" startPosition="80" endLine="247" endPosition="13" />
+    <nodeInfo nodeId="2890452262040416066" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="255" startPosition="74" endLine="259" endPosition="0" />
+    <nodeInfo nodeId="8076150362379146003" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="50" startPosition="87" endLine="55" endPosition="7" />
+    <nodeInfo nodeId="8461255328188999510" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="130" startPosition="0" endLine="135" endPosition="9" />
+    <nodeInfo nodeId="994404492881108791" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="150" startPosition="24" endLine="155" endPosition="11" />
+    <nodeInfo nodeId="2890452262040415630" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="231" startPosition="51" endLine="236" endPosition="15" />
+    <nodeInfo nodeId="2890452262040416059" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="254" startPosition="83" endLine="259" endPosition="9" />
+    <nodeInfo nodeId="2890452262040415751" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="242" startPosition="34" endLine="248" endPosition="11" />
+    <nodeInfo nodeId="8461255328188987391" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="91" startPosition="59" endLine="98" endPosition="7" />
+    <nodeInfo nodeId="8461255328188996317" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="114" startPosition="28" endLine="121" endPosition="13" />
+    <nodeInfo nodeId="117045834910997610" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="141" startPosition="123" endLine="149" endPosition="16" />
+    <nodeInfo nodeId="117045834911031104" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="149" startPosition="16" endLine="157" endPosition="7" />
+    <nodeInfo nodeId="2890452262040415618" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="230" startPosition="81" endLine="238" endPosition="0" />
+    <nodeInfo nodeId="8461255328188996301" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="113" startPosition="19" endLine="122" endPosition="11" />
+    <nodeInfo nodeId="5407760271366641100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="229" startPosition="19" endLine="238" endPosition="11" />
+    <nodeInfo nodeId="2890452262040415578" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="228" startPosition="108" endLine="239" endPosition="7" />
+    <nodeInfo nodeId="2890452262040415656" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="240" startPosition="73" endLine="253" endPosition="0" />
+    <nodeInfo nodeId="2890452262040415649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="239" startPosition="7" endLine="253" endPosition="9" />
+    <nodeInfo nodeId="8461255328188996297" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="101" startPosition="36" endLine="123" endPosition="9" />
+    <nodeInfo nodeId="6318286127860318767" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="99" startPosition="17" endLine="124" endPosition="7" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="191" startPosition="24" endLine="216" endPosition="23" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="189" startPosition="50" endLine="217" endPosition="35" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="InstallCustomMergeDriver_Action.java" startLine="188" startPosition="0" endLine="220" endPosition="0" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="185" startPosition="50" endLine="220" endPosition="18" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="InstallCustomMergeDriver_Action.java" startLine="184" startPosition="43" endLine="222" endPosition="0" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="183" startPosition="44" endLine="222" endPosition="14" />
+    <nodeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Iterable;" fileName="InstallCustomMergeDriver_Action.java" startLine="182" startPosition="98" endLine="224" endPosition="0" />
+    <nodeInfo nodeId="994404492881108882" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="181" startPosition="72" endLine="224" endPosition="37" />
+    <nodeInfo nodeId="994404492881108887" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="179" startPosition="124" endLine="226" endPosition="7" />
+    <nodeInfo nodeId="5407760271366641031" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="177" startPosition="5" endLine="264" endPosition="5" />
+    <nodeInfo nodeId="8461255328188996449" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/vfs/VirtualFile;ZLjava/util/Map;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="172" startPosition="0" endLine="266" endPosition="0" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="208" startPosition="31" endLine="208" endPosition="31" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="211" startPosition="31" endLine="211" endPosition="31" />
+    <scopeInfo nodeId="8076150362379150526" fileName="InstallCustomMergeDriver_Action.java" startLine="52" startPosition="43" endLine="53" endPosition="48" />
+    <scopeInfo nodeId="8461255328188996336" fileName="InstallCustomMergeDriver_Action.java" startLine="108" startPosition="37" endLine="109" endPosition="58" />
+    <scopeInfo nodeId="8461255328188996318" fileName="InstallCustomMergeDriver_Action.java" startLine="115" startPosition="17" endLine="116" endPosition="26" />
+    <scopeInfo nodeId="8461255328188996324" fileName="InstallCustomMergeDriver_Action.java" startLine="118" startPosition="41" endLine="119" endPosition="55" />
+    <scopeInfo nodeId="8461255328188999527" fileName="InstallCustomMergeDriver_Action.java" startLine="132" startPosition="45" endLine="133" endPosition="132" />
+    <scopeInfo nodeId="117045834910997632" fileName="InstallCustomMergeDriver_Action.java" startLine="143" startPosition="41" endLine="144" endPosition="34" />
+    <scopeInfo nodeId="994404492881108799" fileName="InstallCustomMergeDriver_Action.java" startLine="152" startPosition="43" endLine="153" endPosition="77" />
+    <scopeInfo nodeId="117045834911031130" fileName="InstallCustomMergeDriver_Action.java" startLine="165" startPosition="91" endLine="166" endPosition="77" />
+    <scopeInfo nodeId="2890452262040415956" fileName="InstallCustomMergeDriver_Action.java" startLine="169" startPosition="77" endLine="170" endPosition="71" />
+    <scopeInfo nodeId="5407760271366640948" fileName="InstallCustomMergeDriver_Action.java" startLine="175" startPosition="65" endLine="176" endPosition="19" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="214" startPosition="32" endLine="215" endPosition="41" />
+    <scopeInfo nodeId="2890452262040415635" fileName="InstallCustomMergeDriver_Action.java" startLine="233" startPosition="50" endLine="234" endPosition="76" />
+    <scopeInfo nodeId="2890452262040415933" fileName="InstallCustomMergeDriver_Action.java" startLine="249" startPosition="27" endLine="250" endPosition="85" />
+    <scopeInfo nodeId="2890452262040416067" fileName="InstallCustomMergeDriver_Action.java" startLine="256" startPosition="40" endLine="257" endPosition="27" />
+    <scopeInfo nodeId="5407760271366641033" fileName="InstallCustomMergeDriver_Action.java" startLine="262" startPosition="0" endLine="263" endPosition="19">
       <varInfo nodeId="5407760271366641034" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5407760271366641036" fileName="InstallCustomMergeDriver_Action.java" startLine="267" startPosition="29" endLine="268" endPosition="19" />
-    <scopeInfo nodeId="8461255328188988796" fileName="InstallCustomMergeDriver_Action.java" startLine="91" startPosition="51" endLine="93" endPosition="15" />
-    <scopeInfo nodeId="8461255328188987452" fileName="InstallCustomMergeDriver_Action.java" startLine="99" startPosition="61" endLine="101" endPosition="16" />
-    <scopeInfo nodeId="8461255328188999556" fileName="InstallCustomMergeDriver_Action.java" startLine="141" startPosition="59" endLine="143" endPosition="15" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="199" startPosition="32" endLine="201" endPosition="39" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="203" startPosition="49" endLine="205" endPosition="34" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="213" startPosition="31" endLine="215" endPosition="32" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="216" startPosition="31" endLine="218" endPosition="32" />
-    <scopeInfo nodeId="2890452262040415772" fileName="InstallCustomMergeDriver_Action.java" startLine="249" startPosition="179" endLine="251" endPosition="29" />
-    <scopeInfo nodeId="8461255328188996336" fileName="InstallCustomMergeDriver_Action.java" startLine="112" startPosition="33" endLine="115" endPosition="11" />
-    <scopeInfo nodeId="8461255328188996319" fileName="InstallCustomMergeDriver_Action.java" startLine="122" startPosition="0" endLine="125" endPosition="15">
+    <scopeInfo nodeId="5407760271366641036" fileName="InstallCustomMergeDriver_Action.java" startLine="262" startPosition="29" endLine="263" endPosition="19" />
+    <scopeInfo nodeId="8461255328188988796" fileName="InstallCustomMergeDriver_Action.java" startLine="86" startPosition="51" endLine="88" endPosition="15" />
+    <scopeInfo nodeId="8461255328188987452" fileName="InstallCustomMergeDriver_Action.java" startLine="94" startPosition="61" endLine="96" endPosition="16" />
+    <scopeInfo nodeId="8461255328188999556" fileName="InstallCustomMergeDriver_Action.java" startLine="136" startPosition="59" endLine="138" endPosition="15" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="194" startPosition="32" endLine="196" endPosition="39" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="198" startPosition="49" endLine="200" endPosition="34" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="208" startPosition="31" endLine="210" endPosition="32" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="211" startPosition="31" endLine="213" endPosition="32" />
+    <scopeInfo nodeId="2890452262040415772" fileName="InstallCustomMergeDriver_Action.java" startLine="244" startPosition="179" endLine="246" endPosition="29" />
+    <scopeInfo nodeId="8461255328188996336" fileName="InstallCustomMergeDriver_Action.java" startLine="107" startPosition="33" endLine="110" endPosition="11" />
+    <scopeInfo nodeId="8461255328188996319" fileName="InstallCustomMergeDriver_Action.java" startLine="117" startPosition="0" endLine="120" endPosition="15">
       <varInfo nodeId="8461255328188996320" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8461255328188996322" fileName="InstallCustomMergeDriver_Action.java" startLine="122" startPosition="37" endLine="125" endPosition="15" />
-    <scopeInfo nodeId="8461255328188996324" fileName="InstallCustomMergeDriver_Action.java" startLine="122" startPosition="37" endLine="125" endPosition="15" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="209" startPosition="31" endLine="212" endPosition="38" />
-    <scopeInfo nodeId="8076150362379150525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="56" startPosition="203" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="8461255328188996222" fileName="InstallCustomMergeDriver_Action.java" startLine="107" startPosition="13" endLine="111" endPosition="22" />
-    <scopeInfo nodeId="8461255328188999526" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="136" startPosition="234" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="117045834910997631" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsRoot;)Ljava/lang/String;" fileName="InstallCustomMergeDriver_Action.java" startLine="147" startPosition="309" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="994404492881108798" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lcom/intellij/openapi/vcs/VcsRoot;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="156" startPosition="79" endLine="160" endPosition="0" />
-    <scopeInfo nodeId="117045834911031128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAlreadyInstalled#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/Map;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="8461255328188996322" fileName="InstallCustomMergeDriver_Action.java" startLine="117" startPosition="37" endLine="120" endPosition="15" />
+    <scopeInfo nodeId="8461255328188996324" fileName="InstallCustomMergeDriver_Action.java" startLine="117" startPosition="37" endLine="120" endPosition="15" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="204" startPosition="31" endLine="207" endPosition="38" />
+    <scopeInfo nodeId="8076150362379150525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="51" startPosition="203" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8461255328188996222" fileName="InstallCustomMergeDriver_Action.java" startLine="102" startPosition="13" endLine="106" endPosition="22" />
+    <scopeInfo nodeId="8461255328188999526" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsRoot;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="131" startPosition="234" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="117045834910997631" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/vcs/VcsRoot;)Ljava/lang/String;" fileName="InstallCustomMergeDriver_Action.java" startLine="142" startPosition="309" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="994404492881108798" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lcom/intellij/openapi/vcs/VcsRoot;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="151" startPosition="79" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="117045834911031128" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAlreadyInstalled#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/Map;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="164" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="117045834911031133" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="2890452262040415954" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/Map;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="173" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="2890452262040415954" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/Map;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="168" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="2890452262040415959" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="2890452262040415634" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="237" startPosition="86" endLine="241" endPosition="0" />
-    <scopeInfo nodeId="2890452262040415752" fileName="InstallCustomMergeDriver_Action.java" startLine="248" startPosition="80" endLine="252" endPosition="13" />
-    <scopeInfo nodeId="2890452262040416066" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="260" startPosition="74" endLine="264" endPosition="0" />
-    <scopeInfo nodeId="8076150362379146002" fileName="InstallCustomMergeDriver_Action.java" startLine="55" startPosition="87" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="8461255328188987393" fileName="InstallCustomMergeDriver_Action.java" startLine="97" startPosition="32" endLine="102" endPosition="9">
+    <scopeInfo nodeId="2890452262040415634" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="232" startPosition="86" endLine="236" endPosition="0" />
+    <scopeInfo nodeId="2890452262040415752" fileName="InstallCustomMergeDriver_Action.java" startLine="243" startPosition="80" endLine="247" endPosition="13" />
+    <scopeInfo nodeId="2890452262040416066" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="255" startPosition="74" endLine="259" endPosition="0" />
+    <scopeInfo nodeId="8076150362379146002" fileName="InstallCustomMergeDriver_Action.java" startLine="50" startPosition="87" endLine="55" endPosition="7" />
+    <scopeInfo nodeId="8461255328188987393" fileName="InstallCustomMergeDriver_Action.java" startLine="92" startPosition="32" endLine="97" endPosition="9">
       <varInfo nodeId="8461255328188987417" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="8461255328188996223" fileName="InstallCustomMergeDriver_Action.java" startLine="112" startPosition="0" endLine="117" endPosition="17">
+    <scopeInfo nodeId="8461255328188996223" fileName="InstallCustomMergeDriver_Action.java" startLine="107" startPosition="0" endLine="112" endPosition="17">
       <varInfo nodeId="8461255328188996224" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8461255328188996226" fileName="InstallCustomMergeDriver_Action.java" startLine="112" startPosition="33" endLine="117" endPosition="17" />
-    <scopeInfo nodeId="2890452262040415619" fileName="InstallCustomMergeDriver_Action.java" startLine="236" startPosition="51" endLine="241" endPosition="15" />
-    <scopeInfo nodeId="117045834911031105" fileName="InstallCustomMergeDriver_Action.java" startLine="155" startPosition="24" endLine="161" endPosition="159" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="202" startPosition="31" endLine="208" endPosition="32" />
-    <scopeInfo nodeId="2890452262040415751" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="247" startPosition="34" endLine="253" endPosition="11">
+    <scopeInfo nodeId="8461255328188996226" fileName="InstallCustomMergeDriver_Action.java" startLine="107" startPosition="33" endLine="112" endPosition="17" />
+    <scopeInfo nodeId="2890452262040415619" fileName="InstallCustomMergeDriver_Action.java" startLine="231" startPosition="51" endLine="236" endPosition="15" />
+    <scopeInfo nodeId="117045834911031105" fileName="InstallCustomMergeDriver_Action.java" startLine="150" startPosition="24" endLine="156" endPosition="159" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="197" startPosition="31" endLine="203" endPosition="32" />
+    <scopeInfo nodeId="2890452262040415751" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="InstallCustomMergeDriver_Action.java" startLine="242" startPosition="34" endLine="248" endPosition="11">
       <varInfo nodeId="2890452262040415754" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="8461255328188996303" fileName="InstallCustomMergeDriver_Action.java" startLine="119" startPosition="28" endLine="126" endPosition="13" />
-    <scopeInfo nodeId="2890452262040415618" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="235" startPosition="81" endLine="243" endPosition="0" />
-    <scopeInfo nodeId="8461255328188996298" fileName="InstallCustomMergeDriver_Action.java" startLine="118" startPosition="19" endLine="127" endPosition="11" />
-    <scopeInfo nodeId="2890452262040415579" fileName="InstallCustomMergeDriver_Action.java" startLine="234" startPosition="19" endLine="243" endPosition="11" />
-    <scopeInfo nodeId="2890452262040415657" fileName="InstallCustomMergeDriver_Action.java" startLine="246" startPosition="39" endLine="256" endPosition="11">
+    <scopeInfo nodeId="8461255328188996303" fileName="InstallCustomMergeDriver_Action.java" startLine="114" startPosition="28" endLine="121" endPosition="13" />
+    <scopeInfo nodeId="2890452262040415618" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="230" startPosition="81" endLine="238" endPosition="0" />
+    <scopeInfo nodeId="8461255328188996298" fileName="InstallCustomMergeDriver_Action.java" startLine="113" startPosition="19" endLine="122" endPosition="11" />
+    <scopeInfo nodeId="2890452262040415579" fileName="InstallCustomMergeDriver_Action.java" startLine="229" startPosition="19" endLine="238" endPosition="11" />
+    <scopeInfo nodeId="2890452262040415657" fileName="InstallCustomMergeDriver_Action.java" startLine="241" startPosition="39" endLine="251" endPosition="11">
       <varInfo nodeId="2890452262040415920" varName="updated" />
     </scopeInfo>
-    <scopeInfo nodeId="2890452262040415656" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="245" startPosition="73" endLine="258" endPosition="0" />
-    <scopeInfo nodeId="6318286127860318768" fileName="InstallCustomMergeDriver_Action.java" startLine="105" startPosition="38" endLine="128" endPosition="9">
+    <scopeInfo nodeId="2890452262040415656" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/String;)V" fileName="InstallCustomMergeDriver_Action.java" startLine="240" startPosition="73" endLine="253" endPosition="0" />
+    <scopeInfo nodeId="6318286127860318768" fileName="InstallCustomMergeDriver_Action.java" startLine="100" startPosition="38" endLine="123" endPosition="9">
       <varInfo nodeId="8461255328188996215" varName="raf" />
     </scopeInfo>
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="196" startPosition="24" endLine="221" endPosition="23" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="194" startPosition="50" endLine="223" endPosition="33" />
-    <scopeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="InstallCustomMergeDriver_Action.java" startLine="193" startPosition="0" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="190" startPosition="50" endLine="225" endPosition="18" />
-    <scopeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="InstallCustomMergeDriver_Action.java" startLine="189" startPosition="43" endLine="227" endPosition="0" />
-    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="188" startPosition="44" endLine="227" endPosition="14" />
-    <scopeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Iterable;" fileName="InstallCustomMergeDriver_Action.java" startLine="187" startPosition="98" endLine="229" endPosition="0" />
-    <scopeInfo nodeId="994404492881108888" fileName="InstallCustomMergeDriver_Action.java" startLine="185" startPosition="36" endLine="230" endPosition="19">
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="191" startPosition="24" endLine="216" endPosition="23" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="189" startPosition="50" endLine="218" endPosition="33" />
+    <scopeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="InstallCustomMergeDriver_Action.java" startLine="188" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="185" startPosition="50" endLine="220" endPosition="18" />
+    <scopeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="InstallCustomMergeDriver_Action.java" startLine="184" startPosition="43" endLine="222" endPosition="0" />
+    <scopeInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="183" startPosition="44" endLine="222" endPosition="14" />
+    <scopeInfo nodeId="117045834911033323" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Iterable;" fileName="InstallCustomMergeDriver_Action.java" startLine="182" startPosition="98" endLine="224" endPosition="0" />
+    <scopeInfo nodeId="994404492881108888" fileName="InstallCustomMergeDriver_Action.java" startLine="180" startPosition="36" endLine="225" endPosition="19">
       <varInfo nodeId="117045834911033352" varName="sc" />
     </scopeInfo>
-    <scopeInfo nodeId="5407760271366641032" fileName="InstallCustomMergeDriver_Action.java" startLine="183" startPosition="9" endLine="266" endPosition="18">
+    <scopeInfo nodeId="5407760271366641032" fileName="InstallCustomMergeDriver_Action.java" startLine="178" startPosition="9" endLine="261" endPosition="18">
       <varInfo nodeId="117045834911031146" varName="lines" />
       <varInfo nodeId="2890452262040416045" varName="wr" />
       <varInfo nodeId="2890452262040415602" varName="extensions" />
     </scopeInfo>
-    <scopeInfo nodeId="8461255328188996451" fileName="InstallCustomMergeDriver_Action.java" startLine="178" startPosition="96" endLine="269" endPosition="5">
+    <scopeInfo nodeId="8461255328188996451" fileName="InstallCustomMergeDriver_Action.java" startLine="173" startPosition="96" endLine="264" endPosition="5">
       <varInfo nodeId="5407760271366640940" varName="attributesFile" />
     </scopeInfo>
-    <scopeInfo nodeId="8461255328188996449" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/vfs/VirtualFile;ZLjava/util/Map;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="177" startPosition="0" endLine="271" endPosition="0">
+    <scopeInfo nodeId="8461255328188996449" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/vfs/VirtualFile;ZLjava/util/Map;)Z" fileName="InstallCustomMergeDriver_Action.java" startLine="172" startPosition="0" endLine="266" endPosition="0">
       <varInfo nodeId="117045834911031125" varName="dryRun" />
       <varInfo nodeId="8461255328188996454" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="8076150362379150525" fileName="InstallCustomMergeDriver_Action.java" startLine="56" startPosition="178" endLine="60" endPosition="5" unitName="jetbrains.mps.vcs.plugin.IWhereFilter$anonymous" />
-    <unitInfo nodeId="8461255328188999526" fileName="InstallCustomMergeDriver_Action.java" startLine="136" startPosition="209" endLine="140" endPosition="7" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$2" />
-    <unitInfo nodeId="117045834910997631" fileName="InstallCustomMergeDriver_Action.java" startLine="147" startPosition="279" endLine="151" endPosition="7" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$3" />
-    <unitInfo nodeId="994404492881108798" fileName="InstallCustomMergeDriver_Action.java" startLine="156" startPosition="58" endLine="160" endPosition="9" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$4" />
-    <unitInfo nodeId="2890452262040415634" fileName="InstallCustomMergeDriver_Action.java" startLine="237" startPosition="62" endLine="241" endPosition="13" unitName="jetbrains.mps.vcs.plugin.IWhereFilter$anonymous" />
-    <unitInfo nodeId="2890452262040416066" fileName="InstallCustomMergeDriver_Action.java" startLine="260" startPosition="54" endLine="264" endPosition="7" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$8" />
-    <unitInfo nodeId="2890452262040415618" fileName="InstallCustomMergeDriver_Action.java" startLine="235" startPosition="57" endLine="243" endPosition="9" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$6" />
-    <unitInfo nodeId="2890452262040415656" fileName="InstallCustomMergeDriver_Action.java" startLine="245" startPosition="53" endLine="258" endPosition="7" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$7" />
-    <unitInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="191" startPosition="27" endLine="225" endPosition="17" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$7" />
-    <unitInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="189" startPosition="23" endLine="227" endPosition="13" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$6" />
-    <unitInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="187" startPosition="48" endLine="229" endPosition="9" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$5" />
+    <unitInfo nodeId="8076150362379150525" fileName="InstallCustomMergeDriver_Action.java" startLine="51" startPosition="178" endLine="55" endPosition="5" unitName="jetbrains.mps.vcs.plugin.IWhereFilter$anonymous" />
+    <unitInfo nodeId="8461255328188999526" fileName="InstallCustomMergeDriver_Action.java" startLine="131" startPosition="209" endLine="135" endPosition="7" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$2" />
+    <unitInfo nodeId="117045834910997631" fileName="InstallCustomMergeDriver_Action.java" startLine="142" startPosition="279" endLine="146" endPosition="7" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$3" />
+    <unitInfo nodeId="994404492881108798" fileName="InstallCustomMergeDriver_Action.java" startLine="151" startPosition="58" endLine="155" endPosition="9" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$4" />
+    <unitInfo nodeId="2890452262040415634" fileName="InstallCustomMergeDriver_Action.java" startLine="232" startPosition="62" endLine="236" endPosition="13" unitName="jetbrains.mps.vcs.plugin.IWhereFilter$anonymous" />
+    <unitInfo nodeId="2890452262040416066" fileName="InstallCustomMergeDriver_Action.java" startLine="255" startPosition="54" endLine="259" endPosition="7" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$8" />
+    <unitInfo nodeId="2890452262040415618" fileName="InstallCustomMergeDriver_Action.java" startLine="230" startPosition="57" endLine="238" endPosition="9" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$6" />
+    <unitInfo nodeId="2890452262040415656" fileName="InstallCustomMergeDriver_Action.java" startLine="240" startPosition="53" endLine="253" endPosition="7" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$7" />
+    <unitInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="186" startPosition="27" endLine="220" endPosition="17" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$7" />
+    <unitInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="184" startPosition="23" endLine="222" endPosition="13" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$6" />
+    <unitInfo nodeId="117045834911033323" fileName="InstallCustomMergeDriver_Action.java" startLine="182" startPosition="48" endLine="224" endPosition="9" unitName="jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action$5" />
   </root>
   <root nodeId="8807724076671132217">
-    <nodeInfo nodeId="8955628568092691936" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Annotate_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="107" />
-    <nodeInfo nodeId="8955628568092691966" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Annotate_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="96" />
-    <scopeInfo nodeId="8911222837206491199" fileName="Annotate_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="107" />
+    <nodeInfo nodeId="8955628568092691936" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Annotate_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="107" />
+    <nodeInfo nodeId="8955628568092691966" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Annotate_Action.java" startLine="57" startPosition="9" endLine="58" endPosition="96" />
+    <scopeInfo nodeId="8911222837206491199" fileName="Annotate_Action.java" startLine="27" startPosition="87" endLine="28" endPosition="107" />
   </root>
   <root nodeId="8807724076671140453">
     <nodeInfo nodeId="8807724076671140459" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotateGroup_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="91" />

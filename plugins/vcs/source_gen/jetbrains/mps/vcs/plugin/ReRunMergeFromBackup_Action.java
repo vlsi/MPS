@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -16,6 +15,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -37,11 +37,6 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     super("Rerun Merge from Backup", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "";
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {

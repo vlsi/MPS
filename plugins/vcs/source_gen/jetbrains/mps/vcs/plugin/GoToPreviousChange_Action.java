@@ -27,11 +27,6 @@ public class GoToPreviousChange_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       IconUtil.useIcon(GoToPreviousChange_Action.this, event.getPresentation(), "icons/previousOccurence.png");
