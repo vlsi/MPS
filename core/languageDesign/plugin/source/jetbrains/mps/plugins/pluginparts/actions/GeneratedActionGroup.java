@@ -39,13 +39,12 @@ public abstract class GeneratedActionGroup extends BaseGroup {
   protected void addParameterizedAction(GeneratedAction action, PluginId id, Object ... params){
     ActionManager manager = ActionManager.getInstance();
     AnAction oldAction = manager.getAction(action.getActionId());
-    if (oldAction==null){
-      manager.registerAction(action.getActionId(),action,id);
-      oldAction = action;
+    if (oldAction!=null){
+      add(oldAction);
+      return;
     }
 
-    add(oldAction);
-
+    add(action);
     BaseApplicationPlugin plugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getPlugin(id);
     plugin.addParameterizedAction(action,params);
   }
