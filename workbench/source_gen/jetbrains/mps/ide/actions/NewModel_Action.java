@@ -6,33 +6,29 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
-import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.project.IModule;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.StereotypeProvider;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 
 public class NewModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewModel_Action.class);
-
-  private Frame frame;
-  private Project project;
-  private IOperationContext context;
-  private IModule module;
-  private TreeNode treeNode;
 
   public NewModel_Action() {
     super("Model", "", ICON);
@@ -45,8 +41,8 @@ public class NewModel_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    String stereotype = NewModel_Action.this.getStereotype();
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    String stereotype = NewModel_Action.this.getStereotype(_params);
     if (stereotype == null) {
       return true;
     }
@@ -58,10 +54,10 @@ public class NewModel_Action extends GeneratedAction {
     return false;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -72,64 +68,64 @@ public class NewModel_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.CONTEXT_MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
-    if (this.treeNode == null) {
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (NewModel_Action.this.module.getSModelRoots().size() == 0) {
-        int code = JOptionPane.showConfirmDialog(NewModel_Action.this.frame, "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
+      if (((IModule) MapSequence.fromMap(_params).get("module")).getSModelRoots().size() == 0) {
+        int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code != JOptionPane.YES_OPTION) {
           return;
         } else {
-          NewModelUtil.ShowModulePropertiesDialog(NewModel_Action.this.module, NewModel_Action.this.context);
+          NewModelUtil.ShowModulePropertiesDialog(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
         }
       }
-      if (NewModel_Action.this.module.getSModelRoots().size() == 0) {
-        JOptionPane.showMessageDialog(NewModel_Action.this.frame, "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
+      if (((IModule) MapSequence.fromMap(_params).get("module")).getSModelRoots().size() == 0) {
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
         return;
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      final IOperationContext localContext = NewModel_Action.this.context;
+      final IOperationContext localContext = ((IOperationContext) MapSequence.fromMap(_params).get("context"));
       final IModule localModule = (localContext.getModule() != null ?
         localContext.getModule() :
-        NewModel_Action.this.module
+        ((IModule) MapSequence.fromMap(_params).get("module"))
       );
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          String stereotype = NewModel_Action.this.getStereotype();
-          dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext, stereotype, NewModel_Action.this.isStrict());
+          String stereotype = NewModel_Action.this.getStereotype(_params);
+          dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(_params), localContext, stereotype, NewModel_Action.this.isStrict(_params));
         }
       });
       dialog.value.showDialog();
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
         SModelDescriptor modelDescriptor = result;
-        ProjectPane.getInstance(NewModel_Action.this.project).selectModel(modelDescriptor, false);
+        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -138,8 +134,8 @@ public class NewModel_Action extends GeneratedAction {
     }
   }
 
-  private StereotypeProvider getStereotypeProvider() {
-    TreeNode parent = NewModel_Action.this.treeNode.getParent();
+  private StereotypeProvider getStereotypeProvider(final Map<String, Object> _params) {
+    TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("treeNode")).getParent();
     while (parent != null) {
       if (parent instanceof StereotypeProvider) {
         return ((StereotypeProvider) parent);
@@ -149,11 +145,11 @@ public class NewModel_Action extends GeneratedAction {
     return null;
   }
 
-  protected String getStereotype() {
-    if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
-      return ((StereotypeProvider) NewModel_Action.this.treeNode).getStereotype();
-    } else if (NewModel_Action.this.treeNode instanceof NamespaceTextNode) {
-      StereotypeProvider parent = NewModel_Action.this.getStereotypeProvider();
+  protected String getStereotype(final Map<String, Object> _params) {
+    if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
+      return ((StereotypeProvider) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getStereotype();
+    } else if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof NamespaceTextNode) {
+      StereotypeProvider parent = NewModel_Action.this.getStereotypeProvider(_params);
       if (parent != null) {
         return parent.getStereotype();
       }
@@ -161,11 +157,11 @@ public class NewModel_Action extends GeneratedAction {
     return null;
   }
 
-  protected boolean isStrict() {
-    if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
-      return ((StereotypeProvider) NewModel_Action.this.treeNode).isStrict();
-    } else if (NewModel_Action.this.treeNode instanceof NamespaceTextNode) {
-      StereotypeProvider parent = NewModel_Action.this.getStereotypeProvider();
+  protected boolean isStrict(final Map<String, Object> _params) {
+    if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
+      return ((StereotypeProvider) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isStrict();
+    } else if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof NamespaceTextNode) {
+      StereotypeProvider parent = NewModel_Action.this.getStereotypeProvider(_params);
       if (parent != null) {
         return parent.isStrict();
       }
@@ -173,7 +169,7 @@ public class NewModel_Action extends GeneratedAction {
     return false;
   }
 
-  protected String getNamespace() {
+  protected String getNamespace(final Map<String, Object> _params) {
     return null;
   }
 }

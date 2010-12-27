@@ -6,10 +6,12 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.VcsRoot;
@@ -39,8 +41,6 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(InstallCustomMergeDriver_Action.class);
 
-  private Project project;
-
   public InstallCustomMergeDriver_Action() {
     super("Install Custom Merge Driver (for Git)...", "", ICON);
     this.setIsAlwaysVisible(false);
@@ -52,18 +52,18 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return Sequence.fromIterable(Sequence.fromArray(InstallCustomMergeDriver_Action.this.project.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots())).any(new IWhereFilter<VcsRoot>() {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return Sequence.fromIterable(Sequence.fromArray(((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectLevelVcsManager.class).getAllVcsRoots())).any(new IWhereFilter<VcsRoot>() {
       public boolean accept(VcsRoot root) {
         return "Git".equals(root.vcs.getName());
       }
     });
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -74,22 +74,22 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       String globalConfigPath = WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig";
       if (!(new File(globalConfigPath).exists())) {
-        Messages.showErrorDialog(InstallCustomMergeDriver_Action.this.project, "Git config (~/.gitconfig) file is not present", "No Git Config");
+        Messages.showErrorDialog(((Project) MapSequence.fromMap(_params).get("project")), "Git config (~/.gitconfig) file is not present", "No Git Config");
         return;
       }
       boolean globalAlreadyInstalled = false;
@@ -113,7 +113,7 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
           if (log.isErrorEnabled()) {
             log.error("Writing gitconfig file failed", e);
           }
-          Messages.showErrorDialog(InstallCustomMergeDriver_Action.this.project, "Writing gitconfig file failed because of IOException:" + e.getMessage(), "Writing .gitconfig Failed");
+          Messages.showErrorDialog(((Project) MapSequence.fromMap(_params).get("project")), "Writing gitconfig file failed because of IOException:" + e.getMessage(), "Writing .gitconfig Failed");
           return;
         } finally {
           if (raf != null) {
@@ -133,18 +133,18 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
         "Global merge driver have been successfully installed."
       );
 
-      Iterable<VcsRoot> rootsToUpdate = Sequence.fromIterable(Sequence.fromArray(InstallCustomMergeDriver_Action.this.project.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots())).where(new IWhereFilter<VcsRoot>() {
+      Iterable<VcsRoot> rootsToUpdate = Sequence.fromIterable(Sequence.fromArray(((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectLevelVcsManager.class).getAllVcsRoots())).where(new IWhereFilter<VcsRoot>() {
         public boolean accept(VcsRoot root) {
-          return "Git".equals(root.vcs.getName()) && !(InstallCustomMergeDriver_Action.this.isAlreadyInstalled(root.path));
+          return "Git".equals(root.vcs.getName()) && !(InstallCustomMergeDriver_Action.this.isAlreadyInstalled(root.path, _params));
         }
       });
       if (Sequence.fromIterable(rootsToUpdate).isEmpty()) {
-        Messages.showInfoMessage(InstallCustomMergeDriver_Action.this.project, globalMessage, "Merge Driver");
+        Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), globalMessage, "Merge Driver");
         return;
       }
 
       String repositories = NameUtil.formatNumericalString(Sequence.fromIterable(rootsToUpdate).count(), "Git repository");
-      int answer = Messages.showYesNoDialog(InstallCustomMergeDriver_Action.this.project, globalMessage + "\nDo you want to to update MPS files attributes in the following Git repositories?\n" + StringUtils.join(Sequence.fromIterable(rootsToUpdate).<String>select(new ISelector<VcsRoot, String>() {
+      int answer = Messages.showYesNoDialog(((Project) MapSequence.fromMap(_params).get("project")), globalMessage + "\nDo you want to to update MPS files attributes in the following Git repositories?\n" + StringUtils.join(Sequence.fromIterable(rootsToUpdate).<String>select(new ISelector<VcsRoot, String>() {
         public String select(VcsRoot r) {
           return r.path.getPath();
         }
@@ -155,10 +155,10 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
       if (answer == 0) {
         Sequence.fromIterable(rootsToUpdate).visitAll(new IVisitor<VcsRoot>() {
           public void visit(VcsRoot root) {
-            InstallCustomMergeDriver_Action.this.install(root.path);
+            InstallCustomMergeDriver_Action.this.install(root.path, _params);
           }
         });
-        Messages.showInfoMessage(InstallCustomMergeDriver_Action.this.project, "Successfully updated attributes for " + repositories, "Attributes");
+        Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "Successfully updated attributes for " + repositories, "Attributes");
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -167,15 +167,15 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
     }
   }
 
-  private boolean isAlreadyInstalled(VirtualFile path) {
-    return InstallCustomMergeDriver_Action.this.install(path, true);
+  private boolean isAlreadyInstalled(VirtualFile path, final Map<String, Object> _params) {
+    return InstallCustomMergeDriver_Action.this.install(path, true, _params);
   }
 
-  private void install(VirtualFile path) {
-    InstallCustomMergeDriver_Action.this.install(path, false);
+  private void install(VirtualFile path, final Map<String, Object> _params) {
+    InstallCustomMergeDriver_Action.this.install(path, false, _params);
   }
 
-  private boolean install(VirtualFile path, boolean dryRun) {
+  private boolean install(VirtualFile path, boolean dryRun, final Map<String, Object> _params) {
     VirtualFile attributesFile = path.findChild(".gitattributes");
     if (attributesFile == null || attributesFile.isDirectory()) {
       return false;

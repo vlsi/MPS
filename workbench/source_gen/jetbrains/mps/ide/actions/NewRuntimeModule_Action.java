@@ -6,12 +6,11 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.IModule;
-import java.awt.Frame;
-import com.intellij.openapi.project.Project;
-import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
@@ -20,6 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -27,6 +27,7 @@ import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import javax.swing.tree.TreeNode;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
@@ -35,11 +36,6 @@ import com.intellij.openapi.application.ModalityState;
 public class NewRuntimeModule_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewRuntimeModule_Action.class);
-
-  private IModule contextModule;
-  private Frame frame;
-  private Project project;
-  private TreeNode treeNode;
 
   public NewRuntimeModule_Action() {
     super("New Runtime Module", "", ICON);
@@ -52,14 +48,14 @@ public class NewRuntimeModule_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return NewRuntimeModule_Action.this.contextModule instanceof Language;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((IModule) MapSequence.fromMap(_params).get("contextModule")) instanceof Language;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -70,30 +66,30 @@ public class NewRuntimeModule_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.contextModule = event.getData(MPSDataKeys.CONTEXT_MODULE);
-    if (this.contextModule == null) {
+    MapSequence.fromMap(_params).put("contextModule", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("contextModule") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
-    if (this.treeNode == null) {
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -101,7 +97,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
           ListSequence.fromList(modules).addSequence(ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules()));
         }
       });
-      BaseModuleModel baseSolutionModel = new BaseModuleModel(NewRuntimeModule_Action.this.project, "runtime module") {
+      BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {
         public ModuleReference[] find(IScope p0) {
           return ListSequence.fromList(modules).<ModuleReference>select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
@@ -116,17 +112,17 @@ public class NewRuntimeModule_Action extends GeneratedAction {
               if (module == null) {
                 return;
               }
-              Language language = (Language) NewRuntimeModule_Action.this.contextModule;
+              Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("contextModule"));
               Dependency dependency = new Dependency();
               dependency.setModuleRef(module);
               language.getModuleDescriptor().getRuntimeModules().add(dependency);
               language.save();
-              ((MPSTreeNode) NewRuntimeModule_Action.this.treeNode).getTree().rebuildLater();
+              ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree().rebuildLater();
             }
           };
         }
       };
-      ChooseByNamePopup popup = ChooseByNamePopup.createPopup(NewRuntimeModule_Action.this.project, baseSolutionModel, new FakePsiContext());
+      ChooseByNamePopup popup = ChooseByNamePopup.createPopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel, new FakePsiContext());
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         public void elementChosen(Object p0) {
           ((NavigationItem) p0).navigate(true);

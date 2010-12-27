@@ -6,26 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.workbench.actions.model.MissingReferencesFinder;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
+import com.intellij.openapi.project.Project;
 
 public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowReferencesToMissingStuff_Action.class);
-
-  private Project project;
-  private IScope scope;
-  private SModelDescriptor model;
 
   public ShowReferencesToMissingStuff_Action() {
     super("Show References to Missing Models/Languages", "", ICON);
@@ -38,14 +36,14 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return ShowReferencesToMissingStuff_Action.this.getTool() != null;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ShowReferencesToMissingStuff_Action.this.getTool(_params) != null;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -56,30 +54,30 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.scope = event.getData(MPSDataKeys.SCOPE);
-    if (this.scope == null) {
+    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SearchQuery query = new SearchQuery(ShowReferencesToMissingStuff_Action.this.model.getSModel(), GlobalScope.getInstance());
-      IResultProvider provider = FindUtils.makeProvider(new MissingReferencesFinder(ShowReferencesToMissingStuff_Action.this.scope, ShowReferencesToMissingStuff_Action.this.model));
-      ShowReferencesToMissingStuff_Action.this.getTool().findUsages(provider, query, false, true, true, "No missing models and languages");
+      SearchQuery query = new SearchQuery(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), GlobalScope.getInstance());
+      IResultProvider provider = FindUtils.makeProvider(new MissingReferencesFinder(((IScope) MapSequence.fromMap(_params).get("scope")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))));
+      ShowReferencesToMissingStuff_Action.this.getTool(_params).findUsages(provider, query, false, true, true, "No missing models and languages");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowReferencesToMissingStuff", t);
@@ -87,7 +85,7 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     }
   }
 
-  private UsagesViewTool getTool() {
-    return ShowReferencesToMissingStuff_Action.this.project.getComponent(UsagesViewTool.class);
+  private UsagesViewTool getTool(final Map<String, Object> _params) {
+    return ((Project) MapSequence.fromMap(_params).get("project")).getComponent(UsagesViewTool.class);
   }
 }

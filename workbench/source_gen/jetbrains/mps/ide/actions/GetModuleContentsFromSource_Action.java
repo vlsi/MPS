@@ -6,25 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.vfs.IFile;
+import java.awt.Frame;
 import jetbrains.mps.javaParser.JavaCompiler;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
 import java.io.File;
 
 public class GetModuleContentsFromSource_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GetModuleContentsFromSource_Action.class);
-
-  private Frame frame;
-  private IOperationContext context;
-  private IModule module;
 
   public GetModuleContentsFromSource_Action() {
     super("Get Module Contents from Source", "", ICON);
@@ -37,7 +35,7 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,26 +46,26 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
@@ -77,9 +75,9 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
           return file.isDirectory();
         }
       });
-      IFile result = treeFileChooser.showDialog(GetModuleContentsFromSource_Action.this.frame);
+      IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(GetModuleContentsFromSource_Action.this.context, GetModuleContentsFromSource_Action.this.module, new File(result.getAbsolutePath()), true);
+        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(result.getAbsolutePath()), true);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

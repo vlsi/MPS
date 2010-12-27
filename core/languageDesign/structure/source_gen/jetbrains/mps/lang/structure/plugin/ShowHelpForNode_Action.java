@@ -5,20 +5,18 @@ package jetbrains.mps.lang.structure.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class ShowHelpForNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowHelpForNode_Action.class);
-
-  private SModelDescriptor model;
-  private IModule module;
-  private SNode node;
 
   public ShowHelpForNode_Action() {
     super("Show Help for Node", "", ICON);
@@ -31,14 +29,14 @@ public class ShowHelpForNode_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return HelpHelper.helpForNodeIsAvailable(ShowHelpForNode_Action.this.node) && HelpHelper.getDefaultHelpFor(ShowHelpForNode_Action.this.module, ShowHelpForNode_Action.this.model, ShowHelpForNode_Action.this.node) != HelpHelper.HelpType.NODE;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return HelpHelper.helpForNodeIsAvailable(((SNode) MapSequence.fromMap(_params).get("node"))) && HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) != HelpHelper.HelpType.NODE;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -47,27 +45,27 @@ public class ShowHelpForNode_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
-    this.module = event.getData(MPSDataKeys.CONTEXT_MODULE);
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HelpHelper.showHelpForNode(ShowHelpForNode_Action.this.node);
+      HelpHelper.showHelpForNode(((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowHelpForNode", t);
     }

@@ -5,12 +5,10 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
 import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
@@ -22,6 +20,7 @@ import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
@@ -39,10 +38,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -54,11 +56,6 @@ public class MakeOrBuild_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(MakeOrBuild_Action.class);
 
-  private IOperationContext context;
-  private List<SModelDescriptor> models;
-  private SModelDescriptor cmodel;
-  private List<IModule> modules;
-  private IModule cmodule;
   private boolean cleanMake;
 
   public MakeOrBuild_Action(boolean cleanMake_par) {
@@ -73,7 +70,7 @@ public class MakeOrBuild_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (MakeOrBuild_Action.this.cleanMake) {
       event.getPresentation().setText("Build");
     } else {
@@ -82,10 +79,10 @@ public class MakeOrBuild_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -94,22 +91,22 @@ public class MakeOrBuild_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.models = event.getData(MPSDataKeys.MODELS);
-    this.cmodel = event.getData(MPSDataKeys.CONTEXT_MODEL);
-    this.modules = event.getData(MPSDataKeys.MODULES);
-    this.cmodule = event.getData(MPSDataKeys.CONTEXT_MODULE);
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("cmodule", event.getData(MPSDataKeys.CONTEXT_MODULE));
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ScriptBuilder scb = new ScriptBuilder();
       final UIQueryRelayStrategy relayStrat = new UIQueryRelayStrategy();
@@ -130,14 +127,14 @@ public class MakeOrBuild_Action extends GeneratedAction {
       };
       final IConfigMonitor cmon = new IConfigMonitor() {
         public <T extends IOption> T relayQuery(IQuery<T> query) {
-          return relayStrat.relayQuery(query, MakeOrBuild_Action.this.context);
+          return relayStrat.relayQuery(query, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
         }
       };
       final IScript scr = scb.withFacets(new IFacet.Name("Generate"), new IFacet.Name("TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("Make")).withTarget(new ITarget.Name("make")).withInit(new _FunctionTypes._void_P1_E0<IParametersPool>() {
         public void invoke(IParametersPool pool) {
           Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.parameters(new ITarget.Name("checkParameters"), Object.class);
-          vars._0(MakeOrBuild_Action.this.context.getProject());
-          vars._1(MakeOrBuild_Action.this.context);
+          vars._0(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
+          vars._1(((IOperationContext) MapSequence.fromMap(_params).get("context")));
           vars._2(MakeOrBuild_Action.this.cleanMake);
         }
       }).withMonitors(new IMonitors.Stub(cmon, jmon) {
@@ -148,7 +145,7 @@ public class MakeOrBuild_Action extends GeneratedAction {
             public void run(ProgressIndicator realInd) {
               code.invoke(jmon);
             }
-          }, "Script", true, MakeOrBuild_Action.this.context.getProject());
+          }, "Script", true, ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
         }
       }).toScript();
 
@@ -156,7 +153,7 @@ public class MakeOrBuild_Action extends GeneratedAction {
         return;
       }
 
-      final Iterable<MResource> inputRes = MakeOrBuild_Action.this.collectInput(!(MakeOrBuild_Action.this.cleanMake));
+      final Iterable<MResource> inputRes = MakeOrBuild_Action.this.collectInput(!(MakeOrBuild_Action.this.cleanMake), _params);
 
       // save all before launching the script 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -167,8 +164,8 @@ public class MakeOrBuild_Action extends GeneratedAction {
 
       final Wrappers._T<IResult> res = new Wrappers._T<IResult>();
 
-      ModelCheckerTool_Tool mct = MakeOrBuild_Action.this.context.getProject().getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
-      if (mct.checkModelsBeforeGenerationIfNeeded(MakeOrBuild_Action.this.context, MakeOrBuild_Action.this.models, new Runnable() {
+      ModelCheckerTool_Tool mct = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject().getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
+      if (mct.checkModelsBeforeGenerationIfNeeded(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), new Runnable() {
         public void run() {
           res.value = scr.execute(inputRes);
         }
@@ -195,7 +192,7 @@ public class MakeOrBuild_Action extends GeneratedAction {
     return res.toString();
   }
 
-  private Iterable<MResource> collectInput(final boolean dirtyOnly) {
+  private Iterable<MResource> collectInput(final boolean dirtyOnly, final Map<String, Object> _params) {
     Iterable<SModelDescriptor> smds = Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
       public Iterable<SModelDescriptor> iterable() {
         return new Iterable<SModelDescriptor>() {
@@ -217,7 +214,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 5:
-                      this._5__yield_rl5vzw_a0a0a0a0a0a0g_it = Sequence.fromIterable(MakeOrBuild_Action.this.models).iterator();
+                      this._5__yield_rl5vzw_a0a0a0a0a0a0g_it = Sequence.fromIterable(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))).iterator();
                     case 6:
                       if (!(this._5__yield_rl5vzw_a0a0a0a0a0a0g_it.hasNext())) {
                         this.__CP__ = 4;
@@ -237,10 +234,10 @@ __switch__:
                       this.__CP__ = 14;
                       break;
                     case 2:
-                      if (MakeOrBuild_Action.this.models != null) {
+                      if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")) != null) {
                         this.__CP__ = 3;
                         break;
-                      } else if (MakeOrBuild_Action.this.cmodel != null) {
+                      } else if (((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")) != null) {
                         this.__CP__ = 9;
                         break;
                       }
@@ -252,7 +249,7 @@ __switch__:
                       return true;
                     case 10:
                       this.__CP__ = 4;
-                      this.yield(MakeOrBuild_Action.this.cmodel);
+                      this.yield(((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")));
                       return true;
                     case 15:
                       this.__CP__ = 13;
@@ -265,17 +262,17 @@ __switch__:
                       this._11_modelsFromModules = null;
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
-                          if (MakeOrBuild_Action.this.modules != null) {
-                            for (IModule mod : ListSequence.fromList(MakeOrBuild_Action.this.modules)) {
+                          if (((List<IModule>) MapSequence.fromMap(_params).get("modules")) != null) {
+                            for (IModule mod : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
                               _11_modelsFromModules = Sequence.fromIterable(_11_modelsFromModules).concat(ListSequence.fromList(mod.getEditableUserModels()));
                             }
-                          } else if (MakeOrBuild_Action.this.cmodule != null) {
-                            _11_modelsFromModules = Sequence.fromIterable(_11_modelsFromModules).concat(ListSequence.fromList(MakeOrBuild_Action.this.cmodule.getEditableUserModels()));
+                          } else if (((IModule) MapSequence.fromMap(_params).get("cmodule")) != null) {
+                            _11_modelsFromModules = Sequence.fromIterable(_11_modelsFromModules).concat(ListSequence.fromList(((IModule) MapSequence.fromMap(_params).get("cmodule")).getEditableUserModels()));
                           }
                           if (dirtyOnly) {
                             _11_modelsFromModules = Sequence.fromIterable(_11_modelsFromModules).where(new IWhereFilter<SModelDescriptor>() {
                               public boolean accept(SModelDescriptor md) {
-                                return ModelGenerationStatusManager.getInstance().generationRequired(md, MakeOrBuild_Action.this.context, false, true);
+                                return ModelGenerationStatusManager.getInstance().generationRequired(md, ((IOperationContext) MapSequence.fromMap(_params).get("context")), false, true);
                               }
                             }).toListSequence();
                           }

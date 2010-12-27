@@ -5,21 +5,20 @@ package jetbrains.mps.lang.quotation.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import java.awt.Component;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import javax.swing.JOptionPane;
+import java.awt.Component;
 
 public class ShowMetaLevel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowMetaLevel_Action.class);
-
-  private SNode currentNode;
-  private Component component;
 
   public ShowMetaLevel_Action() {
     super("Show Quotation Metalevel", "", ICON);
@@ -32,7 +31,7 @@ public class ShowMetaLevel_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -41,8 +40,8 @@ public class ShowMetaLevel_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
@@ -52,22 +51,22 @@ public class ShowMetaLevel_Action extends GeneratedAction {
           node = null;
         }
       }
-      this.currentNode = node;
+      MapSequence.fromMap(_params).put("currentNode", node);
     }
-    if (this.currentNode == null) {
+    if (MapSequence.fromMap(_params).get("currentNode") == null) {
       return false;
     }
-    this.component = event.getData(MPSDataKeys.CONTEXT_COMPONENT);
-    if (this.component == null) {
+    MapSequence.fromMap(_params).put("component", event.getData(MPSDataKeys.CONTEXT_COMPONENT));
+    if (MapSequence.fromMap(_params).get("component") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      int metaLevel = BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(ShowMetaLevel_Action.this.currentNode);
-      JOptionPane.showMessageDialog(ShowMetaLevel_Action.this.component, metaLevel);
+      int metaLevel = BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(((SNode) MapSequence.fromMap(_params).get("currentNode")));
+      JOptionPane.showMessageDialog(((Component) MapSequence.fromMap(_params).get("component")), metaLevel);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowMetaLevel", t);
     }

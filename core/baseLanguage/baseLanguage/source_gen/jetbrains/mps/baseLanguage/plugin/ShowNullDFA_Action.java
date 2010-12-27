@@ -5,25 +5,22 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner;
 import java.util.Map;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner;
 import jetbrains.mps.baseLanguage.dataFlow.NullableState;
 import jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner;
 import jetbrains.mps.lang.dataFlow.presentation.ShowCFGDialog;
+import jetbrains.mps.smodel.IOperationContext;
+import java.awt.Frame;
 
 public class ShowNullDFA_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowNullDFA_Action.class);
-
-  private SNode node;
-  private IOperationContext context;
-  private Frame frame;
 
   public ShowNullDFA_Action() {
     super("Show Nullable DFA", "", ICON);
@@ -36,7 +33,7 @@ public class ShowNullDFA_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -45,34 +42,34 @@ public class ShowNullDFA_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      AnalyzerRunner<Map<SNode, NullableState>> runner = new NullableAnalyzerRunner(ShowNullDFA_Action.this.node);
-      new ShowCFGDialog(runner.getProgramCopy(), ShowNullDFA_Action.this.context, ShowNullDFA_Action.this.frame);
+      AnalyzerRunner<Map<SNode, NullableState>> runner = new NullableAnalyzerRunner(((SNode) MapSequence.fromMap(_params).get("node")));
+      new ShowCFGDialog(runner.getProgramCopy(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowNullDFA", t);
     }

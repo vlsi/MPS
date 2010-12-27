@@ -6,23 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.MissingDependenciesFixer;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
 public class FixDependenciesEverywhere_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(FixDependenciesEverywhere_Action.class);
-
-  private IOperationContext context;
 
   public FixDependenciesEverywhere_Action() {
     super("Add Necessary Module Deps Everywhere", "", ICON);
@@ -35,7 +35,7 @@ public class FixDependenciesEverywhere_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -46,24 +46,24 @@ public class FixDependenciesEverywhere_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (SModelDescriptor model : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
         if (!(model instanceof EditableSModelDescriptor)) {
           continue;
         }
-        new MissingDependenciesFixer(FixDependenciesEverywhere_Action.this.context, model).fix(false);
+        new MissingDependenciesFixer(((IOperationContext) MapSequence.fromMap(_params).get("context")), model).fix(false);
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     } catch (Throwable t) {

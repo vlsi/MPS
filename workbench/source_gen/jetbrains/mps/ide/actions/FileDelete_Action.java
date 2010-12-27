@@ -6,19 +6,17 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ide.DeleteProvider;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class FileDelete_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(FileDelete_Action.class);
 
-  private VirtualFile selectedFile;
-  private DeleteProvider deleteProvider;
   private AnAction action;
 
   public FileDelete_Action(AnAction action_par) {
@@ -33,7 +31,7 @@ public class FileDelete_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       FileDelete_Action.this.action.update(event);
     } catch (Throwable t) {
@@ -44,22 +42,22 @@ public class FileDelete_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.selectedFile = event.getData(MPSDataKeys.VIRTUAL_FILE);
-    if (this.selectedFile == null) {
+    MapSequence.fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    if (MapSequence.fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    this.deleteProvider = event.getData(MPSDataKeys.DELETE_ELEMENT_PROVIDER);
-    if (this.deleteProvider == null) {
+    MapSequence.fromMap(_params).put("deleteProvider", event.getData(MPSDataKeys.DELETE_ELEMENT_PROVIDER));
+    if (MapSequence.fromMap(_params).get("deleteProvider") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FileDelete_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {

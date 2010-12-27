@@ -6,19 +6,20 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
@@ -26,10 +27,6 @@ import jetbrains.mps.make.ModuleMaker;
 public class CleanProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CleanProject_Action.class);
-
-  private IOperationContext context;
-  private Project ideaProject;
-  private MPSProject project;
 
   public CleanProject_Action() {
     super("Clean", "", ICON);
@@ -42,7 +39,7 @@ public class CleanProject_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -53,32 +50,32 @@ public class CleanProject_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
-    if (this.ideaProject == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<IModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<IModule>());
-      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectSolutions()));
-      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectLanguages()));
-      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectDevKits()));
-      ProgressManager.getInstance().run(new Task.Modal(CleanProject_Action.this.ideaProject, "Cleaning", true) {
+      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectSolutions()));
+      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectLanguages()));
+      SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectDevKits()));
+      ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Cleaning", true) {
         public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {

@@ -8,19 +8,18 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.EditorContext;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToPreviousChange_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/previousOccurence.png", "jetbrains.mps.vcs"), true);
   protected static Log log = LogFactory.getLog(GoToPreviousChange_Action.class);
-
-  private EditorContext editorContext;
-  private Project project;
 
   public GoToPreviousChange_Action() {
     super("Previous Change", "Go to previous change", ICON);
@@ -33,11 +32,11 @@ public class GoToPreviousChange_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       IconUtil.useIcon(GoToPreviousChange_Action.this, event.getPresentation(), "icons/previousOccurence.png");
       event.getPresentation().setVisible(true);
-      event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(GoToPreviousChange_Action.this.project).isPreviousChangeAvailable(GoToPreviousChange_Action.this.editorContext));
+      event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isPreviousChangeAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToPreviousChange", t);
@@ -46,24 +45,24 @@ public class GoToPreviousChange_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorChangesHighlighter.getInstance(GoToPreviousChange_Action.this.project).goToPreviousChange(GoToPreviousChange_Action.this.editorContext);
+      EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).goToPreviousChange(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToPreviousChange", t);

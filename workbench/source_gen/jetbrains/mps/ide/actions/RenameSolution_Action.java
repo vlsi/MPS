@@ -6,20 +6,19 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.refactoring.RenameSolutionDialog;
+import java.awt.Frame;
 
 public class RenameSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameSolution_Action.class);
-
-  private Frame frame;
-  private IModule module;
 
   public RenameSolution_Action() {
     super("Rename Solution", "", ICON);
@@ -32,14 +31,14 @@ public class RenameSolution_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return RenameSolution_Action.this.module instanceof Solution;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -50,24 +49,24 @@ public class RenameSolution_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameSolutionDialog(RenameSolution_Action.this.frame, ((Solution) RenameSolution_Action.this.module)).showDialog();
+      new RenameSolutionDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((Solution) ((IModule) MapSequence.fromMap(_params).get("module")))).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameSolution", t);

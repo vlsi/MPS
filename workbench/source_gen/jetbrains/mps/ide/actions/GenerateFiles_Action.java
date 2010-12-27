@@ -6,15 +6,17 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import java.util.List;
-import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import javax.swing.tree.TreeNode;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,9 +25,6 @@ import jetbrains.mps.ide.generator.GeneratorFacade;
 public class GenerateFiles_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateFiles_Action.class);
-
-  private Project project;
-  private List<TreeNode> ppNodes;
 
   public GenerateFiles_Action() {
     super("Generate Files", "Generate files from all models under this namespace", ICON);
@@ -38,8 +37,8 @@ public class GenerateFiles_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    for (TreeNode selectedNode : GenerateFiles_Action.this.ppNodes) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    for (TreeNode selectedNode : ((List<TreeNode>) MapSequence.fromMap(_params).get("ppNodes"))) {
       if (!(selectedNode instanceof NamespaceTextNode)) {
         return false;
       }
@@ -47,10 +46,10 @@ public class GenerateFiles_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -61,26 +60,26 @@ public class GenerateFiles_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.ppNodes = event.getData(MPSDataKeys.LOGICAL_VIEW_NODES);
-    if (this.ppNodes == null) {
+    MapSequence.fromMap(_params).put("ppNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    if (MapSequence.fromMap(_params).get("ppNodes") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IOperationContext projectContext = ProjectOperationContext.get(GenerateFiles_Action.this.project);
+      IOperationContext projectContext = ProjectOperationContext.get(((Project) MapSequence.fromMap(_params).get("project")));
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (TreeNode ppNode : ListSequence.fromList(GenerateFiles_Action.this.ppNodes)) {
+      for (TreeNode ppNode : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("ppNodes")))) {
         for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) ppNode).getModelsUnder())) {
           models.add(model);
         }

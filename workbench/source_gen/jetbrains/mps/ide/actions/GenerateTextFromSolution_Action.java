@@ -6,31 +6,28 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 public class GenerateTextFromSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateTextFromSolution_Action.class);
-
-  private Project project;
-  private IOperationContext context;
-  private IModule module;
-  private Frame frame;
 
   public GenerateTextFromSolution_Action() {
     super("Generate Text from Solution", "", ICON);
@@ -43,14 +40,14 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return GenerateTextFromSolution_Action.this.module instanceof Solution;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -61,50 +58,50 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<GenParameters> params = new Wrappers._T<GenParameters>(null);
       final Wrappers._T<String> exceptionMsg = new Wrappers._T<String>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ModuleTestConfiguration conf = new ModuleTestConfiguration();
-          conf.setModuleRef(GenerateTextFromSolution_Action.this.module.getModuleReference());
+          conf.setModuleRef(((IModule) MapSequence.fromMap(_params).get("module")).getModuleReference());
           conf.setName("tmp");
           try {
-            params.value = conf.getGenParams(GenerateTextFromSolution_Action.this.project, true);
+            params.value = conf.getGenParams(((Project) MapSequence.fromMap(_params).get("project")), true);
           } catch (IllegalGeneratorConfigurationException e) {
             exceptionMsg.value = e.getMessage();
           }
         }
       });
       if (exceptionMsg.value != null) {
-        JOptionPane.showMessageDialog(GenerateTextFromSolution_Action.this.frame, exceptionMsg.value);
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), exceptionMsg.value);
         return;
       }
-      GeneratorFacade.getInstance().generateModels(GenerateTextFromSolution_Action.this.context, params.value.getModelDescriptors(), new OutputViewGenerationHandler(), true, false);
+      GeneratorFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), params.value.getModelDescriptors(), new OutputViewGenerationHandler(), true, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTextFromSolution", t);

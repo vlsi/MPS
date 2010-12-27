@@ -8,30 +8,26 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.workbench.MPSDataKeys;
+import java.awt.Frame;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/diff.png", "jetbrains.mps.vcs"), true);
   protected static Log log = LogFactory.getLog(ShowDiffererenesWithCurrentRevision_Action.class);
-
-  private Frame frame;
-  private SNode node;
-  private Project project;
-  private IOperationContext context;
-  private SModelDescriptor model;
 
   public ShowDiffererenesWithCurrentRevision_Action() {
     super("Compare with the Same Repository Revision", "", ICON);
@@ -44,23 +40,23 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     IconUtil.useIcon(ShowDiffererenesWithCurrentRevision_Action.this, event.getPresentation(), "icons/diff.png");
-    if (!(ShowDiffererenesWithCurrentRevision_Action.this.model instanceof EditableSModelDescriptor)) {
+    if (!(((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor)) {
       return false;
     }
-    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) ShowDiffererenesWithCurrentRevision_Action.this.model).getModelFile());
-    if (ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null) {
-      FileStatus fileStatus = ShowDiffererenesWithCurrentRevision_Action.this.project.getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
+    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getModelFile());
+    if (((SNode) MapSequence.fromMap(_params).get("node")).isRoot() && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
+      FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
       return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
     }
     return false;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -71,36 +67,36 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.NODE);
-    if (this.node == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      VcsActionsHelper.showRootDifference(ShowDiffererenesWithCurrentRevision_Action.this.frame, ShowDiffererenesWithCurrentRevision_Action.this.context, ShowDiffererenesWithCurrentRevision_Action.this.model.getSModel(), ShowDiffererenesWithCurrentRevision_Action.this.node, ShowDiffererenesWithCurrentRevision_Action.this.project);
+      VcsActionsHelper.showRootDifference(((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDiffererenesWithCurrentRevision", t);

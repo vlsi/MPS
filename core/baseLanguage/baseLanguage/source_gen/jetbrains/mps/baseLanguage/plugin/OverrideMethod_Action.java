@@ -5,15 +5,17 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddClassMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToOverrideStrategy;
@@ -22,10 +24,6 @@ import jetbrains.mps.ide.actions.OverrideClassMethodStrategy;
 public class OverrideMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(OverrideMethod_Action.class);
-
-  private SNode selectedNode;
-  private EditorContext editorContext;
-  private IOperationContext operationContext;
 
   public OverrideMethod_Action() {
     super("Override Method...", "", ICON);
@@ -39,14 +37,14 @@ public class OverrideMethod_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return (SNodeOperations.getAncestor(OverrideMethod_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -55,35 +53,35 @@ public class OverrideMethod_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.selectedNode = node;
+      MapSequence.fromMap(_params).put("selectedNode", node);
     }
-    if (this.selectedNode == null) {
+    if (MapSequence.fromMap(_params).get("selectedNode") == null) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.operationContext == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Project project = OverrideMethod_Action.this.operationContext.getProject();
-      Frame frame = OverrideMethod_Action.this.editorContext.getMainFrame();
-      new StratergyAddMethodDialog(OverrideMethod_Action.this.editorContext, frame, new AddClassMethodStrategy(OverrideMethod_Action.this.selectedNode), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
+      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
+      Frame frame = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame();
+      new StratergyAddMethodDialog(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), frame, new AddClassMethodStrategy(((SNode) MapSequence.fromMap(_params).get("selectedNode"))), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "OverrideMethod", t);
     }

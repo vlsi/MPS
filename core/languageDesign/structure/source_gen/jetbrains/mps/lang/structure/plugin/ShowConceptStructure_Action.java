@@ -5,12 +5,14 @@ package jetbrains.mps.lang.structure.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -18,9 +20,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 public class ShowConceptStructure_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowConceptStructure_Action.class);
-
-  private SNode node;
-  private Project project;
 
   public ShowConceptStructure_Action() {
     super("Show Concept Structure", "", ICON);
@@ -33,7 +32,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -42,8 +41,8 @@ public class ShowConceptStructure_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
@@ -53,22 +52,22 @@ public class ShowConceptStructure_Action extends GeneratedAction {
           node = null;
         }
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      StructureView_Tool tool = ShowConceptStructure_Action.this.project.getComponent(ProjectPluginManager.class).getTool(StructureView_Tool.class);
-      tool.getStructureView().inspect(((AbstractConceptDeclaration) ((AbstractConceptDeclaration) SNodeOperations.getAdapter(ShowConceptStructure_Action.this.node))), ProjectOperationContext.get(ShowConceptStructure_Action.this.project));
+      StructureView_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(StructureView_Tool.class);
+      tool.getStructureView().inspect(((AbstractConceptDeclaration) ((AbstractConceptDeclaration) SNodeOperations.getAdapter(((SNode) MapSequence.fromMap(_params).get("node"))))), ProjectOperationContext.get(((Project) MapSequence.fromMap(_params).get("project"))));
       tool.openToolLater(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowConceptStructure", t);

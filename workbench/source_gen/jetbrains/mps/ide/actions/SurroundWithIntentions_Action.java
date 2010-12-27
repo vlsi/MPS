@@ -6,12 +6,14 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
@@ -38,9 +40,6 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SurroundWithIntentions_Action.class);
 
-  private SNode selectedNode;
-  private EditorContext editorContext;
-
   public SurroundWithIntentions_Action() {
     super("Show Surround with Intentions Menu", "", ICON);
     this.setIsAlwaysVisible(false);
@@ -52,7 +51,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -63,38 +62,38 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.selectedNode = node;
+      MapSequence.fromMap(_params).put("selectedNode", node);
     }
-    if (this.selectedNode == null) {
+    if (MapSequence.fromMap(_params).get("selectedNode") == null) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final EditorCell selectedCell = SurroundWithIntentions_Action.this.editorContext.getSelectedCell();
+      final EditorCell selectedCell = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell();
       int x = selectedCell.getX();
       int y = selectedCell.getY();
       if (selectedCell instanceof EditorCell_Label) {
         y += ((EditorCell_Label) selectedCell).getHeight();
       }
-      final DataContext dataContext = DataManager.getInstance().getDataContext(SurroundWithIntentions_Action.this.editorContext.getNodeEditorComponent(), x, y);
+      final DataContext dataContext = DataManager.getInstance().getDataContext(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), x, y);
       ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
         public ListPopup compute() {
-          ActionGroup group = SurroundWithIntentions_Action.this.getIntentionGroup();
+          ActionGroup group = SurroundWithIntentions_Action.this.getIntentionGroup(_params);
           ListPopup popup = null;
           if (group != null) {
             popup = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, dataContext, JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
@@ -102,7 +101,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
           return popup;
         }
       });
-      RelativePoint relativePoint = new RelativePoint(SurroundWithIntentions_Action.this.editorContext.getNodeEditorComponent(), new Point(x, y));
+      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
       if (popup != null) {
         popup.show(relativePoint);
       }
@@ -113,14 +112,14 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     }
   }
 
-  private BaseGroup getIntentionGroup() {
+  private BaseGroup getIntentionGroup(final Map<String, Object> _params) {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
     IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
     query.setIntentionClass(SurroundWithIntention.class);
     query.setInstantiate(true);
     query.setCurrentNodeOnly(true);
-    Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext);
+    Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     groupItems.addAll(intentions);
     if (groupItems.isEmpty()) {
       return null;
@@ -131,12 +130,12 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
         Intention intention2 = p1.getFirst();
         SNode node1 = p0.getSecond();
         SNode node2 = p1.getSecond();
-        return intention1.getDescription(node1, SurroundWithIntentions_Action.this.editorContext).compareTo(intention2.getDescription(node2, SurroundWithIntentions_Action.this.editorContext));
+        return intention1.getDescription(node1, ((EditorContext) MapSequence.fromMap(_params).get("editorContext"))).compareTo(intention2.getDescription(node2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
       }
     });
-    final EditorContext context = SurroundWithIntentions_Action.this.editorContext;
+    final EditorContext context = ((EditorContext) MapSequence.fromMap(_params).get("editorContext"));
     for (final Pair<Intention, SNode> pair : groupItems) {
-      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext)) {
+      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")))) {
         protected void doExecute(AnActionEvent p0) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {

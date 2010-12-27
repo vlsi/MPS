@@ -6,9 +6,11 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModel;
@@ -24,8 +26,6 @@ public class FixVirtualPackges_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(FixVirtualPackges_Action.class);
 
-  private IModule module;
-
   public FixVirtualPackges_Action() {
     super("Fix Virtual Packages", "", ICON);
     this.setIsAlwaysVisible(false);
@@ -37,14 +37,14 @@ public class FixVirtualPackges_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return FixVirtualPackges_Action.this.module instanceof Language;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -55,20 +55,20 @@ public class FixVirtualPackges_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Language language = (Language) FixVirtualPackges_Action.this.module;
+      Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("module"));
       SModel structure = language.getStructureModelDescriptor().getSModel();
       List<SNode> concepts = SModelOperations.getRoots(structure, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       for (SNode concept : concepts) {

@@ -11,6 +11,7 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 
 public class GenerateFilesFromModel_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/generateFiles.png", "jetbrains.mps.ide"), true);
@@ -31,7 +32,7 @@ public class GenerateFilesFromModel_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       GenerateFilesFromModel_Action.this.action.update(event);
     } catch (Throwable t) {
@@ -42,14 +43,14 @@ public class GenerateFilesFromModel_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       GenerateFilesFromModel_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {

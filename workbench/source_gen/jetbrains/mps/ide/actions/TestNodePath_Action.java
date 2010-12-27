@@ -6,18 +6,18 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 
 public class TestNodePath_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(TestNodePath_Action.class);
-
-  private SNode node;
 
   public TestNodePath_Action() {
     super("Test Node Path", "", ICON);
@@ -30,7 +30,7 @@ public class TestNodePath_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -41,26 +41,26 @@ public class TestNodePath_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode root = SNodeOperations.getContainingRoot(TestNodePath_Action.this.node);
-      if (TestNodePath_Action.this.node != root.findChildByPath(root.getNodePath(TestNodePath_Action.this.node))) {
+      SNode root = SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node")));
+      if (((SNode) MapSequence.fromMap(_params).get("node")) != root.findChildByPath(root.getNodePath(((SNode) MapSequence.fromMap(_params).get("node"))))) {
         Logger.getLogger("TestNode_Action").error("find child by path works improperly");
       }
     } catch (Throwable t) {

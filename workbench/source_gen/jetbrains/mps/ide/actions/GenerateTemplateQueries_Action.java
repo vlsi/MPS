@@ -6,11 +6,11 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
@@ -24,14 +24,13 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.project.ProjectOperationContext;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class GenerateTemplateQueries_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateTemplateQueries_Action.class);
 
-  private Project project;
-  private IModule module;
-  private IOperationContext context;
   private boolean regenerate;
 
   public GenerateTemplateQueries_Action(boolean regenerate_par) {
@@ -46,7 +45,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
         String text = ((GenerateTemplateQueries_Action.this.regenerate ?
@@ -54,7 +53,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           "Generate"
         )) + " Generator";
         event.getPresentation().setText(text);
-        GenerateTemplateQueries_Action.this.setEnabledState(event.getPresentation(), GenerateTemplateQueries_Action.this.module instanceof Generator);
+        GenerateTemplateQueries_Action.this.setEnabledState(event.getPresentation(), ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -64,42 +63,42 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IGenerationHandler genHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
       final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ListSequence.fromList(models.value).addSequence(ListSequence.fromList(((Generator) GenerateTemplateQueries_Action.this.module).getGeneratorModels()));
+          ListSequence.fromList(models.value).addSequence(ListSequence.fromList(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))).getGeneratorModels()));
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
             models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it) {
-                return ModelGenerationStatusManager.getInstance().generationRequired(it, ProjectOperationContext.get(GenerateTemplateQueries_Action.this.project), false, true);
+                return ModelGenerationStatusManager.getInstance().generationRequired(it, ProjectOperationContext.get(((Project) MapSequence.fromMap(_params).get("project"))), false, true);
               }
             }).toListSequence();
           }
         }
       });
-      GeneratorFacade.getInstance().generateModels(GenerateTemplateQueries_Action.this.context, models.value, genHandler, true, false);
+      GeneratorFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), models.value, genHandler, true, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTemplateQueries", t);

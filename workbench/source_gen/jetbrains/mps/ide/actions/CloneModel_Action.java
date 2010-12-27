@@ -6,24 +6,22 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel.CloneModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class CloneModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CloneModel_Action.class);
-
-  private SModelDescriptor model;
-  private IOperationContext context;
-  private Integer selSize;
 
   public CloneModel_Action() {
     super("Clone Model", "", ICON);
@@ -36,23 +34,23 @@ public class CloneModel_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    if (CloneModel_Action.this.selSize != 1) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (((Integer) MapSequence.fromMap(_params).get("selSize")) != 1) {
       return false;
     }
-    IModule module = CloneModel_Action.this.model.getModule();
+    IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
     if (module instanceof Language) {
       Language language = (Language) module;
-      return language.getAspectForModel(CloneModel_Action.this.model) == null;
+      return language.getAspectForModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))) == null;
     } else {
       return true;
     }
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -63,31 +61,31 @@ public class CloneModel_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.selSize = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
-    if (this.selSize == null) {
+    MapSequence.fromMap(_params).put("selSize", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
+    if (MapSequence.fromMap(_params).get("selSize") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<CloneModelDialog> dialog = new Wrappers._T<CloneModelDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new CloneModelDialog(CloneModel_Action.this.model, CloneModel_Action.this.context);
+          dialog.value = new CloneModelDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
         }
       });
       dialog.value.showDialog();

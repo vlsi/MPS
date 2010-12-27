@@ -7,28 +7,26 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageConceptsUsagesFinder;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindLanguageConceptsUsages_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/find.png", "jetbrains.mps.lang.core"), true);
   private static Logger LOG = Logger.getLogger(FindLanguageConceptsUsages_Action.class);
-
-  private IModule module;
-  private IOperationContext context;
-  private IScope scope;
 
   public FindLanguageConceptsUsages_Action() {
     super("Find Concepts Usages", "", ICON);
@@ -41,11 +39,11 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    if (!(FindLanguageConceptsUsages_Action.this.module instanceof Language)) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return false;
     }
-    Language language = (Language) FindLanguageConceptsUsages_Action.this.module;
+    Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("module"));
     SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
     if (structureModelDescriptor == null) {
       return false;
@@ -56,10 +54,10 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -68,38 +66,38 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.scope = event.getData(MPSDataKeys.SCOPE);
-    if (this.scope == null) {
+    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final IModule module = FindLanguageConceptsUsages_Action.this.module;
-      final IScope scope = FindLanguageConceptsUsages_Action.this.scope;
+      final IModule module = ((IModule) MapSequence.fromMap(_params).get("module"));
+      final IScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           query[0] = new SearchQuery(module, scope);
           provider[0] = FindUtils.makeProvider(new LanguageConceptsUsagesFinder());
         }
       });
-      FindLanguageConceptsUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "There are no usages of language's concepts");
+      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "There are no usages of language's concepts");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindLanguageConceptsUsages", t);
     }

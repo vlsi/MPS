@@ -5,22 +5,20 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.IModule;
 
 public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(FindInstancesByConditionAndNode_Action.class);
-
-  private IOperationContext context;
-  private IModule langModule;
-  private SNode node;
 
   public FindInstancesByConditionAndNode_Action() {
     super("Find Instances By Condition", "", ICON);
@@ -33,7 +31,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -42,8 +40,8 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
@@ -53,26 +51,26 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
           node = null;
         }
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.langModule = event.getData(MPSDataKeys.MODULE);
-    if (this.langModule == null) {
+    MapSequence.fromMap(_params).put("langModule", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("langModule") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(FindInstancesByConditionAndNode_Action.this.context), (Language) FindInstancesByConditionAndNode_Action.this.langModule);
-      testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.node);
+      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(((IOperationContext) MapSequence.fromMap(_params).get("context"))), (Language) ((IModule) MapSequence.fromMap(_params).get("langModule")));
+      testDialog.setConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
       testDialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindInstancesByConditionAndNode", t);

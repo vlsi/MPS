@@ -6,14 +6,16 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.OptimizeImportsHelper;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
@@ -23,8 +25,6 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(OptimizeImportsInGlobalScope_Action.class);
-
-  private IOperationContext context;
 
   public OptimizeImportsInGlobalScope_Action() {
     super("Optimize Imports Everywhere", "", ICON);
@@ -37,7 +37,7 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,22 +48,22 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
         String report = "";
-        OptimizeImportsHelper helper = new OptimizeImportsHelper(OptimizeImportsInGlobalScope_Action.this.context);
+        OptimizeImportsHelper helper = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context")));
         if (module instanceof Solution) {
           report = helper.optimizeSolutionImports(((Solution) module));
         } else if (module instanceof Language) {

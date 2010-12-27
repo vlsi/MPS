@@ -6,28 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
+import jetbrains.mps.project.IModule;
 
 public class DeleteModels_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeleteModels_Action.class);
-
-  private Frame frame;
-  private Project project;
-  private IModule contextModule;
-  private List<SModelDescriptor> models;
 
   public DeleteModels_Action() {
     super("Delete Models", "", ICON);
@@ -40,7 +36,7 @@ public class DeleteModels_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -51,32 +47,32 @@ public class DeleteModels_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.contextModule = event.getData(MPSDataKeys.CONTEXT_MODULE);
-    if (this.contextModule == null) {
+    MapSequence.fromMap(_params).put("contextModule", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("contextModule") == null) {
       return false;
     }
-    this.models = event.getData(MPSDataKeys.MODELS);
-    if (this.models == null) {
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    if (MapSequence.fromMap(_params).get("models") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final DeleteDialog dialog = new DeleteDialog(DeleteModels_Action.this.project, "Delete Models", "Are you sure you want to delete selected models?");
+      final DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Models", "Are you sure you want to delete selected models?");
       dialog.setOptions(false, true, true, false);
       dialog.show();
       if (!(dialog.isOK())) {
@@ -84,11 +80,11 @@ public class DeleteModels_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (SModelDescriptor model : ListSequence.fromList(DeleteModels_Action.this.models)) {
+          for (SModelDescriptor model : ListSequence.fromList(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")))) {
             if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
               continue;
             }
-            DeleteModelHelper.deleteModel(DeleteModels_Action.this.project, DeleteModels_Action.this.contextModule, model, dialog.isSafe(), dialog.isDeleteFiles());
+            DeleteModelHelper.deleteModel(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("contextModule")), model, dialog.isSafe(), dialog.isDeleteFiles());
           }
         }
       });

@@ -6,12 +6,14 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.util.List;
-import javax.swing.tree.TreeNode;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import java.util.List;
+import javax.swing.tree.TreeNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.ide.projectView.ProjectView;
@@ -20,9 +22,6 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 public class RemoveFromFavorites_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RemoveFromFavorites_Action.class);
-
-  private List<TreeNode> treeNodes;
-  private Project project;
 
   public RemoveFromFavorites_Action() {
     super("Remove from Favorites", "", ICON);
@@ -35,17 +34,17 @@ public class RemoveFromFavorites_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    if (RemoveFromFavorites_Action.this.treeNodes.isEmpty()) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")).isEmpty()) {
       return false;
     }
-    return FavoritesUtil.isActiveFavorites(RemoveFromFavorites_Action.this.project);
+    return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -56,29 +55,29 @@ public class RemoveFromFavorites_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.treeNodes = event.getData(MPSDataKeys.LOGICAL_VIEW_NODES);
-    if (this.treeNodes == null) {
+    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSDataKeys.LOGICAL_VIEW_NODES));
+    if (MapSequence.fromMap(_params).get("treeNodes") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<Object> objects = FavoritesUtil.getObjects(RemoveFromFavorites_Action.this.treeNodes);
-      MPSFavoritesManager favoritesManager = RemoveFromFavorites_Action.this.project.getComponent(MPSFavoritesManager.class);
+      List<Object> objects = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
+      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
       if (favoritesManager == null) {
         return;
       }
-      ProjectView projectView = ProjectView.getInstance(RemoveFromFavorites_Action.this.project);
+      ProjectView projectView = ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
       FavoritesProjectPane pane = (FavoritesProjectPane) projectView.getCurrentProjectViewPane();
       String name = pane.getSubId();
       favoritesManager.removeRoots(name, objects);

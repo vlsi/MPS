@@ -6,24 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SModelDescriptor;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import java.awt.Frame;
 import com.intellij.openapi.application.ModalityState;
 
 public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowDifferencesWithModelOnDisk_Action.class);
-
-  private SModelDescriptor modelDescriptor;
-  private Frame frame;
 
   public ShowDifferencesWithModelOnDisk_Action() {
     super("Show Differences with Model on Disk", "", ICON);
@@ -36,14 +35,14 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor instanceof EditableSModelDescriptor;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")) instanceof EditableSModelDescriptor;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -54,29 +53,29 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.modelDescriptor = event.getData(MPSDataKeys.MODEL);
-    if (this.modelDescriptor == null) {
+    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModel memory = ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getSModel();
-      final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor).getModelFile());
+      final SModel memory = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")).getSModel();
+      final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).getModelFile());
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           String[] titles = new String[]{"Disk", "Memory"};
-          new ModelDifferenceDialog(event.getRequiredData(MPSDataKeys.OPERATION_CONTEXT), ShowDifferencesWithModelOnDisk_Action.this.frame, disk, memory, "Model Difference", true, titles).showDialog();
+          new ModelDifferenceDialog(event.getRequiredData(MPSDataKeys.OPERATION_CONTEXT), ((Frame) MapSequence.fromMap(_params).get("frame")), disk, memory, "Model Difference", true, titles).showDialog();
         }
       }, ModalityState.NON_MODAL);
     } catch (Throwable t) {

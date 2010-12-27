@@ -5,10 +5,11 @@ package jetbrains.mps.lang.smodel.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
@@ -23,13 +24,11 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 
 public class CheckLangForJavaStubModels_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(CheckLangForJavaStubModels_Action.class);
-
-  private IModule module;
-  private Frame frame;
 
   public CheckLangForJavaStubModels_Action() {
     super("Check for java_stubs Usages", "", ICON);
@@ -42,14 +41,14 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return CheckLangForJavaStubModels_Action.this.module instanceof Language;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -58,24 +57,24 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Language language = ((Language) CheckLangForJavaStubModels_Action.this.module);
+      Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
       Set<String> langStubModels = SetSequence.fromSet(new HashSet<String>());
       Set<String> otherStubModels = SetSequence.fromSet(new HashSet<String>());
       for (EditableSModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
@@ -106,7 +105,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
         "No other stub models" :
         "Other stub models: \n" + otherStubsMsg
       ));
-      JOptionPane.showMessageDialog(CheckLangForJavaStubModels_Action.this.frame, message);
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), message);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CheckLangForJavaStubModels", t);
     }

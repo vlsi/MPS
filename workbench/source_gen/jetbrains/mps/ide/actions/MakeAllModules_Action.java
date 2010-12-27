@@ -8,9 +8,10 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.project.IModule;
@@ -19,12 +20,11 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.project.Project;
 
 public class MakeAllModules_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/compile.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(MakeAllModules_Action.class);
-
-  private Project project;
 
   public MakeAllModules_Action() {
     super("Make All", "", ICON);
@@ -37,7 +37,7 @@ public class MakeAllModules_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,18 +48,18 @@ public class MakeAllModules_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -67,7 +67,7 @@ public class MakeAllModules_Action extends GeneratedAction {
           SetSequence.fromSet(modules).addSequence(SetSequence.fromSet(SetSequence.fromSetWithValues(new LinkedHashSet<IModule>(), MPSModuleRepository.getInstance().getAllModules())));
         }
       });
-      ProgressManager.getInstance().run(new DefaultMakeTask(MakeAllModules_Action.this.project, "Making", modules, false));
+      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Making", modules, false));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MakeAllModules", t);

@@ -5,25 +5,22 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.SNode;
-import java.awt.Frame;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import java.awt.Frame;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 public class InlineLocalVariable_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
-
-  private EditorContext editorContext;
-  private SNode node;
-  private Frame frame;
-  private EditorComponent editorComponent;
 
   public InlineLocalVariable_Action() {
     super("Inline Local Variable", "", ICON);
@@ -36,20 +33,20 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.node);
+        result.value = InlineVariableRefactoring.isApplicable(((SNode) MapSequence.fromMap(_params).get("node")));
       }
     });
-    return result.value && !(InlineLocalVariable_Action.this.editorComponent.isReadOnly());
+    return result.value && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -58,49 +55,49 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<InlineVariableRefactoring> ref = new Wrappers._T<InlineVariableRefactoring>();
       boolean isAvailable;
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ref.value = InlineVariableRefactoring.createRefactoring(InlineLocalVariable_Action.this.node);
+          ref.value = InlineVariableRefactoring.createRefactoring(((SNode) MapSequence.fromMap(_params).get("node")));
         }
       });
-      isAvailable = ref.value.checkRefactoring(InlineLocalVariable_Action.this.frame);
+      isAvailable = ref.value.checkRefactoring(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (isAvailable) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             SNode result = ref.value.doRefactoring();
-            InlineLocalVariable_Action.this.editorContext.select(result);
+            ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(result);
           }
         });
       }

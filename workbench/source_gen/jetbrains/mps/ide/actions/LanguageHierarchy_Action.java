@@ -6,24 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
 import jetbrains.mps.workbench.languagesFs.MPSLanguagesVirtualFileSystem;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.workbench.editors.MPSLanguageEditor;
 
 public class LanguageHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(LanguageHierarchy_Action.class);
-
-  private Project project;
-  private IModule module;
 
   public LanguageHierarchy_Action() {
     super("Language Diagram", "", ICON);
@@ -36,14 +35,14 @@ public class LanguageHierarchy_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return LanguageHierarchy_Action.this.module instanceof Language;
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -54,26 +53,26 @@ public class LanguageHierarchy_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Language language = (Language) LanguageHierarchy_Action.this.module;
+      Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("module"));
       MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
-      FileEditorManager editorManager = FileEditorManager.getInstance(LanguageHierarchy_Action.this.project);
+      FileEditorManager editorManager = FileEditorManager.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
       FileEditor[] res = editorManager.openFile(file, true);
       MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
       languageEditor.getComponent().requestFocus();

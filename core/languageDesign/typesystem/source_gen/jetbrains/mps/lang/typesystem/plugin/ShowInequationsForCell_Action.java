@@ -5,19 +5,19 @@ package jetbrains.mps.lang.typesystem.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import javax.swing.JOptionPane;
 
 public class ShowInequationsForCell_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowInequationsForCell_Action.class);
-
-  private EditorCell selectedCell;
 
   public ShowInequationsForCell_Action() {
     super("Show Inequalities for Cell", "", ICON);
@@ -30,7 +30,7 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
     return "";
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -39,21 +39,21 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.selectedCell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.selectedCell == null) {
+    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("selectedCell") == null) {
       return false;
     }
     return true;
   }
 
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NodeSubstituteInfo substituteInfo = ShowInequationsForCell_Action.this.selectedCell.getSubstituteInfo();
-      InequationSystem inequationSystem = substituteInfo.getInequationSystem(ShowInequationsForCell_Action.this.selectedCell);
+      NodeSubstituteInfo substituteInfo = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getSubstituteInfo();
+      InequationSystem inequationSystem = substituteInfo.getInequationSystem(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")));
       if (inequationSystem == null) {
         JOptionPane.showMessageDialog(null, "no inequation system");
       } else {
