@@ -17,6 +17,8 @@ package jetbrains.mps.ide.refactoring;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
@@ -28,6 +30,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.KeyStroke;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +41,16 @@ public class GenericRefactoringAction extends BaseAction {
   public GenericRefactoringAction(IRefactoring refactoring) {
     super("".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
     myRefactoring = refactoring;
+
+    String keyStroke = myRefactoring.getKeyStroke();
+    if (keyStroke != null && keyStroke.length() != 0) {
+      KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+      KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+    }
+
     setExecuteOutsideCommand(true);
     setIsAlwaysVisible(false);
   }
-
 
   protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -82,11 +91,6 @@ public class GenericRefactoringAction extends BaseAction {
     res.append("#");
     res.append(getRefactoringClassName(myRefactoring));
     return res.toString();
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return myRefactoring.getKeyStroke();
   }
 
   private static String getRefactoringClassName(IRefactoring refactoring) {

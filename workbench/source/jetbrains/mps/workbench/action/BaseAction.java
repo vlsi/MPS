@@ -46,25 +46,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
 
   public BaseAction(String text, String description, Icon icon) {
     super(text, description, icon);
-    updateShortcuts();
-  }
-
-  /**
-   * Is caslled only by ancestors if getShortcut depends on constructor parameters
-   */
-  protected void updateShortcuts() {
     setEnabledInModalContext(false);
-    setShortcutSet(new ShortcutSet() {
-      public Shortcut[] getShortcuts() {
-        KeyStroke keyStroke = KeyStroke.getKeyStroke(getKeyStroke());
-        if (keyStroke != null) {
-          KeyboardShortcut keyboardShortcut = new KeyboardShortcut(keyStroke, null);
-          return new Shortcut[]{keyboardShortcut};
-        } else {
-          return new Shortcut[0];
-        }
-      }
-    });
   }
 
   public void setExecuteOutsideCommand(boolean executeOutsideCommand) {
