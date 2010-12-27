@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="PersistentOptions_PreferencesComponent.java" startLine="50" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent$MyState" />
-  <unitInfo fileName="XWin_KeymapChanges.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ide.actions.XWin_KeymapChanges" />
   <unitInfo fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup" />
   <unitInfo fileName="PackageNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.PackageNewActions_ActionGroup" />
   <unitInfo fileName="JUnitTestMethodActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup" />
   <unitInfo fileName="JUnitTestCaseActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup" />
   <unitInfo fileName="ModelActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
   <unitInfo fileName="NodeActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
-  <unitInfo fileName="Default_KeymapChanges.java" startLine="7" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
   <unitInfo fileName="SaveTransientModels_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.SaveTransientModels_ActionGroup" />
   <unitInfo fileName="CreateRootNode_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
+  <unitInfo fileName="XWin_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.actions.XWin_KeymapChanges" />
   <unitInfo fileName="Ide_PluginInitializer.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_PluginInitializer" />
   <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
+  <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
   <unitInfo fileName="NamespaceActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceActions_ActionGroup" />
   <unitInfo fileName="ModuleActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleActions_ActionGroup" />
   <unitInfo fileName="FolderActions_ActionGroup.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.FolderActions_ActionGroup" />
@@ -28,7 +28,6 @@
   <unitInfo fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageNewCustomPartActions_ActionGroup" />
   <unitInfo fileName="Code_ActionGroup.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.actions.Code_ActionGroup" />
   <unitInfo fileName="NodeExplorer_Tool.java" startLine="20" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ide.actions.NodeExplorer_Tool" />
-  <unitInfo fileName="Mac_KeymapChanges.java" startLine="7" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
   <unitInfo fileName="FavoritesPopup_ActionGroup.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.actions.FavoritesPopup_ActionGroup" />
   <unitInfo fileName="ModelRepository_Tool.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelRepository_Tool" />
   <unitInfo fileName="FileSystemNewActions_ActionGroup.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.actions.FileSystemNewActions_ActionGroup" />
@@ -39,6 +38,7 @@
   <unitInfo fileName="GenerateModule_ActionGroup.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModule_ActionGroup" />
   <unitInfo fileName="ModuleRepository_Tool.java" startLine="19" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleRepository_Tool" />
   <unitInfo fileName="FavoritesPopupWrapper_ActionGroup.java" startLine="22" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup" />
+  <unitInfo fileName="Mac_KeymapChanges.java" startLine="10" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
   <unitInfo fileName="ModelNewActions_ActionGroup.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelNewActions_ActionGroup" />
   <unitInfo fileName="PackageActions_ActionGroup.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ide.actions.PackageActions_ActionGroup" />
   <unitInfo fileName="DumpKeyStrokes_Action.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ide.actions.DumpKeyStrokes_Action" />

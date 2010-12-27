@@ -1101,7 +1101,7 @@
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MacroIntentionsUtil.java" startLine="149" startPosition="13" endLine="150" endPosition="50" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MacroIntentionsUtil.java" startLine="150" startPosition="50" endLine="151" endPosition="73" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MacroIntentionsUtil.java" startLine="152" startPosition="128" endLine="153" endPosition="29" />
-    <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MacroIntentionsUtil.java" startLine="154" startPosition="15" endLine="155" endPosition="93" />
+    <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MacroIntentionsUtil.java" startLine="154" startPosition="15" endLine="155" endPosition="93" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MacroIntentionsUtil.java" startLine="159" startPosition="7" endLine="160" endPosition="18" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MacroIntentionsUtil.java" startLine="163" startPosition="40" endLine="164" endPosition="19" />
     <nodeInfo nodeId="1980960612890491907" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MacroIntentionsUtil.java" startLine="168" startPosition="69" endLine="169" endPosition="86" />
