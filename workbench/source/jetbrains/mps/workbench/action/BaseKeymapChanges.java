@@ -34,11 +34,13 @@ public abstract class BaseKeymapChanges {
   private Keymap myKeymap;
 
   private Map<String, Set<Shortcut>> mySimpleShortcuts = new THashMap<String, Set<Shortcut>>();
-  private THashMap<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<String, Set<ComplexShortcut>>();
+  private Map<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<String, Set<ComplexShortcut>>();
+
+  private Map<String,Set<Shortcut>> myAddedComplexShortcuts = new THashMap<String, Set<Shortcut>>();
 
   //todo transform into event
   //shortId is an id w/o parameter ids
-  public void parameterizedActionCreated(String shortId, Object ... params){
+  public void parameterizedActionCreated(String shortId, String longId, Object ... params){
     Keymap keymap = getKeymap();
     if (keymap==null) return;
 
@@ -47,7 +49,14 @@ public abstract class BaseKeymapChanges {
 
     for (ComplexShortcut cs:complexShortcuts){
       for (Shortcut s: cs.getShortcutsFor(shortId, params)){
-        keymap.addShortcut(shortId,s);
+        keymap.addShortcut(longId,s);
+
+        Set<Shortcut> added = myAddedComplexShortcuts.get(longId);
+        if (added==null){
+          added = new THashSet<Shortcut>();
+          myAddedComplexShortcuts.put(longId,added);
+        }
+        added.add(s);
       }
     }
   }
@@ -68,6 +77,15 @@ public abstract class BaseKeymapChanges {
     Keymap keymap = getKeymap();
     if (keymap==null) return;
 
+    //complex
+    for (Entry<String,Set<Shortcut>> e: myAddedComplexShortcuts.entrySet()){
+      String key = e.getKey();
+      for (Shortcut s : e.getValue()) {
+        keymap.removeShortcut(key, s);
+      }
+    }
+
+    //simple
     for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
       String key = e.getKey();
       for (Shortcut s : e.getValue()) {
@@ -76,22 +94,22 @@ public abstract class BaseKeymapChanges {
     }
   }
 
-  protected void addSimpleShortcut(String id, Shortcut s) {
+  protected void addSimpleShortcut(String id, Shortcut ... s) {
     Set<Shortcut> shortcuts = mySimpleShortcuts.get(id);
     if (shortcuts == null) {
       shortcuts = new THashSet<Shortcut>();
       mySimpleShortcuts.put(id, shortcuts);
     }
-    shortcuts.add(s);
+    shortcuts.addAll(Arrays.asList(s));
   }
 
-  protected void addComplexShortcut(String id, ComplexShortcut s) {
+  protected void addComplexShortcut(String id, ComplexShortcut ... s) {
     Set<ComplexShortcut> shortcuts = myComplexShortcuts.get(id);
     if (shortcuts == null) {
       shortcuts = new THashSet<ComplexShortcut>();
       myComplexShortcuts.put(id, shortcuts);
     }
-    shortcuts.add(s);
+    shortcuts.addAll(Arrays.asList(s));
   }
 
   private Keymap getKeymap(){
@@ -105,8 +123,8 @@ public abstract class BaseKeymapChanges {
     return myKeymap;
   }
 
-  private static abstract class ComplexShortcut{
-    public abstract List<Shortcut> getShortcutsFor(String id, Object ... params);
+  protected static abstract class ComplexShortcut{
+    public abstract List<Shortcut> getShortcutsFor(Object ... params);
   }
 
 
