@@ -285,6 +285,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.ModelUtils" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -293,7 +294,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeSetBuilder" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="javax.swing.Icon" />

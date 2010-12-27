@@ -227,7 +227,6 @@ public abstract class DiffEditorComponent extends EditorComponent {
   public void editNode(final SNode node, IOperationContext operationContext) {
     super.editNode(node, operationContext);
     setReadOnly(ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
       public Boolean compute() {
         return node != null && node.getModel().isNotEditable();
       }

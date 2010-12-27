@@ -25,7 +25,6 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="java.awt.Graphics2D" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -140,7 +139,7 @@
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
@@ -154,7 +153,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -192,6 +190,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.smodel.SModelTreeNode" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
+    <classNode extendsClassName="jetbrains.mps.util.Condition" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ModelDiffTool" file="ModelDiffTool.java">
     <classNode dependClassName="javax.swing.JFrame" />

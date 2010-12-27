@@ -201,7 +201,6 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myOldEditorComponent.removeAllChanges();
     final List<Change> revertChanges = new DiffBuilder(myNewModel, myOldModel).getChanges();
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
-      @Override
       public void run() {
         applySafeMoves(revertChanges);
         myNewEditorComponent.hightlight(revertChanges, true, true);

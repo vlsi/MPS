@@ -68,7 +68,7 @@ import jetbrains.mps.ide.projectPane.Icons;
   private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myDeletedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myChangedSubtree = new HashSet<SNodeId>();
-  private Map<SNodeId, List<Change>> myChangesMap = new HashMap();
+  private Map<SNodeId, List<Change>> myChangesMap = new HashMap<SNodeId, List<Change>>();
   private Set<SNodeId> myExcludetNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myConflicts = new HashSet<SNodeId>();
   private List<Change> myChanges;
@@ -248,11 +248,7 @@ import jetbrains.mps.ide.projectPane.Icons;
     private SModel myModel;
 
     public MySModelTreeNode(SModel model, String label, @NotNull IOperationContext operationContext) {
-      super(null, label, operationContext, new Condition<SNode>() {
-        public boolean met(SNode object) {
-          return myChangedSubtree.contains(object.getSNodeId());
-        }
-      });
+      super(null, label, operationContext, new ModelChangesTree.MyCondition(myChangedNodes));
       myModel = model;
     }
 
@@ -358,6 +354,18 @@ import jetbrains.mps.ide.projectPane.Icons;
     }
   }
 
+  private static class MyCondition implements Condition<SNode> {
+    private Set<SNodeId> myNodeSet;
+
+    public MyCondition(Set<SNodeId> set) {
+      myNodeSet = set;
+    }
+
+    public boolean met(SNode node) {
+      return myNodeSet.contains(node);
+    }
+  }
+
   private class MySNodeTreeNode extends SNodeTreeNode {
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
       super(node, role, operationContext, condition);
@@ -452,7 +460,6 @@ import jetbrains.mps.ide.projectPane.Icons;
           @Override
           protected void doUpdate(final AnActionEvent e) {
             ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
               public void run() {
                 boolean enabled = !(node.getModel().isNotEditable());
                 e.getPresentation().setEnabled(enabled);

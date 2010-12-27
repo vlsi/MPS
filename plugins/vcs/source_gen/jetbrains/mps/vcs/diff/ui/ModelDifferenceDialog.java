@@ -33,7 +33,6 @@ public class ModelDifferenceDialog extends BaseDialog {
           @Override
           protected void doubleClickOnNode(final SNode node) {
             final SNode rootNode = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-              @Override
               public SNode compute() {
                 return node.getContainingRoot();
               }

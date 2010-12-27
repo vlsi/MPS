@@ -123,7 +123,6 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     for (final Project project : toMerge.keySet()) {
       final List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        @Override
         public void run() {
           virtualFileList.addAll(AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project)));
         }

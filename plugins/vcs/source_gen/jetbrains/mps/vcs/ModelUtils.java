@@ -104,7 +104,6 @@ public class ModelUtils {
         file = new File(prefix + v.getSuffix());
       } else {
         File[] files = tmpdir.listFiles(new FilenameFilter() {
-          @Override
           public boolean accept(File dir, String name) {
             return name.endsWith(v.getSuffix());
           }
@@ -176,7 +175,6 @@ public class ModelUtils {
       }
       final Ref<IOException> ex = new Ref<IOException>();
       SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        @Override
         public SModel compute() {
           try {
             return ModelPersistence.readModel(ModelPersistence.getPersistenceVersion(inputSourceFactory.create()), inputSourceFactory.create(), modelName, modelStereotype);
