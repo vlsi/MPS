@@ -17,6 +17,7 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.script.IJob;
@@ -123,7 +124,15 @@ public class Script implements IScript {
     mons.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
       public void invoke(IJobMonitor monit) {
         String scriptName = "Script";
-        monit.currentProgress().beginWork(scriptName, Sequence.fromIterable(toExecute).count(), monit.currentProgress().workLeft());
+        int work = Sequence.fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {
+          public Integer combine(Integer s, ITarget it) {
+            return s + ((it.requiresInput() || it.producesOutput() ?
+              1000 :
+              10
+            ));
+          }
+        });
+        monit.currentProgress().beginWork(scriptName, work, monit.currentProgress().workLeft());
         for (ITarget trg : Sequence.fromIterable(toExecute)) {
           LOG.debug("Executing " + trg.getName());
           Iterable<ITarget> impre = targetRange.immediatePrecursors(trg.getName());
@@ -148,7 +157,10 @@ public class Script implements IScript {
             }
             // TODO: check for appropriate input class 
           }
-          monit.currentProgress().beginWork(trg.getName().toString(), 100, 1);
+          monit.currentProgress().beginWork(trg.getName().toString(), 1000, (trg.requiresInput() || trg.producesOutput() ?
+            1000 :
+            10
+          ));
           IJob job = trg.createJob();
           // TODO: catch possible errors 
           IResult jr = job.execute(input, monit, pool);
@@ -168,7 +180,7 @@ public class Script implements IScript {
             return;
           }
           monit.currentProgress().finishWork(trg.getName().toString());
-          monit.currentProgress().advanceWork(scriptName, 1);
+          // <node> 
         }
         monit.currentProgress().finishWork(scriptName);
       }

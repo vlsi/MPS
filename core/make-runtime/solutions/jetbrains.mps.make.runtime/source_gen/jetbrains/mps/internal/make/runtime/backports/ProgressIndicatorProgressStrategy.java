@@ -6,10 +6,12 @@ import jetbrains.mps.internal.make.runtime.script.AbstractProgressStrategy;
 import com.intellij.openapi.progress.ProgressIndicator;
 
 public class ProgressIndicatorProgressStrategy extends AbstractProgressStrategy {
+  private static final String TOTAL = "__TOTAL__";
+
   private ProgressIndicator pind;
 
   public ProgressIndicatorProgressStrategy() {
-    super("FOO");
+    super(TOTAL);
   }
 
   public void setProgressIndicator(ProgressIndicator pi) {
@@ -27,7 +29,7 @@ public class ProgressIndicatorProgressStrategy extends AbstractProgressStrategy 
   }
 
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {
-    pind.setFraction(wrk.doneRatio());
+    pind.setFraction(wrk.matchingOrTotal(TOTAL).doneRatio());
     pind.setText2((wrk.comment() != null ?
       wrk.comment() :
       ""

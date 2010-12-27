@@ -13,9 +13,8 @@ public abstract class AbstractProgressStrategy {
   private IProgress current;
 
   public AbstractProgressStrategy(String total) {
-    this.last = new AbstractProgressStrategy.Work(null, total, Integer.MAX_VALUE, Integer.MAX_VALUE);
+    this.last = new AbstractProgressStrategy.Work(null, total, 1000, 1000);
     this.current = new AbstractProgressStrategy.CurrentProgress();
-
   }
 
   protected AbstractProgressStrategy.Work pushProgress(String name, int estimate, int total) {
@@ -43,7 +42,7 @@ public abstract class AbstractProgressStrategy {
     return current;
   }
 
-  private static boolean eq_idfyc1_a0a0b0m0(Object a, Object b) {
+  private static boolean eq_idfyc1_a0a0b0k0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -88,6 +87,7 @@ public abstract class AbstractProgressStrategy {
 
     public void finishWork(String name) {
       AbstractProgressStrategy.Work wrk = matchingOrTotal(name);
+      wrk.primDone(wrk.workLeft(), null);
       finishedWork(wrk);
       popProgress(wrk);
     }
@@ -118,6 +118,17 @@ public abstract class AbstractProgressStrategy {
       return comment;
     }
 
+    public AbstractProgressStrategy.Work matchingOrTotal(String name) {
+      AbstractProgressStrategy.Work wrk = this;
+      while (wrk.prev != null) {
+        if (eq_idfyc1_a0a0b0k0(wrk.name, name)) {
+          return wrk;
+        }
+        wrk = wrk.prev;
+      }
+      return wrk;
+    }
+
     private List<String> namePath() {
       List<String> names = ListSequence.fromList(new ArrayList<String>());
       AbstractProgressStrategy.Work wrk = this;
@@ -137,17 +148,6 @@ public abstract class AbstractProgressStrategy {
         }
       }
       advancedWork(this);
-    }
-
-    private AbstractProgressStrategy.Work matchingOrTotal(String name) {
-      AbstractProgressStrategy.Work wrk = this;
-      while (wrk.prev != null) {
-        if (eq_idfyc1_a0a0b0m0(wrk.name, name)) {
-          return wrk;
-        }
-        wrk = wrk.prev;
-      }
-      return wrk;
     }
   }
 

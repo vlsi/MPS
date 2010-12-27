@@ -13,6 +13,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IParametersPool;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
@@ -66,6 +67,15 @@ public class JavaCompile_Facet implements IFacet {
           Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
+              int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
+                public Integer combine(Integer s, IResource it) {
+                  return s + ((((TResource) it).module().isCompileInMPS() ?
+                    100 :
+                    0
+                  ));
+                }
+              });
+              monitor.currentProgress().beginWork("Compiling...", work, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
                 TResource tres = new TResource().assignFrom((TResource) resource);
                 if (tres.module() == null) {
@@ -89,11 +99,12 @@ public class JavaCompile_Facet implements IFacet {
                   }
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
-
+                monitor.currentProgress().advanceWork("Compiling...", 100);
                 if (tres.module().reloadClassesAfterGeneration()) {
                   _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               }
+              monitor.currentProgress().finishWork("Compiling...");
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0a);
           }
@@ -154,6 +165,16 @@ public class JavaCompile_Facet implements IFacet {
           Iterable<IResource> _output_wf1ya0_a0b = null;
           switch (0) {
             case 0:
+              int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
+                public Integer combine(Integer s, IResource it) {
+                  return s + ((((TResource) it).module().isCompileInMPS() ?
+                    0 :
+                    100
+                  ));
+                }
+              });
+              monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA...", work, monitor.currentProgress().workLeft());
+
               boolean refreshed = false;
               for (IResource resource : Sequence.fromIterable(input)) {
                 TResource tres = new TResource().assignFrom((TResource) resource);
@@ -190,11 +211,12 @@ public class JavaCompile_Facet implements IFacet {
                   }
                   return new IResult.FAILURE(_output_wf1ya0_a0b);
                 }
-
+                monitor.currentProgress().advanceWork("Compiling in IntelliJ IDEA...", 100);
                 if (tres.module().reloadClassesAfterGeneration()) {
                   _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               }
+              monitor.currentProgress().finishWork("Compiling in IntelliJ IDEA...");
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0b);
           }

@@ -418,14 +418,14 @@ public class Generate_Facet implements IFacet {
 
               GenerationHandler gh = new GenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
-                  monitor.currentProgress().advanceWork("Generation", 1);
+                  monitor.currentProgress().advanceWork("Generation", 1000);
                   _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                   return true;
                 }
               });
               monitor.currentProgress().beginWork("Generation", Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
-                  return s + Sequence.fromIterable(((MResource) it).models()).count();
+                  return s + Sequence.fromIterable(((MResource) it).models()).count() * 1000;
                 }
               }), monitor.currentProgress().workLeft());
               generationOk = gm.generateModels(Sequence.fromIterable(input).<SModelDescriptor>translate(new ITranslator2<IResource, SModelDescriptor>() {
