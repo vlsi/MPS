@@ -19,19 +19,20 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.Anchor;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.workbench.action.MPSActions;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 
 public abstract class BaseApplicationPlugin {
+  private ActionManagerEx myActionManager = ActionManagerEx.getInstanceEx();
+
   private List<BaseCustomApplicationPlugin> myCustomParts;
   private List<BaseGroup> myGroups = new ArrayList<BaseGroup>();
   private List<BaseKeymapChanges> myKeymapChanges = new ArrayList<BaseKeymapChanges>();
@@ -40,7 +41,21 @@ public abstract class BaseApplicationPlugin {
 
   }
 
-  protected void addGroup(BaseGroup group){
+  protected void addParameterizedAction(GeneratedAction action, Object... params) {
+    addAction(action);
+
+    String shortId = action.getClass().getName();
+    for (BaseKeymapChanges kc : myKeymapChanges) {
+      kc.parameterizedActionCreated(shortId, action.getActionId(), params);
+    }
+  }
+
+  protected void addAction(GeneratedAction action) {
+    myActionManager.registerAction(action.getActionId(), action, getId());
+  }
+
+  protected void addGroup(BaseGroup group) {
+    myActionManager.registerAction(group.getId(), group, getId());
     myGroups.add(group);
   }
 
@@ -53,7 +68,7 @@ public abstract class BaseApplicationPlugin {
 
   }
 
-  public void adjustRegularGroups(){
+  public void adjustRegularGroups() {
 
   }
 
@@ -67,7 +82,7 @@ public abstract class BaseApplicationPlugin {
 
   public void createKeymaps() {
     myKeymapChanges = initKeymaps();
-    for (BaseKeymapChanges change:myKeymapChanges){
+    for (BaseKeymapChanges change : myKeymapChanges) {
       change.init();
     }
   }
@@ -80,10 +95,10 @@ public abstract class BaseApplicationPlugin {
     //groups are disposed in ActionFactory
     //keymaps are unregistered in ActionFactory
     for (BaseCustomApplicationPlugin part : myCustomParts) {
-      part.dispose ();
+      part.dispose();
     }
 
-    for (BaseKeymapChanges change:myKeymapChanges){
+    for (BaseKeymapChanges change : myKeymapChanges) {
       change.dispose();
     }
     myKeymapChanges.clear();
@@ -108,7 +123,7 @@ public abstract class BaseApplicationPlugin {
   }
 
   protected void insertGroupIntoAnother(String toId, String whatId, String labelName) {
-    insertInterfaceGroupIntoAnother(toId,whatId,labelName);
+    insertInterfaceGroupIntoAnother(toId, whatId, labelName);
     //todo with this method, we can use Idea's ActionStubs
   }
 

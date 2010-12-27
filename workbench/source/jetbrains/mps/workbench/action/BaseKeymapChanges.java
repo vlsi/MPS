@@ -40,7 +40,6 @@ public abstract class BaseKeymapChanges {
 
   public abstract String getScheme();
 
-  //todo transform into event
   //shortId is an id w/o parameter ids
   public void parameterizedActionCreated(String shortId, String longId, Object... params) {
     Keymap keymap = getKeymap();
