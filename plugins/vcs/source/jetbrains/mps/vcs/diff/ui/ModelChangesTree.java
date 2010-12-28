@@ -18,6 +18,8 @@ package jetbrains.mps.vcs.diff.ui;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vcs.FileStatus;
@@ -437,10 +439,10 @@ class ModelChangesTree extends MPSTree {
       final SNode node = getSNode();
       if (node != null) {
         BaseAction showRootDiffDialog = new BaseAction("Show Difference In MPS Editor") {
-          @NotNull
-          @Override
-          protected String getKeyStroke() {
-            return "ctrl D";
+          {
+            String keyStroke = "ctrl D";
+            KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+            KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
           }
 
           @Override
@@ -451,6 +453,12 @@ class ModelChangesTree extends MPSTree {
         showRootDiffDialog.setExecuteOutsideCommand(true);
 
         BaseAction showNodeInEditor = new BaseAction("Open in Editor") {
+          {
+            String keyStroke = "F4";
+            KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+            KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+          }
+
           @Override
           protected void doUpdate(final AnActionEvent e, Map<String, Object> _params) {
             ModelAccess.instance().runReadAction(new Runnable() {
@@ -461,12 +469,6 @@ class ModelChangesTree extends MPSTree {
                 e.getPresentation().setVisible(enabled);
               }
             });
-          }
-
-          @NotNull
-          @Override
-          protected String getKeyStroke() {
-            return "F4";
           }
 
           @Override

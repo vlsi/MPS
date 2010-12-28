@@ -162,15 +162,4 @@ public abstract class BaseAction extends AnAction implements DumbAware {
   }
 
   protected abstract void doExecute(AnActionEvent e, Map<String, Object> params) ;
-
-//-----------------deprecated
-
-  @Deprecated //make final
-  @NotNull
-  protected String getKeyStroke() {
-    return "";
-  }
-
-
-
 }
