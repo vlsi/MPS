@@ -6,12 +6,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AnnotationInstance_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     if (SLinkOperations.getTarget(_context.getLink(), "target", false) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       return true;
     }
-    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "value");
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null);
   }
 }
