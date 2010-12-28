@@ -8,76 +8,76 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debug.privateMembers)" />
-  <import index="vhgx" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="qsdy" modelUID="f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" version="-1" />
-  <import index="yjwb" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="yvor" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
-  <import index="yvnu" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="a9e8" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" implicit="yes" />
-  <import index="i783" modelUID="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debug.privateMembers.structure)" version="-1" implicit="yes" />
-  <import index="8pw4" modelUID="r:d881cf0e-8140-4fc2-a2c4-7677643f9693(jetbrains.mps.baseLanguage.tuples.plugin)" version="-1" implicit="yes" />
+  <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="diss" modelUID="f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)" version="-1" />
+  <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
+  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="kisg" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" implicit="yes" />
+  <import index="wch2" modelUID="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debug.privateMembers.structure)" version="-1" implicit="yes" />
+  <import index="ddt4" modelUID="r:d881cf0e-8140-4fc2-a2c4-7677643f9693(jetbrains.mps.baseLanguage.tuples.plugin)" version="-1" implicit="yes" />
   <roots>
-    <node type="a9e8.CustomWatchablesContainer" typeId="a9e8.5117350825036256317:0" id="4712912993948287708">
-      <property name="name" nameId="yvnu.1169194664001:0" value="TuplesWatchables" />
+    <node type="kisg.CustomWatchablesContainer" typeId="kisg.5117350825036256317" id="4712912993948287708">
+      <property name="name" nameId="tpck.1169194664001" value="TuplesWatchables" />
     </node>
-    <node type="a9e8.HighLevelCustomViewer" typeId="a9e8.680105146889009728:0" id="2603491487853694400">
-      <property name="name" nameId="yvnu.1169194664001:0" value="IndexedTupleViewer" />
+    <node type="kisg.HighLevelCustomViewer" typeId="kisg.680105146889009728" id="2603491487853694400">
+      <property name="name" nameId="tpck.1169194664001" value="IndexedTupleViewer" />
     </node>
   </roots>
   <root id="4712912993948287708">
-    <node role="watchable" roleId="a9e8.5117350825036256318:0" type="a9e8.CustomWatchable" typeId="a9e8.5117350825036234483:0" id="4712912993948287846">
-      <property name="name" nameId="yvnu.1169194664001:0" value="element" />
+    <node role="watchable" roleId="kisg.5117350825036256318" type="kisg.CustomWatchable" typeId="kisg.5117350825036234483" id="4712912993948287846">
+      <property name="name" nameId="tpck.1169194664001" value="element" />
     </node>
   </root>
   <root id="2603491487853694400">
-    <node role="valueType" roleId="a9e8.43370322128256026:0" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="2603491487853713629">
-      <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="qsdy.~MultiTuple" resolveInfo="MultiTuple" />
+    <node role="valueType" roleId="kisg.43370322128256026" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2603491487853713629">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="diss.~MultiTuple" resolveInfo="MultiTuple" />
     </node>
-    <node role="getWatchables" roleId="a9e8.43370322128194611:0" type="a9e8.GetHighLevelWatchablesBlock_ConceptFunction" typeId="a9e8.43370322128194518:0" id="2603491487853694402">
-      <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2603491487853694403">
-        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="2603491487853715548">
-          <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="2603491487853715549">
-            <property name="name" nameId="yvnu.1169194664001:0" value="result" />
-            <node role="type" roleId="yvor.5680397130376446158:3" type="a9e8.WatchableListType" typeId="a9e8.1842653058274900915:0" id="2603491487853715550" />
-            <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="2603491487853715552">
-              <node role="creator" roleId="yvor.1145553007750:3" type="a9e8.WatchablesListCreator" typeId="a9e8.1842653058274900914:0" id="2603491487853746840" />
+    <node role="getWatchables" roleId="kisg.43370322128194611" type="kisg.GetHighLevelWatchablesBlock_ConceptFunction" typeId="kisg.43370322128194518" id="2603491487853694402">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2603491487853694403">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2603491487853715548">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2603491487853715549">
+            <property name="name" nameId="tpck.1169194664001" value="result" />
+            <node role="type" roleId="tpee.5680397130376446158" type="kisg.WatchableListType" typeId="kisg.1842653058274900915" id="2603491487853715550" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2603491487853715552">
+              <node role="creator" roleId="tpee.1145553007750" type="kisg.WatchablesListCreator" typeId="kisg.1842653058274900914" id="2603491487853746840" />
             </node>
           </node>
         </node>
-        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.LocalVariableDeclarationStatement" typeId="yvor.1068581242864:3" id="1900095324287480901">
-          <node role="localVariableDeclaration" roleId="yvor.1068581242865:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="1900095324287480902">
-            <property name="name" nameId="yvnu.1169194664001:0" value="values" />
-            <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.ArrayType" typeId="yvor.1070534760951:3" id="1900095324287480903">
-              <node role="componentType" roleId="yvor.1070534760952:3" type="yvor.ClassifierType" typeId="yvor.1107535904670:3" id="1900095324287480904">
-                <link role="classifier" roleId="yvor.1107535924139:3" targetNodeId="vhgx.~Object" resolveInfo="Object" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1900095324287480901">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1900095324287480902">
+            <property name="name" nameId="tpck.1169194664001" value="values" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1900095324287480903">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1900095324287480904">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Object" resolveInfo="Object" />
               </node>
             </node>
-            <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="1900095324287480905">
-              <node role="operand" roleId="yvor.1197027771414:3" type="a9e8.HighLevelValue_ConceptFunctionParameter" typeId="a9e8.43370322128272301:0" id="1900095324287480906" />
-              <node role="operation" roleId="yvor.1197027833540:3" type="i783.PrivateFieldReferenceOperation" typeId="i783.6825241477451043705" id="1900095324287480907">
-                <link role="fieldDeclaration" roleId="yvor.1197029500499:3" targetNodeId="qsdy.~MultiTuple%dvalues" resolveInfo="values" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1900095324287480905">
+              <node role="operand" roleId="tpee.1197027771414" type="kisg.HighLevelValue_ConceptFunctionParameter" typeId="kisg.43370322128272301" id="1900095324287480906" />
+              <node role="operation" roleId="tpee.1197027833540" type="wch2.PrivateFieldReferenceOperation" typeId="wch2.6825241477451043705" id="1900095324287480907">
+                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="diss.~MultiTuple%dvalues" resolveInfo="values" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ForStatement" typeId="yvor.1144231330558:3" id="5639218245806441386">
-          <node role="body" roleId="yvor.1154032183016:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="5639218245806441387">
-            <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="5639218245806442360">
-              <node role="expression" roleId="yvor.1068580123156:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5639218245806442362">
-                <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5639218245806442361">
-                  <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="2603491487853715549" resolveInfo="result" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ForStatement" typeId="tpee.1144231330558" id="5639218245806441386">
+          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5639218245806441387">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5639218245806442360">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5639218245806442362">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5639218245806442361">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2603491487853715549" resolveInfo="result" />
                 </node>
-                <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="5639218245806442366">
-                  <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="yjwb.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="yvor.1068499141038:3" type="yvor.GenericNewExpression" typeId="yvor.1145552977093:3" id="5639218245806442367">
-                    <node role="creator" roleId="yvor.1145553007750:3" type="a9e8.HighLevelWatchableCreator" typeId="a9e8.43370322128285902:0" id="5639218245806442369">
-                      <link role="watchable" roleId="a9e8.43370322128310821:0" targetNodeId="4712912993948287846" resolveInfo="element" />
-                      <node role="value" roleId="a9e8.43370322128311163:0" type="yvor.ArrayAccessExpression" typeId="yvor.1173175405605:3" id="5639218245806442372">
-                        <node role="index" roleId="yvor.1173175577737:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5639218245806442375">
-                          <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5639218245806441389" resolveInfo="i" />
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5639218245806442366">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t1ti.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5639218245806442367">
+                    <node role="creator" roleId="tpee.1145553007750" type="kisg.HighLevelWatchableCreator" typeId="kisg.43370322128285902" id="5639218245806442369">
+                      <link role="watchable" roleId="kisg.43370322128310821" targetNodeId="4712912993948287846" resolveInfo="element" />
+                      <node role="value" roleId="kisg.43370322128311163" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="5639218245806442372">
+                        <node role="index" roleId="tpee.1173175577737" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5639218245806442375">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5639218245806441389" resolveInfo="i" />
                         </node>
-                        <node role="array" roleId="yvor.1173175590490:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5639218245806442371">
-                          <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="1900095324287480902" resolveInfo="values" />
+                        <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5639218245806442371">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1900095324287480902" resolveInfo="values" />
                         </node>
                       </node>
                     </node>
@@ -86,48 +86,48 @@
               </node>
             </node>
           </node>
-          <node role="variable" roleId="yvor.1144230900587:3" type="yvor.LocalVariableDeclaration" typeId="yvor.1068581242863:3" id="5639218245806441389">
-            <property name="name" nameId="yvnu.1169194664001:0" value="i" />
-            <node role="type" roleId="yvor.5680397130376446158:3" type="yvor.IntegerType" typeId="yvor.1070534370425:3" id="5639218245806441390" />
-            <node role="initializer" roleId="yvor.1068431790190:3" type="yvor.IntegerConstant" typeId="yvor.1068580320020:3" id="5639218245806441392">
-              <property name="value" nameId="yvor.1068580320021:3" value="0" />
+          <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5639218245806441389">
+            <property name="name" nameId="tpck.1169194664001" value="i" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5639218245806441390" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5639218245806441392">
+              <property name="value" nameId="tpee.1068580320021" value="0" />
             </node>
           </node>
-          <node role="condition" roleId="yvor.1144231399730:3" type="yvor.LessThanExpression" typeId="yvor.1081506773034:3" id="5639218245806441394">
-            <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="5639218245806441398">
-              <node role="operand" roleId="yvor.1197027771414:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5639218245806441397">
-                <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="1900095324287480902" resolveInfo="values" />
+          <node role="condition" roleId="tpee.1144231399730" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="5639218245806441394">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5639218245806441398">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5639218245806441397">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1900095324287480902" resolveInfo="values" />
               </node>
-              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.ArrayLengthOperation" typeId="yvor.1208890769693:3" id="5639218245806442356" />
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.ArrayLengthOperation" typeId="tpee.1208890769693" id="5639218245806442356" />
             </node>
-            <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5639218245806441393">
-              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5639218245806441389" resolveInfo="i" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5639218245806441393">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5639218245806441389" resolveInfo="i" />
             </node>
           </node>
-          <node role="iteration" roleId="yvor.1144231408325:3" type="yvor.PostfixIncrementExpression" typeId="yvor.1214918800624:3" id="5639218245806442358">
-            <node role="expression" roleId="yvor.1239714902950:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="5639218245806442359">
-              <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="5639218245806441389" resolveInfo="i" />
+          <node role="iteration" roleId="tpee.1144231408325" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="5639218245806442358">
+            <node role="expression" roleId="tpee.1239714902950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5639218245806442359">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5639218245806441389" resolveInfo="i" />
             </node>
           </node>
         </node>
-        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ReturnStatement" typeId="yvor.1068581242878:3" id="2603491487853746856">
-          <node role="expression" roleId="yvor.1068581517676:3" type="yvor.LocalVariableReference" typeId="yvor.1068581242866:3" id="2603491487853746858">
-            <link role="variableDeclaration" roleId="yvor.1068581517664:3" targetNodeId="2603491487853715549" resolveInfo="result" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2603491487853746856">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2603491487853746858">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2603491487853715549" resolveInfo="result" />
           </node>
         </node>
       </node>
     </node>
-    <node role="getPresentation" roleId="a9e8.43370322128194610:0" type="a9e8.GetHighLevelValuePresentation_ConceptFunction" typeId="a9e8.43370322128194514:0" id="2603491487853713632">
-      <node role="body" roleId="yvor.1137022507850:3" type="yvor.StatementList" typeId="yvor.1068580123136:3" id="2603491487853713633">
-        <node role="statement" roleId="yvor.1068581517665:3" type="yvor.ExpressionStatement" typeId="yvor.1068580123155:3" id="2603491487853713634">
-          <node role="expression" roleId="yvor.1068580123156:3" type="yvor.PlusExpression" typeId="yvor.1068581242875:3" id="2603491487853714606">
-            <node role="leftExpression" roleId="yvor.1081773367580:3" type="yvor.StringLiteral" typeId="yvor.1070475926800:3" id="2603491487853714609">
-              <property name="value" nameId="yvor.1070475926801:3" value="tuple " />
+    <node role="getPresentation" roleId="kisg.43370322128194610" type="kisg.GetHighLevelValuePresentation_ConceptFunction" typeId="kisg.43370322128194514" id="2603491487853713632">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2603491487853713633">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2603491487853713634">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2603491487853714606">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2603491487853714609">
+              <property name="value" nameId="tpee.1070475926801" value="tuple " />
             </node>
-            <node role="rightExpression" roleId="yvor.1081773367579:3" type="yvor.DotExpression" typeId="yvor.1197027756228:3" id="2603491487853713636">
-              <node role="operand" roleId="yvor.1197027771414:3" type="a9e8.HighLevelValue_ConceptFunctionParameter" typeId="a9e8.43370322128272301:0" id="2603491487853713635" />
-              <node role="operation" roleId="yvor.1197027833540:3" type="yvor.InstanceMethodCallOperation" typeId="yvor.1202948039474:3" id="2603491487853714594">
-                <link role="baseMethodDeclaration" roleId="yvor.1068499141037:3" targetNodeId="qsdy.~MultiTuple%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2603491487853713636">
+              <node role="operand" roleId="tpee.1197027771414" type="kisg.HighLevelValue_ConceptFunctionParameter" typeId="kisg.43370322128272301" id="2603491487853713635" />
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2603491487853714594">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="diss.~MultiTuple%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
               </node>
             </node>
           </node>
