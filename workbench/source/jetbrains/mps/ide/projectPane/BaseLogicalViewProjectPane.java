@@ -145,7 +145,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public void dispose() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     removeListeners();
     myDisposed = true;
     super.dispose();
@@ -194,6 +193,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   protected void removeListeners() {
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
     ModelAccess.instance().removeCommandListener(myModelAccessListener);
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
