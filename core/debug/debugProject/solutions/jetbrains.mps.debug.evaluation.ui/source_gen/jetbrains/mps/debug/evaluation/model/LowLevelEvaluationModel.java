@@ -27,7 +27,7 @@ import jetbrains.mps.traceInfo.TraceInfoManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelReference;
@@ -85,6 +85,12 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         StubReloadManager.getInstance().loadImmediately(myAuxModule, pathsToAdd);
       }
     });
+
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        createNodesToShow(myAuxModel);
+      }
+    });
   }
 
   @Nullable
@@ -133,8 +139,8 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   @Override
-  public Tuples._2<SNode, SNode> createNodesToShow(SModelDescriptor model) {
-    Tuples._2<SNode, SNode> nodes = super.createNodesToShow(model);
+  public void createNodesToShow(EditableSModelDescriptor model) {
+    super.createNodesToShow(model);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -142,7 +148,6 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       }
     });
     createVars();
-    return nodes;
   }
 
   @Override

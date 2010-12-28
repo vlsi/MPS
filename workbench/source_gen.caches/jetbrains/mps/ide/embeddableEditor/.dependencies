@@ -2,8 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" file="EmbeddableEditor.java">
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.GenerationResult" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />

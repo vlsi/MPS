@@ -5,7 +5,7 @@ package jetbrains.mps.debug.evaluation.model;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
@@ -18,14 +18,16 @@ import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -61,7 +63,7 @@ public abstract class AbstractEvaluationModel {
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
   protected final IOperationContext myContext;
-  protected SModelDescriptor myAuxModel;
+  protected final EditableSModelDescriptor myAuxModel;
   protected final EvaluationAuxModule myAuxModule;
   private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"));
   protected SNode myEvaluator;
@@ -77,6 +79,15 @@ public abstract class AbstractEvaluationModel {
       myContext = new ModuleContext(auxModule, project);
     }
     myAuxModule = auxModule;
+
+    final Wrappers._T<EditableSModelDescriptor> modelDescriptor = new Wrappers._T<EditableSModelDescriptor>();
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        modelDescriptor.value = ProjectModels.createDescriptorFor(myAuxModule);
+        modelDescriptor.value.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+      }
+    });
+    myAuxModel = modelDescriptor.value;
     myEvaluationContext = context;
   }
 
@@ -96,6 +107,10 @@ public abstract class AbstractEvaluationModel {
     return myAuxModule;
   }
 
+  public EditableSModelDescriptor getModel() {
+    return myAuxModel;
+  }
+
   public List<Language> getRequiredLanguages() {
     return myLanguages;
   }
@@ -106,8 +121,8 @@ public abstract class AbstractEvaluationModel {
   @NotNull
   public abstract SNode getNodeToShow();
 
-  public Tuples._2<SNode, SNode> createNodesToShow(final SModelDescriptor model) {
-    myAuxModel = model;
+  public void createNodesToShow(final EditableSModelDescriptor model) {
+    // todo do we need a separate method for that now? 
     // creating evaluator node 
     myEvaluator = createEvaluator(model);
 
@@ -116,8 +131,6 @@ public abstract class AbstractEvaluationModel {
         model.getSModel().addRoot(myEvaluator);
       }
     });
-
-    return MultiTuple.<SNode,SNode>from(getRootToShow(), getNodeToShow());
   }
 
   protected SNode createEvaluator(SModelDescriptor model) {
@@ -174,7 +187,7 @@ public abstract class AbstractEvaluationModel {
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.singletonList(myAuxModel), myContext, handler, progressWindow, messageHandler, true, false);
+      boolean successful = generatorManager.generateModels(Collections.singletonList((SModelDescriptor) myAuxModel), myContext, handler, progressWindow, messageHandler, true, false);
 
       Disposer.dispose(progressWindow);
 

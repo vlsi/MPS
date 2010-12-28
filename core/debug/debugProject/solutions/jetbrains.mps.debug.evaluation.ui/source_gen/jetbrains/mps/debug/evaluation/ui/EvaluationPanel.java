@@ -13,8 +13,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
@@ -48,11 +46,7 @@ public class EvaluationPanel extends EvaluationUi {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject().getProject()), myEvaluationModel.getModule(), new _FunctionTypes._return_P1_E0<Tuples._2<SNode, SNode>, SModelDescriptor>() {
-          public Tuples._2<SNode, SNode> invoke(SModelDescriptor model) {
-            return myEvaluationModel.createNodesToShow(model);
-          }
-        }, true);
+        myEditor = new EmbeddableEditor(new ModuleContext(myEvaluationModel.getModule(), myEvaluationModel.getModule().getMPSProject().getProject()), myEvaluationModel.getModel(), myEvaluationModel.getRootToShow(), myEvaluationModel.getNodeToShow(), true);
 
         for (Language language : myEvaluationModel.getRequiredLanguages()) {
           myEditor.addLanguage(language);

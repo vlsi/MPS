@@ -9,9 +9,6 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.IEditor;
@@ -23,6 +20,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.generator.GeneratorFacade;
@@ -60,27 +58,23 @@ public class EmbeddableEditor {
     setNode(rootNode, targetNode, true);
   }
 
-  public EmbeddableEditor(IOperationContext context, ModelOwner owner, _FunctionTypes._return_P1_E0<? extends Tuples._2<SNode, SNode>, ? super SModelDescriptor> createNodes, boolean editable) {
-    myOwner = owner;
+  public EmbeddableEditor(IOperationContext context, EditableSModelDescriptor modelDescriptor, SNode rootNode, SNode targetNode, boolean editable) {
+    myOwner = modelDescriptor.getModule();
     myContext = context;
     myIsEditable = editable;
-    myModel = ProjectModels.createDescriptorFor(myOwner);
-    myModel.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-    SNode root;
-    SNode target;
-    {
-      Tuples._2<SNode, SNode> _tmp_a6dqux_h0d = createNodes.invoke(myModel);
-      root = _tmp_a6dqux_h0d._0();
-      target = _tmp_a6dqux_h0d._1();
-    }
-    setNode(root, target, false);
+    myModel = modelDescriptor;
+    setNode(rootNode, targetNode, false);
   }
 
-  private void setNode(@NotNull SNode rootNode, @NotNull SNode targetNode, boolean addToModel) {
+  private void setNode(@NotNull final SNode rootNode, @NotNull SNode targetNode, boolean addToModel) {
     myRootNode = rootNode;
     myNode = targetNode;
     if (addToModel) {
-      addRoot(rootNode);
+      myModel.getSModel().runLoadingAction(new Runnable() {
+        public void run() {
+          myModel.getSModel().addRoot(rootNode);
+        }
+      });
     }
     myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
     IEditor editor = myFileNodeEditor.getNodeEditor();
@@ -93,14 +87,6 @@ public class EmbeddableEditor {
     } else {
       myPanel.setEditor(myFileNodeEditor);
     }
-  }
-
-  private void addRoot(final SNode root) {
-    myModel.getSModel().runLoadingAction(new Runnable() {
-      public void run() {
-        myModel.getSModel().addRoot(root);
-      }
-    });
   }
 
   public void setNode(@NotNull SNode node) {

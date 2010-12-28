@@ -36,19 +36,9 @@ public class WatchesPanel extends EvaluationUi {
     super(provider.getDebugSession(), true);
     myProvider = provider;
 
-    final Project project = myDebugSession.getProject();
-
     myProvider.addWatchListener(new IWatchListener() {
       @Override
       public void watchAdded(final AbstractEvaluationModel model) {
-        // todo this code sucks
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          @Override
-          public void run() {
-            EditableSModelDescriptor descriptorFor = ProjectModels.createDescriptorFor(((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).getAuxModule());
-            model.createNodesToShow(descriptorFor);
-          }
-        }, project);
         myTree.addModel(model);
         evaluate(model);
       }
