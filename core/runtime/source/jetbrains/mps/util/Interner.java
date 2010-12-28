@@ -27,6 +27,8 @@ public class Interner {
 
   public String intern(String s) {
     if (s == null) return null;
+    s = new String (s);
+
     synchronized (myCache) {
       String result = myCache.tryKey(s);
       if (result != null) {
@@ -34,9 +36,9 @@ public class Interner {
         return result;
       }
       // Ensure we cache only what's necessary!
-      s = new String (s);
       myCache.cacheObject(s, s);
     }
+
     return s;
   }
 }
