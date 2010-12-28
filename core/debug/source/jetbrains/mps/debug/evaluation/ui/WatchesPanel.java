@@ -15,22 +15,13 @@
  */
 package jetbrains.mps.debug.evaluation.ui;
 
-import com.intellij.execution.ExecutionManager;
-import com.intellij.execution.executors.DefaultDebugExecutor;
-import com.intellij.execution.ui.RunContentDescriptor;
-import com.intellij.execution.ui.layout.impl.RunnerContentUi;
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.ui.content.Content;
-import jetbrains.mps.debug.api.integration.DebuggerContent;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.IWatchListener;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
-import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -38,7 +29,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import java.awt.BorderLayout;
 
 public class WatchesPanel extends EvaluationUi {
-  private static final Logger LOG = Logger.getLogger(WatchesPanel.class);
   private final SessionStopDisposer mySessionStopDisposer;
   private final EvaluationProvider myProvider;
 
@@ -77,17 +67,6 @@ public class WatchesPanel extends EvaluationUi {
     };
 
     add(new JBScrollPane(myTree), BorderLayout.CENTER);
-  }
-
-  private void focusWatches(Project project, DebugSession debugSession) {
-    RunContentDescriptor contentDescriptor = ExecutionManager.getInstance(project).getContentManager().findContentDescriptor(DefaultDebugExecutor.getDebugExecutorInstance(), debugSession.getProcessHandler());
-    RunnerContentUi ui = RunnerContentUi.KEY.getData(DataManager.getInstance().getDataContext(contentDescriptor.getComponent()));
-    if (ui == null) {
-      LOG.warning("Could not find ui.");
-      return;
-    }
-    Content watches = ui.findContent(DebuggerContent.WATCHES);
-    ui.select(watches, true);
   }
 
   @Override
