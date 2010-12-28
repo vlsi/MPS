@@ -11,13 +11,6 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 14.04.2010
- * Time: 21:40:25
- * To change this template use File | Settings | File Templates.
- */
 public class CalculatedWatchable extends JavaBreakpointWatchable implements IWatchable {
   private final JavaValue myValue;
 

@@ -25,6 +25,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
@@ -133,6 +135,12 @@ public abstract class AbstractEvaluationModel {
   public void updateState() {
     myUiState = myDebugSession.getUiState();
     myEvaluationContext.setUiState(myUiState);
+  }
+
+  public String getPresentation() {
+    // todo better presentation 
+    // and when there are not statements? 
+    return BaseConcept_Behavior.call_getPresentation_1213877396640(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(myEvaluator, "evaluatedStatement", true), "statements", true), "statement", true)).first());
   }
 
   @Nullable

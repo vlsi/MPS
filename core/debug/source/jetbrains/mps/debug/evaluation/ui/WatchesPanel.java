@@ -22,51 +22,64 @@ import com.intellij.execution.ui.layout.impl.RunnerContentUi;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.content.Content;
-import com.intellij.ui.content.ContentManager;
-import com.intellij.ui.tabs.TabInfo;
-import com.intellij.ui.tabs.impl.JBTabsImpl;
 import jetbrains.mps.debug.api.integration.DebuggerContent;
+import jetbrains.mps.debug.api.integration.ui.WatchableNode;
+import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.IWatchListener;
+import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
+import jetbrains.mps.debug.runtime.SuspendContext;
+import jetbrains.mps.debug.runtime.java.programState.watchables.WatchWatchable;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
-public class WatchesPanel extends JPanel {
+public class WatchesPanel extends EvaluationUi {
   private static final Logger LOG = Logger.getLogger(WatchesPanel.class);
-  private final List<EvaluationPanel> myPanels = new ArrayList<EvaluationPanel>();
-  private final JBTabsImpl myTabsPane;
   private final SessionStopDisposer mySessionStopDisposer;
+  private final EvaluationProvider myProvider;
 
   public WatchesPanel(final EvaluationProvider provider) {
-    super(new BorderLayout());
+    super(provider.getDebugSession(), true);
+    myProvider = provider;
 
-    final DebugSession debugSession = provider.getDebugSession();
-    final Project project = debugSession.getProject();
-    myTabsPane = new JBTabsImpl(project);
+    final Project project = myDebugSession.getProject();
 
-    provider.addWatchListener(new IWatchListener() {
+    myProvider.addWatchListener(new IWatchListener() {
       @Override
-      public void watchAdded(AbstractEvaluationModel model) {
-        EvaluationPanel evaluationPanel = new EvaluationPanel(project, debugSession, model, true);
-        myPanels.add(evaluationPanel);
-        TabInfo info = new TabInfo(evaluationPanel);
-        info.setText("This is a watch.");
-        myTabsPane.addTab(info);
-
-        // todo does not work
-//        focusWatches(project, debugSession);
+      public void watchAdded(final AbstractEvaluationModel model) {
+        // todo this code sucks
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
+          public void run() {
+            EditableSModelDescriptor descriptorFor = ProjectModels.createDescriptorFor(((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).getAuxModule());
+            model.createNodesToShow(descriptorFor);
+          }
+        }, project);
+        myTree.addModel(model);
+        evaluate(model);
       }
     });
 
-    mySessionStopDisposer = new SessionStopDisposer(debugSession) {
+    mySessionStopDisposer = new SessionStopDisposer(myDebugSession) {
       @Override
       public void doDispose() {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -78,7 +91,7 @@ public class WatchesPanel extends JPanel {
       }
     };
 
-    add(myTabsPane, BorderLayout.CENTER);
+    add(new JBScrollPane(myTree), BorderLayout.CENTER);
   }
 
   private void focusWatches(Project project, DebugSession debugSession) {
@@ -92,10 +105,17 @@ public class WatchesPanel extends JPanel {
     ui.select(watches, true);
   }
 
-  private void dispose() {
-    myTabsPane.removeAllTabs();
-    for (EvaluationPanel panel : myPanels) {
-      panel.dispose();
+  @Override
+  protected void update() {
+    for (AbstractEvaluationModel model : myProvider.getWatches()) {
+      model.updateState();
+    }
+  }
+
+  @Override
+  public void evaluate() {
+    for (AbstractEvaluationModel model : myProvider.getWatches()) {
+      evaluate(model);
     }
   }
 }
