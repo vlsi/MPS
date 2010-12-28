@@ -499,6 +499,31 @@
               </node>
             </node>
             <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4972886494893418366" />
+            <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3056334993733464204">
+              <node role="2.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3056334993733464205">
+                <property name="1.name:0" value="differentIndices" />
+                <node role="2.type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="3056334993733464206">
+                  <node role="5.elementType:7" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="3056334993733464207">
+                    <node role="11.componentType:2" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="3056334993733464208">
+                      <node role="11.componentType:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3056334993733464209" />
+                      <node role="11.componentType:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3056334993733464210" />
+                    </node>
+                    <node role="11.componentType:2" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="3056334993733464211">
+                      <node role="11.componentType:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3056334993733464212" />
+                      <node role="11.componentType:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3056334993733464213" />
+                    </node>
+                  </node>
+                </node>
+                <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3056334993733464214">
+                  <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3056334993733464215">
+                    <link role="2.variableDeclaration:3" targetNodeId="4972886494893415493" resolveInfo="finder" />
+                  </node>
+                  <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3056334993733464216">
+                    <link role="2.baseMethodDeclaration:3" targetNodeId="9.4972886494893402109:0" resolveInfo="getDifferentIndices" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="2.statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="4972886494893401457">
               <node role="5.variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="4972886494893401458">
                 <property name="1.name:0" value="indices" />
@@ -731,26 +756,35 @@
                   </node>
                 </node>
               </node>
-              <node role="5.inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4972886494893415503">
-                <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4972886494893415502">
-                  <link role="2.variableDeclaration:3" targetNodeId="4972886494893415493" resolveInfo="finder" />
-                </node>
-                <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4972886494893415513">
-                  <link role="2.baseMethodDeclaration:3" targetNodeId="9.4972886494893402109:0" resolveInfo="getDifferentIndices" />
-                </node>
+              <node role="5.inputSequence:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3056334993733464217">
+                <link role="2.variableDeclaration:3" targetNodeId="3056334993733464205" resolveInfo="differentIndices" />
               </node>
             </node>
             <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4972886494893418365" />
+            <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2729259761015898452">
+              <node role="2.localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2729259761015898453">
+                <property name="1.name:0" value="commonIndices" />
+                <node role="2.type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="2729259761015898454">
+                  <node role="5.elementType:7" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType:2" id="2729259761015898455">
+                    <node role="11.componentType:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="2729259761015898456" />
+                    <node role="11.componentType:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="2729259761015898457" />
+                  </node>
+                </node>
+                <node role="2.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2729259761015898458">
+                  <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2729259761015898459">
+                    <link role="2.variableDeclaration:3" targetNodeId="4972886494893415493" resolveInfo="finder" />
+                  </node>
+                  <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2729259761015898460">
+                    <link role="2.baseMethodDeclaration:3" targetNodeId="9.4972886494893401870:0" resolveInfo="getCommonIndices" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4972886494893418349">
               <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4972886494893418368">
                 <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4972886494893418350">
-                  <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4972886494893418351">
-                    <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4972886494893418352">
-                      <link role="2.variableDeclaration:3" targetNodeId="4972886494893415493" resolveInfo="finder" />
-                    </node>
-                    <node role="2.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4972886494893418353">
-                      <link role="2.baseMethodDeclaration:3" targetNodeId="9.4972886494893401870:0" resolveInfo="getCommonIndices" />
-                    </node>
+                  <node role="2.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2729259761015898461">
+                    <link role="2.variableDeclaration:3" targetNodeId="2729259761015898453" resolveInfo="commonIndices" />
                   </node>
                   <node role="2.operation:3" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation:7" id="4972886494893418354">
                     <node role="5.closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="4972886494893418355">

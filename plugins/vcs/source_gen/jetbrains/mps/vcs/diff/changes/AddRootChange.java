@@ -14,6 +14,6 @@ public class AddRootChange extends ModelChange {
 
   @Override
   public String toString() {
-    return "Add Root [" + myNodeId + "]";
+    return "Add Root " + myNodeId;
   }
 }

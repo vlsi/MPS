@@ -14,6 +14,6 @@ public class DeleteRootChange extends ModelChange {
 
   @Override
   public String toString() {
-    return "Delete Root [" + myNodeId + "]";
+    return "Delete Root " + myNodeId;
   }
 }
