@@ -164,8 +164,9 @@ public class Inequalities {
           InequalityBlock block = typesToBlocks.get(result);
           info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(subTypes.iterator().next()).getEquationInfo();
         } else if (!superTypes.isEmpty()) {
-          result = subTyping.createMeet(superTypes);InequalityBlock block = typesToBlocks.get(result);
-          info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(subTypes.iterator().next()).getEquationInfo();
+          result = subTyping.createMeet(superTypes);
+          InequalityBlock block = typesToBlocks.get(result);
+          info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(superTypes.iterator().next()).getEquationInfo();
         }
         if (result != null) {
           myState.addEquation(node, result, info);

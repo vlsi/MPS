@@ -267,9 +267,9 @@ public class SubTyping {
   public SNode createMeet(Set<SNode> types) {
 
     if (types.size() > 1) {
-     // System.out.println("meet" + types);
-      types = eliminateSubOrSuperTypes(types, false);
-     // System.out.println(types);
+    //  System.out.println("meet" + types);
+      types = eliminateSubOrSuperTypes(types, true);
+    //  System.out.println(types);
 
     }
 
@@ -279,10 +279,9 @@ public class SubTyping {
   }
 
   public SNode createLCS(Set<SNode> types) {
-
     if (types.size() > 1) {
     //  System.out.println("lcs" + types);
-      types = eliminateSubOrSuperTypes(types, true);
+      types = eliminateSubOrSuperTypes(types, false);
     //  System.out.println(types);
     }
     return types.iterator().next();
