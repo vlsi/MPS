@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.*;
@@ -54,16 +56,16 @@ public class NodeTypesComponent {
   private boolean myIsCheckedTypesystem = false;
   private boolean myIsCheckedNonTypesystem = false;
   private TypeChecker myTypeChecker;
-  private Map<SNode, SNode> myNodesToTypesMap = new HashMap<SNode, SNode>();
-  private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
+  private Map<SNode, SNode> myNodesToTypesMap = new THashMap<SNode, SNode>();
+  private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
 
-  private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
+  private Map<SNode, List<IErrorReporter>> myNodesToNonTypesystemErrorsMap = new THashMap<SNode, List<IErrorReporter>>();
 
-  protected Set<SNode> myFullyCheckedNodes = new HashSet<SNode>(); //nodes which are checked with their children
-  protected Set<SNode> myPartlyCheckedNodes = new HashSet<SNode>(); // nodes which are checked themselves but not children
+  protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
+  protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
-    = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
+    = new THashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
 
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes_A = new WeakHashMap<SNode, WeakSet<SNode>>();
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes_B = new WeakHashMap<SNode, WeakSet<SNode>>();
@@ -75,10 +77,10 @@ public class NodeTypesComponent {
 
   private Stack<SNode> myCurrentSlaveComputedNodes = new Stack<SNode>();
   //key is a blocking node
-  private Map<SNode, Set<SNode>> myBlockedOnSlaveComputation = new HashMap<SNode, Set<SNode>>();
-  private Set<SNode> myComputedBlockingTerms = new HashSet<SNode>();
+  private Map<SNode, Set<SNode>> myBlockedOnSlaveComputation = new THashMap<SNode, Set<SNode>>();
+  private Set<SNode> myComputedBlockingTerms = new THashSet<SNode>();
 
-  private Map<String, Set<SNode>> myRegisteredVariables = new HashMap<String, Set<SNode>>();
+  private Map<String, Set<SNode>> myRegisteredVariables = new THashMap<String, Set<SNode>>();
 
   private MyModelListener myModelListener = new MyModelListener();
   private MyModelListenerManager myModelListenerManager = new MyModelListenerManager(myModelListener);
@@ -88,11 +90,11 @@ public class NodeTypesComponent {
   private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
   private MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
 
-  private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
+  private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
   private boolean myCacheWasCurrentlyRebuiltTypesystem = false;
-  private Set<SNode> myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
-  private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidateNonTypesystem = new HashSet<Pair<SNode, String>>();
-  private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new HashSet<SNode>();
+  private Set<SNode> myCurrentNodesToInvalidateNonTypesystem = new THashSet<SNode>();
+  private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidateNonTypesystem = new THashSet<Pair<SNode, String>>();
+  private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new THashSet<SNode>();
   private boolean myCacheWasCurrentlyRebuiltNonTypesystem = false;
 
   //temp
@@ -100,15 +102,15 @@ public class NodeTypesComponent {
 
   // nodes to rules which depend on this nodes
   private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myNodesToDependentNodesWithNTRules =
-    new HashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
+    new THashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
 
   // properties to rules which depend on this nodes' properties
   private Map<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myPropertiesToDependentNodesWithNTRules =
-    new HashMap<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
+    new THashMap<Pair<SNode, String>, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
 
   // typed terms to rules which depend on this nodes
   private Map<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>> myTypedTermsToDependentNodesWithNTRules =
-    new HashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
+    new THashMap<SNode, Map<NonTypesystemRule_Runtime, WeakSet<SNode>>>();
 
   private WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> myNodesDependentOnCachesWithNTRules =
     new WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>();
