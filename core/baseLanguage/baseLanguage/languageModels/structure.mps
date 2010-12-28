@@ -578,7 +578,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1188207840427">
       <property name="name" nameId="tpck.1169194664001" value="AnnotationInstance" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1188208481402">
       <property name="name" nameId="tpck.1169194664001" value="HasAnnotation" />
