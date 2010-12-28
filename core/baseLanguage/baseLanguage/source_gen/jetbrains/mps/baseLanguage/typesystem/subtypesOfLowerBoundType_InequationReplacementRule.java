@@ -43,9 +43,9 @@ public class subtypesOfLowerBoundType_InequationReplacementRule extends Abstract
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status) {
     boolean result_14532009 = true;
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), (SNode) SLinkOperations.getTarget(supertype, "bound", true), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(supertype, "bound", true), (SNode) SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), true);
     } else {
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) subtype, (SNode) SLinkOperations.getTarget(supertype, "bound", true), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(supertype, "bound", true), (SNode) subtype, true);
     }
     return result_14532009;
   }
