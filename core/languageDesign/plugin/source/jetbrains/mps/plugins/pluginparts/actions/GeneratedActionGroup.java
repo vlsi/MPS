@@ -41,6 +41,11 @@ public abstract class GeneratedActionGroup extends BaseGroup {
 
   @Deprecated
   protected void addParameterizedAction(GeneratedAction action, PluginId id, Object... params) {
+    if (!isStrict()){
+      add(action);
+      return;
+    }
+
     ActionManager manager = ActionManager.getInstance();
     AnAction oldAction = manager.getAction(action.getActionId());
     if (oldAction != null) {
@@ -49,17 +54,8 @@ public abstract class GeneratedActionGroup extends BaseGroup {
     }
 
     add(action);
-
-/*
-    for (BaseAction a : getAllActions()) {
-      if (a.getActionId().equals(action.getActionId())) {
-*/
-        BaseApplicationPlugin plugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getPlugin(id);
-        plugin.addParameterizedAction(action, params);
-/*
-      }
-    }
-*/
+    BaseApplicationPlugin plugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getPlugin(id);
+    plugin.addParameterizedAction(action, params);
   }
 
   protected void addAction(ActionStub creator) {
@@ -68,9 +64,5 @@ public abstract class GeneratedActionGroup extends BaseGroup {
 
   protected boolean isStrict(){
     return true;
-  }
-
-  protected List<BaseAction> getAllActions() {
-    return Collections.emptyList();
   }
 }
