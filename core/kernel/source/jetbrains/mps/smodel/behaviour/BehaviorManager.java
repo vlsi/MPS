@@ -46,6 +46,11 @@ public final class BehaviorManager implements ApplicationComponent {
   private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.(\\w+)$");
 
   private static Map<Class, Object> ourDefaultValue = new HashMap<Class, Object>();
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clear();
+    }
+  };
 
   static {
     ourDefaultValue.put(Byte.class, (byte) 0);
@@ -72,11 +77,7 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clear();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -86,7 +87,7 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   public void clear() {
