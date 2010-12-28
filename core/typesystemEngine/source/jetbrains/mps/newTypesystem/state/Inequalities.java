@@ -126,6 +126,7 @@ public class Inequalities {
     }
     List<SNode> sortedNodes = sort(inputsToOutputs, nodes);
 
+    Map<SNode, InequalityBlock> typesToBlocks = new HashMap<SNode, InequalityBlock>();
   //  System.out.println(sortedNodes);
     for (SNode node : sortedNodes) {
       //todo shallow concrete
@@ -136,6 +137,7 @@ public class Inequalities {
       Set<SNode> superTypes = new LinkedHashSet<SNode>();
       Set<SNode> subTypes = new LinkedHashSet<SNode>();
       for (InequalityBlock block : blocks) {
+
         if (block.getRelationKind().isCheckOnly()) {
           continue;
         }
@@ -146,20 +148,27 @@ public class Inequalities {
         }
         if (left == node && !TypesUtil.isVariable(right)) {
           superTypes.add(right);
+          typesToBlocks.put(right, block);
         }
         if (right == node && !TypesUtil.isVariable(left)) {
           subTypes.add(left);
+          typesToBlocks.put(left, block);
         } 
       }
       SubTyping subTyping = new SubTyping(myState);
       if (TypesUtil.isVariable(node)) {
+        SNode result = null;
+        EquationInfo info = null;
         if (!subTypes.isEmpty()) {
-          EquationInfo info = new EquationInfo(node, "LCS");
-          myState.addEquation(node, subTyping.createLCS(subTypes), info);
+          result = subTyping.createLCS(subTypes);
+          InequalityBlock block = typesToBlocks.get(result);
+          info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(subTypes.iterator().next()).getEquationInfo();
+        } else if (!superTypes.isEmpty()) {
+          result = subTyping.createMeet(superTypes);InequalityBlock block = typesToBlocks.get(result);
+          info = (block != null) ? block.getEquationInfo() : typesToBlocks.get(subTypes.iterator().next()).getEquationInfo();
         }
-        if (!superTypes.isEmpty()) {
-          EquationInfo info = new EquationInfo(node, "meet");
-          myState.addEquation(node, subTyping.createMeet(superTypes),info);
+        if (result != null) {
+          myState.addEquation(node, result, info);
         }
       } else {
 

@@ -91,6 +91,9 @@ public class SubTyping {
   }
 
   public boolean isSubType(SNode subType, SNode superType) {
+    if (isSubTypeByReplacementRules(subType, superType)) {
+      return true;
+    }
     return isInSuperTypes(subType, superType, null, true, true);
   }
 
@@ -218,16 +221,6 @@ public class SubTyping {
     return result;
   }
 
-  private SNode meet(SNode left, SNode right) {
-    if (isSubType(left, right)) {
-      return left;
-    }
-    if (isSubType(right, left)) {
-      return right;
-    }
-    return left;
-  }
-
   private Set<SNode> eliminateSubOrSuperTypes(Set<SNode> types, boolean sub) {
     //todo fix bug & optimize
     types = eliminateEqual(types);
@@ -312,11 +305,6 @@ public class SubTyping {
       result.removeAll(toRemove);
     }
     return result;
-  }
-
-  public SNode leastCommonSuperType(Set<SNode> types) {
-    //eliminate subTypes: double for
-    return null;
   }
 
   public boolean isComparableByRules(SNode left, SNode right, EquationInfo info, boolean isWeak) {
