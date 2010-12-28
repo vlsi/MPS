@@ -3143,6 +3143,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1188214504398">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" />
     </node>
+    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="8647043020514268561" />
   </root>
   <root id="1188214545140">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1188214607812">
