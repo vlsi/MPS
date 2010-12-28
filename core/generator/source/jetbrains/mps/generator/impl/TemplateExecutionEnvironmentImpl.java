@@ -72,13 +72,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return new TemplateExecutionEnvironmentImpl(generator, new ReductionContext(reductionContext, inputNode, rule), operationContext, tracer);
   }
 
-  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
+  public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String templateId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
     Collection<SNode> outputNodes = null;
     for (SNode newInputNode : inputNodes) {
       Collection<SNode> _outputNodes =
         newInputNode.getModel() == generator.getInputModel() && newInputNode.isRegistered()
-          ? generator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, reductionContext, new boolean[]{false})
-          : generator.copyNodeFromExternalNode(mappingName, templateNode, newInputNode, reductionContext);
+          ? generator.copyNodeFromInputNode(mappingName, templateNode, templateId, newInputNode, reductionContext, new boolean[]{false})
+          : generator.copyNodeFromExternalNode(mappingName, templateNode, templateId, newInputNode, reductionContext);
       if (_outputNodes != null) {
         // check node languages : prevent 'input node' query from returning node, which language was not counted when
         // planning the generation steps.

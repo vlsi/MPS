@@ -59,7 +59,7 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
             try {
               environment.getTracer().pushMacro(copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2);
               final SNode copySrcInput3 = QueriesGenerated.sourceNodeQuery_4146564171992617089(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2, context, environment.getGenerator()));
-              tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2, null, context);
+              tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617075", null, context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_eum2xg_a0a0a1a3a1a3a1a2);
             }
@@ -73,7 +73,7 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
             try {
               environment.getTracer().pushMacro(copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2);
               final SNode copySrcInput5 = QueriesGenerated.sourceNodeQuery_4146564171992617085(environment.getOperationContext(), new SourceSubstituteMacroNodeContext(context.getInput(), copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2, context, environment.getGenerator()));
-              tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2, null, context);
+              tlist5 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput5), copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617079", null, context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_eum2xg_a0a0a1a4a1a3a1a2);
             }

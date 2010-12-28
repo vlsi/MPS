@@ -6235,7 +6235,7 @@
                         <property name="makeUnique" nameId="tp68.8835849473318867199" value="true" />
                         <node role="expression" roleId="tp68.1238251454130" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4155486055398183420">
                           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4155486055398183421">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4155486055398183422" />
                           </node>
                           <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="4155486055398183423">
@@ -6768,7 +6768,7 @@
                                 <property name="makeUnique" nameId="tp68.8835849473318867199" value="true" />
                                 <node role="expression" roleId="tp68.1238251454130" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2053864656213145693">
                                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2053864656213145694">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2053864656213145695" />
                                   </node>
                                   <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="2053864656213145696">
@@ -10479,7 +10479,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="747214206848642857" resolveInfo="environment" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4155486055398088763">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuxb.~TemplateExecutionEnvironment%dcopyNodes(java%dlang%dIterable,jetbrains%dmps%dsmodel%dSNodePointer,java%dlang%dString,jetbrains%dmps%dgenerator%druntime%dTemplateContext)%cjava%dutil%dCollection" resolveInfo="copyNodes" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuxb.~TemplateExecutionEnvironment%dcopyNodes(java%dlang%dIterable,jetbrains%dmps%dsmodel%dSNodePointer,java%dlang%dString,java%dlang%dString,jetbrains%dmps%dgenerator%druntime%dTemplateContext)%cjava%dutil%dCollection" resolveInfo="copyNodes" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4155486055398088764">
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xuxb.~TemplateUtil" resolveInfo="TemplateUtil" />
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuxb.~TemplateUtil%dsingletonList(jetbrains%dmps%dsmodel%dSNode)%cjava%dutil%dCollection" resolveInfo="singletonList" />
@@ -10489,6 +10489,30 @@
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.ExtractToConstantRefExpression" typeId="tp68.99767819676010097" id="4341394098072499253">
                       <link role="original" roleId="tp68.99767819676010098" targetNodeId="4155486055398088808" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="439634159192472801">
+                      <property name="value" nameId="tpee.1070475926801" value="" />
+                      <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="439634159192472877">
+                        <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="439634159192472878">
+                          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="439634159192472879">
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="439634159192472880">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="439634159192472881">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jbt5.~GeneratorUtil%dgetTemplateNodeId(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getTemplateNodeId" />
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jbt5.~GeneratorUtil" resolveInfo="GeneratorUtil" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="439634159192472882">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="439634159192472883" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOriginalCopiedInputByOutput" typeId="tpf3.1229477454423" id="439634159192472884">
+                                    <node role="outputNode" roleId="tpf3.1229477520175" type="tpee.DotExpression" typeId="tpee.1197027756228" id="439634159192472885">
+                                      <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="439634159192472886" />
+                                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="439634159192472887" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4155486055398088766">
                       <property name="value" nameId="tpee.1070475926801" value="" />
@@ -12152,7 +12176,7 @@
                     <property name="makeUnique" nameId="tp68.8835849473318867199" value="true" />
                     <node role="expression" roleId="tp68.1238251454130" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4155486055398088866">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4155486055398088867">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode)" resolveInfo="SNodePointer" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~SNodePointer%d&lt;init&gt;(jetbrains%dmps%dsmodel%dINodeAdapter)" resolveInfo="SNodePointer" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4155486055398088868" />
                       </node>
                       <node role="nodeMacro$attribute" type="tpf8.TemplateCallMacro" typeId="tpf8.1510949579266781519" id="4155486055398088869">
@@ -12290,12 +12314,36 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6831954580247646281" resolveInfo="environment" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4155486055398089085">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuxb.~TemplateExecutionEnvironment%dcopyNodes(java%dlang%dIterable,jetbrains%dmps%dsmodel%dSNodePointer,java%dlang%dString,jetbrains%dmps%dgenerator%druntime%dTemplateContext)%cjava%dutil%dCollection" resolveInfo="copyNodes" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xuxb.~TemplateExecutionEnvironment%dcopyNodes(java%dlang%dIterable,jetbrains%dmps%dsmodel%dSNodePointer,java%dlang%dString,java%dlang%dString,jetbrains%dmps%dgenerator%druntime%dTemplateContext)%cjava%dutil%dCollection" resolveInfo="copyNodes" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4155486055398089086">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4155486055398088974" resolveInfo="copyListInput" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.ExtractToConstantRefExpression" typeId="tp68.99767819676010097" id="4341394098072499255">
                       <link role="original" roleId="tp68.99767819676010098" targetNodeId="4155486055398088865" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="439634159192472803">
+                      <property name="value" nameId="tpee.1070475926801" value="" />
+                      <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="439634159192472863">
+                        <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="439634159192472864">
+                          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="439634159192472865">
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="439634159192472866">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="439634159192472867">
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jbt5.~GeneratorUtil" resolveInfo="GeneratorUtil" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jbt5.~GeneratorUtil%dgetTemplateNodeId(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="getTemplateNodeId" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="439634159192472868">
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="439634159192472869" />
+                                  <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOriginalCopiedInputByOutput" typeId="tpf3.1229477454423" id="439634159192472870">
+                                    <node role="outputNode" roleId="tpf3.1229477520175" type="tpee.DotExpression" typeId="tpee.1197027756228" id="439634159192472872">
+                                      <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="439634159192472871" />
+                                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="439634159192472876" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4155486055398089087">
                       <property name="value" nameId="tpee.1070475926801" value="" />
