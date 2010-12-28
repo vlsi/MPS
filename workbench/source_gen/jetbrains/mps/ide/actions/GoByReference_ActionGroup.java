@@ -11,12 +11,11 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.List;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
@@ -29,7 +28,6 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.GoByReference_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-  private List<AnAction> myAllActions;
 
   public GoByReference_ActionGroup() {
     super("Go by Reference", ID);
@@ -97,5 +95,9 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
+  }
+
+  public boolean isStrict() {
+    return false;
   }
 }

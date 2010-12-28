@@ -45,7 +45,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action" />
@@ -53,7 +52,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="jetbrains.mps.lang.script.plugin.ScriptsMenuBuilder" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -67,7 +65,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action" />
@@ -75,7 +72,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="jetbrains.mps.lang.script.plugin.ScriptsMenuBuilder" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />

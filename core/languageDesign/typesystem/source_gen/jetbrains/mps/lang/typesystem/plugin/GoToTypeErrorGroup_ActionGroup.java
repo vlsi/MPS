@@ -11,8 +11,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.List;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -26,7 +24,6 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-  private List<AnAction> myAllActions;
 
   public GoToTypeErrorGroup_ActionGroup() {
     super("Go to Rule Which Caused Error", ID);
@@ -73,5 +70,9 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
+  }
+
+  public boolean isStrict() {
+    return false;
   }
 }

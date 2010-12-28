@@ -11,11 +11,10 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.List;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.GenerateIntention;
+import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
@@ -36,7 +35,6 @@ public class GenerationIntentions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.GenerationIntentions_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-  private List<AnAction> myAllActions;
 
   public GenerationIntentions_ActionGroup() {
     super("GenerationIntentions", ID);
@@ -87,5 +85,9 @@ public class GenerationIntentions_ActionGroup extends GeneratedActionGroup {
 
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
+  }
+
+  public boolean isStrict() {
+    return false;
   }
 }
