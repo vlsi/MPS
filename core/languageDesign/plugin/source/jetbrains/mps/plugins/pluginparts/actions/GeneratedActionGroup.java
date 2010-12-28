@@ -15,15 +15,19 @@
  */
 package jetbrains.mps.plugins.pluginparts.actions;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionStub;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.MPSActions;
+
+import java.util.Collections;
+import java.util.List;
 
 public abstract class GeneratedActionGroup extends BaseGroup {
   protected GeneratedActionGroup(String text, String id) {
@@ -31,25 +35,42 @@ public abstract class GeneratedActionGroup extends BaseGroup {
   }
 
   @Deprecated//replace with action stubs
-  protected void addAction(String id){
+  protected void addAction(String id) {
     add(ActionManager.getInstance().getAction(id));
   }
 
   @Deprecated
-  protected void addParameterizedAction(GeneratedAction action, PluginId id, Object ... params){
+  protected void addParameterizedAction(GeneratedAction action, PluginId id, Object... params) {
     ActionManager manager = ActionManager.getInstance();
     AnAction oldAction = manager.getAction(action.getActionId());
-    if (oldAction!=null){
+    if (oldAction != null) {
       add(oldAction);
       return;
     }
 
     add(action);
-    BaseApplicationPlugin plugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getPlugin(id);
-    plugin.addParameterizedAction(action,params);
+
+/*
+    for (BaseAction a : getAllActions()) {
+      if (a.getActionId().equals(action.getActionId())) {
+*/
+        BaseApplicationPlugin plugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getPlugin(id);
+        plugin.addParameterizedAction(action, params);
+/*
+      }
+    }
+*/
   }
 
   protected void addAction(ActionStub creator) {
     add(MPSActions.getInstance().acquireAction(creator));
+  }
+
+  protected boolean isStrict(){
+    return true;
+  }
+
+  protected List<BaseAction> getAllActions() {
+    return Collections.emptyList();
   }
 }
