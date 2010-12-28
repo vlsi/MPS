@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.changesmanager;
 
 import java.util.EventListener;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.FileStatus;

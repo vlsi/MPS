@@ -47,7 +47,7 @@ public interface TemplateExecutionEnvironment {
 
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
-  Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
+  Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodePointer templateNode, String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
   Collection<SNode> trySwitch(SNodePointer _switch, String mappingName, TemplateContext context) throws GenerationException;
 

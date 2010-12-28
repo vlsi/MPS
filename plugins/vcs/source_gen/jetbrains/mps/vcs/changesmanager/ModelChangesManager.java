@@ -7,7 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
-import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
@@ -29,18 +29,18 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.vcs.diff.changes.NewNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ICollectionSequence;
-import jetbrains.mps.vcs.diff.changes.DeleteNodeChange;
-import jetbrains.mps.vcs.diff.changes.MoveNodeChange;
-import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
-import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.SetPropertyChange;
+import jetbrains.mps.vcs.diff.oldchanges.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.AddRootChange;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
-import jetbrains.mps.vcs.diff.changes.SetNodeChange;
-import jetbrains.mps.vcs.diff.changes.AddNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.SetNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.AddNodeChange;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -59,8 +59,9 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.vcs.diff.changes.SubstituteNodeChange;
+import jetbrains.mps.vcs.diff.oldchanges.SubstituteNodeChange;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SReference;
@@ -71,15 +72,15 @@ import jetbrains.mps.smodel.SModelAdapter;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.vcs.diff.changes.ModelImportChange;
+import jetbrains.mps.vcs.diff.oldchanges.ModelImportChange;
 import jetbrains.mps.smodel.event.SModelImportEvent;
-import jetbrains.mps.vcs.diff.changes.UsedLanguagesChange;
+import jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
-import jetbrains.mps.vcs.diff.changes.UsedDevkitsChange;
+import jetbrains.mps.vcs.diff.oldchanges.UsedDevkitsChange;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.vcs.diff.changes.DeleteReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 
 public class ModelChangesManager {
@@ -331,7 +332,7 @@ public class ModelChangesManager {
     return removeChanges(changeClass, condition, false);
   }
 
-  private <C extends Change> int removeAllChanges() {
+  private int removeAllChanges() {
     return removeChanges(Change.class, new _FunctionTypes._return_P1_E0<Boolean, Change>() {
       public Boolean invoke(Change change) {
         return true;
@@ -748,7 +749,7 @@ __switch__:
     // Step 2: find longest common subsequence of children 
     List<SNodeId> currentChildrenIds = SModelUtils.getNodeIds(currentChildren);
     List<SNodeId> baseChildrenIds = SModelUtils.getNodeIds(check_fh1co9_a0a21a93(myBaseVersionModel.getNodeById(parentNode.getSNodeId()), role));
-    List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = LongestCommonSubsequenceFinder.findDifferentSubsequences(baseChildrenIds, currentChildrenIds);
+    List<Tuples._2<Iterable<SNodeId>, Iterable<SNodeId>>> differentSubsequences = new LongestCommonSubsequenceFinder<SNodeId>(baseChildrenIds, currentChildrenIds).getDifferentSubsequences();
 
     // Step 3: add new changes 
     List<Change> changesToAdd = ListSequence.fromList(new ArrayList<Change>());

@@ -552,8 +552,70 @@ public class JavaConverterTreeBuilder {
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(ThisReference x) {
-    jetbrains.mps.baseLanguage.structure.Expression thisRef = ThisExpression.newInstance(myCurrentModel);
-    return thisRef;
+    return ThisExpression.newInstance(myCurrentModel);
+  }
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(NormalAnnotation x) {
+    AnnotationInstance annotationInstance = prepareAnnotationInstance(x);
+    MemberValuePair[] pairs = x.memberValuePairs();
+    if (pairs != null) {
+      for (MemberValuePair pair : pairs) {
+        AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(myCurrentModel);
+        value.setValue(processExpressionRefl(pair.value));
+
+        SNode valueNode = value.getNode();
+        if (pair.binding == null) {
+          valueNode.addReference(myTypesProvider.createErrorReference(AnnotationInstanceValue.KEY, new String(pair.name), valueNode));
+        } else {
+          valueNode.addReference(
+          myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
+        }
+        annotationInstance.addValue(value);
+      }
+    }
+    return annotationInstance;
+  }
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(MarkerAnnotation x) {
+    return prepareAnnotationInstance(x);
+  }
+
+  jetbrains.mps.baseLanguage.structure.Expression processExpression(SingleMemberAnnotation x) {
+    AnnotationInstance annotationInstance = prepareAnnotationInstance(x);
+    ImplicitAnnotationInstanceValue value = ImplicitAnnotationInstanceValue.newInstance(myCurrentModel);
+    MemberValuePair[] pairs = x.memberValuePairs();
+    if (pairs != null) {
+      MemberValuePair pair = pairs[0];
+      value.setValue(processExpressionRefl(pair.value));
+        SNode valueNode = value.getNode();
+        if (pair.binding == null) {
+          valueNode.addReference(myTypesProvider.createErrorReference(AnnotationInstanceValue.KEY, new String(pair.name), valueNode));
+        } else {
+          valueNode.addReference(
+          myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
+        }
+        annotationInstance.addValue(value);
+    }
+    return annotationInstance;
+  }
+
+  AnnotationInstance prepareAnnotationInstance(Annotation annotation) {
+    AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myCurrentModel);
+    SNode sourceNode = annotationInstance.getNode();
+    AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
+    SReference classifierReference;
+    if (annotationBinding == null) {
+      TypeReference type = annotation.type;
+      classifierReference = myTypesProvider.createErrorClassifierReference(
+        AnnotationInstance.ANNOTATION, type.resolvedType, sourceNode);
+    } else {
+      classifierReference = myTypesProvider.createClassifierReference(
+      annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode);
+    }
+    if (classifierReference != null) {
+      sourceNode.addReference(classifierReference);
+    }
+    return annotationInstance;
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(QualifiedThisReference x) {
@@ -1570,39 +1632,9 @@ public class JavaConverterTreeBuilder {
 
   
 
-  private void addAnnotation(HasAnnotation variableDeclaration, Annotation annotation) {
-     AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myCurrentModel);
-    SNode sourceNode = annotationInstance.getNode();
-    AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
-    SReference classifierReference;
-    if (annotationBinding == null) {
-      TypeReference type = annotation.type;
-      classifierReference = myTypesProvider.createErrorClassifierReference(
-        AnnotationInstance.ANNOTATION, type.resolvedType, sourceNode);
-    } else {
-      classifierReference = myTypesProvider.createClassifierReference(
-      annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode);
-    }
-    if (classifierReference != null) {
-      sourceNode.addReference(classifierReference);
-    }
-    MemberValuePair[] pairs = annotation.memberValuePairs();
-    if (pairs != null) {
-      for (MemberValuePair pair : pairs) {
-        AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(myCurrentModel);
-        value.setValue(processExpressionRefl(pair.value));
-
-        SNode valueNode = value.getNode();
-        if (pair.binding == null) {
-          valueNode.addReference(myTypesProvider.createErrorReference(AnnotationInstanceValue.KEY, new String(pair.name), valueNode));
-        } else {
-          valueNode.addReference(
-          myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
-        }
-        annotationInstance.addValue(value);
-      }
-    }
-    variableDeclaration.addAnnotation(annotationInstance);
+  private void addAnnotation(HasAnnotation hasAnnotation, Annotation annotation) {
+    AnnotationInstance annotationInstance = (AnnotationInstance) processExpressionRefl(annotation);
+    hasAnnotation.addAnnotation(annotationInstance);
   }
 
   // exec ==========================================================================

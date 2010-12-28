@@ -14,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 
 public class EvaluateExpression_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/evaluate.png", "jetbrains.mps.ide"), true);
@@ -38,7 +37,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
     try {
       {
         AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled() && debugSession.getEvaluationProvider() != null);
+        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled() && debugSession.canShowEvaluationDialog());
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -71,11 +70,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      IEvaluationProvider provider = DebugActionsUtil.getDebugSession(event).getEvaluationProvider();
-      if (provider == null) {
-        return;
-      }
-      provider.showEvaluationDialog(EvaluateExpression_Action.this.operationContext);
+      DebugActionsUtil.getDebugSession(event).showEvaluationDialog(EvaluateExpression_Action.this.operationContext);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "EvaluateExpression", t);

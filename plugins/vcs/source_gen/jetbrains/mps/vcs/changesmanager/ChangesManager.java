@@ -32,12 +32,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.io.PrintStream;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.changes.Change;
-import jetbrains.mps.vcs.VCSSettingsHolder;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
+import jetbrains.mps.vcs.VcsSettingsHolder;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import java.util.Collection;
 import com.intellij.openapi.vcs.changes.ChangeList;
-import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vcs.MPSVcsManager;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -201,7 +201,7 @@ public class ChangesManager extends AbstractProjectComponent {
   }
 
   public static boolean isEnabled() {
-    return VCSSettingsHolder.instance().getSettings().isChangesManagerEnabled();
+    return VcsSettingsHolder.instance().getSettings().isChangesManagerEnabled();
   }
 
   private class MyChangeListListener extends ChangeListAdapter {
@@ -233,7 +233,7 @@ public class ChangesManager extends AbstractProjectComponent {
 
     @Override
     public void unchangedFileStatusChanged() {
-      for (VirtualFile virtualFile : ListSequence.fromList(MPSVCSManager.getInstance(myProject).getUnversionedFilesFromChangeListManager())) {
+      for (VirtualFile virtualFile : ListSequence.fromList(MPSVcsManager.getInstance(myProject).getUnversionedFilesFromChangeListManager())) {
         updateModelStatus(virtualFile, null);
       }
     }

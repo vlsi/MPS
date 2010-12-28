@@ -3,13 +3,13 @@
   <persistence version="7" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <import index="yvor" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="yvnr" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
-  <import index="yvnu" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
+  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
-    <node type="yvnr.ConceptDeclaration" typeId="yvnr.1071489090640:0" id="4079382982702596667">
-      <property name="name" nameId="yvnu.1169194664001:0" value="CheckedDotExpression" />
-      <link role="extends" roleId="yvnr.1071489389519:0" targetNodeId="yvor.1197027756228:3" resolveInfo="DotExpression" />
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4079382982702596667">
+      <property name="name" nameId="tpck.1169194664001" value="CheckedDotExpression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
     </node>
   </roots>
   <root id="4079382982702596667" />

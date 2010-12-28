@@ -301,7 +301,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myGenerationTracer.pushInputNode(inputRootNode);
     try {
       boolean[] changed = new boolean[]{false};
-      SNode root = copyNodeFromInputNode_internal(null, inputRootNode, environment.getReductionContext(), changed);
+      SNode root = copyNodeFromInputNode_internal(null, null, inputRootNode, environment.getReductionContext(), changed);
       registerRoot(root, inputRootNode, null, true);
       if (changed[0]) {
         setChanged();
@@ -445,7 +445,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
-  Collection<SNode> copyNodeFromExternalNode(String mappingName, SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> copyNodeFromExternalNode(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
     if (inputNode.isRegistered()) {
       // TODO fail in strict mode
       inputNode = CopyUtil.copy(inputNode);
@@ -464,10 +464,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     //invalidateReferencesInCopiedNode(inputNode);
     //return Collections.singletonList(inputNode);
 
-    return copyNodeFromInputNode(mappingName, templateNode, inputNode, reductionContext, new boolean[]{false});
+    return copyNodeFromInputNode(mappingName, templateNode, templateNodeId, inputNode, reductionContext, new boolean[]{false});
   }
 
-  Collection<SNode> copyNodeFromInputNode(String mappingName, SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> copyNodeFromInputNode(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushInputNode(inputNode);
     try {
       Collection<SNode> outputNodes = tryToReduce(new DefaultTemplateContext(inputNode), null, mappingName, reductionContext);
@@ -476,7 +476,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return outputNodes;
       }
 
-      SNode copiedNode = copyNodeFromInputNode_internal(templateNode, inputNode, reductionContext, changed);
+      SNode copiedNode = copyNodeFromInputNode_internal(templateNode, templateNodeId, inputNode, reductionContext, changed);
       myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, copiedNode);
       return Collections.singletonList(copiedNode);
     } finally {
@@ -484,7 +484,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private SNode copyNodeFromInputNode_internal(@Nullable SNodePointer templateNode, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
+  private SNode copyNodeFromInputNode_internal(@Nullable SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
@@ -493,7 +493,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     blockReductionsForCopiedNode(inputNode, outputNode, reductionContext); // prevent infinite applying of the same reduction to the 'same' node.
 
-    if (templateNode != null) {
+    if(templateNodeId != null) {
+      myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, outputNode);
+    } else if (templateNode != null) {
       myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode.getNode(), outputNode);
     }
     // output node should be accessible via 'findCopiedNode'
@@ -585,7 +587,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             outputNode.addChild(childRole, outputChildNode);
           }
         } else {
-          outputNode.addChild(childRole, copyNodeFromInputNode_internal(null, inputChildNode, reductionContext, changed));
+          outputNode.addChild(childRole, copyNodeFromInputNode_internal(null, null, inputChildNode, reductionContext, changed));
         }
       } finally {
         myGenerationTracer.closeInputNode(inputChildNode);

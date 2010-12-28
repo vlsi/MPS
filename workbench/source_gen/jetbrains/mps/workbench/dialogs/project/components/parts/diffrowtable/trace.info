@@ -57,36 +57,36 @@
     <nodeInfo nodeId="1560298786499491120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DiffRowTable.java" startLine="146" startPosition="5" endLine="147" endPosition="22" />
     <nodeInfo nodeId="1560298786499491134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DiffRowTable.java" startLine="148" startPosition="42" endLine="149" endPosition="52" />
     <nodeInfo nodeId="1560298786499491144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DiffRowTable.java" startLine="150" startPosition="5" endLine="151" endPosition="81" />
-    <nodeInfo nodeId="1560298786499490571" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="DiffRowTable.java" startLine="22" startPosition="42" endLine="25" endPosition="3" />
-    <nodeInfo nodeId="1560298786499490578" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="DiffRowTable.java" startLine="26" startPosition="0" endLine="29" endPosition="3" />
-    <nodeInfo nodeId="1560298786499490587" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="DiffRowTable.java" startLine="30" startPosition="0" endLine="33" endPosition="3" />
-    <nodeInfo nodeId="1560298786499490617" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="DiffRowTable.java" startLine="39" startPosition="0" endLine="42" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490571" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#()V" fileName="DiffRowTable.java" startLine="22" startPosition="42" endLine="25" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490578" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(Ljavax/swing/table/TableModel;)V" fileName="DiffRowTable.java" startLine="26" startPosition="0" endLine="29" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490587" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(Ljavax/swing/table/TableModel;Ljavax/swing/table/TableColumnModel;)V" fileName="DiffRowTable.java" startLine="30" startPosition="0" endLine="33" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490617" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(II)V" fileName="DiffRowTable.java" startLine="39" startPosition="0" endLine="42" endPosition="3" />
     <nodeInfo nodeId="1560298786499490737" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DiffRowTable.java" startLine="70" startPosition="50" endLine="73" endPosition="7" />
     <nodeInfo nodeId="1560298786499490907" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="108" startPosition="20" endLine="111" endPosition="5" />
     <nodeInfo nodeId="1560298786499490973" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DiffRowTable.java" startLine="117" startPosition="58" endLine="120" endPosition="7" />
     <nodeInfo nodeId="1560298786499491066" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DiffRowTable.java" startLine="137" startPosition="37" endLine="140" endPosition="5" />
     <nodeInfo nodeId="1560298786499491100" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="143" startPosition="27" endLine="146" endPosition="5" />
     <nodeInfo nodeId="1560298786499491124" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="147" startPosition="22" endLine="150" endPosition="5" />
-    <nodeInfo nodeId="1560298786499490598" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="DiffRowTable.java" startLine="34" startPosition="0" endLine="38" endPosition="3" />
-    <nodeInfo nodeId="1560298786499490652" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="47" startPosition="49" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="1560298786499490683" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="57" startPosition="49" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490598" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(Ljavax/swing/table/TableModel;Ljavax/swing/table/TableColumnModel;Ljavax/swing/ListSelectionModel;)V" fileName="DiffRowTable.java" startLine="34" startPosition="0" endLine="38" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490652" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="componentResized#(Ljava/awt/event/ComponentEvent;)V" fileName="DiffRowTable.java" startLine="47" startPosition="49" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490683" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="componentResized#(Ljava/awt/event/ComponentEvent;)V" fileName="DiffRowTable.java" startLine="57" startPosition="49" endLine="61" endPosition="0" />
     <nodeInfo nodeId="1560298786499490766" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DiffRowTable.java" startLine="79" startPosition="81" endLine="83" endPosition="5" />
-    <nodeInfo nodeId="1560298786499490795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowHeight#()I" fileName="DiffRowTable.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <nodeInfo nodeId="1560298786499490845" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="DiffRowTable.java" startLine="94" startPosition="65" endLine="98" endPosition="7" />
     <nodeInfo nodeId="1560298786499490990" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="DiffRowTable.java" startLine="123" startPosition="5" endLine="127" endPosition="5" />
-    <nodeInfo nodeId="1560298786499491038" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
+    <nodeInfo nodeId="1560298786499491038" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="columnSelectionChanged#(Ljavax/swing/event/ListSelectionEvent;)V" fileName="DiffRowTable.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
     <nodeInfo nodeId="1560298786499490645" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DiffRowTable.java" startLine="46" startPosition="37" endLine="51" endPosition="7" />
     <nodeInfo nodeId="1560298786499490676" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DiffRowTable.java" startLine="56" startPosition="37" endLine="61" endPosition="7" />
     <nodeInfo nodeId="1560298786499490718" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="68" startPosition="22" endLine="74" endPosition="5" />
     <nodeInfo nodeId="1560298786499490831" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="93" startPosition="55" endLine="99" endPosition="5" />
-    <nodeInfo nodeId="1560298786499490629" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="DiffRowTable.java" startLine="43" startPosition="0" endLine="52" endPosition="3" />
-    <nodeInfo nodeId="1560298786499490657" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="DiffRowTable.java" startLine="53" startPosition="0" endLine="62" endPosition="3" />
-    <nodeInfo nodeId="1560298786499490747" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="77" startPosition="0" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490629" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(Ljava/util/Vector;Ljava/util/Vector;)V" fileName="DiffRowTable.java" startLine="43" startPosition="0" endLine="52" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490657" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#([[Ljava/lang/Object;[Ljava/lang/Object;)V" fileName="DiffRowTable.java" startLine="53" startPosition="0" endLine="62" endPosition="3" />
+    <nodeInfo nodeId="1560298786499490747" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#(Ljava/lang/Object;I)I" fileName="DiffRowTable.java" startLine="77" startPosition="0" endLine="86" endPosition="0" />
     <nodeInfo nodeId="1560298786499490950" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="DiffRowTable.java" startLine="114" startPosition="60" endLine="123" endPosition="5" />
-    <nodeInfo nodeId="1560298786499490808" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="90" startPosition="0" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="1560298786499490688" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="63" startPosition="0" endLine="77" endPosition="0" />
-    <nodeInfo nodeId="1560298786499491048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="134" startPosition="0" endLine="153" endPosition="0" />
-    <nodeInfo nodeId="1560298786499490867" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="DiffRowTable.java" startLine="102" startPosition="0" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490808" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowHeight#(I)I" fileName="DiffRowTable.java" startLine="90" startPosition="0" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490688" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rowAtPoint#(Ljava/awt/Point;)I" fileName="DiffRowTable.java" startLine="63" startPosition="0" endLine="77" endPosition="0" />
+    <nodeInfo nodeId="1560298786499491048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/ListSelectionEvent;)V" fileName="DiffRowTable.java" startLine="134" startPosition="0" endLine="153" endPosition="0" />
+    <nodeInfo nodeId="1560298786499490867" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellRect#(IIZ)Ljava/awt/Rectangle;" fileName="DiffRowTable.java" startLine="102" startPosition="0" endLine="130" endPosition="0" />
     <scopeInfo nodeId="1560298786499490846" fileName="DiffRowTable.java" startLine="97" startPosition="0" endLine="97" endPosition="29">
       <varInfo nodeId="1560298786499490848" varName="e" />
     </scopeInfo>
@@ -113,65 +113,65 @@
     <scopeInfo nodeId="1560298786499490993" fileName="DiffRowTable.java" startLine="124" startPosition="28" endLine="126" endPosition="161">
       <varInfo nodeId="1560298786499490995" varName="spacing" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490571" fileName="DiffRowTable.java" startLine="22" startPosition="42" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="1560298786499490578" fileName="DiffRowTable.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
+    <scopeInfo nodeId="1560298786499490571" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#()V" fileName="DiffRowTable.java" startLine="22" startPosition="42" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="1560298786499490578" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(Ljavax/swing/table/TableModel;)V" fileName="DiffRowTable.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="1560298786499490580" varName="dm" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490587" fileName="DiffRowTable.java" startLine="30" startPosition="0" endLine="33" endPosition="3">
+    <scopeInfo nodeId="1560298786499490587" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(Ljavax/swing/table/TableModel;Ljavax/swing/table/TableColumnModel;)V" fileName="DiffRowTable.java" startLine="30" startPosition="0" endLine="33" endPosition="3">
       <varInfo nodeId="1560298786499490591" varName="cm" />
       <varInfo nodeId="1560298786499490589" varName="dm" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490617" fileName="DiffRowTable.java" startLine="39" startPosition="0" endLine="42" endPosition="3">
+    <scopeInfo nodeId="1560298786499490617" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(II)V" fileName="DiffRowTable.java" startLine="39" startPosition="0" endLine="42" endPosition="3">
       <varInfo nodeId="1560298786499490621" varName="numColumns" />
       <varInfo nodeId="1560298786499490619" varName="numRows" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490907" fileName="DiffRowTable.java" startLine="108" startPosition="20" endLine="111" endPosition="5">
+    <scopeInfo nodeId="1560298786499490907" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="108" startPosition="20" endLine="111" endPosition="5">
       <varInfo nodeId="1560298786499490911" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499491100" fileName="DiffRowTable.java" startLine="143" startPosition="27" endLine="146" endPosition="5">
+    <scopeInfo nodeId="1560298786499491100" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="143" startPosition="27" endLine="146" endPosition="5">
       <varInfo nodeId="1560298786499491104" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499491124" fileName="DiffRowTable.java" startLine="147" startPosition="22" endLine="150" endPosition="5">
+    <scopeInfo nodeId="1560298786499491124" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="147" startPosition="22" endLine="150" endPosition="5">
       <varInfo nodeId="1560298786499491128" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490598" fileName="DiffRowTable.java" startLine="34" startPosition="0" endLine="38" endPosition="3">
+    <scopeInfo nodeId="1560298786499490598" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(Ljavax/swing/table/TableModel;Ljavax/swing/table/TableColumnModel;Ljavax/swing/ListSelectionModel;)V" fileName="DiffRowTable.java" startLine="34" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="1560298786499490604" varName="sm" />
       <varInfo nodeId="1560298786499490602" varName="cm" />
       <varInfo nodeId="1560298786499490600" varName="dm" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490652" fileName="DiffRowTable.java" startLine="47" startPosition="49" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1560298786499490652" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="componentResized#(Ljava/awt/event/ComponentEvent;)V" fileName="DiffRowTable.java" startLine="47" startPosition="49" endLine="51" endPosition="0">
       <varInfo nodeId="1560298786499490655" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490683" fileName="DiffRowTable.java" startLine="57" startPosition="49" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1560298786499490683" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="componentResized#(Ljava/awt/event/ComponentEvent;)V" fileName="DiffRowTable.java" startLine="57" startPosition="49" endLine="61" endPosition="0">
       <varInfo nodeId="1560298786499490686" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490727" fileName="DiffRowTable.java" startLine="69" startPosition="46" endLine="73" endPosition="7" />
-    <scopeInfo nodeId="1560298786499490795" fileName="DiffRowTable.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1560298786499490795" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowHeight#()I" fileName="DiffRowTable.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="1560298786499490844" fileName="DiffRowTable.java" startLine="94" startPosition="65" endLine="98" endPosition="7" />
-    <scopeInfo nodeId="1560298786499491038" fileName="DiffRowTable.java" startLine="130" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="1560298786499491038" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="columnSelectionChanged#(Ljavax/swing/event/ListSelectionEvent;)V" fileName="DiffRowTable.java" startLine="130" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="1560298786499491041" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490718" fileName="DiffRowTable.java" startLine="68" startPosition="22" endLine="74" endPosition="5">
+    <scopeInfo nodeId="1560298786499490718" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="68" startPosition="22" endLine="74" endPosition="5">
       <varInfo nodeId="1560298786499490722" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490754" fileName="DiffRowTable.java" startLine="78" startPosition="48" endLine="84" endPosition="26">
       <varInfo nodeId="1560298786499490756" varName="tcr" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490831" fileName="DiffRowTable.java" startLine="93" startPosition="55" endLine="99" endPosition="5">
+    <scopeInfo nodeId="1560298786499490831" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="DiffRowTable.java" startLine="93" startPosition="55" endLine="99" endPosition="5">
       <varInfo nodeId="1560298786499490839" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490635" fileName="DiffRowTable.java" startLine="44" startPosition="71" endLine="51" endPosition="7" />
     <scopeInfo nodeId="1560298786499490666" fileName="DiffRowTable.java" startLine="54" startPosition="77" endLine="61" endPosition="7" />
     <scopeInfo nodeId="1560298786499490954" fileName="DiffRowTable.java" startLine="115" startPosition="43" endLine="122" endPosition="14" />
-    <scopeInfo nodeId="1560298786499490629" fileName="DiffRowTable.java" startLine="43" startPosition="0" endLine="52" endPosition="3">
+    <scopeInfo nodeId="1560298786499490629" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#(Ljava/util/Vector;Ljava/util/Vector;)V" fileName="DiffRowTable.java" startLine="43" startPosition="0" endLine="52" endPosition="3">
       <varInfo nodeId="1560298786499490631" varName="rowData" />
       <varInfo nodeId="1560298786499490633" varName="columnNames" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490657" fileName="DiffRowTable.java" startLine="53" startPosition="0" endLine="62" endPosition="3">
+    <scopeInfo nodeId="1560298786499490657" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffRowTable#([[Ljava/lang/Object;[Ljava/lang/Object;)V" fileName="DiffRowTable.java" startLine="53" startPosition="0" endLine="62" endPosition="3">
       <varInfo nodeId="1560298786499490659" varName="rowData" />
       <varInfo nodeId="1560298786499490663" varName="columnNames" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490747" fileName="DiffRowTable.java" startLine="77" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1560298786499490747" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHeight#(Ljava/lang/Object;I)I" fileName="DiffRowTable.java" startLine="77" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1560298786499490750" varName="obj" />
       <varInfo nodeId="1560298786499490752" varName="colNum" />
     </scopeInfo>
@@ -185,10 +185,10 @@
       <varInfo nodeId="1560298786499490715" varName="rowHeight" />
       <varInfo nodeId="1560298786499490695" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490808" fileName="DiffRowTable.java" startLine="90" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="1560298786499490808" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowHeight#(I)I" fileName="DiffRowTable.java" startLine="90" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="1560298786499490811" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490688" fileName="DiffRowTable.java" startLine="63" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="1560298786499490688" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rowAtPoint#(Ljava/awt/Point;)I" fileName="DiffRowTable.java" startLine="63" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1560298786499490691" varName="point" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499491053" fileName="DiffRowTable.java" startLine="135" startPosition="50" endLine="151" endPosition="81">
@@ -198,7 +198,7 @@
       <varInfo nodeId="1560298786499491091" varName="numColumns" />
       <varInfo nodeId="1560298786499491055" varName="firstIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499491048" fileName="DiffRowTable.java" startLine="134" startPosition="0" endLine="153" endPosition="0">
+    <scopeInfo nodeId="1560298786499491048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="valueChanged#(Ljavax/swing/event/ListSelectionEvent;)V" fileName="DiffRowTable.java" startLine="134" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="1560298786499491051" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499490876" fileName="DiffRowTable.java" startLine="103" startPosition="77" endLine="128" endPosition="21">
@@ -208,7 +208,7 @@
       <varInfo nodeId="1560298786499490881" varName="aColumn" />
       <varInfo nodeId="1560298786499490943" varName="enumeration" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499490867" fileName="DiffRowTable.java" startLine="102" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="1560298786499490867" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellRect#(IIZ)Ljava/awt/Rectangle;" fileName="DiffRowTable.java" startLine="102" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="1560298786499490872" varName="column" />
       <varInfo nodeId="1560298786499490874" varName="includeSpacing" />
       <varInfo nodeId="1560298786499490870" varName="row" />
@@ -326,7 +326,7 @@
     <nodeInfo nodeId="1560298786499497369" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BasicDiffRowTableUI.java" startLine="216" startPosition="46" endLine="217" endPosition="77" />
     <nodeInfo nodeId="1560298786499497395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BasicDiffRowTableUI.java" startLine="218" startPosition="26" endLine="219" endPosition="42" />
     <nodeInfo nodeId="1560298786499497405" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BasicDiffRowTableUI.java" startLine="220" startPosition="5" endLine="221" endPosition="21" />
-    <nodeInfo nodeId="1560298786499496074" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" fileName="BasicDiffRowTableUI.java" startLine="18" startPosition="60" endLine="21" endPosition="3" />
+    <nodeInfo nodeId="1560298786499496074" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BasicDiffRowTableUI#()V" fileName="BasicDiffRowTableUI.java" startLine="18" startPosition="60" endLine="21" endPosition="3" />
     <nodeInfo nodeId="1560298786499496127" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="28" startPosition="39" endLine="31" endPosition="7" />
     <nodeInfo nodeId="1560298786499496178" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BasicDiffRowTableUI.java" startLine="34" startPosition="52" endLine="37" endPosition="5" />
     <nodeInfo nodeId="1560298786499496191" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="38" startPosition="24" endLine="41" endPosition="5" />
@@ -355,21 +355,21 @@
     <nodeInfo nodeId="1560298786499497256" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="BasicDiffRowTableUI.java" startLine="205" startPosition="10" endLine="212" endPosition="5" />
     <nodeInfo nodeId="1560298786499496741" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="131" startPosition="62" endLine="139" endPosition="5" />
     <nodeInfo nodeId="1560298786499496983" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BasicDiffRowTableUI.java" startLine="161" startPosition="21" endLine="169" endPosition="9" />
-    <nodeInfo nodeId="1560298786499497363" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="215" startPosition="0" endLine="223" endPosition="0" />
-    <nodeInfo nodeId="1560298786499496221" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="44" startPosition="0" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="1560298786499496267" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="54" startPosition="0" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="1560298786499496313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="64" startPosition="0" endLine="74" endPosition="0" />
-    <nodeInfo nodeId="1560298786499496532" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="98" startPosition="0" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="1560298786499497363" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lastVisibleRow#(Ljava/awt/Rectangle;)I" fileName="BasicDiffRowTableUI.java" startLine="215" startPosition="0" endLine="223" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496221" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMinimumSize#(Ljavax/swing/JComponent;)Ljava/awt/Dimension;" fileName="BasicDiffRowTableUI.java" startLine="44" startPosition="0" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496267" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#(Ljavax/swing/JComponent;)Ljava/awt/Dimension;" fileName="BasicDiffRowTableUI.java" startLine="54" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMaximumSize#(Ljavax/swing/JComponent;)Ljava/awt/Dimension;" fileName="BasicDiffRowTableUI.java" startLine="64" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496532" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintGrid#(Ljava/awt/Graphics;)V" fileName="BasicDiffRowTableUI.java" startLine="98" startPosition="0" endLine="108" endPosition="0" />
     <nodeInfo nodeId="1560298786499497234" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BasicDiffRowTableUI.java" startLine="200" startPosition="150" endLine="212" endPosition="5" />
-    <nodeInfo nodeId="1560298786499496707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="126" startPosition="0" endLine="141" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintVerticalLines#(Ljava/awt/Graphics;)V" fileName="BasicDiffRowTableUI.java" startLine="126" startPosition="0" endLine="141" endPosition="0" />
     <nodeInfo nodeId="1560298786499496967" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BasicDiffRowTableUI.java" startLine="159" startPosition="58" endLine="174" endPosition="7" />
     <nodeInfo nodeId="1560298786499497054" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="BasicDiffRowTableUI.java" startLine="177" startPosition="5" endLine="194" endPosition="5" />
-    <nodeInfo nodeId="1560298786499496571" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="108" startPosition="0" endLine="126" endPosition="0" />
-    <nodeInfo nodeId="1560298786499497176" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="196" startPosition="0" endLine="215" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496571" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintHorizontalLines#(Ljava/awt/Graphics;)V" fileName="BasicDiffRowTableUI.java" startLine="108" startPosition="0" endLine="126" endPosition="0" />
+    <nodeInfo nodeId="1560298786499497176" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintCell#(Ljava/awt/Graphics;Ljava/awt/Rectangle;II)V" fileName="BasicDiffRowTableUI.java" startLine="196" startPosition="0" endLine="215" endPosition="0" />
     <nodeInfo nodeId="1560298786499496942" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="BasicDiffRowTableUI.java" startLine="156" startPosition="66" endLine="177" endPosition="5" />
-    <nodeInfo nodeId="1560298786499496078" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="22" startPosition="0" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="1560298786499496359" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="74" startPosition="0" endLine="98" endPosition="0" />
-    <nodeInfo nodeId="1560298786499496828" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="BasicDiffRowTableUI.java" startLine="141" startPosition="0" endLine="196" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496078" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTableSize#(J)Ljava/awt/Dimension;" fileName="BasicDiffRowTableUI.java" startLine="22" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496359" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V" fileName="BasicDiffRowTableUI.java" startLine="74" startPosition="0" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="1560298786499496828" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintRow#(Ljava/awt/Graphics;I)V" fileName="BasicDiffRowTableUI.java" startLine="141" startPosition="0" endLine="196" endPosition="0" />
     <scopeInfo nodeId="1560298786499496076" fileName="BasicDiffRowTableUI.java" startLine="19" startPosition="32" endLine="20" endPosition="12" />
     <scopeInfo nodeId="1560298786499496136" fileName="BasicDiffRowTableUI.java" startLine="29" startPosition="41" endLine="30" endPosition="98" />
     <scopeInfo nodeId="1560298786499496182" fileName="BasicDiffRowTableUI.java" startLine="35" startPosition="46" endLine="36" endPosition="42" />
@@ -398,21 +398,21 @@
     <scopeInfo nodeId="1560298786499496337" fileName="BasicDiffRowTableUI.java" startLine="68" startPosition="43" endLine="70" endPosition="44">
       <varInfo nodeId="1560298786499496339" varName="aColumn" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496074" fileName="BasicDiffRowTableUI.java" startLine="18" startPosition="60" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="1560298786499496074" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BasicDiffRowTableUI#()V" fileName="BasicDiffRowTableUI.java" startLine="18" startPosition="60" endLine="21" endPosition="3" />
     <scopeInfo nodeId="1560298786499496126" fileName="BasicDiffRowTableUI.java" startLine="28" startPosition="39" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1560298786499496127" fileName="BasicDiffRowTableUI.java" startLine="28" startPosition="39" endLine="31" endPosition="7">
+    <scopeInfo nodeId="1560298786499496127" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="28" startPosition="39" endLine="31" endPosition="7">
       <varInfo nodeId="1560298786499496131" varName="j" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496191" fileName="BasicDiffRowTableUI.java" startLine="38" startPosition="24" endLine="41" endPosition="5">
+    <scopeInfo nodeId="1560298786499496191" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="38" startPosition="24" endLine="41" endPosition="5">
       <varInfo nodeId="1560298786499496195" varName="k" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496463" fileName="BasicDiffRowTableUI.java" startLine="86" startPosition="18" endLine="89" endPosition="5">
+    <scopeInfo nodeId="1560298786499496463" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="86" startPosition="18" endLine="89" endPosition="5">
       <varInfo nodeId="1560298786499496467" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496621" fileName="BasicDiffRowTableUI.java" startLine="115" startPosition="23" endLine="118" endPosition="5">
+    <scopeInfo nodeId="1560298786499496621" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="115" startPosition="23" endLine="118" endPosition="5">
       <varInfo nodeId="1560298786499496625" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496904" fileName="BasicDiffRowTableUI.java" startLine="152" startPosition="19" endLine="155" endPosition="5">
+    <scopeInfo nodeId="1560298786499496904" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="152" startPosition="19" endLine="155" endPosition="5">
       <varInfo nodeId="1560298786499496908" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496973" fileName="BasicDiffRowTableUI.java" startLine="170" startPosition="14" endLine="173" endPosition="9" />
@@ -422,16 +422,16 @@
     <scopeInfo nodeId="1560298786499496498" fileName="BasicDiffRowTableUI.java" startLine="90" startPosition="63" endLine="94" endPosition="74" />
     <scopeInfo nodeId="1560298786499496654" fileName="BasicDiffRowTableUI.java" startLine="119" startPosition="63" endLine="123" endPosition="7" />
     <scopeInfo nodeId="1560298786499496996" fileName="BasicDiffRowTableUI.java" startLine="164" startPosition="16" endLine="168" endPosition="38" />
-    <scopeInfo nodeId="1560298786499496117" fileName="BasicDiffRowTableUI.java" startLine="27" startPosition="36" endLine="32" endPosition="5">
+    <scopeInfo nodeId="1560298786499496117" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="27" startPosition="36" endLine="32" endPosition="5">
       <varInfo nodeId="1560298786499496121" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499497368" fileName="BasicDiffRowTableUI.java" startLine="216" startPosition="46" endLine="221" endPosition="21">
       <varInfo nodeId="1560298786499497370" varName="lastIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496489" fileName="BasicDiffRowTableUI.java" startLine="89" startPosition="5" endLine="95" endPosition="5">
+    <scopeInfo nodeId="1560298786499496489" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="89" startPosition="5" endLine="95" endPosition="5">
       <varInfo nodeId="1560298786499496493" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496645" fileName="BasicDiffRowTableUI.java" startLine="118" startPosition="5" endLine="124" endPosition="5">
+    <scopeInfo nodeId="1560298786499496645" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="118" startPosition="5" endLine="124" endPosition="5">
       <varInfo nodeId="1560298786499496649" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496750" fileName="BasicDiffRowTableUI.java" startLine="132" startPosition="50" endLine="138" endPosition="7" />
@@ -452,23 +452,23 @@
       <varInfo nodeId="1560298786499496324" varName="enumeration" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496537" fileName="BasicDiffRowTableUI.java" startLine="99" startPosition="38" endLine="106" endPosition="5" />
-    <scopeInfo nodeId="1560298786499496741" fileName="BasicDiffRowTableUI.java" startLine="131" startPosition="62" endLine="139" endPosition="5">
+    <scopeInfo nodeId="1560298786499496741" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="BasicDiffRowTableUI.java" startLine="131" startPosition="62" endLine="139" endPosition="5">
       <varInfo nodeId="1560298786499496745" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499497363" fileName="BasicDiffRowTableUI.java" startLine="215" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="1560298786499497363" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lastVisibleRow#(Ljava/awt/Rectangle;)I" fileName="BasicDiffRowTableUI.java" startLine="215" startPosition="0" endLine="223" endPosition="0">
       <varInfo nodeId="1560298786499497366" varName="clip" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496978" fileName="BasicDiffRowTableUI.java" startLine="160" startPosition="38" endLine="169" endPosition="9" />
-    <scopeInfo nodeId="1560298786499496221" fileName="BasicDiffRowTableUI.java" startLine="44" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="1560298786499496221" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMinimumSize#(Ljavax/swing/JComponent;)Ljava/awt/Dimension;" fileName="BasicDiffRowTableUI.java" startLine="44" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1560298786499496224" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496267" fileName="BasicDiffRowTableUI.java" startLine="54" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1560298786499496267" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#(Ljavax/swing/JComponent;)Ljava/awt/Dimension;" fileName="BasicDiffRowTableUI.java" startLine="54" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="1560298786499496270" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496313" fileName="BasicDiffRowTableUI.java" startLine="64" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1560298786499496313" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMaximumSize#(Ljavax/swing/JComponent;)Ljava/awt/Dimension;" fileName="BasicDiffRowTableUI.java" startLine="64" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1560298786499496316" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496532" fileName="BasicDiffRowTableUI.java" startLine="98" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="1560298786499496532" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintGrid#(Ljava/awt/Graphics;)V" fileName="BasicDiffRowTableUI.java" startLine="98" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="1560298786499496535" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496712" fileName="BasicDiffRowTableUI.java" startLine="127" startPosition="47" endLine="139" endPosition="5">
@@ -485,7 +485,7 @@
       <varInfo nodeId="1560298786499496584" varName="rect" />
       <varInfo nodeId="1560298786499496617" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496707" fileName="BasicDiffRowTableUI.java" startLine="126" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="1560298786499496707" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintVerticalLines#(Ljava/awt/Graphics;)V" fileName="BasicDiffRowTableUI.java" startLine="126" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="1560298786499496710" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499497063" fileName="BasicDiffRowTableUI.java" startLine="178" startPosition="62" endLine="193" endPosition="61">
@@ -498,7 +498,7 @@
       <varInfo nodeId="1560298786499497197" varName="spacingWidth" />
       <varInfo nodeId="1560298786499497189" varName="spacingHeight" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496571" fileName="BasicDiffRowTableUI.java" startLine="108" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="1560298786499496571" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintHorizontalLines#(Ljava/awt/Graphics;)V" fileName="BasicDiffRowTableUI.java" startLine="108" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="1560298786499496574" varName="g" />
     </scopeInfo>
     <scopeInfo nodeId="1560298786499496083" fileName="BasicDiffRowTableUI.java" startLine="23" startPosition="49" endLine="42" endPosition="94">
@@ -513,7 +513,7 @@
     <scopeInfo nodeId="1560298786499496946" fileName="BasicDiffRowTableUI.java" startLine="157" startPosition="43" endLine="176" endPosition="15">
       <varInfo nodeId="1560298786499496948" varName="aColumn" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499497176" fileName="BasicDiffRowTableUI.java" startLine="196" startPosition="0" endLine="215" endPosition="0">
+    <scopeInfo nodeId="1560298786499497176" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintCell#(Ljava/awt/Graphics;Ljava/awt/Rectangle;II)V" fileName="BasicDiffRowTableUI.java" startLine="196" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="1560298786499497181" varName="cellRect" />
       <varInfo nodeId="1560298786499497179" varName="g" />
       <varInfo nodeId="1560298786499497185" varName="column" />
@@ -528,10 +528,10 @@
       <varInfo nodeId="1560298786499496368" varName="oldClipBounds" />
       <varInfo nodeId="1560298786499496380" varName="tableWidth" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496078" fileName="BasicDiffRowTableUI.java" startLine="22" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="1560298786499496078" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTableSize#(J)Ljava/awt/Dimension;" fileName="BasicDiffRowTableUI.java" startLine="22" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1560298786499496081" varName="width" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496359" fileName="BasicDiffRowTableUI.java" startLine="74" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="1560298786499496359" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V" fileName="BasicDiffRowTableUI.java" startLine="74" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1560298786499496362" varName="g" />
       <varInfo nodeId="1560298786499496364" varName="c" />
     </scopeInfo>
@@ -546,7 +546,7 @@
       <varInfo nodeId="1560298786499496868" varName="header" />
       <varInfo nodeId="1560298786499496847" varName="drawn" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499496828" fileName="BasicDiffRowTableUI.java" startLine="141" startPosition="0" endLine="196" endPosition="0">
+    <scopeInfo nodeId="1560298786499496828" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintRow#(Ljava/awt/Graphics;I)V" fileName="BasicDiffRowTableUI.java" startLine="141" startPosition="0" endLine="196" endPosition="0">
       <varInfo nodeId="1560298786499496831" varName="g" />
       <varInfo nodeId="1560298786499496833" varName="row" />
     </scopeInfo>

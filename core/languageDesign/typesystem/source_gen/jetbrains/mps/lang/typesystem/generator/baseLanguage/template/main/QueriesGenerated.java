@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
+import jetbrains.mps.lang.typesystem.behavior.AbstractInequationStatement_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -2423,11 +2424,17 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1215531866909(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+    if (AbstractInequationStatement_Behavior.call_isLessThanInequality_5312038888515830439(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"))) {
+      return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
+    }
+    return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
 
   public static SNode sourceNodeQuery_1215531866917(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
+    if (AbstractInequationStatement_Behavior.call_isLessThanInequality_5312038888515830439(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"))) {
+      return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
+    }
+    return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
 
   public static SNode sourceNodeQuery_1215531842897(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
