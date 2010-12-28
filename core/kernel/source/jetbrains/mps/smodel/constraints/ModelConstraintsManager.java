@@ -75,6 +75,18 @@ public class ModelConstraintsManager implements ApplicationComponent {
     public void unRegisterSelf(ModelConstraintsManager manager) {
     }
   };
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clearAll();
+    }
+  };
+  private ModuleRepositoryAdapter myRepositoryListener = new ModuleRepositoryAdapter() {
+    public void moduleRemoved(IModule module) {
+      if (module instanceof Language) {
+        processLanguageRemoved((Language) module);
+      }
+    }
+  };
 
   public static ModelConstraintsManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelConstraintsManager.class);
@@ -106,31 +118,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
-      public void moduleAdded(IModule module) {
-      }
-
-      public void beforeModuleRemoved(IModule module) {
-      }
-
-      public void moduleRemoved(IModule module) {
-        if (module instanceof Language) {
-          processLanguageRemoved((Language) module);
-        }
-      }
-
-      public void moduleInitialized(IModule module) {
-      }
-
-      public void moduleChanged(IModule module) {
-      }
-    });
-
-    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clearAll();
-      }
-    });
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -140,7 +129,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
+    MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
   }
 
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {

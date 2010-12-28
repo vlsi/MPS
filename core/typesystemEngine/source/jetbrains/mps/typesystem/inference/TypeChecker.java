@@ -42,13 +42,9 @@ import java.util.List;
 import java.util.Map;
 
 public class TypeChecker implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(TypeChecker.class);
-
   private static final String RUNTIME_TYPES = "$runtimeTypes$";
   private static final String TYPES_MODEL_NAME = "typesModel";
   private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
-  private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {
-  };
 
   public final Object LISTENERS_LOCK = new Object();
 
@@ -69,6 +65,11 @@ public class TypeChecker implements ApplicationComponent {
   private IPerformanceTracer myPerformanceTracer = null;
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clearForReload();
+    }
+  };
 
   private static final boolean useNewTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
 
@@ -85,11 +86,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clearForReload();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -99,6 +96,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void disposeComponent() {
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   public static TypeChecker getInstance() {

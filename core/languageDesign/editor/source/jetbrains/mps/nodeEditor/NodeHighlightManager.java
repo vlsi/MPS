@@ -53,18 +53,17 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * all Caches are synchronized using myMessagesLock
    */
   private Map<EditorCell, List<EditorMessage>> myMessagesCache;
-  public ReloadAdapter myHandler;
+  public ReloadAdapter myHandler = new ReloadAdapter() {
+    public void unload() {
+      clear();
+    }
+  };
   private RebuildListener myRebuildListener;
   private Set<EditorMessageIconRenderer> myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
   private boolean myRebuildIconRenderersCacheFlag;
 
   public NodeHighlightManager(@NotNull EditorComponent editor) {
     myEditor = editor;
-    myHandler = new ReloadAdapter() {
-      public void unload() {
-        clear();
-      }
-    };
 
     editor.addRebuildListener(myRebuildListener = new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {

@@ -59,6 +59,7 @@ public class NewLanguageUITest extends NewDialogsUITestsBase {
       @Override
       public void onAfterReload() {
         loaded[0] = true;
+        ClassLoaderManager.getInstance().removeReloadHandler(this);
       }
     });
 

@@ -41,6 +41,11 @@ public class QueryMethodGenerated implements ApplicationComponent {
   private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
   private static ConcurrentMap<String, Constructor> ourAdaptorsConstructors = new ConcurrentHashMap<String, Constructor>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clearCaches();
+    }
+  };
 
   public static IModule findModuleForModel(SModelDescriptor sourceModel) {
     for (ModelOwner owner : SModelRepository.getInstance().getOwners(sourceModel)) {
@@ -193,11 +198,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clearCaches();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -207,5 +208,6 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   public void disposeComponent() {
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 }

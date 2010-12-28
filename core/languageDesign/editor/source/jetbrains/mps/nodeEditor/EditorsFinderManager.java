@@ -39,6 +39,11 @@ import org.jetbrains.annotations.NotNull;
 
 public class EditorsFinderManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(EditorsFinderManager.class);
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clearCaches();
+    }
+  };
 
   public static EditorsFinderManager getInstance() {
     return ApplicationManager.getApplication().getComponent(EditorsFinderManager.class);
@@ -54,11 +59,7 @@ public class EditorsFinderManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clearCaches();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -68,6 +69,7 @@ public class EditorsFinderManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   public INodeEditor loadEditor(EditorContext context, SNode node) {

@@ -33,12 +33,24 @@ import java.util.*;
 public class WatchedRoots implements ApplicationComponent {
   private final LibraryManager myLibraryManager;
   private final ClassLoaderManager myClassLoaderManager;
-  private ReloadAdapter myReloadHandler;
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void onAfterReload() {
+      processLibrariesChange();
+    }
+  };
   private final Map<Library, LocalFileSystem.WatchRequest> myLibrariesRequests = new HashMap<Library, WatchRequest>();
   private final Map<Library, LocalFileSystem.WatchRequest> myProjectLibrariesRequests = new HashMap<Library, WatchRequest>();
   private final LocalFileSystem myLocalFileSystem;
   private final ProjectManager myProjectManager;
-  private ProjectManagerAdapter myProjectManagerListener;
+  private ProjectManagerAdapter myProjectManagerListener = new ProjectManagerAdapter() {
+    public void projectOpened(Project project) {
+      processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
+    }
+
+    public void projectClosing(Project project) {
+      processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
+    }
+  };
 
   public WatchedRoots(LocalFileSystem lfs, ClassLoaderManager classLoaderManager, LibraryManager libraryManager, ProjectManager projectManager) {
     myLibraryManager = libraryManager;
@@ -53,26 +65,14 @@ public class WatchedRoots implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myReloadHandler = new ReloadAdapter() {
-      @Override
-      public void onAfterReload() {
-        processLibrariesChange();
-      }
-    };
     processLibrariesChange();
     myClassLoaderManager.addReloadHandler(myReloadHandler);
-    myProjectManagerListener = new ProjectManagerAdapter() {
-      @Override
-      public void projectOpened(Project project) {
-        processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
-      }
-
-      @Override
-      public void projectClosing(Project project) {
-        processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
-      }
-    };
     myProjectManager.addProjectManagerListener(myProjectManagerListener);
+  }
+
+  public void disposeComponent() {
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    myProjectManager.removeProjectManagerListener(myProjectManagerListener);
   }
 
   private void processLibrariesChange() {
@@ -127,10 +127,5 @@ public class WatchedRoots implements ApplicationComponent {
       }
     }
     return result;
-  }
-
-  public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
-    myProjectManager.removeProjectManagerListener(myProjectManagerListener);
   }
 }
