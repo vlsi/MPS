@@ -237,6 +237,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GenerateModels_ActionGroup());
     addGroup(new GenerateModule_ActionGroup());
     addGroup(new Generate_ActionGroup());
+    addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
     addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
@@ -269,6 +270,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SolutionActions_ActionGroup());
     addGroup(new SolutionNewActions_ActionGroup());
     addGroup(new SolutionRefactoring_ActionGroup());
+    addGroup(new SurroundWithIntentions_ActionGroup());
     addGroup(new ToolsInternal_ActionGroup());
     addGroup(new ToolsUpgrade_ActionGroup());
     addGroup(new Tools_ActionGroup());

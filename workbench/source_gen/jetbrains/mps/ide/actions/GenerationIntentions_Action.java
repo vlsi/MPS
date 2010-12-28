@@ -9,32 +9,21 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.workbench.action.ActionFactory;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
-import jetbrains.mps.workbench.action.BaseGroup;
-import java.util.List;
-import com.intellij.openapi.util.Pair;
-import jetbrains.mps.intentions.Intention;
-import java.util.ArrayList;
-import jetbrains.mps.intentions.IntentionsManager;
-import jetbrains.mps.intentions.GenerateIntention;
-import java.util.Collections;
-import java.util.Comparator;
-import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.intentions.IntentionContext;
 
 public class GenerationIntentions_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -61,15 +50,6 @@ public class GenerationIntentions_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    {
-      SNode node = event.getData(MPSDataKeys.NODE);
-      if (node != null) {
-      }
-      MapSequence.fromMap(_params).put("selectedNode", node);
-    }
-    if (MapSequence.fromMap(_params).get("selectedNode") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
@@ -86,64 +66,27 @@ public class GenerationIntentions_Action extends GeneratedAction {
         y += ((EditorCell_Label) selectedCell).getHeight();
       }
       final DataContext dataContext = DataManager.getInstance().getDataContext(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), x, y);
-      ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
-        public ListPopup compute() {
-          ActionGroup group = GenerationIntentions_Action.this.getIntentionGroup(_params);
-          ListPopup popup = null;
-          if (group != null) {
-            popup = JBPopupFactory.getInstance().createActionGroupPopup("Generate", group, dataContext, JBPopupFactory.ActionSelectionAid.NUMBERING, false);
+      final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ActionGroup group = ActionFactory.getInstance().acquireRegisteredGroup("jetbrains.mps.ide.actions.GenerationIntentions_ActionGroup", "jetbrains.mps.ide");
+          group.update(event);
+          if (group.getChildren(event).length == 0) {
+            return;
           }
-          return popup;
+          popup.value = JBPopupFactory.getInstance().createActionGroupPopup("Generate", group, dataContext, JBPopupFactory.ActionSelectionAid.NUMBERING, false);
         }
       });
-      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
-      if (popup != null) {
-        popup.show(relativePoint);
+      if (popup.value == null) {
+        return;
       }
+
+      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
+      popup.value.show(relativePoint);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerationIntentions", t);
       }
     }
-  }
-
-  private BaseGroup getIntentionGroup(final Map<String, Object> _params) {
-    BaseGroup group = new BaseGroup("");
-    List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-    query.setIntentionClass(GenerateIntention.class);
-    query.setInstantiate(true);
-    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext"))));
-    if (groupItems.isEmpty()) {
-      return null;
-    }
-    final EditorContext editorContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext"));
-    Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
-      public int compare(Pair<Intention, SNode> p0, Pair<Intention, SNode> p1) {
-        Intention intention1 = p0.getFirst();
-        Intention intention2 = p1.getFirst();
-        SNode node1 = p0.getSecond();
-        SNode node2 = p1.getSecond();
-        return intention1.getDescription(node1, editorContext).compareTo(intention2.getDescription(node2, editorContext));
-      }
-    });
-    for (final Pair<Intention, SNode> pair : groupItems) {
-      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), editorContext)) {
-        protected void doExecute(AnActionEvent event) {
-          final IntentionContext intentionContext = new IntentionContext();
-          final GenerateIntention generateIntention = (GenerateIntention) pair.getFirst();
-          if (generateIntention.executeUI(pair.getSecond(), editorContext, intentionContext)) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                generateIntention.execute(pair.getSecond(), editorContext, intentionContext);
-              }
-            });
-          }
-        }
-      };
-      action.setExecuteOutsideCommand(true);
-      group.add(action);
-    }
-    return group;
   }
 }
