@@ -40,13 +40,19 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
 
   @Override
   public void deleteRow(int row) {
-    assert row >= 1;
+    if (row == 0) {
+      // it's not possible to delete header row 
+      return;
+    }
     super.deleteRow(row - 1);
   }
 
   @Override
   public void insertRow(int row) {
-    assert row >= 1;
+    if (row == 0) {
+      // it's not possible to insert row before header 
+      row = 1;
+    }
     super.insertRow(row - 1);
   }
 
