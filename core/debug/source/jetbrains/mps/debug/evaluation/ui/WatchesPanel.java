@@ -25,32 +25,17 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.debug.api.integration.DebuggerContent;
-import jetbrains.mps.debug.api.integration.ui.WatchableNode;
-import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.IWatchListener;
-import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
-import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.runtime.DebugSession;
-import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
-import jetbrains.mps.debug.runtime.SuspendContext;
-import jetbrains.mps.debug.runtime.java.programState.watchables.WatchWatchable;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 public class WatchesPanel extends EvaluationUi {
   private static final Logger LOG = Logger.getLogger(WatchesPanel.class);

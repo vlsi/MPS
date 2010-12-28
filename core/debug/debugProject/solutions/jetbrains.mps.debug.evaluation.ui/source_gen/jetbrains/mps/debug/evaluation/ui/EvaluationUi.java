@@ -43,6 +43,7 @@ public abstract class EvaluationUi extends JPanel {
 
   public void dispose() {
     myDebugSession.removeChangeListener(mySessionChangeAdapter);
+    myTree.dispose();
   }
 
   protected void evaluate(final AbstractEvaluationModel model) {

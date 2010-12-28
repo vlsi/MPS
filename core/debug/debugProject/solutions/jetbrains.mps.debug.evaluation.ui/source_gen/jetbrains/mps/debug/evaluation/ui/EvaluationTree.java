@@ -52,7 +52,7 @@ import java.io.PrintWriter;
   }
 
   /*package*/ void setResultProxy(IValueProxy valueProxy, AbstractEvaluationModel model) {
-    MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(valueProxy, myClassFqName, myThreadReference));
+    MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), valueProxy, myClassFqName, myThreadReference));
   }
 
   /*package*/ void setError(@NotNull String text, AbstractEvaluationModel model) {
@@ -74,6 +74,13 @@ import java.io.PrintWriter;
       state.rebuild(rootTreeNode);
     }
     return rootTreeNode;
+  }
+
+  @Override
+  public void dispose() {
+    MapSequence.fromMap(myStates).clear();
+    rebuildLater();
+    super.dispose();
   }
 
   private static abstract class EvaluationState {
@@ -107,15 +114,17 @@ import java.io.PrintWriter;
     @NotNull
     private final String myClassFqName;
     private final ThreadReference myThreadReference;
+    private final String myPresentation;
 
-    public ResultState(IValueProxy proxy, String classFqName, ThreadReference threadReference) {
+    public ResultState(String presentation, IValueProxy proxy, String classFqName, ThreadReference threadReference) {
+      myPresentation = presentation;
       myValueProxy = proxy;
       myClassFqName = classFqName;
       myThreadReference = threadReference;
     }
 
     public void rebuild(MPSTreeNode rootTreeNode) {
-      rootTreeNode.add(new WatchableNode(new CalculatedWatchable(this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference)));
+      rootTreeNode.add(new WatchableNode(new CalculatedWatchable(myPresentation, this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference)));
     }
   }
 

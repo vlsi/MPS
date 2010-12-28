@@ -13,9 +13,11 @@ import javax.swing.Icon;
 
 public class CalculatedWatchable extends JavaBreakpointWatchable implements IWatchable {
   private final JavaValue myValue;
+  private final String myName;
 
-  public CalculatedWatchable(Value value, String classFqName, ThreadReference threadReference) {
+  public CalculatedWatchable(String name, Value value, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
+    myName = name;
     myValue = JavaValue.fromJDIValue(value, myClassFQName, threadReference);
   }
 
@@ -26,7 +28,7 @@ public class CalculatedWatchable extends JavaBreakpointWatchable implements IWat
 
   @Override
   public String getName() {
-    return "calculated value";
+    return myName;
   }
 
   @Override

@@ -25,8 +25,10 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
@@ -139,8 +141,19 @@ public abstract class AbstractEvaluationModel {
 
   public String getPresentation() {
     // todo better presentation 
-    // and when there are not statements? 
-    return BaseConcept_Behavior.call_getPresentation_1213877396640(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(myEvaluator, "evaluatedStatement", true), "statements", true), "statement", true)).first());
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
+        List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(myEvaluator, "evaluatedStatement", true), "statements", true), "statement", true);
+        if (ListSequence.fromList(statements).isEmpty()) {
+          return "empty statement";
+        }
+        SNode firstStatement = ListSequence.fromList(statements).first();
+        if (SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+          return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(SNodeOperations.cast(firstStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
+        }
+        return BaseConcept_Behavior.call_getPresentation_1213877396640(firstStatement);
+      }
+    });
   }
 
   @Nullable
