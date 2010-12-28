@@ -34,8 +34,7 @@ import java.util.Map.Entry;
 
 
 public class NodeHighlightManager implements EditorMessageOwner {
-  private static final Comparator<EditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<EditorMessage>() {
-    @Override
+  private static final Comparator<EditorMessage> EDITOR_MESSAGES_COPARATOR = new Comparator<EditorMessage>() {
     public int compare(EditorMessage m1, EditorMessage m2) {
       return m1.getPriority() - m2.getPriority();
     }
@@ -82,6 +81,11 @@ public class NodeHighlightManager implements EditorMessageOwner {
     });
 
     ClassLoaderManager.getInstance().addReloadHandler(myHandler);
+  }
+
+  public void dispose() {
+    ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
+    myEditor.removeRebuildListener(myRebuildListener);    
   }
 
   /**
@@ -377,11 +381,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return result;
   }
 
-  public void dispose() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
-    myEditor.removeRebuildListener(myRebuildListener);
-  }
-
   public EditorCell getCell(EditorMessage change) {
     for (Entry<EditorCell, List<EditorMessage>> e: getMessagesCache().entrySet()) {
       if (e.getValue().contains(change)) {
@@ -390,5 +389,4 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
     return null;
   }
-
 }
