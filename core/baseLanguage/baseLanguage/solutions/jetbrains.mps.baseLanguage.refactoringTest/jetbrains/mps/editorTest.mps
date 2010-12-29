@@ -2443,7 +2443,7 @@
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5394298559859263510">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.BootstrapActionReference" typeId="tp5g.1101347953350122758" id="5394298559859263511">
-          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.End_Action" />
+          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide.actions.End_Action" />
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="1232980788138">
@@ -2595,7 +2595,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1235221901284">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5394298559859255194">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.BootstrapActionReference" typeId="tp5g.1101347953350122758" id="5394298559859255195">
-          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.End_Action" />
+          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide.actions.End_Action" />
         </node>
       </node>
     </node>
@@ -4440,12 +4440,12 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2322823743453986728">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1759230080744540284">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.BootstrapActionReference" typeId="tp5g.1101347953350122758" id="1759230080744540285">
-          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.SelectUp_Action" />
+          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide.actions.SelectUp_Action" />
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1759230080744581085">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.BootstrapActionReference" typeId="tp5g.1101347953350122758" id="1759230080744581086">
-          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.SelectUp_Action" />
+          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide.actions.SelectUp_Action" />
         </node>
       </node>
     </node>

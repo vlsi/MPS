@@ -385,8 +385,8 @@
   </root>
   <root nodeId="1232980648942">
     <nodeInfo nodeId="1232980750082" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PressingEndWithSelectedNode_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="141" />
-    <nodeInfo nodeId="5394298559859263510" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PressingEndWithSelectedNode_Test.java" startLine="28" startPosition="141" endLine="29" endPosition="120" />
-    <nodeInfo nodeId="1232980788138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PressingEndWithSelectedNode_Test.java" startLine="29" startPosition="120" endLine="30" endPosition="117" />
+    <nodeInfo nodeId="5394298559859263510" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PressingEndWithSelectedNode_Test.java" startLine="28" startPosition="141" endLine="29" endPosition="95" />
+    <nodeInfo nodeId="1232980788138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PressingEndWithSelectedNode_Test.java" startLine="29" startPosition="95" endLine="30" endPosition="117" />
   </root>
   <root nodeId="1233333241782">
     <nodeInfo nodeId="3167392541572726587" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="BracesTest_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" />
@@ -397,7 +397,7 @@
     <nodeInfo nodeId="1234448038163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TypeToTypeof_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="59" />
   </root>
   <root nodeId="1235221783263">
-    <nodeInfo nodeId="5394298559859255194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationSelection_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="120" />
+    <nodeInfo nodeId="5394298559859255194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AnnotationSelection_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="95" />
   </root>
   <root nodeId="1235487648829">
     <nodeInfo nodeId="1235487748155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ActionAtFirstPostionProblem_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="122" />
@@ -489,8 +489,8 @@
     <nodeInfo nodeId="7504064136823144972" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="29" startPosition="118" endLine="30" endPosition="65" />
   </root>
   <root nodeId="2322823743453985855">
-    <nodeInfo nodeId="1759230080744540284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WrappingCellShouldntBeSelectable_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="125" />
-    <nodeInfo nodeId="1759230080744581085" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WrappingCellShouldntBeSelectable_Test.java" startLine="26" startPosition="125" endLine="27" endPosition="125" />
+    <nodeInfo nodeId="1759230080744540284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WrappingCellShouldntBeSelectable_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="100" />
+    <nodeInfo nodeId="1759230080744581085" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WrappingCellShouldntBeSelectable_Test.java" startLine="26" startPosition="100" endLine="27" endPosition="100" />
   </root>
   <root nodeId="2345623147105465521">
     <nodeInfo nodeId="2345623147105496873" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="33" startPosition="81" endLine="34" endPosition="123" />
