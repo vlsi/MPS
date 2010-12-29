@@ -77,7 +77,7 @@ public class TypeChecker implements ApplicationComponent {
 
     mySubtypingManager = new SubtypingManager(this);
     if (useNewTypeSystem) {
-      myRuntimeSupport = new RuntimeSupport(this);
+      myRuntimeSupport = new RuntimeSupportNew(this);
     } else {
       myRuntimeSupport = new RuntimeSupport(this);
     }

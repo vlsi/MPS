@@ -330,8 +330,8 @@ public class BreakpointsTree extends BreakpointsView {
       super(breakpoint, operationContext);
 
       BreakpointNodeData bp = (BreakpointNodeData) getUserObject();
-      setNodeIdentifier(getText());
 
+      setNodeIdentifier(bp.getText());
       setIcon(bp.getIcon(true));
       setText(bp.getText());
     }

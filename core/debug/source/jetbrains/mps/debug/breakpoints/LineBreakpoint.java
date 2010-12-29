@@ -35,12 +35,12 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   private static final Logger LOG = Logger.getLogger(LineBreakpoint.class);
   protected final BreakpointLocation myLocation;
 
-  public LineBreakpoint(SNodePointer nodePointer, Project project) {
+  public LineBreakpoint(@NotNull SNodePointer nodePointer, Project project) {
     super(project);
     myLocation = new BreakpointLocation(nodePointer);
   }
 
-  public LineBreakpoint(SNode node, Project project) {
+  public LineBreakpoint(@NotNull SNode node, Project project) {
     this(new SNodePointer(node), project);
   }
 

@@ -126,36 +126,19 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
     }
     return type;  
   }
-            /*
-  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
-    try {
 
-      if (refreshTypes) {
-        clear();
-      }
-      if (!loadTypeSystemRules(nodeToCheck)) {
-        return;
-      }    /*
-
-      if (inferenceMode) {
-        getEquationManager().setInferenceMode();
-      }    /*
-      if (myIsSmartCompletion) {
-        myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
-        if (!myHoleIsAType) {
-          myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
-        }
-      }     */           /*
-      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
-      ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
-     
-    } finally {
-     // clearEquationManager();
-     // myInvalidationWasPerformed = false;
+  protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
+    if (refreshTypes) {
+      clear();
     }
+    if (!loadTypesystemRules(nodeToCheck)) {
+      return;
+    }
+    computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
+    ((TypeCheckingContextNew)myTypeCheckingContext).solveAndExpand();
   }
 
-
+        /*
   private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();

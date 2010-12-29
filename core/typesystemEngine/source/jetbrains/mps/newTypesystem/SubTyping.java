@@ -91,6 +91,9 @@ public class SubTyping {
   }
 
   public boolean isSubType(SNode subType, SNode superType) {
+    if (isSubTypeByReplacementRules(subType, superType)) {
+      return true;
+    }
     return isInSuperTypes(subType, superType, null, true, true);
   }
 
@@ -218,16 +221,6 @@ public class SubTyping {
     return result;
   }
 
-  private SNode meet(SNode left, SNode right) {
-    if (isSubType(left, right)) {
-      return left;
-    }
-    if (isSubType(right, left)) {
-      return right;
-    }
-    return left;
-  }
-
   private Set<SNode> eliminateSubOrSuperTypes(Set<SNode> types, boolean sub) {
     //todo fix bug & optimize
     types = eliminateEqual(types);
@@ -274,9 +267,9 @@ public class SubTyping {
   public SNode createMeet(Set<SNode> types) {
 
     if (types.size() > 1) {
-     // System.out.println("meet" + types);
-      types = eliminateSubOrSuperTypes(types, false);
-     // System.out.println(types);
+    //  System.out.println("meet" + types);
+      types = eliminateSubOrSuperTypes(types, true);
+    //  System.out.println(types);
 
     }
 
@@ -286,10 +279,9 @@ public class SubTyping {
   }
 
   public SNode createLCS(Set<SNode> types) {
-
     if (types.size() > 1) {
     //  System.out.println("lcs" + types);
-      types = eliminateSubOrSuperTypes(types, true);
+      types = eliminateSubOrSuperTypes(types, false);
     //  System.out.println(types);
     }
     return types.iterator().next();
@@ -314,11 +306,6 @@ public class SubTyping {
     return result;
   }
 
-  public SNode leastCommonSuperType(Set<SNode> types) {
-    //eliminate subTypes: double for
-    return null;
-  }
-
   public boolean isComparableByRules(SNode left, SNode right, EquationInfo info, boolean isWeak) {
     if (left == null || right == null) {
       return false;
@@ -339,7 +326,7 @@ public class SubTyping {
   }
 
 
-    public SNode coerceSubtyping(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
+  public SNode coerceSubtyping(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {

@@ -13,13 +13,6 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.04.2010
- * Time: 21:12:08
- * To change this template use File | Settings | File Templates.
- */
 public class JavaField extends JavaBreakpointWatchable implements IWatchable {
   private static Logger LOG = Logger.getLogger(ProxyForJava.class);
 
@@ -40,7 +33,11 @@ public class JavaField extends JavaBreakpointWatchable implements IWatchable {
 
   @Override
   public String getName() {
-    return myField.name();
+    String name = myField.name();
+    if (myField.isStatic() && !myField.declaringType().name().equals(myParent.referenceType().name())) {
+      name = name + " (" + myField.declaringType().name() + ")";
+    }
+    return name;
   }
 
   @Override

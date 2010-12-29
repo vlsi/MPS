@@ -1857,7 +1857,7 @@
     <nodeInfo nodeId="1179411081637" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="52" startPosition="49" endLine="53" endPosition="56" />
     <nodeInfo nodeId="1179411081637" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="53" startPosition="56" endLine="54" endPosition="213" />
     <nodeInfo nodeId="1179411081637" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="54" startPosition="213" endLine="55" endPosition="58" />
-    <nodeInfo nodeId="1179411081637" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="55" startPosition="58" endLine="56" endPosition="397" />
+    <nodeInfo nodeId="1179411081637" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="55" startPosition="58" endLine="56" endPosition="398" />
     <nodeInfo nodeId="1179410535708" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="60" startPosition="5" endLine="61" endPosition="59" />
     <nodeInfo nodeId="1179410535708" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="61" startPosition="59" endLine="62" endPosition="52" />
     <nodeInfo nodeId="1179410535708" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="62" startPosition="52" endLine="63" endPosition="209" />
@@ -1876,7 +1876,7 @@
     <scopeInfo nodeId="1179410829052" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="25" startPosition="100" endLine="28" endPosition="253" />
     <scopeInfo nodeId="1179410886099" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="32" startPosition="34" endLine="35" endPosition="302" />
     <scopeInfo nodeId="1179410535708" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="60" startPosition="5" endLine="64" endPosition="360" />
-    <scopeInfo nodeId="1179411081637" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="51" startPosition="9" endLine="56" endPosition="397" />
+    <scopeInfo nodeId="1179411081637" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="51" startPosition="9" endLine="56" endPosition="398" />
     <scopeInfo nodeId="1179410574355" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="50" startPosition="46" endLine="57" endPosition="9" />
     <scopeInfo nodeId="1179410574350" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="42" startPosition="20" endLine="57" endPosition="9" />
     <scopeInfo nodeId="1179410574350" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="37" startPosition="5" endLine="58" endPosition="7">

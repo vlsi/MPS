@@ -228,8 +228,8 @@ public class TemplateProcessor {
       for (SNode newInputNode : newInputNodes) {
         Collection<SNode> _outputNodes =
           newInputNode.getModel() == myGenerator.getInputModel() && newInputNode.isRegistered()
-            ? myGenerator.copyNodeFromInputNode(mappingName, templateNodeRef, newInputNode, myReductionContext, new boolean[]{false})
-            : myGenerator.copyNodeFromExternalNode(mappingName, templateNodeRef, newInputNode, myReductionContext);
+            ? myGenerator.copyNodeFromInputNode(mappingName, templateNodeRef, null, newInputNode, myReductionContext, new boolean[]{false})
+            : myGenerator.copyNodeFromExternalNode(mappingName, templateNodeRef, null, newInputNode, myReductionContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.

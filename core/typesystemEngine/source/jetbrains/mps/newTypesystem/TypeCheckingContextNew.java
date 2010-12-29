@@ -147,7 +147,18 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   @Override
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
-    ((NodeTypesComponentNew)myNodeTypesComponent).checkIfNotChecked(node);
+    if (node == null) return null;
+    SNode type = null;
+    NodeTypesComponent currentTypesComponent = getNodeTypesComponent();   //first, in current component
+    if (currentTypesComponent != null) {
+      //--- for incremental algorithm:
+      currentTypesComponent.addNodeToFrontier(node);
+      currentTypesComponent.typeOfNodeCalled(node);
+      if (addDependency) {
+        currentTypesComponent.addDependcyOnCurrent(node);
+      }
+    }
+    //((NodeTypesComponentNew)myNodeTypesComponent).checkIfNotChecked(node);
     return myState.typeOf(node, info);
   }
 
