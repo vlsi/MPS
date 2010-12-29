@@ -32,7 +32,7 @@ public class CleanProject_Action extends GeneratedAction {
   private MPSProject project;
 
   public CleanProject_Action() {
-    super("Clean", "", ICON);
+    super("Clean Project", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

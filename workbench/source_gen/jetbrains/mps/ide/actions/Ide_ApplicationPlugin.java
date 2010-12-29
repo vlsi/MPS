@@ -45,10 +45,14 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FileSystemNewActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FolderActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Folding_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateEditorPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateFavorites_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModelPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModels_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModulePopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModule_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateOptions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateProjectPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Generate_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup");

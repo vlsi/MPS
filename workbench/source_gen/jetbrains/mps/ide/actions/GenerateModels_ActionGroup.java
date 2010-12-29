@@ -26,7 +26,6 @@ public class GenerateModels_ActionGroup extends GeneratedActionGroup {
 
   public void adjust() {
     this.insertGroupIntoAnother(Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
-    this.insertGroupIntoAnother("MPSToolbarRunGroup", null);
+    this.insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, GenerateEditorPopup_ActionGroup.LABEL_ID_generate);
   }
 }

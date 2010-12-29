@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.generator.GeneratorFacade;
-import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 public class ModelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelActions_ActionGroup.class);
@@ -13,6 +11,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_newActions = ID + "newActions";
   public static final String LABEL_ID_showHelp = ID + "showHelp";
   public static final String LABEL_ID_modelUsages = ID + "modelUsages";
+  public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateActions = ID + "generateActions";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_favorites = ID + "favorites";
@@ -43,11 +42,8 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModel_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_modelUsages);
       ModelActions_ActionGroup.this.addSeparator();
+      ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_make);
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_generateActions);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", GeneratorFacade.getInstance().getDefaultGenerationHandler(), false);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new OutputViewGenerationHandler(), false);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RevertMemoryChanges_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SaveModel_Action", "jetbrains.mps.ide");

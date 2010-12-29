@@ -9,6 +9,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionActions";
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
+  public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_favorites = ID + "favorites";
@@ -22,8 +23,9 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
     try {
       SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_solutionNew);
       SolutionActions_ActionGroup.this.addSeparator();
+      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_make);
       SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromSolution_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addSeparator();
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModule_Action", "jetbrains.mps.ide", "Solution");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
