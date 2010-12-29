@@ -621,8 +621,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   private void deleteIfPossible() {
     if ("".equals(getText()) && isTopCell()) {
       if (getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
-        getSNode().delete();
-      } 
+        if (!executeAction(CellActionType.DELETE)) {
+          getSNode().delete();
+        }
+      }
     }
   }
 

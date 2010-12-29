@@ -117,7 +117,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             }
           }
 
-          public void deleteRow(int row) {
+          public void deleteRow(int rowNumber) {
           }
         };
       }

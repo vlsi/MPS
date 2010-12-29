@@ -88,17 +88,17 @@ public class Table_Editor extends DefaultNodeEditor {
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count();
           }
 
-          public void deleteRow(int row) {
-            ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).removeElementAt(row);
+          public void deleteRow(int rowNumber) {
+            ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).removeElementAt(rowNumber);
           }
 
           @Override
-          public void insertRow(int row) {
+          public void insertRow(int rowNumber) {
             SNode rowNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
             for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count(); i++) {
               ListSequence.fromList(SLinkOperations.getTargets(rowNode, "cells", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
             }
-            ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).insertElement(row, rowNode);
+            ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).insertElement(rowNumber, rowNode);
           }
         };
       }

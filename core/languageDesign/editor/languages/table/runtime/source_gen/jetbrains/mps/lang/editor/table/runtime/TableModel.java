@@ -7,8 +7,10 @@ import jetbrains.mps.smodel.SNode;
 public interface TableModel {
   public int getColumnCount();
   public int getRowCount();
-  public void deleteRow(int row);
+  public void deleteRow(int rowNumber);
   public SNode getValueAt(int row, int column);
   public void createElement(int row, int column);
-  public void insertRow(int row);
+  public void insertRow(int rowNumber);
+  public void deleteColumn(int columnNumber);
+  public void insertColumn(int columnNumber);
 }

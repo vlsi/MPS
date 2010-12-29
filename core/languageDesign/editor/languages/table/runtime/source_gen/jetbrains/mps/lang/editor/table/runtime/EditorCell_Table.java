@@ -43,7 +43,7 @@ public class EditorCell_Table extends EditorCell_Collection {
       EditorCell_Collection rowCell = this.createRowCell(row);
       String rowId = myUniquePrefix + "_row_" + row;
       rowCell.setCellId(rowId);
-      rowCell.addEditorCell(createRowEningCell(row, rowId + "_firstCell"));
+      rowCell.addEditorCell(createRowEndingCell(row, rowId + "_firstCell"));
       final int finalRow = row;
       for (int column = 0; column < myModel.getColumnCount(); column++) {
         final int finalColumn = column;
@@ -53,16 +53,17 @@ public class EditorCell_Table extends EditorCell_Collection {
           editorCell = getEditorContext().createNodeCell(value);
           editorCell.setAction(CellActionType.DELETE, new EditorCellAction() {
             public void execute(EditorContext editorContext) {
+              myModel.deleteColumn(finalColumn);
             }
           });
           editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
             public void execute(EditorContext editorContext) {
-              // handle insert column before action 
+              myModel.insertColumn(finalColumn + 1);
             }
           });
           editorCell.setAction(CellActionType.INSERT_BEFORE, new EditorCellAction() {
-            public void execute(EditorContext p0) {
-              // handle insert column after action 
+            public void execute(EditorContext editorContext) {
+              myModel.insertColumn(finalColumn);
             }
           });
         } else {
@@ -81,7 +82,7 @@ public class EditorCell_Table extends EditorCell_Collection {
 
         rowCell.addEditorCell(editorCell);
       }
-      rowCell.addEditorCell(createRowEningCell(row + 1, rowId + "_lastCell"));
+      rowCell.addEditorCell(createRowEndingCell(row + 1, rowId + "_lastCell"));
       this.addEditorCell(rowCell);
     }
   }
@@ -143,7 +144,7 @@ public class EditorCell_Table extends EditorCell_Collection {
     return rowCell;
   }
 
-  private EditorCell createRowEningCell(final int rowNumber, String cellId) {
+  private EditorCell createRowEndingCell(final int rowNumber, String cellId) {
     EditorCell emptyCell = new EditorCell_Empty(getEditorContext(), getSNode());
     emptyCell.setAction(CellActionType.INSERT, new EditorCellAction() {
       public void execute(EditorContext editorContext) {

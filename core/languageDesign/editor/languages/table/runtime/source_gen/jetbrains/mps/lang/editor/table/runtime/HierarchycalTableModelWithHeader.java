@@ -7,15 +7,19 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 
 public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
-  private SNode myHeaderCellsLinkDeclaration;
+  private SNode myHeaderColumnsLinkDeclaration;
 
   public HierarchycalTableModelWithHeader(@NotNull SNode tableNode, @NotNull SNode rowsLinkDeclaration, @NotNull SNode cellsLinkDeclaration, @NotNull SNode headerCellsLinkDeclaration) {
     super(tableNode, rowsLinkDeclaration, cellsLinkDeclaration);
-    myHeaderCellsLinkDeclaration = headerCellsLinkDeclaration;
-    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(getTableNode()))).contains(myHeaderCellsLinkDeclaration);
+    myHeaderColumnsLinkDeclaration = headerCellsLinkDeclaration;
+    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(getTableNode()))).contains(myHeaderColumnsLinkDeclaration);
+    assert ListSequence.fromList(getHeaderColumns()).count() == getColumnCount();
   }
 
   @Override
@@ -23,7 +27,7 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
     assert row >= 0;
     assert column >= 0;
     if (row == 0) {
-      return ListSequence.fromList(getHeaderCells()).getElement(column);
+      return ListSequence.fromList(getHeaderColumns()).getElement(column);
     }
     return super.getValueAt(row - 1, column);
   }
@@ -34,29 +38,36 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
   }
 
   @Override
-  public int getColumnCount() {
-    return ListSequence.fromList(getHeaderCells()).count();
-  }
-
-  @Override
-  public void deleteRow(int row) {
-    if (row == 0) {
+  public void deleteRow(int rowNumber) {
+    if (rowNumber == 0) {
       // it's not possible to delete header row 
       return;
     }
-    super.deleteRow(row - 1);
+    super.deleteRow(rowNumber - 1);
   }
 
   @Override
-  public void insertRow(int row) {
-    if (row == 0) {
+  public void insertRow(int rowNumber) {
+    if (rowNumber == 0) {
       // it's not possible to insert row before header 
-      row = 1;
+      rowNumber = 1;
     }
-    super.insertRow(row - 1);
+    super.insertRow(rowNumber - 1);
   }
 
-  private List<SNode> getHeaderCells() {
-    return SNodeOperations.getChildren(getTableNode(), myHeaderCellsLinkDeclaration);
+  @Override
+  public void deleteColumn(int columnNumber) {
+    deleteElementAt(getHeaderColumns(), columnNumber);
+    super.deleteColumn(columnNumber);
+  }
+
+  @Override
+  public void insertColumn(int columnNumber) {
+    insertElementAt(getHeaderColumns(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, "target", false)), null), columnNumber);
+    super.insertColumn(columnNumber);
+  }
+
+  private List<SNode> getHeaderColumns() {
+    return SNodeOperations.getChildren(getTableNode(), myHeaderColumnsLinkDeclaration);
   }
 }

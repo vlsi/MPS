@@ -7,12 +7,18 @@ public abstract class AbstractTableModel implements TableModel {
   public AbstractTableModel() {
   }
 
-  public void deleteRow(int row) {
+  public void deleteRow(int rowNumber) {
   }
 
   public void createElement(int row, int column) {
   }
 
-  public void insertRow(int row) {
+  public void insertRow(int rowNumber) {
+  }
+
+  public void deleteColumn(int columnNumber) {
+  }
+
+  public void insertColumn(int columnNumber) {
   }
 }

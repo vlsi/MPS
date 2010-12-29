@@ -16,16 +16,21 @@ import java.util.List;
 public class HierarchycalTableModel extends AbstractTableModel {
   private SNode myTableNode;
   private SNode myRowsLinkDeclaration;
-  private SNode myCellsLinkDeclaration;
-  private int myColumnsNumber;
+  private SNode myColumnsLinkDeclaration;
+  private int myColumnCount;
+  private int myRowCount;
 
   public HierarchycalTableModel(@NotNull SNode tableNode, @NotNull SNode rowsLinkDeclaration, @NotNull SNode cellsLinkDeclaration) {
     myTableNode = tableNode;
     myRowsLinkDeclaration = rowsLinkDeclaration;
     assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(myTableNode))).contains(myRowsLinkDeclaration);
-    myCellsLinkDeclaration = cellsLinkDeclaration;
-    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false))).contains(myCellsLinkDeclaration);
-    myColumnsNumber = ListSequence.fromList(getColumns(ListSequence.fromList(getRows()).first())).count();
+    myColumnsLinkDeclaration = cellsLinkDeclaration;
+    assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false))).contains(myColumnsLinkDeclaration);
+    myRowCount = ListSequence.fromList(getRows()).count();
+    myColumnCount = ListSequence.fromList(getColumns(ListSequence.fromList(getRows()).first())).count();
+    for (SNode row : ListSequence.fromList(getRows())) {
+      assert myColumnCount == ListSequence.fromList(getColumns(row)).count();
+    }
   }
 
   public SNode getValueAt(int row, int column) {
@@ -35,33 +40,39 @@ public class HierarchycalTableModel extends AbstractTableModel {
   }
 
   public int getRowCount() {
-    return ListSequence.fromList(getRows()).count();
-
+    return myRowCount;
   }
 
   public int getColumnCount() {
-    return myColumnsNumber;
+    return myColumnCount;
   }
 
   @Override
-  public void deleteRow(int row) {
-    assert row >= 0;
-    ListSequence.fromList(getRows()).removeElementAt(row);
+  public void deleteRow(int rowNumber) {
+    deleteElementAt(getRows(), rowNumber);
   }
 
   @Override
-  public void insertRow(int row) {
-    assert row >= 0;
+  public void insertRow(int rowNumber) {
     SNode newRow = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false)), null);
     for (int i = 0; i < getColumnCount(); i++) {
-      newRow.addChild(SPropertyOperations.getString(myCellsLinkDeclaration, "role"), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myCellsLinkDeclaration, "target", false)), null));
+      newRow.addChild(SPropertyOperations.getString(myColumnsLinkDeclaration, "role"), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null));
     }
-    List<SNode> rows = getRows();
-    if (ListSequence.fromList(rows).count() == 0) {
-      assert row == 0;
-      myTableNode.addChild(SPropertyOperations.getString(myRowsLinkDeclaration, "role"), newRow);
-    } else {
-      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(rows).getElement(row), newRow);
+    insertElementAt(getRows(), newRow, rowNumber);
+  }
+
+  @Override
+  public void deleteColumn(int columnNumber) {
+    for (SNode row : ListSequence.fromList(getRows())) {
+      deleteElementAt(getColumns(row), columnNumber);
+    }
+  }
+
+  @Override
+  public void insertColumn(int columnNumber) {
+    for (SNode row : ListSequence.fromList(getRows())) {
+      SNode newColumn = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null);
+      insertElementAt(getColumns(row), newColumn, columnNumber);
     }
   }
 
@@ -69,11 +80,25 @@ public class HierarchycalTableModel extends AbstractTableModel {
     return myTableNode;
   }
 
+  protected void insertElementAt(List<SNode> list, SNode newElement, int index) {
+    assert index >= 0 && index <= ListSequence.fromList(list).count();
+    if (ListSequence.fromList(list).count() == 0 || index == ListSequence.fromList(list).count()) {
+      ListSequence.fromList(list).addElement(newElement);
+    } else {
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(list).getElement(index), newElement);
+    }
+  }
+
+  protected void deleteElementAt(List<SNode> list, int index) {
+    assert index >= 0 && index < ListSequence.fromList(list).count();
+    ListSequence.fromList(list).removeElementAt(index);
+  }
+
   private List<SNode> getRows() {
     return SNodeOperations.getChildren(myTableNode, myRowsLinkDeclaration);
   }
 
   private List<SNode> getColumns(SNode row) {
-    return SNodeOperations.getChildren(row, myCellsLinkDeclaration);
+    return SNodeOperations.getChildren(row, myColumnsLinkDeclaration);
   }
 }
