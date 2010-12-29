@@ -146,7 +146,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
-    <classNode dependClassName="jetbrains.mps.util.ColorAndGraphicsUtil" />
     <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTargetEnum" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
@@ -176,6 +175,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.ide.util.ColorAndGraphicsUtil" />
     <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

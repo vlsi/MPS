@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.dialogs;
 
-import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 
 import javax.swing.*;
 import java.awt.*;

@@ -20,7 +20,6 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.logging.Logger;
 import org.apache.commons.lang.ObjectUtils;
 
