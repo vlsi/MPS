@@ -19,7 +19,6 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.JDomReader;
 import com.thoughtworks.xstream.io.xml.JDomWriter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.ISerializable;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
@@ -466,12 +465,6 @@ public class StructureModificationData {
         element.setAttribute(MODEL_UID, ((SModelDescriptor) value).toString());
         return;
       }
-      if (value instanceof ISerializable) {
-        element.setAttribute(OBJECT_TYPE, ISERIALIZABLE);
-        element.setAttribute(CLASS_NAME, value.getClass().getName());
-        ((ISerializable) value).toElement(element);
-        return;
-      }
       if (value instanceof Collection) {
         element.setAttribute(OBJECT_TYPE, COLLECTION);
         element.setAttribute(CLASS_NAME, value.getClass().getName());
@@ -511,15 +504,6 @@ public class StructureModificationData {
           return null;
         }
         return modelDescriptor.getSModel();
-      }
-      if (ISERIALIZABLE.equals(OBJECT_TYPE)) {
-        String className = element.getAttributeValue(CLASS_NAME);
-        try {
-          Class<ISerializable> c = (Class<ISerializable>) Class.forName(className);
-          //todo
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
       }
       if (COLLECTION.equals(OBJECT_TYPE)) {
         String className = element.getAttributeValue(CLASS_NAME);
