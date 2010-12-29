@@ -26,6 +26,6 @@ public class InsertNodeGroupChange extends NodeGroupChange {
 
   @Override
   public String toString() {
-    return String.format("Insert nodes #%d-%d into position #%d in role %s of node %s", myResultBegin, myResultEnd - 1, myPosition, getRole(), getParentNodeId());
+    return String.format("Insert %s into position #%d in role %s of node %s", nodeRange(myResultBegin, myResultEnd), myPosition, getRole(), getParentNodeId());
   }
 }

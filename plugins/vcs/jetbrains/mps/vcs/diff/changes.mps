@@ -1964,6 +1964,66 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4972886494893223485">
     <property name="1.name:0" value="NodeGroupChange" />
     <property name="2.abstractClass:3" value="true" />
+    <node role="2.staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8272111966352338796">
+      <property name="1.name:0" value="nodeRange" />
+      <node role="2.returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8272111966352338801" />
+      <node role="2.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8272111966352338799">
+        <node role="2.statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8272111966352338825">
+          <node role="2.expression:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="8272111966352338826">
+            <node role="2.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8272111966352338827">
+              <link role="2.classConcept:3" targetNodeId="8.~String" resolveInfo="String" />
+              <link role="2.baseMethodDeclaration:3" targetNodeId="8.~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8272111966352338828">
+                <property name="2.value:3" value="node #%d" />
+              </node>
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8272111966352338844">
+                <link role="2.variableDeclaration:3" targetNodeId="8272111966352338802" resolveInfo="begin" />
+              </node>
+            </node>
+            <node role="2.ifFalse:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8272111966352338830">
+              <link role="2.baseMethodDeclaration:3" targetNodeId="8.~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
+              <link role="2.classConcept:3" targetNodeId="8.~String" resolveInfo="String" />
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8272111966352338831">
+                <property name="2.value:3" value="nodes #%d-%d" />
+              </node>
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8272111966352338845">
+                <link role="2.variableDeclaration:3" targetNodeId="8272111966352338802" resolveInfo="begin" />
+              </node>
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="8272111966352338833">
+                <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8272111966352338834">
+                  <property name="2.value:3" value="1" />
+                </node>
+                <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8272111966352338847">
+                  <link role="2.variableDeclaration:3" targetNodeId="8272111966352338804" resolveInfo="end" />
+                </node>
+              </node>
+            </node>
+            <node role="2.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="8272111966352338836">
+              <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8272111966352338843">
+                <link role="2.variableDeclaration:3" targetNodeId="8272111966352338804" resolveInfo="end" />
+              </node>
+              <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8272111966352338838">
+                <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8272111966352338839">
+                  <property name="2.value:3" value="1" />
+                </node>
+                <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8272111966352338842">
+                  <link role="2.variableDeclaration:3" targetNodeId="8272111966352338802" resolveInfo="begin" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="2.visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="8272111966352338800" />
+      <node role="2.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8272111966352338802">
+        <property name="1.name:0" value="begin" />
+        <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="8272111966352338803" />
+      </node>
+      <node role="2.parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8272111966352338804">
+        <property name="1.name:0" value="end" />
+        <node role="2.type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="8272111966352338806" />
+      </node>
+    </node>
     <node role="2.field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4972886494893223503">
       <property name="1.name:0" value="myParentNodeId" />
       <node role="2.visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4972886494893223504" />
@@ -2124,16 +2184,14 @@
             <link role="2.classConcept:3" targetNodeId="8.~String" resolveInfo="String" />
             <link role="2.baseMethodDeclaration:3" targetNodeId="8.~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
             <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4972886494893365722">
-              <property name="2.value:3" value="Insert nodes #%d-%d into position #%d in role %s of node %s" />
+              <property name="2.value:3" value="Insert %s into position #%d in role %s of node %s" />
             </node>
-            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4972886494893365731">
-              <link role="2.variableDeclaration:3" targetNodeId="4972886494893365082" resolveInfo="myResultBegin" />
-            </node>
-            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="4972886494893365724">
-              <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4972886494893365725">
-                <property name="2.value:3" value="1" />
+            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="8272111966352338852">
+              <link role="2.baseMethodDeclaration:3" targetNodeId="8272111966352338796" resolveInfo="nodeRange" />
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8272111966352338853">
+                <link role="2.variableDeclaration:3" targetNodeId="4972886494893365082" resolveInfo="myResultBegin" />
               </node>
-              <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4972886494893365732">
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8272111966352338855">
                 <link role="2.variableDeclaration:3" targetNodeId="4972886494893365105" resolveInfo="myResultEnd" />
               </node>
             </node>
@@ -2280,16 +2338,14 @@
             <link role="2.classConcept:3" targetNodeId="8.~String" resolveInfo="String" />
             <link role="2.baseMethodDeclaration:3" targetNodeId="8.~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
             <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4972886494893365736">
-              <property name="2.value:3" value="Delete nodes #%d-%d in role %s of node %s" />
+              <property name="2.value:3" value="Delete %s in role %s of node %s" />
             </node>
-            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4972886494893365737">
-              <link role="2.variableDeclaration:3" targetNodeId="4972886494893365223" resolveInfo="myBegin" />
-            </node>
-            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="4972886494893365738">
-              <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4972886494893365739">
-                <property name="2.value:3" value="1" />
+            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="8272111966352338848">
+              <link role="2.baseMethodDeclaration:3" targetNodeId="8272111966352338796" resolveInfo="nodeRange" />
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8272111966352338849">
+                <link role="2.variableDeclaration:3" targetNodeId="4972886494893365223" resolveInfo="myBegin" />
               </node>
-              <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4972886494893365740">
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8272111966352338851">
                 <link role="2.variableDeclaration:3" targetNodeId="4972886494893365302" resolveInfo="myEnd" />
               </node>
             </node>
@@ -2429,24 +2485,25 @@
             <link role="2.classConcept:3" targetNodeId="8.~String" resolveInfo="String" />
             <link role="2.baseMethodDeclaration:3" targetNodeId="8.~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
             <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4972886494893365586">
-              <property name="2.value:3" value="Replace nodes #%d-%d with nodes #%d-%d in role %s of node %s" />
+              <property name="2.value:3" value="Replace %s with nodes %s in role %s of node %s" />
             </node>
-            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4972886494893365592">
-              <link role="2.variableDeclaration:3" targetNodeId="4972886494893365436" resolveInfo="myBegin" />
-            </node>
-            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="4972886494893365595">
-              <node role="2.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4972886494893365598">
-                <property name="2.value:3" value="1" />
+            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="8272111966352338858">
+              <link role="2.baseMethodDeclaration:3" targetNodeId="8272111966352338796" resolveInfo="nodeRange" />
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8272111966352338859">
+                <link role="2.variableDeclaration:3" targetNodeId="4972886494893365436" resolveInfo="myBegin" />
               </node>
-              <node role="2.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4972886494893365594">
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8272111966352338861">
                 <link role="2.variableDeclaration:3" targetNodeId="4972886494893365439" resolveInfo="myEnd" />
               </node>
             </node>
-            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4972886494893365600">
-              <link role="2.variableDeclaration:3" targetNodeId="4972886494893365506" resolveInfo="myResultBegin" />
-            </node>
-            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4972886494893365602">
-              <link role="2.variableDeclaration:3" targetNodeId="4972886494893365510" resolveInfo="myResultEnd" />
+            <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="8272111966352338863">
+              <link role="2.baseMethodDeclaration:3" targetNodeId="8272111966352338796" resolveInfo="nodeRange" />
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8272111966352338866">
+                <link role="2.variableDeclaration:3" targetNodeId="4972886494893365506" resolveInfo="myResultBegin" />
+              </node>
+              <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8272111966352338867">
+                <link role="2.variableDeclaration:3" targetNodeId="4972886494893365510" resolveInfo="myResultEnd" />
+              </node>
             </node>
             <node role="2.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="4972886494893365604">
               <link role="2.baseMethodDeclaration:3" targetNodeId="4972886494893364971" resolveInfo="getRole" />

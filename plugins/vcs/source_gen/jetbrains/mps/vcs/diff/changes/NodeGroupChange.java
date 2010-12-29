@@ -25,4 +25,11 @@ public abstract class NodeGroupChange extends ModelChange {
   public abstract int getBegin();
 
   public abstract int getEnd();
+
+  protected static String nodeRange(int begin, int end) {
+    return (begin + 1 == end ?
+      String.format("node #%d", begin) :
+      String.format("nodes #%d-%d", begin, end - 1)
+    );
+  }
 }
