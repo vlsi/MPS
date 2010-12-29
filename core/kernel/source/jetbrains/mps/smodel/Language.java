@@ -19,7 +19,6 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.library.LibraryInitializer;
@@ -340,14 +339,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public int getVersion() {
     return getStructureModelDescriptor().getVersion();
-  }
-
-  public String getGeneratedPluginClassLongName() {
-    return LanguageAspect.PLUGIN.get(this).getLongName() + "." + PluginNameUtils.getPluginName(this);
-  }
-
-  public String getGeneratedApplicationPluginClassLongName() {
-    return LanguageAspect.PLUGIN.get(this).getLongName() + "." + PluginNameUtils.getApplicationPluginName(this);
   }
 
   public List<Generator> getGenerators() {
