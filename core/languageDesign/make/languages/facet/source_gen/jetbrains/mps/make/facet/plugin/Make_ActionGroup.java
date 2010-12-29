@@ -4,7 +4,6 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Generate_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
@@ -18,15 +17,14 @@ public class Make_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Make_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeOrBuild_Action", "jetbrains.mps.make.facet", true);
-      Make_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeOrBuild_Action", "jetbrains.mps.make.facet", false);
+      Make_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeSelection_Action", "jetbrains.mps.make.facet", false);
+      Make_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeSelection_Action", "jetbrains.mps.make.facet", true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
     this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);

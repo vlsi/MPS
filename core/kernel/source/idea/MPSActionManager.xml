@@ -95,12 +95,8 @@
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
     </group>
 
-    <group id="GenerateMenu" popup="true" text="Ge_nerate">
-      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="CodeMenu"/>
-    </group>
-
     <group id="BuildMenu" popup="true" text="Build">
-      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="CodeMenu"/>
     </group>
 
     <group id="MPSWelcomeDocumentationMenu">

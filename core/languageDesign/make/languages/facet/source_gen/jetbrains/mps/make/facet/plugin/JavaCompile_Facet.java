@@ -75,6 +75,9 @@ public class JavaCompile_Facet implements IFacet {
                   ));
                 }
               });
+              if (work == 0) {
+                return new IResult.SUCCESS(_output_wf1ya0_a0a);
+              }
               monitor.currentProgress().beginWork("Compiling...", work, monitor.currentProgress().workLeft());
               for (IResource resource : Sequence.fromIterable(input)) {
                 TResource tres = new TResource().assignFrom((TResource) resource);
@@ -173,6 +176,9 @@ public class JavaCompile_Facet implements IFacet {
                   ));
                 }
               });
+              if (work == 0) {
+                return new IResult.SUCCESS(_output_wf1ya0_a0b);
+              }
               monitor.currentProgress().beginWork("Compiling in IntelliJ IDEA...", work, monitor.currentProgress().workLeft());
 
               boolean refreshed = false;

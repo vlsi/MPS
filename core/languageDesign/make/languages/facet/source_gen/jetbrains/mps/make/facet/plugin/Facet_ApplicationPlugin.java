@@ -17,6 +17,7 @@ public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.make.facet";
+    this.addGroup(groups, moduleName, "jetbrains.mps.make.facet.plugin.GlobalMake_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.make.facet.plugin.Make_ActionGroup");
     return groups;
   }

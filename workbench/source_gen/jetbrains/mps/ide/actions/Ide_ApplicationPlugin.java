@@ -28,6 +28,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Breakpoints_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Build_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Code_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Compile_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugRunMenu_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugTool_ActionGroup");
@@ -47,6 +48,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateFavorites_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModels_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateModule_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GenerateOptions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Generate_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup");
