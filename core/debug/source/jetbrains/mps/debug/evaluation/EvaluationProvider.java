@@ -15,18 +15,30 @@
  */
 package jetbrains.mps.debug.evaluation;
 
-import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P0_E0;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
-import jetbrains.mps.debug.evaluation.model.*;
-import jetbrains.mps.debug.evaluation.ui.*;
+import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
+import jetbrains.mps.debug.evaluation.model.HighLevelEvaluationModel;
+import jetbrains.mps.debug.evaluation.model.LowLevelEvaluationModel;
+import jetbrains.mps.debug.evaluation.ui.EditWatchDialog;
+import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
+import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
+import jetbrains.mps.debug.evaluation.ui.WatchesPanel;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +60,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     });
   }
 
-  public void dispose(){
+  public void dispose() {
     myAuxModule.dispose();
     myAuxModule = null;
   }
@@ -62,15 +74,31 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
   }
 
+  public void showEditWatchDialog(IOperationContext context, final AbstractEvaluationModel model) {
+    final EditWatchDialog editWatchDialog = new EditWatchDialog(context, this, model);
+    editWatchDialog.addWindowListener(new WindowAdapter() {
+      @Override
+      public void windowClosed(WindowEvent e) {
+        fireWatchUpdated(model);
+      }
+    });
+    editWatchDialog.showDialog();
+  }
+
   @Override
   public JComponent createWatchesPanel() {
     return new WatchesPanel(this);
   }
 
-  public void watch(AbstractEvaluationModel evaluationModel) {
+  public void addWatch(AbstractEvaluationModel evaluationModel) {
     final AbstractEvaluationModel copy = evaluationModel.copy();
     myWatches.add(copy);
     fireWatchAdded(copy);
+  }
+
+  public void addWatch(Project project) {
+    //todo how to set isRuntime?
+    addWatch(createLowLevelEvaluationModel(project));
   }
 
   public DebugSession getDebugSession() {
@@ -103,6 +131,12 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
   }
 
+  private void fireWatchUpdated(AbstractEvaluationModel model) {
+    for (IWatchListener listener : myWatchListeners) {
+      listener.watchUpdated(model);
+    }
+  }
+
   public void addWatchListener(@NotNull IWatchListener listener) {
     myWatchListeners.add(listener);
   }
@@ -113,5 +147,24 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   public interface IWatchListener {
     public void watchAdded(AbstractEvaluationModel model);
+
+    public void watchUpdated(AbstractEvaluationModel model);
+
+    public void watchRemoved(AbstractEvaluationModel model);
+  }
+
+  public static class WatchAdapter implements IWatchListener {
+
+    @Override
+    public void watchAdded(AbstractEvaluationModel model) {
+    }
+
+    @Override
+    public void watchUpdated(AbstractEvaluationModel model) {
+    }
+
+    @Override
+    public void watchRemoved(AbstractEvaluationModel model) {
+    }
   }
 }

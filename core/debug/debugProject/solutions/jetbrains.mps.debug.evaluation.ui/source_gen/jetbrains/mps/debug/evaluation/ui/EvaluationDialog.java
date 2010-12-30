@@ -15,7 +15,7 @@ public class EvaluationDialog extends AbstractEvaluationDialog {
 
   @BaseDialog.Button(position = 1, name = "Watch", mnemonic = 'W', defaultButton = false)
   public void buttonWatch() {
-    myProvider.watch(myEvaluationPanel.getEvaluationModel());
+    myProvider.addWatch(myEvaluationPanel.getEvaluationModel());
     dispose();
   }
 

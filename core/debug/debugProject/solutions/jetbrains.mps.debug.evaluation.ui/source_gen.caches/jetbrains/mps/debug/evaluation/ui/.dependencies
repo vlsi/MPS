@@ -69,9 +69,8 @@
     <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.EditWatchDialog" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationProvider" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -80,7 +79,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="java.io.StringWriter" />
-    <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="jetbrains.mps.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable" />

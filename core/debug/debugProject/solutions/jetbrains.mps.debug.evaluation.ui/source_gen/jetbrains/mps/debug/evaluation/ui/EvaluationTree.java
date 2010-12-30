@@ -21,8 +21,8 @@ import javax.swing.tree.TreePath;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
+import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
@@ -109,10 +109,9 @@ import java.io.PrintWriter;
   private static ActionGroup getWatchesActionGroup() {
     AnAction editWatchAction = new AnAction("Edit Watch") {
       public void actionPerformed(AnActionEvent event) {
-        // todo move to provider 
         AbstractEvaluationModel model = EvaluationTree.EVALUATION_MODEL.getData(event.getDataContext());
-        EditWatchDialog dialog = new EditWatchDialog(MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), (EvaluationProvider) model.getDebugSession().getEvaluationProvider(), model);
-        dialog.showDialog();
+        // todo remove cast 
+        ((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).showEditWatchDialog(MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), model);
       }
 
       @Override
