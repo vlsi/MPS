@@ -146,6 +146,7 @@ public abstract class EvaluationUi extends JPanel {
     @Override
     public void paused(AbstractDebugSession session) {
       if (myDebugSession == session) {
+        myTree.updateLocation(myDebugSession.getUiState().getStackFrame().getLocation().getUnitName(), myDebugSession.getUiState().getThread().getThread());
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             setErrorText("");
@@ -156,8 +157,6 @@ public abstract class EvaluationUi extends JPanel {
           }
         });
       }
-
-      myTree.updateLocation(myDebugSession.getUiState().getStackFrame().getLocation().getUnitName(), myDebugSession.getUiState().getThread().getThread());
     }
 
     @Override

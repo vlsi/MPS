@@ -102,7 +102,7 @@ public class CustomViewersManager implements ApplicationComponent {
     return result;
   }
 
-  public ValueWrapper getValueWrapper(JavaValue originalValue, String className) {
+  public ValueWrapper getValueWrapper(JavaValue originalValue, @NotNull String className) {
     //loading languages
     int lastDot = className.lastIndexOf(".");
     String pkg = (lastDot == -1 ?

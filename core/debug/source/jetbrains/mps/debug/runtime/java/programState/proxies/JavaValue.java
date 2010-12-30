@@ -6,13 +6,6 @@ import jetbrains.mps.debug.customViewers.CustomViewersManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.04.2010
- * Time: 18:40:46
- * To change this template use File | Settings | File Templates.
- */
 public abstract class JavaValue extends ProxyForJava implements IValue {
   @Nullable
   protected final Value myValue;
@@ -26,7 +19,7 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
     myThreadReference = threadReference;
   }
 
-  public static JavaValue fromJDIValue(Value value, String classFQname, ThreadReference threadReference) {
+  public static JavaValue fromJDIValue(Value value, @NotNull String classFQname, ThreadReference threadReference) {
     // could not we, like, get fqName from the value?
     JavaValue javaValue = fromJDIValueRaw(value, classFQname, threadReference);
     return tryToWrap(classFQname, javaValue);
@@ -42,7 +35,7 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
     return tryToWrap(javaValue.getClassFQName(), javaValue);
   }
 
-  private static JavaValue tryToWrap(String classFQname, JavaValue javaValue) {
+  private static JavaValue tryToWrap(@NotNull String classFQname, JavaValue javaValue) {
     CustomViewersManager customViewersManager = CustomViewersManager.getInstance();
     ValueWrapper wrapper = customViewersManager.getValueWrapper(javaValue, classFQname);
     if (wrapper == null) return javaValue;

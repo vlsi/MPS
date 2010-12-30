@@ -4,9 +4,10 @@ package jetbrains.mps.debug.evaluation.ui;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DataKey;
+import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import com.sun.jdi.ThreadReference;
 import java.util.Map;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
@@ -17,16 +18,15 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.tree.TreePath;
-import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.debug.api.integration.ui.WatchableNode;
-import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
-import jetbrains.mps.debug.api.programState.IWatchable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.debug.api.integration.ui.WatchableNode;
+import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
+import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -38,6 +38,8 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 
 /*package*/ class EvaluationTree extends MPSTree implements DataProvider {
+  private static DataKey<AbstractEvaluationModel> EVALUATION_MODEL = DataKey.create("Evaluation Model");
+
   private String myClassFqName;
   private ThreadReference myThreadReference;
   private Map<AbstractEvaluationModel, EvaluationTree.EvaluationState> myStates = MapSequence.fromMap(new HashMap<AbstractEvaluationModel, EvaluationTree.EvaluationState>());
@@ -92,7 +94,7 @@ import java.io.PrintWriter;
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(EvaluationTree.ResultState.EVALUATION_MODEL.getName())) {
+    if (dataId.equals(EvaluationTree.EVALUATION_MODEL.getName())) {
       TreePath path = getSelectionPath();
       if (path != null) {
         Object component = path.getLastPathComponent();
@@ -102,6 +104,23 @@ import java.io.PrintWriter;
       }
     }
     return null;
+  }
+
+  private static ActionGroup getWatchesActionGroup() {
+    AnAction editWatchAction = new AnAction("Edit Watch") {
+      public void actionPerformed(AnActionEvent event) {
+        // todo move to provider 
+        AbstractEvaluationModel model = EvaluationTree.EVALUATION_MODEL.getData(event.getDataContext());
+        EditWatchDialog dialog = new EditWatchDialog(MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), (EvaluationProvider) model.getDebugSession().getEvaluationProvider(), model);
+        dialog.showDialog();
+      }
+
+      @Override
+      public void update(AnActionEvent event) {
+        event.getPresentation().setVisible(EvaluationTree.EVALUATION_MODEL.getData(event.getDataContext()) != null);
+      }
+    };
+    return new DefaultActionGroup(editWatchAction);
   }
 
   private static abstract class EvaluationState {
@@ -134,8 +153,6 @@ import java.io.PrintWriter;
   }
 
   private static class ResultState extends EvaluationTree.EvaluationState {
-    private static DataKey<AbstractEvaluationModel> EVALUATION_MODEL = DataKey.create("Evaluation Model");
-
     @NotNull
     private final IValueProxy myValueProxy;
     @NotNull
@@ -143,7 +160,7 @@ import java.io.PrintWriter;
     private final ThreadReference myThreadReference;
     private final String myPresentation;
 
-    public ResultState(String presentation, IValueProxy proxy, String classFqName, ThreadReference threadReference) {
+    public ResultState(String presentation, IValueProxy proxy, @NotNull String classFqName, ThreadReference threadReference) {
       myPresentation = presentation;
       myValueProxy = proxy;
       myClassFqName = classFqName;
@@ -166,23 +183,10 @@ import java.io.PrintWriter;
       @Override
       public ActionGroup getActionGroup() {
         ActionGroup group = super.getActionGroup();
-        AnAction editWatchAction = new AnAction("Edit Watch") {
-          public void actionPerformed(AnActionEvent event) {
-            AbstractEvaluationModel model = EvaluationTree.ResultState.EVALUATION_MODEL.getData(event.getDataContext());
-            EvaluationDialog dialog = new EvaluationDialog(MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), (EvaluationProvider) model.getDebugSession().getEvaluationProvider(), model);
-            dialog.showDialog();
-          }
-
-          @Override
-          public void update(AnActionEvent event) {
-            event.getPresentation().setVisible(EvaluationTree.ResultState.EVALUATION_MODEL.getData(event.getDataContext()) != null);
-          }
-        };
-
         if (group == null) {
-          return new DefaultActionGroup(editWatchAction);
+          return new DefaultActionGroup(getWatchesActionGroup());
         }
-        return new DefaultActionGroup(group, editWatchAction);
+        return new DefaultActionGroup(group, getWatchesActionGroup());
       }
 
       public AbstractEvaluationModel getModel() {
@@ -218,7 +222,7 @@ import java.io.PrintWriter;
     private final AbstractEvaluationModel myModel;
 
     public ErrorTreeNode(AbstractEvaluationModel model, @NotNull String text, String... extendedMessage) {
-      super(text);
+      super(model.getPresentation() + " = " + text);
       myModel = model;
       if (extendedMessage != null && extendedMessage.length > 0) {
         for (int i = 0; i < extendedMessage.length; i++) {
@@ -275,6 +279,7 @@ import java.io.PrintWriter;
           }));
         }
       });
+      defaultActionGroup.add(getWatchesActionGroup());
       return defaultActionGroup;
     }
 
@@ -293,7 +298,7 @@ import java.io.PrintWriter;
     private final AbstractEvaluationModel myModel;
 
     public EvaluatingTreeNode(AbstractEvaluationModel model) {
-      super("evaluating...");
+      super(model.getPresentation() + " = " + "evaluating...");
       myModel = model;
     }
 

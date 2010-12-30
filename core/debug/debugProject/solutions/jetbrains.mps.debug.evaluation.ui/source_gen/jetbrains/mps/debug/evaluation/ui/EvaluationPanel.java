@@ -55,6 +55,7 @@ public class EvaluationPanel extends EvaluationUi {
     });
 
     myTree.addModel(myEvaluationModel);
+    myTree.updateLocation(myDebugSession.getUiState().getStackFrame().getLocation().getUnitName(), myDebugSession.getUiState().getThread().getThread());
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
     splitPane.setResizeWeight(0.5);

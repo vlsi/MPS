@@ -16,15 +16,11 @@
 package jetbrains.mps.debug.evaluation.ui;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.IWatchListener;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ProjectModels;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.awt.BorderLayout;
 

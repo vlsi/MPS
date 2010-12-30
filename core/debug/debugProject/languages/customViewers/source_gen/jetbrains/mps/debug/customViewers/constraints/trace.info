@@ -80,7 +80,7 @@
     <nodeInfo nodeId="43370322128311188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="HighLevelWatchableCreator_watchable_ReferentConstraint.java" startLine="34" startPosition="5" endLine="35" endPosition="18" />
     <nodeInfo nodeId="43370322128311174" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="HighLevelWatchableCreator_watchable_ReferentConstraint.java" startLine="31" startPosition="48" endLine="34" endPosition="5" />
     <scopeInfo nodeId="43370322128311175" fileName="HighLevelWatchableCreator_watchable_ReferentConstraint.java" startLine="32" startPosition="149" endLine="33" endPosition="129" />
-    <scopeInfo nodeId="43370322128311174" fileName="HighLevelWatchableCreator_watchable_ReferentConstraint.java" startLine="31" startPosition="48" endLine="34" endPosition="5">
+    <scopeInfo nodeId="43370322128311174" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="HighLevelWatchableCreator_watchable_ReferentConstraint.java" startLine="31" startPosition="48" endLine="34" endPosition="5">
       <varInfo nodeId="43370322128311183" varName="container" />
     </scopeInfo>
     <scopeInfo nodeId="43370322128311165" fileName="HighLevelWatchableCreator_watchable_ReferentConstraint.java" startLine="30" startPosition="132" endLine="35" endPosition="18">
@@ -93,7 +93,7 @@
     <nodeInfo nodeId="5264817233616809554" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="WatchableCreator_watchable_ReferentConstraint.java" startLine="34" startPosition="5" endLine="35" endPosition="18" />
     <nodeInfo nodeId="5264817233616809524" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="WatchableCreator_watchable_ReferentConstraint.java" startLine="31" startPosition="48" endLine="34" endPosition="5" />
     <scopeInfo nodeId="5264817233616809525" fileName="WatchableCreator_watchable_ReferentConstraint.java" startLine="32" startPosition="149" endLine="33" endPosition="129" />
-    <scopeInfo nodeId="5264817233616809524" fileName="WatchableCreator_watchable_ReferentConstraint.java" startLine="31" startPosition="48" endLine="34" endPosition="5">
+    <scopeInfo nodeId="5264817233616809524" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="WatchableCreator_watchable_ReferentConstraint.java" startLine="31" startPosition="48" endLine="34" endPosition="5">
       <varInfo nodeId="5264817233616809526" varName="container" />
     </scopeInfo>
     <scopeInfo nodeId="5264817233616806019" fileName="WatchableCreator_watchable_ReferentConstraint.java" startLine="30" startPosition="132" endLine="35" endPosition="18">
