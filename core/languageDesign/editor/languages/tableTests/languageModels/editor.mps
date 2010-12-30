@@ -57,10 +57,18 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5508804114499100762">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2qyu.5508804114499095504" resolveInfo="UltimateContainer" />
     </node>
+    <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="2361546520930481310">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="genericTable" />
+      <property name="name" nameId="tpck.1169194664001" value="DataCellActionMap" />
+      <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="2qyu.2882388703616155300" resolveInfo="DataCell" />
+    </node>
   </roots>
   <root id="2882388703616228143">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2422839104779461391">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="2qyu.2882388703616155301" resolveInfo="value" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AutoDeletableStyleClassItem" typeId="tpc2.1186414949600" id="2361546520930481788">
+        <property name="flag" nameId="tpc2.1186414551515" value="false" />
+      </node>
     </node>
   </root>
   <root id="2882388703616228151">
@@ -1004,6 +1012,15 @@
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5508804114499214364">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="2361546520930481310">
+    <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="2361546520930481311">
+      <property name="actionId" nameId="tpc2.1139535298778" value="delete_action_id" />
+      <property name="description" nameId="tpc2.1139537298254" value="delete" />
+      <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="2361546520930481312">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2361546520930481313" />
       </node>
     </node>
   </root>

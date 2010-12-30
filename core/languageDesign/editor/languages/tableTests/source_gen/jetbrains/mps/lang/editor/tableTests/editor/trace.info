@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="HierarchycalTable_Editor.java" startLine="74" startPosition="36" endLine="78" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.HierarchycalTable_Editor$1" />
+  <unitInfo fileName="DataCellActionMap.java" startLine="16" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCellActionMap$DataCellActionMap_DELETE" />
   <unitInfo fileName="State_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.State_Editor" />
   <unitInfo fileName="Event_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Event_Editor" />
-  <unitInfo fileName="DataCell_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCell_Editor" />
+  <unitInfo fileName="DataCellActionMap.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCellActionMap" />
+  <unitInfo fileName="DataCell_Editor.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCell_Editor" />
   <unitInfo fileName="Table_Editor.java" startLine="76" startPosition="36" endLine="105" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$1" />
   <unitInfo fileName="EventReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EventReference_Editor$_Inline_ofn6x9_a0a" />
   <unitInfo fileName="StateReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.StateReference_Editor$_Inline_8btjnt_a0a" />
@@ -17,6 +19,9 @@
   <unitInfo fileName="StateMachine_Editor.java" startLine="27" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor" />
   <unitInfo fileName="Transition_Editor.java" startLine="18" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Transition_Editor" />
   <unitInfo fileName="UltimateContainer_Editor.java" startLine="22" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.UltimateContainer_Editor" />
+  <root nodeId="2361546520930481310">
+    <scopeInfo nodeId="2361546520930481313" fileName="DataCellActionMap.java" startLine="31" startPosition="75" endLine="31" endPosition="75" />
+  </root>
   <root nodeId="2882388703616228151">
     <nodeInfo nodeId="2882388703616283570" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Table_Editor.java" startLine="79" startPosition="56" endLine="80" endPosition="190" />
     <nodeInfo nodeId="2882388703616283584" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Table_Editor.java" startLine="83" startPosition="36" endLine="84" endPosition="97" />

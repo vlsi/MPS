@@ -9,10 +9,10 @@
   <unitInfo fileName="InsertRowAfter_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test$TestBody" />
   <unitInfo fileName="InsertFirstRow_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertFirstRow_Test$TestBody" />
   <unitInfo fileName="DeleteRow_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteRow_Test$TestBody" />
-  <unitInfo fileName="DeleteHeaderCell_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteHeaderCell_Test$TestBody" />
   <unitInfo fileName="InsertColumnAfterLast_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnAfterLast_Test$TestBody" />
   <unitInfo fileName="InsertColumnBeforeFirst_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnBeforeFirst_Test$TestBody" />
   <unitInfo fileName="InsertLastRow_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertLastRow_Test$TestBody" />
+  <unitInfo fileName="DeleteHeaderCell_Test.java" startLine="22" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteHeaderCell_Test$TestBody" />
   <unitInfo fileName="Create_Test.java" startLine="22" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test$TestBody" />
   <unitInfo fileName="EditHeaderCell_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test" />
   <unitInfo fileName="EditCell_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test" />
@@ -23,10 +23,10 @@
   <unitInfo fileName="InsertRowAfter_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test" />
   <unitInfo fileName="InsertFirstRow_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertFirstRow_Test" />
   <unitInfo fileName="DeleteRow_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteRow_Test" />
-  <unitInfo fileName="DeleteHeaderCell_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteHeaderCell_Test" />
   <unitInfo fileName="InsertColumnAfterLast_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnAfterLast_Test" />
   <unitInfo fileName="InsertColumnBeforeFirst_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnBeforeFirst_Test" />
   <unitInfo fileName="InsertLastRow_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertLastRow_Test" />
+  <unitInfo fileName="DeleteHeaderCell_Test.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteHeaderCell_Test" />
   <unitInfo fileName="Create_Test.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test" />
   <root nodeId="1211716198725196074">
     <nodeInfo nodeId="1211716198725196127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertLastRow_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
@@ -43,6 +43,7 @@
   </root>
   <root nodeId="6170050146384276111">
     <nodeInfo nodeId="6170050146384276162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DeleteHeaderCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" />
+    <nodeInfo nodeId="1010717384721789219" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DeleteHeaderCell_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="123" />
   </root>
   <root nodeId="6170050146384276164">
     <nodeInfo nodeId="6170050146384276191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DeleteRow_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" />
