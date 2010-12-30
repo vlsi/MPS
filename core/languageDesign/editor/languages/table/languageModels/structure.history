@@ -67,5 +67,19 @@
       </entry>
     </conceptFeatureMap>
   </refactoringContext>
+  <refactoringContext modelVersion="1">
+    <dependencies>
+      <model modelUID="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" version="0" />
+    </dependencies>
+    <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
+    <moveMap />
+    <sourceMap />
+    <conceptFeatureMap>
+      <entry>
+        <key featureName="GetTableModel" conceptFQName="jetbrains.mps.lang.editor.table.structure.GetTableModel" featureKind="CONCEPT" />
+        <value featureName="QueryFunction_TableModel" conceptFQName="jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel" featureKind="CONCEPT" />
+      </entry>
+    </conceptFeatureMap>
+  </refactoringContext>
 </refactoringHistory>
 

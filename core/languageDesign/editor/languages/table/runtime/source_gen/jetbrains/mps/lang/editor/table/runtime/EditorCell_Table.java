@@ -19,26 +19,33 @@ import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 
 public class EditorCell_Table extends EditorCell_Collection {
   private TableModel myModel;
+  private String myUniquePrefix;
 
-  public EditorCell_Table(EditorContext editorContext, SNode node, CellLayout cellLayout, TableModel model) {
+  public EditorCell_Table(EditorContext editorContext, SNode node, CellLayout cellLayout, TableModel model, String uniquePrefix) {
     super(editorContext, node, new CellLayout_Vertical(), null);
     setGridLayout(true);
     myModel = model;
+    myUniquePrefix = uniquePrefix;
     this.setSelectable(false);
     this.getStyle().set(StyleAttributes.TABLE_COMPONENT, TableComponent.VERTICAL_COLLECTION);
     createChildrenCells();
   }
 
   public void createChildrenCells() {
-    for (int row = 0; row < myModel.getRowsNumber(); row++) {
+    for (int row = 0; row < myModel.getRowCount(); row++) {
       EditorCell_Collection rowCell = this.createRowCell(row);
+      String rowId = myUniquePrefix + "_row_" + row;
+      rowCell.setCellId(rowId);
+      rowCell.addEditorCell(createRowEndingCell(row, rowId + "_firstCell"));
       final int finalRow = row;
-      for (int column = 0; column < myModel.getColumnsNumber(); column++) {
+      for (int column = 0; column < myModel.getColumnCount(); column++) {
         final int finalColumn = column;
         SNode value = myModel.getValueAt(row, column);
         EditorCell editorCell;
@@ -46,6 +53,17 @@ public class EditorCell_Table extends EditorCell_Collection {
           editorCell = getEditorContext().createNodeCell(value);
           editorCell.setAction(CellActionType.DELETE, new EditorCellAction() {
             public void execute(EditorContext editorContext) {
+              myModel.deleteColumn(finalColumn);
+            }
+          });
+          editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
+            public void execute(EditorContext editorContext) {
+              myModel.insertColumn(finalColumn + 1);
+            }
+          });
+          editorCell.setAction(CellActionType.INSERT_BEFORE, new EditorCellAction() {
+            public void execute(EditorContext editorContext) {
+              myModel.insertColumn(finalColumn);
             }
           });
         } else {
@@ -56,19 +74,15 @@ public class EditorCell_Table extends EditorCell_Collection {
             }
           });
         }
+        if (editorCell.getCellId() == null) {
+          editorCell.setCellId(rowId + "_column_" + column);
+        }
         editorCell.setLeftGap(4);
         editorCell.setRightGap(4);
 
         rowCell.addEditorCell(editorCell);
       }
-
-      EditorCell_Constant lastCell = new EditorCell_Constant(getEditorContext(), getSNode(), "");
-      lastCell.setAction(CellActionType.INSERT, new EditorCellAction() {
-        public void execute(EditorContext p0) {
-          myModel.insertRow(finalRow + 1);
-        }
-      });
-      rowCell.addEditorCell(lastCell);
+      rowCell.addEditorCell(createRowEndingCell(row + 1, rowId + "_lastCell"));
       this.addEditorCell(rowCell);
     }
   }
@@ -77,25 +91,45 @@ public class EditorCell_Table extends EditorCell_Collection {
   public void paint(Graphics graphics, ParentSettings parentSettings) {
     super.paint(graphics, parentSettings);
     graphics.setColor(Color.GRAY);
-    List<Integer> positions = ListSequence.fromList(new ArrayList<Integer>());
-    for (EditorCell row : getCells()) {
-      EditorCell[] rowCells = ((EditorCell_Collection) row).getCells();
-      int rowLastLine = rowCells[rowCells.length - 1].getX();
-      graphics.drawLine(getX(), row.getY(), rowLastLine, row.getY());
-      graphics.drawLine(getX(), row.getY() + row.getHeight(), rowLastLine, row.getY() + row.getHeight());
-      int index = 0;
-      for (EditorCell cell : rowCells) {
-        int x = cell.getX();
-        if (index >= ListSequence.fromList(positions).count()) {
-          ListSequence.fromList(positions).addElement(x);
-        } else {
-          ListSequence.fromList(positions).setElement(index, Math.min(x, ListSequence.fromList(positions).getElement(index)));
-        }
-        index++;
+    List<Integer> positionsX = ListSequence.fromList(new ArrayList<Integer>());
+    List<Integer> positionsY = ListSequence.fromList(new ArrayList<Integer>());
+
+    for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
+      EditorCell nextRow = rowsIterator.next();
+      assert nextRow instanceof EditorCell_Collection;
+      ListSequence.fromList(positionsY).addElement(nextRow.getY());
+      if (!(rowsIterator.hasNext())) {
+        // adding last row bottom coordinates 
+        ListSequence.fromList(positionsY).addElement(nextRow.getY() + nextRow.getHeight());
       }
+      int index = -1;
+      for (Iterator<EditorCell> cellIterator = ((EditorCell_Collection) nextRow).iterator(); cellIterator.hasNext(); index++) {
+        EditorCell nextCell = cellIterator.next();
+        if (index < 0) {
+          //  skipping first cell 
+          continue;
+        }
+        int x = nextCell.getX();
+        if (index >= ListSequence.fromList(positionsX).count()) {
+          ListSequence.fromList(positionsX).addElement(x);
+        } else {
+          ListSequence.fromList(positionsX).setElement(index, Math.min(x, ListSequence.fromList(positionsX).getElement(index)));
+        }
+      }
+      assert index > 0;
     }
-    for (int x : ListSequence.fromList(positions)) {
-      graphics.drawLine(x, getY(), x, getY() + getHeight());
+    assert ListSequence.fromList(positionsX).count() > 1;
+    int firstX = ListSequence.fromList(positionsX).first();
+    int lastX = ListSequence.fromList(positionsX).last();
+    for (int y : ListSequence.fromList(positionsY)) {
+      graphics.drawLine(firstX, y, lastX, y);
+    }
+
+    assert ListSequence.fromList(positionsY).count() > 1;
+    int firstY = ListSequence.fromList(positionsY).first();
+    int lastY = ListSequence.fromList(positionsY).last();
+    for (int x : ListSequence.fromList(positionsX)) {
+      graphics.drawLine(x, firstY, x, lastY);
     }
   }
 
@@ -110,7 +144,18 @@ public class EditorCell_Table extends EditorCell_Collection {
     return rowCell;
   }
 
-  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model) {
-    return new EditorCell_Table(editorContext, node, new CellLayout_Table(), model);
+  private EditorCell createRowEndingCell(final int rowNumber, String cellId) {
+    EditorCell emptyCell = new EditorCell_Empty(getEditorContext(), getSNode());
+    emptyCell.setAction(CellActionType.INSERT, new EditorCellAction() {
+      public void execute(EditorContext editorContext) {
+        myModel.insertRow(rowNumber);
+      }
+    });
+    emptyCell.setCellId(cellId);
+    return emptyCell;
+  }
+
+  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
+    return new EditorCell_Table(editorContext, node, new CellLayout_Table(), model, uniquePrefix);
   }
 }

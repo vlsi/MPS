@@ -41,6 +41,7 @@
   <import index="ryl9" modelUID="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)" version="-1" implicit="yes" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
+  <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <roots>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1230058635633">
       <property name="name" nameId="tpck.1169194664001" value="AnonymousClassTest" />
@@ -2441,9 +2442,9 @@
           <property name="keycode" nameId="tp4k.1207318242774" value="VK_UP" />
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5394298559859263510">
-        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.BootstrapActionReference" typeId="tp5g.1101347953350122758" id="5394298559859263511">
-          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.End_Action" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1211716198725181144">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="1211716198725181146">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5246419582055583191" resolveInfo="End" />
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="1232980788138">
@@ -2593,9 +2594,9 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1235221901284">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="5394298559859255194">
-        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.BootstrapActionReference" typeId="tp5g.1101347953350122758" id="5394298559859255195">
-          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.End_Action" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1211716198725181140">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="1211716198725181142">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5246419582055583191" resolveInfo="End" />
         </node>
       </node>
     </node>
@@ -4438,14 +4439,14 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2322823743453986728">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1759230080744540284">
-        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.BootstrapActionReference" typeId="tp5g.1101347953350122758" id="1759230080744540285">
-          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.SelectUp_Action" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1211716198725181148">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="1211716198725181150">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.4092891540838667558" resolveInfo="SelectUp" />
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1759230080744581085">
-        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.BootstrapActionReference" typeId="tp5g.1101347953350122758" id="1759230080744581086">
-          <property name="actionId" nameId="tp5g.1101347953350127918" value="jetbrains.mps.ide#action#jetbrains.mps.ide.actions.SelectUp_Action" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="1211716198725181152">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="1211716198725181154">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.4092891540838667558" resolveInfo="SelectUp" />
         </node>
       </node>
     </node>

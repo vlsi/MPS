@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.constraints.AbstractStateMachineElement_Constraints" file="AbstractStateMachineElement_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.constraints.StateReference_state_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.constraints.EventReference_event_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.constraints.EventReference_Constraints" file="EventReference_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.constraints.EventReference_event_ReferentConstraint" file="EventReference_event_ReferentConstraint.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.constraints.StateReference_Constraints" file="StateReference_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.constraints.StateReference_state_ReferentConstraint" file="StateReference_state_ReferentConstraint.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
+    <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
+  </dependency>
+</dependenciesRoot>
+

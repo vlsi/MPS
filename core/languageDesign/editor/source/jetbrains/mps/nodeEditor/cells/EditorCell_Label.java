@@ -622,7 +622,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if ("".equals(getText()) && isTopCell()) {
       if (getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
         getSNode().delete();
-      } 
+      }
     }
   }
 

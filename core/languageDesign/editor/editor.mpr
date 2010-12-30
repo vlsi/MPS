@@ -20,15 +20,19 @@
     <projectSolutions>
       <solutionPath path="${mps_home}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.refactoringTest.msd" />
       <solutionPath path="${project}/languages/table/runtime/jetbrains.mps.table.runtime.msd" />
-      <solutionPath path="${project}/languages/table/sandbox/jetbrains.mps.table.sandbox.msd" />
+      <solutionPath path="${project}/tests/table/jetbrains.mps.lang.editor.table.tests.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/editor.mpl" />
       <languagePath path="${project}/languages/table/table.mpl" folder="" />
+      <languagePath path="${project}/languages/tableTests/tableTests.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
       <genConfModule name="editor" moduleRef="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
+      <genConfModule name="table.runtime" moduleRef="jetbrains.mps.lang.editor.table.runtime" />
+      <genConfModule name="tableTests" moduleRef="jetbrains.mps.lang.editor.tableTests" />
+      <genConfModule name="tables" moduleRef="jetbrains.mps.lang.editor.table" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

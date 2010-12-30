@@ -90,7 +90,9 @@ public class InitialPropertyValueClause_Editor extends DefaultNodeEditor {
         }
         result.append(")->");
         SNode expectedReturnType = TypeChecker.getInstance().getTypeOf(node);
-        result.append(expectedReturnType.getPresentation());
+        if (expectedReturnType != null) {
+          result.append(expectedReturnType.getPresentation());
+        }
         return result.toString();
       }
 

@@ -266,7 +266,7 @@ public class SNodeOperations {
       return new ArrayList<SNode>(0);
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return node.getChildren(((LinkDeclaration) linkDeclaration.getAdapter()).getRole());
+    return SLinkOperations.getTargets(node, ((LinkDeclaration) linkDeclaration.getAdapter()).getRole(), true);
   }
 
   public static SModel getModel(SNode node) {

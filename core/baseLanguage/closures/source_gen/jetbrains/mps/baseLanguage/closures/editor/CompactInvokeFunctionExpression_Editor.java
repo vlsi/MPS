@@ -9,12 +9,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -52,6 +56,9 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1dey68_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    if (renderingCondition_1dey68_a3a(node, editorContext, editorContext.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+    }
     CompactInvokeFunctionExpression_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -61,6 +68,9 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new CompactInvokeFunctionExpression_Editor.parameterListHandler_1dey68_c0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
+    if (renderingCondition_1dey68_a2a(node, editorContext, editorContext.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -80,6 +90,14 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_1dey68_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_1dey68_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
   }
 
   private static class parameterListHandler_1dey68_c0 extends RefNodeListHandler {
