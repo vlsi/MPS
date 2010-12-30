@@ -32,6 +32,10 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import java.util.Set;
@@ -46,7 +50,6 @@ import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.Collections;
 import com.intellij.openapi.util.Disposer;
-import org.apache.commons.lang.StringUtils;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.project.IModule;
@@ -160,13 +163,59 @@ public abstract class AbstractEvaluationModel {
         if (ListSequence.fromList(statements).isEmpty()) {
           return "empty statement";
         }
-        SNode firstStatement = ListSequence.fromList(statements).first();
+        SNode firstStatement = ListSequence.fromList(statements).last();
+        String suffix = ((ListSequence.fromList(statements).count() > 1 ?
+          "..." :
+          ""
+        ));
         if (SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-          return BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(SNodeOperations.cast(firstStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
+          return getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(firstStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)) + suffix;
         }
-        return BaseConcept_Behavior.call_getPresentation_1213877396640(firstStatement);
+        return BaseConcept_Behavior.call_getPresentation_1213877396640(firstStatement) + suffix;
       }
     });
+  }
+
+  private String getPresentation(@Nullable SNode expression) {
+    if (expression == null) {
+      return "????";
+    }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+      return SPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+    }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+      return getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)) + "." + getOperationPresentation(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true));
+    }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      return getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true)) + SConceptPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "alias") + getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
+    }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral")) {
+      return "\"" + SPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value") + "\"";
+    }
+    if (SConceptPropertyOperations.getBoolean(expression, "constant")) {
+      return Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(expression, getModule()) + "";
+    }
+    return BaseConcept_Behavior.call_getPresentation_1213877396640(expression);
+  }
+
+  private String getOperationPresentation(@Nullable SNode operation) {
+    if (operation == null) {
+      return "????";
+    }
+    if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(operation, "alias"))) {
+      return SConceptPropertyOperations.getString(operation, "alias");
+    }
+    if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
+        public String combine(String s, SNode it) {
+          return ((StringUtils.isEmpty(s) ?
+            "" :
+            s + ","
+          )) + getPresentation(it);
+        }
+      }) + ")";
+    }
+    return BaseConcept_Behavior.call_getPresentation_1213877396640(operation);
   }
 
   @Nullable
