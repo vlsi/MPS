@@ -30,7 +30,7 @@ public class typeof_DoneWorkStatement_InferenceRule extends AbstractInferenceRul
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.make.script.structure.DoneWorkStatement";
+    return "jetbrains.mps.make.script.structure.AdvanceWorkStatement";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

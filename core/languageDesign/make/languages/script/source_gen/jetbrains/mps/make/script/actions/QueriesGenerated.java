@@ -166,7 +166,7 @@ public class QueriesGenerated {
       }
     }
     {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.DoneWorkStatement");
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
@@ -176,7 +176,7 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.DoneWorkStatement");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
@@ -189,11 +189,11 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0k().createNode(SPropertyOperations.getString((item), "work"));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0k().createNode((item));
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.DoneWorkStatement"), "alias") + " <amount> of " + SPropertyOperations.getString((item), "work");
+                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement"), "alias") + " <amount> of " + SPropertyOperations.getString((item), "workName");
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -218,11 +218,11 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0k().createNode(SPropertyOperations.getString((item), "work"));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0k().createNode((item));
               }
 
               public String getMatchingText(String pattern) {
-                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement"), "alias") + " " + SPropertyOperations.getString((item), "work");
+                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement"), "alias") + " " + SPropertyOperations.getString((item), "workName");
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -309,9 +309,9 @@ public class QueriesGenerated {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.DoneWorkStatement", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("work", (String) parameter_5);
+        quotedNode1_3.setReferent("workStatement", (SNode) parameter_5);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -334,7 +334,7 @@ public class QueriesGenerated {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("work", (String) parameter_3);
+        quotedNode1_2.setReferent("workStatement", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

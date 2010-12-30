@@ -61,21 +61,21 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="q9ra.3668957831723333672" resolveInfo="ReportFeedbackStatement" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="187226666892735674">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="q9ra.187226666892669026" resolveInfo="ProgressStatement" />
-    </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="187226666892735689">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="q9ra.187226666892683652" resolveInfo="DoneWorkStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="187226666892740058">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="q9ra.187226666892683650" resolveInfo="BeginWorkStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3297237684108627660">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="q9ra.3297237684108627658" resolveInfo="AllWorkLeftExpression" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="682890046602516267">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="q9ra.187226666892683655" resolveInfo="FinishWorkStatement" />
     </node>
   </roots>
   <root id="7077360340906447919">
@@ -512,23 +512,6 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="3668957831723333683" />
     </node>
   </root>
-  <root id="187226666892735674">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="187226666892735676">
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="187226666892735679">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="187226666892820018">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.187226666892820016" resolveInfo="work" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415563770" resolveInfo="StringLiteral" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="187226666892735684">
-        <property name="text" nameId="tpc2.1073389577007" value=";" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215094139260" resolveInfo="Semicolon" />
-      </node>
-      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="187226666892735678" />
-    </node>
-  </root>
   <root id="187226666892735689">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="187226666892735691">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="187226666892735694">
@@ -539,12 +522,18 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.187226666892735700" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="187226666892735697">
-        <property name="text" nameId="tpc2.1073389577007" value="of" />
+        <property name="text" nameId="tpc2.1073389577007" value="units of" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="187226666892820020">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.187226666892820016" resolveInfo="work" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415563770" resolveInfo="StringLiteral" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="682890046602515788">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.682890046602395482" />
+        <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="682890046602515789">
+          <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="682890046602515791">
+            <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415563770" resolveInfo="StringLiteral" />
+            <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.682890046602602769" resolveInfo="workName" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3297237684108617539">
         <property name="text" nameId="tpc2.1073389577007" value=";" />
@@ -559,8 +548,8 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="187226666892820022">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.187226666892820016" resolveInfo="work" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="682890046602602772">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.682890046602602769" resolveInfo="workName" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415563770" resolveInfo="StringLiteral" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="187226666892740069">
@@ -571,25 +560,25 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.187226666892740071" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3297237684108594969">
-        <property name="text" nameId="tpc2.1073389577007" value="of work left" />
+        <property name="text" nameId="tpc2.1073389577007" value="units of total work left," />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="187226666892740066">
-        <property name="text" nameId="tpc2.1073389577007" value="[expecting" />
+        <property name="text" nameId="tpc2.1073389577007" value="expecting" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="187226666892766094">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.187226666892740070" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3297237684108594971">
-        <property name="text" nameId="tpc2.1073389577007" value="]" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="4791725746957479975">
+        <property name="text" nameId="tpc2.1073389577007" value="units" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="187226666892740063">
         <property name="text" nameId="tpc2.1073389577007" value=";" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215094139260" resolveInfo="Semicolon" />
       </node>
-      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="187226666892740064" />
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4791725746957479971" />
     </node>
   </root>
   <root id="3297237684108627660">
@@ -599,6 +588,29 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1198160792349" resolveInfo="StaticField" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="3297237684108627664" />
+    </node>
+  </root>
+  <root id="682890046602516267">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="682890046602516269">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="682890046602516270">
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1156235010670" resolveInfo="alias" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="682890046602516273">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.682890046602397405" />
+        <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="682890046602516274">
+          <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="682890046602516275">
+            <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415563770" resolveInfo="StringLiteral" />
+            <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="q9ra.682890046602602769" resolveInfo="workName" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="682890046602516278">
+        <property name="text" nameId="tpc2.1073389577007" value=";" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215094139260" resolveInfo="Semicolon" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="682890046602516279" />
     </node>
   </root>
 </model>

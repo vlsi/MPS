@@ -48,6 +48,7 @@
   <import index="jt7v" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="l400" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <import index="yif3" modelUID="r:13ec431d-483d-451c-a648-ffefde4fef51(jetbrains.mps.internal.make.runtime.backports)" version="-1" />
+  <import index="x6yx" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
@@ -60,7 +61,6 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="vvvw" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" implicit="yes" />
-  <import index="x6yx" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8163946392710004057">
       <property name="name" nameId="tpck.1169194664001" value="Make" />
@@ -1157,8 +1157,9 @@
                         </node>
                       </node>
                       <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="2383991756720301165">
-                        <node role="statement" roleId="tpee.1068581517665" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="4088393582892937930">
+                        <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="4088393582892937930">
                           <property name="work" nameId="q9ra.187226666892820016" value="Generation" />
+                          <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="4088393582892937924" />
                           <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4088393582892937932">
                             <property name="value" nameId="tpee.1068580320021" value="1000" />
                           </node>
@@ -1188,6 +1189,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="4088393582892937924">
               <property name="work" nameId="q9ra.187226666892820016" value="Generation" />
+              <property name="workName" nameId="q9ra.682890046602602769" value="Generation" />
               <node role="expected" roleId="q9ra.187226666892740070" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4422520938197586883">
                 <node role="operand" roleId="tpee.1197027771414" type="q9ra.InputResourcesParameter" typeId="q9ra.2360002718792625580" id="121625899507585757" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.FoldLeftOperation" typeId="tp2q.1522217801069396578" id="4422520938197586887">
@@ -1357,6 +1359,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="4088393582892937934">
               <property name="work" nameId="q9ra.187226666892820016" value="Generation" />
+              <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="4088393582892937924" />
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="127305800529678190">
               <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="127305800529678205">
@@ -1884,6 +1887,7 @@
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="273167807853687443">
                   <property name="work" nameId="q9ra.187226666892820016" value="Generating text..." />
+                  <property name="workName" nameId="q9ra.682890046602602769" value="Generating text..." />
                   <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="273167807853687446">
                     <property name="value" nameId="tpee.1068580320021" value="100" />
                   </node>
@@ -2123,6 +2127,7 @@
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="273167807853687453">
                   <property name="work" nameId="q9ra.187226666892820016" value="Generating text..." />
+                  <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="273167807853687443" />
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="5964195490229321781">
                   <node role="resource" roleId="q9ra.2360002718792622193" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5964195490229365849">
@@ -2286,6 +2291,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="273167807853687455">
               <property name="work" nameId="q9ra.187226666892820016" value="Compiling..." />
+              <property name="workName" nameId="q9ra.682890046602602769" value="Compiling..." />
               <node role="expected" roleId="q9ra.187226666892740070" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="273167807853742531">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="273167807853742504" resolveInfo="work" />
               </node>
@@ -2479,8 +2485,9 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" roleId="tpee.1068581517665" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="273167807853742532">
+                <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="273167807853742532">
                   <property name="work" nameId="q9ra.187226666892820016" value="Compiling..." />
+                  <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="273167807853687455" />
                   <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="273167807853742534">
                     <property name="value" nameId="tpee.1068580320021" value="100" />
                   </node>
@@ -2516,6 +2523,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="273167807853742536">
               <property name="work" nameId="q9ra.187226666892820016" value="Compiling..." />
+              <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="273167807853687455" />
             </node>
           </node>
         </node>
@@ -2613,6 +2621,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="273167807853742569">
               <property name="work" nameId="q9ra.187226666892820016" value="Compiling in IntelliJ IDEA..." />
+              <property name="workName" nameId="q9ra.682890046602602769" value="Compiling in IntelliJ IDEA..." />
               <node role="expected" roleId="q9ra.187226666892740070" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="273167807853742570">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="273167807853742542" resolveInfo="work" />
               </node>
@@ -2896,8 +2905,9 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement" roleId="tpee.1068581517665" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="273167807853742577">
+                <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="273167807853742577">
                   <property name="work" nameId="q9ra.187226666892820016" value="Compiling in IntelliJ IDEA..." />
+                  <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="273167807853742569" />
                   <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="273167807853742579">
                     <property name="value" nameId="tpee.1068580320021" value="100" />
                   </node>
@@ -2933,6 +2943,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="273167807853742582">
               <property name="work" nameId="q9ra.187226666892820016" value="Compiling in IntelliJ IDEA..." />
+              <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="273167807853742569" />
             </node>
           </node>
         </node>

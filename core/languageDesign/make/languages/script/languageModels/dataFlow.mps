@@ -20,11 +20,11 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="q9ra.2360002718792622184" resolveInfo="OutputResources" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="187226666892820023">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="q9ra.187226666892683650" resolveInfo="BeginWorkStatement" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="187226666892820043">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="q9ra.187226666892683652" resolveInfo="DoneWorkStatement" />
     </node>
   </roots>

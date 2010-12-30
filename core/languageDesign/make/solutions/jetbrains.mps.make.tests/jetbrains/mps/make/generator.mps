@@ -117,6 +117,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="9000373783400678067">
               <property name="work" nameId="q9ra.187226666892820016" value="GENERATE" />
+              <property name="workName" nameId="q9ra.682890046602602769" value="GENERATE" />
               <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9000373783400678070">
                 <property name="value" nameId="tpee.1068580320021" value="100" />
               </node>
@@ -144,8 +145,9 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="505095865854424970" resolveInfo="resource" />
                   </node>
                 </node>
-                <node role="statement" roleId="tpee.1068581517665" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="9000373783400678072">
+                <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="9000373783400678072">
                   <property name="work" nameId="q9ra.187226666892820016" value="GENERATE" />
+                  <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="9000373783400678067" />
                   <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9000373783400678074">
                     <property name="value" nameId="tpee.1068580320021" value="50" />
                   </node>
@@ -159,6 +161,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="9000373783400678076">
               <property name="work" nameId="q9ra.187226666892820016" value="GENERATE" />
+              <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="9000373783400678067" />
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="505095865854424973">
               <node role="resource" roleId="q9ra.2360002718792622193" type="q9ra.InputResourcesParameter" typeId="q9ra.2360002718792625580" id="505095865854424974" />
@@ -4266,19 +4269,22 @@
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9000373783400844604">
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="9000373783400844606">
               <property name="work" nameId="q9ra.187226666892820016" value="WORK" />
+              <property name="workName" nameId="q9ra.682890046602602769" value="WORK" />
               <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9000373783400844609">
                 <property name="value" nameId="tpee.1068580320021" value="100" />
               </node>
               <node role="ofTotal" roleId="q9ra.187226666892740071" type="q9ra.AllWorkLeftExpression" typeId="q9ra.3297237684108627658" id="9000373783400844608" />
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="9000373783400844611">
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="9000373783400844611">
               <property name="work" nameId="q9ra.187226666892820016" value="WORK" />
+              <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="9000373783400844606" />
               <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9000373783400844613">
                 <property name="value" nameId="tpee.1068580320021" value="50" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="9000373783400844615">
               <property name="work" nameId="q9ra.187226666892820016" value="WORKWORK" />
+              <property name="workName" nameId="q9ra.682890046602602769" value="WORKWORK" />
               <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9000373783400844622">
                 <property name="value" nameId="tpee.1068580320021" value="10" />
               </node>
@@ -4289,23 +4295,27 @@
                 <node role="leftExpression" roleId="tpee.1081773367580" type="q9ra.AllWorkLeftExpression" typeId="q9ra.3297237684108627658" id="9000373783400844617" />
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="9000373783400844624">
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="9000373783400844624">
               <property name="work" nameId="q9ra.187226666892820016" value="WORKWORK" />
+              <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="9000373783400844615" />
               <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9000373783400844626">
                 <property name="value" nameId="tpee.1068580320021" value="5" />
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="9000373783400844628">
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="9000373783400844628">
               <property name="work" nameId="q9ra.187226666892820016" value="WORKWORK" />
+              <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="9000373783400844615" />
               <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9000373783400844630">
                 <property name="value" nameId="tpee.1068580320021" value="5" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="9000373783400844632">
               <property name="work" nameId="q9ra.187226666892820016" value="WORKWORK" />
+              <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="9000373783400844615" />
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="9000373783400844634">
               <property name="work" nameId="q9ra.187226666892820016" value="WORK" />
+              <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="9000373783400844606" />
             </node>
           </node>
         </node>

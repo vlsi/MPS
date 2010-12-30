@@ -124,6 +124,7 @@ public class FFFFacet_Facet implements IFacet {
               monitor.currentProgress().beginWork("ASDF", 10, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("ASDF", 10);
               monitor.currentProgress().finishWork("ASDF");
+
             default:
               return new IResult.SUCCESS(_output_chixuw_a0b);
           }

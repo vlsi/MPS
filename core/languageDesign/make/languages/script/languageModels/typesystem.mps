@@ -43,15 +43,15 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="187226666892735701">
       <property name="name" nameId="tpck.1169194664001" value="typeof_DoneWorkStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="187226666892740072">
       <property name="name" nameId="tpck.1169194664001" value="typeof_BeginWorkStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3297237684108627666">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AllWorkLeftExpression" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
     </node>
   </roots>
   <root id="2360002718792535571">

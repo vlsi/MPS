@@ -403,15 +403,10 @@
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="187226666892821431">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3297237684108474668">
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3297237684108474669">
-                  <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.DoneWorkStatement" typeId="q9ra.187226666892683652" id="3297237684108474671">
+                  <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="3297237684108474671">
                     <node role="amount" roleId="q9ra.187226666892735700" type="tpee.Expression" typeId="tpee.1068431790191" id="3297237684108474672" />
-                    <node role="propertyAntiquotation$property_attribute$work" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="3297237684108474673">
-                      <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3297237684108474676">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3297237684108474675" />
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3297237684108506254">
-                          <link role="property" roleId="tp25.1138056395725" targetNodeId="q9ra.187226666892820016" resolveInfo="work" />
-                        </node>
-                      </node>
+                    <node role="referenceAntiquotation$link_attribute$workStatement" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="682890046602647186">
+                      <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="682890046602647273" />
                     </node>
                   </node>
                 </node>
@@ -424,8 +419,8 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="187226666892821474">
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="187226666892821478">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="187226666892821477" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3297237684108510201">
-                      <link role="property" roleId="tp25.1138056395725" targetNodeId="q9ra.187226666892820016" resolveInfo="work" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="682890046602647185">
+                      <link role="property" roleId="tp25.1138056395725" targetNodeId="q9ra.682890046602602769" resolveInfo="workName" />
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="187226666892821470">
@@ -488,13 +483,8 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3297237684108506294">
                 <node role="expression" roleId="tpee.1068580123156" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3297237684108506295">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="3297237684108506297">
-                    <node role="propertyAntiquotation$property_attribute$work" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="3297237684108506298">
-                      <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3297237684108506301">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3297237684108506300" />
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3297237684108506305">
-                          <link role="property" roleId="tp25.1138056395725" targetNodeId="q9ra.187226666892820016" resolveInfo="work" />
-                        </node>
-                      </node>
+                    <node role="referenceAntiquotation$link_attribute$workStatement" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="682890046602647275">
+                      <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="682890046602647277" />
                     </node>
                   </node>
                 </node>
@@ -520,8 +510,8 @@
                   </node>
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3297237684108510209">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="3297237684108510210" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3297237684108510211">
-                      <link role="property" roleId="tp25.1138056395725" targetNodeId="q9ra.187226666892820016" resolveInfo="work" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="682890046602647274">
+                      <link role="property" roleId="tp25.1138056395725" targetNodeId="q9ra.682890046602602769" resolveInfo="workName" />
                     </node>
                   </node>
                 </node>
