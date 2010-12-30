@@ -5,9 +5,6 @@ package jetbrains.mps.lang.structure.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.EditorContext;
-import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class LinkDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -38,22 +35,5 @@ public class LinkDeclaration_Behavior {
   public static boolean call_isAtLeastOneCardinality_3386205146660812199(SNode thisNode) {
     SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(thisNode);
     return SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1..n", "0..1");
-  }
-
-  public static void call_commitLinkRole_3129341680481880340(SNode thisNode, EditorContext editorContext, String oldValue, final String newValue, final SNode node, String message, String title) {
-    if (oldValue != null) {
-      if (oldValue.equals(newValue)) {
-        return;
-      }
-      int result = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), message, title, JOptionPane.YES_NO_OPTION);
-      if (result == JOptionPane.NO_OPTION) {
-        return;
-      }
-    }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SPropertyOperations.set(node, "role", newValue);
-      }
-    });
   }
 }
