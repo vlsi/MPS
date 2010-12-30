@@ -31,8 +31,8 @@ import java.util.Set;
 
 public abstract class RelationBlock extends Block {
   protected RelationKind myRelationKind;
-  protected SNode myLeftNode;
-  protected SNode myRightNode;
+  protected final SNode myLeftNode;
+  protected final SNode myRightNode;
   protected EquationInfo myEquationInfo;
 
   public RelationBlock(State state, SNode left, SNode right,

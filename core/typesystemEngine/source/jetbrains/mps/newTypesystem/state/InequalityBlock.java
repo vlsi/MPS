@@ -131,7 +131,6 @@ public class InequalityBlock extends RelationBlock {
 
   @Override
   public String getExpandedPresentation(State state) {
-
-    return getPresentationInternal(state.getRepresentative(myLeftNode), state.getRepresentative(myRightNode));
+    return getPresentationInternal(state.expand(myLeftNode), state.expand(myRightNode));
   }
 }

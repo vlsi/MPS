@@ -108,31 +108,41 @@ public class Inequalities {
     for (InequalityBlock inequality : inequalities) {
       SNode input = myState.getRepresentative(inequality.getInput());
       SNode output = myState.getRepresentative(inequality.getOutput());
-
       if (input != null) {
         if (input != output) {
           inputsToOutputs.addLink(input, output);
           nodesToBlocks.addLink(input, inequality);
           nodes.add(input);
+          if (!TypesUtil.isVariable(input) && !TypesUtil.isVariable(output)) {
+            for (SNode inputVar : TypesUtil.getVariables(input)) {
+              for (SNode outputVar : TypesUtil.getVariables(output)) {
+                inputsToOutputs.addLink(myState.getRepresentative(inputVar), myState.getRepresentative(outputVar));
+              }
+            }
+          }
+
+          
         }
         nodesToBlocks.addLink(output, inequality);
         nodes.add(output);
       }
+
     }
-   // System.out.println(inputsToOutputs);
-   // System.out.println(nodes);
+    
+  //  System.out.println(nodes);
     if (nodes.isEmpty()) {
       return;
     }
     List<SNode> sortedNodes = sort(inputsToOutputs, nodes);
 
     Map<SNode, InequalityBlock> typesToBlocks = new HashMap<SNode, InequalityBlock>();
-  //  System.out.println(sortedNodes);
+    //System.out.println(sortedNodes);
+
     for (SNode node : sortedNodes) {
       //todo shallow concrete
-     if (!TypesUtil.isVariable(node)) {
-       continue;
-     }
+      if (!TypesUtil.isVariable(node)) {
+        continue;
+      }
       Set<InequalityBlock> blocks = nodesToBlocks.getByFirst(node);
       Set<SNode> superTypes = new LinkedHashSet<SNode>();
       Set<SNode> subTypes = new LinkedHashSet<SNode>();

@@ -29,6 +29,7 @@ import java.awt.event.ItemListener;
 public class ShowTypeSystemTrace extends JDialog {
   Checkbox myBlockDependencies;
   Checkbox myTraceForNode;
+  Checkbox myGenerationMode;
   TypeSystemTraceTree myTree;
 
   public ShowTypeSystemTrace(TypeCheckingContextNew t, final IOperationContext operationContext, Frame frame, SNode node) {
@@ -48,12 +49,14 @@ public class ShowTypeSystemTrace extends JDialog {
     myBlockDependencies = new Checkbox("Block dependencies");
     myBlockDependencies.setState(myTree.isShowDependencyOperations());
     myTraceForNode = new Checkbox("Trace for node");
+    myGenerationMode = new Checkbox("Generation mode");
     checkBoxes.add(myBlockDependencies);
     checkBoxes.add(myTraceForNode);
+    checkBoxes.add(myGenerationMode);
     CheckBoxListener listener = new CheckBoxListener();
     myBlockDependencies.addItemListener(listener);
     myTraceForNode.addItemListener(listener);
-
+    myGenerationMode.addItemListener(listener);
     myTree.setBackground(getBackground());
     myTree.setForeground(new Color(0x07025D));
     this.setSize(500, 600);
@@ -80,8 +83,10 @@ public class ShowTypeSystemTrace extends JDialog {
       boolean selected = ItemEvent.SELECTED == e.getStateChange();
       if (source == myTraceForNode) {
         myTree.setTraceForNode(selected);
-      } else {
+      } else if (source== myBlockDependencies) {
         myTree.setShowDependencyOperations(selected);
+      } else {
+        myTree.setGenerationMode(selected);
       }
       myTree.rebuildNow();
       myTree.expandAll();

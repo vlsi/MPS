@@ -35,6 +35,8 @@ import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 
@@ -53,13 +55,15 @@ import java.util.Set;
  */
 public class TypeSystemTraceTree extends MPSTree {
   private final IOperationContext myOperationContext;
-  private final AbstractOperation myDifference;
+  private AbstractOperation myDifference;
   private final Frame myFrame;
   private final TypeCheckingContextNew myTypeCheckingContextNew;
+  private TypeCheckingContextNew myCurrentContext;
   private final SNode mySelectedNode;
   private final Set<SNode> myNodes;
   private boolean showDependencyOperations = false;
   private boolean traceForNode = false;
+  private boolean generationMode = false;
 
   public boolean isTraceForNode() {
      return traceForNode;
@@ -67,6 +71,19 @@ public class TypeSystemTraceTree extends MPSTree {
 
   public void setTraceForNode(boolean traceForNode) {
     this.traceForNode = traceForNode;
+  }
+
+  public void setGenerationMode(boolean generationMode) {
+    this.generationMode = generationMode;
+    if (this.generationMode) {
+      TypeCheckingContextNew context = (TypeCheckingContextNew)TypeContextManager.getInstance().createTypeCheckingContext(mySelectedNode);
+      context.getTypeInGenerationMode(mySelectedNode);
+      myDifference = context.getOperation();
+      myCurrentContext = context;
+    } else {
+      myDifference = myTypeCheckingContextNew.getOperation();
+      myCurrentContext = myTypeCheckingContextNew;
+    }
   }
 
   public void setShowDependencyOperations(boolean showDependencyOperations) {
@@ -85,7 +102,7 @@ public class TypeSystemTraceTree extends MPSTree {
     mySelectedNode = node;
     myNodes = new HashSet<SNode>();
     myNodes.add(node);
-
+    myCurrentContext = tcc;
     this.rebuildNow();
     expandAll();
   }
@@ -228,8 +245,8 @@ public class TypeSystemTraceTree extends MPSTree {
   }
 
   private void showState(MPSTreeNode node) {
-    State state = myTypeCheckingContextNew.getState();
-    AbstractOperation rootDifference = myTypeCheckingContextNew.getOperation();
+    State state = myCurrentContext.getState();
+    AbstractOperation rootDifference = myCurrentContext.getOperation();
     Object difference = node.getUserObject();
     State copy = new State(state.getTypeCheckingContext());
     copy.executeOperationsBeforeAnchor(rootDifference, difference);

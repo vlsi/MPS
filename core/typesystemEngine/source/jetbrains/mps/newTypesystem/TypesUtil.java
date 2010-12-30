@@ -25,9 +25,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -65,6 +63,29 @@ public class TypesUtil {
     }
     return false;
   }
+
+  private static void getVariablesInside(SNode node, List<SNode> result) {
+    if (isVariable(node)) {
+      result.add(node);
+      return;
+    }
+    for (SNode child : node.getChildren()) {
+      getVariablesInside(child, result);
+    }
+    for (SNode referent : node.getReferents()) {
+      if (referent != null && isVariable(referent)) {
+        result.add(referent);
+      }
+    }
+  }
+
+  public static List<SNode> getVariables(SNode node) {
+    List<SNode> result = new LinkedList<SNode>();
+    getVariablesInside(node,result);
+    return result;
+  }
+
+
 
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {
     if (left == right) {
