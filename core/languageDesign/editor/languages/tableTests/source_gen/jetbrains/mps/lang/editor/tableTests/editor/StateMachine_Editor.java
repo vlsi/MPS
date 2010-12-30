@@ -22,6 +22,7 @@ import jetbrains.mps.lang.editor.table.runtime.AbstractTableModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
 public class StateMachine_Editor extends DefaultNodeEditor {
@@ -117,7 +118,50 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             }
           }
 
+          @Override
+          public void insertColumn(int columnNumber) {
+            if (columnNumber <= 0) {
+              return;
+            }
+            ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).insertElement(columnNumber - 1, SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null));
+          }
+
+          @Override
+          public void insertRow(int rowNumber) {
+            if (rowNumber <= 0) {
+              return;
+            }
+            ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).insertElement(rowNumber - 1, SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null));
+          }
+
+          @Override
+          public void deleteColumn(int columnNumber) {
+            if (columnNumber <= 0) {
+              return;
+            }
+            SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).removeElementAt(columnNumber - 1);
+            for (SNode transition : ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true))) {
+              if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", false) == event) {
+                SNodeOperations.deleteNode(transition);
+              }
+            }
+            SNodeOperations.deleteNode(event);
+          }
+
+          @Override
           public void deleteRow(int rowNumber) {
+            if (rowNumber <= 0) {
+              return;
+            }
+            SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).removeElementAt(rowNumber - 1);
+            for (SNode transition : ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true))) {
+              if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", false) == state) {
+                SNodeOperations.deleteNode(transition);
+              } else if (SLinkOperations.getTarget(SLinkOperations.getTarget(transition, "toState", true), "state", false) == state) {
+                SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "toState", true), "state", null, false);
+              }
+            }
+            SNodeOperations.deleteNode(state);
           }
         };
       }
