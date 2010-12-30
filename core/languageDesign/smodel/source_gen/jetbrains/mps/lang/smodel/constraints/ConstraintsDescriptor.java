@@ -12,6 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new CheckedModuleReference_moduleId_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SPropertyAccess_property_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyAttributeAccessQualifier_annotationLink_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint());
