@@ -143,10 +143,12 @@ public class SubTyping {
         }
         yetPassedRaw.add(node);
       }
+
       ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
-          return SNodeOperations.depth(o2) - SNodeOperations.depth(o1);
+          return TypesUtil.depth(o2) - TypesUtil.depth(o1);
+          //    return SNodeOperations.depth(o2) - SNodeOperations.depth(o1);
         }
       });
       //searching the frontier's ancestors

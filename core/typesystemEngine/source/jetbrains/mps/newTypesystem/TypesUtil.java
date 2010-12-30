@@ -79,13 +79,35 @@ public class TypesUtil {
     }
   }
 
+  public static int getInnerNodeCount(SNode node) {
+    int counter = 0;
+    for (SNode child : node.getChildren()) {
+      counter += getInnerNodeCount(child);
+    }
+    counter += node.getReferences().size();
+    return counter;
+  }
+
+  public static int depth(SNode sNode) {
+    int childDepth = 0;
+    for (SNode child : sNode.getChildrenIterable()) {
+      int depth = depth(child);
+      if (childDepth < depth) {
+        childDepth = depth;
+      }
+    }
+    if (sNode.getReference("concept") != null) {
+      childDepth++; 
+    }
+    return childDepth + 1;
+  }
+
+
   public static List<SNode> getVariables(SNode node) {
     List<SNode> result = new LinkedList<SNode>();
     getVariablesInside(node,result);
     return result;
   }
-
-
 
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {
     if (left == right) {
