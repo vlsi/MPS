@@ -100,6 +100,20 @@ public class Table_Editor extends DefaultNodeEditor {
             }
             ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).insertElement(rowNumber, rowNode);
           }
+
+          @Override
+          public void deleteColumn(int columnNumber) {
+            for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {
+              ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).removeElementAt(columnNumber);
+            }
+          }
+
+          @Override
+          public void insertColumn(int columnNumber) {
+            for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {
+              ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).insertElement(columnNumber, SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+            }
+          }
         };
       }
     };

@@ -6,16 +6,16 @@
   <unitInfo fileName="Event_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Event_Editor" />
   <unitInfo fileName="DataCellActionMap.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCellActionMap" />
   <unitInfo fileName="DataCell_Editor.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCell_Editor" />
-  <unitInfo fileName="Table_Editor.java" startLine="76" startPosition="36" endLine="105" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$1" />
   <unitInfo fileName="EventReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EventReference_Editor$_Inline_ofn6x9_a0a" />
   <unitInfo fileName="StateReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.StateReference_Editor$_Inline_8btjnt_a0a" />
   <unitInfo fileName="UltimateContainer_Editor.java" startLine="120" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.UltimateContainer_Editor$stateMachinesListHandler_hd4pfy_b1a" />
   <unitInfo fileName="UltimateContainer_Editor.java" startLine="158" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.UltimateContainer_Editor$tablesListHandler_hd4pfy_d1a" />
+  <unitInfo fileName="Table_Editor.java" startLine="76" startPosition="36" endLine="119" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$1" />
   <unitInfo fileName="StateMachine_Editor.java" startLine="76" startPosition="36" endLine="124" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor$1" />
   <unitInfo fileName="HierarchycalTable_Editor.java" startLine="25" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.HierarchycalTable_Editor" />
   <unitInfo fileName="EventReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EventReference_Editor" />
   <unitInfo fileName="StateReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.StateReference_Editor" />
-  <unitInfo fileName="Table_Editor.java" startLine="27" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor" />
+  <unitInfo fileName="Table_Editor.java" startLine="27" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor" />
   <unitInfo fileName="StateMachine_Editor.java" startLine="27" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.StateMachine_Editor" />
   <unitInfo fileName="Transition_Editor.java" startLine="18" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.Transition_Editor" />
   <unitInfo fileName="UltimateContainer_Editor.java" startLine="22" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.UltimateContainer_Editor" />
@@ -30,21 +30,33 @@
     <nodeInfo nodeId="2882388703616283623" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="Table_Editor.java" startLine="96" startPosition="48" endLine="97" endPosition="121" />
     <nodeInfo nodeId="2882388703616283631" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Table_Editor.java" startLine="98" startPosition="191" endLine="99" endPosition="198" />
     <nodeInfo nodeId="2882388703616283656" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Table_Editor.java" startLine="100" startPosition="13" endLine="101" endPosition="116" />
+    <nodeInfo nodeId="6814837785823339872" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Table_Editor.java" startLine="106" startPosition="101" endLine="107" endPosition="114" />
+    <nodeInfo nodeId="6814837785823339842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Table_Editor.java" startLine="113" startPosition="101" endLine="114" endPosition="211" />
     <nodeInfo nodeId="2882388703616283629" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="Table_Editor.java" startLine="97" startPosition="121" endLine="100" endPosition="13" />
+    <nodeInfo nodeId="6814837785823339862" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Table_Editor.java" startLine="105" startPosition="54" endLine="108" endPosition="13" />
+    <nodeInfo nodeId="6814837785823339832" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Table_Editor.java" startLine="112" startPosition="54" endLine="115" endPosition="13" />
     <nodeInfo nodeId="2882388703616283562" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljetbrains/mps/smodel/SNode;" fileName="Table_Editor.java" startLine="78" startPosition="41" endLine="82" endPosition="0" />
     <nodeInfo nodeId="2882388703616283580" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRowCount#()I" fileName="Table_Editor.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
     <nodeInfo nodeId="2882388703616283590" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnCount#()I" fileName="Table_Editor.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
     <nodeInfo nodeId="2882388703616283604" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteRow#(I)V" fileName="Table_Editor.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <nodeInfo nodeId="6814837785823339805" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteColumn#(I)V" fileName="Table_Editor.java" startLine="103" startPosition="0" endLine="110" endPosition="0" />
+    <nodeInfo nodeId="6814837785823339815" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertColumn#(I)V" fileName="Table_Editor.java" startLine="110" startPosition="0" endLine="117" endPosition="0" />
     <nodeInfo nodeId="2882388703616283617" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertRow#(I)V" fileName="Table_Editor.java" startLine="94" startPosition="0" endLine="103" endPosition="0" />
-    <nodeInfo nodeId="2882388703616283557" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Table_Editor.java" startLine="77" startPosition="81" endLine="103" endPosition="10" />
+    <nodeInfo nodeId="2882388703616283557" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Table_Editor.java" startLine="77" startPosition="81" endLine="117" endPosition="10" />
     <scopeInfo nodeId="2882388703616283569" fileName="Table_Editor.java" startLine="79" startPosition="56" endLine="80" endPosition="190" />
     <scopeInfo nodeId="2882388703616283583" fileName="Table_Editor.java" startLine="83" startPosition="36" endLine="84" endPosition="97" />
     <scopeInfo nodeId="2882388703616283593" fileName="Table_Editor.java" startLine="87" startPosition="39" endLine="88" endPosition="171" />
     <scopeInfo nodeId="2882388703616283609" fileName="Table_Editor.java" startLine="91" startPosition="48" endLine="92" endPosition="109" />
     <scopeInfo nodeId="2882388703616283630" fileName="Table_Editor.java" startLine="98" startPosition="191" endLine="99" endPosition="198" />
+    <scopeInfo nodeId="6814837785823339865" fileName="Table_Editor.java" startLine="106" startPosition="101" endLine="107" endPosition="114" />
+    <scopeInfo nodeId="6814837785823339835" fileName="Table_Editor.java" startLine="113" startPosition="101" endLine="114" endPosition="211" />
     <scopeInfo nodeId="2882388703616283629" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" fileName="Table_Editor.java" startLine="97" startPosition="121" endLine="100" endPosition="13">
       <varInfo nodeId="2882388703616283640" varName="i" />
     </scopeInfo>
+    <scopeInfo nodeId="6814837785823339810" fileName="Table_Editor.java" startLine="105" startPosition="54" endLine="108" endPosition="13" />
+    <scopeInfo nodeId="6814837785823339862" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Table_Editor.java" startLine="105" startPosition="54" endLine="108" endPosition="13" />
+    <scopeInfo nodeId="6814837785823339820" fileName="Table_Editor.java" startLine="112" startPosition="54" endLine="115" endPosition="13" />
+    <scopeInfo nodeId="6814837785823339832" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="Table_Editor.java" startLine="112" startPosition="54" endLine="115" endPosition="13" />
     <scopeInfo nodeId="2882388703616283562" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljetbrains/mps/smodel/SNode;" fileName="Table_Editor.java" startLine="78" startPosition="41" endLine="82" endPosition="0">
       <varInfo nodeId="2882388703616283567" varName="column" />
       <varInfo nodeId="2882388703616283565" varName="row" />
@@ -57,10 +69,16 @@
     <scopeInfo nodeId="2882388703616283622" fileName="Table_Editor.java" startLine="96" startPosition="48" endLine="101" endPosition="116">
       <varInfo nodeId="2882388703616283624" varName="rowNode" />
     </scopeInfo>
+    <scopeInfo nodeId="6814837785823339805" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteColumn#(I)V" fileName="Table_Editor.java" startLine="103" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="6814837785823339808" varName="columnNumber" />
+    </scopeInfo>
+    <scopeInfo nodeId="6814837785823339815" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertColumn#(I)V" fileName="Table_Editor.java" startLine="110" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="6814837785823339818" varName="columnNumber" />
+    </scopeInfo>
     <scopeInfo nodeId="2882388703616283617" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertRow#(I)V" fileName="Table_Editor.java" startLine="94" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="2882388703616283620" varName="rowNumber" />
     </scopeInfo>
-    <unitInfo nodeId="2882388703616283560" fileName="Table_Editor.java" startLine="78" startPosition="19" endLine="103" endPosition="9" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$2" />
+    <unitInfo nodeId="2882388703616283560" fileName="Table_Editor.java" startLine="78" startPosition="19" endLine="117" endPosition="9" unitName="jetbrains.mps.lang.editor.tableTests.editor.Table_Editor$2" />
   </root>
   <root nodeId="7483705179651268326">
     <nodeInfo nodeId="7483705179651268873" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StateMachine_Editor.java" startLine="79" startPosition="39" endLine="80" endPosition="103" />

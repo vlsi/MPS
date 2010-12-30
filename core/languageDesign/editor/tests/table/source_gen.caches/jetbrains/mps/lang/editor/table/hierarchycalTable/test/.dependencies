@@ -14,62 +14,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteBeforeHeaderRow_Test" file="DeleteBeforeHeaderRow_Test.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteHeaderCell_Test" file="DeleteHeaderCell_Test.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteHeaderRow_Test" file="DeleteHeaderRow_Test.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.DeleteRow_Test" file="DeleteRow_Test.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test" file="EditCell_Test.java">
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.ide.IEditor" />
@@ -120,7 +64,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertFirstRow_Test" file="InsertFirstRow_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterHeader_Test" file="InsertRowAfterHeader_Test.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
@@ -134,7 +78,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertLastRow_Test" file="InsertLastRow_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterLast_Test" file="InsertRowAfterLast_Test.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
@@ -177,6 +121,76 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test" file="InsertRowBefore_Test.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test" file="RemoveCell_Test.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderCell_Test" file="RemoveHeaderCell_Test.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromAfter_Test" file="RemoveHeaderRowFromAfter_Test.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromBefore_Test" file="RemoveHeaderRowFromBefore_Test.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode dependClassName="jetbrains.mps.ide.IEditor" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveRow_Test" file="RemoveRow_Test.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />

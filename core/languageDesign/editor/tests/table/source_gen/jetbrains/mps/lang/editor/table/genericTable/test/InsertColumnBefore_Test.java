@@ -12,20 +12,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class DeleteBeforeRow_Test extends BaseTransformationTest {
+public class InsertColumnBefore_Test extends BaseTransformationTest {
   @Test
-  public void test_DeleteBeforeRow() throws Throwable {
+  public void test_InsertColumnBefore() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
-    this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.DeleteBeforeRow_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnBefore_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      final IEditor editor = TestBody.this.initEditor("8143909488490604941", "8143909488490604963");
+      final IEditor editor = TestBody.this.initEditor("6814837785823339531", "6814837785823361527");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }
