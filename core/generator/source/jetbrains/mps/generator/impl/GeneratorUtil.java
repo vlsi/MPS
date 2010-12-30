@@ -28,6 +28,7 @@ import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -85,24 +86,11 @@ public class GeneratorUtil {
 
   /*package*/
 
-  public static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
+  public static List<TemplateFragment> getTemplateFragments(INodeAdapter template) {
     // FIXME rewrite
     List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
-    for (INodeAdapter subnode : template.getDescendants()) {
-      if (subnode instanceof TemplateFragment) {
-        templateFragments.add((TemplateFragment) subnode);
-      }
-    }
-    return templateFragments;
-  }
-
-  static List<TemplateFragment> getTemplateFragments(InlineTemplateWithContext_RuleConsequence inlineTemplate) {
-    // FIXME rewrite
-    List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
-    for (INodeAdapter subnode : inlineTemplate.getDescendants()) {
-      if (subnode instanceof TemplateFragment) {
-        templateFragments.add((TemplateFragment) subnode);
-      }
+    for (SNode subnode : template.getNode().getDescendantsIterable(new IsInstanceCondition(TemplateFragment.concept), false)) {
+      templateFragments.add((TemplateFragment) subnode.getAdapter());
     }
     return templateFragments;
   }

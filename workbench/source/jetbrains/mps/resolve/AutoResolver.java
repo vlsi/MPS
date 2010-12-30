@@ -111,11 +111,9 @@ public class AutoResolver extends EditorCheckerAdapter {
 
   private Set<SReference> collectBadReferences(SNode cellNode) {
     Set<SReference> result = new HashSet<SReference>();
-    List<SNode> list = cellNode.getDescendants();
-    list.add(0, cellNode);
-    for (SNode node : list) {
-      for (SReference ref : node.getReferencesArray()) {
-        if (ref.getTargetNode() == null) {
+    for (SNode node : cellNode.getDescendantsIterable(null, true)) {
+      for (SReference ref : node.getReferencesIterable()) {
+        if (ref.getTargetNodeSilently() == null) {
           result.add(ref);
         }
       }

@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -81,7 +82,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     myTopConcept = topConcept;
   }
 
-  public List<AbstractConceptDeclaration> getConcepts() {
+  public AbstractConceptDeclaration[] getConcepts() {
     ConceptsDataSet dataSet = (ConceptsDataSet) getDataSet(ConceptsDataSet.ID, CONCEPTS_CACHE_CREATOR);
     return dataSet.getConcepts();
 
@@ -172,7 +173,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
   private static class ConceptsDataSet extends DataSet {
     public static final String ID = "CONCEPTS_DATASET";
     private AbstractConceptDeclaration myTopConcept;
-    private List<AbstractConceptDeclaration> myConcepts;
+    private AbstractConceptDeclaration[] myConcepts;
     private Set<SNode> myDependsOnNodes;
 
     public ConceptsDataSet(ConceptAndSuperConceptsCache ownerCache) {
@@ -180,7 +181,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       myTopConcept = ownerCache.myTopConcept;
     }
 
-    public List<AbstractConceptDeclaration> getConcepts() {
+    public AbstractConceptDeclaration[] getConcepts() {
       return myConcepts;
     }
 
@@ -192,10 +193,10 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       Set<AbstractConceptDeclaration> result = new LinkedHashSet<AbstractConceptDeclaration>();
       collectImplementedAndExtended(myTopConcept, result);
       result.add(SModelUtil_new.getBaseConcept());
-      myConcepts = new ArrayList<AbstractConceptDeclaration>(result);
+      myConcepts = result.toArray(new AbstractConceptDeclaration[result.size()]);
 
       // depends on concepts and implemented interface references
-      myDependsOnNodes = new HashSet<SNode>();
+      myDependsOnNodes = new HashSet<SNode>(myConcepts.length * 2);
       for (AbstractConceptDeclaration concept : myConcepts) {
         myDependsOnNodes.add(concept.getNode());
         if (concept instanceof InterfaceConceptDeclaration) {
@@ -275,10 +276,10 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       myProperties = new ArrayList<PropertyDeclaration>();
       myPropertyByName = new HashMap<String, PropertyDeclaration>();
 
-      List<AbstractConceptDeclaration> concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      AbstractConceptDeclaration[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       // iterate bottom-up
-      for (int i = concepts.size() - 1; i >= 0; i--) {
-        List<PropertyDeclaration> props = concepts.get(i).getPropertyDeclarations();
+      for (int i = concepts.length - 1; i >= 0; i--) {
+        List<PropertyDeclaration> props = concepts[i].getPropertyDeclarations();
         for (PropertyDeclaration prop : props) {
           allProperties.add(prop);
           String name = prop.getName();
@@ -378,12 +379,12 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
     }
 
     protected void init() {
-      List<LinkDeclaration> allLinks = new ArrayList<LinkDeclaration>();
       myLinkByRole = new HashMap<String, LinkDeclaration>();
-      List<AbstractConceptDeclaration> concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      AbstractConceptDeclaration[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      FlattenIterable<LinkDeclaration> allLinks = new FlattenIterable<LinkDeclaration>(new ArrayList<Iterable<LinkDeclaration>>(concepts.length));
       for (AbstractConceptDeclaration concept : concepts) {
         List<LinkDeclaration> list = concept.getLinkDeclarations();
-        allLinks.addAll(list);
+        allLinks.add(list);
         for (LinkDeclaration link : list) {
           String role1 = link.getRole();
           if (role1 == null) continue;
@@ -493,8 +494,8 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
       Set<ConceptPropertyDeclaration> allConceptPropertyDeclarations = new HashSet<ConceptPropertyDeclaration>();
       myPropertyByName = new HashMap<String, ConceptProperty>();
 
-      List<AbstractConceptDeclaration> concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
-      // iterate up-donw
+      AbstractConceptDeclaration[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
+      // iterate up-down
       for (AbstractConceptDeclaration concept : concepts) {
         List<ConceptProperty> conceptProperties = concept.getConceptProperties();
         for (ConceptProperty conceptProperty : conceptProperties) {
@@ -507,7 +508,7 @@ class ConceptAndSuperConceptsCache extends AbstractCache {
 
           // property is in 'top' concept or inheritable property
           if (conceptPropertyDeclaration.getInheritable() ||
-            concept == concepts.get(0)) {
+            concept == concepts[0]) {
             if (!myPropertyByName.containsKey(propertyName)) {
               myPropertyByName.put(propertyName, conceptProperty);
             }

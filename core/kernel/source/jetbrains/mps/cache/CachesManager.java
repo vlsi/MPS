@@ -128,7 +128,7 @@ public class CachesManager implements ApplicationComponent {
 
   private void removeAllCaches() {
     while (!myCaches.isEmpty()) {
-      List keys = new ArrayList(myCaches.keySet());
+      List<Object> keys = new ArrayList<Object>(myCaches.keySet());
       for (Object key : keys) {
         removeCache(key);
       }

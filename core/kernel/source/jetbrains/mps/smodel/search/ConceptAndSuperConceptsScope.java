@@ -28,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   public List<AbstractConceptDeclaration> getConcepts() {
     if (myTopConcept == null) return Collections.emptyList();
-    return new ArrayList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
+    return Arrays.asList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
   }
 
   public PropertyDeclaration getPropertyDeclarationByName(final String name) {
@@ -109,10 +110,9 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     // filter by condition
     for (INodeAdapter node : getConcepts()) {
       if (node == null) continue;
-      if (condition.met(node.getNode())) {
-        result.add(node.getNode());
+      for (SNode n : node.getNode().getDescendantsIterable(condition, true)) {
+        result.add(n);
       }
-      result.addAll(node.getNode().getDescendants(condition));
     }
     return result;
   }
