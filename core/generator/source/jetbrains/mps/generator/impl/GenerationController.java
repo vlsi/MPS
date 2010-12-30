@@ -198,7 +198,7 @@ public class GenerationController implements ITaskPoolProvider {
         myLogger.info("");
       }
       String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
-      progressHelper.setText2("model " + inputModel.getSModelReference().getSModelFqName());
+      progressHelper.setText2("Generating " + inputModel.getSModelReference().getSModelFqName());
       progressHelper.startLeafTask(taskName);
       if (myLogger.needsInfo()) {
         myLogger.info("[model " + inputModel.getSModelReference().getSModelFqName() +

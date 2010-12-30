@@ -5009,8 +5009,16 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4175026531914406779">
-                                    <property name="value" nameId="tpee.1070475926801" value="Script" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="8931147452431047742">
+                                    <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8931147452431047746">
+                                      <property name="value" nameId="tpee.1070475926801" value="Rebuild" />
+                                    </node>
+                                    <node role="condition" roleId="tpee.1163668914799" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8931147452431047741">
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4175026531914406905" resolveInfo="cleanMake" />
+                                    </node>
+                                    <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8931147452431047747">
+                                      <property name="value" nameId="tpee.1070475926801" value="Make" />
+                                    </node>
                                   </node>
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="4175026531914406780">
                                     <property name="value" nameId="tpee.1068580123138" value="true" />

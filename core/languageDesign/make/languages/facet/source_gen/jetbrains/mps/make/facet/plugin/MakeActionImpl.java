@@ -93,7 +93,10 @@ public class MakeActionImpl {
             pind.value = new JobMonitorProgressIndicator(jmon);
             code.invoke(jmon);
           }
-        }, "Script", true, MakeActionImpl.this.context.getProject());
+        }, (cleanMake ?
+          "Rebuild" :
+          "Make"
+        ), true, MakeActionImpl.this.context.getProject());
       }
     }).toScript();
 
