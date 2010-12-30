@@ -20,8 +20,6 @@ import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
-import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
-import jetbrains.mps.lang.refactoring.structure.Refactoring;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.library.LibraryInitializer;
@@ -32,9 +30,6 @@ import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
-import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -47,11 +42,9 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Constructor;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -72,10 +65,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private IClassPathItem myLanguageRuntimeClasspathCache;
 
   private CachesInvalidator myCachesInvalidator;
-
-  private Set<SNodePointer> myNotFoundRefactorings = new HashSet<SNodePointer>(2);
-  @Nullable
-  private Set<IRefactoring> myCachedRefactorings = null;
 
   private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
@@ -313,8 +302,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
       myGenerators.clear();
     }
-    myNotFoundRefactorings.clear();
-    myCachedRefactorings = null;
   }
 
   public LanguageDescriptor getModuleDescriptor() {
@@ -496,8 +483,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     super.invalidateCaches();
     myNameToConceptCache.clear();
     myNamesWithNoConcepts.clear();
-    myNotFoundRefactorings.clear();
-    myCachedRefactorings = null;
     myAllExtendedLanguages = null;
   }
 
@@ -564,7 +549,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       if (!(sm instanceof EditableSModelDescriptor)) continue;
 
       if (ownModels.contains(sm)) {
-        inputModels.add(((EditableSModelDescriptor) sm));
+        inputModels.add(sm);
       }
     }
 
@@ -610,73 +595,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public String toString() {
     return getModuleDescriptor().getNamespace();
-  }
-
-  public Set<IRefactoring> getRefactorings() {
-    Set<IRefactoring> result = new HashSet<IRefactoring>();
-    if (myCachedRefactorings != null) {
-      result.addAll(myCachedRefactorings);
-      return result;
-    }
-
-
-    //todo {begin} for compatibility with old refactorings
-    {
-      SModelDescriptor scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(this);
-      if (scriptsModelDescriptor != null) {
-        SModel scriptsModel = scriptsModelDescriptor.getSModel();
-        String packageName = scriptsModel.getLongName();
-        for (OldRefactoring refactoring : scriptsModel.getRootsAdapters(OldRefactoring.class)) {
-          try {
-            String fqName = packageName + "." + refactoring.getName();
-            Class<AbstractLoggableRefactoring> cls = getClass(fqName);
-            SNodePointer pointer = new SNodePointer(refactoring.getNode());
-            if (cls == null) {
-              if (!myNotFoundRefactorings.contains(pointer)) {
-                LOG.error("Can't find " + fqName);
-                myNotFoundRefactorings.add(pointer);
-              }
-              continue;
-            }
-            Constructor<AbstractLoggableRefactoring> constructor = cls.getConstructor();
-            constructor.setAccessible(false);
-            AbstractLoggableRefactoring oldRefactoring = constructor.newInstance();
-            result.add(OldRefactoringAdapter.createAdapterFor(oldRefactoring));
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-    //todo {--end} for compatibility with old refactorings
-
-    SModelDescriptor refModelDescriptor = LanguageAspect.REFACTORINGS.get(this);
-    if (refModelDescriptor != null) {
-      SModel refactoringsModel = refModelDescriptor.getSModel();
-      String packageName = refactoringsModel.getLongName();
-      for (Refactoring refactoring : refactoringsModel.getRootsAdapters(Refactoring.class)) {
-        try {
-          String fqName = packageName + "." + refactoring.getName();
-          Class<IRefactoring> cls = getClass(fqName);
-          SNodePointer pointer = new SNodePointer(refactoring.getNode());
-          if (cls == null) {
-            if (!myNotFoundRefactorings.contains(pointer)) {
-              LOG.error("Can't find " + fqName);
-              myNotFoundRefactorings.add(pointer);
-            }
-            continue;
-          }
-          Constructor<IRefactoring> constructor = cls.getConstructor();
-          constructor.setAccessible(false);
-          result.add(constructor.newInstance());
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-    }
-
-    myCachedRefactorings = new HashSet<IRefactoring>(result);
-    return result;
   }
 
   public LanguageAspect getAspectForModel(@NotNull SModelDescriptor sm) {

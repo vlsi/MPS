@@ -30,6 +30,7 @@ import jetbrains.mps.project.structure.project.testconfigurations.IllegalGenerat
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.*;
 
+import java.lang.reflect.Constructor;
 import java.util.*;
 
 public class RefactoringUtil {
@@ -69,10 +70,61 @@ public class RefactoringUtil {
     List<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
 
     for (Language language : languages) {
-      allRefactorings.addAll(language.getRefactorings());
+      allRefactorings.addAll(getRefactorings(language));
     }
 
     return allRefactorings;
+  }
+
+  public static Set<IRefactoring> getRefactorings(Language language) {
+    Set<IRefactoring> result = new HashSet<IRefactoring>();
+    //todo {begin} for compatibility with old refactorings
+    {
+      SModelDescriptor scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(language);
+      if (scriptsModelDescriptor != null) {
+        SModel scriptsModel = scriptsModelDescriptor.getSModel();
+        String packageName = scriptsModel.getLongName();
+        for (OldRefactoring refactoring : scriptsModel.getRootsAdapters(OldRefactoring.class)) {
+          try {
+            String fqName = packageName + "." + refactoring.getName();
+            Class<AbstractLoggableRefactoring> cls = language.getClass(fqName);
+            if (cls == null) {
+              LOG.error("Can't find " + fqName);
+              continue;
+            }
+            Constructor<AbstractLoggableRefactoring> constructor = cls.getConstructor();
+            constructor.setAccessible(false);
+            AbstractLoggableRefactoring oldRefactoring = constructor.newInstance();
+            result.add(OldRefactoringAdapter.createAdapterFor(oldRefactoring));
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+        }
+      }
+    }
+    //todo {--end} for compatibility with old refactorings
+
+    SModelDescriptor refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);
+    if (refModelDescriptor != null) {
+      SModel refactoringsModel = refModelDescriptor.getSModel();
+      String packageName = refactoringsModel.getLongName();
+      for (Refactoring refactoring : refactoringsModel.getRootsAdapters(Refactoring.class)) {
+        try {
+          String fqName = packageName + "." + refactoring.getName();
+          Class<IRefactoring> cls = language.getClass(fqName);
+          if (cls == null) {
+            LOG.error("Can't find " + fqName);
+            continue;
+          }
+          Constructor<IRefactoring> constructor = cls.getConstructor();
+          constructor.setAccessible(false);
+          result.add(constructor.newInstance());
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+    }
+    return result;
   }
 
   public static Applicability getApplicability(IRefactoring refactoring, Collection entities) {
