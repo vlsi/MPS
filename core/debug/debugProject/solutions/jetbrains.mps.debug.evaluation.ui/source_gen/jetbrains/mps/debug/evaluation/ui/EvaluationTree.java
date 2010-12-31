@@ -37,8 +37,8 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 
-/*package*/ class EvaluationTree extends MPSTree implements DataProvider {
-  private static DataKey<AbstractEvaluationModel> EVALUATION_MODEL = DataKey.create("Evaluation Model");
+public class EvaluationTree extends MPSTree implements DataProvider {
+  public static final DataKey<AbstractEvaluationModel> EVALUATION_MODEL = DataKey.create("Evaluation Model");
 
   private String myClassFqName;
   private ThreadReference myThreadReference;
@@ -58,6 +58,10 @@ import java.io.PrintWriter;
 
   /*package*/ void addModel(AbstractEvaluationModel model) {
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.InitializedState());
+  }
+
+  /*package*/ void removeModel(AbstractEvaluationModel model) {
+    MapSequence.fromMap(myStates).removeKey(model);
   }
 
   /*package*/ void setResultProxy(IValueProxy valueProxy, AbstractEvaluationModel model) {

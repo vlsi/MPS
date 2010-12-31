@@ -27,6 +27,7 @@ import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.evaluation.ui.WatchesPanel;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.debug.runtime.JavaUiState;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -100,10 +101,21 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void addWatch(Project project) {
-    //todo how to set isRuntime?
-    AbstractEvaluationModel model = createLowLevelEvaluationModel(project);
+    final AbstractEvaluationModel model = createLowLevelEvaluationModel(project);
     model.setIsInContext(false);
-    addWatch(model);
+    EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(project), this, model);
+    editWatchDialog.addWindowListener(new WindowAdapter() {
+      @Override
+      public void windowClosed(WindowEvent e) {
+        addWatch(model);
+      }
+    });
+    editWatchDialog.showDialog();
+  }
+
+  public void removeWatch(AbstractEvaluationModel model) {
+    myWatches.remove(model);
+    fireWatchRemoved(model);
   }
 
   public DebugSession getDebugSession() {
@@ -139,6 +151,12 @@ public class EvaluationProvider implements IEvaluationProvider {
   private void fireWatchUpdated(AbstractEvaluationModel model) {
     for (IWatchListener listener : myWatchListeners) {
       listener.watchUpdated(model);
+    }
+  }
+
+  private void fireWatchRemoved(AbstractEvaluationModel model) {
+    for (IWatchListener listener : myWatchListeners) {
+      listener.watchRemoved(model);
     }
   }
 

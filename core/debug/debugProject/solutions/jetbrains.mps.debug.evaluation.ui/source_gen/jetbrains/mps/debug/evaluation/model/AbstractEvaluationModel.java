@@ -289,7 +289,7 @@ public abstract class AbstractEvaluationModel {
   }
 
   public void setIsInContext(final boolean isInContext) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SPropertyOperations.set(myEvaluator, "isInContext", "" + (isInContext));
       }
