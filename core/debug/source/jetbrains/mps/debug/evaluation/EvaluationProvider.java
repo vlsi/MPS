@@ -62,6 +62,11 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   @Override
+  public boolean canEvaluate() {
+    return myDebugSession.isStepEnabled();
+  }
+
+  @Override
   public void showEvaluationDialog(IOperationContext context) {
     JavaUiState state = myDebugSession.getUiState();
     if (state.isPausedOnBreakpoint()) {

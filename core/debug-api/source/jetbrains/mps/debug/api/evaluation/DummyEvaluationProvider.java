@@ -36,4 +36,9 @@ public class DummyEvaluationProvider implements IEvaluationProvider {
   public JComponent createWatchesPanel() {
     return null;
   }
+
+  @Override
+  public boolean canEvaluate() {
+    return mySession.isStepEnabled();
+  }
 }

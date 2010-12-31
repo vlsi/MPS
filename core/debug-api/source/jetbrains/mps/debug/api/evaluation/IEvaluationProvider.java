@@ -34,4 +34,6 @@ public interface IEvaluationProvider {
 
   @Nullable
   JComponent createWatchesPanel();
+
+  boolean canEvaluate();
 }
