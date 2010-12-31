@@ -18,10 +18,13 @@ package jetbrains.mps.debug.evaluation.ui;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.debug.evaluation.EvaluationProvider.WatchAdapter;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
+import jetbrains.mps.ide.actions.DebugActionsUtil;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
 
 import java.awt.BorderLayout;
@@ -67,8 +70,17 @@ public class WatchesPanel extends EvaluationUi {
 
     add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, new DefaultActionGroup(new AnAction("Add Watch", "Add Watch", Icons.ADD) {
       @Override
+      public void update(AnActionEvent e) {
+        e.getPresentation().setEnabled(DebugActionsUtil.getDebugSession(e) != null);
+      }
+
+      @Override
       public void actionPerformed(AnActionEvent e) {
-        myProvider.createWatch(myDebugSession.getProject());
+        AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(e);
+        IEvaluationProvider evaluationProvider = debugSession.getEvaluationProvider();
+        if (evaluationProvider != null) {
+          ((EvaluationProvider) evaluationProvider).createWatch(myDebugSession.getProject());
+        }
       }
     }, new AnAction("Remove Watch", "Remove Watch", Icons.REMOVE) {
       @Override
@@ -80,7 +92,11 @@ public class WatchesPanel extends EvaluationUi {
       public void actionPerformed(AnActionEvent e) {
         //todo move EvaluationTree.EVALUATION_MODEL out of the tree and make tree package private back
         AbstractEvaluationModel model = EvaluationTree.EVALUATION_MODEL.getData(e.getDataContext());
-        myProvider.removeWatch(model);
+        AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(e);
+        IEvaluationProvider evaluationProvider = debugSession.getEvaluationProvider();
+        if (evaluationProvider != null) {
+          ((EvaluationProvider) evaluationProvider).removeWatch(model);
+        }
       }
     }), false).getComponent(), BorderLayout.WEST);
     add(new JBScrollPane(myTree), BorderLayout.CENTER);
