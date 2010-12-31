@@ -70,7 +70,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   public void showEvaluationDialog(IOperationContext context) {
     JavaUiState state = myDebugSession.getUiState();
     if (state.isPausedOnBreakpoint()) {
-      AbstractEvaluationModel model = createEvaluationLogic(context.getProject());
+      AbstractEvaluationModel model = createEvaluationLogic();
       model.setIsInContext(true); // todo constructor parameter?
       EvaluationDialog evaluationDialog = new EvaluationDialog(context, this, model);
       evaluationDialog.showDialog();
@@ -100,8 +100,9 @@ public class EvaluationProvider implements IEvaluationProvider {
     fireWatchAdded(copy);
   }
 
-  public void createWatch(Project project) {
-    final AbstractEvaluationModel model = createLowLevelEvaluationModel(project);
+  public void createWatch() {
+    Project project = myDebugSession.getProject();
+    final AbstractEvaluationModel model = createLowLevelEvaluationModel();
     model.setIsInContext(false);
     EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(project), this, model, new _void_P0_E0() {
       @Override
@@ -125,15 +126,17 @@ public class EvaluationProvider implements IEvaluationProvider {
     return myAuxModule;
   }
 
-  public AbstractEvaluationModel createEvaluationLogic(Project project) {
-    return createLowLevelEvaluationModel(project);
+  public AbstractEvaluationModel createEvaluationLogic() {
+    return createLowLevelEvaluationModel();
   }
 
-  AbstractEvaluationModel createHighLevelEvaluationModel(Project project) {
+  AbstractEvaluationModel createHighLevelEvaluationModel() {
+    Project project = myDebugSession.getProject();
     return new HighLevelEvaluationModel(project, myDebugSession, getAuxModule());
   }
 
-  AbstractEvaluationModel createLowLevelEvaluationModel(Project project) {
+  AbstractEvaluationModel createLowLevelEvaluationModel() {
+    Project project = myDebugSession.getProject();
     return new LowLevelEvaluationModel(project, myDebugSession, getAuxModule());
   }
 

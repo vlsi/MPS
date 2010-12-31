@@ -24,7 +24,6 @@ import jetbrains.mps.debug.evaluation.EvaluationProvider.WatchAdapter;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.runtime.SessionStopDisposer;
 import jetbrains.mps.ide.actions.DebugActionsUtil;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
 
 import java.awt.BorderLayout;
@@ -99,7 +98,6 @@ public class WatchesPanel extends EvaluationUi {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-      //todo move EvaluationTree.EVALUATION_MODEL out of the tree and make tree package private back
       AbstractEvaluationModel model = EVALUATION_MODEL.getData(e.getDataContext());
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(e);
       if (evaluationProvider != null) {
@@ -122,7 +120,7 @@ public class WatchesPanel extends EvaluationUi {
     public void actionPerformed(AnActionEvent e) {
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(e);
       if (evaluationProvider != null) {
-        ((EvaluationProvider) evaluationProvider).createWatch(MPSDataKeys.PROJECT.getData(e.getDataContext())); //todo why do we need to pass project?
+        ((EvaluationProvider) evaluationProvider).createWatch();
       }
     }
   }
