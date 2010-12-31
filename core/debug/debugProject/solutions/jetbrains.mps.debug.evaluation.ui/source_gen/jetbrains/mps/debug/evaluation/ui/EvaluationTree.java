@@ -4,10 +4,9 @@ package jetbrains.mps.debug.evaluation.ui;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import com.sun.jdi.ThreadReference;
 import java.util.Map;
+import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
@@ -37,9 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 
-public class EvaluationTree extends MPSTree implements DataProvider {
-  public static final DataKey<AbstractEvaluationModel> EVALUATION_MODEL = DataKey.create("Evaluation Model");
-
+/*package*/ class EvaluationTree extends MPSTree implements DataProvider {
   private String myClassFqName;
   private ThreadReference myThreadReference;
   private Map<AbstractEvaluationModel, EvaluationTree.EvaluationState> myStates = MapSequence.fromMap(new HashMap<AbstractEvaluationModel, EvaluationTree.EvaluationState>());
@@ -98,7 +95,7 @@ public class EvaluationTree extends MPSTree implements DataProvider {
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(EvaluationTree.EVALUATION_MODEL.getName())) {
+    if (dataId.equals(EvaluationUi.EVALUATION_MODEL.getName())) {
       TreePath path = getSelectionPath();
       if (path != null) {
         Object component = path.getLastPathComponent();
@@ -113,14 +110,14 @@ public class EvaluationTree extends MPSTree implements DataProvider {
   private static ActionGroup getWatchesActionGroup() {
     AnAction editWatchAction = new AnAction("Edit Watch") {
       public void actionPerformed(AnActionEvent event) {
-        AbstractEvaluationModel model = EvaluationTree.EVALUATION_MODEL.getData(event.getDataContext());
+        AbstractEvaluationModel model = EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext());
         // todo remove cast 
         ((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).showEditWatchDialog(MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), model);
       }
 
       @Override
       public void update(AnActionEvent event) {
-        event.getPresentation().setVisible(EvaluationTree.EVALUATION_MODEL.getData(event.getDataContext()) != null);
+        event.getPresentation().setVisible(EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext()) != null);
       }
     };
     return new DefaultActionGroup(editWatchAction);

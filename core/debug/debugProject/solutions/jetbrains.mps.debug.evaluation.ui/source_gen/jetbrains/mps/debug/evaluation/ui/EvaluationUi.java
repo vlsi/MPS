@@ -4,10 +4,11 @@ package jetbrains.mps.debug.evaluation.ui;
 
 import javax.swing.JPanel;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.actionSystem.DataKey;
+import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.runtime.DebugSession;
 import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
-import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 import com.intellij.openapi.application.ApplicationManager;
@@ -22,6 +23,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public abstract class EvaluationUi extends JPanel {
   private static final Logger LOG = Logger.getLogger(EvaluationUi.class);
+  public static final DataKey<AbstractEvaluationModel> EVALUATION_MODEL = DataKey.create("Evaluation Model");
 
   protected final DebugSession myDebugSession;
   protected final EvaluationTree myTree;
