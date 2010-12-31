@@ -9,6 +9,7 @@ import java.util.Map;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -54,26 +55,32 @@ import java.io.PrintWriter;
   }
 
   /*package*/ void addModel(AbstractEvaluationModel model) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.InitializedState());
   }
 
   /*package*/ void removeModel(AbstractEvaluationModel model) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).removeKey(model);
   }
 
   /*package*/ void setResultProxy(IValueProxy valueProxy, AbstractEvaluationModel model) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), valueProxy, myClassFqName, myThreadReference));
   }
 
   /*package*/ void setError(@NotNull String text, AbstractEvaluationModel model) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(text));
   }
 
   /*package*/ void setError(@NotNull Throwable error, AbstractEvaluationModel model) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(error));
   }
 
   /*package*/ void setEvaluating(AbstractEvaluationModel model) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     MapSequence.fromMap(myStates).put(model, new EvaluationTree.EvaluationInProgressState());
   }
 
