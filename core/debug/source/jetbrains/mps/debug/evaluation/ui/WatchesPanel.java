@@ -68,7 +68,7 @@ public class WatchesPanel extends EvaluationUi {
     add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, new DefaultActionGroup(new AnAction("Add Watch", "Add Watch", Icons.ADD) {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        myProvider.addWatch(myDebugSession.getProject());
+        myProvider.createWatch(myDebugSession.getProject());
       }
     }, new AnAction("Remove Watch", "Remove Watch", Icons.REMOVE) {
       @Override

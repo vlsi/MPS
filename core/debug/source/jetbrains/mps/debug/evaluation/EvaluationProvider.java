@@ -16,6 +16,7 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P0_E0;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.evaluation.model.HighLevelEvaluationModel;
@@ -94,13 +95,12 @@ public class EvaluationProvider implements IEvaluationProvider {
     fireWatchAdded(copy);
   }
 
-  public void addWatch(Project project) {
+  public void createWatch(Project project) {
     final AbstractEvaluationModel model = createLowLevelEvaluationModel(project);
     model.setIsInContext(false);
-    EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(project), this, model);
-    editWatchDialog.addWindowListener(new WindowAdapter() {
+    EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(project), this, model, new _void_P0_E0() {
       @Override
-      public void windowClosed(WindowEvent e) {
+      public void invoke() {
         addWatch(model);
       }
     });

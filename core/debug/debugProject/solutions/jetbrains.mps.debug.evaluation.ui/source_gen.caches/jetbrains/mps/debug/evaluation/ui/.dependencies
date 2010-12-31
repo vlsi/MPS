@@ -17,11 +17,13 @@
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.ui.EditWatchDialog" file="EditWatchDialog.java">
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
     <classNode extendsClassName="jetbrains.mps.debug.evaluation.ui.AbstractEvaluationDialog" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.ui.EvaluationDialog" file="EvaluationDialog.java">
