@@ -245,22 +245,9 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           @Override
           protected SNode createEvaluator(SModelDescriptor model) {
             SNode newEvaluator = CopyUtil.copyAndPreserveId(evaluator, true);
-            SPropertyOperations.set(newEvaluator, "isRuntime", "" + (false));
             model.getSModel().addRoot(newEvaluator);
             SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
             return newEvaluator;
-          }
-
-          private SNode clone(SModelDescriptor model, SNode fromNode) {
-            SNode result = new SNode(model.getSModel(), fromNode.getConceptFqName());
-            result.putProperties(fromNode);
-            result.putUserObjects(fromNode);
-            for (SNode ch : ListSequence.fromList(fromNode.getChildren(true))) {
-              String role = ch.getRole_();
-              assert role != null;
-              result.addChild(role, clone(model, ch));
-            }
-            return result;
           }
         };
       }

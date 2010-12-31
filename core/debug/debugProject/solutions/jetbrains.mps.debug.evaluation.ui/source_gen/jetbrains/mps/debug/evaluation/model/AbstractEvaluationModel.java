@@ -138,7 +138,7 @@ public abstract class AbstractEvaluationModel {
 
   protected SNode createEvaluator(SModelDescriptor model) {
     SNode evaluator = (SNode) new SNode(model.getSModel(), INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept")));
-    SPropertyOperations.set(evaluator, "isRuntime", "" + !(IS_DEVELOPER_MODE));
+    SPropertyOperations.set(evaluator, "isInContext", "" + !(IS_DEVELOPER_MODE));
     return evaluator;
   }
 
@@ -286,6 +286,14 @@ public abstract class AbstractEvaluationModel {
 
   public IOperationContext getContext() {
     return myContext;
+  }
+
+  public void setIsInContext(final boolean isInContext) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        SPropertyOperations.set(myEvaluator, "isInContext", "" + (isInContext));
+      }
+    });
   }
 
   private class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {

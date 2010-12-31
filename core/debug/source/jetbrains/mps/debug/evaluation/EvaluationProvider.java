@@ -69,7 +69,9 @@ public class EvaluationProvider implements IEvaluationProvider {
   public void showEvaluationDialog(IOperationContext context) {
     JavaUiState state = myDebugSession.getUiState();
     if (state.isPausedOnBreakpoint()) {
-      EvaluationDialog evaluationDialog = new EvaluationDialog(context, this, createEvaluationLogic(context.getProject()));
+      AbstractEvaluationModel model = createEvaluationLogic(context.getProject());
+      model.setIsInContext(true); // todo constructor parameter?
+      EvaluationDialog evaluationDialog = new EvaluationDialog(context, this, model);
       evaluationDialog.showDialog();
     }
   }
@@ -91,14 +93,17 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void addWatch(AbstractEvaluationModel evaluationModel) {
-    final AbstractEvaluationModel copy = evaluationModel.copy();
+    AbstractEvaluationModel copy = evaluationModel.copy();
+    copy.setIsInContext(false);
     myWatches.add(copy);
     fireWatchAdded(copy);
   }
 
   public void addWatch(Project project) {
     //todo how to set isRuntime?
-    addWatch(createLowLevelEvaluationModel(project));
+    AbstractEvaluationModel model = createLowLevelEvaluationModel(project);
+    model.setIsInContext(false);
+    addWatch(model);
   }
 
   public DebugSession getDebugSession() {

@@ -70,7 +70,7 @@
   </roots>
   <root id="6036237525966182693">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6036237525966243739">
-      <property name="name" nameId="tpck.1169194664001" value="isRuntime" />
+      <property name="name" nameId="tpck.1169194664001" value="isInContext" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6036237525966243735">
