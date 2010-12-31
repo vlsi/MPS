@@ -4,10 +4,10 @@ package jetbrains.mps.debug.evaluation.model;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.JavaUiState;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.StackFrame;
@@ -15,6 +15,7 @@ import com.sun.jdi.Location;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.project.AbstractModule;
 import java.util.Collections;
 import java.util.Map;
@@ -52,10 +53,16 @@ public class StackFrameContext extends EvaluationContext {
     super(uiState);
   }
 
+  @Nullable
   protected IModule getLocationModule() {
-    return getLocationModel().getModelDescriptor().getModule();
+    SModel model = getLocationModel();
+    if (model == null) {
+      return null;
+    }
+    return model.getModelDescriptor().getModule();
   }
 
+  @Nullable
   private SModel getLocationModel() {
     return SNodeOperations.getModel(getLocationNode());
   }
@@ -81,6 +88,10 @@ public class StackFrameContext extends EvaluationContext {
   @NotNull
   public IClassPathItem getClassPathItem() {
     IModule locationModule = getLocationModule();
+    // todo classpath should not be from location module but rather from run configuration 
+    if (locationModule == null) {
+      return CommonPaths.getJDKClassPath();
+    }
     return AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
   }
 

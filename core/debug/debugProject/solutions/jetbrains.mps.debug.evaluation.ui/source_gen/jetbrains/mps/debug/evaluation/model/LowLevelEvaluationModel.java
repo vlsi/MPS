@@ -28,6 +28,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelReference;
@@ -144,7 +145,10 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        LowLevelEvaluationModel.this.importStubForFqName(getLocationModel().getSModelFqName().toString());
+        SModel model = getLocationModel();
+        if (model != null) {
+          LowLevelEvaluationModel.this.importStubForFqName(model.getSModelFqName().toString());
+        }
       }
     });
     createVars();

@@ -146,7 +146,7 @@ import java.io.PrintWriter;
     }
 
     public void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model) {
-      // doing nothing 
+      rootTreeNode.add(new TextTreeNode(model.getPresentation() + " = "));
     }
   }
 
