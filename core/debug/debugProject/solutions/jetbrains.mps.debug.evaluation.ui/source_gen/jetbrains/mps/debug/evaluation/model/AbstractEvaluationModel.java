@@ -72,8 +72,9 @@ public abstract class AbstractEvaluationModel {
   protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
   protected final EvaluationContext myEvaluationContext;
+  private final boolean myIsInContext;
 
-  public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule, EvaluationContext context) {
+  public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule, EvaluationContext context, boolean isInContext) {
     myUiState = session.getUiState();
     myDebugSession = session;
     if (context.getLocationNode() != null) {
@@ -92,6 +93,7 @@ public abstract class AbstractEvaluationModel {
     });
     myAuxModel = modelDescriptor.value;
     myEvaluationContext = context;
+    myIsInContext = isInContext;
   }
 
   protected SModel getLocationModel() {
@@ -137,9 +139,9 @@ public abstract class AbstractEvaluationModel {
   }
 
   protected SNode createEvaluator(SModelDescriptor model) {
-    SNode evaluator = (SNode) new SNode(model.getSModel(), INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept")));
-    SPropertyOperations.set(evaluator, "isInContext", "" + !(IS_DEVELOPER_MODE));
-    return evaluator;
+    SNode evaluatorConcept = (SNode) new SNode(model.getSModel(), INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept")));
+    SPropertyOperations.set(evaluatorConcept, "isInContext", "" + (myIsInContext));
+    return evaluatorConcept;
   }
 
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
@@ -278,7 +280,7 @@ public abstract class AbstractEvaluationModel {
     }
   }
 
-  public abstract AbstractEvaluationModel copy();
+  public abstract AbstractEvaluationModel copy(boolean isInContext);
 
   protected IModule getLocationModule() {
     return getLocationModel().getModelDescriptor().getModule();
@@ -286,14 +288,6 @@ public abstract class AbstractEvaluationModel {
 
   public IOperationContext getContext() {
     return myContext;
-  }
-
-  public void setIsInContext(final boolean isInContext) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SPropertyOperations.set(myEvaluator, "isInContext", "" + (isInContext));
-      }
-    });
   }
 
   private class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {

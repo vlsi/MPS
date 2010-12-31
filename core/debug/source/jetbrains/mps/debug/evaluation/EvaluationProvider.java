@@ -71,7 +71,6 @@ public class EvaluationProvider implements IEvaluationProvider {
     JavaUiState state = myDebugSession.getUiState();
     if (state.isPausedOnBreakpoint()) {
       AbstractEvaluationModel model = createEvaluationLogic();
-      model.setIsInContext(true); // todo constructor parameter?
       EvaluationDialog evaluationDialog = new EvaluationDialog(context, this, model);
       evaluationDialog.showDialog();
     }
@@ -94,8 +93,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void addWatch(AbstractEvaluationModel evaluationModel) {
-    AbstractEvaluationModel copy = evaluationModel.copy();
-    copy.setIsInContext(false);
+    AbstractEvaluationModel copy = evaluationModel.copy(false);
     myWatches.add(copy);
     fireWatchAdded(copy);
   }
@@ -103,7 +101,6 @@ public class EvaluationProvider implements IEvaluationProvider {
   public void createWatch() {
     Project project = myDebugSession.getProject();
     final AbstractEvaluationModel model = createLowLevelEvaluationModel();
-    model.setIsInContext(false);
     EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(project), this, model, new _void_P0_E0() {
       @Override
       public void invoke() {
@@ -132,12 +129,12 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   AbstractEvaluationModel createHighLevelEvaluationModel() {
     Project project = myDebugSession.getProject();
-    return new HighLevelEvaluationModel(project, myDebugSession, getAuxModule());
+    return new HighLevelEvaluationModel(project, myDebugSession, getAuxModule(), true);
   }
 
   AbstractEvaluationModel createLowLevelEvaluationModel() {
     Project project = myDebugSession.getProject();
-    return new LowLevelEvaluationModel(project, myDebugSession, getAuxModule());
+    return new LowLevelEvaluationModel(project, myDebugSession, getAuxModule(), true);
   }
 
   public List<AbstractEvaluationModel> getWatches() {

@@ -20,8 +20,8 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
   private SNode myLocationRootCopy;
   private SNode myNodeToShow;
 
-  public HighLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
-    super(project, session, module, new StackFrameContext(session.getUiState()));
+  public HighLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isInContext) {
+    super(project, session, module, new StackFrameContext(session.getUiState()), isInContext);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -76,8 +76,8 @@ public class HighLevelEvaluationModel extends AbstractEvaluationModel {
     throw new RuntimeException("update state unimplemented!");
   }
 
-  public HighLevelEvaluationModel copy() {
-    HighLevelEvaluationModel model = new HighLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule);
+  public HighLevelEvaluationModel copy(boolean isInContext) {
+    HighLevelEvaluationModel model = new HighLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isInContext);
     return model;
   }
 }

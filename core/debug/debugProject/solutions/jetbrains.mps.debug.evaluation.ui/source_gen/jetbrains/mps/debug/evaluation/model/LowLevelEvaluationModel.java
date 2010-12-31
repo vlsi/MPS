@@ -52,12 +52,12 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   private AbstractClassifiersScope myScope;
 
-  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module) {
-    this(project, session, module, new StackFrameContext(session.getUiState()));
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, boolean isInContext) {
+    this(project, session, module, new StackFrameContext(session.getUiState()), isInContext);
   }
 
-  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context) {
-    super(project, session, module, context);
+  public LowLevelEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule module, EvaluationContext context, boolean isInContext) {
+    super(project, session, module, context, isInContext);
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -236,15 +236,16 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     }
   }
 
-  public LowLevelEvaluationModel copy() {
+  public LowLevelEvaluationModel copy(final boolean isInContext) {
     final Wrappers._T<LowLevelEvaluationModel> evaluationModel = new Wrappers._T<LowLevelEvaluationModel>();
     final SNode evaluator = myEvaluator;
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<LowLevelEvaluationModel>() {
       public LowLevelEvaluationModel invoke() {
-        return evaluationModel.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule) {
+        return evaluationModel.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isInContext) {
           @Override
           protected SNode createEvaluator(SModelDescriptor model) {
             SNode newEvaluator = CopyUtil.copyAndPreserveId(evaluator, true);
+            SPropertyOperations.set(newEvaluator, "isInContext", "" + (isInContext));
             model.getSModel().addRoot(newEvaluator);
             SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
             return newEvaluator;
