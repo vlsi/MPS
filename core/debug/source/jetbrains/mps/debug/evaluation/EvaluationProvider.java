@@ -16,7 +16,6 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P0_E0;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debug.evaluation.model.HighLevelEvaluationModel;
@@ -30,11 +29,6 @@ import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
