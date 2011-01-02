@@ -89,7 +89,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     }
   }
 
-
+  @Nullable
   public EventSet getEventSet() {
     assertNotResumed();
     return myEventSet;
