@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.debug.evaluation;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P0_E0;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel;
@@ -99,9 +98,8 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void createWatch() {
-    Project project = myDebugSession.getProject();
     final AbstractEvaluationModel model = createLowLevelEvaluationModel();
-    EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(project), this, model, new _void_P0_E0() {
+    EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(myDebugSession.getProject()), this, model, new _void_P0_E0() {
       @Override
       public void invoke() {
         addWatch(model);
@@ -128,13 +126,11 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   AbstractEvaluationModel createHighLevelEvaluationModel() {
-    Project project = myDebugSession.getProject();
-    return new HighLevelEvaluationModel(project, myDebugSession, getAuxModule(), true);
+    return new HighLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), true);
   }
 
   AbstractEvaluationModel createLowLevelEvaluationModel() {
-    Project project = myDebugSession.getProject();
-    return new LowLevelEvaluationModel(project, myDebugSession, getAuxModule(), true);
+    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), true);
   }
 
   public List<AbstractEvaluationModel> getWatches() {
