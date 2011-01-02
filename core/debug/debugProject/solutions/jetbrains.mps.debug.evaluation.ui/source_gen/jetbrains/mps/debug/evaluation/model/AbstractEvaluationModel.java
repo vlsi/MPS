@@ -165,15 +165,15 @@ public abstract class AbstractEvaluationModel {
         if (ListSequence.fromList(statements).isEmpty()) {
           return "empty statement";
         }
-        SNode firstStatement = ListSequence.fromList(statements).last();
+        SNode lastStatement = ListSequence.fromList(statements).last();
         String suffix = ((ListSequence.fromList(statements).count() > 1 ?
           "..." :
           ""
         ));
-        if (SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-          return getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(firstStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)) + suffix;
+        if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+          return getPresentation(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)) + suffix;
         }
-        return BaseConcept_Behavior.call_getPresentation_1213877396640(firstStatement) + suffix;
+        return BaseConcept_Behavior.call_getPresentation_1213877396640(lastStatement) + suffix;
       }
     });
   }
