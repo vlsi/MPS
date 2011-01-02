@@ -17,7 +17,10 @@ import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 // This class is immutable
 public class JavaUiState extends AbstractUiState {
@@ -221,29 +224,31 @@ public class JavaUiState extends AbstractUiState {
   private List<IWatchable> getAdditionalWatchables() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     if (myContext != null) {
-      Iterator<Event> iterator = myContext.getEventSet().iterator();
-      while (iterator.hasNext()) {
-        Event event = iterator.next();
-        if (event instanceof ExceptionEvent) {
-          ObjectReference exception = ((ExceptionEvent) event).exception();
-          watchables.add(new JavaExceptionWatchable(exception, getStackFrame().getClassFqName(), getThread().getThread()));
-        } else if (event instanceof MethodEntryEvent) {
-          Method method = ((MethodEntryEvent) event).method();
-          watchables.add(new JavaMethodWatchable(method, true, getStackFrame().getClassFqName(), getThread().getThread()));
-        } else if (event instanceof MethodExitEvent) {
-          Method method = ((MethodExitEvent) event).method();
-          Value value = ((MethodExitEvent) event).returnValue();
-          watchables.add(new JavaMethodWatchable(method, false, getStackFrame().getClassFqName(), getThread().getThread()));
-          watchables.add(new JavaReturnWatchable(value, getStackFrame().getClassFqName(), getThread().getThread()));
-        } else if (event instanceof AccessWatchpointEvent) {
-          Field field = ((AccessWatchpointEvent) event).field();
-          Value value = ((AccessWatchpointEvent) event).valueCurrent();
-          watchables.add(new JavaWatchpointWatchable(field, value, getStackFrame().getClassFqName(), getThread().getThread()));
-        } else if (event instanceof ModificationWatchpointEvent) {
-          Field field = ((ModificationWatchpointEvent) event).field();
-          Value currentValue = ((ModificationWatchpointEvent) event).valueCurrent();
-          Value valueToBe = ((ModificationWatchpointEvent) event).valueToBe();
-          watchables.add(new JavaWatchpointWatchable(field, currentValue, valueToBe, getStackFrame().getClassFqName(), getThread().getThread()));
+      EventSet eventSet = myContext.getEventSet();
+      if (eventSet != null) {
+        for (Object eventObject : eventSet) {
+          Event event = (Event) eventObject;
+          if (event instanceof ExceptionEvent) {
+            ObjectReference exception = ((ExceptionEvent) event).exception();
+            watchables.add(new JavaExceptionWatchable(exception, getStackFrame().getClassFqName(), getThread().getThread()));
+          } else if (event instanceof MethodEntryEvent) {
+            Method method = ((MethodEntryEvent) event).method();
+            watchables.add(new JavaMethodWatchable(method, true, getStackFrame().getClassFqName(), getThread().getThread()));
+          } else if (event instanceof MethodExitEvent) {
+            Method method = ((MethodExitEvent) event).method();
+            Value value = ((MethodExitEvent) event).returnValue();
+            watchables.add(new JavaMethodWatchable(method, false, getStackFrame().getClassFqName(), getThread().getThread()));
+            watchables.add(new JavaReturnWatchable(value, getStackFrame().getClassFqName(), getThread().getThread()));
+          } else if (event instanceof AccessWatchpointEvent) {
+            Field field = ((AccessWatchpointEvent) event).field();
+            Value value = ((AccessWatchpointEvent) event).valueCurrent();
+            watchables.add(new JavaWatchpointWatchable(field, value, getStackFrame().getClassFqName(), getThread().getThread()));
+          } else if (event instanceof ModificationWatchpointEvent) {
+            Field field = ((ModificationWatchpointEvent) event).field();
+            Value currentValue = ((ModificationWatchpointEvent) event).valueCurrent();
+            Value valueToBe = ((ModificationWatchpointEvent) event).valueToBe();
+            watchables.add(new JavaWatchpointWatchable(field, currentValue, valueToBe, getStackFrame().getClassFqName(), getThread().getThread()));
+          }
         }
       }
     }
