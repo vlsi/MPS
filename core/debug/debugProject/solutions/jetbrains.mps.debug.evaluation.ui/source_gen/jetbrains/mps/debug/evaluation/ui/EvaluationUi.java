@@ -49,7 +49,7 @@ public abstract class EvaluationUi extends JPanel {
   }
 
   protected void evaluate(final AbstractEvaluationModel model) {
-    if (!(model.getDebugSession().isStepEnabled())) {
+    if (!(myDebugSession.getEvaluationProvider().canEvaluate())) {
       setErrorText("Program should be paused on breakpoint to evaluate");
       return;
     }

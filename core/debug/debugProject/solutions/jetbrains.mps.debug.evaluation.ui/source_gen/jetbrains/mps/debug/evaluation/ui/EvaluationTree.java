@@ -177,7 +177,7 @@ import java.io.PrintWriter;
     }
 
     public void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model) {
-      final boolean canEvalaute = model.getDebugSession().isStepEnabled();
+      final boolean canEvalaute = model.getDebugSession().getEvaluationProvider().canEvaluate();
       if (canEvalaute) {
         myCachedWatchable = new CalculatedWatchable(myPresentation, myValueProxy.getJDIValue(), myClassFqName, myThreadReference);
       }
