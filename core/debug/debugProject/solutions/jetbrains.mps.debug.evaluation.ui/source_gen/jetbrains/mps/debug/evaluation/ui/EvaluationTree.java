@@ -24,8 +24,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.debug.evaluation.EvaluationProvider;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
+import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -146,7 +146,8 @@ import java.io.PrintWriter;
     }
 
     public void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model) {
-      rootTreeNode.add(new TextTreeNode(model.getPresentation() + " = "));
+      rootTreeNode.add(new EvaluationTree.InitialTreeNode(model));
+      // todo? 
     }
   }
 
@@ -166,6 +167,7 @@ import java.io.PrintWriter;
     private final String myClassFqName;
     private final ThreadReference myThreadReference;
     private final String myPresentation;
+    private CalculatedWatchable myCachedWatchable;
 
     public ResultState(String presentation, IValueProxy proxy, @NotNull String classFqName, ThreadReference threadReference) {
       myPresentation = presentation;
@@ -175,8 +177,24 @@ import java.io.PrintWriter;
     }
 
     public void rebuild(MPSTreeNode rootTreeNode, AbstractEvaluationModel model) {
-      WatchableNode watchableNode = new EvaluationTree.ResultState.MyWatchableNode(model, new CalculatedWatchable(myPresentation, this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference));
-      rootTreeNode.add(watchableNode);
+      final boolean canEvalaute = model.getDebugSession().isStepEnabled();
+      if (canEvalaute) {
+        myCachedWatchable = new CalculatedWatchable(myPresentation, myValueProxy.getJDIValue(), myClassFqName, myThreadReference);
+      }
+      if (myCachedWatchable != null) {
+        WatchableNode watchableNode = new EvaluationTree.ResultState.MyWatchableNode(model, myCachedWatchable) {
+          @Override
+          public boolean isLeaf() {
+            if (canEvalaute) {
+              return super.isLeaf();
+            }
+            return true;
+          }
+        };
+        rootTreeNode.add(watchableNode);
+      } else {
+        rootTreeNode.add(new EvaluationTree.InitialTreeNode(model));
+      }
     }
 
     private class MyWatchableNode extends WatchableNode implements EvaluationTree.EvaluationModelNode {
@@ -323,6 +341,17 @@ import java.io.PrintWriter;
 
     public AbstractEvaluationModel getModel() {
       return myModel;
+    }
+  }
+
+  private static class InitialTreeNode extends TextTreeNode {
+    public InitialTreeNode(AbstractEvaluationModel model) {
+      super(model.getPresentation() + " = ");
+      setIcon(jetbrains.mps.debug.integration.Icons.WATCH);
+    }
+
+    public boolean isLeaf() {
+      return true;
     }
   }
 }

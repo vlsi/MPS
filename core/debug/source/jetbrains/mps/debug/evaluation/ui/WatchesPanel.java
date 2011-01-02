@@ -41,6 +41,7 @@ public class WatchesPanel extends EvaluationUi {
       public void watchAdded(final AbstractEvaluationModel model) {
         myTree.addModel(model); // todo threads
         evaluate(model);
+        myTree.rebuildLater();
       }
 
       @Override

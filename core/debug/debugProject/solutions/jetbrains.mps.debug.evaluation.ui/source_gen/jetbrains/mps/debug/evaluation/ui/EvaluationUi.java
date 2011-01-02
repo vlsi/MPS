@@ -171,5 +171,16 @@ public abstract class EvaluationUi extends JPanel {
         });
       }
     }
+
+    @Override
+    public void resumed(AbstractDebugSession session) {
+      if (myDebugSession == session) {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            myTree.rebuildLater();
+          }
+        });
+      }
+    }
   }
 }

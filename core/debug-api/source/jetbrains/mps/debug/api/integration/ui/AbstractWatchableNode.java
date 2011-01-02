@@ -19,6 +19,7 @@ abstract class AbstractWatchableNode extends MPSTreeNode {
   private static final ActionGroup OUR_GROUP = new DefaultActionGroup(new AnAction("Go To Source") {
     @Override
     public void actionPerformed(AnActionEvent e) {
+      // todo this action should not be here
       final SNode node = MPSDataKeys.NODE.getData(e.getDataContext());
       final Project project = MPSDataKeys.PROJECT.getData(e.getDataContext());
       final IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
