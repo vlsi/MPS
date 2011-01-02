@@ -27,7 +27,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;

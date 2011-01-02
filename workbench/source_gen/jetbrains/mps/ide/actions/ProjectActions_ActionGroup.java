@@ -4,12 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.actions.module.GenerateAllModulesInProjectAction;
 
 public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.ProjectActions";
   public static final String LABEL_ID_projectNew = ID + "projectNew";
+  public static final String LABEL_ID_make = ID + "make";
+  public static final String LABEL_ID_generate = ID + "generate";
   public static final String LABEL_ID_runConfig = ID + "runConfig";
 
   public ProjectActions_ActionGroup() {
@@ -19,11 +20,12 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
     try {
       ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
       ProjectActions_ActionGroup.this.addSeparator();
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RegenerateProject_Action", "jetbrains.mps.ide", new GenerateAllModulesInProjectAction(true));
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateProject_Action", "jetbrains.mps.ide", new GenerateAllModulesInProjectAction(false));
+      ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_make);
+      ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_generate);
+      ProjectActions_ActionGroup.this.addSeparator();
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckProject_Action", "jetbrains.mps.ide");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeProject_Action", "jetbrains.mps.ide");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildProject_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CompileProject_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RecompileProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_runConfig);
       ProjectActions_ActionGroup.this.addSeparator();

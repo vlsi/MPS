@@ -28,7 +28,7 @@ public class GenerateFilesFromModel_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl shift F9";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

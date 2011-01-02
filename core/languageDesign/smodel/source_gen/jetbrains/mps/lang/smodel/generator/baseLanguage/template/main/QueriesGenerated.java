@@ -27,6 +27,8 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -711,6 +713,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "link", false), "role");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4357968816427531029(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String moduleFqName = SPropertyOperations.getString(_context.getNode(), "moduleId");
+    IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleFqName);
+    if (module == null) {
+      _context.showErrorMessage(_context.getNode(), "module `" + moduleFqName + "` is not found");
+      return "";
+    }
+    return module.getModuleReference().toString();
+  }
+
   public static Object referenceMacro_GetReferent_1170457360268(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return QueriesUtil.get_SPropertyAccess_simple_getterMethod(_context.getNode(), _context.getScope());
   }
@@ -733,7 +745,7 @@ public class QueriesGenerated {
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(rawType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     SNode classifier = SLinkOperations.getTarget(nodeType, "classifier", false);
     if (classifier == null) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a4a151().createNode(), "classifier", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a4a251().createNode(), "classifier", false);
     }
     return classifier;
   }
@@ -1609,8 +1621,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a4a151 {
-    public QuotationClass_x583g4_a0a0a4a151() {
+  public static class QuotationClass_x583g4_a0a0a4a251 {
+    public QuotationClass_x583g4_a0a0a4a251() {
     }
 
     public SNode createNode() {

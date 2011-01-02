@@ -18,6 +18,7 @@ package jetbrains.mps.plugins;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
+import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
@@ -146,7 +147,7 @@ public class PluginUtil {
 
   public static final class ProjectPluginCreator extends PluginCreator<BaseProjectPlugin> {
     public String getPlugin(Language l) {
-      return l.getGeneratedPluginClassLongName();
+      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + PluginNameUtils.getPluginName(l);
     }
 
     public String getPlugin(DevKit d) {
@@ -161,7 +162,7 @@ public class PluginUtil {
 
   public static final class ApplicationPluginCreator extends PluginCreator<BaseApplicationPlugin> {
     public String getPlugin(Language l) {
-      return l.getGeneratedApplicationPluginClassLongName();
+      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + PluginNameUtils.getApplicationPluginName(l);
     }
 
     public String getPlugin(DevKit d) {

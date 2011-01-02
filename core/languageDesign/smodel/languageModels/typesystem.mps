@@ -23,6 +23,7 @@
   <import index="66wm" modelUID="f:java_stub#jetbrains.mps.lang.core.structure(jetbrains.mps.lang.core.structure@java_stub)" version="-1" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="wxye" modelUID="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)" version="-1" />
+  <import index="x6yx" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="tpeq" modelUID="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" version="-1" implicit="yes" />
@@ -467,6 +468,9 @@
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="8675759500157011600">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="name" nameId="tpck.1169194664001" value="supertypesOf_SNodeListType_ClassifierListType" />
+    </node>
+    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4357968816427488502">
+      <property name="name" nameId="tpck.1169194664001" value="typeof_CheckedModuleReference" />
     </node>
   </roots>
   <root id="1178287490510">
@@ -11133,6 +11137,30 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8675759500157011602">
       <property name="name" nameId="tpck.1169194664001" value="nodeListType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp25.1145383075378" resolveInfo="SNodeListType" />
+    </node>
+  </root>
+  <root id="4357968816427488502">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4357968816427488503">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="4357968816427489630">
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4357968816427489634">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4357968816427489635">
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4357968816427494436">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="x6yx.~ModuleReference" resolveInfo="ModuleReference" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="4357968816427489633">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="4357968816427489627">
+            <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="4357968816427489629">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="4357968816427488504" resolveInfo="ref" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4357968816427488504">
+      <property name="name" nameId="tpck.1169194664001" value="ref" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp25.4357968816427488499" resolveInfo="CheckedModuleReference" />
     </node>
   </root>
 </model>

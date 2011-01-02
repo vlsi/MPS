@@ -188,7 +188,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_6rl195_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isRuntime"));
+    return !(SPropertyOperations.getBoolean(node, "isInContext"));
   }
 
   private static class variablesListHandler_6rl195_a6a0 extends RefNodeListHandler {

@@ -73,6 +73,7 @@
   <import index="bfxj" modelUID="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" version="-1" />
   <import index="1bso" modelUID="r:e7eb8d2d-304d-447e-8625-ba74a8b15edf(jetbrains.mps.vcs.ui)" version="-1" />
   <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="0" />
+  <import index="cpdg" modelUID="f:java_stub#jetbrains.mps.ide.util(jetbrains.mps.ide.util@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -14377,13 +14378,13 @@
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3717011451301308941">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5p1m.~Color" resolveInfo="Color" />
                   </node>
-                  <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3717011451301308942">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ctdc.~ColorAndGraphicsUtil%dsaturateColor(java%dawt%dColor,float)%cjava%dawt%dColor" resolveInfo="saturateColor" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ctdc.~ColorAndGraphicsUtil" resolveInfo="ColorAndGraphicsUtil" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3717011451301308943">
+                  <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7546571542616768213">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpdg.~ColorAndGraphicsUtil%dsaturateColor(java%dawt%dColor,float)%cjava%dawt%dColor" resolveInfo="saturateColor" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cpdg.~ColorAndGraphicsUtil" resolveInfo="ColorAndGraphicsUtil" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7546571542616768214">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3719874279484891749" resolveInfo="defaultColor" />
                     </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="3717011451301308944">
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="7546571542616768215">
                       <property name="value" nameId="tpee.5279705229678483899" value="1.5f" />
                     </node>
                   </node>
@@ -14392,13 +14393,13 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3717011451301331761">
                 <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="3717011451301331762">
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3717011451301331772">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3717011451301331775">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ctdc.~ColorAndGraphicsUtil%dbrightenColor(java%dawt%dColor,float)%cjava%dawt%dColor" resolveInfo="brightenColor" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ctdc.~ColorAndGraphicsUtil" resolveInfo="ColorAndGraphicsUtil" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3717011451301331776">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7546571542616768216">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpdg.~ColorAndGraphicsUtil%dbrightenColor(java%dawt%dColor,float)%cjava%dawt%dColor" resolveInfo="brightenColor" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cpdg.~ColorAndGraphicsUtil" resolveInfo="ColorAndGraphicsUtil" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7546571542616768217">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3719874279484891749" resolveInfo="defaultColor" />
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="3717011451301331780">
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="7546571542616768218">
                         <property name="value" nameId="tpee.5279705229678483899" value="0.9f" />
                       </node>
                     </node>
@@ -15176,13 +15177,13 @@
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="977382291400331963">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5p1m.~Graphics%dsetColor(java%dawt%dColor)%cvoid" resolveInfo="setColor" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="977382291400346647">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ctdc.~ColorAndGraphicsUtil%dbrightenColor(java%dawt%dColor,float)%cjava%dawt%dColor" resolveInfo="brightenColor" />
-                                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ctdc.~ColorAndGraphicsUtil" resolveInfo="ColorAndGraphicsUtil" />
-                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="977382291400346648">
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7546571542616811842">
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cpdg.~ColorAndGraphicsUtil%dbrightenColor(java%dawt%dColor,float)%cjava%dawt%dColor" resolveInfo="brightenColor" />
+                                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cpdg.~ColorAndGraphicsUtil" resolveInfo="ColorAndGraphicsUtil" />
+                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7546571542616811843">
                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7429456937243134896" resolveInfo="getColor" />
                                       </node>
-                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="977382291400346652">
+                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="7546571542616811844">
                                         <property name="value" nameId="tpee.5279705229678483899" value="0.8f" />
                                       </node>
                                     </node>

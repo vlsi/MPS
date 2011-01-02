@@ -23,13 +23,13 @@
   <import index="hhn0" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
   <import index="gink" modelUID="f:java_stub#jetbrains.mps.testbench.junit(jetbrains.mps.testbench.junit@java_stub)" version="-1" />
   <import index="n1y2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="fgjr" modelUID="f:java_stub#org.junit.runner.notification(org.junit.runner.notification@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="gffh" modelUID="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" version="-1" implicit="yes" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
-  <import index="fgjr" modelUID="f:java_stub#org.junit.runner.notification(org.junit.runner.notification@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3564492719942580100">
       <property name="name" nameId="tpck.1169194664001" value="Mockups" />
@@ -11964,7 +11964,7 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602171">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602172">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 1%" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 30%" />
                                     </node>
                                   </node>
                                 </node>
@@ -12030,7 +12030,7 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602138">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602139">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 1%" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 40%" />
                                     </node>
                                   </node>
                                 </node>
@@ -12081,6 +12081,94 @@
                               </node>
                             </node>
                           </node>
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2617540731012929806">
+                            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2617540731012929807">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2617540731012929808">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%doneOf(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="oneOf" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2617540731012929809">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7797884084018601010" resolveInfo="logger" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2617540731012929810">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.7797884084018607108" resolveInfo="info" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2617540731012929811">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dwith(org%dhamcrest%dMatcher)%cjava%dlang%dObject" resolveInfo="with" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2617540731012929812">
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2617540731012929813">
+                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 80%" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2617540731012929814">
+                            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2617540731012929815">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2617540731012929816">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%doneOf(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="oneOf" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2617540731012929817">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7797884084018601010" resolveInfo="logger" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2617540731012929818">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.7797884084018607108" resolveInfo="info" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2617540731012929819">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dwith(org%dhamcrest%dMatcher)%cjava%dlang%dObject" resolveInfo="with" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2617540731012929820">
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2617540731012929821">
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top -- done 80%" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2617540731012931059">
+                            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2617540731012931060">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2617540731012931061">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%doneOf(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="oneOf" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2617540731012931062">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7797884084018601010" resolveInfo="logger" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2617540731012931063">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.7797884084018607108" resolveInfo="info" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2617540731012931064">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dwith(org%dhamcrest%dMatcher)%cjava%dlang%dObject" resolveInfo="with" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2617540731012931065">
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2617540731012931066">
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Mid -- done 100%" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2361047209818820678">
+                            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2361047209818820679">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2361047209818820680">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%doneOf(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="oneOf" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2361047209818820681">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7797884084018601010" resolveInfo="logger" />
+                                </node>
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2361047209818820682">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.7797884084018607108" resolveInfo="info" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2361047209818820683">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dwith(org%dhamcrest%dMatcher)%cjava%dlang%dObject" resolveInfo="with" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2361047209818820684">
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2361047209818820685">
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Mid -- finished" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7797884084018602198">
                             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7797884084018602199">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7797884084018602200">
@@ -12096,7 +12184,7 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602204">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602205">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Mid/Bot -- started" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Bot -- started" />
                                     </node>
                                   </node>
                                 </node>
@@ -12118,7 +12206,7 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602215">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602216">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 1%" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 90%" />
                                     </node>
                                   </node>
                                 </node>
@@ -12140,7 +12228,7 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602226">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602227">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top -- done 60%" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top -- done 90%" />
                                     </node>
                                   </node>
                                 </node>
@@ -12162,29 +12250,7 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602237">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602238">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Mid -- done 60%" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7797884084018602242">
-                            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7797884084018602243">
-                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7797884084018602244">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%doneOf(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="oneOf" />
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7797884084018602245">
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7797884084018601010" resolveInfo="logger" />
-                                </node>
-                              </node>
-                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7797884084018602246">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.7797884084018607108" resolveInfo="info" />
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7797884084018602247">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dwith(org%dhamcrest%dMatcher)%cjava%dlang%dObject" resolveInfo="with" />
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602248">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602249">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Mid/Bot -- done 50%" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Bot -- done 10%" />
                                     </node>
                                   </node>
                                 </node>
@@ -12206,7 +12272,7 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602259">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602260">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 1%" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞ -- done 100%" />
                                     </node>
                                   </node>
                                 </node>
@@ -12228,7 +12294,7 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602270">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602271">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top -- done 80%" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top -- done 100%" />
                                     </node>
                                   </node>
                                 </node>
@@ -12250,29 +12316,29 @@
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602281">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602282">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Mid -- done 100%" />
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Bot -- done 100%" />
                                     </node>
                                   </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7797884084018602286">
-                            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7797884084018602287">
-                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7797884084018602288">
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2617540731012934878">
+                            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2617540731012934879">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2617540731012934880">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%doneOf(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="oneOf" />
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7797884084018602289">
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2617540731012934881">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7797884084018601010" resolveInfo="logger" />
                                 </node>
                               </node>
-                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7797884084018602290">
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2617540731012934882">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.7797884084018607108" resolveInfo="info" />
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="7797884084018602291">
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2617540731012934883">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dwith(org%dhamcrest%dMatcher)%cjava%dlang%dObject" resolveInfo="with" />
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="7797884084018602292">
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="2617540731012934884">
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cec2.~Expectations%dequal(java%dlang%dObject)%corg%dhamcrest%dMatcher" resolveInfo="equal" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018602293">
-                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top/Mid/Bot -- done 100%" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2617540731012934885">
+                                      <property name="value" nameId="tpee.1070475926801" value="∞/Top -- done 100%" />
                                     </node>
                                   </node>
                                 </node>
@@ -12336,7 +12402,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7797884084018587336" resolveInfo="strat" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7797884084018587334">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.7797884084018581710" resolveInfo="currentProgress" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jqcx.5589305777382267707" resolveInfo="currentProgress" />
                 </node>
               </node>
             </node>
@@ -12411,6 +12477,19 @@
               </node>
             </node>
           </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2361047209818819425">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2361047209818819434">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2361047209818819427">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7797884084018587324" resolveInfo="pro" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2361047209818819438">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i9so.7797884084018559893" resolveInfo="finishWork" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2361047209818819439">
+                  <property name="value" nameId="tpee.1070475926801" value="Mid" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7797884084018587390">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7797884084018587392">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7797884084018587391">
@@ -12440,8 +12519,8 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7797884084018596264">
                   <property name="value" nameId="tpee.1070475926801" value="Bot" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7797884084018596265">
-                  <property name="value" nameId="tpee.1068580320021" value="5" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2617540731012932403">
+                  <property name="value" nameId="tpee.1068580320021" value="1" />
                 </node>
               </node>
             </node>
@@ -12457,7 +12536,7 @@
                   <property name="value" nameId="tpee.1070475926801" value="Bot" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7797884084018597241">
-                  <property name="value" nameId="tpee.1068580320021" value="5" />
+                  <property name="value" nameId="tpee.1068580320021" value="9" />
                 </node>
               </node>
             </node>

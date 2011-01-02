@@ -4,7 +4,6 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
-import org.apache.log4j.Level;
 import java.lang.reflect.Method;
 import jetbrains.mps.make.facet.FacetRegistry;
 
@@ -18,7 +17,8 @@ public class Facets_CustomApplicationPlugin extends BaseCustomApplicationPlugin 
 
   public void doInit() {
     try {
-      org.apache.log4j.Logger.getLogger("jetbrains.mps.make").setLevel(Level.INFO);
+      // <node> 
+      // <node> 
       Object inst = new FacetManifest();
       Class<?> mf = inst.getClass();
       Facets_CustomApplicationPlugin.this.manifest = inst;

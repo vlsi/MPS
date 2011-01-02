@@ -60,10 +60,13 @@ public class Equations {
   @StateMethod
   public void add(SNode child, SNode parent) {
     myState.assertIsInStateChangeAction();
-    myRepresentatives.put(child, parent);
+    myRepresentatives.put(getNameRepresentative(child), getNameRepresentative(parent));
   }
 
   private SNode getNameRepresentative(SNode node) {
+    if (!TypesUtil.isVariable(node)) {
+      return node;
+    }
     String name = node.getName();
     SNode result = myNamesToNodes.get(name);
     if (result == null) {
@@ -95,7 +98,7 @@ public class Equations {
         }
       }
     }
-    return current;
+    return getNameRepresentative(current);
   }
 
   private void substituteRepresentative(SNode elem, SNode current) {
@@ -140,11 +143,12 @@ public class Equations {
     myState.executeOperation(new EquationAddedOperation(var, type, source, info));
   }
 
-  public SNode expandNode(SNode node) {
+  public SNode expandNode(final SNode node) {
     return expandNode(node, new HashSet<SNode>());
   }
 
-  private SNode expandNode(SNode node, Set<SNode> variablesMet) {
+  private SNode expandNode(final SNode node, Set<SNode> variablesMet) {
+    //todo copy
     if (node == null) {
       return null;
     }
@@ -161,9 +165,10 @@ public class Equations {
       variablesMet.remove(type);
       return result;
     } else {
-      replaceChildren(node, variablesMet);
-      replaceReferences(node, variablesMet);
-      return node;
+      SNode result = CopyUtil.copy(node);
+      replaceChildren(result, variablesMet);
+      replaceReferences(result, variablesMet);
+      return result;
     }
   }
 
@@ -219,6 +224,36 @@ public class Equations {
       result.add(entry.getKey() + " = " + entry.getValue());
     }
     Collections.sort(result);
+    return result;
+  }
+
+  public List<String> getGroupsListPresentation() {
+    Set<SNode> all = new HashSet<SNode>();
+    List<String> result = new LinkedList<String>();
+    Map<SNode, Set<SNode>> map = new HashMap<SNode, Set<SNode>>();
+    all.addAll(myRepresentatives.keySet());
+    System.out.println(all);
+    for (SNode node : all) {
+      node = getNameRepresentative(node);
+      SNode representative = getRepresentative(node);
+      Set<SNode> value = map.get(representative);
+      if (value == null) {
+        value = new HashSet<SNode>();
+        map.put(representative, value);
+      }
+      if (node != representative) {
+        value.add(node);
+      }
+    }
+    for (Map.Entry<SNode, Set<SNode>> entry : map.entrySet()) {
+      String s = "";
+      for (SNode node : entry.getValue()) {
+        s = s + node + " = ";
+      }
+      if (!s.equals(""))result.add(s + entry.getKey());
+    }
+    System.out.println(getListPresentation());
+    System.out.println(result);
     return result;
   }
 

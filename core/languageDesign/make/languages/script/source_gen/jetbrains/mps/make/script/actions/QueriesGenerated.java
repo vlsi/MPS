@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -20,6 +21,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -41,6 +44,14 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_3668957831723381945(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false) != null);
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_187226666892820055(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false) != null);
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_3297237684108627751(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.make.script.structure.BeginWorkStatement") && SLinkOperations.findLinkDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement", "ofTotal") == _context.getLink();
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7077360340906499515(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -115,7 +126,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h().createNode(SEnumOperations.getEnumMemberValue((item)));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j().createNode(SEnumOperations.getEnumMemberValue((item)));
               }
 
               public String getMatchingText(String pattern) {
@@ -133,8 +144,110 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0h() {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_187226666892820054(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0k().createNode();
+          }
+
+          public String getMatchingText(String pattern) {
+            return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement"), "alias");
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.DoneWorkStatement");
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
+    }
+    {
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement");
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.DoneWorkStatement");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+          public Object calculate() {
+            return SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), "body", true), "jetbrains.mps.make.script.structure.BeginWorkStatement", false, new String[]{});
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0k().createNode(SPropertyOperations.getString((item), "work"));
+              }
+
+              public String getMatchingText(String pattern) {
+                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.DoneWorkStatement"), "alias") + " <amount> of " + SPropertyOperations.getString((item), "work");
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
+          }
+        }
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+          public Object calculate() {
+            return SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), "body", true), "jetbrains.mps.make.script.structure.BeginWorkStatement", false, new String[]{});
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0k().createNode(SPropertyOperations.getString((item), "work"));
+              }
+
+              public String getMatchingText(String pattern) {
+                return SConceptPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement"), "alias") + " " + SPropertyOperations.getString((item), "work");
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_3297237684108627750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AllWorkLeftExpression");
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
+    }
+    return result;
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -152,6 +265,77 @@ public class QueriesGenerated {
           quotedNode_1.addChild("message", quotedNode1_4);
         }
         result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0k {
+    public QuotationClass_x583g4_a0a0a0a0a0a0c0a0b0k() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode_1.addChild("expected", quotedNode1_5);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.AllWorkLeftExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode_1.addChild("ofTotal", quotedNode1_6);
+        }
+        result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0k {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0e0k() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.DoneWorkStatement", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.setProperty("work", (String) parameter_5);
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode_1.addChild("amount", quotedNode1_4);
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0k {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0f0k() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("work", (String) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }

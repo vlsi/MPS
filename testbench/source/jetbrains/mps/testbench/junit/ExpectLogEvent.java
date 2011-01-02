@@ -6,6 +6,8 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,5 +22,5 @@ public @interface ExpectLogEvent {
   String DEFAULT = "jetbrains.mps.testbench.junit.DEFAULT";
 
   int level() default Priority.FATAL_INT;
-  String text() default DEFAULT;
+  String[] text() default DEFAULT;
 }

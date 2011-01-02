@@ -8,11 +8,14 @@ public interface IJobMonitor {
   public IProgress currentProgress();
   public void reportFeedback(IFeedback fdbk);
   public static class Stub implements IJobMonitor {
-    public Stub() {
+    private IProgress pstub;
+
+    public Stub(IProgress pstub) {
+      this.pstub = pstub;
     }
 
     public IProgress currentProgress() {
-      return null;
+      return pstub;
     }
 
     public void reportFeedback(IFeedback fdbk) {

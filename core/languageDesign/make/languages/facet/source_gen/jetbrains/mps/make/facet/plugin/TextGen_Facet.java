@@ -73,6 +73,7 @@ public class TextGen_Facet implements IFacet {
                   Logger.getLogger("jetbrains.mps.make.TextGen").error("Generation was not OK");
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
+                monitor.currentProgress().beginWork("Generating text...", 100, monitor.currentProgress().workLeft());
                 IFile targetDir = FileSystem.getInstance().getFileByPath(gres.module().getOutputFor(gres.model()));
                 JavaStreamHandler javaStreamHandler = new JavaStreamHandler(gres.model(), targetDir, fileProc);
                 try {
@@ -89,6 +90,7 @@ public class TextGen_Facet implements IFacet {
                 } finally {
                   javaStreamHandler.dispose();
                 }
+                monitor.currentProgress().finishWork("Generating text...");
                 _output_21gswx_a0a = Sequence.fromIterable(_output_21gswx_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TResource(gres.module()))));
               }
               ModelAccess.instance().writeFilesInEDT(new Runnable() {

@@ -2704,7 +2704,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         SNode addedChild = frontier.get(frontier.size() - 1).getNode();
         EditorCell cell = findNodeCell(addedChild);
         if (cell != null) {
-          changeSelectionWRTFocusPolicy(cell);
+          // similar to: IntellijentInputUtil.applyRigthTransform() logic
+          EditorCell errorCell = cell.findChild(CellFinders.FIRST_ERROR, true);
+          if (errorCell != null) {
+            changeSelectionWRTFocusPolicy(errorCell);
+          } else {
+            changeSelectionWRTFocusPolicy(cell);
+          }
         }
         return;
       } else {

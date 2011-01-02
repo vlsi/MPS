@@ -48,7 +48,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     myClassLoaderManager = manager;
   }
 
-  public List<EditorCellKeyMap> getKeyMapsForLanguage(Language l) {
+  public List<EditorCellKeyMap> getKeyMapsForLanguage(@NotNull Language l) {
     if (!myLanguagesToKeyMaps.containsKey(l)) {
       registerLanguageKeyMaps(l);
     }

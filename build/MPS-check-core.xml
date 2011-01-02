@@ -16,8 +16,6 @@
 <project name="MPS-compile" default="compile" basedir="..">
 
   <path id="core.sources">
-    <!-- hack -->
-    <path path="build/tempsource"/>
 
     <!-- core -->
     <path path="core/kernel/source"/>
@@ -25,20 +23,12 @@
     <path path="core/generator/source" />
     <path path="core/runtime/source" />
     <path path="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
-    <path path="core/kernel/xmlQuery/runtime/source_gen"/>
 
     <!-- typesystem engine -->
-    <path path="core/typesystemEngine/source/jetbrains/mps/lang"/>
-    <path path="core/typesystemEngine/source/jetbrains/mps/typesystem/debug"/>
-    <path path="core/typesystemEngine/source/jetbrains/mps/typesystem/inference"/>
-    <path path="core/typesystemEngine/source/jetbrains/mps/typesystem/newTypesystem"/>
-    <path path="core/typesystemEngine/source/jetbrains/mps/typesystem/integration"/>
+    <path path="core/typesystemEngine/source"/>
 
     <!-- actions -->
     <path path="core/languageDesign/actions/source_gen/jetbrains/mps/lang/actions/structure"/>
-
-    <!-- annotations -->
-    <path path="core/languageDesign/annotations/source_gen/jetbrains/mps/lang/annotations/structure"/>
 
     <!-- behavior -->
     <path path="core/languageDesign/behavior/source_gen/jetbrains/mps/lang/behavior/behavior"/>
@@ -88,10 +78,10 @@
     <path path="core/languageDesign/pattern/source_gen/jetbrains/mps/lang/pattern/typesystem"/>
 
     <!-- plugin -->
-    <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/behavior"/>
-    <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/generator"/>
+    <!-- <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/behavior"/> -->
+    <!-- <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/generator"/> -->
     <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/structure"/>
-    <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem"/>
+   <!-- <path path="core/languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/typesystem"/> -->
 
     <!-- quotation -->
     <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/behavior"/>
@@ -100,7 +90,7 @@
     <path path="core/languageDesign/quotation/source_gen/jetbrains/mps/lang/quotation/typesystem"/>
 
     <!-- refactoring -->
-    <path path="core/languageDesign/refactoring/source"/>
+    <!-- <path path="core/languageDesign/refactoring/source"/> -->
     <!--<path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/behavior"/>-->
     <!--<path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/generator"/>-->
     <path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/structure"/>
@@ -124,6 +114,7 @@
     <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/generator"/>
     <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/structure"/>
     <path path="core/languageDesign/smodel/source_gen/jetbrains/mps/lang/smodel/typesystem"/>
+    <path path="core/languageDesign/smodel/solutions/runtime/source_gen/jetbrains/mps/lang/smodel/generator/smodelAdapter"/>
 
     <!-- structure -->
     <path path="core/languageDesign/structure/source/jetbrains/mps/lang/structure/constraints"/>
@@ -155,29 +146,29 @@
     <path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/typesystem"/>
 
 
-    <dirset dir="core/baseLanguage">
-      <include name="**/source/**/structure"/>
-      <include name="**/source_gen/**/structure"/>
-      <include name="**/source/**/behavior"/>
-      <include name="**/source_gen/**/behavior"/>
-      <include name="**/source/**/generator"/>
-      <include name="**/source_gen/**/generator"/>
-      <include name="**/source/**/textGen"/>
-      <include name="**/source_gen/**/textGen"/>
-      <include name="collections/runtime/source_gen"/>
-    </dirset>
+    <!-- baseLanguage -->
+    <path path="core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage"/>
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/behavior"/>
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/structure"/>
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen"/>
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/stubs"/>
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/search"/>
+
+    <path path="core/baseLanguage/classifiers/source_gen/jetbrains/mps/baseLanguage/classifiers/structure"/>
+
+    <!-- collections -->	
+    <path path="core/baseLanguage/collections/source_gen/jetbrains/mps/baseLanguage/collections/structure"/>
+    <path path="core/baseLanguage/collections/runtime/source_gen/jetbrains/mps/internal/collections/runtime"/>
+
+    <path path="core/baseLanguage/closures/source_gen/jetbrains/mps/baseLanguage/closures/structure"/>
+    <path path="core/baseLanguage/closures/runtime/source"/>
+    <path path="core/baseLanguage/closures/runtime/source_gen"/>
+
+    <path path="core/baseLanguage/tuples/runtime/source_gen"/>
   </path>
 
   <path id="core.classpath">
     <fileset dir="lib" includes="*.jar"/>
-    <path path="lib/commons-lang/commons-lang-2.1.jar" />
-    <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/eclipse-compiler/ecj.jar" />
-    <path path="lib/jdom/jdom.jar" />
-    <path path="lib/junit4/junit-4.8.2.jar" />
-    <path path="lib/log4j/log4j.jar" />
-    <path path="lib/asm/asm.jar" />
-    <path path="lib/trove4j/trove4j.jar" />
   </path>
 
   <target name="clean">
@@ -187,7 +178,7 @@
   <target name="compile" depends="clean">
     <mkdir dir="tempbuild"/>
 
-    <javac classpathref="core.classpath" destdir="tempbuild" fork="true" memorymaximumsize="1024m" source="1.5">
+    <javac classpathref="core.classpath" destdir="tempbuild" fork="true" memorymaximumsize="1024m">
       <src>
         <path refid="core.sources"/>
       </src>

@@ -12,6 +12,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_goByRef = ID + "goByRef";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_folding = ID + "folding";
+  public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModel = ID + "generateModel";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_vcs = ID + "vcs";
@@ -42,8 +43,8 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRules_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addSeparator();
+      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_make);
       EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_generateModel);
-      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToUsageInMappingConfig_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowGenerationTrace_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action", "jetbrains.mps.ide");

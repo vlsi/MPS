@@ -25,6 +25,7 @@
   <unitInfo fileName="BootstrapActionReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.test.structure.BootstrapActionReference" />
   <unitInfo fileName="InvokeActionStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.InvokeActionStatement" />
   <unitInfo fileName="TestInfo.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TestInfo" />
+  <unitInfo fileName="MPSActionReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.MPSActionReference" />
   <unitInfo fileName="TypeKeyStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TypeKeyStatement" />
   <unitInfo fileName="TestNode.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.TestNode" />
   <unitInfo fileName="VariableLive.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.structure.VariableLive" />

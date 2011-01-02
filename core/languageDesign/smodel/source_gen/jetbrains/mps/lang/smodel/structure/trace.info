@@ -57,6 +57,7 @@
   <unitInfo fileName="Property_HasValue_Enum.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" />
   <unitInfo fileName="OperationParm_Concept.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" />
   <unitInfo fileName="Node_IsInstanceOfOperation.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
+  <unitInfo fileName="CheckedModuleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.CheckedModuleReference" />
   <unitInfo fileName="ConceptProperty_SetOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation" />
   <unitInfo fileName="Model_AddRootOperation.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" />
   <unitInfo fileName="Concept_FindInstances.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.smodel.structure.Concept_FindInstances" />

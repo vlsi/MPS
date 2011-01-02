@@ -24,6 +24,6 @@ public class DeleteNodeGroupChange extends NodeGroupChange {
 
   @Override
   public String toString() {
-    return String.format("Delete nodes #%d-%d in role %s of node %s", myBegin, myEnd - 1, getRole(), getParentNodeId());
+    return String.format("Delete %s in role %s of node %s", nodeRange(myBegin, myEnd), getRole(), getParentNodeId());
   }
 }

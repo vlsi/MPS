@@ -202,6 +202,35 @@ public class EvaluationUtils {
     return (IObjectValueProxy) MirrorUtil.getValueProxy(EvaluationUtils.invokeConstructorInternal(className, jniSignature, threadReference, args), threadReference);
   }
 
+  public static IArrayValueProxy createArray(String className, ThreadReference threadReference, int size) throws EvaluationException {
+    List<ReferenceType> referenceTypes = threadReference.virtualMachine().classesByName(className + "[");
+    if (referenceTypes.isEmpty()) {
+      throw new EvaluationException("Could not find type " + className + "[]");
+    }
+    ArrayType arrayType = null;
+    for (ReferenceType referenceType : referenceTypes) {
+      if (referenceType instanceof ArrayType) {
+        arrayType = (ArrayType) referenceType;
+        break;
+      }
+    }
+    if (arrayType == null) {
+      throw new EvaluationException("Could not find type " + className + "[]");
+    }
+
+    ArrayReference arrayReference = arrayType.newInstance(size);
+    return (IArrayValueProxy) MirrorUtil.getValueProxy(arrayReference, threadReference);
+  }
+
+  public static IArrayValueProxy createArrayFromValues(String className, ThreadReference threadReference, Object... args) throws EvaluationException {
+    IArrayValueProxy array = createArray(className, threadReference, args.length);
+    List<Value> values = MirrorUtil.getValues(threadReference, args);
+    for (int i = 0; i < values.size(); i++) {
+      array.setElement(values.get(i), i);
+    }
+    return array;
+  }
+
   @NotNull
   public static IValueProxy getClassValue(String className, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
     ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());

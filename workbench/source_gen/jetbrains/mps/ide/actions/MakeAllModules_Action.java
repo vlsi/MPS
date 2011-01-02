@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
@@ -21,13 +19,13 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.progress.ProgressManager;
 
 public class MakeAllModules_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/compile.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MakeAllModules_Action.class);
 
   private Project project;
 
   public MakeAllModules_Action() {
-    super("Make All", "", ICON);
+    super("Compile Java Files", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }

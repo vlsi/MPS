@@ -13,7 +13,7 @@
     <nodeInfo nodeId="1197635106703" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptInstances_Finder.java" startLine="33" startPosition="259" endLine="36" endPosition="5" />
     <scopeInfo nodeId="1197635106704" fileName="ConceptInstances_Finder.java" startLine="34" startPosition="36" endLine="35" endPosition="58" />
     <scopeInfo nodeId="1206463350775" fileName="ConceptInstances_Finder.java" startLine="39" startPosition="45" endLine="40" endPosition="31" />
-    <scopeInfo nodeId="1197635106703" fileName="ConceptInstances_Finder.java" startLine="33" startPosition="259" endLine="36" endPosition="5">
+    <scopeInfo nodeId="1197635106703" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ConceptInstances_Finder.java" startLine="33" startPosition="259" endLine="36" endPosition="5">
       <varInfo nodeId="1197635106707" varName="resNode" />
     </scopeInfo>
     <scopeInfo nodeId="1197632773082" fileName="ConceptInstances_Finder.java" startLine="32" startPosition="102" endLine="36" endPosition="5">
@@ -27,7 +27,7 @@
     <nodeInfo nodeId="1197636333587" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeUsages_Finder.java" startLine="33" startPosition="163" endLine="36" endPosition="5" />
     <scopeInfo nodeId="1197636333588" fileName="NodeUsages_Finder.java" startLine="34" startPosition="42" endLine="35" endPosition="76" />
     <scopeInfo nodeId="1206463393132" fileName="NodeUsages_Finder.java" startLine="39" startPosition="45" endLine="40" endPosition="25" />
-    <scopeInfo nodeId="1197636333587" fileName="NodeUsages_Finder.java" startLine="33" startPosition="163" endLine="36" endPosition="5">
+    <scopeInfo nodeId="1197636333587" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeUsages_Finder.java" startLine="33" startPosition="163" endLine="36" endPosition="5">
       <varInfo nodeId="1197636333598" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="1197636141666" fileName="NodeUsages_Finder.java" startLine="32" startPosition="102" endLine="36" endPosition="5">
@@ -50,9 +50,9 @@
     <scopeInfo nodeId="1198432150345" fileName="NodeAndDescendantsUsages_Finder.java" startLine="43" startPosition="78" endLine="44" endPosition="78" />
     <scopeInfo nodeId="1206538095563" fileName="NodeAndDescendantsUsages_Finder.java" startLine="49" startPosition="80" endLine="50" endPosition="53" />
     <scopeInfo nodeId="1206463379526" fileName="NodeAndDescendantsUsages_Finder.java" startLine="53" startPosition="45" endLine="54" endPosition="37" />
-    <scopeInfo nodeId="1206538130614" fileName="NodeAndDescendantsUsages_Finder.java" startLine="36" startPosition="48" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="1206538130614" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeAndDescendantsUsages_Finder.java" startLine="36" startPosition="48" endLine="39" endPosition="5" />
     <scopeInfo nodeId="1198430917730" fileName="NodeAndDescendantsUsages_Finder.java" startLine="42" startPosition="42" endLine="45" endPosition="7" />
-    <scopeInfo nodeId="1198430917729" fileName="NodeAndDescendantsUsages_Finder.java" startLine="41" startPosition="144" endLine="46" endPosition="5">
+    <scopeInfo nodeId="1198430917729" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeAndDescendantsUsages_Finder.java" startLine="41" startPosition="144" endLine="46" endPosition="5">
       <varInfo nodeId="1198430917741" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="1198430852445" fileName="NodeAndDescendantsUsages_Finder.java" startLine="34" startPosition="102" endLine="46" endPosition="5">
@@ -91,14 +91,14 @@
     <scopeInfo nodeId="1206463363236" fileName="LinkInstances_Finder.java" startLine="70" startPosition="45" endLine="71" endPosition="28" />
     <scopeInfo nodeId="1236788293559" fileName="LinkInstances_Finder.java" startLine="43" startPosition="8" endLine="45" endPosition="77" />
     <scopeInfo nodeId="1236788630747" fileName="LinkInstances_Finder.java" startLine="56" startPosition="22" endLine="59" endPosition="11" />
-    <scopeInfo nodeId="1236789129904" fileName="LinkInstances_Finder.java" startLine="56" startPosition="22" endLine="59" endPosition="11" />
+    <scopeInfo nodeId="1236789129904" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LinkInstances_Finder.java" startLine="56" startPosition="22" endLine="59" endPosition="11" />
     <scopeInfo nodeId="1236788630763" fileName="LinkInstances_Finder.java" startLine="60" startPosition="16" endLine="64" endPosition="11">
       <varInfo nodeId="1236788630765" varName="referent" />
     </scopeInfo>
     <scopeInfo nodeId="1236788630744" fileName="LinkInstances_Finder.java" startLine="55" startPosition="54" endLine="65" endPosition="9" />
     <scopeInfo nodeId="1236788630740" fileName="LinkInstances_Finder.java" startLine="54" startPosition="180" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="1236788630741" fileName="LinkInstances_Finder.java" startLine="54" startPosition="180" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="1236788630738" fileName="LinkInstances_Finder.java" startLine="53" startPosition="40" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="1236788630741" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LinkInstances_Finder.java" startLine="54" startPosition="180" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="1236788630738" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="LinkInstances_Finder.java" startLine="53" startPosition="40" endLine="67" endPosition="5" />
     <scopeInfo nodeId="1201275992902" fileName="LinkInstances_Finder.java" startLine="39" startPosition="102" endLine="67" endPosition="5">
       <varInfo nodeId="1236788367145" varName="curNode" />
       <varInfo nodeId="1201278326043" varName="conceptDeclaration" />
@@ -113,7 +113,7 @@
     <nodeInfo nodeId="1211301915956" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExactConceptInstances_Finder.java" startLine="33" startPosition="347" endLine="36" endPosition="5" />
     <scopeInfo nodeId="1211301915957" fileName="ExactConceptInstances_Finder.java" startLine="34" startPosition="36" endLine="35" endPosition="58" />
     <scopeInfo nodeId="1211301915968" fileName="ExactConceptInstances_Finder.java" startLine="39" startPosition="45" endLine="40" endPosition="31" />
-    <scopeInfo nodeId="1211301915956" fileName="ExactConceptInstances_Finder.java" startLine="33" startPosition="347" endLine="36" endPosition="5">
+    <scopeInfo nodeId="1211301915956" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ExactConceptInstances_Finder.java" startLine="33" startPosition="347" endLine="36" endPosition="5">
       <varInfo nodeId="1211301915965" varName="resNode" />
     </scopeInfo>
     <scopeInfo nodeId="1211301915937" fileName="ExactConceptInstances_Finder.java" startLine="32" startPosition="102" endLine="36" endPosition="5">
@@ -135,7 +135,7 @@
       <varInfo nodeId="1225128446510" varName="property" />
     </scopeInfo>
     <scopeInfo nodeId="1225128303113" fileName="PropertyInstances_Finder.java" startLine="34" startPosition="42" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="1225128303114" fileName="PropertyInstances_Finder.java" startLine="34" startPosition="42" endLine="40" endPosition="7">
+    <scopeInfo nodeId="1225128303114" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="PropertyInstances_Finder.java" startLine="34" startPosition="42" endLine="40" endPosition="7">
       <varInfo nodeId="1225128303158" varName="instance" />
     </scopeInfo>
     <scopeInfo nodeId="1225128146052" fileName="PropertyInstances_Finder.java" startLine="31" startPosition="102" endLine="41" endPosition="5">

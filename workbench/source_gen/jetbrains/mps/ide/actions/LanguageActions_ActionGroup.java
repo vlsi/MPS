@@ -9,6 +9,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.LanguageActions";
   public static final String LABEL_ID_newGroup = ID + "newGroup";
+  public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_find_usages = ID + "find_usages";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
@@ -25,8 +26,11 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
     try {
       LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_newGroup);
       LanguageActions_ActionGroup.this.addSeparator();
+      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_make);
       LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_generateModule);
+      LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModule_Action", "jetbrains.mps.ide", "Language");
+      LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixVirtualPackges_Action", "jetbrains.mps.ide");
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");

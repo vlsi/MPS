@@ -7,80 +7,90 @@ import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.application.ModalityState;
 
 public class ProgressIndicatorAdapter implements ProgressIndicator {
-  private ProgressIndicator ind;
-
-  public ProgressIndicatorAdapter(ProgressIndicator ind) {
-    this.ind = ind;
+  public ProgressIndicatorAdapter() {
   }
 
   public void checkCanceled() throws ProcessCanceledException {
+    throw new UnsupportedOperationException();
   }
 
   public void setIndeterminate(boolean b) {
+    throw new UnsupportedOperationException();
   }
 
   public boolean isIndeterminate() {
-    return false;
+    throw new UnsupportedOperationException();
   }
 
   public void setModalityProgress(ProgressIndicator indicator) {
+    throw new UnsupportedOperationException();
   }
 
   public ModalityState getModalityState() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   public boolean isModal() {
-    return false;
+    throw new UnsupportedOperationException();
   }
 
   public void finishNonCancelableSection() {
+    throw new UnsupportedOperationException();
   }
 
   public void startNonCancelableSection() {
+    throw new UnsupportedOperationException();
   }
 
   public void popState() {
+    throw new UnsupportedOperationException();
   }
 
   public void pushState() {
+    throw new UnsupportedOperationException();
   }
 
   public void setFraction(double d) {
+    throw new UnsupportedOperationException();
   }
 
   public double getFraction() {
-    return 0.;
+    throw new UnsupportedOperationException();
   }
 
   public String getText2() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   public void setText2(String string) {
+    throw new UnsupportedOperationException();
   }
 
   public String getText() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   public void setText(String string) {
+    throw new UnsupportedOperationException();
   }
 
   public boolean isCanceled() {
-    return false;
+    throw new UnsupportedOperationException();
   }
 
   public void cancel() {
+    throw new UnsupportedOperationException();
   }
 
   public boolean isRunning() {
-    return false;
+    throw new UnsupportedOperationException();
   }
 
   public void stop() {
+    throw new UnsupportedOperationException();
   }
 
   public void start() {
+    throw new UnsupportedOperationException();
   }
 }

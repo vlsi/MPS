@@ -108,7 +108,11 @@ public class KeyMapUtil {
       }
 
       for (ModuleReference ref : importedAndExtendedLanguages) {
-        List<EditorCellKeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(editorContext.getScope().getLanguage(ref));
+        Language language = editorContext.getScope().getLanguage(ref);
+        if (language == null) {
+          continue;
+        }
+        List<EditorCellKeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(language);
         if (keyMapsForNamespace != null) {
           for (EditorCellKeyMap keymap : keyMapsForNamespace) {
             if (!addedKeymaps.contains(keymap.getClass())) {

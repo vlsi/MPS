@@ -609,6 +609,10 @@ public class TypeCheckingContext {
     }
   }
 
+  public SNode getTypeInGenerationMode(SNode node) {
+    return getTypeOf_generationMode(node);
+  }
+
   protected SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
     Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
     if (pair.o2) {

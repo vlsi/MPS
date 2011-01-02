@@ -144,10 +144,13 @@ public class Generator_Facet implements IFacet {
           switch (0) {
             case 0:
               Assert.assertEquals("uninitialized", pool.parameters(new ITarget.Name("Configure"), Generator_Facet.Target_ixz87t_a.Variables.class).value());
+              monitor.currentProgress().beginWork("GENERATE", 100, monitor.currentProgress().workLeft());
               pool.parameters(new ITarget.Name("Configure"), Generator_Facet.Target_ixz87t_a.Variables.class).value("VALUE");
               for (IResource resource : input) {
                 _output_ixz87t_a0b = Sequence.fromIterable(_output_ixz87t_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
+                monitor.currentProgress().advanceWork("GENERATE", 50);
               }
+              monitor.currentProgress().finishWork("GENERATE");
               _output_ixz87t_a0b = Sequence.fromIterable(_output_ixz87t_a0b).concat(Sequence.fromIterable(input));
               return new IResult.SUCCESS(_output_ixz87t_a0b);
             default:

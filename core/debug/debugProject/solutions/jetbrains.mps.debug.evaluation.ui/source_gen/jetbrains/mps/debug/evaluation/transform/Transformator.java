@@ -16,6 +16,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.baseLanguage.textGen.LastStatementUtil;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -183,15 +184,40 @@ public class Transformator {
   private void replaceConstructors() {
     for (SNode newExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator") && TransformationUtil.isUnprocessed(it) && TransformationUtil.isUnprocessed(SLinkOperations.getTarget(it, "creator", true));
+        return TransformationUtil.isUnprocessed(it) && TransformationUtil.isUnprocessed(SLinkOperations.getTarget(it, "creator", true));
       }
     })) {
-      SNode constructor = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
-      SNode fqNameNode = TransformationUtil.createClassFqNameNode(myModel, SNodeOperations.getAncestor(constructor, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
-      SNode jnSignature = TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(constructor));
-      List<SNode> actualArguments = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true);
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
+        SNode constructor = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
+        SNode fqNameNode = TransformationUtil.createClassFqNameNode(myModel, SNodeOperations.getAncestor(constructor, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+        SNode jnSignature = TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(constructor));
+        List<SNode> actualArguments = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true);
 
-      TransformationUtil.replaceConstructor(newExpression, fqNameNode, jnSignature, actualArguments);
+        TransformationUtil.replaceConstructor(newExpression, fqNameNode, jnSignature, actualArguments);
+      } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator")) {
+        SNode componentType = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "componentType", true);
+        SNode fqNameNode;
+        if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          fqNameNode = TransformationUtil.createClassFqNameNode(myModel, SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
+        } else {
+          fqNameNode = TransformationUtil.createStringLiteral(SConceptPropertyOperations.getString(componentType, "alias"));
+        }
+        // todo multi-array 
+        SNode size = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "dimensionExpression", true)).first(), "expression", true);
+
+        TransformationUtil.replaceArrayConstructor(newExpression, fqNameNode, size);
+      } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer")) {
+        SNode componentType = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), "componentType", true);
+        SNode fqNameNode;
+        if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          fqNameNode = TransformationUtil.createClassFqNameNode(myModel, SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
+        } else {
+          fqNameNode = TransformationUtil.createStringLiteral(SConceptPropertyOperations.getString(componentType, "alias"));
+        }
+        List<SNode> initValues = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), "initValue", true);
+
+        TransformationUtil.replaceArrayWithInitializerConstructor(newExpression, fqNameNode, initValues);
+      }
     }
 
     for (SNode newExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {

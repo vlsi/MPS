@@ -34,6 +34,17 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
   }
 
   @Override
+  public void setElement(Value element, int index) throws EvaluationException {
+    try {
+      getArrayValue().setValue(index, element);
+    } catch (InvalidTypeException e) {
+      throw new EvaluationException("Error setting array element at " + index, e);
+    } catch (ClassNotLoadedException e) {
+      throw new EvaluationException("Error setting array element at " + index, e);
+    }
+  }
+
+  @Override
   public int getLength() {
     return getArrayValue().length();
   }

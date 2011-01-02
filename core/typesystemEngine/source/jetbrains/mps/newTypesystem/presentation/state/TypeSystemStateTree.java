@@ -67,7 +67,7 @@ public class TypeSystemStateTree extends MPSTree {
     result.add(createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null));
     result.add(createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED));
     result.add(createNode("Types", myState.getNodeMaps().getTypeListPresentation(), null));
-    result.add(createNode("Equations", myState.getEquations().getListPresentation(), null));
+    result.add(createNode("Equations", myState.getEquations().getGroupsListPresentation(), null));
 
     return result;
   }

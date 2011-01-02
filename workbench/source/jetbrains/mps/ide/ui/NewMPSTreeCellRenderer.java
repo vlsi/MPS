@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.ide.ui;
 
-import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.tree.TreeCellRenderer;
 import java.awt.*;
-import java.awt.font.TextAttribute;
-import java.util.Map;
 
 
 class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {

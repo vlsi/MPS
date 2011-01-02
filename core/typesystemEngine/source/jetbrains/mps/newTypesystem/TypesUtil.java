@@ -25,9 +25,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -64,6 +62,51 @@ public class TypesUtil {
       }
     }
     return false;
+  }
+
+  private static void getVariablesInside(SNode node, List<SNode> result) {
+    if (isVariable(node)) {
+      result.add(node);
+      return;
+    }
+    for (SNode child : node.getChildren()) {
+      getVariablesInside(child, result);
+    }
+    for (SNode referent : node.getReferents()) {
+      if (referent != null && isVariable(referent)) {
+        result.add(referent);
+      }
+    }
+  }
+
+  public static int getInnerNodeCount(SNode node) {
+    int counter = 0;
+    for (SNode child : node.getChildren()) {
+      counter += getInnerNodeCount(child);
+    }
+    counter += node.getReferences().size();
+    return counter;
+  }
+
+  public static int depth(SNode sNode) {
+    int childDepth = 0;
+    for (SNode child : sNode.getChildrenIterable()) {
+      int depth = depth(child);
+      if (childDepth < depth) {
+        childDepth = depth;
+      }
+    }
+    if (sNode.getReference("concept") != null) {
+      childDepth++; 
+    }
+    return childDepth + 1;
+  }
+
+
+  public static List<SNode> getVariables(SNode node) {
+    List<SNode> result = new LinkedList<SNode>();
+    getVariablesInside(node,result);
+    return result;
   }
 
   public static boolean match(SNode left, SNode right, Equations equations, @Nullable EquationInfo info, boolean checkOnly) {

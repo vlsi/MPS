@@ -1,259 +1,390 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.facet.plugin.FacetManifest" file="FacetManifest.java">
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.Make_Facet" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.Generate_Facet" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.JavaCompile_Facet" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.Generate_Facet" />
+    <classNode dependClassName="java.util.ArrayList" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" file="Facet_ApplicationPlugin.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Facet_ProjectPlugin" file="Facet_ProjectPlugin.java">
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Facets_CustomApplicationPlugin" file="Facets_CustomApplicationPlugin.java">
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.FacetManifest" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.reflect.Method" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.GResource" file="GResource.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Generate_Facet" file="Generate_Facet.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
-    <classNode dependClassName="jetbrains.mps.generator.NullGenerationTracer" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.GenerationStrategy" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.GResource" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.generator.IGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
-    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.GResource" />
-    <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.plugin.debug.GenerationTracer" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="com.intellij.openapi.project.DumbService" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.rrr_Option" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.generator.TransientModelsComponent" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.GenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
-    <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="jetbrains.mps.generator.IGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.GenerationStrategy" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.plugin.debug.GenerationTracer" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.rrr_Option" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="jetbrains.mps.generator.NullGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.generator.TransientModelsComponent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.MResource" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
+    <classNode dependClassName="com.intellij.openapi.project.DumbService" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.GenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.GenerationHandler" file="GenerationHandler.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.GResource" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationCanceledException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.ide.progress.ITaskProgressHelper" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationCanceledException" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.GResource" />
     <classNode extendsClassName="jetbrains.mps.generator.generationTypes.GenerationHandlerBase" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.GenerationStrategy" file="GenerationStrategy.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.generator.ModelDigestHelper" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.generator.ModelDigestHelper" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode extendsClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.plugin.JavaCompile_Facet" file="JavaCompile_Facet.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="java.util.List" />
+  <dependency className="jetbrains.mps.make.facet.plugin.GlobalMake_ActionGroup" file="GlobalMake_ActionGroup.java">
+    <classNode dependClassName="jetbrains.mps.ide.actions.Build_ActionGroup" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.JavaCompile_Facet" file="JavaCompile_Facet.java">
     <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
-    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.Generate_Facet" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
+    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.Generate_Facet" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.IAuxProjectPeer" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.TResource" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.MResource" file="MResource.java">
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
-  </dependency>
-  <dependency className="jetbrains.mps.make.facet.plugin.MakeOrBuild_Action" file="MakeOrBuild_Action.java">
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="java.lang.Comparable" />
-    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ScriptBuilder" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MResource" />
-    <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.make.script.IOption" />
-    <classNode dependClassName="java.lang.StringBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="com.intellij.openapi.progress.Progressive" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ModelCheckerTool_Tool" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
-    <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IScript" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
+    <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.MakeActionImpl" file="MakeActionImpl.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="jetbrains.mps.make.script.IMonitors" />
+    <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="com.intellij.openapi.progress.Progressive" />
+    <classNode dependClassName="jetbrains.mps.make.script.IOption" />
+    <classNode dependClassName="jetbrains.mps.make.script.IMonitors" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScript" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MResource" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ScriptBuilder" />
+    <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelCheckerTool_Tool" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.JobMonitorProgressIndicator" />
+    <classNode dependClassName="java.lang.Iterable" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.MakeActionParameters" file="MakeActionParameters.java">
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Comparable" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MResource" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
+    <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.MakeProject_Action" file="MakeProject_Action.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action" file="MakeSelectedModels_Action.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action" file="MakeSelectedModules_Action.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.MakeSelection_Action" file="MakeSelection_Action.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Make_ActionGroup" file="Make_ActionGroup.java">
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.Generate_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Make_Facet" file="Make_Facet.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
-    <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
+    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" file="SaveTransientModels_Query.java">
-    <classNode dependClassName="java.lang.Iterable" />
+  <dependency className="jetbrains.mps.make.facet.plugin.ProjectMake_ActionGroup" file="ProjectMake_ActionGroup.java">
+    <classNode dependClassName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.RebuildProject_Action" file="RebuildProject_Action.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.RebuildSelectedModels_Action" file="RebuildSelectedModels_Action.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.RebuildSelectedModules_Action" file="RebuildSelectedModules_Action.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionImpl" />
+    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.SaveTransientModels_Query" file="SaveTransientModels_Query.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.SaveTransient_Option" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode extendsClassName="jetbrains.mps.make.script.IQuery" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.SaveTransient_Option" file="SaveTransient_Option.java">
@@ -262,48 +393,54 @@
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.TResource" file="TResource.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IResource" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.TextGen_Facet" file="TextGen_Facet.java">
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
-    <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
-    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerator" />
-    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IJobMonitor" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.GResource" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.TResource" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.make.script.IParametersPool" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
-    <classNode dependClassName="jetbrains.mps.make.script.IJob" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.Generate_Facet" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.TResource" />
+    <classNode dependClassName="jetbrains.mps.make.java.BLDependenciesCache" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITarget" />
   </dependency>
-  <dependency className="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" file="WontAskAgain_Query.java">
-    <classNode dependClassName="java.lang.Iterable" />
+  <dependency className="jetbrains.mps.make.facet.plugin.ToolbarMake_ActionGroup" file="ToolbarMake_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.plugin.WontAskAgain_Query" file="WontAskAgain_Query.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.rrr_Option" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode extendsClassName="jetbrains.mps.make.script.IQuery" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.rrr_Option" file="rrr_Option.java">

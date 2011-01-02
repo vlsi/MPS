@@ -1,15 +1,9 @@
 package jetbrains.mps.debug.evaluation.proxies;
 
 import com.sun.jdi.Value;
+import jetbrains.mps.debug.evaluation.EvaluationException;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 24.03.2010
- * Time: 22:00:00
- * To change this template use File | Settings | File Templates.
- */
 class NullValueProxy implements INullValueProxy {
   @Override
   public IValueProxy getFieldValue(String fieldName) {
@@ -45,6 +39,11 @@ class NullValueProxy implements INullValueProxy {
   @Override
   public IValueProxy getElementAt(int index) {
     throw new NullPointerException("NPE; Getting element of null array.");
+  }
+
+  @Override
+  public void setElement(Value element, int index) throws EvaluationException {
+    throw new NullPointerException("NPE; Setting element of null array.");
   }
 
   @Override

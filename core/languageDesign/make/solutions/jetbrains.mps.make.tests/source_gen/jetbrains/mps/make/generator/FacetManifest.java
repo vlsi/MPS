@@ -15,6 +15,7 @@ public class FacetManifest {
     ListSequence.fromList(facets).addElement(new Maker_Facet());
     ListSequence.fromList(facets).addElement(new Generator_Facet());
     ListSequence.fromList(facets).addElement(new TextGen_Facet());
+    ListSequence.fromList(facets).addElement(new Worker_Facet());
   }
 
   public void registerFacets(FacetRegistry registry) {

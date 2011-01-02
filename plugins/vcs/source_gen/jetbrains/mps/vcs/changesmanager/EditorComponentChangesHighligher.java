@@ -39,7 +39,7 @@ import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import java.awt.Graphics;
 import org.apache.commons.lang.ObjectUtils;
 import java.awt.Rectangle;

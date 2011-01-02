@@ -4,17 +4,27 @@ package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
+import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.smodel.SReference;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -31,9 +41,58 @@ public class ChangeSetBuilder {
     buildChanges();
   }
 
+  private void buildPropertyChanges(SNode oldNode, SNode newNode) {
+    Map<String, String> oldProperties = ((Map<String, String>) oldNode.getProperties());
+    Map<String, String> newProperties = ((Map<String, String>) newNode.getProperties());
+    for (String name : SetSequence.fromSet(MapSequence.fromMap(oldProperties).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(newProperties).keySet()))) {
+      PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
+      PropertyDeclaration propertyDeclaration = oldNode.getPropertyDeclaration(name);
+      if (propertyDeclaration != null) {
+        propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
+      }
+
+      String oldInternalValue = propertySupport.toInternalValue(MapSequence.fromMap(oldProperties).get(name));
+      String newInternalValue = propertySupport.toInternalValue(MapSequence.fromMap(newProperties).get(name));
+      if (!(ObjectUtils.equals(oldInternalValue, newInternalValue))) {
+        myChangeSet.add(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, MapSequence.fromMap(newProperties).get(name)));
+      }
+    }
+  }
+
+  private void buildReferenceChanges(SNode oldNode, SNode newNode) {
+    final Map<String, SReference> oldReferences = MapSequence.fromMap(new HashMap<String, SReference>());
+    final Map<String, SReference> newReferences = MapSequence.fromMap(new HashMap<String, SReference>());
+    Sequence.fromIterable(SNodeOperations.getReferences(oldNode)).visitAll(new IVisitor<SReference>() {
+      public void visit(SReference ref) {
+        MapSequence.fromMap(oldReferences).put(SLinkOperations.getRole(ref), ref);
+      }
+    });
+    Sequence.fromIterable(SNodeOperations.getReferences(newNode)).visitAll(new IVisitor<SReference>() {
+      public void visit(SReference ref) {
+        MapSequence.fromMap(newReferences).put(SLinkOperations.getRole(ref), ref);
+      }
+    });
+    for (String role : SetSequence.fromSet(MapSequence.fromMap(oldReferences).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(newReferences).keySet()))) {
+      SReference oldReference = MapSequence.fromMap(oldReferences).get(role);
+      SReference newReference = MapSequence.fromMap(newReferences).get(role);
+      if (!(ObjectUtils.equals(check_nbyrtw_a0a2a4a1(SLinkOperations.getTargetNode(oldReference)), check_nbyrtw_b0a2a4a1(SLinkOperations.getTargetNode(newReference))))) {
+        SModelReference targetModel = check_nbyrtw_a0a0c0e0b(SNodeOperations.getModel(SLinkOperations.getTargetNode(newReference)));
+        if (SNodeOperations.getModel(SLinkOperations.getTargetNode(newReference)) == SNodeOperations.getModel(newNode)) {
+          // This is internal reference 
+          targetModel = null;
+        }
+        myChangeSet.add(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, check_nbyrtw_e0a0a2a2a4a1(SLinkOperations.getTargetNode(newReference)), SLinkOperations.getResolveInfo(newReference)));
+      }
+    }
+  }
+
   private void buildNodeChanges(SNode oldNode) {
     SNodeId nodeId = oldNode.getSNodeId();
     SNode newNode = myNewModel.getNodeById(nodeId);
+
+    buildPropertyChanges(oldNode, newNode);
+    buildReferenceChanges(oldNode, newNode);
+
     Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(SNodeOperations.getChildren(oldNode)).concat(ListSequence.fromList(SNodeOperations.getChildren(newNode))).<String>select(new ISelector<SNode, String>() {
       public String select(SNode ch) {
         return SNodeOperations.getContainingLinkRole(ch);
@@ -54,6 +113,7 @@ public class ChangeSetBuilder {
       }).toListSequence();
       LongestCommonSubsequenceFinder<SNodeId> finder = new LongestCommonSubsequenceFinder<SNodeId>(oldIds, newIds);
 
+      // Finding insertings, deletings and replacings 
       List<Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>>> differentIndices = finder.getDifferentIndices();
       for (Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>> indices : ListSequence.fromList(differentIndices)) {
         Tuples._2<Integer, Integer> oldIndices = indices._0();
@@ -67,6 +127,7 @@ public class ChangeSetBuilder {
         }
       }
 
+      // Finding changes for children 
       List<Tuples._2<Integer, Integer>> commonIndices = finder.getCommonIndices();
       ListSequence.fromList(commonIndices).<SNode>select(new ISelector<Tuples._2<Integer, Integer>, SNode>() {
         public SNode select(Tuples._2<Integer, Integer> in) {
@@ -111,5 +172,42 @@ public class ChangeSetBuilder {
 
   public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
     return new ChangeSetBuilder(oldModel, newModel).myChangeSet;
+  }
+
+  private static SModelReference check_nbyrtw_a0a0c0e0b(SModel p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSModelReference();
+  }
+
+  private static SNodeId check_nbyrtw_e0a0a2a2a4a1(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
+  }
+
+  private static SNodeId check_nbyrtw_a0a2a4a1(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
+  }
+
+  private static SNodeId check_nbyrtw_b0a2a4a1(SNode p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getSNodeId();
+  }
+
+  private static class DefaultPropertySupport extends PropertySupport {
+    private DefaultPropertySupport() {
+    }
+
+    protected boolean canSetValue(String string) {
+      return true;
+    }
   }
 }

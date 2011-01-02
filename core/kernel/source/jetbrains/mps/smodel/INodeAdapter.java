@@ -67,9 +67,6 @@ public interface INodeAdapter {
   <E extends INodeAdapter> List<E> getDescendants(Class<E> cls);
 
   @NotNull
-  <E extends INodeAdapter> List<E> getDescendants();
-
-  @NotNull
   <E extends INodeAdapter> List<E> getDescendants(Condition<INodeAdapter> condition);
 
   void delete();

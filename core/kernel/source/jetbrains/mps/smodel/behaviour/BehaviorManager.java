@@ -270,7 +270,7 @@ public final class BehaviorManager implements ApplicationComponent {
       superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
     } else {
       AbstractConceptDeclaration callerConcept = SModelUtil_new.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
-      superConcepts = SModelUtil_new.getConceptAndSuperConcepts(callerConcept);
+      superConcepts = new ArrayList<AbstractConceptDeclaration>(SModelUtil_new.getConceptAndSuperConcepts(callerConcept));
       superConcepts.remove(callerConcept);
     }
 

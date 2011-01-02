@@ -60,6 +60,18 @@ public class QueriesGenerated {
     return _context.createUniqueName(_context.getTemplateValue(), _context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_3297237684108617667(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "work");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3297237684108617579(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "work");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3297237684108617635(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "work");
+  }
+
   public static Object propertyMacro_GetPropertyValue_7877690107352956507(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "presentation", true), "text");
   }
@@ -132,6 +144,38 @@ public class QueriesGenerated {
     });
   }
 
+  public static Object referenceMacro_GetReferent_3297237684108623912(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), "JobDefinition_closure"), "parameter", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode p) {
+        return "monitor".equals(SPropertyOperations.getString(p, "name"));
+      }
+    });
+  }
+
+  public static Object referenceMacro_GetReferent_3297237684108623985(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), "JobDefinition_closure"), "parameter", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode p) {
+        return "monitor".equals(SPropertyOperations.getString(p, "name"));
+      }
+    });
+  }
+
+  public static Object referenceMacro_GetReferent_3297237684108624012(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), "JobDefinition_closure"), "parameter", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode p) {
+        return "monitor".equals(SPropertyOperations.getString(p, "name"));
+      }
+    });
+  }
+
+  public static Object referenceMacro_GetReferent_3297237684108627713(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.make.script.structure.JobDefinition", false, false), "JobDefinition_closure"), "parameter", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode p) {
+        return "monitor".equals(SPropertyOperations.getString(p, "name"));
+      }
+    });
+  }
+
   public static Object referenceMacro_GetReferent_8486446835277407047(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expected", true), "jetbrains.mps.make.script.structure.ExpectedOption"), "ExpectedOption_enum");
   }
@@ -186,6 +230,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4629164904928210828(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "resource", true);
+  }
+
+  public static SNode sourceNodeQuery_3297237684108617681(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expected", true);
+  }
+
+  public static SNode sourceNodeQuery_3297237684108617693(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "ofTotal", true);
+  }
+
+  public static SNode sourceNodeQuery_3297237684108617602(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "amount", true);
   }
 
   public static SNode sourceNodeQuery_4824283731826016788(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

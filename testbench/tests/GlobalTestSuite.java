@@ -6,7 +6,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
 
-@SuiteClasses({jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test.class,
+@SuiteClasses({
+
+  jetbrains.mps.make.generator.Generator_Test.class,
+  jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test.class,
 jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test.class,
 jetbrains.mps.internalCollections.test.basicOperations.QueueDequeStack_Test.class,
 jetbrains.mps.internalCollections.test.nullHacks.NullValues_Test.class,
@@ -45,7 +48,7 @@ jetbrains.mps.baseLanguage.tuples.test.ExtendedNamedTuples_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test.class,
 jetbrains.mps.make.unittest.FacetRegistry_Test.class,
 jetbrains.mps.make.unittest.Execute_Test.class,
-jetbrains.mps.make.generator.Generator_Test.class,
+
 jetbrains.mps.make.unittest.ScriptBuilder_Test.class,
 jetbrains.mps.make.unittest.LogReporting_Test.class,
 jetbrains.mps.make.unittest.Targets_Test.class,
@@ -382,7 +385,40 @@ jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Te
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test.class,
-jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})
+jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.Create_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.EditCell_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnAfter_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnBefore_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.InsertRowAfter_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.InsertRowBefore_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.RemoveColumn_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.RemoveRowFromAfter_Test.class,
+jetbrains.mps.lang.editor.table.genericTable.test.RemoveRowFromBefore_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.Create_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnAfterLast_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertColumnBeforeFirst_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterHeader_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfterLast_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBeforeHeader_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderCell_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromAfter_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromBefore_Test.class,
+jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveRow_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.Create_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.CreateEvent_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.CreateState_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.CreateTransition_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.MoveTransitionToAnotherColumn_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.MoveTransitionToAnotherRow_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.RemoveEvent_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.RemoveState_Test.class,
+jetbrains.mps.lang.editor.table.stateMachine.test.RemoveTransition_Test.class})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass

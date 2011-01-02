@@ -126,7 +126,7 @@ public class NodeTypesComponentNew extends NodeTypesComponent {
     }
     return type;  
   }
-
+  
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
     if (refreshTypes) {
       clear();

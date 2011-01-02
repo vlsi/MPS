@@ -15,21 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.actions.structure.Actions_Language;
-import jetbrains.mps.lang.behavior.structure.Behavior_Language;
-import jetbrains.mps.lang.constraints.structure.Constraints_Language;
-import jetbrains.mps.lang.dataFlow.structure.DataFlow_Language;
-import jetbrains.mps.lang.editor.structure.Editor_Language;
-import jetbrains.mps.lang.findUsages.structure.FindUsages_Language;
-import jetbrains.mps.lang.intentions.structure.Intentions_Language;
-import jetbrains.mps.lang.plugin.structure.Plugin_Language;
-import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
-import jetbrains.mps.lang.script.structure.Script_Language;
-import jetbrains.mps.lang.structure.structure.Structure_Language;
-import jetbrains.mps.lang.stubs.structure.Stubs_Language;
-import jetbrains.mps.lang.test.structure.Test_Language;
-import jetbrains.mps.lang.textGen.structure.TextGen_Language;
-import jetbrains.mps.lang.typesystem.structure.Typesystem_Language;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -41,7 +26,7 @@ import java.util.List;
 public enum LanguageAspect {
   STRUCTURE("structure") {
     public ModuleReference getMainLanguage() {
-      return Structure_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.STRUCTURE;
     }
 
     public String getHelpURL() {
@@ -51,7 +36,7 @@ public enum LanguageAspect {
 
   EDITOR("editor") {
     public ModuleReference getMainLanguage() {
-      return Editor_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.EDITOR;
     }
 
     public String getHelpURL() {
@@ -61,7 +46,7 @@ public enum LanguageAspect {
 
   ACTIONS("actions") {
     public ModuleReference getMainLanguage() {
-      return Actions_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.ACTIONS;
     }
 
     public String getHelpURL() {
@@ -71,7 +56,7 @@ public enum LanguageAspect {
 
   CONSTRAINTS("constraints") {
     public ModuleReference getMainLanguage() {
-      return Constraints_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.CONSTRAINTS;
     }
 
     public String getHelpURL() {
@@ -81,7 +66,7 @@ public enum LanguageAspect {
 
   BEHAVIOR("behavior") {
     public ModuleReference getMainLanguage() {
-      return Behavior_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.BEHAVIOR;
     }
 
     public String getHelpURL() {
@@ -100,7 +85,7 @@ public enum LanguageAspect {
     }
 
     public ModuleReference getMainLanguage() {
-      return Typesystem_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.TYPESYSTEM;
     }
 
     public List<ModuleReference> getAllLanguagesToImport(Language l) {
@@ -116,7 +101,7 @@ public enum LanguageAspect {
 
   REFACTORINGS("refactorings") {
     public ModuleReference getMainLanguage() {
-      return Refactoring_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.REFACTORING;
     }
 
     public String getHelpURL() {
@@ -126,7 +111,7 @@ public enum LanguageAspect {
 
   SCRIPTS("scripts") {
     public ModuleReference getMainLanguage() {
-      return Script_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.SCRIPT;
     }
 
     public String getHelpURL() {
@@ -136,7 +121,7 @@ public enum LanguageAspect {
 
   INTENTIONS("intentions") {
     public ModuleReference getMainLanguage() {
-      return Intentions_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.INTENTIONS;
     }
 
     public String getHelpURL() {
@@ -146,7 +131,7 @@ public enum LanguageAspect {
 
   FIND_USAGES("findUsages") {
     public ModuleReference getMainLanguage() {
-      return FindUsages_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.FIND_USAGES;
     }
 
     public String getHelpURL() {
@@ -156,7 +141,7 @@ public enum LanguageAspect {
 
   PLUGIN("plugin") {
     public ModuleReference getMainLanguage() {
-      return Plugin_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.PLUGIN;
     }
 
     public String getHelpURL() {
@@ -166,7 +151,7 @@ public enum LanguageAspect {
 
   DATA_FLOW("dataFlow") {
     public ModuleReference getMainLanguage() {
-      return DataFlow_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.DATA_FLOW;
     }
 
     public String getHelpURL() {
@@ -176,7 +161,7 @@ public enum LanguageAspect {
 
   TEST("test") {
     public ModuleReference getMainLanguage() {
-      return Test_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.TEST;
     }
 
     public String getHelpURL() {
@@ -186,7 +171,7 @@ public enum LanguageAspect {
 
   TEXT_GEN("textGen") {
     public ModuleReference getMainLanguage() {
-      return TextGen_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.TEXT_GEN;
     }
 
     public String getHelpURL() {
@@ -196,7 +181,7 @@ public enum LanguageAspect {
 
   STUBS("stubs") {
     public ModuleReference getMainLanguage() {
-      return Stubs_Language.MODULE_REFERENCE;
+      return BootstrapLanguages.STUBS;
     }
 
     public String getHelpURL() {

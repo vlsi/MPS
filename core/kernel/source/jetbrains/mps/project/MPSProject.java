@@ -35,8 +35,6 @@ import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
@@ -164,6 +162,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         MPSProjects projects = MPSProjects.instance();
         projects.removeProject(MPSProject.this);
 
+        // FIXME asap!
         getProject().getComponent(Highlighter.class).stopUpdater();
 
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
