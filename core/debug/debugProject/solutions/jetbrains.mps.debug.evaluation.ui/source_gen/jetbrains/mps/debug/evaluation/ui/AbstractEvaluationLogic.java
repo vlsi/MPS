@@ -58,7 +58,7 @@ public abstract class AbstractEvaluationLogic {
   private static final Logger LOG = Logger.getLogger(AbstractEvaluationLogic.class);
   private static final String EVALUATOR_NAME = "EvaluatorInstance";
   private static final boolean IS_IN_HIGHLEVEL_MODE = false;
-  private static final boolean IS_DEVELOPER_MODE = true;
+  private static final boolean IS_DEVELOPER_MODE = false;
 
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
