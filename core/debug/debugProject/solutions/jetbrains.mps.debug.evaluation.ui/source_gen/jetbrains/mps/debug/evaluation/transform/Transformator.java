@@ -208,7 +208,6 @@ public class Transformator {
         TransformationUtil.replaceArrayConstructor(newExpression, fqNameNode, size);
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer")) {
         SNode componentType = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer"), "componentType", true);
-        // todo if this is not a classifier? 
         SNode fqNameNode;
         if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
           fqNameNode = TransformationUtil.createClassFqNameNode(myModel, SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
