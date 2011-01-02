@@ -94,71 +94,72 @@
     <nodeInfo nodeId="864648422614490959" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="188" startPosition="105" endLine="189" endPosition="328" />
     <nodeInfo nodeId="864648422614491022" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="191" startPosition="107" endLine="192" endPosition="468" />
     <nodeInfo nodeId="3451429699316823916" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="194" startPosition="105" endLine="195" endPosition="154" />
-    <nodeInfo nodeId="3451429699316823893" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="197" startPosition="72" endLine="198" endPosition="110" />
-    <nodeInfo nodeId="864648422614491036" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="199" startPosition="5" endLine="200" endPosition="79" />
-    <nodeInfo nodeId="5439191097839083294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="204" startPosition="28" endLine="205" endPosition="20" />
-    <nodeInfo nodeId="5439191097839083313" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="207" startPosition="91" endLine="208" endPosition="70" />
-    <nodeInfo nodeId="5439191097839093363" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="219" startPosition="5" endLine="220" endPosition="78" />
-    <nodeInfo nodeId="7757449281563189656" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="225" startPosition="9" endLine="226" endPosition="75" />
-    <nodeInfo nodeId="7757449281563189670" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="227" startPosition="50" endLine="228" endPosition="58" />
-    <nodeInfo nodeId="7757449281563189676" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="228" startPosition="58" endLine="229" endPosition="29" />
-    <nodeInfo nodeId="7757449281563189681" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="230" startPosition="7" endLine="231" endPosition="98" />
-    <nodeInfo nodeId="7757449281563189690" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="231" startPosition="98" endLine="232" endPosition="74" />
-    <nodeInfo nodeId="7757449281563189698" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="232" startPosition="74" endLine="233" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189699" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="233" startPosition="0" endLine="234" endPosition="47" />
-    <nodeInfo nodeId="7757449281563189705" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="234" startPosition="47" endLine="235" endPosition="112" />
-    <nodeInfo nodeId="7757449281563189717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="235" startPosition="112" endLine="236" endPosition="131" />
-    <nodeInfo nodeId="7757449281563189726" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="236" startPosition="131" endLine="237" endPosition="74" />
-    <nodeInfo nodeId="7757449281563189736" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="237" startPosition="74" endLine="238" endPosition="84" />
-    <nodeInfo nodeId="7757449281563189742" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="238" startPosition="84" endLine="239" endPosition="77" />
-    <nodeInfo nodeId="7757449281563189749" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="239" startPosition="77" endLine="240" endPosition="87" />
-    <nodeInfo nodeId="7757449281563189756" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="240" startPosition="87" endLine="241" endPosition="182" />
-    <nodeInfo nodeId="7757449281563189770" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="241" startPosition="182" endLine="242" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189771" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="242" startPosition="0" endLine="243" endPosition="39" />
-    <nodeInfo nodeId="7757449281563189774" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="243" startPosition="39" endLine="244" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189775" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="244" startPosition="0" endLine="245" endPosition="62" />
-    <nodeInfo nodeId="7757449281563189784" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="245" startPosition="62" endLine="246" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189789" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="248" startPosition="32" endLine="249" endPosition="37" />
-    <nodeInfo nodeId="7757449281563189795" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="250" startPosition="9" endLine="251" endPosition="83" />
-    <nodeInfo nodeId="7757449281563189805" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="251" startPosition="83" endLine="252" endPosition="114" />
-    <nodeInfo nodeId="7757449281563189817" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="252" startPosition="114" endLine="253" endPosition="28" />
-    <nodeInfo nodeId="7757449281563189822" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="254" startPosition="13" endLine="255" endPosition="102" />
-    <nodeInfo nodeId="7757449281563189840" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="256" startPosition="47" endLine="257" endPosition="23" />
-    <nodeInfo nodeId="7757449281563189842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="257" startPosition="23" endLine="258" endPosition="47" />
-    <nodeInfo nodeId="7757449281563189848" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="258" startPosition="47" endLine="259" endPosition="102" />
-    <nodeInfo nodeId="7757449281563189862" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="260" startPosition="9" endLine="261" endPosition="25" />
-    <nodeInfo nodeId="7757449281563189877" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="262" startPosition="67" endLine="263" endPosition="68" />
-    <nodeInfo nodeId="7757449281563189883" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="264" startPosition="14" endLine="265" endPosition="67" />
-    <nodeInfo nodeId="7757449281563189621" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="267" startPosition="43" endLine="268" endPosition="82" />
-    <nodeInfo nodeId="7757449281563189623" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="268" startPosition="82" endLine="269" endPosition="55" />
-    <nodeInfo nodeId="7757449281563189625" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="269" startPosition="55" endLine="270" endPosition="21" />
-    <nodeInfo nodeId="7757449281563189627" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="270" startPosition="21" endLine="271" endPosition="79" />
-    <nodeInfo nodeId="7757449281563189629" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="271" startPosition="79" endLine="272" endPosition="42" />
-    <nodeInfo nodeId="7757449281563189631" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="272" startPosition="42" endLine="273" endPosition="32" />
-    <nodeInfo nodeId="7757449281563189633" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="273" startPosition="32" endLine="274" endPosition="20" />
-    <nodeInfo nodeId="7757449281563189635" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="274" startPosition="20" endLine="275" endPosition="66" />
-    <nodeInfo nodeId="7757449281563189645" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="276" startPosition="37" endLine="277" endPosition="14" />
-    <nodeInfo nodeId="7757449281563189649" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="278" startPosition="27" endLine="279" endPosition="39" />
-    <nodeInfo nodeId="7757449281563189915" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="285" startPosition="41" endLine="286" endPosition="63" />
-    <nodeInfo nodeId="7757449281563189926" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="289" startPosition="41" endLine="290" endPosition="21" />
-    <nodeInfo nodeId="7757449281563189377" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClasspaths" fileName="AbstractEvaluationModel.java" startLine="293" startPosition="87" endLine="294" endPosition="51" />
-    <nodeInfo nodeId="7757449281563189245" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="AbstractEvaluationModel.java" startLine="296" startPosition="120" endLine="297" endPosition="40" />
-    <nodeInfo nodeId="7757449281563189248" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="297" startPosition="40" endLine="298" endPosition="37" />
-    <nodeInfo nodeId="7757449281563189266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="302" startPosition="59" endLine="303" endPosition="32" />
-    <nodeInfo nodeId="7757449281563189280" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="307" startPosition="80" endLine="308" endPosition="73" />
-    <nodeInfo nodeId="7757449281563189287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="309" startPosition="53" endLine="310" endPosition="25" />
-    <nodeInfo nodeId="7757449281563189297" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="311" startPosition="7" endLine="312" endPosition="20" />
-    <nodeInfo nodeId="7757449281563189314" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="316" startPosition="158" endLine="317" endPosition="45" />
-    <nodeInfo nodeId="7757449281563189325" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="318" startPosition="26" endLine="319" endPosition="110" />
-    <nodeInfo nodeId="7757449281563189331" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="319" startPosition="110" endLine="320" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="322" startPosition="15" endLine="323" endPosition="68" />
-    <nodeInfo nodeId="7757449281563189349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="325" startPosition="119" endLine="326" endPosition="43" />
-    <nodeInfo nodeId="7757449281563189359" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="329" startPosition="33" endLine="330" endPosition="25" />
-    <nodeInfo nodeId="7757449281563189364" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="331" startPosition="11" endLine="332" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189368" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="334" startPosition="7" endLine="335" endPosition="77" />
+    <nodeInfo nodeId="6647443673251191206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="197" startPosition="112" endLine="198" endPosition="217" />
+    <nodeInfo nodeId="3451429699316823893" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="200" startPosition="72" endLine="201" endPosition="110" />
+    <nodeInfo nodeId="864648422614491036" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="202" startPosition="5" endLine="203" endPosition="79" />
+    <nodeInfo nodeId="5439191097839083294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="207" startPosition="28" endLine="208" endPosition="20" />
+    <nodeInfo nodeId="5439191097839083313" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="210" startPosition="91" endLine="211" endPosition="70" />
+    <nodeInfo nodeId="5439191097839093363" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="222" startPosition="5" endLine="223" endPosition="78" />
+    <nodeInfo nodeId="7757449281563189656" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="228" startPosition="9" endLine="229" endPosition="75" />
+    <nodeInfo nodeId="7757449281563189670" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="230" startPosition="50" endLine="231" endPosition="58" />
+    <nodeInfo nodeId="7757449281563189676" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="231" startPosition="58" endLine="232" endPosition="29" />
+    <nodeInfo nodeId="7757449281563189681" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="233" startPosition="7" endLine="234" endPosition="98" />
+    <nodeInfo nodeId="7757449281563189690" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="234" startPosition="98" endLine="235" endPosition="74" />
+    <nodeInfo nodeId="7757449281563189698" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="235" startPosition="74" endLine="236" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189699" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="236" startPosition="0" endLine="237" endPosition="47" />
+    <nodeInfo nodeId="7757449281563189705" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="237" startPosition="47" endLine="238" endPosition="112" />
+    <nodeInfo nodeId="7757449281563189717" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="238" startPosition="112" endLine="239" endPosition="131" />
+    <nodeInfo nodeId="7757449281563189726" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="239" startPosition="131" endLine="240" endPosition="74" />
+    <nodeInfo nodeId="7757449281563189736" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="240" startPosition="74" endLine="241" endPosition="84" />
+    <nodeInfo nodeId="7757449281563189742" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="241" startPosition="84" endLine="242" endPosition="77" />
+    <nodeInfo nodeId="7757449281563189749" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="242" startPosition="77" endLine="243" endPosition="87" />
+    <nodeInfo nodeId="7757449281563189756" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="243" startPosition="87" endLine="244" endPosition="182" />
+    <nodeInfo nodeId="7757449281563189770" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="244" startPosition="182" endLine="245" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189771" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="245" startPosition="0" endLine="246" endPosition="39" />
+    <nodeInfo nodeId="7757449281563189774" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="246" startPosition="39" endLine="247" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189775" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="247" startPosition="0" endLine="248" endPosition="62" />
+    <nodeInfo nodeId="7757449281563189784" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="248" startPosition="62" endLine="249" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189789" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="251" startPosition="32" endLine="252" endPosition="37" />
+    <nodeInfo nodeId="7757449281563189795" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="253" startPosition="9" endLine="254" endPosition="83" />
+    <nodeInfo nodeId="7757449281563189805" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="254" startPosition="83" endLine="255" endPosition="114" />
+    <nodeInfo nodeId="7757449281563189817" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="255" startPosition="114" endLine="256" endPosition="28" />
+    <nodeInfo nodeId="7757449281563189822" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="257" startPosition="13" endLine="258" endPosition="102" />
+    <nodeInfo nodeId="7757449281563189840" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="259" startPosition="47" endLine="260" endPosition="23" />
+    <nodeInfo nodeId="7757449281563189842" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="260" startPosition="23" endLine="261" endPosition="47" />
+    <nodeInfo nodeId="7757449281563189848" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="261" startPosition="47" endLine="262" endPosition="102" />
+    <nodeInfo nodeId="7757449281563189862" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="263" startPosition="9" endLine="264" endPosition="25" />
+    <nodeInfo nodeId="7757449281563189877" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="265" startPosition="67" endLine="266" endPosition="68" />
+    <nodeInfo nodeId="7757449281563189883" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="267" startPosition="14" endLine="268" endPosition="67" />
+    <nodeInfo nodeId="7757449281563189621" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="270" startPosition="43" endLine="271" endPosition="82" />
+    <nodeInfo nodeId="7757449281563189623" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="271" startPosition="82" endLine="272" endPosition="55" />
+    <nodeInfo nodeId="7757449281563189625" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="272" startPosition="55" endLine="273" endPosition="21" />
+    <nodeInfo nodeId="7757449281563189627" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="273" startPosition="21" endLine="274" endPosition="79" />
+    <nodeInfo nodeId="7757449281563189629" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="274" startPosition="79" endLine="275" endPosition="42" />
+    <nodeInfo nodeId="7757449281563189631" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="275" startPosition="42" endLine="276" endPosition="32" />
+    <nodeInfo nodeId="7757449281563189633" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="AbstractEvaluationModel.java" startLine="276" startPosition="32" endLine="277" endPosition="20" />
+    <nodeInfo nodeId="7757449281563189635" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="277" startPosition="20" endLine="278" endPosition="66" />
+    <nodeInfo nodeId="7757449281563189645" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="279" startPosition="37" endLine="280" endPosition="14" />
+    <nodeInfo nodeId="7757449281563189649" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" fileName="AbstractEvaluationModel.java" startLine="281" startPosition="27" endLine="282" endPosition="39" />
+    <nodeInfo nodeId="7757449281563189915" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="288" startPosition="41" endLine="289" endPosition="63" />
+    <nodeInfo nodeId="7757449281563189926" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="292" startPosition="41" endLine="293" endPosition="21" />
+    <nodeInfo nodeId="7757449281563189377" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClasspaths" fileName="AbstractEvaluationModel.java" startLine="296" startPosition="87" endLine="297" endPosition="51" />
+    <nodeInfo nodeId="7757449281563189245" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="AbstractEvaluationModel.java" startLine="299" startPosition="120" endLine="300" endPosition="40" />
+    <nodeInfo nodeId="7757449281563189248" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="300" startPosition="40" endLine="301" endPosition="37" />
+    <nodeInfo nodeId="7757449281563189266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="305" startPosition="59" endLine="306" endPosition="32" />
+    <nodeInfo nodeId="7757449281563189280" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="310" startPosition="80" endLine="311" endPosition="73" />
+    <nodeInfo nodeId="7757449281563189287" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="312" startPosition="53" endLine="313" endPosition="25" />
+    <nodeInfo nodeId="7757449281563189297" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="314" startPosition="7" endLine="315" endPosition="20" />
+    <nodeInfo nodeId="7757449281563189314" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="319" startPosition="158" endLine="320" endPosition="45" />
+    <nodeInfo nodeId="7757449281563189325" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="321" startPosition="26" endLine="322" endPosition="110" />
+    <nodeInfo nodeId="7757449281563189331" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="322" startPosition="110" endLine="323" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="325" startPosition="15" endLine="326" endPosition="68" />
+    <nodeInfo nodeId="7757449281563189349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="328" startPosition="119" endLine="329" endPosition="43" />
+    <nodeInfo nodeId="7757449281563189359" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="332" startPosition="33" endLine="333" endPosition="25" />
+    <nodeInfo nodeId="7757449281563189364" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="AbstractEvaluationModel.java" startLine="334" startPosition="11" endLine="335" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189368" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="337" startPosition="7" endLine="338" endPosition="77" />
     <nodeInfo nodeId="2125029577638882151" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AbstractEvaluationModel.java" startLine="82" startPosition="10" endLine="84" endPosition="5" />
-    <nodeInfo nodeId="7757449281563189881" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AbstractEvaluationModel.java" startLine="264" startPosition="12" endLine="266" endPosition="7" />
-    <nodeInfo nodeId="7757449281563189903" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copy#(Z)Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;" fileName="AbstractEvaluationModel.java" startLine="282" startPosition="0" endLine="284" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189881" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="AbstractEvaluationModel.java" startLine="267" startPosition="12" endLine="269" endPosition="7" />
+    <nodeInfo nodeId="7757449281563189903" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copy#(Z)Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;" fileName="AbstractEvaluationModel.java" startLine="285" startPosition="0" endLine="287" endPosition="0" />
     <nodeInfo nodeId="7757449281563189568" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootToShow#()Ljetbrains/mps/smodel/SNode;" fileName="AbstractEvaluationModel.java" startLine="122" startPosition="0" endLine="125" endPosition="0" />
     <nodeInfo nodeId="7757449281563189573" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeToShow#()Ljetbrains/mps/smodel/SNode;" fileName="AbstractEvaluationModel.java" startLine="125" startPosition="0" endLine="128" endPosition="0" />
     <nodeInfo nodeId="1400711440828853625" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="164" startPosition="194" endLine="167" endPosition="9" />
@@ -168,12 +169,13 @@
     <nodeInfo nodeId="864648422614490947" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="187" startPosition="5" endLine="190" endPosition="5" />
     <nodeInfo nodeId="864648422614491010" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="190" startPosition="5" endLine="193" endPosition="5" />
     <nodeInfo nodeId="3451429699316823904" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="193" startPosition="5" endLine="196" endPosition="5" />
-    <nodeInfo nodeId="3451429699316823891" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="196" startPosition="5" endLine="199" endPosition="5" />
-    <nodeInfo nodeId="5439191097839083286" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="203" startPosition="70" endLine="206" endPosition="5" />
-    <nodeInfo nodeId="5439191097839083298" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="206" startPosition="5" endLine="209" endPosition="5" />
-    <nodeInfo nodeId="7757449281563189787" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="247" startPosition="57" endLine="250" endPosition="9" />
-    <nodeInfo nodeId="7757449281563189285" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="308" startPosition="73" endLine="311" endPosition="7" />
-    <nodeInfo nodeId="7757449281563189345" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="324" startPosition="60" endLine="327" endPosition="15" />
+    <nodeInfo nodeId="6647443673251191194" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="196" startPosition="5" endLine="199" endPosition="5" />
+    <nodeInfo nodeId="3451429699316823891" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="199" startPosition="5" endLine="202" endPosition="5" />
+    <nodeInfo nodeId="5439191097839083286" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="206" startPosition="70" endLine="209" endPosition="5" />
+    <nodeInfo nodeId="5439191097839083298" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="209" startPosition="5" endLine="212" endPosition="5" />
+    <nodeInfo nodeId="7757449281563189787" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="250" startPosition="57" endLine="253" endPosition="9" />
+    <nodeInfo nodeId="7757449281563189285" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="311" startPosition="73" endLine="314" endPosition="7" />
+    <nodeInfo nodeId="7757449281563189345" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="327" startPosition="60" endLine="330" endPosition="15" />
     <nodeInfo nodeId="7757449281563189390" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationModel#()Ljetbrains/mps/smodel/SModel;" fileName="AbstractEvaluationModel.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
     <nodeInfo nodeId="7757449281563189517" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUiState#()Ljetbrains/mps/debug/runtime/JavaUiState;" fileName="AbstractEvaluationModel.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
     <nodeInfo nodeId="7757449281563189525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugSession#()Ljetbrains/mps/debug/runtime/DebugSession;" fileName="AbstractEvaluationModel.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
@@ -184,38 +186,38 @@
     <nodeInfo nodeId="7757449281563189578" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addGenerationListener#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" fileName="AbstractEvaluationModel.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
     <nodeInfo nodeId="7757449281563189591" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDeveloperMode#()Z" fileName="AbstractEvaluationModel.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
     <nodeInfo nodeId="864648422614490930" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="AbstractEvaluationModel.java" startLine="168" startPosition="71" endLine="172" endPosition="11" />
-    <nodeInfo nodeId="5439191097839093351" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="212" startPosition="51" endLine="216" endPosition="35" />
-    <nodeInfo nodeId="7757449281563189663" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="226" startPosition="75" endLine="230" endPosition="7" />
-    <nodeInfo nodeId="7757449281563189911" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationModule#()Ljetbrains/mps/project/IModule;" fileName="AbstractEvaluationModel.java" startLine="284" startPosition="0" endLine="288" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189922" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/IOperationContext;" fileName="AbstractEvaluationModel.java" startLine="288" startPosition="0" endLine="292" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189241" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyInMemoryJavaGenerationHandler#(ZZLjava/util/Set;)V" fileName="AbstractEvaluationModel.java" startLine="295" startPosition="0" endLine="299" endPosition="5" />
+    <nodeInfo nodeId="5439191097839093351" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="215" startPosition="51" endLine="219" endPosition="35" />
+    <nodeInfo nodeId="7757449281563189663" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="229" startPosition="75" endLine="233" endPosition="7" />
+    <nodeInfo nodeId="7757449281563189911" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationModule#()Ljetbrains/mps/project/IModule;" fileName="AbstractEvaluationModel.java" startLine="287" startPosition="0" endLine="291" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189922" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/IOperationContext;" fileName="AbstractEvaluationModel.java" startLine="291" startPosition="0" endLine="295" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189241" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyInMemoryJavaGenerationHandler#(ZZLjava/util/Set;)V" fileName="AbstractEvaluationModel.java" startLine="298" startPosition="0" endLine="302" endPosition="5" />
     <nodeInfo nodeId="2125029577638882129" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="79" startPosition="29" endLine="84" endPosition="5" />
     <nodeInfo nodeId="1852292599487322545" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AbstractEvaluationModel.java" startLine="88" startPosition="67" endLine="93" endPosition="0" />
     <nodeInfo nodeId="4223719328592862649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="133" startPosition="0" endLine="138" endPosition="7" />
     <nodeInfo nodeId="7757449281563189597" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateState#()V" fileName="AbstractEvaluationModel.java" startLine="154" startPosition="0" endLine="159" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189262" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canHandle#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="AbstractEvaluationModel.java" startLine="300" startPosition="0" endLine="305" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189343" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="323" startPosition="68" endLine="328" endPosition="13" />
+    <nodeInfo nodeId="7757449281563189262" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canHandle#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="AbstractEvaluationModel.java" startLine="303" startPosition="0" endLine="308" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189343" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="326" startPosition="68" endLine="331" endPosition="13" />
     <nodeInfo nodeId="1852292599487322544" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AbstractEvaluationModel.java" startLine="87" startPosition="110" endLine="93" endPosition="7" />
     <nodeInfo nodeId="276193728322540391" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEvaluator#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SNode;" fileName="AbstractEvaluationModel.java" startLine="140" startPosition="0" endLine="146" endPosition="0" />
-    <nodeInfo nodeId="5439191097839093342" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="211" startPosition="413" endLine="218" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189820" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="AbstractEvaluationModel.java" startLine="253" startPosition="28" endLine="260" endPosition="9" />
-    <nodeInfo nodeId="5439191097839083342" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="210" startPosition="102" endLine="218" endPosition="15" />
-    <nodeInfo nodeId="7757449281563189273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassPath#(Ljava/util/Set;)Ljetbrains/mps/reloading/CompositeClassPathItem;" fileName="AbstractEvaluationModel.java" startLine="305" startPosition="0" endLine="314" endPosition="0" />
-    <nodeInfo nodeId="5439191097839083330" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="209" startPosition="5" endLine="219" endPosition="5" />
-    <nodeInfo nodeId="7757449281563189334" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="AbstractEvaluationModel.java" startLine="321" startPosition="32" endLine="331" endPosition="11" />
+    <nodeInfo nodeId="5439191097839093342" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="214" startPosition="413" endLine="221" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189820" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="AbstractEvaluationModel.java" startLine="256" startPosition="28" endLine="263" endPosition="9" />
+    <nodeInfo nodeId="5439191097839083342" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="213" startPosition="102" endLine="221" endPosition="15" />
+    <nodeInfo nodeId="7757449281563189273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassPath#(Ljava/util/Set;)Ljetbrains/mps/reloading/CompositeClassPathItem;" fileName="AbstractEvaluationModel.java" startLine="308" startPosition="0" endLine="317" endPosition="0" />
+    <nodeInfo nodeId="5439191097839083330" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="212" startPosition="5" endLine="222" endPosition="5" />
+    <nodeInfo nodeId="7757449281563189334" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="AbstractEvaluationModel.java" startLine="324" startPosition="32" endLine="334" endPosition="11" />
     <nodeInfo nodeId="276193728322520120" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodesToShow#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)V" fileName="AbstractEvaluationModel.java" startLine="128" startPosition="0" endLine="140" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189332" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="320" startPosition="0" endLine="333" endPosition="9" />
+    <nodeInfo nodeId="7757449281563189332" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="323" startPosition="0" endLine="336" endPosition="9" />
     <nodeInfo nodeId="1400711440828853594" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="162" startPosition="74" endLine="178" endPosition="0" />
     <nodeInfo nodeId="1400711440828853099" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="AbstractEvaluationModel.java" startLine="161" startPosition="32" endLine="178" endPosition="7" />
-    <nodeInfo nodeId="7757449281563189320" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="317" startPosition="45" endLine="334" endPosition="7" />
-    <nodeInfo nodeId="5439191097839081446" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOperationPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="202" startPosition="0" endLine="222" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189785" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="246" startPosition="0" endLine="266" endPosition="7" />
+    <nodeInfo nodeId="7757449281563189320" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="320" startPosition="45" endLine="337" endPosition="7" />
+    <nodeInfo nodeId="5439191097839081446" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOperationPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="205" startPosition="0" endLine="225" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189785" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AbstractEvaluationModel.java" startLine="249" startPosition="0" endLine="269" endPosition="7" />
     <nodeInfo nodeId="7757449281563189450" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractEvaluationModel#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debug/runtime/DebugSession;Ljetbrains/mps/debug/evaluation/ui/EvaluationAuxModule;Ljetbrains/mps/debug/evaluation/model/EvaluationContext;Z)V" fileName="AbstractEvaluationModel.java" startLine="76" startPosition="0" endLine="97" endPosition="3" />
     <nodeInfo nodeId="3988550529129685725" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="159" startPosition="0" endLine="180" endPosition="0" />
-    <nodeInfo nodeId="864648422614435063" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="180" startPosition="0" endLine="202" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189300" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="AbstractEvaluationModel.java" startLine="314" startPosition="0" endLine="337" endPosition="0" />
-    <nodeInfo nodeId="7757449281563189616" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="AbstractEvaluationModel.java" startLine="224" startPosition="58" endLine="280" endPosition="5" />
-    <nodeInfo nodeId="7757449281563189612" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="evaluate#()Ljetbrains/mps/debug/evaluation/Evaluator;" fileName="AbstractEvaluationModel.java" startLine="222" startPosition="0" endLine="282" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189300" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="AbstractEvaluationModel.java" startLine="317" startPosition="0" endLine="340" endPosition="0" />
+    <nodeInfo nodeId="864648422614435063" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="180" startPosition="0" endLine="205" endPosition="0" />
+    <nodeInfo nodeId="7757449281563189616" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" fileName="AbstractEvaluationModel.java" startLine="227" startPosition="58" endLine="283" endPosition="5" />
+    <nodeInfo nodeId="7757449281563189612" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="evaluate#()Ljetbrains/mps/debug/evaluation/Evaluator;" fileName="AbstractEvaluationModel.java" startLine="225" startPosition="0" endLine="285" endPosition="0" />
     <scopeInfo nodeId="2125029577638882130" fileName="AbstractEvaluationModel.java" startLine="80" startPosition="44" endLine="81" endPosition="75" />
     <scopeInfo nodeId="2125029577638882152" fileName="AbstractEvaluationModel.java" startLine="82" startPosition="12" endLine="83" endPosition="56" />
     <scopeInfo nodeId="7757449281563189393" fileName="AbstractEvaluationModel.java" startLine="99" startPosition="39" endLine="100" endPosition="75" />
@@ -234,53 +236,54 @@
     <scopeInfo nodeId="864648422614490948" fileName="AbstractEvaluationModel.java" startLine="188" startPosition="105" endLine="189" endPosition="328" />
     <scopeInfo nodeId="864648422614491011" fileName="AbstractEvaluationModel.java" startLine="191" startPosition="107" endLine="192" endPosition="468" />
     <scopeInfo nodeId="3451429699316823905" fileName="AbstractEvaluationModel.java" startLine="194" startPosition="105" endLine="195" endPosition="154" />
-    <scopeInfo nodeId="3451429699316823892" fileName="AbstractEvaluationModel.java" startLine="197" startPosition="72" endLine="198" endPosition="110" />
-    <scopeInfo nodeId="5439191097839083288" fileName="AbstractEvaluationModel.java" startLine="204" startPosition="28" endLine="205" endPosition="20" />
-    <scopeInfo nodeId="5439191097839083299" fileName="AbstractEvaluationModel.java" startLine="207" startPosition="91" endLine="208" endPosition="70" />
-    <scopeInfo nodeId="7757449281563189788" fileName="AbstractEvaluationModel.java" startLine="248" startPosition="32" endLine="249" endPosition="37" />
-    <scopeInfo nodeId="7757449281563189821" fileName="AbstractEvaluationModel.java" startLine="254" startPosition="13" endLine="255" endPosition="102" />
-    <scopeInfo nodeId="7757449281563189876" fileName="AbstractEvaluationModel.java" startLine="262" startPosition="67" endLine="263" endPosition="68" />
-    <scopeInfo nodeId="7757449281563189882" fileName="AbstractEvaluationModel.java" startLine="264" startPosition="14" endLine="265" endPosition="67" />
-    <scopeInfo nodeId="7757449281563189641" fileName="AbstractEvaluationModel.java" startLine="276" startPosition="0" endLine="277" endPosition="14">
+    <scopeInfo nodeId="6647443673251191195" fileName="AbstractEvaluationModel.java" startLine="197" startPosition="112" endLine="198" endPosition="217" />
+    <scopeInfo nodeId="3451429699316823892" fileName="AbstractEvaluationModel.java" startLine="200" startPosition="72" endLine="201" endPosition="110" />
+    <scopeInfo nodeId="5439191097839083288" fileName="AbstractEvaluationModel.java" startLine="207" startPosition="28" endLine="208" endPosition="20" />
+    <scopeInfo nodeId="5439191097839083299" fileName="AbstractEvaluationModel.java" startLine="210" startPosition="91" endLine="211" endPosition="70" />
+    <scopeInfo nodeId="7757449281563189788" fileName="AbstractEvaluationModel.java" startLine="251" startPosition="32" endLine="252" endPosition="37" />
+    <scopeInfo nodeId="7757449281563189821" fileName="AbstractEvaluationModel.java" startLine="257" startPosition="13" endLine="258" endPosition="102" />
+    <scopeInfo nodeId="7757449281563189876" fileName="AbstractEvaluationModel.java" startLine="265" startPosition="67" endLine="266" endPosition="68" />
+    <scopeInfo nodeId="7757449281563189882" fileName="AbstractEvaluationModel.java" startLine="267" startPosition="14" endLine="268" endPosition="67" />
+    <scopeInfo nodeId="7757449281563189641" fileName="AbstractEvaluationModel.java" startLine="279" startPosition="0" endLine="280" endPosition="14">
       <varInfo nodeId="7757449281563189642" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189644" fileName="AbstractEvaluationModel.java" startLine="276" startPosition="37" endLine="277" endPosition="14" />
-    <scopeInfo nodeId="7757449281563189647" fileName="AbstractEvaluationModel.java" startLine="278" startPosition="0" endLine="279" endPosition="39">
+    <scopeInfo nodeId="7757449281563189644" fileName="AbstractEvaluationModel.java" startLine="279" startPosition="37" endLine="280" endPosition="14" />
+    <scopeInfo nodeId="7757449281563189647" fileName="AbstractEvaluationModel.java" startLine="281" startPosition="0" endLine="282" endPosition="39">
       <varInfo nodeId="7757449281563189653" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189648" fileName="AbstractEvaluationModel.java" startLine="278" startPosition="27" endLine="279" endPosition="39" />
-    <scopeInfo nodeId="7757449281563189914" fileName="AbstractEvaluationModel.java" startLine="285" startPosition="41" endLine="286" endPosition="63" />
-    <scopeInfo nodeId="7757449281563189925" fileName="AbstractEvaluationModel.java" startLine="289" startPosition="41" endLine="290" endPosition="21" />
-    <scopeInfo nodeId="7757449281563189265" fileName="AbstractEvaluationModel.java" startLine="302" startPosition="59" endLine="303" endPosition="32" />
-    <scopeInfo nodeId="7757449281563189286" fileName="AbstractEvaluationModel.java" startLine="309" startPosition="53" endLine="310" endPosition="25" />
-    <scopeInfo nodeId="7757449281563189348" fileName="AbstractEvaluationModel.java" startLine="325" startPosition="119" endLine="326" endPosition="43" />
-    <scopeInfo nodeId="7757449281563189355" fileName="AbstractEvaluationModel.java" startLine="329" startPosition="0" endLine="330" endPosition="25">
+    <scopeInfo nodeId="7757449281563189648" fileName="AbstractEvaluationModel.java" startLine="281" startPosition="27" endLine="282" endPosition="39" />
+    <scopeInfo nodeId="7757449281563189914" fileName="AbstractEvaluationModel.java" startLine="288" startPosition="41" endLine="289" endPosition="63" />
+    <scopeInfo nodeId="7757449281563189925" fileName="AbstractEvaluationModel.java" startLine="292" startPosition="41" endLine="293" endPosition="21" />
+    <scopeInfo nodeId="7757449281563189265" fileName="AbstractEvaluationModel.java" startLine="305" startPosition="59" endLine="306" endPosition="32" />
+    <scopeInfo nodeId="7757449281563189286" fileName="AbstractEvaluationModel.java" startLine="312" startPosition="53" endLine="313" endPosition="25" />
+    <scopeInfo nodeId="7757449281563189348" fileName="AbstractEvaluationModel.java" startLine="328" startPosition="119" endLine="329" endPosition="43" />
+    <scopeInfo nodeId="7757449281563189355" fileName="AbstractEvaluationModel.java" startLine="332" startPosition="0" endLine="333" endPosition="25">
       <varInfo nodeId="7757449281563189356" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189358" fileName="AbstractEvaluationModel.java" startLine="329" startPosition="33" endLine="330" endPosition="25" />
+    <scopeInfo nodeId="7757449281563189358" fileName="AbstractEvaluationModel.java" startLine="332" startPosition="33" endLine="333" endPosition="25" />
     <scopeInfo nodeId="1852292599487322546" fileName="AbstractEvaluationModel.java" startLine="89" startPosition="25" endLine="91" endPosition="92" />
     <scopeInfo nodeId="7757449281563189600" fileName="AbstractEvaluationModel.java" startLine="155" startPosition="29" endLine="157" endPosition="46" />
-    <scopeInfo nodeId="7757449281563189669" fileName="AbstractEvaluationModel.java" startLine="227" startPosition="50" endLine="229" endPosition="29">
+    <scopeInfo nodeId="7757449281563189669" fileName="AbstractEvaluationModel.java" startLine="230" startPosition="50" endLine="232" endPosition="29">
       <varInfo nodeId="7757449281563189671" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189903" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copy#(Z)Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;" fileName="AbstractEvaluationModel.java" startLine="282" startPosition="0" endLine="284" endPosition="0">
+    <scopeInfo nodeId="7757449281563189903" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copy#(Z)Ljetbrains/mps/debug/evaluation/model/AbstractEvaluationModel;" fileName="AbstractEvaluationModel.java" startLine="285" startPosition="0" endLine="287" endPosition="0">
       <varInfo nodeId="1488682280965852214" varName="isInContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189244" fileName="AbstractEvaluationModel.java" startLine="296" startPosition="120" endLine="298" endPosition="37" />
+    <scopeInfo nodeId="7757449281563189244" fileName="AbstractEvaluationModel.java" startLine="299" startPosition="120" endLine="301" endPosition="37" />
     <scopeInfo nodeId="7757449281563189568" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootToShow#()Ljetbrains/mps/smodel/SNode;" fileName="AbstractEvaluationModel.java" startLine="122" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="7757449281563189573" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeToShow#()Ljetbrains/mps/smodel/SNode;" fileName="AbstractEvaluationModel.java" startLine="125" startPosition="0" endLine="128" endPosition="0" />
     <scopeInfo nodeId="276193728322540395" fileName="AbstractEvaluationModel.java" startLine="141" startPosition="59" endLine="144" endPosition="28">
       <varInfo nodeId="1488682280965852177" varName="evaluatorConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189836" fileName="AbstractEvaluationModel.java" startLine="256" startPosition="0" endLine="259" endPosition="102">
+    <scopeInfo nodeId="7757449281563189836" fileName="AbstractEvaluationModel.java" startLine="259" startPosition="0" endLine="262" endPosition="102">
       <varInfo nodeId="7757449281563189837" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189839" fileName="AbstractEvaluationModel.java" startLine="256" startPosition="47" endLine="259" endPosition="102" />
-    <scopeInfo nodeId="7757449281563189285" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="308" startPosition="73" endLine="311" endPosition="7">
+    <scopeInfo nodeId="7757449281563189839" fileName="AbstractEvaluationModel.java" startLine="259" startPosition="47" endLine="262" endPosition="102" />
+    <scopeInfo nodeId="7757449281563189285" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="311" startPosition="73" endLine="314" endPosition="7">
       <varInfo nodeId="7757449281563189295" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189344" fileName="AbstractEvaluationModel.java" startLine="324" startPosition="60" endLine="327" endPosition="15" />
-    <scopeInfo nodeId="7757449281563189345" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="324" startPosition="60" endLine="327" endPosition="15" />
+    <scopeInfo nodeId="7757449281563189344" fileName="AbstractEvaluationModel.java" startLine="327" startPosition="60" endLine="330" endPosition="15" />
+    <scopeInfo nodeId="7757449281563189345" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="327" startPosition="60" endLine="330" endPosition="15" />
     <scopeInfo nodeId="7757449281563189390" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationModel#()Ljetbrains/mps/smodel/SModel;" fileName="AbstractEvaluationModel.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="7757449281563189517" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUiState#()Ljetbrains/mps/debug/runtime/JavaUiState;" fileName="AbstractEvaluationModel.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="7757449281563189525" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugSession#()Ljetbrains/mps/debug/runtime/DebugSession;" fileName="AbstractEvaluationModel.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
@@ -292,40 +295,40 @@
       <varInfo nodeId="7757449281563189587" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189591" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDeveloperMode#()Z" fileName="AbstractEvaluationModel.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="5439191097839093343" fileName="AbstractEvaluationModel.java" startLine="212" startPosition="51" endLine="216" endPosition="35" />
-    <scopeInfo nodeId="7757449281563189663" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="226" startPosition="75" endLine="230" endPosition="7">
+    <scopeInfo nodeId="5439191097839093343" fileName="AbstractEvaluationModel.java" startLine="215" startPosition="51" endLine="219" endPosition="35" />
+    <scopeInfo nodeId="7757449281563189663" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="AbstractEvaluationModel.java" startLine="229" startPosition="75" endLine="233" endPosition="7">
       <varInfo nodeId="7757449281563189667" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189911" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationModule#()Ljetbrains/mps/project/IModule;" fileName="AbstractEvaluationModel.java" startLine="284" startPosition="0" endLine="288" endPosition="0" />
-    <scopeInfo nodeId="7757449281563189922" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/IOperationContext;" fileName="AbstractEvaluationModel.java" startLine="288" startPosition="0" endLine="292" endPosition="0" />
-    <scopeInfo nodeId="7757449281563189241" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyInMemoryJavaGenerationHandler#(ZZLjava/util/Set;)V" fileName="AbstractEvaluationModel.java" startLine="295" startPosition="0" endLine="299" endPosition="5">
+    <scopeInfo nodeId="7757449281563189911" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationModule#()Ljetbrains/mps/project/IModule;" fileName="AbstractEvaluationModel.java" startLine="287" startPosition="0" endLine="291" endPosition="0" />
+    <scopeInfo nodeId="7757449281563189922" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/smodel/IOperationContext;" fileName="AbstractEvaluationModel.java" startLine="291" startPosition="0" endLine="295" endPosition="0" />
+    <scopeInfo nodeId="7757449281563189241" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyInMemoryJavaGenerationHandler#(ZZLjava/util/Set;)V" fileName="AbstractEvaluationModel.java" startLine="298" startPosition="0" endLine="302" endPosition="5">
       <varInfo nodeId="7757449281563189256" varName="keepSources" />
       <varInfo nodeId="7757449281563189254" varName="reloadClasses" />
       <varInfo nodeId="7757449281563189258" varName="classpaths" />
     </scopeInfo>
     <scopeInfo nodeId="1852292599487322545" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="AbstractEvaluationModel.java" startLine="88" startPosition="67" endLine="93" endPosition="0" />
     <scopeInfo nodeId="7757449281563189597" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateState#()V" fileName="AbstractEvaluationModel.java" startLine="154" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="7757449281563189262" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canHandle#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="AbstractEvaluationModel.java" startLine="300" startPosition="0" endLine="305" endPosition="0">
+    <scopeInfo nodeId="7757449281563189262" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canHandle#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="AbstractEvaluationModel.java" startLine="303" startPosition="0" endLine="308" endPosition="0">
       <varInfo nodeId="7757449281563189270" varName="inputModel" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189279" fileName="AbstractEvaluationModel.java" startLine="307" startPosition="80" endLine="312" endPosition="20">
+    <scopeInfo nodeId="7757449281563189279" fileName="AbstractEvaluationModel.java" startLine="310" startPosition="80" endLine="315" endPosition="20">
       <varInfo nodeId="7757449281563189281" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="276193728322540391" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEvaluator#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/smodel/SNode;" fileName="AbstractEvaluationModel.java" startLine="140" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="276193728322540390" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189335" fileName="AbstractEvaluationModel.java" startLine="322" startPosition="15" endLine="328" endPosition="13" />
-    <scopeInfo nodeId="5439191097839093342" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="211" startPosition="413" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="5439191097839083331" fileName="AbstractEvaluationModel.java" startLine="210" startPosition="102" endLine="218" endPosition="15" />
-    <scopeInfo nodeId="7757449281563189617" fileName="AbstractEvaluationModel.java" startLine="267" startPosition="0" endLine="275" endPosition="66">
+    <scopeInfo nodeId="7757449281563189335" fileName="AbstractEvaluationModel.java" startLine="325" startPosition="15" endLine="331" endPosition="13" />
+    <scopeInfo nodeId="5439191097839093342" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="214" startPosition="413" endLine="221" endPosition="0" />
+    <scopeInfo nodeId="5439191097839083331" fileName="AbstractEvaluationModel.java" startLine="213" startPosition="102" endLine="221" endPosition="15" />
+    <scopeInfo nodeId="7757449281563189617" fileName="AbstractEvaluationModel.java" startLine="270" startPosition="0" endLine="278" endPosition="66">
       <varInfo nodeId="7757449281563189618" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189620" fileName="AbstractEvaluationModel.java" startLine="267" startPosition="43" endLine="275" endPosition="66" />
+    <scopeInfo nodeId="7757449281563189620" fileName="AbstractEvaluationModel.java" startLine="270" startPosition="43" endLine="278" endPosition="66" />
     <scopeInfo nodeId="276193728322520123" fileName="AbstractEvaluationModel.java" startLine="129" startPosition="71" endLine="138" endPosition="7" />
-    <scopeInfo nodeId="7757449281563189273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassPath#(Ljava/util/Set;)Ljetbrains/mps/reloading/CompositeClassPathItem;" fileName="AbstractEvaluationModel.java" startLine="305" startPosition="0" endLine="314" endPosition="0">
+    <scopeInfo nodeId="7757449281563189273" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassPath#(Ljava/util/Set;)Ljetbrains/mps/reloading/CompositeClassPathItem;" fileName="AbstractEvaluationModel.java" startLine="308" startPosition="0" endLine="317" endPosition="0">
       <varInfo nodeId="7757449281563189276" varName="contextModules" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189333" fileName="AbstractEvaluationModel.java" startLine="321" startPosition="32" endLine="332" endPosition="0" />
+    <scopeInfo nodeId="7757449281563189333" fileName="AbstractEvaluationModel.java" startLine="324" startPosition="32" endLine="335" endPosition="0" />
     <scopeInfo nodeId="276193728322520120" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodesToShow#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)V" fileName="AbstractEvaluationModel.java" startLine="128" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="276193728322538821" varName="model" />
     </scopeInfo>
@@ -334,25 +337,24 @@
       <varInfo nodeId="864648422614490931" varName="suffix" />
       <varInfo nodeId="1400711440828889730" varName="lastStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189786" fileName="AbstractEvaluationModel.java" startLine="247" startPosition="57" endLine="261" endPosition="25">
+    <scopeInfo nodeId="7757449281563189786" fileName="AbstractEvaluationModel.java" startLine="250" startPosition="57" endLine="264" endPosition="25">
       <varInfo nodeId="7757449281563189818" varName="evaluator" />
       <varInfo nodeId="7757449281563189806" varName="clazz" />
       <varInfo nodeId="7757449281563189796" varName="parentClassLoader" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189324" fileName="AbstractEvaluationModel.java" startLine="318" startPosition="26" endLine="333" endPosition="9">
+    <scopeInfo nodeId="7757449281563189324" fileName="AbstractEvaluationModel.java" startLine="321" startPosition="26" endLine="336" endPosition="9">
       <varInfo nodeId="7757449281563189326" varName="evaluator" />
     </scopeInfo>
     <scopeInfo nodeId="1400711440828853594" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="162" startPosition="74" endLine="178" endPosition="0" />
-    <scopeInfo nodeId="5439191097839081449" fileName="AbstractEvaluationModel.java" startLine="203" startPosition="70" endLine="220" endPosition="78" />
+    <scopeInfo nodeId="5439191097839081449" fileName="AbstractEvaluationModel.java" startLine="206" startPosition="70" endLine="223" endPosition="78" />
     <scopeInfo nodeId="3988550529129685728" fileName="AbstractEvaluationModel.java" startLine="160" startPosition="35" endLine="178" endPosition="7" />
     <scopeInfo nodeId="7757449281563189463" fileName="AbstractEvaluationModel.java" startLine="77" startPosition="170" endLine="96" endPosition="32">
       <varInfo nodeId="4626269720740410032" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="864648422614435066" fileName="AbstractEvaluationModel.java" startLine="181" startPosition="62" endLine="200" endPosition="79" />
-    <scopeInfo nodeId="7757449281563189313" fileName="AbstractEvaluationModel.java" startLine="316" startPosition="158" endLine="335" endPosition="77">
+    <scopeInfo nodeId="7757449281563189313" fileName="AbstractEvaluationModel.java" startLine="319" startPosition="158" endLine="338" endPosition="77">
       <varInfo nodeId="7757449281563189315" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="5439191097839081446" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOperationPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="202" startPosition="0" endLine="222" endPosition="0">
+    <scopeInfo nodeId="5439191097839081446" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOperationPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="205" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="5439191097839083283" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189450" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractEvaluationModel#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debug/runtime/DebugSession;Ljetbrains/mps/debug/evaluation/ui/EvaluationAuxModule;Ljetbrains/mps/debug/evaluation/model/EvaluationContext;Z)V" fileName="AbstractEvaluationModel.java" startLine="76" startPosition="0" endLine="97" endPosition="3">
@@ -363,17 +365,18 @@
       <varInfo nodeId="1488682280965841491" varName="isInContext" />
     </scopeInfo>
     <scopeInfo nodeId="3988550529129685725" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="159" startPosition="0" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="864648422614435063" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="180" startPosition="0" endLine="202" endPosition="0">
-      <varInfo nodeId="864648422614446818" varName="expression" />
-    </scopeInfo>
-    <scopeInfo nodeId="7757449281563189300" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="AbstractEvaluationModel.java" startLine="314" startPosition="0" endLine="337" endPosition="0">
+    <scopeInfo nodeId="864648422614435066" fileName="AbstractEvaluationModel.java" startLine="181" startPosition="62" endLine="203" endPosition="79" />
+    <scopeInfo nodeId="7757449281563189300" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleOutput#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/generator/GenerationStatus;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/progress/ITaskProgressHelper;)Z" fileName="AbstractEvaluationModel.java" startLine="317" startPosition="0" endLine="340" endPosition="0">
       <varInfo nodeId="7757449281563189301" varName="module" />
       <varInfo nodeId="7757449281563189309" varName="helper" />
       <varInfo nodeId="7757449281563189305" varName="status" />
       <varInfo nodeId="7757449281563189307" varName="context" />
       <varInfo nodeId="7757449281563189303" varName="inputModel" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189655" fileName="AbstractEvaluationModel.java" startLine="225" startPosition="9" endLine="266" endPosition="7">
+    <scopeInfo nodeId="864648422614435063" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="AbstractEvaluationModel.java" startLine="180" startPosition="0" endLine="205" endPosition="0">
+      <varInfo nodeId="864648422614446818" varName="expression" />
+    </scopeInfo>
+    <scopeInfo nodeId="7757449281563189655" fileName="AbstractEvaluationModel.java" startLine="228" startPosition="9" endLine="269" endPosition="7">
       <varInfo nodeId="7757449281563189743" varName="progressWindow" />
       <varInfo nodeId="7757449281563189700" varName="project" />
       <varInfo nodeId="7757449281563189776" varName="source" />
@@ -386,14 +389,14 @@
       <varInfo nodeId="7757449281563189657" varName="classpaths" />
       <varInfo nodeId="7757449281563189718" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="7757449281563189615" fileName="AbstractEvaluationModel.java" startLine="224" startPosition="58" endLine="280" endPosition="5" />
-    <scopeInfo nodeId="7757449281563189612" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="evaluate#()Ljetbrains/mps/debug/evaluation/Evaluator;" fileName="AbstractEvaluationModel.java" startLine="222" startPosition="0" endLine="282" endPosition="0" />
+    <scopeInfo nodeId="7757449281563189615" fileName="AbstractEvaluationModel.java" startLine="227" startPosition="58" endLine="283" endPosition="5" />
+    <scopeInfo nodeId="7757449281563189612" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="evaluate#()Ljetbrains/mps/debug/evaluation/Evaluator;" fileName="AbstractEvaluationModel.java" startLine="225" startPosition="0" endLine="285" endPosition="0" />
     <unitInfo nodeId="4223719328592872982" fileName="AbstractEvaluationModel.java" startLine="134" startPosition="43" endLine="138" endPosition="5" unitName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel$2" />
     <unitInfo nodeId="1852292599487322545" fileName="AbstractEvaluationModel.java" startLine="88" startPosition="55" endLine="93" endPosition="5" unitName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel$1" />
-    <unitInfo nodeId="5439191097839093342" fileName="AbstractEvaluationModel.java" startLine="211" startPosition="379" endLine="218" endPosition="7" unitName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel$4" />
+    <unitInfo nodeId="5439191097839093342" fileName="AbstractEvaluationModel.java" startLine="214" startPosition="379" endLine="221" endPosition="7" unitName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel$4" />
     <unitInfo nodeId="1400711440828853592" fileName="AbstractEvaluationModel.java" startLine="162" startPosition="52" endLine="178" endPosition="5" unitName="jetbrains.mps.debug.evaluation.model.Computable$anonymous" />
-    <unitInfo nodeId="7757449281563189240" fileName="AbstractEvaluationModel.java" startLine="293" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel$MyInMemoryJavaGenerationHandler" />
-    <unitInfo nodeId="7757449281563189239" fileName="AbstractEvaluationModel.java" startLine="62" startPosition="0" endLine="339" endPosition="0" unitName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
+    <unitInfo nodeId="7757449281563189240" fileName="AbstractEvaluationModel.java" startLine="296" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel$MyInMemoryJavaGenerationHandler" />
+    <unitInfo nodeId="7757449281563189239" fileName="AbstractEvaluationModel.java" startLine="62" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
   </root>
   <root nodeId="7757449281563189928">
     <nodeInfo nodeId="7757449281563190031" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocationRootCopy" fileName="HighLevelEvaluationModel.java" startLine="19" startPosition="71" endLine="20" endPosition="35" />

@@ -194,6 +194,9 @@ public abstract class AbstractEvaluationModel {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral")) {
       return "\"" + SPropertyOperations.getString(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value") + "\"";
     }
+    if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")) {
+      return "new " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true));
+    }
     if (SConceptPropertyOperations.getBoolean(expression, "constant")) {
       return Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(expression, getModule()) + "";
     }
