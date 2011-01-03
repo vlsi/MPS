@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.presentation.difference;
 
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.smodel.IOperationContext;
@@ -24,19 +25,21 @@ import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
+import java.awt.Color;
+
 public class TypeSystemTraceTreeNode extends MPSTreeNode {
   public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext) {
     super(userObject, operationContext);
     AbstractOperation difference = (AbstractOperation) userObject;
     setNodeIdentifier(difference.getPresentation());
     this.setAutoExpandable(true);
-    this.setIcon(difference.getIcon());
+    this.setIcon(Icons.DEFAULT_ICON);
   }
 
   public void doUpdatePresentation() {
     super.doUpdatePresentation();
     AbstractOperation difference = (AbstractOperation) getUserObject();
-    setColor(difference.getColor());
+    setColor(Color.BLACK);
   }
 
   public void goToRule() {
