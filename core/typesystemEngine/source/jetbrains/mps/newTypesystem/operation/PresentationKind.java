@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.presentation.color;
-
-import java.awt.Color;
+package jetbrains.mps.newTypesystem.operation;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,13 +22,15 @@ import java.awt.Color;
  * Time: 20:03
  * To change this template use File | Settings | File Templates.
  */
-public class Colors {
-  public static final Color EQUATION_ADDED = new Color(0x670365);
-  public static final Color RELATION_ADDED = new Color(0x000077);
-  public static final Color RELATION_REMOVED = new Color(0x774400);
-  public static final Color WHEN_CONCRETE_ADDED = new Color(0x1111BB);
-  public static final Color WHEN_CONCRETE_REMOVED = new Color(0x1177BB);
-  public static final Color ERROR_ADDED = Color.RED;
-  public static final Color TYPE_ASSIGNED = new Color(0x007700);
-  public static final Color TYPE_EXPANDED = new Color(0x008704);
+public class PresentationKind {
+
+  public static final String EQUATION_ADDED = "equation_added";
+  public static final String RELATION_ADDED = "relation_added";
+  public static final String RELATION_REMOVED = "relation_removed";
+  public static final String WHEN_CONCRETE_ADDED = "when_concrete_added";
+  public static final String WHEN_CONCRETE_REMOVED = "when_concrete_removed";
+  public static final String ERROR_ADDED = "error_added";
+  public static final String TYPE_ASSIGNED = "type_assigned";
+  public static final String TYPE_EXPANDED = "type_expanded";
+  public static final String DEFAULT = "default";
 }

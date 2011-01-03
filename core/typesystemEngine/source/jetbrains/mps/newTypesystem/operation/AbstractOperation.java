@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.operation;
 
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import javax.swing.Icon;
-import java.awt.Color;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -87,14 +84,8 @@ public abstract class AbstractOperation {
     return "";
   }
 
-  // todo remove to presentation
-  public Color getColor() {
-    return Color.BLACK;
-  }
-
-  // todo remove to presentation
-  public Icon getIcon() {
-    return Icons.DEFAULT_ICON;
+  public String getPresentationKind() {
+    return PresentationKind.DEFAULT;
   }
 
   public SNode getSource() {

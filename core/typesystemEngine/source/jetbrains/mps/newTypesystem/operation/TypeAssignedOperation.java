@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.newTypesystem.operation;
 
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
@@ -55,8 +52,8 @@ public class TypeAssignedOperation extends AbstractOperation {
   }
 
   @Override
-  public Color getColor() {
-    return Colors.TYPE_ASSIGNED;
+  public String getPresentationKind() {
+    return PresentationKind.TYPE_ASSIGNED;
   }
 
   public SNode getNode() {

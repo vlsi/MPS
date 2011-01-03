@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.operation.equation;
 
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
+import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
@@ -69,7 +67,7 @@ public class EquationAddedOperation extends AbstractEquationOperation {
 
 
   @Override
-  public Color getColor() {
-    return Colors.EQUATION_ADDED;
+  public String getPresentationKind() {
+    return PresentationKind.EQUATION_ADDED;
   }
 }

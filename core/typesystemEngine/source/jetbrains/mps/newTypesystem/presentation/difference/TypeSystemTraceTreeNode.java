@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.presentation.difference;
 
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -24,19 +26,47 @@ import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
+import java.awt.Color;
+import java.util.HashMap;
+import java.util.Map;
+
 public class TypeSystemTraceTreeNode extends MPSTreeNode {
+
+  private static final Map<String,Color> COLOR_MAP = initColors();
+
+  private static Map<String, Color> initColors() {
+    Map<String,Color> result = new HashMap<String, Color>();
+    result.put(PresentationKind.EQUATION_ADDED, new Color(0x670365));
+    result.put(PresentationKind.RELATION_ADDED, new Color(0x000077));
+    result.put(PresentationKind.RELATION_REMOVED, new Color(0x774400));
+    result.put(PresentationKind.WHEN_CONCRETE_ADDED, new Color(0x1111BB));
+    result.put(PresentationKind.WHEN_CONCRETE_REMOVED, new Color(0x1177BB));
+    result.put(PresentationKind.ERROR_ADDED, Color.RED);
+    result.put(PresentationKind.TYPE_ASSIGNED, new Color(0x007700));
+    result.put(PresentationKind.TYPE_EXPANDED, new Color(0x008704));
+    result.put(PresentationKind.DEFAULT, Color.BLACK);
+    return result;
+  }
+
+
   public TypeSystemTraceTreeNode(Object userObject, IOperationContext operationContext) {
     super(userObject, operationContext);
     AbstractOperation difference = (AbstractOperation) userObject;
     setNodeIdentifier(difference.getPresentation());
     this.setAutoExpandable(true);
-    this.setIcon(difference.getIcon());
+    this.setIcon(Icons.DEFAULT_ICON);
   }
 
   public void doUpdatePresentation() {
     super.doUpdatePresentation();
     AbstractOperation difference = (AbstractOperation) getUserObject();
-    setColor(difference.getColor());
+    setColor(getOperationColor(difference));
+  }
+
+  private Color getOperationColor(AbstractOperation difference) {
+    String colorId = difference.getPresentationKind();
+    Color color = COLOR_MAP.get(colorId);
+    return color != null ? color : Color.BLACK;
   }
 
   public void goToRule() {
