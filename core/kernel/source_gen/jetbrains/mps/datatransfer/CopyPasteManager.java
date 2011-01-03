@@ -19,8 +19,7 @@ import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.actions.behavior.CopyPreProcessor_Behavior;
-import jetbrains.mps.lang.actions.behavior.PastePostProcessor_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
@@ -98,10 +97,10 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
       });
       for (SNode root : roots) {
         for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "preProcessor", true))) {
-          MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(preProcessor), language, LOG));
+          MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(preProcessor, "jetbrains.mps.lang.actions.structure.CopyPreProcessor"), "call_getClassName_5948027493682347861", new Class[]{SNode.class}), language, LOG));
         }
         for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "postProcessor", true))) {
-          MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + PastePostProcessor_Behavior.call_getClassName_5457641811177522085(postProcessor), language, LOG));
+          MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(postProcessor, "jetbrains.mps.lang.actions.structure.PastePostProcessor"), "call_getClassName_5457641811177522085", new Class[]{SNode.class}), language, LOG));
         }
 
       }
