@@ -30,6 +30,8 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import java.awt.*;
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URI;
 import java.util.*;
 import java.util.List;
@@ -360,21 +362,42 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
 
       protected JComponent createNorthPanel() {
         JComponent panel = super.createNorthPanel();
+        JComponent textField = null;
+        JPanel messagePanel = null;
+        try {
+          textField = (JComponent) InputDialog.class.getMethod("getTextField").invoke(this);
+        }
+        catch (InvocationTargetException ignore) {}
+        catch (NoSuchMethodException ignore) {}
+        catch (IllegalAccessException ignore) {}
 
-        JPanel messagePanel = (JPanel) super.getTextField().getParent();
-        messagePanel.remove(super.getTextField()); // xe-xe
+        if (textField != null) {
+          messagePanel = (JPanel) textField.getParent();
+          messagePanel.remove(textField); // xe-xe
 
-        textArea = new JTextArea(10, 50);
-        textArea.setWrapStyleWord(true);
-        textArea.setLineWrap(true);
-        textArea.getDocument().addDocumentListener(new DocumentAdapter() {
-          protected void textChanged(final DocumentEvent e) {
+          textArea = new JTextArea(10, 50);
+          textArea.setWrapStyleWord(true);
+          textArea.setLineWrap(true);
+          textArea.getDocument().addDocumentListener(new DocumentAdapter() {
+            protected void textChanged(final DocumentEvent e) {
+            }
+          });
+
+          JComponent scrollPane = null;
+          try {
+            Method createScrollPane = ScrollPaneFactory.class.getMethod("createScrollPane", Component.class);
+            scrollPane = (JScrollPane) createScrollPane.invoke(null, textArea);
           }
-        });
-        JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(textArea);
-        messagePanel.add(scrollPane, BorderLayout.SOUTH);
+          catch (InvocationTargetException ignore) {}
+          catch (NoSuchMethodException ignore) {}
+          catch (IllegalAccessException ignore) {}
 
-        return panel;                    
+          if (scrollPane != null) {
+            messagePanel.add(scrollPane, BorderLayout.SOUTH);
+          }
+        }
+
+        return panel;
       }
 
       public JComponent getPreferredFocusedComponent() {
