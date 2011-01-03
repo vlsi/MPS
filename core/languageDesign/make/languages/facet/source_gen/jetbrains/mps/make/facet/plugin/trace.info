@@ -167,12 +167,11 @@
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="151" startPosition="27" endLine="151" endPosition="27" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="154" startPosition="27" endLine="154" endPosition="27" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="157" startPosition="28" endLine="157" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="234" startPosition="27" endLine="234" endPosition="27" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="237" startPosition="27" endLine="237" endPosition="27" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="240" startPosition="27" endLine="240" endPosition="27" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="243" startPosition="27" endLine="243" endPosition="27" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="246" startPosition="27" endLine="246" endPosition="27" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="253" startPosition="28" endLine="253" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="238" startPosition="27" endLine="238" endPosition="27" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="245" startPosition="27" endLine="245" endPosition="27" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="248" startPosition="27" endLine="248" endPosition="27" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="251" startPosition="28" endLine="251" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="258" startPosition="28" endLine="258" endPosition="28" />
     <nodeInfo nodeId="4175026531914353771" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" fileName="MakeActionParameters.java" startLine="23" startPosition="35" endLine="24" endPosition="36" />
     <nodeInfo nodeId="4175026531914353780" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="models" fileName="MakeActionParameters.java" startLine="24" startPosition="36" endLine="25" endPosition="40" />
     <nodeInfo nodeId="4175026531914353790" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cmodel" fileName="MakeActionParameters.java" startLine="25" startPosition="40" endLine="26" endPosition="34" />
@@ -193,24 +192,24 @@
     <nodeInfo nodeId="3835800809904095981" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="54" startPosition="12" endLine="55" endPosition="18" />
     <nodeInfo nodeId="8666365535672374798" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="56" startPosition="5" endLine="57" endPosition="25" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="MakeActionParameters.java" startLine="65" startPosition="61" endLine="66" endPosition="37" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5__yield_nk3wxj_a0a0a0a0a0a0b" fileName="MakeActionParameters.java" startLine="66" startPosition="37" endLine="67" endPosition="70" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5__yield_nk3wxj_a0a0a0a0a0a0b_it" fileName="MakeActionParameters.java" startLine="67" startPosition="70" endLine="68" endPosition="83" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_11_modelsFromModules" fileName="MakeActionParameters.java" startLine="68" startPosition="83" endLine="69" endPosition="71" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_12__yield_nk3wxj_d0a0a0a0a0b" fileName="MakeActionParameters.java" startLine="69" startPosition="71" endLine="70" endPosition="69" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_12__yield_nk3wxj_d0a0a0a0a0b_it" fileName="MakeActionParameters.java" startLine="70" startPosition="69" endLine="71" endPosition="82" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5__yield_nk3wxj_a0a0a0a0a0a1" fileName="MakeActionParameters.java" startLine="66" startPosition="37" endLine="67" endPosition="69" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5__yield_nk3wxj_a0a0a0a0a0a1_it" fileName="MakeActionParameters.java" startLine="67" startPosition="69" endLine="68" endPosition="82" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_11_modelsFromModules" fileName="MakeActionParameters.java" startLine="68" startPosition="82" endLine="69" endPosition="71" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_12__yield_nk3wxj_d0a0a0a0a1" fileName="MakeActionParameters.java" startLine="69" startPosition="71" endLine="70" endPosition="68" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_12__yield_nk3wxj_d0a0a0a0a1_it" fileName="MakeActionParameters.java" startLine="70" startPosition="68" endLine="71" endPosition="81" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="MakeActionParameters.java" startLine="78" startPosition="28" endLine="79" endPosition="54" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="79" startPosition="54" endLine="80" endPosition="35" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="81" startPosition="27" endLine="82" endPosition="130" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="84" startPosition="80" endLine="85" endPosition="40" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="81" startPosition="27" endLine="82" endPosition="129" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="84" startPosition="79" endLine="85" endPosition="40" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="85" startPosition="40" endLine="86" endPosition="30" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="87" startPosition="23" endLine="88" endPosition="106" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="88" startPosition="106" endLine="89" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="87" startPosition="23" endLine="88" endPosition="104" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="88" startPosition="104" endLine="89" endPosition="38" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="89" startPosition="38" endLine="90" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="91" startPosition="28" endLine="92" endPosition="118" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="94" startPosition="79" endLine="95" endPosition="40" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="91" startPosition="28" endLine="92" endPosition="117" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="94" startPosition="78" endLine="95" endPosition="40" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="95" startPosition="40" endLine="96" endPosition="30" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="97" startPosition="23" endLine="98" endPosition="104" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="98" startPosition="104" endLine="99" endPosition="39" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="97" startPosition="23" endLine="98" endPosition="102" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="98" startPosition="102" endLine="99" endPosition="39" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="99" startPosition="39" endLine="100" endPosition="28" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="102" startPosition="69" endLine="103" endPosition="40" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="103" startPosition="40" endLine="104" endPosition="30" />
@@ -219,14 +218,14 @@
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="108" startPosition="23" endLine="109" endPosition="38" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="109" startPosition="38" endLine="110" endPosition="28" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="111" startPosition="27" endLine="112" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="112" startPosition="38" endLine="113" endPosition="65" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="113" startPosition="65" endLine="114" endPosition="34" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="112" startPosition="38" endLine="113" endPosition="64" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="113" startPosition="64" endLine="114" endPosition="34" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="115" startPosition="28" endLine="116" endPosition="38" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="116" startPosition="38" endLine="117" endPosition="67" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="117" startPosition="67" endLine="118" endPosition="34" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="119" startPosition="28" endLine="120" endPosition="39" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="120" startPosition="39" endLine="121" endPosition="64" />
-    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="121" startPosition="64" endLine="122" endPosition="34" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="120" startPosition="39" endLine="121" endPosition="63" />
+    <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="121" startPosition="63" endLine="122" endPosition="34" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="123" startPosition="27" endLine="124" endPosition="38" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="124" startPosition="38" endLine="125" endPosition="28" />
     <nodeInfo nodeId="4175026531914353592" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="126" startPosition="27" endLine="127" endPosition="56" />
@@ -246,143 +245,147 @@
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="160" startPosition="28" endLine="161" endPosition="37" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="163" startPosition="31" endLine="164" endPosition="29" />
     <nodeInfo nodeId="4175026531914353670" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="171" startPosition="58" endLine="172" endPosition="50" />
-    <nodeInfo nodeId="4175026531914353684" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeActionParameters.java" startLine="174" startPosition="87" endLine="175" endPosition="101" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="MakeActionParameters.java" startLine="180" startPosition="54" endLine="181" endPosition="37" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="MakeActionParameters.java" startLine="188" startPosition="28" endLine="189" endPosition="54" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="189" startPosition="54" endLine="190" endPosition="35" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="192" startPosition="40" endLine="193" endPosition="40" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="193" startPosition="40" endLine="194" endPosition="30" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="195" startPosition="23" endLine="196" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="196" startPosition="38" endLine="197" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="199" startPosition="49" endLine="200" endPosition="40" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="200" startPosition="40" endLine="201" endPosition="30" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="202" startPosition="23" endLine="203" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="203" startPosition="38" endLine="204" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="206" startPosition="49" endLine="207" endPosition="40" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="207" startPosition="40" endLine="208" endPosition="30" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="209" startPosition="23" endLine="210" endPosition="39" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="210" startPosition="39" endLine="211" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="213" startPosition="102" endLine="214" endPosition="41" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="214" startPosition="41" endLine="215" endPosition="30" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="216" startPosition="23" endLine="217" endPosition="39" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="217" startPosition="39" endLine="218" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="220" startPosition="49" endLine="221" endPosition="41" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="221" startPosition="41" endLine="222" endPosition="30" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="223" startPosition="23" endLine="224" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="224" startPosition="38" endLine="225" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="226" startPosition="27" endLine="227" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="227" startPosition="38" endLine="228" endPosition="118" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="228" startPosition="118" endLine="229" endPosition="34" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="230" startPosition="28" endLine="231" endPosition="39" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="231" startPosition="39" endLine="232" endPosition="118" />
+    <nodeInfo nodeId="48557965018878423" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="174" startPosition="13" endLine="175" endPosition="33" />
+    <nodeInfo nodeId="4175026531914353684" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeActionParameters.java" startLine="178" startPosition="80" endLine="179" endPosition="101" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" fileName="MakeActionParameters.java" startLine="184" startPosition="54" endLine="185" endPosition="37" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" fileName="MakeActionParameters.java" startLine="192" startPosition="28" endLine="193" endPosition="54" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="193" startPosition="54" endLine="194" endPosition="35" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="196" startPosition="40" endLine="197" endPosition="40" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="197" startPosition="40" endLine="198" endPosition="30" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="199" startPosition="23" endLine="200" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="200" startPosition="38" endLine="201" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="203" startPosition="49" endLine="204" endPosition="40" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="204" startPosition="40" endLine="205" endPosition="30" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="206" startPosition="23" endLine="207" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="207" startPosition="38" endLine="208" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="210" startPosition="49" endLine="211" endPosition="41" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="211" startPosition="41" endLine="212" endPosition="30" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="213" startPosition="23" endLine="214" endPosition="39" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="214" startPosition="39" endLine="215" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="217" startPosition="102" endLine="218" endPosition="41" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="218" startPosition="41" endLine="219" endPosition="30" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="220" startPosition="23" endLine="221" endPosition="39" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="221" startPosition="39" endLine="222" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="224" startPosition="49" endLine="225" endPosition="41" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="225" startPosition="41" endLine="226" endPosition="30" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="227" startPosition="23" endLine="228" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="228" startPosition="38" endLine="229" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="230" startPosition="27" endLine="231" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="231" startPosition="38" endLine="232" endPosition="118" />
     <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="232" startPosition="118" endLine="233" endPosition="34" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="234" startPosition="27" endLine="235" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="235" startPosition="38" endLine="236" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="237" startPosition="27" endLine="238" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="238" startPosition="38" endLine="239" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="240" startPosition="27" endLine="241" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="241" startPosition="38" endLine="242" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="243" startPosition="27" endLine="244" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="244" startPosition="38" endLine="245" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="246" startPosition="27" endLine="247" endPosition="39" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="247" startPosition="39" endLine="248" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="249" startPosition="28" endLine="250" endPosition="74" />
-    <nodeInfo nodeId="4175026531914353722" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="249" startPosition="28" endLine="250" endPosition="74" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="250" startPosition="74" endLine="251" endPosition="39" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="251" startPosition="39" endLine="252" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="253" startPosition="28" endLine="254" endPosition="39" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="254" startPosition="39" endLine="255" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="256" startPosition="28" endLine="257" endPosition="42" />
-    <nodeInfo nodeId="4175026531914353748" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="256" startPosition="28" endLine="257" endPosition="42" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="257" startPosition="42" endLine="258" endPosition="39" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="258" startPosition="39" endLine="259" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="260" startPosition="28" endLine="261" endPosition="107" />
-    <nodeInfo nodeId="4175026531914353760" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="260" startPosition="28" endLine="261" endPosition="107" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="261" startPosition="107" endLine="262" endPosition="38" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="262" startPosition="38" endLine="263" endPosition="28" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="264" startPosition="28" endLine="265" endPosition="37" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="267" startPosition="31" endLine="268" endPosition="29" />
-    <nodeInfo nodeId="8666365535672334751" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeActionParameters.java" startLine="277" startPosition="34" endLine="278" endPosition="70" />
-    <nodeInfo nodeId="8666365535672334764" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="279" startPosition="57" endLine="280" endPosition="55" />
-    <nodeInfo nodeId="8666365535672334773" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="281" startPosition="5" endLine="282" endPosition="24" />
-    <nodeInfo nodeId="8666365535672334782" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeActionParameters.java" startLine="285" startPosition="42" endLine="286" endPosition="86" />
-    <nodeInfo nodeId="8666365535672334795" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="287" startPosition="56" endLine="288" endPosition="54" />
-    <nodeInfo nodeId="8666365535672334804" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="289" startPosition="5" endLine="290" endPosition="23" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="234" startPosition="28" endLine="235" endPosition="39" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="235" startPosition="39" endLine="236" endPosition="118" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="236" startPosition="118" endLine="237" endPosition="34" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="238" startPosition="27" endLine="239" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="239" startPosition="38" endLine="240" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="241" startPosition="27" endLine="242" endPosition="44" />
+    <nodeInfo nodeId="48557965018878427" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" fileName="MakeActionParameters.java" startLine="241" startPosition="27" endLine="242" endPosition="44" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="242" startPosition="44" endLine="243" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="243" startPosition="38" endLine="244" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="245" startPosition="27" endLine="246" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="246" startPosition="38" endLine="247" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="248" startPosition="27" endLine="249" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="249" startPosition="38" endLine="250" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="251" startPosition="28" endLine="252" endPosition="39" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="252" startPosition="39" endLine="253" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="254" startPosition="28" endLine="255" endPosition="74" />
+    <nodeInfo nodeId="4175026531914353722" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="254" startPosition="28" endLine="255" endPosition="74" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="255" startPosition="74" endLine="256" endPosition="39" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="256" startPosition="39" endLine="257" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="258" startPosition="28" endLine="259" endPosition="39" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="259" startPosition="39" endLine="260" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="261" startPosition="28" endLine="262" endPosition="42" />
+    <nodeInfo nodeId="4175026531914353748" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="261" startPosition="28" endLine="262" endPosition="42" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="262" startPosition="42" endLine="263" endPosition="39" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="263" startPosition="39" endLine="264" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="265" startPosition="28" endLine="266" endPosition="107" />
+    <nodeInfo nodeId="4175026531914353760" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="265" startPosition="28" endLine="266" endPosition="107" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="266" startPosition="107" endLine="267" endPosition="38" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="267" startPosition="38" endLine="268" endPosition="28" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="MakeActionParameters.java" startLine="269" startPosition="28" endLine="270" endPosition="37" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="272" startPosition="31" endLine="273" endPosition="29" />
+    <nodeInfo nodeId="8666365535672334751" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeActionParameters.java" startLine="282" startPosition="34" endLine="283" endPosition="70" />
+    <nodeInfo nodeId="8666365535672334764" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="284" startPosition="57" endLine="285" endPosition="55" />
+    <nodeInfo nodeId="8666365535672334773" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="286" startPosition="5" endLine="287" endPosition="24" />
+    <nodeInfo nodeId="8666365535672334782" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeActionParameters.java" startLine="290" startPosition="42" endLine="291" endPosition="86" />
+    <nodeInfo nodeId="8666365535672334795" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="292" startPosition="56" endLine="293" endPosition="54" />
+    <nodeInfo nodeId="8666365535672334804" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="294" startPosition="5" endLine="295" endPosition="23" />
     <nodeInfo nodeId="3835800809904095979" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="54" startPosition="10" endLine="56" endPosition="5" />
     <nodeInfo nodeId="4175026531914353607" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="MakeActionParameters.java" startLine="130" startPosition="74" endLine="133" endPosition="29" />
-    <nodeInfo nodeId="8666365535672334762" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="278" startPosition="70" endLine="281" endPosition="5" />
-    <nodeInfo nodeId="8666365535672334793" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="286" startPosition="86" endLine="289" endPosition="5" />
+    <nodeInfo nodeId="8666365535672334762" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="283" startPosition="70" endLine="286" endPosition="5" />
+    <nodeInfo nodeId="8666365535672334793" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="291" startPosition="86" endLine="294" endPosition="5" />
     <nodeInfo nodeId="8666365535672310914" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="39" startPosition="43" endLine="43" endPosition="7" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="83" startPosition="27" endLine="87" endPosition="23" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="93" startPosition="28" endLine="97" endPosition="23" />
     <nodeInfo nodeId="4175026531914353648" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="MakeActionParameters.java" startLine="138" startPosition="141" endLine="142" endPosition="0" />
     <nodeInfo nodeId="4175026531914353668" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Comparable;" fileName="MakeActionParameters.java" startLine="170" startPosition="63" endLine="174" endPosition="0" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="191" startPosition="27" endLine="195" endPosition="23" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="198" startPosition="27" endLine="202" endPosition="23" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="205" startPosition="27" endLine="209" endPosition="23" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="212" startPosition="28" endLine="216" endPosition="23" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="219" startPosition="28" endLine="223" endPosition="23" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="195" startPosition="27" endLine="199" endPosition="23" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="202" startPosition="27" endLine="206" endPosition="23" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="209" startPosition="27" endLine="213" endPosition="23" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="216" startPosition="28" endLine="220" endPosition="23" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="223" startPosition="28" endLine="227" endPosition="23" />
     <nodeInfo nodeId="4175026531914353642" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="137" startPosition="42" endLine="142" endPosition="48" />
     <nodeInfo nodeId="4175026531914353517" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeActionParameters#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/List;Ljetbrains/mps/smodel/SModelDescriptor;Ljava/util/List;Ljetbrains/mps/project/IModule;)V" fileName="MakeActionParameters.java" startLine="29" startPosition="0" endLine="36" endPosition="3" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="101" startPosition="27" endLine="108" endPosition="23" />
     <nodeInfo nodeId="4175026531914353600" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="129" startPosition="43" endLine="136" endPosition="27" />
     <nodeInfo nodeId="4175026531914353640" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="136" startPosition="27" endLine="143" endPosition="27" />
-    <nodeInfo nodeId="8666365535672311048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moduleToMake#()Ljetbrains/mps/project/IModule;" fileName="MakeActionParameters.java" startLine="276" startPosition="0" endLine="284" endPosition="0" />
-    <nodeInfo nodeId="8666365535672311054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelToMake#()Ljetbrains/mps/smodel/SModelDescriptor;" fileName="MakeActionParameters.java" startLine="284" startPosition="0" endLine="292" endPosition="0" />
+    <nodeInfo nodeId="8666365535672311048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moduleToMake#()Ljetbrains/mps/project/IModule;" fileName="MakeActionParameters.java" startLine="281" startPosition="0" endLine="289" endPosition="0" />
+    <nodeInfo nodeId="8666365535672311054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelToMake#()Ljetbrains/mps/smodel/SModelDescriptor;" fileName="MakeActionParameters.java" startLine="289" startPosition="0" endLine="297" endPosition="0" />
     <nodeInfo nodeId="8666365535672310936" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="MakeActionParameters.java" startLine="45" startPosition="48" endLine="56" endPosition="5" />
     <nodeInfo nodeId="4175026531914353598" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="MakeActionParameters.java" startLine="128" startPosition="75" endLine="145" endPosition="0" />
     <nodeInfo nodeId="4175026531914353597" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="MakeActionParameters.java" startLine="127" startPosition="56" endLine="145" endPosition="25" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="MakeActionParameters.java" startLine="126" startPosition="27" endLine="145" endPosition="25" />
     <nodeInfo nodeId="8666365535672290261" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionText#(Z)Ljava/lang/String;" fileName="MakeActionParameters.java" startLine="37" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="MakeActionParameters.java" startLine="185" startPosition="20" endLine="266" endPosition="19" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="MakeActionParameters.java" startLine="183" startPosition="46" endLine="267" endPosition="31" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="MakeActionParameters.java" startLine="189" startPosition="20" endLine="271" endPosition="19" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="MakeActionParameters.java" startLine="187" startPosition="46" endLine="272" endPosition="31" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" fileName="MakeActionParameters.java" startLine="75" startPosition="20" endLine="162" endPosition="19" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="MakeActionParameters.java" startLine="182" startPosition="0" endLine="270" endPosition="0" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="MakeActionParameters.java" startLine="186" startPosition="0" endLine="275" endPosition="0" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="MakeActionParameters.java" startLine="73" startPosition="46" endLine="163" endPosition="31" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="179" startPosition="49" endLine="270" endPosition="14" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="183" startPosition="49" endLine="275" endPosition="14" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="MakeActionParameters.java" startLine="72" startPosition="0" endLine="166" endPosition="0" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="MakeActionParameters.java" startLine="178" startPosition="42" endLine="272" endPosition="0" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="177" startPosition="72" endLine="272" endPosition="10" />
-    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="176" startPosition="109" endLine="274" endPosition="0" />
-    <nodeInfo nodeId="4175026531914353689" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="175" startPosition="101" endLine="274" endPosition="24" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="MakeActionParameters.java" startLine="182" startPosition="42" endLine="277" endPosition="0" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="181" startPosition="72" endLine="277" endPosition="10" />
+    <nodeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="180" startPosition="183" endLine="279" endPosition="0" />
+    <nodeInfo nodeId="4175026531914353689" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="179" startPosition="101" endLine="279" endPosition="24" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="64" startPosition="56" endLine="166" endPosition="14" />
+    <nodeInfo nodeId="48557965018867884" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="arrangeByModule#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="177" startPosition="0" endLine="281" endPosition="0" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="MakeActionParameters.java" startLine="63" startPosition="49" endLine="168" endPosition="0" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MakeActionParameters.java" startLine="62" startPosition="52" endLine="168" endPosition="10" />
     <nodeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="61" startPosition="123" endLine="170" endPosition="0" />
-    <nodeInfo nodeId="4175026531914353559" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeActionParameters.java" startLine="60" startPosition="68" endLine="174" endPosition="87" />
-    <nodeInfo nodeId="4175026531914353548" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInput#(Z)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="59" startPosition="0" endLine="276" endPosition="0" />
+    <nodeInfo nodeId="4175026531914353559" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MakeActionParameters.java" startLine="60" startPosition="68" endLine="174" endPosition="13" />
+    <nodeInfo nodeId="4175026531914353548" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInput#(Z)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="59" startPosition="0" endLine="177" endPosition="0" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="123" startPosition="27" endLine="123" endPosition="27" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="148" startPosition="27" endLine="148" endPosition="27" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="151" startPosition="27" endLine="151" endPosition="27" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="154" startPosition="27" endLine="154" endPosition="27" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="157" startPosition="28" endLine="157" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="234" startPosition="27" endLine="234" endPosition="27" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="237" startPosition="27" endLine="237" endPosition="27" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="240" startPosition="27" endLine="240" endPosition="27" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="243" startPosition="27" endLine="243" endPosition="27" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="246" startPosition="27" endLine="246" endPosition="27" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="253" startPosition="28" endLine="253" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="238" startPosition="27" endLine="238" endPosition="27" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="245" startPosition="27" endLine="245" endPosition="27" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="248" startPosition="27" endLine="248" endPosition="27" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="251" startPosition="28" endLine="251" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="258" startPosition="28" endLine="258" endPosition="28" />
     <scopeInfo nodeId="8666365535672310937" fileName="MakeActionParameters.java" startLine="46" startPosition="24" endLine="47" endPosition="117" />
     <scopeInfo nodeId="8666365535672310972" fileName="MakeActionParameters.java" startLine="48" startPosition="63" endLine="49" endPosition="35" />
     <scopeInfo nodeId="8666365535672310982" fileName="MakeActionParameters.java" startLine="50" startPosition="32" endLine="51" endPosition="183" />
     <scopeInfo nodeId="8666365535672311021" fileName="MakeActionParameters.java" startLine="52" startPosition="65" endLine="53" endPosition="36" />
     <scopeInfo nodeId="3835800809904095980" fileName="MakeActionParameters.java" startLine="54" startPosition="12" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="81" startPosition="27" endLine="82" endPosition="130" />
-    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="91" startPosition="28" endLine="92" endPosition="118" />
+    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="81" startPosition="27" endLine="82" endPosition="129" />
+    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="91" startPosition="28" endLine="92" endPosition="117" />
     <scopeInfo nodeId="4175026531914353612" fileName="MakeActionParameters.java" startLine="131" startPosition="106" endLine="132" endPosition="158" />
     <scopeInfo nodeId="4175026531914353623" fileName="MakeActionParameters.java" startLine="134" startPosition="81" endLine="135" endPosition="186" />
     <scopeInfo nodeId="4175026531914353649" fileName="MakeActionParameters.java" startLine="139" startPosition="74" endLine="140" endPosition="153" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="160" startPosition="28" endLine="161" endPosition="37" />
     <scopeInfo nodeId="4175026531914353669" fileName="MakeActionParameters.java" startLine="171" startPosition="58" endLine="172" endPosition="50" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="249" startPosition="28" endLine="250" endPosition="74" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="256" startPosition="28" endLine="257" endPosition="42" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="260" startPosition="28" endLine="261" endPosition="107" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="264" startPosition="28" endLine="265" endPosition="37" />
-    <scopeInfo nodeId="8666365535672334763" fileName="MakeActionParameters.java" startLine="279" startPosition="57" endLine="280" endPosition="55" />
-    <scopeInfo nodeId="8666365535672334794" fileName="MakeActionParameters.java" startLine="287" startPosition="56" endLine="288" endPosition="54" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="241" startPosition="27" endLine="242" endPosition="44" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="254" startPosition="28" endLine="255" endPosition="74" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="261" startPosition="28" endLine="262" endPosition="42" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="265" startPosition="28" endLine="266" endPosition="107" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="269" startPosition="28" endLine="270" endPosition="37" />
+    <scopeInfo nodeId="8666365535672334763" fileName="MakeActionParameters.java" startLine="284" startPosition="57" endLine="285" endPosition="55" />
+    <scopeInfo nodeId="8666365535672334794" fileName="MakeActionParameters.java" startLine="292" startPosition="56" endLine="293" endPosition="54" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="78" startPosition="28" endLine="80" endPosition="35" />
-    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="84" startPosition="80" endLine="86" endPosition="30" />
-    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="94" startPosition="79" endLine="96" endPosition="30" />
+    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="84" startPosition="79" endLine="86" endPosition="30" />
+    <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="94" startPosition="78" endLine="96" endPosition="30" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="102" startPosition="69" endLine="104" endPosition="30" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="105" startPosition="76" endLine="107" endPosition="30" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="123" startPosition="27" endLine="125" endPosition="28" />
@@ -390,43 +393,43 @@
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="151" startPosition="27" endLine="153" endPosition="28" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="154" startPosition="27" endLine="156" endPosition="28" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="157" startPosition="28" endLine="159" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="188" startPosition="28" endLine="190" endPosition="35" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="192" startPosition="40" endLine="194" endPosition="30" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="199" startPosition="49" endLine="201" endPosition="30" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="206" startPosition="49" endLine="208" endPosition="30" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="213" startPosition="102" endLine="215" endPosition="30" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="220" startPosition="49" endLine="222" endPosition="30" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="234" startPosition="27" endLine="236" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="237" startPosition="27" endLine="239" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="240" startPosition="27" endLine="242" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="243" startPosition="27" endLine="245" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="246" startPosition="27" endLine="248" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="253" startPosition="28" endLine="255" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="192" startPosition="28" endLine="194" endPosition="35" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="196" startPosition="40" endLine="198" endPosition="30" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="203" startPosition="49" endLine="205" endPosition="30" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="210" startPosition="49" endLine="212" endPosition="30" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="217" startPosition="102" endLine="219" endPosition="30" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="224" startPosition="49" endLine="226" endPosition="30" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="238" startPosition="27" endLine="240" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="245" startPosition="27" endLine="247" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="248" startPosition="27" endLine="250" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="251" startPosition="28" endLine="253" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="258" startPosition="28" endLine="260" endPosition="28" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="111" startPosition="27" endLine="114" endPosition="34" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="115" startPosition="28" endLine="118" endPosition="34" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="119" startPosition="28" endLine="122" endPosition="34" />
     <scopeInfo nodeId="4175026531914353606" fileName="MakeActionParameters.java" startLine="130" startPosition="74" endLine="133" endPosition="29" />
     <scopeInfo nodeId="4175026531914353607" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="MakeActionParameters.java" startLine="130" startPosition="74" endLine="133" endPosition="29" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="226" startPosition="27" endLine="229" endPosition="34" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="230" startPosition="28" endLine="233" endPosition="34" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="249" startPosition="28" endLine="252" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="256" startPosition="28" endLine="259" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="260" startPosition="28" endLine="263" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="230" startPosition="27" endLine="233" endPosition="34" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="234" startPosition="28" endLine="237" endPosition="34" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="241" startPosition="27" endLine="244" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="254" startPosition="28" endLine="257" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="261" startPosition="28" endLine="264" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="265" startPosition="28" endLine="268" endPosition="28" />
     <scopeInfo nodeId="4175026531914353648" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" fileName="MakeActionParameters.java" startLine="138" startPosition="141" endLine="142" endPosition="0" />
     <scopeInfo nodeId="4175026531914353668" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Comparable;" fileName="MakeActionParameters.java" startLine="170" startPosition="63" endLine="174" endPosition="0" />
     <scopeInfo nodeId="4175026531914353520" fileName="MakeActionParameters.java" startLine="30" startPosition="154" endLine="35" endPosition="27" />
     <scopeInfo nodeId="4175026531914353641" fileName="MakeActionParameters.java" startLine="137" startPosition="42" endLine="142" endPosition="48" />
-    <scopeInfo nodeId="8666365535672311051" fileName="MakeActionParameters.java" startLine="277" startPosition="34" endLine="282" endPosition="24">
+    <scopeInfo nodeId="8666365535672311051" fileName="MakeActionParameters.java" startLine="282" startPosition="34" endLine="287" endPosition="24">
       <varInfo nodeId="8666365535672334752" varName="modulesSeq" />
     </scopeInfo>
-    <scopeInfo nodeId="8666365535672311057" fileName="MakeActionParameters.java" startLine="285" startPosition="42" endLine="290" endPosition="23">
+    <scopeInfo nodeId="8666365535672311057" fileName="MakeActionParameters.java" startLine="290" startPosition="42" endLine="295" endPosition="23">
       <varInfo nodeId="8666365535672334783" varName="modelsSeq" />
     </scopeInfo>
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="191" startPosition="27" endLine="197" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="198" startPosition="27" endLine="204" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="205" startPosition="27" endLine="211" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="212" startPosition="28" endLine="218" endPosition="28" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="219" startPosition="28" endLine="225" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="195" startPosition="27" endLine="201" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="202" startPosition="27" endLine="208" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="209" startPosition="27" endLine="215" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="216" startPosition="28" endLine="222" endPosition="28" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="223" startPosition="28" endLine="229" endPosition="28" />
     <scopeInfo nodeId="4175026531914353517" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeActionParameters#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/List;Ljetbrains/mps/smodel/SModelDescriptor;Ljava/util/List;Ljetbrains/mps/project/IModule;)V" fileName="MakeActionParameters.java" startLine="29" startPosition="0" endLine="36" endPosition="3">
       <varInfo nodeId="4175026531914353521" varName="models" />
       <varInfo nodeId="4175026531914353533" varName="cmodule" />
@@ -436,8 +439,8 @@
     </scopeInfo>
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="83" startPosition="27" endLine="90" endPosition="28" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="93" startPosition="28" endLine="100" endPosition="28" />
-    <scopeInfo nodeId="8666365535672311048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moduleToMake#()Ljetbrains/mps/project/IModule;" fileName="MakeActionParameters.java" startLine="276" startPosition="0" endLine="284" endPosition="0" />
-    <scopeInfo nodeId="8666365535672311054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelToMake#()Ljetbrains/mps/smodel/SModelDescriptor;" fileName="MakeActionParameters.java" startLine="284" startPosition="0" endLine="292" endPosition="0" />
+    <scopeInfo nodeId="8666365535672311048" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moduleToMake#()Ljetbrains/mps/project/IModule;" fileName="MakeActionParameters.java" startLine="281" startPosition="0" endLine="289" endPosition="0" />
+    <scopeInfo nodeId="8666365535672311054" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelToMake#()Ljetbrains/mps/smodel/SModelDescriptor;" fileName="MakeActionParameters.java" startLine="289" startPosition="0" endLine="297" endPosition="0" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="101" startPosition="27" endLine="110" endPosition="28" />
     <scopeInfo nodeId="4175026531914353599" fileName="MakeActionParameters.java" startLine="129" startPosition="43" endLine="143" endPosition="27" />
     <scopeInfo nodeId="4175026531914353598" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="MakeActionParameters.java" startLine="128" startPosition="75" endLine="145" endPosition="0" />
@@ -451,37 +454,42 @@
     <scopeInfo nodeId="8666365535672290261" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionText#(Z)Ljava/lang/String;" fileName="MakeActionParameters.java" startLine="37" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="8666365535672311042" varName="cleanMake" />
     </scopeInfo>
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="185" startPosition="20" endLine="266" endPosition="19" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="183" startPosition="46" endLine="268" endPosition="29" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="189" startPosition="20" endLine="271" endPosition="19" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="187" startPosition="46" endLine="273" endPosition="29" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="75" startPosition="20" endLine="162" endPosition="19" />
-    <scopeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="MakeActionParameters.java" startLine="182" startPosition="0" endLine="270" endPosition="0" />
+    <scopeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="MakeActionParameters.java" startLine="186" startPosition="0" endLine="275" endPosition="0" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="73" startPosition="46" endLine="164" endPosition="29" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="179" startPosition="49" endLine="270" endPosition="14" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="183" startPosition="49" endLine="275" endPosition="14" />
     <scopeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" fileName="MakeActionParameters.java" startLine="72" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="MakeActionParameters.java" startLine="178" startPosition="42" endLine="272" endPosition="0" />
-    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="177" startPosition="72" endLine="272" endPosition="10" />
-    <scopeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="176" startPosition="109" endLine="274" endPosition="0" />
+    <scopeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="MakeActionParameters.java" startLine="182" startPosition="42" endLine="277" endPosition="0" />
+    <scopeInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="181" startPosition="72" endLine="277" endPosition="10" />
+    <scopeInfo nodeId="4175026531914353694" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="180" startPosition="183" endLine="279" endPosition="0" />
+    <scopeInfo nodeId="48557965018867887" fileName="MakeActionParameters.java" startLine="178" startPosition="80" endLine="279" endPosition="24">
+      <varInfo nodeId="4175026531914353685" varName="models" />
+    </scopeInfo>
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="64" startPosition="56" endLine="166" endPosition="14" />
+    <scopeInfo nodeId="48557965018867884" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="arrangeByModule#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="177" startPosition="0" endLine="281" endPosition="0">
+      <varInfo nodeId="48557965018878402" varName="smds" />
+    </scopeInfo>
     <scopeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" fileName="MakeActionParameters.java" startLine="63" startPosition="49" endLine="168" endPosition="0" />
     <scopeInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="62" startPosition="52" endLine="168" endPosition="10" />
     <scopeInfo nodeId="4175026531914353568" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="61" startPosition="123" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="4175026531914353551" fileName="MakeActionParameters.java" startLine="60" startPosition="68" endLine="274" endPosition="24">
-      <varInfo nodeId="4175026531914353685" varName="models" />
+    <scopeInfo nodeId="4175026531914353551" fileName="MakeActionParameters.java" startLine="60" startPosition="68" endLine="175" endPosition="33">
       <varInfo nodeId="4175026531914353560" varName="smds" />
     </scopeInfo>
-    <scopeInfo nodeId="4175026531914353548" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInput#(Z)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="59" startPosition="0" endLine="276" endPosition="0">
+    <scopeInfo nodeId="4175026531914353548" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectInput#(Z)Ljava/lang/Iterable;" fileName="MakeActionParameters.java" startLine="59" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="4175026531914353556" varName="dirtyOnly" />
     </scopeInfo>
     <unitInfo nodeId="4175026531914353648" fileName="MakeActionParameters.java" startLine="138" startPosition="107" endLine="142" endPosition="29" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$5" />
     <unitInfo nodeId="4175026531914353668" fileName="MakeActionParameters.java" startLine="170" startPosition="17" endLine="174" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$2" />
     <unitInfo nodeId="4175026531914353598" fileName="MakeActionParameters.java" startLine="128" startPosition="63" endLine="145" endPosition="23" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$4" />
-    <unitInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="180" startPosition="23" endLine="270" endPosition="13" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$5" />
-    <unitInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="178" startPosition="19" endLine="272" endPosition="9" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$4" />
-    <unitInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="176" startPosition="64" endLine="274" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$3" />
+    <unitInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="184" startPosition="23" endLine="275" endPosition="13" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$5" />
+    <unitInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="182" startPosition="19" endLine="277" endPosition="9" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$4" />
+    <unitInfo nodeId="4175026531914353694" fileName="MakeActionParameters.java" startLine="180" startPosition="138" endLine="279" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$3" />
     <unitInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="65" startPosition="23" endLine="166" endPosition="13" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$3" />
     <unitInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="63" startPosition="19" endLine="168" endPosition="9" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$2" />
     <unitInfo nodeId="4175026531914353568" fileName="MakeActionParameters.java" startLine="61" startPosition="85" endLine="170" endPosition="5" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters$1" />
-    <unitInfo nodeId="4175026531914353515" fileName="MakeActionParameters.java" startLine="23" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
+    <unitInfo nodeId="4175026531914353515" fileName="MakeActionParameters.java" startLine="23" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeActionParameters" />
   </root>
   <root nodeId="4175026531914406520">
     <nodeInfo nodeId="4175026531914406531" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="context" fileName="MakeActionImpl.java" startLine="38" startPosition="29" endLine="39" endPosition="36" />
