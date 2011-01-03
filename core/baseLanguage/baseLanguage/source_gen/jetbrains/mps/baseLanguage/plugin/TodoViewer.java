@@ -121,7 +121,6 @@ public class TodoViewer extends JPanel {
       return Icons.CLOSED_FOLDER;
     }
 
-    @Override
     public List<CategoryKind> getCategoryKinds() {
       return Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
     }
