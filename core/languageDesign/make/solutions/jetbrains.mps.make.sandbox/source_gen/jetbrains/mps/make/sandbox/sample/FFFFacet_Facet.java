@@ -121,9 +121,9 @@ public class FFFFacet_Facet implements IFacet {
           switch (0) {
             case 0:
 
-              monitor.currentProgress().beginWork("ASDF", 10, monitor.currentProgress().workLeft());
-              monitor.currentProgress().advanceWork("ASDF", 10);
-              monitor.currentProgress().finishWork("ASDF");
+              monitor.currentProgress().beginWork("Foobar", 10, monitor.currentProgress().workLeft());
+              monitor.currentProgress().advanceWork("Foobar", 10);
+              monitor.currentProgress().finishWork("Foobar");
 
             default:
               return new IResult.SUCCESS(_output_chixuw_a0b);

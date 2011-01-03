@@ -7,12 +7,15 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
+  <language namespace="dc54e1b2-86b3-49d2-9014-a76af17af22a(jetbrains.mps.make.outlook)" />
+  <import index="1u06" modelUID="r:aa4df85a-48f0-4531-a9c6-bb42f911e10f(jetbrains.mps.make.facet.plugin)" version="-1" />
   <import index="vvvw" modelUID="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" version="1" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="q9ra" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="hs7a" modelUID="r:592314bc-6729-4503-84dc-fd04330640bd(jetbrains.mps.make.sandbox.sample)" version="-1" implicit="yes" />
+  <import index="z5g5" modelUID="r:c2ffe851-b1b7-4bfa-aad8-33ebdf91b115(jetbrains.mps.make.outlook.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="6418371274763153153">
       <property name="name" nameId="tpck.1169194664001" value="FFFFacet" />
@@ -25,6 +28,9 @@
     </node>
     <node type="vvvw.FacetDeclaration" typeId="vvvw.6418371274763029523" id="127305800529643681">
       <property name="name" nameId="tpck.1169194664001" value="GGG" />
+    </node>
+    <node type="z5g5.Outlook" typeId="z5g5.5608160002100057298" id="5608160002100096669">
+      <property name="name" nameId="tpck.1169194664001" value="outlook1" />
     </node>
   </roots>
   <root id="6418371274763153153">
@@ -73,7 +79,7 @@
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="505095865854424943">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5898308035039018853" />
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.BeginWorkStatement" typeId="q9ra.187226666892683650" id="3297237684108626081">
-              <property name="work" nameId="q9ra.187226666892820016" value="ASDF" />
+              <property name="work" value="ASDF" />
               <property name="workName" nameId="q9ra.682890046602602769" value="Foobar" />
               <node role="expected" roleId="q9ra.187226666892740070" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626085">
                 <property name="value" nameId="tpee.1068580320021" value="10" />
@@ -81,14 +87,14 @@
               <node role="ofTotal" roleId="q9ra.187226666892740071" type="q9ra.AllWorkLeftExpression" typeId="q9ra.3297237684108627658" id="5898308035038932579" />
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.AdvanceWorkStatement" typeId="q9ra.187226666892683652" id="3297237684108626087">
-              <property name="work" nameId="q9ra.187226666892820016" value="ASDF" />
+              <property name="work" value="ASDF" />
               <link role="workStatement" roleId="q9ra.682890046602395482" targetNodeId="3297237684108626081" />
               <node role="amount" roleId="q9ra.187226666892735700" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3297237684108626089">
                 <property name="value" nameId="tpee.1068580320021" value="10" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="q9ra.FinishWorkStatement" typeId="q9ra.187226666892683655" id="3297237684108626091">
-              <property name="work" nameId="q9ra.187226666892820016" value="ASDF" />
+              <property name="work" value="ASDF" />
               <link role="workStatement" roleId="q9ra.682890046602397405" targetNodeId="3297237684108626081" />
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="682890046602567448" />
@@ -272,5 +278,13 @@
     </node>
   </root>
   <root id="127305800529643681" />
+  <root id="5608160002100096669">
+    <node role="facet" roleId="z5g5.5608160002100058529" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="5608160002100096671">
+      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="127305800529643681" resolveInfo="GGG" />
+    </node>
+    <node role="facet" roleId="z5g5.5608160002100058529" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="5608160002100096673">
+      <link role="facet" roleId="vvvw.6447445394688422643" targetNodeId="1u06.4328738523548357342" resolveInfo="JavaCompile" />
+    </node>
+  </root>
 </model>
 

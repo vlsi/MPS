@@ -22,10 +22,12 @@
       <solutionPath path="${project}/solutions/jetbrains.mps.make.tests/jetbrains.mps.make.tests.msd" />
       <solutionPath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
       <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
+      <solutionPath path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/facet/facet.mpl" />
       <languagePath path="${project}/languages/script/script.mpl" folder="" />
+      <languagePath path="${project}/languages/outlook/outlook.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
