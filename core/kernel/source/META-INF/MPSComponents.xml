@@ -345,10 +345,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.project.listener.AbstractModuleAdjuster</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.project.listener.AbstractModuleWorkbenchAdjuster</implementation-class>
     </component>
 

@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.listener;
+package jetbrains.mps.ide.project.listener;
 
 import jetbrains.mps.baseLanguage.unitTest.structure.UnitTest_Language;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.listener.ModelCreationListener;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class TestsModelCreationListener extends ModelCreationListener {
   public boolean isApplicable(SModelDescriptor model) {
