@@ -29,22 +29,77 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
     final int maxRepetitions = 1000000;
 
-    long refTime = 0;
-    for (int count=3; count>0; --count) {
-      refTime += computePerformanceBenchmark(maxThreads);
-    }
+    long refTime = computeMedian(new LongProducer() {
+      @Override
+      public long produce() {
+        return computePerformanceBenchmark(maxThreads);
+      }
+    });
 
-    long time = 0;
-    for (int count=3; count>0; --count) {
-      time += loadTest(maxObjects, maxThreads, maxRepetitions);
-    }
+    long time = computeMedian(new LongProducer() {
+      @Override
+      public long produce() {
+        return loadTestNoOverflow(maxObjects, maxThreads, maxRepetitions);
+      }
+    });
 
     double ratio = time / (double) refTime;
 
     Assert.assertTrue("Interner perfomance is not within bounds: "+ratio,  0.45 < ratio && ratio < 1.95);
   }
 
-  private long loadTest(final int maxObjects, final int maxThreads, final int maxRepetitions) {
+  @Test
+  public void stressTestWithRandomStrings() {
+    final int maxObjects = 2000;
+    final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
+    final int maxRepetitions = 1000;
+
+    long refTime = computeMedian(new LongProducer() {
+      @Override
+      public long produce() {
+        return computePerformanceBenchmark(maxThreads);
+      }
+    });
+
+    long time = computeMedian(new LongProducer() {
+      @Override
+      public long produce() {
+        return loadTestWithOverflow(maxObjects, maxThreads, maxRepetitions);
+      }
+    });
+
+    double ratio = time / (double) refTime;
+
+    Assert.assertTrue("Interner perfomance is not within bounds: "+ratio,  0.45 < ratio && ratio < 1.95);
+  }
+
+  @Test
+  public void stressTestWithSimilarStrings() {
+    final int maxObjects = 5000;
+    final int maxThreads = Runtime.getRuntime().availableProcessors() * 20;
+    final int maxRepetitions = 100000;
+
+    long refTime = computeMedian(new LongProducer() {
+      @Override
+      public long produce() {
+        return computePerformanceBenchmark(maxThreads);
+      }
+    });
+
+    long time = computeMedian(new LongProducer() {
+      @Override
+      public long produce() {
+        return loadTestWithSimilarStrings(maxObjects, maxThreads, maxRepetitions);
+      }
+    });
+
+    double ratio = time / (double) refTime;
+
+    Assert.assertTrue("Interner perfomance is not within bounds: " + ratio, 0.45 < ratio && ratio < 1.95);
+  }
+
+
+  private long loadTestNoOverflow(final int maxObjects, final int maxThreads, final int maxRepetitions) {
     final Interner interner = new Interner(maxObjects);
     final long start = System.currentTimeMillis();
 
@@ -73,6 +128,67 @@ public class InternerTest {
     return System.currentTimeMillis() - start;
   }
 
+  private long loadTestWithOverflow(final int maxObjects, final int maxThreads, final int maxRepetitions) {
+    final Interner interner = new Interner(maxObjects);
+    final long start = System.currentTimeMillis();
+
+    runInParallel(maxThreads, new Runnable (){
+        @Override
+        public void run() {
+          Random rnd = new Random ();
+          StringBuilder sb = new StringBuilder();
+          List<String> list = new ArrayList<String>();
+          for (int count=maxObjects*2; count > 0; --count) {
+            sb.setLength(0);
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + 50))); size > 0; --size) {
+              sb.append ((char)(rnd.nextInt(127-32)+32));
+            }
+            list.add (interner.intern(sb.toString()));
+          }
+
+          for (int count= maxRepetitions; count > 0; --count) {
+            String s = list.get(rnd.nextInt(list.size()));
+            Assert.assertEquals(s, interner.intern(s));
+          }
+
+        }
+      });
+
+    return System.currentTimeMillis() - start;
+  }
+
+  private long loadTestWithSimilarStrings(final int maxObjects, final int maxThreads, final int maxRepetitions) {
+    final Interner interner = new Interner(maxObjects);
+    final long start = System.currentTimeMillis();
+
+    final long seed = System.currentTimeMillis();
+    runInParallel(maxThreads, new Runnable (){
+        @Override
+        public void run() {
+          Random rnd = new Random (seed);
+          StringBuilder sb = new StringBuilder();
+          List<String> list = new ArrayList<String>();
+          for (int count=maxObjects*2; count > 0; --count) {
+            sb.setLength(0);
+            for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + 50))); size > 0; --size) {
+              sb.append ((char)(rnd.nextInt(127-32)+32));
+            }
+            list.add (/*interner.intern*/(sb.toString()));
+          }
+
+          rnd = new Random ();
+          for (int count= maxRepetitions; count > 0; --count) {
+            String s = list.get(rnd.nextInt(list.size()));
+            Assert.assertEquals(s, interner.intern(s));
+          }
+
+        }
+      });
+
+    return System.currentTimeMillis() - start;
+  }
+
+
   private void runInParallel (int maxThreads, final Runnable runnable) {
     int threads = maxThreads;
     final RuntimeException[] rex = new RuntimeException[maxThreads];
@@ -95,6 +211,9 @@ public class InternerTest {
           }
           catch (RuntimeException re) {
             rex[reidx] = re;
+          }
+          catch (Error er) {
+            rex[reidx] = new RuntimeException(er);
           }
 
           try {
@@ -123,10 +242,12 @@ public class InternerTest {
       throw rexlist.get(0);
     }
     if (rexlist.size() > 1) {
+      for(RuntimeException re: rexlist) {
+        re.printStackTrace();
+      }
       throw new CompositeRuntimeException(rexlist);
     }
   }
-
 
   private long computePerformanceBenchmark (int maxThreads) {
     long start = System.currentTimeMillis();
@@ -172,6 +293,20 @@ public class InternerTest {
     return alloc + filled;
   }
 
+  private long computeMedian (LongProducer lp) {
+    List<Long> times = new ArrayList<Long>();
+    for (int count=8; count>0; --count) {
+      times.add(lp.produce());
+    }
+    Collections.sort(times);
+    int middle = times.size()/2;
+    return (long) (times.get(middle-1)+times.get(middle))/2;
+  }
+
+  private static interface LongProducer {
+    public long produce();
+  }
+
   public static class CompositeRuntimeException extends RuntimeException {
     private final List<RuntimeException> myCauses;
 
@@ -184,4 +319,5 @@ public class InternerTest {
       return myCauses.toString();
     }
   }
+
 }
