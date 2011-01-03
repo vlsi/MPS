@@ -119,32 +119,46 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_t4g6n2_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_a_0");
-    editorCell.addEditorCell(this.createConstant_t4g6n2_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_t4g6n2_b0(editorContext, node));
-    if (renderingCondition_t4g6n2_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_t4g6n2_c0_0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_t4g6n2_a0(editorContext, node));
+    if (renderingCondition_t4g6n2_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_t4g6n2_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_t4g6n2_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_t4g6n2_c0_0");
+  private EditorCell createCollection_t4g6n2_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_t4g6n2_a0");
+    editorCell.addEditorCell(this.createConstant_t4g6n2_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_t4g6n2_b0a(editorContext, node));
+    if (renderingCondition_t4g6n2_a2a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_t4g6n2_c0a(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_t4g6n2_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_t4g6n2_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     }
-    editorCell.addEditorCell(this.createConstant_t4g6n2_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_t4g6n2_b2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_t4g6n2_c2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_t4g6n2_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_t4g6n2_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_t4g6n2_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_t4g6n2_b0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new NodeMacro_postfix(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    }
     return editorCell;
   }
 
@@ -252,9 +266,9 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_t4g6n2_a0_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_t4g6n2_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$IF$");
-    editorCell.setCellId("Constant_t4g6n2_a0_0");
+    editorCell.setCellId("Constant_t4g6n2_a0a");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -265,20 +279,20 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IfMacro_Editor.IfMacro_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IfMacro_Editor.IfMacro_component_cellMenu_a0a0a()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_t4g6n2_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_t4g6n2_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_t4g6n2_a2a");
+    editorCell.setCellId("Constant_t4g6n2_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_t4g6n2_b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_t4g6n2_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$ELSE$");
-    editorCell.setCellId("Constant_t4g6n2_b2a");
+    editorCell.setCellId("Constant_t4g6n2_a1a");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -343,7 +357,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_t4g6n2_c2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_t4g6n2_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("alternativeConsequence");
     provider.setNoTargetText("<no alternativeConsequence>");
@@ -352,6 +366,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BRACKETS, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -383,7 +398,11 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_t4g6n2_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_t4g6n2_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "alternativeConsequence", true) != null);
+  }
+
+  private static boolean renderingCondition_t4g6n2_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "alternativeConsequence", true) != null);
   }
 
@@ -421,10 +440,10 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class IfMacro_component_cellMenu_a0a0 implements SubstituteInfoPart {
+  public static class IfMacro_component_cellMenu_a0a0a implements SubstituteInfoPart {
     private replace_node_macro myComponent;
 
-    public IfMacro_component_cellMenu_a0a0() {
+    public IfMacro_component_cellMenu_a0a0a() {
       this.myComponent = new replace_node_macro();
     }
 
