@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.util;
 
-import java.lang.ref.ReferenceQueue;
-import java.lang.ref.SoftReference;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Interner {
 
-  private final DumbLRUCache<String> myCache;
+  private final DumbestLRUCache<String> myCache;
 
   public Interner(int size) {
-    myCache = new DumbLRUCache<String>() {
+    myCache = new DumbestLRUCache<String>(size) {
       @Override
       public String canonic(String s) {
         // Ensure we cache only what's necessary!
@@ -40,114 +40,112 @@ public class Interner {
     return myCache.cacheObject(s);
   }
 
+  private static class DumbestLRUCache<K> {
 
-  private static class DumbLRUCache<K> {
+    private static final int DEFAULT_MAX_SIZE = 20000;
+    private static final double FIRST_LEVEL_RATIO = 0.6;
 
-    private ThreadLocal<SubstituteKeyHolder<K>> myThreadKey = new ThreadLocal<SubstituteKeyHolder<K>>() {
-      @Override
-      protected SubstituteKeyHolder<K> initialValue() {
-        return new SubstituteKeyHolder<K>();
-      }
-    };
+    private AtomicInteger roomLeftFirstLevel;
+    private AtomicInteger roomLeftSecondLevel;
 
-    private ConcurrentHashMap<KeyHolder<K>, KeyHolder<K>> myMap = new ConcurrentHashMap<KeyHolder<K>, KeyHolder<K>>();
+    private ConcurrentHashMap<K, K> firstLevelCache;
+    private ConcurrentLinkedQueue<K> firstLevelQueue = new ConcurrentLinkedQueue<K>();
 
-    private ReferenceQueue<K> myRefQueue = new ReferenceQueue<K>();
+    private ConcurrentHashMap<K, K> secondLevelCache;
+    private ConcurrentLinkedQueue<K> secondLevelQueue = new ConcurrentLinkedQueue<K>();
 
-    public K cacheObject(K k) {
-      purge();
+    private ConcurrentHashMap<K, K> transitionalCache = new ConcurrentHashMap<K, K>();
 
-      SubstituteKeyHolder<K> substituteKeyHolder = myThreadKey.get();
-      substituteKeyHolder.myKey = k;
+    private int myMaxSize;
 
-      K res;
-      try {
-        KeyHolder<K> keyHolder = myMap.get(substituteKeyHolder);
-        if (keyHolder == null) {
-          keyHolder = new SoftKeyHolder<K>(canonic(k), myRefQueue);
-          KeyHolder<K> skh = myMap.putIfAbsent(keyHolder, keyHolder);
-          keyHolder = skh != null ? skh : keyHolder;
-        }
-        res = keyHolder.get();
-        assert res.equals(k);
-      }
-      finally {
-        substituteKeyHolder.myKey = null;
-      }
-
-      return res;
+    public DumbestLRUCache (int maxSize) {
+      myMaxSize = maxSize;
+      roomLeftFirstLevel = new AtomicInteger((int)(myMaxSize*FIRST_LEVEL_RATIO));
+      roomLeftSecondLevel = new AtomicInteger((int)(myMaxSize*(1-FIRST_LEVEL_RATIO)));
+      firstLevelCache = new ConcurrentHashMap<K, K>((int)(myMaxSize*FIRST_LEVEL_RATIO));
+      secondLevelCache = new ConcurrentHashMap<K, K>((int)(myMaxSize*(1-FIRST_LEVEL_RATIO)));
     }
 
-    public K canonic(K k) {
+    public DumbestLRUCache () {
+      this(DEFAULT_MAX_SIZE);
+    }
+
+    protected K canonic(K k) {
       return k;
     }
 
-    private void purge() {
-      SoftKeyHolder<K> ref = null;
-      while ((ref = (SoftKeyHolder<K>) myRefQueue.poll()) != null) {
-        myMap.remove(ref);
+    public K cacheObject (K toCache) {
+      K cached = secondLevelCache.get(toCache);
+      if (cached != null) {
+        return cached;
       }
+
+      cached = firstLevelCache.get(toCache);
+      if (cached != null) {
+        return primPromote(toCache, cached);
+      }
+
+      cached = transitionalCache.get(toCache);
+      if (cached != null) {
+        return cached;
+      }
+
+      return primCacheObject(canonic(toCache), toCache);
     }
 
-    private interface KeyHolder<T> {
-      T get();
+    private K primPromote(K toCache, K cached) {
+      K transit = transitionalCache.putIfAbsent(cached, cached);
+      if (transit != null) {
+        return transit;
+      }
+
+      // current thread has a mutex on 'cached'
+      K secondCached = secondLevelCache.putIfAbsent(cached, cached);
+      assert secondCached == null;
+      secondLevelQueue.add(cached);
+
+      boolean removed = firstLevelCache.remove(cached, toCache);
+      assert removed;
+      firstLevelQueue.remove(cached);
+
+      if (roomLeftSecondLevel.get() <= 0) {
+        K toRemove = secondLevelQueue.poll();
+        removed = secondLevelCache.remove(toRemove, toRemove);
+        assert removed;
+
+        primCacheObject(toRemove, toCache);
+      }
+      else {
+        roomLeftSecondLevel.decrementAndGet();
+      }
+      removed = transitionalCache.remove(cached, toCache);
+
+      assert removed;
+      return cached;
     }
 
-    private static class SubstituteKeyHolder<T> implements KeyHolder<T> {
-      T myKey;
-
-      public T get() {
-        return myKey;
+    private K primCacheObject(K canonic, K toCache) {
+      K cached;
+      cached = firstLevelCache.putIfAbsent(canonic, canonic);
+      if (cached != null) {
+        return cached;
       }
 
-      @Override
-      public int hashCode() {
-        return myKey.hashCode();
-      }
+      // current thread has a mutex on 'canonic'
+      firstLevelQueue.add(canonic);
 
-      @Override
-      public boolean equals(Object obj) {
-        if (obj == null) return false;
-        if (obj == this) return true;
-        if (obj instanceof KeyHolder) {
-          return eq(myKey, ((KeyHolder) obj).get());
+      if (roomLeftFirstLevel.get() <= 0) {
+        K toRemove = firstLevelQueue.poll();
+        if (!transitionalCache.contains(toRemove)) {
+          boolean removed = firstLevelCache.remove(toRemove, toRemove);
+          assert removed;
         }
-        return false;
       }
-    }
-
-    private static class SoftKeyHolder<T> extends SoftReference<T> implements KeyHolder<T> {
-      int myHash;
-
-      private SoftKeyHolder(T ref, ReferenceQueue queue) {
-        super(ref, queue);
-        myHash = ref.hashCode();
+      else {
+        roomLeftFirstLevel.decrementAndGet();
       }
 
-      @Override
-      public int hashCode() {
-        return myHash;
-      }
-
-      @Override
-      public T get() {
-        return super.get();
-      }
-
-      @Override
-      public boolean equals(Object obj) {
-        if (obj == null) return false;
-        if (obj == this) return true;
-        if (obj instanceof KeyHolder) {
-          return eq(get(), ((KeyHolder) obj).get());
-        }
-        return false;
-      }
-    }
-
-    private static boolean eq(Object a, Object b) {
-      return a == null ? b == null : a.equals(b);
+      return canonic;
     }
   }
-
 }

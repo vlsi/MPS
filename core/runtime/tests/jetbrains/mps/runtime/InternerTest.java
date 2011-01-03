@@ -119,7 +119,10 @@ public class InternerTest {
         rexlist.add(rex[i]);
       }
     }
-    if (rexlist.size() > 0) {
+    if (rexlist.size() == 1) {
+      throw rexlist.get(0);
+    }
+    if (rexlist.size() > 1) {
       throw new CompositeRuntimeException(rexlist);
     }
   }
