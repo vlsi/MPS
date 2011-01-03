@@ -2,10 +2,6 @@ package jetbrains.mps.stubs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.Processor;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
@@ -20,6 +16,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -411,17 +409,22 @@ public class StubReloadManager implements ApplicationComponent {
 
     private long getTimestamp() {
       //todo this can be rewritten using filesystem listeners
-      VirtualFile file = VirtualFileUtils.getVirtualFile(myStubPath.getPath());
-      if (file == null) return 0L;
-      final long[] timeStamp = {file.getTimeStamp()};
-      VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {
-        public boolean process(VirtualFile virtualFile) {
-          timeStamp[0] = Math.max(timeStamp[0], virtualFile.getTimeStamp());
-          return true;
-        }
-      });
+      IFile path = FileSystem.getInstance().getFileByPath(myStubPath.getPath());
+      if(path == null) return 0L;
+      return getTimestampRecursive(path);
+    }
 
-      return timeStamp[0];
+    private static long getTimestampRecursive(IFile path) {
+      long max = path.lastModified();
+      if(path.isDirectory()) {
+        for(IFile child : path.list()) {
+          long timestamp = getTimestampRecursive(child);
+          if(timestamp > max) {
+            max = timestamp;
+          }
+        }
+      }
+      return max;
     }
 
     private long getManagerTimestamp() {

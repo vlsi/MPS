@@ -453,10 +453,4 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   public <T> T getComponent(Class<T> clazz) {
     return getProject().getComponent(clazz);
   }
-
-  @Deprecated
-  //should be left for compatibility (Project Operations in plugins)
-  public ProjectPluginManager getPluginManager() {
-    return myProject.getComponent(ProjectPluginManager.class);
-  }
 }
