@@ -16,7 +16,7 @@
         <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
       </dependencies>
       <usedDevKits>
-        <usedDevKit>e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.general-purpose)</usedDevKit>
+        <usedDevKit>e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)</usedDevKit>
       </usedDevKits>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
