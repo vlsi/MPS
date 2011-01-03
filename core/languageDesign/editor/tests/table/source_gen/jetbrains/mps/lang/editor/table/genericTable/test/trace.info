@@ -7,6 +7,8 @@
   <unitInfo fileName="InsertRowAfter_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowAfter_Test$TestBody" />
   <unitInfo fileName="RemoveRowFromAfter_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveRowFromAfter_Test$TestBody" />
   <unitInfo fileName="Create_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.Create_Test$TestBody" />
+  <unitInfo fileName="TabNavigationNextLine_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.TabNavigationNextLine_Test$TestBody" />
+  <unitInfo fileName="TabNavigation_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.TabNavigation_Test$TestBody" />
   <unitInfo fileName="RemoveColumn_Test.java" startLine="22" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveColumn_Test$TestBody" />
   <unitInfo fileName="EditCell_Test.java" startLine="20" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.EditCell_Test$TestBody" />
   <unitInfo fileName="RemoveRowFromBefore_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveRowFromBefore_Test" />
@@ -16,8 +18,16 @@
   <unitInfo fileName="InsertRowAfter_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.InsertRowAfter_Test" />
   <unitInfo fileName="RemoveRowFromAfter_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveRowFromAfter_Test" />
   <unitInfo fileName="Create_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.Create_Test" />
+  <unitInfo fileName="TabNavigationNextLine_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.TabNavigationNextLine_Test" />
+  <unitInfo fileName="TabNavigation_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.TabNavigation_Test" />
   <unitInfo fileName="RemoveColumn_Test.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.RemoveColumn_Test" />
   <unitInfo fileName="EditCell_Test.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.genericTable.test.EditCell_Test" />
+  <root nodeId="1626657127781621490">
+    <nodeInfo nodeId="1626657127781667186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TabNavigation_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="116" />
+  </root>
+  <root nodeId="1626657127781667188">
+    <nodeInfo nodeId="1626657127781667236" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="TabNavigationNextLine_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="116" />
+  </root>
   <root nodeId="6170050146384276436">
     <nodeInfo nodeId="6170050146384276463" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Create_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
   </root>
