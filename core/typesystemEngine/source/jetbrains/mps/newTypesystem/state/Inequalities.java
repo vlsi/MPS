@@ -51,7 +51,7 @@ public class Inequalities {
       result = inputsToOutputs.getBySecond(result).iterator().next();
       counter++;
       if (counter == n) {
-        return null; // cycle!
+        return result; // todo cycle!
       }
     }
   }

@@ -252,8 +252,6 @@ public class Equations {
       }
       if (!s.equals(""))result.add(s + entry.getKey());
     }
-    System.out.println(getListPresentation());
-    System.out.println(result);
     return result;
   }
 
