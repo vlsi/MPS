@@ -108,12 +108,12 @@ public class QueriesGenerated {
     return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
-  public static boolean baseMappingRule_Condition_2853323645193762325(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode()));
+  public static boolean baseMappingRule_Condition_2853323645193762321(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "directCall");
   }
 
-  public static boolean baseMappingRule_Condition_2853323645193762321(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode()) && SPropertyOperations.getBoolean(_context.getNode(), "directCall");
+  public static boolean baseMappingRule_Condition_2853323645193762325(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode()));
   }
 
   public static boolean baseMappingRule_Condition_1171416050076(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

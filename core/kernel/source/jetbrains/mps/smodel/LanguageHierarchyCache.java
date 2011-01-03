@@ -20,7 +20,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
@@ -336,8 +335,9 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     void build() {
       for (ConceptDeclaration cd : myLanguage.getConceptDeclarations()) {
         if (!cd.isRoot()) continue;
-        if (!AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(cd.getNode()))
+        if (!SNodeUtil.isDefaultSubstitutable(cd.getNode())) {
           continue;
+        }
 
         String fqName = NameUtil.nodeFQName(cd);
 

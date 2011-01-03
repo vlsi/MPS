@@ -16,4 +16,8 @@ public class SNodeUtil {
   public static String getDetailedPresentation(SNode node) {
     return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getDetailedPresentation_2354269628709769373", new Class[]{SNode.class});
   }
+
+  public static boolean isDefaultSubstitutable(SNode node) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_isDefaultSubstitutable_7429110134803670673", new Class[]{SNode.class});
+  }
 }
