@@ -357,6 +357,10 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6611733346286335531">
       <property name="name" nameId="tpck.1169194664001" value="GoToHelper" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8156047350005475301">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="analyzeStacktrace" />
+      <property name="name" nameId="tpck.1169194664001" value="PrintNodePosition" />
+    </node>
   </roots>
   <root id="1205247737002">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205247768364">
@@ -16737,6 +16741,17 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="8156047350005475301">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8156047350005475303">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8156047350005480585">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6173548178016197729" resolveInfo="PrintNodePosition" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8156047350005480586">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991232446" resolveInfo="EditorInternal" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.8156047350005480588" resolveInfo="printNodePosition" />
     </node>
   </root>
 </model>
