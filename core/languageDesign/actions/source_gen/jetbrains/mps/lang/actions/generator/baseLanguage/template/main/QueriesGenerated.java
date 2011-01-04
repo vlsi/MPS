@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -20,8 +21,8 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.lang.actions.behavior.PastePostProcessor_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.actions.behavior.CopyPreProcessor_Behavior;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -37,6 +38,10 @@ public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1235652996916(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SmartEditorActions")).isNotEmpty();
+  }
+
+  public static boolean baseMappingRule_Condition_5979988948250981389(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "creator", true)), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer");
   }
 
   public static boolean baseMappingRule_Condition_1235754927540(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -164,6 +169,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5948027493682405974(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5979988948250981408(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "createdType", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false));
   }
 
   public static Object referenceMacro_GetReferent_1220274244791(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -352,6 +361,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1235156254022(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "isApplicable", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_5979988948250981423(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "prototypeNode", true) != null;
   }
 
   public static SNode sourceNodeQuery_1172253302099(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -599,6 +612,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5948027493682498298(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "preProcessFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_5979988948250981437(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "prototypeNode", true);
   }
 
   public static Iterable sourceNodesQuery_5771417138871048269(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
