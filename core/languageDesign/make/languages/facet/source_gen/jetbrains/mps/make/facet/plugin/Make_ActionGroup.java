@@ -15,8 +15,8 @@ public class Make_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Make_ActionGroup.this.addParameterizedAction(new MakeOrBuild_Action(true), PluginId.getId("jetbrains.mps.make.facet"), true);
-      Make_ActionGroup.this.addParameterizedAction(new MakeOrBuild_Action(false), PluginId.getId("jetbrains.mps.make.facet"), false);
+      Make_ActionGroup.this.addParameterizedAction(new MakeSelection_Action(false), PluginId.getId("jetbrains.mps.make.facet"), false);
+      Make_ActionGroup.this.addParameterizedAction(new MakeSelection_Action(true), PluginId.getId("jetbrains.mps.make.facet"), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
