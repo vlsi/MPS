@@ -19,7 +19,7 @@ import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.diff.Merger;
 import jetbrains.mps.vcs.diff.Conflict;
-import jetbrains.mps.vcs.diff.changes.Change;
+import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -142,44 +142,6 @@ public class NewMergeView extends JPanel {
     protected void doubleClickOnNode(final SNode node) {
     }
 
-    @Override
-    protected ActionGroup getActionGroupForChanges(final List<Change> changes) {
-
-      BaseAction excludeAction = new BaseAction("Exclude") {
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          for (Change change : changes) {
-            myMerger.excludeChange(change);
-            getExcludetNodes().add(change.getAffectedNodeId());
-          }
-          myMerger.doRebuild(new Runnable() {
-            public void run() {
-              updateView();
-            }
-          });
-
-        }
-      };
-      excludeAction.setDisableOnNoProject(false);
-
-      BaseAction includeAction = new BaseAction("Include") {
-        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-          for (Change change : changes) {
-            myMerger.includeChange(change);
-            getExcludetNodes().remove(change.getAffectedNodeId());
-          }
-          myMerger.doRebuild(new Runnable() {
-            public void run() {
-              updateView();
-            }
-          });
-
-        }
-      };
-      includeAction.setDisableOnNoProject(false);
-
-      return ActionUtils.groupFromActions(excludeAction, includeAction);
-
-    }
   }
 
 

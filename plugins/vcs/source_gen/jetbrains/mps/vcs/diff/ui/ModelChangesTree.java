@@ -34,6 +34,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.diff.changes.*;
+import jetbrains.mps.vcs.diff.changes.AddRootChange;
+import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
+import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
+import jetbrains.mps.vcs.diff.oldchanges.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -131,33 +135,7 @@ class ModelChangesTree extends MPSTree {
       }
     }
 
-    for (AddRootChange ar : CollectionUtil.filter(AddRootChange.class, changes)) {
-      myAddedNodes.add(ar.getAffectedNodeId());
-    }
 
-    for (AddNodeChange an : CollectionUtil.filter(AddNodeChange.class, changes)) {
-      myAddedNodes.add(an.getAffectedNodeId());
-    }
-
-    for (SetNodeChange c : CollectionUtil.filter(SetNodeChange.class, changes)) {
-      myAddedNodes.add(c.getAffectedNodeId());
-    }
-
-    for (SetPropertyChange p : CollectionUtil.filter(SetPropertyChange.class, changes)) {
-      myChangedNodes.add(p.getAffectedNodeId());
-    }
-
-    for (SetReferenceChange r : CollectionUtil.filter(SetReferenceChange.class, changes)) {
-      myChangedNodes.add(r.getAffectedNodeId());
-    }
-
-    for (ChangeConceptChange ch : CollectionUtil.filter(ChangeConceptChange.class, changes)) {
-      myChangedNodes.add(ch.getAffectedNodeId());
-    }
-
-    for (DeleteNodeChange ch : CollectionUtil.filter(DeleteNodeChange.class, changes)) {
-      myDeletedNodes.add(ch.getAffectedNodeId());
-    }
 
     rebuildNow();
     expandRoot();
@@ -176,13 +154,7 @@ class ModelChangesTree extends MPSTree {
             if (nnc.getNodeParent() == null || !myAddedNodes.contains(nnc.getNodeParent())) {
               expandNode(c.getAffectedNodeId());
             }
-          } else if (c instanceof SetPropertyChange ||
-            c instanceof SetReferenceChange) {
-            SNodeId id = c.getAffectedNodeId();
-            if (!myAddedNodes.contains(id)) {
-              expandNode(id);
-            }
-          } else if (c instanceof DeleteNodeChange) {
+          }  else if (c instanceof DeleteNodeChange) {
             //skip
           } else {
             expandNode(c.getAffectedNodeId());
