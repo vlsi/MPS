@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a0lzr48ohbxsg0dyy69lztpxl18ogp0">
+<dependencies version="2" modelHash="c17jpwg9tfhjbwil0zz8haqzkr7bx3j">
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-d210pk8xi3k369xbgop6hfgbxsjqja5" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="21uhs6v5db5ggvkzq7nnnyov21utrw8" />
@@ -21,7 +21,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
-  <source id="7836612869650926685" name="NodeFactories_for_actions_only" hash="68y4m5i0sd03fnipm83wc6l30wbjnri">
+  <source id="7836612869650926685" name="NodeFactories_for_actions_only" hash="-3h3utj8cvfvc5xtz89v6yr5xhreu9wo">
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />

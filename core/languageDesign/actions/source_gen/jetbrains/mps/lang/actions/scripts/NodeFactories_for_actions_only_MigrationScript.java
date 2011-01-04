@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class NodeFactories_for_actions_only_MigrationScript extends BaseMigrationScript {
@@ -29,7 +30,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeCreator") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -55,7 +56,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Concept_NewInstance") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -81,7 +82,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -107,7 +108,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -133,7 +134,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -159,7 +160,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -185,7 +186,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -211,7 +212,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -237,7 +238,7 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public boolean isApplicableInstanceNode(SNode node) {
         LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
-        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+        return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
       public void doUpdateInstanceNode(SNode node) {
