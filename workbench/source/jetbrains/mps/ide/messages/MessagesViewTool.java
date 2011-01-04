@@ -362,7 +362,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
             setExecuteOutsideCommand(true);
           }
 
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent e, Map<String, Object> params) {
             showException(toShow);
           }
         });
