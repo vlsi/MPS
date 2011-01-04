@@ -1962,7 +1962,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "leftExpression", _context.getSourceNode(), true);
             ParenthesisUtil.checkOperationWRTPriority(result);
@@ -1989,7 +1989,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode nodeToProcess = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
               // since BinaryOperations are left-associative we should perform complex LT then 
@@ -2031,7 +2031,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode expr = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Expression");
               SNodeOperations.replaceWithAnother(expr, result);
@@ -2131,7 +2131,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "lValue", _context.getSourceNode(), true);
             return result;
@@ -2157,7 +2157,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode source = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
               // since BaseAssignmentExpressions are right-associative we should LT parent 
@@ -3154,7 +3154,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode type = ExpectedType_FactoryUtil.createExpectedType(_context.getSourceNode());
               if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -3200,7 +3200,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode expression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SubstringExpression");
               SLinkOperations.setTarget(expression, "operand", _context.getSourceNode(), true);
@@ -3228,7 +3228,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "statement", _context.getSourceNode(), true);
             return result;
@@ -3254,7 +3254,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(SNodeOperations.getParent(_context.getSourceNode()), result);
             SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
             return result;
@@ -3280,7 +3280,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
               SNodeOperations.replaceWithAnother(SNodeOperations.getParent(_context.getSourceNode()), statement);
@@ -3538,7 +3538,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
               SNodeOperations.replaceWithAnother(targetExpression, result);
@@ -3920,7 +3920,7 @@ __switch__:
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SLinkOperations.setTarget(result, "expression", SLinkOperations.getTarget(_context.getSourceNode(), "expression", true), true);
             return result;
           }

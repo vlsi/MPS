@@ -23,6 +23,7 @@ import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class QueriesGenerated {
   private static Pattern REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0b = Pattern.compile("(?:-?)\\d+", 0);
@@ -119,7 +120,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "leftOperand", _context.getSourceNode(), true);
             return result;

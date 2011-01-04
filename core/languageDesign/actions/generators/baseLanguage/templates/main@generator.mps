@@ -5439,7 +5439,7 @@
                                             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1238774270909">
                                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1203068955852" resolveInfo="subconcept" />
                                             </node>
-                                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_NewInstance" typeId="tp25.1181949435690" id="1238774270910" />
+                                            <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Concept_NewInstance" typeId="tpdg.7776141288922801652" id="4489250773155196091" />
                                           </node>
                                           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1239568232669" />
                                         </node>
