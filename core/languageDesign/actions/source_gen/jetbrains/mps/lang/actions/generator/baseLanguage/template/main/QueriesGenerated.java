@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
@@ -34,6 +35,16 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class QueriesGenerated {
+  public static boolean createRootRule_Condition_3341893916018742339(final IOperationContext operationContext, final CreateRootRuleContext _context) {
+    if (LanguageAspect.ACTIONS.is(_context.getOriginalInputModel())) {
+      return true;
+    }
+    if (ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.NodeSetupFunction")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.RemoveByConditionPart")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart")).isNotEmpty()) {
+      return true;
+    }
+    return false;
+  }
+
   public static boolean createRootRule_Condition_1221138344773(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.PasteWrapper")).isNotEmpty();
   }
