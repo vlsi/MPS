@@ -50,45 +50,8 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
     EditorCell selectedCell = editorContext.getSelectedCell();
 
-    if (selectedCell != null) {
-      if (selectedCell.isErrorState()) {
-        if (actionType == CellActionType.INSERT ||
-          actionType == CellActionType.INSERT_BEFORE) {
-          if (selectedCell.validate(actionType != CellActionType.INSERT, true)) {
-            return true;
-          }
-        }
-
-        selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
-        if (selectedCell == null) {
-          return true;
-        }
-      }
-    }
-
     // process action
     if (selectedCell != null) {
-      if (selectedCell instanceof EditorCell_Label &&
-        !isLinkCollection(selectedCell) &&
-        (actionType == CellActionType.INSERT || actionType == CellActionType.INSERT_BEFORE)) {
-
-        EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
-
-        if (cellWithRole == null && actionType == CellActionType.INSERT_BEFORE &&
-          selectedCell.isFirstPositionInBigCell() && hasSingleRolesAtLeftBoundary(selectedCell) && selectedCell.getPrevLeaf() != null) {
-          cellWithRole = new ChildrenCollectionFinder(selectedCell.getPrevLeaf(), false).find();
-        }
-
-        if (cellWithRole == null && actionType == CellActionType.INSERT &&
-          selectedCell.isLastPositionInBigCell() && hasSingleRolesAtRightBoundary(selectedCell) && selectedCell.getNextLeaf() != null) {
-          cellWithRole = new ChildrenCollectionFinder(selectedCell.getNextLeaf(), true).find();
-        }
-
-        if (cellWithRole != null && cellWithRole.executeAction(actionType)) {
-          return true;
-        }
-      }
-
       if (actionType != null && actionType != CellActionType.DELETE) {
         if (selectedCell.executeAction(actionType)) {
           return true;
@@ -262,51 +225,5 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     String role = cell.getRole();
     if (role == null) return false;
     return true;
-  }
-
-  private boolean hasSingleRolesAtLeftBoundary(EditorCell cell) {
-    if (!hasSingleRole(cell.getSNode())) return false;
-
-    if (cell.isOnLeftBoundary()) {
-      EditorCell parent = cell.getParent();
-      if (parent == null) {
-        return true;
-      } else {
-        return hasSingleRolesAtLeftBoundary(parent);
-      }
-    }
-
-    return true;
-  }
-
-  private boolean hasSingleRolesAtRightBoundary(final EditorCell cell) {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        if (!hasSingleRole(cell.getSNode())) return false;
-
-        if (cell.isOnRightBoundary()) {
-          EditorCell parent = cell.getParent();
-          if (parent == null) {
-            return true;
-          } else {
-            return hasSingleRolesAtRightBoundary(parent);
-          }
-        }
-
-        return true;
-      }
-    });
-  }
-
-  private boolean hasSingleRole(final SNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        String role = node.getRole_();
-        if (role == null) return false;
-        LinkDeclaration link = node.getParent().getLinkDeclaration(role);
-        if (link == null) return false;
-        return link.getSourceCardinality() == Cardinality._0__1 || link.getSourceCardinality() == Cardinality._1;
-      }
-    });
   }
 }

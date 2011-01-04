@@ -1266,21 +1266,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && noKeysDown(keyEvent)) {
       return CellActionType.DOWN;
     }
-    if (!com.intellij.openapi.util.SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT && noKeysDown(keyEvent)) {
-      return CellActionType.INSERT_BEFORE;
-    }
-    if (com.intellij.openapi.util.SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_ENTER && shiftDown(keyEvent)) {
-      return CellActionType.INSERT_BEFORE;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && noKeysDown(keyEvent)) {
-      EditorCell contextCell = editorContext.getContextCell();
-      if (contextCell != null && contextCell.isFirstCaretPosition()) {
-        if (!contextCell.isLastCaretPosition() || (contextCell instanceof EditorCell_Label && !((EditorCell_Label) contextCell).isLastPositionAllowed())) {
-          return CellActionType.INSERT_BEFORE;
-        }
-      }
-      return CellActionType.INSERT;
-    }
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && shiftDown(keyEvent)) {
       return CellActionType.SELECT_LEFT;
     }

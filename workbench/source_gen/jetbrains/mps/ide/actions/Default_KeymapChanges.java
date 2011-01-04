@@ -54,6 +54,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightInstances_Action", getShortcut("ctrl shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightUsages_Action", getShortcut("ctrl shift F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Home_Action", getShortcut(" HOME"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.InsertBefore_Action", getShortcut(" INSERT"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.Insert_Action", getShortcut(" ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.LanguageProperties_Action", getShortcut("alt ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.LocalEnd_Action", getShortcut("ctrl RIGHT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.LocalHome_Action", getShortcut("ctrl LEFT"));
@@ -109,8 +111,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addComplexShortcut("jetbrains.mps.ide.actions.GoToSolution_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift S")));
     addComplexShortcut("jetbrains.mps.ide.actions.SelectInActionAdapter_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("alt F1")));
     // complex 
-    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_rd());
-    addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_sd());
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_td());
+    addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_ud());
   }
 
   public String getScheme() {
@@ -121,8 +123,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
 
-  public class GoToBookmark_ShortcutChange_qjewi8_rd extends BaseKeymapChanges.ComplexShortcut {
-    public GoToBookmark_ShortcutChange_qjewi8_rd() {
+  public class GoToBookmark_ShortcutChange_qjewi8_td extends BaseKeymapChanges.ComplexShortcut {
+    public GoToBookmark_ShortcutChange_qjewi8_td() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
@@ -132,8 +134,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     }
   }
 
-  public class SetBookmark_ShortcutChange_qjewi8_sd extends BaseKeymapChanges.ComplexShortcut {
-    public SetBookmark_ShortcutChange_qjewi8_sd() {
+  public class SetBookmark_ShortcutChange_qjewi8_ud extends BaseKeymapChanges.ComplexShortcut {
+    public SetBookmark_ShortcutChange_qjewi8_ud() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {

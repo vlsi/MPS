@@ -15,6 +15,8 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.End_Action", getShortcut(" END"), getShortcut("meta RIGHT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GenerationIntentions_Action", getShortcut("ctrl N"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Home_Action", getShortcut(" HOME"), getShortcut("meta LEFT"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.InsertBefore_Action", getShortcut("shift ENTER"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.Insert_Action", getShortcut(" ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.LocalEnd_Action", getShortcut("alt RIGHT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.LocalHome_Action", getShortcut("alt LEFT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("ctrl N"), getShortcut("ctrl ENTER"));

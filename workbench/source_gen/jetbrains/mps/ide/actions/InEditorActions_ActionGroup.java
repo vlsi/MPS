@@ -24,6 +24,8 @@ public class InEditorActions_ActionGroup extends GeneratedActionGroup {
       InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.End_Action");
       InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectUp_Action");
       InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectDown_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Insert_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.InsertBefore_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
