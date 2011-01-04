@@ -40,6 +40,15 @@ public class Interner {
     return myCache.cacheObject(s);
   }
 
+  @Override
+  public String toString() {
+    return "Interner["+myCache.toString()+"]";
+  }
+
+  public int size () {
+    return myCache.size ();
+  }
+
   private static class DumbestLRUCache<K> {
 
     private static final int DEFAULT_MAX_SIZE = 20000;
@@ -70,8 +79,17 @@ public class Interner {
       this(DEFAULT_MAX_SIZE);
     }
 
+    public int size() {
+      return firstLevelCache.size() + secondLevelCache.size();
+    }
+
     protected K canonic(K k) {
       return k;
+    }
+
+    @Override
+    public String toString() {
+      return "LRU["+firstLevelCache.size()+", "+secondLevelCache.size()+"]";
     }
 
     public K cacheObject (K toCache) {
@@ -107,81 +125,67 @@ public class Interner {
 
         return alreadyPromoted;
       }
-      assert !secondLevelQueue.contains(cached);
       secondLevelQueue.add(cached);
 
-      if (firstLevelQueue.remove(cached)) {
-        boolean removed = firstLevelCache.remove(cached, toCache);
-        assert removed;
-        int roomLeft = roomLeftFirstLevel.incrementAndGet();
-//        assert roomLeft >= 0;
+      if (firstLevelCache.remove(cached, toCache)) {
+        roomLeftFirstLevel.incrementAndGet();
       }
-      assert !firstLevelCache.containsKey(cached);
 
       if (roomLeftSecondLevel.decrementAndGet() <= 0) {
+        K toDemote = secondLevelQueue.poll();
+        assert toDemote != null;
 
-        K toRemove = secondLevelQueue.peek();
-        assert toRemove != null;
+        primCacheObject(toDemote, toDemote);
 
-        if (transitionalCache.putIfAbsent(toRemove, toRemove) == null) {
-
-          if (secondLevelQueue.remove(toRemove)) {
-            boolean removed = secondLevelCache.remove(toRemove, toRemove);
-            assert removed;
+        if (transitionalCache.putIfAbsent(toDemote, toDemote) == null) {
+          if (secondLevelCache.remove(toDemote, toDemote)) {
             roomLeftSecondLevel.incrementAndGet();
           }
-          assert !secondLevelCache.containsKey(toRemove);
-
-          boolean removed = transitionalCache.remove(toRemove, toRemove);
-          assert removed;
+          transitionalCache.remove(toDemote, toDemote);
         }
-
-        if (!secondLevelCache.containsKey(toRemove)) {
-          primCacheObject(toRemove, toCache);
+        else {
+          secondLevelQueue.add(toDemote);
         }
       }
 
-      boolean removed = transitionalCache.remove(cached, toCache);
-      assert removed;
-
+      transitionalCache.remove(cached, toCache);
       return cached;
     }
 
     private K primCacheObject(K canonic, K toCache) {
       if (transitionalCache.putIfAbsent(canonic, canonic) == null) {
-        K cached;
-        cached = firstLevelCache.putIfAbsent(canonic, canonic);
-        if (cached != null) {
-          return cached;
+        K alreadyCached = firstLevelCache.putIfAbsent(canonic, canonic);
+
+        if (alreadyCached != null) {
+          boolean removed = transitionalCache.remove(canonic, toCache);
+          assert removed;
+
+          return alreadyCached;
         }
 
         // current thread has a mutex on 'canonic'
         firstLevelQueue.add(canonic);
 
         if (roomLeftFirstLevel.decrementAndGet() <= 0) {
-
-          K toRemove = firstLevelQueue.peek();
+          K toRemove = firstLevelQueue.poll();
           assert toRemove != null;
 
           if (transitionalCache.putIfAbsent(toRemove, toRemove) == null) {
-            if (firstLevelQueue.remove(toRemove)) {
-              boolean removed = firstLevelCache.remove(toRemove, toRemove);
-              assert removed;
+            if (firstLevelCache.remove(toRemove, toRemove)) {
               roomLeftFirstLevel.incrementAndGet();
             }
-            assert !firstLevelCache.containsKey(toRemove);
-
-            boolean removed = transitionalCache.remove(toRemove, toRemove);
-            assert removed;
+            transitionalCache.remove(toRemove, toRemove);
           }
-
+          else {
+            firstLevelQueue.add(toRemove);
+          }
         }
 
-        boolean removed = transitionalCache.remove(canonic, canonic);
-        assert removed;
+        transitionalCache.remove(canonic, canonic);
       }
 
       return canonic;
     }
+
   }
 }

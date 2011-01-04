@@ -4,6 +4,8 @@ import jetbrains.mps.util.Interner;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryUsage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,50 +29,73 @@ public class InternerTest {
   public void cacheRandomStrings() {
     final int maxObjects = 20000;
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
-    final int maxRepetitions = 1000000;
+    final int maxRepetitions = 2000000;
 
-    long refTime = computeMedian(new LongProducer() {
-      @Override
-      public long produce() {
-        return computePerformanceBenchmark(maxThreads);
+    long[] refTime = computeMedian(new LongProducer() {
+      public long[] produce() {
+        return new long[] {computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long time = computeMedian(new LongProducer() {
-      @Override
-      public long produce() {
-        return loadTestNoOverflow(maxObjects, maxThreads, maxRepetitions);
+    long[] stats = computeMedian(new LongProducer() {
+      public long[] produce() {
+        long baseLine = computeUsedHeap();
+        final Interner interner = new Interner(maxObjects);
+        final List<List<String>> listOfLists = new ArrayList<List<String>>();
+
+        long time = loadTestNoOverflow(Collections.synchronizedList(listOfLists), interner, maxObjects, maxThreads, maxRepetitions);
+
+        long used = computeUsedHeap() - baseLine;
+        int totalSize = 0;
+        for (int idx = listOfLists.size()-1; idx >= 0; --idx) {
+          totalSize += listOfLists.get(idx).size();
+        }
+        return new long[] {time, interner.size(), used, totalSize};
       }
     });
 
-    double ratio = time / (double) refTime;
+    double perfRatio = stats[0] / (double) refTime[0];
+    Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
-    Assert.assertTrue("Interner perfomance is not within bounds: "+ratio,  0.45 < ratio && ratio < 1.95);
+    double memRatio = stats[2] / (double) stats[3] / 4. / 50.;
+    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.35);
   }
 
   @Test
   public void stressTestWithRandomStrings() {
-    final int maxObjects = 2000;
+    final int maxObjects = 10000;
     final int maxThreads = Runtime.getRuntime().availableProcessors()*3;
-    final int maxRepetitions = 1000;
+    final int maxRepetitions = 100000;
 
-    long refTime = computeMedian(new LongProducer() {
-      @Override
-      public long produce() {
-        return computePerformanceBenchmark(maxThreads);
+    final int k = Runtime.getRuntime().availableProcessors() > 4 ? 5 : 1;
+
+    long [] refTime = computeMedian(new LongProducer() {
+      public long [] produce() {
+        return new long [] {k *computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long time = computeMedian(new LongProducer() {
-      @Override
-      public long produce() {
-        return loadTestWithOverflow(maxObjects, maxThreads, maxRepetitions);
+    long[] stats = computeMedian(new LongProducer() {
+      public long [] produce() {
+        long baseLine = computeUsedHeap();
+        final Interner interner = new Interner(maxObjects);
+        final List<List<String>> listOfLists = new ArrayList<List<String>>();
+        long time = loadTestWithOverflow(Collections.synchronizedList(listOfLists), interner, maxObjects, maxThreads, maxRepetitions);
+
+        long used = computeUsedHeap() - baseLine;
+        int totalSize = 0;
+        for (int idx = listOfLists.size()-1; idx >= 0; --idx) {
+          totalSize += listOfLists.get(idx).size();
+        }
+        return new long[] {time, interner.size(), used, totalSize};
       }
     });
 
-    double ratio = time / (double) refTime;
+    double perfRatio = stats[0] / (double) refTime[0];
+    Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
-    Assert.assertTrue("Interner perfomance is not within bounds: "+ratio,  0.45 < ratio && ratio < 1.95);
+    double memRatio = stats[2] / (double) stats[3] / 4. / 50.;
+    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.35);
   }
 
   @Test
@@ -79,36 +104,45 @@ public class InternerTest {
     final int maxThreads = Runtime.getRuntime().availableProcessors() * 20;
     final int maxRepetitions = 100000;
 
-    long refTime = computeMedian(new LongProducer() {
-      @Override
-      public long produce() {
-        return computePerformanceBenchmark(maxThreads);
+    long[] refTime = computeMedian(new LongProducer() {
+      public long[] produce() {
+        return new long []{computePerformanceBenchmark(maxThreads)};
       }
     });
 
-    long time = computeMedian(new LongProducer() {
-      @Override
-      public long produce() {
-        return loadTestWithSimilarStrings(maxObjects, maxThreads, maxRepetitions);
+    long[] stats = computeMedian(new LongProducer() {
+      public long[] produce() {
+        long baseLine = computeUsedHeap();
+        final Interner interner = new Interner(maxObjects);
+        final List<List<String>> listOfLists = new ArrayList<List<String>>();
+        long time = loadTestWithSimilarStrings(Collections.synchronizedList(listOfLists), interner, maxObjects, maxThreads, maxRepetitions);
+
+        long used = computeUsedHeap() - baseLine;
+        int totalSize = 0;
+        for (int idx = listOfLists.size()-1; idx >= 0; --idx) {
+          totalSize += listOfLists.get(idx).size();
+        }
+        return new long[] {time, interner.size(), used, totalSize};
       }
     });
 
-    double ratio = time / (double) refTime;
+    double perfRatio = stats[0] / (double) refTime[0];
+    Assert.assertTrue("Interner perfomance is not within bounds: "+perfRatio,  0.45 < perfRatio && perfRatio < 1.95);
 
-    Assert.assertTrue("Interner perfomance is not within bounds: " + ratio, 0.45 < ratio && ratio < 1.95);
+    double memRatio = stats[2] / (double) stats[3] / 4. / 50.;
+    Assert.assertTrue("Interner memory consumption is not within bounds: "+memRatio,  0.65 < memRatio && memRatio < 1.35);
   }
 
 
-  private long loadTestNoOverflow(final int maxObjects, final int maxThreads, final int maxRepetitions) {
-    final Interner interner = new Interner(maxObjects);
+  private long loadTestNoOverflow(final List<List<String>> listOfLists, final Interner interner, final int maxObjects, final int maxThreads, final int maxRepetitions) {
     final long start = System.currentTimeMillis();
 
     runInParallel(maxThreads, new Runnable (){
-        @Override
         public void run() {
           Random rnd = new Random ();
           StringBuilder sb = new StringBuilder();
           List<String> list = new ArrayList<String>();
+          listOfLists.add(list);
           for (int count=maxObjects/maxThreads/3; count > 0; --count) {
             sb.setLength(0);
             for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + 50))); size > 0; --size) {
@@ -128,16 +162,15 @@ public class InternerTest {
     return System.currentTimeMillis() - start;
   }
 
-  private long loadTestWithOverflow(final int maxObjects, final int maxThreads, final int maxRepetitions) {
-    final Interner interner = new Interner(maxObjects);
+  private long loadTestWithOverflow(final List<List<String>> listOfLists, final Interner interner, final int maxObjects, final int maxThreads, final int maxRepetitions) {
     final long start = System.currentTimeMillis();
 
     runInParallel(maxThreads, new Runnable (){
-        @Override
         public void run() {
           Random rnd = new Random ();
           StringBuilder sb = new StringBuilder();
           List<String> list = new ArrayList<String>();
+          listOfLists.add(list);
           for (int count=maxObjects*2; count > 0; --count) {
             sb.setLength(0);
             for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + 50))); size > 0; --size) {
@@ -157,17 +190,16 @@ public class InternerTest {
     return System.currentTimeMillis() - start;
   }
 
-  private long loadTestWithSimilarStrings(final int maxObjects, final int maxThreads, final int maxRepetitions) {
-    final Interner interner = new Interner(maxObjects);
+  private long loadTestWithSimilarStrings(final List<List<String>> listOfLists, final Interner interner, final int maxObjects, final int maxThreads, final int maxRepetitions) {
     final long start = System.currentTimeMillis();
 
     final long seed = System.currentTimeMillis();
     runInParallel(maxThreads, new Runnable (){
-        @Override
         public void run() {
           Random rnd = new Random (seed);
           StringBuilder sb = new StringBuilder();
           List<String> list = new ArrayList<String>();
+          listOfLists.add(list);
           for (int count=maxObjects*2; count > 0; --count) {
             sb.setLength(0);
             for (int size = Math.max (5, Math.min(200, (int) (rnd.nextGaussian() * 30 + 50))); size > 0; --size) {
@@ -198,7 +230,6 @@ public class InternerTest {
     while (--threads>=0) {
       final int reidx = threads;
       new Thread (new Runnable() {
-        @Override
         public void run() {
           try {
             cbstart.await();
@@ -256,7 +287,6 @@ public class InternerTest {
     final List<int[]> list = Collections.synchronizedList(new ArrayList<int[]>());
 
     runInParallel(maxThreads, new Runnable() {
-      @Override
       public void run() {
         Random rnd = new Random();
         for (int count = reps; count > 0; --count) {
@@ -269,7 +299,6 @@ public class InternerTest {
     long alloc = -start + (start = System.currentTimeMillis());
 
     runInParallel(maxThreads, new Runnable() {
-      @Override
       public void run() {
         Random rnd = new Random();
         for (int[] iarr: list) {
@@ -293,18 +322,45 @@ public class InternerTest {
     return alloc + filled;
   }
 
-  private long computeMedian (LongProducer lp) {
-    List<Long> times = new ArrayList<Long>();
+  private long computeUsedHeap () {
+    System.gc();
+    System.gc();
+    try {
+      Thread.sleep(100);
+    } catch (InterruptedException e) {}
+    System.gc();
+
+    MemoryUsage hmu = ManagementFactory.getMemoryMXBean().getHeapMemoryUsage();
+    return hmu.getUsed();
+  }
+
+  private long[] computeMedian (LongProducer lp) {
+    List<long[]> data = new ArrayList<long[]>();
     for (int count=8; count>0; --count) {
-      times.add(lp.produce());
+      data.add(lp.produce());
     }
-    Collections.sort(times);
-    int middle = times.size()/2;
-    return (long) (times.get(middle-1)+times.get(middle))/2;
+
+    List<Long> medians = new ArrayList<Long>();
+with_samples:
+    for (int i=0; ;++i) {
+      List<Long> samples = new ArrayList<Long>();
+      for (long[] smpl: data) {
+        if (smpl.length <= i) { break with_samples; }
+        samples.add(smpl[i]);
+      }
+      Collections.sort(samples);
+      int middle = samples.size()/2;
+      medians.add((samples.get(middle-1)+samples.get(middle))/2);
+    }
+    long[] retVal = new long[medians.size()];
+    for (int i=0; i<medians.size();i++) {
+      retVal[i] = medians.get(i);
+    }
+    return retVal;
   }
 
   private static interface LongProducer {
-    public long produce();
+    public long[] produce();
   }
 
   public static class CompositeRuntimeException extends RuntimeException {

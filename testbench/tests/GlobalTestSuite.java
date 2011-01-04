@@ -7,6 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @SuiteClasses({jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
+  jetbrains.mps.runtime.InternerTest.class,
   jetbrains.mps.runtime.BundleTest.class,
   jetbrains.mps.runtime.BundleLoadingTest.class,
   jetbrains.mps.make.dependencies.GraphTestCase.class,
