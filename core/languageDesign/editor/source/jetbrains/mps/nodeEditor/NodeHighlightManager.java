@@ -34,7 +34,7 @@ import java.util.Map.Entry;
 
 
 public class NodeHighlightManager implements EditorMessageOwner {
-  private static final Comparator<EditorMessage> EDITOR_MESSAGES_COPARATOR = new Comparator<EditorMessage>() {
+  private static final Comparator<EditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<EditorMessage>() {
     public int compare(EditorMessage m1, EditorMessage m2) {
       return m1.getPriority() - m2.getPriority();
     }
