@@ -118,6 +118,13 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_SNodeCreator_3602058458308809798(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeCreator")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "createdType", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "createdType", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "prototypeNode", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "prototypeNode", true), true);
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1138413233760(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     final ApplicableTypesInfo appTypesInfo;
