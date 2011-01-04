@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="ActionsQueriesGenerated.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.actions.scripts.ActionsQueriesGenerated" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="17" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$1" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript" />
+  <root nodeId="7836612869650926685">
+    <nodeInfo nodeId="7836612869650932732" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="109" />
+    <nodeInfo nodeId="7836612869650932743" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="31" startPosition="109" endLine="32" endPosition="142" />
+    <nodeInfo nodeId="7836612869650932785" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="35" startPosition="52" endLine="36" endPosition="124" />
+    <scopeInfo nodeId="7836612869650927542" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="35" startPosition="52" endLine="36" endPosition="124" />
+    <scopeInfo nodeId="7836612869650932731" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="30" startPosition="59" endLine="32" endPosition="142">
+      <varInfo nodeId="7836612869650932733" varName="aspect" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

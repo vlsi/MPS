@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-113h3nvowkmyzafjzkla01o66jc6y5j">
+<dependencies version="2" modelHash="21uhs6v5db5ggvkzq7nnnyov21utrw8">
   <dep model="f:java_stub#java.io(java.io@java_stub)" />
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -1560,7 +1560,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SNodeCreatorAndInitializer.java" />
   </source>
-  <source id="7776141288922801652" name="NF_Concept_NewInstance" hash="3jdzd5d638ujvylkxy3fnlwo45gexhx">
+  <source id="7776141288922801652" name="NF_Concept_NewInstance" hash="-qhii05y05oocy07vfthip4q4e12pne">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -1573,7 +1573,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NF_Concept_NewInstance.java" />
   </source>
-  <source id="5480835971642155304" name="NF_Model_CreateNewNodeOperation" hash="-39f5wycazwgd03tmwj0m1cmrwk1d73s">
+  <source id="5480835971642155304" name="NF_Model_CreateNewNodeOperation" hash="-9fvc2xgauuo28vtmbat42ist13eor7l">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -1586,7 +1586,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NF_Model_CreateNewNodeOperation.java" />
   </source>
-  <source id="5480835971642160908" name="NF_Model_CreateNewRootNodeOperation" hash="-13ahbzcdfta14swvivlke2e3fue2yzg">
+  <source id="5480835971642160908" name="NF_Model_CreateNewRootNodeOperation" hash="ad4x4c34yesplncgzcxwqnlmhpzvssb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -1599,7 +1599,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NF_Model_CreateNewRootNodeOperation.java" />
   </source>
-  <source id="767145758118872824" name="NF_Node_InsertNewNextSiblingOperation" hash="-3py7p6d4xu2e18am0uqbvau22w82rn7">
+  <source id="767145758118872824" name="NF_Node_InsertNewNextSiblingOperation" hash="-44c978ep9q8dex4ao39ag1tf451e4kn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -1612,7 +1612,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NF_Node_InsertNewNextSiblingOperation.java" />
   </source>
-  <source id="767145758118872826" name="NF_Node_InsertNewPrevSiblingOperation" hash="-1wdf521127f0hwaygqdfgs8wtlh5ts0">
+  <source id="767145758118872826" name="NF_Node_InsertNewPrevSiblingOperation" hash="3vihz1jivel641e39vp6lf6e6h3op2w">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -1625,7 +1625,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NF_Node_InsertNewPrevSiblingOperation.java" />
   </source>
-  <source id="767145758118872828" name="NF_Node_ReplaceWithNewOperation" hash="-39dz1y0pp7hqv4ynczt0e30fpvfr4ny">
+  <source id="767145758118872828" name="NF_Node_ReplaceWithNewOperation" hash="bgwu8ay3t187uwtmt5xtvhep8ctru6u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -1638,7 +1638,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NF_Node_ReplaceWithNewOperation.java" />
   </source>
-  <source id="767145758118872830" name="NF_Link_SetNewChildOperation" hash="-492n54fyboozepcj28gtj9eg3z5gnis">
+  <source id="767145758118872830" name="NF_Link_SetNewChildOperation" hash="a4r0aryga7xix0hs4507z9muv4rn8ob">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -1651,7 +1651,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NF_Link_SetNewChildOperation.java" />
   </source>
-  <source id="767145758118872833" name="NF_LinkList_AddNewChildOperation" hash="-4unzuanhrdm74qoukm53z1vzgnld2vu">
+  <source id="767145758118872833" name="NF_LinkList_AddNewChildOperation" hash="7qte575py4xp5godzdtc27op43t775">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
