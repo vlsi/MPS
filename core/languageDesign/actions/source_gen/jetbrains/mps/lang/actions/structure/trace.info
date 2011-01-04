@@ -7,6 +7,8 @@
   <unitInfo fileName="SideTransformMenuPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformMenuPart" />
   <unitInfo fileName="AddMenuPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.AddMenuPart" />
   <unitInfo fileName="SubstituteMenuPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SubstituteMenuPart" />
+  <unitInfo fileName="Model_CreateNewInitializedRootNodeOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Model_CreateNewInitializedRootNodeOperation" />
+  <unitInfo fileName="Model_CreateNewInitializedNodeOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Model_CreateNewInitializedNodeOperation" />
   <unitInfo fileName="Concept_NewInitializedInstance.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.Concept_NewInitializedInstance" />
   <unitInfo fileName="SNodeCreatorAndInitializer.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" />
   <unitInfo fileName="ConceptFunctionParameter_nodeToCopyPreProcessOriginal.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />

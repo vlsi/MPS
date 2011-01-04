@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -25,5 +26,20 @@ public class SNodeFactoryOperations {
   public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
     if (conceptFqName == null) return null;
     return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null);
+  }
+
+  public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
+    SNode enclosingNode = null;
+    if (prototypeNode != null) {
+      enclosingNode = prototypeNode.getParent();
+    }
+
+    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, enclosingNode, model);
+  }
+
+  public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
+    SNode newNode = NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, model);
+    model.addRoot(newNode);
+    return newNode;
   }
 }
