@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.lang.pattern.util.PatternAddingUtil;
+import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;

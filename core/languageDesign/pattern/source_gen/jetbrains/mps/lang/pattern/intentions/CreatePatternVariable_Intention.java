@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.pattern.util.PatternAddingUtil;
+import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 
 public class CreatePatternVariable_Intention extends BaseIntention implements Intention {
   public CreatePatternVariable_Intention() {

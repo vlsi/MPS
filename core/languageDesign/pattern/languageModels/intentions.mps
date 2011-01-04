@@ -8,11 +8,11 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <import index="n2cy" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <import index="ovhc" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="a0xp" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="d8ec" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <import index="tp3y" modelUID="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -69,8 +69,8 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3514655265371682056">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3514655265371724194">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3514655265371724195">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n2cy.~PatternAddingUtil%daddVariablePattern(jetbrains%dmps%dnodeEditor%dEditorContext)%cvoid" resolveInfo="addVariablePattern" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n2cy.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp3y.5121729553547267722" resolveInfo="PatternAddingUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp3y.5121729553547267768" resolveInfo="addVariablePattern" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="3514655265371724197" />
           </node>
         </node>
@@ -80,8 +80,8 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3514655265371691622">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3514655265371691623">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3514655265371691624">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n2cy.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n2cy.~PatternAddingUtil%disPatternApplicable(jetbrains%dmps%dnodeEditor%dEditorContext)%cboolean" resolveInfo="isPatternApplicable" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp3y.5121729553547267722" resolveInfo="PatternAddingUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp3y.5121729553547267728" resolveInfo="isPatternApplicable" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="3514655265371720686" />
           </node>
         </node>
@@ -179,8 +179,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3514655265371724205">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.AndExpression" typeId="tpee.1080120340718" id="3514655265371724206">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3514655265371724207">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n2cy.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n2cy.~PatternAddingUtil%disPatternApplicable(jetbrains%dmps%dnodeEditor%dEditorContext)%cboolean" resolveInfo="isPatternApplicable" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp3y.5121729553547267722" resolveInfo="PatternAddingUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp3y.5121729553547267728" resolveInfo="isPatternApplicable" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="3514655265371753278" />
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3514655265371724209">
@@ -301,8 +301,8 @@
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3514655265371789404">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n2cy.~PatternAddingUtil%disPatternApplicable(jetbrains%dmps%dnodeEditor%dEditorContext)%cboolean" resolveInfo="isPatternApplicable" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n2cy.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp3y.5121729553547267722" resolveInfo="PatternAddingUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp3y.5121729553547267728" resolveInfo="isPatternApplicable" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="3514655265371789406" />
             </node>
           </node>
@@ -363,8 +363,8 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3514655265371789452">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3514655265371789453">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3514655265371789454">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n2cy.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n2cy.~PatternAddingUtil%disPatternApplicable(jetbrains%dmps%dnodeEditor%dEditorContext)%cboolean" resolveInfo="isPatternApplicable" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp3y.5121729553547267722" resolveInfo="PatternAddingUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp3y.5121729553547267728" resolveInfo="isPatternApplicable" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="3514655265371789468" />
           </node>
         </node>
@@ -418,8 +418,8 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3514655265371789477">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3514655265371789478">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3514655265371789479">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n2cy.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n2cy.~PatternAddingUtil%disPatternApplicable(jetbrains%dmps%dnodeEditor%dEditorContext)%cboolean" resolveInfo="isPatternApplicable" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp3y.5121729553547267722" resolveInfo="PatternAddingUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp3y.5121729553547267728" resolveInfo="isPatternApplicable" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="3514655265371789489" />
           </node>
         </node>
@@ -507,8 +507,8 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4413230749907743503">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4413230749907743504">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4413230749907743505">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n2cy.~PatternAddingUtil" resolveInfo="PatternAddingUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n2cy.~PatternAddingUtil%disPatternApplicable(jetbrains%dmps%dnodeEditor%dEditorContext)%cboolean" resolveInfo="isPatternApplicable" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp3y.5121729553547267722" resolveInfo="PatternAddingUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp3y.5121729553547267728" resolveInfo="isPatternApplicable" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_editorContext" typeId="tpcw.1194033889146" id="4413230749907743506" />
           </node>
         </node>
