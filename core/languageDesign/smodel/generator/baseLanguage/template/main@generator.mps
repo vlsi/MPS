@@ -176,10 +176,6 @@
       <property name="name" nameId="tpck.1169194664001" value="reduce_GetContainingRootOperation" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp25.1171310072040" />
     </node>
-    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1171321933453">
-      <property name="name" nameId="tpck.1169194664001" value="reduce_RootsOperation" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp25.1171315804604" />
-    </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1171322948481">
       <property name="name" nameId="tpck.1169194664001" value="reduce_Model_RootsOperation_hasConcept" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp25.1171315804604" />
@@ -5085,61 +5081,6 @@
         </node>
       </node>
       <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1171312080437" />
-    </node>
-  </root>
-  <root id="1171321933453">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1171321933454">
-      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n8s8.~SModelOperations" resolveInfo="SModelOperations" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n8s8.~SModelOperations%dcreateNewNode(jetbrains%dmps%dsmodel%dSModel,java%dlang%dString)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="createNewNode" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1171321933455">
-        <node role="nodeMacro$attribute" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="1171321933456">
-          <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1171321933457">
-            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1171321933458">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1203120617071">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227918433">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1203120617073" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1203120617074">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpeu.1213877508894" resolveInfo="getLeftExpression" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1171321933466">
-        <property name="value" nameId="tpee.1070475926801" value="_concept_name_" />
-        <node role="propertyMacro$property_attribute$value" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1171321933467">
-          <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1171321933468">
-            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1171321933469">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1171321933470">
-                <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1171321933471">
-                  <property name="name" nameId="tpck.1169194664001" value="parmConcept" />
-                  <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1171321933472">
-                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpce.1071489090640" />
-                  </node>
-                  <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227900691">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1171321933474" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1171321933475">
-                      <link role="link" roleId="tp25.1138056516764" targetNodeId="tp25.1143235391024" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1171321933476">
-                <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1171321933477">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ctdc.~NameUtil" resolveInfo="NameUtil" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ctdc.~NameUtil%dnodeFQName(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="nodeFQName" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1171321933478">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1171321933471" resolveInfo="parmConcept" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1171321933479" />
     </node>
   </root>
   <root id="1171322948481">
