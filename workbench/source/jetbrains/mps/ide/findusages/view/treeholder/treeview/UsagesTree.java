@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
@@ -449,35 +447,34 @@ public class UsagesTree extends MPSTree {
   }
 
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
-    if (!myShowPopupMenu) {
-      return null;
-    }
+    if (!myShowPopupMenu) return null;
+
     BaseAction includeAction = new BaseAction("Include") {
-      public void doExecute(AnActionEvent e) {
+      {
+        String keyStroke = "INSERT";
+        KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+        KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+      }
+
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesExclusion(false);
         e.getInputEvent().consume();
       }
-
-      @NotNull
-      @Override
-      protected String getKeyStroke() {
-        return "INSERT";
-      }
     };
     BaseAction excludeAction = new BaseAction("Exclude") {
-      public void doExecute(AnActionEvent e) {
+      {
+        String keyStroke = "DELETE";
+        KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+        KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+      }
+
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesExclusion(true);
         e.getInputEvent().consume();
       }
-
-      @NotNull
-      @Override
-      protected String getKeyStroke() {
-        return "DELETE";
-      }
     };
     BaseAction includeSelectedOnlyAction = new BaseAction("Include selected only") {
-      public void doExecute(AnActionEvent e) {
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesOnlyExclusion();
         e.getInputEvent().consume();
       }

@@ -6,23 +6,21 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newDevkitDialog.NewDevKitDialog;
+import java.awt.Frame;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 
 public class NewDevKit_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewDevKit_Action.class);
-
-  private Frame frame;
-  private MPSProject project;
-  private Project ideaProject;
 
   public NewDevKit_Action() {
     super("DevKit", "", ICON);
@@ -30,12 +28,7 @@ public class NewDevKit_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -46,42 +39,35 @@ public class NewDevKit_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
-    if (this.ideaProject == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.project = null;
-    this.ideaProject = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewDevKitDialog dialog = new NewDevKitDialog(NewDevKit_Action.this.frame);
-      dialog.setProject(NewDevKit_Action.this.project);
+      NewDevKitDialog dialog = new NewDevKitDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
+      dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
       dialog.showDialog();
       DevKit devkit = dialog.getResult();
       if (devkit == null) {
         return;
       }
-      ProjectPane projectPane = ProjectPane.getInstance(NewDevKit_Action.this.ideaProject);
+      ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(devkit, false);
     } catch (Throwable t) {

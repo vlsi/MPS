@@ -6,27 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
-import java.awt.Frame;
-import javax.swing.tree.TreeNode;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import javax.swing.tree.TreeNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 
 public class RenameNamespace_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameNamespace_Action.class);
-
-  private Project ideaProject;
-  private MPSProject project;
-  private Frame frame;
-  private TreeNode treeNode;
 
   public RenameNamespace_Action() {
     super("Rename", "", ICON);
@@ -34,19 +31,14 @@ public class RenameNamespace_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane(_params) != null && !(((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isFinalName());
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return RenameNamespace_Action.this.treeNode instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane() != null && !(((NamespaceTextNode) RenameNamespace_Action.this.treeNode).isFinalName());
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -57,41 +49,33 @@ public class RenameNamespace_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
-    if (this.ideaProject == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
-    if (this.treeNode == null) {
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.ideaProject = null;
-    this.project = null;
-    this.frame = null;
-    this.treeNode = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NamespaceTextNode node = ((NamespaceTextNode) RenameNamespace_Action.this.treeNode);
-      String newFolder = JOptionPane.showInputDialog(RenameNamespace_Action.this.frame, "Enter New Folder", node.getName());
+      NamespaceTextNode node = ((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode")));
+      String newFolder = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Folder", node.getName());
       if (newFolder == null) {
         return;
       }
@@ -99,9 +83,9 @@ public class RenameNamespace_Action extends GeneratedAction {
         newFolder = null;
       }
       for (IModule module : ListSequence.fromList(node.getModulesUnder())) {
-        RenameNamespace_Action.this.project.setFolderFor(module, newFolder);
+        ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(module, newFolder);
       }
-      RenameNamespace_Action.this.getProjectPane().rebuild();
+      RenameNamespace_Action.this.getProjectPane(_params).rebuild();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameNamespace", t);
@@ -109,7 +93,7 @@ public class RenameNamespace_Action extends GeneratedAction {
     }
   }
 
-  private ProjectPane getProjectPane() {
-    return ProjectPane.getInstance(RenameNamespace_Action.this.ideaProject);
+  private ProjectPane getProjectPane(final Map<String, Object> _params) {
+    return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
   }
 }

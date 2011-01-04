@@ -9,23 +9,15 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import com.intellij.openapi.util.Computable;
@@ -51,50 +43,14 @@ public class SModelUtil {
   private static Map<SNode, Language> myConceptToLanguage = MapSequence.fromMap(new HashMap<SNode, Language>());
   protected static Log log = LogFactory.getLog(SModelUtil.class);
 
-  public static void startListeningOnce(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
-    clManager.addReloadHandler(new ReloadAdapter() {
-      public void clearCaches() {
-        MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
-        MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
-      }
-    });
-    meManager.addGlobalModelListener(new SModelAdapter(SModelListener.SModelListenerPriority.PLATFORM) {
-      public void rootRemoved(SModelRootEvent p0) {
-        if (Language.getModelAspect(p0.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
-          if (SNodeOperations.isInstanceOf(((SNode) p0.getRoot()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-            MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
-            MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
-          }
-        }
-      }
-
-      public void modelReplaced(SModelDescriptor descriptor) {
-        if (Language.getModelAspect(descriptor) != LanguageAspect.STRUCTURE) {
-          return;
-        }
-        MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
-        MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
-      }
-
-      public void propertyChanged(SModelPropertyEvent p0) {
-        if (Language.getModelAspect(p0.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
-          if (SNodeOperations.isInstanceOf(((SNode) p0.getNode()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-            if (p0.getPropertyName().equals("name")) {
-              String modelName = p0.getNode().getModel().getLongName();
-              String newName = modelName + "." + p0.getNewPropertyValue();
-              String oldName = modelName + "." + p0.getOldPropertyValue();
-              MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(InternUtil.intern(newName), MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).get(oldName));
-              MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).removeKey(oldName);
-            }
-          }
-        }
-      }
-    });
-  }
-
   public static void clearCaches() {
     MapSequence.fromMap(myFQNameToConcepDecl).clear();
     MapSequence.fromMap(myConceptToLanguage).clear();
+  }
+
+  public static void conceptRenamed(String oldName, String newName) {
+    MapSequence.fromMap(myFQNameToConcepDecl).put(InternUtil.intern(newName), MapSequence.fromMap(myFQNameToConcepDecl).get(oldName));
+    MapSequence.fromMap(myFQNameToConcepDecl).removeKey(oldName);
   }
 
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {

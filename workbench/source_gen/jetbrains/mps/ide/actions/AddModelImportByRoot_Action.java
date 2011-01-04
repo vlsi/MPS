@@ -6,27 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.workbench.actions.imports.ImportHelper;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.IModule;
 
 public class AddModelImportByRoot_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(AddModelImportByRoot_Action.class);
-
-  private Project project;
-  private IModule module;
-  private SModelDescriptor model;
-  private EditorComponent editorComponent;
 
   public AddModelImportByRoot_Action() {
     super("Add Model Import by Root", "", ICON);
@@ -34,19 +31,14 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl R";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return AddModelImportByRoot_Action.this.model instanceof EditableSModelDescriptor;
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -57,40 +49,32 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.module = null;
-    this.model = null;
-    this.editorComponent = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorCell selectedCell = AddModelImportByRoot_Action.this.editorComponent.getSelectedCell();
+      EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
       String initialText = "";
       if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isErrorState()) {
         EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
@@ -98,7 +82,7 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
           initialText = ((EditorCell_Label) selectedCell).getRenderedText();
         }
       }
-      ImportHelper.addModelImportByRoot(AddModelImportByRoot_Action.this.project, AddModelImportByRoot_Action.this.module, AddModelImportByRoot_Action.this.model, initialText);
+      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), initialText);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModelImportByRoot", t);

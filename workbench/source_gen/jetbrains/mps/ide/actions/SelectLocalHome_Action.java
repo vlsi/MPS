@@ -6,24 +6,22 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.CellActionType;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.NodeRangeSelection;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 public class SelectLocalHome_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SelectLocalHome_Action.class);
-
-  private EditorCell editorCell;
-  private EditorComponent editorComponent;
-  private EditorContext editorContext;
 
   public SelectLocalHome_Action() {
     super("Move Caret to Previous Word with Selection", "", ICON);
@@ -31,12 +29,7 @@ public class SelectLocalHome_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl shift LEFT";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -47,41 +40,34 @@ public class SelectLocalHome_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.editorCell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.editorCell == null) {
+    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorCell = null;
-    this.editorComponent = null;
-    this.editorContext = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (SelectLocalHome_Action.this.editorCell instanceof EditorCell_Label && !(SelectLocalHome_Action.this.editorCell.isFirstCaretPosition()) && ((EditorCell_Label) SelectLocalHome_Action.this.editorCell).isFirstPositionAllowed()) {
-        SelectLocalHome_Action.this.editorCell.executeAction(CellActionType.SELECT_LOCAL_HOME);
+      if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label && !(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).isFirstCaretPosition()) && ((EditorCell_Label) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).isFirstPositionAllowed()) {
+        ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).executeAction(CellActionType.SELECT_LOCAL_HOME);
       } else if (event.getInputEvent() instanceof KeyEvent) {
         KeyEvent keyEvent = (KeyEvent) event.getInputEvent();
-        NodeRangeSelection rangeSelection = SelectLocalHome_Action.this.editorComponent.getNodeRangeSelection();
+        NodeRangeSelection rangeSelection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeRangeSelection();
         if (rangeSelection.isActive()) {
-          rangeSelection.processKeyPressed(SelectLocalHome_Action.this.editorContext, keyEvent);
+          rangeSelection.processKeyPressed(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), keyEvent);
         } else {
           rangeSelection.activate(keyEvent);
         }

@@ -5,11 +5,13 @@ package jetbrains.mps.lang.editor.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -30,28 +32,20 @@ public class DeleteLine_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(DeleteLine_Action.class);
 
-  private EditorComponent editorComponent;
-  private EditorCell currentCell;
-
   public DeleteLine_Action() {
     super("Delete Line", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl Y";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return !(DeleteLine_Action.this.editorComponent.isReadOnly());
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -60,31 +54,25 @@ public class DeleteLine_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    this.currentCell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.currentCell == null) {
+    MapSequence.fromMap(_params).put("currentCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("currentCell") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-    this.currentCell = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (DeleteLine_Action.this.currentCell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection) DeleteLine_Action.this.currentCell;
+      if (((EditorCell) MapSequence.fromMap(_params).get("currentCell")) instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection) ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
         Queue<EditorCell_Collection> collections = QueueSequence.fromQueue(new LinkedList<EditorCell_Collection>());
         QueueSequence.fromQueue(collections).addLastElement(collection);
         while (QueueSequence.fromQueue(collections).isNotEmpty()) {
@@ -99,7 +87,7 @@ public class DeleteLine_Action extends GeneratedAction {
           }
         }
       }
-      EditorCell current = DeleteLine_Action.this.currentCell;
+      EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
       List<SNode> nodesToDelete = new ArrayList<SNode>();
       EditorCell cellToSelect = null;
       while (true) {
@@ -140,7 +128,7 @@ public class DeleteLine_Action extends GeneratedAction {
         }
       }
       if (cellToSelect != null) {
-        DeleteLine_Action.this.editorComponent.changeSelection(cellToSelect);
+        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).changeSelection(cellToSelect);
         cellToSelect.home();
       }
     } catch (Throwable t) {

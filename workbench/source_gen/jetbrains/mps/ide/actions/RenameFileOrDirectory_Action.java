@@ -6,26 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.dialogs.RenameFileDialog;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 
 public class RenameFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameFileOrDirectory_Action.class);
-
-  private VirtualFile selectedFile;
-  private Project project;
-  private Frame frame;
 
   public RenameFileOrDirectory_Action() {
     super("Rename...", "", ICON);
@@ -33,12 +31,7 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "shift F6";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -49,36 +42,29 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.selectedFile = event.getData(MPSDataKeys.VIRTUAL_FILE);
-    if (this.selectedFile == null) {
+    MapSequence.fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    if (MapSequence.fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedFile = null;
-    this.project = null;
-    this.frame = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String oldName = RenameFileOrDirectory_Action.this.selectedFile.getName();
-      RenameFileDialog dialog = new RenameFileDialog(RenameFileOrDirectory_Action.this.project, oldName, RenameFileOrDirectory_Action.this.selectedFile.isDirectory());
+      String oldName = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName();
+      RenameFileDialog dialog = new RenameFileDialog(((Project) MapSequence.fromMap(_params).get("project")), oldName, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
       dialog.show();
       if (!(dialog.isOK())) {
         return;
@@ -87,14 +73,14 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           try {
-            if (RenameFileOrDirectory_Action.this.isNotValid(result)) {
+            if (RenameFileOrDirectory_Action.this.isNotValid(result, _params)) {
               return;
             }
-            RenameFileOrDirectory_Action.this.selectedFile.rename(null, result);
-            ProjectView.getInstance(RenameFileOrDirectory_Action.this.project).refresh();
+            ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).rename(null, result);
+            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                ProjectView.getInstance(RenameFileOrDirectory_Action.this.project).getCurrentProjectViewPane().select(null, RenameFileOrDirectory_Action.this.selectedFile, true);
+                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getCurrentProjectViewPane().select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
               }
             });
           } catch (IOException e) {
@@ -108,13 +94,13 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     }
   }
 
-  /*package*/ boolean isNotValid(String result) {
+  /*package*/ boolean isNotValid(String result, final Map<String, Object> _params) {
     if (result == null || result.length() == 0) {
-      JOptionPane.showMessageDialog(RenameFileOrDirectory_Action.this.frame, "Enter valid name");
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter valid name");
       return true;
     }
-    if (check_g7rid4_a0b0a(RenameFileOrDirectory_Action.this.selectedFile.getParent(), result) != null) {
-      JOptionPane.showMessageDialog(RenameFileOrDirectory_Action.this.frame, result + " already exists");
+    if (check_g7rid4_a0b0a(((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent(), result) != null) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), result + " already exists");
       return true;
     }
     return false;

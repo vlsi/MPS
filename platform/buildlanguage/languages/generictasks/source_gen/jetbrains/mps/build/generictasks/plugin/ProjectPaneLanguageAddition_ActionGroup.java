@@ -4,24 +4,19 @@ package jetbrains.mps.build.generictasks.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 
 public class ProjectPaneLanguageAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectPaneLanguageAddition_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.build.generictasks.plugin.ProjectPaneLanguageAddition";
+  public static final String ID = "jetbrains.mps.build.generictasks.plugin.ProjectPaneLanguageAddition_ActionGroup";
 
   public ProjectPaneLanguageAddition_ActionGroup() {
     super("ProjectPaneLanguageAddition", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ProjectPaneLanguageAddition_ActionGroup.this.addAction("jetbrains.mps.build.generictasks.plugin.ImportAntStuff_Action", "jetbrains.mps.build.generictasks");
+      ProjectPaneLanguageAddition_ActionGroup.this.addAction("jetbrains.mps.build.generictasks.plugin.ImportAntStuff_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, null);
   }
 }

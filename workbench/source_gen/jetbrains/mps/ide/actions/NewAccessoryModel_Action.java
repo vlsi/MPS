@@ -6,17 +6,17 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
-import com.intellij.openapi.project.Project;
-import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import javax.swing.tree.TreeNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,26 +26,15 @@ public class NewAccessoryModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewAccessoryModel_Action.class);
 
-  private Frame frame;
-  private IOperationContext context;
-  private IModule module;
-  private Project project;
-  private TreeNode treeNode;
-
   public NewAccessoryModel_Action() {
     super("New Accessory Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setText(((NewAccessoryModel_Action.this.treeNode instanceof ProjectModuleTreeNode ?
+      event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ?
         "" :
         "New "
       )) + "Accesory Model");
@@ -57,46 +46,37 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.CONTEXT_MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
-    if (this.treeNode == null) {
+    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.context = null;
-    this.module = null;
-    this.project = null;
-    this.treeNode = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Language language = ((Language) NewAccessoryModel_Action.this.module);
-      NewModelDialog d = new NewModelDialog(NewAccessoryModel_Action.this.module, language.getModuleFqName() + ".", NewAccessoryModel_Action.this.context, SModelStereotype.NONE, true);
+      final Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
+      NewModelDialog d = new NewModelDialog(((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName() + ".", ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
       d.showDialog();
       final SModelDescriptor result = d.getResult();
 

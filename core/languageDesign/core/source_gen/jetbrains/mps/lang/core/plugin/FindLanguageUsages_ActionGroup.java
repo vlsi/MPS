@@ -4,25 +4,20 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 
 public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FindLanguageUsages_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.core.plugin.FindLanguageUsages";
+  public static final String ID = "jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup";
 
   public FindLanguageUsages_ActionGroup() {
     super("FindLanguageUsages", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action", "jetbrains.mps.lang.core");
-      FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action", "jetbrains.mps.lang.core");
+      FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action");
+      FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_usages);
   }
 }

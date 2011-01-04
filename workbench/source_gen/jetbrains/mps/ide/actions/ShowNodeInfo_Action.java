@@ -6,25 +6,22 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.awt.Point;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import java.awt.Frame;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.NodeInformationDialog;
 
 public class ShowNodeInfo_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowNodeInfo_Action.class);
-
-  private Frame frame;
-  private EditorComponent editor;
-  private EditorCell cell;
-  private SNode node;
 
   public ShowNodeInfo_Action() {
     super("Show Node Info", "", ICON);
@@ -32,12 +29,7 @@ public class ShowNodeInfo_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl Q";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,44 +40,36 @@ public class ShowNodeInfo_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.editor = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editor == null) {
+    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }
-    this.cell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.cell == null) {
+    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.NODE);
-    if (this.node == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.editor = null;
-    this.cell = null;
-    this.node = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Point point = new Point(ShowNodeInfo_Action.this.cell.getX() + ShowNodeInfo_Action.this.cell.getWidth(), ShowNodeInfo_Action.this.cell.getY());
-      SwingUtilities.convertPointToScreen(point, ShowNodeInfo_Action.this.editor);
+      final Point point = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY());
+      SwingUtilities.convertPointToScreen(point, ((EditorComponent) MapSequence.fromMap(_params).get("editor")));
       // Displaying this action in .invokeLater call to let popup menu be disposed first ( <node> will be diposed immediately by corresponding events otherwise) 
-      final Frame frame = ShowNodeInfo_Action.this.frame;
-      final SNode node = ShowNodeInfo_Action.this.node;
+      final Frame frame = ((Frame) MapSequence.fromMap(_params).get("frame"));
+      final SNode node = ((SNode) MapSequence.fromMap(_params).get("node"));
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           new NodeInformationDialog(frame, point, node).setVisible(true);

@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.DumbAware;
+import gnu.trove.THashMap;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -26,6 +27,7 @@ import javax.swing.Icon;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public abstract class BaseAction extends AnAction implements DumbAware {
@@ -44,25 +46,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
 
   public BaseAction(String text, String description, Icon icon) {
     super(text, description, icon);
-    updateShortcuts();
-  }
-
-  /**
-   * Is caslled only by ancestors if getShortcut depends on constructor parameters
-   */
-  protected void updateShortcuts() {
     setEnabledInModalContext(false);
-    setShortcutSet(new ShortcutSet() {
-      public Shortcut[] getShortcuts() {
-        KeyStroke keyStroke = KeyStroke.getKeyStroke(getKeyStroke());
-        if (keyStroke != null) {
-          KeyboardShortcut keyboardShortcut = new KeyboardShortcut(keyStroke, null);
-          return new Shortcut[]{keyboardShortcut};
-        } else {
-          return new Shortcut[0];
-        }
-      }
-    });
   }
 
   public void setExecuteOutsideCommand(boolean executeOutsideCommand) {
@@ -106,38 +90,32 @@ public abstract class BaseAction extends AnAction implements DumbAware {
           disable(e.getPresentation());
           return;
         }
-        try {
-          if (!collectActionData(e)) {
-            disable(e.getPresentation());
-            return;
-          }
-          doUpdate(e);
-        } finally {
-          cleanup();
+        THashMap<String, Object> params = new THashMap<String, Object>();
+        if (!collectActionData(e, params)) {
+          disable(e.getPresentation());
+          return;
         }
+        doUpdate(e, params);
       }
     });
   }
 
   public final void actionPerformed(final AnActionEvent e) {
-    try {
-      ModelAccess.instance().runReadAction(new Runnable() {
+    final THashMap<String, Object> params = new THashMap<String, Object>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        collectActionData(e, params);
+      }
+    });
+    final ModelAccess access = ModelAccess.instance();
+    if (myExecuteOutsideCommand) {
+      doExecute(e, params);
+    } else {
+      access.runWriteActionInCommand(new Runnable() {
         public void run() {
-          collectActionData(e);
+          doExecute(e, params);
         }
       });
-      final ModelAccess access = ModelAccess.instance();
-      if (myExecuteOutsideCommand) {
-        doExecute(e);
-      } else {
-        access.runWriteActionInCommand(new Runnable() {
-          public void run() {
-            doExecute(e);
-          }
-        });
-      }
-    } finally {
-      //cleanup();
     }
   }
 
@@ -170,31 +148,11 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     return result;
   }
 
-  /**
-   * Collect action parameters HERE
-   *
-   * @param e
-   * @return true if all action parameters collected, false otherwise
-   */
-  protected boolean collectActionData(AnActionEvent e) {
+  protected boolean collectActionData(AnActionEvent e, Map<String, Object> params) {
     return true;
   }
 
-  protected void cleanup() {
-
-  }
-
-  /**
-   * If the result depends on something, do not forget to call updateShortcuts
-   *
-   * @return
-   */
-  @NotNull
-  protected String getKeyStroke() {
-    return "";
-  }
-
-  protected void doUpdate(AnActionEvent e) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> params) {
     e.getPresentation().setVisible(true);
     e.getPresentation().setEnabled(true);
   }
@@ -203,5 +161,5 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     return getClass().getName();
   }
 
-  protected abstract void doExecute(AnActionEvent e);
+  protected abstract void doExecute(AnActionEvent e, Map<String, Object> params) ;
 }

@@ -32,6 +32,11 @@ import java.util.*;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clearCaches();
+    }
+  };
 
   public static LanguagesKeymapManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LanguagesKeymapManager.class);
@@ -56,12 +61,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clearCaches();
-      }
-    });
-
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
     myRepository.addModuleRepositoryListener(myListener);
   }
 
@@ -72,6 +72,8 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
+    myRepository.removeModuleRepositoryListener(myListener);
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   private void clearCaches() {

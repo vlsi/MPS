@@ -6,16 +6,16 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class FindNext_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(FindNext_Action.class);
-
-  private EditorComponent editorComponent;
 
   public FindNext_Action() {
     super("Find Next", "Repeat the last Find operation", ICON);
@@ -24,19 +24,14 @@ public class FindNext_Action extends GeneratedAction {
     this.setMnemonic("N".charAt(0));
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return " F3";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().isVisible();
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return FindNext_Action.this.editorComponent.getSearchPanel().isVisible();
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -47,25 +42,20 @@ public class FindNext_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      FindNext_Action.this.editorComponent.getSearchPanel().goToNext();
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().goToNext();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "FindNext", t);

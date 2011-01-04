@@ -6,17 +6,19 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import javax.swing.tree.TreeNode;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import javax.swing.tree.TreeNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
@@ -24,28 +26,20 @@ public class RenamePackage_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenamePackage_Action.class);
 
-  private Frame frame;
-  private TreeNode ppNode;
-
   public RenamePackage_Action() {
     super("Rename", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "shift F6";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((TreeNode) MapSequence.fromMap(_params).get("ppNode")) instanceof PackageNode;
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return RenamePackage_Action.this.ppNode instanceof PackageNode;
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -56,38 +50,32 @@ public class RenamePackage_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.ppNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
-    if (this.ppNode == null) {
+    MapSequence.fromMap(_params).put("ppNode", event.getData(MPSDataKeys.LOGICAL_VIEW_NODE));
+    if (MapSequence.fromMap(_params).get("ppNode") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.ppNode = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<Set<SNode>> nodes = new Wrappers._T<Set<SNode>>();
-      final PackageNode treeNode = (PackageNode) RenamePackage_Action.this.ppNode;
+      final PackageNode treeNode = (PackageNode) ((TreeNode) MapSequence.fromMap(_params).get("ppNode"));
       final String name = treeNode.getPackage();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           nodes.value = treeNode.getNodesUnderPackage();
         }
       });
-      final String newName = JOptionPane.showInputDialog(RenamePackage_Action.this.frame, "Enter New Package Name", name);
+      final String newName = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Package Name", name);
       if (newName == null) {
         return;
       }

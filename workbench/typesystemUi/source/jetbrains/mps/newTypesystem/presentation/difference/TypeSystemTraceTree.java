@@ -26,7 +26,6 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.TypeAssignedOperation;
 import jetbrains.mps.newTypesystem.operation.block.AbstractBlockOperation;
-import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.equation.EquationAddedOperation;
@@ -42,10 +41,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JPopupMenu;
 import java.awt.Frame;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -225,17 +221,17 @@ public class TypeSystemTraceTree extends MPSTree {
   @Override
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
     BaseAction goToRule = new BaseAction("Go to rule") {
-      public void doExecute(AnActionEvent e) {
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         ((TypeSystemTraceTreeNode) treeNode).goToRule();
       }
     };
     BaseAction goToNode = new BaseAction("Go to node") {
-      public void doExecute(AnActionEvent e) {
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         ((TypeSystemTraceTreeNode) treeNode).goToNode();
       }
     };
     BaseAction showState = new BaseAction("Show state") {
-      public void doExecute(AnActionEvent e) {
+      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         showState(treeNode);
       }
     };

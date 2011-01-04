@@ -18,6 +18,8 @@ package jetbrains.mps.workbench.actions.help;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
+import java.util.Map;
+
 public class ShowUserGuideAction extends ShowSiteAction {
   public ShowUserGuideAction() {
     super("User Guide");
@@ -26,8 +28,8 @@ public class ShowUserGuideAction extends ShowSiteAction {
   }
 
   @Override
-  protected void doUpdate(AnActionEvent e) {
-    super.doUpdate(e);
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
+    super.doUpdate(e, _params);
 
     if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {
       e.getPresentation().setIcon(Icons.READ_HELP_ICON);

@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class NodeActionsInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeActionsInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.NodeActionsInternal";
+  public static final String ID = "jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup";
 
   public NodeActionsInternal_ActionGroup() {
     super("Internal", ID);
@@ -17,9 +17,5 @@ public class NodeActionsInternal_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, null);
   }
 }

@@ -7,27 +7,23 @@ import jetbrains.mps.logging.Logger;
 
 public class Search_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Search_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Search";
+  public static final String ID = "jetbrains.mps.ide.actions.Search_ActionGroup";
 
   public Search_ActionGroup() {
     super("Search", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Find_Action", "jetbrains.mps.ide");
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindNext_Action", "jetbrains.mps.ide");
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindPrevious_Action", "jetbrains.mps.ide");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Find_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindNext_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindPrevious_Action");
       Search_ActionGroup.this.addSeparator();
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", "jetbrains.mps.ide");
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", "jetbrains.mps.ide");
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightUsages_Action", "jetbrains.mps.ide");
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action", "jetbrains.mps.ide");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightUsages_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("SearchMenu", null);
   }
 }

@@ -5,14 +5,14 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import java.awt.Frame;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -21,15 +21,12 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactor
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog;
+import java.awt.Frame;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 public class ExtractMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
-
-  private List<SNode> nodes;
-  private Frame frame;
-  private EditorContext context;
-  private EditorComponent editorComponent;
 
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);
@@ -37,19 +34,14 @@ public class ExtractMethod_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl alt M";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return ExtractMethodFactory.isRefactoringAvailable(ExtractMethod_Action.this.nodes) && !(ExtractMethod_Action.this.editorComponent.isReadOnly());
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -58,8 +50,8 @@ public class ExtractMethod_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
@@ -68,49 +60,41 @@ public class ExtractMethod_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        this.nodes = null;
+        MapSequence.fromMap(_params).put("nodes", null);
       } else {
-        this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (this.nodes == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.frame = null;
-    this.context = null;
-    this.editorComponent = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<ExtractMethodRefactoringParameters> params = new Wrappers._T<ExtractMethodRefactoringParameters>();
       final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          params.value = ExtractMethodFactory.createParameters(ExtractMethod_Action.this.nodes);
+          params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
           refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
           params.value.setReturnType(refactoring.value.getMethodType());
         }
       });
-      ExtractMethodDialog dialog = new ExtractMethodDialog(ExtractMethod_Action.this.frame, ExtractMethod_Action.this.context, params.value, refactoring.value);
+      ExtractMethodDialog dialog = new ExtractMethodDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
       dialog.pack();
       dialog.showDialog();
     } catch (Throwable t) {

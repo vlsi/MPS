@@ -23,11 +23,16 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NonNls;
@@ -38,16 +43,46 @@ import java.util.List;
 
 public class SModelUtil_new implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(SModelUtil_new.class);
+  private ClassLoaderManager myClManager;
+  private GlobalSModelEventsManager myMeManager;
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      SModelUtil.clearCaches();
+    }
+  };
+  private SModelAdapter myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
+    public void rootRemoved(SModelRootEvent p0) {
+      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) { return; }
+      if (!(p0.getRoot().getAdapter() instanceof AbstractConceptDeclaration)) { return; }
+
+      SModelUtil.clearCaches();
+    }
+
+    public void modelReplaced(SModelDescriptor descriptor) {
+      if (Language.getModelAspect(descriptor) != LanguageAspect.STRUCTURE) { return; }
+      SModelUtil.clearCaches();
+    }
+
+    public void propertyChanged(SModelPropertyEvent p0) {
+      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) { return; }
+      if (!(p0.getNode().getAdapter() instanceof AbstractConceptDeclaration)) { return; }
+      if (!p0.getPropertyName().equals("name")) { return; }
+
+      String modelName = p0.getNode().getModel().getLongName();
+      String newName = modelName + "." + p0.getNewPropertyValue();
+      String oldName = modelName + "." + p0.getOldPropertyValue();
+      SModelUtil.conceptRenamed(oldName,newName);
+    }
+  };
 
   public SModelUtil_new(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
-    SModelUtil.startListeningOnce(clManager, meManager);
-  }
-
-  static void clearCaches() {
-    SModelUtil.clearCaches();
+    myClManager = clManager;
+    myMeManager = meManager;
   }
 
   public void initComponent() {
+    myClManager.addReloadHandler(myReloadHandler);
+    myMeManager.addGlobalModelListener(myModelListener);
   }
 
   @NonNls
@@ -57,7 +92,8 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    myMeManager.removeGlobalModelListener(myModelListener);
+    myClManager.removeReloadHandler(myReloadHandler);
   }
 
   public static <T extends BaseAdapter> T findNodeByFQName(String nodeFQName, Class<T> conceptClass, IScope scope) {

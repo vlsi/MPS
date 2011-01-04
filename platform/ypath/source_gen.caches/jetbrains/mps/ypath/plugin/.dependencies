@@ -6,11 +6,12 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.plugin.Ypath_ApplicationPlugin" file="Ypath_ApplicationPlugin.java">
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.ypath.plugin.DesignPartLoader_CustomApplicationPlugin" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.plugin.Ypath_ProjectPlugin" file="Ypath_ProjectPlugin.java">

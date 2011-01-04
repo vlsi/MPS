@@ -6,11 +6,13 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
@@ -20,20 +22,13 @@ public class CopyNodeReference_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CopyNodeReference_Action.class);
 
-  private List<SNode> nodes;
-
   public CopyNodeReference_Action() {
     super("Copy Reference", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl shift C";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -44,8 +39,8 @@ public class CopyNodeReference_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
@@ -54,26 +49,21 @@ public class CopyNodeReference_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        this.nodes = null;
+        MapSequence.fromMap(_params).put("nodes", null);
       } else {
-        this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (this.nodes == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       StringBuilder builder = new StringBuilder();
-      for (SNode node : ListSequence.fromList(CopyNodeReference_Action.this.nodes)) {
+      for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
         builder.append(NameUtil.nodeFQName(node)).append("\n");
       }
       builder.deleteCharAt(builder.length() - 1);

@@ -7,29 +7,25 @@ import jetbrains.mps.logging.Logger;
 
 public class InEditorActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(InEditorActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.InEditorActions";
+  public static final String ID = "jetbrains.mps.ide.actions.InEditorActions_ActionGroup";
 
   public InEditorActions_ActionGroup() {
     super("InEditorActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LocalHome_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LocalEnd_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectLocalHome_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectLocalEnd_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RootHome_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RootEnd_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Home_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.End_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectUp_Action", "jetbrains.mps.ide");
-      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectDown_Action", "jetbrains.mps.ide");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LocalHome_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LocalEnd_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectLocalHome_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectLocalEnd_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RootHome_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RootEnd_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Home_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.End_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectUp_Action");
+      InEditorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SelectDown_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("EditorActions", null);
   }
 }

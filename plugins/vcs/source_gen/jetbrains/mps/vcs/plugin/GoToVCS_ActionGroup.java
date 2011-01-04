@@ -4,25 +4,20 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Goto_ActionGroup;
 
 public class GoToVCS_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GoToVCS_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.GoToVCS";
+  public static final String ID = "jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup";
 
   public GoToVCS_ActionGroup() {
     super("GoToVCS", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToNextChange_Action", "jetbrains.mps.vcs");
-      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action", "jetbrains.mps.vcs");
+      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToNextChange_Action");
+      GoToVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoVCS);
   }
 }

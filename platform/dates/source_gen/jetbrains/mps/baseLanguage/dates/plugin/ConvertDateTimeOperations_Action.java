@@ -5,13 +5,16 @@ package jetbrains.mps.baseLanguage.dates.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -19,20 +22,13 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ConvertDateTimeOperations_Action.class);
 
-  private SModel model;
-
   public ConvertDateTimeOperations_Action() {
     super("Convert Date Time Operations", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -41,34 +37,32 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    if (event.getData(MPSDataKeys.CONTEXT_MODEL) == null) {
-      return false;
+    {
+      SModelDescriptor modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
+      if (modelDescriptor == null) {
+        return false;
+      }
+      MapSequence.fromMap(_params).put("model", modelDescriptor.getSModel());
     }
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL).getSModel();
-    if (this.model == null) {
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SNode> minusPeriodOperations = SModelOperations.getNodes(ConvertDateTimeOperations_Action.this.model, "jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusPeriodOperation");
+      List<SNode> minusPeriodOperations = SModelOperations.getNodes(((SModel) MapSequence.fromMap(_params).get("model")), "jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusPeriodOperation");
       for (SNode operation : minusPeriodOperations) {
         SNode minusExpression = SNodeOperations.replaceWithNewChild(operation, "jetbrains.mps.baseLanguage.structure.MinusExpression");
         SLinkOperations.setTarget(minusExpression, "leftExpression", SLinkOperations.getTarget(operation, "leftValue", true), true);
         SLinkOperations.setTarget(minusExpression, "rightExpression", SLinkOperations.getTarget(operation, "rightValue", true), true);
       }
-      List<SNode> plusPeriodOperations = SModelOperations.getNodes(ConvertDateTimeOperations_Action.this.model, "jetbrains.mps.baseLanguage.dates.structure.DateTimePlusPeriodOperation");
+      List<SNode> plusPeriodOperations = SModelOperations.getNodes(((SModel) MapSequence.fromMap(_params).get("model")), "jetbrains.mps.baseLanguage.dates.structure.DateTimePlusPeriodOperation");
       for (SNode operation : plusPeriodOperations) {
         SNode plusExpression = SNodeOperations.replaceWithNewChild(operation, "jetbrains.mps.baseLanguage.structure.PlusExpression");
         SLinkOperations.setTarget(plusExpression, "leftExpression", SLinkOperations.getTarget(operation, "leftValue", true), true);

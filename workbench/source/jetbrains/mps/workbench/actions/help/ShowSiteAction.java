@@ -19,13 +19,15 @@ import com.intellij.ide.BrowserUtil;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
 
+import java.util.Map;
+
 public abstract class ShowSiteAction extends BaseAction {
   protected ShowSiteAction(String name) {
     super(name);
     setDisableOnNoProject(false);
   }
 
-  protected void doExecute(AnActionEvent e) {
+  protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     BrowserUtil.launchBrowser(getSiteURL());
   }
 

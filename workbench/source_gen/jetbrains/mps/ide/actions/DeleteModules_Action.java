@@ -6,17 +6,19 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
 
@@ -24,29 +26,20 @@ public class DeleteModules_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeleteModules_Action.class);
 
-  private Project project;
-  private List<IModule> modules;
-  private Integer selSize;
-
   public DeleteModules_Action() {
     super("Delete Module...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return " DELETE";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    if (DeleteModules_Action.this.selSize == 0) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (((Integer) MapSequence.fromMap(_params).get("selSize")) == 0) {
       return false;
     }
-    if (DeleteModules_Action.this.selSize != DeleteModules_Action.this.modules.size()) {
+    if (((Integer) MapSequence.fromMap(_params).get("selSize")) != ((List<IModule>) MapSequence.fromMap(_params).get("modules")).size()) {
       return false;
     }
-    for (IModule module : ListSequence.fromList(DeleteModules_Action.this.modules)) {
+    for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
       if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
         return false;
       }
@@ -54,10 +47,10 @@ public class DeleteModules_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -68,36 +61,29 @@ public class DeleteModules_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.modules = event.getData(MPSDataKeys.MODULES);
-    if (this.modules == null) {
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
-    this.selSize = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
-    if (this.selSize == null) {
+    MapSequence.fromMap(_params).put("selSize", event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE));
+    if (MapSequence.fromMap(_params).get("selSize") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.modules = null;
-    this.selSize = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
-      final DeleteDialog dialog = new DeleteDialog(DeleteModules_Action.this.project, "Delete Modules", message);
+      final DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Modules", message);
       dialog.setOptions(false, false, true, false);
       dialog.show();
       if (!(dialog.isOK())) {
@@ -105,8 +91,8 @@ public class DeleteModules_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (IModule module : ListSequence.fromList(DeleteModules_Action.this.modules)) {
-            DeleteModuleHelper.deleteModule(DeleteModules_Action.this.project, module, dialog.isSafe(), dialog.isDeleteFiles());
+          for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
+            DeleteModuleHelper.deleteModule(((Project) MapSequence.fromMap(_params).get("project")), module, dialog.isSafe(), dialog.isDeleteFiles());
           }
         }
       });

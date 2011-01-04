@@ -6,20 +6,22 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IScope;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import java.awt.Frame;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.IScope;
 import java.util.Set;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -31,23 +33,14 @@ public class SetNodePackage_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SetNodePackage_Action.class);
 
-  private Frame frame;
-  private IScope scope;
-  private List<SNode> nodes;
-
   public SetNodePackage_Action() {
     super("Set Virtual Folder", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    for (SNode node : ListSequence.fromList(SetNodePackage_Action.this.nodes)) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
       if (!(node.isRoot())) {
         return false;
       }
@@ -55,10 +48,10 @@ public class SetNodePackage_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -69,8 +62,8 @@ public class SetNodePackage_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
@@ -79,43 +72,36 @@ public class SetNodePackage_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        this.nodes = null;
+        MapSequence.fromMap(_params).put("nodes", null);
       } else {
-        this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (this.nodes == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.scope = event.getData(MPSDataKeys.SCOPE);
-    if (this.scope == null) {
+    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.frame = null;
-    this.scope = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<List<String>> packages = new Wrappers._T<List<String>>();
       final Wrappers._T<String> oldPackage = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          packages.value = SetNodePackage_Action.this.fetchExistingPackages(SetNodePackage_Action.this.nodes);
-          oldPackage.value = ListSequence.fromList(SetNodePackage_Action.this.nodes).first().getProperty(SModelTreeNode.PACK);
+          packages.value = SetNodePackage_Action.this.fetchExistingPackages(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), _params);
+          oldPackage.value = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first().getProperty(SModelTreeNode.PACK);
         }
       });
-      final SetNodePackageDialog dialog = new SetNodePackageDialog(SetNodePackage_Action.this.frame, "Set Virtual Package...", packages.value);
+      final SetNodePackageDialog dialog = new SetNodePackageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Set Virtual Package...", packages.value);
       dialog.setPackage(oldPackage.value);
       dialog.showDialog();
       if (dialog.isCancelled()) {
@@ -123,10 +109,10 @@ public class SetNodePackage_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (SNode node : ListSequence.fromList(SetNodePackage_Action.this.nodes)) {
+          for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
             node.setProperty(SModelTreeNode.PACK, dialog.getPackage());
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-              for (SNode aspect : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), SetNodePackage_Action.this.scope))) {
+              for (SNode aspect : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), ((IScope) MapSequence.fromMap(_params).get("scope"))))) {
                 aspect.setProperty(SModelTreeNode.PACK, dialog.getPackage());
               }
             }
@@ -140,7 +126,7 @@ public class SetNodePackage_Action extends GeneratedAction {
     }
   }
 
-  /*package*/ List<String> fetchExistingPackages(List<SNode> nlist) {
+  /*package*/ List<String> fetchExistingPackages(List<SNode> nlist, final Map<String, Object> _params) {
     Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
     for (SNode node : ListSequence.fromList(nlist)) {
       SetSequence.fromSet(models).addElement(SNodeOperations.getModel(node));

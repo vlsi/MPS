@@ -34,7 +34,7 @@
     <scopeInfo nodeId="1230216704594" fileName="CommandClosureLiteral_DataFlow.java" startLine="18" startPosition="103" endLine="19" endPosition="103" />
     <scopeInfo nodeId="1230216768310" fileName="CommandClosureLiteral_DataFlow.java" startLine="21" startPosition="161" endLine="22" endPosition="44" />
     <scopeInfo nodeId="1230216763002" fileName="CommandClosureLiteral_DataFlow.java" startLine="20" startPosition="12" endLine="23" endPosition="7" />
-    <scopeInfo nodeId="1230216768309" fileName="CommandClosureLiteral_DataFlow.java" startLine="20" startPosition="12" endLine="23" endPosition="7">
+    <scopeInfo nodeId="1230216768309" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CommandClosureLiteral_DataFlow.java" startLine="20" startPosition="12" endLine="23" endPosition="7">
       <varInfo nodeId="1230216768313" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="1225441216911" fileName="CommandClosureLiteral_DataFlow.java" startLine="17" startPosition="102" endLine="24" endPosition="5" />
@@ -72,7 +72,7 @@
     <nodeInfo nodeId="4290387479601704096" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ActionInstance_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
     <scopeInfo nodeId="4290387479601704097" fileName="ActionInstance_DataFlow.java" startLine="16" startPosition="102" endLine="17" endPosition="54" />
     <scopeInfo nodeId="4290387479601704090" fileName="ActionInstance_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="4290387479601704096" fileName="ActionInstance_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
+    <scopeInfo nodeId="4290387479601704096" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ActionInstance_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="4290387479601704100" varName="expression" />
     </scopeInfo>
   </root>
@@ -119,7 +119,7 @@
     <nodeInfo nodeId="8415911927033508131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CreateRunConfigStatement_DataFlow.java" startLine="19" startPosition="116" endLine="20" endPosition="52" />
     <nodeInfo nodeId="8415911927033508118" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CreateRunConfigStatement_DataFlow.java" startLine="18" startPosition="110" endLine="21" endPosition="5" />
     <scopeInfo nodeId="8415911927033508121" fileName="CreateRunConfigStatement_DataFlow.java" startLine="19" startPosition="116" endLine="20" endPosition="52" />
-    <scopeInfo nodeId="8415911927033508118" fileName="CreateRunConfigStatement_DataFlow.java" startLine="18" startPosition="110" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="8415911927033508118" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="CreateRunConfigStatement_DataFlow.java" startLine="18" startPosition="110" endLine="21" endPosition="5" />
     <scopeInfo nodeId="8415911927033508117" fileName="CreateRunConfigStatement_DataFlow.java" startLine="16" startPosition="102" endLine="21" endPosition="5" />
   </root>
   <root nodeId="8415911927033508134">

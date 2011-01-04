@@ -16,6 +16,7 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
@@ -35,6 +36,13 @@ public class ApplicationPluginManager implements ApplicationComponent {
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
 
   //-------
+
+  public BaseApplicationPlugin getPlugin(PluginId id){
+    for (BaseApplicationPlugin p:mySortedPlugins){
+      if (p.getId()==id) return p;
+    }
+    return null;
+  }
 
   public void loadPlugins() {
     mySortedPlugins = createPlugins();

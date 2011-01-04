@@ -5,26 +5,24 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 
 public class GenerateBuildAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GenerateBuildAction_Action.class);
-
-  private Project project;
-  private IOperationContext operationContext;
-  private SModelDescriptor modelDescriptor;
 
   public GenerateBuildAction_Action() {
     super("Generate Build Files", "Generate Build Files And Place Them Into Base Directory", ICON);
@@ -32,19 +30,14 @@ public class GenerateBuildAction_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return GenerateBuildAction_Action.this.getMPSLayout(_params) != null;
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return GenerateBuildAction_Action.this.getMPSLayout() != null;
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -53,52 +46,45 @@ public class GenerateBuildAction_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.operationContext == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    this.modelDescriptor = event.getData(MPSDataKeys.MODEL);
-    if (this.modelDescriptor == null) {
+    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.operationContext = null;
-    this.modelDescriptor = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       // calculate output path 
-      final SNode layout = GenerateBuildAction_Action.this.getMPSLayout();
+      final SNode layout = GenerateBuildAction_Action.this.getMPSLayout(_params);
       final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout, "configuration", true)).first();
         }
       });
-      GenerateTextFromBuild.generate(configuration.value, GenerateBuildAction_Action.this.modelDescriptor, GenerateBuildAction_Action.this.operationContext, GenerateBuildAction_Action.this.project, true);
+      GenerateTextFromBuild.generate(configuration.value, ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((Project) MapSequence.fromMap(_params).get("project")), true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateBuildAction", t);
     }
   }
 
-  private SNode getMPSLayout() {
+  private SNode getMPSLayout(final Map<String, Object> _params) {
     return ModelAccess.instance().runReadAction(new Computable<SNode>() {
       public SNode compute() {
-        return GenerateTextFromBuild.getLayout(GenerateBuildAction_Action.this.modelDescriptor);
+        return GenerateTextFromBuild.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")));
       }
     });
   }

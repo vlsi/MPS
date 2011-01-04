@@ -26,6 +26,11 @@ public class DataFlowManager implements ApplicationComponent {
   private MPSModuleRepository myModuleRepository;
   private Map<String, DataFlowBuilder> myBuilders = new HashMap<String, DataFlowBuilder>();
   private boolean myLoaded = false;
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      DataFlowManager.this.clear();
+    }
+  };
 
   public DataFlowManager(ClassLoaderManager manager, MPSModuleRepository repo) {
     this.myClassLoaderManager = manager;
@@ -33,11 +38,7 @@ public class DataFlowManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    this.myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        DataFlowManager.this.clear();
-      }
-    });
+    this.myClassLoaderManager.addReloadHandler(this.myReloadHandler);
   }
 
   @NotNull
@@ -46,6 +47,7 @@ public class DataFlowManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
+    this.myClassLoaderManager.removeReloadHandler(this.myReloadHandler);
   }
 
   public void register(String conceptFqName, DataFlowBuilder builder) {

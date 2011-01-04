@@ -16,12 +16,16 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.ide.ui.customization.CustomActionsSchema;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.openapi.wm.impl.IdeFrameImpl;
+import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -64,7 +68,11 @@ public class GroupAdjuster {
 
     List<BaseGroup> mainMenuGroups = new ArrayList<BaseGroup>();
     DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
-    for (BaseGroup group : idePlugin.getGroups()) {
+    ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+    for (String id : manager.getPluginActions(idePlugin.getId())) {
+      AnAction action = manager.getAction(id);
+      if (!(action instanceof BaseGroup)) continue;
+      BaseGroup group = ((BaseGroup) action);
       if (ActionUtils.contains(mainMenuGroup, group)) {
         mainMenuGroups.add(group);
       }

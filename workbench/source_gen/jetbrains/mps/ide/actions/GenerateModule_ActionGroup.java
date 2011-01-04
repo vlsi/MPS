@@ -5,25 +5,21 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction;
+import com.intellij.openapi.extensions.PluginId;
 
 public class GenerateModule_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GenerateModule_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.GenerateModule";
+  public static final String ID = "jetbrains.mps.ide.actions.GenerateModule_ActionGroup";
 
   public GenerateModule_ActionGroup() {
     super("GenerateModule", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GenerateModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RegenerateModule_Action", "jetbrains.mps.ide", new GenerateAllModelsInModuleAction(true));
-      GenerateModule_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModule_Action", "jetbrains.mps.ide", new GenerateAllModelsInModuleAction(false));
+      GenerateModule_ActionGroup.this.addParameterizedAction(new RegenerateModule_Action(new GenerateAllModelsInModuleAction(true)), PluginId.getId("jetbrains.mps.ide"), new GenerateAllModelsInModuleAction(true));
+      GenerateModule_ActionGroup.this.addParameterizedAction(new GenerateModule_Action(new GenerateAllModelsInModuleAction(false)), PluginId.getId("jetbrains.mps.ide"), new GenerateAllModelsInModuleAction(false));
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, GenerateModulePopup_ActionGroup.LABEL_ID_generate);
-    this.insertGroupIntoAnother(Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
   }
 }

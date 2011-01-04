@@ -8,19 +8,18 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cellExplorer.CellExplorerView;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class ShowCellInExplorer_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/cellExplorer.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowCellInExplorer_Action.class);
-
-  private IOperationContext context;
-  private EditorCell cell;
 
   public ShowCellInExplorer_Action() {
     super("Show Cell In Explorer", "", ICON);
@@ -28,12 +27,7 @@ public class ShowCellInExplorer_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -44,30 +38,24 @@ public class ShowCellInExplorer_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.cell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.cell == null) {
+    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.cell = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ShowCellInExplorer_Action.this.context.getComponent(CellExplorerView.class).showCell(ShowCellInExplorer_Action.this.cell);
+      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(CellExplorerView.class).showCell(((EditorCell) MapSequence.fromMap(_params).get("cell")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowCellInExplorer", t);

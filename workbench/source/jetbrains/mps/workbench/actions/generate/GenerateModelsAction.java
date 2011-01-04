@@ -29,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public abstract class GenerateModelsAction extends BaseAction {
   private List<SModelDescriptor> myModels;
@@ -44,7 +45,7 @@ public abstract class GenerateModelsAction extends BaseAction {
 
   public abstract IGenerationHandler getGenerationHandler();
 
-  public void doExecute(AnActionEvent e) {
+  public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     //noinspection ConstantConditions
     boolean checkSuccessful = myPluginManager.getTool(ModelCheckerTool_Tool.class)
       .checkModelsBeforeGenerationIfNeeded(myContext, (List<SModelDescriptor>) ((List) myModels), new Runnable() {
@@ -69,7 +70,7 @@ public abstract class GenerateModelsAction extends BaseAction {
       false);
   }
 
-  protected void doUpdate(AnActionEvent e) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
     boolean applicable = true;
     for (SModelDescriptor sm : myModels) {
       if (!getGenerationHandler().canHandle(sm)) {
@@ -81,8 +82,8 @@ public abstract class GenerateModelsAction extends BaseAction {
   }
 
   @Override
-  protected boolean collectActionData(AnActionEvent e) {
-    if (!super.collectActionData(e)) return false;
+  protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
+    if (!super.collectActionData(e, _params)) return false;
     Project project = e.getData(MPSDataKeys.PROJECT);
     myPluginManager = project.getComponent(ProjectPluginManager.class);
     List<SModelDescriptor> models = e.getData(MPSDataKeys.MODELS);

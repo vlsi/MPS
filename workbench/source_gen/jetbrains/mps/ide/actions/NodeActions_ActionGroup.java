@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class NodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.NodeActions";
+  public static final String ID = "jetbrains.mps.ide.actions.NodeActions_ActionGroup";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_diff = ID + "diff";
@@ -18,42 +21,62 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EditNode_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EditNodeExplicit_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EditNode_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EditNodeExplicit_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetNodePackage_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetNodePackage_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExpandNode_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExpandNode_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeName_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNode_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CutNode_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CloneRoot_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeName_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNode_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CutNode_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CloneRoot_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteNode_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteNode_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRules_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRules_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInExplorer_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowGenerationTrace_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowGenerationTrace_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowGenerationTraceback_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_find_instances);
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_find_instances);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_structure);
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_diff);
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_structure);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_diff);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowErrorMessage_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowErrorMessage_Action");
       NodeActions_ActionGroup.this.addSeparator();
-      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_favorites);
+      {
+        LabelledAnchor action = new LabelledAnchor(NodeActions_ActionGroup.LABEL_ID_favorites);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        NodeActions_ActionGroup.this.addAction(action);
+      }
       NodeActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

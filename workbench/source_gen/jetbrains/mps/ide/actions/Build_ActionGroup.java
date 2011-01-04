@@ -7,31 +7,18 @@ import jetbrains.mps.logging.Logger;
 
 public class Build_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Build_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Build";
-  public static final String LABEL_ID_make = ID + "make";
-  public static final String LABEL_ID_compile = ID + "compile";
-  public static final String LABEL_ID_options = ID + "options";
-  public static final String LABEL_ID_aux = ID + "aux";
+  public static final String ID = "jetbrains.mps.ide.actions.Build_ActionGroup";
 
   public Build_ActionGroup() {
     super("Build", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Build_ActionGroup.this.addAnchor(Build_ActionGroup.LABEL_ID_make);
-      Build_ActionGroup.this.addSeparator();
-      Build_ActionGroup.this.addAnchor(Build_ActionGroup.LABEL_ID_compile);
-      Build_ActionGroup.this.addSeparator();
-      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Options_Action", "jetbrains.mps.ide");
-      Build_ActionGroup.this.addAnchor(Build_ActionGroup.LABEL_ID_options);
-      Build_ActionGroup.this.addSeparator();
-      Build_ActionGroup.this.addAnchor(Build_ActionGroup.LABEL_ID_aux);
+      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeAllModules_Action");
+      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanAllModules_Action");
+      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildAllModules_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("BuildMenu", null);
   }
 }

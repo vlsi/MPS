@@ -6,23 +6,22 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.project.Project;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newLanguageDialog.NewLanguageDialog;
+import java.awt.Frame;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 
 public class NewLanguage_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewLanguage_Action.class);
 
-  private MPSProject project;
-  private Project ideaProject;
-  private Frame frame;
   private String folder;
 
   public NewLanguage_Action(String folder_par) {
@@ -32,12 +31,7 @@ public class NewLanguage_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,43 +42,36 @@ public class NewLanguage_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
-    if (this.ideaProject == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.ideaProject = null;
-    this.frame = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewLanguageDialog dialog = new NewLanguageDialog(NewLanguage_Action.this.frame);
-      dialog.setProject(NewLanguage_Action.this.project);
+      NewLanguageDialog dialog = new NewLanguageDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
+      dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
       dialog.showDialog();
       Language l = dialog.getResult();
       if (l == null) {
         return;
       }
-      NewLanguage_Action.this.project.setFolderFor(l, NewLanguage_Action.this.folder);
-      ProjectPane projectPane = ProjectPane.getInstance(NewLanguage_Action.this.ideaProject);
+      ((MPSProject) MapSequence.fromMap(_params).get("project")).setFolderFor(l, NewLanguage_Action.this.folder);
+      ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(l, false);
     } catch (Throwable t) {
@@ -96,8 +83,8 @@ public class NewLanguage_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(NewLanguage_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(folder_State((String) this.folder));
     res.append("!");

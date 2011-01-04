@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageNewActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions";
+  public static final String ID = "jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup";
   public static final String LABEL_ID_newAspect = ID + "newAspect";
 
   public LanguageNewActions_ActionGroup() {
@@ -15,19 +18,20 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewGenerator_Action", "jetbrains.mps.ide");
+      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewGenerator_Action");
       LanguageNewActions_ActionGroup.this.addSeparator();
-      LanguageNewActions_ActionGroup.this.addAnchor(LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
+      {
+        LabelledAnchor action = new LabelledAnchor(LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        LanguageNewActions_ActionGroup.this.addAction(action);
+      }
       LanguageNewActions_ActionGroup.this.addSeparator();
-      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action", "jetbrains.mps.ide");
-      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action", "jetbrains.mps.ide");
-      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action", "jetbrains.mps.ide");
+      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action");
+      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action");
+      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_newGroup);
   }
 }

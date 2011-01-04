@@ -6,8 +6,9 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import org.jetbrains.annotations.NotNull;
 
 public class ShowErrorMessage_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -19,19 +20,14 @@ public class ShowErrorMessage_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return false;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -42,18 +38,14 @@ public class ShowErrorMessage_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

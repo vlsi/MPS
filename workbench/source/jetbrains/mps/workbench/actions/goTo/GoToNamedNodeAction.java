@@ -40,6 +40,7 @@ import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GoToNamedNodeAction extends BaseAction {
   private static boolean myUseCache = true;
@@ -48,7 +49,7 @@ public class GoToNamedNodeAction extends BaseAction {
     myUseCache = useCache;
   }
 
-  public void doExecute(AnActionEvent e) {
+  public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 

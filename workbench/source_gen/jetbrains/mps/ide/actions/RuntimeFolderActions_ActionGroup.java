@@ -7,14 +7,14 @@ import jetbrains.mps.logging.Logger;
 
 public class RuntimeFolderActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(RuntimeFolderActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.RuntimeFolderActions";
+  public static final String ID = "jetbrains.mps.ide.actions.RuntimeFolderActions_ActionGroup";
 
   public RuntimeFolderActions_ActionGroup() {
     super("RuntimeFolderActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      RuntimeFolderActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewRuntimeModule_Action", "jetbrains.mps.ide");
+      RuntimeFolderActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewRuntimeModule_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -6,13 +6,13 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientModelsModule;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.smodel.SModel;
@@ -22,14 +22,12 @@ import jetbrains.mps.javaParser.JavaCompiler;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
+import java.awt.Frame;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class GetModelContentsFromSource_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GetModelContentsFromSource_Action.class);
-
-  private Frame frame;
-  private IOperationContext context;
-  private SModelDescriptor model;
 
   public GetModelContentsFromSource_Action() {
     super("Get Model Contents from Source", "", ICON);
@@ -37,23 +35,18 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    IModule module = GetModelContentsFromSource_Action.this.model.getModule();
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
     if (module == null) {
       return false;
     }
     return !(module instanceof TransientModelsModule);
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -64,39 +57,32 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.context = null;
-    this.model = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule module = GetModelContentsFromSource_Action.this.model.getModule();
+      IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
       treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-      final SModel sModel = GetModelContentsFromSource_Action.this.model.getSModel();
+      final SModel sModel = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
       treeFileChooser.setFileFilter(new IFileFilter() {
         public boolean accept(IFile file) {
           return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getAbsolutePath()));
@@ -122,9 +108,9 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
       if (initial != null) {
         treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
       }
-      IFile result = treeFileChooser.showDialog(GetModelContentsFromSource_Action.this.frame);
+      IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(GetModelContentsFromSource_Action.this.context, module, new File(result.getAbsolutePath()), false, sModel);
+        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), module, new File(result.getAbsolutePath()), false, sModel);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

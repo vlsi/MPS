@@ -99,6 +99,10 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6388164970935848749">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorHelper" />
     </node>
+    <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="902116341861940181">
+      <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
+      <property name="name" nameId="tpck.1169194664001" value="Default" />
+    </node>
   </roots>
   <root id="1216648908320">
     <node role="methodDeclaration" roleId="tp4k.6547237850567462848" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="1216649373054">
@@ -393,9 +397,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2510134983999309021">
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F1" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="2510134983999479076">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2510134983999479077">
@@ -5881,6 +5882,14 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="1214823353927928447">
           <node role="componentType" roleId="tpee.1070534760952" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1214823353927928445" />
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="902116341861940181">
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940182">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="2510134983999308902" resolveInfo="ShowDefaultHelp" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940183">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F1" />
       </node>
     </node>
   </root>

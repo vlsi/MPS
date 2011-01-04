@@ -33,17 +33,18 @@ class DefaultFindUsagesManager extends FindUsagesManager {
 
   private HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>>();
   private ClassLoaderManager myClassLoaderManager;
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      DefaultFindUsagesManager.invalidateCaches();
+    }
+  };
 
   public DefaultFindUsagesManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        DefaultFindUsagesManager.invalidateCaches();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -53,7 +54,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
   }
 
   public void disposeComponent() {
-
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {

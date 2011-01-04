@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Favorites_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Favorites_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Favorites";
+  public static final String ID = "jetbrains.mps.ide.actions.Favorites_ActionGroup";
   public static final String LABEL_ID_generate = ID + "generate";
   public static final String LABEL_ID_popup = ID + "popup";
 
@@ -16,22 +19,24 @@ public class Favorites_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Favorites_ActionGroup.this.addAnchor(Favorites_ActionGroup.LABEL_ID_generate);
+      {
+        LabelledAnchor action = new LabelledAnchor(Favorites_ActionGroup.LABEL_ID_generate);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Favorites_ActionGroup.this.addAction(action);
+      }
       Favorites_ActionGroup.this.addSeparator();
-      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameFavoritesList_Action", "jetbrains.mps.ide");
-      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveFromFavorites_Action", "jetbrains.mps.ide");
-      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteFavoritesList_Action", "jetbrains.mps.ide");
-      Favorites_ActionGroup.this.addAnchor(Favorites_ActionGroup.LABEL_ID_popup);
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameFavoritesList_Action");
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveFromFavorites_Action");
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteFavoritesList_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(Favorites_ActionGroup.LABEL_ID_popup);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Favorites_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_favorites);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_favorites);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_favorites);
-    this.insertGroupIntoAnother(GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_favorites);
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);
   }
 }

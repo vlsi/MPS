@@ -4,27 +4,45 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Generate_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Generate";
+  public static final String ID = "jetbrains.mps.ide.actions.Generate_ActionGroup";
+  public static final String LABEL_ID_saveTransientModels = ID + "saveTransientModels";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_generateModel = ID + "generateModel";
 
   public Generate_ActionGroup() {
-    super("Generate (obsolete)", ID);
+    super("Generate", ID);
     this.setIsInternal(false);
-    this.setPopup(true);
+    this.setPopup(false);
     try {
-      Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModule);
+      {
+        LabelledAnchor action = new LabelledAnchor(Generate_ActionGroup.LABEL_ID_saveTransientModels);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Generate_ActionGroup.this.addAction(action);
+      }
+      Generate_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action");
       Generate_ActionGroup.this.addSeparator();
-      Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModel);
+      {
+        LabelledAnchor action = new LabelledAnchor(Generate_ActionGroup.LABEL_ID_generateModule);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Generate_ActionGroup.this.addAction(action);
+      }
+      Generate_ActionGroup.this.addSeparator();
+      {
+        LabelledAnchor action = new LabelledAnchor(Generate_ActionGroup.LABEL_ID_generateModel);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Generate_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
   }
 }

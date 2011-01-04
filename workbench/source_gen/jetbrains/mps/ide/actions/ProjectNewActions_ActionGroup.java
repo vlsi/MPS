@@ -4,25 +4,22 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectNewActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.ProjectNewActions";
+  public static final String ID = "jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup";
 
   public ProjectNewActions_ActionGroup() {
     super("New", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSolution_Action", "jetbrains.mps.ide", "");
-      ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewLanguage_Action", "jetbrains.mps.ide", "");
-      ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewDevKit_Action", "jetbrains.mps.ide");
+      ProjectNewActions_ActionGroup.this.addParameterizedAction(new NewSolution_Action(""), PluginId.getId("jetbrains.mps.ide"), "");
+      ProjectNewActions_ActionGroup.this.addParameterizedAction(new NewLanguage_Action(""), PluginId.getId("jetbrains.mps.ide"), "");
+      ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewDevKit_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
   }
 }

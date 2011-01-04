@@ -6,9 +6,9 @@
   <unitInfo fileName="CollectionsWatchables.java" startLine="37" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_key" />
   <unitInfo fileName="CollectionsWatchables.java" startLine="49" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_value" />
   <unitInfo fileName="CollectionsWatchables.java" startLine="61" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_size" />
-  <unitInfo fileName="Collections_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_ApplicationPlugin" />
   <unitInfo fileName="Collections_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_CustomApplicationPlugin" />
   <unitInfo fileName="CustomViewersDescriptor.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersDescriptor" />
+  <unitInfo fileName="Collections_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_ApplicationPlugin" />
   <unitInfo fileName="ListViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory$ListViewerWrapper" />
   <unitInfo fileName="SetViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory$SetViewerWrapper" />
   <unitInfo fileName="MapViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory$MapViewerWrapper" />

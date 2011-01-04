@@ -6,27 +6,25 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import java.util.List;
 import java.util.ArrayList;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 
 public class GenerateModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateModel_Action.class);
 
-  private Project project;
-  private IOperationContext context;
-  private List<SModelDescriptor> models;
-  private SModelDescriptor model;
   private IGenerationHandler generationHandler;
   private boolean rebuildAll;
 
@@ -38,20 +36,15 @@ public class GenerateModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
         event.getPresentation().setText((GenerateModel_Action.this.rebuildAll ?
           "Regenerate Files" :
           GenerateModel_Action.this.generationHandler.toString()
         ));
-        boolean applicable = ListSequence.fromList(GenerateModel_Action.this.getModels()).isNotEmpty();
-        for (SModelDescriptor model : ListSequence.fromList(GenerateModel_Action.this.getModels())) {
+        boolean applicable = ListSequence.fromList(GenerateModel_Action.this.getModels(_params)).isNotEmpty();
+        for (SModelDescriptor model : ListSequence.fromList(GenerateModel_Action.this.getModels(_params))) {
           if (!(GenerateModel_Action.this.generationHandler.canHandle(model))) {
             applicable = false;
             break;
@@ -67,46 +60,38 @@ public class GenerateModel_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.models = event.getData(MPSDataKeys.MODELS);
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.context = null;
-    this.models = null;
-    this.model = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor m : ListSequence.fromList(GenerateModel_Action.this.models)) {
+      for (SModelDescriptor m : ListSequence.fromList(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")))) {
         modelsToGenerate.add(m);
       }
-      boolean checkSuccessful = GenerateModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, (List) modelsToGenerate, new Runnable() {
+      boolean checkSuccessful = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(((IOperationContext) MapSequence.fromMap(_params).get("context")), (List) modelsToGenerate, new Runnable() {
         public void run() {
-          GeneratorFacade.getInstance().generateModels(GenerateModel_Action.this.context, modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
+          GeneratorFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
         }
       });
       if (!(checkSuccessful)) {
         return;
       }
-      GeneratorFacade.getInstance().generateModels(GenerateModel_Action.this.context, modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
+      GeneratorFacade.getInstance().generateModels(((IOperationContext) MapSequence.fromMap(_params).get("context")), modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateModel", t);
@@ -116,8 +101,8 @@ public class GenerateModel_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(GenerateModel_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(generationHandler_State((IGenerationHandler) this.generationHandler));
     res.append("!");
@@ -126,13 +111,13 @@ public class GenerateModel_Action extends GeneratedAction {
     return res.toString();
   }
 
-  /*package*/ List<SModelDescriptor> getModels() {
+  /*package*/ List<SModelDescriptor> getModels(final Map<String, Object> _params) {
     List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    if (GenerateModel_Action.this.models != null) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(GenerateModel_Action.this.models));
+    if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")) != null) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))));
     }
-    if (ListSequence.fromList(result).isEmpty() && GenerateModel_Action.this.model != null) {
-      ListSequence.fromList(result).addElement(GenerateModel_Action.this.model);
+    if (ListSequence.fromList(result).isEmpty() && ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) != null) {
+      ListSequence.fromList(result).addElement(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
     }
     return result;
   }

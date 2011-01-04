@@ -7,20 +7,16 @@ import jetbrains.mps.logging.Logger;
 
 public class ModelRefactoring_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelRefactoring_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.ModelRefactoring";
+  public static final String ID = "jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup";
 
   public ModelRefactoring_ActionGroup() {
     super("Refactoring", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      ModelRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameModel_Action", "jetbrains.mps.ide");
+      ModelRefactoring_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameModel_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_refactoring);
   }
 }

@@ -5,14 +5,16 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddClassMethodStrategy;
@@ -23,10 +25,6 @@ public class ImplementMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ImplementMethod_Action.class);
 
-  private SNode selectedNode;
-  private EditorContext editorContext;
-  private IOperationContext operationContext;
-
   public ImplementMethod_Action() {
     super("Implement Method...", "", ICON);
     this.setIsAlwaysVisible(false);
@@ -34,19 +32,14 @@ public class ImplementMethod_Action extends GeneratedAction {
     this.setMnemonic("I".charAt(0));
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl I";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return !(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).isInspector()) && (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return !(ImplementMethod_Action.this.editorContext.isInspector()) && (SNodeOperations.getAncestor(ImplementMethod_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -55,42 +48,35 @@ public class ImplementMethod_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.selectedNode = node;
+      MapSequence.fromMap(_params).put("selectedNode", node);
     }
-    if (this.selectedNode == null) {
+    if (MapSequence.fromMap(_params).get("selectedNode") == null) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.operationContext == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedNode = null;
-    this.editorContext = null;
-    this.operationContext = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Project project = ImplementMethod_Action.this.operationContext.getProject();
-      Frame frame = ImplementMethod_Action.this.editorContext.getMainFrame();
-      new StratergyAddMethodDialog(ImplementMethod_Action.this.editorContext, frame, new AddClassMethodStrategy(ImplementMethod_Action.this.selectedNode), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
+      Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
+      Frame frame = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getMainFrame();
+      new StratergyAddMethodDialog(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), frame, new AddClassMethodStrategy(((SNode) MapSequence.fromMap(_params).get("selectedNode"))), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ImplementMethod", t);
     }

@@ -15,44 +15,54 @@
  */
 package jetbrains.mps.plugins.pluginparts.actions;
 
-import com.intellij.openapi.actionSystem.*;
-import jetbrains.mps.workbench.action.ActionFactory;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionStub;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.MPSActions;
+
+import java.util.Collections;
+import java.util.List;
 
 public abstract class GeneratedActionGroup extends BaseGroup {
-  protected GeneratedActionGroup(String name) {
-    super(name);
-  }
-
   protected GeneratedActionGroup(String text, String id) {
     super(text, id);
   }
 
-  protected void addAction(String actionClassName, String moduleName, Object... params) {
-    AnAction action = ActionFactory.getInstance().acquireRegisteredAction(actionClassName, moduleName, params);
-    if (action != null) {
-      this.add(action);
-    }
+  @Deprecated//replace with action stubs
+  protected void addAction(String id) {
+    add(ActionManager.getInstance().getAction(id));
   }
 
-  protected void addGroup(String groupClassName, String moduleName, Object... params) {
-    AnAction group = ActionFactory.getInstance().acquireRegisteredGroup(groupClassName, moduleName, params);
-    if (group != null) {
-      this.add(group);
-    }
-  }
-
-  public void insertGroupIntoAnother(String toId, String labelName) {
-    DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
-    if (gTo == null) {
+  @Deprecated
+  protected void addParameterizedAction(GeneratedAction action, PluginId id, Object... params) {
+    if (!isStrict()){
+      add(action);
       return;
     }
-    if (labelName != null) {
-      Constraints constraints = new Constraints(Anchor.AFTER, labelName);
-      gTo.add(this, constraints);
-    } else
-    {
-      gTo.add(this);
+
+    ActionManager manager = ActionManager.getInstance();
+    AnAction oldAction = manager.getAction(action.getActionId());
+    if (oldAction != null) {
+      add(oldAction);
+      return;
     }
+
+    add(action);
+    BaseApplicationPlugin plugin = ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).getPlugin(id);
+    plugin.addParameterizedAction(action, params);
+  }
+
+  protected void addAction(ActionStub creator) {
+    add(MPSActions.getInstance().acquireAction(creator));
+  }
+
+  protected boolean isStrict(){
+    return true;
   }
 }

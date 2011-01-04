@@ -7,46 +7,42 @@ import jetbrains.mps.logging.Logger;
 
 public class Bookmarks_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Bookmarks_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Bookmarks";
+  public static final String ID = "jetbrains.mps.ide.actions.Bookmarks_ActionGroup";
 
   public Bookmarks_ActionGroup() {
     super("Bookmarks", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action", "jetbrains.mps.ide");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action");
       Bookmarks_ActionGroup.this.addSeparator();
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action", "jetbrains.mps.ide");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action");
       Bookmarks_ActionGroup.this.addSeparator();
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveAllBookmarks_Action", "jetbrains.mps.ide");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveAllBookmarks_Action");
       Bookmarks_ActionGroup.this.addSeparator();
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark0_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark1_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark2_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark3_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark4_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark5_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark6_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark7_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark8_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark9_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark0_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark1_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark2_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark3_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark4_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark5_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark6_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark7_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark8_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark9_Action", "jetbrains.mps.ide");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action", "jetbrains.mps.ide");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark0_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark1_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark2_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark3_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark4_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark5_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark6_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark7_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark8_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark9_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark0_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark1_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark2_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark3_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark4_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark5_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark6_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark7_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark8_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark9_Action");
+      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

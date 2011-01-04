@@ -11,12 +11,10 @@ import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 
 public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeRefactoring_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.refactoring.plugin.NodeRefactoring";
+  public static final String ID = "jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup";
 
   public NodeRefactoring_ActionGroup() {
     super("Refactoring", ID);
@@ -42,10 +40,5 @@ outer:
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, null);
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

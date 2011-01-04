@@ -11,9 +11,8 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.List;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.List;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
@@ -23,10 +22,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NamespaceInternalActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.NamespaceInternalActions";
+  public static final String ID = "jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-  private List<AnAction> myAllActions;
 
   public NamespaceInternalActions_ActionGroup() {
     super("NamespaceInternalActions", ID);
@@ -58,10 +56,10 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
           NamespaceInternalActions_ActionGroup.this.addSeparator();
         }
       }
-      NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action", "jetbrains.mps.ide");
+      NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action");
       if (ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceInternalActions_ActionGroup.this.addSeparator();
-        NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action", "jetbrains.mps.ide");
+        NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
@@ -75,7 +73,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
 
-  public void adjust() {
-    this.insertGroupIntoAnother(NamespaceActions_ActionGroup.ID, NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
+  public boolean isStrict() {
+    return false;
   }
 }

@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class JUnitTestMethodActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(JUnitTestMethodActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.JUnitTestMethodActions";
+  public static final String ID = "jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup";
 
   public JUnitTestMethodActions_ActionGroup() {
     super("JUnitTestMethodActions", ID);

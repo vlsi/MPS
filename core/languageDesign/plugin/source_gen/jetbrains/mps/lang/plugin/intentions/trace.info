@@ -25,7 +25,7 @@
     <nodeInfo nodeId="8821725594354779365" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1616052750811363741" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="25" />
     <scopeInfo nodeId="8821725594354779368" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="43" startPosition="69" endLine="44" endPosition="312" />
-    <scopeInfo nodeId="8821725594354779365" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="8821725594354779365" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1616052750811363743" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="39" startPosition="76" endLine="46" endPosition="223">
       <varInfo nodeId="8821725594354763765" varName="readActionStatement" />
       <varInfo nodeId="8821725594354779345" varName="selectedNodes" />

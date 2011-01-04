@@ -57,6 +57,11 @@ import java.util.*;
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clear();
+    }
+  };
 
   public static IntentionsManager getInstance() {
     return ApplicationManager.getApplication().getComponent(IntentionsManager.class);
@@ -443,11 +448,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------component methods-----------------
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clear();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -457,7 +458,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public void disposeComponent() {
-
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   public MyState getState() {

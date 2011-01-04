@@ -5,11 +5,13 @@ package jetbrains.mps.lang.structure.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 
@@ -17,25 +19,16 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowDefaultHelp_Action.class);
 
-  private IModule module;
-  private SModelDescriptor model;
-  private SNode node;
-
   public ShowDefaultHelp_Action() {
     super("Show Default Help", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return " F1";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(ShowDefaultHelp_Action.this.module, ShowDefaultHelp_Action.this.model, ShowDefaultHelp_Action.this.node);
+        HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
         if (defaultHelp == null) {
           ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
           return;
@@ -49,31 +42,24 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    this.module = event.getData(MPSDataKeys.CONTEXT_MODULE);
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.CONTEXT_MODULE));
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.module = null;
-    this.model = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HelpHelper.showHelpFor(ShowDefaultHelp_Action.this.module, ShowDefaultHelp_Action.this.model, ShowDefaultHelp_Action.this.node);
+      HelpHelper.showHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
     }

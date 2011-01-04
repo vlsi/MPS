@@ -21,7 +21,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -29,6 +28,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.Frame;
+import java.util.Map;
 
 public class OpenMPSProjectAction extends BaseAction {
   private static final Icon OPEN_ICON = new ImageIcon(OpenMPSProjectAction.class.getResource("open.png"));
@@ -43,8 +43,8 @@ public class OpenMPSProjectAction extends BaseAction {
 
 
   @Override
-  protected void doUpdate(AnActionEvent e) {
-    super.doUpdate(e);
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
+    super.doUpdate(e, _params);
 
     if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {
       e.getPresentation().setIcon(OPEN_ICON_WELCOME_SCREEN);
@@ -53,7 +53,7 @@ public class OpenMPSProjectAction extends BaseAction {
     }
   }
 
-  public void doExecute(AnActionEvent e) {
+  public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     TreeFileChooser chooser = new TreeFileChooser();
 
     chooser.setFileFilter(new IFileFilter() {

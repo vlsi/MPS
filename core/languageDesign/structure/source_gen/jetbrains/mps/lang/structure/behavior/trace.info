@@ -20,7 +20,7 @@
   <unitInfo fileName="IStructureDeprecatable_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_Behavior" />
   <unitInfo fileName="ConstrainedDataTypeDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.ConstrainedDataTypeDeclaration_Behavior" />
   <unitInfo fileName="EnumerationMemberDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior" />
-  <unitInfo fileName="LinkDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
+  <unitInfo fileName="LinkDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
   <unitInfo fileName="IConceptAspect_Behavior.java" startLine="12" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior" />
   <unitInfo fileName="PrimitiveDataTypeDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior" />
   <unitInfo fileName="DataTypeDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior" />
@@ -88,26 +88,44 @@
     <scopeInfo nodeId="1220268704141" fileName="DataTypeDeclaration_Behavior.java" startLine="32" startPosition="75" endLine="38" endPosition="17" />
   </root>
   <root nodeId="1213877254522">
-    <nodeInfo nodeId="1213877254531" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="14" startPosition="27" endLine="15" endPosition="18" />
-    <nodeInfo nodeId="1213877254533" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="16" startPosition="5" endLine="17" endPosition="58" />
-    <nodeInfo nodeId="1213877254550" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="21" startPosition="27" endLine="22" endPosition="18" />
-    <nodeInfo nodeId="1213877254552" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="51" />
-    <nodeInfo nodeId="1213877254560" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="27" startPosition="71" endLine="28" endPosition="163" />
-    <nodeInfo nodeId="1213877254576" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="31" startPosition="78" endLine="32" endPosition="59" />
-    <nodeInfo nodeId="3386205146661103653" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LinkDeclaration_Behavior.java" startLine="35" startPosition="90" endLine="36" endPosition="93" />
-    <nodeInfo nodeId="3386205146661103661" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="36" startPosition="93" endLine="37" endPosition="169" />
-    <nodeInfo nodeId="1213877254526" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LinkDeclaration_Behavior.java" startLine="13" startPosition="73" endLine="16" endPosition="5" />
-    <nodeInfo nodeId="1213877254545" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LinkDeclaration_Behavior.java" startLine="20" startPosition="74" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="1213877254582" fileName="LinkDeclaration_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="1213877254530" fileName="LinkDeclaration_Behavior.java" startLine="14" startPosition="27" endLine="15" endPosition="18" />
-    <scopeInfo nodeId="1213877254549" fileName="LinkDeclaration_Behavior.java" startLine="21" startPosition="27" endLine="22" endPosition="18" />
-    <scopeInfo nodeId="1213877254559" fileName="LinkDeclaration_Behavior.java" startLine="27" startPosition="71" endLine="28" endPosition="163" />
-    <scopeInfo nodeId="1213877254575" fileName="LinkDeclaration_Behavior.java" startLine="31" startPosition="78" endLine="32" endPosition="59" />
-    <scopeInfo nodeId="3386205146660812202" fileName="LinkDeclaration_Behavior.java" startLine="35" startPosition="90" endLine="37" endPosition="169">
+    <nodeInfo nodeId="1213877254531" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="17" startPosition="27" endLine="18" endPosition="18" />
+    <nodeInfo nodeId="1213877254533" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="58" />
+    <nodeInfo nodeId="1213877254550" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="24" startPosition="27" endLine="25" endPosition="18" />
+    <nodeInfo nodeId="1213877254552" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="51" />
+    <nodeInfo nodeId="1213877254560" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="163" />
+    <nodeInfo nodeId="1213877254576" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="34" startPosition="78" endLine="35" endPosition="59" />
+    <nodeInfo nodeId="3386205146661103653" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LinkDeclaration_Behavior.java" startLine="38" startPosition="90" endLine="39" endPosition="93" />
+    <nodeInfo nodeId="3386205146661103661" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="39" startPosition="93" endLine="40" endPosition="169" />
+    <nodeInfo nodeId="3129341680481886014" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="45" startPosition="38" endLine="46" endPosition="15" />
+    <nodeInfo nodeId="3129341680481885956" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="LinkDeclaration_Behavior.java" startLine="47" startPosition="7" endLine="48" endPosition="132" />
+    <nodeInfo nodeId="3129341680481885968" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="LinkDeclaration_Behavior.java" startLine="49" startPosition="44" endLine="50" endPosition="15" />
+    <nodeInfo nodeId="3129341680481885987" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LinkDeclaration_Behavior.java" startLine="54" startPosition="25" endLine="55" endPosition="56" />
+    <nodeInfo nodeId="1213877254526" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LinkDeclaration_Behavior.java" startLine="16" startPosition="73" endLine="19" endPosition="5" />
+    <nodeInfo nodeId="1213877254545" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LinkDeclaration_Behavior.java" startLine="23" startPosition="74" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="3129341680481886003" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LinkDeclaration_Behavior.java" startLine="44" startPosition="27" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="3129341680481885966" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LinkDeclaration_Behavior.java" startLine="48" startPosition="132" endLine="51" endPosition="7" />
+    <nodeInfo nodeId="3129341680481885983" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="LinkDeclaration_Behavior.java" startLine="53" startPosition="67" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="3129341680481885975" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="LinkDeclaration_Behavior.java" startLine="52" startPosition="5" endLine="57" endPosition="7" />
+    <nodeInfo nodeId="3129341680481885954" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="LinkDeclaration_Behavior.java" startLine="43" startPosition="195" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="1213877254582" fileName="LinkDeclaration_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1213877254530" fileName="LinkDeclaration_Behavior.java" startLine="17" startPosition="27" endLine="18" endPosition="18" />
+    <scopeInfo nodeId="1213877254549" fileName="LinkDeclaration_Behavior.java" startLine="24" startPosition="27" endLine="25" endPosition="18" />
+    <scopeInfo nodeId="1213877254559" fileName="LinkDeclaration_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="163" />
+    <scopeInfo nodeId="1213877254575" fileName="LinkDeclaration_Behavior.java" startLine="34" startPosition="78" endLine="35" endPosition="59" />
+    <scopeInfo nodeId="3129341680481886004" fileName="LinkDeclaration_Behavior.java" startLine="45" startPosition="38" endLine="46" endPosition="15" />
+    <scopeInfo nodeId="3129341680481885967" fileName="LinkDeclaration_Behavior.java" startLine="49" startPosition="44" endLine="50" endPosition="15" />
+    <scopeInfo nodeId="3129341680481885986" fileName="LinkDeclaration_Behavior.java" startLine="54" startPosition="25" endLine="55" endPosition="56" />
+    <scopeInfo nodeId="3386205146660812202" fileName="LinkDeclaration_Behavior.java" startLine="38" startPosition="90" endLine="40" endPosition="169">
       <varInfo nodeId="3386205146661103654" varName="genuineLink" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877254525" fileName="LinkDeclaration_Behavior.java" startLine="13" startPosition="73" endLine="17" endPosition="58" />
-    <scopeInfo nodeId="1213877254544" fileName="LinkDeclaration_Behavior.java" startLine="20" startPosition="74" endLine="24" endPosition="51" />
+    <scopeInfo nodeId="1213877254525" fileName="LinkDeclaration_Behavior.java" startLine="16" startPosition="73" endLine="20" endPosition="58" />
+    <scopeInfo nodeId="1213877254544" fileName="LinkDeclaration_Behavior.java" startLine="23" startPosition="74" endLine="27" endPosition="51" />
+    <scopeInfo nodeId="3129341680481885983" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="LinkDeclaration_Behavior.java" startLine="53" startPosition="67" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="3129341680481885955" fileName="LinkDeclaration_Behavior.java" startLine="44" startPosition="27" endLine="51" endPosition="7">
+      <varInfo nodeId="3129341680481885957" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3129341680481880343" fileName="LinkDeclaration_Behavior.java" startLine="43" startPosition="195" endLine="57" endPosition="7" />
+    <unitInfo nodeId="3129341680481885981" fileName="LinkDeclaration_Behavior.java" startLine="53" startPosition="55" endLine="57" endPosition="5" unitName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior$1" />
   </root>
   <root nodeId="1213877301667">
     <nodeInfo nodeId="1213877301670" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConstrainedDataTypeDeclaration_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="98" />

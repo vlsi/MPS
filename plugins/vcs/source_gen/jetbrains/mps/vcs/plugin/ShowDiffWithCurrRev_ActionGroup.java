@@ -4,26 +4,19 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 
 public class ShowDiffWithCurrRev_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ShowDiffWithCurrRev_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev";
+  public static final String ID = "jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup";
 
   public ShowDiffWithCurrRev_ActionGroup() {
     super("ShowDiffWithCurrRev", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ShowDiffWithCurrRev_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowDiffererenesWithCurrentRevision_Action", "jetbrains.mps.vcs");
+      ShowDiffWithCurrRev_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowDiffererenesWithCurrentRevision_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);
   }
 }

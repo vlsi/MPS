@@ -5,4 +5,6 @@ package jetbrains.mps.debug.sampleLanguage.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class SampleLanguage_ProjectPlugin extends BaseProjectPlugin {
+  public SampleLanguage_ProjectPlugin() {
+  }
 }

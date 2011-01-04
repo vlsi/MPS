@@ -5,12 +5,13 @@ package jetbrains.mps.lang.test.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -18,18 +19,15 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
+import jetbrains.mps.smodel.SModel;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
-import jetbrains.mps.smodel.SModelDescriptor;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 
 public class RunTestInMPS_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(RunTestInMPS_Action.class);
-
-  private SModel model;
-  private SNode node;
-  private Project project;
 
   public RunTestInMPS_Action() {
     super("Run Test in MPS Process", "", ICON);
@@ -37,19 +35,14 @@ public class RunTestInMPS_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase");
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(RunTestInMPS_Action.this.node, "jetbrains.mps.lang.test.structure.NodesTestCase");
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -58,61 +51,57 @@ public class RunTestInMPS_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    if (event.getData(MPSDataKeys.CONTEXT_MODEL) == null) {
-      return false;
+    {
+      SModelDescriptor modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
+      if (modelDescriptor == null) {
+        return false;
+      }
+      MapSequence.fromMap(_params).put("model", modelDescriptor.getSModel());
     }
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL).getSModel();
-    if (this.model == null) {
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-    this.node = null;
-    this.project = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(RunTestInMPS_Action.this.node, "jetbrains.mps.lang.test.structure.NodesTestCase"))).toListSequence());
+      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.test.structure.NodesTestCase"))).toListSequence());
       for (SNode test : SetSequence.fromSet(tests)) {
-        RunTestInMPS_Action.this.runTest(test);
+        RunTestInMPS_Action.this.runTest(test, _params);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RunTestInMPS", t);
     }
   }
 
-  /*package*/ void runTest(final SNode test) {
+  /*package*/ void runTest(final SNode test, final Map<String, Object> _params) {
     try {
       final String className = ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test));
       final String testName = ITestMethod_Behavior.call_getTestName_1216136419751(test);
       System.out.println("Test " + className + "." + testName);
-      final Class c = RunTestInMPS_Action.this.model.getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
+      final Class c = ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
       final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
       Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
-      final Object testClass = ctor.newInstance(RunTestInMPS_Action.this.project, RunTestInMPS_Action.this.model.getModelDescriptor());
+      final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor());
       Thread thread = new Thread(new Runnable() {
         public void run() {
           try {

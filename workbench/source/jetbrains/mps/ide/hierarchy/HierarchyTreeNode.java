@@ -25,6 +25,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Map;
+
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   private SNodePointer myNodePointer;
   protected AbstractHierarchyTree<T> myHierarchyTree;
@@ -100,7 +102,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
 
     BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         final SNode node = myNodePointer.getNode();
         hierarchyView.showItemInHierarchy((T) node.getAdapter(), getOperationContext());
       }

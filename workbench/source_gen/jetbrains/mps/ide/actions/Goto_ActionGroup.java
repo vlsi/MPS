@@ -5,6 +5,9 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import com.intellij.ide.actions.GotoActionAction;
+import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.ide.actions.GotoFileAction;
 import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
@@ -14,7 +17,7 @@ import jetbrains.mps.workbench.actions.goTo.GoToDevkitAction;
 
 public class Goto_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Goto_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Goto";
+  public static final String ID = "jetbrains.mps.ide.actions.Goto_ActionGroup";
   public static final String LABEL_ID_gotoVCS = ID + "gotoVCS";
 
   public Goto_ActionGroup() {
@@ -22,27 +25,28 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToAction_Action", "jetbrains.mps.ide", new GotoActionAction());
-      Goto_ActionGroup.this.addAnchor(Goto_ActionGroup.LABEL_ID_gotoVCS);
+      Goto_ActionGroup.this.addParameterizedAction(new GoToAction_Action(new GotoActionAction()), PluginId.getId("jetbrains.mps.ide"), new GotoActionAction());
+      {
+        LabelledAnchor action = new LabelledAnchor(Goto_ActionGroup.LABEL_ID_gotoVCS);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Goto_ActionGroup.this.addAction(action);
+      }
       Goto_ActionGroup.this.addSeparator();
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToFile_Action", "jetbrains.mps.ide", new GotoFileAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRootNode_Action", "jetbrains.mps.ide", new GoToRootNodeAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNodeById_Action", "jetbrains.mps.ide");
+      Goto_ActionGroup.this.addParameterizedAction(new GoToFile_Action(new GotoFileAction()), PluginId.getId("jetbrains.mps.ide"), new GotoFileAction());
+      Goto_ActionGroup.this.addParameterizedAction(new GoToRootNode_Action(new GoToRootNodeAction()), PluginId.getId("jetbrains.mps.ide"), new GoToRootNodeAction());
+      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNodeById_Action");
       Goto_ActionGroup.this.addSeparator();
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRules_Action", "jetbrains.mps.ide");
+      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action");
+      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action");
+      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRules_Action");
       Goto_ActionGroup.this.addSeparator();
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToModel_Action", "jetbrains.mps.ide", new GoToModelAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToLanguage_Action", "jetbrains.mps.ide", new GoToLanguageAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToSolution_Action", "jetbrains.mps.ide", new GoToSolutionAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToDevkit_Action", "jetbrains.mps.ide", new GoToDevkitAction());
+      Goto_ActionGroup.this.addParameterizedAction(new GoToModel_Action(new GoToModelAction()), PluginId.getId("jetbrains.mps.ide"), new GoToModelAction());
+      Goto_ActionGroup.this.addParameterizedAction(new GoToLanguage_Action(new GoToLanguageAction()), PluginId.getId("jetbrains.mps.ide"), new GoToLanguageAction());
+      Goto_ActionGroup.this.addParameterizedAction(new GoToSolution_Action(new GoToSolutionAction()), PluginId.getId("jetbrains.mps.ide"), new GoToSolutionAction());
+      Goto_ActionGroup.this.addParameterizedAction(new GoToDevkit_Action(new GoToDevkitAction()), PluginId.getId("jetbrains.mps.ide"), new GoToDevkitAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("GoToMenu", null);
   }
 }

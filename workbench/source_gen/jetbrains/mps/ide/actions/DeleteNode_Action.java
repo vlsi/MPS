@@ -6,26 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class DeleteNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeleteNode_Action.class);
-
-  private Project project;
-  private List<SNode> nodes;
-  private IOperationContext context;
 
   public DeleteNode_Action() {
     super("Delete", "", ICON);
@@ -33,19 +31,14 @@ public class DeleteNode_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return " DELETE";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((List<SNode>) MapSequence.fromMap(_params).get("nodes")).size() != 0;
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return DeleteNode_Action.this.nodes.size() != 0;
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -56,39 +49,32 @@ public class DeleteNode_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.nodes = event.getData(MPSDataKeys.NODES);
-    if (this.nodes == null) {
+    MapSequence.fromMap(_params).put("nodes", event.getData(MPSDataKeys.NODES));
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.nodes = null;
-    this.context = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._boolean safe = new Wrappers._boolean(false);
       final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (SNode node : DeleteNode_Action.this.nodes) {
+          for (SNode node : ((List<SNode>) MapSequence.fromMap(_params).get("nodes"))) {
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && node.isRoot()) {
               dialogNeeded.value = true;
               break;
@@ -97,7 +83,7 @@ public class DeleteNode_Action extends GeneratedAction {
         }
       });
       if (dialogNeeded.value) {
-        DeleteDialog dialog = new DeleteDialog(DeleteNode_Action.this.project, "Delete Node", "Are you sure you want to delete selected node?");
+        DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?");
         dialog.setOptions(false, true, false, false);
         dialog.show();
         if (!(dialog.isOK())) {
@@ -107,7 +93,7 @@ public class DeleteNode_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          new DeleteNodesHelper(DeleteNode_Action.this.nodes, DeleteNode_Action.this.context, safe.value).deleteNodes(true);
+          new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), safe.value).deleteNodes(true);
         }
       });
     } catch (Throwable t) {

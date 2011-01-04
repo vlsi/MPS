@@ -8,7 +8,7 @@ import jetbrains.mps.workbench.actions.generate.SaveTransientModelsAction;
 
 public class SaveTransientModels_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SaveTransientModels_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.SaveTransientModels";
+  public static final String ID = "jetbrains.mps.ide.actions.SaveTransientModels_ActionGroup";
 
   public SaveTransientModels_ActionGroup() {
     super("SaveTransientModels", ID);
@@ -19,9 +19,5 @@ public class SaveTransientModels_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
   }
 }

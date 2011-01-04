@@ -5,11 +5,12 @@ package jetbrains.mps.build.custommps.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.build.packaging.plugin.GenerateBuildWizard;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -18,21 +19,13 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GenerateCustomMPSBuildForProjectAction_Action.class);
 
-  private MPSProject mpsProject;
-  private Project project;
-
   public GenerateCustomMPSBuildForProjectAction_Action() {
     super("Custom MPS Build Script", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -41,31 +34,25 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.mpsProject = null;
-    this.project = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CustomMPSBuildGenerator buildGenerator = new CustomMPSBuildGenerator(GenerateCustomMPSBuildForProjectAction_Action.this.project);
-      final GenerateBuildWizard wizard = new GenerateCustomMpsBuildWizard("Generate Custom MPS Build", GenerateCustomMPSBuildForProjectAction_Action.this.project, buildGenerator);
+      CustomMPSBuildGenerator buildGenerator = new CustomMPSBuildGenerator(((Project) MapSequence.fromMap(_params).get("project")));
+      final GenerateBuildWizard wizard = new GenerateCustomMpsBuildWizard("Generate Custom MPS Build", ((Project) MapSequence.fromMap(_params).get("project")), buildGenerator);
       wizard.initWizard();
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {

@@ -81,7 +81,6 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
-
   }
 
   public void disposeComponent() {

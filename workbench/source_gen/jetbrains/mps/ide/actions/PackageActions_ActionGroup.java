@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class PackageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(PackageActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.PackageActions";
+  public static final String ID = "jetbrains.mps.ide.actions.PackageActions_ActionGroup";
   public static final String LABEL_ID_newActions = ID + "newActions";
 
   public PackageActions_ActionGroup() {
@@ -15,11 +18,16 @@ public class PackageActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      PackageActions_ActionGroup.this.addAnchor(PackageActions_ActionGroup.LABEL_ID_newActions);
+      {
+        LabelledAnchor action = new LabelledAnchor(PackageActions_ActionGroup.LABEL_ID_newActions);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        PackageActions_ActionGroup.this.addAction(action);
+      }
       PackageActions_ActionGroup.this.addSeparator();
-      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
+      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action");
       PackageActions_ActionGroup.this.addSeparator();
-      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenamePackage_Action", "jetbrains.mps.ide");
+      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenamePackage_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

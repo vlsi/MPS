@@ -21,7 +21,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.newTypesystem.presentation.difference.TypeSystemTraceTreeNode;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.BlockKind;
 import jetbrains.mps.smodel.IOperationContext;
@@ -31,6 +30,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.JPopupMenu;
 import java.awt.Color;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -97,7 +97,7 @@ public class TypeSystemStateTree extends MPSTree {
   @Override
    protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
      BaseAction goToRule = new BaseAction("Go to rule") {
-       public void doExecute(AnActionEvent e) {
+       public void doExecute(AnActionEvent e, Map<String, Object> _params) {
          ((TypeSystemStateTreeNode) treeNode).goToRule();
        }
      };

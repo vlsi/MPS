@@ -6,11 +6,13 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.util.List;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.project.IModule;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Language;
@@ -22,33 +24,25 @@ public class AddModuleToProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(AddModuleToProject_Action.class);
 
-  private List<IModule> modules;
-  private MPSProject mpsProject;
-
   public AddModuleToProject_Action() {
     super("Add to Project", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    for (IModule module : AddModuleToProject_Action.this.modules) {
-      if (AddModuleToProject_Action.this.mpsProject.getModules().contains(module)) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    for (IModule module : ((List<IModule>) MapSequence.fromMap(_params).get("modules"))) {
+      if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules().contains(module)) {
         return false;
       }
     }
     return true;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -59,40 +53,34 @@ public class AddModuleToProject_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.modules = event.getData(MPSDataKeys.MODULES);
-    if (this.modules == null) {
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.modules = null;
-    this.mpsProject = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.fromList(AddModuleToProject_Action.this.modules)) {
+      for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
         if (module instanceof Language) {
-          AddModuleToProject_Action.this.mpsProject.addProjectLanguage(((Language) module));
+          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addProjectLanguage(((Language) module));
         } else if (module instanceof Solution) {
           IFile file = module.getDescriptorFile();
           assert file != null;
-          AddModuleToProject_Action.this.mpsProject.addProjectSolution(file);
+          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addProjectSolution(file);
         } else if (module instanceof DevKit) {
           IFile file = module.getDescriptorFile();
           assert file != null;
-          AddModuleToProject_Action.this.mpsProject.addProjectDevKit(file);
+          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addProjectDevKit(file);
         }
       }
     } catch (Throwable t) {

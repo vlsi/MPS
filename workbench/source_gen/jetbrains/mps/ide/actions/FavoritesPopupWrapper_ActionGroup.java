@@ -11,8 +11,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.List;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -21,10 +19,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FavoritesPopupWrapper_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopupWrapper";
+  public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-  private List<AnAction> myAllActions;
 
   public FavoritesPopupWrapper_ActionGroup() {
     super("FavoritesPopupWrapper", ID);
@@ -56,7 +53,7 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
 
-  public void adjust() {
-    this.insertGroupIntoAnother(Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_popup);
+  public boolean isStrict() {
+    return false;
   }
 }

@@ -5,7 +5,6 @@
   <unitInfo fileName="NodesTestMethod_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodesTestMethod_Behavior" />
   <unitInfo fileName="CheckDataFlowOperation_Behavior.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_Behavior" />
   <unitInfo fileName="BootstrapActionReference_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BootstrapActionReference_Behavior" />
-  <unitInfo fileName="MPSActionReference_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.MPSActionReference_Behavior" />
   <unitInfo fileName="TypesCheckOperation_Behavior.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.TypesCheckOperation_Behavior" />
   <unitInfo fileName="EditorTestCase_Behavior.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorTestCase_Behavior" />
   <unitInfo fileName="NodeOperation_Behavior.java" startLine="10" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeOperation_Behavior" />
@@ -187,16 +186,6 @@
     <scopeInfo nodeId="1229281943678" fileName="EditorTestCase_Behavior.java" startLine="28" startPosition="94" endLine="29" endPosition="71" />
     <scopeInfo nodeId="2148145109766219696" fileName="EditorTestCase_Behavior.java" startLine="32" startPosition="88" endLine="35" endPosition="18">
       <varInfo nodeId="2148145109766229640" varName="result" />
-    </scopeInfo>
-  </root>
-  <root nodeId="4239542196496960972">
-    <nodeInfo nodeId="1211716198725159018" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MPSActionReference_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="104" />
-    <nodeInfo nodeId="1211716198725168787" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="MPSActionReference_Behavior.java" startLine="19" startPosition="104" endLine="20" endPosition="87" />
-    <nodeInfo nodeId="1211716198725168800" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MPSActionReference_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="161" />
-    <scopeInfo nodeId="4239542196496960974" fileName="MPSActionReference_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="4239542196496960977" fileName="MPSActionReference_Behavior.java" startLine="18" startPosition="80" endLine="21" endPosition="161">
-      <varInfo nodeId="1211716198725159019" varName="actionModel" />
-      <varInfo nodeId="1211716198725168788" varName="moduleName" />
     </scopeInfo>
   </root>
   <root nodeId="5097124989038916372">

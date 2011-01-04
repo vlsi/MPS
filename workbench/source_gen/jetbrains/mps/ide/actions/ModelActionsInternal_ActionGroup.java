@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class ModelActionsInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelActionsInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.ModelActionsInternal";
+  public static final String ID = "jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup";
 
   public ModelActionsInternal_ActionGroup() {
     super("Internal", ID);

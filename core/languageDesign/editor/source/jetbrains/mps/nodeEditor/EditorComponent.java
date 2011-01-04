@@ -20,6 +20,7 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -949,7 +950,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       String description = pair.first.getDescription(pair.second, context);
       Icon icon = pair.first.getType().getIcon();
       BaseAction mpsAction = new BaseAction(description, "Execute intention", icon) {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           executeIntention(pair.first, pair.second, context);
         }
       };
@@ -999,12 +1000,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           BaseAction mpsAction = new BaseAction("" + action.getDescriptionText()) {
             private EditorCellKeyMapAction myAction = action;
 
-            @NotNull
-            public String getKeyStroke() {
-              return action.getKeyStroke();
+            {
+              String keyStroke = action.getKeyStroke();
+              if (keyStroke != null && keyStroke.length() != 0) {
+                KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+                KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+              }
             }
 
-            protected void doExecute(AnActionEvent e) {
+            protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
               try {
                 myAction.execute(null, editorContext);
               } catch (Throwable t) {

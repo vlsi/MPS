@@ -6,26 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class GoToNodeById_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoToNodeById_Action.class);
-
-  private Project project;
-  private Frame frame;
-  private IOperationContext context;
-  private SModelDescriptor model;
 
   public GoToNodeById_Action() {
     super("Go to Node by ID", "", ICON);
@@ -33,12 +30,7 @@ public class GoToNodeById_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl G";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -49,50 +41,42 @@ public class GoToNodeById_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.frame = null;
-    this.context = null;
-    this.model = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String value = JOptionPane.showInputDialog(GoToNodeById_Action.this.frame, "Enter node ID:", "Find node in model " + GoToNodeById_Action.this.model.getLongName(), JOptionPane.QUESTION_MESSAGE);
+      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName(), JOptionPane.QUESTION_MESSAGE);
       if (value == null) {
         return;
       }
       value = StringUtils.trim(value);
-      SNode node = GoToNodeById_Action.this.model.getSModel().getNodeById(value);
+      SNode node = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel().getNodeById(value);
       if (node == null) {
-        JOptionPane.showMessageDialog(GoToNodeById_Action.this.frame, "Can't find node with id " + value);
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + value);
         return;
       }
-      GoToNodeById_Action.this.project.getComponent(MPSEditorOpener.class).editNode(node, GoToNodeById_Action.this.context);
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(node, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNodeById", t);

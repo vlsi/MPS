@@ -8,19 +8,17 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class EvaluateExpression_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/evaluate.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(EvaluateExpression_Action.class);
-
-  private Project project;
-  private IOperationContext operationContext;
 
   public EvaluateExpression_Action() {
     super("Evaluate Expression", "", ICON);
@@ -28,12 +26,7 @@ public class EvaluateExpression_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "alt F8";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
         AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
@@ -47,30 +40,24 @@ public class EvaluateExpression_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.operationContext == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.operationContext = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      DebugActionsUtil.getDebugSession(event).showEvaluationDialog(EvaluateExpression_Action.this.operationContext);
+      DebugActionsUtil.getDebugSession(event).showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "EvaluateExpression", t);

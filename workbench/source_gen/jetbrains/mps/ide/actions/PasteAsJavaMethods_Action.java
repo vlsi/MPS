@@ -6,20 +6,19 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.datatransfer.JavaPaster;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.javaParser.FeatureKind;
 
 public class PasteAsJavaMethods_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(PasteAsJavaMethods_Action.class);
-
-  private IOperationContext operationContext;
-  private SNode anchorNode;
 
   public PasteAsJavaMethods_Action() {
     super("Paste As Java Methods", "", ICON);
@@ -27,12 +26,7 @@ public class PasteAsJavaMethods_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -43,30 +37,24 @@ public class PasteAsJavaMethods_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.operationContext == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    this.anchorNode = event.getData(MPSDataKeys.NODE);
-    if (this.anchorNode == null) {
+    MapSequence.fromMap(_params).put("anchorNode", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("anchorNode") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.operationContext = null;
-    this.anchorNode = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new JavaPaster().pasteJava(PasteAsJavaMethods_Action.this.anchorNode, PasteAsJavaMethods_Action.this.operationContext, FeatureKind.METHOD);
+      new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.METHOD);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteAsJavaMethods", t);

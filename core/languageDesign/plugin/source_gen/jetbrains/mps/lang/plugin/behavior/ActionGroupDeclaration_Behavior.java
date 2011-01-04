@@ -31,10 +31,6 @@ public class ActionGroupDeclaration_Behavior {
     return SNodeOperations.getModel(thisNode).getLongName() + "." + ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(thisNode);
   }
 
-  public static String call_getID_1213877494306(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + SPropertyOperations.getString(thisNode, "name");
-  }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.GroupType", null);
     SLinkOperations.setTarget(type, "actionGroup", thisNode, false);

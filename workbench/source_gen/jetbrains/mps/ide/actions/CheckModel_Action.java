@@ -8,23 +8,20 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.List;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class CheckModel_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelChecker.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(CheckModel_Action.class);
-
-  private SModelDescriptor model;
-  private List<SModelDescriptor> models;
-  private Project project;
-  private IOperationContext operationContext;
 
   public CheckModel_Action() {
     super("Check Model", "Check model for unresolved references and typesystem rules", ICON);
@@ -32,17 +29,12 @@ public class CheckModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
         String whatToCheck = "Model";
-        if (CheckModel_Action.this.models.size() > 1) {
-          whatToCheck = CheckModel_Action.this.models.size() + " Models";
+        if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 1) {
+          whatToCheck = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() + " Models";
         }
         event.getPresentation().setText("Check " + whatToCheck);
       }
@@ -54,43 +46,35 @@ public class CheckModel_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    this.models = event.getData(MPSDataKeys.MODELS);
-    if (this.models == null) {
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    if (MapSequence.fromMap(_params).get("models") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.operationContext == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-    this.models = null;
-    this.project = null;
-    this.operationContext = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (CheckModel_Action.this.models.size() > 1) {
-        CheckModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(CheckModel_Action.this.models, CheckModel_Action.this.operationContext, true);
+      if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 1) {
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       } else {
-        CheckModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModel(CheckModel_Action.this.model, CheckModel_Action.this.operationContext, true);
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

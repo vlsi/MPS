@@ -30,6 +30,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
+import java.util.Map;
+
 public class GenerationTracerTreeNode extends MPSTreeNode {
   private static final Logger LOG = Logger.getLogger(GenerationTracerTreeNode.class);
 
@@ -104,11 +106,11 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     TracerNode rootTracerNode = rootNode.getTracerNode();
     if (rootTracerNode != null && rootTracerNode.getKind() == Kind.OUTPUT) {
       group.add(new BaseAction("Show Trace") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
         }
 
-        protected void doUpdate(AnActionEvent e) {
+        protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
           boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelReference());
           setEnabledState(e.getPresentation(), enabled);
         }
@@ -116,11 +118,11 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
 
     group.add(new BaseAction("Show Prev Step Traceback") {
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         tracer.showTracebackData(tracerNode.getNodePointer().getNode());
       }
 
-      protected void doUpdate(AnActionEvent e) {
+      protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
         boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelReference());
         setEnabledState(e.getPresentation(), enabled);
       }
@@ -141,11 +143,11 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     TracerNode rootTracerNode = rootNode.getTracerNode();
     if (rootTracerNode != null && (rootTracerNode.getKind() == Kind.INPUT || rootTracerNode.getKind() == Kind.RULE)) {
       group.add(new BaseAction("Show Traceback") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           tracer.showTracebackData(tracerNode.getNodePointer().getNode());
         }
 
-        protected void doUpdate(AnActionEvent e) {
+        protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
           boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelReference());
           setEnabledState(e.getPresentation(), enabled);
         }
@@ -153,11 +155,11 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
 
     group.add(new BaseAction("Show Next Step Trace") {
-      protected void doExecute(AnActionEvent e) {
+      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         tracer.showTraceInputData(tracerNode.getNodePointer().getNode());
       }
 
-      protected void doUpdate(AnActionEvent e) {
+      protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
         boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelReference());
         setEnabledState(e.getPresentation(), enabled);
       }

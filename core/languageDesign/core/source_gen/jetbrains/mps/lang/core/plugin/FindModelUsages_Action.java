@@ -7,27 +7,25 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindModelUsages_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/find.png", "jetbrains.mps.lang.core"), true);
   private static Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
-
-  private IScope scope;
-  private IOperationContext context;
-  private SModelDescriptor model;
 
   public FindModelUsages_Action() {
     super("Find Usages", "", ICON);
@@ -35,12 +33,7 @@ public class FindModelUsages_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "alt F7";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -49,45 +42,38 @@ public class FindModelUsages_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.scope = event.getData(MPSDataKeys.SCOPE);
-    if (this.scope == null) {
+    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.scope = null;
-    this.context = null;
-    this.model = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final SModel model = FindModelUsages_Action.this.model.getSModel();
-      final IScope scope = FindModelUsages_Action.this.scope;
+      final SModel model = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
+      final IScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           query[0] = new SearchQuery(model, scope);
           provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
         }
       });
-      FindModelUsages_Action.this.context.getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Model has no usages");
+      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Model has no usages");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
     }
