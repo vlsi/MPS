@@ -1,15 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ActionsQueriesGenerated.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.actions.scripts.ActionsQueriesGenerated" />
   <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="17" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$1" />
-  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="43" startPosition="28" endLine="68" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$2" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="69" startPosition="28" endLine="94" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$3" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="95" startPosition="28" endLine="120" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$4" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="121" startPosition="28" endLine="146" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$5" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="147" startPosition="28" endLine="172" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$6" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="173" startPosition="28" endLine="198" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$7" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="199" startPosition="28" endLine="224" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$8" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="225" startPosition="28" endLine="250" endPosition="5" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript$9" />
+  <unitInfo fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="14" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript" />
   <root nodeId="7836612869650926685">
     <nodeInfo nodeId="7836612869650932732" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="30" startPosition="59" endLine="31" endPosition="109" />
     <nodeInfo nodeId="7836612869650932743" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="31" startPosition="109" endLine="32" endPosition="142" />
     <nodeInfo nodeId="7836612869650932785" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="35" startPosition="52" endLine="36" endPosition="124" />
+    <nodeInfo nodeId="3341893916018837249" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="56" startPosition="59" endLine="57" endPosition="109" />
+    <nodeInfo nodeId="3341893916018837259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="57" startPosition="109" endLine="58" endPosition="142" />
+    <nodeInfo nodeId="3341893916018829240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="61" startPosition="52" endLine="62" endPosition="120" />
+    <nodeInfo nodeId="3341893916018837483" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="82" startPosition="59" endLine="83" endPosition="109" />
+    <nodeInfo nodeId="3341893916018837493" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="83" startPosition="109" endLine="84" endPosition="142" />
+    <nodeInfo nodeId="3341893916018837510" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="87" startPosition="52" endLine="88" endPosition="129" />
+    <nodeInfo nodeId="3341893916018837524" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="108" startPosition="59" endLine="109" endPosition="109" />
+    <nodeInfo nodeId="3341893916018837534" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="109" startPosition="109" endLine="110" endPosition="142" />
+    <nodeInfo nodeId="3341893916018837518" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="113" startPosition="52" endLine="114" endPosition="133" />
+    <nodeInfo nodeId="3341893916018837571" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="134" startPosition="59" endLine="135" endPosition="109" />
+    <nodeInfo nodeId="3341893916018837581" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="135" startPosition="109" endLine="136" endPosition="142" />
+    <nodeInfo nodeId="3341893916018837714" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="139" startPosition="52" endLine="140" endPosition="135" />
+    <nodeInfo nodeId="3341893916018837600" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="160" startPosition="59" endLine="161" endPosition="109" />
+    <nodeInfo nodeId="3341893916018837610" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="161" startPosition="109" endLine="162" endPosition="142" />
+    <nodeInfo nodeId="3341893916018837718" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="165" startPosition="52" endLine="166" endPosition="135" />
+    <nodeInfo nodeId="3341893916018837629" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="186" startPosition="59" endLine="187" endPosition="109" />
+    <nodeInfo nodeId="3341893916018837639" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="187" startPosition="109" endLine="188" endPosition="142" />
+    <nodeInfo nodeId="3341893916018837722" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="191" startPosition="52" endLine="192" endPosition="129" />
+    <nodeInfo nodeId="3341893916018837658" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="212" startPosition="59" endLine="213" endPosition="109" />
+    <nodeInfo nodeId="3341893916018837668" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="213" startPosition="109" endLine="214" endPosition="142" />
+    <nodeInfo nodeId="3341893916018837726" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="217" startPosition="52" endLine="218" endPosition="126" />
+    <nodeInfo nodeId="3341893916018837687" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="238" startPosition="59" endLine="239" endPosition="109" />
+    <nodeInfo nodeId="3341893916018837697" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="239" startPosition="109" endLine="240" endPosition="142" />
+    <nodeInfo nodeId="3341893916018837730" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="243" startPosition="52" endLine="244" endPosition="130" />
     <scopeInfo nodeId="7836612869650927542" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="35" startPosition="52" endLine="36" endPosition="124" />
+    <scopeInfo nodeId="3341893916018828118" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="61" startPosition="52" endLine="62" endPosition="120" />
+    <scopeInfo nodeId="3341893916018837480" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="87" startPosition="52" endLine="88" endPosition="129" />
+    <scopeInfo nodeId="3341893916018837517" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="113" startPosition="52" endLine="114" endPosition="133" />
+    <scopeInfo nodeId="3341893916018837553" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="139" startPosition="52" endLine="140" endPosition="135" />
+    <scopeInfo nodeId="3341893916018837558" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="165" startPosition="52" endLine="166" endPosition="135" />
+    <scopeInfo nodeId="3341893916018837561" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="191" startPosition="52" endLine="192" endPosition="129" />
+    <scopeInfo nodeId="3341893916018837564" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="217" startPosition="52" endLine="218" endPosition="126" />
+    <scopeInfo nodeId="3341893916018837567" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="243" startPosition="52" endLine="244" endPosition="130" />
     <scopeInfo nodeId="7836612869650932731" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="30" startPosition="59" endLine="32" endPosition="142">
       <varInfo nodeId="7836612869650932733" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3341893916018837248" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="56" startPosition="59" endLine="58" endPosition="142">
+      <varInfo nodeId="3341893916018837250" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3341893916018837482" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="82" startPosition="59" endLine="84" endPosition="142">
+      <varInfo nodeId="3341893916018837484" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3341893916018837523" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="108" startPosition="59" endLine="110" endPosition="142">
+      <varInfo nodeId="3341893916018837525" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3341893916018837570" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="134" startPosition="59" endLine="136" endPosition="142">
+      <varInfo nodeId="3341893916018837572" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3341893916018837599" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="160" startPosition="59" endLine="162" endPosition="142">
+      <varInfo nodeId="3341893916018837601" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3341893916018837628" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="186" startPosition="59" endLine="188" endPosition="142">
+      <varInfo nodeId="3341893916018837630" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3341893916018837657" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="212" startPosition="59" endLine="214" endPosition="142">
+      <varInfo nodeId="3341893916018837659" varName="aspect" />
+    </scopeInfo>
+    <scopeInfo nodeId="3341893916018837686" fileName="NodeFactories_for_actions_only_MigrationScript.java" startLine="238" startPosition="59" endLine="240" endPosition="142">
+      <varInfo nodeId="3341893916018837688" varName="aspect" />
     </scopeInfo>
   </root>
 </debugInfo>

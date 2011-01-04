@@ -125,6 +125,77 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_Concept_NewInstance_3341893916018829254(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_NewInstance")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "prototypeNode", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_NewInstance"), "prototypeNode", true), true);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
+      for (SNode parm : ListSequence.fromList(parms)) {
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_Model_CreateNewNodeOperation_3341893916018829317(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "prototypeNode", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), "prototypeNode", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), "concept", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), "concept", false), false);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
+      for (SNode parm : ListSequence.fromList(parms)) {
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_Node_InsertNewNextSiblingOperation_3341893916018829414(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "concept", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation"), "concept", false), false);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
+      for (SNode parm : ListSequence.fromList(parms)) {
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_Node_InsertNewPrevSiblingOperation_3341893916018829508(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "concept", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation"), "concept", false), false);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
+      for (SNode parm : ListSequence.fromList(parms)) {
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_Node_ReplaceWithNewOperation_3341893916018829549(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "concept", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"), "concept", false), false);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
+      for (SNode parm : ListSequence.fromList(parms)) {
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_Link_SetNewChildOperation_3341893916018829590(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "concept", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation"), "concept", false), false);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
+      for (SNode parm : ListSequence.fromList(parms)) {
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_LinkList_AddNewChildOperation_3341893916018829633(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "concept", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation"), "concept", false), false);
+      List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
+      for (SNode parm : ListSequence.fromList(parms)) {
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
+      }
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1138413233760(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     final ApplicableTypesInfo appTypesInfo;

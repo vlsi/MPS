@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.actions.scripts.ActionsQueriesGenerated" file="ActionsQueriesGenerated.java" />
   <dependency className="jetbrains.mps.lang.actions.scripts.NodeFactories_for_actions_only_MigrationScript" file="NodeFactories_for_actions_only_MigrationScript.java">
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />

@@ -16,11 +16,11 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
     super("Update node creation operations in actions/intentions/editor");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "up";
+        return "replace new node<>";
       }
 
       public String getAdditionalInfo() {
-        return "up";
+        return "replace new node<>";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -34,6 +34,214 @@ public class NodeFactories_for_actions_only_MigrationScript extends BaseMigratio
 
       public void doUpdateInstanceNode(SNode node) {
         SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer");
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "replace concept.new instance()";
+      }
+
+      public String getAdditionalInfo() {
+        return "replace concept.new instance()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.Concept_NewInstance";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance");
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "replace model.new node()";
+      }
+
+      public String getAdditionalInfo() {
+        return "replace model.new node()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation");
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "replace model.new root node()";
+      }
+
+      public String getAdditionalInfo() {
+        return "replace model.new root node()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation");
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "replace node.new next-sibling()";
+      }
+
+      public String getAdditionalInfo() {
+        return "replace node.new next-sibling()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation");
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "replace node.new prev-sibling()";
+      }
+
+      public String getAdditionalInfo() {
+        return "replace node.new prev-sibling()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation");
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "replace node.replace with new()";
+      }
+
+      public String getAdditionalInfo() {
+        return "replace node.replace with new()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation");
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "replace node.link.set new()";
+      }
+
+      public String getAdditionalInfo() {
+        return "replace node.link.set new()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation");
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "replace node.link.add new()";
+      }
+
+      public String getAdditionalInfo() {
+        return "replace node.link.add new()";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        return aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation");
       }
 
       public boolean isShowAsIntention() {
