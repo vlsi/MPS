@@ -169,7 +169,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a1a0a1a7().createNode(_context.getSourceNode()));
+          SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0b0a0b0h().createNode(_context.getSourceNode()));
           return SLinkOperations.getTarget(result, "exponent", true);
         }
 
@@ -209,7 +209,7 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a0e0a0b0i().createNode(_context.getSourceNode())));
+            return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), new QueriesGenerated.QuotationClass_x583g4_a1b0a0a0a0a0a0e0a0b0i().createNode(_context.getSourceNode())));
           }
 
           public SNode getOutputConcept() {
@@ -256,8 +256,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a1a0a1a7 {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a1a0a1a7() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a0b0a0b0h {
+    public QuotationClass_x583g4_a1a0a0a0a0a0b0a0b0h() {
     }
 
     public SNode createNode(Object parameter_7) {
@@ -293,8 +293,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a0e0a0b0i {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0a0e0a0b0i() {
+  public static class QuotationClass_x583g4_a1b0a0a0a0a0a0e0a0b0i {
+    public QuotationClass_x583g4_a1b0a0a0a0a0a0e0a0b0i() {
     }
 
     public SNode createNode(Object parameter_3) {

@@ -255,7 +255,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0t().createNode(_context.getSourceNode()));
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a1a0a1a91().createNode(_context.getSourceNode()));
         }
 
         public String getMatchingText(String pattern) {
@@ -322,8 +322,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0t {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0t() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a1a0a1a91 {
+    public QuotationClass_x583g4_a1a0a0a0a0a1a0a1a91() {
     }
 
     public SNode createNode(Object parameter_5) {

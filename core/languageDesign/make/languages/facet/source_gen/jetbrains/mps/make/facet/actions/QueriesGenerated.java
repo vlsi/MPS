@@ -118,7 +118,7 @@ __switch__:
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode dep = SModelOperations.createNewNode(model, "jetbrains.mps.make.facet.structure.TargetDependency", null);
-                SPropertyOperations.set(dep, "qualifier", "" + SEnumOperations.getEnumMemberValue((item)._0()));
+                SPropertyOperations.set(dep, "qualifier", SEnumOperations.getEnumMemberValue((item)._0()));
                 SLinkOperations.setTarget(dep, "dependsOn", (item)._1(), false);
                 return dep;
               }
@@ -157,7 +157,7 @@ __switch__:
                 SNode lve = SConceptOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersExpression", null);
                 SNode lvce = SConceptOperations.createNewNode("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", null);
                 SLinkOperations.setTarget(lvce, "operand", lve, true);
-                SLinkOperations.setTarget(lvce, "operation", new QueriesGenerated.QuotationClass_x583g4_a0a3a0a0a0a0a0a2a2a0a1a4().createNode((item)), true);
+                SLinkOperations.setTarget(lvce, "operation", new QueriesGenerated.QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a4().createNode((item)), true);
                 return lvce;
               }
 
@@ -230,8 +230,8 @@ __switch__:
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a3a0a0a0a0a0a2a2a0a1a4 {
-    public QuotationClass_x583g4_a0a3a0a0a0a0a0a2a2a0a1a4() {
+  public static class QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a4 {
+    public QuotationClass_x583g4_a2a3a0a0a0a0a0a2a2a0a1a4() {
     }
 
     public SNode createNode(Object parameter_3) {
