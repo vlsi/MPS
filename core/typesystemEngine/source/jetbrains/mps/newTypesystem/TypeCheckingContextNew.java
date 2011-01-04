@@ -184,6 +184,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (!ErrorReportUtil.shouldReportError(nodeWithError)) return;
     myState.addError(nodeWithError, errorReporter, null);
   }
 
