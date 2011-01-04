@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class MigrateString_Intention extends BaseIntention implements Intention {
   public MigrateString_Intention() {
@@ -46,7 +46,7 @@ public class MigrateString_Intention extends BaseIntention implements Intention 
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode stringType = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.StringType");
+    SNode stringType = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.StringType");
     editorContext.select(stringType);
   }
 

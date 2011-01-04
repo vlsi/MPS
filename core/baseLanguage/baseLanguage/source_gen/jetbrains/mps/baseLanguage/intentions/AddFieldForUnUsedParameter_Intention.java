@@ -11,7 +11,7 @@ import java.util.Set;
 import jetbrains.mps.lang.dataFlow.DataFlow;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -57,20 +57,20 @@ public class AddFieldForUnUsedParameter_Intention extends BaseIntention implemen
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode clazz = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode field = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
+    SNode field = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
     SPropertyOperations.set(field, "name", SPropertyOperations.getString(node, "name"));
     SLinkOperations.setTarget(field, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), true);
     ListSequence.fromList(SLinkOperations.getTargets(clazz, "field", true)).addElement(field);
-    SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
+    SNode newStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
     SLinkOperations.setTarget(newStatement, "expression", expr, true);
-    SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+    SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
     SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
-    SNode leftPart = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-    SLinkOperations.setTarget(leftPart, "operand", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
+    SNode leftPart = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+    SLinkOperations.setTarget(leftPart, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
     SLinkOperations.setTarget(leftPart, "operation", fieldRef, true);
     SLinkOperations.setTarget(expr, "lValue", leftPart, true);
-    SNode paramRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
+    SNode paramRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(paramRef, "variableDeclaration", node, false);
     SLinkOperations.setTarget(expr, "rValue", paramRef, true);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true), "statement", true)).addElement(newStatement);

@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.SurroundWithIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,7 +37,7 @@ public class SurroundStatementsWithForEach_Intention extends SurroundWithIntenti
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode forStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
+    SNode forStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, forStatement);
     for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

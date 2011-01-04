@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ConvertToClosure_Intention extends BaseIntention implements Intention {
   public ConvertToClosure_Intention() {
@@ -61,7 +61,7 @@ public class ConvertToClosure_Intention extends BaseIntention implements Intenti
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode closureLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null);
+    SNode closureLiteral = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
       SLinkOperations.setTarget(closureLiteral, "body", SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).first(), "body", true), true);
     }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class _TryCatchStatement_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,7 +30,7 @@ public class _TryCatchStatement_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.addNewChild(node, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
+      SNodeFactoryOperations.addNewChild(node, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
     }
   }
 }

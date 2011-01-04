@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -116,7 +116,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       if (!(getterIsAbsent.value)) {
         continue;
       }
-      SNode fieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+      SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
       lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_43x4b2_a0a0a6a3a7().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
 

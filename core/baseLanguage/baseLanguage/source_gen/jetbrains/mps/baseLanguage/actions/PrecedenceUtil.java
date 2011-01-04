@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
@@ -65,7 +66,7 @@ public class PrecedenceUtil {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       if (SNodeOperations.getContainingLinkDeclaration(contextNode) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression") && isHigherPriority(parentBinaryOperation, contextNode)) {
-        SNode result = SNodeOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
         SLinkOperations.setTarget(result, "expression", contextNode, true);
         return result;
       }

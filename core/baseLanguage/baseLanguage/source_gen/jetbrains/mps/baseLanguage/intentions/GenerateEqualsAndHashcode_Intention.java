@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
@@ -65,14 +65,14 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    final SNode thisExp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+    final SNode thisExp = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     final SNode equalsDeclaration = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a2a7().createNode(thisExp, thisExp, classConcept, classConcept);
     SNode thatDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
 
-    SNode thatRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+    SNode thatRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(thatRef, "variableDeclaration", thatDeclaration, false);
-    SNode fieldRefLocal = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
-    SNode fieldRefOperation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+    SNode fieldRefLocal = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+    SNode fieldRefOperation = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
 
     for (SNode field : (List<SNode>) ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       SLinkOperations.setTarget(fieldRefLocal, "variableDeclaration", field, false);
@@ -95,16 +95,16 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
       }
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(checkStmt);
     }
-    SLinkOperations.addNewChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.Statement");
+    SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.Statement");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0m0h().createNode());
     ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(equalsDeclaration);
     // Method equals() is generated, now hashCode method body generation begins  
     SNode hashCodeDeclaration = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a51a7().createNode());
     SNode resultDeclaration = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a61a7().createNode();
-    SNode resultReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+    SNode resultReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(resultReference, "variableDeclaration", SLinkOperations.getTarget(resultDeclaration, "localVariableDeclaration", true), false);
     SNode tempDeclaration = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a91a7().createNode();
-    SNode tempReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
+    SNode tempReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(tempReference, "variableDeclaration", SLinkOperations.getTarget(tempDeclaration, "localVariableDeclaration", true), false);
     if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -116,7 +116,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(resultDeclaration);
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       SLinkOperations.setTarget(fieldRefLocal, "variableDeclaration", field, false);
-      SNode calcStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null);
+      SNode calcStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null);
       SNode mulExpression = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a2a42a7().createNode(resultReference);
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
         calcStatement = new GenerateEqualsAndHashcode_Intention.QuotationClass_4qz7hx_a0a0a3a42a7().createNode(resultReference, SNodeOperations.copyNode(fieldRefLocal), mulExpression);

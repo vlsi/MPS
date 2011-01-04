@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -55,14 +55,14 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention implements Inte
 
   public void execute(final SNode node, final EditorContext editorContext) {
     // produce throw statement 
-    SNode throwStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
+    SNode throwStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
     SNode newExpr = new ReplaceAssertWithIf_Intention.QuotationClass_iey3o5_a0a2a7().createNode();
     SLinkOperations.setTarget(throwStatement, "throwable", newExpr, true);
     // produce if statement 
-    SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
-    SNode notExpr = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
+    SNode ifStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+    SNode notExpr = SNodeFactoryOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
     SLinkOperations.setTarget(notExpr, "expression", SLinkOperations.getTarget(node, "condition", true), true);
-    SLinkOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNodeFactoryOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).insertElement(0, throwStatement);
     // replace assert with if 
     SNodeOperations.replaceWithAnother(node, ifStatement);

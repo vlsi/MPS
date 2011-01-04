@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.datatransfer.PasteWrapperContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class PasteWrappers {
@@ -24,7 +24,7 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
         SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
         return result;
       }
@@ -65,7 +65,7 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+        SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
         SLinkOperations.setTarget(statement, "localVariableDeclaration", _context.getSourceNode(), true);
         return statement;
       }
@@ -80,7 +80,7 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
         SLinkOperations.setTarget(result, "creator", _context.getSourceNode(), true);
         return result;
       }
@@ -95,8 +95,8 @@ public class PasteWrappers {
       }
 
       public SNode wrap(PasteWrapperContext _context) {
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-        SNode newExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+        SNode newExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
         SLinkOperations.setTarget(newExpression, "creator", _context.getSourceNode(), true);
         SLinkOperations.setTarget(result, "expression", newExpression, true);
         return result;

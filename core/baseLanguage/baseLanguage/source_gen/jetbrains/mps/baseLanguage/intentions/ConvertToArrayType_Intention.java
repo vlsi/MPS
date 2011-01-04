@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConvertToArrayType_Intention extends BaseIntention implements Intention {
@@ -46,7 +46,7 @@ public class ConvertToArrayType_Intention extends BaseIntention implements Inten
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
+    SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
     SLinkOperations.setTarget(result, "componentType", SNodeOperations.copyNode(node), true);
     SNodeOperations.replaceWithAnother(node, result);
     editorContext.selectWRTFocusPolicy(result);

@@ -8,9 +8,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ReplaceConditionalWithIf_Intention extends BaseIntention implements Intention {
   public ReplaceConditionalWithIf_Intention() {
@@ -56,10 +55,10 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention implements
     SNode stmtNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement");
     if (SNodeOperations.isInstanceOf(stmtNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
       SNode variableDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(stmtNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
-      SNode eStatement = SModelOperations.createNewNode(SNodeOperations.getModel(variableDeclaration), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-      SNode assignment = SLinkOperations.setNewChild(eStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+      SNode eStatement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(variableDeclaration), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+      SNode assignment = SNodeFactoryOperations.setNewChild(eStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
       SLinkOperations.setTarget(assignment, "rValue", SLinkOperations.getTarget(variableDeclaration, "initializer", true), true);
-      SNode local = SLinkOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+      SNode local = SNodeFactoryOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
       SLinkOperations.setTarget(local, "variableDeclaration", variableDeclaration, false);
       SNodeOperations.insertNextSiblingChild(stmtNode, eStatement);
       stmtNode = SNodeOperations.cast(SNodeOperations.getNextSibling(stmtNode), "jetbrains.mps.baseLanguage.structure.Statement");
@@ -74,13 +73,13 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention implements
     // make - node 
     SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(nodeParent)).getElement(nodeIndex), SLinkOperations.getTarget(nodeCopy, "ifFalse", true));
     // make the best - block ever 
-    SNode falseBlockStmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
-    SLinkOperations.setNewChild(falseBlockStmt, "statements", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNode falseBlockStmt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
+    SNodeFactoryOperations.setNewChild(falseBlockStmt, "statements", "jetbrains.mps.baseLanguage.structure.StatementList");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(falseBlockStmt, "statements", true), "statement", true)).insertElement(0, SNodeOperations.copyNode(stmtNode));
     // make if-statement and replace 
-    SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+    SNode ifNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SLinkOperations.setTarget(ifNode, "condition", SLinkOperations.getTarget(node, "condition", true), true);
-    SLinkOperations.setNewChild(ifNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNodeFactoryOperations.setNewChild(ifNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifNode, "ifTrue", true), "statement", true)).insertElement(0, trueStmt);
     SLinkOperations.setTarget(ifNode, "ifFalseStatement", falseBlockStmt, true);
     SNodeOperations.replaceWithAnother(stmtNode, ifNode);

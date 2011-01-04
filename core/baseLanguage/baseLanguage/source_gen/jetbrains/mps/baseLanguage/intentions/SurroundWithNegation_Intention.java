@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class SurroundWithNegation_Intention extends SurroundWithIntention implements Intention {
   public SurroundWithNegation_Intention() {
@@ -45,7 +46,7 @@ public class SurroundWithNegation_Intention extends SurroundWithIntention implem
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.NotExpression");
+    SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.NotExpression");
   }
 
   public String getLocationString() {

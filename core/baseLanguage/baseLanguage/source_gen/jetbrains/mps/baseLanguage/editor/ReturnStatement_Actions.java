@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ReturnStatement_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -33,7 +33,7 @@ public class ReturnStatement_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, "expression", true) == null) {
-        SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
+        SNodeFactoryOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }
   }
@@ -50,7 +50,7 @@ public class ReturnStatement_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode expressionStatement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+      SNode expressionStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
       SLinkOperations.setTarget(expressionStatement, "expression", SLinkOperations.getTarget(node, "expression", true), true);
     }
   }

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -58,9 +59,9 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode statementNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement");
     // 
-    SNode ifNode = SNodeOperations.insertNewPrevSiblingChild(statementNode, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    SNode ifTrue = SLinkOperations.setNewChild(ifNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
-    SNode ifFalse = SLinkOperations.setNewChild(SLinkOperations.setNewChild(ifNode, "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNode ifNode = SNodeFactoryOperations.insertNewPrevSiblingChild(statementNode, "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SNode ifTrue = SNodeFactoryOperations.setNewChild(ifNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNode ifFalse = SNodeFactoryOperations.setNewChild(SNodeFactoryOperations.setNewChild(ifNode, "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", "jetbrains.mps.baseLanguage.structure.StatementList");
     // 
     SLinkOperations.setTarget(ifNode, "condition", SNodeOperations.copyNode(node), true);
     // 
@@ -76,7 +77,7 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
     });
     Sequence.fromIterable(refs).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SNode booleanConstant = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+        SNode booleanConstant = SNodeFactoryOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
         SPropertyOperations.set(booleanConstant, "value", "" + (true));
       }
     });
@@ -87,7 +88,7 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
     });
     Sequence.fromIterable(refs).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SNode booleanConstant = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+        SNode booleanConstant = SNodeFactoryOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
         SPropertyOperations.set(booleanConstant, "value", "" + (false));
       }
     });

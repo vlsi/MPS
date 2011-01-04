@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class UnwrapIfThenBlock_Intention extends BaseIntention implements Intention {
   public UnwrapIfThenBlock_Intention() {
@@ -65,7 +66,7 @@ public class UnwrapIfThenBlock_Intention extends BaseIntention implements Intent
         }
       });
     } else {
-      SNode statement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.BlockStatement");
+      SNode statement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.BlockStatement");
       SLinkOperations.setTarget(statement, "statements", SLinkOperations.getTarget(node, "ifTrue", true), true);
     }
     SNodeOperations.deleteNode(node);

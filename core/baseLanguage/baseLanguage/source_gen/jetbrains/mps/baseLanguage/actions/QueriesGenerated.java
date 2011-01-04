@@ -21,6 +21,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.smodel.SModel;
@@ -377,7 +378,7 @@ __switch__:
 
   public static void nodeFactory_NodeSetup_ClassConcept_1213605907037(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (!(SNodeOperations.isInstanceOf(_context.getNewNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
-      SLinkOperations.addNewChild(_context.getNewNode(), "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      SNodeFactoryOperations.addNewChild(_context.getNewNode(), "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
     }
     if ((_context.getEnclosingNode() != null) && !(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       SPropertyOperations.set(_context.getNewNode(), "nonStatic", "" + (true));
@@ -394,16 +395,16 @@ __switch__:
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
     }
-    SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     if (_context.getEnclosingNode() != null && SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IVisible")) {
       SLinkOperations.setTarget(_context.getNewNode(), "visibility", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true)), true);
     } else {
-      SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
     }
   }
 
   public static void nodeFactory_NodeSetup_AnnotationMethodDeclaration_6624237184120886047(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode classifierType = SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    SNode classifierType = SNodeFactoryOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
     SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~String"), false);
   }
 
@@ -419,27 +420,27 @@ __switch__:
 
   public static void nodeFactory_NodeSetup_StaticFieldDeclaration_1178291730240(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
     } else {
-      SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
     }
   }
 
   public static void nodeFactory_NodeSetup_StaticMethodDeclaration_1178291583640(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     if (_context.getEnclosingNode() != null && SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IVisible")) {
       SLinkOperations.setTarget(_context.getNewNode(), "visibility", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true)), true);
     } else {
-      SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
     }
   }
 
   public static void nodeFactory_NodeSetup_ConstructorDeclaration_1178291598890(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     if (_context.getEnclosingNode() != null && SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IVisible")) {
       SLinkOperations.setTarget(_context.getNewNode(), "visibility", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true)), true);
     } else {
-      SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
     }
   }
 
@@ -503,37 +504,37 @@ __switch__:
         SNodeOperations.deleteNode(expression);
       } else {
       }
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeFactoryOperations.setNewChild(_context.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
   public static void nodeFactory_NodeSetup_BlockStatement_1205764418296(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "statements", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeFactoryOperations.setNewChild(_context.getNewNode(), "statements", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
   public static void nodeFactory_NodeSetup_ForStatement_1188991552885(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
   public static void nodeFactory_NodeSetup_ForeachStatement_1188991457471(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
   public static void nodeFactory_NodeSetup_TryCatchStatement_1183997671101(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
   public static void nodeFactory_NodeSetup_TryStatement_1183997675652(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeFactoryOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
@@ -573,7 +574,7 @@ __switch__:
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode intConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+            SNode intConst = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
             try {
               SPropertyOperations.set(intConst, "value", "" + (Integer.parseInt(pattern)));
             } catch (NumberFormatException e) {
@@ -610,7 +611,7 @@ __switch__:
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LongLiteral", null);
+            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LongLiteral", null);
             SPropertyOperations.set(result, "value", pattern);
             return result;
           }
@@ -647,7 +648,7 @@ __switch__:
           for (final Boolean item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode integerConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+                SNode integerConst = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
                 SPropertyOperations.set(integerConst, "value", "" + ((item).booleanValue()));
                 return integerConst;
               }
@@ -670,7 +671,7 @@ __switch__:
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode doubleConstant = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
+            SNode doubleConstant = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
             SPropertyOperations.set(doubleConstant, "value", pattern);
             return doubleConstant;
           }
@@ -699,7 +700,7 @@ __switch__:
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode floatConst = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null);
+            SNode floatConst = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null);
             SPropertyOperations.set(floatConst, "value", pattern);
             return floatConst;
           }
@@ -728,7 +729,7 @@ __switch__:
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode stringLiteral = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+            SNode stringLiteral = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
             {
               Pattern _pattern_0 = REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0yc;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
@@ -786,13 +787,13 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
+                SNode operationExpression = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-                  SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);
+                  SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);
                 } else if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-                  SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), false);
+                  SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), false);
                 }
-                SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
+                SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
                 int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
                 if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode()), _context.getParentNode(), constraint)).contains((item)))) {
@@ -868,7 +869,7 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(nodeToWrap), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+          SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(nodeToWrap), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
           SLinkOperations.setTarget(result, "expression", nodeToWrap, true);
           return result;
         }
@@ -898,8 +899,8 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
-          SNode var = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
+          SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+          SNode var = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
           SLinkOperations.setTarget(var, "type", nodeToWrap, true);
           SLinkOperations.setTarget(result, "localVariableDeclaration", var, true);
           return result;
@@ -930,7 +931,7 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+          SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
           SLinkOperations.setTarget(result, "localVariableDeclaration", nodeToWrap, true);
           return result;
         }
@@ -960,7 +961,7 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+          SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
           SLinkOperations.setTarget(result, "type", nodeToWrap, true);
           return result;
         }
@@ -1006,7 +1007,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null);
+                SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", null);
                 SLinkOperations.setTarget(newNode, "baseMethodDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) {
                   for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "actualArgument", true))) {
@@ -1051,7 +1052,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null);
+                SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", null);
                 SLinkOperations.setTarget(newNode, "baseMethodDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) {
                   for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "actualArgument", true))) {
@@ -1109,7 +1110,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode thisEx = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+                SNode thisEx = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
                 SLinkOperations.setTarget(thisEx, "classConcept", (item), false);
                 return thisEx;
               }
@@ -1248,8 +1249,8 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
-                SLinkOperations.setTarget(creator, "cls", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null), true);
+                SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
+                SLinkOperations.setTarget(creator, "cls", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null), true);
                 SLinkOperations.setTarget(SLinkOperations.getTarget(creator, "cls", true), "classifier", (item), false);
                 List<SNode> methodsToImplement = SLinkOperations.getTargets((item), "method", true);
                 if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -1265,7 +1266,7 @@ __switch__:
                 for (SNode method : ListSequence.fromList(methodsToImplement)) {
                   SNode method_copy = SNodeOperations.copyNode(method);
                   SPropertyOperations.set(method_copy, "isAbstract", "" + false);
-                  SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+                  SNodeFactoryOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
                   ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(creator, "cls", true), "method", true)).addElement(method_copy);
                 }
                 // replace all type vars with Object 
@@ -1298,13 +1299,13 @@ __switch__:
             List<SNode> list = (List<SNode>) searchScope.getClassifierNodes();
             List<SNode> types = new ArrayList<SNode>();
             for (SNode classifier : ListSequence.fromList(list)) {
-              SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+              SNode type = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
               SLinkOperations.setTarget(type, "classifier", classifier, false);
               ListSequence.fromList(types).addElement(type);
             }
             for (SNode typeConcept : ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type"), _context.getModel(), operationContext.getScope()))) {
               if (!(SConceptPropertyOperations.getBoolean(typeConcept, "abstract"))) {
-                ListSequence.fromList(types).addElement(SConceptOperations.createNewNode(NameUtil.nodeFQName(typeConcept), null));
+                ListSequence.fromList(types).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(typeConcept), null));
               }
             }
             return types;
@@ -1315,7 +1316,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
+                SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
                 SLinkOperations.setTarget(creator, "componentType", (item), true);
                 return creator;
               }
@@ -1349,7 +1350,7 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+          SNode statementList = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
           ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(nodeToWrap);
           return statementList;
         }
@@ -1379,7 +1380,7 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
+          SNode method = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
           SLinkOperations.setTarget(method, "visibility", nodeToWrap, true);
           return method;
         }
@@ -1409,7 +1410,7 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
+          SNode method = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
           SLinkOperations.setTarget(method, "visibility", nodeToWrap, true);
           return method;
         }
@@ -1439,7 +1440,7 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
+          SNode method = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
           SLinkOperations.setTarget(method, "visibility", nodeToWrap, true);
           return method;
         }
@@ -1479,7 +1480,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+                SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
@@ -1507,7 +1508,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+                SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
@@ -1535,7 +1536,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+                SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
@@ -1563,7 +1564,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+                SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
@@ -1603,7 +1604,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode gne = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+                SNode gne = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
                 SLinkOperations.setTarget(gne, "creator", (item), true);
                 return gne;
               }
@@ -1636,7 +1637,7 @@ __switch__:
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             if (!(SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.Expression"))) {
-              return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CastExpression", null);
+              return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CastExpression", null);
             }
             SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_context.getParentNode(), SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
             SNode castType = null;
@@ -1675,7 +1676,7 @@ __switch__:
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
             SPropertyOperations.set(result, "isFinal", "" + (true));
             return result;
           }
@@ -1705,7 +1706,7 @@ __switch__:
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
             SPropertyOperations.set(result, "text", pattern);
             return result;
           }
@@ -1753,7 +1754,7 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+                SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
@@ -1783,7 +1784,7 @@ __switch__:
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", null);
           SLinkOperations.setTarget(result, "value", nodeToWrap, true);
           if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
             SNode annotationInstance = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
@@ -1841,8 +1842,8 @@ __switch__:
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null);
-                SLinkOperations.setTarget(result, "primitiveType", SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null), true);
+                SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null);
+                SLinkOperations.setTarget(result, "primitiveType", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null), true);
                 return result;
               }
 
@@ -1919,7 +1920,7 @@ __switch__:
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
           SNode dotExpression = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression");
-          SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+          SNode smc = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
           String role = "baseMethodDeclaration";
           SReference sReference = SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").getReference(role);
           smc.addReference(new StaticReference(role, smc, SNodeOperations.getModel(smc).getSModelReference(), null, sReference.getResolveInfo()));
@@ -2051,9 +2052,9 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode dotExpression = SNodeOperations.replaceWithAnother(_context.getSourceNode(), SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.DotExpression", _context.getSourceNode()));
+          SNode dotExpression = SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.DotExpression", _context.getSourceNode()));
           SLinkOperations.setTarget(dotExpression, "operand", _context.getSourceNode(), true);
-          SLinkOperations.setNewChild(dotExpression, "operation", "jetbrains.mps.baseLanguage.structure.AbstractOperation");
+          SNodeFactoryOperations.setNewChild(dotExpression, "operation", "jetbrains.mps.baseLanguage.structure.AbstractOperation");
           return dotExpression;
         }
 
@@ -2093,7 +2094,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "leftExpression", _context.getSourceNode(), true);
           return result;
@@ -2182,7 +2183,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "array", _context.getSourceNode(), true);
           return result;
@@ -2210,7 +2211,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.Expression", null);
+          SNode result = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.Expression", null);
           SLinkOperations.setTarget(_context.getSourceNode(), "initializer", result, true);
           return _context.getSourceNode();
         }
@@ -2237,7 +2238,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ArrayType", null);
+          SNode result = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ArrayType", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "componentType", _context.getSourceNode(), true);
           return result;
@@ -2265,7 +2266,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.baseLanguage.structure.Type");
+          SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.baseLanguage.structure.Type");
           return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "parameter", true)).first();
         }
 
@@ -2291,7 +2292,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+          SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
           return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeVariableDeclaration", true)).first();
         }
 
@@ -2317,7 +2318,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "typeParameter", "jetbrains.mps.baseLanguage.structure.Type");
+          SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "typeParameter", "jetbrains.mps.baseLanguage.structure.Type");
           return _context.getSourceNode();
         }
 
@@ -2357,7 +2358,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode catchClause = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
+          SNode catchClause = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
           ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)).insertElement(0, catchClause);
           return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)).first();
         }
@@ -2380,7 +2381,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CatchClause");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode catchClause = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
+          SNode catchClause = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
           SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), catchClause);
           return catchClause;
         }
@@ -2403,13 +2404,13 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode tryStatement = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TryStatement", null);
+          SNode tryStatement = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TryStatement", null);
           SNode body = SLinkOperations.getTarget(_context.getSourceNode(), "body", true);
           SLinkOperations.setTarget(tryStatement, "body", body, true);
           for (SNode catchClause : SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)) {
             ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
           }
-          SLinkOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
+          SNodeFactoryOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), tryStatement);
           return tryStatement;
         }
@@ -2433,13 +2434,13 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode node = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
-          SNode tryStatement = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TryStatement", null);
+          SNode tryStatement = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TryStatement", null);
           SNode body = SLinkOperations.getTarget(node, "body", true);
           SLinkOperations.setTarget(tryStatement, "body", body, true);
           for (SNode catchClause : SLinkOperations.getTargets(node, "catchClause", true)) {
             ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
           }
-          SLinkOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
+          SNodeFactoryOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
           SNodeOperations.replaceWithAnother(node, tryStatement);
           return tryStatement;
         }
@@ -2462,7 +2463,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode to = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
+          SNode to = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
           SNode current = _context.getSourceNode();
           while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true) == current) {
             current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
@@ -2494,7 +2495,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode newNode = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
+          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
           SLinkOperations.setTarget(newNode, "componentType", SLinkOperations.getTarget(_context.getSourceNode(), "componentType", true), true);
           return newNode;
         }
@@ -2526,7 +2527,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DimensionExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DimensionExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DimensionExpression", null);
           SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
           return result;
         }
@@ -2644,7 +2645,7 @@ __switch__:
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode labelReference = SLinkOperations.setNewChild(_context.getSourceNode(), "loopLabelReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference");
+            SNode labelReference = SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "loopLabelReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference");
             SLinkOperations.setTarget(labelReference, "loopLabel", (item), false);
             return labelReference;
           }
@@ -2726,7 +2727,7 @@ __switch__:
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode labelReference = SLinkOperations.setNewChild(_context.getSourceNode(), "loopLabelReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference");
+            SNode labelReference = SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "loopLabelReference", "jetbrains.mps.baseLanguage.structure.LoopLabelReference");
             SLinkOperations.setTarget(labelReference, "loopLabel", (item), false);
             return labelReference;
           }
@@ -2758,8 +2759,8 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-          SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+          SNode ref = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
           SLinkOperations.setTarget(ref, "classifier", SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false), false);
           SLinkOperations.setTarget(result, "expression", ref, true);
           SNodeOperations.replaceWithAnother(SNodeOperations.getParent(SNodeOperations.getParent(_context.getSourceNode())), result);
@@ -2788,7 +2789,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
           SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           return result;
@@ -2816,7 +2817,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
           SLinkOperations.setTarget(result, "expression", SNodeOperations.copyNode(_context.getSourceNode()), true);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           return result;
@@ -2852,7 +2853,7 @@ __switch__:
       for (final String item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SLinkOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
+            SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
             return SLinkOperations.getTarget(_context.getSourceNode(), "ifFalseStatement", true);
           }
 
@@ -2871,7 +2872,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.setTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.IfStatement"), "ifFalseStatement", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null), true);
+          SLinkOperations.setTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.IfStatement"), "ifFalseStatement", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null), true);
           return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.IfStatement"), "ifFalseStatement", true);
         }
 
@@ -2896,7 +2897,7 @@ __switch__:
       for (final String item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode elseIf = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
+            SNode elseIf = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
             SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), elseIf);
             return elseIf;
           }
@@ -2932,7 +2933,7 @@ __switch__:
       for (final String item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode elseIf = SLinkOperations.addNewChild(_context.getSourceNode(), "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
+            SNode elseIf = SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
             return elseIf;
           }
 
@@ -2959,8 +2960,8 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
-          final SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
+          SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
+          final SNode cls = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
           ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode it) {
               ListSequence.fromList(SLinkOperations.getTargets(cls, "actualArgument", true)).addElement(it);
@@ -3007,7 +3008,7 @@ __switch__:
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+            SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
             SLinkOperations.setTarget(expr, "classConcept", (item), false);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), expr);
             return expr;
@@ -3036,7 +3037,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableArityType");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode variableArityType = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+          SNode variableArityType = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
           SLinkOperations.setTarget(variableArityType, "componentType", _context.getSourceNode(), true);
           return variableArityType;
         }
@@ -3059,7 +3060,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
+          SNode type = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
           ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).addElement(type);
           return type;
         }
@@ -3201,7 +3202,7 @@ __switch__:
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
-              SNode expression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SubstringExpression");
+              SNode expression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SubstringExpression");
               SLinkOperations.setTarget(expression, "operand", _context.getSourceNode(), true);
               return expression;
             }
@@ -3281,9 +3282,9 @@ __switch__:
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
-              SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+              SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
               SNodeOperations.replaceWithAnother(SNodeOperations.getParent(_context.getSourceNode()), statement);
-              SNode localVariableDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
+              SNode localVariableDeclaration = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
               SLinkOperations.setTarget(statement, "localVariableDeclaration", localVariableDeclaration, true);
               SLinkOperations.setTarget(localVariableDeclaration, "type", result, true);
               SLinkOperations.setTarget(localVariableDeclaration, "initializer", _context.getSourceNode(), true);
@@ -3303,7 +3304,7 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-          SLinkOperations.addNewChild(method, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+          SNodeFactoryOperations.addNewChild(method, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
           return method;
         }
 
@@ -3321,7 +3322,7 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-          SLinkOperations.addNewChild(method, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+          SNodeFactoryOperations.addNewChild(method, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
           return method;
         }
 
@@ -3344,7 +3345,7 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-          SLinkOperations.addNewChild(method, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+          SNodeFactoryOperations.addNewChild(method, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
           return method;
         }
 
@@ -3392,7 +3393,7 @@ __switch__:
           do {
             SNode type = TypeChecker.getInstance().getTypeOf(node);
             if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.BooleanType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Boolean")) {
-              SNode not = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
+              SNode not = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
               SNodeOperations.replaceWithAnother(node, not);
               SLinkOperations.setTarget(not, "expression", SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Expression"), true);
               return not;
@@ -3470,7 +3471,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", null);
           SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
           SNodeOperations.replaceWithAnother(targetExpression, result);
           SLinkOperations.setTarget(result, "expression", targetExpression, true);
@@ -3499,7 +3500,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", null);
           SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
           SNodeOperations.replaceWithAnother(targetExpression, result);
           SLinkOperations.setTarget(result, "expression", targetExpression, true);
@@ -3557,7 +3558,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.UnaryMinus");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UnaryMinus", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UnaryMinus", null);
           SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
           SNodeOperations.replaceWithAnother(targetExpression, result);
           SLinkOperations.setTarget(result, "expression", targetExpression, true);
@@ -3601,9 +3602,9 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode statement = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Statement");
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
           SNodeOperations.replaceWithAnother(statement, result);
-          SNode part = SLinkOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+          SNode part = SNodeFactoryOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
           SLinkOperations.setTarget(part, "commentedStatement", statement, true);
           return result;
         }
@@ -3627,9 +3628,9 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode statement = _context.getSourceNode();
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
           SNodeOperations.replaceWithAnother(statement, result);
-          SNode part = SLinkOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+          SNode part = SNodeFactoryOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
           SLinkOperations.setTarget(part, "commentedStatement", statement, true);
           return result;
         }
@@ -3653,9 +3654,9 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode statement = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getSourceNode())), "jetbrains.mps.baseLanguage.structure.Statement");
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
           SNodeOperations.replaceWithAnother(statement, result);
-          SNode part = SLinkOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+          SNode part = SNodeFactoryOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
           SLinkOperations.setTarget(part, "commentedStatement", statement, true);
           return result;
         }
@@ -3678,7 +3679,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setNewChild(_context.getSourceNode(), "loopLabel", "jetbrains.mps.baseLanguage.structure.LoopLabel");
+          return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "loopLabel", "jetbrains.mps.baseLanguage.structure.LoopLabel");
         }
 
         public String getMatchingText(String pattern) {
@@ -3703,7 +3704,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setNewChild(_context.getSourceNode(), "switchLabel", "jetbrains.mps.baseLanguage.structure.LoopLabel");
+          return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "switchLabel", "jetbrains.mps.baseLanguage.structure.LoopLabel");
         }
 
         public String getMatchingText(String pattern) {
@@ -3728,7 +3729,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.addNewChild(_context.getSourceNode(), "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+          return SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         }
 
         public String getMatchingText(String pattern) {
@@ -3753,7 +3754,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.setNewChild(_context.getSourceNode(), "expression", "jetbrains.mps.baseLanguage.structure.Expression");
+          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "expression", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }
 
@@ -3775,7 +3776,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.addNewChild(_context.getSourceNode(), "typeArgument", "jetbrains.mps.baseLanguage.structure.Type");
+          return SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "typeArgument", "jetbrains.mps.baseLanguage.structure.Type");
         }
 
         public String getMatchingText(String pattern) {
@@ -3796,7 +3797,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.addNewChild(_context.getSourceNode(), "typeArgument", "jetbrains.mps.baseLanguage.structure.Type");
+          return SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "typeArgument", "jetbrains.mps.baseLanguage.structure.Type");
         }
 
         public String getMatchingText(String pattern) {
@@ -3817,7 +3818,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setNewChild(_context.getSourceNode(), "defaultValue", "jetbrains.mps.baseLanguage.structure.Expression");
+          return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "defaultValue", "jetbrains.mps.baseLanguage.structure.Expression");
         }
 
         public String getMatchingText(String pattern) {
@@ -3888,7 +3889,7 @@ __switch__:
         public SNode doSubstitute(String pattern) {
           SNode targetExpression = PrecedenceUtil.getTargetForRightTransform(_context.getSourceNode());
           SNode assertion = SNodeOperations.cast(SNodeOperations.getParent(targetExpression), "jetbrains.mps.baseLanguage.structure.AssertStatement");
-          SLinkOperations.setNewChild(assertion, "message", "jetbrains.mps.baseLanguage.structure.Expression");
+          SNodeFactoryOperations.setNewChild(assertion, "message", "jetbrains.mps.baseLanguage.structure.Expression");
           return SLinkOperations.getTarget(assertion, "message", true);
         }
 

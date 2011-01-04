@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProcessor {
   public SNode getApplicableConcept() {
@@ -35,7 +36,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
       }
     }).first();
     if (staticFieldDecl != null) {
-      SNode localStatisFieldReference = SNodeOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
+      SNode localStatisFieldReference = SNodeFactoryOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
       SLinkOperations.setTarget(localStatisFieldReference, "variableDeclaration", staticFieldDecl, false);
     }
   }

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class CreateSetAccessor_Intention extends BaseIntention implements Intention {
   public CreateSetAccessor_Intention() {
@@ -45,7 +46,7 @@ public class CreateSetAccessor_Intention extends BaseIntention implements Intent
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setNewChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", false, false), "setAccessor", "jetbrains.mps.baseLanguage.structure.SetAccessor");
+    SNodeFactoryOperations.setNewChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", false, false), "setAccessor", "jetbrains.mps.baseLanguage.structure.SetAccessor");
   }
 
   public String getLocationString() {

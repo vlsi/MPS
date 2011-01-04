@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class StaticMethodCall_Actions {
@@ -31,7 +32,7 @@ public class StaticMethodCall_Actions {
       SNode classConcept1 = SLinkOperations.getTarget(node, "classConcept", false);
       SNode classConcept2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       if (classConcept1 == classConcept2) {
-        SNode localStaticMethodCall = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
+        SNode localStaticMethodCall = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
         SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true))) {
           ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);

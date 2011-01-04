@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RemarkStatement_KeyMap extends EditorCellKeyMap {
@@ -57,7 +57,7 @@ public class RemarkStatement_KeyMap extends EditorCellKeyMap {
       int caretPostion = label.getCaretPosition();
       String text = SPropertyOperations.getString(node, "value");
       SPropertyOperations.set(node, "value", text.substring(0, caretPostion));
-      SNode newRemark = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.RemarkStatement", null);
+      SNode newRemark = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.RemarkStatement", null);
       SPropertyOperations.set(newRemark, "value", text.substring(caretPostion));
       SNodeOperations.insertNextSiblingChild(node, newRemark);
     }

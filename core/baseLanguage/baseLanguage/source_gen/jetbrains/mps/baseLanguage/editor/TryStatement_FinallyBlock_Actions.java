@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TryStatement_FinallyBlock_Actions {
@@ -33,7 +34,7 @@ public class TryStatement_FinallyBlock_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)).isNotEmpty()) {
-        SNode tryCatchStatement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+        SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
         SLinkOperations.setTarget(tryCatchStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
         ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).clear();
         ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)));

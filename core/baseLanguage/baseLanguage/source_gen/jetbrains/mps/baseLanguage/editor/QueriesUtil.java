@@ -11,9 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesUtil {
@@ -26,8 +25,8 @@ public class QueriesUtil {
       }
     }).toListSequence();
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-      ListSequence.fromList(result).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null));
-      ListSequence.fromList(result).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null));
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null));
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null));
     }
     return result;
   }
@@ -35,7 +34,7 @@ public class QueriesUtil {
   public static SNode replaceNodeMenu_createNewNode(SNode classifier, SNode parameterObject, SNode oldNode) {
     SModel model = SNodeOperations.getModel(classifier);
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newNode, "baseMethodDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       SLinkOperations.setTarget(newNode, "classConcept", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
@@ -51,24 +50,24 @@ public class QueriesUtil {
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(newNode, "variableDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), false);
       SLinkOperations.setTarget(newNode, "classifier", classifier, false);
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
       SLinkOperations.setTarget(newNode, "enumConstantDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), false);
       SLinkOperations.setTarget(newNode, "enumClass", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression")) {
-      SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", null);
       SLinkOperations.setTarget(newNode, "enumClass", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
       return newNode;
     }
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression")) {
-      SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.EnumValuesExpression", null);
       SLinkOperations.setTarget(newNode, "enumClass", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
       return newNode;
     }

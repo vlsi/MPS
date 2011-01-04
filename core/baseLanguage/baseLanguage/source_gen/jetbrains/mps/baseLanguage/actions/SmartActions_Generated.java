@@ -8,9 +8,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.actions.SmartActionUIPanel;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -36,14 +37,14 @@ public class SmartActions_Generated {
           return;
         }
         for (SNode field : ((List<SNode>) (getSmartActionContext()).get("fields")[0])) {
-          SNode getter = SLinkOperations.addNewChild(ancestor, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+          SNode getter = SNodeFactoryOperations.addNewChild(ancestor, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           SPropertyOperations.set(getter, "name", "get" + NameUtil.capitalize(SPropertyOperations.getString(field, "name")));
           SLinkOperations.setTarget(getter, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), true);
-          SLinkOperations.setNewChild(getter, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-          SNode returnStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(getter, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-          SNode dotExpression = SLinkOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.DotExpression");
-          SLinkOperations.setNewChild(dotExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-          SNode fieldRef = SLinkOperations.setNewChild(dotExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
+          SNodeFactoryOperations.setNewChild(getter, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+          SNode returnStatement = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(getter, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
+          SNode dotExpression = SNodeFactoryOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.DotExpression");
+          SNodeFactoryOperations.setNewChild(dotExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
+          SNode fieldRef = SNodeFactoryOperations.setNewChild(dotExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
           SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
         }
       }

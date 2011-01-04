@@ -8,6 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -31,7 +32,7 @@ public class AnonymousClass_CurlyBraces {
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
         SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
-        final SNode classCreator = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.structure.ClassCreator");
+        final SNode classCreator = SNodeFactoryOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.structure.ClassCreator");
         SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {

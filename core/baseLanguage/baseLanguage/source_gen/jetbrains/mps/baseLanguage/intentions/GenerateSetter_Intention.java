@@ -14,7 +14,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -95,7 +95,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       }
       // Method creation begins 
       String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, ideaProject);
-      SNode fieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+      SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
       SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_hfod7k_a0a0a8a3a7().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
       lastAdded = added;

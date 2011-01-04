@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddForStatementVar extends EditorCellKeyMap {
   public AddForStatementVar() {
@@ -66,7 +66,7 @@ public class AddForStatementVar extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode variableDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, false);
       SNode forStatement = SNodeOperations.cast(SNodeOperations.getParent(variableDeclaration), "jetbrains.mps.baseLanguage.structure.ForStatement");
-      ListSequence.fromList(SLinkOperations.getTargets(forStatement, "additionalVar", true)).insertElement(0, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", null));
+      ListSequence.fromList(SLinkOperations.getTargets(forStatement, "additionalVar", true)).insertElement(0, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", null));
     }
 
     public String getKeyStroke() {

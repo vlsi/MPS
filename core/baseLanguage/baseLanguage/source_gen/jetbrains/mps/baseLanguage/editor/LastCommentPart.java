@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class LastCommentPart extends EditorCellKeyMap {
   public LastCommentPart() {
@@ -55,7 +55,7 @@ public class LastCommentPart extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeOperations.insertNextSiblingChild(SNodeOperations.getParent(node), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null));
+      SNodeOperations.insertNextSiblingChild(SNodeOperations.getParent(node), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null));
     }
 
     public String getKeyStroke() {

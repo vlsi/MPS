@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AddRemoveStaticMethodModifier_Intention extends BaseIntention implements Intention {
@@ -69,9 +70,9 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention imple
     SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode method;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-      method = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      method = SNodeFactoryOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     } else {
-      method = SLinkOperations.addNewChild(classConcept, "staticMethod", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+      method = SNodeFactoryOperations.addNewChild(classConcept, "staticMethod", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     }
     SLinkOperations.setTarget(method, "returnType", SLinkOperations.getTarget(node, "returnType", true), true);
     ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)));

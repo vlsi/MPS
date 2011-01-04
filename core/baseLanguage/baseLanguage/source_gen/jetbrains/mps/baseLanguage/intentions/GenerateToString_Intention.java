@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -68,7 +68,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     SNode firstField = ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).first();
     SNode currentExpression = null;
     for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
-      SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+      SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
       SNode item = new GenerateToString_Intention.QuotationClass_6enhg7_a0a2a4a7().createNode(((field == firstField ?
         "" :
