@@ -41,10 +41,10 @@
       <property name="name" nameId="tpck.1169194664001" value="InsertRowBeforeHeader" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8143909488490586222">
-      <property name="name" nameId="tpck.1169194664001" value="RemoveHeaderRowFromAfter" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveHeaderRow_FromLastCell" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8143909488490605459">
-      <property name="name" nameId="tpck.1169194664001" value="RemoveHeaderRowFromBefore" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveHeaderRow_FromFirstCell" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="1211716198725196074">
       <property name="name" nameId="tpck.1169194664001" value="InsertRowAfterLast" />
@@ -1394,7 +1394,7 @@
   </root>
   <root id="8143909488490586222">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="2qyu.HierarchycalTable" typeId="2qyu.8506335436194701777" id="8143909488490586224">
-      <property name="name" nameId="tpck.1169194664001" value="removeHeaferRowFromAfterTable" />
+      <property name="name" nameId="tpck.1169194664001" value="removeHeaferRow_FromLastCellTable" />
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8143909488490586225">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8143909488490586226">
           <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
@@ -1465,7 +1465,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="2qyu.HierarchycalTable" typeId="2qyu.8506335436194701777" id="8143909488490586249">
-      <property name="name" nameId="tpck.1169194664001" value="removeHeaferRowFromAfterTable" />
+      <property name="name" nameId="tpck.1169194664001" value="removeHeaferRow_FromLastCellTable" />
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8143909488490586250">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8143909488490586251">
           <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
@@ -1545,7 +1545,7 @@
   </root>
   <root id="8143909488490605459">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="2qyu.HierarchycalTable" typeId="2qyu.8506335436194701777" id="8143909488490605461">
-      <property name="name" nameId="tpck.1169194664001" value="removeHeaderRowFromBeforeTable" />
+      <property name="name" nameId="tpck.1169194664001" value="removeHeaderRow_FromFirstCellTable" />
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8143909488490605462">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8143909488490605463">
           <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />
@@ -1616,7 +1616,7 @@
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="2qyu.HierarchycalTable" typeId="2qyu.8506335436194701777" id="8143909488490605486">
-      <property name="name" nameId="tpck.1169194664001" value="removeHeaderRowFromBeforeTable" />
+      <property name="name" nameId="tpck.1169194664001" value="removeHeaderRow_FromFirstCellTable" />
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="8143909488490605487">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="8143909488490605488">
           <property name="value" nameId="2qyu.2882388703616155301" value="$0 0$" />

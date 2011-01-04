@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="EditHeaderCell_Test.java" startLine="20" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test$TestBody" />
   <unitInfo fileName="EditCell_Test.java" startLine="20" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test$TestBody" />
-  <unitInfo fileName="RemoveHeaderRowFromBefore_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromBefore_Test$TestBody" />
-  <unitInfo fileName="RemoveHeaderRowFromAfter_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromAfter_Test$TestBody" />
+  <unitInfo fileName="RemoveHeaderRow_FromFirstCell_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test$TestBody" />
+  <unitInfo fileName="RemoveHeaderRow_FromLastCell_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromLastCell_Test$TestBody" />
   <unitInfo fileName="InsertRowBeforeHeader_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBeforeHeader_Test$TestBody" />
   <unitInfo fileName="InsertRowBefore_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test$TestBody" />
   <unitInfo fileName="InsertRowAfter_Test.java" startLine="22" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test$TestBody" />
@@ -17,8 +17,8 @@
   <unitInfo fileName="RemoveCell_Test.java" startLine="22" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveCell_Test$TestBody" />
   <unitInfo fileName="EditHeaderCell_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditHeaderCell_Test" />
   <unitInfo fileName="EditCell_Test.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.EditCell_Test" />
-  <unitInfo fileName="RemoveHeaderRowFromBefore_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromBefore_Test" />
-  <unitInfo fileName="RemoveHeaderRowFromAfter_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromAfter_Test" />
+  <unitInfo fileName="RemoveHeaderRow_FromFirstCell_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test" />
+  <unitInfo fileName="RemoveHeaderRow_FromLastCell_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromLastCell_Test" />
   <unitInfo fileName="InsertRowBeforeHeader_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBeforeHeader_Test" />
   <unitInfo fileName="InsertRowBefore_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowBefore_Test" />
   <unitInfo fileName="InsertRowAfter_Test.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.table.hierarchycalTable.test.InsertRowAfter_Test" />
@@ -69,10 +69,10 @@
     <nodeInfo nodeId="6341395909949441294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InsertRowBeforeHeader_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
   </root>
   <root nodeId="8143909488490586222">
-    <nodeInfo nodeId="8143909488490603675" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveHeaderRowFromAfter_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" />
+    <nodeInfo nodeId="8143909488490603675" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveHeaderRow_FromLastCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="123" />
   </root>
   <root nodeId="8143909488490605459">
-    <nodeInfo nodeId="8143909488490605513" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveHeaderRowFromBefore_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" />
+    <nodeInfo nodeId="8143909488490605513" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveHeaderRow_FromFirstCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" />
   </root>
   <root nodeId="9025751233592076947">
     <nodeInfo nodeId="9025751233592112533" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="RemoveCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="119" />

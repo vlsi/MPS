@@ -12,11 +12,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class RemoveHeaderRowFromBefore_Test extends BaseTransformationTest {
+public class RemoveHeaderRow_FromFirstCell_Test extends BaseTransformationTest {
   @Test
-  public void test_RemoveHeaderRowFromBefore() throws Throwable {
-    this.initTest("${mps_home}/plugins/vcs/vcs.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
-    this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromBefore_Test$TestBody", "testMethod", false);
+  public void test_RemoveHeaderRow_FromFirstCell() throws Throwable {
+    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
+    this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRow_FromFirstCell_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch

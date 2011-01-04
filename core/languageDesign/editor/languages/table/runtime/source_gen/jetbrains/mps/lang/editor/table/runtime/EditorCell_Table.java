@@ -46,7 +46,7 @@ public class EditorCell_Table extends EditorCell_Collection {
       EditorCell_Collection rowCell = this.createRowCell(row);
       String rowId = myUniquePrefix + "_row_" + row;
       rowCell.setCellId(rowId);
-      rowCell.addEditorCell(createRowEndingCell(row, rowId + "_firstCell"));
+      rowCell.addEditorCell(createRowOutermostCell(row, rowId, true));
       final int finalRow = row;
       for (int column = 0; column < myModel.getColumnCount(); column++) {
         final int finalColumn = column;
@@ -107,7 +107,7 @@ public class EditorCell_Table extends EditorCell_Collection {
 
         rowCell.addEditorCell(editorCell);
       }
-      rowCell.addEditorCell(createRowEndingCell(row + 1, rowId + "_lastCell"));
+      rowCell.addEditorCell(createRowOutermostCell(row, rowId, false));
       this.addEditorCell(rowCell);
     }
   }
@@ -169,14 +169,26 @@ public class EditorCell_Table extends EditorCell_Collection {
     return rowCell;
   }
 
-  private EditorCell createRowEndingCell(final int rowNumber, String cellId) {
+  private EditorCell createRowOutermostCell(final int rowNumber, String cellId, boolean beggining) {
     EditorCell emptyCell = new EditorCell_Empty(getEditorContext(), getSNode());
-    emptyCell.setAction(CellActionType.INSERT, new EditorCellAction() {
+    if (beggining) {
+      emptyCell.getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+    } else {
+      emptyCell.setAction(CellActionType.INSERT, new EditorCellAction() {
+        public void execute(EditorContext editorContext) {
+          myModel.insertRow(rowNumber + 1);
+        }
+      });
+    }
+    emptyCell.setAction(CellActionType.INSERT_BEFORE, new EditorCellAction() {
       public void execute(EditorContext editorContext) {
         myModel.insertRow(rowNumber);
       }
     });
-    emptyCell.setCellId(cellId);
+    emptyCell.setCellId(cellId + ((beggining ?
+      "_firstCell" :
+      "_lastCell"
+    )));
     return emptyCell;
   }
 
