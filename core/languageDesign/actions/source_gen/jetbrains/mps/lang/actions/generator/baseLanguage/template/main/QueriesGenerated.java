@@ -9,10 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_Behavior;
 import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
@@ -42,24 +42,16 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SmartEditorActions")).isNotEmpty();
   }
 
-  public static boolean baseMappingRule_Condition_7836612869651263974(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
-      SNode c = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "operation", true));
-      return c == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance") || c == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation") || c == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation") || c == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation") || c == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation") || c == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation") || c == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation") || c == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation");
-    }
-    return false;
-  }
-
-  public static boolean baseMappingRule_Condition_5979988948250981389(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "creator", true)), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer");
-  }
-
   public static boolean baseMappingRule_Condition_1235754927540(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode();
   }
 
   public static boolean baseMappingRule_Condition_1235754864859(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode());
+  }
+
+  public static boolean baseMappingRule_Condition_6839387317842789829(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "creator", true)), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer");
   }
 
   public static Object propertyMacro_GetPropertyValue_1203349256426(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -427,10 +419,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_5480835971642160940(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "prototypeNode", true) != null;
-  }
-
-  public static SNode sourceNodeQuery_7836612869651263968(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "operation", true);
   }
 
   public static SNode sourceNodeQuery_1172253302099(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
