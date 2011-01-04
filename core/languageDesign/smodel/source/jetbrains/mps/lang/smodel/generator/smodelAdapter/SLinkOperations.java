@@ -27,7 +27,6 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList.AggregatedSNodesList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList.LinkedSNodesList;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -74,6 +73,7 @@ public class SLinkOperations {
     return targetNode;
   }
 
+  // TODO get rid of NodeFactoryManager, asap!
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode prototypeNode = node.getChild(role);
@@ -94,6 +94,7 @@ public class SLinkOperations {
     return new ArrayList(0);
   }
 
+  // TODO get rid of NodeFactoryManager, asap!
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel());

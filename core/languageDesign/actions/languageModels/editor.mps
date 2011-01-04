@@ -145,6 +145,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdg.5948027493682789918" resolveInfo="CopyPasteHandlers" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5979988948250981290">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdg.5979988948250981289" resolveInfo="SNodeCreatorWithInitialization" />
     </node>
   </roots>

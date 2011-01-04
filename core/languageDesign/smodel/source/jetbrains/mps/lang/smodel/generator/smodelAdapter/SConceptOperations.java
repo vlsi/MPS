@@ -136,6 +136,7 @@ public final class SConceptOperations {
     return FindUsagesManager.getInstance().findInstances(conceptDeclarationNode, scope);
   }
 
+  // TODO get rid of NodeFactoryManager, asap!
   public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
     if (conceptFqName == null) return null;
     return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null);

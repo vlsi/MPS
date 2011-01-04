@@ -152,6 +152,7 @@ public class SModelOperations {
     return createNewNode(model, conceptFqName, null);
   }
 
+  // TODO get rid of NodeFactoryManager, asap!
   public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
     SNode enclosingNode = null;
     if (prototypeNode != null) {
@@ -161,6 +162,7 @@ public class SModelOperations {
     return NodeFactoryManager.createNode(conceptFqName, prototypeNode, enclosingNode, model);
   }
 
+  // TODO get rid of NodeFactoryManager, asap!
   public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
     SNode newNode = NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, model);
     model.addRoot(newNode);

@@ -358,6 +358,7 @@ public class SNodeOperations {
     return result;
   }
 
+  // TODO get rid of NodeFactoryManager, asap!
   public static SNode insertNewNextSiblingChild(SNode node, String conceptFQName) {
     if (node == null || node.getParent() == null) return null;
     SNode parent = node.getParent();
@@ -369,6 +370,7 @@ public class SNodeOperations {
     return newChild;
   }
 
+  // TODO get rid of NodeFactoryManager, asap!
   public static SNode insertNewPrevSiblingChild(SNode node, String conceptFqName) {
     if (node == null) return null;
     SNode parent = node.getParent();
@@ -409,6 +411,7 @@ public class SNodeOperations {
     return siblingNode;
   }
 
+  // TODO get rid of NodeFactoryManager, asap!
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
