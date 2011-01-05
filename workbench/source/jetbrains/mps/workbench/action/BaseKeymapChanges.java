@@ -33,6 +33,7 @@ public abstract class BaseKeymapChanges {
 
   private Keymap myKeymap;
 
+  private Map<String, Set<Shortcut>> myRemovedShortcuts = new THashMap<String, Set<Shortcut>>();
   private Map<String, Set<Shortcut>> mySimpleShortcuts = new THashMap<String, Set<Shortcut>>();
   private Map<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<String, Set<ComplexShortcut>>();
 
@@ -50,7 +51,7 @@ public abstract class BaseKeymapChanges {
 
     for (ComplexShortcut cs : complexShortcuts) {
       for (Shortcut s : cs.getShortcutsFor(shortId, params)) {
-        keymap.addShortcut(longId, s);
+        addShortcutToKeymap(longId, keymap, s);
 
         Set<Shortcut> added = myAddedComplexShortcuts.get(longId);
         if (added == null) {
@@ -69,7 +70,7 @@ public abstract class BaseKeymapChanges {
     for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
       String key = e.getKey();
       for (Shortcut s : e.getValue()) {
-        keymap.addShortcut(key, s);
+        addShortcutToKeymap(key, keymap, s);
       }
     }
   }
@@ -85,6 +86,7 @@ public abstract class BaseKeymapChanges {
         keymap.removeShortcut(key, s);
       }
     }
+    myAddedComplexShortcuts.clear();
 
     //simple
     for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
@@ -93,6 +95,16 @@ public abstract class BaseKeymapChanges {
         keymap.removeShortcut(key, s);
       }
     }
+    mySimpleShortcuts.clear();
+
+    //register old
+    for (Entry<String, Set<Shortcut>> e : myRemovedShortcuts.entrySet()) {
+      String key = e.getKey();
+      for (Shortcut s : e.getValue()) {
+        keymap.addShortcut(key, s);
+      }
+    }
+    myRemovedShortcuts.clear();
   }
 
   protected void addSimpleShortcut(String id, Shortcut... s) {
@@ -111,6 +123,15 @@ public abstract class BaseKeymapChanges {
       myComplexShortcuts.put(id, shortcuts);
     }
     shortcuts.addAll(Arrays.asList(s));
+  }
+
+  private void addShortcutToKeymap(String longId, Keymap keymap, Shortcut s) {
+    Shortcut[] oldShortcuts = keymap.getShortcuts(longId);
+    if (oldShortcuts.length != 0 && !myRemovedShortcuts.containsKey(longId)) {
+      myRemovedShortcuts.put(longId, new THashSet<Shortcut>(Arrays.asList(oldShortcuts)));
+      keymap.removeAllActionShortcuts(longId);
+    }
+    keymap.addShortcut(longId, s);
   }
 
   private Keymap getKeymap() {
