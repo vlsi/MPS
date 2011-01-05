@@ -33,6 +33,8 @@ public abstract class BaseKeymapChanges {
 
   private Keymap myKeymap;
 
+  private Set<String> ourClearedActions = new THashSet<String>();
+
   private Map<String, Set<Shortcut>> myRemovedShortcuts = new THashMap<String, Set<Shortcut>>();
   private Map<String, Set<Shortcut>> mySimpleShortcuts = new THashMap<String, Set<Shortcut>>();
   private Map<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<String, Set<ComplexShortcut>>();
@@ -105,6 +107,8 @@ public abstract class BaseKeymapChanges {
       }
     }
     myRemovedShortcuts.clear();
+
+    ourClearedActions.clear();
   }
 
   protected void addSimpleShortcut(String id, Shortcut... s) {
@@ -127,7 +131,8 @@ public abstract class BaseKeymapChanges {
 
   private void addShortcutToKeymap(String longId, Keymap keymap, Shortcut s) {
     Shortcut[] oldShortcuts = keymap.getShortcuts(longId);
-    if (oldShortcuts.length != 0 && !myRemovedShortcuts.containsKey(longId)) {
+    if (oldShortcuts.length != 0 && !ourClearedActions.contains(longId)) {
+      ourClearedActions.add(longId);
       myRemovedShortcuts.put(longId, new THashSet<Shortcut>(Arrays.asList(oldShortcuts)));
       keymap.removeAllActionShortcuts(longId);
     }
