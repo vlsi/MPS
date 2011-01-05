@@ -21,6 +21,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.SwingUtilities;
+
 //this is to get rid of memleak in case exception class is loaded by a language classloader
 public class MessagesPoolClearer implements ApplicationComponent {
   private ClassLoaderManager myManager;
@@ -38,7 +40,11 @@ public class MessagesPoolClearer implements ApplicationComponent {
   public void initComponent() {
     myHandler = new ReloadAdapter() {
       public void unload() {
-        MessagePool.getInstance().clearFatals();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            MessagePool.getInstance().clearFatals();
+          }
+        });
       }
     };
     myManager.addReloadHandler(myHandler);
