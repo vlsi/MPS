@@ -52,7 +52,7 @@ public abstract class BaseKeymapChanges {
     if (complexShortcuts == null) return;
 
     for (ComplexShortcut cs : complexShortcuts) {
-      for (Shortcut s : cs.getShortcutsFor(shortId, params)) {
+      for (Shortcut s : cs.getShortcutsFor(params)) {
         addShortcutToKeymap(longId, keymap, s);
 
         Set<Shortcut> added = myAddedComplexShortcuts.get(longId);
