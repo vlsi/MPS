@@ -5819,6 +5819,15 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8131292300542179716">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.8817525066851790100" resolveInfo="KeyStrokeType" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="8131292300542179718">
+        <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8131292300542179721">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ll11.~Shortcut" resolveInfo="Shortcut" />
+        </node>
+      </node>
+    </node>
   </root>
   <root id="1204479048161">
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="929556153838364379">
