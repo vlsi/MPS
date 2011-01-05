@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class CreateState_Test extends BaseTransformationTest {
   @Test
   public void test_CreateState() throws Throwable {
-    this.initTest("${mps_home}/plugins/vcs/vcs.mpr", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)");
+    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)");
     this.runTest("jetbrains.mps.lang.editor.table.stateMachine.test.CreateState_Test$TestBody", "testMethod", false);
   }
 
@@ -23,7 +23,7 @@ public class CreateState_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("9025751233592279042", "5877647854348533421");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide#action#jetbrains.mps.ide.actions.Insert_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.Insert_Action");
       BaseEditorTestBody.typeString(editorComponent, "newState");
     }
   }
