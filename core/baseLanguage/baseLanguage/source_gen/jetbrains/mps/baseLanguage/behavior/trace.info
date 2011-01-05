@@ -17,6 +17,7 @@
   <unitInfo fileName="CommentedStatement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentedStatement_Behavior" />
   <unitInfo fileName="LocalVariableDeclarationStatement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalVariableDeclarationStatement_Behavior" />
   <unitInfo fileName="PropertyReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.PropertyReference_Behavior" />
+  <unitInfo fileName="VariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior" />
   <unitInfo fileName="CustomPropertyImplementation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CustomPropertyImplementation_Behavior" />
   <unitInfo fileName="AbstractLoopStatement_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_Behavior" />
   <unitInfo fileName="BlockStatement_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BlockStatement_Behavior" />
@@ -123,7 +124,6 @@
   <unitInfo fileName="DotExpression_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior" />
   <unitInfo fileName="BaseMethodCall_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseMethodCall_Behavior" />
   <unitInfo fileName="Type_Behavior.java" startLine="290" startPosition="0" endLine="322" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Type_Behavior$Pattern_smb55n_a0a0a0a31" />
-  <unitInfo fileName="VariableReference_Behavior.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior" />
   <unitInfo fileName="ClassifierType_Behavior.java" startLine="220" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior$Pattern_hz3823_a0a1a1a0a0a01" />
   <unitInfo fileName="IContainsStatementList_Behavior.java" startLine="11" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" />
   <unitInfo fileName="IMemberContainer_Behavior.java" startLine="11" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
@@ -1231,43 +1231,9 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877348222">
-    <nodeInfo nodeId="1233921353146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VariableReference_Behavior.java" startLine="16" startPosition="79" endLine="17" endPosition="138" />
-    <nodeInfo nodeId="5536314641534924425" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VariableReference_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="199" />
-    <nodeInfo nodeId="5536314641534924455" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VariableReference_Behavior.java" startLine="22" startPosition="32" endLine="23" endPosition="18" />
-    <nodeInfo nodeId="5536314641534924421" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VariableReference_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="145" />
-    <nodeInfo nodeId="5536314641534928656" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VariableReference_Behavior.java" startLine="25" startPosition="145" endLine="26" endPosition="30" />
-    <nodeInfo nodeId="5536314641534939219" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="VariableReference_Behavior.java" startLine="26" startPosition="30" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="5536314641534939192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VariableReference_Behavior.java" startLine="27" startPosition="0" endLine="28" endPosition="150" />
-    <nodeInfo nodeId="5536314641534939388" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VariableReference_Behavior.java" startLine="29" startPosition="86" endLine="30" endPosition="18" />
-    <nodeInfo nodeId="5536314641534928655" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" fileName="VariableReference_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="5536314641534928695" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VariableReference_Behavior.java" startLine="34" startPosition="46" endLine="35" endPosition="40" />
-    <nodeInfo nodeId="5536314641534928702" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="VariableReference_Behavior.java" startLine="35" startPosition="40" endLine="36" endPosition="14" />
-    <nodeInfo nodeId="5536314641534928649" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="VariableReference_Behavior.java" startLine="37" startPosition="7" endLine="38" endPosition="149" />
-    <nodeInfo nodeId="5536314641534929759" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="VariableReference_Behavior.java" startLine="40" startPosition="33" endLine="41" endPosition="84" />
-    <nodeInfo nodeId="4914488904500881396" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VariableReference_Behavior.java" startLine="41" startPosition="84" endLine="42" endPosition="79" />
-    <nodeInfo nodeId="5536314641534928722" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VariableReference_Behavior.java" startLine="43" startPosition="12" endLine="44" endPosition="18" />
-    <nodeInfo nodeId="5536314641534928719" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="VariableReference_Behavior.java" startLine="43" startPosition="10" endLine="45" endPosition="5" />
-    <nodeInfo nodeId="5536314641534924446" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VariableReference_Behavior.java" startLine="21" startPosition="199" endLine="24" endPosition="5" />
-    <nodeInfo nodeId="5536314641534939374" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VariableReference_Behavior.java" startLine="28" startPosition="150" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="5536314641534928686" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VariableReference_Behavior.java" startLine="33" startPosition="40" endLine="37" endPosition="7" />
-    <nodeInfo nodeId="5536314641534928712" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="VariableReference_Behavior.java" startLine="39" startPosition="5" endLine="45" endPosition="5" />
-    <nodeInfo nodeId="5536314641534928640" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" fileName="VariableReference_Behavior.java" startLine="32" startPosition="0" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="1213877348224" fileName="VariableReference_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1233921343754" fileName="VariableReference_Behavior.java" startLine="16" startPosition="79" endLine="17" endPosition="138" />
-    <scopeInfo nodeId="5536314641534924447" fileName="VariableReference_Behavior.java" startLine="22" startPosition="32" endLine="23" endPosition="18" />
-    <scopeInfo nodeId="5536314641534939375" fileName="VariableReference_Behavior.java" startLine="29" startPosition="86" endLine="30" endPosition="18" />
-    <scopeInfo nodeId="5536314641534928720" fileName="VariableReference_Behavior.java" startLine="43" startPosition="12" endLine="44" endPosition="18" />
-    <scopeInfo nodeId="5536314641534928687" fileName="VariableReference_Behavior.java" startLine="34" startPosition="46" endLine="36" endPosition="14" />
-    <scopeInfo nodeId="5536314641534928713" fileName="VariableReference_Behavior.java" startLine="40" startPosition="33" endLine="42" endPosition="79">
-      <varInfo nodeId="5536314641534929760" varName="program" />
-    </scopeInfo>
-    <scopeInfo nodeId="5536314641534928642" fileName="VariableReference_Behavior.java" startLine="33" startPosition="40" endLine="38" endPosition="149" />
-    <scopeInfo nodeId="5536314641534918563" fileName="VariableReference_Behavior.java" startLine="20" startPosition="87" endLine="45" endPosition="5">
-      <varInfo nodeId="5536314641534928657" varName="ourContainer" />
-      <varInfo nodeId="5536314641534939193" varName="assignmentExpression" />
-      <varInfo nodeId="5536314641534924422" varName="currentContainer" />
-      <varInfo nodeId="5536314641534924426" varName="declContainer" />
-    </scopeInfo>
+    <nodeInfo nodeId="1233921353146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="VariableReference_Behavior.java" startLine="12" startPosition="79" endLine="13" endPosition="138" />
+    <scopeInfo nodeId="1213877348224" fileName="VariableReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1233921343754" fileName="VariableReference_Behavior.java" startLine="12" startPosition="79" endLine="13" endPosition="138" />
   </root>
   <root nodeId="1213877350233">
     <nodeInfo nodeId="5039675756633081795" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="BaseMethodDeclaration_Behavior.java" startLine="35" startPosition="85" endLine="36" endPosition="184" />
