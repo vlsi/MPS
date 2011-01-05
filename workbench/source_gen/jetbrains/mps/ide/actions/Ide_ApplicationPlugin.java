@@ -42,6 +42,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CloneRoot_Action());
     addAction(new CollapseAll_Action());
     addAction(new Collapse_Action());
+    addAction(new CompileProject_Action());
     addAction(new CopyModelName_Action());
     addAction(new CopyModuleName_Action());
     addAction(new CopyNodeName_Action());
@@ -110,7 +111,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MPSProjectPaths_Action());
     addAction(new MakeAllModules_Action());
     addAction(new MakeModule_Action());
-    addAction(new MakeProject_Action());
     addAction(new ModelPropertiesWOShortcut_Action());
     addAction(new ModelProperties_Action());
     addAction(new MoveFileOrDirectory_Action());
@@ -128,6 +128,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OptimizeModelImports_Action());
     addAction(new OptimizeModuleImports_Action());
     addAction(new OptimizeProjectImports_Action());
+    addAction(new Options_Action());
     addAction(new PasteAsJavaClass_Action());
     addAction(new PasteAsJavaMethods_Action());
     addAction(new PasteAsJavaStatements_Action());
@@ -137,7 +138,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new QuickCreate_Action());
     addAction(new RebuildAllModules_Action());
     addAction(new RebuildModule_Action());
-    addAction(new RebuildProject_Action());
+    addAction(new RecompileProject_Action());
     addAction(new ReloadAll_Action());
     addAction(new ReloadStubs_Action());
     addAction(new RemoveAllBookmarks_Action());
@@ -217,6 +218,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Breakpoints_ActionGroup());
     addGroup(new Build_ActionGroup());
     addGroup(new Code_ActionGroup());
+    addGroup(new Compile_ActionGroup());
     addGroup(new CreateRootNode_ActionGroup());
     addGroup(new DebugRunMenu_ActionGroup());
     addGroup(new DebugTool_ActionGroup());
@@ -233,9 +235,14 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new FileSystemNewActions_ActionGroup());
     addGroup(new FolderActions_ActionGroup());
     addGroup(new Folding_ActionGroup());
+    addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateFavorites_ActionGroup());
+    addGroup(new GenerateModelPopup_ActionGroup());
     addGroup(new GenerateModels_ActionGroup());
+    addGroup(new GenerateModulePopup_ActionGroup());
     addGroup(new GenerateModule_ActionGroup());
+    addGroup(new GenerateOptions_ActionGroup());
+    addGroup(new GenerateProjectPopup_ActionGroup());
     addGroup(new Generate_ActionGroup());
     addGroup(new GenerationIntentions_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
@@ -303,7 +310,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GeneratorNewActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
-    insertGroupIntoAnother(Generate_ActionGroup.ID, "GenerateMenu", null);
+    insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
     insertGroupIntoAnother(Tools_ActionGroup.ID, "ToolsMenu", null);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
@@ -319,13 +326,11 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ModelRefactoring_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(GenerateModule_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
-    insertGroupIntoAnother(GenerateModule_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
+    insertGroupIntoAnother(GenerateModule_ActionGroup.ID, GenerateModulePopup_ActionGroup.ID, GenerateModulePopup_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateModule_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateModels_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
-    insertGroupIntoAnother(GenerateModels_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
-    insertGroupIntoAnother(GenerateModels_ActionGroup.ID, "MPSToolbarRunGroup", null);
-    insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_saveTransientModels);
+    insertGroupIntoAnother(GenerateModels_ActionGroup.ID, GenerateEditorPopup_ActionGroup.ID, GenerateEditorPopup_ActionGroup.LABEL_ID_generate);
+    insertGroupIntoAnother(SaveTransientModels_ActionGroup.ID, GenerateOptions_ActionGroup.ID, GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_goByRef);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
     insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);
@@ -345,6 +350,13 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(InEditorActions_ActionGroup.ID, "EditorActions", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);
+    insertGroupIntoAnother(Compile_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
+    insertGroupIntoAnother(GenerateProjectPopup_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_generate);
+    insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
+    insertGroupIntoAnother(GenerateOptions_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
+    insertGroupIntoAnother(GenerateModelPopup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
+    insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
+    insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
+import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
@@ -15,7 +16,6 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.action.BaseKeymapChanges;
 
 public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.vcs");
@@ -39,6 +39,8 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new InstallCustomMergeDriver_Action());
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new RollbackChanges_Action());
+    addAction(new SaveModelDifference_Action());
+    addAction(new ShowDifference_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
     addAction(new ShowDiffererenesWithCurrentRevision_Action());
     // groups 
@@ -57,6 +59,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GoToVCS_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoVCS);
+    insertGroupIntoAnother(EditorInternalVCS_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(VCSModelActions_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_mpsvcs);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);
@@ -69,12 +72,6 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new main_CustomApplicationPlugin());
-    return res;
-  }
-
-  public List<BaseKeymapChanges> initKeymaps() {
-    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
-    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     return res;
   }
 

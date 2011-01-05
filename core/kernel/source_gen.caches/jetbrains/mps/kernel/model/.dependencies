@@ -39,17 +39,17 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.kernel.model.TemporaryModelOwner" file="TemporaryModelOwner.java">
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleOwner" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleOwner" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.ModelOwner" />

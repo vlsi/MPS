@@ -36,8 +36,9 @@ public class NodeExplorer_Tool extends GeneratedTool {
     NodeExplorer_Tool.this.myPanel.add(NodeExplorer_Tool.this.myNodeExplorer.getComponent(), BorderLayout.CENTER);
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new CloseAction(NodeExplorer_Tool.this) {
-      public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        super.doExecute(e, _params);
+      @Override
+      protected void doExecute(AnActionEvent event, Map<String, Object> map) {
+        super.doExecute(event, map);
         NodeExplorer_Tool.this.myNodeExplorer.clear();
       }
     });

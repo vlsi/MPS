@@ -153,7 +153,6 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ShowMembers_Action" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.plugin.NodeRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" />
@@ -163,7 +162,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IntroduceField_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup" />
@@ -389,13 +387,6 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationFactory" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.plugin.Default_KeymapChanges" file="Default_KeymapChanges.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action" file="ExtractMethod_Action.java">
     <classNode dependClassName="java.util.ArrayList" />

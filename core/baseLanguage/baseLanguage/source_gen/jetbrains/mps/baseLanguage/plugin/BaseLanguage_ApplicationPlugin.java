@@ -16,7 +16,6 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.action.BaseKeymapChanges;
 
 public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.baseLanguage");
@@ -72,19 +71,13 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
-    insertGroupIntoAnother(PrintNodePosition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
+    insertGroupIntoAnother(PrintNodePosition_ActionGroup.ID, EditorInternal_ActionGroup.ID, EditorInternal_ActionGroup.LABEL_ID_printNodePosition);
   }
 
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
     addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
-    return res;
-  }
-
-  public List<BaseKeymapChanges> initKeymaps() {
-    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
-    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     return res;
   }
 

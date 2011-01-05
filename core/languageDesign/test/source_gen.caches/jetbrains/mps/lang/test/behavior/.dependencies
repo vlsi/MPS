@@ -53,6 +53,17 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters" />
     <classNode dependClassName="java.util.ArrayList" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.behavior.MPSActionReference_Behavior" file="MPSActionReference_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeOperation_Behavior" file="NodeOperation_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.lang.Class" />

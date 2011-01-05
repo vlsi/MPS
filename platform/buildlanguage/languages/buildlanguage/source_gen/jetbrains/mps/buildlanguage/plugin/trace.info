@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Buildlanguage_ApplicationPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ApplicationPlugin" />
   <unitInfo fileName="DefaultBuildLanguageApplication_Editor.java" startLine="22" startPosition="47" endLine="26" endPosition="7" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Editor$2" />
   <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="137" startPosition="42" endLine="141" endPosition="13" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$2" />
   <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="226" startPosition="45" endLine="230" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$2" />

@@ -11,6 +11,7 @@ import com.intellij.openapi.extensions.PluginId;
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorInternal_ActionGroup";
+  public static final String LABEL_ID_printNodePosition = ID + "printNodePosition";
   public static final String LABEL_ID_VCS = ID + "VCS";
 
   public EditorInternal_ActionGroup() {
@@ -26,6 +27,12 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
       EditorInternal_ActionGroup.this.addSeparator();
       EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PrintNodeID_Action");
       EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightCellDependencies_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_printNodePosition);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorInternal_ActionGroup.this.addAction(action);
+      }
       {
         LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_VCS);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

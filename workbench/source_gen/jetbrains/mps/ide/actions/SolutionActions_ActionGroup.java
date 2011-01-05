@@ -12,6 +12,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionActions_ActionGroup";
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
+  public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_favorites = ID + "favorites";
@@ -31,12 +32,18 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
       }
       SolutionActions_ActionGroup.this.addSeparator();
       {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_make);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
+      {
         LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         SolutionActions_ActionGroup.this.addAction(action);
       }
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromSolution_Action");
+      SolutionActions_ActionGroup.this.addSeparator();
       SolutionActions_ActionGroup.this.addParameterizedAction(new CheckModule_Action("Solution"), PluginId.getId("jetbrains.mps.ide"), "Solution");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action");
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action");

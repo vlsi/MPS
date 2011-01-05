@@ -11,23 +11,14 @@ import com.intellij.openapi.extensions.PluginId;
 public class Generate_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Generate_ActionGroup";
-  public static final String LABEL_ID_saveTransientModels = ID + "saveTransientModels";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_generateModel = ID + "generateModel";
 
   public Generate_ActionGroup() {
-    super("Generate", ID);
+    super("Generate (obsolete)", ID);
     this.setIsInternal(false);
-    this.setPopup(false);
+    this.setPopup(true);
     try {
-      {
-        LabelledAnchor action = new LabelledAnchor(Generate_ActionGroup.LABEL_ID_saveTransientModels);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        Generate_ActionGroup.this.addAction(action);
-      }
-      Generate_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action");
-      Generate_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(Generate_ActionGroup.LABEL_ID_generateModule);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

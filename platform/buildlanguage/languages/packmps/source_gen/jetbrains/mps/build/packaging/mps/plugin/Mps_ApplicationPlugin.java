@@ -26,6 +26,6 @@ public class Mps_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(InternalChecks_ActionGroup.ID, Build_ActionGroup.ID, null);
+    insertGroupIntoAnother(InternalChecks_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
   }
 }

@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" file="AbstractExtractMethodRefactoringProcessor.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor" file="AbstractStaticContainerProcessor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.AskDialog" file="AskDialog.java">
@@ -142,7 +127,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassRefactoringUtils" file="ClassRefactoringUtils.java">
     <classNode dependClassName="java.lang.String" />
@@ -210,12 +195,12 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="java.lang.Character" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
     <classNode dependClassName="javax.swing.event.TableModelEvent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="javax.swing.event.DocumentEvent" />
     <classNode dependClassName="javax.swing.border.TitledBorder" />
@@ -225,7 +210,7 @@
     <classNode dependClassName="com.intellij.ui.DocumentAdapter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" />
     <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
+    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="javax.swing.JPanel" />
@@ -233,13 +218,13 @@
     <classNode dependClassName="javax.swing.border.Border" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BLDialogs" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ParametersPanel" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityPanel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="java.lang.StringBuffer" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ParametersPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor" />
     <classNode dependClassName="javax.swing.JTextArea" />
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.String" />
@@ -293,7 +278,6 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" file="ExtractMethodRefactoring.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.DuplicatesProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -304,7 +288,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassStaticContainerProcessor" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
@@ -312,7 +296,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodDuplicatesFinder" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -321,6 +305,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodOptimizer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IParameter_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringAnalyzer" />
@@ -333,46 +318,46 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringAnalyzer" file="ExtractMethodRefactoringAnalyzer.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.EndInstruction" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisResult" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.VarSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor" />
-    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IParameter_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IParameter_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ClassExtractMethodRefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IExtractMethodAvailable_Behavior" />
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.analyzers.ReachabilityAnalyzer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.analyzers.ReachabilityAnalyzer" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" file="ExtractMethodRefactoringParameters.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -442,10 +427,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPlace" file="FieldInitializationPlace.java">
     <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor" file="IExtractMethodRefactoringProcessor.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="java.util.List" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" file="IStaticContainerProcessor.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

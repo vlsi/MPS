@@ -16,6 +16,8 @@ public class EditorInternalVCS_ActionGroup extends GeneratedActionGroup {
     try {
       EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.DumpChangesManager_Action");
       EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action");
+      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.SaveModelDifference_Action");
+      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowDifference_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

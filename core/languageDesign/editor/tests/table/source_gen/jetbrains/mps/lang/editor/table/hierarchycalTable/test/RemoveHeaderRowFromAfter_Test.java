@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class RemoveHeaderRowFromAfter_Test extends BaseTransformationTest {
   @Test
   public void test_RemoveHeaderRowFromAfter() throws Throwable {
-    this.initTest("${mps_home}/core/languageDesign/editor/editor.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
+    this.initTest("${mps_home}/plugins/vcs/vcs.mpr", "r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.hierarchycalTable.test.RemoveHeaderRowFromAfter_Test$TestBody", "testMethod", false);
   }
 
