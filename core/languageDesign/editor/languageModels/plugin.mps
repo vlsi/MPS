@@ -1541,18 +1541,18 @@
     </node>
   </root>
   <root id="902116341861939989">
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861939990">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="2969742747086834029" resolveInfo="DeleteLine" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861939991">
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_Y" />
-        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
-      </node>
-    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940117">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1207225803603" resolveInfo="CopyThisDown" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940118">
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_D" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861939990">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="2969742747086834029" resolveInfo="DeleteLine" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861939991">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_Y" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
       </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940200">

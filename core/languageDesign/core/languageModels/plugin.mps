@@ -7532,13 +7532,6 @@
     </node>
   </root>
   <root id="902116341861940076">
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940077">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1209308509191" resolveInfo="FindModelUsages" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940078">
-        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F7" />
-      </node>
-    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940097">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1225978220759" resolveInfo="FindLanguageConceptsUsages" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940098">
@@ -7546,18 +7539,25 @@
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_F8" />
       </node>
     </node>
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940137">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1210951952325" resolveInfo="ShowNodeMessages" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940138">
-        <property name="modifiers" nameId="tp4k.1207318242773" value="alt+shift" />
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
-      </node>
-    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940188">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1209824745368" resolveInfo="FindLanguageUsages" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940189">
         <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_F7" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940077">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1209308509191" resolveInfo="FindModelUsages" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940078">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F7" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940137">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1210951952325" resolveInfo="ShowNodeMessages" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940138">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt+shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
       </node>
     </node>
   </root>

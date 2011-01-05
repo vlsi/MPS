@@ -353,18 +353,18 @@
     </node>
   </root>
   <root id="902116341861939978">
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861939979">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="7562825466847533959" resolveInfo="OverrideBehaviorMethod" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861939980">
-        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_O" />
-      </node>
-    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940052">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="7562825466847536367" resolveInfo="ImplementBehaviorMethod" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940053">
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_I" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861939979">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="7562825466847533959" resolveInfo="OverrideBehaviorMethod" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861939980">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_O" />
       </node>
     </node>
   </root>
