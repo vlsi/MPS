@@ -5,6 +5,7 @@ package jetbrains.mps.ide.actions;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.SearchableConfigurable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.application.ApplicationManager;
 
-@State(name = "ModelCheckerSettings", storages = {})
+@State(name = "ModelCheckerSettings", storages = {@Storage(id = "other", file = "$APP_CONFIG$/modelCheckerSettings.xml")})
 public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent, SearchableConfigurable {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
   private ModelCheckerPreferencesPage myPreferences;
