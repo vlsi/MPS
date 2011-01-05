@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class RemoveRowFromBefore_Test extends BaseTransformationTest {
   @Test
   public void test_RemoveRowFromBefore() throws Throwable {
-    this.initTest("${mps_home}/plugins/vcs/vcs.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
+    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.RemoveRowFromBefore_Test$TestBody", "testMethod", false);
   }
 
