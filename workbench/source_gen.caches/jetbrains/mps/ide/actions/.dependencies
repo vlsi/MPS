@@ -913,6 +913,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
@@ -3032,6 +3033,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />

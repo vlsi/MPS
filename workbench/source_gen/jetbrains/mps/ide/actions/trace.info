@@ -2942,10 +2942,10 @@
     </scopeInfo>
   </root>
   <root nodeId="2443880313834662249">
-    <nodeInfo nodeId="7575217966414037159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Default_KeymapChanges.java" startLine="129" startPosition="57" endLine="130" endPosition="92" />
-    <nodeInfo nodeId="7575217966414037167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Default_KeymapChanges.java" startLine="140" startPosition="57" endLine="141" endPosition="98" />
-    <scopeInfo nodeId="8131292300541727032" fileName="Default_KeymapChanges.java" startLine="129" startPosition="57" endLine="130" endPosition="92" />
-    <scopeInfo nodeId="8131292300541727121" fileName="Default_KeymapChanges.java" startLine="140" startPosition="57" endLine="141" endPosition="98" />
+    <nodeInfo nodeId="7575217966414037159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Default_KeymapChanges.java" startLine="129" startPosition="57" endLine="130" endPosition="104" />
+    <nodeInfo nodeId="7575217966414037167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Default_KeymapChanges.java" startLine="140" startPosition="57" endLine="141" endPosition="110" />
+    <scopeInfo nodeId="8131292300541727032" fileName="Default_KeymapChanges.java" startLine="129" startPosition="57" endLine="130" endPosition="104" />
+    <scopeInfo nodeId="8131292300541727121" fileName="Default_KeymapChanges.java" startLine="140" startPosition="57" endLine="141" endPosition="110" />
   </root>
   <root nodeId="2485811537947421542">
     <nodeInfo nodeId="5999020322563340260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AccessoriesGroupActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="111" />
@@ -3787,8 +3787,8 @@
     <scopeInfo nodeId="3734045384532066592" fileName="RenameSolution_Action.java" startLine="29" startPosition="87" endLine="30" endPosition="86" />
   </root>
   <root nodeId="3734045384533036331">
-    <nodeInfo nodeId="7575217966414163354" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Mac_KeymapChanges.java" startLine="48" startPosition="57" endLine="49" endPosition="92" />
-    <scopeInfo nodeId="8131292300542105283" fileName="Mac_KeymapChanges.java" startLine="48" startPosition="57" endLine="49" endPosition="92" />
+    <nodeInfo nodeId="7575217966414163354" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Mac_KeymapChanges.java" startLine="48" startPosition="57" endLine="49" endPosition="104" />
+    <scopeInfo nodeId="8131292300542105283" fileName="Mac_KeymapChanges.java" startLine="48" startPosition="57" endLine="49" endPosition="104" />
   </root>
   <root nodeId="3812525277597542056">
     <nodeInfo nodeId="3812525277597542789" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoToEditorDeclaration_Action.java" startLine="47" startPosition="87" endLine="48" endPosition="192" />

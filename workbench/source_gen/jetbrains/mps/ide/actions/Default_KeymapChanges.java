@@ -127,7 +127,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
       List<Shortcut> _result = new ArrayList<Shortcut>();
-      _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl " + objects[0]), null));
+      _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl " + ((Integer) objects[0])), null));
       return _result;
     }
   }
@@ -138,7 +138,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
       List<Shortcut> _result = new ArrayList<Shortcut>();
-      _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl shift " + objects[0]), null));
+      _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl shift " + ((Integer) objects[0])), null));
       return _result;
     }
   }
