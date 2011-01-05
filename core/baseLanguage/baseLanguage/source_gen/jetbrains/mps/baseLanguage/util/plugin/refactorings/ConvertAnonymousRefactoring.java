@@ -19,6 +19,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
@@ -109,6 +110,13 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void makeInnerConstructor(SNode innerClass) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).isEmpty()) {
+      SNode ctor = SModelOperations.createNewNode(SNodeOperations.getModel(innerClass), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
+      ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).addElement(ctor);
+      SLinkOperations.setNewChild(ctor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
+      SLinkOperations.setNewChild(ctor, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      SLinkOperations.setNewChild(ctor, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    }
     SNode innerConstructor = ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).getElement(0);
     this.addParametersToConstructor(innerConstructor);
     this.makeConstructorBody(innerConstructor);
