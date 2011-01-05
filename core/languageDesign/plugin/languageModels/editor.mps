@@ -495,6 +495,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4k.8817525066851790100" resolveInfo="KeyStrokeType" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8131292300541729387">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp4k.8131292300541727132" resolveInfo="KeystrokeCreator" />
+    </node>
   </roots>
   <root id="1203083734526">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Block" typeId="tpc2.1198489924438" id="1218984772499">
@@ -6758,6 +6762,23 @@
   <root id="8817525066851790102">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8817525066851800869">
       <property name="text" nameId="tpc2.1073389577007" value="keystroke" />
+    </node>
+  </root>
+  <root id="8131292300541729387">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8131292300541732885">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8131292300541732888">
+        <property name="text" nameId="tpc2.1073389577007" value="keystroke" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8131292300541732890">
+        <property name="text" nameId="tpc2.1073389577007" value="(" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="8131292300541917065">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp4k.8131292300541905245" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8131292300541732892">
+        <property name="text" nameId="tpc2.1073389577007" value=")" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="8131292300541732887" />
     </node>
   </root>
 </model>

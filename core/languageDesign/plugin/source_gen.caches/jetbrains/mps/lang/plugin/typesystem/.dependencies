@@ -192,13 +192,14 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.Typeof_SingletabbedEditorTabType_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ConceptFunctionParameter_ScopeNode_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ProcessHandlerStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_AddActionStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_PreferencePage_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ExecutionConsoleStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ReportErrorStatement_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_SmartDisposeClosureParameterDeclaration_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_ConsoleExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_CreateRunConfigBlockParameter_InferenceRule" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_AddActionStatement_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_KeystrokeCreator_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_BootstrapActionGroup_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_GroupAccessOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.typesystem.typeof_RunConfigurationRunProfileState_InferenceRule" />
@@ -855,6 +856,21 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.typesystem.typeof_KeystrokeCreator_InferenceRule" file="typeof_KeystrokeCreator_InferenceRule.java">
+    <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
