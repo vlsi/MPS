@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class InsertRowBefore_FromFirstCell_ByIns_Test extends BaseTransformationTest {
@@ -25,7 +23,7 @@ public class InsertRowBefore_FromFirstCell_ByIns_Test extends BaseTransformation
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("5481602834662762304", "5481602834662762326");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " INSERT"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide#action#jetbrains.mps.ide.actions.InsertBefore_Action");
     }
   }
 }

@@ -12,6 +12,7 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="2qyu" modelUID="r:ed658292-9fbd-4bc1-94c2-435048f00105(jetbrains.mps.lang.editor.tableTests.structure)" version="-1" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
+  <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <roots>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6170050146384276078">
       <property name="name" nameId="tpck.1169194664001" value="Create" />
@@ -832,9 +833,9 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6170050146384276346">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="6170050146384276347">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6170050146384276348">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162723">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162724">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -994,9 +995,9 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6170050146384276404">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="6170050146384276405">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6170050146384276406">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162721">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162722">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -1229,9 +1230,9 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6341395909949440769">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="6341395909949440770">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6341395909949440771">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162727">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162728">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -1385,9 +1386,9 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6341395909949441287">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="6341395909949441294">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6341395909949441295">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162729">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162730">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -1843,9 +1844,9 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1211716198725196126">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="1211716198725196127">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1211716198725196128">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162725">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162726">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -2007,9 +2008,9 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5171926735592482848">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="5171926735592482849">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="5171926735592482850">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162719">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162720">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -2171,9 +2172,9 @@
       <node role="headers" roleId="2qyu.8506335436194701780" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="5171926735592482909" />
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5171926735592482916">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="5171926735592482917">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="5171926735592482918">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162717">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162718">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>

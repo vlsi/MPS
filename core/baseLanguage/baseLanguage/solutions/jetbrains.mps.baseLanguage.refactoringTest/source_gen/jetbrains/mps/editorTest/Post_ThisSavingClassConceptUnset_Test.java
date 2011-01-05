@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class Post_ThisSavingClassConceptUnset_Test extends BaseTransformationTest {
@@ -26,7 +24,7 @@ public class Post_ThisSavingClassConceptUnset_Test extends BaseTransformationTes
       final IEditor editor = TestBody.this.initEditor("222793074662091832", "222793074662091867");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide#action#jetbrains.mps.ide.actions.Insert_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }
