@@ -211,7 +211,6 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   @Override
   public void reloadRequired(GeneratorMappings mappings) throws GenerationFailureException {
     if (myRequiredSet.isEmpty()) {
-      assert myRequiredSet.isEmpty();
       return;
     }
 
