@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
@@ -39,7 +40,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.*;
 
-public class LazyTabbedPane extends JPanel implements Disposable {
+public class LazyTabbedPane extends JPanel {
   private JTabbedPane myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
   private List<ILazyTab> myLazyTabs = new ArrayList<ILazyTab>();
   private Set<ILazyTab> myInitializedTabs = new HashSet<ILazyTab>();
@@ -168,7 +169,6 @@ public class LazyTabbedPane extends JPanel implements Disposable {
     myTabbedEditor.tabStructureChanged();
   }
 
-  @Override
   public void dispose() {
     for (ILazyTab lazyTab : myLazyTabs) {
       lazyTab.dispose();
