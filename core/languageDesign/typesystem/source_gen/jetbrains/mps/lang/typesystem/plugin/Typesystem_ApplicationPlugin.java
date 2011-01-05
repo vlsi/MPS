@@ -38,11 +38,11 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemNodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(TypesystemActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(TypesystemNodeActions_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(TypesystemEditorPopupInternal_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
-    insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(GoToTypeErrorGroup_ActionGroup.ID, TypesystemNodeActions_ActionGroup.ID, null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

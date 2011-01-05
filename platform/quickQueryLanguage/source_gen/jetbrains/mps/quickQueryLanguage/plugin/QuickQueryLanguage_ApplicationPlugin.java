@@ -5,8 +5,8 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 
 public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.quickQueryLanguage");
@@ -31,7 +31,7 @@ public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin 
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FindInstancesByConditionGroup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_instances);
-    insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find_instances);
     insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_find_instances);
+    insertGroupIntoAnother(FindInstancesByConditionAndNodeGroup_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find_instances);
   }
 }
