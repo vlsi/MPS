@@ -167,6 +167,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="actions" />
       <property name="name" nameId="tpck.1169194664001" value="ProjectMake" />
     </node>
+    <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="7000507154716606312">
+      <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
+      <property name="name" nameId="tpck.1169194664001" value="Default" />
+    </node>
   </roots>
   <root id="8163946392710004057">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8163946392710004058">
@@ -5495,10 +5499,6 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3835800809904096069" />
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8666365535672514213">
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F9" />
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
-    </node>
   </root>
   <root id="8230822688952463319">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8230822688952463334">
@@ -5730,10 +5730,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8666365535672514214">
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F9" />
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
     </node>
   </root>
   <root id="8666365535672413643">
@@ -6048,6 +6044,22 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4698945337527126769">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8670285774174934053" resolveInfo="RebuildProject" />
+      </node>
+    </node>
+  </root>
+  <root id="7000507154716606312">
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606313">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="8230822688952455568" resolveInfo="MakeSelectedModules" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606314">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F9" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606457">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="8666365535672374934" resolveInfo="MakeSelectedModels" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606458">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F9" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
       </node>
     </node>
   </root>

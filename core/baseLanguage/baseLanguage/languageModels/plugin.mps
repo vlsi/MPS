@@ -361,6 +361,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="analyzeStacktrace" />
       <property name="name" nameId="tpck.1169194664001" value="PrintNodePosition" />
     </node>
+    <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="7000507154716606309">
+      <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
+      <property name="name" nameId="tpck.1169194664001" value="Default" />
+    </node>
   </roots>
   <root id="1205247737002">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="1205247768364">
@@ -457,10 +461,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1207320153735">
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_SLASH" />
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
-    </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionParameterDeclaration" typeId="tp4k.1205679047295" id="1206096366578">
       <property name="name" nameId="tpck.1169194664001" value="nodes" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1206096366579" />
@@ -535,10 +535,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1207320171736">
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_SLASH" />
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1208269168882">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1208269168883">
@@ -1468,10 +1464,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1224078899132">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="N" />
-    </node>
   </root>
   <root id="1223451793768">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionParameterDeclaration" typeId="tp4k.1205679047295" id="1223451793769">
@@ -1648,10 +1640,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1223451793853">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
-    </node>
   </root>
   <root id="1224422652338">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1224422722570">
@@ -1775,10 +1763,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1224422804716">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="N" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1224422931387">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224422931388">
@@ -1989,10 +1973,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1225103382715">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_V" />
-    </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1225103436654">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225103436655">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1228412728726">
@@ -2155,10 +2135,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1225103593237">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1225103606756">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225103606757">
@@ -2378,10 +2354,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1225104399101">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_C" />
-    </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionParameterDeclaration" typeId="tp4k.1205679047295" id="1225104422039">
       <property name="name" nameId="tpck.1169194664001" value="node" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1225104422040" />
@@ -2460,10 +2432,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1225463472457">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F6" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionParameterDeclaration" typeId="tp4k.1205679047295" id="1225463561739">
       <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -6153,10 +6121,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8596238429278845810">
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_B" />
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
-    </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1910641662758326349">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1910641662758326350">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="4909195013914279206">
@@ -6846,10 +6810,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6556826051425136742">
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_B" />
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="6556826051425136743">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6556826051425136744">
@@ -7625,10 +7585,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6049742529940611650">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F12" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="4393431345216924409">
       <property name="name" nameId="tpck.1169194664001" value="frame" />
@@ -11158,10 +11114,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1108208212555615261">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_U" />
-    </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionParameterDeclaration" typeId="tp4k.1205679047295" id="1108208212555649458">
       <property name="name" nameId="tpck.1169194664001" value="selectedNode" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1108208212555649459" />
@@ -12793,10 +12745,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="401697226377603549">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_SLASH" />
-    </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="401697226377603554">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="401697226377603555">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5700621532627840496">
@@ -13732,10 +13680,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4670094048336708066">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_O" />
-    </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="4670094048336776353">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4670094048336776354">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4670094048336776355">
@@ -13862,10 +13806,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4670094048336778320">
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_I" />
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="4670094048336778326">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4670094048336778327">
@@ -16752,6 +16692,120 @@
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8156047350005480586">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991232446" resolveInfo="EditorInternal" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="tprs.8156047350005480588" resolveInfo="printNodePosition" />
+    </node>
+  </root>
+  <root id="7000507154716606309">
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606310">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1205604975727" resolveInfo="UncommentStatements" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606311">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_SLASH" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606325">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="6049742529940611647" resolveInfo="ShowMembers" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606326">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F12" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606331">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1225103350103" resolveInfo="IntroduceVariable" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606332">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_V" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606363">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="8596238429278788966" resolveInfo="GoToOverridingMethod" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606364">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_B" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606367">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1223452095337" resolveInfo="InlineMethod" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606368">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="N" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606377">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="4670094048336708063" resolveInfo="OverrideMethod" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606378">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_O" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606385">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1225463448250" resolveInfo="RenameVariable" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606386">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F6" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606393">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="6556826051425136566" resolveInfo="GoToInheritedClassifier" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606394">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_B" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606449">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1223451793768" resolveInfo="ExtractMethod" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606450">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606459">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1225103563547" resolveInfo="IntroduceField" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606460">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606477">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="401697226377603546" resolveInfo="CommentLine" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606478">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_SLASH" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606495">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1225104324580" resolveInfo="IntroduceConstant" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606496">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_C" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606509">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="4670094048336778317" resolveInfo="ImplementMethod" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606510">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_I" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606519">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1224422652338" resolveInfo="InlineLocalVariable" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606520">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="N" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606525">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1205248417575" resolveInfo="CommentStatements" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606526">
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_SLASH" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+shift" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606551">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1108208212555615250" resolveInfo="GoToOverridenMethod" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606552">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_U" />
+      </node>
     </node>
   </root>
 </model>

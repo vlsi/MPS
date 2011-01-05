@@ -3412,6 +3412,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelCheckerPreferencesPage" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelPropertiesChecker" />
+    <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.UnavailableConceptsChecker" />

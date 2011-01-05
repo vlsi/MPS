@@ -16,6 +16,7 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
 
 public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.baseLanguage");
@@ -78,6 +79,12 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new DebugInfoProvider_CustomApplicationPlugin());
     addCustomPart(res, new TraceInfoInitializer_CustomApplicationPlugin());
+    return res;
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     return res;
   }
 
