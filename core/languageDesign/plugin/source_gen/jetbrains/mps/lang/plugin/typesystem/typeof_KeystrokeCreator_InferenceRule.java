@@ -7,9 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -19,23 +19,17 @@ public class typeof_KeystrokeCreator_InferenceRule extends AbstractInferenceRule
   public typeof_KeystrokeCreator_InferenceRule() {
   }
 
-  public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+  public void applyRule(final SNode stmt, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = creator;
-      BaseQuickFixProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8131292300541729379", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8131292300541728561", true), (SNode) new typeof_KeystrokeCreator_InferenceRule.QuotationClass_d8k55o_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
-    }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "stroke", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(stmt, "stroke", true);
       BaseQuickFixProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8131292300541907325", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8131292300541907082", true), (SNode) new typeof_KeystrokeCreator_InferenceRule.QuotationClass_d8k55o_a0a1a0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8131292300541907082", true), (SNode) new typeof_KeystrokeCreator_InferenceRule.QuotationClass_d8k55o_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.plugin.structure.KeystrokeCreator";
+    return "jetbrains.mps.lang.plugin.structure.AddKeystrokeStatement";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
@@ -51,35 +45,6 @@ public class typeof_KeystrokeCreator_InferenceRule extends AbstractInferenceRule
 
   public static class QuotationClass_d8k55o_a0a0a0 {
     public QuotationClass_d8k55o_a0a0a0() {
-    }
-
-    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.KeyStrokeType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.KeyStrokeType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_d8k55o_a0a1a0 {
-    public QuotationClass_d8k55o_a0a1a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

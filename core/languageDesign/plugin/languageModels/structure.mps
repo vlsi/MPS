@@ -1178,8 +1178,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8131292300541727132">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
-      <property name="name" nameId="tpck.1169194664001" value="KeystrokeCreator" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <property name="name" nameId="tpck.1169194664001" value="AddKeystrokeStatement" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
   </roots>
   <root id="1203071646776">
@@ -2989,9 +2989,7 @@
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1821622352985038316">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tp2q.ListType" typeId="tp2q.1151688443754" id="8131292300541738675">
-        <node role="elementType" roleId="tp2q.1151688676805" type="tp4k.KeyStrokeType" typeId="8817525066851790100" id="8131292300541738677" />
-      </node>
+      <node role="target" roleId="tpce.1105736901241" type="tpee.VoidType" typeId="tpee.1068581517677" id="7575217966414037173" />
     </node>
   </root>
   <root id="7035278950562850663">
@@ -4566,7 +4564,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8131292300541727135">
-      <property name="value" nameId="tpce.1105725733873" value="keystroke" />
+      <property name="value" nameId="tpce.1105725733873" value="addKeystroke" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>

@@ -122,11 +122,11 @@
   <unitInfo fileName="ActionParameter_NameCellComponent.java" startLine="24" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent" />
   <unitInfo fileName="TabbedToolDeclaration_Editor.java" startLine="528" startPosition="0" endLine="580" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.TabbedToolDeclaration_Editor$fieldDeclarationListHandler_txf5qz_e1b0" />
   <unitInfo fileName="ToolDeclaration_Editor.java" startLine="603" startPosition="0" endLine="655" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolDeclaration_Editor$fieldDeclarationListHandler_du6pr9_e1b0" />
-  <unitInfo fileName="KeystrokeCreator_Editor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.KeystrokeCreator_Editor" />
   <unitInfo fileName="UpdateGroupBlock_Editor.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UpdateGroupBlock_Editor" />
   <unitInfo fileName="IRunConfigPropertyInstance_Editor.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.IRunConfigPropertyInstance_Editor" />
   <unitInfo fileName="ActionConstructorParameterReferenceOperation_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionConstructorParameterReferenceOperation_Editor" />
   <unitInfo fileName="RunConfigParameterReferenceOperation_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigParameterReferenceOperation_Editor" />
+  <unitInfo fileName="AddKeystrokeStatement_Editor.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AddKeystrokeStatement_Editor" />
   <unitInfo fileName="AddTabOperation_Editor.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.AddTabOperation_Editor" />
   <unitInfo fileName="ActionDataParameterReferenceOperation_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionDataParameterReferenceOperation_Editor" />
   <unitInfo fileName="ActionParameterReferenceOperation_Editor.java" startLine="21" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameterReferenceOperation_Editor" />
