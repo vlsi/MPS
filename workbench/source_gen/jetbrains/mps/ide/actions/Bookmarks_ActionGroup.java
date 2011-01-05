@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Bookmarks_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Bookmarks_ActionGroup.class);
@@ -15,32 +16,16 @@ public class Bookmarks_ActionGroup extends GeneratedActionGroup {
     this.setPopup(true);
     try {
       Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarks_Action");
-      Bookmarks_ActionGroup.this.addSeparator();
       Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action");
-      Bookmarks_ActionGroup.this.addSeparator();
       Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveAllBookmarks_Action");
       Bookmarks_ActionGroup.this.addSeparator();
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark0_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark1_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark2_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark3_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark4_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark5_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark6_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark7_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark8_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToBookmark9_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark0_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark1_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark2_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark3_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark4_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark5_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark6_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark7_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark8_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmark9_Action");
-      Bookmarks_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action");
+      for (int i = 0; i < 10; i++) {
+        Bookmarks_ActionGroup.this.addParameterizedAction(new GoToBookmark_Action(i), PluginId.getId("jetbrains.mps.ide"), i);
+      }
+      Bookmarks_ActionGroup.this.addSeparator();
+      for (int i = 0; i < 10; i++) {
+        Bookmarks_ActionGroup.this.addParameterizedAction(new SetBookmark_Action(i), PluginId.getId("jetbrains.mps.ide"), i);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

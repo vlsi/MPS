@@ -14,22 +14,25 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
 
-public class GoToBookmark9_Action extends GeneratedAction {
+public class GoToBookmark_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToBookmark9_Action.class);
+  protected static Log log = LogFactory.getLog(GoToBookmark_Action.class);
 
-  public GoToBookmark9_Action() {
-    super("Go To Bookmark 9", "", ICON);
+  private int num;
+
+  public GoToBookmark_Action(int num_par) {
+    super("Go to Bookmark", "", ICON);
+    this.num = num_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      event.getPresentation().setText("Go to Bookmark " + GoToBookmark_Action.this.num);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToBookmark9", t);
+        log.error("User's action doUpdate method failed. Action:" + "GoToBookmark", t);
       }
       this.disable(event.getPresentation());
     }
@@ -48,11 +51,21 @@ public class GoToBookmark9_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).navigateToBookmark(9);
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).navigateToBookmark(GoToBookmark_Action.this.num);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToBookmark9", t);
+        log.error("User's action execute method failed. Action:" + "GoToBookmark", t);
       }
     }
+  }
+
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
+    res.append("#");
+    res.append(((Object) this.num).toString());
+    res.append("!");
+    return res.toString();
   }
 }

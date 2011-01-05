@@ -11,26 +11,29 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
 import jetbrains.mps.smodel.SNode;
 
-public class SetBookmark7_Action extends GeneratedAction {
+public class SetBookmark_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(SetBookmark7_Action.class);
+  protected static Log log = LogFactory.getLog(SetBookmark_Action.class);
 
-  public SetBookmark7_Action() {
-    super("Set Bookmark 7", "", ICON);
+  private int num;
+
+  public SetBookmark_Action(int num_par) {
+    super("Set Bookmark", "", ICON);
+    this.num = num_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      event.getPresentation().setText("Set Bookmark " + SetBookmark_Action.this.num);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "SetBookmark7", t);
+        log.error("User's action doUpdate method failed. Action:" + "SetBookmark", t);
       }
       this.disable(event.getPresentation());
     }
@@ -40,12 +43,12 @@ public class SetBookmark7_Action extends GeneratedAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
@@ -53,12 +56,21 @@ public class SetBookmark7_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      BookmarkManager bookmarkManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class);
-      bookmarkManager.setBookmark(((SNode) MapSequence.fromMap(_params).get("node")), 7);
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).setBookmark(((SNode) MapSequence.fromMap(_params).get("node")), SetBookmark_Action.this.num);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "SetBookmark7", t);
+        log.error("User's action execute method failed. Action:" + "SetBookmark", t);
       }
     }
+  }
+
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
+    res.append("#");
+    res.append(((Object) this.num).toString());
+    res.append("!");
+    return res.toString();
   }
 }
