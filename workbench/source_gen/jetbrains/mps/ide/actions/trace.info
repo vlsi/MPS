@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Mac_KeymapChanges.java" startLine="44" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges$GoToBookmark_ShortcutChange_tqv_p" />
-  <unitInfo fileName="Default_KeymapChanges.java" startLine="125" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$GoToBookmark_ShortcutChange_qjewi8_rd" />
-  <unitInfo fileName="Default_KeymapChanges.java" startLine="134" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$SetBookmark_ShortcutChange_qjewi8_sd" />
   <unitInfo fileName="PersistentOptions_PreferencesComponent.java" startLine="50" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent$MyState" />
+  <unitInfo fileName="Mac_KeymapChanges.java" startLine="43" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges$GoToBookmark_ShortcutChange_tqv_p" />
+  <unitInfo fileName="Default_KeymapChanges.java" startLine="124" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$GoToBookmark_ShortcutChange_qjewi8_rd" />
+  <unitInfo fileName="Default_KeymapChanges.java" startLine="135" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges$SetBookmark_ShortcutChange_qjewi8_sd" />
   <unitInfo fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup" />
   <unitInfo fileName="PackageNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.PackageNewActions_ActionGroup" />
   <unitInfo fileName="JUnitTestMethodActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup" />
@@ -65,9 +65,9 @@
   <unitInfo fileName="EditorInternal_ActionGroup.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
   <unitInfo fileName="DumpKeyStrokes_Action.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.actions.DumpKeyStrokes_Action" />
   <unitInfo fileName="AbstractFileActions_ActionGroup.java" startLine="12" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup" />
-  <unitInfo fileName="Mac_KeymapChanges.java" startLine="13" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
   <unitInfo fileName="AddLanguageDesingDevKitToLanguages_Action.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.actions.AddLanguageDesingDevKitToLanguages_Action" />
   <unitInfo fileName="FavoritesPopupWrapper_ActionGroup.java" startLine="20" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup" />
+  <unitInfo fileName="Mac_KeymapChanges.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
   <unitInfo fileName="PrintNodeID_Action.java" startLine="16" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ide.actions.PrintNodeID_Action" />
   <unitInfo fileName="SelectDown_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectDown_Action" />
   <unitInfo fileName="SelectUp_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectUp_Action" />
@@ -279,7 +279,7 @@
   <unitInfo fileName="InstallIDEAPlugin_Action.java" startLine="31" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.actions.InstallIDEAPlugin_Action" />
   <unitInfo fileName="GoToEditorDeclaration_Action.java" startLine="37" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToEditorDeclaration_Action" />
   <unitInfo fileName="SetNodePackage_Action.java" startLine="32" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.ide.actions.SetNodePackage_Action" />
-  <unitInfo fileName="Default_KeymapChanges.java" startLine="13" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
+  <unitInfo fileName="Default_KeymapChanges.java" startLine="12" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
   <unitInfo fileName="NewModel_Action.java" startLine="29" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModel_Action" />
   <unitInfo fileName="NewModelFromSource_Action.java" startLine="36" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModelFromSource_Action" />
   <unitInfo fileName="GoByCurrentReference_Action.java" startLine="35" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action" />
@@ -2942,10 +2942,10 @@
     </scopeInfo>
   </root>
   <root nodeId="2443880313834662249">
-    <nodeInfo nodeId="8131292300542082090" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Default_KeymapChanges.java" startLine="129" startPosition="62" endLine="130" endPosition="144" />
-    <nodeInfo nodeId="8131292300542103730" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Default_KeymapChanges.java" startLine="138" startPosition="62" endLine="139" endPosition="150" />
-    <scopeInfo nodeId="8131292300541727032" fileName="Default_KeymapChanges.java" startLine="129" startPosition="62" endLine="130" endPosition="144" />
-    <scopeInfo nodeId="8131292300541727121" fileName="Default_KeymapChanges.java" startLine="138" startPosition="62" endLine="139" endPosition="150" />
+    <nodeInfo nodeId="7575217966414037159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Default_KeymapChanges.java" startLine="129" startPosition="57" endLine="130" endPosition="92" />
+    <nodeInfo nodeId="7575217966414037167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Default_KeymapChanges.java" startLine="140" startPosition="57" endLine="141" endPosition="98" />
+    <scopeInfo nodeId="8131292300541727032" fileName="Default_KeymapChanges.java" startLine="129" startPosition="57" endLine="130" endPosition="92" />
+    <scopeInfo nodeId="8131292300541727121" fileName="Default_KeymapChanges.java" startLine="140" startPosition="57" endLine="141" endPosition="98" />
   </root>
   <root nodeId="2485811537947421542">
     <nodeInfo nodeId="5999020322563340260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AccessoriesGroupActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="111" />
@@ -3787,8 +3787,8 @@
     <scopeInfo nodeId="3734045384532066592" fileName="RenameSolution_Action.java" startLine="29" startPosition="87" endLine="30" endPosition="86" />
   </root>
   <root nodeId="3734045384533036331">
-    <nodeInfo nodeId="8131292300542105284" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Mac_KeymapChanges.java" startLine="48" startPosition="62" endLine="49" endPosition="144" />
-    <scopeInfo nodeId="8131292300542105283" fileName="Mac_KeymapChanges.java" startLine="48" startPosition="62" endLine="49" endPosition="144" />
+    <nodeInfo nodeId="7575217966414163354" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="Mac_KeymapChanges.java" startLine="48" startPosition="57" endLine="49" endPosition="92" />
+    <scopeInfo nodeId="8131292300542105283" fileName="Mac_KeymapChanges.java" startLine="48" startPosition="57" endLine="49" endPosition="92" />
   </root>
   <root nodeId="3812525277597542056">
     <nodeInfo nodeId="3812525277597542789" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GoToEditorDeclaration_Action.java" startLine="47" startPosition="87" endLine="48" endPosition="192" />

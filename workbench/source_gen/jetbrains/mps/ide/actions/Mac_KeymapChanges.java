@@ -7,7 +7,6 @@ import com.intellij.openapi.actionSystem.Shortcut;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import javax.swing.KeyStroke;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Mac_KeymapChanges extends BaseKeymapChanges {
@@ -46,7 +45,9 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
-      return ListSequence.fromListAndArray(new ArrayList<Shortcut>(), new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl " + objects[0]), null));
+      List<Shortcut> _result = new ArrayList<Shortcut>();
+      _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl " + objects[0]), null));
+      return _result;
     }
   }
 }
