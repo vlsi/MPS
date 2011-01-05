@@ -191,18 +191,6 @@ public class TabbedEditor implements IEditor {
     manager.updateFilePresentation(baseVirtualFile);
   }
 
-  @NotNull
-  public Set<SNode> getAvailableNodes() {
-    Set<SNode> result = new HashSet<SNode>();
-    for (ILazyTab tab : myTabbedPane.getTabs()) {
-      for (EditorComponent c : tab.getEditorComponents()) {
-        result.add(c.getEditedNode());
-      }
-    }
-
-    return result;
-  }
-
   public JComponent getComponent() {
     return myTabbedPane;
   }
