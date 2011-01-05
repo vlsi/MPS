@@ -60,8 +60,8 @@
     <nodeInfo nodeId="1977954644795408643" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesGenerated.java" startLine="32" startPosition="189" endLine="33" endPosition="289" />
     <nodeInfo nodeId="2360002718792651975" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="33" startPosition="289" endLine="34" endPosition="191" />
     <nodeInfo nodeId="2360002718792464610" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="64" startPosition="37" endLine="65" endPosition="164" />
-    <nodeInfo nodeId="7077360340906499734" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesGenerated.java" startLine="72" startPosition="98" endLine="73" endPosition="126" />
-    <nodeInfo nodeId="7077360340906499741" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesGenerated.java" startLine="73" startPosition="126" endLine="74" endPosition="98" />
+    <nodeInfo nodeId="7077360340906499734" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="QueriesGenerated.java" startLine="72" startPosition="98" endLine="73" endPosition="132" />
+    <nodeInfo nodeId="7077360340906499741" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesGenerated.java" startLine="73" startPosition="132" endLine="74" endPosition="98" />
     <nodeInfo nodeId="7077360340906499754" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="74" startPosition="98" endLine="75" endPosition="26" />
     <nodeInfo nodeId="2360002718792465704" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="78" startPosition="61" endLine="79" endPosition="65" />
     <scopeInfo nodeId="7077360340906499528" fileName="QueriesGenerated.java" startLine="64" startPosition="37" endLine="65" endPosition="164" />
