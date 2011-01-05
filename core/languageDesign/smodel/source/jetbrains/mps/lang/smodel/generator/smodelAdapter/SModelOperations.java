@@ -17,9 +17,9 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -145,26 +145,23 @@ public class SModelOperations {
   }
 
 
-  /**
-   * @deprecated
-   */
   public static SNode createNewNode(SModel model, String conceptFqName) {
-    return createNewNode(model, conceptFqName, null);
-  }
-
-  // TODO get rid of NodeFactoryManager, asap!
-  public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
-    SNode enclosingNode = null;
-    if (prototypeNode != null) {
-      enclosingNode = prototypeNode.getParent();
+    if (conceptFqName == null) return null;
+    AbstractConceptDeclaration nodeConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    if (nodeConcept instanceof InterfaceConceptDeclaration) {
+      return new SNode(model, conceptFqName);
     }
-
-    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, enclosingNode, model);
+    return SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, GlobalScope.getInstance(), false);
   }
 
-  // TODO get rid of NodeFactoryManager, asap!
+  @Deprecated
+  public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
+    return createNewNode(model, conceptFqName);
+  }
+
+  // TODO deprecate prototype node
   public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
-    SNode newNode = NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, model);
+    SNode newNode = createNewNode(model, conceptFqName);
     model.addRoot(newNode);
     return newNode;
   }

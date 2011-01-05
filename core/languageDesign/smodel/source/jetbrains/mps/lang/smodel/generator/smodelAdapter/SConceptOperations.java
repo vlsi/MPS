@@ -18,10 +18,9 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -117,7 +116,7 @@ public final class SConceptOperations {
     if (conceptDeclarationNode == null) return new ArrayList<SNode>();
     Set<String> descendants = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclarationNode));
 
-    Set<Language> availableLanguages = new HashSet<Language>(SModelOperations.getLanguages(model, scope));
+    Set<Language> availableLanguages = new HashSet<Language>(jetbrains.mps.smodel.SModelOperations.getLanguages(model, scope));
     List<SNode> result = new ArrayList<SNode>();
     for (String descendant : descendants) {
       SNode declaration = SModelUtil.findConceptDeclaration(descendant, GlobalScope.getInstance());
@@ -136,10 +135,12 @@ public final class SConceptOperations {
     return FindUsagesManager.getInstance().findInstances(conceptDeclarationNode, scope);
   }
 
-  // TODO get rid of NodeFactoryManager, asap!
-  public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
-    if (conceptFqName == null) return null;
-    return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null);
+  public static SNode createNewNode(String conceptFqName) {
+    return SModelOperations.createNewNode(AuxilaryRuntimeModel.getDescriptor().getSModel(), conceptFqName);
   }
 
+  @Deprecated
+  public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
+    return SModelOperations.createNewNode(AuxilaryRuntimeModel.getDescriptor().getSModel(), conceptFqName);
+  }
 }

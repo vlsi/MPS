@@ -15,20 +15,19 @@
  */
 package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.kernel.model.SModelUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -358,11 +357,10 @@ public class SNodeOperations {
     return result;
   }
 
-  // TODO get rid of NodeFactoryManager, asap!
   public static SNode insertNewNextSiblingChild(SNode node, String conceptFQName) {
     if (node == null || node.getParent() == null) return null;
     SNode parent = node.getParent();
-    SNode newChild = NodeFactoryManager.createNode(conceptFQName, null, parent, node.getModel());
+    SNode newChild = SModelOperations.createNewNode(node.getModel(), conceptFQName);
     if (newChild == null) return null;
     String role = node.getRole_();
     assert parent != null && role != null;
@@ -370,12 +368,11 @@ public class SNodeOperations {
     return newChild;
   }
 
-  // TODO get rid of NodeFactoryManager, asap!
   public static SNode insertNewPrevSiblingChild(SNode node, String conceptFqName) {
     if (node == null) return null;
     SNode parent = node.getParent();
     if (parent == null) return null;
-    SNode newChild = NodeFactoryManager.createNode(conceptFqName, null, parent, node.getModel());
+    SNode newChild = SModelOperations.createNewNode(node.getModel(), conceptFqName);
     if (newChild == null) return null;
     String role = node.getRole_();
     assert role != null;
@@ -411,7 +408,6 @@ public class SNodeOperations {
     return siblingNode;
   }
 
-  // TODO get rid of NodeFactoryManager, asap!
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
@@ -419,7 +415,7 @@ public class SNodeOperations {
       return null;
     }
     SModel model = oldChild.getModel();
-    SNode newChild = NodeFactoryManager.createNode(conceptFqName, oldChild, oldChildParent, model);
+    SNode newChild = SModelOperations.createNewNode(model, conceptFqName);
     if (newChild == null) return null;
     if (oldChildParent == null) {
       model.addRoot(newChild);
