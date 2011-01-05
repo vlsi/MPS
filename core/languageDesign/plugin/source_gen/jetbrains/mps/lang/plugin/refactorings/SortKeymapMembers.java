@@ -19,7 +19,7 @@ public class SortKeymapMembers extends BaseRefactoring {
   }
 
   public String getUserFriendlyName() {
-    return "SortKeymapMembers";
+    return "Sort Members";
   }
 
   public String getKeyStroke() {

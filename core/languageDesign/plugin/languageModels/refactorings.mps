@@ -3,6 +3,10 @@
   <persistence version="7" />
   <language namespace="3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -14,7 +18,7 @@
   <roots>
     <node type="tp1h.Refactoring" typeId="tp1h.6895093993902236229" id="6237653430913268254">
       <property name="name" nameId="tpck.1169194664001" value="SortKeymapMembers" />
-      <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="SortKeymapMembers" />
+      <property name="userFriendlyName" nameId="tp1h.6895093993902236371" value="Sort Members" />
     </node>
   </roots>
   <root id="6237653430913268254">
