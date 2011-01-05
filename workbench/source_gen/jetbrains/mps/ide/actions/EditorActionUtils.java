@@ -30,7 +30,7 @@ public class EditorActionUtils {
       EditorCell cellWithRole = new ChildrenCollectionFinder(cell, true).find();
 
       if (cellWithRole == null && cell.isLastPositionInBigCell() && hasSingleRolesAtRightBoundary(cell) && cell.getNextLeaf() != null) {
-        // Looking for the next child collection to the rigt from next leaf cell 
+        // Looking for the next child collection to the right from next leaf cell 
         cellWithRole = new ChildrenCollectionFinder(cell.getNextLeaf(), true).find();
       }
 
