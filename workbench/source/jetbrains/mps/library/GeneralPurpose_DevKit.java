@@ -20,7 +20,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class GeneralPurpose_DevKit {
-  public static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.general-purpose)");
+  public static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)");
 
   public static DevKit get() {
     return MPSModuleRepository.getInstance().getDevKit(MODULE_REFERENCE);
