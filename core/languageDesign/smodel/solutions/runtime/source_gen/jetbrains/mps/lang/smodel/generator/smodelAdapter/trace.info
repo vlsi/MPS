@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1101499704720825413">
+    <nodeInfo nodeId="1101499704720825417" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SEnumOperations.java" startLine="15" startPosition="71" endLine="16" endPosition="63" />
+    <nodeInfo nodeId="1101499704720825422" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SEnumOperations.java" startLine="16" startPosition="63" endLine="17" endPosition="82" />
+    <nodeInfo nodeId="1101499704720825441" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="19" startPosition="39" endLine="20" endPosition="74" />
+    <nodeInfo nodeId="1101499704720825461" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="25" startPosition="57" endLine="26" endPosition="61" />
+    <nodeInfo nodeId="1101499704720825475" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="29" startPosition="63" endLine="30" endPosition="42" />
+    <nodeInfo nodeId="1101499704720825483" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="33" startPosition="56" endLine="34" endPosition="240" />
+    <nodeInfo nodeId="1101499704720825496" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="37" startPosition="57" endLine="38" endPosition="76" />
+    <nodeInfo nodeId="1101499704720825509" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="SEnumOperations.java" startLine="41" startPosition="73" endLine="42" endPosition="35" />
+    <nodeInfo nodeId="1101499704720825525" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="44" startPosition="39" endLine="45" endPosition="243" />
+    <nodeInfo nodeId="1101499704720825545" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="51" startPosition="24" endLine="52" endPosition="251" />
+    <nodeInfo nodeId="1101499704720825565" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="55" startPosition="39" endLine="56" endPosition="80" />
+    <nodeInfo nodeId="1101499704720825543" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="SEnumOperations.java" startLine="50" startPosition="75" endLine="53" endPosition="5" />
+    <nodeInfo nodeId="1101499704720825439" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SEnumOperations.java" startLine="18" startPosition="170" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825456" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnumMembers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="SEnumOperations.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825467" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnumMember#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" fileName="SEnumOperations.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825479" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnumMemberName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SEnumOperations.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825492" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnumMemberValue#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SEnumOperations.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825523" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SEnumOperations.java" startLine="43" startPosition="133" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825563" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SEnumOperations.java" startLine="54" startPosition="130" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825431" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="17" startPosition="82" endLine="22" endPosition="16" />
+    <nodeInfo nodeId="1101499704720825515" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="42" startPosition="35" endLine="47" endPosition="8" />
+    <nodeInfo nodeId="1101499704720825555" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SEnumOperations.java" startLine="53" startPosition="5" endLine="58" endPosition="8" />
+    <nodeInfo nodeId="1101499704720825505" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="enumMemberForName#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" fileName="SEnumOperations.java" startLine="40" startPosition="0" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825414" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnum#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" fileName="SEnumOperations.java" startLine="14" startPosition="30" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="1101499704720825539" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="enumMemberForValue#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" fileName="SEnumOperations.java" startLine="49" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1101499704720825440" fileName="SEnumOperations.java" startLine="19" startPosition="39" endLine="20" endPosition="74" />
+    <scopeInfo nodeId="1101499704720825460" fileName="SEnumOperations.java" startLine="25" startPosition="57" endLine="26" endPosition="61" />
+    <scopeInfo nodeId="1101499704720825474" fileName="SEnumOperations.java" startLine="29" startPosition="63" endLine="30" endPosition="42" />
+    <scopeInfo nodeId="1101499704720825482" fileName="SEnumOperations.java" startLine="33" startPosition="56" endLine="34" endPosition="240" />
+    <scopeInfo nodeId="1101499704720825495" fileName="SEnumOperations.java" startLine="37" startPosition="57" endLine="38" endPosition="76" />
+    <scopeInfo nodeId="1101499704720825524" fileName="SEnumOperations.java" startLine="44" startPosition="39" endLine="45" endPosition="243" />
+    <scopeInfo nodeId="1101499704720825544" fileName="SEnumOperations.java" startLine="51" startPosition="24" endLine="52" endPosition="251" />
+    <scopeInfo nodeId="1101499704720825564" fileName="SEnumOperations.java" startLine="55" startPosition="39" endLine="56" endPosition="80" />
+    <scopeInfo nodeId="1101499704720825439" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SEnumOperations.java" startLine="18" startPosition="170" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1101499704720825456" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnumMembers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" fileName="SEnumOperations.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1101499704720825465" varName="enumm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825467" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnumMember#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" fileName="SEnumOperations.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1101499704720825468" varName="enumm" />
+      <varInfo nodeId="1101499704720825470" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825479" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnumMemberName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SEnumOperations.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1101499704720825490" varName="member" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825492" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnumMemberValue#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="SEnumOperations.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1101499704720825503" varName="member" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825523" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SEnumOperations.java" startLine="43" startPosition="133" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1101499704720825563" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" fileName="SEnumOperations.java" startLine="54" startPosition="130" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1101499704720825508" fileName="SEnumOperations.java" startLine="41" startPosition="73" endLine="47" endPosition="8">
+      <varInfo nodeId="1101499704720825510" varName="enumNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825416" fileName="SEnumOperations.java" startLine="15" startPosition="71" endLine="22" endPosition="16">
+      <varInfo nodeId="1101499704720825418" varName="ref" />
+      <varInfo nodeId="1101499704720825423" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825542" fileName="SEnumOperations.java" startLine="50" startPosition="75" endLine="58" endPosition="8" />
+    <scopeInfo nodeId="1101499704720825505" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="enumMemberForName#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" fileName="SEnumOperations.java" startLine="40" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1101499704720825535" varName="enumm" />
+      <varInfo nodeId="1101499704720825537" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825414" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getEnum#(Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" fileName="SEnumOperations.java" startLine="14" startPosition="30" endLine="24" endPosition="0">
+      <varInfo nodeId="1101499704720825453" varName="nodeName" />
+      <varInfo nodeId="1101499704720825451" varName="modelUID" />
+    </scopeInfo>
+    <scopeInfo nodeId="1101499704720825539" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="enumMemberForValue#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" fileName="SEnumOperations.java" startLine="49" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1101499704720825575" varName="enumm" />
+      <varInfo nodeId="1101499704720825577" varName="value" />
+    </scopeInfo>
+    <unitInfo nodeId="1101499704720825439" fileName="SEnumOperations.java" startLine="18" startPosition="147" endLine="22" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$1" />
+    <unitInfo nodeId="1101499704720825523" fileName="SEnumOperations.java" startLine="43" startPosition="110" endLine="47" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$2" />
+    <unitInfo nodeId="1101499704720825563" fileName="SEnumOperations.java" startLine="54" startPosition="107" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations$3" />
+    <unitInfo nodeId="1101499704720825413" fileName="SEnumOperations.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
+  </root>
+</debugInfo>
+
