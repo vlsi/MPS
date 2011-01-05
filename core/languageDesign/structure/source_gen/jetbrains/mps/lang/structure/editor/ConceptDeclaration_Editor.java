@@ -40,7 +40,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
@@ -819,7 +819,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "aggregation");
       return result;
     }
@@ -865,7 +865,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "reference");
       return result;
     }
@@ -1057,7 +1057,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "aggregation");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
     }
@@ -1072,7 +1072,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "reference");
       ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
     }

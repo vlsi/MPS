@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -57,7 +57,7 @@ public class _Line_Actions extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeOperations.insertNextSiblingChild(node, SConceptOperations.createNewNode("jetbrains.mpslite.structure.Line", null));
+      SNodeOperations.insertNextSiblingChild(node, SNodeFactoryOperations.createNewNode("jetbrains.mpslite.structure.Line", null));
     }
 
     public String getKeyStroke() {
@@ -96,7 +96,7 @@ public class _Line_Actions extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeOperations.insertPrevSiblingChild(node, SConceptOperations.createNewNode("jetbrains.mpslite.structure.Line", null));
+      SNodeOperations.insertPrevSiblingChild(node, SNodeFactoryOperations.createNewNode("jetbrains.mpslite.structure.Line", null));
     }
 
     public String getKeyStroke() {
@@ -144,7 +144,7 @@ public class _Line_Actions extends EditorCellKeyMap {
       }
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(prevLinePart), "jetbrains.mpslite.structure.Line")) {
         SNode line = SNodeOperations.cast(SNodeOperations.getParent(prevLinePart), "jetbrains.mpslite.structure.Line");
-        SNode nextLine = SNodeOperations.insertNextSiblingChild(line, SConceptOperations.createNewNode("jetbrains.mpslite.structure.Line", null));
+        SNode nextLine = SNodeOperations.insertNextSiblingChild(line, SNodeFactoryOperations.createNewNode("jetbrains.mpslite.structure.Line", null));
         SNode sibling = SNodeOperations.cast(SNodeOperations.getNextSibling(prevLinePart), "jetbrains.mpslite.structure.LinePart");
         while (sibling != null) {
           SNode currentSibling = sibling;

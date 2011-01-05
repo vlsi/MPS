@@ -19,6 +19,7 @@ import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -46,7 +47,7 @@ public class QueriesGenerated {
           for (final IModule item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);
+                SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);
                 SPropertyOperations.set(newNode, "id", (item).getModuleReference().getModuleId().toString());
                 SPropertyOperations.set(newNode, "name", Module_Behavior.extractModuleProperName_1235487584035((item)));
                 return newNode;
@@ -109,7 +110,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
+                SNode pathComponent = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
                 SPropertyOperations.set(pathComponent, "path", (item));
                 return pathComponent;
               }
@@ -148,7 +149,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MacroReference", null);
+                SNode macro = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.packaging.structure.MacroReference", null);
                 if ((item).equals(no_macro)) {
                   SPropertyOperations.set(macro, "name", "");
                 } else {
@@ -180,7 +181,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode reference = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.TargetReference", null);
+                SNode reference = SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.TargetReference", null);
                 SLinkOperations.setTarget(reference, "targetDeclaration", (item), false);
                 return reference;
               }
@@ -200,7 +201,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode string = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.SimpleString", null);
+            SNode string = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.packaging.structure.SimpleString", null);
             SPropertyOperations.set(string, "name", pattern);
             return string;
           }

@@ -911,7 +911,7 @@
                       <link role="link" roleId="tp25.1138056546658" targetNodeId="tp25.1144104376918" />
                     </node>
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="1179536644420" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_LinkList_AddNewChildOperation" typeId="tpdg.767145758118872833" id="6357564549601490577" />
                 </node>
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1180465685342">
@@ -1016,7 +1016,7 @@
                       <link role="link" roleId="tp25.1138056546658" targetNodeId="tp25.1144104376918" />
                     </node>
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="1207070783568">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_LinkList_AddNewChildOperation" typeId="tpdg.767145758118872833" id="6357564549601490584">
                     <link role="concept" roleId="tp25.1139877738879" targetNodeId="tp25.1144101972840" resolveInfo="OperationParm_Concept" />
                   </node>
                 </node>
@@ -1109,7 +1109,7 @@
                       <link role="link" roleId="tp25.1138056546658" targetNodeId="tp25.1144104376918" />
                     </node>
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="1207248813915">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_LinkList_AddNewChildOperation" typeId="tpdg.767145758118872833" id="6357564549601490581">
                     <link role="concept" roleId="tp25.1139877738879" targetNodeId="tp25.1144101972840" resolveInfo="OperationParm_Concept" />
                   </node>
                 </node>
@@ -2036,8 +2036,8 @@
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1203648256025">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1179535189149" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithNewOperation" typeId="tp25.1139867745658" id="1179535189148">
-                      <link role="concept" roleId="tp25.1139867957129" targetNodeId="tp25.1140137987495" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Node_ReplaceWithNewOperation" typeId="tpdg.767145758118872828" id="6357564549601490528">
+                      <link role="concept" roleId="tp25.1139867957129" targetNodeId="tp25.1140137987495" resolveInfo="SNodeTypeCastExpression" />
                     </node>
                   </node>
                 </node>
@@ -2094,7 +2094,7 @@
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1240396416334">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1240396416335" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithNewOperation" typeId="tp25.1139867745658" id="1240396416336">
+                    <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Node_ReplaceWithNewOperation" typeId="tpdg.767145758118872828" id="6357564549601490525">
                       <link role="concept" roleId="tp25.1139867957129" targetNodeId="tp25.1140137987495" resolveInfo="SNodeTypeCastExpression" />
                     </node>
                   </node>
@@ -2271,8 +2271,8 @@
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1203648260513">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1179535648229" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithNewOperation" typeId="tp25.1139867745658" id="1179535648228">
-                      <link role="concept" roleId="tp25.1139867957129" targetNodeId="tp25.1145404486709" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Node_ReplaceWithNewOperation" typeId="tpdg.767145758118872828" id="6357564549601490527">
+                      <link role="concept" roleId="tp25.1139867957129" targetNodeId="tp25.1145404486709" resolveInfo="SemanticDowncastExpression" />
                     </node>
                   </node>
                 </node>
@@ -2369,8 +2369,8 @@
                     <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp25.1206019730951" resolveInfo="StaticConceptMethodCall" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1206022291199">
-                    <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="1206022291200">
-                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1206022291201">
+                    <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="6357564549601490284">
+                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6357564549601490285">
                         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp25.1206019730951" resolveInfo="StaticConceptMethodCall" />
                       </node>
                     </node>

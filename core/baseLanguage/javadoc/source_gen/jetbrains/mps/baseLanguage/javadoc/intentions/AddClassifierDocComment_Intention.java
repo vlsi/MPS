@@ -9,8 +9,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -60,12 +60,12 @@ public class AddClassifierDocComment_Intention extends BaseIntention implements 
       return;
     }
 
-    SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
+    SNodeFactoryOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment");
 
     //  Type variables 
     for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
-      SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-      SLinkOperations.setTarget(paramTag, "parameter", new AddClassifierDocComment_Intention.QuotationClass_nmk0m3_a0a1a5a7().createNode(typeVariableDeclaration), true);
+      SNode paramTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
+      SLinkOperations.setTarget(paramTag, "parameter", new AddClassifierDocComment_Intention.QuotationClass_nmk0m3_a2a1a5a7().createNode(typeVariableDeclaration), true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), true), "param", true)).addElement(paramTag);
     }
   }
@@ -74,8 +74,8 @@ public class AddClassifierDocComment_Intention extends BaseIntention implements 
     return "jetbrains.mps.baseLanguage.javadoc.intentions";
   }
 
-  public static class QuotationClass_nmk0m3_a0a1a5a7 {
-    public QuotationClass_nmk0m3_a0a1a5a7() {
+  public static class QuotationClass_nmk0m3_a2a1a5a7 {
+    public QuotationClass_nmk0m3_a2a1a5a7() {
     }
 
     public SNode createNode(Object parameter_3) {

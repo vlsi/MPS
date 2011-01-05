@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class CreateListPattern_Intention extends BaseIntention implements Intention {
@@ -51,7 +51,7 @@ public class CreateListPattern_Intention extends BaseIntention implements Intent
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
     List<SNode> siblings = SNodeOperations.getAllSiblings(currentNode, false);
-    SLinkOperations.setNewChild(currentNode, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.ListPattern");
+    SNodeFactoryOperations.setNewChild(currentNode, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.ListPattern");
     for (SNode sibling : siblings) {
       SNodeOperations.deleteNode(sibling);
     }

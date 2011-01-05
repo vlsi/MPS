@@ -37,8 +37,8 @@
                       </node>
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227822349">
                         <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="1187361572852" />
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_CreateNewNodeOperation" typeId="tp25.1143235216708" id="1187361578106">
-                          <link role="concept" roleId="tp25.1143235391024" targetNodeId="tp7v.1187357945755" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Model_CreateNewNodeOperation" typeId="tpdg.5480835971642155304" id="6357564549601506822">
+                          <link role="concept" roleId="tp25.1143235391024" targetNodeId="tp7v.1187357945755" resolveInfo="MoneyGetCurrencyMethodCall" />
                         </node>
                       </node>
                     </node>
@@ -126,8 +126,8 @@
                       </node>
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227832284">
                         <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="1187617748538" />
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_CreateNewNodeOperation" typeId="tp25.1143235216708" id="1187617748537">
-                          <link role="concept" roleId="tp25.1143235391024" targetNodeId="tp7v.1187617584208" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Model_CreateNewNodeOperation" typeId="tpdg.5480835971642155304" id="6357564549601506814">
+                          <link role="concept" roleId="tp25.1143235391024" targetNodeId="tp7v.1187617584208" resolveInfo="MoneyIsZeroMethodCall" />
                         </node>
                       </node>
                     </node>
@@ -215,8 +215,8 @@
                       </node>
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227846771">
                         <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="1187361598232" />
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_CreateNewNodeOperation" typeId="tp25.1143235216708" id="1187361600611">
-                          <link role="concept" roleId="tp25.1143235391024" targetNodeId="tp7v.1187357875552" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Model_CreateNewNodeOperation" typeId="tpdg.5480835971642155304" id="6357564549601506813">
+                          <link role="concept" roleId="tp25.1143235391024" targetNodeId="tp7v.1187357875552" resolveInfo="MoneyGetAmountMethodCall" />
                         </node>
                       </node>
                     </node>

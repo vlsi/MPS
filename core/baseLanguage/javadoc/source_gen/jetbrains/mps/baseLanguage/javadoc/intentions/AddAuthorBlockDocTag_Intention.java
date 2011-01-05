@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddAuthorBlockDocTag_Intention extends BaseIntention implements Intention {
   public AddAuthorBlockDocTag_Intention() {
@@ -46,7 +46,7 @@ public class AddAuthorBlockDocTag_Intention extends BaseIntention implements Int
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode authorTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
+    SNode authorTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
     ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).addElement(authorTag);
     //  TODO 
     editorContext.getNodeEditorComponent().setSelectionDontClearStack(editorContext.getNodeEditorComponent().findNodeCellWithRole(authorTag, "text"), true, true);

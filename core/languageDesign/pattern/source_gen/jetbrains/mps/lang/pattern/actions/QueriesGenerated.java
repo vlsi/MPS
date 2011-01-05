@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
@@ -26,7 +27,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.OrPattern");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode orPattern = SConceptOperations.createNewNode("jetbrains.mps.lang.pattern.structure.OrPattern", null);
+          SNode orPattern = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.pattern.structure.OrPattern", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), orPattern);
           return SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", _context.getSourceNode(), true);
         }

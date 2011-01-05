@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -60,7 +60,7 @@ public class NewTemplateInWeaveEach_Intention extends BaseIntention implements I
         name += SPropertyOperations.getString(applicableConcept, "name");
       }
     }
-    SNode t = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
+    SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
     SPropertyOperations.set(t, "name", name);
     SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
     t.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
@@ -71,7 +71,7 @@ public class NewTemplateInWeaveEach_Intention extends BaseIntention implements I
       SNode contextNodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(contextNodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
       if (contextNodeConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")) {
         if (!(SNodeOperations.isInstanceOf(contextNodeConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
-          SLinkOperations.setTarget(t, "contentNode", SConceptOperations.createNewNode(NameUtil.nodeFQName(contextNodeConcept), null), true);
+          SLinkOperations.setTarget(t, "contentNode", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(contextNodeConcept), null), true);
         }
       }
     }

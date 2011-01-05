@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class AddOperationParameter_Intention extends BaseIntention implements Intention {
@@ -53,9 +53,9 @@ public class AddOperationParameter_Intention extends BaseIntention implements In
   public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> applicableParms = SLinkOperations.getConceptLinkTargets(node, "applicableParameter");
     if (ListSequence.fromList(applicableParms).count() == 1) {
-      ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).addElement(SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
+      ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
     } else {
-      SLinkOperations.addNewChild(node, "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
+      SNodeFactoryOperations.addNewChild(node, "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
     }
   }
 

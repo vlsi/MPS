@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -39,13 +39,13 @@ public class FlipInequality_Intention extends BaseIntention implements Intention
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode newNode;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement")) {
-      newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", null);
+      newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", null);
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement")) {
-      newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", null);
+      newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", null);
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement")) {
-      newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", null);
+      newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", null);
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement")) {
-      newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", null);
+      newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", null);
     } else {
       return;
     }

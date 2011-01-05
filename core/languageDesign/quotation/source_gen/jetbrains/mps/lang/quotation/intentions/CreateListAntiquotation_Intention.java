@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class CreateListAntiquotation_Intention extends BaseIntention implements Intention {
   public CreateListAntiquotation_Intention() {
@@ -49,7 +49,7 @@ public class CreateListAntiquotation_Intention extends BaseIntention implements 
     if (SNodeOperations.isInstanceOf(((SNode) contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
       contextNode.setAttribute(null);
     } else {
-      SNode listAntiquotation = SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null);
+      SNode listAntiquotation = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null);
       contextNode.setAttribute(listAntiquotation);
       editorContext.selectWRTFocusPolicy(listAntiquotation);
     }

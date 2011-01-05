@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddStaticFieldDocComment_Intention extends BaseIntention implements Intention {
   public AddStaticFieldDocComment_Intention() {
@@ -38,7 +39,7 @@ public class AddStaticFieldDocComment_Intention extends BaseIntention implements
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), true) == null)) {
-      SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+      SNodeFactoryOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
     } else {
       SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("staticFieldDocComment"), null, true);
     }

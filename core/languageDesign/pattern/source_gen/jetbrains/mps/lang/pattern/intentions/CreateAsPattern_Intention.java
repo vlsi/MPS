@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class CreateAsPattern_Intention extends BaseIntention implements Intention {
@@ -47,7 +47,7 @@ public class CreateAsPattern_Intention extends BaseIntention implements Intentio
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
-    SLinkOperations.setNewChild(currentNode, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.AsPattern");
+    SNodeFactoryOperations.setNewChild(currentNode, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.AsPattern");
   }
 
   public String getLocationString() {

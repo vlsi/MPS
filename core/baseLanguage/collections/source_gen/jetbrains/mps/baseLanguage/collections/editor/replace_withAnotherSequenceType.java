@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
@@ -42,7 +43,7 @@ public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
     }
 
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return SConceptOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
+      return SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
     }
 
     public boolean isReferentPresentation() {

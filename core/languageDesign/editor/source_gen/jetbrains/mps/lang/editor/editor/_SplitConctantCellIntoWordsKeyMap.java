@@ -10,10 +10,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
   public _SplitConctantCellIntoWordsKeyMap() {
@@ -61,8 +61,8 @@ public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode collection = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-      SLinkOperations.setNewChild(collection, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow");
+      SNode collection = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
+      SNodeFactoryOperations.setNewChild(collection, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow");
       SNodeOperations.replaceWithAnother(node, collection);
       String text = SPropertyOperations.getString(node, "text");
       String[] strings = text.split(" ");

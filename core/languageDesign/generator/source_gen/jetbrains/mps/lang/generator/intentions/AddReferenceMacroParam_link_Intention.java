@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -61,13 +61,13 @@ public class AddReferenceMacroParam_link_Intention extends BaseIntention impleme
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
-    SNode referentValue = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", null);
-    SNode dotExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-    SNode linkAccess = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
+    SNode referentValue = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", null);
+    SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+    SNode linkAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
     SLinkOperations.setTarget(linkAccess, "link", this.myParameter, false);
     SLinkOperations.setTarget(dotExpression, "operation", linkAccess, true);
-    SLinkOperations.setTarget(dotExpression, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
-    SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
+    SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(referenceMacro, "referentFunction", referentValue, true);

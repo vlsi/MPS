@@ -11,10 +11,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class ReplaceWithConcreteSubconcept_Intention extends BaseIntention imple
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode concreteConceptInstance = SConceptOperations.createNewNode(NameUtil.nodeFQName(this.myParameter), null);
+    SNode concreteConceptInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(this.myParameter), null);
     SNodeOperations.replaceWithAnother(node, concreteConceptInstance);
     SNodeOperations.deleteNode(node);
   }

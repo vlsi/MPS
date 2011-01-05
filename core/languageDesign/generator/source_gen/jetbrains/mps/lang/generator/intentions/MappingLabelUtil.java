@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class MappingLabelUtil {
   public static SNode findOrCreateMappingLabelForName(SNode templateNode, String labelName) {
@@ -38,11 +39,11 @@ public class MappingLabelUtil {
           mc = ListSequence.fromList(localMCs).first();
         }
       } else {
-        mc = SModelOperations.createNewRootNode(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
+        mc = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
         SPropertyOperations.set(mc, "name", "MappingLabels");
       }
       // new mapping label 
-      SNode newLabel = SLinkOperations.addNewChild(mc, "mappingLabel", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration");
+      SNode newLabel = SNodeFactoryOperations.addNewChild(mc, "mappingLabel", "jetbrains.mps.lang.generator.structure.MappingLabelDeclaration");
       SPropertyOperations.set(newLabel, "name", labelName);
       mappingLabel = newLabel;
     }

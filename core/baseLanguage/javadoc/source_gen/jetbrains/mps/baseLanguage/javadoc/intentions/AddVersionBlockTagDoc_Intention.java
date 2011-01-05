@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddVersionBlockTagDoc_Intention extends BaseIntention implements Intention {
   public AddVersionBlockTagDoc_Intention() {
@@ -45,7 +46,7 @@ public class AddVersionBlockTagDoc_Intention extends BaseIntention implements In
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.addNewChild(node, "version", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag");
+    SNodeFactoryOperations.addNewChild(node, "version", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag");
   }
 
   public String getLocationString() {

@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ConvertPropertySetToAssignment_Intention extends BaseIntention implements Intention {
   public ConvertPropertySetToAssignment_Intention() {
@@ -41,7 +41,7 @@ public class ConvertPropertySetToAssignment_Intention extends BaseIntention impl
     SNodeOperations.detachNode(SLinkOperations.getTarget(node, "value", true));
     SNode dotExpr = IOperation_Behavior.call_getDotExpression_1224687669172(node);
     SNodeOperations.detachNode(SLinkOperations.getTarget(dotExpr, "operand", true));
-    SNode assignment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
+    SNode assignment = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
     SLinkOperations.setTarget(assignment, "lValue", lValue, true);
     SLinkOperations.setTarget(assignment, "rValue", rValue, true);
     SNodeOperations.replaceWithAnother(dotExpr, assignment);

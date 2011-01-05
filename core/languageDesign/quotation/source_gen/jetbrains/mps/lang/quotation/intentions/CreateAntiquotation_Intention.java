@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class CreateAntiquotation_Intention extends BaseIntention implements Intention {
   public CreateAntiquotation_Intention() {
@@ -50,7 +50,7 @@ public class CreateAntiquotation_Intention extends BaseIntention implements Inte
     if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) != null) {
       contextNode.setAttribute(null);
     } else {
-      SNode antiquotation = SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null);
+      SNode antiquotation = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null);
       contextNode.setAttribute(antiquotation);
       editorContext.selectWRTFocusPolicy(antiquotation);
     }

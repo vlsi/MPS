@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class WindowsConfig_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -468,7 +468,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode signConfig = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", null);
+      SNode signConfig = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", null);
       SLinkOperations.setTarget(node, "signatureConfiguration", signConfig, true);
     }
 

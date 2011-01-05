@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -63,13 +63,13 @@ public class AddPropertyMacroParam_property_Intention extends BaseIntention impl
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode propertyMacro = QueriesUtil.addPropertyMacro(node, editorContext.getSelectedCell());
-    SNode propertyValue = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", null);
-    SNode dotExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-    SNode propertyAccess = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SPropertyAccess", null);
+    SNode propertyValue = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", null);
+    SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+    SNode propertyAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SPropertyAccess", null);
     SLinkOperations.setTarget(propertyAccess, "property", this.myParameter, false);
     SLinkOperations.setTarget(dotExpression, "operation", propertyAccess, true);
-    SLinkOperations.setTarget(dotExpression, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
-    SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
+    SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(propertyValue, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(propertyMacro, "propertyValueFunction", propertyValue, true);

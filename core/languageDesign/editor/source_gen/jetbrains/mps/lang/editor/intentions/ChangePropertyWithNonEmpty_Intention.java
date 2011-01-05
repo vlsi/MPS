@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
@@ -50,7 +51,7 @@ public class ChangePropertyWithNonEmpty_Intention extends BaseIntention implemen
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode nonEmpty = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", node);
+    SNode nonEmpty = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", node);
     SLinkOperations.setTarget(nonEmpty, "relationDeclaration", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
     SLinkOperations.setTarget(node, "relationDeclaration", null, false);
     for (SNode child : ListSequence.fromList(node.getChildren())) {

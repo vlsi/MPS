@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -51,12 +51,12 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention imple
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode project = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.Project", null);
+    SNode project = SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.Project", null);
     List<String> externalProps = ListSequence.fromListAndArray(new ArrayList<String>(), "input.dir", "output.dir", "deploy.dir");
     for (String prop : ListSequence.fromList(externalProps)) {
-      SNode property = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration", null);
+      SNode property = SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration", null);
       SPropertyOperations.set(property, "name", prop);
-      SLinkOperations.setTarget(property, "type", SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.FileType", null), true);
+      SLinkOperations.setTarget(property, "type", SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.FileType", null), true);
       ListSequence.fromList(SLinkOperations.getTargets(project, "property", true)).addElement(property);
     }
     SModel model = editorContext.getModel();

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddReturnBlockTag_Intention extends BaseIntention implements Intention {
   public AddReturnBlockTag_Intention() {
@@ -47,7 +47,7 @@ public class AddReturnBlockTag_Intention extends BaseIntention implements Intent
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setTarget(node, "return", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", null), true);
+    SLinkOperations.setTarget(node, "return", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", null), true);
   }
 
   public String getLocationString() {

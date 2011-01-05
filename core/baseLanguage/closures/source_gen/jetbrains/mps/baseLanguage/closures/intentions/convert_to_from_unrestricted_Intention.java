@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -55,8 +56,8 @@ public class convert_to_from_unrestricted_Intention extends BaseIntention implem
   public void execute(final SNode node, final EditorContext editorContext) {
     String id = node.getId();
     SNode cl = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ?
-      SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", null) :
-      SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null)
+      SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", null) :
+      SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null)
     );
     cl.setId(SNodeId.fromString(id));
     SNodeOperations.replaceWithAnother(node, cl);

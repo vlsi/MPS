@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -48,8 +48,8 @@ public class SurrondWithIndentCollection_Intention extends BaseIntention impleme
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-    SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
+    SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
+    SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
     List<SNode> nodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(ListSequence.fromList(nodes).last(), result);
     for (SNode sn : nodes) {

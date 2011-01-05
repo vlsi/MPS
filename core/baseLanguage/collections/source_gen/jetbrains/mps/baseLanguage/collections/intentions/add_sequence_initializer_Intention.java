@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class add_sequence_initializer_Intention extends BaseIntention implements Intention {
   public add_sequence_initializer_Intention() {
@@ -44,7 +45,7 @@ public class add_sequence_initializer_Intention extends BaseIntention implements
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+    SNodeFactoryOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
   }
 
   public String getLocationString() {

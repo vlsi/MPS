@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -36,8 +36,8 @@ public class ConvertToBeanBuilder_Intention extends BaseIntention implements Int
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", null);
-    SNode builder = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", null);
+    SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", null);
+    SNode builder = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", null);
     SLinkOperations.setTarget(builder, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
     for (SNode arg : SLinkOperations.getTargets(node, "actualArgument", true)) {
       ListSequence.fromList(SLinkOperations.getTargets(builder, "actualArgument", true)).addElement(arg);

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,7 +49,7 @@ public class convert_to_restricted_Intention extends BaseIntention implements In
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode rft = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
+    SNode rft = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
     List<SNode> ptypes = SLinkOperations.getTargets(node, "parameterType", true);
     for (SNode pt : ptypes) {
       ListSequence.fromList(SLinkOperations.getTargets(rft, "parameterType", true)).addElement(SNodeOperations.detachNode(pt));

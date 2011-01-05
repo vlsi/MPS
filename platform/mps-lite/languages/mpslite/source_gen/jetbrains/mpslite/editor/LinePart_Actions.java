@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LinePart_Actions extends EditorCellKeyMap {
@@ -63,7 +64,7 @@ public class LinePart_Actions extends EditorCellKeyMap {
           EditorCell_Label label = (EditorCell_Label) editorCell;
           String textBC = label.getTextBeforeCaret();
           String textAC = label.getTextAfterCaret();
-          SNode nextLinePart = SNodeOperations.insertNewNextSiblingChild(selectedNode, "jetbrains.mpslite.structure.ConstantLinePart");
+          SNode nextLinePart = SNodeFactoryOperations.insertNewNextSiblingChild(selectedNode, "jetbrains.mpslite.structure.ConstantLinePart");
           SPropertyOperations.set(SNodeOperations.cast(selectedNode, "jetbrains.mpslite.structure.ConstantLinePart"), "text", textBC);
           SPropertyOperations.set(nextLinePart, "text", textAC);
         }
@@ -107,7 +108,7 @@ public class LinePart_Actions extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode selectedNode = editorContext.getSelectedNode();
-      SNodeOperations.insertNewNextSiblingChild(selectedNode, "jetbrains.mpslite.structure.LinePart");
+      SNodeFactoryOperations.insertNewNextSiblingChild(selectedNode, "jetbrains.mpslite.structure.LinePart");
     }
 
     public String getKeyStroke() {
@@ -147,7 +148,7 @@ public class LinePart_Actions extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode selectedNode = editorContext.getSelectedNode();
-      SNodeOperations.insertNewPrevSiblingChild(selectedNode, "jetbrains.mpslite.structure.LinePart");
+      SNodeFactoryOperations.insertNewPrevSiblingChild(selectedNode, "jetbrains.mpslite.structure.LinePart");
     }
 
     public String getKeyStroke() {

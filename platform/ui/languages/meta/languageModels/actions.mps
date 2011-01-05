@@ -68,7 +68,7 @@
                       <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2663453265346703858">
                         <node role="expression" roleId="tp3r.1196350785111" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2663453265346703877">
                           <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="2663453265346703878" />
-                          <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_NewInstance" typeId="tp25.1181949435690" id="2663453265346703879" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Concept_NewInstance" typeId="tpdg.7776141288922801652" id="8427581592624635707" />
                         </node>
                       </node>
                     </node>
@@ -215,7 +215,7 @@
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="sqp9.8508807536211371479" />
                     </node>
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetNewChildOperation" typeId="tp25.1138757581985" id="8508807536211441135" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Link_SetNewChildOperation" typeId="tpdg.767145758118872830" id="8427581592624635743" />
                 </node>
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8508807536211441139">
@@ -260,7 +260,7 @@
                       <link role="link" roleId="tp25.1138056516764" targetNodeId="sqp9.8508807536211371482" />
                     </node>
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetNewChildOperation" typeId="tp25.1138757581985" id="8508807536211441174" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Link_SetNewChildOperation" typeId="tpdg.767145758118872830" id="8427581592624635737" />
                 </node>
               </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8508807536211441178">

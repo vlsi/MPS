@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -93,7 +94,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_UnrestrictedFunctionType_1232132222405(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setNewChild(_context.getNewNode(), "resultType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "resultType", "jetbrains.mps.baseLanguage.structure.VoidType");
   }
 
   public static void nodeFactory_NodeSetup_ClosureLiteral_876385242039333160(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -109,7 +110,7 @@ public class QueriesGenerated {
               SNode adaptTo = ListSequence.fromList(methods).getElement(0);
               // TODO: generic parameters 
               for (SNode adaptToPD : SLinkOperations.getTargets(adaptTo, "parameter", true)) {
-                SNode pd = ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null));
+                SNode pd = ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null));
                 SPropertyOperations.set(pd, "name", SPropertyOperations.getString(adaptToPD, "name"));
                 SLinkOperations.setTarget(pd, "type", SLinkOperations.getTarget(adaptToPD, "type", true), true);
               }
@@ -172,9 +173,9 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode ccs = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", null);
+                SNode ccs = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", null);
                 SLinkOperations.setTarget(ccs, "controlMethod", (item), false);
-                SLinkOperations.setNewChild(ccs, "controlClosure", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral");
+                SNodeFactoryOperations.setNewChild(ccs, "controlClosure", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral");
                 return ccs;
               }
 
@@ -203,7 +204,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "actualParameter", "jetbrains.mps.baseLanguage.structure.Expression");
+          SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "actualParameter", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }
 
@@ -229,7 +230,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "actualParameter", "jetbrains.mps.baseLanguage.structure.Expression");
+          SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "actualParameter", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }
 
@@ -280,7 +281,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlClosure", true), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+          SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlClosure", true), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
           return _context.getSourceNode();
         }
 
@@ -306,7 +307,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "throwsType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNodeFactoryOperations.addNewChild(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "throwsType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
           return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "throwsType", true)).first();
         }
 

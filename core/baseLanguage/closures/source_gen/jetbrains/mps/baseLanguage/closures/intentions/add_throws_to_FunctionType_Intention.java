@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class add_throws_to_FunctionType_Intention extends BaseIntention implements Intention {
   public add_throws_to_FunctionType_Intention() {
@@ -45,7 +46,7 @@ public class add_throws_to_FunctionType_Intention extends BaseIntention implemen
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.addNewChild(node, "throwsType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    SNodeFactoryOperations.addNewChild(node, "throwsType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
 
   public String getLocationString() {

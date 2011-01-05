@@ -28,6 +28,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class ExponentOperation_Component extends AbstractCellProvider {
@@ -121,7 +122,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode(NameUtil.nodeFQName(parameterObject), SLinkOperations.getTarget(node, "expr", true)));
+      SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), SLinkOperations.getTarget(node, "expr", true)));
     }
 
     public boolean isReferentPresentation() {

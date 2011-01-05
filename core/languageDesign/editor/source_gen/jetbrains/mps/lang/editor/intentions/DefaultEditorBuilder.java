@@ -4,13 +4,14 @@ package jetbrains.mps.lang.editor.intentions;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class DefaultEditorBuilder {
@@ -19,12 +20,12 @@ public class DefaultEditorBuilder {
 
   public static void buildDefaultEditor(SNode node) {
     SNode conceptDeclaration = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(node);
-    SNode collection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-    SLinkOperations.setTarget(collection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
+    SNode collection = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
+    SLinkOperations.setTarget(collection, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
     for (SNode property : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(conceptDeclaration))) {
       if (SNodeOperations.getParent(property) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
         DefaultEditorBuilder.addName(SPropertyOperations.getString(property, "name"), collection);
-        SNode propertyCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
+        SNode propertyCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
         SLinkOperations.setTarget(propertyCell, "relationDeclaration", property, false);
         DefaultEditorBuilder.makeNewLine(propertyCell);
         ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(propertyCell);
@@ -34,14 +35,14 @@ public class DefaultEditorBuilder {
       DefaultEditorBuilder.addName(SPropertyOperations.getString(linkDeclaration, "role"), collection);
       if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
         if (LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration)) {
-          SNode linkCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
+          SNode linkCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
           DefaultEditorBuilder.makeNewLine(linkCell);
           ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(linkCell);
         } else {
-          SNode linkCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
+          SNode linkCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
-          SLinkOperations.setTarget(linkCell, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
+          SLinkOperations.setTarget(linkCell, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
           DefaultEditorBuilder.makeNewLine(linkCell);
           DefaultEditorBuilder.addClassItem(linkCell, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"));
           DefaultEditorBuilder.addClassItem(linkCell, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
@@ -49,7 +50,7 @@ public class DefaultEditorBuilder {
         }
       } else {
         if (LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration)) {
-          SNode linkCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
+          SNode linkCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
           SLinkOperations.setTarget(linkCell, "editorComponent", createInlineEditorComponent(SLinkOperations.getTarget(linkDeclaration, "target", false)), true);
           DefaultEditorBuilder.makeNewLine(linkCell);
@@ -61,27 +62,27 @@ public class DefaultEditorBuilder {
   }
 
   public static SNode createInlineEditorComponent(SNode concept) {
-    SNode inline = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.InlineEditorComponent", null);
-    SNode propertyCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
+    SNode inline = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.InlineEditorComponent", null);
+    SNode propertyCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
     SLinkOperations.setTarget(propertyCell, "relationDeclaration", AbstractConceptDeclaration_Behavior.call_findPropertyDeclaration_1219835742593(concept, "name"), false);
     SLinkOperations.setTarget(inline, "cellModel", propertyCell, true);
     return inline;
   }
 
   private static void makeNewLine(SNode propertyCell) {
-    SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
+    SNode classItem = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
     SPropertyOperations.set(classItem, "flag", "" + true);
     ListSequence.fromList(SLinkOperations.getTargets(propertyCell, "styleItem", true)).addElement(classItem);
   }
 
   private static void addName(String name, SNode collection) {
-    SNode nameCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Constant", null);
+    SNode nameCell = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Constant", null);
     SPropertyOperations.set(nameCell, "text", name);
     ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(nameCell);
   }
 
   private static void addClassItem(SNode linkCell, SNode concept) {
-    SNode classItem = SConceptOperations.createNewNode(NameUtil.nodeFQName(concept), null);
+    SNode classItem = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
     SPropertyOperations.set(classItem, "flag", "" + true);
     ListSequence.fromList(SLinkOperations.getTargets(linkCell, "styleItem", true)).addElement(classItem);
   }

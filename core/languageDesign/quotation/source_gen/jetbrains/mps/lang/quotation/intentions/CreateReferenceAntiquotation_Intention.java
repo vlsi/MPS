@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class CreateReferenceAntiquotation_Intention extends BaseIntention implements Intention {
   public CreateReferenceAntiquotation_Intention() {
@@ -86,7 +87,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention implem
     if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), true) != null) {
       SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
     } else {
-      SNode referenceAntiquotation = SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
+      SNode referenceAntiquotation = SNodeFactoryOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
       if (selectedCell.isSingleNodeCell()) {
         SPropertyOperations.set(referenceAntiquotation, "label", SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), "name"));
       }

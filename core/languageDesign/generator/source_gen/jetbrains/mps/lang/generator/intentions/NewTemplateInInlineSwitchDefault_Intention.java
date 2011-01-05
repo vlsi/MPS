@@ -9,10 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class NewTemplateInInlineSwitchDefault_Intention extends BaseIntention implements Intention {
   public NewTemplateInInlineSwitchDefault_Intention() {
@@ -58,11 +57,11 @@ public class NewTemplateInInlineSwitchDefault_Intention extends BaseIntention im
         name += SPropertyOperations.getString(applicableConcept, "name");
       }
     }
-    SNode t = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
+    SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
     SPropertyOperations.set(t, "name", name);
     t.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
     // make reference 
-    SNode tr = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
+    SNode tr = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
     SLinkOperations.setTarget(tr, "template", t, false);
     SLinkOperations.setTarget(node, "defaultConsequence", tr, true);
   }

@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -35,10 +35,10 @@ public class ConvertGivetypeToTypeOfIntention_Intention extends BaseIntention im
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode equationStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", null);
-    SNode typeOfExpression = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", null);
-    SNode leftTypeClause = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
-    SNode rightTypeClause = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
+    SNode equationStatement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", null);
+    SNode typeOfExpression = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", null);
+    SNode leftTypeClause = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
+    SNode rightTypeClause = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
     SLinkOperations.setTarget(equationStatement, "leftExpression", leftTypeClause, true);
     SLinkOperations.setTarget(equationStatement, "rightExpression", rightTypeClause, true);
     SLinkOperations.setTarget(leftTypeClause, "normalType", typeOfExpression, true);

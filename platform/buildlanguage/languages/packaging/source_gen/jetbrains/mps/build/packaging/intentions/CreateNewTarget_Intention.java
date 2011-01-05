@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -47,7 +47,7 @@ public class CreateNewTarget_Intention extends BaseIntention implements Intentio
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode targetDeclaration = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.TargetDeclaration", null);
+    SNode targetDeclaration = SNodeFactoryOperations.createNewNode("jetbrains.mps.buildlanguage.structure.TargetDeclaration", null);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "project", false), "target", true)).addElement(targetDeclaration);
     SLinkOperations.setTarget(node, "targetDeclaration", targetDeclaration, false);
     MPSEditorOpener opener = editorContext.getOperationContext().getProject().getComponent(MPSEditorOpener.class);

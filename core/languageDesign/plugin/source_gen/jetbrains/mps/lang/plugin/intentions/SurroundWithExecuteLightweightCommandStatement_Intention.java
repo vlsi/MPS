@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.SurroundWithIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,7 +37,7 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention extends Su
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode readActionStatement = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", null);
+    SNode readActionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, readActionStatement);
     for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
@@ -76,7 +76,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", null);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", null);
             SPropertyOperations.set(result, "text", pattern);
             return result;
           }

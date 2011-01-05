@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -160,8 +160,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             return result;
           }
 
@@ -185,8 +185,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null)) {
               EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
@@ -213,8 +213,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             return result;
           }
 
@@ -238,8 +238,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null)) {
               EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
@@ -266,8 +266,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SLinkOperations.setNewChild(result, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SNodeFactoryOperations.setNewChild(result, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
             return result;
           }
 
@@ -291,8 +291,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SLinkOperations.setNewChild(result, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
+            SNodeFactoryOperations.setNewChild(result, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
             if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null)) {
               EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
@@ -319,8 +319,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
             return result;
           }
 
@@ -344,8 +344,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
             return result;
           }
 
@@ -369,8 +369,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             return result;
           }
 
@@ -394,8 +394,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
               EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
@@ -422,8 +422,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             return result;
           }
 
@@ -447,8 +447,8 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
               EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
             }
@@ -475,7 +475,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefCell", _context.getCurrentTargetNode());
+            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefCell", _context.getCurrentTargetNode());
           }
 
           public String getDescriptionText(String pattern) {
@@ -498,7 +498,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNode", _context.getCurrentTargetNode());
+            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNode", _context.getCurrentTargetNode());
           }
 
           public String getDescriptionText(String pattern) {
@@ -521,7 +521,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Property", _context.getCurrentTargetNode());
+            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Property", _context.getCurrentTargetNode());
           }
 
           public String getDescriptionText(String pattern) {
@@ -544,7 +544,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", _context.getCurrentTargetNode());
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", _context.getCurrentTargetNode());
             return result;
           }
 
@@ -568,7 +568,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Alternation", _context.getCurrentTargetNode());
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Alternation", _context.getCurrentTargetNode());
             return result;
           }
 
@@ -592,7 +592,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Constant", _context.getCurrentTargetNode());
+            SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Constant", _context.getCurrentTargetNode());
             SPropertyOperations.set(result, "text", NameUtil.stripQuotes(pattern, "\"", "\""));
             return result;
           }
@@ -625,7 +625,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", _context.getCurrentTargetNode());
+            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", _context.getCurrentTargetNode());
             SPropertyOperations.set(result, "text", NameUtil.stripQuotes(pattern, "!", "!"));
             return result;
           }
@@ -667,7 +667,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode component = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Component", null);
+                SNode component = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Component", null);
                 SLinkOperations.setTarget(component, "editorComponent", (item), false);
                 return component;
               }
@@ -703,7 +703,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellActionMapItem", _context.getCurrentTargetNode());
+                SNode newNode = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellActionMapItem", _context.getCurrentTargetNode());
                 SPropertyOperations.set(newNode, "actionId", SPropertyOperations.getString((item), "internalValue"));
                 return newNode;
               }
@@ -762,7 +762,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode abstractOperation = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+                SNode abstractOperation = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
                 return abstractOperation;
               }
             });

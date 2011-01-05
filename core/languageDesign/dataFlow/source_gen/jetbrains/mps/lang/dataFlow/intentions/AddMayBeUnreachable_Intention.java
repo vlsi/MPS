@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AddMayBeUnreachable_Intention extends BaseIntention implements Intention {
@@ -46,7 +46,7 @@ public class AddMayBeUnreachable_Intention extends BaseIntention implements Inte
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", null);
+    SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", null);
     SNodeOperations.replaceWithAnother(node, result);
     SLinkOperations.setTarget(result, "emitStatement", node, true);
     editorContext.select(node);

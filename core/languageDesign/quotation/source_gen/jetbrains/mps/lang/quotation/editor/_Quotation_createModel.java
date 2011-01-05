@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class _Quotation_createModel extends EditorCellKeyMap {
   public _Quotation_createModel() {
@@ -54,7 +55,7 @@ public class _Quotation_createModel extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SLinkOperations.setNewChild(node, "modelToCreate", "jetbrains.mps.baseLanguage.structure.Expression");
+      SNodeFactoryOperations.setNewChild(node, "modelToCreate", "jetbrains.mps.baseLanguage.structure.Expression");
     }
 
     public String getKeyStroke() {

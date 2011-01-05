@@ -23,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -130,7 +131,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer");
+      SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer");
     }
 
     public String getMatchingText() {

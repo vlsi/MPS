@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -28,7 +28,7 @@ public class CompositeString_RT {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.CompositeString", null);
+      SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.packaging.structure.CompositeString", null);
       SNodeOperations.replaceWithAnother(node, newNode);
       SLinkOperations.setTarget(newNode, "left", node, true);
     }

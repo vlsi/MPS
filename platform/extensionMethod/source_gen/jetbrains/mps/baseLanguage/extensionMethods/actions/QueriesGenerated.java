@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -18,7 +18,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -41,7 +41,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_ExtensionMethodDeclaration_720975379598240373(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_5246850046234986610(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -60,9 +60,9 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
-                SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), false);
-                SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression");
+                SNode operationExpression = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
+                SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), false);
+                SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression");
                 return operationExpression;
               }
             });
@@ -91,9 +91,9 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
-                SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);
-                SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression");
+                SNode operationExpression = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
+                SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);
+                SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression");
 
                 return operationExpression;
               }

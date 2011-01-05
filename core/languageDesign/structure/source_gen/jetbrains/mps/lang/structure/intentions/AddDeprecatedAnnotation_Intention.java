@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AddDeprecatedAnnotation_Intention extends BaseIntention implements Intention {
@@ -40,7 +40,7 @@ public class AddDeprecatedAnnotation_Intention extends BaseIntention implements 
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) == null)) {
-      SNode annotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
+      SNode annotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
       SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), annotation, true);
     } else {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true));

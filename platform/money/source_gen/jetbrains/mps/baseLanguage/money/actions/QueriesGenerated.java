@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
@@ -24,7 +24,7 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
-            SNode mgcmc = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", null);
+            SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
             SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
             return mgcmc;
@@ -50,7 +50,7 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
-            SNode mgcmc = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", null);
+            SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
             SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
             return mgcmc;
@@ -76,7 +76,7 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
-            SNode mgcmc = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", null);
+            SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
             SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
             return mgcmc;

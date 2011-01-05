@@ -50,15 +50,15 @@ public class Add_Comparator_Intention extends BaseIntention implements Intention
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setTarget(node, "comparator", new Add_Comparator_Intention.QuotationClass_z9bmn4_a0a0a0h().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true))), true);
+    SLinkOperations.setTarget(node, "comparator", new Add_Comparator_Intention.QuotationClass_z9bmn4_a2a0a7().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true))), true);
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.collections.intentions";
   }
 
-  public static class QuotationClass_z9bmn4_a0a0a0h {
-    public QuotationClass_z9bmn4_a0a0a0h() {
+  public static class QuotationClass_z9bmn4_a2a0a7 {
+    public QuotationClass_z9bmn4_a2a0a7() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {

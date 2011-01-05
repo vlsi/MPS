@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class PersistenPropertyDeclaration_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,7 +30,7 @@ public class PersistenPropertyDeclaration_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.structure.Expression");
+      SNodeFactoryOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.structure.Expression");
     }
   }
 }

@@ -10,9 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -61,7 +62,7 @@ public class SetExportAnnotation_Intention extends BaseIntention implements Inte
   public void execute(final SNode node, final EditorContext editorContext) {
     SNodeOperations.deleteNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("export"), true));
     if ((this.myParameter != null)) {
-      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("export"), SConceptOperations.createNewNode(NameUtil.nodeFQName(this.myParameter), null), true);
+      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("export"), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(this.myParameter), null), true);
     }
   }
 

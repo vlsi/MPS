@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ChangeOrientationCollection_Intention extends BaseIntention implements Intention {
   public ChangeOrientationCollection_Intention() {
@@ -51,9 +51,9 @@ public class ChangeOrientationCollection_Intention extends BaseIntention impleme
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if (CellModel_Collection_Behavior.call_isVertical_1237380214915(node)) {
-      SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
+      SLinkOperations.setTarget(node, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
     } else {
-      SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
+      SLinkOperations.setTarget(node, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
     }
   }
 

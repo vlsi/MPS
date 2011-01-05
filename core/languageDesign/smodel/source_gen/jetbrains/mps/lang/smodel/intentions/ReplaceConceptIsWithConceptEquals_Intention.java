@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention implements Intention {
@@ -47,7 +47,7 @@ public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention i
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode conceptList = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", null);
+    SNode conceptList = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList", null);
     SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(conceptList, "concept", true)).first(), "concept", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false), false);
     SNodeOperations.replaceWithAnother(node, conceptList);
   }

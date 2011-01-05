@@ -41,6 +41,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -703,7 +704,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
+      SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
     }
 
     public String getMatchingText() {

@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
@@ -47,7 +47,7 @@ public class AddPropertiesMark_Intention extends BaseIntention implements Intent
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodePropertiesContainer", null);
+    SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.NodePropertiesContainer", null);
     SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), newAnnotation, true);
     editorContext.select(newAnnotation);
   }

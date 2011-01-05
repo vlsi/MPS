@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -90,7 +90,7 @@ public class QueriesUtil {
         QueriesUtil.createTemplateFragment(applyToNode);
       }
     }
-    SNode nodeMacro = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.NodeMacro", null);
+    SNode nodeMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.NodeMacro", null);
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
       SNodeOperations.insertPrevSiblingChild(node, nodeMacro);
     } else {
@@ -107,7 +107,7 @@ public class QueriesUtil {
       }
     }
     String propertyName = QueriesUtil.getEditedPropertyName(cell);
-    SNode propertyMacro = SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", propertyName), "jetbrains.mps.lang.generator.structure.PropertyMacro");
+    SNode propertyMacro = SNodeFactoryOperations.setNewChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", propertyName), "jetbrains.mps.lang.generator.structure.PropertyMacro");
     return propertyMacro;
   }
 
@@ -120,7 +120,7 @@ public class QueriesUtil {
         QueriesUtil.createTemplateFragment(referentNode);
       }
     }
-    SNode referenceMacro = SLinkOperations.setNewChild(referentNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", linkRole), "jetbrains.mps.lang.generator.structure.ReferenceMacro");
+    SNode referenceMacro = SNodeFactoryOperations.setNewChild(referentNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceMacro", linkRole), "jetbrains.mps.lang.generator.structure.ReferenceMacro");
     return referenceMacro;
   }
 
@@ -134,7 +134,7 @@ public class QueriesUtil {
   }
 
   public static void createTemplateFragment(final SNode node) {
-    SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), "jetbrains.mps.lang.generator.structure.TemplateFragment");
+    SNodeFactoryOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), "jetbrains.mps.lang.generator.structure.TemplateFragment");
     // remove subordinate template fragments 
     Iterable<SNode> children = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

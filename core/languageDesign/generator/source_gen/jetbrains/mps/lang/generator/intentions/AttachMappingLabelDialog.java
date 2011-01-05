@@ -21,6 +21,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.awt.Insets;
 
 public class AttachMappingLabelDialog extends BaseDialog {
@@ -98,7 +99,7 @@ public class AttachMappingLabelDialog extends BaseDialog {
           return;
         }
         // create new MAP_SRC macro 
-        SNode newMacro = SLinkOperations.addNewChild(AttachMappingLabelDialog.this.myTemplateNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro");
+        SNode newMacro = SNodeFactoryOperations.addNewChild(AttachMappingLabelDialog.this.myTemplateNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro");
         SLinkOperations.setTarget(newMacro, "mappingLabel", mappingLabel, false);
       }
     });
