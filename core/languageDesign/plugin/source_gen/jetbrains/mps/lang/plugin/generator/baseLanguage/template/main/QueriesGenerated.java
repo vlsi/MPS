@@ -605,6 +605,10 @@ public class QueriesGenerated {
     return PluginNameUtils.getPluginInitializerName(PluginNameUtils.getOriginalModule(_context));
   }
 
+  public static Object propertyMacro_GetPropertyValue_7792877032404025380(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false));
+  }
+
   public static Object referenceMacro_GetReferent_1227015434861(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConstructorParameterParameter");
   }
@@ -817,10 +821,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_3005430634737954743(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByMappingLabel("projPluginConstructor");
-  }
-
-  public static Object referenceMacro_GetReferent_7792877032403716221(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "map_ConstructorParameterField");
   }
 
   public static boolean ifMacro_Condition_1213878132458(final IOperationContext operationContext, final IfMacroContext _context) {
