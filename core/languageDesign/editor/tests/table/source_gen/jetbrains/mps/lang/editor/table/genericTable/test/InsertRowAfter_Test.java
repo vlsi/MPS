@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class InsertRowAfter_Test extends BaseTransformationTest {
   @Test
   public void test_InsertRowAfter() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
+    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.InsertRowAfter_Test$TestBody", "testMethod", false);
   }
 

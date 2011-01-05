@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class InsertColumnAfter_Test extends BaseTransformationTest {
   @Test
   public void test_InsertColumnAfter() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
+    this.initTest("${mps_home}/core/languageDesign/plugin/plugin.mpr", "r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)");
     this.runTest("jetbrains.mps.lang.editor.table.genericTable.test.InsertColumnAfter_Test$TestBody", "testMethod", false);
   }
 
