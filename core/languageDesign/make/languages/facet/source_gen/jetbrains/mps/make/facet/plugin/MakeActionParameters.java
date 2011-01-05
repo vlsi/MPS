@@ -283,6 +283,8 @@ __switch__:
     Iterable<IModule> modulesSeq = ((Iterable<IModule>) this.modules);
     if (Sequence.fromIterable(modulesSeq).count() == 1) {
       return Sequence.fromIterable(modulesSeq).first();
+    } else if (Sequence.fromIterable(modulesSeq).count() > 1) {
+      return null;
     }
     return this.cmodule;
   }
@@ -291,6 +293,8 @@ __switch__:
     Iterable<SModelDescriptor> modelsSeq = ((Iterable<SModelDescriptor>) this.models);
     if (Sequence.fromIterable(modelsSeq).count() == 1) {
       return Sequence.fromIterable(modelsSeq).first();
+    } else if (Sequence.fromIterable(modelsSeq).count() > 1) {
+      return null;
     }
     return this.cmodel;
   }
