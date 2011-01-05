@@ -20,12 +20,13 @@
   </dependency>
   <dependency className="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" file="Facet_ApplicationPlugin.java">
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.GlobalMake_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Build_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.RebuildSelectedModules_Action" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.ToolbarMake_ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.Make_ActionGroup" />
@@ -41,7 +42,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode dependClassName="jetbrains.mps.make.facet.plugin.RebuildProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.make.facet.plugin.ToolbarMake_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>

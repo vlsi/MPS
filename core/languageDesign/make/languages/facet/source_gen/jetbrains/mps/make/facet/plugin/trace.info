@@ -19,9 +19,9 @@
   <unitInfo fileName="GResource.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.GResource" />
   <unitInfo fileName="RebuildSelectedModules_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModules_Action" />
   <unitInfo fileName="MakeSelectedModels_Action.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action" />
-  <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
   <unitInfo fileName="RebuildSelectedModels_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.RebuildSelectedModels_Action" />
   <unitInfo fileName="MakeSelectedModules_Action.java" startLine="17" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action" />
+  <unitInfo fileName="Facet_ApplicationPlugin.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Facet_ApplicationPlugin" />
   <unitInfo fileName="MakeSelection_Action.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.MakeSelection_Action" />
   <unitInfo fileName="Make_Facet.java" startLine="17" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.Make_Facet" />
   <unitInfo fileName="TextGen_Facet.java" startLine="29" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.make.facet.plugin.TextGen_Facet" />

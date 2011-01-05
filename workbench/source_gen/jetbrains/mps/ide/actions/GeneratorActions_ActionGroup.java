@@ -12,6 +12,8 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GeneratorActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup";
   public static final String LABEL_ID_generatorNew = ID + "generatorNew";
+  public static final String LABEL_ID_make = ID + "make";
+  public static final String LABEL_ID_generate = ID + "generate";
   public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_scripts = ID + "scripts";
 
@@ -26,8 +28,18 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         GeneratorActions_ActionGroup.this.addAction(action);
       }
-      GeneratorActions_ActionGroup.this.addParameterizedAction(new GenerateTemplateQueries_Action(true), PluginId.getId("jetbrains.mps.ide"), true);
-      GeneratorActions_ActionGroup.this.addParameterizedAction(new GenerateTemplateQueries_Action(false), PluginId.getId("jetbrains.mps.ide"), false);
+      {
+        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_make);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        GeneratorActions_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(GeneratorActions_ActionGroup.LABEL_ID_generate);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        GeneratorActions_ActionGroup.this.addAction(action);
+      }
       GeneratorActions_ActionGroup.this.addSeparator();
       GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action");
       GeneratorActions_ActionGroup.this.addSeparator();

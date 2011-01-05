@@ -1999,7 +1999,6 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.ide.actions.CheckModule_Action" />
     <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GenerateTemplateQueries_Action" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
