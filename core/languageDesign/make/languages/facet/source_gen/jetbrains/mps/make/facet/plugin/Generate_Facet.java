@@ -502,7 +502,9 @@ public class Generate_Facet implements IFacet {
           Iterable<IResource> _output_fi61u2_a0e = null;
           switch (0) {
             case 0:
-              pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
+              if (!(pool.parameters(new ITarget.Name("configure"), Generate_Facet.Target_fi61u2_c.Variables.class).saveTransient())) {
+                pool.parameters(new ITarget.Name("checkParameters"), Generate_Facet.Target_fi61u2_a.Variables.class).project().getComponent(TransientModelsComponent.class).removeAllTransient();
+              }
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0e);
           }

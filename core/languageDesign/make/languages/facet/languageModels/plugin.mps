@@ -1401,26 +1401,40 @@
       <node role="job" roleId="vvvw.2360002718792633290" type="q9ra.JobDeclaration" typeId="q9ra.505095865854384109" id="7831273901269501180">
         <node role="job" roleId="q9ra.505095865854384110" type="q9ra.JobDefinition" typeId="q9ra.2360002718792625579" id="7831273901269501181">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7831273901269501182">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7831273901269527515">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7831273901269530265">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7831273901269527523">
-                  <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersComponentExpression" typeId="vvvw.3344436107830227889" id="7831273901269527516">
-                    <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="7831273901269527517">
-                      <link role="target" roleId="vvvw.3344436107830227902" targetNodeId="2340850238541827739" resolveInfo="checkParameters" />
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6414782719047917414">
+              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6414782719047917415">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7831273901269527515">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7831273901269530265">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7831273901269527523">
+                      <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersComponentExpression" typeId="vvvw.3344436107830227889" id="7831273901269527516">
+                        <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="7831273901269527517">
+                          <link role="target" roleId="vvvw.3344436107830227902" targetNodeId="2340850238541827739" resolveInfo="checkParameters" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="7831273901269527518">
+                          <link role="component" roleId="cx9y.1239576542472" targetNodeId="2340850238541827745" resolveInfo="project" />
+                        </node>
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7831273901269530262">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c9ty.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="7831273901269530264">
+                          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="qspx.~TransientModelsComponent" resolveInfo="TransientModelsComponent" />
+                        </node>
+                      </node>
                     </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="7831273901269527518">
-                      <link role="component" roleId="cx9y.1239576542472" targetNodeId="2340850238541827745" resolveInfo="project" />
-                    </node>
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7831273901269530262">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="c9ty.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="7831273901269530264">
-                      <link role="classifier" roleId="tpee.1116615189566" targetNodeId="qspx.~TransientModelsComponent" resolveInfo="TransientModelsComponent" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7831273901269530269">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qspx.~TransientModelsComponent%dremoveAllTransient()%cvoid" resolveInfo="removeAllTransient" />
                     </node>
                   </node>
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7831273901269530269">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qspx.~TransientModelsComponent%dremoveAllTransient()%cvoid" resolveInfo="removeAllTransient" />
+              </node>
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6414782719047917418">
+                <node role="expression" roleId="tpee.1081516765348" type="vvvw.ForeignParametersComponentExpression" typeId="vvvw.3344436107830227889" id="6414782719047917420">
+                  <node role="operand" roleId="tpee.1197027771414" type="vvvw.ForeignParametersExpression" typeId="vvvw.3344436107830227888" id="6414782719047917421">
+                    <link role="target" roleId="vvvw.3344436107830227902" targetNodeId="4853833103870841535" resolveInfo="configure" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="cx9y.NamedTupleComponentAccessOperation" typeId="cx9y.1239576519914" id="6414782719047917422">
+                    <link role="component" roleId="cx9y.1239576542472" targetNodeId="3868725017587287660" resolveInfo="saveTransient" />
+                  </node>
                 </node>
               </node>
             </node>
