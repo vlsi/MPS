@@ -18,7 +18,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.baseLanguage.typesystem.ResolveUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseMethodDeclaration_Behavior {
