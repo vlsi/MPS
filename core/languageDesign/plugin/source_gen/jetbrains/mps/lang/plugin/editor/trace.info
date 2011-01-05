@@ -31,7 +31,7 @@
   <unitInfo fileName="ToolInstanceExpression_Editor.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolInstanceExpression_Editor" />
   <unitInfo fileName="ActionParameter_Hint.java" startLine="157" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0f" />
   <unitInfo fileName="ActionParameter_Hint.java" startLine="175" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint$QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0g" />
-  <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="106" startPosition="83" endLine="124" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor$1" />
+  <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="113" startPosition="83" endLine="131" endPosition="5" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor$1" />
   <unitInfo fileName="PersistenPropertyDeclaration_Actions.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PersistenPropertyDeclaration_Actions$PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM" />
   <unitInfo fileName="ActionParameter_NameCellComponent.java" startLine="55" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent$ActionParameter_name_postfixCellMenu_a0a" />
   <unitInfo fileName="ProjectExpression_Editor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ProjectExpression_Editor" />
@@ -65,7 +65,7 @@
   <unitInfo fileName="RunNodeConfigCreator_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunNodeConfigCreator_Editor$_Inline_o2so93_a3a0a" />
   <unitInfo fileName="RunModuleConfigCreator_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunModuleConfigCreator_Editor$_Inline_2e5ul8_a3a0a" />
   <unitInfo fileName="RunModelConfigCreator_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunModelConfigCreator_Editor$_Inline_ptxxhc_a3a0a" />
-  <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="182" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor$_Inline_ecw4ny_a0a0a" />
+  <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="189" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor$_Inline_ecw4ny_a0a" />
   <unitInfo fileName="DebuggableNodeItem_Editor.java" startLine="200" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.DebuggableNodeItem_Editor$_Inline_dx7uys_a0a0" />
   <unitInfo fileName="TabbedEditorDeclaration_Editor.java" startLine="234" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.TabbedEditorDeclaration_Editor$_Inline_r7bgrp_a1a1b0" />
   <unitInfo fileName="RunConfigurationDeclaration_Editor.java" startLine="286" startPosition="0" endLine="318" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationDeclaration_Editor$_Inline_l50atq_a1a0" />
@@ -181,8 +181,8 @@
   <unitInfo fileName="KeyMapKeystroke_Editor.java" startLine="28" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.KeyMapKeystroke_Editor" />
   <unitInfo fileName="ActionInstance_Editor.java" startLine="33" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionInstance_Editor" />
   <unitInfo fileName="ActionParameter_Hint.java" startLine="33" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionParameter_Hint" />
-  <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="35" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor" />
   <unitInfo fileName="GeneratePlugins_Editor.java" startLine="22" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.GeneratePlugins_Editor" />
+  <unitInfo fileName="ParameterizedShortcutChange_Editor.java" startLine="35" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ParameterizedShortcutChange_Editor" />
   <unitInfo fileName="ToolTab_Editor.java" startLine="19" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ToolTab_Editor" />
   <unitInfo fileName="UniversalRunConfigCreator_Editor.java" startLine="22" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.UniversalRunConfigCreator_Editor" />
   <unitInfo fileName="RunNodeConfigCreator_Editor.java" startLine="25" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunNodeConfigCreator_Editor" />
@@ -449,16 +449,16 @@
     </scopeInfo>
   </root>
   <root nodeId="6193305307616734269">
-    <nodeInfo nodeId="1821622352985043384" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="107" startPosition="31" endLine="108" endPosition="51" />
-    <nodeInfo nodeId="1821622352985043397" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="109" startPosition="160" endLine="110" endPosition="70" />
-    <nodeInfo nodeId="6069796500369449136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="111" startPosition="163" endLine="112" endPosition="32" />
-    <nodeInfo nodeId="1821622352985043419" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="114" startPosition="9" endLine="115" endPosition="34" />
-    <nodeInfo nodeId="6069796500369449112" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="110" startPosition="70" endLine="113" endPosition="11" />
-    <nodeInfo nodeId="1821622352985043389" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="108" startPosition="51" endLine="114" endPosition="9" />
-    <scopeInfo nodeId="6069796500369449113" fileName="ParameterizedShortcutChange_Editor.java" startLine="111" startPosition="163" endLine="112" endPosition="32" />
-    <scopeInfo nodeId="1821622352985043396" fileName="ParameterizedShortcutChange_Editor.java" startLine="109" startPosition="160" endLine="113" endPosition="11" />
-    <scopeInfo nodeId="1821622352985043389" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="108" startPosition="51" endLine="114" endPosition="9" />
-    <scopeInfo nodeId="1821622352985043383" fileName="ParameterizedShortcutChange_Editor.java" startLine="107" startPosition="31" endLine="115" endPosition="34">
+    <nodeInfo nodeId="1821622352985043384" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="114" startPosition="31" endLine="115" endPosition="51" />
+    <nodeInfo nodeId="1821622352985043397" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="116" startPosition="160" endLine="117" endPosition="70" />
+    <nodeInfo nodeId="6069796500369449136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="118" startPosition="163" endLine="119" endPosition="32" />
+    <nodeInfo nodeId="1821622352985043419" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="121" startPosition="9" endLine="122" endPosition="34" />
+    <nodeInfo nodeId="6069796500369449112" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="117" startPosition="70" endLine="120" endPosition="11" />
+    <nodeInfo nodeId="1821622352985043389" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="115" startPosition="51" endLine="121" endPosition="9" />
+    <scopeInfo nodeId="6069796500369449113" fileName="ParameterizedShortcutChange_Editor.java" startLine="118" startPosition="163" endLine="119" endPosition="32" />
+    <scopeInfo nodeId="1821622352985043396" fileName="ParameterizedShortcutChange_Editor.java" startLine="116" startPosition="160" endLine="120" endPosition="11" />
+    <scopeInfo nodeId="1821622352985043389" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="ParameterizedShortcutChange_Editor.java" startLine="115" startPosition="51" endLine="121" endPosition="9" />
+    <scopeInfo nodeId="1821622352985043383" fileName="ParameterizedShortcutChange_Editor.java" startLine="114" startPosition="31" endLine="122" endPosition="34">
       <varInfo nodeId="1821622352985043385" varName="params" />
     </scopeInfo>
   </root>
