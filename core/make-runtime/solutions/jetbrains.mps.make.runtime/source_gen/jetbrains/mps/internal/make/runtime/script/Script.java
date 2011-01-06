@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.script.IJob;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Collections;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -122,7 +123,7 @@ public class Script implements IScript {
       return results;
     }
     mons.runJobWithMonitor(new _FunctionTypes._void_P1_E0<IJobMonitor>() {
-      public void invoke(IJobMonitor monit) {
+      public void invoke(final IJobMonitor monit) {
         String scriptName = "Script";
         int work = Sequence.fromIterable(toExecute).foldLeft(0, new ILeftCombinator<ITarget, Integer>() {
           public Integer combine(Integer s, ITarget it) {
@@ -162,8 +163,14 @@ public class Script implements IScript {
             10
           ));
           IJob job = trg.createJob();
+
           // TODO: catch possible errors 
-          IResult jr = job.execute(input, monit, pool);
+          IResult jr = job.execute(Sequence.fromIterable(input).where(new IWhereFilter<IResource>() {
+            public boolean accept(IResource it) {
+              return !(monit.stopRequested());
+            }
+          }), monit, pool);
+
           if (!(trg.producesOutput())) {
             // ignore the output 
             jr = new Script.SubsOutputResult(jr, (trg.requiresInput() ?
@@ -172,7 +179,7 @@ public class Script implements IScript {
             ));
           }
           results.addResult(trg.getName(), jr);
-          if (!(jr.isSucessful()) || monit.pleaseStop()) {
+          if (!(jr.isSucessful()) || monit.stopRequested()) {
             LOG.debug((jr.isSucessful() ?
               "Stop requested" :
               "Execution failed"
@@ -180,7 +187,6 @@ public class Script implements IScript {
             return;
           }
           monit.currentProgress().finishWork(trg.getName().toString());
-          // <node> 
         }
         monit.currentProgress().finishWork(scriptName);
       }

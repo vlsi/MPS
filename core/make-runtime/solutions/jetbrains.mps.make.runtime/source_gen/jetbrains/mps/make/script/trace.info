@@ -103,26 +103,26 @@
     <unitInfo nodeId="6168415856807657227" fileName="IScript.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.script.IScript" />
   </root>
   <root nodeId="6168415856807657250">
-    <nodeInfo nodeId="6168415856807657251" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pleaseStop#()Z" fileName="IJobMonitor.java" startLine="6" startPosition="30" endLine="7" endPosition="30" />
-    <nodeInfo nodeId="7797884084018629453" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="IJobMonitor.java" startLine="7" startPosition="30" endLine="8" endPosition="37" />
+    <nodeInfo nodeId="6168415856807657251" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopRequested#()Z" fileName="IJobMonitor.java" startLine="6" startPosition="30" endLine="7" endPosition="33" />
+    <nodeInfo nodeId="7797884084018629453" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="IJobMonitor.java" startLine="7" startPosition="33" endLine="8" endPosition="37" />
     <nodeInfo nodeId="3668957831723303232" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" fileName="IJobMonitor.java" startLine="8" startPosition="37" endLine="9" endPosition="45" />
     <nodeInfo nodeId="9000373783400696056" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="pstub" fileName="IJobMonitor.java" startLine="10" startPosition="51" endLine="11" endPosition="28" />
     <nodeInfo nodeId="9000373783400696059" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="IJobMonitor.java" startLine="13" startPosition="34" endLine="14" endPosition="25" />
     <nodeInfo nodeId="9000373783400696065" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IJobMonitor.java" startLine="17" startPosition="40" endLine="18" endPosition="19" />
-    <nodeInfo nodeId="5646063728432307518" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IJobMonitor.java" startLine="24" startPosition="33" endLine="25" endPosition="19" />
+    <nodeInfo nodeId="5646063728432307518" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IJobMonitor.java" startLine="24" startPosition="36" endLine="25" endPosition="19" />
     <nodeInfo nodeId="5646063728432307503" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#(Ljetbrains/mps/make/script/IProgress;)V" fileName="IJobMonitor.java" startLine="12" startPosition="0" endLine="15" endPosition="5" />
     <nodeInfo nodeId="3668957831723303243" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" fileName="IJobMonitor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <nodeInfo nodeId="5646063728432307508" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="IJobMonitor.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <nodeInfo nodeId="5646063728432307512" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pleaseStop#()Z" fileName="IJobMonitor.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="5646063728432307512" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopRequested#()Z" fileName="IJobMonitor.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="3668957831723303248" fileName="IJobMonitor.java" startLine="21" startPosition="48" endLine="21" endPosition="48" />
-    <scopeInfo nodeId="6168415856807657251" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pleaseStop#()Z" fileName="IJobMonitor.java" startLine="6" startPosition="30" endLine="7" endPosition="30" />
-    <scopeInfo nodeId="7797884084018629453" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="IJobMonitor.java" startLine="7" startPosition="30" endLine="8" endPosition="37" />
+    <scopeInfo nodeId="6168415856807657251" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopRequested#()Z" fileName="IJobMonitor.java" startLine="6" startPosition="30" endLine="7" endPosition="33" />
+    <scopeInfo nodeId="7797884084018629453" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="IJobMonitor.java" startLine="7" startPosition="33" endLine="8" endPosition="37" />
     <scopeInfo nodeId="3668957831723303232" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" fileName="IJobMonitor.java" startLine="8" startPosition="37" endLine="9" endPosition="45">
       <varInfo nodeId="3668957831723303236" varName="fdbk" />
     </scopeInfo>
     <scopeInfo nodeId="5646063728432307506" fileName="IJobMonitor.java" startLine="13" startPosition="34" endLine="14" endPosition="25" />
     <scopeInfo nodeId="5646063728432307511" fileName="IJobMonitor.java" startLine="17" startPosition="40" endLine="18" endPosition="19" />
-    <scopeInfo nodeId="5646063728432307515" fileName="IJobMonitor.java" startLine="24" startPosition="33" endLine="25" endPosition="19" />
+    <scopeInfo nodeId="5646063728432307515" fileName="IJobMonitor.java" startLine="24" startPosition="36" endLine="25" endPosition="19" />
     <scopeInfo nodeId="5646063728432307503" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Stub#(Ljetbrains/mps/make/script/IProgress;)V" fileName="IJobMonitor.java" startLine="12" startPosition="0" endLine="15" endPosition="5">
       <varInfo nodeId="9000373783400696053" varName="pstub" />
     </scopeInfo>
@@ -130,7 +130,7 @@
       <varInfo nodeId="3668957831723303244" varName="fdbk" />
     </scopeInfo>
     <scopeInfo nodeId="5646063728432307508" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentProgress#()Ljetbrains/mps/make/script/IProgress;" fileName="IJobMonitor.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="5646063728432307512" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pleaseStop#()Z" fileName="IJobMonitor.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="5646063728432307512" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopRequested#()Z" fileName="IJobMonitor.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <unitInfo nodeId="5646063728432307501" fileName="IJobMonitor.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.make.script.IJobMonitor$Stub" />
     <unitInfo nodeId="6168415856807657250" fileName="IJobMonitor.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.make.script.IJobMonitor" />
   </root>

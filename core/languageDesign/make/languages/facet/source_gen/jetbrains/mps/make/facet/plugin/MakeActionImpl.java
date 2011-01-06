@@ -7,14 +7,14 @@ import jetbrains.mps.internal.make.runtime.script.ScriptBuilder;
 import jetbrains.mps.internal.make.runtime.script.UIQueryRelayStrategy;
 import jetbrains.mps.internal.make.runtime.backports.ProgressIndicatorProgressStrategy;
 import jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.facet.IFacet;
@@ -51,9 +51,13 @@ public class MakeActionImpl {
     final UIQueryRelayStrategy relayStrat = new UIQueryRelayStrategy();
     final ProgressIndicatorProgressStrategy progStrat = new ProgressIndicatorProgressStrategy();
     final LoggingFeedbackStrategy feedbackStrat = new LoggingFeedbackStrategy();
+    final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(null);
     final IJobMonitor jmon = new IJobMonitor() {
-      public boolean pleaseStop() {
-        return false;
+      public boolean stopRequested() {
+        return (progStrat.getProgressIndicator() != null ?
+          progStrat.getProgressIndicator().isCanceled() :
+          false
+        );
       }
 
       public IProgress currentProgress() {
@@ -69,7 +73,6 @@ public class MakeActionImpl {
         return relayStrat.relayQuery(query, MakeActionImpl.this.context);
       }
     };
-    final Wrappers._T<ProgressIndicator> pind = new Wrappers._T<ProgressIndicator>(null);
     final _FunctionTypes._return_P0_E0<? extends ProgressIndicator> pindGet = new _FunctionTypes._return_P0_E0<ProgressIndicator>() {
       public ProgressIndicator invoke() {
         return pind.value;
