@@ -20,7 +20,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.DropRootRuleContext;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.DropRootRule;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;

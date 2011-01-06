@@ -23,7 +23,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.BaseMappingRule;
 import jetbrains.mps.lang.generator.structure.MappingLabelDeclaration;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;

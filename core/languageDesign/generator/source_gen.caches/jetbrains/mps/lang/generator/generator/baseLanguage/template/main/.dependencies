@@ -3,7 +3,7 @@
   <dependency className="jetbrains.mps.lang.generator.generator.baseLanguage.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -13,7 +13,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="java.lang.Long" />
-    <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
@@ -44,6 +43,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="java.util.Comparator" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateFunctionMethodName" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />

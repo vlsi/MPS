@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.smodel.SModel;

@@ -28,7 +28,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;

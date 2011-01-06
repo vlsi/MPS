@@ -25,7 +25,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.CreateRootRule;
 import jetbrains.mps.lang.generator.structure.MappingLabelDeclaration;
 import jetbrains.mps.smodel.SNode;
@@ -45,12 +45,10 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
     this.ruleNode = ruleNode;
   }
 
-  @Override
   public SNodePointer getRuleNode() {
     return new SNodePointer(ruleNode);
   }
 
-  @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
     SNode conditionFunction = ruleNode.getChild(CreateRootRule.CONDITION_FUNCTION);
     if (conditionFunction == null) {
@@ -74,7 +72,6 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
     return false;
   }
 
-  @Override
   public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, TemplateProcessingFailureException, GenerationFailureException, DismissTopMappingRuleException {
     SNode templateNode = ruleNode.getReferent(CreateRootRule.TEMPLATE_NODE);
     if (templateNode != null) {
