@@ -15,8 +15,10 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.Comparator;
+import jetbrains.mps.workbench.actions.nodes.GoToRulesHelper;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.TabHelper;
@@ -229,7 +231,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public List<SNode> getNodes(SNode node) {
-      List<SNode> rules = AbstractConceptDeclaration_Behavior.call_findApplicableTypesystemRules_6409339300305625028(node, ConceptEditorHelper.getScope(Typesystem_Tab.this));
+      List<SNode> rules = (List<SNode>) GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration) SNodeOperations.getAdapter(node)), ConceptEditorHelper.getScope(Typesystem_Tab.this), false);
       return ListSequence.fromList(rules).sort(new Comparator<SNode>() {
         public int compare(SNode a, SNode b) {
           boolean aConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(a, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");
