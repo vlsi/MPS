@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps;
+package jetbrains.mps.packaged;
 
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
+import org.junit.Assert;
 import org.junit.Test;
 
 import javax.swing.Icon;
@@ -28,8 +30,6 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
-import static org.junit.Assert.*;
 
 /**
  * @author Evgeny Gerashchenko
@@ -59,46 +59,46 @@ public class PackagedLanguageTest {
         }
       });
     if (!result) {
-      fail();
+      Assert.fail();
     }
   }
 
   private void checkStructureModelLoaded() {
     final SModelDescriptor structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".structure"));
-    assertNotNull(structureModelDescriptor);
+    Assert.assertNotNull(structureModelDescriptor);
     final SModel structureModel = structureModelDescriptor.getSModel();
-    assertNotNull(structureModel);
-    assertEquals(1, structureModel.rootsCount());
+    Assert.assertNotNull(structureModel);
+    Assert.assertEquals(1, structureModel.rootsCount());
     final Iterable<SNode> roots = structureModel.roots();
     for (SNode root : roots) {
-      assertEquals(PACKAGED_CONCEPT, root.getProperty("name"));
+      Assert.assertEquals(PACKAGED_CONCEPT, root.getProperty("name"));
       final SNode propertyDeclaration = root.getChild("propertyDeclaration");
-      assertNotNull(propertyDeclaration);
-      assertEquals("someProperty", propertyDeclaration.getProperty("name"));
+      Assert.assertNotNull(propertyDeclaration);
+      Assert.assertEquals("someProperty", propertyDeclaration.getProperty("name"));
     }
   }
 
   private void checkEditorModelLoaded() {
     final SModelDescriptor editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".editor"));
-    assertNotNull(editorModelDescriptor);
+    Assert.assertNotNull(editorModelDescriptor);
     final SModel editorModel = editorModelDescriptor.getSModel();
-    assertNotNull(editorModel);
-    assertEquals(1, editorModel.rootsCount());
+    Assert.assertNotNull(editorModel);
+    Assert.assertEquals(1, editorModel.rootsCount());
   }
 
   private void checkIconsLoaded() {
     final SModelDescriptor sandboxModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("ProjectWithPackagedLanguage.sandbox.sandbox"));
     final SNode packagedConceptInstance = new SNode(sandboxModelDescriptor.getSModel(), PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
     final Icon icon = IconManager.getIconFor(packagedConceptInstance);
-    assertNotNull(icon);
-    assertEquals(16, icon.getIconHeight());
-    assertEquals(16, icon.getIconWidth());
+    Assert.assertNotNull(icon);
+    Assert.assertEquals(16, icon.getIconHeight());
+    Assert.assertEquals(16, icon.getIconWidth());
     final BufferedImage buf = new BufferedImage(16, 16, BufferedImage.TYPE_INT_RGB);
     icon.paintIcon(new Component() {}, buf.getGraphics(), 0, 0);
 
     for (int i = 0; i < 16; i++) {
       final Color color = new Color(buf.getRGB(i, i));
-      assertTrue(i % 2 == 0 ? Color.BLACK.equals(color) : Color.WHITE.equals(color));
+      Assert.assertTrue(i % 2 == 0 ? Color.BLACK.equals(color) : Color.WHITE.equals(color));
     }
   }
 }
