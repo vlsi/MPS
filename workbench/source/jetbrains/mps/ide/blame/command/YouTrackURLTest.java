@@ -26,7 +26,19 @@ public class YouTrackURLTest extends TestCase {
   public void testLogin() throws IOException {
     HttpClient client = new HttpClient();
     Poster.setTimeouts(client);
-    Response result = Command.login(client, Query.ANONYMOUS);
+    Response result = null;
+    for (int i=0; i<3; ++i) {
+      result = Command.login(client, Query.ANONYMOUS);
+      if (!result.isSuccess()) {
+        try {
+          Thread.sleep(3000);
+        }
+        catch (InterruptedException ignore) {}
+      }
+      else {
+        break;
+      }
+    }
     assertTrue("Can't login to YouTrack as anonymous", result.isSuccess());
   }
 }
