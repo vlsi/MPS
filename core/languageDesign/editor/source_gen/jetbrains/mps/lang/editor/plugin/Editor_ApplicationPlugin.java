@@ -25,19 +25,34 @@ public class Editor_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new CopyThisDown_Action());
     addAction(new DeleteLine_Action());
+    addAction(new End_Action());
     addAction(new ExtractComponent_Action());
+    addAction(new Home_Action());
+    addAction(new InsertBefore_Action());
+    addAction(new Insert_Action());
+    addAction(new LocalEnd_Action());
+    addAction(new LocalHome_Action());
+    addAction(new RootEnd_Action());
+    addAction(new RootHome_Action());
+    addAction(new SelectDown_Action());
+    addAction(new SelectLocalEnd_Action());
+    addAction(new SelectLocalHome_Action());
+    addAction(new SelectUp_Action());
     // groups 
+    addGroup(new EditMenuActions_ActionGroup());
     addGroup(new EditorActions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(EditorActions_ActionGroup.ID, Edit_ActionGroup.ID, Edit_ActionGroup.LABEL_ID_custom);
-    insertGroupIntoAnother(EditorActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(EditMenuActions_ActionGroup.ID, Edit_ActionGroup.ID, Edit_ActionGroup.LABEL_ID_custom);
+    insertGroupIntoAnother(EditMenuActions_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
+    insertGroupIntoAnother(EditorActions_ActionGroup.ID, "EditorActions", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
     return res;
   }
 }

@@ -12,18 +12,8 @@ import java.util.ArrayList;
 public class Mac_KeymapChanges extends BaseKeymapChanges {
   public Mac_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.ide.actions.End_Action", getShortcut(" END"), getShortcut("meta RIGHT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GenerationIntentions_Action", getShortcut("ctrl N"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.Home_Action", getShortcut(" HOME"), getShortcut("meta LEFT"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.InsertBefore_Action", getShortcut("shift ENTER"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.Insert_Action", getShortcut(" ENTER"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.LocalEnd_Action", getShortcut("alt RIGHT"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.LocalHome_Action", getShortcut("alt LEFT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("ctrl N"), getShortcut("ctrl ENTER"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.SelectDown_Action", getShortcut("ctrl DOWN"), getShortcut("ctrl shift W"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.SelectLocalEnd_Action", getShortcut("alt shift RIGHT"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.SelectLocalHome_Action", getShortcut("alt shift LEFT"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.SelectUp_Action", getShortcut("ctrl UP"), getShortcut("ctrl W"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", getShortcut("ctrl H"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowNodeInfo_Action", getShortcut("ctrl Q"));
@@ -31,7 +21,7 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl 0")));
     addComplexShortcut("jetbrains.mps.ide.actions.GoToDevkit_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift E")));
     // complex 
-    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Mac_KeymapChanges.GoToBookmark_ShortcutChange_tqv_p());
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Mac_KeymapChanges.GoToBookmark_ShortcutChange_tqv_h());
   }
 
   public String getScheme() {
@@ -42,8 +32,8 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
 
-  public class GoToBookmark_ShortcutChange_tqv_p extends BaseKeymapChanges.ComplexShortcut {
-    public GoToBookmark_ShortcutChange_tqv_p() {
+  public class GoToBookmark_ShortcutChange_tqv_h extends BaseKeymapChanges.ComplexShortcut {
+    public GoToBookmark_ShortcutChange_tqv_h() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
