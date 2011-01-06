@@ -18,7 +18,9 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.CloneModel_Action", getShortcut("shift F5"));
     addSimpleShortcut("jetbrains.mps.ide.actions.CloneRoot_Action", getShortcut("shift F5"));
     addSimpleShortcut("jetbrains.mps.ide.actions.CollapseAll_Action", getShortcut("ctrl shift SUBTRACT"), getShortcut("ctrl shift MINUS"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.CollapseAll_Action", getShortcut("ctrl shift SUBTRACT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Collapse_Action", getShortcut("ctrl SUBTRACT"), getShortcut("ctrl MINUS"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.Collapse_Action", getShortcut("ctrl SUBTRACT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.CopyNodeReference_Action", getShortcut("ctrl shift C"));
     addSimpleShortcut("jetbrains.mps.ide.actions.CopyNode_Action", getShortcut("ctrl C"));
     addSimpleShortcut("jetbrains.mps.ide.actions.CutNode_Action", getShortcut("ctrl X"));
@@ -29,9 +31,12 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.DeletePropertyAction_Action", getShortcut(" DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.DeleteReferenceAction_Action", getShortcut(" DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.DevkitProperties_Action", getShortcut("alt ENTER"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.End_Action", getShortcut(" END"));
     addSimpleShortcut("jetbrains.mps.ide.actions.EvaluateExpression_Action", getShortcut("alt F8"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ExpandAll_Action", getShortcut("ctrl shift ADD"), getShortcut("ctrl shift EQUALS"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.ExpandAll_Action", getShortcut("ctrl shift ADD"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Expand_Action", getShortcut("ctrl ADD"), getShortcut("ctrl EQUALS"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.Expand_Action", getShortcut("ctrl ADD"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", getShortcut("ctrl F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindNext_Action", getShortcut(" F3"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindPrevious_Action", getShortcut("shift F3"));
@@ -48,12 +53,18 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightCellDependencies_Action", getShortcut("ctrl alt shift F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightInstances_Action", getShortcut("ctrl shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.HighlightUsages_Action", getShortcut("ctrl shift F7"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.Home_Action", getShortcut(" HOME"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.InsertBefore_Action", getShortcut(" INSERT"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.Insert_Action", getShortcut(" ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.LanguageProperties_Action", getShortcut("alt ENTER"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.LocalEnd_Action", getShortcut("ctrl RIGHT"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.LocalHome_Action", getShortcut("ctrl LEFT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.MPSProjectPaths_Action", getShortcut("alt ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ModelProperties_Action", getShortcut("alt ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.MoveFileOrDirectory_Action", getShortcut(" F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.PasteNode_Action", getShortcut("ctrl V"));
     addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("alt INSERT"), getShortcut("ctrl alt INSERT"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("alt INSERT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RemoveFromFavorites_Action", getShortcut("ctrl DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RenameFileOrDirectory_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RenameLanguage_Action", getShortcut("shift F6"));
@@ -61,6 +72,14 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.RenamePackage_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RenameSolution_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Resume_Action", getShortcut(" F9"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.RootEnd_Action", getShortcut("ctrl END"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.RootHome_Action", getShortcut("ctrl HOME"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.SelectDown_Action", getShortcut("ctrl DOWN"), getShortcut("ctrl shift W"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.SelectDown_Action", getShortcut("ctrl DOWN"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.SelectLocalEnd_Action", getShortcut("ctrl shift RIGHT"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.SelectLocalHome_Action", getShortcut("ctrl shift LEFT"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.SelectUp_Action", getShortcut("ctrl UP"), getShortcut("ctrl W"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.SelectUp_Action", getShortcut("ctrl UP"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action", getShortcut(" F11"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action", getShortcut("shift F11"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", getShortcut("ctrl H"));
@@ -92,8 +111,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addComplexShortcut("jetbrains.mps.ide.actions.GoToSolution_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt shift S")));
     addComplexShortcut("jetbrains.mps.ide.actions.SelectInActionAdapter_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("alt F1")));
     // complex 
-    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_ad());
-    addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_bd());
+    addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Default_KeymapChanges.GoToBookmark_ShortcutChange_qjewi8_td());
+    addComplexShortcut("jetbrains.mps.ide.actions.SetBookmark_Action", new Default_KeymapChanges.SetBookmark_ShortcutChange_qjewi8_ud());
   }
 
   public String getScheme() {
@@ -104,8 +123,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
 
-  public class GoToBookmark_ShortcutChange_qjewi8_ad extends BaseKeymapChanges.ComplexShortcut {
-    public GoToBookmark_ShortcutChange_qjewi8_ad() {
+  public class GoToBookmark_ShortcutChange_qjewi8_td extends BaseKeymapChanges.ComplexShortcut {
+    public GoToBookmark_ShortcutChange_qjewi8_td() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
@@ -115,8 +134,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     }
   }
 
-  public class SetBookmark_ShortcutChange_qjewi8_bd extends BaseKeymapChanges.ComplexShortcut {
-    public SetBookmark_ShortcutChange_qjewi8_bd() {
+  public class SetBookmark_ShortcutChange_qjewi8_ud extends BaseKeymapChanges.ComplexShortcut {
+    public SetBookmark_ShortcutChange_qjewi8_ud() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {

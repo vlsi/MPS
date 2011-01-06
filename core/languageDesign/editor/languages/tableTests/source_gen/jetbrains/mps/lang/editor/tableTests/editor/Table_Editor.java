@@ -74,7 +74,7 @@ public class Table_Editor extends DefaultNodeEditor {
 
   private EditorCell createTable_3p37vj_c0(EditorContext editorContext, SNode node) {
     TableModelCreator creator = new TableModelCreator() {
-      public TableModel getTable(final SNode node, final EditorContext editorContext) {
+      public TableModel getTable(final SNode node, EditorContext editorContext) {
         return new AbstractTableModel() {
           public SNode getValueAt(int row, int column) {
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).getElement(row), "cells", true)).getElement(column);

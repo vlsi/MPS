@@ -27,6 +27,10 @@
   <import index="n1y2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="yj88" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
+  <import index="8b2u" modelUID="f:java_stub#jetbrains.mps.ide.findusages.view(jetbrains.mps.ide.findusages.view@java_stub)" version="-1" />
+  <import index="t7tp" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
+  <import index="gpr6" modelUID="f:java_stub#jetbrains.mps.baseLanguage.findUsages(jetbrains.mps.baseLanguage.findUsages@java_stub)" version="-1" />
+  <import index="yc9w" modelUID="f:java_stub#jetbrains.mps.ide.findusages.findalgorithm.finders(jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)" version="-1" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />

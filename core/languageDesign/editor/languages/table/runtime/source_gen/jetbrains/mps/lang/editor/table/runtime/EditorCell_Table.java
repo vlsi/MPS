@@ -13,12 +13,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import java.awt.Color;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
@@ -73,8 +76,29 @@ public class EditorCell_Table extends EditorCell_Collection {
               myModel.createElement(finalRow, finalColumn);
             }
           });
+          editorCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(getEditorContext()) {
+            protected List<INodeSubstituteAction> createActions() {
+              List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+              ListSequence.fromList(result).addElement(new AbstractNodeSubstituteAction(null, getSNode()) {
+                protected SNode doSubstitute(String p0) {
+                  myModel.createElement(finalRow, finalColumn);
+                  return null;
+                }
+
+                @Override
+                protected String getMatchingText(String string, boolean b1, boolean b2) {
+                  return "create new cell node";
+                }
+
+                @Override
+                protected String getDescriptionText(String string, boolean b) {
+                  return super.getDescriptionText(string, b);
+                }
+              });
+              return result;
+            }
+          });
         }
-        editorCell.setSubstituteInfo(myModel.getSubstituteInfo(row, column));
         if (editorCell.getCellId() == null) {
           editorCell.setCellId(rowId + "_column_" + column);
         }

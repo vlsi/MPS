@@ -14,18 +14,9 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.LocalHome_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.LocalEnd_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.SelectLocalHome_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.SelectLocalEnd_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.RootHome_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.RootEnd_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.Home_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.End_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.SelectUp_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.SelectDown_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.Insert_Action");
-      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.InsertBefore_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.CopyThisDown_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.DeleteLine_Action");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.ExtractComponent_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

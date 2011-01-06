@@ -17,6 +17,7 @@
   <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="3q6c" modelUID="f:java_stub#com.intellij.openapi.ui(com.intellij.openapi.ui@java_stub)" version="-1" />
   <import index="1ah9" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
+  <import index="n3eq" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="x6yx" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="olbw" modelUID="f:java_stub#org.jdesktop.beansbinding(org.jdesktop.beansbinding@java_stub)" version="-1" />
   <import index="jt7v" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -60,6 +61,7 @@
   <import index="h0au" modelUID="f:java_stub#jetbrains.mps.lang.generator.structure(jetbrains.mps.lang.generator.structure@java_stub)" version="-1" />
   <import index="b2e1" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
   <import index="l400" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
+  <import index="x0xe" modelUID="f:java_stub#jetbrains.mps.refactoring(jetbrains.mps.refactoring@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="pmg0" modelUID="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" version="0" implicit="yes" />

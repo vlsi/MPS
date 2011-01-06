@@ -7,12 +7,12 @@
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
-  <import index="tpc0" modelUID="r:00000000-0000-4000-0000-011c8959029c(jetbrains.mps.lang.editor.plugin)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="2qyu" modelUID="r:ed658292-9fbd-4bc1-94c2-435048f00105(jetbrains.mps.lang.editor.tableTests.structure)" version="-1" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
+  <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <roots>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6170050146384276078">
       <property name="name" nameId="tpck.1169194664001" value="Create" />
@@ -835,7 +835,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6170050146384276346">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162723">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162724">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -997,7 +997,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6170050146384276404">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162721">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162722">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -1232,7 +1232,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6341395909949440769">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162727">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162728">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -1388,7 +1388,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6341395909949441287">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162729">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162730">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -1846,7 +1846,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="1211716198725196126">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162725">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162726">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -2010,7 +2010,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5171926735592482848">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162719">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162720">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -2174,7 +2174,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5171926735592482916">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162717">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162718">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>

@@ -72,7 +72,7 @@ public class HierarchycalTable_Editor extends DefaultNodeEditor {
 
   private EditorCell createTable_sl01pn_c0(EditorContext editorContext, SNode node) {
     TableModelCreator creator = new TableModelCreator() {
-      public TableModel getTable(final SNode node, final EditorContext editorContext) {
+      public TableModel getTable(final SNode node, EditorContext editorContext) {
         return new HierarchycalTableModelWithHeader(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Table", "rows"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Row", "cells"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "headers"));
       }
     };

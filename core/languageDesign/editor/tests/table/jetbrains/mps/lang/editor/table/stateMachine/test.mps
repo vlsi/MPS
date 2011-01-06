@@ -6,13 +6,13 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
-  <import index="tpc0" modelUID="r:00000000-0000-4000-0000-011c8959029c(jetbrains.mps.lang.editor.plugin)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" implicit="yes" />
   <import index="c1yb" modelUID="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="2qyu" modelUID="r:ed658292-9fbd-4bc1-94c2-435048f00105(jetbrains.mps.lang.editor.tableTests.structure)" version="-1" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
+  <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <roots>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6170050146384276051">
       <property name="name" nameId="tpck.1169194664001" value="Create" />
@@ -126,7 +126,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6170050146384276075">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162731">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162732">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -491,7 +491,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8017670888383406687">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162741">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162742">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -702,7 +702,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5877647854348551010">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162739">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162740">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="5877647854348551014">
@@ -844,7 +844,7 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5877647854348551071">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="4880455824535162733">
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4880455824535162734">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tpc0.4743603200655334753" resolveInfo="Insert" />
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="tprs.5977858699883421033" resolveInfo="Insert" />
         </node>
       </node>
     </node>
@@ -1412,6 +1412,80 @@
         <property name="cellId" nameId="tp5g.1229194968595" value="Table_qpt50r_c0_row_1_column_2" />
       </node>
     </node>
+    <node role="result" roleId="tp5g.1229187707859" type="2qyu.StateMachine" typeId="2qyu.763922957008726945" id="3676708844864308477">
+      <property name="name" nameId="tpck.1169194664001" value="completeEmptyCell" />
+      <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="3676708844864308478">
+        <property name="name" nameId="tpck.1169194664001" value="e_0" />
+      </node>
+      <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="3676708844864308479">
+        <property name="name" nameId="tpck.1169194664001" value="e_1" />
+      </node>
+      <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="3676708844864308480">
+        <property name="name" nameId="tpck.1169194664001" value="e_2" />
+      </node>
+      <node role="states" roleId="2qyu.763922957008726949" type="2qyu.State" typeId="2qyu.763922957008729154" id="3676708844864308481">
+        <property name="name" nameId="tpck.1169194664001" value="s_0" />
+      </node>
+      <node role="states" roleId="2qyu.763922957008726949" type="2qyu.State" typeId="2qyu.763922957008729154" id="3676708844864308482">
+        <property name="name" nameId="tpck.1169194664001" value="s_1" />
+      </node>
+      <node role="states" roleId="2qyu.763922957008726949" type="2qyu.State" typeId="2qyu.763922957008729154" id="3676708844864308483">
+        <property name="name" nameId="tpck.1169194664001" value="s_2" />
+      </node>
+      <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="3676708844864308484">
+        <property name="condition" nameId="2qyu.763922957008729153" value="true" />
+        <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="3676708844864308485">
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="3676708844864308481" resolveInfo="s_0" />
+        </node>
+        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="3676708844864308486">
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="3676708844864308482" resolveInfo="s_1" />
+        </node>
+        <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="3676708844864308487">
+          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="3676708844864308478" resolveInfo="e_0" />
+        </node>
+      </node>
+      <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="3676708844864308488">
+        <property name="condition" nameId="2qyu.763922957008729153" value="true" />
+        <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="3676708844864308489">
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="3676708844864308482" resolveInfo="s_1" />
+        </node>
+        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="3676708844864308490">
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="3676708844864308483" resolveInfo="s_2" />
+        </node>
+        <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="3676708844864308491">
+          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="3676708844864308479" resolveInfo="e_1" />
+        </node>
+      </node>
+      <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="3676708844864308492">
+        <property name="condition" nameId="2qyu.763922957008729153" value="true" />
+        <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="3676708844864308493">
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="3676708844864308483" resolveInfo="s_2" />
+        </node>
+        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="3676708844864308494">
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="3676708844864308481" resolveInfo="s_0" />
+        </node>
+        <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="3676708844864308495">
+          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="3676708844864308480" resolveInfo="e_2" />
+        </node>
+      </node>
+      <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="2059470233827535861">
+        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="2059470233827535862">
+          <node role="testNode$attribute" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2059470233827535865">
+            <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="empty_state" />
+          </node>
+        </node>
+        <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="2059470233827535863">
+          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="3676708844864308479" resolveInfo="e_1" />
+        </node>
+        <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="2059470233827535864">
+          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="3676708844864308481" resolveInfo="s_0" />
+        </node>
+      </node>
+    </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2059470233827535853">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="2059470233827535857">
         <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2059470233827535858">
@@ -1420,79 +1494,6 @@
         </node>
         <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2059470233827535860">
           <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
-        </node>
-      </node>
-    </node>
-    <node role="result" roleId="tp5g.1229187707859" type="2qyu.StateMachine" typeId="2qyu.763922957008726945" id="7668835185988064522">
-      <property name="name" nameId="tpck.1169194664001" value="completeEmptyCell" />
-      <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="7668835185988064523">
-        <property name="name" nameId="tpck.1169194664001" value="e_0" />
-      </node>
-      <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="7668835185988064524">
-        <property name="name" nameId="tpck.1169194664001" value="e_1" />
-      </node>
-      <node role="events" roleId="2qyu.763922957008726947" type="2qyu.Event" typeId="2qyu.763922957008729147" id="7668835185988064525">
-        <property name="name" nameId="tpck.1169194664001" value="e_2" />
-      </node>
-      <node role="states" roleId="2qyu.763922957008726949" type="2qyu.State" typeId="2qyu.763922957008729154" id="7668835185988064526">
-        <property name="name" nameId="tpck.1169194664001" value="s_0" />
-      </node>
-      <node role="states" roleId="2qyu.763922957008726949" type="2qyu.State" typeId="2qyu.763922957008729154" id="7668835185988064527">
-        <property name="name" nameId="tpck.1169194664001" value="s_1" />
-      </node>
-      <node role="states" roleId="2qyu.763922957008726949" type="2qyu.State" typeId="2qyu.763922957008729154" id="7668835185988064528">
-        <property name="name" nameId="tpck.1169194664001" value="s_2" />
-      </node>
-      <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="7668835185988064529">
-        <property name="condition" nameId="2qyu.763922957008729153" value="true" />
-        <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064530">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064526" resolveInfo="s_0" />
-        </node>
-        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064531">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064527" resolveInfo="s_1" />
-        </node>
-        <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="7668835185988064532">
-          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="7668835185988064523" resolveInfo="e_0" />
-        </node>
-      </node>
-      <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="7668835185988064533">
-        <property name="condition" nameId="2qyu.763922957008729153" value="true" />
-        <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064534">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064527" resolveInfo="s_1" />
-        </node>
-        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064535">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064528" resolveInfo="s_2" />
-        </node>
-        <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="7668835185988064536">
-          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="7668835185988064524" resolveInfo="e_1" />
-        </node>
-      </node>
-      <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="7668835185988064537">
-        <property name="condition" nameId="2qyu.763922957008729153" value="true" />
-        <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064538">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064528" resolveInfo="s_2" />
-        </node>
-        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064539">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064526" resolveInfo="s_0" />
-        </node>
-        <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="7668835185988064540">
-          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="7668835185988064525" resolveInfo="e_2" />
-        </node>
-      </node>
-      <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="7668835185988064542">
-        <node role="toState" roleId="2qyu.763922957008729152" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064544" />
-        <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="7668835185988064546">
-          <link role="event" roleId="2qyu.763922957008729159" targetNodeId="7668835185988064524" resolveInfo="e_1" />
-        </node>
-        <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="7668835185988064547">
-          <link role="state" roleId="2qyu.763922957008729157" targetNodeId="7668835185988064526" resolveInfo="s_0" />
-        </node>
-        <node role="testNode$attribute" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7668835185988064548">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="5" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_jj4qz_a0a0" />
         </node>
       </node>
     </node>
