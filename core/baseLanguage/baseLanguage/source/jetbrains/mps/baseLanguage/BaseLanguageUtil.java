@@ -18,7 +18,6 @@ package jetbrains.mps.baseLanguage;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
-import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;

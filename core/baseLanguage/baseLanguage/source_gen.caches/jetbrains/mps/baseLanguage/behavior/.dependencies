@@ -21,6 +21,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="java.util.Set" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.AbstractStaticContainerProcessor" file="AbstractStaticContainerProcessor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.AbstractUnaryNumberOperation_Behavior" file="AbstractUnaryNumberOperation_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
@@ -757,13 +762,17 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior" file="IStaticContainerForMethods_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.IStaticContainerProcessor" file="IStaticContainerProcessor.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.util.List" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_Behavior" file="ITryCatchStatement_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

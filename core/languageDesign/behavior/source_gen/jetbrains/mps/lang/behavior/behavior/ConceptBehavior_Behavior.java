@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor;
+import jetbrains.mps.baseLanguage.behavior.AbstractStaticContainerProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
