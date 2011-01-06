@@ -27,7 +27,6 @@ import com.intellij.openapi.util.ShutDownTracker;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
@@ -46,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @State(
   name = "MPSProject",
@@ -59,9 +59,11 @@ import java.util.List;
 public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent, PersistentStateComponent<Element> {
   private Project myProject;
   private Element myProjectElement;
+  private List<ProjectDisposeListener> myListeners;
 
   public MPSProject(Project project) {
     myProject = project;
+    myListeners = new CopyOnWriteArrayList<ProjectDisposeListener>();
   }
 
   public Element getState() {
@@ -161,8 +163,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         MPSProjects projects = MPSProjects.instance();
         projects.removeProject(MPSProject.this);
 
-        // FIXME asap!
-        getProject().getComponent(Highlighter.class).stopUpdater();
+        for (ProjectDisposeListener listener : myListeners) {
+          listener.onBeforeDispose();
+        }
 
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
@@ -179,6 +182,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         }
 
         CleanupManager.getInstance().cleanup();
+        myListeners.clear();
       }
     });
 
@@ -188,6 +192,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         ProjectUtil.closeAndDispose(myProject);
       }
     }
+  }
+
+  public void addDisposeListener(ProjectDisposeListener listener) {
+    myListeners.add(listener);
   }
 
   //--modules
@@ -451,5 +459,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   // should be left for compatibility with generated plugins (editor openers)
   public <T> T getComponent(Class<T> clazz) {
     return getProject().getComponent(clazz);
+  }
+
+  public static interface ProjectDisposeListener {
+
+    void onBeforeDispose();
   }
 }
