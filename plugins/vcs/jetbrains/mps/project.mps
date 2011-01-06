@@ -40,9 +40,9 @@
         </node>
       </node>
       <node role="5.body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4707157387247408527">
-        <node role="5.statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="4707157387247408528">
-          <link role="5.baseMethodDeclaration:3" targetNodeId="6.~BaseDirectoryIndexExcludePolicy.&lt;init&gt;(com.intellij.openapi.project.Project)" />
-          <node role="5.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247408529">
+        <node role="5.statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1602656939386659683">
+          <link role="5.baseMethodDeclaration:3" targetNodeId="19.~BaseDirectoryIndexExcludePolicy.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="BaseDirectoryIndexExcludePolicy" />
+          <node role="5.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1602656939386659684">
             <link role="5.variableDeclaration:3" targetNodeId="4707157387247408524" resolveInfo="project" />
           </node>
         </node>

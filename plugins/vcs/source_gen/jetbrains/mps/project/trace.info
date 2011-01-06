@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4707157387247408518">
-    <nodeInfo nodeId="4707157387247408528" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="67" endLine="20" endPosition="19" />
+    <nodeInfo nodeId="1602656939386659683" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="GeneratedFilesExcludePolicy.java" startLine="19" startPosition="67" endLine="20" endPosition="19" />
     <nodeInfo nodeId="4707157387247408542" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GeneratedFilesExcludePolicy.java" startLine="26" startPosition="91" endLine="27" endPosition="35" />
     <nodeInfo nodeId="4707157387247408544" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GeneratedFilesExcludePolicy.java" startLine="28" startPosition="5" endLine="29" endPosition="56" />
     <nodeInfo nodeId="4707157387247408558" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="GeneratedFilesExcludePolicy.java" startLine="30" startPosition="99" endLine="31" endPosition="51" />
