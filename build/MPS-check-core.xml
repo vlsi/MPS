@@ -70,9 +70,6 @@
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/stubs"/>
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/search"/>
 
-    <!-- generator -->
-    <path path="core/languageDesign/generator/source/jetbrains/mps/lang/generator/generator"/>
-
   </path>
 
   <path id="core.behavior.sources">
