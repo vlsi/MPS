@@ -65,7 +65,6 @@
     <!-- baseLanguage -->
     <path path="core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage"/>
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/behavior"/>
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen"/>
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/stubs"/>
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/stubs"/>
     <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/search"/>
@@ -87,6 +86,9 @@
     <!--TODO<path path="core/languageDesign/textGen/source_gen/jetbrains/mps/lang/textGen/behavior"/>-->
     <!--TODO<path path="core/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/behavior"/>-->
 
+    <!-- other -->
+    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen"/>
+
   </path>
 
   <path id="core.classpath">
@@ -102,6 +104,7 @@
 
     <javac sourcepath="" classpathref="core.classpath" destdir="tempbuild" fork="true" memorymaximumsize="1024m">
       <src refid="core.sources"/>
+      <!--<src refid="core.behavior.sources"/>-->
       <include name="**/*.java"/>
       <exclude name="**/generator/java/closures/*.java"/>
     </javac>
