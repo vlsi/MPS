@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs;
+package jetbrains.mps.ide.vcs;
 
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diff.ActionButtonPresentation;
@@ -28,6 +28,7 @@ import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vcs.VcsHelperUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;

@@ -4,7 +4,7 @@
 
   <!--MPS Patch begin-->
   <projectService serviceInterface="com.intellij.openapi.vcs.AbstractVcsHelper"
-                  serviceImplementation="jetbrains.mps.vcs.MPSVcsHelperImpl"/>
+                  serviceImplementation="jetbrains.mps.ide.vcs.MPSVcsHelperImpl"/>
   <!--MPS Patch end-->
 
   <projectService serviceInterface="com.intellij.openapi.vcs.IssueNavigationConfiguration"

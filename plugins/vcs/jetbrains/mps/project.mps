@@ -3,6 +3,7 @@
   <persistence version="6" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="18" modelUID="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)" version="-1" />
+  <import index="19" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <import index="1" modelUID="r:f5443f73-5650-4b8f-9806-1f303d093757(jetbrains.mps.project)" version="-1" implicit="yes" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" implicit="yes" />
@@ -23,8 +24,8 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4707157387247408518">
     <property name="2.name:0" value="GeneratedFilesExcludePolicy" />
     <node role="5.visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4707157387247408519" />
-    <node role="5.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247408520">
-      <link role="5.classifier:3" targetNodeId="6.~BaseDirectoryIndexExcludePolicy" />
+    <node role="5.superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3155029608256763757">
+      <link role="5.classifier:3" targetNodeId="19.~BaseDirectoryIndexExcludePolicy" resolveInfo="BaseDirectoryIndexExcludePolicy" />
     </node>
     <node role="5.constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="4707157387247408521">
       <node role="5.visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="4707157387247408522" />
@@ -64,7 +65,7 @@
                 <link role="5.baseMethodDeclaration:3" targetNodeId="18.3613324658897713319" resolveInfo="getInstance" />
                 <link role="5.classConcept:3" targetNodeId="18.3613324658897713212" resolveInfo="MPSVcsProjectConfiguration" />
                 <node role="5.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="3613324658897777718">
-                  <link role="5.baseMethodDeclaration:3" targetNodeId="6.~BaseDirectoryIndexExcludePolicy.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                  <link role="5.baseMethodDeclaration:3" targetNodeId="19.~BaseDirectoryIndexExcludePolicy.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                 </node>
               </node>
               <node role="5.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247408540">

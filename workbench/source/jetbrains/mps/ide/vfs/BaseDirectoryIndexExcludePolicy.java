@@ -1,4 +1,4 @@
-package jetbrains.mps.project;
+package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
