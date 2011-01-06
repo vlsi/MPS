@@ -16,8 +16,8 @@
 package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.make.java.BLDependenciesCache;
-import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
-import jetbrains.mps.baseLanguage.textGen.RootDependencies;
+import jetbrains.mps.make.java.ModelDependencies;
+import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.*;
 import jetbrains.mps.generator.GenerationStatus;

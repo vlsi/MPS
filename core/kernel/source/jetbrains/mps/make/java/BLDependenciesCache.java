@@ -16,8 +16,6 @@
 package jetbrains.mps.make.java;
 
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.baseLanguage.textGen.BLDependenciesHandler;
-import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
