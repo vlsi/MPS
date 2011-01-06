@@ -4,10 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.lang.dataFlow.DataFlow;
 
 public class VariableReference_Behavior {
   public static void init(SNode thisNode) {
@@ -15,33 +11,5 @@ public class VariableReference_Behavior {
 
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return TypeAnnotable_Behavior.call_getTypeAnnotation_1233920952262(SLinkOperations.getTarget(thisNode, "variableDeclaration", false));
-  }
-
-  public static boolean call_isUninitializedOrBad_5536314641534918560(SNode thisNode) {
-    SNode declContainer = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-    if (declContainer == null) {
-      return true;
-    }
-    SNode currentContainer = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-    SNode ourContainer = null;
-
-    SNode assignmentExpression = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-    if (SLinkOperations.getTarget(assignmentExpression, "lValue", true) != thisNode) {
-      return true;
-    }
-
-    while ((currentContainer != null)) {
-      if (currentContainer == declContainer) {
-        ourContainer = currentContainer;
-        break;
-      }
-      currentContainer = SNodeOperations.getAncestor(currentContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
-    }
-    if ((ourContainer != null)) {
-      Program program = DataFlowManager.getInstance().buildProgramFor(ourContainer);
-      return !(DataFlow.isInitializedRewritten(program, assignmentExpression));
-    } else {
-      return true;
-    }
   }
 }

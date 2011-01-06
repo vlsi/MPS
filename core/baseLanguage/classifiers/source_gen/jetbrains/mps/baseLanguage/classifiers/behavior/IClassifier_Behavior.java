@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor;
+import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IClassifier_Behavior {

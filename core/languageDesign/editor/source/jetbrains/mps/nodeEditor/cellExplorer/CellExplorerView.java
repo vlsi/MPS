@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cellExplorer;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.icons.IconManager;
@@ -45,7 +44,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.BorderLayout;
-import java.awt.Frame;
 import java.util.*;
 
 /**
@@ -224,12 +222,12 @@ public class CellExplorerView extends BaseProjectTool {
 
     public ActionGroup getActionGroup() {
       BaseAction selectInEditorAction = new BaseAction("Select In Editor") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           showCell();
         }
       };
       BaseAction propertiesAction = new BaseAction("Properties") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           new CellPropertiesWindow(myCell, e.getData(MPSDataKeys.FRAME));
         }
       };

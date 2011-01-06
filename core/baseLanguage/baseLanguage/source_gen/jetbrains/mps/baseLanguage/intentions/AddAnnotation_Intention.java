@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddAnnotation_Intention extends BaseIntention implements Intention {
   public AddAnnotation_Intention() {
@@ -56,7 +57,7 @@ public class AddAnnotation_Intention extends BaseIntention implements Intention 
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode annotationInstance = SLinkOperations.addNewChild(node, "annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
+    SNode annotationInstance = SNodeFactoryOperations.addNewChild(node, "annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
     editorContext.selectWRTFocusPolicy(annotationInstance);
   }
 

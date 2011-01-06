@@ -8,26 +8,23 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.IEditor;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/hierarchyView.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowConceptInHierarchy_Action.class);
-
-  private IOperationContext context;
-  private EditorCell editorCell;
-  private SNode node;
-  private IEditor editor;
 
   public ShowConceptInHierarchy_Action() {
     super("Show Concept in Hierarchy", "", ICON);
@@ -35,19 +32,14 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl H";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return (ShowConceptInHierarchy_Action.this.getConceptNode(_params) != null);
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return (ShowConceptInHierarchy_Action.this.getConceptNode() != null);
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -58,46 +50,38 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.editorCell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.editorCell == null) {
+    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    this.editor = event.getData(MPSDataKeys.MPS_EDITOR);
-    if (this.editor == null) {
+    MapSequence.fromMap(_params).put("editor", event.getData(MPSDataKeys.MPS_EDITOR));
+    if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.context = null;
-    this.editorCell = null;
-    this.editor = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
-      tool.showItemInHierarchy(((AbstractConceptDeclaration) SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), ShowConceptInHierarchy_Action.this.context);
+      HierarchyViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(HierarchyViewTool.class);
+      tool.showItemInHierarchy(((AbstractConceptDeclaration) SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode(_params))), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -106,8 +90,8 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     }
   }
 
-  private SNode getConceptNode() {
-    SNode refNode = ShowConceptInHierarchy_Action.this.editorCell.getSNodeWRTReference();
+  private SNode getConceptNode(final Map<String, Object> _params) {
+    SNode refNode = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
     if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       return SNodeOperations.cast(refNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
     }
@@ -117,15 +101,15 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
         return concept;
       }
     }
-    SNode outerConcept = SNodeOperations.getAncestor(ShowConceptInHierarchy_Action.this.node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+    SNode outerConcept = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
     if (outerConcept != null) {
       return outerConcept;
     }
 
-    if (!(ShowConceptInHierarchy_Action.this.editor instanceof TabbedEditor)) {
+    if (!(((IEditor) MapSequence.fromMap(_params).get("editor")) instanceof TabbedEditor)) {
       return null;
     }
-    TabbedEditor tabbedEditor = (TabbedEditor) ShowConceptInHierarchy_Action.this.editor;
+    TabbedEditor tabbedEditor = (TabbedEditor) ((IEditor) MapSequence.fromMap(_params).get("editor"));
     SNode editedNode = (tabbedEditor).getEditedNode();
     if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return null;

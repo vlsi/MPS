@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddRemoveMessage_Intention extends BaseIntention implements Intention {
   public AddRemoveMessage_Intention() {
@@ -37,7 +38,7 @@ public class AddRemoveMessage_Intention extends BaseIntention implements Intenti
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "message", true), "message", true) == null)) {
-      SLinkOperations.setNewChild(node, "message", "jetbrains.mps.baseLanguage.unitTest.structure.Message");
+      SNodeFactoryOperations.setNewChild(node, "message", "jetbrains.mps.baseLanguage.unitTest.structure.Message");
     } else {
       SLinkOperations.setTarget(node, "message", null, true);
     }

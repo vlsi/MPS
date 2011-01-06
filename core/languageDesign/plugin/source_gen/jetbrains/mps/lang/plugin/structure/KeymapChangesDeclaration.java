@@ -69,19 +69,19 @@ public class KeymapChangesDeclaration extends BaseConcept implements INamedConce
     return this.getChildCount(KeymapChangesDeclaration.SHORTCUT_CHANGE);
   }
 
-  public Iterator<SimpleShortcutChange> shortcutChanges() {
-    return this.children(SimpleShortcutChange.class, KeymapChangesDeclaration.SHORTCUT_CHANGE);
+  public Iterator<ShortcutChange> shortcutChanges() {
+    return this.children(ShortcutChange.class, KeymapChangesDeclaration.SHORTCUT_CHANGE);
   }
 
-  public List<SimpleShortcutChange> getShortcutChanges() {
-    return this.getChildren(SimpleShortcutChange.class, KeymapChangesDeclaration.SHORTCUT_CHANGE);
+  public List<ShortcutChange> getShortcutChanges() {
+    return this.getChildren(ShortcutChange.class, KeymapChangesDeclaration.SHORTCUT_CHANGE);
   }
 
-  public void addShortcutChange(SimpleShortcutChange node) {
+  public void addShortcutChange(ShortcutChange node) {
     this.addChild(KeymapChangesDeclaration.SHORTCUT_CHANGE, node);
   }
 
-  public void insertShortcutChange(SimpleShortcutChange prev, SimpleShortcutChange node) {
+  public void insertShortcutChange(ShortcutChange prev, ShortcutChange node) {
     this.insertChild(prev, KeymapChangesDeclaration.SHORTCUT_CHANGE, node);
   }
 

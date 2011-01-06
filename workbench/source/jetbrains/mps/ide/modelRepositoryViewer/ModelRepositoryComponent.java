@@ -37,6 +37,7 @@ import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Map;
 
 public class ModelRepositoryComponent {
   private MPSTree myTree = new MyTree();
@@ -82,7 +83,7 @@ public class ModelRepositoryComponent {
 
             public ActionGroup getActionGroup() {
               BaseAction refreshAction = new BaseAction("Refresh") {
-                protected void doExecute(AnActionEvent e) {
+                protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
                   myTree.rebuildNow();
                 }
               };

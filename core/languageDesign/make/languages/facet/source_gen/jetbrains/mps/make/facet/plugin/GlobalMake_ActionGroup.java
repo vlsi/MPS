@@ -4,30 +4,25 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Build_ActionGroup;
 
 public class GlobalMake_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GlobalMake_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.make.facet.plugin.GlobalMake";
+  public static final String ID = "jetbrains.mps.make.facet.plugin.GlobalMake_ActionGroup";
 
   public GlobalMake_ActionGroup() {
     super("GlobalMake", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeProject_Action", "jetbrains.mps.make.facet");
-      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action", "jetbrains.mps.make.facet");
-      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.RebuildSelectedModules_Action", "jetbrains.mps.make.facet");
-      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action", "jetbrains.mps.make.facet");
-      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.RebuildSelectedModels_Action", "jetbrains.mps.make.facet");
+      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeProject_Action");
+      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeSelectedModules_Action");
+      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.RebuildSelectedModules_Action");
+      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeSelectedModels_Action");
+      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.RebuildSelectedModels_Action");
       GlobalMake_ActionGroup.this.addSeparator();
-      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.RebuildProject_Action", "jetbrains.mps.make.facet");
+      GlobalMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.RebuildProject_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_make);
   }
 }

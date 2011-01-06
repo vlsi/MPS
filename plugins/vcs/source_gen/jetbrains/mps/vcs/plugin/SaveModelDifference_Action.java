@@ -6,20 +6,22 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SNode;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import java.io.FileWriter;
@@ -29,21 +31,13 @@ public class SaveModelDifference_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SaveModelDifference_Action.class);
 
-  private SNode node;
-  private Project project;
-
   public SaveModelDifference_Action() {
     super("Save Model Difference", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -54,28 +48,22 @@ public class SaveModelDifference_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.NODE);
-    if (this.node == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.project = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       int number = 1;
       File rootDir = new File(System.getProperty("user.home"), "mydiffs");
@@ -93,11 +81,11 @@ public class SaveModelDifference_Action extends GeneratedAction {
         final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            model.value = SaveModelDifference_Action.this.node.getModel().getModelDescriptor();
+            model.value = ((SNode) MapSequence.fromMap(_params).get("node")).getModel().getModelDescriptor();
           }
         });
         VirtualFile file = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) model.value).getModelFile());
-        AbstractVcs vcs = ProjectLevelVcsManager.getInstance(SaveModelDifference_Action.this.project).getVcsFor(file);
+        AbstractVcs vcs = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(file);
         VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
         ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
         FileWriter fw = new FileWriter(new File(thisDir, model.value.getSModelReference().getSModelFqName().getCompactPresentation() + ".old.mps"));

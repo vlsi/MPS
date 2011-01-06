@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class GenerateEditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GenerateEditorPopup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.GenerateEditorPopup";
+  public static final String ID = "jetbrains.mps.ide.actions.GenerateEditorPopup_ActionGroup";
   public static final String LABEL_ID_generate = ID + "generate";
 
   public GenerateEditorPopup_ActionGroup() {
@@ -15,14 +18,15 @@ public class GenerateEditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      GenerateEditorPopup_ActionGroup.this.addAnchor(GenerateEditorPopup_ActionGroup.LABEL_ID_generate);
-      GenerateEditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToUsageInMappingConfig_Action", "jetbrains.mps.ide");
+      {
+        LabelledAnchor action = new LabelledAnchor(GenerateEditorPopup_ActionGroup.LABEL_ID_generate);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        GenerateEditorPopup_ActionGroup.this.addAction(action);
+      }
+      GenerateEditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToUsageInMappingConfig_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_generateModel);
   }
 }

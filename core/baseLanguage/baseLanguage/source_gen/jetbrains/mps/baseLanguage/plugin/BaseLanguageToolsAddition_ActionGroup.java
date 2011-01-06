@@ -4,25 +4,20 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Tools_ActionGroup;
 
 public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageToolsAddition_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition";
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup";
 
   public BaseLanguageToolsAddition_ActionGroup() {
     super("BaseLanguageToolsAddition", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BaseLanguageToolsAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageToolsAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action", "jetbrains.mps.baseLanguage");
+      BaseLanguageToolsAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action");
+      BaseLanguageToolsAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
   }
 }

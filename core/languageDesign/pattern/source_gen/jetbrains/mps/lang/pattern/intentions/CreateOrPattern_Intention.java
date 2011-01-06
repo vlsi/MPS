@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -49,7 +49,7 @@ public class CreateOrPattern_Intention extends BaseIntention implements Intentio
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
-    SNode orPattern = SConceptOperations.createNewNode("jetbrains.mps.lang.pattern.structure.OrPattern", null);
+    SNode orPattern = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.pattern.structure.OrPattern", null);
     SNodeOperations.replaceWithAnother(currentNode, orPattern);
     SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", currentNode, true);
   }

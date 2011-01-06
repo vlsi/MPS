@@ -5,10 +5,12 @@ package jetbrains.mps.build.generictasks.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.build.generictasks.taskfromjar.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -17,27 +19,20 @@ public class ImportAntStuff_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ImportAntStuff_Action.class);
 
-  private IModule module;
-
   public ImportAntStuff_Action() {
     super("Import Ant Stuff", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) && (((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName().contains("jetbrains.mps.build.generictasks"));
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return (ImportAntStuff_Action.this.module instanceof Language) && (ImportAntStuff_Action.this.module.getModuleFqName().contains("jetbrains.mps.build.generictasks"));
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -46,35 +41,30 @@ public class ImportAntStuff_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Language language = ((Language) ImportAntStuff_Action.this.module);
-      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getGenerated(language), Generator.Modes.CORE);
-      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.NODEPS);
-      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.JUNIT);
+      Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
+      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getGenerated(language), Generator.Modes.CORE, _params);
+      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.NODEPS, _params);
+      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.JUNIT, _params);
       LOG.info("Import completed.");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ImportAntStuff", t);
     }
   }
 
-  private void importTasks(Language l, SModelDescriptor model, Generator.Modes m) {
+  private void importTasks(Language l, SModelDescriptor model, Generator.Modes m, final Map<String, Object> _params) {
     assert model != null;
     new Generator().generateTasks(model.getSModel(), m, ImportAntStuffUtil.getAllModels(l));
   }

@@ -15,75 +15,154 @@
  */
 package jetbrains.mps.workbench.action;
 
-import org.apache.commons.lang.ObjectUtils;
-import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.Shortcut;
+import com.intellij.openapi.keymap.Keymap;
+import com.intellij.openapi.keymap.KeymapManager;
+import gnu.trove.THashMap;
+import gnu.trove.THashSet;
+import jetbrains.mps.logging.Logger;
 
-import javax.swing.KeyStroke;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public abstract class BaseKeymapChanges {
-  private Map<ActionDescriptor, ShortcutsGetter> myKeystrokes = new HashMap<ActionDescriptor, ShortcutsGetter>();
+  private static final Logger LOG = Logger.getLogger(BaseKeymapChanges.class);
+
+  private Keymap myKeymap;
+
+  private Set<String> ourClearedActions = new THashSet<String>();
+
+  private Map<String, Set<Shortcut>> myRemovedShortcuts = new THashMap<String, Set<Shortcut>>();
+  private Map<String, Set<Shortcut>> mySimpleShortcuts = new THashMap<String, Set<Shortcut>>();
+  private Map<String, Set<ComplexShortcut>> myComplexShortcuts = new THashMap<String, Set<ComplexShortcut>>();
+
+  private Map<String, Set<Shortcut>> myAddedComplexShortcuts = new THashMap<String, Set<Shortcut>>();
 
   public abstract String getScheme();
 
-  public boolean hasShortcutsForAction(String actionClassName, String moduleNamespace) {
-    return myKeystrokes.containsKey(new ActionDescriptor(actionClassName, moduleNamespace));
-  }
+  //shortId is an id w/o parameter ids
+  public void parameterizedActionCreated(String shortId, String longId, Object... params) {
+    Keymap keymap = getKeymap();
+    if (keymap == null) return;
 
-  @NotNull
-  public List<KeyStroke> getShortcutsForAction(String actionClassName, String moduleNamespace, Object... params) {
-    BaseKeymapChanges.ShortcutsGetter keystrokes = myKeystrokes.get(new ActionDescriptor(actionClassName, moduleNamespace));
-    assert keystrokes != null;
-    return keystrokes.getKeyStrokes(params);
-  }
+    Set<ComplexShortcut> complexShortcuts = myComplexShortcuts.get(shortId);
+    if (complexShortcuts == null) return;
 
-  protected void addAction(String actionClassName, String moduleNamespace, ShortcutsGetter getter) {
-    myKeystrokes.put(new ActionDescriptor(actionClassName, moduleNamespace), getter);
-  }
+    for (ComplexShortcut cs : complexShortcuts) {
+      for (Shortcut s : cs.getShortcutsFor(params)) {
+        addShortcutToKeymap(longId, keymap, s);
 
-  protected void addAction(String actionClassName, String moduleNamespace, final String... shortcuts) {
-    myKeystrokes.put(new ActionDescriptor(actionClassName, moduleNamespace), new ShortcutsGetter() {
-      public List<KeyStroke> getKeyStrokes(Object... params) {
-        List<KeyStroke> result = new ArrayList<KeyStroke>();
-        for (String shortcut : shortcuts) {
-          result.add(KeyStroke.getKeyStroke(shortcut));
+        Set<Shortcut> added = myAddedComplexShortcuts.get(longId);
+        if (added == null) {
+          added = new THashSet<Shortcut>();
+          myAddedComplexShortcuts.put(longId, added);
         }
-        return result;
+        added.add(s);
       }
-    });
+    }
   }
 
-  public abstract class ShortcutsGetter {
-    public abstract List<KeyStroke> getKeyStrokes(Object... params);
+  public final void init() {
+    Keymap keymap = getKeymap();
+    if (keymap == null) return;
+
+    for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
+      String key = e.getKey();
+      for (Shortcut s : e.getValue()) {
+        addShortcutToKeymap(key, keymap, s);
+      }
+    }
   }
 
-  private static class ActionDescriptor {
-    public String myClassName;
-    public String myModuleNamespace;
+  public final void dispose() {
+    Keymap keymap = getKeymap();
+    if (keymap == null) return;
 
-    private ActionDescriptor(String className, String moduleNamespace) {
-      myClassName = className;
-      myModuleNamespace = moduleNamespace;
+    //complex
+    for (Entry<String, Set<Shortcut>> e : myAddedComplexShortcuts.entrySet()) {
+      String key = e.getKey();
+      for (Shortcut s : e.getValue()) {
+        keymap.removeShortcut(key, s);
+      }
     }
+    myAddedComplexShortcuts.clear();
 
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-
-      ActionDescriptor that = (ActionDescriptor) o;
-      if (!ObjectUtils.equals(this.myClassName, that.myClassName)) return false;
-      if (!ObjectUtils.equals(this.myModuleNamespace, that.myModuleNamespace)) return false;
-
-      return true;
+    //simple
+    for (Entry<String, Set<Shortcut>> e : mySimpleShortcuts.entrySet()) {
+      String key = e.getKey();
+      for (Shortcut s : e.getValue()) {
+        keymap.removeShortcut(key, s);
+      }
     }
+    mySimpleShortcuts.clear();
 
-    public int hashCode() {
-      int result = myClassName != null ? myClassName.hashCode() : 0;
-      result = 31 * result + (myModuleNamespace != null ? myModuleNamespace.hashCode() : 0);
-      return result;
+    //register old
+    for (Entry<String, Set<Shortcut>> e : myRemovedShortcuts.entrySet()) {
+      String key = e.getKey();
+      for (Shortcut s : e.getValue()) {
+        keymap.addShortcut(key, s);
+      }
+    }
+    myRemovedShortcuts.clear();
+
+    ourClearedActions.clear();
+  }
+
+  protected void addSimpleShortcut(String id, Shortcut... s) {
+    Set<Shortcut> shortcuts = mySimpleShortcuts.get(id);
+    if (shortcuts == null) {
+      shortcuts = new THashSet<Shortcut>();
+      mySimpleShortcuts.put(id, shortcuts);
+    }
+    shortcuts.addAll(Arrays.asList(s));
+  }
+
+  protected void addComplexShortcut(String id, ComplexShortcut... s) {
+    Set<ComplexShortcut> shortcuts = myComplexShortcuts.get(id);
+    if (shortcuts == null) {
+      shortcuts = new THashSet<ComplexShortcut>();
+      myComplexShortcuts.put(id, shortcuts);
+    }
+    shortcuts.addAll(Arrays.asList(s));
+  }
+
+  private void addShortcutToKeymap(String longId, Keymap keymap, Shortcut s) {
+    Shortcut[] oldShortcuts = keymap.getShortcuts(longId);
+    if (oldShortcuts.length != 0 && !ourClearedActions.contains(longId)) {
+      ourClearedActions.add(longId);
+      myRemovedShortcuts.put(longId, new THashSet<Shortcut>(Arrays.asList(oldShortcuts)));
+      keymap.removeAllActionShortcuts(longId);
+    }
+    keymap.addShortcut(longId, s);
+  }
+
+  private Keymap getKeymap() {
+    if (myKeymap == null) {
+      myKeymap = KeymapManager.getInstance().getKeymap(getScheme());
+      if (myKeymap == null) {
+        LOG.error("keymap " + getScheme() + " is not found");
+        return null;
+      }
+    }
+    return myKeymap;
+  }
+
+  protected static abstract class ComplexShortcut {
+    public abstract List<Shortcut> getShortcutsFor(Object... params);
+
+    public static class ParameterizedSimpleShortcut extends ComplexShortcut {
+      private final List<Shortcut> myShortcut;
+
+      public ParameterizedSimpleShortcut(Shortcut... shortcut) {
+        myShortcut = Arrays.asList(shortcut);
+      }
+
+      public List<Shortcut> getShortcutsFor(Object... params) {
+        return myShortcut;
+      }
     }
   }
 }

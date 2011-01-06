@@ -7,14 +7,14 @@ import jetbrains.mps.logging.Logger;
 
 public class PropertyNodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(PropertyNodeActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.PropertyNodeActions";
+  public static final String ID = "jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup";
 
   public PropertyNodeActions_ActionGroup() {
     super("PropertyNodeActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      PropertyNodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeletePropertyAction_Action", "jetbrains.mps.ide");
+      PropertyNodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeletePropertyAction_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

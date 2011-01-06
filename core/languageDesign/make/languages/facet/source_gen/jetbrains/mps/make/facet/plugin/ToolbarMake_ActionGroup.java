@@ -7,20 +7,16 @@ import jetbrains.mps.logging.Logger;
 
 public class ToolbarMake_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ToolbarMake_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.make.facet.plugin.ToolbarMake";
+  public static final String ID = "jetbrains.mps.make.facet.plugin.ToolbarMake_ActionGroup";
 
   public ToolbarMake_ActionGroup() {
     super("ToolbarMake", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ToolbarMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeProject_Action", "jetbrains.mps.make.facet");
+      ToolbarMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeProject_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("MPSToolbarRunGroup", null);
   }
 }

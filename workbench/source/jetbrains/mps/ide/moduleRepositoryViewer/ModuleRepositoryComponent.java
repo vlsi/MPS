@@ -33,6 +33,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import java.util.Map;
 
 public class ModuleRepositoryComponent {
   private MPSTree myTree = new MyTree();
@@ -76,7 +77,7 @@ public class ModuleRepositoryComponent {
 
             public ActionGroup getActionGroup() {
               BaseAction refreshAction = new BaseAction("Refresh") {
-                protected void doExecute(AnActionEvent e) {
+                protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
                   myTree.rebuildNow();
                 }
               };

@@ -105,6 +105,10 @@
     <node type="tp4k.ProjectPluginDeclaration" typeId="tp4k.1206110063106" id="3382625879346929484">
       <property name="name" nameId="tpck.1169194664001" value="LanguageChecksPlugin" />
     </node>
+    <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="902116341861940076">
+      <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
+      <property name="name" nameId="tpck.1169194664001" value="Default" />
+    </node>
   </roots>
   <root id="1209308509191">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1209308509192">
@@ -286,10 +290,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1209308529773">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F7" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="1217420645601">
       <property name="name" nameId="tpck.1169194664001" value="scope" />
@@ -494,10 +494,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1209824745413">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F7" />
-    </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1209825222420">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1209825222421">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1209825243697">
@@ -693,10 +689,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1210952509952">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="alt+shift" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1210952584861">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210952584862">
@@ -945,10 +937,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="1225978220831">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_F8" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="1225978220832">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1225978220833">
@@ -5942,26 +5930,10 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6040017830384335924">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fo3f.~ClassLoaderManager%daddReloadHandler(jetbrains%dmps%dreloading%dReloadListener)%cvoid" resolveInfo="addReloadHandler" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6040017830384335942">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="6040017830384335945">
-                  <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6040017830384335946">
-                    <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                    <link role="classifier" roleId="tpee.1170346070688" targetNodeId="fo3f.~ReloadAdapter" resolveInfo="ReloadAdapter" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fo3f.~ReloadAdapter%d&lt;init&gt;()" resolveInfo="ReloadAdapter" />
-                    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6040017830384335947" />
-                    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6040017830384335948">
-                      <property name="name" nameId="tpck.1169194664001" value="unload" />
-                      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6040017830384335949" />
-                      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6040017830384335950" />
-                      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6040017830384335951">
-                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6040017830384335954">
-                          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6040017830384335955">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6040017830384335001" resolveInfo="clearForReload" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4958544726713838712">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4958544726713838713" />
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="4958544726713838714">
+                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4958544726713838699" resolveInfo="myReloadListener" />
                 </node>
               </node>
             </node>
@@ -6087,6 +6059,20 @@
               </node>
               <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6040017830384335261">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6040017830384335149" resolveInfo="myListenedModels" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4958544726713842832">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4958544726713842835">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4958544726713842834">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fo3f.~ClassLoaderManager%dgetInstance()%cjetbrains%dmps%dreloading%dClassLoaderManager" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fo3f.~ClassLoaderManager" resolveInfo="ClassLoaderManager" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4958544726713842839">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fo3f.~ClassLoaderManager%dremoveReloadHandler(jetbrains%dmps%dreloading%dReloadListener)%cvoid" resolveInfo="removeReloadHandler" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4958544726713842840">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4958544726713838699" resolveInfo="myReloadListener" />
               </node>
             </node>
           </node>
@@ -7374,6 +7360,35 @@
         </node>
       </node>
     </node>
+    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="4958544726713838699">
+      <property name="name" nameId="tpck.1169194664001" value="myReloadListener" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4958544726713838700" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4958544726713838701">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fo3f.~ReloadAdapter" resolveInfo="ReloadAdapter" />
+      </node>
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4958544726713838702">
+        <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="4958544726713838703">
+          <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="4958544726713838704">
+            <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="fo3f.~ReloadAdapter" resolveInfo="ReloadAdapter" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fo3f.~ReloadAdapter%d&lt;init&gt;()" resolveInfo="ReloadAdapter" />
+            <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4958544726713838705" />
+            <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4958544726713838706">
+              <property name="name" nameId="tpck.1169194664001" value="unload" />
+              <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4958544726713838707" />
+              <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4958544726713838708" />
+              <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4958544726713838709">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4958544726713838710">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4958544726713838711">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6040017830384335001" resolveInfo="clearForUnload" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </root>
   <root id="3382625879346929484">
     <node role="fieldDeclaration" roleId="tp4k.1206112250032" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="3382625879346929515">
@@ -7513,6 +7528,36 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="902116341861940076">
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940097">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1225978220759" resolveInfo="FindLanguageConceptsUsages" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940098">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F8" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940188">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1209824745368" resolveInfo="FindLanguageUsages" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940189">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F7" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940077">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1209308509191" resolveInfo="FindModelUsages" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940078">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_F7" />
+      </node>
+    </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="902116341861940137">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1210951952325" resolveInfo="ShowNodeMessages" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="902116341861940138">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt+shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
       </node>
     </node>
   </root>

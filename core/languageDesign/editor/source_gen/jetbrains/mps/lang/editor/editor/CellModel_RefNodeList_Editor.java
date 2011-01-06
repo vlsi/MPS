@@ -32,7 +32,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 
@@ -1123,7 +1123,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(result).addElement(SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", null));
+      ListSequence.fromList(result).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", null));
       return result;
     }
 
@@ -1192,7 +1192,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
+      SNodeFactoryOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
     }
 
     public String getMatchingText() {

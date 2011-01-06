@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class replace_node_macro extends AbstractCellMenuComponent {
@@ -40,7 +41,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
     }
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNode macro = SConceptOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
+      SNode macro = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
       SNodeOperations.replaceWithAnother(node, macro);
       editorContext.selectAndSetCaret(macro, 1);
       editorContext.openInspector();

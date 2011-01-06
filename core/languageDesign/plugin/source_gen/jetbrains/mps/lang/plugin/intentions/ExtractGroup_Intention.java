@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -47,7 +47,7 @@ public class ExtractGroup_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode rootGroup = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", null);
+    SNode rootGroup = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", null);
     SPropertyOperations.set(rootGroup, "name", SPropertyOperations.getString(node, "name"));
     SLinkOperations.setTarget(rootGroup, "contents", SLinkOperations.getTarget(node, "contents", true), true);
     SNodeOperations.deleteNode(node);

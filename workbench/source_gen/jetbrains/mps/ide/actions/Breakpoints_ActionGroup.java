@@ -7,20 +7,16 @@ import jetbrains.mps.logging.Logger;
 
 public class Breakpoints_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Breakpoints_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Breakpoints";
+  public static final String ID = "jetbrains.mps.ide.actions.Breakpoints_ActionGroup";
 
   public Breakpoints_ActionGroup() {
     super("Breakpoints", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Breakpoints_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ToggleBreakpoint_Action", "jetbrains.mps.ide");
+      Breakpoints_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ToggleBreakpoint_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

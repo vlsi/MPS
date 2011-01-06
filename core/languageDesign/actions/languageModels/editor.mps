@@ -7,6 +7,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <import index="tpdl" modelUID="r:00000000-0000-4000-0000-011c895902a5(jetbrains.mps.lang.actions.editor)" version="-1" implicit="yes" />
   <roots>
@@ -142,6 +143,10 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5948027493682790677">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="copyPaste" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdg.5948027493682789918" resolveInfo="CopyPasteHandlers" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5979988948250981290">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdg.5979988948250981289" resolveInfo="SNodeCreatorWithInitialization" />
     </node>
   </roots>
   <root id="1112058353358">
@@ -2221,6 +2226,34 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="5948027493682790697" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="5948027493682790698" />
+    </node>
+  </root>
+  <root id="5979988948250981290">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5979988948250981292">
+      <property name="vertical" nameId="tpc2.1073389446425" value="false" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5979988948250981376">
+        <property name="text" nameId="tpc2.1073389577007" value="initialized" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5979988948250981293">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp25.1180636770616" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5979988948250981294">
+        <property name="text" nameId="tpc2.1073389577007" value="(" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5979988948250981295">
+        <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="true" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp25.1181937442359" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingRightStyleClassItem" typeId="tpc2.1215007897487" id="5979988948250981296">
+          <property name="value" nameId="tpc2.1215007802031" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5979988948250981297">
+        <property name="text" nameId="tpc2.1073389577007" value=")" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5979988948250981298" />
     </node>
   </root>
 </model>

@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class EditorLeftPanelMenu_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorLeftPanelMenu_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.EditorLeftPanelMenu";
+  public static final String ID = "jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup";
 
   public EditorLeftPanelMenu_ActionGroup() {
     super("EditorLeftPanelMenu", ID);

@@ -4,26 +4,21 @@ package jetbrains.mps.build.packaging.mps.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Build_ActionGroup;
 
 public class InternalChecks_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(InternalChecks_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.build.packaging.mps.plugin.InternalChecks";
+  public static final String ID = "jetbrains.mps.build.packaging.mps.plugin.InternalChecks_ActionGroup";
 
   public InternalChecks_ActionGroup() {
     super("Checks", ID);
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.packaging.mps.plugin.CheckSamples_Action", "jetbrains.mps.build.packaging.mps");
-      InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.packaging.mps.plugin.CheckCoreRuntimeDeps_Action", "jetbrains.mps.build.packaging.mps");
-      InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.packaging.mps.plugin.CheckIncludedLanguages_Action", "jetbrains.mps.build.packaging.mps");
+      InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.packaging.mps.plugin.CheckSamples_Action");
+      InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.packaging.mps.plugin.CheckCoreRuntimeDeps_Action");
+      InternalChecks_ActionGroup.this.addAction("jetbrains.mps.build.packaging.mps.plugin.CheckIncludedLanguages_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Build_ActionGroup.ID, null);
   }
 }

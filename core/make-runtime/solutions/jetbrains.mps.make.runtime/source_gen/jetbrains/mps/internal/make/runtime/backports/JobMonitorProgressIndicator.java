@@ -83,12 +83,11 @@ public class JobMonitorProgressIndicator extends ProgressIndicatorAdapter {
 
   @Override
   public boolean isCanceled() {
-    return false;
+    return jm.stopRequested();
   }
 
   @Override
   public void cancel() {
-    jm.pleaseStop();
   }
 
   private static boolean neq_8r1isy_a0a0b0e(Object a, Object b) {

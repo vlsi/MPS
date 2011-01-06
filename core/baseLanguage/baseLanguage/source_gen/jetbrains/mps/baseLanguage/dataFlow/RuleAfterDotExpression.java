@@ -25,7 +25,7 @@ public class RuleAfterDotExpression extends DataFlowConstructor {
   }
 
   public void performActions(Program o, SNode node) {
-    if (!(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(node, "operation", true)))) {
+    if (!(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(node, "operation", true))) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"))) {
       {
         Object object = SLinkOperations.getTarget(node, "operand", true);
         if (((Program) o).contains(object)) {

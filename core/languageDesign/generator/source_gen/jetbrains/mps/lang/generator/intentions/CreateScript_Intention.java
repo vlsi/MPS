@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -47,7 +47,7 @@ public class CreateScript_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode script = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingScript", null);
+    SNode script = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingScript", null);
     SPropertyOperations.set(script, "name", "script");
     if (SNodeOperations.hasRole(node, "jetbrains.mps.lang.generator.structure.MappingConfiguration", "preMappingScript")) {
       SPropertyOperations.set(script, "scriptKind", "pre_processing");

@@ -4,25 +4,20 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 
 public class ProjectMake_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectMake_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.make.facet.plugin.ProjectMake";
+  public static final String ID = "jetbrains.mps.make.facet.plugin.ProjectMake_ActionGroup";
 
   public ProjectMake_ActionGroup() {
     super("ProjectMake", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ProjectMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeProject_Action", "jetbrains.mps.make.facet");
-      ProjectMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.RebuildProject_Action", "jetbrains.mps.make.facet");
+      ProjectMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeProject_Action");
+      ProjectMake_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.RebuildProject_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_make);
   }
 }

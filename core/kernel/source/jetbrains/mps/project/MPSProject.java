@@ -28,7 +28,6 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
@@ -452,11 +451,5 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   // should be left for compatibility with generated plugins (editor openers)
   public <T> T getComponent(Class<T> clazz) {
     return getProject().getComponent(clazz);
-  }
-
-  @Deprecated
-  //should be left for compatibility (Project Operations in plugins)
-  public ProjectPluginManager getPluginManager() {
-    return myProject.getComponent(ProjectPluginManager.class);
   }
 }

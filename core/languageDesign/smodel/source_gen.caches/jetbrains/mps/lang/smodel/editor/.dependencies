@@ -732,7 +732,7 @@
   <dependency className="jetbrains.mps.lang.smodel.editor.Node_ConceptMethodCall_Editor" file="Node_ConceptMethodCall_Editor.java">
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.Style" />
@@ -744,6 +744,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.Padding" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.Measure" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

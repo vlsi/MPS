@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -47,7 +47,7 @@ public class ConvertToReturnStatement_Intention extends BaseIntention implements
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode returnStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
+    SNode returnStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SLinkOperations.setTarget(returnStatement, "expression", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
     SNodeOperations.replaceWithAnother(node, returnStatement);
   }

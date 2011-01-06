@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class SplitStringIntoConcatenation_Intention extends BaseIntention implements Intention {
   public SplitStringIntoConcatenation_Intention() {
@@ -40,9 +39,9 @@ public class SplitStringIntoConcatenation_Intention extends BaseIntention implem
     int caretPosition = cell.getCaretPosition();
     String s1 = SPropertyOperations.getString(node, "value").substring(0, caretPosition);
     String s2 = SPropertyOperations.getString(node, "value").substring(caretPosition);
-    SNode plusExpression = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.PlusExpression");
-    SPropertyOperations.set(SLinkOperations.setNewChild(plusExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", s1);
-    SPropertyOperations.set(SLinkOperations.setNewChild(plusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", s2);
+    SNode plusExpression = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.PlusExpression");
+    SPropertyOperations.set(SNodeFactoryOperations.setNewChild(plusExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", s1);
+    SPropertyOperations.set(SNodeFactoryOperations.setNewChild(plusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", s2);
   }
 
   public String getLocationString() {

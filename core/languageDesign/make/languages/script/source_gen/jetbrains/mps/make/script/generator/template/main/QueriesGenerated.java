@@ -61,15 +61,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3297237684108617667(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "work");
+    return SPropertyOperations.getString(_context.getNode(), "workName");
   }
 
   public static Object propertyMacro_GetPropertyValue_3297237684108617579(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "work");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "workStatement", false), "workName");
   }
 
   public static Object propertyMacro_GetPropertyValue_3297237684108617635(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "work");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "workStatement", false), "workName");
   }
 
   public static Object propertyMacro_GetPropertyValue_7877690107352956507(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class UnwrapTryCatch_Intention extends BaseIntention implements Intention {
   public UnwrapTryCatch_Intention() {
@@ -70,7 +71,7 @@ public class UnwrapTryCatch_Intention extends BaseIntention implements Intention
         }
       });
     } else {
-      SNode statement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.BlockStatement");
+      SNode statement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.BlockStatement");
       SLinkOperations.setTarget(statement, "statements", body, true);
     }
   }

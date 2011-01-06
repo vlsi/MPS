@@ -21,7 +21,7 @@ import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.AbstractTableModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
 public class Table_Editor extends DefaultNodeEditor {
@@ -94,9 +94,9 @@ public class Table_Editor extends DefaultNodeEditor {
 
           @Override
           public void insertRow(int rowNumber) {
-            SNode rowNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
+            SNode rowNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
             for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count(); i++) {
-              ListSequence.fromList(SLinkOperations.getTargets(rowNode, "cells", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+              ListSequence.fromList(SLinkOperations.getTargets(rowNode, "cells", true)).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
             }
             ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).insertElement(rowNumber, rowNode);
           }
@@ -111,7 +111,7 @@ public class Table_Editor extends DefaultNodeEditor {
           @Override
           public void insertColumn(int columnNumber) {
             for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {
-              ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).insertElement(columnNumber, SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+              ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).insertElement(columnNumber, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
             }
           }
         };

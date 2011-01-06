@@ -64,11 +64,11 @@ public class MakeActionParameters {
           public Iterator<SModelDescriptor> iterator() {
             return new YieldingIterator<SModelDescriptor>() {
               private int __CP__ = 0;
-              private SModelDescriptor _5__yield_nk3wxj_a0a0a0a0a0a0b;
-              private Iterator<SModelDescriptor> _5__yield_nk3wxj_a0a0a0a0a0a0b_it;
+              private SModelDescriptor _5__yield_nk3wxj_a0a0a0a0a0a1;
+              private Iterator<SModelDescriptor> _5__yield_nk3wxj_a0a0a0a0a0a1_it;
               private Iterable<SModelDescriptor> _11_modelsFromModules;
-              private SModelDescriptor _12__yield_nk3wxj_d0a0a0a0a0b;
-              private Iterator<SModelDescriptor> _12__yield_nk3wxj_d0a0a0a0a0b_it;
+              private SModelDescriptor _12__yield_nk3wxj_d0a0a0a0a1;
+              private Iterator<SModelDescriptor> _12__yield_nk3wxj_d0a0a0a0a1_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -79,23 +79,23 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 5:
-                      this._5__yield_nk3wxj_a0a0a0a0a0a0b_it = Sequence.fromIterable(MakeActionParameters.this.models).iterator();
+                      this._5__yield_nk3wxj_a0a0a0a0a0a1_it = Sequence.fromIterable(MakeActionParameters.this.models).iterator();
                     case 6:
-                      if (!(this._5__yield_nk3wxj_a0a0a0a0a0a0b_it.hasNext())) {
+                      if (!(this._5__yield_nk3wxj_a0a0a0a0a0a1_it.hasNext())) {
                         this.__CP__ = 4;
                         break;
                       }
-                      this._5__yield_nk3wxj_a0a0a0a0a0a0b = this._5__yield_nk3wxj_a0a0a0a0a0a0b_it.next();
+                      this._5__yield_nk3wxj_a0a0a0a0a0a1 = this._5__yield_nk3wxj_a0a0a0a0a0a1_it.next();
                       this.__CP__ = 7;
                       break;
                     case 12:
-                      this._12__yield_nk3wxj_d0a0a0a0a0b_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
+                      this._12__yield_nk3wxj_d0a0a0a0a1_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
                     case 13:
-                      if (!(this._12__yield_nk3wxj_d0a0a0a0a0b_it.hasNext())) {
+                      if (!(this._12__yield_nk3wxj_d0a0a0a0a1_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._12__yield_nk3wxj_d0a0a0a0a0b = this._12__yield_nk3wxj_d0a0a0a0a0b_it.next();
+                      this._12__yield_nk3wxj_d0a0a0a0a1 = this._12__yield_nk3wxj_d0a0a0a0a1_it.next();
                       this.__CP__ = 14;
                       break;
                     case 2:
@@ -110,7 +110,7 @@ __switch__:
                       break;
                     case 8:
                       this.__CP__ = 6;
-                      this.yield(_5__yield_nk3wxj_a0a0a0a0a0a0b);
+                      this.yield(_5__yield_nk3wxj_a0a0a0a0a0a1);
                       return true;
                     case 10:
                       this.__CP__ = 4;
@@ -118,7 +118,7 @@ __switch__:
                       return true;
                     case 15:
                       this.__CP__ = 13;
-                      this.yield(_12__yield_nk3wxj_d0a0a0a0a0b);
+                      this.yield(_12__yield_nk3wxj_d0a0a0a0a1);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -171,9 +171,13 @@ __switch__:
       public Comparable<?> select(SModelDescriptor desc) {
         return desc.getModule().getModuleFqName();
       }
-    }, true).concat(Sequence.fromIterable(Sequence.<SModelDescriptor>singleton(null)));
+    }, true);
+    return arrangeByModule(smds);
+  }
+
+  private Iterable<MResource> arrangeByModule(Iterable<SModelDescriptor> smds) {
     final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(null);
-    return Sequence.fromIterable(smds).<MResource>translate(new ITranslator2<SModelDescriptor, MResource>() {
+    return Sequence.fromIterable(smds).concat(Sequence.fromIterable(Sequence.<SModelDescriptor>singleton(null))).<MResource>translate(new ITranslator2<SModelDescriptor, MResource>() {
       public Iterable<MResource> translate(final SModelDescriptor smd) {
         return new Iterable<MResource>() {
           public Iterator<MResource> iterator() {
@@ -193,71 +197,72 @@ __switch__:
                         this.__CP__ = 3;
                         break;
                       }
-                      this.__CP__ = 7;
+                      this.__CP__ = 8;
                       break;
-                    case 4:
+                    case 5:
                       if (models.value != null) {
-                        this.__CP__ = 5;
+                        this.__CP__ = 6;
                         break;
                       }
                       this.__CP__ = 1;
                       break;
-                    case 8:
+                    case 9:
                       if (models.value != null) {
-                        this.__CP__ = 9;
+                        this.__CP__ = 10;
                         break;
                       }
-                      this.__CP__ = 10;
+                      this.__CP__ = 11;
+                      break;
+                    case 12:
+                      if (ListSequence.fromList(models.value).last().getModule() == smd.getModule()) {
+                        this.__CP__ = 13;
+                        break;
+                      }
+                      this.__CP__ = 15;
                       break;
                     case 11:
-                      if (ListSequence.fromList(models.value).last().getModule() == smd.getModule()) {
-                        this.__CP__ = 12;
-                        break;
-                      }
-                      this.__CP__ = 14;
-                      break;
-                    case 10:
                       if (models.value == null) {
-                        this.__CP__ = 17;
+                        this.__CP__ = 18;
                         break;
                       }
                       this.__CP__ = 1;
                       break;
-                    case 6:
+                    case 7:
                       this.__CP__ = 1;
                       this.yield(new MResource(ListSequence.fromList(models.value).last().getModule(), models.value));
                       return true;
-                    case 15:
-                      this.__CP__ = 16;
+                    case 16:
+                      this.__CP__ = 17;
                       this.yield(new MResource(ListSequence.fromList(models.value).last().getModule(), models.value));
                       return true;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 3:
-                      this.__CP__ = 4;
+                      // end marker reached 
+                      this.__CP__ = 5;
                       break;
-                    case 5:
-                      this.__CP__ = 6;
+                    case 6:
+                      this.__CP__ = 7;
                       break;
-                    case 7:
-                      this.__CP__ = 8;
+                    case 8:
+                      this.__CP__ = 9;
                       break;
-                    case 9:
+                    case 10:
+                      this.__CP__ = 12;
+                      break;
+                    case 13:
+                      ListSequence.fromList(models.value).addElement(smd);
                       this.__CP__ = 11;
                       break;
-                    case 12:
-                      ListSequence.fromList(models.value).addElement(smd);
-                      this.__CP__ = 10;
-                      break;
-                    case 14:
-                      this.__CP__ = 15;
-                      break;
-                    case 16:
-                      models.value = null;
-                      this.__CP__ = 10;
+                    case 15:
+                      this.__CP__ = 16;
                       break;
                     case 17:
+                      models.value = null;
+                      this.__CP__ = 11;
+                      break;
+                    case 18:
                       models.value = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), smd);
                       this.__CP__ = 1;
                       break;
@@ -278,6 +283,8 @@ __switch__:
     Iterable<IModule> modulesSeq = ((Iterable<IModule>) this.modules);
     if (Sequence.fromIterable(modulesSeq).count() == 1) {
       return Sequence.fromIterable(modulesSeq).first();
+    } else if (Sequence.fromIterable(modulesSeq).count() > 1) {
+      return null;
     }
     return this.cmodule;
   }
@@ -286,6 +293,8 @@ __switch__:
     Iterable<SModelDescriptor> modelsSeq = ((Iterable<SModelDescriptor>) this.models);
     if (Sequence.fromIterable(modelsSeq).count() == 1) {
       return Sequence.fromIterable(modelsSeq).first();
+    } else if (Sequence.fromIterable(modelsSeq).count() > 1) {
+      return null;
     }
     return this.cmodel;
   }

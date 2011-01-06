@@ -8,6 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.generator.Icons;
 import com.intellij.util.ui.EmptyIcon;
@@ -22,12 +23,7 @@ public class CheckModelsBeforeGeneration_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
         boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
@@ -45,18 +41,14 @@ public class CheckModelsBeforeGeneration_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       GenerationSettings settings = GenerationSettings.getInstance();
       settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));

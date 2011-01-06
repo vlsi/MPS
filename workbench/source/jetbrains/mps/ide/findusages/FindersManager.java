@@ -41,6 +41,11 @@ public class FindersManager implements ApplicationComponent {
   private boolean myLoaded = false;
 
   private ClassLoaderManager myClassLoaderManager;
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clear();
+    }
+  };
 
   public FindersManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
@@ -166,11 +171,7 @@ public class FindersManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clear();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -180,6 +181,6 @@ public class FindersManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 }

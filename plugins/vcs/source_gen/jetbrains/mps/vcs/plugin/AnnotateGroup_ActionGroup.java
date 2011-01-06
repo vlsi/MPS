@@ -4,24 +4,19 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup;
 
 public class AnnotateGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AnnotateGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.AnnotateGroup";
+  public static final String ID = "jetbrains.mps.vcs.plugin.AnnotateGroup_ActionGroup";
 
   public AnnotateGroup_ActionGroup() {
     super("AnnotateGroup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      AnnotateGroup_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.Annotate_Action", "jetbrains.mps.vcs");
+      AnnotateGroup_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.Annotate_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorLeftPanelMenu_ActionGroup.ID, null);
   }
 }

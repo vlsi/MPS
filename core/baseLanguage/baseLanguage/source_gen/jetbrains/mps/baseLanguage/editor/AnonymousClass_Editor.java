@@ -37,6 +37,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -713,7 +714,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.addNewChild(node, "field", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      SNodeFactoryOperations.addNewChild(node, "field", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     }
 
     public String getMatchingText() {
@@ -726,7 +727,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.addNewChild(node, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      SNodeFactoryOperations.addNewChild(node, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     }
 
     public String getMatchingText() {
@@ -739,7 +740,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
+      SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
     }
 
     public String getMatchingText() {

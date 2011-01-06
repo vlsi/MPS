@@ -35,7 +35,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -201,7 +201,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode tagWrapper = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", null);
+      SNode tagWrapper = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", null);
       SPropertyOperations.set(tagWrapper, "tag", SPropertyOperations.getString_def(node, "tag", null));
       ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).addElement(tagWrapper);
       SPropertyOperations.set(node, "tag", null);

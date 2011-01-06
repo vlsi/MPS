@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class Folding_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Folding_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Folding";
+  public static final String ID = "jetbrains.mps.ide.actions.Folding_ActionGroup";
 
   public Folding_ActionGroup() {
     super("Folding", ID);
@@ -15,19 +15,15 @@ public class Folding_ActionGroup extends GeneratedActionGroup {
     this.setMnemonic("g".charAt(0));
     this.setPopup(true);
     try {
-      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Expand_Action", "jetbrains.mps.ide");
-      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Collapse_Action", "jetbrains.mps.ide");
+      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Expand_Action");
+      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Collapse_Action");
       Folding_ActionGroup.this.addSeparator();
-      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExpandAll_Action", "jetbrains.mps.ide");
-      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CollapseAll_Action", "jetbrains.mps.ide");
+      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExpandAll_Action");
+      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CollapseAll_Action");
       Folding_ActionGroup.this.addSeparator();
-      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FoldSelection_Action", "jetbrains.mps.ide");
+      Folding_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FoldSelection_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
   }
 }

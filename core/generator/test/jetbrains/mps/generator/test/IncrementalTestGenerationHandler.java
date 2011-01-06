@@ -225,7 +225,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       switch (msg.getKind()) {
         case ERROR:
         case WARNING:
-          Assert.fail((msg.getKind() == MessageKind.ERROR ? "error: " : "warning: ") + msg.getText());
+          Assert.fail((msg.getKind() == MessageKind.ERROR ? "error: " : "warning: ") + msg.getText() + msg.getException());
           break;
 
         case INFORMATION:

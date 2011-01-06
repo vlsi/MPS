@@ -6,27 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import com.intellij.openapi.extensions.PluginId;
 
 public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageEditorPopup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup";
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup";
 
   public BaseLanguageEditorPopup_ActionGroup() {
     super("BaseLanguageEditorPopup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action", "jetbrains.mps.baseLanguage", ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"));
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action", "jetbrains.mps.baseLanguage");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowMembers_Action", "jetbrains.mps.baseLanguage");
+      BaseLanguageEditorPopup_ActionGroup.this.addParameterizedAction(new GoToOverridingMethod_Action(ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder")), PluginId.getId("jetbrains.mps.baseLanguage"), ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"));
+      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action");
+      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action");
+      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowMembers_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

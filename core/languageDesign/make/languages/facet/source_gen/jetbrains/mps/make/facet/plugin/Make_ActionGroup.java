@@ -4,31 +4,21 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
-import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Make_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Make_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.make.facet.plugin.Make";
+  public static final String ID = "jetbrains.mps.make.facet.plugin.Make_ActionGroup";
 
   public Make_ActionGroup() {
     super("Make", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Make_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeSelection_Action", "jetbrains.mps.make.facet", false);
-      Make_ActionGroup.this.addAction("jetbrains.mps.make.facet.plugin.MakeSelection_Action", "jetbrains.mps.make.facet", true);
+      Make_ActionGroup.this.addParameterizedAction(new MakeSelection_Action(false), PluginId.getId("jetbrains.mps.make.facet"), false);
+      Make_ActionGroup.this.addParameterizedAction(new MakeSelection_Action(true), PluginId.getId("jetbrains.mps.make.facet"), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_make);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_make);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_make);
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_make);
   }
 }

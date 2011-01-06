@@ -29,6 +29,7 @@ import javax.swing.border.EmptyBorder;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;

@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,17 +48,17 @@ public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention impleme
 
   public void execute(final SNode node, final EditorContext editorContext) {
     // replace for loop with while 
-    SNode whileStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WhileStatement", null);
+    SNode whileStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WhileStatement", null);
     SNodeOperations.replaceWithAnother(node, whileStatement);
     // adjust while body 
     SLinkOperations.setTarget(whileStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
     // adjust precondition 
     // todo: multiple vars 
-    SNode preStatement = SNodeOperations.insertNewPrevSiblingChild(whileStatement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+    SNode preStatement = SNodeFactoryOperations.insertNewPrevSiblingChild(whileStatement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
     SLinkOperations.setTarget(preStatement, "localVariableDeclaration", SLinkOperations.getTarget(node, "variable", true), true);
     // adjust iteration 
     // todo: multiple iterations 
-    SNode iterStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SNode iterStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(iterStatement, "expression", SLinkOperations.getTarget(node, "iteration", true), true);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(whileStatement, "body", true), "statement", true)).addElement(iterStatement);
     // adjust exit condition 

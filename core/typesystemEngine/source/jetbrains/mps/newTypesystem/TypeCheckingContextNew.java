@@ -126,6 +126,11 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   }
 
   @Override
+  public void createGreaterThanInequationStrong(SNode node1, SNode node2, boolean checkOnly, EquationInfo equationInfo) {
+    myState.addInequality(node2, node1, false, checkOnly, equationInfo, false);
+  }
+
+  @Override
   public void createEquation(SNode node1, SNode node2, EquationInfo equationInfo) {
     myState.addEquation(node1, node2, equationInfo);
   }
@@ -179,6 +184,7 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (!ErrorReportUtil.shouldReportError(nodeWithError)) return;
     myState.addError(nodeWithError, errorReporter, null);
   }
 

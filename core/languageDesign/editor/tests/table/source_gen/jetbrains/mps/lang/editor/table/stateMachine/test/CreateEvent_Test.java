@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class CreateEvent_Test extends BaseTransformationTest {
@@ -25,7 +23,7 @@ public class CreateEvent_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("5877647854348551017", "5877647854348551049");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.Insert_Action");
     }
   }
 }

@@ -8,26 +8,23 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 
 public class CutNode_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/menu-cut.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(CutNode_Action.class);
-
-  private Project project;
-  private IOperationContext context;
-  private List<SNode> nodes;
 
   public CutNode_Action() {
     super("Cut", "", ICON);
@@ -35,24 +32,19 @@ public class CutNode_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl X";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    for (SNode node : ListSequence.fromList(CutNode_Action.this.nodes)) {
-      if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(CutNode_Action.this.nodes).first())) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+      if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first())) {
         return false;
       }
     }
-    return CutNode_Action.this.getProjectPane() != null;
+    return CutNode_Action.this.getProjectPane(_params) != null;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -63,8 +55,8 @@ public class CutNode_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
@@ -73,39 +65,32 @@ public class CutNode_Action extends GeneratedAction {
       if (nodes != null) {
       }
       if (error || nodes == null) {
-        this.nodes = null;
+        MapSequence.fromMap(_params).put("nodes", null);
       } else {
-        this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
     }
-    if (this.nodes == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.nodes = null;
-    this.project = null;
-    this.context = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyNodesToClipboard(CutNode_Action.this.nodes);
-      for (SNode node : ListSequence.fromList(CutNode_Action.this.nodes)) {
-        if (node == ListSequence.fromList(CutNode_Action.this.nodes).last()) {
-          ProjectPane pane = CutNode_Action.this.getProjectPane();
-          if (ListSequence.fromList(CutNode_Action.this.nodes).count() != 1) {
+      CopyPasteUtil.copyNodesToClipboard(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
+      for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+        if (node == ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).last()) {
+          ProjectPane pane = CutNode_Action.this.getProjectPane(_params);
+          if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).count() != 1) {
             pane.rebuildTree();
           }
           pane.selectNextNode(node);
@@ -119,7 +104,7 @@ public class CutNode_Action extends GeneratedAction {
     }
   }
 
-  private ProjectPane getProjectPane() {
-    return ProjectPane.getInstance(CutNode_Action.this.project);
+  private ProjectPane getProjectPane(final Map<String, Object> _params) {
+    return ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
   }
 }

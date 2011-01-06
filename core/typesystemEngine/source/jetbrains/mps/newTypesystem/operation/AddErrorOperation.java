@@ -16,15 +16,9 @@
 package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,7 +53,7 @@ public class AddErrorOperation extends AbstractOperation {
   }
 
   @Override
-  public Color getColor() {
-    return Colors.ERROR_ADDED;
+  public String getPresentationKind() {
+    return PresentationKind.ERROR_ADDED;
   }
 }

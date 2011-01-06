@@ -23,6 +23,7 @@ import jetbrains.mps.util.Calculable;
 import org.joda.time.DateTimeZone;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.joda.time.DateTime;
@@ -142,7 +143,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode tz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.TimeZoneIDExpression", null);
+                SNode tz = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.TimeZoneIDExpression", null);
                 SPropertyOperations.set(tz, "timezone_id", (item));
                 return tz;
               }
@@ -165,7 +166,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode tz = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.TimeZoneOffsetExpression", null);
+            SNode tz = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.TimeZoneOffsetExpression", null);
             SPropertyOperations.set(tz, "offsetmillis", "" + (0));
             try {
               DateTime dt = DateTimeFormat.forPattern("Z").withOffsetParsed().parseDateTime(pattern);
@@ -214,7 +215,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode op = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.TimeZoneNameOperation", null);
+            SNode op = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.TimeZoneNameOperation", null);
             SPropertyOperations.set(op, "property", "short name");
             return op;
           }
@@ -239,7 +240,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode op = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.TimeZoneNameOperation", null);
+            SNode op = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.TimeZoneNameOperation", null);
             SPropertyOperations.set(op, "property", "name");
             return op;
           }
@@ -276,7 +277,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "datetime", _context.getSourceNode(), true);
             return result;
@@ -293,7 +294,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatDateTimeExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setTarget(_context.getSourceNode(), "locale", SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0u().createNode(), "locale", false), false);
+          return SLinkOperations.setTarget(_context.getSourceNode(), "locale", SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0u().createNode(), "locale", false), false);
         }
 
         public String getMatchingText(String pattern) {
@@ -314,7 +315,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setTarget(_context.getSourceNode(), "locale", SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0v().createNode(), "locale", false), false);
+          return SLinkOperations.setTarget(_context.getSourceNode(), "locale", SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0v().createNode(), "locale", false), false);
         }
 
         public String getMatchingText(String pattern) {
@@ -335,7 +336,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatPeriodExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setTarget(_context.getSourceNode(), "locale", SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0w().createNode(), "locale", false), false);
+          return SLinkOperations.setTarget(_context.getSourceNode(), "locale", SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0w().createNode(), "locale", false), false);
         }
 
         public String getMatchingText(String pattern) {
@@ -356,7 +357,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ParseDateTimeExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode n = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.dates.structure.ParseDateTimeExpression");
+          SNode n = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.dates.structure.ParseDateTimeExpression");
           SLinkOperations.setTarget(n, "source", _context.getSourceNode(), true);
           return n;
         }
@@ -397,7 +398,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ParseDateTimeExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setTarget(_context.getSourceNode(), "default", new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a1a0a1a52().createNode(), true);
+          return SLinkOperations.setTarget(_context.getSourceNode(), "default", new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a1a0a1a52().createNode(), true);
         }
 
         public String getMatchingText(String pattern) {
@@ -422,7 +423,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ParseDateTimeExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.setTarget(_context.getSourceNode(), "locale", SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0ab().createNode(), "locale", false), false);
+          SLinkOperations.setTarget(_context.getSourceNode(), "locale", SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0ab().createNode(), "locale", false), false);
           return SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895903dd(jetbrains.mps.baseLanguage.datesInternal.structure)", "1172074383898");
         }
 
@@ -448,7 +449,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "datetime", _context.getSourceNode(), true);
           return result;
@@ -480,7 +481,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "datetime", _context.getSourceNode(), true);
             return result;
@@ -497,11 +498,11 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression", null);
+          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SNode tzexpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.InTimezoneExpression", null);
+          SNode tzexpr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.InTimezoneExpression", null);
           SLinkOperations.setTarget(tzexpr, "datetime", _context.getSourceNode(), true);
-          SLinkOperations.setTarget(tzexpr, "timezone", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.DefaultTimeZoneConstant", null), true);
+          SLinkOperations.setTarget(tzexpr, "timezone", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.DefaultTimeZoneConstant", null), true);
           SLinkOperations.setTarget(result, "datetime", tzexpr, true);
           return result;
         }
@@ -532,12 +533,12 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-              SNode tzexpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.InTimezoneExpression", null);
+              SNode tzexpr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.InTimezoneExpression", null);
               SLinkOperations.setTarget(tzexpr, "datetime", _context.getSourceNode(), true);
-              SLinkOperations.setTarget(tzexpr, "timezone", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.DefaultTimeZoneConstant", null), true);
+              SLinkOperations.setTarget(tzexpr, "timezone", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.dates.structure.DefaultTimeZoneConstant", null), true);
               SLinkOperations.setTarget(result, "datetime", tzexpr, true);
               return result;
             }
@@ -563,7 +564,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "period", _context.getSourceNode(), true);
             return result;
@@ -589,7 +590,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "datetime", _context.getSourceNode(), true);
             return result;
@@ -610,7 +611,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "datetime", _context.getSourceNode(), true);
             return result;
@@ -636,7 +637,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode sn = DateTypeUtil.getCompareExpression(_context.getSourceNode());
               SNodeOperations.replaceWithAnother(sn, result);
@@ -665,14 +666,14 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode sn = DateTypeUtil.getContainingPeriod(_context.getSourceNode());
               SNodeOperations.replaceWithAnother(sn, result);
               if (SNodeOperations.isInstanceOf(sn, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
                 SLinkOperations.setTarget(result, "datetime", sn, true);
               } else {
-                SLinkOperations.setTarget(result, "datetime", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null), true);
+                SLinkOperations.setTarget(result, "datetime", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null), true);
                 SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "datetime", true), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", sn, true);
               }
               return result;
@@ -698,7 +699,7 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.dates.structure.PeriodConstant");
+            SNode result = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.dates.structure.PeriodConstant");
             SLinkOperations.setTarget(result, "count", _context.getSourceNode(), true);
             SLinkOperations.setTarget(result, "dateTimeProperty", (item), false);
             return result;
@@ -759,8 +760,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0u {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0u() {
+  public static class QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0u {
+    public QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0u() {
     }
 
     public SNode createNode() {
@@ -796,8 +797,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0v {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0v() {
+  public static class QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0v {
+    public QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0v() {
     }
 
     public SNode createNode() {
@@ -833,8 +834,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0w {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0w() {
+  public static class QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0w {
+    public QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0w() {
     }
 
     public SNode createNode() {
@@ -870,8 +871,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a1a0a1a52 {
-    public QuotationClass_x583g4_a0a0a0a0a0a1a0a1a52() {
+  public static class QuotationClass_x583g4_a2a0a0a0a0a1a0a1a52 {
+    public QuotationClass_x583g4_a2a0a0a0a0a1a0a1a52() {
     }
 
     public SNode createNode() {
@@ -899,8 +900,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0ab {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0ab() {
+  public static class QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0ab {
+    public QuotationClass_x583g4_a0c0a0a0a0a0b0a0b0ab() {
     }
 
     public SNode createNode() {

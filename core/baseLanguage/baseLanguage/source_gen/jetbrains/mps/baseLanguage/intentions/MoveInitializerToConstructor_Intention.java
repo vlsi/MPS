@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MoveInitializerToConstructor_Intention extends BaseIntention implements Intention {
@@ -55,13 +55,13 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode classNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     // 
-    SNode assignmentStmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    SNode assignmentExpr = SLinkOperations.setNewChild(assignmentStmt, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+    SNode assignmentStmt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SNode assignmentExpr = SNodeFactoryOperations.setNewChild(assignmentStmt, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     SLinkOperations.setTarget(assignmentExpr, "rValue", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "initializer", true)), true);
     // 
-    SNode lValue = SLinkOperations.setNewChild(assignmentExpr, "lValue", "jetbrains.mps.baseLanguage.structure.DotExpression");
-    SLinkOperations.setNewChild(lValue, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-    SLinkOperations.setTarget(SLinkOperations.setNewChild(lValue, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", node, false);
+    SNode lValue = SNodeFactoryOperations.setNewChild(assignmentExpr, "lValue", "jetbrains.mps.baseLanguage.structure.DotExpression");
+    SNodeFactoryOperations.setNewChild(lValue, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
+    SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(lValue, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", node, false);
     // 
     for (SNode constr : ListSequence.fromList(SLinkOperations.getTargets(classNode, "constructor", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constr, "body", true), "statement", true)).insertElement(0, SNodeOperations.copyNode(assignmentStmt));

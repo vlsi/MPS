@@ -6,24 +6,21 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.model.PartitioningHelper;
 import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IScope;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.actions.model.PartitioningHelper;
 
 public class ShowMappingsPartitioning_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowMappingsPartitioning_Action.class);
-
-  private Project project;
-  private Frame frame;
-  private IScope scope;
-  private List<SModelDescriptor> models;
 
   public ShowMappingsPartitioning_Action() {
     super("Show Mappings Partitioning", "", ICON);
@@ -31,19 +28,14 @@ public class ShowMappingsPartitioning_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 1;
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return ShowMappingsPartitioning_Action.this.models.size() == 1;
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -54,40 +46,32 @@ public class ShowMappingsPartitioning_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.scope = event.getData(MPSDataKeys.SCOPE);
-    if (this.scope == null) {
+    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
     }
-    this.models = event.getData(MPSDataKeys.MODELS);
-    if (this.models == null) {
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    if (MapSequence.fromMap(_params).get("models") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.frame = null;
-    this.scope = null;
-    this.models = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      PartitioningHelper.showMappingPartitioning(ShowMappingsPartitioning_Action.this.project, ShowMappingsPartitioning_Action.this.frame, ShowMappingsPartitioning_Action.this.scope, ShowMappingsPartitioning_Action.this.models);
+      PartitioningHelper.showMappingPartitioning(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IScope) MapSequence.fromMap(_params).get("scope")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowMappingsPartitioning", t);

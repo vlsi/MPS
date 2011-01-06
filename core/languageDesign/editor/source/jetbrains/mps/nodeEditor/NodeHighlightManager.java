@@ -35,7 +35,6 @@ import java.util.Map.Entry;
 
 public class NodeHighlightManager implements EditorMessageOwner {
   private static final Comparator<EditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<EditorMessage>() {
-    @Override
     public int compare(EditorMessage m1, EditorMessage m2) {
       return m1.getPriority() - m2.getPriority();
     }
@@ -53,7 +52,11 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * all Caches are synchronized using myMessagesLock
    */
   private Map<EditorCell, List<EditorMessage>> myMessagesCache;
-  private ReloadAdapter myHandler;
+  public ReloadAdapter myHandler = new ReloadAdapter() {
+    public void unload() {
+      clear();
+    }
+  };
   private RebuildListener myRebuildListener;
   private Set<EditorMessageIconRenderer> myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
   private boolean myRebuildIconRenderersCacheFlag;
@@ -61,14 +64,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public NodeHighlightManager(@NotNull EditorComponent editor) {
     myEditor = editor;
-    myHandler = new ReloadAdapter() {
-      public void unload() {
-        if (myDisposed) {
-          return;
-        }
-        clear();
-      }
-    };
 
     editor.addRebuildListener(myRebuildListener = new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
@@ -456,5 +451,4 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
     return null;
   }
-
 }

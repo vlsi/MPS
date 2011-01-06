@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -59,8 +59,8 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention implemen
 
   public void execute(final SNode node, final EditorContext editorContext) {
     String text = SPropertyOperations.getString(node, "text").trim();
-    SNode collection = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
-    SLinkOperations.setNewChild(collection, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow");
+    SNode collection = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
+    SNodeFactoryOperations.setNewChild(collection, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow");
     SNodeOperations.replaceWithAnother(node, collection);
     String[] strings = text.split(" ");
     int i = 0;
@@ -84,11 +84,11 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention implemen
         }
       }
       if (!(leftPaddingSet)) {
-        SNode paddingLeftStyleClassItem = SLinkOperations.addNewChild(constantCell, "styleItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem");
+        SNode paddingLeftStyleClassItem = SNodeFactoryOperations.addNewChild(constantCell, "styleItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem");
         SPropertyOperations.set(paddingLeftStyleClassItem, "value", "0.5");
       }
       if (!(rightPaddingSet)) {
-        SNode paddingRightStyleClassItem = SLinkOperations.addNewChild(constantCell, "styleItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem");
+        SNode paddingRightStyleClassItem = SNodeFactoryOperations.addNewChild(constantCell, "styleItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem");
         SPropertyOperations.set(paddingRightStyleClassItem, "value", "0.5");
       }
       ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(constantCell);

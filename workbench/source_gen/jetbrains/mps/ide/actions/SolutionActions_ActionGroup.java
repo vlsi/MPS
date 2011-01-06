@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.SolutionActions";
+  public static final String ID = "jetbrains.mps.ide.actions.SolutionActions_ActionGroup";
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
@@ -21,39 +24,74 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_solutionNew);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_solutionNew);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_make);
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_make);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModule_Action", "jetbrains.mps.ide", "Solution");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addParameterizedAction(new CheckModule_Action("Solution"), PluginId.getId("jetbrains.mps.ide"), "Solution");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeModule_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildModule_Action", "jetbrains.mps.ide");
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanModule_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeModule_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildModule_Action");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanModule_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_refactoring);
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action", "jetbrains.mps.ide");
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_refactoring);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action");
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_favorites);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_favorites);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_vcs);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_vcs);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_scripts);
+      {
+        LabelledAnchor action = new LabelledAnchor(SolutionActions_ActionGroup.LABEL_ID_scripts);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        SolutionActions_ActionGroup.this.addAction(action);
+      }
       SolutionActions_ActionGroup.this.addSeparator();
-      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SolutionProperties_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SolutionProperties_Action");
       SolutionActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

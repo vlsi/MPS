@@ -25,7 +25,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
@@ -147,7 +147,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
       if (eq_n0gj60_a0b0c1(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
-        SLinkOperations.setTarget(node, "query", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", null), true);
+        SLinkOperations.setTarget(node, "query", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", null), true);
       }
     }
 

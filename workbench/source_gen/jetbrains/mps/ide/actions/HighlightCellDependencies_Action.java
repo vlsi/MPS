@@ -6,13 +6,15 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -22,21 +24,13 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(HighlightCellDependencies_Action.class);
 
-  private EditorComponent editorComponent;
-  private EditorCell editorCell;
-
   public HighlightCellDependencies_Action() {
     super("Higlighted Cell's Dependent Nodes", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl alt shift F7";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -47,39 +41,33 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    this.editorCell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.editorCell == null) {
+    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("editorCell") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-    this.editorCell = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NodeHighlightManager highlightManager = HighlightCellDependencies_Action.this.editorComponent.getHighlightManager();
-      EditorMessageOwner messageOwner = HighlightCellDependencies_Action.this.editorComponent.getHighlightMessagesOwner();
-      highlightManager.mark(HighlightCellDependencies_Action.this.editorCell.getSNode(), HighlightConstants.NODE_COLOR, "node", messageOwner);
-      Set<SNode> nodes = HighlightCellDependencies_Action.this.editorComponent.getNodesCellDependOn(HighlightCellDependencies_Action.this.editorCell);
+      NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
+      EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
+      highlightManager.mark(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNode(), HighlightConstants.NODE_COLOR, "node", messageOwner);
+      Set<SNode> nodes = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodesCellDependOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
       if (nodes != null) {
         for (SNode node : SetSequence.fromSet(nodes)) {
           highlightManager.mark(node, HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
         }
       }
-      Set<SNodePointer> copyOfRefTargets = HighlightCellDependencies_Action.this.editorComponent.getCopyOfRefTargetsCellDependsOn(HighlightCellDependencies_Action.this.editorCell);
+      Set<SNodePointer> copyOfRefTargets = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getCopyOfRefTargetsCellDependsOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
       if (copyOfRefTargets != null) {
         for (SNodePointer nodePointer : SetSequence.fromSet(copyOfRefTargets)) {
           if (nodePointer.getNode() != null) {

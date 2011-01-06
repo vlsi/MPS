@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Locale;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class FoldHTMLElement_Intention extends BaseIntention implements Intention {
   public FoldHTMLElement_Intention() {
@@ -45,7 +46,7 @@ public class FoldHTMLElement_Intention extends BaseIntention implements Intentio
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
-      SLinkOperations.addNewChild(node, "line", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+      SNodeFactoryOperations.addNewChild(node, "line", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
     } else {
       ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).clear();
     }

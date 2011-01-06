@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -61,7 +61,7 @@ public class AddNodeMacroParam_switch_Intention extends BaseIntention implements
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode nodeMacro = QueriesUtil.addNodeMacro(node);
-    SNode switchMacro = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.SwitchMacro", null);
+    SNode switchMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.SwitchMacro", null);
     SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
     SLinkOperations.setTarget(switchMacro, "templateSwitch", this.myParameter, false);
     // set caret 

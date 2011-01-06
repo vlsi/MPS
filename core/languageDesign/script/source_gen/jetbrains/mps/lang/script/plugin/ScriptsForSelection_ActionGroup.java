@@ -11,23 +11,17 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.List;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
-import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
-import jetbrains.mps.ide.actions.SolutionActions_ActionGroup;
 
 public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ScriptsForSelection_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsForSelection";
+  public static final String ID = "jetbrains.mps.lang.script.plugin.ScriptsForSelection_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-  private List<AnAction> myAllActions;
 
   public ScriptsForSelection_ActionGroup() {
     super("Scripts", ID);
@@ -55,7 +49,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
       ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByBuildPopup());
       ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByLanguagePopup());
       // 
-      ScriptsForSelection_ActionGroup.this.addAction("jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action", "jetbrains.mps.lang.script", menuBuilder.getAllScripts(), true);
+      ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder.getAllScripts(), true), PluginId.getId("jetbrains.mps.lang.script"), menuBuilder.getAllScripts(), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
@@ -68,10 +62,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
 
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_scripts);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_scripts);
-    this.insertGroupIntoAnother(GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_scripts);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_scripts);
+  public boolean isStrict() {
+    return false;
   }
 }

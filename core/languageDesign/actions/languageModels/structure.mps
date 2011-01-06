@@ -14,7 +14,7 @@
   <import index="i09a" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="ovhc" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="f6p7" modelUID="f:java_stub#jetbrains.mps.lang.actions(jetbrains.mps.lang.actions@java_stub)" version="-1" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
@@ -494,6 +494,51 @@
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="copyPaste" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5979988948250981289">
+      <property name="name" nameId="tpck.1169194664001" value="SNodeCreatorAndInitializer" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1180636770613" resolveInfo="SNodeCreator" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7776141288922801652">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <property name="name" nameId="tpck.1169194664001" value="NF_Concept_NewInstance" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1181949435690" resolveInfo="Concept_NewInstance" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5480835971642155304">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <property name="name" nameId="tpck.1169194664001" value="NF_Model_CreateNewNodeOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1143235216708" resolveInfo="Model_CreateNewNodeOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5480835971642160908">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <property name="name" nameId="tpck.1169194664001" value="NF_Model_CreateNewRootNodeOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1166648550386" resolveInfo="Model_CreateNewRootNodeOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="767145758118872824">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <property name="name" nameId="tpck.1169194664001" value="NF_Node_InsertNewNextSiblingOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1139858892567" resolveInfo="Node_InsertNewNextSiblingOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="767145758118872826">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <property name="name" nameId="tpck.1169194664001" value="NF_Node_InsertNewPrevSiblingOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1143221076066" resolveInfo="Node_InsertNewPrevSiblingOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="767145758118872828">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <property name="name" nameId="tpck.1169194664001" value="NF_Node_ReplaceWithNewOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1139867745658" resolveInfo="Node_ReplaceWithNewOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="767145758118872830">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <property name="name" nameId="tpck.1169194664001" value="NF_Link_SetNewChildOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1138757581985" resolveInfo="Link_SetNewChildOperation" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="767145758118872833">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
+      <property name="name" nameId="tpck.1169194664001" value="NF_LinkList_AddNewChildOperation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1139184414036" resolveInfo="LinkList_AddNewChildOperation" />
     </node>
   </roots>
   <root id="1112056943463">
@@ -2437,6 +2482,103 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5948027493682790121">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
+  </root>
+  <root id="5979988948250981289">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5979988948250981377">
+      <property name="value" nameId="tpce.1105725733873" value="initialized node&lt;&gt;" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5979988948250981378">
+      <property name="value" nameId="tpce.1105725733873" value="create new initialized node" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </root>
+  <root id="7776141288922801652">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7776141288922801654">
+      <property name="value" nameId="tpce.1105725733873" value="new initialized instance" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7776141288922801655">
+      <property name="value" nameId="tpce.1105725733873" value="create new initialized node" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932817">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1172326539502" resolveInfo="applicableToConcept" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932818">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1138763325919" resolveInfo="applicableToLink" />
+    </node>
+  </root>
+  <root id="5480835971642155304">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5480835971642160857">
+      <property name="value" nameId="tpce.1105725733873" value="new initialized node" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932811">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1143235288634" resolveInfo="applicableToModel" />
+    </node>
+  </root>
+  <root id="5480835971642160908">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5480835971642160909">
+      <property name="value" nameId="tpce.1105725733873" value="new initialized root node" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932809">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1143235288634" resolveInfo="applicableToModel" />
+    </node>
+  </root>
+  <root id="767145758118872824">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="767145758118872825">
+      <property name="value" nameId="tpce.1105725733873" value="new initialized next-sibling" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932807">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1138763241883" resolveInfo="applicableToNode" />
+    </node>
+  </root>
+  <root id="767145758118872826">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="767145758118872827">
+      <property name="value" nameId="tpce.1105725733873" value="new initialized prev-sibling" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932805">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1138763241883" resolveInfo="applicableToNode" />
+    </node>
+  </root>
+  <root id="767145758118872828">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="767145758118872829">
+      <property name="value" nameId="tpce.1105725733873" value="replace with new initialized" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932802">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1138763241883" resolveInfo="applicableToNode" />
+    </node>
+  </root>
+  <root id="767145758118872830">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="767145758118872831">
+      <property name="value" nameId="tpce.1105725733873" value="set new initialized" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="767145758118872832">
+      <property name="value" nameId="tpce.1105725733873" value="set new initialized child" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932813">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1138763325919" resolveInfo="applicableToLink" />
+    </node>
+  </root>
+  <root id="767145758118872833">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="767145758118872834">
+      <property name="value" nameId="tpce.1105725733873" value="add new initialized" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="767145758118872835">
+      <property name="value" nameId="tpce.1105725733873" value="add new initialized child" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7836612869650932815">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tp25.1138763350436" resolveInfo="applicableToLinkList" />
     </node>
   </root>
 </model>

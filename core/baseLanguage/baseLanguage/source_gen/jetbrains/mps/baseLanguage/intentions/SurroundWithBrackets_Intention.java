@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.SurroundWithIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,7 +37,7 @@ public class SurroundWithBrackets_Intention extends SurroundWithIntention implem
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode blockStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
+    SNode blockStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, blockStatement);
     for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {

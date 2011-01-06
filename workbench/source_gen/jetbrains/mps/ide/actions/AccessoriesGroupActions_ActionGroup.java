@@ -7,15 +7,15 @@ import jetbrains.mps.logging.Logger;
 
 public class AccessoriesGroupActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AccessoriesGroupActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.AccessoriesGroupActions";
+  public static final String ID = "jetbrains.mps.ide.actions.AccessoriesGroupActions_ActionGroup";
 
   public AccessoriesGroupActions_ActionGroup() {
     super("AccessoriesGroupActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      AccessoriesGroupActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action", "jetbrains.mps.ide");
-      AccessoriesGroupActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddAccessoryModel_Action", "jetbrains.mps.ide");
+      AccessoriesGroupActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action");
+      AccessoriesGroupActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddAccessoryModel_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

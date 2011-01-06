@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddPosition {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -28,7 +28,7 @@ public class AddPosition {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, "position", true) == null) {
-        SLinkOperations.setTarget(node, "position", SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null), true);
+        SLinkOperations.setTarget(node, "position", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null), true);
       }
     }
   }

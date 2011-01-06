@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FontStyleQuery_Intention extends BaseIntention implements Intention {
@@ -41,7 +42,7 @@ public class FontStyleQuery_Intention extends BaseIntention implements Intention
   public void execute(final SNode node, final EditorContext editorContext) {
     SPropertyOperations.set(node, "style", null);
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
-      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle");
+      SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle");
     } else {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
     }

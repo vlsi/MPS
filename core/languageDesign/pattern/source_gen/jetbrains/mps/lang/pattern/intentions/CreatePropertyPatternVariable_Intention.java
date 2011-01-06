@@ -7,9 +7,9 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.lang.pattern.util.PatternAddingUtil;
+import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CreatePropertyPatternVariable_Intention extends BaseIntention implements Intention {
@@ -50,7 +50,7 @@ public class CreatePropertyPatternVariable_Intention extends BaseIntention imple
   public void execute(final SNode node, final EditorContext editorContext) {
     EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
     String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
-    cell.getSNode().setPropertyAttribute(propertyName, SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", null));
+    cell.getSNode().setPropertyAttribute(propertyName, SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", null));
   }
 
   public String getLocationString() {

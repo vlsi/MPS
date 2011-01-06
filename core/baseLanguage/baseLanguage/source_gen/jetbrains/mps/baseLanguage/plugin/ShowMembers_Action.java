@@ -5,27 +5,25 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import java.awt.Frame;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ShowMembers_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowMembers_Action.class);
-
-  private Frame frame;
-  private IOperationContext context;
-  private SNode node;
 
   public ShowMembers_Action() {
     super("Show Members", "", ICON);
@@ -33,19 +31,14 @@ public class ShowMembers_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl F12";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false) != null);
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return (SNodeOperations.getAncestor(ShowMembers_Action.this.node, "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false) != null);
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -54,50 +47,43 @@ public class ShowMembers_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.frame = null;
-    this.context = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          members.value = IMemberContainer_Behavior.call_getMembers_1213877531970(SNodeOperations.getAncestor(ShowMembers_Action.this.node, "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false));
+          members.value = IMemberContainer_Behavior.call_getMembers_1213877531970(SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false));
         }
       });
-      SNode snode = CommonChoosers.showDialogNodeChooser(ShowMembers_Action.this.frame, members.value);
+      SNode snode = CommonChoosers.showDialogNodeChooser(((Frame) MapSequence.fromMap(_params).get("frame")), members.value);
       if (snode == null) {
         return;
       }
-      ShowMembers_Action.this.context.getComponent(MPSEditorOpener.class).openNode(snode, ShowMembers_Action.this.context, true, true);
+      ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).openNode(snode, ((IOperationContext) MapSequence.fromMap(_params).get("context")), true, true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowMembers", t);
     }

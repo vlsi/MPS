@@ -15,10 +15,10 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1167245930434(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -37,13 +37,13 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode logStatement = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.logging.structure.LogStatement", null);
+                SNode logStatement = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.logging.structure.LogStatement", null);
                 SPropertyOperations.set(logStatement, "severity", SEnumOperations.getEnumMemberValue((item)));
-                SLinkOperations.setNewChild(logStatement, "logExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
+                SNodeFactoryOperations.setNewChild(logStatement, "logExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
                 SNode catchClause = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.CatchClause", true, false);
                 if ((catchClause != null) && (SLinkOperations.getTarget(catchClause, "throwable", true) != null)) {
                   SPropertyOperations.set(logStatement, "hasException", "" + (true));
-                  SNode lvr = SLinkOperations.setNewChild(logStatement, "exception", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+                  SNode lvr = SNodeFactoryOperations.setNewChild(logStatement, "exception", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
                   SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(catchClause, "throwable", true), false);
                 }
                 return logStatement;

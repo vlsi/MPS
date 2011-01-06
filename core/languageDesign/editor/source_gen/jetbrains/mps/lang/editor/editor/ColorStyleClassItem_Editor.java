@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -177,7 +178,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
+      SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
     }
 
     public String getMatchingText() {
@@ -190,7 +191,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
+      SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
     }
 
     public String getMatchingText() {
@@ -203,7 +204,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
+      SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.RGBColor");
     }
 
     public String getMatchingText() {
@@ -216,7 +217,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
+      SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
     }
 
     public String getMatchingText() {

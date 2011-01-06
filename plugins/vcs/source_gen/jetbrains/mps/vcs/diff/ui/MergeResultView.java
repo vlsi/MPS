@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.smodel.ModelAccess;
@@ -113,8 +114,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
       final SNode node = getSNode();
       if (node != null && node.isRoot()) {
         BaseAction showRootDiffDialog = new BaseAction("Show Merge In MPS Editor") {
-          @Override
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent event, Map<String, Object> map) {
             doubleClick();
           }
         };
@@ -263,7 +263,7 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
         "Exclude"
       );
       BaseAction action = new BaseAction(text) {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent event, Map<String, Object> map) {
           if (myMerger.getExcludedChanges().contains(myChange)) {
             myMerger.includeChange(myChange);
           } else {

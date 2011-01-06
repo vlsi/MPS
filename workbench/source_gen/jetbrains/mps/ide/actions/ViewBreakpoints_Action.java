@@ -8,11 +8,13 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointsBrowserDialog;
+import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
@@ -20,20 +22,13 @@ public class ViewBreakpoints_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/viewBreakpoints.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ViewBreakpoints_Action.class);
 
-  private IOperationContext context;
-
   public ViewBreakpoints_Action() {
     super("View Breakpoints", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl shift F8";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -44,25 +39,20 @@ public class ViewBreakpoints_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final BreakpointsBrowserDialog dialog = new BreakpointsBrowserDialog(ViewBreakpoints_Action.this.context);
+      final BreakpointsBrowserDialog dialog = new BreakpointsBrowserDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")));
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           dialog.showDialog();

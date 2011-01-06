@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class StaticConceptMethodCallUtil {
@@ -26,7 +26,7 @@ public class StaticConceptMethodCallUtil {
   }
 
   public static SNode createNewNodeForMethodDeclarationParameter(SNode existingNode, SNode parameter) {
-    final SNode staticConceptMethodCall = SModelOperations.createNewNode(SNodeOperations.getModel(existingNode), "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
+    final SNode staticConceptMethodCall = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(existingNode), "jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
     SLinkOperations.setTarget(staticConceptMethodCall, "concept", SLinkOperations.getTarget(existingNode, "concept", false), false);
     SLinkOperations.setTarget(staticConceptMethodCall, "baseMethodDeclaration", parameter, false);
     ListSequence.fromList(SLinkOperations.getTargets(existingNode, "actualArgument", true)).visitAll(new IVisitor<SNode>() {

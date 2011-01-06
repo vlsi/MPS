@@ -8,11 +8,10 @@ import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
-import jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup;
 
 public class ModelRefactorings_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelRefactorings_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.refactoring.plugin.ModelRefactorings";
+  public static final String ID = "jetbrains.mps.lang.refactoring.plugin.ModelRefactorings_ActionGroup";
 
   public ModelRefactorings_ActionGroup() {
     super("ModelRefactorings", ID);
@@ -27,9 +26,5 @@ public class ModelRefactorings_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelRefactoring_ActionGroup.ID, null);
   }
 }

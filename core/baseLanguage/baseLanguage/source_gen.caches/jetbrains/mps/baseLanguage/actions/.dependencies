@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_CopyPreProcessor_0" file="BL_CopyPasteHandlers_CopyPreProcessor_0.java">
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -8,19 +9,20 @@
     <classNode extendsClassName="jetbrains.mps.datatransfer.CopyPreProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_0" file="BL_CopyPasteHandlers_PastePostProcessor_0.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode extendsClassName="jetbrains.mps.datatransfer.PastePostProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1" file="BL_CopyPasteHandlers_PastePostProcessor_1.java">
@@ -51,12 +53,12 @@
   <dependency className="jetbrains.mps.baseLanguage.actions.PasteWrappers" file="PasteWrappers.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.datatransfer.PasteWrapperContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.datatransfer.PasteWrapper" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="java.util.ArrayList" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.actions.PrecedenceUtil" file="PrecedenceUtil.java">
@@ -65,6 +67,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.actions.QueriesGenerated" file="QueriesGenerated.java">
@@ -86,6 +89,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="java.lang.NumberFormatException" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformPreconditionContext" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="java.util.regex.Matcher" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -107,7 +111,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
     <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformPreconditionContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformActionsBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -152,6 +156,7 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNodeEx" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

@@ -29,7 +29,7 @@ public class Post_ThisRemovingClassConcept_Test extends BaseTransformationTest {
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " UP"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " UP"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " HOME"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.actions.Insert_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }

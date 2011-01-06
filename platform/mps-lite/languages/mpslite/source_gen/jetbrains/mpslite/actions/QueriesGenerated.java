@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
@@ -28,7 +28,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode constant = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.ConstantLinePart", null);
+            SNode constant = SNodeFactoryOperations.createNewNode(model, "jetbrains.mpslite.structure.ConstantLinePart", null);
             SPropertyOperations.set(constant, "text", pattern);
             return constant;
           }

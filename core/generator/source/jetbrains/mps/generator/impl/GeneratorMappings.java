@@ -297,11 +297,13 @@ public class GeneratorMappings {
       currentMapping.put(inputNode, outputNode);
     } else if (o instanceof List) {
       ((List<SNode>) o).add(outputNode);
-    } else {
+    } else if(o != outputNode) {
       List<SNode> list = new ArrayList<SNode>(4);
       list.add((SNode) o);
       list.add(outputNode);
       currentMapping.put(inputNode, list);
+    } else {
+      // TODO ?
     }
   }
 }

@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddNewLine_Intention extends BaseIntention implements Intention {
   public AddNewLine_Intention() {
@@ -45,7 +45,7 @@ public class AddNewLine_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.insertNextSiblingChild(node, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", null));
+    SNodeOperations.insertNextSiblingChild(node, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", null));
   }
 
   public String getLocationString() {

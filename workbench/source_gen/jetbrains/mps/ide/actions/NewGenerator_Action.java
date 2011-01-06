@@ -6,25 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.project.IModule;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import java.awt.Frame;
 import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.project.Project;
 
 public class NewGenerator_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewGenerator_Action.class);
-
-  private Frame frame;
-  private IModule module;
-  private Project project;
 
   public NewGenerator_Action() {
     super("Generator", "", ICON);
@@ -32,19 +30,14 @@ public class NewGenerator_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((IModule) MapSequence.fromMap(_params).get("module")) != null && ((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return NewGenerator_Action.this.module != null && NewGenerator_Action.this.module instanceof Language;
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -55,45 +48,38 @@ public class NewGenerator_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-    this.module = null;
-    this.project = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Frame localFrame = NewGenerator_Action.this.frame;
+      final Frame localFrame = ((Frame) MapSequence.fromMap(_params).get("frame"));
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog[0] = new NewGeneratorDialog(localFrame, ((Language) NewGenerator_Action.this.module));
+          dialog[0] = new NewGeneratorDialog(localFrame, ((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
         }
       });
       dialog[0].showDialog();
       Generator result = dialog[0].getResult();
       if (result != null) {
-        ProjectPane.getInstance(NewGenerator_Action.this.project).selectModule(result, false);
+        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModule(result, false);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

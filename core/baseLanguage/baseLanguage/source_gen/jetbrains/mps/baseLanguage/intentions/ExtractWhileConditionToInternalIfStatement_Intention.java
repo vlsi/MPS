@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -48,16 +48,16 @@ public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIn
 
   public void execute(final SNode node, final EditorContext editorContext) {
     // produce break statement 
-    SNode breakStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BreakStatement", null);
+    SNode breakStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BreakStatement", null);
     // produce if statement 
-    SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
-    SNode conditionExpr = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
+    SNode ifStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+    SNode conditionExpr = SNodeFactoryOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
     SLinkOperations.setTarget(conditionExpr, "expression", SLinkOperations.getTarget(node, "condition", true), true);
-    SLinkOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
+    SNodeFactoryOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).insertElement(0, breakStatement);
     // insert if statement and replace condition with true 
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "statement", true)).insertElement(0, ifStatement);
-    SNode condition = SLinkOperations.setNewChild(node, "condition", "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+    SNode condition = SNodeFactoryOperations.setNewChild(node, "condition", "jetbrains.mps.baseLanguage.structure.BooleanConstant");
     SPropertyOperations.set(condition, "value", "" + (true));
   }
 

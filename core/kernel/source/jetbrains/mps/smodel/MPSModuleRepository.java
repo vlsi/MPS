@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.generator.cache.BaseModelCache;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.model.RootReference;
@@ -117,7 +118,7 @@ public class MPSModuleRepository implements ApplicationComponent {
         for (IModule m : getAllModules()) {
           m.invalidateCaches();
         }
-        SModelUtil_new.clearCaches();
+        SModelUtil.clearCaches();
       }
     });
   }

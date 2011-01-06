@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Edit_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Edit_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Edit";
+  public static final String ID = "jetbrains.mps.ide.actions.Edit_ActionGroup";
   public static final String LABEL_ID_custom = ID + "custom";
 
   public Edit_ActionGroup() {
@@ -16,21 +19,22 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       Edit_ActionGroup.this.addSeparator();
-      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.QuickCreate_Action", "jetbrains.mps.ide");
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.QuickCreate_Action");
       Edit_ActionGroup.this.addSeparator();
-      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action", "jetbrains.mps.ide");
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action");
       Edit_ActionGroup.this.addSeparator();
-      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImport_Action", "jetbrains.mps.ide");
-      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImportByRoot_Action", "jetbrains.mps.ide");
-      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddLanguageImport_Action", "jetbrains.mps.ide");
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImport_Action");
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImportByRoot_Action");
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddLanguageImport_Action");
       Edit_ActionGroup.this.addSeparator();
-      Edit_ActionGroup.this.addAnchor(Edit_ActionGroup.LABEL_ID_custom);
+      {
+        LabelledAnchor action = new LabelledAnchor(Edit_ActionGroup.LABEL_ID_custom);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Edit_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("EditMenu", null);
   }
 }

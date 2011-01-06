@@ -18,12 +18,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.Map.Entry;
 
-/**
- * Created by IntelliJ IDEA.
- * Date: 25.08.2010
- * Time: 14:25:19
- * To change this template use File | Settings | File Templates.
- */
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
   private static final boolean useNewTypeSystem = "true".equals(System.getenv(TypeCheckingContextNew.USE_NEW_TYPESYSTEM));
@@ -64,7 +58,20 @@ public class TypeContextManager implements ApplicationComponent {
     }
   };
   private static final long TIMEOUT = 60000;
-  private SModelRepositoryAdapter mySModelRepositoryListener;
+  private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter() {
+    public void modelDeleted(SModelDescriptor modelDescriptor) {
+      myListeningForModels.remove(modelDescriptor);
+    }
+
+    public void modelRemoved(SModelDescriptor modelDescriptor) {
+      myListeningForModels.remove(modelDescriptor);
+    }
+  };
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clearForClassesUnload();
+    }
+  };
 
   public TypeContextManager(TypeChecker typeChecker, ClassLoaderManager classLoaderManager) {
     myTypeChecker = typeChecker;
@@ -72,42 +79,24 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   @NotNull
-  @Override
   public String getComponentName() {
     return "Type Context Manager";
   }
 
-  @Override
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clearForClassesUnload();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
     myTimer = new Timer(true);
     myTimer.schedule(new TimerTask() {
-      @Override
       public void run() {
         clearDefaultOwners();
       }
     }, TIMEOUT, TIMEOUT);
-    mySModelRepositoryListener = new SModelRepositoryAdapter() {
-      @Override
-      public void modelDeleted(SModelDescriptor modelDescriptor) {
-        myListeningForModels.remove(modelDescriptor);
-      }
-
-      @Override
-      public void modelRemoved(SModelDescriptor modelDescriptor) {
-        myListeningForModels.remove(modelDescriptor);
-      }
-    };
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
-  @Override
   public void disposeComponent() {
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   public static TypeContextManager getInstance() {

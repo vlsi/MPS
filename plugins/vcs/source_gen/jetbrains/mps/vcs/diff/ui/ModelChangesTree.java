@@ -53,6 +53,8 @@ import jetbrains.mps.ide.ui.TreeTextUtil;
 import java.util.LinkedHashSet;
 import javax.swing.tree.DefaultTreeModel;
 import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -444,21 +446,26 @@ import jetbrains.mps.ide.projectPane.Icons;
       final SNode node = getSNode();
       if (node != null) {
         BaseAction showRootDiffDialog = new BaseAction("Show Difference In MPS Editor") {
-          @NotNull
-          @Override
-          protected String getKeyStroke() {
-            return "ctrl D";
+          {
+            String keyStroke = "ctrl D";
+            KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+            KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
           }
 
-          @Override
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent event, Map<String, Object> map) {
             doubleClickOnNode(node);
           }
         };
         showRootDiffDialog.setExecuteOutsideCommand(true);
         BaseAction showNodeInEditor = new BaseAction("Open in Editor") {
+          {
+            String keyStroke = "F4";
+            KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+            KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+          }
+
           @Override
-          protected void doUpdate(final AnActionEvent e) {
+          protected void doUpdate(final AnActionEvent e, Map<String, Object> map) {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 boolean enabled = !(node.getModel().isNotEditable());
@@ -468,14 +475,7 @@ import jetbrains.mps.ide.projectPane.Icons;
             });
           }
 
-          @NotNull
-          @Override
-          protected String getKeyStroke() {
-            return "F4";
-          }
-
-          @Override
-          protected void doExecute(AnActionEvent e) {
+          protected void doExecute(AnActionEvent event, Map<String, Object> map) {
             getOperationContext().getComponent(MPSEditorOpener.class).editNode(node, getOperationContext());
           }
         };

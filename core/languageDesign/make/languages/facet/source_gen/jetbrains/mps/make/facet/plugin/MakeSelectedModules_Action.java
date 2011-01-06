@@ -5,20 +5,18 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class MakeSelectedModules_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(MakeSelectedModules_Action.class);
-
-  private IOperationContext context;
-  private List<IModule> modules;
-  private IModule cmodule;
 
   public MakeSelectedModules_Action() {
     super("Make Module", "", ICON);
@@ -26,13 +24,8 @@ public class MakeSelectedModules_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl F9";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    String text = new MakeActionParameters(MakeSelectedModules_Action.this.context, null, null, MakeSelectedModules_Action.this.modules, MakeSelectedModules_Action.this.cmodule).actionText(false);
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, ((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IModule) MapSequence.fromMap(_params).get("cmodule"))).actionText(false);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -41,10 +34,10 @@ public class MakeSelectedModules_Action extends GeneratedAction {
 
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -53,29 +46,22 @@ public class MakeSelectedModules_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.modules = event.getData(MPSDataKeys.MODULES);
-    this.cmodule = event.getData(MPSDataKeys.CONTEXT_MODULE);
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("cmodule", event.getData(MPSDataKeys.CONTEXT_MODULE));
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.modules = null;
-    this.cmodule = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(MakeSelectedModules_Action.this.context, new MakeActionParameters(MakeSelectedModules_Action.this.context, null, null, MakeSelectedModules_Action.this.modules, MakeSelectedModules_Action.this.cmodule), false).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, ((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IModule) MapSequence.fromMap(_params).get("cmodule"))), false).executeAction();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeSelectedModules", t);
     }

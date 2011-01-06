@@ -6,12 +6,12 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -35,37 +36,27 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoByCurrentReference_Action.class);
 
-  private EditorComponent editorComponent;
-  private EditorCell cell;
-  private IOperationContext context;
-  private SNode node;
-
   public GoByCurrentReference_Action() {
     super("Go by Current Reference", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl B";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
     if (targetNode == null) {
       return false;
     }
-    if (targetNode == GoByCurrentReference_Action.this.cell.getSNode()) {
+    if (targetNode == ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode()) {
       return false;
     }
     return true;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -76,47 +67,39 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    this.cell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.cell == null) {
+    MapSequence.fromMap(_params).put("cell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.node = event.getData(MPSDataKeys.NODE);
-    if (this.node == null) {
+    MapSequence.fromMap(_params).put("node", event.getData(MPSDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.editorComponent = null;
-    this.cell = null;
-    this.context = null;
-    this.node = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
+      final SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
       String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
       String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
-      if (neq_1m2c1e_a0e0a0f(stubSter, targetSter)) {
-        GoByCurrentReference_Action.this.open(targetNode);
+      if (neq_1m2c1e_a0e0a0d(stubSter, targetSter)) {
+        GoByCurrentReference_Action.this.open(targetNode, _params);
       } else {
-        SNode node = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
+        SNode node = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
         SModel model = node.getModel();
         Set<IModule> modules = model.getModelDescriptor().getModules();
         assert !(modules.isEmpty());
@@ -135,8 +118,8 @@ public class GoByCurrentReference_Action extends GeneratedAction {
             // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {
-                if (!(GoByCurrentReference_Action.this.navigateToJavaStub(modulePath, targetNode))) {
-                  GoByCurrentReference_Action.this.open(targetNode);
+                if (!(GoByCurrentReference_Action.this.navigateToJavaStub(modulePath, targetNode, _params))) {
+                  GoByCurrentReference_Action.this.open(targetNode, _params);
                 }
               }
             });
@@ -150,11 +133,11 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     }
   }
 
-  private void open(SNode targetNode) {
-    GoByCurrentReference_Action.this.context.getComponent(MPSEditorOpener.class).openNode(targetNode, GoByCurrentReference_Action.this.context, true, !(targetNode.isRoot()));
+  private void open(SNode targetNode, final Map<String, Object> _params) {
+    ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(MPSEditorOpener.class).openNode(targetNode, ((IOperationContext) MapSequence.fromMap(_params).get("context")), true, !(targetNode.isRoot()));
   }
 
-  private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode) {
+  private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {
     SModelReference ref = SNodeOperations.getModel(targetNode).getSModelReference();
     boolean isClassifier = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier");
     boolean isConstructor = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
@@ -171,7 +154,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         }
       }
     } else if (isConstructor) {
-      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
+      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref, _params);
       int paramCount = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).count();
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openClass(projectPath, classifierName)) {
@@ -181,7 +164,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         }
       }
     } else if (isMethod) {
-      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
+      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref, _params);
       SNode method = SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, "name"), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count())) {
@@ -189,7 +172,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         }
       }
     } else {
-      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
+      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref, _params);
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openField(projectPath, classifierName, targetNode.getName())) {
           return true;
@@ -199,13 +182,13 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     return false;
   }
 
-  private String getClassifierName(SNode targetNode, SModelReference ref) {
+  private String getClassifierName(SNode targetNode, SModelReference ref, final Map<String, Object> _params) {
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
     assert classifier != null;
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
   }
 
-  private static boolean neq_1m2c1e_a0e0a0f(Object a, Object b) {
+  private static boolean neq_1m2c1e_a0e0a0d(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

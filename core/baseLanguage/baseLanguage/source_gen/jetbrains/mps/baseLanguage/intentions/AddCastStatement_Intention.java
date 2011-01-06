@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -50,13 +50,13 @@ public class AddCastStatement_Intention extends BaseIntention implements Intenti
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode castVariable = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+    SNode castVariable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SNode instanceOfExpression = SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
     SNode declaration = SLinkOperations.getTarget(castVariable, "localVariableDeclaration", true);
     SLinkOperations.setTarget(declaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);
     List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(instanceOfExpression, "classType", true));
     SPropertyOperations.set(declaration, "name", ListSequence.fromList(variableSuffixes).first());
-    SNode castExpression = SLinkOperations.setNewChild(declaration, "initializer", "jetbrains.mps.baseLanguage.structure.CastExpression");
+    SNode castExpression = SNodeFactoryOperations.setNewChild(declaration, "initializer", "jetbrains.mps.baseLanguage.structure.CastExpression");
     SLinkOperations.setTarget(castExpression, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "classType", true)), true);
     SLinkOperations.setTarget(castExpression, "expression", SNodeOperations.copyNode(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true)), true);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).insertElement(0, castVariable);

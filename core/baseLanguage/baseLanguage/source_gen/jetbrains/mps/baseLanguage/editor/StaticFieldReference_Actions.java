@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class StaticFieldReference_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,7 +31,7 @@ public class StaticFieldReference_Actions {
       SNode classifier1 = SLinkOperations.getTarget(node, "classifier", false);
       SNode classifier2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (classifier1 == classifier2) {
-        SNode localStaticFieldReference = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
+        SNode localStaticFieldReference = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
         SLinkOperations.setTarget(localStaticFieldReference, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);
       }
     }

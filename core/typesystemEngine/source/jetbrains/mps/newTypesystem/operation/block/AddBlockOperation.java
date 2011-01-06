@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.operation.block;
 
-import jetbrains.mps.newTypesystem.operation.AbstractOperation;
-import jetbrains.mps.newTypesystem.presentation.color.Colors;
+import jetbrains.mps.newTypesystem.operation.PresentationKind;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-
-import java.awt.Color;
 
 /**
  * Created by IntelliJ IDEA.
@@ -43,8 +40,8 @@ public class AddBlockOperation extends AbstractBlockOperation {
   }
 
   @Override
-  public Color getColor() {
-    return Colors.WHEN_CONCRETE_ADDED;
+  public String getPresentationKind() {
+    return PresentationKind.WHEN_CONCRETE_ADDED;
   }
 
   @Override

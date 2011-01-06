@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class UseIndentLayoutInRefNodeList_Intention extends BaseIntention implements Intention {
   public UseIndentLayoutInRefNodeList_Intention() {
@@ -39,9 +40,9 @@ public class UseIndentLayoutInRefNodeList_Intention extends BaseIntention implem
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
-      SLinkOperations.setNewChild(node, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+      SNodeFactoryOperations.setNewChild(node, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
     } else {
-      SLinkOperations.setNewChild(node, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
+      SNodeFactoryOperations.setNewChild(node, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
     }
   }
 

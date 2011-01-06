@@ -19,6 +19,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.workbench.action.BaseAction;
 
+import java.util.Map;
+
 public class CloseAction extends BaseAction {
   private BaseTool myTool;
 
@@ -27,7 +29,7 @@ public class CloseAction extends BaseAction {
     myTool = tool;
   }
 
-  protected void doExecute(AnActionEvent e) {
+  protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     myTool.makeUnavailableLater();
   }
 }

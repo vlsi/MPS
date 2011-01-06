@@ -11,8 +11,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import java.util.List;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -20,14 +18,14 @@ import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.util.EqualUtil;
+import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
 public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AddToFavoritesGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.AddToFavoritesGroup";
+  public static final String ID = "jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup";
 
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-  private List<AnAction> myAllActions;
 
   public AddToFavoritesGroup_ActionGroup() {
     super("AddToFavoritesGroup", ID);
@@ -59,7 +57,7 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
         if (pane != null && EqualUtil.equals(name, currentFavoritesList)) {
           continue;
         }
-        AddToFavoritesGroup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddToFavorites_Action", "jetbrains.mps.ide", name);
+        AddToFavoritesGroup_ActionGroup.this.addParameterizedAction(new AddToFavorites_Action(name), PluginId.getId("jetbrains.mps.ide"), name);
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
@@ -73,7 +71,7 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
 
-  public void adjust() {
-    this.insertGroupIntoAnother(FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
+  public boolean isStrict() {
+    return false;
   }
 }

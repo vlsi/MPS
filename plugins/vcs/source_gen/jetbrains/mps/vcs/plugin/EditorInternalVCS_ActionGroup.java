@@ -4,27 +4,22 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class EditorInternalVCS_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorInternalVCS_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.EditorInternalVCS";
+  public static final String ID = "jetbrains.mps.vcs.plugin.EditorInternalVCS_ActionGroup";
 
   public EditorInternalVCS_ActionGroup() {
     super("EditorInternalVCS", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.DumpChangesManager_Action", "jetbrains.mps.vcs");
-      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action", "jetbrains.mps.vcs");
-      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.SaveModelDifference_Action", "jetbrains.mps.vcs");
-      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowDifference_Action", "jetbrains.mps.vcs");
+      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.DumpChangesManager_Action");
+      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action");
+      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.SaveModelDifference_Action");
+      EditorInternalVCS_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowDifference_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, null);
   }
 }

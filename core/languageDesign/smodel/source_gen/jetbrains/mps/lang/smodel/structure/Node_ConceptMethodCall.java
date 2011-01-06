@@ -18,6 +18,7 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DIRECT_CALL = "directCall";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
 
@@ -47,6 +48,14 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
 
   public void setVirtualPackage(String value) {
     this.setProperty(Node_ConceptMethodCall.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getDirectCall() {
+    return this.getBooleanProperty(Node_ConceptMethodCall.DIRECT_CALL);
+  }
+
+  public void setDirectCall(boolean value) {
+    this.setBooleanProperty(Node_ConceptMethodCall.DIRECT_CALL, value);
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {

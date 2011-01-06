@@ -11,6 +11,7 @@ import jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AddRemoveNewLineForChildren_Intention extends BaseIntention implements Intention {
@@ -63,7 +64,7 @@ public class AddRemoveNewLineForChildren_Intention extends BaseIntention impleme
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).isEmpty()) {
-      SNode styleItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", null);
+      SNode styleItem = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", null);
       SPropertyOperations.set(styleItem, "flag", "" + true);
       ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(styleItem);
     } else {

@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -39,7 +39,7 @@ public class ChangeTransactionalProperty_Intention extends BaseIntention impleme
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode transactional = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
+    SNode transactional = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
     SLinkOperations.setTarget(transactional, "relationDeclaration", SLinkOperations.getTarget(node, "property", false), false);
     SLinkOperations.setTarget(node, "property", null, false);
     SNodeOperations.detachNode(SLinkOperations.getTarget(node, "handlerBlock", true));

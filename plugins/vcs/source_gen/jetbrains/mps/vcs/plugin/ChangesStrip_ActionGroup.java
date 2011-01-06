@@ -7,16 +7,16 @@ import jetbrains.mps.logging.Logger;
 
 public class ChangesStrip_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ChangesStrip_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.ChangesStrip";
+  public static final String ID = "jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup";
 
   public ChangesStrip_ActionGroup() {
     super("ChangesStrip", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToNextChange_Action", "jetbrains.mps.vcs");
-      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action", "jetbrains.mps.vcs");
-      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.RollbackChanges_Action", "jetbrains.mps.vcs");
+      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToNextChange_Action");
+      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.GoToPreviousChange_Action");
+      ChangesStrip_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.RollbackChanges_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

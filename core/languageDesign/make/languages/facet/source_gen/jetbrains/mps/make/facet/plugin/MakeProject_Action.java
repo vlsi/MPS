@@ -7,18 +7,17 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 
 public class MakeProject_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/make.png", "jetbrains.mps.make.facet"), true);
   private static Logger LOG = Logger.getLogger(MakeProject_Action.class);
-
-  private IOperationContext context;
-  private MPSProject mpsProject;
 
   public MakeProject_Action() {
     super("Make _Project", "", ICON);
@@ -26,12 +25,7 @@ public class MakeProject_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -40,30 +34,24 @@ public class MakeProject_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.mpsProject = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(MakeProject_Action.this.context, new MakeActionParameters(MakeProject_Action.this.context, null, null, MakeProject_Action.this.mpsProject.getModules(), null), false).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules(), null), false).executeAction();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeProject", t);
     }

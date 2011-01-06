@@ -8,23 +8,21 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.IModule;
-import java.util.List;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import java.util.List;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class CheckModule_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelChecker.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(CheckModule_Action.class);
 
-  private IModule module;
-  private List<IModule> modules;
-  private Project project;
-  private IOperationContext operationContext;
   private String moduleType;
 
   public CheckModule_Action(String moduleType_par) {
@@ -34,17 +32,12 @@ public class CheckModule_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
         String whatToCheck = CheckModule_Action.this.moduleType;
-        if (CheckModule_Action.this.modules.size() > 1) {
-          whatToCheck = CheckModule_Action.this.modules.size() + " Modules";
+        if (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() > 1) {
+          whatToCheck = ((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() + " Modules";
         }
         event.getPresentation().setText("Check " + whatToCheck);
         event.getPresentation().setDescription("Check " + whatToCheck.toLowerCase() + " for structure and typesystem rules");
@@ -57,43 +50,35 @@ public class CheckModule_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    this.modules = event.getData(MPSDataKeys.MODULES);
-    if (this.modules == null) {
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.operationContext == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.module = null;
-    this.modules = null;
-    this.project = null;
-    this.operationContext = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (CheckModule_Action.this.modules.size() > 1) {
-        CheckModule_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(CheckModule_Action.this.modules, CheckModule_Action.this.operationContext, true);
+      if (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() > 1) {
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       } else {
-        CheckModule_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(CheckModule_Action.this.module, CheckModule_Action.this.operationContext, true);
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -104,8 +89,8 @@ public class CheckModule_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(CheckModule_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(moduleType_State((String) this.moduleType));
     res.append("!");

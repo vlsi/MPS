@@ -20,14 +20,12 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList.AggregatedSNodesList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList.LinkedSNodesList;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -76,8 +74,7 @@ public class SLinkOperations {
 
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      SNode prototypeNode = node.getChild(role);
-      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
+      SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
       node.setChild(role, newChild);
       return newChild;
     }
@@ -96,7 +93,7 @@ public class SLinkOperations {
 
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel());
+      SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
       node.addChild(role, newChild);
       return newChild;
     }

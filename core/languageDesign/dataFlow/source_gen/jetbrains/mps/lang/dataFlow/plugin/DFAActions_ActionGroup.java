@@ -4,27 +4,22 @@ package jetbrains.mps.lang.dataFlow.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 
 public class DFAActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DFAActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.dataFlow.plugin.DFAActions";
+  public static final String ID = "jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup";
 
   public DFAActions_ActionGroup() {
     super("DFAActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action", "jetbrains.mps.lang.dataFlow");
-      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action", "jetbrains.mps.lang.dataFlow");
-      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action", "jetbrains.mps.lang.dataFlow");
-      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action", "jetbrains.mps.lang.dataFlow");
+      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action");
+      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action");
+      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action");
+      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, null);
   }
 }

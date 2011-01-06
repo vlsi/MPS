@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
@@ -57,7 +58,7 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode testCase = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
+    SNode testCase = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
     SPropertyOperations.set(testCase, "name", SPropertyOperations.getString(node, "name"));
     SPropertyOperations.set(testCase, "testCaseName", SPropertyOperations.getString(node, "name"));
     if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false) != SLinkOperations.getTarget(new convert_test_case_to_unittest_case_Intention.QuotationClass_p2nyw8_a0a0a3a7().createNode(), "classifier", false)) {

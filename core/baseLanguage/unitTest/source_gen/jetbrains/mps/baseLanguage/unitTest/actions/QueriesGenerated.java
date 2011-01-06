@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -19,7 +19,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_TestMethod_1198167764447(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AssertStatement_589054057631277540(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {

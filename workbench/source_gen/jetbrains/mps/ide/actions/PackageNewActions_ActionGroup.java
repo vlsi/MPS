@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class PackageNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(PackageNewActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.PackageNewActions";
+  public static final String ID = "jetbrains.mps.ide.actions.PackageNewActions_ActionGroup";
 
   public PackageNewActions_ActionGroup() {
     super("New", ID);
@@ -17,9 +17,5 @@ public class PackageNewActions_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);
   }
 }

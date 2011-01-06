@@ -17,7 +17,6 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.lang.structure.structure.*;
 
 /**

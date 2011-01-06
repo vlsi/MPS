@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -64,6 +64,11 @@ public class LanguageChecker implements IEditorChecker {
     }
   };
   private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
+  private ReloadAdapter myReloadListener = new ReloadAdapter() {
+    public void unload() {
+      clearForUnload();
+    }
+  };
 
   public LanguageChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
@@ -71,11 +76,7 @@ public class LanguageChecker implements IEditorChecker {
     SetSequence.fromSet(myRules).addElement(new CardinalitiesChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
 
-    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clearForUnload();
-      }
-    });
+    ClassLoaderManager.getInstance().addReloadHandler(this.myReloadListener);
     SModelRepository.getInstance().addModelRepositoryListener(this.myRepositoryListener);
   }
 
@@ -90,6 +91,7 @@ public class LanguageChecker implements IEditorChecker {
     for (SModelDescriptor modelDescriptor : SetSequence.fromSetWithValues(new HashSet<SModelDescriptor>(), myListenedModels)) {
       removeModelListener(modelDescriptor);
     }
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
   }
 
   public void clearForUnload() {

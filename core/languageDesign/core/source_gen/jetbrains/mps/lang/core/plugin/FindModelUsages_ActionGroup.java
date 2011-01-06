@@ -4,24 +4,19 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 
 public class FindModelUsages_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(FindModelUsages_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.core.plugin.FindModelUsages";
+  public static final String ID = "jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup";
 
   public FindModelUsages_ActionGroup() {
     super("FindModelUsages", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      FindModelUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action", "jetbrains.mps.lang.core");
+      FindModelUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
   }
 }

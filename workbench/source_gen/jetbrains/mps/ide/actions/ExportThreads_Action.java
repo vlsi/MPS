@@ -8,17 +8,18 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.ILocation;
+import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
@@ -26,21 +27,13 @@ public class ExportThreads_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/export.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ExportThreads_Action.class);
 
-  private Project project;
-  private IOperationContext context;
-
   public ExportThreads_Action() {
     super("Export Threads", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
         AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
@@ -55,28 +48,22 @@ public class ExportThreads_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.project = null;
-    this.context = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
       AbstractUiState uiState = ((AbstractUiState) debugSession.getUiState());
@@ -101,7 +88,7 @@ public class ExportThreads_Action extends GeneratedAction {
         sb.append('\n');
       }
 
-      final ExportThreadsDialog dialog = new ExportThreadsDialog(ExportThreads_Action.this.context, sb);
+      final ExportThreadsDialog dialog = new ExportThreadsDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), sb);
 
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {

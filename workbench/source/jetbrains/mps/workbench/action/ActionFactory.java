@@ -159,31 +159,10 @@ public class ActionFactory {
     myActions.add(id);
 
     registerDefaultActionShortcut(action, id);
-    registerKeymapChanges(id, shortId, languageNamespace, params);
 
     ActionManager.getInstance().registerAction(id, action, PluginId.getId(languageNamespace != null ? InternUtil.intern(languageNamespace) : "java actions"));
   }
 
-  private void registerKeymapChanges(String actionId, String action, String languageNamespace, Object[] params) {
-    boolean cleared = false;
-    for (BaseKeymapChanges keymapDiff : myKeymaps) {
-      Keymap keymap = KeymapManager.getInstance().getKeymap(keymapDiff.getScheme());
-      if (keymap == null) {
-        LOG.error("keymap " + keymapDiff.getScheme() + " is not found");
-        return;
-      }
-
-      if (keymapDiff.hasShortcutsForAction(action, languageNamespace)) {
-        if (!cleared) {
-          cleared = true;
-          keymap.removeAllActionShortcuts(actionId);
-        }
-        for (KeyStroke stroke : keymapDiff.getShortcutsForAction(action, languageNamespace, params)) {
-          keymap.addShortcut(actionId, new KeyboardShortcut(stroke, null));
-        }
-      }
-    }
-  }
 
   private void registerDefaultActionShortcut(AnAction action, String id) {
     Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);

@@ -6,13 +6,14 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.project.Project;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.dialogs.MoveFileDialog;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.ide.projectView.ProjectView;
@@ -20,6 +21,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 
@@ -27,22 +29,13 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MoveFileOrDirectory_Action.class);
 
-  private VirtualFile selectedFile;
-  private Project project;
-  private Frame frame;
-
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return " F6";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -53,36 +46,29 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.selectedFile = event.getData(MPSDataKeys.VIRTUAL_FILE);
-    if (this.selectedFile == null) {
+    MapSequence.fromMap(_params).put("selectedFile", event.getData(MPSDataKeys.VIRTUAL_FILE));
+    if (MapSequence.fromMap(_params).get("selectedFile") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedFile = null;
-    this.project = null;
-    this.frame = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String path = MoveFileOrDirectory_Action.this.selectedFile.getParent().getPath();
-      MoveFileDialog dialog = new MoveFileDialog(MoveFileOrDirectory_Action.this.project, path, MoveFileOrDirectory_Action.this.selectedFile.isDirectory());
+      String path = ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getParent().getPath();
+      MoveFileDialog dialog = new MoveFileDialog(((Project) MapSequence.fromMap(_params).get("project")), path, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).isDirectory());
       dialog.show();
       if (!(dialog.isOK())) {
         return;
@@ -91,15 +77,15 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           try {
-            if (MoveFileOrDirectory_Action.this.isNotValid(result)) {
+            if (MoveFileOrDirectory_Action.this.isNotValid(result, _params)) {
               return;
             }
             VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(result);
-            MoveFileOrDirectory_Action.this.selectedFile.move(null, virtualFile);
-            ProjectView.getInstance(MoveFileOrDirectory_Action.this.project).refresh();
+            ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).move(null, virtualFile);
+            ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).refresh();
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                ProjectView.getInstance(MoveFileOrDirectory_Action.this.project).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, MoveFileOrDirectory_Action.this.selectedFile, true);
+                ProjectView.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")), true);
               }
             });
           } catch (IOException e) {
@@ -113,13 +99,13 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
     }
   }
 
-  /*package*/ boolean isNotValid(String result) {
+  /*package*/ boolean isNotValid(String result, final Map<String, Object> _params) {
     if (result == null || result.length() == 0) {
-      JOptionPane.showMessageDialog(MoveFileOrDirectory_Action.this.frame, "Enter valid name");
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter valid name");
       return true;
     }
-    if (FileSystem.getInstance().getFileByPath(result + File.separator + MoveFileOrDirectory_Action.this.selectedFile.getName()).exists()) {
-      JOptionPane.showMessageDialog(MoveFileOrDirectory_Action.this.frame, MoveFileOrDirectory_Action.this.selectedFile.getName() + " already exists");
+    if (FileSystem.getInstance().getFileByPath(result + File.separator + ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName()).exists()) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((VirtualFile) MapSequence.fromMap(_params).get("selectedFile")).getName() + " already exists");
       return true;
     }
     return false;

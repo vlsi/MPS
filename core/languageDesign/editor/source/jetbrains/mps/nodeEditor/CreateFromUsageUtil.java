@@ -41,6 +41,7 @@ import javax.swing.Icon;
 import java.awt.Point;
 import java.util.List;
 import java.util.Collections;
+import java.util.Map;
 
 public final class CreateFromUsageUtil {
 
@@ -103,7 +104,7 @@ public final class CreateFromUsageUtil {
       for (final ConceptDeclaration concept : language.getConceptDeclarations()) {
         if (concept.getRootable() && (conceptsFilter == null || conceptsFilter.met(concept.getNode()))) {
           BaseAction action = new BaseAction(NodePresentationUtil.matchingText(concept.getNode())) {
-            protected void doExecute(AnActionEvent e) {
+            protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
                   SNode result = NodeFactoryManager.createNode(concept, null, null, model, scope);

@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -60,8 +60,8 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
       GeneratedMatchingPattern pattern_6isygg_a0a = new IterateOverIterable_Intention.Pattern_w1n2qe_a0a0a0a7();
       SNode coercedNode_6isygg_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), pattern_6isygg_a0a);
       if (coercedNode_6isygg_a0a != null) {
-        SNode foreachStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
-        SNode variableDeclaration = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+        SNode foreachStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
+        SNode variableDeclaration = SNodeFactoryOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
         SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_6isygg_a0a.getFieldValue("PatternVar_elem"))), true);
         SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) pattern_6isygg_a0a.getFieldValue("PatternVar_elem")))));
         SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);

@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.Comparing;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class NewRootMappingRule_Intention extends BaseIntention implements Intention {
@@ -92,7 +93,7 @@ public class NewRootMappingRule_Intention extends BaseIntention implements Inten
       // TODO: let user to choose mapping config? 
     }
     //  add new rule 
-    SNode rule = SLinkOperations.addNewChild(ListSequence.fromList(configs).first(), "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
+    SNode rule = SNodeFactoryOperations.addNewChild(ListSequence.fromList(configs).first(), "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
     SLinkOperations.setTarget(rule, "applicableConcept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", false), false);
     SLinkOperations.setTarget(rule, "template", node, false);
     //  open in editor 

@@ -6,14 +6,16 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
 import javax.swing.JOptionPane;
+import java.awt.Frame;
 import java.io.IOException;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -30,20 +32,13 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(InstallIDEAPlugin_Action.class);
 
-  private Frame frame;
-
   public InstallIDEAPlugin_Action() {
     super("Install IntelliJ IDEA Plugin", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -54,26 +49,21 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.frame = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
-      File targetDir = InstallIDEAPlugin_Action.this.getTargetDir();
+      File targetDir = InstallIDEAPlugin_Action.this.getTargetDir(_params);
       if (targetDir == null) {
         return;
       }
@@ -82,9 +72,9 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
       }
       try {
         FileUtil.copyFileChecked(pluginFile, targetDir);
-        JOptionPane.showMessageDialog(InstallIDEAPlugin_Action.this.frame, "Plugin Installed\nYou should restart IDEA before using plugin");
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Plugin Installed\nYou should restart IDEA before using plugin");
       } catch (IOException e) {
-        JOptionPane.showMessageDialog(InstallIDEAPlugin_Action.this.frame, "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -93,8 +83,8 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     }
   }
 
-  private File getTargetDir() {
-    File targetIdeaInstallDir = InstallIDEAPlugin_Action.this.getTargetIdeaInstallDir();
+  private File getTargetDir(final Map<String, Object> _params) {
+    File targetIdeaInstallDir = InstallIDEAPlugin_Action.this.getTargetIdeaInstallDir(_params);
     if (targetIdeaInstallDir == null) {
       return null;
     }
@@ -104,7 +94,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     return new File(targetIdeaInstallDir, "config" + File.separator + "plugins");
   }
 
-  private File getTargetIdeaInstallDir() {
+  private File getTargetIdeaInstallDir(final Map<String, Object> _params) {
     boolean isMac = SystemInfo.isMac;
     String userHome = System.getProperty("user.home");
     String ideaConfigRootPath = (isMac ?
@@ -123,7 +113,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
       }
     }
     if (ListSequence.fromList(existingIdeaConfigs).count() == 0) {
-      JOptionPane.showMessageDialog(InstallIDEAPlugin_Action.this.frame, "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
       return null;
     } else if (ListSequence.fromList(existingIdeaConfigs).count() == 1) {
       return VirtualFileUtils.toFile(ListSequence.fromList(existingIdeaConfigs).first());
@@ -143,7 +133,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
 
     String oldShowHiddenValue = PropertiesComponent.getInstance().getValue("FileChooser.showHiddens");
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", Boolean.TRUE.toString());
-    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, InstallIDEAPlugin_Action.this.frame);
+    FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ((Frame) MapSequence.fromMap(_params).get("frame")));
     VirtualFile[] files = dialog.choose(ideaConfigRoot, null);
     PropertiesComponent.getInstance().setValue("FileChooser.showHiddens", oldShowHiddenValue);
     assert files.length <= 1;

@@ -24,6 +24,7 @@ import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import java.util.Map;
 
 public class NewMPSProjectAction extends BaseAction {
   private static final Icon NEW_ICON_WELCOME_SCREEN = new ImageIcon(OpenMPSProjectAction.class.getResource("newWelcomeScreen.png"));
@@ -36,8 +37,8 @@ public class NewMPSProjectAction extends BaseAction {
   }
 
   @Override
-  protected void doUpdate(AnActionEvent e) {
-    super.doUpdate(e);
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
+    super.doUpdate(e, _params);
     if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {
       e.getPresentation().setIcon(NEW_ICON_WELCOME_SCREEN);
     } else {
@@ -45,7 +46,7 @@ public class NewMPSProjectAction extends BaseAction {
     }
   }
 
-  public void doExecute(AnActionEvent e) {
+  public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     Project project = e.getData(PlatformDataKeys.PROJECT);
     NewProjectWizard wizard = new NewProjectWizard("New Project", project);
     wizard.show();

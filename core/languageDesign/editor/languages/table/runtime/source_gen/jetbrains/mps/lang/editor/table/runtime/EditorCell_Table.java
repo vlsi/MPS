@@ -13,12 +13,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import java.awt.Color;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
@@ -43,7 +46,7 @@ public class EditorCell_Table extends EditorCell_Collection {
       EditorCell_Collection rowCell = this.createRowCell(row);
       String rowId = myUniquePrefix + "_row_" + row;
       rowCell.setCellId(rowId);
-      rowCell.addEditorCell(createRowEndingCell(row, rowId + "_firstCell"));
+      rowCell.addEditorCell(createRowOutermostCell(row, rowId, true));
       final int finalRow = row;
       for (int column = 0; column < myModel.getColumnCount(); column++) {
         final int finalColumn = column;
@@ -67,10 +70,32 @@ public class EditorCell_Table extends EditorCell_Collection {
             }
           });
         } else {
-          editorCell = new EditorCell_Constant(getEditorContext(), getSNode(), "");
+          editorCell = new EditorCell_Constant(getEditorContext(), getSNode(), "", true);
           editorCell.setAction(CellActionType.INSERT, new EditorCellAction() {
             public void execute(EditorContext editorContext) {
               myModel.createElement(finalRow, finalColumn);
+            }
+          });
+          editorCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(getEditorContext()) {
+            protected List<INodeSubstituteAction> createActions() {
+              List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+              ListSequence.fromList(result).addElement(new AbstractNodeSubstituteAction(null, getSNode()) {
+                protected SNode doSubstitute(String p0) {
+                  myModel.createElement(finalRow, finalColumn);
+                  return null;
+                }
+
+                @Override
+                protected String getMatchingText(String string, boolean b1, boolean b2) {
+                  return "create new cell node";
+                }
+
+                @Override
+                protected String getDescriptionText(String string, boolean b) {
+                  return super.getDescriptionText(string, b);
+                }
+              });
+              return result;
             }
           });
         }
@@ -82,7 +107,7 @@ public class EditorCell_Table extends EditorCell_Collection {
 
         rowCell.addEditorCell(editorCell);
       }
-      rowCell.addEditorCell(createRowEndingCell(row + 1, rowId + "_lastCell"));
+      rowCell.addEditorCell(createRowOutermostCell(row, rowId, false));
       this.addEditorCell(rowCell);
     }
   }
@@ -144,14 +169,26 @@ public class EditorCell_Table extends EditorCell_Collection {
     return rowCell;
   }
 
-  private EditorCell createRowEndingCell(final int rowNumber, String cellId) {
+  private EditorCell createRowOutermostCell(final int rowNumber, String cellId, boolean beggining) {
     EditorCell emptyCell = new EditorCell_Empty(getEditorContext(), getSNode());
-    emptyCell.setAction(CellActionType.INSERT, new EditorCellAction() {
+    if (beggining) {
+      emptyCell.getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+    } else {
+      emptyCell.setAction(CellActionType.INSERT, new EditorCellAction() {
+        public void execute(EditorContext editorContext) {
+          myModel.insertRow(rowNumber + 1);
+        }
+      });
+    }
+    emptyCell.setAction(CellActionType.INSERT_BEFORE, new EditorCellAction() {
       public void execute(EditorContext editorContext) {
         myModel.insertRow(rowNumber);
       }
     });
-    emptyCell.setCellId(cellId);
+    emptyCell.setCellId(cellId + ((beggining ?
+      "_firstCell" :
+      "_lastCell"
+    )));
     return emptyCell;
   }
 

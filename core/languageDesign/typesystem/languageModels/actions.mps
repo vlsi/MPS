@@ -406,7 +406,7 @@
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227907430">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="1199876623543" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_NewInstance" typeId="tp25.1181949435690" id="1199876625375" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Concept_NewInstance" typeId="tpdg.7776141288922801652" id="6357564549601490436" />
                   </node>
                 </node>
               </node>
@@ -460,8 +460,8 @@
                     <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.1185788614172" resolveInfo="NormalTypeClause" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1199876733241">
-                    <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="1199876733242">
-                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1199876733243">
+                    <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="6357564549601490280">
+                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6357564549601490281">
                         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpd4.1185788614172" resolveInfo="NormalTypeClause" />
                       </node>
                     </node>
@@ -528,8 +528,8 @@
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227915113">
                     <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="1185801798463" />
-                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_CreateNewNodeOperation" typeId="tp25.1143235216708" id="1185801807796">
-                      <link role="concept" roleId="tp25.1143235391024" targetNodeId="tpd4.1185788614172" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Model_CreateNewNodeOperation" typeId="tpdg.5480835971642155304" id="6357564549601490454">
+                      <link role="concept" roleId="tp25.1143235391024" targetNodeId="tpd4.1185788614172" resolveInfo="NormalTypeClause" />
                     </node>
                   </node>
                 </node>

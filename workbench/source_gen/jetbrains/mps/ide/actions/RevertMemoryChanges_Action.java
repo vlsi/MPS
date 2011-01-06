@@ -6,17 +6,17 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class RevertMemoryChanges_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RevertMemoryChanges_Action.class);
-
-  private SModelDescriptor model;
 
   public RevertMemoryChanges_Action() {
     super("Revert Memory Changes", "", ICON);
@@ -24,19 +24,14 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return RevertMemoryChanges_Action.this.model instanceof EditableSModelDescriptor;
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -47,25 +42,20 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.model = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditableSModelDescriptor) RevertMemoryChanges_Action.this.model).reloadFromDisk();
+      ((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).reloadFromDisk();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);

@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
@@ -64,7 +64,7 @@ public class NewTemplateInWeavingRule_Intention extends BaseIntention implements
         name += SPropertyOperations.getString(applicableConcept, "name");
       }
     }
-    SNode t = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
+    SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
     SPropertyOperations.set(t, "name", name);
     SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
     t.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
@@ -74,12 +74,12 @@ public class NewTemplateInWeavingRule_Intention extends BaseIntention implements
       SNode contextNodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(contextNodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
       if (contextNodeConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")) {
         if (!(SNodeOperations.isInstanceOf(contextNodeConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
-          SLinkOperations.setTarget(t, "contentNode", SConceptOperations.createNewNode(NameUtil.nodeFQName(contextNodeConcept), null), true);
+          SLinkOperations.setTarget(t, "contentNode", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(contextNodeConcept), null), true);
         }
       }
     }
     // make reference 
-    SNode tr = SLinkOperations.setNewChild(node, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+    SNode tr = SNodeFactoryOperations.setNewChild(node, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
     SLinkOperations.setTarget(tr, "template", t, false);
   }
 

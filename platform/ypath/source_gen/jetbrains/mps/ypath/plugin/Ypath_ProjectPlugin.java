@@ -5,4 +5,6 @@ package jetbrains.mps.ypath.plugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 
 public class Ypath_ProjectPlugin extends BaseProjectPlugin {
+  public Ypath_ProjectPlugin() {
+  }
 }

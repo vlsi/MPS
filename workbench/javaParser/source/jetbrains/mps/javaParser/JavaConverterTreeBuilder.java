@@ -654,8 +654,8 @@ public class JavaConverterTreeBuilder {
     SNode sourceNode;
     jetbrains.mps.baseLanguage.structure.Expression result;
     ReferenceBinding declaredClassBinding = getDeclaredClassBinding(fieldBinding);
-    SNodePointer classifierPointer = myTypesProvider.createClassifierPointer(declaredClassBinding);
     if (fieldBinding.isStatic()) {
+      SNodePointer classifierPointer = myTypesProvider.createClassifierPointer(declaredClassBinding);
       if (BaseAdapter.isInstance(classifierPointer.getNode(), EnumClass.class)) {
         //enum constant reference
         EnumConstantReference enumConstantReference = EnumConstantReference.newInstance(myCurrentModel);

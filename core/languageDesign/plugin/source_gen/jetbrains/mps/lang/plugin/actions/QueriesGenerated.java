@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -19,9 +20,9 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
@@ -46,9 +47,9 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ToolTab_485694842828664422(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode disposeTabClosure = SLinkOperations.getTarget(_context.getNewNode(), "disposeTabClosure", true);
     if ((disposeTabClosure == null)) {
-      disposeTabClosure = SLinkOperations.setNewChild(_context.getNewNode(), "disposeTabClosure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      disposeTabClosure = SNodeFactoryOperations.setNewChild(_context.getNewNode(), "disposeTabClosure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
-    SNode pd = SLinkOperations.addNewChild(SNodeOperations.cast(disposeTabClosure, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration");
+    SNode pd = SNodeFactoryOperations.addNewChild(SNodeOperations.cast(disposeTabClosure, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "parameter", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration");
     SPropertyOperations.set(pd, "name", "component");
   }
 
@@ -73,7 +74,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", null);
+                SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", null);
                 SLinkOperations.setTarget(result, "type", (item), true);
                 return result;
               }
@@ -107,7 +108,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", null);
+                SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", null);
                 SLinkOperations.setTarget(result, "key", (item), false);
                 return result;
               }
@@ -154,7 +155,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionInstance", null);
+                SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionInstance", null);
                 SLinkOperations.setTarget(result, "action", (item), false);
                 return result;
               }
@@ -187,7 +188,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration", null);
+                SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration", null);
                 SLinkOperations.setTarget(result, "key", (item), false);
                 return result;
               }

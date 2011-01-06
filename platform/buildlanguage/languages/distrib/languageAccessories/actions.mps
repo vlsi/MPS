@@ -56,8 +56,8 @@
                     <link role="concept" roleId="tp25.1138405853777" targetNodeId="60oz.1234544143490" resolveInfo="Role" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1234544740637">
-                    <node role="creator" roleId="tpee.1145553007750" type="tp25.SNodeCreator" typeId="tp25.1180636770613" id="1234544740638">
-                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1234544740639">
+                    <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="8427581592624635661">
+                      <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8427581592624635662">
                         <link role="concept" roleId="tp25.1138405853777" targetNodeId="60oz.1234544143490" resolveInfo="Role" />
                       </node>
                     </node>

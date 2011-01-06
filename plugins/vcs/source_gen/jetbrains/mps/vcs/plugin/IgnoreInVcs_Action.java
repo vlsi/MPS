@@ -6,13 +6,15 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.util.List;
-import jetbrains.mps.project.IModule;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import java.util.List;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog;
@@ -21,21 +23,13 @@ public class IgnoreInVcs_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(IgnoreInVcs_Action.class);
 
-  private List<IModule> modules;
-  private Project project;
-
   public IgnoreInVcs_Action() {
     super("Ignore...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -46,35 +40,29 @@ public class IgnoreInVcs_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.modules = event.getData(MPSDataKeys.MODULES);
-    if (this.modules == null) {
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.modules = null;
-    this.project = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(IgnoreInVcs_Action.this.project, IgnoreInVcs_Action.this.modules);
+      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
       if (ListSequence.fromList(unversionedFiles).isEmpty()) {
-        Messages.showInfoMessage(IgnoreInVcs_Action.this.project, "Nothing to ignore", "Ignore..");
+        Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "Nothing to ignore", "Ignore..");
         return;
       }
-      IgnoreUnversionedDialog.ignoreSelectedFiles(IgnoreInVcs_Action.this.project, unversionedFiles);
+      IgnoreUnversionedDialog.ignoreSelectedFiles(((Project) MapSequence.fromMap(_params).get("project")), unversionedFiles);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "IgnoreInVcs", t);

@@ -22,6 +22,7 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.oldchanges.Change;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class NewMergeView extends JPanel {
@@ -127,7 +128,7 @@ public class NewMergeView extends JPanel {
     @Override
     protected ActionGroup getActionGroupForChanges(final List<Change> changes) {
       BaseAction excludeAction = new BaseAction("Exclude") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent e, Map<String, Object> map) {
           for (Change change : changes) {
             myMerger.excludeChange(change);
             getExcludetNodes().add(change.getAffectedNodeId());
@@ -141,7 +142,7 @@ public class NewMergeView extends JPanel {
       };
       excludeAction.setDisableOnNoProject(false);
       BaseAction includeAction = new BaseAction("Include") {
-        protected void doExecute(AnActionEvent e) {
+        protected void doExecute(AnActionEvent event, Map<String, Object> map) {
           for (Change change : changes) {
             myMerger.includeChange(change);
             getExcludetNodes().remove(change.getAffectedNodeId());

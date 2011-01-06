@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class DebugRunMenu_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DebugRunMenu_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.DebugRunMenu";
+  public static final String ID = "jetbrains.mps.ide.actions.DebugRunMenu_ActionGroup";
 
   public DebugRunMenu_ActionGroup() {
     super("DebugRunMenu", ID);
@@ -15,22 +15,18 @@ public class DebugRunMenu_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       DebugRunMenu_ActionGroup.this.addSeparator();
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepOver_Action", "jetbrains.mps.ide");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepInto_Action", "jetbrains.mps.ide");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepOut_Action", "jetbrains.mps.ide");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Resume_Action", "jetbrains.mps.ide");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Pause_Action", "jetbrains.mps.ide");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EvaluateExpression_Action", "jetbrains.mps.ide");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExportThreads_Action", "jetbrains.mps.ide");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepOver_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepInto_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.StepOut_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Resume_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Pause_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.EvaluateExpression_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ExportThreads_Action");
       DebugRunMenu_ActionGroup.this.addSeparator();
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ToggleBreakpoint_Action", "jetbrains.mps.ide");
-      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ViewBreakpoints_Action", "jetbrains.mps.ide");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ToggleBreakpoint_Action");
+      DebugRunMenu_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ViewBreakpoints_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("RunMenu", null);
   }
 }

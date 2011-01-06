@@ -6,30 +6,25 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.ModelFindOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.IScope;
 
 public class HighlightInstances_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(HighlightInstances_Action.class);
-
-  private EditorComponent editorComponent;
-  private EditorCell editorCell;
-  private IScope scope;
-  private SModelDescriptor model;
-  private SNode node;
 
   public HighlightInstances_Action() {
     super("Highlight Instances", "", ICON);
@@ -37,12 +32,7 @@ public class HighlightInstances_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl shift F6";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -53,53 +43,44 @@ public class HighlightInstances_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    this.editorCell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.editorCell == null) {
+    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    this.scope = event.getData(MPSDataKeys.SCOPE);
-    if (this.scope == null) {
+    MapSequence.fromMap(_params).put("scope", event.getData(MPSDataKeys.SCOPE));
+    if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.CONTEXT_MODEL);
-    if (this.model == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.editorComponent = null;
-    this.editorCell = null;
-    this.scope = null;
-    this.model = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NodeHighlightManager highlightManager = HighlightInstances_Action.this.editorComponent.getHighlightManager();
-      EditorMessageOwner messageOwner = HighlightInstances_Action.this.editorComponent.getHighlightMessagesOwner();
-      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(HighlightInstances_Action.this.model).findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(HighlightInstances_Action.this.node))), HighlightInstances_Action.this.scope))) {
-        if (ref.getContainingRoot() == HighlightInstances_Action.this.editorComponent.getRootCell().getSNode().getContainingRoot()) {
+      NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
+      EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
+      for (SNode ref : SetSequence.fromSet(new ModelFindOperations(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))))), ((IScope) MapSequence.fromMap(_params).get("scope"))))) {
+        if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }
       }

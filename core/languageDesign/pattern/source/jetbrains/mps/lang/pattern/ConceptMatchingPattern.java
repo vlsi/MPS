@@ -16,16 +16,7 @@
 package jetbrains.mps.lang.pattern;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.kernel.model.SModelUtil;
 
-/**
- * Created by IntelliJ IDEA.
-* User: test
-* Date: Aug 30, 2008
-* Time: 9:31:02 PM
-* To change this template use File | Settings | File Templates.
-*/
 public class ConceptMatchingPattern implements IMatchingPattern {
   private String myConceptFQName;
 

@@ -25,17 +25,18 @@ public class CustomViewersManager implements ApplicationComponent {
   private Set<ValueWrapperFactory> myFactories = new HashSet<ValueWrapperFactory>();
   private Set<String> myLoadedLanguages = new HashSet<String>();
   private ClassLoaderManager myClassLoaderManager;
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      clear();
+    }
+  };
 
   public CustomViewersManager(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
   }
 
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        clear();
-      }
-    });
+    myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -45,6 +46,7 @@ public class CustomViewersManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
+    myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
   public static CustomViewersManager getInstance() {

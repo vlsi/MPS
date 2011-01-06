@@ -22,7 +22,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_al4u6z_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_al4u6z_a");
     editorCell.addEditorCell(this.createConceptProperty_al4u6z_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_al4u6z_b0(editorContext, node));
@@ -45,7 +45,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_al4u6z_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "of work left");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "units of total work left,");
     editorCell.setCellId("Constant_al4u6z_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -53,7 +53,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_al4u6z_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[expecting");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expecting");
     editorCell.setCellId("Constant_al4u6z_f0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -61,7 +61,7 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_al4u6z_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "units");
     editorCell.setCellId("Constant_al4u6z_h0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -112,11 +112,11 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_al4u6z_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("work");
-    provider.setNoTargetText("<no work>");
+    provider.setRole("workName");
+    provider.setNoTargetText("<no workName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_work");
+    editorCell.setCellId("property_workName");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -6,21 +6,18 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class ToggleBreakpoint_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ToggleBreakpoint_Action.class);
-
-  private EditorCell selectedCell;
-  private EditorComponent editorComponent;
-  private Project project;
 
   public ToggleBreakpoint_Action() {
     super("Toggle Breakpoint", "", ICON);
@@ -28,14 +25,9 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl F8";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setEnabled(ToggleBreakpoint_Action.this.project.getComponent(BreakpointManagerComponent.class).isDebuggable(ToggleBreakpoint_Action.this.selectedCell));
+      event.getPresentation().setEnabled(((Project) MapSequence.fromMap(_params).get("project")).getComponent(BreakpointManagerComponent.class).isDebuggable(((EditorCell) MapSequence.fromMap(_params).get("selectedCell"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "ToggleBreakpoint", t);
@@ -44,35 +36,28 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.selectedCell = event.getData(MPSDataKeys.EDITOR_CELL);
-    if (this.selectedCell == null) {
+    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("selectedCell") == null) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedCell = null;
-    this.editorComponent = null;
-    this.project = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ToggleBreakpoint_Action.this.project.getComponent(BreakpointManagerComponent.class).toggleBreakpoint(ToggleBreakpoint_Action.this.selectedCell);
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BreakpointManagerComponent.class).toggleBreakpoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ToggleBreakpoint", t);

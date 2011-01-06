@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ParameterDeclaration_Name_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -32,7 +32,7 @@ public class ParameterDeclaration_Name_Actions {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-        SLinkOperations.addNewChild(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+        SNodeFactoryOperations.addNewChild(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
       }
     }
   }

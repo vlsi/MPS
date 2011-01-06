@@ -6,40 +6,28 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.workbench.action.ActionFactory;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
-import jetbrains.mps.workbench.action.BaseGroup;
-import java.util.List;
-import com.intellij.openapi.util.Pair;
-import jetbrains.mps.intentions.Intention;
-import java.util.ArrayList;
-import jetbrains.mps.intentions.IntentionsManager;
-import jetbrains.mps.intentions.SurroundWithIntention;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import jetbrains.mps.workbench.action.BaseAction;
 
 public class SurroundWithIntentions_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SurroundWithIntentions_Action.class);
-
-  private SNode selectedNode;
-  private EditorContext editorContext;
 
   public SurroundWithIntentions_Action() {
     super("Show Surround with Intentions Menu", "", ICON);
@@ -47,12 +35,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl alt T";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -63,97 +46,47 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    {
-      SNode node = event.getData(MPSDataKeys.NODE);
-      if (node != null) {
-      }
-      this.selectedNode = node;
-    }
-    if (this.selectedNode == null) {
-      return false;
-    }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
+    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.selectedNode = null;
-    this.editorContext = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final EditorCell selectedCell = SurroundWithIntentions_Action.this.editorContext.getSelectedCell();
+      final EditorCell selectedCell = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell();
       int x = selectedCell.getX();
       int y = selectedCell.getY();
       if (selectedCell instanceof EditorCell_Label) {
         y += ((EditorCell_Label) selectedCell).getHeight();
       }
-      final DataContext dataContext = DataManager.getInstance().getDataContext(SurroundWithIntentions_Action.this.editorContext.getNodeEditorComponent(), x, y);
-      ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
-        public ListPopup compute() {
-          ActionGroup group = SurroundWithIntentions_Action.this.getIntentionGroup();
-          ListPopup popup = null;
-          if (group != null) {
-            popup = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, dataContext, JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
+      final DataContext dataContext = DataManager.getInstance().getDataContext(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), x, y);
+      final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ActionGroup group = ActionFactory.getInstance().acquireRegisteredGroup("jetbrains.mps.ide.actions.SurroundWithIntentions_ActionGroup", "jetbrains.mps.ide");
+          group.update(event);
+          if (group.getChildren(event).length == 0) {
+            return;
           }
-          return popup;
+          popup.value = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, dataContext, JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
         }
       });
-      RelativePoint relativePoint = new RelativePoint(SurroundWithIntentions_Action.this.editorContext.getNodeEditorComponent(), new Point(x, y));
-      if (popup != null) {
-        popup.show(relativePoint);
+      if (popup.value == null) {
+        return;
       }
+
+      RelativePoint relativePoint = new RelativePoint(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent(), new Point(x, y));
+      popup.value.show(relativePoint);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SurroundWithIntentions", t);
       }
     }
-  }
-
-  private BaseGroup getIntentionGroup() {
-    BaseGroup group = new BaseGroup("");
-    List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-    query.setIntentionClass(SurroundWithIntention.class);
-    query.setInstantiate(true);
-    query.setCurrentNodeOnly(true);
-    Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext);
-    groupItems.addAll(intentions);
-    if (groupItems.isEmpty()) {
-      return null;
-    }
-    Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
-      public int compare(Pair<Intention, SNode> p0, Pair<Intention, SNode> p1) {
-        Intention intention1 = p0.getFirst();
-        Intention intention2 = p1.getFirst();
-        SNode node1 = p0.getSecond();
-        SNode node2 = p1.getSecond();
-        return intention1.getDescription(node1, SurroundWithIntentions_Action.this.editorContext).compareTo(intention2.getDescription(node2, SurroundWithIntentions_Action.this.editorContext));
-      }
-    });
-    final EditorContext context = SurroundWithIntentions_Action.this.editorContext;
-    for (final Pair<Intention, SNode> pair : groupItems) {
-      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext)) {
-        protected void doExecute(AnActionEvent p0) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              pair.getFirst().execute(pair.getSecond(), context);
-            }
-          });
-        }
-      };
-      action.setExecuteOutsideCommand(true);
-      group.add(action);
-    }
-    return group;
   }
 }

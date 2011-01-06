@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class EditorInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(EditorInternal_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.EditorInternal";
+  public static final String ID = "jetbrains.mps.ide.actions.EditorInternal_ActionGroup";
+  public static final String LABEL_ID_printNodePosition = ID + "printNodePosition";
   public static final String LABEL_ID_VCS = ID + "VCS";
 
   public EditorInternal_ActionGroup() {
@@ -15,24 +19,30 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(true);
     try {
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.TestNodePath_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CellProperties_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerationIntentions_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SurroundWithIntentions_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowCellInExplorer_Action", "jetbrains.mps.ide");
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.TestNodePath_Action");
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CellProperties_Action");
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerationIntentions_Action");
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SurroundWithIntentions_Action");
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowCellInExplorer_Action");
       EditorInternal_ActionGroup.this.addSeparator();
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PrintNodeID_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightCellDependencies_Action", "jetbrains.mps.ide");
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.PrintNodePosition_Action", "jetbrains.mps.baseLanguage");
-      EditorInternal_ActionGroup.this.addAnchor(EditorInternal_ActionGroup.LABEL_ID_VCS);
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PrintNodeID_Action");
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightCellDependencies_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_printNodePosition);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorInternal_ActionGroup.this.addAction(action);
+      }
+      {
+        LabelledAnchor action = new LabelledAnchor(EditorInternal_ActionGroup.LABEL_ID_VCS);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        EditorInternal_ActionGroup.this.addAction(action);
+      }
       EditorInternal_ActionGroup.this.addSeparator();
-      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguagePaths_Action", "jetbrains.mps.ide");
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguagePaths_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
 }

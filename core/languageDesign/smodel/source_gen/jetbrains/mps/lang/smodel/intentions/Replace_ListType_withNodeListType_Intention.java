@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class Replace_ListType_withNodeListType_Intention extends BaseIntention implements Intention {
   public Replace_ListType_withNodeListType_Intention() {
@@ -45,7 +46,7 @@ public class Replace_ListType_withNodeListType_Intention extends BaseIntention i
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.smodel.structure.SNodeListType");
+    SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.smodel.structure.SNodeListType");
   }
 
   public String getLocationString() {

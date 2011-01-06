@@ -8,7 +8,7 @@ import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
 public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(CreateRootNode_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.CreateRootNode";
+  public static final String ID = "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup";
 
   public CreateRootNode_ActionGroup() {
     super("Root Node", ID);
@@ -19,10 +19,5 @@ public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
-    this.insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, null);
   }
 }

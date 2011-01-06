@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.javadoc.editor;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -18,7 +18,7 @@ public class TextCommentPartUtil {
     if (index.value != -1) {
       SNode tagPart;
       divideLineBetweenCaret(node, index.value, index.value + 2, newText);
-      tagPart = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", null);
+      tagPart = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", null);
       SNodeOperations.insertNextSiblingChild(node, tagPart);
       return;
     }
@@ -26,7 +26,7 @@ public class TextCommentPartUtil {
     if (index.value != -1) {
       SNode codeSnippet;
       SNode nextLine = divideLineBetweenCaretAndInsertNewLine(node, index.value, index.value + 2, newText);
-      codeSnippet = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", null);
+      codeSnippet = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", null);
       SNodeOperations.insertPrevSiblingChild(nextLine, codeSnippet);
       editorContext.selectWRTFocusPolicy(codeSnippet);
       return;
@@ -38,7 +38,7 @@ public class TextCommentPartUtil {
         public void run() {
           divideLineBetweenCaret(node, index.value, index.value + 1, newText);
 
-          htmlElement.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", null);
+          htmlElement.value = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", null);
           SNodeOperations.insertNextSiblingChild(node, htmlElement.value);
         }
       });
@@ -53,7 +53,7 @@ public class TextCommentPartUtil {
 
     SPropertyOperations.set(node, "text", leftPart);
 
-    SNode newTextPart = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
+    SNode newTextPart = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
     SPropertyOperations.set(newTextPart, "text", rightPart);
     SNodeOperations.insertNextSiblingChild(node, newTextPart);
   }
@@ -63,7 +63,7 @@ public class TextCommentPartUtil {
     String rightPart = text.substring(index2);
 
     SNode thisLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-    SNode nextLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
+    SNode nextLine = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
     SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", rightPart);
     SNodeOperations.insertNextSiblingChild(thisLine, nextLine);
 

@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class SequenceCreator_add_initializer extends EditorCellKeyMap {
   public SequenceCreator_add_initializer() {
@@ -57,7 +58,7 @@ public class SequenceCreator_add_initializer extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SLinkOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      SNodeFactoryOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
 
     public String getKeyStroke() {

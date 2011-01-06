@@ -202,6 +202,11 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
         final File testFile = new File(filePath);
         String oldContent = null;
         String newContent = this.getSourceByNode(outputRoot, outputModel);
+// Uncomment to store regenerated content on disk:
+//        try {
+//          FileUtil.writeFile(testFile, newContent);
+//        } catch (IOException e) {
+//        }
         if (testFile.exists() && testFile.canRead()) {
           oldContent = FileUtil.read(testFile);
           files.remove(filename);

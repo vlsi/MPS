@@ -50,6 +50,7 @@ import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Kostik
@@ -178,12 +179,8 @@ public class CreateRootNodeGroup extends BaseGroup {
       setExecuteOutsideCommand(true);
     }
 
-    protected void doUpdate(AnActionEvent e) {
-      super.doUpdate(e);
-    }
-
-    protected boolean collectActionData(AnActionEvent e) {
-      if (!super.collectActionData(e)) return false;
+    protected boolean collectActionData(AnActionEvent e,Map<String, Object> _params) {
+      if (!super.collectActionData(e,_params)) return false;
       myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
       myScope = MPSDataKeys.SCOPE.getData(e.getDataContext());
       if (myScope == null) return false;
@@ -192,7 +189,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       return true;
     }
 
-    protected void doExecute(AnActionEvent e) {
+    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       final SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
         public SNode compute() {
           SNode result = NodeFactoryManager.createNode((ConceptDeclaration) myNodeConcept.getNode().getAdapter(), null, null, myModelDescriptor.getSModel(), myScope);

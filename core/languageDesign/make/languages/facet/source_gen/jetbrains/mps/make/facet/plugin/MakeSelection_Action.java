@@ -5,23 +5,20 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class MakeSelection_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(MakeSelection_Action.class);
 
-  private IOperationContext context;
-  private List<SModelDescriptor> models;
-  private SModelDescriptor cmodel;
-  private List<IModule> modules;
-  private IModule cmodule;
   private boolean cleanMake;
 
   public MakeSelection_Action(boolean cleanMake_par) {
@@ -31,13 +28,8 @@ public class MakeSelection_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    String text = new MakeActionParameters(MakeSelection_Action.this.context, MakeSelection_Action.this.models, MakeSelection_Action.this.cmodel, MakeSelection_Action.this.modules, MakeSelection_Action.this.cmodule).actionText(MakeSelection_Action.this.cleanMake);
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IModule) MapSequence.fromMap(_params).get("cmodule"))).actionText(MakeSelection_Action.this.cleanMake);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -45,10 +37,10 @@ public class MakeSelection_Action extends GeneratedAction {
     return false;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -57,33 +49,24 @@ public class MakeSelection_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.models = event.getData(MPSDataKeys.MODELS);
-    this.cmodel = event.getData(MPSDataKeys.CONTEXT_MODEL);
-    this.modules = event.getData(MPSDataKeys.MODULES);
-    this.cmodule = event.getData(MPSDataKeys.CONTEXT_MODULE);
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    MapSequence.fromMap(_params).put("cmodule", event.getData(MPSDataKeys.CONTEXT_MODULE));
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.models = null;
-    this.cmodel = null;
-    this.modules = null;
-    this.cmodule = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(MakeSelection_Action.this.context, new MakeActionParameters(MakeSelection_Action.this.context, MakeSelection_Action.this.models, MakeSelection_Action.this.cmodel, MakeSelection_Action.this.modules, MakeSelection_Action.this.cmodule), MakeSelection_Action.this.cleanMake).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), ((List<IModule>) MapSequence.fromMap(_params).get("modules")), ((IModule) MapSequence.fromMap(_params).get("cmodule"))), MakeSelection_Action.this.cleanMake).executeAction();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeSelection", t);
     }
@@ -91,8 +74,8 @@ public class MakeSelection_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(MakeSelection_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(((Object) this.cleanMake).toString());
     res.append("!");

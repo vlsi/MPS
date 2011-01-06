@@ -15,12 +15,6 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.SNode;
-
-import java.util.List;
-import java.util.ArrayList;
-
 public abstract class BaseIntention extends AbstractIntention{
   
 }

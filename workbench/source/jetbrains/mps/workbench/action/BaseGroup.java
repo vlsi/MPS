@@ -98,17 +98,9 @@ public class BaseGroup extends DefaultActionGroup {
     }
   }
 
-  public void addAnchor(String id) {
-    add(new LabelledAnchor(id));
-  }
-
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> condition) {
     List actionList = Arrays.asList(getChildren(null));
     addPlaceToActionList(actionList, place, condition);
-  }
-
-  public void adjust() {
-
   }
 
   protected void doUpdate(AnActionEvent e) {

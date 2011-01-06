@@ -12,6 +12,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new AdvanceWorkStatement_workStatement_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new FinishWorkStatement_workStatement_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

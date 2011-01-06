@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IOperationContext;
@@ -52,7 +52,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode nonTypesystemRule = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", null);
+    SNode nonTypesystemRule = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", null);
     SPropertyOperations.set(nonTypesystemRule, "overrides", "" + (SPropertyOperations.getBoolean(node, "overrides")));
     SPropertyOperations.set(nonTypesystemRule, "name", SPropertyOperations.getString(node, "name"));
     SLinkOperations.setTarget(nonTypesystemRule, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true)), true);

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MergeStringConcatenation_Intention extends BaseIntention implements Intention {
@@ -46,7 +47,7 @@ public class MergeStringConcatenation_Intention extends BaseIntention implements
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode stringLiteral = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.StringLiteral");
+    SNode stringLiteral = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.StringLiteral");
     String left = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(node, "leftExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
     String right = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(node, "rightExpression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
     SPropertyOperations.set(stringLiteral, "value", left + right);

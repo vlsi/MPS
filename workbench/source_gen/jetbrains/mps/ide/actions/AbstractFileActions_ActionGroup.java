@@ -4,11 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed;
 
 public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AbstractFileActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.AbstractFileActions";
+  public static final String ID = "jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup";
   public static final String LABEL_ID_new = ID + "new";
   public static final String LABEL_ID_ideaActions = ID + "ideaActions";
   public static final String LABEL_ID_vcs = ID + "vcs";
@@ -18,22 +21,31 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_new);
+      {
+        LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_new);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        AbstractFileActions_ActionGroup.this.addAction(action);
+      }
       AbstractFileActions_ActionGroup.this.addSeparator();
-      AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
-      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameFileOrDirectory_Action", "jetbrains.mps.ide");
-      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MoveFileOrDirectory_Action", "jetbrains.mps.ide");
-      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FileDelete_Action", "jetbrains.mps.ide", new FileDeleteActionFixed());
+      {
+        LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        AbstractFileActions_ActionGroup.this.addAction(action);
+      }
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameFileOrDirectory_Action");
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MoveFileOrDirectory_Action");
+      AbstractFileActions_ActionGroup.this.addParameterizedAction(new FileDelete_Action(new FileDeleteActionFixed()), PluginId.getId("jetbrains.mps.ide"), new FileDeleteActionFixed());
       AbstractFileActions_ActionGroup.this.addSeparator();
-      AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
+      {
+        LabelledAnchor action = new LabelledAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        AbstractFileActions_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(FileActions_ActionGroup.ID, FileActions_ActionGroup.LABEL_ID_abstractFileActions);
-    this.insertGroupIntoAnother(FolderActions_ActionGroup.ID, FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
-    this.insertGroupIntoAnother(ModuleActions_ActionGroup.ID, ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
   }
 }

@@ -5,29 +5,24 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import java.awt.Frame;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodDialog;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class InlineMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(InlineMethod_Action.class);
-
-  private SNode node;
-  private Frame frame;
-  private Project project;
-  private IOperationContext operationContext;
-  private EditorComponent editorComponent;
 
   public InlineMethod_Action() {
     super("Inline Method", "", ICON);
@@ -35,25 +30,20 @@ public class InlineMethod_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl alt N";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<Boolean> b = new Wrappers._T<Boolean>(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        b.value = MethodCallAdapter.isMethodCall(InlineMethod_Action.this.node) || SNodeOperations.isInstanceOf(InlineMethod_Action.this.node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+        b.value = MethodCallAdapter.isMethodCall(((SNode) MapSequence.fromMap(_params).get("node"))) || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
     });
-    return b.value && !(InlineMethod_Action.this.editorComponent.isReadOnly());
+    return b.value && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -62,50 +52,41 @@ public class InlineMethod_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.operationContext == null) {
+    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.frame = null;
-    this.project = null;
-    this.operationContext = null;
-    this.editorComponent = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      InlineMethodDialog dialog = new InlineMethodDialog(InlineMethod_Action.this.node, InlineMethod_Action.this.project, InlineMethod_Action.this.operationContext);
+      InlineMethodDialog dialog = new InlineMethodDialog(((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
       dialog.tryToShow();
       dialog.pack();
     } catch (Throwable t) {

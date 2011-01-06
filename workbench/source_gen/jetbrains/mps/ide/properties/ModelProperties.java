@@ -19,6 +19,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 
 public class ModelProperties extends BaseBean {
@@ -107,7 +108,8 @@ public class ModelProperties extends BaseBean {
 
   private void removeUnusedDevKits() {
     Set<ModuleReference> propsDevKits = new HashSet<ModuleReference>(getUsedDevKits());
-    for (ModuleReference dk : myModelDescriptor.getSModel().importedDevkits()) {
+    List<ModuleReference> imported = new ArrayList<ModuleReference>(myModelDescriptor.getSModel().importedDevkits());
+    for (ModuleReference dk : imported) {
       if (!(propsDevKits.contains(dk))) {
         myModelDescriptor.getSModel().deleteDevKit(dk);
       }

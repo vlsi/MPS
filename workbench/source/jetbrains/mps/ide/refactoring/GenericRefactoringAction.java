@@ -17,6 +17,8 @@ package jetbrains.mps.ide.refactoring;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
+import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
@@ -28,8 +30,10 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.KeyStroke;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GenericRefactoringAction extends BaseAction {
   private IRefactoring myRefactoring;
@@ -37,12 +41,18 @@ public class GenericRefactoringAction extends BaseAction {
   public GenericRefactoringAction(IRefactoring refactoring) {
     super("".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
     myRefactoring = refactoring;
+
+    String keyStroke = myRefactoring.getKeyStroke();
+    if (keyStroke != null && keyStroke.length() != 0) {
+      KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
+      KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+    }
+
     setExecuteOutsideCommand(true);
     setIsAlwaysVisible(false);
   }
 
-
-  protected void doExecute(AnActionEvent e) {
+  protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModelRepository.getInstance().saveAll();
@@ -81,11 +91,6 @@ public class GenericRefactoringAction extends BaseAction {
     res.append("#");
     res.append(getRefactoringClassName(myRefactoring));
     return res.toString();
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return myRefactoring.getKeyStroke();
   }
 
   private static String getRefactoringClassName(IRefactoring refactoring) {
@@ -131,7 +136,7 @@ public class GenericRefactoringAction extends BaseAction {
     return getEntities(e, oneEntity, MPSDataKeys.MODULE, MPSDataKeys.MODULES);
   }
 
-  protected void doUpdate(AnActionEvent e) {
+  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
     IRefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
     boolean oneEntity = !refTarget.allowMultipleTargets();
     List entities;

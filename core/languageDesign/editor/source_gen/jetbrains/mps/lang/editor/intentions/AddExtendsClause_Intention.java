@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddExtendsClause_Intention extends BaseIntention implements Intention {
   public AddExtendsClause_Intention() {
@@ -34,7 +34,7 @@ public class AddExtendsClause_Intention extends BaseIntention implements Intenti
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setTarget(node, "extendedClass", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleSheetClassReference", null), true);
+    SLinkOperations.setTarget(node, "extendedClass", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleSheetClassReference", null), true);
   }
 
   public String getLocationString() {

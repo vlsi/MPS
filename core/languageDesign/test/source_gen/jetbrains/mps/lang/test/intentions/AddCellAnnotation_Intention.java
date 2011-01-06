@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -59,7 +59,7 @@ public class AddCellAnnotation_Intention extends BaseIntention implements Intent
     for (SNode oldAnnotation : SNodeOperations.getDescendants(ancessor, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{})) {
       SNodeOperations.deleteNode(oldAnnotation);
     }
-    SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
+    SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
     EditorCell contextCell = editorContext.getContextCell();
     if (contextCell.getEditor() instanceof InspectorEditorComponent) {
       SPropertyOperations.set(newAnnotation, "isInInspector", "" + true);

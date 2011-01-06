@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddElsifClause_Intention extends BaseIntention implements Intention {
   public AddElsifClause_Intention() {
@@ -47,7 +48,7 @@ public class AddElsifClause_Intention extends BaseIntention implements Intention
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifFalse = SLinkOperations.getTarget(node, "ifFalseStatement", true);
     SLinkOperations.setTarget(node, "ifFalseStatement", null, true);
-    SLinkOperations.addNewChild(node, "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
+    SNodeFactoryOperations.addNewChild(node, "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
     SLinkOperations.setTarget(node, "ifFalseStatement", ifFalse, true);
   }
 

@@ -165,7 +165,7 @@ public class Equations {
       variablesMet.remove(type);
       return result;
     } else {
-      SNode result = CopyUtil.copy(node);
+      SNode result = node;
       replaceChildren(result, variablesMet);
       replaceReferences(result, variablesMet);
       return result;
@@ -252,8 +252,6 @@ public class Equations {
       }
       if (!s.equals(""))result.add(s + entry.getKey());
     }
-    System.out.println(getListPresentation());
-    System.out.println(result);
     return result;
   }
 

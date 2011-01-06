@@ -5,20 +5,18 @@ package jetbrains.mps.make.facet.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class MakeSelectedModels_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(MakeSelectedModels_Action.class);
-
-  private IOperationContext context;
-  private List<SModelDescriptor> models;
-  private SModelDescriptor cmodel;
 
   public MakeSelectedModels_Action() {
     super("Make Model", "", ICON);
@@ -26,13 +24,8 @@ public class MakeSelectedModels_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl shift F9";
-  }
-
-  public boolean isApplicable(AnActionEvent event) {
-    String text = new MakeActionParameters(MakeSelectedModels_Action.this.context, MakeSelectedModels_Action.this.models, MakeSelectedModels_Action.this.cmodel, null, null).actionText(false);
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), null, null).actionText(false);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -40,10 +33,10 @@ public class MakeSelectedModels_Action extends GeneratedAction {
     return false;
   }
 
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        boolean enabled = this.isApplicable(event);
+        boolean enabled = this.isApplicable(event, _params);
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
@@ -52,29 +45,22 @@ public class MakeSelectedModels_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.models = event.getData(MPSDataKeys.MODELS);
-    this.cmodel = event.getData(MPSDataKeys.CONTEXT_MODEL);
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    MapSequence.fromMap(_params).put("cmodel", event.getData(MPSDataKeys.CONTEXT_MODEL));
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.models = null;
-    this.cmodel = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MakeActionImpl(MakeSelectedModels_Action.this.context, new MakeActionParameters(MakeSelectedModels_Action.this.context, MakeSelectedModels_Action.this.models, MakeSelectedModels_Action.this.cmodel, null, null), false).executeAction();
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")), ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), null, null), false).executeAction();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeSelectedModels", t);
     }

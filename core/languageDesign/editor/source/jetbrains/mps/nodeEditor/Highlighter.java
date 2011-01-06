@@ -160,9 +160,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   public void projectClosed() {
     ModelAccess.instance().removeCommandListener(myCommandListener);
-    myClassLoaderManager.removeReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
+    myClassLoaderManager.removeReloadHandler(myReloadListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;
   }

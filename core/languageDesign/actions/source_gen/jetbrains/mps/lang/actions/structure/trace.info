@@ -7,6 +7,15 @@
   <unitInfo fileName="SideTransformMenuPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SideTransformMenuPart" />
   <unitInfo fileName="AddMenuPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.AddMenuPart" />
   <unitInfo fileName="SubstituteMenuPart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SubstituteMenuPart" />
+  <unitInfo fileName="NF_LinkList_AddNewChildOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation" />
+  <unitInfo fileName="NF_Link_SetNewChildOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" />
+  <unitInfo fileName="NF_Node_ReplaceWithNewOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation" />
+  <unitInfo fileName="NF_Node_InsertNewPrevSiblingOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation" />
+  <unitInfo fileName="NF_Node_InsertNewNextSiblingOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation" />
+  <unitInfo fileName="NF_Model_CreateNewRootNodeOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation" />
+  <unitInfo fileName="NF_Model_CreateNewNodeOperation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation" />
+  <unitInfo fileName="NF_Concept_NewInstance.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance" />
+  <unitInfo fileName="SNodeCreatorAndInitializer.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" />
   <unitInfo fileName="ConceptFunctionParameter_nodeToCopyPreProcessOriginal.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
   <unitInfo fileName="ConceptFunctionParameter_nodeToCopyPreProcess.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess" />
   <unitInfo fileName="CopyPreProcessFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.structure.CopyPreProcessFunction" />

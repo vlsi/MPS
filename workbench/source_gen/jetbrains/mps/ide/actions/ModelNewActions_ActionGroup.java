@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ModelNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelNewActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.ModelNewActions";
+  public static final String ID = "jetbrains.mps.ide.actions.ModelNewActions_ActionGroup";
   public static final String LABEL_ID_newRoot = ID + "newRoot";
 
   public ModelNewActions_ActionGroup() {
@@ -15,16 +18,17 @@ public class ModelNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      ModelNewActions_ActionGroup.this.addAnchor(ModelNewActions_ActionGroup.LABEL_ID_newRoot);
+      {
+        LabelledAnchor action = new LabelledAnchor(ModelNewActions_ActionGroup.LABEL_ID_newRoot);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        ModelNewActions_ActionGroup.this.addAction(action);
+      }
       ModelNewActions_ActionGroup.this.addSeparator();
-      ModelNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSubModel_Action", "jetbrains.mps.ide");
-      ModelNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSubTestModel_Action", "jetbrains.mps.ide");
+      ModelNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSubModel_Action");
+      ModelNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSubTestModel_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
   }
 }

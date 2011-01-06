@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class NewTemplateInInlineSwitchCase_Intention extends BaseIntention implements Intention {
@@ -62,12 +62,12 @@ public class NewTemplateInInlineSwitchCase_Intention extends BaseIntention imple
         name += SPropertyOperations.getString(applicableConcept, "name");
       }
     }
-    SNode t = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
+    SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
     SPropertyOperations.set(t, "name", name);
     SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
     t.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
     // make reference 
-    SNode tr = SLinkOperations.setNewChild(node, "caseConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+    SNode tr = SNodeFactoryOperations.setNewChild(node, "caseConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
     SLinkOperations.setTarget(tr, "template", t, false);
   }
 

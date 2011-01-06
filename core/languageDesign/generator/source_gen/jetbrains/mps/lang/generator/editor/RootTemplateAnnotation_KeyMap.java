@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
   public RootTemplateAnnotation_KeyMap() {
@@ -67,7 +68,7 @@ public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SLinkOperations.setNewChild(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+      SNodeFactoryOperations.setNewChild(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
     }
 
     public String getKeyStroke() {

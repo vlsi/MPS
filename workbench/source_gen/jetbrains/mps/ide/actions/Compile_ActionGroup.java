@@ -7,22 +7,18 @@ import jetbrains.mps.logging.Logger;
 
 public class Compile_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Compile_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Compile";
+  public static final String ID = "jetbrains.mps.ide.actions.Compile_ActionGroup";
 
   public Compile_ActionGroup() {
     super("Compile", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Compile_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeAllModules_Action", "jetbrains.mps.ide");
-      Compile_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanAllModules_Action", "jetbrains.mps.ide");
-      Compile_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildAllModules_Action", "jetbrains.mps.ide");
+      Compile_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeAllModules_Action");
+      Compile_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanAllModules_Action");
+      Compile_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildAllModules_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_compile);
   }
 }

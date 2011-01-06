@@ -1,29 +1,26 @@
 package jetbrains.mps.intentions;
 
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.options.SearchableConfigurable;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
-import com.intellij.ide.DataManager;
 import com.intellij.util.SystemProperties;
 import jetbrains.mps.intentions.CodeStyleSettings.MyState;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.MPSDataKeys;
-
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JComponent;
 import javax.swing.Icon;
+import javax.swing.JComponent;
 
 @State(
   name = "CodeStyleSettings",
   storages = {
     @Storage(
-      id ="other",
+      id = "other",
       file = "$WORKSPACE_FILE$"
     )
   }
@@ -95,7 +92,7 @@ public class CodeStyleSettings implements PersistentStateComponent<MyState>, Pro
     myState.myLineSeparator = lineSeparator;
   }
 
-  
+
   public MyState getState() {
     return myState;
   }

@@ -48,7 +48,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestMethodActions");
+    return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup");
   }
 
   public void doubleClick() {

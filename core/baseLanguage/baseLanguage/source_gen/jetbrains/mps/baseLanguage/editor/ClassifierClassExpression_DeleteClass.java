@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -28,7 +28,7 @@ public class ClassifierClassExpression_DeleteClass {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+      SNode ref = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(ref, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
       SNodeOperations.replaceWithAnother(node, ref);
     }

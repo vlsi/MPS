@@ -5,8 +5,9 @@ package jetbrains.mps.baseLanguage.actions;
 import jetbrains.mps.datatransfer.CopyPreProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BL_CopyPasteHandlers_CopyPreProcessor_0 implements CopyPreProcessor {
   public SNode getApplicableConcept() {
@@ -14,7 +15,7 @@ public class BL_CopyPasteHandlers_CopyPreProcessor_0 implements CopyPreProcessor
   }
 
   public void preProcesNode(SNode copy, SNode original) {
-    SNode staticFieldReference = SNodeOperations.replaceWithNewChild(copy, "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+    SNode staticFieldReference = SNodeFactoryOperations.replaceWithNewChild(copy, "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
     SLinkOperations.setTarget(staticFieldReference, "variableDeclaration", SLinkOperations.getTarget(original, "variableDeclaration", false), false);
     SLinkOperations.setTarget(staticFieldReference, "classifier", SNodeOperations.getAncestor(original, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), false);
   }

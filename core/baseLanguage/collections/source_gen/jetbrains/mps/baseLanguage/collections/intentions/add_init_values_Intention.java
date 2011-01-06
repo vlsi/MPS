@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class add_init_values_Intention extends BaseIntention implements Intention {
   public add_init_values_Intention() {
@@ -46,7 +47,7 @@ public class add_init_values_Intention extends BaseIntention implements Intentio
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.addNewChild(node, "initValue", "jetbrains.mps.baseLanguage.structure.Expression");
+    SNodeFactoryOperations.addNewChild(node, "initValue", "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
   public String getLocationString() {

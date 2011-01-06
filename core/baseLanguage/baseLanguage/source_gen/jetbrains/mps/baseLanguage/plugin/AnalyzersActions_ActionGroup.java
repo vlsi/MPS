@@ -4,24 +4,19 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.lang.dataFlow.plugin.DFAActions_ActionGroup;
 
 public class AnalyzersActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AnalyzersActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.baseLanguage.plugin.AnalyzersActions";
+  public static final String ID = "jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup";
 
   public AnalyzersActions_ActionGroup() {
     super("AnalyzersActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      AnalyzersActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action", "jetbrains.mps.baseLanguage");
+      AnalyzersActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(DFAActions_ActionGroup.ID, null);
   }
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="SampleLanguage_ApplicationPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.plugin.SampleLanguage_ApplicationPlugin" />
-  <unitInfo fileName="SampleLanguage_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.plugin.SampleLanguage_ProjectPlugin" />
+  <unitInfo fileName="SampleLanguage_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.plugin.SampleLanguage_ProjectPlugin" />
   <unitInfo fileName="WannabeClassConfiguration_Editor.java" startLine="25" startPosition="47" endLine="29" endPosition="7" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Editor$2" />
   <unitInfo fileName="WannabeClassConfiguration_Configuration.java" startLine="150" startPosition="42" endLine="154" endPosition="13" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Configuration$2" />
   <unitInfo fileName="WannabeClassConfiguration_Configuration.java" startLine="239" startPosition="45" endLine="243" endPosition="5" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Configuration$2" />
   <unitInfo fileName="WannabeClassConfiguration_Configuration.java" startLine="268" startPosition="66" endLine="272" endPosition="7" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Configuration$4" />
   <unitInfo fileName="WannabeClassConfiguration_Configuration.java" startLine="253" startPosition="45" endLine="258" endPosition="5" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Configuration$3" />
   <unitInfo fileName="WannabeClassConfiguration_Configuration.java" startLine="139" startPosition="90" endLine="146" endPosition="13" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Configuration$2" />
+  <unitInfo fileName="SampleLanguage_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.plugin.SampleLanguage_ApplicationPlugin" />
   <unitInfo fileName="WannabeClassConfiguration_Editor.java" startLine="22" startPosition="74" endLine="32" endPosition="3" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Editor$1" />
   <unitInfo fileName="WannabeClassConfiguration_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Factory" />
   <unitInfo fileName="WannabeClassConfiguration_Configuration.java" startLine="277" startPosition="35" endLine="291" endPosition="9" unitName="jetbrains.mps.debug.sampleLanguage.plugin.WannabeClassConfiguration_Configuration$5" />
@@ -35,12 +35,12 @@
     <nodeInfo nodeId="1816315258006337848" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="WannabeClassConfiguration_Configuration.java" startLine="288" startPosition="15" endLine="289" endPosition="36" />
     <nodeInfo nodeId="1816315258006341508" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="WannabeClassConfiguration_Editor.java" startLine="38" startPosition="83" endLine="41" endPosition="15" />
     <nodeInfo nodeId="1816315258006341508" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="WannabeClassConfiguration_Configuration.java" startLine="282" startPosition="87" endLine="285" endPosition="19" />
-    <nodeInfo nodeId="1816315258006316193" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="WannabeClassConfiguration_Configuration.java" startLine="163" startPosition="71" endLine="167" endPosition="0" />
+    <nodeInfo nodeId="1816315258006316193" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="WannabeClassConfiguration_Configuration.java" startLine="163" startPosition="71" endLine="167" endPosition="0" />
     <nodeInfo nodeId="1816315258006341484" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="WannabeClassConfiguration_Editor.java" startLine="37" startPosition="29" endLine="42" endPosition="13" />
     <nodeInfo nodeId="1816315258006316192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WannabeClassConfiguration_Configuration.java" startLine="162" startPosition="82" endLine="167" endPosition="21" />
     <nodeInfo nodeId="1816315258006341484" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="WannabeClassConfiguration_Configuration.java" startLine="281" startPosition="33" endLine="286" endPosition="17" />
-    <nodeInfo nodeId="1816315258006341479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="WannabeClassConfiguration_Editor.java" startLine="36" startPosition="61" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="1816315258006341479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="WannabeClassConfiguration_Configuration.java" startLine="280" startPosition="65" endLine="288" endPosition="0" />
+    <nodeInfo nodeId="1816315258006341479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="WannabeClassConfiguration_Editor.java" startLine="36" startPosition="61" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="1816315258006341479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="WannabeClassConfiguration_Configuration.java" startLine="280" startPosition="65" endLine="288" endPosition="0" />
     <nodeInfo nodeId="1816315258006341478" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WannabeClassConfiguration_Editor.java" startLine="35" startPosition="57" endLine="44" endPosition="11" />
     <nodeInfo nodeId="1816315258006341478" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="WannabeClassConfiguration_Configuration.java" startLine="279" startPosition="61" endLine="288" endPosition="15" />
     <scopeInfo nodeId="1816315258006341510" fileName="WannabeClassConfiguration_Editor.java" startLine="39" startPosition="69" endLine="40" endPosition="30" />
@@ -48,17 +48,17 @@
     <scopeInfo nodeId="1816315258006341510" fileName="WannabeClassConfiguration_Configuration.java" startLine="283" startPosition="73" endLine="284" endPosition="34" />
     <scopeInfo nodeId="1816315258006341486" fileName="WannabeClassConfiguration_Editor.java" startLine="38" startPosition="83" endLine="41" endPosition="15" />
     <scopeInfo nodeId="1816315258006341486" fileName="WannabeClassConfiguration_Configuration.java" startLine="282" startPosition="87" endLine="285" endPosition="19" />
-    <scopeInfo nodeId="1816315258006316193" fileName="WannabeClassConfiguration_Configuration.java" startLine="163" startPosition="71" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="1816315258006316193" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="WannabeClassConfiguration_Configuration.java" startLine="163" startPosition="71" endLine="167" endPosition="0" />
     <scopeInfo nodeId="1816315258006341480" fileName="WannabeClassConfiguration_Editor.java" startLine="37" startPosition="29" endLine="42" endPosition="13" />
-    <scopeInfo nodeId="1816315258006341484" fileName="WannabeClassConfiguration_Editor.java" startLine="37" startPosition="29" endLine="42" endPosition="13">
+    <scopeInfo nodeId="1816315258006341484" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="WannabeClassConfiguration_Editor.java" startLine="37" startPosition="29" endLine="42" endPosition="13">
       <varInfo nodeId="1816315258006341485" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="1816315258006341480" fileName="WannabeClassConfiguration_Configuration.java" startLine="281" startPosition="33" endLine="286" endPosition="17" />
-    <scopeInfo nodeId="1816315258006341484" fileName="WannabeClassConfiguration_Configuration.java" startLine="281" startPosition="33" endLine="286" endPosition="17">
+    <scopeInfo nodeId="1816315258006341484" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="WannabeClassConfiguration_Configuration.java" startLine="281" startPosition="33" endLine="286" endPosition="17">
       <varInfo nodeId="1816315258006341485" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="1816315258006341479" fileName="WannabeClassConfiguration_Editor.java" startLine="36" startPosition="61" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1816315258006341479" fileName="WannabeClassConfiguration_Configuration.java" startLine="280" startPosition="65" endLine="288" endPosition="0" />
+    <scopeInfo nodeId="1816315258006341479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="WannabeClassConfiguration_Editor.java" startLine="36" startPosition="61" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1816315258006341479" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" fileName="WannabeClassConfiguration_Configuration.java" startLine="280" startPosition="65" endLine="288" endPosition="0" />
     <scopeInfo nodeId="1816315258006316182" fileName="WannabeClassConfiguration_Configuration.java" startLine="160" startPosition="21" endLine="169" endPosition="114">
       <varInfo nodeId="1816315258006316202" varName="process" />
       <varInfo nodeId="1816315258006316184" varName="classRunner" />

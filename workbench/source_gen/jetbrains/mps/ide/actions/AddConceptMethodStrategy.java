@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.typesystem.ResolveUtil;
+import jetbrains.mps.baseLanguage.behavior.ResolveUtil;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.INodeAdapter;

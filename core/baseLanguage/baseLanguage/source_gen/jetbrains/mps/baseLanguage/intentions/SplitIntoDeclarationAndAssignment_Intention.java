@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SplitIntoDeclarationAndAssignment_Intention extends BaseIntention implements Intention {
@@ -46,10 +46,10 @@ public class SplitIntoDeclarationAndAssignment_Intention extends BaseIntention i
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode eStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    SNode assignment = SLinkOperations.setNewChild(eStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+    SNode eStatement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SNode assignment = SNodeFactoryOperations.setNewChild(eStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     SLinkOperations.setTarget(assignment, "rValue", SLinkOperations.getTarget(node, "initializer", true), true);
-    SNode local = SLinkOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+    SNode local = SNodeFactoryOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
     SLinkOperations.setTarget(local, "variableDeclaration", node, false);
     SNodeOperations.insertNextSiblingChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), eStatement);
   }

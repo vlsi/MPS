@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -36,7 +37,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_ConceptMethodDeclaration_1238617792579(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode behaviour = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
-    SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
     if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(behaviour, "concept", false)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       SPropertyOperations.set(_context.getNewNode(), "isAbstract", "" + (true));
       SPropertyOperations.set(_context.getNewNode(), "isVirtual", "" + (true));
@@ -44,7 +45,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_StaticConceptMethodDeclaration_1238617792618(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1238617792506(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -64,9 +65,9 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-                SLinkOperations.setNewChild(expr, "operand", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression");
-                SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+                SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+                SNodeFactoryOperations.setNewChild(expr, "operand", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression");
+                SNode call = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
                 SLinkOperations.setTarget(call, "baseMethodDeclaration", (item), false);
                 SLinkOperations.setTarget(expr, "operation", call, true);
                 return expr;

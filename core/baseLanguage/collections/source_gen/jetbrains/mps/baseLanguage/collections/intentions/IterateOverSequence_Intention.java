@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -52,7 +52,7 @@ public class IterateOverSequence_Intention extends SurroundWithIntention impleme
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode forStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", null);
+    SNode forStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", null);
     SNode outerStatement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
     boolean deleteStatement = SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     SNodeOperations.insertNextSiblingChild(outerStatement, forStatement);

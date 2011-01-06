@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class CreateDigitalSignatureConfiguration_Intension_Intention extends BaseIntention implements Intention {
   public CreateDigitalSignatureConfiguration_Intension_Intention() {
@@ -45,7 +45,7 @@ public class CreateDigitalSignatureConfiguration_Intension_Intention extends Bas
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode signConfig = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", null);
+    SNode signConfig = SNodeFactoryOperations.createNewNode("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", null);
     SLinkOperations.setTarget(node, "signatureConfiguration", signConfig, true);
   }
 

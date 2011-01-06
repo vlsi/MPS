@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
@@ -39,7 +39,7 @@ public class ChangeProperty_Intention extends BaseIntention implements Intention
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode transactional = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", node);
+    SNode transactional = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", node);
     SLinkOperations.setTarget(transactional, "property", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
     SLinkOperations.setTarget(node, "relationDeclaration", null, false);
     for (SNode child : ListSequence.fromList(node.getChildren())) {

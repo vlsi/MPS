@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class GenerateOptions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GenerateOptions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.GenerateOptions";
+  public static final String ID = "jetbrains.mps.ide.actions.GenerateOptions_ActionGroup";
   public static final String LABEL_ID_saveTransientModels = ID + "saveTransientModels";
 
   public GenerateOptions_ActionGroup() {
@@ -15,14 +18,15 @@ public class GenerateOptions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GenerateOptions_ActionGroup.this.addAnchor(GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
-      GenerateOptions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action", "jetbrains.mps.ide");
+      {
+        LabelledAnchor action = new LabelledAnchor(GenerateOptions_ActionGroup.LABEL_ID_saveTransientModels);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        GenerateOptions_ActionGroup.this.addAction(action);
+      }
+      GenerateOptions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_options);
   }
 }

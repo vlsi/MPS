@@ -6,26 +6,24 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.IOperationContext;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
+import jetbrains.mps.smodel.IOperationContext;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.project.Project;
 
 public class OptimizeModelImports_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(OptimizeModelImports_Action.class);
-
-  private IOperationContext context;
-  private List<SModelDescriptor> models;
-  private Project project;
 
   public OptimizeModelImports_Action() {
     super("Optimize Imports", "", ICON);
@@ -33,12 +31,7 @@ public class OptimizeModelImports_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -49,42 +42,35 @@ public class OptimizeModelImports_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.models = event.getData(MPSDataKeys.MODELS);
-    if (this.models == null) {
+    MapSequence.fromMap(_params).put("models", event.getData(MPSDataKeys.MODELS));
+    if (MapSequence.fromMap(_params).get("models") == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.PROJECT);
-    if (this.project == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(MPSDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.context = null;
-    this.models = null;
-    this.project = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<String> report = new Wrappers._T<String>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          report.value = new OptimizeImportsHelper(OptimizeModelImports_Action.this.context).optimizeModelsImports(OptimizeModelImports_Action.this.models);
+          report.value = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context"))).optimizeModelsImports(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
           SModelRepository.getInstance().saveAll();
         }
       });
-      Messages.showMessageDialog(OptimizeModelImports_Action.this.project, report.value, "Optimize Imports", Messages.getInformationIcon());
+      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);

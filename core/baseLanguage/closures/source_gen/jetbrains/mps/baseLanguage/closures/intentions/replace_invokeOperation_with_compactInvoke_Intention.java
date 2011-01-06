@@ -52,15 +52,15 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
-    SNodeOperations.replaceWithAnother(parent, new replace_invokeOperation_with_compactInvoke_Intention.QuotationClass_fknil1_a0a0b0h().createNode(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
+    SNodeOperations.replaceWithAnother(parent, new replace_invokeOperation_with_compactInvoke_Intention.QuotationClass_fknil1_a1a1a7().createNode(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
   }
 
-  public static class QuotationClass_fknil1_a0a0b0h {
-    public QuotationClass_fknil1_a0a0b0h() {
+  public static class QuotationClass_fknil1_a1a1a7 {
+    public QuotationClass_fknil1_a1a1a7() {
     }
 
     public SNode createNode(Object parameter_6, Object parameter_7) {

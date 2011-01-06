@@ -4,24 +4,19 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 
 public class TypesystemNodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(TypesystemNodeActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions";
+  public static final String ID = "jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup";
 
   public TypesystemNodeActions_ActionGroup() {
     super("TypesystemNodeActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      TypesystemNodeActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action", "jetbrains.mps.lang.typesystem");
+      TypesystemNodeActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, null);
   }
 }

@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -49,7 +49,7 @@ public class AddIndent_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode newLine = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", null);
+    SNode newLine = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", null);
     SPropertyOperations.set(newLine, "flag", "" + (true));
     ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(newLine);
   }

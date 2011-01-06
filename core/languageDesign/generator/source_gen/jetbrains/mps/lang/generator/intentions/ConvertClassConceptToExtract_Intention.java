@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.smodel.CopyUtil;
@@ -49,7 +50,7 @@ public class ConvertClassConceptToExtract_Intention extends BaseIntention implem
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", null);
+    SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", null);
     for (SNode child : newNode.getChildren()) {
       newNode.removeChild(child);
     }

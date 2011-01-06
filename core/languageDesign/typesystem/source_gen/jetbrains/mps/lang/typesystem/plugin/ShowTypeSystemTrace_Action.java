@@ -5,25 +5,22 @@ package jetbrains.mps.lang.typesystem.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import java.awt.Frame;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.presentation.difference.ShowTypeSystemTrace;
+import jetbrains.mps.smodel.IOperationContext;
+import java.awt.Frame;
 
 public class ShowTypeSystemTrace_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowTypeSystemTrace_Action.class);
-
-  private IOperationContext context;
-  private SNode node;
-  private Frame frame;
-  private EditorComponent editorComponent;
 
   public ShowTypeSystemTrace_Action() {
     super("Show Typesystem Trace", "", ICON);
@@ -31,12 +28,7 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl shift Q";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -45,49 +37,41 @@ public class ShowTypeSystemTrace_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
       }
-      this.node = node;
+      MapSequence.fromMap(_params).put("node", node);
     }
-    if (this.node == null) {
+    if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
-    if (this.context == null) {
+    MapSequence.fromMap(_params).put("context", event.getData(MPSDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    this.frame = event.getData(MPSDataKeys.FRAME);
-    if (this.frame == null) {
+    MapSequence.fromMap(_params).put("frame", event.getData(MPSDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
-    if (this.editorComponent == null) {
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-    this.node = null;
-    this.context = null;
-    this.frame = null;
-    this.editorComponent = null;
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       TypeCheckingContext typeCheckingContext;
-      typeCheckingContext = ShowTypeSystemTrace_Action.this.editorComponent.getTypeCheckingContext();
+      typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
       if (typeCheckingContext instanceof TypeCheckingContextNew) {
         TypeCheckingContextNew t = (TypeCheckingContextNew) typeCheckingContext;
-        new ShowTypeSystemTrace(t, ShowTypeSystemTrace_Action.this.context, ShowTypeSystemTrace_Action.this.frame, ShowTypeSystemTrace_Action.this.node);
+        new ShowTypeSystemTrace(t, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((SNode) MapSequence.fromMap(_params).get("node")));
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);

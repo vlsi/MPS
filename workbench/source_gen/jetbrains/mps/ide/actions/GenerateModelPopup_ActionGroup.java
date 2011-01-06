@@ -5,27 +5,24 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.generator.GeneratorFacade;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 public class GenerateModelPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GenerateModelPopup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.GenerateModelPopup";
+  public static final String ID = "jetbrains.mps.ide.actions.GenerateModelPopup_ActionGroup";
 
   public GenerateModelPopup_ActionGroup() {
     super("Generate (obsolete)", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      GenerateModelPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", GeneratorFacade.getInstance().getDefaultGenerationHandler(), false);
-      GenerateModelPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
-      GenerateModelPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new OutputViewGenerationHandler(), false);
-      GenerateModelPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action", "jetbrains.mps.ide");
+      GenerateModelPopup_ActionGroup.this.addParameterizedAction(new GenerateModel_Action(GeneratorFacade.getInstance().getDefaultGenerationHandler(), false), PluginId.getId("jetbrains.mps.ide"), GeneratorFacade.getInstance().getDefaultGenerationHandler(), false);
+      GenerateModelPopup_ActionGroup.this.addParameterizedAction(new GenerateModel_Action(GeneratorFacade.getInstance().getDefaultGenerationHandler(), true), PluginId.getId("jetbrains.mps.ide"), GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
+      GenerateModelPopup_ActionGroup.this.addParameterizedAction(new GenerateModel_Action(new OutputViewGenerationHandler(), false), PluginId.getId("jetbrains.mps.ide"), new OutputViewGenerationHandler(), false);
+      GenerateModelPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
   }
 }

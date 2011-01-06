@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class IfStatement_elseBlockStatement_delete {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -34,7 +34,7 @@ public class IfStatement_elseBlockStatement_delete {
       SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
       List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true), "statement", true);
       if (ListSequence.fromList(statements).isEmpty()) {
-        statement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement", null);
+        statement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement", null);
       } else {
         statement = ListSequence.fromList(statements).first();
       }

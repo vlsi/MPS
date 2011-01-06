@@ -21,7 +21,7 @@ import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.AbstractTableModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
@@ -109,10 +109,10 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (row > 0 && column > 0) {
               SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
               SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
-              SNode transition = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Transition", null);
-              SLinkOperations.setTarget(transition, "trigger", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.EventReference", null), true);
+              SNode transition = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Transition", null);
+              SLinkOperations.setTarget(transition, "trigger", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.EventReference", null), true);
               SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", event, false);
-              SLinkOperations.setTarget(transition, "fromState", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.StateReference", null), true);
+              SLinkOperations.setTarget(transition, "fromState", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.StateReference", null), true);
               SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", state, false);
               ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true)).addElement(transition);
             }
@@ -123,7 +123,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (columnNumber <= 0) {
               return;
             }
-            ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).insertElement(columnNumber - 1, SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).insertElement(columnNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null));
           }
 
           @Override
@@ -131,7 +131,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
             if (rowNumber <= 0) {
               return;
             }
-            ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).insertElement(rowNumber - 1, SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null));
+            ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).insertElement(rowNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null));
           }
 
           @Override

@@ -151,7 +151,7 @@ public class Mockups {
     final IJobMonitor monitor = context.mock(IJobMonitor.class, name);
     context.checking(new Expectations() {
       {
-        this.allowing(monitor).pleaseStop();
+        this.allowing(monitor).stopRequested();
         this.will(returnValue(false));
       }
     });

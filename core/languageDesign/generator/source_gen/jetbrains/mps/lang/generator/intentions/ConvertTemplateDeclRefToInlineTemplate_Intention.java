@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntention implements Intention {
   public ConvertTemplateDeclRefToInlineTemplate_Intention() {
@@ -63,7 +64,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntent
     SNode fragmentToSet = SNodeOperations.copyNode(SNodeOperations.getParent(ListSequence.fromList(TFs).first()));
     SNode TFtoDelete = SLinkOperations.getTarget(fragmentToSet, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true);
     SNodeOperations.deleteNode(TFtoDelete);
-    SNode inlineTemplate = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
+    SNode inlineTemplate = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
     SLinkOperations.setTarget(inlineTemplate, "templateNode", fragmentToSet, true);
     // ------ 
     int option = JOptionPane.showConfirmDialog(null, "Delete old template?", "", JOptionPane.YES_NO_OPTION);

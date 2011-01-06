@@ -5,10 +5,11 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
+import com.intellij.openapi.extensions.PluginId;
 
 public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(LanguageNewCustomPartActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.LanguageNewCustomPartActions";
+  public static final String ID = "jetbrains.mps.ide.actions.LanguageNewCustomPartActions_ActionGroup";
 
   public LanguageNewCustomPartActions_ActionGroup() {
     super("LanguageNewCustomPartActions", ID);
@@ -16,14 +17,10 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
     this.setPopup(false);
     try {
       for (LanguageAspect aspect : LanguageAspect.values()) {
-        LanguageNewCustomPartActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAspectModel_Action", "jetbrains.mps.ide", aspect);
+        LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModel_Action(aspect), PluginId.getId("jetbrains.mps.ide"), aspect);
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
   }
 }

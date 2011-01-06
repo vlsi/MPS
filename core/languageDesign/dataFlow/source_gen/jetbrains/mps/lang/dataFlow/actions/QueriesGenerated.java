@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_EmitStatement_137546700134038988(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -20,7 +21,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitStatement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.setTarget(_context.getSourceNode(), "position", SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null), true);
+          return SLinkOperations.setTarget(_context.getSourceNode(), "position", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null), true);
         }
 
         public String getMatchingText(String pattern) {

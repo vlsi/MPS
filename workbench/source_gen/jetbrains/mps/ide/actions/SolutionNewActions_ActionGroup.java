@@ -7,21 +7,17 @@ import jetbrains.mps.logging.Logger;
 
 public class SolutionNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionNewActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions";
+  public static final String ID = "jetbrains.mps.ide.actions.SolutionNewActions_ActionGroup";
 
   public SolutionNewActions_ActionGroup() {
     super("New", ID);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      SolutionNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action", "jetbrains.mps.ide");
-      SolutionNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action", "jetbrains.mps.ide");
+      SolutionNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action");
+      SolutionNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_solutionNew);
   }
 }

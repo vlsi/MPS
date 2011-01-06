@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddSinceBlockDocTag_Intention extends BaseIntention implements Intention {
   public AddSinceBlockDocTag_Intention() {
@@ -45,7 +46,7 @@ public class AddSinceBlockDocTag_Intention extends BaseIntention implements Inte
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.addNewChild(node, "since", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag");
+    SNodeFactoryOperations.addNewChild(node, "since", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag");
   }
 
   public String getLocationString() {

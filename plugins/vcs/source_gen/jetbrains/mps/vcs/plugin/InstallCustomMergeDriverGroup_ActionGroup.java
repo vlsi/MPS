@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 
 public class InstallCustomMergeDriverGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(InstallCustomMergeDriverGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup";
+  public static final String ID = "jetbrains.mps.vcs.plugin.InstallCustomMergeDriverGroup_ActionGroup";
 
   public InstallCustomMergeDriverGroup_ActionGroup() {
     super("InstallCustomMergeDriverGroup", ID);
@@ -15,13 +15,9 @@ public class InstallCustomMergeDriverGroup_ActionGroup extends GeneratedActionGr
     this.setPopup(false);
     try {
       InstallCustomMergeDriverGroup_ActionGroup.this.addSeparator();
-      InstallCustomMergeDriverGroup_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action", "jetbrains.mps.vcs");
+      InstallCustomMergeDriverGroup_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.InstallCustomMergeDriver_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("VcsGlobalGroup", null);
   }
 }

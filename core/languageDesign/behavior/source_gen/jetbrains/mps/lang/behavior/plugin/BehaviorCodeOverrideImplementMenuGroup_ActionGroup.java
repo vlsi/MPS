@@ -4,25 +4,20 @@ package jetbrains.mps.lang.behavior.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.actions.Code_ActionGroup;
 
 public class BehaviorCodeOverrideImplementMenuGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup";
+  public static final String ID = "jetbrains.mps.lang.behavior.plugin.BehaviorCodeOverrideImplementMenuGroup_ActionGroup";
 
   public BehaviorCodeOverrideImplementMenuGroup_ActionGroup() {
     super("BehaviorCodeOverrideImplementMenuGroup", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BehaviorCodeOverrideImplementMenuGroup_ActionGroup.this.addAction("jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action", "jetbrains.mps.lang.behavior");
-      BehaviorCodeOverrideImplementMenuGroup_ActionGroup.this.addAction("jetbrains.mps.lang.behavior.plugin.ImplementBehaviorMethod_Action", "jetbrains.mps.lang.behavior");
+      BehaviorCodeOverrideImplementMenuGroup_ActionGroup.this.addAction("jetbrains.mps.lang.behavior.plugin.OverrideBehaviorMethod_Action");
+      BehaviorCodeOverrideImplementMenuGroup_ActionGroup.this.addAction("jetbrains.mps.lang.behavior.plugin.ImplementBehaviorMethod_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
   }
 }

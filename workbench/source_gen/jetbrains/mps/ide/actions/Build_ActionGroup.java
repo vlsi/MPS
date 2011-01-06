@@ -4,10 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Build_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Build_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.Build";
+  public static final String ID = "jetbrains.mps.ide.actions.Build_ActionGroup";
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_compile = ID + "compile";
   public static final String LABEL_ID_options = ID + "options";
@@ -18,20 +21,36 @@ public class Build_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Build_ActionGroup.this.addAnchor(Build_ActionGroup.LABEL_ID_make);
+      {
+        LabelledAnchor action = new LabelledAnchor(Build_ActionGroup.LABEL_ID_make);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Build_ActionGroup.this.addAction(action);
+      }
       Build_ActionGroup.this.addSeparator();
-      Build_ActionGroup.this.addAnchor(Build_ActionGroup.LABEL_ID_compile);
+      {
+        LabelledAnchor action = new LabelledAnchor(Build_ActionGroup.LABEL_ID_compile);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Build_ActionGroup.this.addAction(action);
+      }
       Build_ActionGroup.this.addSeparator();
-      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Options_Action", "jetbrains.mps.ide");
-      Build_ActionGroup.this.addAnchor(Build_ActionGroup.LABEL_ID_options);
+      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.Options_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(Build_ActionGroup.LABEL_ID_options);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Build_ActionGroup.this.addAction(action);
+      }
       Build_ActionGroup.this.addSeparator();
-      Build_ActionGroup.this.addAnchor(Build_ActionGroup.LABEL_ID_aux);
+      {
+        LabelledAnchor action = new LabelledAnchor(Build_ActionGroup.LABEL_ID_aux);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        Build_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother("BuildMenu", null);
   }
 }

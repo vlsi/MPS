@@ -5,27 +5,23 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction;
+import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction;
 
 public class GenerateModels_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(GenerateModels_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.GenerateModels";
+  public static final String ID = "jetbrains.mps.ide.actions.GenerateModels_ActionGroup";
 
   public GenerateModels_ActionGroup() {
     super("GenerateModels", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GenerateModels_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction(false));
-      GenerateModels_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RegenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction(true));
-      GenerateModels_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromModel_Action", "jetbrains.mps.ide", new GenerateTextFromModelsAction());
+      GenerateModels_ActionGroup.this.addParameterizedAction(new GenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(false)), PluginId.getId("jetbrains.mps.ide"), new GenerateFilesFromModelsAction(false));
+      GenerateModels_ActionGroup.this.addParameterizedAction(new RegenerateFilesFromModel_Action(new GenerateFilesFromModelsAction(true)), PluginId.getId("jetbrains.mps.ide"), new GenerateFilesFromModelsAction(true));
+      GenerateModels_ActionGroup.this.addParameterizedAction(new GenerateTextFromModel_Action(new GenerateTextFromModelsAction()), PluginId.getId("jetbrains.mps.ide"), new GenerateTextFromModelsAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-  }
-
-  public void adjust() {
-    this.insertGroupIntoAnother(Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModel);
-    this.insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, GenerateEditorPopup_ActionGroup.LABEL_ID_generate);
   }
 }

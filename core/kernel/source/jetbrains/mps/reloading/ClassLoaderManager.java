@@ -40,6 +40,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ClassLoaderManager.class);
+  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    public void unload() {
+      myRepository.invalidateCaches();
+    }
+  };
 
   public static ClassLoaderManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ClassLoaderManager.class);
@@ -223,11 +228,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   //---------------component stuff------------------
 
   public void initComponent() {
-    addReloadHandler(new ReloadAdapter() {
-      public void unload() {
-        myRepository.invalidateCaches();
-      }
-    });
+    addReloadHandler(myReloadHandler);
   }
 
   @NonNls
@@ -237,7 +238,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    removeReloadHandler(myReloadHandler);
   }
 
   //---------------reload handlers------------------

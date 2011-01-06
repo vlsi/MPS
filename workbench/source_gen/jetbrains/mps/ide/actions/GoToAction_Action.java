@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Map;
 
 public class GoToAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -23,12 +24,7 @@ public class GoToAction_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull
-  public String getKeyStroke() {
-    return "ctrl shift A";
-  }
-
-  public void doUpdate(@NotNull AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       GoToAction_Action.this.action.update(event);
     } catch (Throwable t) {
@@ -39,18 +35,14 @@ public class GoToAction_Action extends GeneratedAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event) {
-    if (!(super.collectActionData(event))) {
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
       return false;
     }
     return true;
   }
 
-  protected void cleanup() {
-    super.cleanup();
-  }
-
-  public void doExecute(@NotNull final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       GoToAction_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
@@ -62,8 +54,8 @@ public class GoToAction_Action extends GeneratedAction {
 
   @NotNull
   public String getActionId() {
-    StringBuilder res = new StringBuilder(500);
-    res.append(GoToAction_Action.class.getName());
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
     res.append("#");
     res.append(action_State((AnAction) this.action));
     res.append("!");

@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
@@ -1329,9 +1328,9 @@ public final class SNode {
  As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
  */
       if (detailed) {
-        return "" + BaseConcept_Behavior.call_getDetailedPresentation_2354269628709769373(this);
+        return SNodeUtil.getDetailedPresentation(this);
       } else {
-        return "" + BaseConcept_Behavior.call_getPresentation_1213877396640(this);
+        return SNodeUtil.getPresentation(this);
       }
     } catch (RuntimeException t) {
       LOG.error(t);

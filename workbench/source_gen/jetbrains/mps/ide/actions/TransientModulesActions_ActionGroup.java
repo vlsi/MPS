@@ -7,14 +7,14 @@ import jetbrains.mps.logging.Logger;
 
 public class TransientModulesActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(TransientModulesActions_ActionGroup.class);
-  public static final String ID = "jetbrains.mps.ide.actions.TransientModulesActions";
+  public static final String ID = "jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup";
 
   public TransientModulesActions_ActionGroup() {
     super("TransientModulesActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      TransientModulesActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveTransientModels_Action", "jetbrains.mps.ide");
+      TransientModulesActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveTransientModels_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

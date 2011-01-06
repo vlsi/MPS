@@ -33,6 +33,7 @@ public class AbstractModuleWorkbenchAdjuster implements ApplicationComponent {
     AbstractModule.registerModelCreationListener(new GeneratorModelCreationListener());
     AbstractModule.registerModelCreationListener(new LanguageAspectCreationListener());
     AbstractModule.registerModelCreationListener(new LanguageModelCreationListener());
+    AbstractModule.registerModelCreationListener(new TestsModelCreationListener());
   }
 
   public void disposeComponent() {

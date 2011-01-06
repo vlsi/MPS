@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
@@ -72,7 +72,7 @@ public class QueriesGenerated {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode normalTypeClause = SModelOperations.createNewNode(model, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
+          SNode normalTypeClause = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
           SLinkOperations.setTarget(normalTypeClause, "normalType", nodeToWrap, true);
           return normalTypeClause;
         }
@@ -131,13 +131,13 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SNode statement = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
             if (statement == null) {
               return null;
             }
             SNodeOperations.replaceWithAnother(statement, result);
-            SNode left = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
+            SNode left = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
             SLinkOperations.setTarget(left, "normalType", _context.getSourceNode(), true);
             SLinkOperations.setTarget(result, "leftExpression", left, true);
             return result;

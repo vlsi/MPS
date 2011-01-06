@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class MakeGeneric_Intention extends BaseIntention implements Intention {
   public MakeGeneric_Intention() {
@@ -45,7 +46,7 @@ public class MakeGeneric_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.addNewChild(node, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+    SNodeFactoryOperations.addNewChild(node, "typeVariableDeclaration", "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
   }
 
   public String getLocationString() {

@@ -287,7 +287,7 @@
     <nodeInfo nodeId="5270353093116089591" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeFactories_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5" />
     <scopeInfo nodeId="5270353093116089377" fileName="NodeFactories_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
     <scopeInfo nodeId="5270353093116089592" fileName="NodeFactories_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="115" />
-    <scopeInfo nodeId="5270353093116089591" fileName="NodeFactories_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
+    <scopeInfo nodeId="5270353093116089591" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeFactories_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
       <varInfo nodeId="5270353093116089609" varName="nodeFactory" />
     </scopeInfo>
     <scopeInfo nodeId="6261424444345978411" fileName="NodeFactories_Behavior.java" startLine="29" startPosition="100" endLine="32" endPosition="109">
@@ -307,7 +307,7 @@
     <nodeInfo nodeId="5270353093116089678" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeSubstituteActions_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5" />
     <scopeInfo nodeId="5270353093116089663" fileName="NodeSubstituteActions_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
     <scopeInfo nodeId="5270353093116089679" fileName="NodeSubstituteActions_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="115" />
-    <scopeInfo nodeId="5270353093116089678" fileName="NodeSubstituteActions_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
+    <scopeInfo nodeId="5270353093116089678" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="NodeSubstituteActions_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
       <varInfo nodeId="5270353093116089690" varName="nodeFactory" />
     </scopeInfo>
     <scopeInfo nodeId="6261424444345978470" fileName="NodeSubstituteActions_Behavior.java" startLine="29" startPosition="100" endLine="32" endPosition="115">
@@ -327,7 +327,7 @@
     <nodeInfo nodeId="5270353093116090141" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="PasteWrappers_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5" />
     <scopeInfo nodeId="5270353093116089916" fileName="PasteWrappers_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
     <scopeInfo nodeId="5270353093116090142" fileName="PasteWrappers_Behavior.java" startLine="23" startPosition="85" endLine="24" endPosition="111" />
-    <scopeInfo nodeId="5270353093116090141" fileName="PasteWrappers_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
+    <scopeInfo nodeId="5270353093116090141" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="PasteWrappers_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
       <varInfo nodeId="5270353093116090153" varName="nodeFactory" />
     </scopeInfo>
     <scopeInfo nodeId="6261424444345978529" fileName="PasteWrappers_Behavior.java" startLine="29" startPosition="100" endLine="32" endPosition="106">
@@ -347,7 +347,7 @@
     <nodeInfo nodeId="5270353093116090198" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5" />
     <scopeInfo nodeId="5270353093116090176" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
     <scopeInfo nodeId="5270353093116090199" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="115" />
-    <scopeInfo nodeId="5270353093116090198" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
+    <scopeInfo nodeId="5270353093116090198" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
       <varInfo nodeId="5270353093116090210" varName="nodeFactory" />
     </scopeInfo>
     <scopeInfo nodeId="6261424444345978591" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="29" startPosition="100" endLine="32" endPosition="115">
@@ -393,15 +393,15 @@
     <nodeInfo nodeId="6261424444345978355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CopyPasteHandlers_Behavior.java" startLine="43" startPosition="81" endLine="44" endPosition="118" />
     <nodeInfo nodeId="5699776870187306049" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CopyPasteHandlers_Behavior.java" startLine="44" startPosition="118" endLine="45" endPosition="108" />
     <nodeInfo nodeId="590757823759260315" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CopyPasteHandlers_Behavior.java" startLine="45" startPosition="108" endLine="46" endPosition="107" />
-    <nodeInfo nodeId="5948027493682791387" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="118" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="5948027493682791370" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="119" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="5948027493682791387" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="118" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="5948027493682791370" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="119" endLine="37" endPosition="0" />
     <nodeInfo nodeId="5948027493682791381" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CopyPasteHandlers_Behavior.java" startLine="27" startPosition="54" endLine="32" endPosition="7" />
     <nodeInfo nodeId="5948027493682791364" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="CopyPasteHandlers_Behavior.java" startLine="32" startPosition="7" endLine="37" endPosition="7" />
     <scopeInfo nodeId="5948027493682791349" fileName="CopyPasteHandlers_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
     <scopeInfo nodeId="5948027493682791388" fileName="CopyPasteHandlers_Behavior.java" startLine="29" startPosition="35" endLine="30" endPosition="98" />
     <scopeInfo nodeId="5948027493682791371" fileName="CopyPasteHandlers_Behavior.java" startLine="34" startPosition="35" endLine="35" endPosition="98" />
-    <scopeInfo nodeId="5948027493682791387" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="118" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5948027493682791370" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="119" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="5948027493682791387" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="118" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5948027493682791370" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="119" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6261424444345978346" fileName="CopyPasteHandlers_Behavior.java" startLine="41" startPosition="100" endLine="46" endPosition="107">
       <varInfo nodeId="6261424444345978370" varName="pastePostProcessor" />
       <varInfo nodeId="5699776870187306050" varName="name" />

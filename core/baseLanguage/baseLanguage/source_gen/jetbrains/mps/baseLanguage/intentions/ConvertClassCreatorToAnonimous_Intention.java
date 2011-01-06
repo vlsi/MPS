@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -46,7 +47,7 @@ public class ConvertClassCreatorToAnonimous_Intention extends BaseIntention impl
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode anonimousClassCreator = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
+    SNode anonimousClassCreator = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
     SLinkOperations.setTarget(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "classifier", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);

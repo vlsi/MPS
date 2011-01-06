@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class ElsifTransform_Intention extends BaseIntention implements Intention {
   public ElsifTransform_Intention() {
@@ -49,7 +50,7 @@ public class ElsifTransform_Intention extends BaseIntention implements Intention
     SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
     while (true) {
       SNode ifStatement = SNodeOperations.cast(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
-      SNode elsifClause = SLinkOperations.addNewChild(node, "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
+      SNode elsifClause = SNodeFactoryOperations.addNewChild(node, "elsifClauses", "jetbrains.mps.baseLanguage.structure.ElsifClause");
       SLinkOperations.setTarget(elsifClause, "condition", SLinkOperations.getTarget(ifStatement, "condition", true), true);
       SLinkOperations.setTarget(elsifClause, "statementList", SLinkOperations.getTarget(ifStatement, "ifTrue", true), true);
       ifFalseStatement = SLinkOperations.getTarget(ifStatement, "ifFalseStatement", true);
