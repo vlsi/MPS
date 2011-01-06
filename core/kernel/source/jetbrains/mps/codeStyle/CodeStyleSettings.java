@@ -1,47 +1,24 @@
-package jetbrains.mps.intentions;
+package jetbrains.mps.codeStyle;
 
-import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.SystemProperties;
-import jetbrains.mps.intentions.CodeStyleSettings.MyState;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
+public class CodeStyleSettings implements ProjectComponent {
 
-@State(
-  name = "CodeStyleSettings",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
+  public CodeStyleSettings() {
   }
-)
-public class CodeStyleSettings implements PersistentStateComponent<MyState>, ProjectComponent, SearchableConfigurable {
+
   public static CodeStyleSettings getInstance(Project project) {
     if (project == null) return null;
     return project.getComponent(CodeStyleSettings.class);
   }
 
   private MyState myState = new MyState();
-  private CodeStylePreferencesPage myPage;
 
   private static final String ourSystemLineSeparator = SystemProperties.getLineSeparator();
-
-  private CodeStylePreferencesPage getPage() {
-    if (myPage == null) {
-      myPage = new CodeStylePreferencesPage(this);
-    }
-    return myPage;
-  }
 
   public Pair<String, String> getFieldSettings() {
     return new Pair<String, String>(myState.getFieldPrefix(), myState.getFieldSuffix());
@@ -92,7 +69,6 @@ public class CodeStyleSettings implements PersistentStateComponent<MyState>, Pro
     myState.myLineSeparator = lineSeparator;
   }
 
-
   public MyState getState() {
     return myState;
   }
@@ -116,46 +92,6 @@ public class CodeStyleSettings implements PersistentStateComponent<MyState>, Pro
   }
 
   public void disposeComponent() {
-  }
-
-  public JComponent createComponent() {
-    return getPage().getComponent();
-  }
-
-  public boolean isModified() {
-    return getPage().isModified();
-  }
-
-  public void apply() throws ConfigurationException {
-    getPage().commit();
-  }
-
-  public void reset() {
-    getPage().update();
-  }
-
-  public void disposeUIResources() {
-  }
-
-  @Nls
-  public String getDisplayName() {
-    return getPage().getName();
-  }
-
-  public Icon getIcon() {
-    return null;
-  }
-
-  public String getHelpTopic() {
-    return null;
-  }
-
-  public String getId() {
-    return "code.style";
-  }
-
-  public Runnable enableSearch(String option) {
-    return null;
   }
 
   public static class MyState {

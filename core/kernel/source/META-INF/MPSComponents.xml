@@ -43,7 +43,10 @@
       <skipForDummyProject/>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.intentions.CodeStyleSettings</implementation-class>
+      <implementation-class>jetbrains.mps.codeStyle.CodeStyleSettings</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable</implementation-class>
     </component>
   </project-components>
 

@@ -1,5 +1,6 @@
-package jetbrains.mps.intentions;
+package jetbrains.mps.ide.codeStyle;
 
+import jetbrains.mps.codeStyle.CodeStyleSettings;
 import jetbrains.mps.util.Pair;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
@@ -13,8 +14,7 @@ public class CodeStylePreferencesPage {
     SYSTEM_DEPENDENT(null, "System Dependent"),
     UNIX("\n", "Unix"),
     WINDOWS("\r\n", "Windows"),
-    MACINTOSH("\r", "Mac"),
-    ;
+    MACINTOSH("\r", "Mac"),;
     private String mySetting;
     private String myName;
 
@@ -46,7 +46,7 @@ public class CodeStylePreferencesPage {
 
     myPage = new JPanel();
     myPage.setLayout(new BoxLayout(myPage, BoxLayout.Y_AXIS));
-    
+
     JPanel namingPanel = new JPanel(new GridBagLayout());
     namingPanel.setBorder(BorderFactory.createTitledBorder("Naming"));
     myPreferLongerName = new JCheckBox("Prefer longer names", true);
@@ -95,7 +95,7 @@ public class CodeStylePreferencesPage {
   }
 
   private Insets getInsets() {
-    return new Insets(4,4,4,4);
+    return new Insets(4, 4, 4, 4);
   }
 
   public JComponent getComponent() {
@@ -116,10 +116,10 @@ public class CodeStylePreferencesPage {
 
   public boolean isModified() {
     return !(mySettings.getFieldSettings().equals(myFieldItem.getSettings()) &&
-             mySettings.getStaticFieldSettings().equals(myStaticField.getSettings()) &&
-             mySettings.getParameterSettings().equals(myParameter.getSettings()) &&
-             mySettings.getLocalVariableSettings().equals(myLocalVariable.getSettings()) &&
-             ObjectUtils.equals(mySettings.getLineSeparatorSetting(), getSelectedLineSeparator()));
+      mySettings.getStaticFieldSettings().equals(myStaticField.getSettings()) &&
+      mySettings.getParameterSettings().equals(myParameter.getSettings()) &&
+      mySettings.getLocalVariableSettings().equals(myLocalVariable.getSettings()) &&
+      ObjectUtils.equals(mySettings.getLineSeparatorSetting(), getSelectedLineSeparator()));
   }
 
   public void update() {

@@ -7,7 +7,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.intentions.CodeStyleSettings;
+import jetbrains.mps.codeStyle.CodeStyleSettings;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenerateGettersAndSettersUtil {

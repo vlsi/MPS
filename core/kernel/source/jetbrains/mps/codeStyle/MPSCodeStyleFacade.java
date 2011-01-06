@@ -1,4 +1,4 @@
-package jetbrains.mps.intentions;
+package jetbrains.mps.codeStyle;
 
 import com.intellij.codeStyle.DefaultCodeStyleFacade;
 import com.intellij.openapi.project.Project;
