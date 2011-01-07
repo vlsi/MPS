@@ -70,6 +70,7 @@ public class PersistenceTest extends BaseMPSTest {
               }
             }
           });
+          ModelAccess.instance().flushEventQueue();
           return true;
       }
     });
@@ -113,6 +114,7 @@ public class PersistenceTest extends BaseMPSTest {
                 resultTo.getModel().dispose();
               }
             });
+            ModelAccess.instance().flushEventQueue();
             return true;
         }
       });

@@ -153,7 +153,7 @@ class EDTExecutor {
                 /* ignore */
               }
             }
-            if(workerStarted) {
+            if (workerStarted) {
               continue;
             }
             Task first = myTasks.peek();
@@ -188,19 +188,24 @@ class EDTExecutor {
           if (t == null) {
             return;
           }
+          boolean remove = true;
           try {
             if (!t.tryRun()) {
               // stop processing, reschedule
+              remove = false;
               return;
             }
           } catch (TaskIsOutdated e) {
             /* ignore, remove task */
           } catch (Exception e) {
-            LOG.error(e);
-            /* remove task */
-          }
-          synchronized (myLock) {
-            myTasks.remove();
+            /* report */
+            LOG.error("run in EDT failure", e);
+          } finally {
+            if (remove) {
+              synchronized (myLock) {
+                myTasks.remove();
+              }
+            }
           }
         } while (deadline > System.currentTimeMillis());
 
@@ -215,6 +220,7 @@ class EDTExecutor {
 
   private static interface Task {
     boolean tryRun() throws TaskIsOutdated;
+
     boolean needsWrite();
   }
 
