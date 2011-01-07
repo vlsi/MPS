@@ -25,7 +25,6 @@ import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
@@ -44,6 +43,9 @@ public class WorkbenchModelAccess extends ModelAccess {
   private EDTExecutor myEDTExecutor = new EDTExecutor(this);
   private Set<Thread> myIndexingThreads = new ConcurrentHashSet<Thread>();
 
+  // changed only in EDT
+  private volatile boolean myDistributedLocksMode = false;
+
   public WorkbenchModelAccess() {
   }
 
@@ -60,11 +62,34 @@ public class WorkbenchModelAccess extends ModelAccess {
       r.run();
       return;
     }
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      throw new IllegalStateException("deadlock prevention: do not start read action in EDT, use tryRead");
+    }
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       public void run() {
         getReadLock().lock();
         try {
           r.run();
+        } finally {
+          getReadLock().unlock();
+        }
+      }
+    });
+  }
+
+  @Override
+  public <T> T runReadAction(final Computable<T> c) {
+    if (canRead()) {
+      return c.compute();
+    }
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      throw new IllegalStateException("deadlock prevention: do not start read action in EDT, use tryRead");
+    }
+    return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
+      public T compute() {
+        getReadLock().lock();
+        try {
+          return c.compute();
         } finally {
           getReadLock().unlock();
         }
@@ -79,6 +104,9 @@ public class WorkbenchModelAccess extends ModelAccess {
       return;
     }
     assertNotWriteFromRead();
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      throw new IllegalStateException("deadlock prevention: do not start write action in EDT, use tryWrite");
+    }
     Runnable runnable = new Runnable() {
       public void run() {
         getWriteLock().lock();
@@ -96,83 +124,15 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
   }
 
-  public void writeFilesInEDT(@NotNull final Runnable action) {
-    // EDT should have IDEA write lock
-    runReadInWriteAction(new Computable<Object>() {
-      @Override
-      public Object compute() {
-        Runnable task = new Runnable() {
-          @Override
-          public void run() {
-            runReadInWriteWorker(action);
-          }
-        };
-        if (ApplicationManager.getApplication().isDispatchThread()) {
-          task.run();
-        } else {
-          ApplicationManager.getApplication().invokeAndWait(task, ModalityState.defaultModalityState());
-        }
-        return null;
-      }
-    });
-  }
-
-  @Override
-  public void runWriteActionWithProgressSynchronously(@NotNull final Progressive process, final String progressTitle, final boolean canBeCanceled,
-                                                      final Project project) {
-
-    assert ThreadUtils.isEventDispatchThread() : "should be event dispatch thread";
-    assert !canRead() : "should be outside of read actions";
-
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-          public void run() {
-            ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
-            progressIndicator.pushState();
-            getWriteLock().lock();
-            try {
-              process.run(progressIndicator);
-            } finally {
-              getWriteLock().unlock();
-              progressIndicator.popState();
-            }
-          }
-        }, progressTitle, canBeCanceled, project);
-      }
-    });
-  }
-
-  private void assertNotWriteFromRead() {
-    if (InternalFlag.isInternalMode()) {
-      assert !canRead() : "Deadlock: Write action should not be executed from within read.";
-    }
-  }
-
-  @Override
-  public <T> T runReadAction(final Computable<T> c) {
-    if (canRead()) {
-      return c.compute();
-    }
-    return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
-      public T compute() {
-        getReadLock().lock();
-        try {
-          return c.compute();
-        } finally {
-          getReadLock().unlock();
-        }
-      }
-    });
-  }
-
   @Override
   public <T> T runWriteAction(final Computable<T> c) {
     if (canWrite()) {
       return c.compute();
     }
     assertNotWriteFromRead();
+    if(myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
+      throw new IllegalStateException("deadlock prevention: do not start write action in EDT, use tryWrite");
+    }
     Computable<T> computable = new Computable<T>() {
       public T compute() {
         getWriteLock().lock();
@@ -187,6 +147,73 @@ public class WorkbenchModelAccess extends ModelAccess {
       return ApplicationManager.getApplication().runWriteAction(computable);
     } else {
       return ApplicationManager.getApplication().runReadAction(computable);
+    }
+  }
+
+  public void writeFilesInEDT(@NotNull final Runnable action) {
+    // EDT should have IDEA write lock
+    runReadInWriteAction(new Computable<Object>() {
+      @Override
+      public Object compute() {
+        Runnable task = new Runnable() {
+          @Override
+          public void run() {
+            runReadInWriteWorker(action);
+          }
+        };
+        if (ApplicationManager.getApplication().isDispatchThread()) {
+          task.run();
+        } else {
+          if(!myDistributedLocksMode) {
+            LOG.error("EDT should have IDEA write lock", new Exception());
+            throw new IllegalStateException();
+          } else {
+            ApplicationManager.getApplication().invokeAndWait(task, ModalityState.defaultModalityState());
+          }
+        }
+        return null;
+      }
+    });
+  }
+
+  @Override
+  public void runWriteActionWithProgressSynchronously(@NotNull final Progressive process, final String progressTitle, final boolean canBeCanceled,
+                                                      final Project project) {
+
+    if(!ApplicationManager.getApplication().isDispatchThread()) {
+      throw new IllegalStateException("should be event dispatch thread");
+    }
+    assert !canRead() : "should be outside of read actions";
+    assert !myDistributedLocksMode : "cannot re-enter distributed locks mode";
+
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          myDistributedLocksMode = true;
+          ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+            public void run() {
+              ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+              progressIndicator.pushState();
+              getWriteLock().lock();
+              try {
+                process.run(progressIndicator);
+              } finally {
+                getWriteLock().unlock();
+                progressIndicator.popState();
+              }
+            }
+          }, progressTitle, canBeCanceled, project);
+        } finally {
+          myDistributedLocksMode = false;
+        }
+      }
+    });
+  }
+
+  private void assertNotWriteFromRead() {
+    if(canRead()) {
+      throw new IllegalStateException("deadlock prevention: do not start write action from read");
     }
   }
 
@@ -212,7 +239,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public boolean isInEDT() {
-    return myEDTExecutor.isInEDT();
+    return ApplicationManager.getApplication().isDispatchThread();
   }
 
   public boolean tryRead(final Runnable r) {
@@ -307,13 +334,10 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  @Deprecated
-  public void executeCommand(Runnable r) {
-    executeCommand(r, CurrentProjectAccessUtil.getProjectFromUI());
-  }
-
-  @Override
   public void executeCommand(Runnable r, Project project) {
+    if(project == null) {
+      project = CurrentProjectAccessUtil.getProjectFromUI();
+    }
     CommandProcessor.getInstance().executeCommand(project, new CommandRunnable(r), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
@@ -325,6 +349,9 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public <T> T runWriteActionInCommand(Computable<T> c, Project project) {
+    if(project == null) {
+      project = CurrentProjectAccessUtil.getProjectFromUI();
+    }
     return runWriteActionInCommand(c, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
   }
 

@@ -75,7 +75,7 @@ public class RenameSolutionDialog extends BaseDialog {
         new SolutionRenamer(mySolution, fqName).rename();
         return true;
       }
-    });
+    }, null /* TODO ? */);
 
     if (!renamed) {
       return;

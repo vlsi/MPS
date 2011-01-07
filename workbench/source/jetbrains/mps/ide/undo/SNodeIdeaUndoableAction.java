@@ -19,13 +19,11 @@ import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 class SNodeIdeaUndoableAction implements UndoableAction {
   private boolean myIsGlobal;
@@ -65,7 +63,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
           a.undo();
         }
       }
-    });
+    }, null /* TODO? */);
   }
 
   public final void redo() throws UnexpectedUndoException {
@@ -75,7 +73,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
           a.redo();
         }
       }
-    });
+    }, null /* TODO? */);
   }
 
   public DocumentReference[] getAffectedDocuments() {

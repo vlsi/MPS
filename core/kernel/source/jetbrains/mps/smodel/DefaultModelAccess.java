@@ -129,12 +129,6 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  @Deprecated
-  public void executeCommand(Runnable r) {
-    runWriteAction(r);
-  }
-
-  @Override
   public void executeCommand(Runnable r, Project project) {
     runWriteAction(r);
   }

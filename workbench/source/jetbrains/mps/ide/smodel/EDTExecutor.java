@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.project.Project;
@@ -83,10 +82,6 @@ class EDTExecutor {
         LOG.error(e);
       }
     }
-  }
-
-  public boolean isInEDT() {
-    return ApplicationManager.getApplication().isDispatchThread();
   }
 
   private class Executor extends Thread {
@@ -223,7 +218,7 @@ class EDTExecutor {
           Pair<Runnable, Project> pair = myToExecuteCommand.peek();
           if (pair.getSecond() == p) {
             myToExecuteCommand.remove(pair);
-            if(myToExecuteCommand.isEmpty()) myLock.notifyAll();
+            if (myToExecuteCommand.isEmpty()) myLock.notifyAll();
             return pair.getFirst();
           }
           return null;
@@ -261,7 +256,7 @@ class EDTExecutor {
               }
             }, project);
           } else if (project != null) {
-            LOG.error("disposed project, command dropped "+project);
+            LOG.error("disposed project, command dropped " + project);
             getToExecuteCommand(project);
           }
         } finally {
