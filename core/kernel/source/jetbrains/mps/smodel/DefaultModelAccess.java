@@ -129,6 +129,20 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
+  public boolean tryRead(Runnable r) {
+    if (getReadLock().tryLock()) {
+      try {
+        r.run();
+      } finally {
+        getReadLock().unlock();
+      }
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  @Override
   public void executeCommand(Runnable r, Project project) {
     runWriteAction(r);
   }

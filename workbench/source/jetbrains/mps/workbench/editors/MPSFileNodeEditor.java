@@ -217,7 +217,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
 
   public Document[] getDocuments() {
     final List<Document> result = new LinkedList<Document>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().tryRead(new Runnable() {
       public void run() {
         for (SNode node:myNodeEditor.getEditedNodes()){
           result.add(MPSUndoUtil.getDoc(new SNodePointer(node)));

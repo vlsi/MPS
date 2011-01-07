@@ -91,6 +91,8 @@ public interface ModelCommandExecutor {
 
   void removeCommandListener(ModelAccessListener l);
 
+  boolean tryRead(Runnable r);
+
   <T> T tryRead(Computable<T> c);
 
   void flushEventQueue();

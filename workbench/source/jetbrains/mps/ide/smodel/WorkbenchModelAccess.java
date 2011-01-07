@@ -242,6 +242,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     return ApplicationManager.getApplication().isDispatchThread();
   }
 
+  @Override
   public boolean tryRead(final Runnable r) {
     return ApplicationManager.getApplication().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
