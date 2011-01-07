@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import com.intellij.util.containers.ConcurrentHashSet;
+import jetbrains.mps.generator.TransientModelsComponent.TransientSwapSpace;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -110,6 +111,9 @@ public class TransientModelsModule extends AbstractModule {
       if (!myModelsToKeep.contains(model.getSModelReference().toString())) {
         removeModel(model);
       }
+      else {
+        unloadModel (model);
+      }
     }
   }
 
@@ -149,6 +153,18 @@ public class TransientModelsModule extends AbstractModule {
     if (myModels.remove(md.getSModelReference().getSModelFqName()) != null) {
       if (myPublished.remove(md)) {
         SModelRepository.getInstance().removeModelDescriptor(md);
+      }
+    }
+  }
+
+  private void unloadModel(SModelDescriptor model) {
+    if (myModels.containsKey(model.getSModelReference().getSModelFqName())) {
+      if (model instanceof TransientSModelDescriptor) {
+        if (((TransientSModelDescriptor)model).unloadModel()) {
+          if (myPublished.contains(model)) {
+            SModelRepository.getInstance().removeModelDescriptor(model);
+          }
+        }
       }
     }
   }
@@ -202,6 +218,7 @@ public class TransientModelsModule extends AbstractModule {
 
   public class TransientSModelDescriptor extends BaseSModelDescriptor {
     private final String myLongName;
+    private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(SModelFqName fqName, String longName) {
       super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
@@ -209,8 +226,33 @@ public class TransientModelsModule extends AbstractModule {
     }
 
     protected ModelLoadResult initialLoad() {
-      TransientSModel model = new TransientSModel(getSModelReference());
+      TransientSModel model;
+      if (wasUnloaded) {
+        System.out.println("*** Re-loading "+getSModelReference());
+
+        TransientSwapSpace swap = myComponent.getTransientSwapSpace();
+        if (swap == null) { throw new IllegalStateException("no swap space"); }
+
+        model = swap.restoreFromSwap(getSModelReference());
+        if (model == null) { throw new IllegalStateException("lost swapped out model"); }
+      }
+      else{
+        model = new TransientSModel(getSModelReference());
+      }
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
+    }
+
+    private boolean unloadModel() {
+      if (!wasUnloaded) {
+        System.out.println("*** Un-loading "+getSModelReference());
+        TransientSwapSpace swap = myComponent.getTransientSwapSpace();
+        if (swap == null || !swap.swapOut((TransientSModel) mySModel)) { return false; }
+
+        this.mySModel = null;
+        setLoadingState(ModelLoadingState.NOT_LOADED);
+        this.wasUnloaded = true;
+      }
+      return false;
     }
 
     @Override
@@ -233,5 +275,11 @@ public class TransientModelsModule extends AbstractModule {
       }
       return super.resolveModel(reference);
     }
+
+    public void loadModel () {
+
+    }
+
   }
+
 }

@@ -21,7 +21,6 @@ import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
-import jetbrains.mps.generator.impl.interpreted.TemplateMappingScriptInterpreted;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
@@ -107,7 +106,7 @@ public class GenerationSession {
       if (total > 0 && ignored == total && filter.canIgnoreConditionals()) {
         myLogger.info("generated files are up-to-date");
         ttrace.pop();
-        return new GenerationStatus(myOriginalInputModel.getSModel(), null,
+        return new GenerationStatus(myOriginalInputModel, null,
           myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
       }
 
@@ -165,7 +164,7 @@ public class GenerationSession {
         mySessionContext.keepTransientModel(currOutput, true);
       }
 
-      GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
+      GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput.getModelDescriptor(),
         myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
         myLogger.getWarningCount() > 0, false);
       success = generationStatus.isOk();
@@ -176,11 +175,11 @@ public class GenerationSession {
       // FIXME
       myLogger.error(gfe.getMessage());
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + gfe);
-      return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
+      return new GenerationStatus.ERROR(myOriginalInputModel);
     } catch (Exception e) {
       myLogger.handleException(e);
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed (see exception)");
-      return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
+      return new GenerationStatus.ERROR(myOriginalInputModel);
     } finally {
       if (myNewCache != null) {
         if (success) {

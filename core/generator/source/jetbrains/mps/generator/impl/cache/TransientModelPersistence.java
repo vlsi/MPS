@@ -46,6 +46,23 @@ public class TransientModelPersistence {
     saveNodes(roots, os);
   }
 
+  public TransientSModel loadModel(ModelInputStream is, TransientSModel model) throws IOException {
+    int version = is.readInt();
+    if (version != VERSION) {
+      return null;
+    }
+
+    model.setLoading(true);
+    List<SNode> roots = loadNodes(model, is);
+    for (SNode r: roots) {
+      model.addRoot(r);
+    }
+    // Don't enable events as this will cause TextGen to fail. See MPS-11184
+//    model.setLoading(false);
+
+    return model;
+  }
+
   public List<SNode> loadModel(ModelInputStream is) throws IOException {
     int version = is.readInt();
     if (version != VERSION) {

@@ -21,10 +21,13 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -39,6 +42,8 @@ public class TransientModelsComponent implements ProjectComponent {
   private int myModelsToKeepMax = 0; /* unlimited */
   private Project myProject;
   private int myKeptModels;
+  private TransientSwapOwner myTransientSwapOwner;
+  private String mySessionId;
 
   public TransientModelsComponent(Project project, MPSProject mpsProject) {
     myProject = project;
@@ -60,6 +65,17 @@ public class TransientModelsComponent implements ProjectComponent {
 
   @Override
   public void initComponent() {
+    // TODO unhackme
+
+    try {
+      Class<?> soc = Class.forName("jetbrains.mps.ide.generator.TransientSwapOwnerComponent");
+      Method getInstance = soc.getMethod("getInstance");
+      setTransientSwapOwner((TransientSwapOwner) getInstance.invoke(null));
+    }
+    catch (ClassNotFoundException ignore) {}
+    catch (NoSuchMethodException ignore) {}
+    catch (InvocationTargetException ignore) {}
+    catch (IllegalAccessException ignore) {}
   }
 
   @Override
@@ -86,6 +102,7 @@ public class TransientModelsComponent implements ProjectComponent {
 
   public void startGeneration(int numberOfModelsToKeep) {
     clearAll();
+    mySessionId = newSessionId();
     myKeptModels = 0;
     myModelsToKeepMax = numberOfModelsToKeep;
   }
@@ -101,6 +118,12 @@ public class TransientModelsComponent implements ProjectComponent {
         SModelRepository.getInstance().removeUnusedDescriptors();
       }
     });
+
+    TransientSwapSpace space = getTransientSwapSpace();
+    if (space != null) {
+      space.clear();
+    }
+    mySessionId = null;
   }
 
   public synchronized void publishAll() {
@@ -136,4 +159,46 @@ public class TransientModelsComponent implements ProjectComponent {
     }
     return myKeptModels++ < myModelsToKeepMax;
   }
+
+  public TransientSwapOwner getTransientSwapOwner() {
+    return myTransientSwapOwner;
+  }
+
+  public void setTransientSwapOwner (TransientSwapOwner transientSwapOwner) {
+    myTransientSwapOwner = transientSwapOwner;
+  }
+
+  public TransientSwapSpace getTransientSwapSpace () {
+    if (mySessionId == null) { return null; }
+
+    TransientSwapOwner tso = getTransientSwapOwner();
+    if (tso == null) { return null; }
+
+    TransientSwapSpace space = tso.accessSwapSpace(mySessionId);
+    if (space != null) { return space; }
+
+    return tso.initSwapSpace(mySessionId);
+  }
+
+  private String newSessionId () {
+    return myProject.getLocationHash()+Long.toHexString(System.currentTimeMillis());
+  }
+
+
+  public static interface TransientSwapSpace {
+
+    boolean swapOut(TransientSModel model);
+
+    TransientSModel restoreFromSwap (SModelReference mref);
+
+    void clear();
+  }
+
+  public static interface TransientSwapOwner {
+
+    TransientSwapSpace initSwapSpace(String spaceId);
+
+    TransientSwapSpace accessSwapSpace (String spaceId);
+  }
+
 }
