@@ -100,7 +100,7 @@ public class TransientModelWithMetainfo {
     os.writeInt(END_MARKER);
   }
 
-  private void loadMetainfo(ModelInputStream is) throws ClassNotFoundException, IOException {
+  private void loadMetainfo(ModelInputStream is) throws IOException {
     int size = is.readInt();
     for (; size > 0; size--) {
       SNodeId key = is.readNodeId();
@@ -122,14 +122,10 @@ public class TransientModelWithMetainfo {
 
 
   public static TransientModelWithMetainfo load(ModelInputStream is, SModelReference modelReference) throws IOException {
-    try {
-      List<SNode> roots = new TransientModelPersistence(modelReference).loadModel(is);
-      TransientModelWithMetainfo result = new TransientModelWithMetainfo(modelReference, roots);
-      result.loadMetainfo(is);
-      return result;
-    } catch (ClassNotFoundException ex) {
-      throw new IOException("cannot load: " + ex.toString());
-    }
+    List<SNode> roots = new TransientModelPersistence(modelReference).loadModel(is);
+    TransientModelWithMetainfo result = new TransientModelWithMetainfo(modelReference, roots);
+    result.loadMetainfo(is);
+    return result;
   }
 
   public static TransientModelWithMetainfo create(SModel model, DependenciesBuilder builder) throws GenerationFailureException {

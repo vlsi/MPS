@@ -46,7 +46,7 @@ public class TransientModelPersistence {
     saveNodes(roots, os);
   }
 
-  public List<SNode> loadModel(ModelInputStream is) throws IOException, ClassNotFoundException {
+  public List<SNode> loadModel(ModelInputStream is) throws IOException {
     int version = is.readInt();
     if (version != VERSION) {
       return null;
@@ -65,7 +65,7 @@ public class TransientModelPersistence {
     }
   }
 
-  private List<SNode> loadNodes(SModel model, ModelInputStream is) throws IOException, ClassNotFoundException {
+  private List<SNode> loadNodes(SModel model, ModelInputStream is) throws IOException {
     int size = is.readInt();
     List<SNode> nodes = new ArrayList<SNode>(size);
     for (int i = 0; i < size; i++) {
@@ -74,7 +74,7 @@ public class TransientModelPersistence {
     return nodes;
   }
 
-  private SNode loadNode(SModel model, ModelInputStream is) throws ClassNotFoundException, IOException {
+  private SNode loadNode(SModel model, ModelInputStream is) throws IOException {
     String conceptFqName = is.readString();
     SNodeId nodeId = is.readNodeId();
     String nodeRole = is.readString();
