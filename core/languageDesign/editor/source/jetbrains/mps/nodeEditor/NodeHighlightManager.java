@@ -405,7 +405,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   public List<EditorMessage> getMessagesFor(SNode node) {
     List<EditorMessage> result = new ArrayList<EditorMessage>();
     if (myDisposed) {
-      return null;
+      return result;
     }
     synchronized (myMessagesLock) {
       result.addAll(myMessagesToNodes.getBySecond(node));
