@@ -89,6 +89,12 @@ public class EditorCell_Table extends EditorCell_Collection {
   }
 
   @Override
+  public int getBottomInset() {
+    // Necesary for properly painting bottom table line 
+    return 1;
+  }
+
+  @Override
   public void paint(Graphics graphics, ParentSettings parentSettings) {
     super.paint(graphics, parentSettings);
     graphics.setColor(Color.GRAY);
