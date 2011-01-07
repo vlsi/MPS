@@ -40,7 +40,6 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1207225803603">
       <property name="name" nameId="tpck.1169194664001" value="CopyThisDown" />
       <property name="caption" nameId="tp4k.1205250923097" value="Duplicate Node" />
-      <property name="shortcut" value="control D" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="1207227007620">
@@ -69,6 +68,7 @@
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="4743603200655303700">
       <property name="name" nameId="tpck.1169194664001" value="Mac" />
+      <property name="keymap" nameId="tp4k.1562714432501166281" value="Mac OS X" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4743603200655334382">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
@@ -1753,6 +1753,13 @@
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_LEFT" />
       </node>
     </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="4743603200655340511">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="4743603200655334821" resolveInfo="InsertBefore" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4743603200655340512">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+      </node>
+    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="4743603200655340495">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="4743603200655334840" resolveInfo="LocalEnd" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4743603200655340496">
@@ -1801,19 +1808,6 @@
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4743603200655340508">
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_W" />
-      </node>
-    </node>
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="4743603200655340509">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="4743603200655334753" resolveInfo="Insert" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4743603200655340510">
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
-      </node>
-    </node>
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="4743603200655340511">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="4743603200655334821" resolveInfo="InsertBefore" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="4743603200655340512">
-        <property name="modifiers" nameId="tp4k.1207318242773" value="shift" />
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
       </node>
     </node>
   </root>

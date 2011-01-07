@@ -13,7 +13,6 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.End_Action", getShortcut(" END"), getShortcut("meta RIGHT"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.Home_Action", getShortcut(" HOME"), getShortcut("meta LEFT"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.InsertBefore_Action", getShortcut("shift ENTER"));
-    addSimpleShortcut("jetbrains.mps.lang.editor.plugin.Insert_Action", getShortcut(" ENTER"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.LocalEnd_Action", getShortcut("alt RIGHT"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.LocalHome_Action", getShortcut("alt LEFT"));
     addSimpleShortcut("jetbrains.mps.lang.editor.plugin.SelectDown_Action", getShortcut("ctrl DOWN"), getShortcut("ctrl shift W"));
@@ -25,7 +24,7 @@ public class Mac_KeymapChanges extends BaseKeymapChanges {
   }
 
   public String getScheme() {
-    return "$default";
+    return "Mac OS X";
   }
 
   public static Shortcut getShortcut(String stroke) {
