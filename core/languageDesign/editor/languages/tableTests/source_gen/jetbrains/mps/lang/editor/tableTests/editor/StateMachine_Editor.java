@@ -23,6 +23,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
 public class StateMachine_Editor extends DefaultNodeEditor {
@@ -75,7 +80,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
 
   private EditorCell createTable_qpt50r_c0(EditorContext editorContext, SNode node) {
     TableModelCreator creator = new TableModelCreator() {
-      public TableModel getTable(final SNode node, EditorContext editorContext) {
+      public TableModel getTable(final SNode node, final EditorContext editorContext) {
         return new AbstractTableModel() {
           public int getColumnCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).count();
@@ -146,6 +151,59 @@ public class StateMachine_Editor extends DefaultNodeEditor {
               }
             }
             SNodeOperations.deleteNode(event);
+          }
+
+          @Override
+          public NodeSubstituteInfo getSubstituteInfo(final int row, final int column) {
+            SNode linkDeclaration = null;
+            if (row == 0 && column > 0) {
+              linkDeclaration = SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "events");
+            }
+            if (column == 0 && row > 0) {
+              linkDeclaration = SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "states");
+            }
+            if (row > 0 && column > 0) {
+              linkDeclaration = SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "transitions");
+            }
+            if (linkDeclaration == null) {
+              return null;
+            }
+            return new DefaultChildSubstituteInfo(node, getValueAt(row, column), ((LinkDeclaration) SNodeOperations.getAdapter(linkDeclaration)), editorContext) {
+              @Override
+              protected DefaultChildNodeSetter createDefaultNodeSetter() {
+                return new DefaultChildNodeSetter(getLinkDeclaration()) {
+                  @Override
+                  public SNode doExecute(SNode parentSNode, SNode oldChildSNode, SNode newChildSNode, IScope scope) {
+                    SNode stateMachine = (SNode) parentSNode;
+                    SNode oldChildNode = oldChildSNode;
+                    SNode newChildNode = newChildSNode;
+                    if (oldChildSNode != null) {
+                      SNodeOperations.replaceWithAnother(oldChildNode, newChildNode);
+                    } else {
+                      if (row == 0) {
+                        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(stateMachine, "events", true)).getElement(column - 1), newChildNode);
+                      }
+                      if (column == 0) {
+                        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(stateMachine, "states", true)).getElement(row - 1), newChildNode);
+                      }
+                      if (column > 0 && row > 0) {
+                        ListSequence.fromList(SLinkOperations.getTargets(stateMachine, "transitions", true)).addElement((SNode) newChildNode);
+                      }
+                    }
+                    if (row > 0 && column > 0) {
+                      SNode event = ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);
+                      SNode state = ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).getElement(row - 1);
+                      SNode transition = (SNode) newChildNode;
+                      SLinkOperations.setTarget(transition, "trigger", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.EventReference", null), true);
+                      SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "trigger", true), "event", event, false);
+                      SLinkOperations.setTarget(transition, "fromState", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.StateReference", null), true);
+                      SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", state, false);
+                    }
+                    return newChildNode;
+                  }
+                };
+              }
+            };
           }
 
           @Override
