@@ -105,14 +105,12 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1205248417575">
       <property name="name" nameId="tpck.1169194664001" value="CommentStatements" />
-      <property name="shortcut" value="control shift SLASH" />
       <property name="caption" nameId="tp4k.1205250923097" value="Comment Statements" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1205604975727">
       <property name="name" nameId="tpck.1169194664001" value="UncommentStatements" />
       <property name="caption" nameId="tp4k.1205250923097" value="Uncomment Statements" />
-      <property name="shortcut" value="control shift SLASH" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1208785675986">
@@ -146,7 +144,6 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1223451793768">
       <property name="caption" nameId="tp4k.1205250923097" value="Extract Method" />
       <property name="name" nameId="tpck.1169194664001" value="ExtractMethod" />
-      <property name="shortcut" value="control alt M" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
