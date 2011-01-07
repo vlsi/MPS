@@ -224,17 +224,17 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runReadInEDT(Runnable r) {
-    myEDTExecutor.invokeReadInEDT(r);
+    myEDTExecutor.scheduleRead(r);
   }
 
   @Override
   public void runWriteInEDT(Runnable r) {
-    myEDTExecutor.invokeWriteInEDT(r);
+    myEDTExecutor.scheduleWrite(r);
   }
 
   @Override
-  public void runCommandInEDT(Runnable r, @NotNull Project p) {
-    myEDTExecutor.invokeCommandInEDT(r, p);
+  public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
+    myEDTExecutor.scheduleCommand(r, p);
   }
 
   @Override
@@ -483,6 +483,16 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     }
     super.onCommandFinished();
+  }
+
+  void waitLock(boolean write) {
+    if(write) {
+      getWriteLock().lock();
+      getWriteLock().unlock();
+    } else {
+      getReadLock().lock();
+      getReadLock().unlock();
+    }
   }
 
   private class CommandRunnable implements Runnable {

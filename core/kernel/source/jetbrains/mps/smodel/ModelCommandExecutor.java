@@ -55,7 +55,7 @@ public interface ModelCommandExecutor {
 
   void runWriteInEDT(Runnable r);
 
-  void runCommandInEDT(Runnable r, @NotNull Project p);
+  void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
 
   void executeCommand(Runnable r, Project project);
 
