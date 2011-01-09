@@ -200,11 +200,11 @@
   <unitInfo fileName="IdeaInitializerDescriptor_Editor.java" startLine="18" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.IdeaInitializerDescriptor_Editor" />
   <unitInfo fileName="TabbedEditorDeclaration_Editor.java" startLine="34" startPosition="0" endLine="315" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.TabbedEditorDeclaration_Editor" />
   <unitInfo fileName="RunConfigurationDeclaration_Editor.java" startLine="29" startPosition="0" endLine="319" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationDeclaration_Editor" />
+  <unitInfo fileName="SingletabbedEditorTab_Editor.java" startLine="25" startPosition="0" endLine="329" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.SingletabbedEditorTab_Editor" />
   <unitInfo fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="32" startPosition="0" endLine="338" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationTypeDeclaration_Editor" />
-  <unitInfo fileName="SingletabbedEditorTab_Editor.java" startLine="26" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.SingletabbedEditorTab_Editor" />
   <unitInfo fileName="PreferencesComponentDeclaration_Editor.java" startLine="33" startPosition="0" endLine="357" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencesComponentDeclaration_Editor" />
   <unitInfo fileName="RunConfigurationBody.java" startLine="31" startPosition="0" endLine="363" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.RunConfigurationBody" />
-  <unitInfo fileName="MultitabbedEditorTab_Editor.java" startLine="26" startPosition="0" endLine="402" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.MultitabbedEditorTab_Editor" />
+  <unitInfo fileName="MultitabbedEditorTab_Editor.java" startLine="25" startPosition="0" endLine="397" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.MultitabbedEditorTab_Editor" />
   <unitInfo fileName="ActionGroupDeclaration_Editor.java" startLine="24" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.ActionGroupDeclaration_Editor" />
   <unitInfo fileName="PreferencePage_Editor.java" startLine="35" startPosition="0" endLine="422" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.PreferencePage_Editor" />
   <unitInfo fileName="FileGeneratorDeclaration_Editor.java" startLine="35" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.lang.plugin.editor.FileGeneratorDeclaration_Editor" />
@@ -316,14 +316,14 @@
     <scopeInfo nodeId="1240665767494" fileName="ActionGroupDeclaration_Editor.java" startLine="397" startPosition="111" endLine="398" endPosition="41" />
   </root>
   <root nodeId="1203852140718">
-    <nodeInfo nodeId="5703381818025949429" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SingletabbedEditorTab_Editor.java" startLine="326" startPosition="113" endLine="327" endPosition="74" />
-    <scopeInfo nodeId="5703381818025949428" fileName="SingletabbedEditorTab_Editor.java" startLine="326" startPosition="113" endLine="327" endPosition="74" />
+    <nodeInfo nodeId="5703381818025949429" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="SingletabbedEditorTab_Editor.java" startLine="321" startPosition="113" endLine="322" endPosition="74" />
+    <scopeInfo nodeId="5703381818025949428" fileName="SingletabbedEditorTab_Editor.java" startLine="321" startPosition="113" endLine="322" endPosition="74" />
   </root>
   <root nodeId="1203852144441">
-    <nodeInfo nodeId="5703381818025949403" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MultitabbedEditorTab_Editor.java" startLine="390" startPosition="114" endLine="391" endPosition="143" />
-    <nodeInfo nodeId="9196263109209943108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MultitabbedEditorTab_Editor.java" startLine="394" startPosition="114" endLine="395" endPosition="74" />
-    <scopeInfo nodeId="5703381818025949402" fileName="MultitabbedEditorTab_Editor.java" startLine="390" startPosition="114" endLine="391" endPosition="143" />
-    <scopeInfo nodeId="9196263109209935114" fileName="MultitabbedEditorTab_Editor.java" startLine="394" startPosition="114" endLine="395" endPosition="74" />
+    <nodeInfo nodeId="5703381818025949403" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MultitabbedEditorTab_Editor.java" startLine="385" startPosition="114" endLine="386" endPosition="143" />
+    <nodeInfo nodeId="9196263109209943108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="MultitabbedEditorTab_Editor.java" startLine="389" startPosition="114" endLine="390" endPosition="74" />
+    <scopeInfo nodeId="5703381818025949402" fileName="MultitabbedEditorTab_Editor.java" startLine="385" startPosition="114" endLine="386" endPosition="143" />
+    <scopeInfo nodeId="9196263109209935114" fileName="MultitabbedEditorTab_Editor.java" startLine="389" startPosition="114" endLine="390" endPosition="74" />
   </root>
   <root nodeId="1204464304511">
     <nodeInfo nodeId="1208950262065" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ToolDeclaration_Editor.java" startLine="347" startPosition="30" endLine="348" endPosition="59" />
@@ -368,8 +368,8 @@
     <scopeInfo nodeId="1210180388081" fileName="PersistentPropertyDeclaration_Editor.java" startLine="109" startPosition="111" endLine="110" endPosition="72" />
   </root>
   <root nodeId="1210180436234">
-    <nodeInfo nodeId="1210180450936" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="106" />
-    <scopeInfo nodeId="1210180446805" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="106" />
+    <nodeInfo nodeId="1210180450936" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="113" />
+    <scopeInfo nodeId="1210180446805" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="113" />
   </root>
   <root nodeId="1210687015722">
     <nodeInfo nodeId="1210687257456" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PreferencePage_Editor.java" startLine="273" startPosition="30" endLine="274" endPosition="59" />

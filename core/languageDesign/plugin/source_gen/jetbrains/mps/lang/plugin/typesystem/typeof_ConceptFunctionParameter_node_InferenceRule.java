@@ -24,13 +24,13 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
     SNode captionBlockNode = SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock", false, false);
     SNode mainConceptBlockNode = SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock", false, false);
     if ((captionBlockNode == null) && (mainConceptBlockNode == null)) {
-      SNode tabbedEditor = SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", false, false);
-      if (tabbedEditor != null && SLinkOperations.getTarget(tabbedEditor, "mainConcept", false) != null) {
+      SNode editorTab = SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.plugin.structure.AbstractEditorTab", false, false);
+      if (editorTab != null && SLinkOperations.getTarget(editorTab, "baseNodeConcept", false) != null) {
         {
           SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186126285", 0, intentionProvider);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186126287", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a1a2a0().createNode(SLinkOperations.getTarget(tabbedEditor, "mainConcept", false), typeCheckingContext), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186126287", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a1a2a0().createNode(SLinkOperations.getTarget(editorTab, "baseNodeConcept", false), typeCheckingContext), _info_12389875345);
         }
       } else {
         {

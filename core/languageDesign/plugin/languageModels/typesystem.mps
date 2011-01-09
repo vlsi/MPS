@@ -403,9 +403,9 @@
         <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1204041364258">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1204041368401">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1204041368402">
-              <property name="name" nameId="tpck.1169194664001" value="tabbedEditor" />
+              <property name="name" nameId="tpck.1169194664001" value="editorTab" />
               <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1204041368403">
-                <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4k.1203866019489" resolveInfo="TabbedEditorDeclaration" />
+                <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp4k.1203851787677" resolveInfo="AbstractEditorTab" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227914848">
                 <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1204041368407">
@@ -413,8 +413,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1204041368405">
                   <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1204041368406">
-                    <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1217631635144">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp4k.1203866019489" resolveInfo="TabbedEditorDeclaration" />
+                    <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="3552608880959293221">
+                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp4k.1203851787677" resolveInfo="AbstractEditorTab" />
                     </node>
                   </node>
                 </node>
@@ -439,8 +439,8 @@
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1204041368415">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1204041368402" resolveInfo="tabbedEditor" />
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1204041368416">
-                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tp4k.1203866062022" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3552608880959293223">
+                            <link role="link" roleId="tp25.1138056516764" targetNodeId="tp4k.5866603471302573102" />
                           </node>
                         </node>
                       </node>
@@ -456,8 +456,8 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1204041589289">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1204041368402" resolveInfo="tabbedEditor" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1204041592386">
-                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tp4k.1203866062022" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3552608880959293222">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tp4k.5866603471302573102" />
                   </node>
                 </node>
               </node>
