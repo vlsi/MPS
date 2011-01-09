@@ -20,6 +20,7 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String OUTSIDE_COMMAND = "outsideCommand";
   public static final String BASE_NODE_CONCEPT = "baseNodeConcept";
+  public static final String GOES_AFTER = "goesAfter";
   public static final String BASE_NODE_BLOCK = "baseNodeBlock";
   public static final String INIT_BLOCK = "initBlock";
   public static final String ASK_BLOCK = "askBlock";
@@ -91,6 +92,14 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
 
   public void setBaseNodeConcept(AbstractConceptDeclaration node) {
     super.setReferent(AbstractEditorTab.BASE_NODE_CONCEPT, node);
+  }
+
+  public AbstractEditorTab getGoesAfter() {
+    return (AbstractEditorTab) this.getReferent(AbstractEditorTab.class, AbstractEditorTab.GOES_AFTER);
+  }
+
+  public void setGoesAfter(AbstractEditorTab node) {
+    super.setReferent(AbstractEditorTab.GOES_AFTER, node);
   }
 
   public GetBaseNodeBlock getBaseNodeBlock() {
