@@ -81,7 +81,8 @@ public class ClasspathCollector {
         addPart(current.getClassPathItem());
       }
 
-      for (IModule dep : (List<IModule>) new ArrayList<IModule>(current.getDependenciesManager().getDependOnModules())) {
+      ArrayList<IModule> dependOnCopy = new ArrayList<IModule>(current.getDependenciesManager().getDependOnModules());
+      for (IModule dep : dependOnCopy) {
         doCollect(dep, includeStubSolutions);
       }
 
