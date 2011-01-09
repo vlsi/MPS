@@ -22,18 +22,15 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 public abstract class BaseKeymapChanges {
   private static final Logger LOG = Logger.getLogger(BaseKeymapChanges.class);
 
   private Keymap myKeymap;
 
-  private Set<String> ourClearedActions = new THashSet<String>();
+  private static Map<Keymap, Set<String>> ourClearedActions = new THashMap<Keymap, Set<String>>();
 
   private Map<String, Set<Shortcut>> myRemovedShortcuts = new THashMap<String, Set<Shortcut>>();
   private Map<String, Set<Shortcut>> mySimpleShortcuts = new THashMap<String, Set<Shortcut>>();
@@ -131,11 +128,31 @@ public abstract class BaseKeymapChanges {
 
   private void addShortcutToKeymap(String longId, Keymap keymap, Shortcut s) {
     Shortcut[] oldShortcuts = keymap.getShortcuts(longId);
-    if (oldShortcuts.length != 0 && !ourClearedActions.contains(longId)) {
-      ourClearedActions.add(longId);
-      myRemovedShortcuts.put(longId, new THashSet<Shortcut>(Arrays.asList(oldShortcuts)));
-      keymap.removeAllActionShortcuts(longId);
+
+    boolean isClear = oldShortcuts.length == 0;
+    if (!isClear) {
+      for (Set<String> set : ourClearedActions.values()) {
+        if (set.contains(longId)) {
+          isClear = true;
+          break;
+        }
+      }
     }
+
+    if (!isClear) {
+      if (oldShortcuts.length != 0) {
+        myRemovedShortcuts.put(longId, new THashSet<Shortcut>(Arrays.asList(oldShortcuts)));
+        keymap.removeAllActionShortcuts(longId);
+      }
+    }
+
+    Set<String> actions = ourClearedActions.get(keymap);
+    if (actions == null) {
+      actions = new THashSet<String>();
+      ourClearedActions.put(keymap, actions);
+    }
+    actions.add(longId);
+
     keymap.addShortcut(longId, s);
   }
 
