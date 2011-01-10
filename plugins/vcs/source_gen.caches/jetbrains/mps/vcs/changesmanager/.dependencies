@@ -18,6 +18,7 @@
     <classNode dependClassName="javax.swing.event.PopupMenuEvent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="java.awt.Point" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="java.util.List" />
@@ -45,7 +46,6 @@
     <classNode dependClassName="javax.swing.BorderFactory" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.ChangeType" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.Change" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

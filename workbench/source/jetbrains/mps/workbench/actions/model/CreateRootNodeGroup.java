@@ -20,11 +20,13 @@ import com.intellij.ide.SelectInContext;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.actions.AddLanguageImport_Action;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
@@ -101,7 +103,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor.getSModel(), scope);
     if (modelLanguages.size() == 0) {
-      add(ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.ide.actions.AddLanguageImport_Action", "jetbrains.mps.ide"));
+      add(ActionManager.getInstance().getAction(AddLanguageImport_Action.class.getName()));
     }
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);

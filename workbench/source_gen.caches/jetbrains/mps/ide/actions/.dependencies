@@ -1934,14 +1934,14 @@
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="com.intellij.ide.DataManager" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.GenerationIntentions_ActionGroup" file="GenerationIntentions_ActionGroup.java">
@@ -5551,14 +5551,14 @@
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="com.intellij.ide.DataManager" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.SurroundWithIntentions_ActionGroup" file="SurroundWithIntentions_ActionGroup.java">
