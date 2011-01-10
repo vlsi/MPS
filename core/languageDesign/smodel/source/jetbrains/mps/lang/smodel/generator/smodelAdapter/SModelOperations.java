@@ -20,6 +20,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -151,7 +152,10 @@ public class SModelOperations {
     if (nodeConcept instanceof InterfaceConceptDeclaration) {
       return new SNode(model, conceptFqName);
     }
-    return SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, GlobalScope.getInstance(), false);
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, GlobalScope.getInstance(), false);
+    if(result == null) return null;
+    BehaviorManager.getInstance().initNode(result);
+    return result;
   }
 
   @Deprecated
