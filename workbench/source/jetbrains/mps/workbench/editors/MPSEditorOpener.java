@@ -248,7 +248,7 @@ public class MPSEditorOpener {
     IEditor nodeEditor = fileNodeEditor.getNodeEditor();
 
     if (nodeEditor instanceof TabbedEditor) {
-      ((TabbedEditor) nodeEditor).selectLinkedEditor(root);
+      ((TabbedEditor) nodeEditor).selectLinkedEditor(new SNodePointer(root));
     }
 
     return nodeEditor;

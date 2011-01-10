@@ -28,7 +28,6 @@ import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -149,8 +148,8 @@ public class TabbedEditor implements IEditor {
           if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
 
           final IEditor mpsNodeEditor = openedMPSEditor.getNodeEditor();
-          List<SNode> openedNodes = mpsNodeEditor.getEditedNodes();
-          if (mpsNodeEditor instanceof TabbedEditor || !getEditedNodes().contains(openedNodes.get(0))) continue;
+          List<SNodePointer> openedNodes = mpsNodeEditor.getAllEditedNodes();
+          if (mpsNodeEditor instanceof TabbedEditor || !getAllEditedNodes().contains(openedNodes.get(0))) continue;
 
           boolean needToSelect = virtualFile == openedMPSEditor.getFile();
           if (!needToSelect) {
@@ -167,7 +166,7 @@ public class TabbedEditor implements IEditor {
 
                 SNode node = myNodePointer.getNode();
                 new MPSEditorOpener(project).editNode(node, myOperationContext);
-                final EditorComponent component = selectLinkedEditor(mpsNodeEditor.getEditedNode());
+                final EditorComponent component = selectLinkedEditor(mpsNodeEditor.getCurrentlyEditedNode());
 
                 component.getEditorContext().setMemento(memento);
 
@@ -225,30 +224,26 @@ public class TabbedEditor implements IEditor {
     return editor.getRootCell();
   }
 
-  public SNode getEditedNode() {
-    return myNodePointer.getNode();
+  public SNodePointer getCurrentlyEditedNode() {
+    return myNodePointer;
   }
 
-  public List<SNode> getEditedNodes() {
-    List<SNode> result = new ArrayList<SNode>();
+  public List<SNodePointer> getAllEditedNodes() {
+    List<SNodePointer> result = new ArrayList<SNodePointer>();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
       tab.getComponent();
       for (EditorComponent aec : tab.getEditorComponents()) {
         if (aec.getEditedNode() != null) {
-          result.add(aec.getEditedNode());
+          result.add(new SNodePointer(aec.getEditedNode()));
         }
       }
     }
     return result;
   }
 
-  public SNodePointer getEditedNodePointer() {
-    return myNodePointer;
-  }
-
   public void selectNode(SNode node) {
     SNode containingRoot = node.getContainingRoot();
-    EditorComponent editorComponent = selectLinkedEditor(containingRoot);
+    EditorComponent editorComponent = selectLinkedEditor(new SNodePointer(containingRoot));
 
     assert editorComponent != null : "the root node is not in this editor";
     editorComponent.selectNode(node);
@@ -340,11 +335,7 @@ public class TabbedEditor implements IEditor {
     }
   }
 
-  public void selectMainEditor() {
-    selectTab(0);
-  }
-
-  public EditorComponent selectLinkedEditor(SNode node) {
+  public EditorComponent selectLinkedEditor(SNodePointer node) {
     int index = 0;
     for (ILazyTab tab : myTabbedPane.getTabs()) {
       tab.getComponent();
@@ -352,7 +343,7 @@ public class TabbedEditor implements IEditor {
         BaseMultitabbedTab multitabbedTab = (BaseMultitabbedTab) tab;
         int innerIndex = 0;
         for (EditorComponent editorComponent : multitabbedTab.getEditorComponents()) {
-          if (editorComponent.getEditedNode() == node) {
+          if (editorComponent.getEditedNode() == node.getNode()) {
             myTabbedPane.selectTab(index);
             multitabbedTab.selectTab(innerIndex);
             return multitabbedTab.getCurrentEditorComponent();
@@ -361,7 +352,7 @@ public class TabbedEditor implements IEditor {
         }
       } else {
         for (EditorComponent c : tab.getEditorComponents()) {
-          if (c.getEditedNode() == node) {
+          if (c.getEditedNode() == node.getNode()) {
             myTabbedPane.selectTab(index);
             return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
           }

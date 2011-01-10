@@ -110,7 +110,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
       return null;
     }
     TabbedEditor tabbedEditor = (TabbedEditor) ((IEditor) MapSequence.fromMap(_params).get("editor"));
-    SNode editedNode = (tabbedEditor).getEditedNode();
+    SNode editedNode = (tabbedEditor).getCurrentlyEditedNode().getNode();
     if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return null;
     }

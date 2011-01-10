@@ -18,7 +18,6 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -73,19 +72,15 @@ public class NodeEditor implements IEditor {
     return myEditorComponent.getRootCell();
   }
 
-  public SNode getEditedNode() {
-    return myEditorComponent.getEditedNode();
-  }
-
-  public SNodePointer getEditedNodePointer() {
+  public SNodePointer getCurrentlyEditedNode() {
     return myEditorComponent.getEditedNodePointer();
   }
 
-  public List<SNode> getEditedNodes() {
-    if (getEditedNode() == null) {
+  public List<SNodePointer> getAllEditedNodes() {
+    if (getCurrentlyEditedNode() == null) {
       return Collections.emptyList();
     }
-    return Collections.singletonList(getEditedNode());
+    return Collections.singletonList(getCurrentlyEditedNode());
   }
 
   public void setBackground(Color color) {

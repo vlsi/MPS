@@ -45,11 +45,9 @@ public interface IEditor {
 
   //-------todo rewrite with SNP
 
-  SNode getEditedNode();
+  SNodePointer getCurrentlyEditedNode();
 
-  SNodePointer getEditedNodePointer();
-
-  List<SNode> getEditedNodes();
+  List<SNodePointer> getAllEditedNodes();
 
   //-----end todo
 

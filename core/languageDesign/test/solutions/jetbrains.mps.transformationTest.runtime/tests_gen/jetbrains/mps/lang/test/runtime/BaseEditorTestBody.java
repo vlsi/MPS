@@ -92,9 +92,9 @@ public class BaseEditorTestBody extends BaseTestBody {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
-          final SNode editedNode = BaseEditorTestBody.this.myEditor.getEditedNode();
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
+              SNode editedNode = BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode().getNode();
               Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
               Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
               if (BaseEditorTestBody.this.myFinish != null) {
