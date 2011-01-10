@@ -203,7 +203,7 @@ public class RefactoringContext {
     for (SNode node : sourceNodes) {
       node.delete();
     }
-    SModelOperations.validateLanguagesAndImports(targetModel, false, true);
+    SModelOperations.validateLanguagesAndImports(targetModel, true, true);
     // targetModel.addImportedModel(sourceModel.getUID());
     return targetNodes;
   }
