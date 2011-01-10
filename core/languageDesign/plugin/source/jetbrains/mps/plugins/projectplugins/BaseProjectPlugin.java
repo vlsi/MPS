@@ -74,13 +74,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   }
 
   protected List<BaseCustomProjectPlugin> initCustomParts(Project project) {
-    return initCustomParts(project.getComponent(MPSProject.class));
-  }
-
-  //---(DEPRECATED)---stuff to generate---(DEPRECATED)---------
-
-  @Deprecated //left for compatibility
-  protected List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
     return new ArrayList<BaseCustomProjectPlugin>();
   }
 
