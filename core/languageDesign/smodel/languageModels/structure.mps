@@ -1122,6 +1122,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="prototypeNode" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" />
+      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019795" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1143235216709">
       <property name="value" nameId="tpce.1105725733873" value="new node" />
@@ -1970,6 +1971,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="prototypeNode" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" />
+      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019775" />
     </node>
   </root>
   <root id="1181949435690">
@@ -1977,6 +1979,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="prototypeNode" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" />
+      <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3757480014665019785" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1181949486312">
       <property name="value" nameId="tpce.1105725733873" value="new instance" />

@@ -21,6 +21,8 @@
   <unitInfo fileName="NodeSubstituteActionsBuilder_Editor.java" startLine="384" startPosition="0" endLine="420" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NodeSubstituteActionsBuilder_Editor$_Inline_nhjrih_a1a0" />
   <unitInfo fileName="SideTransformHintSubstituteActionsBuilder_Editor.java" startLine="439" startPosition="0" endLine="475" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.SideTransformHintSubstituteActionsBuilder_Editor$_Inline_185r4c_a2a0" />
   <unitInfo fileName="PasteWrappers_Editor.java" startLine="109" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.PasteWrappers_Editor$wrapperListHandler_c4m4l8_a2a" />
+  <unitInfo fileName="NF_Model_CreateNewNodeOperation_Editor.java" startLine="112" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NF_Model_CreateNewNodeOperation_Editor$_Inline_6g21z_a2a" />
+  <unitInfo fileName="NF_Model_CreateNewRootNodeOperation_Editor.java" startLine="112" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NF_Model_CreateNewRootNodeOperation_Editor$_Inline_w725d4_a2a" />
   <unitInfo fileName="NodeFactories_Editor.java" startLine="118" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NodeFactories_Editor$nodeFactoryListHandler_lyzgir_a2a" />
   <unitInfo fileName="SmartEditorActions_Editor.java" startLine="171" startPosition="0" endLine="208" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.SmartEditorActions_Editor$generateCodeListHandler_703hqq_b3a" />
   <unitInfo fileName="SmartEditorActions_Editor.java" startLine="209" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.SmartEditorActions_Editor$surroundWithListHandler_703hqq_b6a" />
@@ -35,6 +37,7 @@
   <unitInfo fileName="SmartActionParameter_Editor.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.SmartActionParameter_Editor" />
   <unitInfo fileName="NodeSubstituteActionsBuilder_Editor.java" startLine="421" startPosition="0" endLine="473" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NodeSubstituteActionsBuilder_Editor$variableListHandler_nhjrih_b4b1a" />
   <unitInfo fileName="SideTransformHintSubstituteActionsBuilder_Editor.java" startLine="476" startPosition="0" endLine="528" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.SideTransformHintSubstituteActionsBuilder_Editor$variableListHandler_185r4c_b4b1a" />
+  <unitInfo fileName="NF_Concept_NewInstance_Editor.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NF_Concept_NewInstance_Editor" />
   <unitInfo fileName="IncludeRightTransformForNodePart_Editor.java" startLine="20" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.IncludeRightTransformForNodePart_Editor" />
   <unitInfo fileName="SmartActionParameterReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.SmartActionParameterReference_Editor" />
   <unitInfo fileName="GenericSubstituteMenuPart_Editor.java" startLine="20" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.GenericSubstituteMenuPart_Editor" />
@@ -49,6 +52,8 @@
   <unitInfo fileName="PastePostProcessor_Editor.java" startLine="22" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.PastePostProcessor_Editor" />
   <unitInfo fileName="ConceptsSubstituteMenuPart_Editor.java" startLine="21" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.ConceptsSubstituteMenuPart_Editor" />
   <unitInfo fileName="PasteWrappers_Editor.java" startLine="26" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.PasteWrappers_Editor" />
+  <unitInfo fileName="NF_Model_CreateNewNodeOperation_Editor.java" startLine="27" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NF_Model_CreateNewNodeOperation_Editor" />
+  <unitInfo fileName="NF_Model_CreateNewRootNodeOperation_Editor.java" startLine="27" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NF_Model_CreateNewRootNodeOperation_Editor" />
   <unitInfo fileName="NodeFactories_Editor.java" startLine="27" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NodeFactories_Editor" />
   <unitInfo fileName="SideTransformHintSubstituteActions_Editor.java" startLine="27" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.SideTransformHintSubstituteActions_Editor" />
   <unitInfo fileName="NodeSubstituteActions_Editor.java" startLine="27" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.NodeSubstituteActions_Editor" />
