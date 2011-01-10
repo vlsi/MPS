@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
@@ -64,13 +66,14 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
         });
         ListSequence.fromList(SLinkOperations.getTargets(helperClass, "staticMethod", true)).addElement(method);
 
-        for (SNode tab : ListSequence.fromList(SLinkOperations.getTargets(node, "tabs", true))) {
+        List<SNode> tabs = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(node, "tabs", true));
+        for (SNode tab : ListSequence.fromList(tabs)) {
           SNodeOperations.detachNode(tab);
           SModelOperations.addRootNode(model, tab);
           SLinkOperations.setTarget(tab, "baseNodeConcept", SLinkOperations.getTarget(node, "mainConcept", false), false);
           SNode bnb = SLinkOperations.setNewChild(tab, "baseNodeBlock", "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock");
           SLinkOperations.setNewChild(bnb, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bnb, "body", true), "statement", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0f0m0e0a0a0b0a().createNode(helperClass, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null), SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", null), method));
+          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bnb, "body", true), "statement", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a().createNode(helperClass, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null), SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", null), method));
         }
       }
 
@@ -239,8 +242,8 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_w50lnh_a0a0f0m0e0a0a0b0a {
-    public QuotationClass_w50lnh_a0a0f0m0e0a0a0b0a() {
+  public static class QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a {
+    public QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
