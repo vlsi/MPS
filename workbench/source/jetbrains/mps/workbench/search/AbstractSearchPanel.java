@@ -329,8 +329,10 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Search History");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+/*
       shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
         Find_Action.class.getName()).getShortcutSet().getShortcuts()));
+*/
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), null));
 
       registerCustomShortcutSet(
@@ -354,10 +356,12 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Previous Occurrence");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+/*
       shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
         FindPrevious_Action.class.getName()).getShortcutSet().getShortcuts()));
       shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
         IdeActions.ACTION_EDITOR_MOVE_CARET_UP).getShortcutSet().getShortcuts()));
+*/
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.SHIFT_DOWN_MASK), null));
 
       registerCustomShortcutSet(
@@ -382,10 +386,12 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setText("Next Occurrence");
 
       ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+/*
       shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
         FindNext_Action.class.getName()).getShortcutSet().getShortcuts()));
       shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(
         IdeActions.ACTION_EDITOR_MOVE_CARET_DOWN).getShortcutSet().getShortcuts()));
+*/
       shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), null));
 
       registerCustomShortcutSet(
@@ -408,8 +414,10 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setIcon(IconLoader.getIcon("/actions/export.png"));
       getTemplatePresentation().setDescription("Export matches to Find tool window");
       getTemplatePresentation().setText("Find All");
+/*
       registerCustomShortcutSet(ActionManager.getInstance().getAction(
         FindNext_Action.class.getName()).getShortcutSet(), myText);
+*/
     }
 
     public void update(AnActionEvent e) {
