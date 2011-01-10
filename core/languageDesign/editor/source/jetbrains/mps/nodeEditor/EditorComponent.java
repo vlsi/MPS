@@ -72,7 +72,6 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -1685,7 +1684,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        AnAction action = ActionFactory.getInstance().acquireRegisteredAction(GoByCurrentReference_Action.class.getName(), PluginUtil.IDE_MODULE_ID);
+        AnAction action = ActionManager.getInstance().getAction(GoByCurrentReference_Action.class.getName());
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
         ActionUtils.updateAndPerformAction(action, event);
       }

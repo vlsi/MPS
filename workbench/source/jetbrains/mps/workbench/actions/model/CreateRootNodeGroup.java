@@ -40,7 +40,6 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
