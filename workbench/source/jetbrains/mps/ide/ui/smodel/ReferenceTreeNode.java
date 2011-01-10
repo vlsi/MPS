@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -23,7 +24,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ReferenceTreeNode extends TextTreeNode {
@@ -52,7 +52,7 @@ public class ReferenceTreeNode extends TextTreeNode {
 
   @Override
   public ActionGroup getActionGroup() {
-    return ActionFactory.getInstance().acquireRegisteredGroup(ReferenceNodeActions_ActionGroup.class.getName(), "jetbrains.mps.ide");
+    return ((ActionGroup) ActionManager.getInstance().getAction(ReferenceNodeActions_ActionGroup.class.getName()));
   }
 
   public boolean isLeaf() {
