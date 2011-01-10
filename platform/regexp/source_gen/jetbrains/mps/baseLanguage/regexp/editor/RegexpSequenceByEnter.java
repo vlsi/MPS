@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -58,7 +58,7 @@ public class RegexpSequenceByEnter extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode nt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
+      SNode nt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
       SNodeOperations.replaceWithAnother(node, nt);
       SLinkOperations.setTarget(nt, "left", node, true);
       editorContext.select(nt, "right");
@@ -104,7 +104,7 @@ public class RegexpSequenceByEnter extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode nt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
+      SNode nt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
       SNodeOperations.replaceWithAnother(node, nt);
       SLinkOperations.setTarget(nt, "right", node, true);
       editorContext.select(nt, "left");

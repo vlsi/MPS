@@ -3754,9 +3754,9 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="7775722288089040368">
                       <node role="replacementNode" roleId="tp25.1140131861877" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7775722288089040369">
                         <node role="operand" roleId="tpee.1197027771414" type="tpcw.ConceptFunctionParameter_model" typeId="tpcw.1161622665029" id="7775722288089040370" />
-                        <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Model_CreateNewNodeOperation" typeId="tpdg.5480835971642155304" id="604737560618363543">
+                        <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Model_CreateNewNodeOperation" typeId="tpdg.5480835971642155304" id="2505098507105945452">
                           <link role="concept" roleId="tp25.1143235391024" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
-                          <node role="prototypeNode" roleId="tp25.1177700677986" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="604737560618363544" />
+                          <node role="prototype" roleId="tpdg.3757480014665175786" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2505098507105945453" />
                         </node>
                       </node>
                     </node>

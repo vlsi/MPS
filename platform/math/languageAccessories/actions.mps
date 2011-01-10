@@ -463,11 +463,11 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ReplaceWithAnotherOperation" typeId="tp25.1140131837776" id="7255837154369497646">
                     <node role="replacementNode" roleId="tp25.1140131861877" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7255837154369497648">
                       <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parameterObject" typeId="tpdg.1177337833147" id="7255837154369497649" />
-                      <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Concept_NewInstance" typeId="tpdg.7776141288922801652" id="6357564549601506794">
-                        <node role="prototypeNode" roleId="tp25.1181949561194" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="6357564549601506795">
-                          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.Expression" typeId="tpee.1068431790191" id="6357564549601506796">
-                            <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="6357564549601506797">
-                              <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="6357564549601506798" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_Concept_NewInstance" typeId="tpdg.7776141288922801652" id="2505098507105945419">
+                        <node role="prototype" roleId="tpdg.3757480014665178932" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2505098507105945420">
+                          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.Expression" typeId="tpee.1068431790191" id="2505098507105945421">
+                            <node role="_attr_$attribute" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2505098507105945422">
+                              <node role="expression" roleId="tp3r.1196350785111" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2505098507105945423" />
                             </node>
                           </node>
                         </node>

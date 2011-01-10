@@ -1626,11 +1626,11 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.1216380990741" resolveInfo="CellModel_TransactionalProperty" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1235490295277">
-              <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="6357564549601490428">
-                <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6357564549601490429">
+              <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="2505098507105945413">
+                <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2505098507105945414">
                   <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.1216380990741" resolveInfo="CellModel_TransactionalProperty" />
                 </node>
-                <node role="prototypeNode" roleId="tp25.1181937442359" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="6357564549601490430" />
+                <node role="prototype" roleId="tpdg.3757480014665187678" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="2505098507105945415" />
               </node>
             </node>
           </node>
@@ -4694,11 +4694,11 @@
               <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.1184319644772" resolveInfo="CellModel_NonEmptyProperty" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5137527105084909357">
-              <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="6357564549601490381">
-                <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="6357564549601490382">
+              <node role="creator" roleId="tpee.1145553007750" type="tpdg.SNodeCreatorAndInitializer" typeId="tpdg.5979988948250981289" id="2505098507105945416">
+                <node role="createdType" roleId="tp25.1180636770616" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2505098507105945417">
                   <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpc2.1184319644772" resolveInfo="CellModel_NonEmptyProperty" />
                 </node>
-                <node role="prototypeNode" roleId="tp25.1181937442359" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="6357564549601490383" />
+                <node role="prototype" roleId="tpdg.3757480014665187678" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="2505098507105945418" />
               </node>
             </node>
           </node>
