@@ -158,12 +158,6 @@ public class LazyTabbedPane extends JPanel {
         panel.validate();
         panel.repaint();
       }
-
-      for (EditorComponent c : tab.getEditorComponents()) {
-        for (CellSelectionListener listener : myTabbedEditor.mySelectionListeners) {
-          c.addCellSelectionListener(listener);
-        }
-      }
     }
 
     myTabbedEditor.tabStructureChanged();

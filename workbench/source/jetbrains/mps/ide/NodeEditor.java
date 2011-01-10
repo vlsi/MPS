@@ -64,14 +64,6 @@ public class NodeEditor implements IEditor {
     return false;
   }
 
-  public void addCellSelectionListener(@NotNull CellSelectionListener listener) {
-    myEditorComponent.addCellSelectionListener(listener);
-  }
-
-  public void removeCellSelectionListener(@NotNull CellSelectionListener listener) {
-    myEditorComponent.removeCellSelectionListener(listener);
-  }
-
   @NotNull
   public IOperationContext getOperationContext() {
     return myEditorComponent.getOperationContext();

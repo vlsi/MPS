@@ -56,7 +56,6 @@ public class TabbedEditor implements IEditor {
   private LazyTabbedPane myTabbedPane = new MyLazyTabbedPane(this);
   protected IOperationContext myOperationContext;
   private SNodePointer myNodePointer;
-  List<CellSelectionListener> mySelectionListeners = new ArrayList<CellSelectionListener>();
 
   public TabbedEditor(IOperationContext context, SNode node) {
     assert context == null || context.getModule() != null;
@@ -193,20 +192,6 @@ public class TabbedEditor implements IEditor {
 
   public JComponent getComponent() {
     return myTabbedPane;
-  }
-
-  public void addCellSelectionListener(@NotNull CellSelectionListener listener) {
-    for (EditorComponent c : getEditors()) {
-      c.addCellSelectionListener(listener);
-    }
-    mySelectionListeners.add(listener);
-  }
-
-  public void removeCellSelectionListener(@NotNull CellSelectionListener listener) {
-    mySelectionListeners.remove(listener);
-    for (EditorComponent c : getEditors()) {
-      c.removeCellSelectionListener(listener);
-    }
   }
 
   private List<EditorComponent> getEditors() {
