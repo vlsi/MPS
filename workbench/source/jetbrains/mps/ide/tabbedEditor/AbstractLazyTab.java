@@ -26,7 +26,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,12 +38,10 @@ public abstract class AbstractLazyTab implements ILazyTab {
     SModelRepository.getInstance().addModelRepositoryListener(myModelAddedListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRemovedListener);
 
-/*
     TabColorProvider provider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
     if (provider != null) {
       provider.tabOpened(this);
     }
-*/
   }
 
 
