@@ -16,18 +16,18 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class genericArraysAreIllegal_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public genericArraysAreIllegal_NonTypesystemRule() {
+public class genericArrayCreatorsAreIllegal_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public genericArrayCreatorsAreIllegal_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode arrayType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode componentType = SLinkOperations.getTarget(arrayType, "componentType", true);
+  public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode componentType = SLinkOperations.getTarget(arrayCreator, "componentType", true);
     if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty()) {
         {
           BaseQuickFixProvider intentionProvider = null;
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arrayType, "generic arrays not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7685731695372883359", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arrayCreator, "generic array creation is not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7512113663906845806", intentionProvider, errorTarget);
         }
       }
     }
@@ -35,14 +35,13 @@ public class genericArraysAreIllegal_NonTypesystemRule extends AbstractNonTypesy
       {
         BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arrayType, "generic arrays not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7685731695372883377", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arrayCreator, "generic array creation is not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7512113663906845815", intentionProvider, errorTarget);
       }
-
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ArrayType";
+    return "jetbrains.mps.baseLanguage.structure.ArrayCreator";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
