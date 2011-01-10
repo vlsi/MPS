@@ -194,14 +194,7 @@ public class TabbedEditor implements IEditor {
     manager.updateFilePresentation(baseVirtualFile);
   }
 
-  public JComponent getComponent() {
-    return myTabbedPane;
-  }
-
-  @Override
-  public EditorComponent getCurrentEditorComponent() {
-    return getCurrentEditorComponent();
-  }
+//------------------
 
   private List<EditorComponent> getEditors() {
     List<EditorComponent> result = new ArrayList<EditorComponent>();
@@ -211,20 +204,7 @@ public class TabbedEditor implements IEditor {
     return result;
   }
 
-  @NotNull
-  public IOperationContext getOperationContext() {
-    return myOperationContext;
-  }
 
-  public EditorContext getEditorContext() {
-    EditorComponent editor = getCurrentEditorComponent();
-    if (editor == null) return null;
-    return editor.getEditorContext();
-  }
-
-  public SNodePointer getCurrentlyEditedNode() {
-    return myNodePointer;
-  }
 
   public List<SNodePointer> getAllEditedNodes() {
     List<SNodePointer> result = new ArrayList<SNodePointer>();
@@ -247,6 +227,35 @@ public class TabbedEditor implements IEditor {
     editorComponent.selectNode(node);
   }
 
+
+  public EditorComponent selectLinkedEditor(SNodePointer node) {
+    int index = 0;
+    for (ILazyTab tab : myTabbedPane.getTabs()) {
+      tab.getComponent();
+      if (tab instanceof BaseMultitabbedTab) {
+        BaseMultitabbedTab multitabbedTab = (BaseMultitabbedTab) tab;
+        int innerIndex = 0;
+        for (EditorComponent editorComponent : multitabbedTab.getEditorComponents()) {
+          if (editorComponent.getEditedNode() == node.getNode()) {
+            myTabbedPane.selectTab(index);
+            multitabbedTab.selectTab(innerIndex);
+            return multitabbedTab.getCurrentEditorComponent();
+          }
+          innerIndex++;
+        }
+      } else {
+        for (EditorComponent c : tab.getEditorComponents()) {
+          if (c.getEditedNode() == node.getNode()) {
+            myTabbedPane.selectTab(index);
+            return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
+          }
+        }
+      }
+      index++;
+    }
+    return null;
+  }
+
   public void dispose() {
     getTabbedPane().dispose();
     for (EditorComponent c : getEditors()) {
@@ -254,11 +263,32 @@ public class TabbedEditor implements IEditor {
     }
   }
 
-  public void repaint() {
-    EditorComponent current = getCurrentEditorComponent();
-    if (current != null) {
-      current.repaint();
-    }
+  public JComponent getComponent() {
+    return myTabbedPane;
+  }
+
+  @Nullable
+  public EditorComponent getCurrentEditorComponent() {
+    return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
+  }
+
+  @NotNull
+  public IOperationContext getOperationContext() {
+    return myOperationContext;
+  }
+
+  public EditorContext getEditorContext() {
+    EditorComponent editor = getCurrentEditorComponent();
+    if (editor == null) return null;
+    return editor.getEditorContext();
+  }
+
+  public SNodePointer getCurrentlyEditedNode() {
+    return myNodePointer;
+  }
+
+  public LazyTabbedPane getTabbedPane() {
+    return myTabbedPane;
   }
 
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
@@ -320,38 +350,6 @@ public class TabbedEditor implements IEditor {
         ((NodeEditorComponent) component).getInspector().getEditorContext().setMemento(s.myInspectorMemento);
       }
     }
-  }
-
-  public EditorComponent selectLinkedEditor(SNodePointer node) {
-    int index = 0;
-    for (ILazyTab tab : myTabbedPane.getTabs()) {
-      tab.getComponent();
-      if (tab instanceof BaseMultitabbedTab) {
-        BaseMultitabbedTab multitabbedTab = (BaseMultitabbedTab) tab;
-        int innerIndex = 0;
-        for (EditorComponent editorComponent : multitabbedTab.getEditorComponents()) {
-          if (editorComponent.getEditedNode() == node.getNode()) {
-            myTabbedPane.selectTab(index);
-            multitabbedTab.selectTab(innerIndex);
-            return multitabbedTab.getCurrentEditorComponent();
-          }
-          innerIndex++;
-        }
-      } else {
-        for (EditorComponent c : tab.getEditorComponents()) {
-          if (c.getEditedNode() == node.getNode()) {
-            myTabbedPane.selectTab(index);
-            return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
-          }
-        }
-      }
-      index++;
-    }
-    return null;
-  }
-
-  public LazyTabbedPane getTabbedPane() {
-    return myTabbedPane;
   }
 
   public static class MyFileEditorState implements MPSEditorState {

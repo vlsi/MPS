@@ -15,27 +15,18 @@
  */
 package jetbrains.mps.ide.editorTabs;
 
-import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import java.awt.event.ActionEvent;
+import jetbrains.mps.smodel.SNode;
 
-public class EditorTab extends JButton {
-  private EditorTabDescriptor myDescriptor;
+import java.util.List;
 
-  public EditorTab(EditorTabDescriptor descriptor) {
-    myDescriptor = descriptor;
-    setAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        showMenu();
-      }
-    });
-  }
+public interface EditorTabDescriptor {
+  String getTitle();
 
-  public EditorTabDescriptor getDescriptor() {
-    return myDescriptor;
-  }
+  List<SNode> getNodes();
 
-  private void showMenu() {
+  //---create---
 
-  }
+  List<SNode> getConcepts();
+
+  SNode create(SNode concept);
 }

@@ -79,11 +79,8 @@ public abstract class BaseNodeEditor implements IEditor {
 
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) {
-        return BaseNodeEditor.this;
-      }
-
-      return null;
+      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
+      return getCurrentEditorComponent().getData(dataId);
     }
   }
 }
