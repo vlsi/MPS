@@ -11,6 +11,7 @@ import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
+import com.intellij.openapi.extensions.PluginId;
 
 public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(NodeRefactoring_ActionGroup.class);
@@ -34,7 +35,7 @@ outer:
           }
         }
         if (refactoring.getRefactoringTarget().getTarget() == IRefactoringTarget.TargetType.NODE) {
-          NodeRefactoring_ActionGroup.this.add(RefactoringHelper.getActionForRefactoring(refactoring));
+          NodeRefactoring_ActionGroup.this.addParameterizedAction(new GenericRefctoringAction_Action(refactoring), PluginId.getId("jetbrains.mps.lang.refactoring"), refactoring);
         }
       }
     } catch (Throwable t) {

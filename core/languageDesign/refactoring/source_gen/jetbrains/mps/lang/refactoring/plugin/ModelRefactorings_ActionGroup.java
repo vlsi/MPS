@@ -8,6 +8,7 @@ import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
+import com.intellij.openapi.extensions.PluginId;
 
 public class ModelRefactorings_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelRefactorings_ActionGroup.class);
@@ -20,7 +21,7 @@ public class ModelRefactorings_ActionGroup extends GeneratedActionGroup {
     try {
       for (IRefactoring refactoring : ListSequence.fromList(RefactoringUtil.getAllRefactorings())) {
         if (refactoring.getRefactoringTarget().getTarget() == IRefactoringTarget.TargetType.MODEL) {
-          ModelRefactorings_ActionGroup.this.add(RefactoringHelper.getActionForRefactoring(refactoring));
+          ModelRefactorings_ActionGroup.this.addParameterizedAction(new GenericRefctoringAction_Action(refactoring), PluginId.getId("jetbrains.mps.lang.refactoring"), refactoring);
         }
       }
     } catch (Throwable t) {

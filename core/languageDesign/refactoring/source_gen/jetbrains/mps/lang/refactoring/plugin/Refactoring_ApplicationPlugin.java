@@ -7,6 +7,10 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup;
+import java.util.List;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.refactoring");
@@ -29,5 +33,11 @@ public class Refactoring_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, EditorPopup_ActionGroup.ID, null);
     insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(ModelRefactorings_ActionGroup.ID, ModelRefactoring_ActionGroup.ID, null);
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
+    return res;
   }
 }

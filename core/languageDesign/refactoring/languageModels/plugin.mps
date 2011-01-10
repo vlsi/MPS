@@ -9,14 +9,11 @@
   <import index="g2cz" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="mwyq" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4q7i" modelUID="f:java_stub#jetbrains.mps.ide.refactoring(jetbrains.mps.ide.refactoring@java_stub)" version="-1" />
-  <import index="zupw" modelUID="r:97af5903-9207-42b3-9ee6-25bfa312c64b(jetbrains.mps.ide.refactoring)" version="-1" />
   <import index="d8ec" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="ll11" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="jvm9" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="t1ti" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="i09a" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="qvoq" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="8hn1" modelUID="f:java_stub#com.intellij.openapi.keymap(com.intellij.openapi.keymap@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -264,12 +261,10 @@
       <node role="toStringFunction" roleId="tp4k.1227019158144" type="tp4k.ToStringConceptFunction" typeId="tp4k.1227019068586" id="1106479162954040126">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1106479162954040127">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1106479162954042713">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1106479162954042714">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zupw.1106479162954034108" resolveInfo="getRefactoringClassName" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4q7i.~GenericRefactoringAction" resolveInfo="GenericRefactoringAction" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1106479162954042715">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="null" resolveInfo="myRefactoring" />
-              </node>
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1106479162954061458">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1106479162954059009" resolveInfo="getRefactoringClassName" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="1106479162954058963" resolveInfo="GenericRefactoringHelper" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.ToStringParameter" typeId="tp4k.1227019310584" id="1106479162954061460" />
             </node>
           </node>
         </node>
