@@ -64,14 +64,6 @@ public class NodeEditor implements IEditor {
     return myEditorComponent.getOperationContext();
   }
 
-  public EditorCell getSelectedCell() {
-    return myEditorComponent.getSelectedCell();
-  }
-
-  public EditorCell getRootCell() {
-    return myEditorComponent.getRootCell();
-  }
-
   public SNodePointer getCurrentlyEditedNode() {
     return myEditorComponent.getEditedNodePointer();
   }

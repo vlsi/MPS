@@ -43,10 +43,6 @@ public interface IEditor{
 
   IOperationContext getOperationContext();
 
-  EditorCell getSelectedCell();
-
-  EditorCell getRootCell();
-
   void selectNode(SNode node);
 
   void dispose();

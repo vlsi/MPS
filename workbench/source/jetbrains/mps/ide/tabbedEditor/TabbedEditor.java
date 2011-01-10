@@ -218,18 +218,6 @@ public class TabbedEditor implements IEditor {
     return editor.getEditorContext();
   }
 
-  public EditorCell getSelectedCell() {
-    EditorComponent editor = getCurrentEditorComponent();
-    if (editor == null) return null;
-    return editor.getSelectedCell();
-  }
-
-  public EditorCell getRootCell() {
-    EditorComponent editor = getCurrentEditorComponent();
-    if (editor == null) return null;
-    return editor.getRootCell();
-  }
-
   public SNodePointer getCurrentlyEditedNode() {
     return myNodePointer;
   }
