@@ -40,7 +40,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class NodeEditor implements IEditor {
-
   protected EditorComponent myEditorComponent;
   private JPanel myComponent = new MyPanel();
 
@@ -51,12 +50,17 @@ public class NodeEditor implements IEditor {
     myComponent.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
   }
 
-  protected NodeEditor() {
-
-  }
-
   public JComponent getComponent() {
     return myComponent;
+  }
+
+  @NotNull
+  public EditorComponent getCurrentEditorComponent() {
+    return myEditorComponent;
+  }
+
+  public EditorContext getEditorContext() {
+    return myEditorComponent.getEditorContext();
   }
 
   @NotNull
@@ -75,10 +79,6 @@ public class NodeEditor implements IEditor {
     return Collections.singletonList(getCurrentlyEditedNode());
   }
 
-  public void setBackground(Color color) {
-    myEditorComponent.setBackground(color);
-  }
-
   public void selectNode(SNode node) {
     myEditorComponent.selectNode(node);
   }
@@ -87,28 +87,30 @@ public class NodeEditor implements IEditor {
     myEditorComponent.dispose();
   }
 
-  public void repaint() {
-    myEditorComponent.repaint();
+  //-----
+
+  private class MyPanel extends JPanel implements DataProvider {
+    private MyPanel() {
+      setLayout(new BorderLayout());
+      setBorder(new CompoundBorder(
+        new EmptyBorder(1, 1, 1, 1),
+        new LineBorder(Color.LIGHT_GRAY, 1)
+      ));
+    }
+
+    @Nullable
+    public Object getData(@NonNls String dataId) {
+      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) {
+        return NodeEditor.this;
+      }
+
+      return null;
+    }
   }
 
-  public void setEditable(boolean editable) {
-    myEditorComponent.setEditable(editable);
-  }
-
-  public void mark(List<EditorMessage> messages) {
-    NodeHighlightManager highlightManager = myEditorComponent.getHighlightManager();
-    highlightManager.mark(messages);
-  }
+  //-----state------
 
   @Nullable
-  public EditorComponent getCurrentEditorComponent() {
-    return myEditorComponent;
-  }
-
-  public EditorContext getEditorContext() {
-    return myEditorComponent.getEditorContext();
-  }
-
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     if (getEditorContext() != null && !getEditorContext().getModel().isDisposed()) {
@@ -195,25 +197,6 @@ public class NodeEditor implements IEditor {
 
       MyFileEditorState state = (MyFileEditorState) obj;
       return ObjectUtils.equals(state.myMemento, myMemento) && ObjectUtils.equals(state.myInspectorMemento, myInspectorMemento);
-    }
-  }
-
-  private class MyPanel extends JPanel implements DataProvider {
-    private MyPanel() {
-      setLayout(new BorderLayout());
-      setBorder(new CompoundBorder(
-        new EmptyBorder(1, 1, 1, 1),
-        new LineBorder(Color.LIGHT_GRAY, 1)
-      ));
-    }
-
-    @Nullable
-    public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) {
-        return NodeEditor.this;
-      }
-
-      return null;
     }
   }
 }
