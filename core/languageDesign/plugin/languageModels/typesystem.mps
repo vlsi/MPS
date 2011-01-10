@@ -69,7 +69,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1207145525059">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AddActionStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups.GroupContents" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1207491155028">
       <property name="name" nameId="tpck.1169194664001" value="Typeof_GroupType_IsSubtype_ActionGroup" />
@@ -125,7 +125,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1218036779326">
       <property name="name" nameId="tpck.1169194664001" value="typeof_FileGeneratorType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="FileGenerator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1227019439248">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ToStringParameter" />
@@ -141,7 +141,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="678887849223564269">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ProcessHandlerStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="RunConfigs.Configuration.Execute.Statements" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="678887849223567597">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ExecutionConsoleStatement" />

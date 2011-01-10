@@ -156,7 +156,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1207145850643">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AddElementStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Group" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.1207145475354" resolveInfo="AddActionStatement" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1207321348334">
@@ -185,7 +185,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1210071062178">
       <property name="name" nameId="tpck.1169194664001" value="GenerationListenerImpl" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="GenerationListener" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1210071214234">
       <property name="name" nameId="tpck.1169194664001" value="GenerationListener" />
@@ -256,7 +256,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1218037280980">
       <property name="name" nameId="tpck.1169194664001" value="GeneratedFileGenerator" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="FileGenerator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1218740448438">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ThisAction" />
@@ -4449,6 +4449,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1207145921889">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.1207145475354" resolveInfo="AddActionStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1207145939707">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1207145850643" resolveInfo="reduce_AddActionStatement" />
@@ -5768,6 +5769,7 @@
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1218037251916">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.1218035894314" resolveInfo="FileGenerator" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1218037280980" resolveInfo="GeneratedFileGenerator" />
     </node>
@@ -6070,6 +6072,7 @@
   </root>
   <root id="1210071214234">
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1210071214235">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.1210070489991" resolveInfo="GenerationListenerDeclaration" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1210071062178" resolveInfo="GenerationListenerImpl" />
     </node>
