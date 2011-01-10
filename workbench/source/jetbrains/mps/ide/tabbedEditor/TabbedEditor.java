@@ -21,6 +21,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
@@ -30,6 +31,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -148,7 +150,11 @@ public class TabbedEditor implements IEditor {
           if (ObjectUtils.equals(this, openedMPSEditor.getNodeEditor())) continue;
 
           final IEditor mpsNodeEditor = openedMPSEditor.getNodeEditor();
-          List<SNodePointer> openedNodes = mpsNodeEditor.getAllEditedNodes();
+          List<SNodePointer> openedNodes = ModelAccess.instance().runReadAction(new Computable<List<SNodePointer>>() {
+            public List<SNodePointer> compute() {
+              return mpsNodeEditor.getAllEditedNodes();
+            }
+          });
           if (mpsNodeEditor instanceof TabbedEditor || !getAllEditedNodes().contains(openedNodes.get(0))) continue;
 
           boolean needToSelect = virtualFile == openedMPSEditor.getFile();
