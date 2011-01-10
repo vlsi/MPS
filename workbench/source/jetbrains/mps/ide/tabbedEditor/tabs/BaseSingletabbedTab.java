@@ -39,8 +39,8 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   private EditorComponent myComponent;
   private SNodePointer myLoadableNode;
 
-  protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
-    super(tabbedEditor, baseNode);
+  protected BaseSingletabbedTab(SNode baseNode) {
+    super(baseNode);
   }
 
   public void reinit() {

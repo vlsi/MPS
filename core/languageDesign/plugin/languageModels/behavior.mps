@@ -45,7 +45,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp4k.1205852320419" resolveInfo="ActionType" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877237158">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp4k.1203866019489" resolveInfo="TabbedEditorDeclaration" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877264641">

@@ -31,10 +31,8 @@ import java.util.List;
 
 public abstract class AbstractLazyTab implements ILazyTab {
   private SNodePointer myBaseNode;
-  private TabbedEditor myTabbedEditor;
 
-  public AbstractLazyTab(TabbedEditor tabbedEditor, SNode baseNode) {
-    myTabbedEditor = tabbedEditor;
+  public AbstractLazyTab(SNode baseNode) {
     myBaseNode = new SNodePointer(baseNode);
 
     SModelRepository.getInstance().addModelRepositoryListener(myModelAddedListener);
@@ -45,6 +43,18 @@ public abstract class AbstractLazyTab implements ILazyTab {
       provider.tabOpened(this);
     }
   }
+
+
+  private TabbedEditor myEditor;
+
+  public TabbedEditor getTabbedEditor() {
+    return myEditor;
+  }
+
+  public void setTabbedEditor(TabbedEditor e) {
+    myEditor = e;
+  }
+
 
   public void dispose() {
     TabColorProvider provider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
@@ -72,10 +82,6 @@ public abstract class AbstractLazyTab implements ILazyTab {
     myModelAdditionListeners.clear();
   }
 
-  public TabbedEditor getTabbedEditor() {
-    return myTabbedEditor;
-  }
-
   public SNode getBaseNode() {
     return myBaseNode.getNode();
   }
@@ -95,6 +101,10 @@ public abstract class AbstractLazyTab implements ILazyTab {
 
   protected boolean isOutsideCommandExecution() {
     return false;
+  }
+
+  protected Character getShortcutChar() {
+    return null;
   }
 
   protected abstract void onImportantRootRemoved(SNodePointer node);

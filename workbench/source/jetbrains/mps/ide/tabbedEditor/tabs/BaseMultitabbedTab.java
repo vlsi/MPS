@@ -64,8 +64,8 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   private Set<SModelDescriptor> myModelsWithListeners = new HashSet<SModelDescriptor>();
   private BaseMultitabbedTab.MyNameListener myNodeNameListener = new MyNameListener();
 
-  protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
-    super(tabbedEditor, baseNode);
+  protected BaseMultitabbedTab(SNode baseNode) {
+    super(baseNode);
   }
 
   public void addEditableNode(SNode loadableNode, IOperationContext operationContext) {

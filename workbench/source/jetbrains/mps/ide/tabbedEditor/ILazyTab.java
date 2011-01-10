@@ -27,8 +27,6 @@ public interface ILazyTab {
 
   String getNullText();
 
-  TabbedEditor getTabbedEditor();
-
   List<EditorComponent> getEditorComponents();
 
   EditorComponent getCurrentEditorComponent();
@@ -54,4 +52,7 @@ public interface ILazyTab {
   void removeTabChangeListener(TabChangeListener l);
 
   void dispose();
+
+  @Deprecated//todo get rid of
+  TabbedEditor getTabbedEditor();
 }

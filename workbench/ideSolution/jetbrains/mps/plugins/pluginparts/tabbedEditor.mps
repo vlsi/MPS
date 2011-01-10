@@ -41,54 +41,8 @@
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724273">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="46o1.~BaseMultitabbedTab" />
     </node>
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="504431509334724298">
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="504431509334724299" />
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="504431509334724300">
-        <property name="name" nameId="tpck.1169194664001" value="tabbedEditor" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724301">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2j7v.~TabbedEditor" />
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="504431509334724302">
-        <property name="name" nameId="tpck.1169194664001" value="baseNode" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724303">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~SNode" />
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="504431509334724304">
-        <property name="name" nameId="tpck.1169194664001" value="adapterClass" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724305">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Class" />
-          <node role="parameter" roleId="tpee.1109201940907" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="504431509334724306">
-            <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724307">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~BaseAdapter" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="504431509334724308">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="7477544587122657520">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7477544587122657495" resolveInfo="BaseMultiTab" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7477544587122658522">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="504431509334724300" resolveInfo="tabbedEditor" />
-          </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7477544587122658523">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="504431509334724302" resolveInfo="baseNode" />
-          </node>
-        </node>
-      </node>
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7477544587122657494">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="mwyq.~Deprecated" resolveInfo="Deprecated" />
-      </node>
-    </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7477544587122657495">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.ProtectedVisibility" typeId="tpee.1146644641414" id="7477544587122657496" />
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7477544587122657497">
-        <property name="name" nameId="tpck.1169194664001" value="tabbedEditor" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7477544587122657498">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2j7v.~TabbedEditor" resolveInfo="TabbedEditor" />
-        </node>
-      </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7477544587122657499">
         <property name="name" nameId="tpck.1169194664001" value="baseNode" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7477544587122657500">
@@ -98,9 +52,6 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7477544587122657505">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="7477544587122657506">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="46o1.~BaseMultitabbedTab%d&lt;init&gt;(jetbrains%dmps%dide%dtabbedEditor%dTabbedEditor,jetbrains%dmps%dsmodel%dSNode)" resolveInfo="BaseMultitabbedTab" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7477544587122657507">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7477544587122657497" resolveInfo="tabbedEditor" />
-          </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7477544587122657508">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7477544587122657499" resolveInfo="baseNode" />
           </node>
@@ -667,54 +618,7 @@
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724686">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="46o1.~BaseSingletabbedTab" />
     </node>
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="504431509334724687">
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="504431509334724688" />
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="504431509334724689">
-        <property name="name" nameId="tpck.1169194664001" value="tabbedEditor" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724690">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2j7v.~TabbedEditor" />
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="504431509334724691">
-        <property name="name" nameId="tpck.1169194664001" value="baseNode" />
-        <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724692">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~SNode" />
-        </node>
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="504431509334724693">
-        <property name="name" nameId="tpck.1169194664001" value="adapterClass" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724694">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mwyq.~Class" />
-          <node role="parameter" roleId="tpee.1109201940907" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="504431509334724695">
-            <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="504431509334724696">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~BaseAdapter" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="504431509334724697">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ThisConstructorInvocation" typeId="tpee.1178893518978" id="7477544587122657463">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7477544587122657446" resolveInfo="BaseSingleTab" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7477544587122657464">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="504431509334724689" resolveInfo="tabbedEditor" />
-          </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7477544587122657465">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="504431509334724691" resolveInfo="baseNode" />
-          </node>
-        </node>
-      </node>
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7477544587122657445">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="mwyq.~Deprecated" resolveInfo="Deprecated" />
-      </node>
-    </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7477544587122657446">
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7477544587122657450">
-        <property name="name" nameId="tpck.1169194664001" value="tabbedEditor" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7477544587122657451">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2j7v.~TabbedEditor" resolveInfo="TabbedEditor" />
-        </node>
-      </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7477544587122657452">
         <property name="name" nameId="tpck.1169194664001" value="baseNode" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -727,9 +631,6 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7477544587122657449">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="7477544587122657454">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="46o1.~BaseSingletabbedTab%d&lt;init&gt;(jetbrains%dmps%dide%dtabbedEditor%dTabbedEditor,jetbrains%dmps%dsmodel%dSNode)" resolveInfo="BaseSingletabbedTab" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7477544587122657455">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7477544587122657450" resolveInfo="tabbedEditor" />
-          </node>
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7477544587122657456">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7477544587122657452" resolveInfo="baseNode" />
           </node>

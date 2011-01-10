@@ -15,22 +15,25 @@
  */
 package jetbrains.mps.plugins.projectplugins;
 
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.Tag;
-
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.ide.tabbedEditor.tabs.EditorTabFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
-import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandlerOwner;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
@@ -49,6 +52,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   private List<BaseCustomProjectPlugin> myCustomPartsToDispose = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
   private List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
+  private List<EditorTabFactory> myFactories = new ArrayList<EditorTabFactory>();
+  private MPSEditorOpenHandler myHandler = new MyMPSEditorOpenHandler();
 
   public Project getProject() {
     return myProject;
@@ -56,16 +61,12 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   //------------------stuff to generate-----------------------
 
-  protected void initEditors(Project project) {
-
+  protected List<EditorTabFactory> initEditorTabs(Project project) {
+    return new ArrayList<EditorTabFactory>();
   }
 
   protected List<BaseGeneratedTool> initAllTools(Project project) {
-    ArrayList<BaseGeneratedTool> result = new ArrayList<BaseGeneratedTool>();
-    for (BaseGeneratedTool tool : new ArrayList<GeneratedTool>()) {
-      result.add(tool);
-    }
-    return result;
+    return new ArrayList<BaseGeneratedTool>();
   }
 
   protected List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
@@ -96,7 +97,12 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       manager.addGenerationListener(listener);
     }
 
-    initEditors(myProject);
+    MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
+    opener.registerOpenHandler(myHandler, this);
+
+    for (EditorTabFactory tabFactory : initEditorTabs(project)) {
+      myFactories.add(tabFactory);
+    }
 
     myTools = initAllTools(myProject);
     final Project ideaProject = myProject;
@@ -139,6 +145,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     if (opener != null) {
       opener.unregisterOpenHandlers(BaseProjectPlugin.this);
     }
+
+    myFactories.clear();
 
     GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
     for (GenerationListener listener : myGenerationListeners) {
@@ -208,6 +216,32 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     public ComponentState(String first, Element second) {
       this.first = first;
       this.second = second;
+    }
+  }
+
+  private class MyMPSEditorOpenHandler implements MPSEditorOpenHandler {
+    public SNode getBaseNode(IOperationContext context, SNode node) {
+      for (EditorTabFactory f : myFactories) {
+        SNode baseNode = f.getBaseNode(context, node);
+        if (baseNode != null) return baseNode;
+      }
+      return null;
+    }
+
+    public boolean canOpen(IOperationContext context, SNode node) {
+      return false;
+    }
+
+    public IEditor open(IOperationContext context, final SNode node) {
+      return new TabbedEditor(context, node) {
+        {
+          for (EditorTabFactory factory : myFactories) {
+            AbstractLazyTab tab = factory.createTab(node);
+            tab.setTabbedEditor(this);
+            addTab(tab, 'a');
+          }
+        }
+      };
     }
   }
 }

@@ -118,6 +118,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="E" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935847740" resolveInfo="Structure" />
     </node>
     <node type="tp4k.SingletabbedEditorTab" typeId="tp4k.1203071663527" id="6388164970935847796">
       <property name="name" nameId="tpck.1169194664001" value="Constraints" />
@@ -125,6 +126,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="C" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935847751" resolveInfo="Editor" />
     </node>
     <node type="tp4k.SingletabbedEditorTab" typeId="tp4k.1203071663527" id="6388164970935847831">
       <property name="name" nameId="tpck.1169194664001" value="Behavior" />
@@ -132,6 +134,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="B" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935847796" resolveInfo="Constraints" />
     </node>
     <node type="tp4k.MultitabbedEditorTab" typeId="tp4k.1203780151140" id="6388164970935847866">
       <property name="name" nameId="tpck.1169194664001" value="Typesystem" />
@@ -139,6 +142,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="T" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935847831" resolveInfo="Behavior" />
     </node>
     <node type="tp4k.MultitabbedEditorTab" typeId="tp4k.1203780151140" id="6388164970935847998">
       <property name="name" nameId="tpck.1169194664001" value="Actions" />
@@ -146,6 +150,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="A" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935847866" resolveInfo="Typesystem" />
     </node>
     <node type="tp4k.MultitabbedEditorTab" typeId="tp4k.1203780151140" id="6388164970935848028">
       <property name="name" nameId="tpck.1169194664001" value="Refactorings" />
@@ -153,6 +158,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="R" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935847998" resolveInfo="Actions" />
     </node>
     <node type="tp4k.MultitabbedEditorTab" typeId="tp4k.1203780151140" id="6388164970935848058">
       <property name="name" nameId="tpck.1169194664001" value="Intentions" />
@@ -160,6 +166,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="I" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935848028" resolveInfo="Refactorings" />
     </node>
     <node type="tp4k.MultitabbedEditorTab" typeId="tp4k.1203780151140" id="6388164970935848088">
       <property name="name" nameId="tpck.1169194664001" value="Find Usages" />
@@ -167,6 +174,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="F" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935848058" resolveInfo="Intentions" />
     </node>
     <node type="tp4k.SingletabbedEditorTab" typeId="tp4k.1203071663527" id="6388164970935848124">
       <property name="name" nameId="tpck.1169194664001" value="Data Flow" />
@@ -174,6 +182,7 @@
       <property name="shortcutChar" nameId="tp4k.7669625834619276534" value="D" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935848088" resolveInfo="Find Usages" />
     </node>
     <node type="tp4k.MultitabbedEditorTab" typeId="tp4k.1203780151140" id="6388164970935848159">
       <property name="name" nameId="tpck.1169194664001" value="Generator" />
@@ -182,15 +191,17 @@
       <property name="outsideCommand" nameId="tp4k.8538762981200303653" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935848124" resolveInfo="Data Flow" />
     </node>
     <node type="tp4k.SingletabbedEditorTab" typeId="tp4k.1203071663527" id="6388164970935848593">
       <property name="name" nameId="tpck.1169194664001" value="Textgen" />
       <property name="emptyCaption" nameId="tp4k.1203851807860" value="No Text Gen." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
       <link role="baseNodeConcept" roleId="tp4k.5866603471302573102" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <link role="goesAfter" roleId="tp4k.3552608880959439198" targetNodeId="6388164970935848159" resolveInfo="Generator" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3552608880959246745">
-      <property name="name" nameId="tpck.1169194664001" value="ConceptEditorHelper" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptEditorOpenHelper" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
     </node>
   </roots>
