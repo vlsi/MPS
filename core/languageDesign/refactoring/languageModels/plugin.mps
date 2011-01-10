@@ -36,7 +36,7 @@
       <property name="isInvisibleWhenDisabled" nameId="tp4k.1217005992861" value="false" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1106479162954038584">
-      <property name="name" nameId="tpck.1169194664001" value="GenericRefctoringAction" />
+      <property name="name" nameId="tpck.1169194664001" value="GenericRefactoringAction" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="caption" nameId="tp4k.1205250923097" value="&lt;caption&gt;" />
     </node>

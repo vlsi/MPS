@@ -16,7 +16,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     // simple 
     // simple parameterized 
     // complex 
-    addComplexShortcut("jetbrains.mps.lang.refactoring.plugin.GenericRefctoringAction_Action", new Default_KeymapChanges.GenericRefctoringAction_ShortcutChange_qjewi8_a());
+    addComplexShortcut("jetbrains.mps.lang.refactoring.plugin.GenericRefactoringAction_Action", new Default_KeymapChanges.GenericRefactoringAction_ShortcutChange_qjewi8_a());
   }
 
   public String getScheme() {
@@ -27,8 +27,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
 
-  public class GenericRefctoringAction_ShortcutChange_qjewi8_a extends BaseKeymapChanges.ComplexShortcut {
-    public GenericRefctoringAction_ShortcutChange_qjewi8_a() {
+  public class GenericRefactoringAction_ShortcutChange_qjewi8_a extends BaseKeymapChanges.ComplexShortcut {
+    public GenericRefactoringAction_ShortcutChange_qjewi8_a() {
     }
 
     public List<Shortcut> getShortcutsFor(Object... objects) {

@@ -35,7 +35,7 @@ outer:
           }
         }
         if (refactoring.getRefactoringTarget().getTarget() == IRefactoringTarget.TargetType.NODE) {
-          NodeRefactoring_ActionGroup.this.addParameterizedAction(new GenericRefctoringAction_Action(refactoring), PluginId.getId("jetbrains.mps.lang.refactoring"), refactoring);
+          NodeRefactoring_ActionGroup.this.addParameterizedAction(new GenericRefactoringAction_Action(refactoring), PluginId.getId("jetbrains.mps.lang.refactoring"), refactoring);
         }
       }
     } catch (Throwable t) {

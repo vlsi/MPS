@@ -21,7 +21,7 @@ public class ModelRefactorings_ActionGroup extends GeneratedActionGroup {
     try {
       for (IRefactoring refactoring : ListSequence.fromList(RefactoringUtil.getAllRefactorings())) {
         if (refactoring.getRefactoringTarget().getTarget() == IRefactoringTarget.TargetType.MODEL) {
-          ModelRefactorings_ActionGroup.this.addParameterizedAction(new GenericRefctoringAction_Action(refactoring), PluginId.getId("jetbrains.mps.lang.refactoring"), refactoring);
+          ModelRefactorings_ActionGroup.this.addParameterizedAction(new GenericRefactoringAction_Action(refactoring), PluginId.getId("jetbrains.mps.lang.refactoring"), refactoring);
         }
       }
     } catch (Throwable t) {
