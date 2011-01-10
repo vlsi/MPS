@@ -20,12 +20,12 @@ public class check_InstanceOf_NonTypesystemRule extends AbstractNonTypesystemRul
   }
 
   public void applyRule(final SNode instanceOfExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode classType = SLinkOperations.getTarget(instanceOfExpression, "classType", true);
-    if ((classType != null)) {
-      if (!(Type_Behavior.call_isReifiable_2817265908000464118(SLinkOperations.getTarget(instanceOfExpression, "classType", true)))) {
+    SNode classifierType = SLinkOperations.getTarget(instanceOfExpression, "classType", true);
+    if ((classifierType != null)) {
+      if (!(Type_Behavior.call_isReifiable_2817265908000464118(classifierType))) {
         BaseQuickFixProvider intentionProvider = null;
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classType, "parameterized type in instanceof is not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2817265908000619081", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifierType, "parameterized type in instanceof is not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8918460683225653154", intentionProvider, errorTarget);
       }
     }
   }
