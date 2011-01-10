@@ -43,13 +43,9 @@ public interface IEditor {
 
   EditorCell getRootCell();
 
-  //-------todo rewrite with SNP
-
   SNodePointer getCurrentlyEditedNode();
 
   List<SNodePointer> getAllEditedNodes();
-
-  //-----end todo
 
   void selectNode(SNode node);
 
