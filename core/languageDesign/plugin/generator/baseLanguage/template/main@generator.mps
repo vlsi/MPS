@@ -3127,8 +3127,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1203875172634" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3552608880959559338">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
-        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3552608880959606036">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3552608880959605932" resolveInfo="EditorTabFactory" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1561929634096466362">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="46o1.~EditorTabFactory" resolveInfo="EditorTabFactory" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1204475188842">
@@ -3163,8 +3163,8 @@
             <property name="name" nameId="tpck.1169194664001" value="result" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3552608880959559362">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t1ti.~List" resolveInfo="List" />
-              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3552608880959606035">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3552608880959605932" resolveInfo="EditorTabFactory" />
+              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1561929634096466363">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="46o1.~EditorTabFactory" resolveInfo="EditorTabFactory" />
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3552608880959559366">
@@ -15235,7 +15235,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3552608880959605983">
-        <property name="name" nameId="tpck.1169194664001" value="aspect" />
+        <property name="name" nameId="tpck.1169194664001" value="node" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="3552608880959605984" />
       </node>
     </node>
