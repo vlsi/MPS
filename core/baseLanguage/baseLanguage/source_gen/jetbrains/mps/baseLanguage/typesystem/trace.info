@@ -128,6 +128,7 @@
   <unitInfo fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ClassShouldHaveConstructor_NonTypesystemRule" />
   <unitInfo fileName="typeof_AdditionalForLoopVariable_InferenceRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_AdditionalForLoopVariable_InferenceRule" />
   <unitInfo fileName="typeof_IMethodCall_InferenceRule.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_IMethodCall_InferenceRule" />
+  <unitInfo fileName="check_InstanceOf_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_InstanceOf_NonTypesystemRule" />
   <unitInfo fileName="Class_Void_weak_supertypeof_void_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.Class_Void_weak_supertypeof_void_SubtypingRule$QuotationClass_or08yn_a0a0a" />
   <unitInfo fileName="string_extends_java_lang_String_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.string_extends_java_lang_String_SubtypingRule$QuotationClass_s518me_a0a0a" />
   <unitInfo fileName="wildCard_is_Object_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.wildCard_is_Object_SubtypingRule$QuotationClass_9oqlj5_a0a0a" />
@@ -249,7 +250,6 @@
   <unitInfo fileName="check_AnnotationInstanceHasAllValues_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_AnnotationInstanceHasAllValues_NonTypesystemRule" />
   <unitInfo fileName="typeof_EnumValuesExpression_InferenceRule.java" startLine="46" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_EnumValuesExpression_InferenceRule$QuotationClass_pii9m7_a0a0a0" />
   <unitInfo fileName="typeof_BaseAssignmentExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BaseAssignmentExpression_InferenceRule" />
-  <unitInfo fileName="check_InstanceOf_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_InstanceOf_NonTypesystemRule" />
   <unitInfo fileName="check_ConceptFunctionParameter_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ConceptFunctionParameter_NonTypesystemRule" />
   <unitInfo fileName="typeOf_ClassifierClassExpression_InferenceRule.java" startLine="49" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeOf_ClassifierClassExpression_InferenceRule$QuotationClass_z3vtx7_a0a0a0" />
   <unitInfo fileName="EnumsAreEnum_SubtypingRule.java" startLine="51" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.EnumsAreEnum_SubtypingRule$QuotationClass_b0gd6z_a0a0a0c0a" />
@@ -3431,7 +3431,7 @@
     <nodeInfo nodeId="1220444030637" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="35" startPosition="212" endLine="36" endPosition="64" />
     <nodeInfo nodeId="1220444030637" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="36" startPosition="64" endLine="37" endPosition="56" />
     <nodeInfo nodeId="1220444030637" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="37" startPosition="56" endLine="38" endPosition="157" />
-    <nodeInfo nodeId="1220443995701" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="45" startPosition="103" endLine="46" endPosition="304" />
+    <nodeInfo nodeId="1220443995701" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="45" startPosition="103" endLine="46" endPosition="304" />
     <nodeInfo nodeId="1220444030637" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="47" startPosition="12" endLine="48" endPosition="185" />
     <nodeInfo nodeId="1220444023164" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="47" startPosition="10" endLine="49" endPosition="5" />
     <nodeInfo nodeId="1220443943109" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="subtypesOfUpperBoundType_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="49" endPosition="5" />
@@ -3501,7 +3501,7 @@
     <nodeInfo nodeId="1220523357876" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="137" startPosition="15" endLine="138" endPosition="55" />
     <nodeInfo nodeId="6281385834685063550" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="138" startPosition="55" endLine="139" endPosition="158" />
     <nodeInfo nodeId="1220523357880" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="140" startPosition="17" endLine="141" endPosition="54" />
-    <nodeInfo nodeId="1220523357903" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="142" startPosition="328" endLine="143" endPosition="128" />
+    <nodeInfo nodeId="1220523357903" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="142" startPosition="328" endLine="143" endPosition="128" />
     <nodeInfo nodeId="1227258840880" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="149" startPosition="16" endLine="150" endPosition="64" />
     <nodeInfo nodeId="1227258925906" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="150" startPosition="64" endLine="151" endPosition="34" />
     <nodeInfo nodeId="1233155321686" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfClassifierTypeWWildcards_InequationReplacementRule.java" startLine="152" startPosition="139" endLine="153" endPosition="140" />
@@ -5594,7 +5594,7 @@
     <nodeInfo nodeId="4691618959158120638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="36" startPosition="64" endLine="37" endPosition="56" />
     <nodeInfo nodeId="4691618959158120638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="37" startPosition="56" endLine="38" endPosition="160" />
     <nodeInfo nodeId="4691618959158120669" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="45" startPosition="103" endLine="46" endPosition="262" />
-    <nodeInfo nodeId="4691618959158120638" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="47" startPosition="12" endLine="48" endPosition="185" />
+    <nodeInfo nodeId="4691618959158120638" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="47" startPosition="12" endLine="48" endPosition="185" />
     <nodeInfo nodeId="4691618959158120663" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="47" startPosition="10" endLine="49" endPosition="5" />
     <nodeInfo nodeId="4691618959158120651" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="44" startPosition="35" endLine="49" endPosition="5" />
     <nodeInfo nodeId="4691618959158120669" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="subtypesOfLowerBoundType_InequationReplacementRule.java" startLine="22" startPosition="103" endLine="30" endPosition="7" />
@@ -6315,31 +6315,17 @@
     </scopeInfo>
   </root>
   <root nodeId="7854098281915049056">
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="23" startPosition="8" endLine="24" endPosition="103" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="26" endPosition="43" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="27" startPosition="9" endLine="28" endPosition="109" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="29" startPosition="48" endLine="30" endPosition="167" />
-    <nodeInfo nodeId="7854098281915151107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="35" startPosition="13" endLine="36" endPosition="60" />
-    <nodeInfo nodeId="7854098281915151107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="36" startPosition="60" endLine="37" endPosition="66" />
-    <nodeInfo nodeId="7854098281915151107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="37" startPosition="66" endLine="38" endPosition="298" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="40" startPosition="11" endLine="41" endPosition="16" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="28" startPosition="109" endLine="31" endPosition="11" />
-    <nodeInfo nodeId="7854098281915151107" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="34" startPosition="121" endLine="39" endPosition="13" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="26" startPosition="43" endLine="32" endPosition="9" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="33" startPosition="33" endLine="40" endPosition="11" />
-    <nodeInfo nodeId="7854098281915102845" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="33" startPosition="33" endLine="40" endPosition="11" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="32" startPosition="9" endLine="42" endPosition="9" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="24" startPosition="103" endLine="43" endPosition="7" />
-    <nodeInfo nodeId="7854098281915102836" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="44" endPosition="20" />
-    <scopeInfo nodeId="7854098281915102836" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="29" startPosition="48" endLine="30" endPosition="167" />
-    <scopeInfo nodeId="7854098281915151107" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="35" startPosition="13" endLine="38" endPosition="298" />
-    <scopeInfo nodeId="7854098281915102836" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="27" startPosition="9" endLine="31" endPosition="11" />
-    <scopeInfo nodeId="7854098281915102847" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="34" startPosition="121" endLine="39" endPosition="13" />
-    <scopeInfo nodeId="7854098281915102840" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="33" startPosition="33" endLine="40" endPosition="11" />
-    <scopeInfo nodeId="7854098281915102836" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="33" startPosition="33" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="7854098281915102836" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="42" endPosition="9" />
-    <scopeInfo nodeId="7854098281915102836" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="23" startPosition="8" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="7854098281915049057" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="44" endPosition="20" />
+    <nodeInfo nodeId="2817265908000620198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="23" endPosition="89" />
+    <nodeInfo nodeId="2817265908000619081" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="25" startPosition="134" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="2817265908000619081" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="26" startPosition="54" endLine="27" endPosition="60" />
+    <nodeInfo nodeId="2817265908000619081" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="27" startPosition="60" endLine="28" endPosition="280" />
+    <nodeInfo nodeId="2817265908000619081" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="24" startPosition="30" endLine="29" endPosition="7" />
+    <nodeInfo nodeId="2817265908000619097" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="23" startPosition="89" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="2817265908000619081" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="25" startPosition="134" endLine="28" endPosition="280" />
+    <scopeInfo nodeId="2817265908000619098" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="24" startPosition="30" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="7854098281915049057" fileName="check_InstanceOf_NonTypesystemRule.java" startLine="22" startPosition="133" endLine="30" endPosition="5">
+      <varInfo nodeId="2817265908000620199" varName="classType" />
+    </scopeInfo>
   </root>
   <root nodeId="7970711249077251764">
     <nodeInfo nodeId="7970711249077251789" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="CheckingUtil.java" startLine="14" startPosition="48" endLine="15" endPosition="136" />

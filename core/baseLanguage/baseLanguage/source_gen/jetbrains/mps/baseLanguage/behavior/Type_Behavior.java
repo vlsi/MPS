@@ -28,6 +28,7 @@ public class Type_Behavior {
   private static Class[] PARAMETERS_1447667470349154499 = {SNode.class};
   private static Class[] PARAMETERS_1213877337313 = {SNode.class};
   private static Class[] PARAMETERS_702942408396803226 = {SNode.class};
+  private static Class[] PARAMETERS_2817265908000464118 = {SNode.class};
   private static Class[] PARAMETERS_1213877337320 = {SNode.class};
   private static Class[] PARAMETERS_1213877337340 = {SNode.class};
   private static Class[] PARAMETERS_1226945293888 = {SNode.class};
@@ -62,6 +63,10 @@ public class Type_Behavior {
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     return thisNode;
+  }
+
+  public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
+    return true;
   }
 
   public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
@@ -99,10 +104,10 @@ public class Type_Behavior {
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     {
-      IMatchingPattern pattern_smb55n_a0l = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode coercedNode_smb55n_a0l = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_smb55n_a0l);
-      if (coercedNode_smb55n_a0l != null) {
-        return new Type_Behavior.QuotationClass_smb55n_a0a0c0a0m().createNode(SLinkOperations.getTarget(coercedNode_smb55n_a0l, "classifier", false));
+      IMatchingPattern pattern_smb55n_a0m = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode coercedNode_smb55n_a0m = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_smb55n_a0m);
+      if (coercedNode_smb55n_a0m != null) {
+        return new Type_Behavior.QuotationClass_smb55n_a0a0c0a0n().createNode(SLinkOperations.getTarget(coercedNode_smb55n_a0m, "classifier", false));
       } else {
         throw new UnsupportedOperationException();
       }
@@ -111,9 +116,9 @@ public class Type_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
-      GeneratedMatchingPattern pattern_smb55n_a0m = new Type_Behavior.Pattern_smb55n_a0a0a0a31(thisNode);
-      SNode coercedNode_smb55n_a0m = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0m);
-      if (coercedNode_smb55n_a0m != null) {
+      GeneratedMatchingPattern pattern_smb55n_a0n = new Type_Behavior.Pattern_smb55n_a0a0a0a41(thisNode);
+      SNode coercedNode_smb55n_a0n = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0n);
+      if (coercedNode_smb55n_a0n != null) {
         return true;
       } else {
       }
@@ -155,6 +160,10 @@ public class Type_Behavior {
 
   public static SNode call_getErasure_702942408396803226(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getErasure_702942408396803226", PARAMETERS_702942408396803226);
+  }
+
+  public static boolean call_isReifiable_2817265908000464118(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_isReifiable_2817265908000464118", PARAMETERS_2817265908000464118);
   }
 
   public static SNode call_getUnboxedType_1213877337320(SNode thisNode) {
@@ -221,6 +230,10 @@ public class Type_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getErasure_702942408396803226", PARAMETERS_702942408396803226);
   }
 
+  public static boolean callSuper_isReifiable_2817265908000464118(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isReifiable_2817265908000464118", PARAMETERS_2817265908000464118);
+  }
+
   public static SNode callSuper_getUnboxedType_1213877337320(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getUnboxedType_1213877337320", PARAMETERS_1213877337320);
   }
@@ -269,8 +282,8 @@ public class Type_Behavior {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_jniSignature_8847328628797633411", PARAMETERS_8847328628797633411);
   }
 
-  public static class QuotationClass_smb55n_a0a0c0a0m {
-    public QuotationClass_smb55n_a0a0c0a0m() {
+  public static class QuotationClass_smb55n_a0a0c0a0n {
+    public QuotationClass_smb55n_a0a0c0a0n() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -287,18 +300,18 @@ public class Type_Behavior {
     }
   }
 
-  public static class Pattern_smb55n_a0a0a0a31 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ Object AntiquotationField_smb55n_a0a0a0a21;
+  public static class Pattern_smb55n_a0a0a0a41 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ Object AntiquotationField_smb55n_a0a0a0a31;
 
-    public Pattern_smb55n_a0a0a0a31(Object parameter_smb55n_a0a0a0a21) {
-      this.AntiquotationField_smb55n_a0a0a0a21 = parameter_smb55n_a0a0a0a21;
+    public Pattern_smb55n_a0a0a0a41(Object parameter_smb55n_a0a0a0a31) {
+      this.AntiquotationField_smb55n_a0a0a0a31 = parameter_smb55n_a0a0a0a31;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_smb55n_a0a0a21;
-        nodeToMatch_smb55n_a0a0a21 = nodeToMatch;
-        if (!("jetbrains.mps.lang.core.structure.BaseConcept".equals(nodeToMatch_smb55n_a0a0a21.getConceptFqName()))) {
+        SNode nodeToMatch_smb55n_a0a0a31;
+        nodeToMatch_smb55n_a0a0a31 = nodeToMatch;
+        if (!("jetbrains.mps.lang.core.structure.BaseConcept".equals(nodeToMatch_smb55n_a0a0a31.getConceptFqName()))) {
           return false;
         }
       }

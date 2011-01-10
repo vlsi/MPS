@@ -191,6 +191,17 @@ public class ClassifierType_Behavior {
     return "L" + preparedFQName + ";";
   }
 
+  public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty())) {
+      for (SNode parameter : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+        if (!(SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
   public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
   }
