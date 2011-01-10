@@ -98,16 +98,6 @@
     </scopeInfo>
     <unitInfo nodeId="504431509334724637" fileName="TabHelper.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.tabbedEditor.TabHelper" />
   </root>
-  <root nodeId="504431509334724671">
-    <nodeInfo nodeId="504431509334724681" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="BaseTabbedEditor.java" startLine="10" startPosition="66" endLine="11" endPosition="25" />
-    <nodeInfo nodeId="504431509334724674" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseTabbedEditor#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;)V" fileName="BaseTabbedEditor.java" startLine="9" startPosition="61" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="504431509334724680" fileName="BaseTabbedEditor.java" startLine="10" startPosition="66" endLine="11" endPosition="25" />
-    <scopeInfo nodeId="504431509334724674" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseTabbedEditor#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;)V" fileName="BaseTabbedEditor.java" startLine="9" startPosition="61" endLine="12" endPosition="3">
-      <varInfo nodeId="504431509334724678" varName="node" />
-      <varInfo nodeId="504431509334724676" varName="context" />
-    </scopeInfo>
-    <unitInfo nodeId="504431509334724671" fileName="BaseTabbedEditor.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseTabbedEditor" />
-  </root>
   <root nodeId="504431509334724684">
     <nodeInfo nodeId="7477544587122657454" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" fileName="BaseSingleTab.java" startLine="10" startPosition="46" endLine="11" endPosition="20" />
     <nodeInfo nodeId="504431509334724753" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseSingleTab.java" startLine="14" startPosition="32" endLine="15" endPosition="34" />
