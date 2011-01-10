@@ -229,6 +229,10 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
 
     public boolean canOpen(IOperationContext context, SNode node) {
+      for (EditorTabFactory f : myFactories) {
+        SNode baseNode = f.getBaseNode(context, node);
+        if (baseNode != null) return true;
+      }
       return false;
     }
 
