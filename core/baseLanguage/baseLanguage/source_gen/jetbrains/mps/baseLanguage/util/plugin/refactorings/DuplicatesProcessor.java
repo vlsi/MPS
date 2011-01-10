@@ -26,6 +26,7 @@ public abstract class DuplicatesProcessor<T> {
         for (EditorMessage message : ListSequence.fromList(messages)) {
           this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmark(message);
         }
+        myEditorContext.getNodeEditorComponent().getHighlightManager().repaintAndRebuildEditorMessages();
         if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE) {
           this.substitute(duplicate);
         } else if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE_ALL) {

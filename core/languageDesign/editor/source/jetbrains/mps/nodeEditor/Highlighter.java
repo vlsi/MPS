@@ -453,7 +453,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
                 messages.addAll(checker.createMessages(node, operationContext, events, wasCheckedOnce, editorContext));
                 messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
               } catch (IndexNotReadyException ex) {
-                highlightManager.clearForOwner(owners[0], false);
+                highlightManager.clearForOwner(owners[0], true);
                 checker.clear(node, editor);
                 throw ex;
               }
@@ -489,6 +489,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       };
       ModelAccess.instance().runReadAction(runnable);
       highlightManager.clearForOwner(owners[0], false);
+      anyMessageChanged = true;
     }
 
     if (anyMessageChanged) {
