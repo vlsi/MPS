@@ -60,10 +60,6 @@ public class NodeEditor implements IEditor {
     return myComponent;
   }
 
-  public boolean removeFromRecentEditorsOnClose() {
-    return false;
-  }
-
   @NotNull
   public IOperationContext getOperationContext() {
     return myEditorComponent.getOperationContext();

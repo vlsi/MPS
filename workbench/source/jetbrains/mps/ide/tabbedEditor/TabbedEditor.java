@@ -279,10 +279,6 @@ public class TabbedEditor implements IEditor {
     return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
   }
 
-  public boolean removeFromRecentEditorsOnClose() {
-    return false;
-  }
-
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     EditorContext editorContext = getEditorContext();

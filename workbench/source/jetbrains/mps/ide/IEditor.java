@@ -32,13 +32,18 @@ import java.util.List;
 public interface IEditor {
   JComponent getComponent();
 
-  IOperationContext getOperationContext();
+  @Nullable
+  EditorComponent getCurrentEditorComponent();
 
   EditorContext getEditorContext();
+
+  IOperationContext getOperationContext();
 
   EditorCell getSelectedCell();
 
   EditorCell getRootCell();
+
+  //-------todo rewrite with SNP
 
   SNode getEditedNode();
 
@@ -46,18 +51,17 @@ public interface IEditor {
 
   List<SNode> getEditedNodes();
 
+  //-----end todo
+
   void selectNode(SNode node);
 
   void requestFocus();
 
-  void dispose();
-
   void repaint();
 
-  @Nullable
-  EditorComponent getCurrentEditorComponent();
+  void dispose();
 
-  boolean removeFromRecentEditorsOnClose();
+  //---state
 
   MPSEditorState saveState(@NotNull FileEditorStateLevel level);
 
