@@ -9,6 +9,7 @@ import javax.swing.KeyStroke;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IRefactoring;
+import org.apache.commons.lang.StringUtils;
 
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
@@ -32,7 +33,12 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
 
     public List<Shortcut> getShortcutsFor(Object... objects) {
       List<Shortcut> _result = new ArrayList<Shortcut>();
-      _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke(((IRefactoring) objects[0]).getKeyStroke()), null));
+      {
+        String keyStroke = ((IRefactoring) objects[0]).getKeyStroke();
+        if (StringUtils.isNotEmpty(keyStroke)) {
+          _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null));
+        }
+      }
       return _result;
     }
   }

@@ -1301,14 +1301,33 @@
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.ParameterizedShortcutChange" typeId="tp4k.6193305307616734266" id="1106479162954059192">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1106479162954038584" resolveInfo="GenericRefctoringAction" />
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1106479162954059193">
-        <node role="statement" roleId="tpee.1068581517665" type="tp4k.AddKeystrokeStatement" typeId="tp4k.8131292300541727132" id="1106479162954059198">
-          <node role="stroke" roleId="tp4k.8131292300541905245" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1106479162954059513">
-            <node role="operand" roleId="tpee.1197027771414" type="tp4k.ActionParameterReference" typeId="tp4k.1821622352985038318" id="1106479162954059514">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1106479162954038587" resolveInfo="refactoring" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4419653827035140868">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4419653827035140869">
+            <property name="name" nameId="tpck.1169194664001" value="keyStroke" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="4419653827035140870" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4419653827035140871">
+              <node role="operand" roleId="tpee.1197027771414" type="tp4k.ActionParameterReference" typeId="tp4k.1821622352985038318" id="4419653827035140872">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1106479162954038587" resolveInfo="refactoring" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4419653827035140873">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n3eq.~IRefactoring%dgetKeyStroke()%cjava%dlang%dString" resolveInfo="getKeyStroke" />
+              </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1106479162954059515">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n3eq.~IRefactoring%dgetKeyStroke()%cjava%dlang%dString" resolveInfo="getKeyStroke" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4419653827035140876">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4419653827035140877">
+            <node role="statement" roleId="tpee.1068581517665" type="tp4k.AddKeystrokeStatement" typeId="tp4k.8131292300541727132" id="4419653827035140885">
+              <node role="stroke" roleId="tp4k.8131292300541905245" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4419653827035140886">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4419653827035140869" resolveInfo="keyStroke" />
+              </node>
             </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1511345777278262457">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4419653827035140880">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4419653827035140869" resolveInfo="keyStroke" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.IsNotEmptyOperation" typeId="tpee.1225271408483" id="1511345777278263971" />
           </node>
         </node>
       </node>
