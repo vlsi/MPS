@@ -1269,9 +1269,6 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1218984978343">
           <property name="text" nameId="tpc2.1073389577007" value="multitabbed editor tab" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.TextBackgroundColorStyleClassItem" typeId="tpc2.1214406454886" id="1218984978344">
-            <property name="color" nameId="tpc2.1186403713874" value="orange" />
-          </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1218984978345">
           <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;tab caption&gt;" />
