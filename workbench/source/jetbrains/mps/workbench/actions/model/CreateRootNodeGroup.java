@@ -32,6 +32,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -206,7 +207,9 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       IEditor editor = myProject.getComponent(MPSEditorOpener.class).editNode(node, myContext);
-      editor.requestFocus();
+      EditorComponent component = editor.getCurrentEditorComponent();
+      if (component==null) return;
+      component.requestFocus();
     }
 
     private boolean trySelectInCurrentPane(final SNode node) {

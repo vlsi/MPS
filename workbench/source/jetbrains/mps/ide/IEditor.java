@@ -29,11 +29,15 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.util.List;
 
-public interface IEditor {
+public interface IEditor{
   JComponent getComponent();
 
   @Nullable
   EditorComponent getCurrentEditorComponent();
+
+  SNodePointer getCurrentlyEditedNode();
+
+  List<SNodePointer> getAllEditedNodes();
 
   EditorContext getEditorContext();
 
@@ -43,15 +47,7 @@ public interface IEditor {
 
   EditorCell getRootCell();
 
-  SNodePointer getCurrentlyEditedNode();
-
-  List<SNodePointer> getAllEditedNodes();
-
   void selectNode(SNode node);
-
-  void requestFocus();
-
-  void repaint();
 
   void dispose();
 

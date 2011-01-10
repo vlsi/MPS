@@ -117,10 +117,6 @@ public class NodeEditor implements IEditor {
     return myEditorComponent.getEditorContext();
   }
 
-  public void requestFocus() {
-    myEditorComponent.requestFocus();
-  }
-
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     if (getEditorContext() != null && !getEditorContext().getModel().isDisposed()) {

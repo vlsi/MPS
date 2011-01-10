@@ -255,12 +255,6 @@ public class TabbedEditor implements IEditor {
     editorComponent.selectNode(node);
   }
 
-  public void requestFocus() {
-    EditorComponent editor = getCurrentEditorComponent();
-    if (editor == null) return;
-    editor.requestFocus();
-  }
-
   public void dispose() {
     getTabbedPane().dispose();
     for (EditorComponent c : getEditors()) {
