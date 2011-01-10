@@ -29,7 +29,6 @@ import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -199,6 +198,11 @@ public class TabbedEditor implements IEditor {
     return myTabbedPane;
   }
 
+  @Override
+  public EditorComponent getCurrentEditorComponent() {
+    return getCurrentEditorComponent();
+  }
+
   private List<EditorComponent> getEditors() {
     List<EditorComponent> result = new ArrayList<EditorComponent>();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
@@ -255,11 +259,6 @@ public class TabbedEditor implements IEditor {
     if (current != null) {
       current.repaint();
     }
-  }
-
-  @Nullable
-  public EditorComponent getCurrentEditorComponent() {
-    return myTabbedPane.getCurrentTab().getCurrentEditorComponent();
   }
 
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {

@@ -32,7 +32,6 @@ import java.util.List;
 public interface IEditor{
   JComponent getComponent();
 
-  @Nullable
   EditorComponent getCurrentEditorComponent();
 
   SNodePointer getCurrentlyEditedNode();

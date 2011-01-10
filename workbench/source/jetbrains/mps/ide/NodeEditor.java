@@ -15,61 +15,23 @@
  */
 package jetbrains.mps.ide;
 
-import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.util.Collections;
 import java.util.List;
 
-public class NodeEditor implements IEditor {
-  protected EditorComponent myEditorComponent;
-  private JPanel myComponent = new MyPanel();
-
+public class NodeEditor extends BaseNodeEditor {
   public NodeEditor(IOperationContext context, SNode node) {
-    myEditorComponent = new NodeEditorComponent(context);
-    myEditorComponent.editNode(node, context);
-
-    myComponent.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
-  }
-
-  public JComponent getComponent() {
-    return myComponent;
-  }
-
-  @NotNull
-  public EditorComponent getCurrentEditorComponent() {
-    return myEditorComponent;
-  }
-
-  public EditorContext getEditorContext() {
-    return myEditorComponent.getEditorContext();
-  }
-
-  @NotNull
-  public IOperationContext getOperationContext() {
-    return myEditorComponent.getOperationContext();
-  }
-
-  public SNodePointer getCurrentlyEditedNode() {
-    return myEditorComponent.getEditedNodePointer();
+    super(context);
+    getCurrentEditorComponent().editNode(node, context);
   }
 
   public List<SNodePointer> getAllEditedNodes() {
@@ -80,32 +42,7 @@ public class NodeEditor implements IEditor {
   }
 
   public void selectNode(SNode node) {
-    myEditorComponent.selectNode(node);
-  }
-
-  public void dispose() {
-    myEditorComponent.dispose();
-  }
-
-  //-----
-
-  private class MyPanel extends JPanel implements DataProvider {
-    private MyPanel() {
-      setLayout(new BorderLayout());
-      setBorder(new CompoundBorder(
-        new EmptyBorder(1, 1, 1, 1),
-        new LineBorder(Color.LIGHT_GRAY, 1)
-      ));
-    }
-
-    @Nullable
-    public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) {
-        return NodeEditor.this;
-      }
-
-      return null;
-    }
+    getCurrentEditorComponent().selectNode(node);
   }
 
   //-----state------
