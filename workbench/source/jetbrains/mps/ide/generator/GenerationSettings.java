@@ -262,14 +262,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private GenerateRequirementsPolicy myGenerateRequirementsPolicy = GenerateRequirementsPolicy.ASK;
     private boolean myCheckModelsBeforeGeneration = true;
     private boolean myParallelGenerator = false;
-    private boolean myStrictMode = false;
+    private boolean myStrictMode = true;
     private int myNumberOfParallelThreads = 2;
     private int myPerformanceTracingLevel = GenerationOptions.TRACE_OFF;
     private int myNumberOfModelsToKeep = -1;
     private boolean myShowInfo = false;
     private boolean myShowWarnings = true;
     private boolean myKeepModelsWithWarnings = true;
-    private boolean myIncremental = false;
+    private boolean myIncremental = true;
     private boolean myIncrementalUseCache = false;
 
     public int getNumberOfModelsToKeep() {
