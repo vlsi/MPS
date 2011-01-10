@@ -234,14 +234,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
-  public void unmarkSingleMessage(EditorMessage message) {
-    if (myDisposed) {
-      return;
-    }
-    unmark(message);
-    repaintAndRebuildEditorMessages();
-  }
-
   public void unmark(EditorMessage message) {
     if (myDisposed) {
       return;
@@ -368,13 +360,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
       result.addAll(myMessages);
     }
     return result;
-  }
-
-  // not used anymore?
-  @Deprecated
-  public Color getColorFor(SNode node) {
-    EditorMessage message = getMessageFor(node);
-    return message != null ? message.getColor() : null;
   }
 
   public EditorMessage getMessageFor(SNode node) {
