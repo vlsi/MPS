@@ -19,7 +19,7 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_NODE_CONCEPT = "baseNodeConcept";
   public static final String ORDER = "order";
-  public static final String INIT_BLOCK = "initBlock";
+  public static final String LISTEN_BLOCK = "listenBlock";
   public static final String BASE_NODE_BLOCK = "baseNodeBlock";
   public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
   public static final String NODES_BLOCK = "nodesBlock";
@@ -86,12 +86,12 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
     super.setChild(EditorTab.ORDER, node);
   }
 
-  public ListenBlock getInitBlock() {
-    return (ListenBlock) this.getChild(ListenBlock.class, EditorTab.INIT_BLOCK);
+  public ListenBlock getListenBlock() {
+    return (ListenBlock) this.getChild(ListenBlock.class, EditorTab.LISTEN_BLOCK);
   }
 
-  public void setInitBlock(ListenBlock node) {
-    super.setChild(EditorTab.INIT_BLOCK, node);
+  public void setListenBlock(ListenBlock node) {
+    super.setChild(EditorTab.LISTEN_BLOCK, node);
   }
 
   public BaseNodeBlock getBaseNodeBlock() {

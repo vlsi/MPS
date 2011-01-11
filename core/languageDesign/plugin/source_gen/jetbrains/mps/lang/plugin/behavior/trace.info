@@ -399,12 +399,12 @@
     <scopeInfo nodeId="3636700473138841192" fileName="IEnhancedRunConfiguration_Behavior.java" startLine="18" startPosition="97" endLine="19" endPosition="58" />
   </root>
   <root nodeId="3743831881070611775">
-    <nodeInfo nodeId="3743831881070611779" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EditorTab_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="96" />
+    <nodeInfo nodeId="3743831881070611779" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EditorTab_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="106" />
     <nodeInfo nodeId="3743831881070611790" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EditorTab_Behavior.java" startLine="22" startPosition="89" endLine="23" endPosition="139" />
     <nodeInfo nodeId="3743831881070611806" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EditorTab_Behavior.java" startLine="26" startPosition="106" endLine="27" endPosition="94" />
     <nodeInfo nodeId="3743831881070611825" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EditorTab_Behavior.java" startLine="27" startPosition="94" endLine="28" endPosition="17" />
     <scopeInfo nodeId="3743831881070611831" fileName="EditorTab_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="3743831881070611778" fileName="EditorTab_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="96" />
+    <scopeInfo nodeId="3743831881070611778" fileName="EditorTab_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="106" />
     <scopeInfo nodeId="3743831881070611789" fileName="EditorTab_Behavior.java" startLine="22" startPosition="89" endLine="23" endPosition="139" />
     <scopeInfo nodeId="3743831881070611805" fileName="EditorTab_Behavior.java" startLine="26" startPosition="106" endLine="28" endPosition="17">
       <varInfo nodeId="3743831881070611807" varName="props" />

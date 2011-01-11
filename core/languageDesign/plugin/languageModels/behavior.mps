@@ -4002,7 +4002,7 @@
               </node>
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3743831881070611785">
-              <property name="value" nameId="tpee.1070475926801" value="_Tab" />
+              <property name="value" nameId="tpee.1070475926801" value="_TabDescriptor" />
             </node>
           </node>
         </node>

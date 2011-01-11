@@ -17,18 +17,27 @@ package jetbrains.mps.ide.editorTabs;
 
 import jetbrains.mps.smodel.SNode;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public interface EditorTabDescriptor {
-  String getTitle();
+public abstract class EditorTabDescriptor {
+  public abstract String getTitle();
 
-  SNode getBaseNode(SNode aspect);
+  public Character getShortcutChar(){
+    return null;
+  }
 
-  boolean isApplicable(SNode node);
+  public abstract SNode getBaseNode(SNode aspect);
 
-  List<SNode> getNodes(SNode baseNode);
+  public abstract boolean isApplicable(SNode node);
 
-  List<SNode> getConcepts();
+  public abstract List<SNode> getNodes(SNode baseNode);
 
-  SNode create(SNode baseNode, SNode concept);
+  public List<SNode> getConcepts(SNode baseNode){
+    return new ArrayList<SNode>();
+  }
+
+  public SNode create(SNode baseNode, SNode concept){
+    throw new UnsupportedOperationException();
+  }
 }

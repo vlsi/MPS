@@ -16,7 +16,7 @@ public class EditorTab_Behavior {
   }
 
   public static String call_getGeneratedName_3743831881070611776(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_Tab";
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_TabDescriptor";
   }
 
   public static String call_getGeneratedClassFQName_3743831881070611787(SNode thisNode) {

@@ -4694,7 +4694,7 @@
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3743831881070613134">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="initBlock" />
+      <property name="role" nameId="tpce.1071599776563" value="listenBlock" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3743831881070657680" resolveInfo="ListenBlock" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3743831881070611762">
