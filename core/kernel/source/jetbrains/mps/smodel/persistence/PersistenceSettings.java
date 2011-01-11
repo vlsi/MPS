@@ -41,6 +41,12 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
   public static final int VERSION_UNDEFINED = -1;
   public static final int MIN_VERSION = 3;
   public static final int MAX_VERSION = 7;
+  private static final String[] VERSION_NAME = { // {MIN_VERSION, ..., MAX_VERSION}
+    "MPS 1.1 (pv3)",
+    "MPS 1.5 (pv4)",
+    "Persistence version 5",
+    "Persistence version 6",
+    "MPS 2.0M2 (pv7)" };
   public static final int VERSION_UPDATE_TO_THE_LATEST = 9999;
 
 
@@ -138,7 +144,7 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
       myButtonGroup.add(radioButton);
 
       for (int i = MIN_VERSION; i <= MAX_VERSION; i++) {
-        radioButton = new JRadioButton("Persistence version " + i);
+        radioButton = new JRadioButton(VERSION_NAME[i - MIN_VERSION]);
         myRadioButtons[i - MIN_VERSION + 1] = radioButton;
         myButtonGroup.add(radioButton);
       }
