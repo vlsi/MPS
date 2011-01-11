@@ -20,9 +20,9 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.JBPopupFactory.ActionSelectionAid;
 import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.BaseNodeEditor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -35,6 +35,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -97,13 +98,12 @@ public class NewTabbedEditor extends BaseNodeEditor {
 
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
-    for (final EditorTabDescriptor d:myPossibleTabs){
+    for (final EditorTabDescriptor d : myPossibleTabs) {
       List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
-      if (!concepts.isEmpty()){
-        DefaultActionGroup sub = new DefaultActionGroup(d.getTitle(),true);
-        for (final SNode concept:concepts){
-          sub.add(new AnAction(concept.getName(),"", IconManager.getIconForConceptFQName(NameUtil.conceptFQNameByAdapterClass(concept.getAdapter().getClass()))
-          ) {
+      if (!concepts.isEmpty()) {
+        DefaultActionGroup sub = new DefaultActionGroup(d.getTitle(), true);
+        for (final SNode concept : concepts) {
+          sub.add(new AnAction(concept.getName(), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept))) {
             public void actionPerformed(AnActionEvent e) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 @Override
@@ -121,6 +121,10 @@ public class NewTabbedEditor extends BaseNodeEditor {
     return result;
   }
 
+  private void onNodeChange(){
+
+  }
+
   private class AddConceptButton extends JButton {
     private AddConceptButton() {
       setAction(new AbstractAction("+") {
@@ -128,8 +132,8 @@ public class NewTabbedEditor extends BaseNodeEditor {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               DataContext dataContext = DataManager.getInstance().getDataContext(getCurrentEditorComponent());
-              ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("", getCreateGroup(), dataContext, ActionSelectionAid.SPEEDSEARCH, false);
-              popup.show(getCurrentEditorComponent());
+              ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Create", getCreateGroup(), dataContext, ActionSelectionAid.SPEEDSEARCH, false);
+              popup.show(new RelativePoint(AddConceptButton.this,new Point(0,0)));
             }
           });
         }
