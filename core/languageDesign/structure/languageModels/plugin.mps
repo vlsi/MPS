@@ -204,6 +204,9 @@
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorOpenHelper" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
     </node>
+    <node type="tp4k.EditorTab" typeId="tp4k.3743831881070611759" id="6769912430829231935">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tabs" />
+    </node>
   </roots>
   <root id="1216648908320">
     <node role="methodDeclaration" roleId="tp4k.6547237850567462848" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="1216649373054">
@@ -6626,6 +6629,9 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3552608880959246807" />
     </node>
+  </root>
+  <root id="6769912430829231935">
+    <node role="nodesBlock" roleId="tp4k.3743831881070612960" type="tp4k.NodesBlock" typeId="tp4k.3743831881070612962" id="6769912430829231936" />
   </root>
 </model>
 

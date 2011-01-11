@@ -302,7 +302,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_gp0hv6_e1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("initBlock");
+    provider.setRole("listenBlock");
     provider.setNoTargetText("<no init block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
