@@ -207,16 +207,20 @@ public class TabbedEditor implements IEditor {
 
 
   public List<SNodePointer> getAllEditedNodes() {
-    List<SNodePointer> result = new ArrayList<SNodePointer>();
-    for (ILazyTab tab : myTabbedPane.getTabs()) {
-      tab.getComponent();
-      for (EditorComponent aec : tab.getEditorComponents()) {
-        if (aec.getEditedNode() != null) {
-          result.add(new SNodePointer(aec.getEditedNode()));
+    return ModelAccess.instance().runReadAction(new Computable<List<SNodePointer>>() {
+      public List<SNodePointer> compute() {
+        List<SNodePointer> result = new ArrayList<SNodePointer>();
+        for (ILazyTab tab : myTabbedPane.getTabs()) {
+          tab.getComponent();
+          for (EditorComponent aec : tab.getEditorComponents()) {
+            if (aec.getEditedNode() != null) {
+              result.add(new SNodePointer(aec.getEditedNode()));
+            }
+          }
         }
+        return result;
       }
-    }
-    return result;
+    });
   }
 
   public void selectNode(SNode node) {
