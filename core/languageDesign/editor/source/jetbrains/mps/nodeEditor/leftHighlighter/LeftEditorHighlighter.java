@@ -382,7 +382,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   private void recalculateFoldingAreaWidth() {
     myLeftFoldingAreaWidth = MIN_LEFT_FOLDING_AREA_WIDTH;
     myRightFoldingAreaWidth = MIN_RIGHT_FOLDING_AREA_WIDTH;
-    // Layouting painterss
+    // Layouting painters
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       myLeftFoldingAreaWidth = Math.max(myLeftFoldingAreaWidth, painter.getLeftAreaWidth());
       myRightFoldingAreaWidth = Math.max(myRightFoldingAreaWidth, painter.getRightAreaWidth());
