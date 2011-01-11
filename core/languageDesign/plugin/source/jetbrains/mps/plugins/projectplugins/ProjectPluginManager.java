@@ -25,8 +25,8 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
-import jetbrains.mps.ide.tabbedEditor.OldTabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
@@ -224,7 +224,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (MPSFileNodeEditor editor : EditorsHelper.getAllEditors(myManager)) {
-          if (editor.isValid() && editor.getNodeEditor() instanceof OldTabbedEditor) {
+          if (editor.isValid() && editor.getNodeEditor() instanceof TabbedEditor) {
             editor.recreateEditor();
           }
         }

@@ -20,7 +20,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.tabbedEditor.OldTabbedEditor;
+import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.SNode;
@@ -28,19 +28,18 @@ import jetbrains.mps.smodel.SNode;
 public abstract class MultiTabPropertyProvider {
   protected SNode getCurrentEditedNode(Project project, VirtualFile file) {
     FileEditor[] editors = FileEditorManager.getInstance(project).getEditors(file);
-    if (editors != null && editors.length > 0) {
-      FileEditor editor = editors[0];
-      if (editor instanceof MPSFileNodeEditor) {
-        IEditor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
-        if (nodeEditor instanceof OldTabbedEditor) {
-          OldTabbedEditor tabbedEditor = (OldTabbedEditor) nodeEditor;
-          EditorComponent tabEditor = tabbedEditor.getTabbedPane().getCurrentTab().getCurrentEditorComponent();
-          if (tabEditor instanceof NodeEditorComponent) {
-            return ((NodeEditorComponent) tabEditor).getEditedNode();
-          }
-        }
-      }
-    }
-    return null;
+    if (editors.length <= 0) return null;
+
+    FileEditor editor = editors[0];
+    if (!(editor instanceof MPSFileNodeEditor)) return null;
+
+    IEditor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
+    if (!(nodeEditor instanceof TabbedEditor)) return null;
+
+    TabbedEditor tabbedEditor = (TabbedEditor) nodeEditor;
+    EditorComponent tabEditor = tabbedEditor.getCurrentEditorComponent();
+    if (!(tabEditor instanceof NodeEditorComponent)) return null;
+
+    return tabEditor.getEditedNode();
   }
 }
