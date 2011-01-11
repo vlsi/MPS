@@ -72,7 +72,7 @@ public class ConceptEditorHelper {
   }
 
   public static SNode createNewConceptAspectInstance(LanguageAspect aspect, SNode applicableNode, SNode concept, ILazyTab lazyTab) {
-    Language language = SModelUtil.getDeclaringLanguage(applicableNode, ConceptEditorHelper.getScope(lazyTab));
+    Language language = SModelUtil.getDeclaringLanguage(applicableNode);
     assert language != null : "Language shouldn't be null for " + applicableNode;
 
     SModelDescriptor md = aspect.get(language);
@@ -100,7 +100,7 @@ public class ConceptEditorHelper {
   private static Language getLanguageForTab(final AbstractLazyTab tab) {
     SNode node = ((SNode) tab.getBaseNode());
     assert node != null : "base node of tabbed editor is null";
-    Language language = SModelUtil.getDeclaringLanguage(node, GlobalScope.getInstance());
+    Language language = SModelUtil.getDeclaringLanguage(node);
     assert language != null : "language is null for node " + node;
     return language;
   }

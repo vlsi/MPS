@@ -124,7 +124,7 @@ public class Generator_Tab extends BaseMultiTab {
     final Wrappers._T<Language> language = new Wrappers._T<Language>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        language.value = SModelUtil.getDeclaringLanguage(node, ConceptEditorHelper.getScope(Generator_Tab.this));
+        language.value = SModelUtil.getDeclaringLanguage(node);
         assert language.value != null : "Language shouldn't be null for " + node;
       }
     });

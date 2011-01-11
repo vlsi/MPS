@@ -70,7 +70,7 @@ public class ConceptEditorOpenHelper {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return false;
     }
-    if (SModelUtil.getDeclaringLanguage(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), context.getScope()) == null) {
+    if (SModelUtil.getDeclaringLanguage(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) == null) {
       return false;
     }
     if (Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor()) == null) {

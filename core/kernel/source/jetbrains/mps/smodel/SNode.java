@@ -1403,7 +1403,7 @@ public final class SNode {
 
   public Language getNodeLanguage() {
     SNode concept = getConceptDeclarationNode();
-    return SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
+    return SModelUtil.getDeclaringLanguage(concept);
   }
 
   @NotNull

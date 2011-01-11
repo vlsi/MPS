@@ -38,7 +38,7 @@ public class Typesystem_Tab extends BaseMultiTab {
   }
 
   public List<SNode> getNodes(SNode node) {
-    List<SNode> rules = (List<SNode>) GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration) SNodeOperations.getAdapter(node)), ConceptEditorHelper.getScope(Typesystem_Tab.this), false);
+    List<SNode> rules = (List<SNode>) GoToRulesHelper.getRules(((AbstractConceptDeclaration) SNodeOperations.getAdapter(node)),  false);
     return ListSequence.fromList(rules).sort(new Comparator<SNode>() {
       public int compare(SNode a, SNode b) {
         boolean aConceptRef = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(a, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");

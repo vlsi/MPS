@@ -45,7 +45,7 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static SModel call_getAspectModel_8360039740498072707(SNode thisNode, IScope scope, LanguageAspect aspect) {
-    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
+    Language language = SModelUtil.getDeclaringLanguage(thisNode);
     if (language == null) {
       return null;
     }

@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.*;
@@ -38,7 +39,7 @@ import java.util.List;
 
 public class GoToRulesHelper {
   public static void go(Frame frame, EditorCell cell, IOperationContext context, AbstractConceptDeclaration concept) {
-    List<SNode> rules = getHelginsRules(concept, context.getScope(), false);
+    List<SNode> rules = getRules(concept, false);
 
     if (rules.size() == 1) {// single rule
       context.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
@@ -56,8 +57,8 @@ public class GoToRulesHelper {
     m.show(frame, x, y);
   }
 
-  public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IScope scope, final boolean exactConcept) {
-    Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
+  public static List<SNode> getRules(final AbstractConceptDeclaration conceptDeclaration, final boolean exactConcept) {
+    Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration.getNode());
     List<SNode> rules = new ArrayList<SNode>();
     List<AbstractRule> overriding = new ArrayList<AbstractRule>();
     if (language != null && LanguageAspect.TYPESYSTEM.get(language) != null) {

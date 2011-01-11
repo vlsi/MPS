@@ -215,7 +215,7 @@ public final class BehaviorManager implements ApplicationComponent {
   private Method getMethod(final SNode concept, final String methodName, final Class[] parameterTypes) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
       public Method compute() {
-        Language l = SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
+        Language l = SModelUtil.getDeclaringLanguage(concept);
 
         Method method = null;
         String fqName = InternUtil.intern(NameUtil.nodeFQName(concept));
