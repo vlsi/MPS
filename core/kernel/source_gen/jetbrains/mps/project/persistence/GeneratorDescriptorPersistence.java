@@ -24,6 +24,9 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 public class GeneratorDescriptorPersistence {
   protected static Log log = LogFactory.getLog(GeneratorDescriptorPersistence.class);
 
+  private GeneratorDescriptorPersistence() {
+  }
+
   public static GeneratorDescriptor loadGeneratorDescriptor(final Element generatorElement, final IFile file, final Macros macros) {
     GeneratorDescriptor descriptor = new _FunctionTypes._return_P0_E0<GeneratorDescriptor>() {
       public GeneratorDescriptor invoke() {

@@ -28,6 +28,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class ProjectDescriptorPersistence {
   protected static Log log = LogFactory.getLog(ProjectDescriptorPersistence.class);
 
+  private ProjectDescriptorPersistence() {
+  }
+
   public static Element saveProjectDescriptorToElement(final ProjectDescriptor descriptor, final File file) {
     final Macros macros = MacrosFactory.projectDescriptor();
     return new _FunctionTypes._return_P0_E0<Element>() {

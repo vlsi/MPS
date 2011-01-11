@@ -29,6 +29,9 @@ import java.io.OutputStream;
 public class LanguageDescriptorPersistence {
   protected static Log log = LogFactory.getLog(LanguageDescriptorPersistence.class);
 
+  private LanguageDescriptorPersistence() {
+  }
+
   public static LanguageDescriptor loadLanguageDescriptor(final IFile file) {
     final Macros macros = MacrosFactory.languageDescriptor();
     LanguageDescriptor descriptor;

@@ -22,6 +22,9 @@ import java.io.OutputStream;
 public class SolutionDescriptorPersistence {
   protected static Log log = LogFactory.getLog(SolutionDescriptorPersistence.class);
 
+  private SolutionDescriptorPersistence() {
+  }
+
   public static SolutionDescriptor loadSolutionDescriptor(final IFile file) {
     final Macros macros = MacrosFactory.solutionDescriptor();
     SolutionDescriptor descriptor;

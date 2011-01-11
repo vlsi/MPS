@@ -21,6 +21,9 @@ import java.io.OutputStream;
 public class DevkitDescriptorPersistence {
   protected static Log log = LogFactory.getLog(DevkitDescriptorPersistence.class);
 
+  private DevkitDescriptorPersistence() {
+  }
+
   public static DevkitDescriptor loadDevKitDescriptor(final IFile file) {
     try {
       Document document = JDOMUtil.loadDocument(file);
