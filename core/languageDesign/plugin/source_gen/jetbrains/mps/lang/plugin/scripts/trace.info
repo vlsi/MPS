@@ -6,11 +6,13 @@
   <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="92" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0a4a0a0a1a0" />
   <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="111" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0d0a0a0c0a" />
   <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="130" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0a4a0a0a2a0" />
+  <unitInfo fileName="MigrateToNewTabs_MigrationScript.java" startLine="13" startPosition="28" endLine="36" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.MigrateToNewTabs_MigrationScript$1" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="86" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a4a4a0a0a1a0" />
   <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="21" startPosition="28" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$1" />
   <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="46" startPosition="28" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$2" />
   <unitInfo fileName="SplitTabbedEditors_MigrationScript.java" startLine="110" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$QuotationClass_w50lnh_a0a5a4a0a0a1a0" />
   <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript$1" />
+  <unitInfo fileName="MigrateToNewTabs_MigrationScript.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MigrateToNewTabs_MigrationScript" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="63" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript$QuotationClass_ft56mw_a0a0d0e0a0a0b0a" />
   <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript" />
   <unitInfo fileName="NewKeymaps_MigrationScript.java" startLine="24" startPosition="28" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.NewKeymaps_MigrationScript$1" />
@@ -105,6 +107,9 @@
     </scopeInfo>
     <unitInfo nodeId="2974336669142017057" fileName="SplitTabbedEditors_MigrationScript.java" startLine="57" startPosition="175" endLine="61" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$2" />
     <unitInfo nodeId="2974336669142017111" fileName="SplitTabbedEditors_MigrationScript.java" startLine="62" startPosition="187" endLine="66" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.SplitTabbedEditors_MigrationScript$2" />
+  </root>
+  <root nodeId="6769912430829125048">
+    <scopeInfo nodeId="6769912430829125051" fileName="MigrateToNewTabs_MigrationScript.java" startLine="30" startPosition="52" endLine="30" endPosition="52" />
   </root>
   <root nodeId="8849278392331870380">
     <nodeInfo nodeId="8849278392331870503" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="FixToolInitAndDispose_MigrationScript.java" startLine="31" startPosition="59" endLine="32" endPosition="128" />

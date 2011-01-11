@@ -48,6 +48,10 @@
       <property name="name" nameId="tpck.1169194664001" value="SplitTabbedEditors" />
       <property name="title" nameId="tp33.1177457669450" value="Split Tabbed Editors" />
     </node>
+    <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="6769912430829125048">
+      <property name="name" nameId="tpck.1169194664001" value="MigrateToNewTabs" />
+      <property name="title" nameId="tp33.1177457669450" value="Migrate to New Tabs" />
+    </node>
   </roots>
   <root id="1239976380271">
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="1239976431843">
@@ -1111,6 +1115,15 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="6769912430829125048">
+    <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="6769912430829125049">
+      <property name="description" nameId="tp33.1177457972041" value="Migrate to New Tabs" />
+      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tp4k.1203851787677" resolveInfo="AbstractEditorTab" />
+      <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="6769912430829125050">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6769912430829125051" />
       </node>
     </node>
   </root>
