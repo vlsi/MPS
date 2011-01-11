@@ -808,7 +808,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
     @Override
     public AnAction getClickAction() {
-      return myNumber != -1 ? ActionManager.getInstance().getAction("jetbrains.mps.ide#action#jetbrains.mps.ide.actions.GoToBookmark" + myNumber + "_Action") : null;
+      return myNumber != -1 ? ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToBookmark_Action#" + myNumber + "!") : null;
     }
 
     @Override

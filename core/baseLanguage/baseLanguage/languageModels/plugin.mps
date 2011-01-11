@@ -10200,8 +10200,18 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1999927664659089473">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ll11.~ActionManager%dgetAction(java%dlang%dString)%ccom%dintellij%dopenapi%dactionSystem%dAnAction" resolveInfo="getAction" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1999927664659089474">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action#jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder!" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="4712703224282534804">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4712703224282556389">
+                  <property name="value" nameId="tpee.1070475926801" value="#jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder!" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5766056450634368833">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5766056450634368832">
+                    <link role="classifier" roleId="tpee.1116615189566" targetNodeId="obgq.~GoToOverridingMethod_Action" resolveInfo="GoToOverridingMethod_Action" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5766056450634368837">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Class%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -10440,8 +10450,13 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="335007595588454378">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ll11.~ActionManager%dgetAction(java%dlang%dString)%ccom%dintellij%dopenapi%dactionSystem%dAnAction" resolveInfo="getAction" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="335007595588454379">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5766056450634368840">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5766056450634368839">
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="obgq.~GoToOverridenMethod_Action" resolveInfo="GoToOverridenMethod_Action" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5766056450634368844">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Class%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                </node>
               </node>
             </node>
           </node>
@@ -13428,8 +13443,13 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3703829873956641486">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ll11.~ActionManager%dgetAction(java%dlang%dString)%ccom%dintellij%dopenapi%dactionSystem%dAnAction" resolveInfo="getAction" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3703829873956641489">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5766056450634298218">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="5766056450634296735">
+                  <link role="classifier" roleId="tpee.1116615189566" targetNodeId="obgq.~GoToInheritedClassifier_Action" resolveInfo="GoToInheritedClassifier_Action" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5766056450634309597">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~Class%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                </node>
               </node>
             </node>
           </node>
