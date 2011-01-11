@@ -28,14 +28,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class TabbedEditor extends BaseNodeEditor {
+public class NewTabbedEditor extends BaseNodeEditor {
   private SNodePointer myBaseNode;
   private Set<EditorTabDescriptor> myPossibleTabs;
 
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
   private JPanel myTabsPanel = new JPanel(new FlowLayout());
 
-  public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
+  public NewTabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
