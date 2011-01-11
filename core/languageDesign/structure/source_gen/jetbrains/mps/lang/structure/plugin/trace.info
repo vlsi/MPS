@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
   <unitInfo fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Default_KeymapChanges" />
   <unitInfo fileName="ShowHelp_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup" />
   <unitInfo fileName="StructureView_Tool.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.StructureView_Tool" />
   <unitInfo fileName="Structure_ActionGroup.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ActionGroup" />
+  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
   <unitInfo fileName="Intentions_TabDescriptor.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Intentions_TabDescriptor" />
   <unitInfo fileName="Structure_TabDescriptor.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_TabDescriptor" />
   <unitInfo fileName="Actions_TabDescriptor.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Actions_TabDescriptor" />

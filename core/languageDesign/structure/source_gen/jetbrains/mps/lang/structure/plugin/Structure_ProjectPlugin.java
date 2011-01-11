@@ -4,13 +4,31 @@ package jetbrains.mps.lang.structure.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Structure_ProjectPlugin extends BaseProjectPlugin {
   public Structure_ProjectPlugin() {
+  }
+
+  public List<EditorTabDescriptor> initTabbedEditors(Project project) {
+    List<EditorTabDescriptor> result = new ArrayList();
+    result.add(new Actions_TabDescriptor());
+    result.add(new Behavior_TabDescriptor());
+    result.add(new Constraints_TabDescriptor());
+    result.add(new Data_Flow_TabDescriptor());
+    result.add(new Editor_TabDescriptor());
+    result.add(new Find_Usages_TabDescriptor());
+    result.add(new Generator_TabDescriptor());
+    result.add(new Intentions_TabDescriptor());
+    result.add(new Refactorings_TabDescriptor());
+    result.add(new Structure_TabDescriptor());
+    result.add(new Textgen_TabDescriptor());
+    result.add(new Typesystem_TabDescriptor());
+    return result;
   }
 
   public List<BaseGeneratedTool> initAllTools(Project project) {

@@ -335,12 +335,25 @@
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" file="Structure_ProjectPlugin.java">
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Behavior_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Textgen_TabDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Actions_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.editorTabs.EditorTabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Find_Usages_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Typesystem_TabDescriptor" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Structure_TabDescriptor" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.StructureView_Tool" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Generator_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Constraints_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Refactorings_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Intentions_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Data_Flow_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.Editor_TabDescriptor" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.plugin.Structure_TabDescriptor" file="Structure_TabDescriptor.java">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Modeling_ProjectPlugin.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Modeling_ProjectPlugin" />
+  <unitInfo fileName="Modeling_ProjectPlugin.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Modeling_ProjectPlugin" />
   <unitInfo fileName="EditorExtensions_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions_CustomApplicationPlugin" />
   <unitInfo fileName="Modeling_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Modeling_ApplicationPlugin" />
   <unitInfo fileName="UIStructure_TabDescriptor.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UIStructure_TabDescriptor" />

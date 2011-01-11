@@ -877,7 +877,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1218028307705(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.AbstractEditorTab")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.EditorTab")).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_1218028332759(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -76,6 +76,14 @@
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.plugin.Modeling_ProjectPlugin" file="Modeling_ProjectPlugin.java">
+    <classNode dependClassName="jetbrains.mps.ui.modeling.plugin.Code_TabDescriptor" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.plugin.Structure_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.editorTabs.EditorTabDescriptor" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.plugin.UICode_TabDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ui.modeling.plugin.UIStructure_TabDescriptor" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ui.modeling.plugin.Structure_TabDescriptor" file="Structure_TabDescriptor.java">

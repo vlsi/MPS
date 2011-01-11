@@ -40,7 +40,7 @@ public class NewTabbedEditor extends BaseNodeEditor {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
 
-    getComponent().add(myTabsPanel, BorderLayout.CENTER);
+    getComponent().add(myTabsPanel, BorderLayout.SOUTH);
     updateTabs();
   }
 
@@ -58,8 +58,11 @@ public class NewTabbedEditor extends BaseNodeEditor {
 
   public List<SNodePointer> getAllEditedNodes() {
     List<SNodePointer> result = new ArrayList<SNodePointer>();
+    SNode baseNode = myBaseNode.getNode();
+    if (baseNode == null) return result;
     for (EditorTab tab : myRealTabs) {
-      for (SNode node : tab.getDescriptor().getNodes(myBaseNode.getNode())) {
+      for (SNode node : tab.getDescriptor().getNodes(baseNode)) {
+        assert node != null;
         result.add(new SNodePointer(node));
       }
     }
