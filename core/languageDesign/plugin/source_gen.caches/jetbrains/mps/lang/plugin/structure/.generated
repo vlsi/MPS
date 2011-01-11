@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4sc7l9dwi7d34fobtm13qnt5uj2fo7d">
+<dependencies version="2" modelHash="-a1xpfcu204k10byvjv7u7rvtqs3mesd">
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-d210pk8xi3k369xbgop6hfgbxsjqja5" />
@@ -3538,7 +3538,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CreateNodeAspectBlock.java" />
   </source>
-  <source id="3743831881070611759" name="EditorTab" hash="-4hq7dnhk0rx2cwgp2skbbbrmxt3zmyr">
+  <source id="3743831881070611759" name="EditorTab" hash="-69zjb4j0hzstfiybslqndg05gh7iiue">
     <dep root="1628770029971140533" />
     <dep root="3743831881070612962" />
     <dep root="3743831881070612965" />

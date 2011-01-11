@@ -303,7 +303,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_gp0hv6_e1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("listenBlock");
-    provider.setNoTargetText("<no init block>");
+    provider.setNoTargetText("<no listen block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -320,7 +320,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_gp0hv6_h1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("baseNodeBlock");
-    provider.setNoTargetText("<no baseNodeBlock>");
+    provider.setNoTargetText("<base node = default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -337,7 +337,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_gp0hv6_j1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("isApplicableBlock");
-    provider.setNoTargetText("<no isApplicableBlock>");
+    provider.setNoTargetText("<isApplicable = true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -354,7 +354,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_gp0hv6_l1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodesBlock");
-    provider.setNoTargetText("<no nodesBlock>");
+    provider.setNoTargetText("<nodes = default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -371,7 +371,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_gp0hv6_n1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conceptsBlock");
-    provider.setNoTargetText("<no available nodes>");
+    provider.setNoTargetText("<no concepts to create>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -388,7 +388,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_gp0hv6_p1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createBlock");
-    provider.setNoTargetText("<no createBlock>");
+    provider.setNoTargetText("<can't create nodes>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

@@ -23,21 +23,29 @@ import java.util.List;
 public abstract class EditorTabDescriptor {
   public abstract String getTitle();
 
-  public Character getShortcutChar(){
+  public Character getShortcutChar() {
     return null;
   }
 
-  public abstract SNode getBaseNode(SNode aspect);
+  public SNode getBaseNode(SNode aspect){
+    return aspect;
+  }
 
-  public abstract boolean isApplicable(SNode node);
+  public boolean isApplicable(SNode node){
+    return true;
+  }
 
-  public abstract List<SNode> getNodes(SNode baseNode);
+  public List<SNode> getNodes(SNode baseNode){
+    ArrayList<SNode> result = new ArrayList<SNode>();
+    result.add(baseNode);
+    return result;
+  }
 
-  public List<SNode> getConcepts(SNode baseNode){
+  public List<SNode> getConcepts(SNode baseNode) {
     return new ArrayList<SNode>();
   }
 
-  public SNode create(SNode baseNode, SNode concept){
+  public SNode create(SNode baseNode, SNode concept) {
     throw new UnsupportedOperationException();
   }
 }
