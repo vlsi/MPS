@@ -417,7 +417,6 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216225441716">
       <property name="name" nameId="tpck.1169194664001" value="GeneratePlugins" />
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
