@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 public abstract class EditorTabFactory {
-  public abstract EditorTabDescriptor createTab(SNode baseNode);
+  public abstract AbstractLazyTab createTab(SNode baseNode);
 
   public abstract SNode getBaseNode(IOperationContext context, SNode aspect);
 }
