@@ -16,12 +16,16 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.MementoPersistence;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.apache.commons.lang.ObjectUtils;
+import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -81,6 +85,90 @@ public abstract class BaseNodeEditor implements IEditor {
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
       return getCurrentEditorComponent().getData(dataId);
+    }
+  }
+
+  //---state---
+
+  @Nullable
+  public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
+   MyFileEditorState result = new MyFileEditorState();
+    EditorContext editorContext = getEditorContext();
+    if (editorContext != null) {
+      boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
+      result.myMemento = editorContext.createMemento(full);
+      EditorComponent editorComponent = getCurrentEditorComponent();
+      if (editorComponent instanceof NodeEditorComponent) {
+        NodeEditorComponent nodeEditorComponent = (NodeEditorComponent) editorComponent;
+        EditorComponent inspector = nodeEditorComponent.getInspector();
+        if (inspector != null) {
+          EditorContext inspectorContext = inspector.getEditorContext();
+          if (inspectorContext != null) {
+            result.myInspectorMemento = inspectorContext.createMemento(full);
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  public void loadState(@NotNull MPSEditorState state) {
+    if (!(state instanceof MyFileEditorState)) return;
+
+    MyFileEditorState s = (MyFileEditorState) state;
+    if (s.myMemento != null) {
+      getEditorContext().setMemento(s.myMemento);
+    }
+    if (s.myInspectorMemento != null) {
+      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+      if (editorComponent != null) {
+        editorComponent.getInspector().getEditorContext().setMemento(s.myInspectorMemento);
+      }
+    }
+  }
+
+  public static class MyFileEditorState implements MPSEditorState {
+    private static final String MEMENTO = "memento";
+    private static final String INSPECTOR_MEMENTO = "inspectorMemento";
+
+    private Object myMemento;
+    private Object myInspectorMemento;
+
+    public void save(Element e) {
+      if (myMemento != null) {
+        Element mementoElem = new Element(MEMENTO);
+        MementoPersistence.saveMemento(myMemento, mementoElem);
+        e.addContent(mementoElem);
+      }
+      if (myInspectorMemento != null) {
+        Element mementoElem = new Element(INSPECTOR_MEMENTO);
+        MementoPersistence.saveMemento(myInspectorMemento, mementoElem);
+        e.addContent(mementoElem);
+      }
+    }
+
+    public void load(Element e) {
+      Element mementoElem = e.getChild(MEMENTO);
+      if (mementoElem != null) {
+        myMemento = MementoPersistence.loadMemento(mementoElem);
+      }
+      Element inspectorMementoElem = e.getChild(MEMENTO);
+      if (inspectorMementoElem != null) {
+        myInspectorMemento = MementoPersistence.loadMemento(inspectorMementoElem);
+      }
+    }
+
+    public int hashCode() {
+      return myMemento.hashCode() + myInspectorMemento.hashCode();
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof MyFileEditorState)) {
+        return false;
+      }
+
+      MyFileEditorState state = (MyFileEditorState) obj;
+      return ObjectUtils.equals(state.myMemento, myMemento) && ObjectUtils.equals(state.myInspectorMemento, myInspectorMemento);
     }
   }
 }

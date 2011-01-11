@@ -44,7 +44,6 @@ public abstract class AbstractLazyTab implements ILazyTab {
     }
   }
 
-
   private TabbedEditor myEditor;
 
   public TabbedEditor getTabbedEditor() {
