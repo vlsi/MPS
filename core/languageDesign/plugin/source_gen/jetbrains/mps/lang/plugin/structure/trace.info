@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="NodesBlock.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.NodesBlock" />
   <unitInfo fileName="IEnhancedRunConfiguration.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IEnhancedRunConfiguration" />
   <unitInfo fileName="IExecuteConfigBlock.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IExecuteConfigBlock" />
   <unitInfo fileName="ActionPlaceSpecification.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionPlaceSpecification" />
@@ -17,7 +18,6 @@
   <unitInfo fileName="ParametrizedExecuteProcess.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteProcess" />
   <unitInfo fileName="ParametrizedExecuteConsole.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteConsole" />
   <unitInfo fileName="RunConfigExecutionParameterDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration" />
-  <unitInfo fileName="NewCreateBlock.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.NewCreateBlock" />
   <unitInfo fileName="GetSelectedTabOperation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation" />
   <unitInfo fileName="TabbedToolDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration" />
   <unitInfo fileName="ProjectCreatorTarget.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ProjectCreatorTarget" />
@@ -39,6 +39,11 @@
   <unitInfo fileName="ConceptFunctionParameter_IModule.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule" />
   <unitInfo fileName="ConceptFunctionParameter_node.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" />
   <unitInfo fileName="DoUpdateBlock.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DoUpdateBlock" />
+  <unitInfo fileName="ListenBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ListenBlock" />
+  <unitInfo fileName="BaseNodeBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseNodeBlock" />
+  <unitInfo fileName="IsApplicableBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" />
+  <unitInfo fileName="OrderConstraints.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.OrderConstraints" />
+  <unitInfo fileName="CreateNodeAspectBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock" />
   <unitInfo fileName="KeyStrokeType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.KeyStrokeType" />
   <unitInfo fileName="ConceptFunction_PropertyStringGetter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunction_PropertyStringGetter" />
   <unitInfo fileName="GenerationListener_options.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GenerationListener_options" />
@@ -60,6 +65,7 @@
   <unitInfo fileName="ConceptFunction_GetVariables.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunction_GetVariables" />
   <unitInfo fileName="VariableNodeExpression.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.VariableNodeExpression" />
   <unitInfo fileName="ConceptFunctionParameter_Concept.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept" />
+  <unitInfo fileName="NewCreateBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.NewCreateBlock" />
   <unitInfo fileName="GetConceptsBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetConceptsBlock" />
   <unitInfo fileName="AskBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AskBlock" />
   <unitInfo fileName="SmartDisposeClosureParameterDeclaration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration" />
@@ -117,8 +123,6 @@
   <unitInfo fileName="ConceptFunctionParameter_OperationContext.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext" />
   <unitInfo fileName="GetBaseNodeBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock" />
   <unitInfo fileName="GetInnerTabCaptionBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock" />
-  <unitInfo fileName="GetNodesBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetNodesBlock" />
-  <unitInfo fileName="GetNodeBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetNodeBlock" />
   <unitInfo fileName="CreateBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.CreateBlock" />
   <unitInfo fileName="ExecuteBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteBlock" />
   <unitInfo fileName="ConceptFunctionParameter_AnActionEvent.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" />
@@ -177,6 +181,8 @@
   <unitInfo fileName="DoUpdateGroupBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock" />
   <unitInfo fileName="BuildGroupBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BuildGroupBlock" />
   <unitInfo fileName="Separator.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.Separator" />
+  <unitInfo fileName="GetNodesBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetNodesBlock" />
+  <unitInfo fileName="GetNodeBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.GetNodeBlock" />
   <unitInfo fileName="BaseProjectOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseProjectOperation" />
   <unitInfo fileName="DebuggableNodeItem.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DebuggableNodeItem" />
   <unitInfo fileName="TabbedToolOperation.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.TabbedToolOperation" />
@@ -224,6 +230,7 @@
   <unitInfo fileName="PreferencesComponentDeclaration.java" startLine="14" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration" />
   <unitInfo fileName="ActionGroupDeclaration.java" startLine="15" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" />
   <unitInfo fileName="FileGeneratorDeclaration.java" startLine="17" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration" />
+  <unitInfo fileName="EditorTab.java" startLine="13" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.EditorTab" />
   <unitInfo fileName="AbstractEditorTab.java" startLine="13" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AbstractEditorTab" />
   <unitInfo fileName="BaseToolDeclaration.java" startLine="16" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseToolDeclaration" />
   <unitInfo fileName="RunConfigurationDeclaration.java" startLine="16" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration" />
