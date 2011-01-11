@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.awt.Frame;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
+import javax.swing.JOptionPane;
 
 public class Code_TabDescriptor extends EditorTabDescriptor {
   public Code_TabDescriptor() {
@@ -41,5 +45,21 @@ public class Code_TabDescriptor extends EditorTabDescriptor {
         return SLinkOperations.getTarget(eht, "event", false) == event;
       }
     }).toListSequence();
+  }
+
+  public SNode createNode(final SNode node, final SNode concept) {
+    String defVal = "<default>";
+    Object[] msg = new Object[]{"Choose destination model for the new template:"};
+    Object[] selVals = Sequence.fromIterable(Sequence.<Object>singleton(defVal)).concat(Sequence.fromIterable(EditorExtensions.getInstance().findEventHandlerTemplateCreatorsInfo())).toGenericArray(Object.class);
+    Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
+    Object creatorInfo = JOptionPane.showInputDialog(frame, msg, "Choose destination model", JOptionPane.QUESTION_MESSAGE, null, selVals, defVal);
+    if (defVal.equals(creatorInfo)) {
+      JOptionPane.showMessageDialog(frame, "Cannot create template", "Error", JOptionPane.ERROR_MESSAGE);
+      return null;
+    }
+    return (creatorInfo != null ?
+      EditorExtensions.getInstance().createEventHandlerTemplate(node, creatorInfo) :
+      null
+    );
   }
 }

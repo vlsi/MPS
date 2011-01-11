@@ -45,4 +45,8 @@ public class Editor_TabDescriptor extends EditorTabDescriptor {
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.EDITOR, node);
   }
+
+  public SNode createNode(final SNode node, final SNode concept) {
+    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, node, concept);
+  }
 }

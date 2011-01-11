@@ -21,6 +21,22 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
+import javax.swing.JFrame;
+import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.BaseAdapter;
+import javax.swing.JOptionPane;
+import jetbrains.mps.ide.actions.MappingDialog;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
 
 public class Generator_TabDescriptor extends EditorTabDescriptor {
   public Generator_TabDescriptor() {
@@ -87,5 +103,100 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
       }
     }
     return result;
+  }
+
+  public SNode createNode(final SNode node, final SNode concept) {
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    final JFrame frame = WindowManager.getInstance().getFrame(project);
+
+    final Wrappers._T<Language> language = new Wrappers._T<Language>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        language.value = SModelUtil.getDeclaringLanguage(node);
+        assert language.value != null : "Language shouldn't be null for " + node;
+      }
+    });
+
+    final List<Generator> genList = language.value.getGenerators();
+    if (ListSequence.fromList(genList).isEmpty()) {
+      NewGeneratorDialog dialog = new NewGeneratorDialog(frame, language.value);
+      dialog.showDialog();
+      final Generator createdGenerator = dialog.getResult();
+      if (createdGenerator == null) {
+        return null;
+      }
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          SModel createdModel = createdGenerator.getOwnTemplateModels().get(0).getSModel();
+          SModelOperations.addRootNode(createdModel, SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null));
+        }
+      });
+    }
+
+    final List<SNode> mappings = new ArrayList<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (Generator generator : genList) {
+          for (BaseAdapter confAdapter : generator.getOwnMappings()) {
+            ListSequence.fromList(mappings).addElement((SNode) confAdapter.getNode());
+          }
+        }
+      }
+    });
+
+    if (ListSequence.fromList(mappings).isEmpty()) {
+      // generator is present - this means we don't have template models or mappings 
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          SModel model = null;
+          for (Generator generator : genList) {
+            if (generator.getOwnTemplateModels().isEmpty()) {
+              continue;
+            }
+            model = generator.getOwnTemplateModels().get(0).getSModel();
+          }
+
+          if (model == null) {
+            JOptionPane.showMessageDialog(frame, "create template model first");
+          }
+
+          SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
+          SModelOperations.addRootNode(model, node);
+          ListSequence.fromList(mappings).addElement(node);
+        }
+      });
+    }
+
+    final Wrappers._T<SNode> mapping = new Wrappers._T<SNode>();
+    if (ListSequence.fromList(mappings).count() > 1) {
+      MappingDialog configurationDialog = new MappingDialog(project, language.value);
+      configurationDialog.showDialog();
+      mapping.value = configurationDialog.getResult();
+    } else {
+      mapping.value = ListSequence.fromList(mappings).first();
+    }
+    final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        SModel model = SNodeOperations.getModel(mapping.value);
+        result.value = SConceptOperations.createNewNode(NameUtil.nodeFQName(concept), null);
+        if (SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
+          result.value = ConceptEditorHelper.createNewConceptAspectInstance(node, concept, model);
+          MappingConfiguration_Behavior.call_addMember_3166264919334415805(mapping.value, result.value);
+        } else if (SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
+          SNode mappingRule = SLinkOperations.addNewChild(mapping.value, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
+          SLinkOperations.setTarget(mappingRule, "applicableConcept", node, false);
+          SLinkOperations.setTarget(mappingRule, "ruleConsequence", SNodeOperations.cast(result.value, "jetbrains.mps.lang.generator.structure.RuleConsequence"), true);
+        } else {
+          SNode rootTemplateNode = SModelOperations.createNewNode(model, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", null);
+          SLinkOperations.setTarget(rootTemplateNode, "applicableConcept", node, false);
+          SLinkOperations.setTarget(result.value, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), rootTemplateNode, true);
+          SPropertyOperations.set(SNodeOperations.cast(result.value, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", SPropertyOperations.getString(node, "name"));
+          SModelOperations.addRootNode(model, result.value);
+          MappingConfiguration_Behavior.call_addMember_3166264919334415805(mapping.value, result.value);
+        }
+      }
+    });
+    return result.value;
   }
 }

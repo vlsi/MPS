@@ -40,4 +40,8 @@ public class Refactorings_TabDescriptor extends EditorTabDescriptor {
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.REFACTORINGS, node);
   }
+
+  public SNode createNode(final SNode node, final SNode concept) {
+    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.REFACTORINGS, node, concept);
+  }
 }

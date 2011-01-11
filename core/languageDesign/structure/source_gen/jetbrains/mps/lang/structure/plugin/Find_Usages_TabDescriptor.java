@@ -40,4 +40,8 @@ public class Find_Usages_TabDescriptor extends EditorTabDescriptor {
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.FIND_USAGES, node);
   }
+
+  public SNode createNode(final SNode node, final SNode concept) {
+    return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.FIND_USAGES, node, concept);
+  }
 }

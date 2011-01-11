@@ -58,7 +58,7 @@ public class ConceptEditorOpenHelper {
       return null;
     }
     AbstractConceptDeclaration baseNode = findBaseNodeMultiTab(node);
-    if (baseNode == null || SModelUtil.getDeclaringLanguage(((SNode) baseNode.getNode())) == null || (Language.getModelAspect(node.getModel().getModelDescriptor()) == null && !(SModelStereotype.isGeneratorModel(node.getModel())))) {
+    if (baseNode == null || SModelUtil.getDeclaringLanguage(baseNode.getNode()) == null || (Language.getModelAspect(node.getModel().getModelDescriptor()) == null && !(SModelStereotype.isGeneratorModel(node.getModel())))) {
       return null;
     }
     return baseNode.getNode();
