@@ -24736,11 +24736,7 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6208564103581774886">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6208564103581772567" resolveInfo="ChangesFoldingAreaPainter.MyPopupMenu" />
       </node>
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6208564103581774756">
-        <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6208564103581775144">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6208564103581772569" resolveInfo="ChangesFoldingAreaPainter.MyPopupMenu" />
-        </node>
-      </node>
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5921685378876832124" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8274502957383551393" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8274502957383614765">
@@ -26379,13 +26375,21 @@
               </node>
             </node>
           </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6208564103581781777">
-            <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6208564103581781324">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531050000760639347">
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="5921685378876726929">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5921685378876737829">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5921685378876737832" />
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5921685378876737828">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6208564103581781456">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JPopupMenu%disVisible()%cboolean" resolveInfo="isVisible" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6208564103581781777">
+              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6208564103581781324">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531050000760639347">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6208564103581781456">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JPopupMenu%disVisible()%cboolean" resolveInfo="isVisible" />
+                </node>
               </node>
             </node>
           </node>
@@ -26450,13 +26454,21 @@
               </node>
             </node>
           </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6208564103581782299">
-            <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6208564103581782300">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531050000760639316">
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="5921685378876737833">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5921685378876737834">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5921685378876737835" />
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5921685378876737836">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6208564103581782304">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JPopupMenu%disVisible()%cboolean" resolveInfo="isVisible" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="5921685378876737837">
+              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5921685378876737838">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5921685378876737839">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5921685378876737840">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JPopupMenu%disVisible()%cboolean" resolveInfo="isVisible" />
+                </node>
               </node>
             </node>
           </node>
@@ -26464,6 +26476,42 @@
       </node>
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1216620237029569554">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="mwyq.~Override" />
+      </node>
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5921685378876737841">
+      <property name="name" nameId="tpck.1169194664001" value="getPopupMenu" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5921685378876832121">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6208564103581772567" resolveInfo="ChangesFoldingAreaPainter.MyPopupMenu" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5921685378876832122" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5921685378876737844">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5921685378876832125">
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="5921685378876832129">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5921685378876832132" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5921685378876832128">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+            </node>
+          </node>
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5921685378876832127">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5921685378876832133">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5921685378876832141">
+                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5921685378876832134">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+                </node>
+                <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5921685378876832144">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5921685378876832145">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6208564103581772569" resolveInfo="ChangesFoldingAreaPainter.MyPopupMenu" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5921685378876832147">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5921685378876832149">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="2310110763987865522">
@@ -26563,8 +26611,8 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2643085131950809484">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2643085131950809748">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531050000760639133">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5921685378876832150">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5921685378876737841" resolveInfo="getPopupMenu" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2643085131950811915">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6208564103581783468" resolveInfo="showIfNeeded" />
@@ -27865,8 +27913,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7755015088410487283">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6378762527268290205">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6378762527268290533">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531050000760639315">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5921685378876832165">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5921685378876737841" resolveInfo="getPopupMenu" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6378762527268290667">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6378762527268264724" resolveInfo="updateAfterTransfer" />
@@ -27875,14 +27923,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7755015088410487289">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531050000760639004">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7755015088410487293">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JPopupMenu%disVisible()%cboolean" resolveInfo="isVisible" />
             </node>
           </node>
           <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="7755015088410487294">
@@ -27894,6 +27934,22 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3821603290882626779" resolveInfo="messageGroup" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="5921685378876832159">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5921685378876832152">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5921685378876832151">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5921685378876832155" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5921685378876832162">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="5921685378876832163">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5921685378876832164">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JPopupMenu%disVisible()%cboolean" resolveInfo="isVisible" />
               </node>
             </node>
           </node>
@@ -27916,8 +27972,8 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7317795005505883208">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7317795005505898110">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7317795005505898114">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531050000760639290">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6208564103581773727" resolveInfo="myPopupMenu" />
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5921685378876832166">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5921685378876737841" resolveInfo="getPopupMenu" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7317795005505898118">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i09a.~JPopupMenu%dsetVisible(boolean)%cvoid" resolveInfo="setVisible" />
