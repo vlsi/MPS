@@ -513,7 +513,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           public void run() {
             SNode node = findDebuggableNode(editorComponent, e.getX(), e.getY());
             if (node != null) {
-              toggleBreakpoint(node, false);
+              toggleBreakpoint(node, true);
             }
           }
         });
