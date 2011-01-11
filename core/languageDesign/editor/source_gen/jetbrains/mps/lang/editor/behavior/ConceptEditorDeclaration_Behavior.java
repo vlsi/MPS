@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -28,7 +27,7 @@ public class ConceptEditorDeclaration_Behavior {
   }
 
   public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
-    List<SNode> createdEditors = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(candidate, GlobalScope.getInstance(), LanguageAspect.EDITOR);
+    List<SNode> createdEditors = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(candidate, LanguageAspect.EDITOR);
     for (SNode createdEditor : createdEditors) {
       if (SNodeOperations.isInstanceOf(createdEditor, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
         return false;

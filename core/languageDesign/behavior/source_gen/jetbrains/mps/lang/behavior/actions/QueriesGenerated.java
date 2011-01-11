@@ -57,7 +57,7 @@ public class QueriesGenerated {
         Calculable calc = new Calculable() {
           public Object calculate() {
             SNode behavior = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
-            return AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(SLinkOperations.getTarget(behavior, "concept", false), _context.getParentNode(), operationContext.getScope());
+            return AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(SLinkOperations.getTarget(behavior, "concept", false), _context.getParentNode());
           }
         };
         Iterable<SNode> queryResult = (Iterable) calc.calculate();

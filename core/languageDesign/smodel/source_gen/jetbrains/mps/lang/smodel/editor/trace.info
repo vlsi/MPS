@@ -242,7 +242,7 @@
   </root>
   <root nodeId="9066272936957038220">
     <nodeInfo nodeId="9066272936957038232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StaticConceptMethodCallUtil.java" startLine="19" startPosition="114" endLine="20" endPosition="48" />
-    <nodeInfo nodeId="9066272936957038246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StaticConceptMethodCallUtil.java" startLine="20" startPosition="48" endLine="21" endPosition="281" />
+    <nodeInfo nodeId="9066272936957038246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StaticConceptMethodCallUtil.java" startLine="20" startPosition="48" endLine="21" endPosition="274" />
     <nodeInfo nodeId="9066272936957038265" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StaticConceptMethodCallUtil.java" startLine="22" startPosition="27" endLine="23" endPosition="175" />
     <nodeInfo nodeId="9066272936957038240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StaticConceptMethodCallUtil.java" startLine="24" startPosition="5" endLine="25" endPosition="18" />
     <nodeInfo nodeId="9066272936957038318" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StaticConceptMethodCallUtil.java" startLine="28" startPosition="103" endLine="29" endPosition="188" />
@@ -252,7 +252,7 @@
     <nodeInfo nodeId="9066272936957038367" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="StaticConceptMethodCallUtil.java" startLine="37" startPosition="84" endLine="38" endPosition="54" />
     <nodeInfo nodeId="9066272936957038375" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StaticConceptMethodCallUtil.java" startLine="38" startPosition="54" endLine="39" endPosition="92" />
     <nodeInfo nodeId="9066272936957038387" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="StaticConceptMethodCallUtil.java" startLine="40" startPosition="5" endLine="41" endPosition="35" />
-    <nodeInfo nodeId="9066272936957038263" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StaticConceptMethodCallUtil.java" startLine="21" startPosition="281" endLine="24" endPosition="5" />
+    <nodeInfo nodeId="9066272936957038263" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="StaticConceptMethodCallUtil.java" startLine="21" startPosition="274" endLine="24" endPosition="5" />
     <nodeInfo nodeId="9066272936957038347" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" fileName="StaticConceptMethodCallUtil.java" startLine="32" startPosition="124" endLine="36" endPosition="0" />
     <nodeInfo nodeId="9066272936957038360" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="StaticConceptMethodCallUtil.java" startLine="36" startPosition="7" endLine="40" endPosition="5" />
     <nodeInfo nodeId="9066272936957038341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="StaticConceptMethodCallUtil.java" startLine="31" startPosition="98" endLine="36" endPosition="7" />

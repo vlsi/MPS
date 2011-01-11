@@ -1647,9 +1647,6 @@
                     <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="1871493518332862946" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1871493518332862947">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8360039740498068384" resolveInfo="findConceptAspect" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1871493518332862950">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7754459869734028948" resolveInfo="scope" />
-                      </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1871493518332862968">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1871493518332862913" resolveInfo="aspect" />
                       </node>
@@ -1679,9 +1676,6 @@
                 <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="7754459869734029317" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7754459869734029318">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6409339300305625383" resolveInfo="findGeneratorFragments" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7754459869734029331">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7754459869734028948" resolveInfo="scope" />
-                  </node>
                 </node>
               </node>
             </node>
@@ -1717,12 +1711,6 @@
           </node>
         </node>
       </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7754459869734028948">
-        <property name="name" nameId="tpck.1169194664001" value="scope" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7754459869734028949">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~IScope" resolveInfo="IScope" />
-        </node>
-      </node>
     </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1213877394200">
       <property name="name" nameId="tpck.1169194664001" value="getAvailableConceptMethods" />
@@ -1730,12 +1718,6 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1213877394201">
         <property name="name" nameId="tpck.1169194664001" value="context" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1213877394202" />
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1213877394203">
-        <property name="name" nameId="tpck.1169194664001" value="scope" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1213877394204">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d8ec.~IScope" resolveInfo="IScope" />
-        </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1213877394205">
         <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="1i04.1225194472830" resolveInfo="ConceptMethodDeclaration" />
@@ -1816,9 +1798,6 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1213877394241">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8360039740498068384" resolveInfo="findConceptAspect" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1213877394242">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877394203" resolveInfo="scope" />
-                      </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8360039740498070910">
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="d8ec.~LanguageAspect%dBEHAVIOR" resolveInfo="BEHAVIOR" />
                         <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="d8ec.~LanguageAspect" resolveInfo="LanguageAspect" />
@@ -2132,9 +2111,6 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1213877394313">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8360039740498068384" resolveInfo="findConceptAspect" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1213877394314">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877394291" resolveInfo="scope" />
-                      </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8360039740498070883">
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="d8ec.~LanguageAspect%dBEHAVIOR" resolveInfo="BEHAVIOR" />
                         <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="d8ec.~LanguageAspect" resolveInfo="LanguageAspect" />
@@ -2287,9 +2263,6 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1213877394375">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8360039740498068384" resolveInfo="findConceptAspect" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1213877394376">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1213877394340" resolveInfo="scope" />
-                      </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8360039740498070840">
                         <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="d8ec.~LanguageAspect%dBEHAVIOR" resolveInfo="BEHAVIOR" />
                         <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="d8ec.~LanguageAspect" resolveInfo="LanguageAspect" />
