@@ -41,17 +41,18 @@ import java.util.Set;
 
 public abstract class TabsComponent extends JPanel {
   private SNodePointer myBaseNode;
+  private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
   private ModelListener myListener = new ModelListener() {
     protected void onImportantRootRemoved(SNodePointer node) {
       if (myBaseNode.equals(node)) return; //will be closed by idea
 
-      if (getCurrentEditorComponent().getEditedNode() == node.getNode()) {
-        getCurrentEditorComponent().editNode(myBaseNode.getNode(), getOperationContext());
+      if (myLastNode.equals(node)) {
+        onNodeChange(myBaseNode.getNode());
       }
 
-      myTabsComponent.updateTabs();
+      updateTabs();
     }
   };
 
@@ -81,50 +82,55 @@ public abstract class TabsComponent extends JPanel {
     return result;
   }
 
-  public SNodePointer getBaseNode() {
-    return myBaseNode;
-  }
-
   private void updateTabs() {
     removeAll();
     myRealTabs.clear();
     for (EditorTabDescriptor d : myPossibleTabs) {
-      if (d.getNodes(myBaseNode.getNode()).isEmpty()) continue;
+      List<SNode> nodes = d.getNodes(myBaseNode.getNode());
+      if (nodes.isEmpty()) continue;
 
-      final EditorTab tab = new EditorTab(this, d);
+      for (SNode node : nodes) {
+        myListener.aspectAdded(node);
+      }
+
+      final EditorTab tab = new EditorTab(this, d, myBaseNode);
       myRealTabs.add(tab);
       add(tab);
     }
     add(new AddConceptButton());
   }
 
-  protected abstract void changeNode(SNode newNode);
-
-  void aspectAdded(SNode node) {
+  private void onNodeChange(SNode node) {
+    myLastNode = new SNodePointer(node);
+    changeNode(node);
   }
+
+  protected abstract void changeNode(SNode newNode);
 
   private class AddConceptButton extends JButton {
     private AddConceptButton() {
       setAction(new AbstractAction("+") {
         public void actionPerformed(ActionEvent e) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              DataContext dataContext = DataManager.getInstance().getDataContext(getCurrentEditorComponent());
-              ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Create", getCreateGroup(), dataContext, ActionSelectionAid.SPEEDSEARCH, false);
-              popup.show(new RelativePoint(AddConceptButton.this, new Point(0, 0)));
-            }
-          });
+          showMenu();
         }
       });
 
       registerKeyboardAction(new AbstractAction() {
         public void actionPerformed(ActionEvent e) {
-          ILazyTab currentTab = myTabbedPane.getCurrentTab();
-          currentTab.create();
-          myTabbedPane.initTab(currentTab);
+          showMenu();
         }
       }, KeyStroke.getKeyStroke("INSERT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
+    }
+
+    private void showMenu() {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          DataContext dataContext = DataManager.getInstance().getDataContext(TabsComponent.this);
+          ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Create", getCreateGroup(), dataContext, ActionSelectionAid.SPEEDSEARCH, false);
+          popup.show(new RelativePoint(AddConceptButton.this, new Point(0, 0)));
+        }
+      });
     }
 
     private ActionGroup getCreateGroup() {
@@ -142,8 +148,6 @@ public abstract class TabsComponent extends JPanel {
                     SNode created = d.createNode(myBaseNode.getNode(), concept);
                     String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
                     created.setProperty(SNode.PACK, mainPack);
-
-                    aspectAdded(created);
 
                     updateTabs();
                   }

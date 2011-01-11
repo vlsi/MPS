@@ -25,6 +25,7 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -37,10 +38,12 @@ import java.util.List;
 public class EditorTab extends JButton {
   private TabsComponent myTabComponent;
   private EditorTabDescriptor myDescriptor;
+  private SNodePointer myBaseNode;
 
-  public EditorTab(TabsComponent tabComponent, EditorTabDescriptor descriptor) {
+  public EditorTab(TabsComponent tabComponent, EditorTabDescriptor descriptor, SNodePointer baseNode) {
     myTabComponent = tabComponent;
     myDescriptor = descriptor;
+    myBaseNode = baseNode;
     setAction(new AbstractAction(descriptor.getTitle()) {
       public void actionPerformed(ActionEvent e) {
         navigate();
@@ -61,7 +64,7 @@ public class EditorTab extends JButton {
   private void navigate() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNode> nodes = myDescriptor.getNodes(myTabComponent.getBaseNode().getNode());
+        List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
         if (nodes.size()==1){
           myTabComponent.changeNode(nodes.get(0));
           return;
@@ -77,21 +80,30 @@ public class EditorTab extends JButton {
   }
 
   private ActionGroup getCreateGroup() {
-    List<SNode> nodes = myDescriptor.getNodes(myTabComponent.getBaseNode().getNode());
+    List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
     if (nodes.isEmpty()) return null;
 
     DefaultActionGroup result = new DefaultActionGroup();
     for (final SNode node : nodes) {
-      result.add(new AnAction(node.getName(), "", IconManager.getIconFor(node)) {
-        public void actionPerformed(AnActionEvent e) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              myTabComponent.changeNode(node);
-            }
-          });
+      result.add(new NavigateNodeAction(node));
+    }
+    return result;
+  }
+
+  private class NavigateNodeAction extends AnAction {
+    private final SNode myNode;
+
+    public NavigateNodeAction(SNode node) {
+      super(node.getName(), "", IconManager.getIconFor(node));
+      myNode = node;
+    }
+
+    public void actionPerformed(AnActionEvent e) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          myTabComponent.changeNode(myNode);
         }
       });
     }
-    return result;
   }
 }
