@@ -15,15 +15,27 @@
  */
 package jetbrains.mps.ide.editorTabs;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.popup.JBPopupFactory.ActionSelectionAid;
+import com.intellij.openapi.ui.popup.ListPopup;
 import jetbrains.mps.ide.BaseNodeEditor;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.NameUtil;
 
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -40,20 +52,14 @@ public class NewTabbedEditor extends BaseNodeEditor {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
 
+    getCurrentEditorComponent().editNode(baseNode.getNode(), context);
+
     getComponent().add(myTabsPanel, BorderLayout.SOUTH);
     updateTabs();
   }
 
-  private void updateTabs() {
-    myTabsPanel.removeAll();
-    myRealTabs.clear();
-    for (EditorTabDescriptor d : myPossibleTabs) {
-      if (!d.getNodes(myBaseNode.getNode()).isEmpty()) {
-        EditorTab tab = new EditorTab(d);
-        myRealTabs.add(tab);
-        myTabsPanel.add(tab);
-      }
-    }
+  public SNodePointer getBaseNode() {
+    return myBaseNode;
   }
 
   public List<SNodePointer> getAllEditedNodes() {
@@ -70,10 +76,60 @@ public class NewTabbedEditor extends BaseNodeEditor {
   }
 
   public void selectNode(SNode node) {
-    SNode containingRoot = node.getContainingRoot();
+    SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
     EditorComponent editor = getCurrentEditorComponent();
     editor.editNode(containingRoot, getOperationContext());
     editor.selectNode(node);
+  }
+
+  private void updateTabs() {
+    myTabsPanel.removeAll();
+    myRealTabs.clear();
+    for (EditorTabDescriptor d : myPossibleTabs) {
+      if (!d.getNodes(myBaseNode.getNode()).isEmpty()) {
+        EditorTab tab = new EditorTab(this, d);
+        myRealTabs.add(tab);
+        myTabsPanel.add(tab);
+      }
+    }
+    myTabsPanel.add(new AddConceptButton());
+  }
+
+  private ActionGroup getCreateGroup() {
+    DefaultActionGroup result = new DefaultActionGroup();
+    for (final EditorTabDescriptor d:myPossibleTabs){
+      List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
+      if (!concepts.isEmpty()){
+        DefaultActionGroup sub = new DefaultActionGroup(d.getTitle(),true);
+        for (final SNode concept:concepts){
+          sub.add(new AnAction(concept.getName(),"", IconManager.getIconForConceptFQName(NameUtil.conceptFQNameByAdapterClass(concept.getAdapter().getClass()))
+          ) {
+            public void actionPerformed(AnActionEvent e) {
+              d.create(myBaseNode.getNode(),concept);
+              updateTabs();
+            }
+          });
+        }
+        result.add(sub);
+      }
+    }
+    return result;
+  }
+
+  private class AddConceptButton extends JButton {
+    private AddConceptButton() {
+      setAction(new AbstractAction("+") {
+        public void actionPerformed(ActionEvent e) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              DataContext dataContext = DataManager.getInstance().getDataContext(getCurrentEditorComponent());
+              ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("", getCreateGroup(), dataContext, ActionSelectionAid.SPEEDSEARCH, false);
+              popup.show(getCurrentEditorComponent());
+            }
+          });
+        }
+      });
+    }
   }
 }
 

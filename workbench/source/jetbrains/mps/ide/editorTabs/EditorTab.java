@@ -15,16 +15,22 @@
  */
 package jetbrains.mps.ide.editorTabs;
 
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
+import java.util.List;
 
 public class EditorTab extends JButton {
+  private NewTabbedEditor myTabbedEditor;
   private EditorTabDescriptor myDescriptor;
 
-  public EditorTab(EditorTabDescriptor descriptor) {
+  public EditorTab(NewTabbedEditor tabbedEditor, EditorTabDescriptor descriptor) {
+    myTabbedEditor = tabbedEditor;
     myDescriptor = descriptor;
-    setAction(new AbstractAction() {
+    setAction(new AbstractAction(descriptor.getTitle()) {
       public void actionPerformed(ActionEvent e) {
         showMenu();
       }
@@ -36,6 +42,12 @@ public class EditorTab extends JButton {
   }
 
   private void showMenu() {
-
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        List<SNode> nodes = myDescriptor.getNodes(myTabbedEditor.getBaseNode().getNode());
+        myTabbedEditor.selectNode(nodes.get(0));
+      }
+    });
   }
 }
