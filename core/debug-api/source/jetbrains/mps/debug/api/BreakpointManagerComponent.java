@@ -373,9 +373,13 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           continue;
         }
 
-        IBreakpoint breakpoint = provider.loadFromState((Element) breakpointElement.getChildren().get(0), kind, myProject);
-        if (breakpoint != null) {
-          myBreakpoints.add(breakpoint);
+        try {
+          IBreakpoint breakpoint = provider.loadFromState((Element) breakpointElement.getChildren().get(0), kind, myProject);
+          if (breakpoint != null) {
+            myBreakpoints.add(breakpoint);
+          }
+        } catch (Throwable t) {
+          LOG.error("Error while loading breakpoint from " + breakpointElement, t);
         }
       }
     }
@@ -404,12 +408,16 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           continue;
         }
 
-        Element element = provider.saveToState(breakpoint);
-        if (element != null) {
-          Element breakpointElement = new Element(BREAKPOINT_ELEMENT);
-          breakpointElement.setAttribute(new Attribute(KIND_TAG, kind.getName()));
-          breakpointElement.addContent(element);
-          rootElement.addContent(breakpointElement);
+        try {
+          Element element = provider.saveToState(breakpoint);
+          if (element != null) {
+            Element breakpointElement = new Element(BREAKPOINT_ELEMENT);
+            breakpointElement.setAttribute(new Attribute(KIND_TAG, kind.getName()));
+            breakpointElement.addContent(element);
+            rootElement.addContent(breakpointElement);
+          }
+        } catch (Throwable t) {
+          LOG.error("Error while saving breakpoint " + breakpoint.getPresentation(), t);
         }
       }
       return rootElement;
@@ -466,7 +474,8 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   // TODO legacy method so the users code would compile -- remove after MPS2.0
   @Deprecated
-  public static void notifyDebuggableConceptsAdded(){}
+  public static void notifyDebuggableConceptsAdded() {
+  }
 
   private class MyBreakpointListener implements IBreakpointListener {
     @Override
