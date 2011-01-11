@@ -38,8 +38,8 @@ import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helpe
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
@@ -2592,13 +2592,21 @@ public class QueriesGenerated {
     );
     final Map<SNode, SNode> theMap = FunctionTypeUtil.mapAdaptableTargetTVDs(SLinkOperations.getTarget(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), trg);
     final List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
-    return ListSequence.fromList(SLinkOperations.getTargets(trg, "typeVariableDeclaration", true)).<SNode>select(new ISelector<SNode, SNode>() {
-      public SNode select(final SNode tvd) {
-        return ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(MapSequence.fromMap(theMap).findFirst(new IWhereFilter<IMapping<SNode, SNode>>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(trg, "typeVariableDeclaration", true)).<IMapping<SNode, SNode>>select(new ISelector<SNode, IMapping<SNode, SNode>>() {
+      public IMapping<SNode, SNode> select(final SNode tvd) {
+        return MapSequence.fromMap(theMap).findFirst(new IWhereFilter<IMapping<SNode, SNode>>() {
           public boolean accept(IMapping<SNode, SNode> m) {
             return m.value() == tvd;
           }
-        }).key()));
+        });
+      }
+    }).where(new IWhereFilter<IMapping<SNode, SNode>>() {
+      public boolean accept(IMapping<SNode, SNode> m) {
+        return m != null;
+      }
+    }).<SNode>select(new ISelector<IMapping<SNode, SNode>, SNode>() {
+      public SNode select(IMapping<SNode, SNode> m) {
+        return ListSequence.fromList(params).getElement(SNodeOperations.getIndexInParent(m.key()));
       }
     });
   }
