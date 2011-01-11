@@ -121,8 +121,6 @@ public class Inequalities {
               }
             }
           }
-
-          
         }
         nodesToBlocks.addLink(output, inequality);
         nodes.add(output);
