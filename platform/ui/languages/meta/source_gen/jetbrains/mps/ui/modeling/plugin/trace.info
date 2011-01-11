@@ -4,16 +4,16 @@
   <unitInfo fileName="EditorExtensions_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions_CustomApplicationPlugin" />
   <unitInfo fileName="Modeling_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Modeling_ApplicationPlugin" />
   <unitInfo fileName="UIStructure_TabDescriptor.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UIStructure_TabDescriptor" />
-  <unitInfo fileName="Structure_TabDescriptor.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Structure_TabDescriptor" />
   <unitInfo fileName="Code_TabDescriptor.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Code_TabDescriptor" />
+  <unitInfo fileName="Structure_TabDescriptor.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Structure_TabDescriptor" />
   <unitInfo fileName="UICode_TabDescriptor.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UICode_TabDescriptor" />
   <root nodeId="1626370525303619752">
     <nodeInfo nodeId="1626370525303619755" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_TabDescriptor.java" startLine="24" startPosition="40" endLine="25" endPosition="49" />
     <nodeInfo nodeId="1626370525303619761" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_TabDescriptor.java" startLine="28" startPosition="43" endLine="29" endPosition="91" />
-    <nodeInfo nodeId="1790847182535108024" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_TabDescriptor.java" startLine="36" startPosition="36" endLine="37" endPosition="16" />
+    <nodeInfo nodeId="1790847182535108024" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Structure_TabDescriptor.java" startLine="42" startPosition="36" endLine="43" endPosition="16" />
     <scopeInfo nodeId="1626370525303619754" fileName="Structure_TabDescriptor.java" startLine="24" startPosition="40" endLine="25" endPosition="49" />
     <scopeInfo nodeId="1626370525303619760" fileName="Structure_TabDescriptor.java" startLine="28" startPosition="43" endLine="29" endPosition="91" />
-    <scopeInfo nodeId="1790847182535108023" fileName="Structure_TabDescriptor.java" startLine="36" startPosition="36" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="1790847182535108023" fileName="Structure_TabDescriptor.java" startLine="42" startPosition="36" endLine="43" endPosition="16" />
   </root>
   <root nodeId="1626370525303619767">
     <nodeInfo nodeId="1626370525303619770" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="UICode_TabDescriptor.java" startLine="30" startPosition="40" endLine="31" endPosition="52" />

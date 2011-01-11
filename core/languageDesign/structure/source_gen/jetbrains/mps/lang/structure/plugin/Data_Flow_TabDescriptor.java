@@ -37,7 +37,13 @@ public class Data_Flow_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), getNode(node));
+    List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
+    SNode n = getNode(node);
+    if (n == null) {
+      return list;
+    }
+    ListSequence.fromList(list).addElement(n);
+    return list;
   }
 
   public SNode getNode(SNode node) {
