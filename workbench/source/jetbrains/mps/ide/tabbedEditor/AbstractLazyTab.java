@@ -44,17 +44,6 @@ public abstract class AbstractLazyTab implements ILazyTab {
     }
   }
 
-  private TabbedEditor myEditor;
-
-  public TabbedEditor getTabbedEditor() {
-    return myEditor;
-  }
-
-  public void setTabbedEditor(TabbedEditor e) {
-    myEditor = e;
-  }
-
-
   public void dispose() {
     TabColorProvider provider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
     if (provider != null) {
