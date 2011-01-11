@@ -24,9 +24,7 @@ import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.ide.editorTabs.TabbedEditor;
-import jetbrains.mps.ide.editorTabs.TabbedEditor.MyTabListener;
-import jetbrains.mps.ide.editorTabs.baseListening.ModelListener;
+import jetbrains.mps.ide.editorTabs.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -34,8 +32,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.FlowLayout;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -43,7 +39,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public abstract class TabsComponent extends JPanel{
+public abstract class TabsComponent extends JPanel {
+  private SNodePointer myBaseNode;
+  private Set<EditorTabDescriptor> myPossibleTabs;
   private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
   private ModelListener myListener = new ModelListener() {
     protected void onImportantRootRemoved(SNodePointer node) {
@@ -57,45 +55,17 @@ public abstract class TabsComponent extends JPanel{
     }
   };
 
-  private Set<EditorTabDescriptor> myTabs;
+  public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
+    myBaseNode = baseNode;
+    myPossibleTabs = possibleTabs;
 
-  public TabsComponent(Set<EditorTabDescriptor> tabs) {
-    myTabs = tabs;
     setLayout(new FlowLayout());
     addListeners();
+    updateTabs();
   }
 
-  public void dispose(){
+  public void dispose() {
     removeListeners();
-  }
-
-  public void updateTabs() {
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        selectTab(tabNum);
-      }
-    }, KeyStroke.getKeyStroke("alt shift " + shortcut), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-
-    myTabbedPane.addChangeListener(new ChangeListener() {
-      public void stateChanged(ChangeEvent e) {
-        int selectionIndex = myTabbedPane.getSelectedIndex();
-        initTab(myLazyTabs.get(selectionIndex));
-        myTabbedEditor.onTabSelectionChange();
-      }
-    });
-
-
-    removeAll();
-    myRealTabs.clear();
-    for (EditorTabDescriptor d : myPossibleTabs) {
-      if (!d.getNodes(myBaseNode.getNode()).isEmpty()) {
-        EditorTab tab = new EditorTab(this, d);
-        myRealTabs.add(tab);
-        add(tab);
-      }
-    }
-    add(new AddConceptButton());
   }
 
   public List<SNodePointer> getAllEditedNodes() {
@@ -112,39 +82,23 @@ public abstract class TabsComponent extends JPanel{
   }
 
 
-  private ActionGroup getCreateGroup() {
-    DefaultActionGroup result = new DefaultActionGroup();
-    for (final EditorTabDescriptor d : myPossibleTabs) {
-      List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
-      if (!concepts.isEmpty()) {
-        DefaultActionGroup sub = new DefaultActionGroup(d.getTitle(), true);
-        for (final SNode concept : concepts) {
-          sub.add(new AnAction(concept.getName(), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept))) {
-            public void actionPerformed(AnActionEvent e) {
-              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                @Override
-                public void run() {
-                  SNode created = d.createNode(myBaseNode.getNode(), concept);
-                  String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
-                  created.setProperty(SNode.PACK, mainPack);
+  private void updateTabs() {
+    removeAll();
+    myRealTabs.clear();
+    for (EditorTabDescriptor d : myPossibleTabs) {
+      if (d.getNodes(myBaseNode.getNode()).isEmpty()) continue;
 
-                  aspectAdded(created);
-
-                  updateTabs();
-                }
-              });
-            }
-          });
-        }
-        result.add(sub);
-      }
+      final EditorTab tab = new EditorTab(this, d);
+      myRealTabs.add(tab);
+      add(tab);
     }
-    return result;
+    add(new AddConceptButton());
   }
 
-  abstract void changeNode(SNode newNode);
+  protected abstract void changeNode(SNode newNode);
 
-  void aspectAdded(SNode node){}
+  void aspectAdded(SNode node) {
+  }
 
   private class AddConceptButton extends JButton {
     private AddConceptButton() {
@@ -159,6 +113,45 @@ public abstract class TabsComponent extends JPanel{
           });
         }
       });
+
+      registerKeyboardAction(new AbstractAction() {
+        public void actionPerformed(ActionEvent e) {
+          ILazyTab currentTab = myTabbedPane.getCurrentTab();
+          currentTab.create();
+          myTabbedPane.initTab(currentTab);
+        }
+      }, KeyStroke.getKeyStroke("INSERT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
+
+    }
+
+    private ActionGroup getCreateGroup() {
+      DefaultActionGroup result = new DefaultActionGroup();
+      for (final EditorTabDescriptor d : myPossibleTabs) {
+        List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
+        if (!concepts.isEmpty()) {
+          DefaultActionGroup sub = new DefaultActionGroup(d.getTitle(), true);
+          for (final SNode concept : concepts) {
+            sub.add(new AnAction(concept.getName(), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept))) {
+              public void actionPerformed(AnActionEvent e) {
+                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                  @Override
+                  public void run() {
+                    SNode created = d.createNode(myBaseNode.getNode(), concept);
+                    String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
+                    created.setProperty(SNode.PACK, mainPack);
+
+                    aspectAdded(created);
+
+                    updateTabs();
+                  }
+                });
+              }
+            });
+          }
+          result.add(sub);
+        }
+      }
+      return result;
     }
   }
 
@@ -230,5 +223,4 @@ public abstract class TabsComponent extends JPanel{
       super(first, second);
     }
   }
-
 }

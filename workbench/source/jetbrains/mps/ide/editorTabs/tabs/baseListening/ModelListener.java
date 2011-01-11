@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs.baseListening;
+package jetbrains.mps.ide.editorTabs.tabs.baseListening;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;

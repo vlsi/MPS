@@ -16,20 +16,21 @@
 package jetbrains.mps.ide.editorTabs.tabs;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
 public class EditorTab extends JButton {
-  private TabbedEditor myTabbedEditor;
+  private TabsComponent myTabbedEditor;
   private EditorTabDescriptor myDescriptor;
 
-  public EditorTab(TabbedEditor tabbedEditor, EditorTabDescriptor descriptor) {
+  public EditorTab(TabsComponent tabbedEditor, EditorTabDescriptor descriptor) {
     myTabbedEditor = tabbedEditor;
     myDescriptor = descriptor;
     setAction(new AbstractAction(descriptor.getTitle()) {
@@ -37,6 +38,13 @@ public class EditorTab extends JButton {
         showMenu();
       }
     });
+
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        showMenu();
+      }
+    }, KeyStroke.getKeyStroke("alt shift " + descriptor.getShortcutChar()), JComponent.WHEN_IN_FOCUSED_WINDOW);
+
   }
 
   public EditorTabDescriptor getDescriptor() {

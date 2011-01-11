@@ -16,16 +16,11 @@
 package jetbrains.mps.ide.editorTabs;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
-import com.intellij.openapi.project.Project;
-
-import java.awt.Color;
 
 public interface TabColorProvider {
   ExtensionPointName<TabColorProvider> EP_NAME = new ExtensionPointName<TabColorProvider>("com.intellij.mps.TabColorProvider");
 
-  Color getColor(Project project, ILazyTab tab);
+  void start(TabbedEditor e);
 
-  void tabOpened(AbstractLazyTab tab);
-
-  void tabClosed(AbstractLazyTab tab);
+  void stop(TabbedEditor e);
 }
