@@ -24,9 +24,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.NewTabbedEditor;
-import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.ide.tabbedEditor.tabs.EditorTabFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
@@ -62,7 +59,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   //------------------stuff to generate-----------------------
 
-
   protected List<EditorTabDescriptor> initTabbedEditors(Project project) {
     return new ArrayList<EditorTabDescriptor>();
   }
@@ -94,11 +90,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
     MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
     opener.registerOpenHandler(myTabsHandler, this);
-    opener.registerOpenHandler(myHandler, this);
-
-    for (EditorTabFactory tabFactory : initEditorTabs(project)) {
-      myFactories.add(tabFactory);
-    }
 
     for (EditorTabDescriptor d : initTabbedEditors(project)) {
       myTabDescriptors.add(d);
@@ -146,7 +137,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       opener.unregisterOpenHandlers(BaseProjectPlugin.this);
     }
 
-    myFactories.clear();
     myTabDescriptors.clear();
 
     GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
@@ -247,47 +237,6 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       }
 
       return new NewTabbedEditor(new SNodePointer(node), tabs, context);
-    }
-  }
-
-
-  //---------deprecated
-
-  private MPSEditorOpenHandler myHandler = new MyMPSEditorOpenHandler();
-  private List<EditorTabFactory> myFactories = new ArrayList<EditorTabFactory>();
-
-  @Deprecated
-  protected List<EditorTabFactory> initEditorTabs(Project project) {
-    return new ArrayList<EditorTabFactory>();
-  }
-
-  private class MyMPSEditorOpenHandler implements MPSEditorOpenHandler {
-    public SNode getBaseNode(IOperationContext context, SNode node) {
-      for (EditorTabFactory f : myFactories) {
-        SNode baseNode = f.getBaseNode(context, node);
-        if (baseNode != null) return baseNode;
-      }
-      return null;
-    }
-
-    public boolean canOpen(IOperationContext context, SNode node) {
-      for (EditorTabFactory f : myFactories) {
-        SNode baseNode = f.getBaseNode(context, node);
-        if (baseNode != null) return true;
-      }
-      return false;
-    }
-
-    public IEditor open(IOperationContext context, final SNode node) {
-      return new TabbedEditor(context, node) {
-        {
-          for (EditorTabFactory factory : myFactories) {
-            AbstractLazyTab tab = factory.createTab(node);
-            tab.setTabbedEditor(this);
-            addTab(tab, 'a');
-          }
-        }
-      };
     }
   }
 }
