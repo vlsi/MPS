@@ -16,22 +16,19 @@
 package jetbrains.mps.ide.editorTabs;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.List;
 
-public abstract class EditorTabDescriptor {
-  private SNodePointer myBaseNode;
+public interface EditorTabDescriptor {
+  String getTitle();
 
-  protected EditorTabDescriptor(SNodePointer baseNode) {
-    myBaseNode = baseNode;
-  }
+  SNode getBaseNode(SNode aspect);
 
-  public abstract String getTitle();
+  boolean isApplicable(SNode node);
 
-  public abstract List<SNode> getNodes();
+  List<SNode> getNodes(SNode baseNode);
 
-  public abstract List<SNode> getConcepts();
+  List<SNode> getConcepts();
 
-  public abstract SNode create(SNode concept);
+  SNode create(SNode baseNode, SNode concept);
 }
