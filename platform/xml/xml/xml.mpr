@@ -29,27 +29,6 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="TestSolutionDescriptor" type="JavaApplication" factoryName="Java Application">
-      <MyState>
-        <option name="myJavaRunParameters">
-          <ConfigRunParameters>
-            <option name="VMParameters" />
-            <option name="alternativeJRE" />
-            <option name="make" value="false" />
-            <option name="programParameters" />
-            <option name="useAlternativeJRE" value="false" />
-            <option name="workingDirectory" />
-          </ConfigRunParameters>
-        </option>
-        <option name="nodeId" value="608266221866950893" />
-        <option name="modelId" value="r:b4d5dff5-c6ef-4d3e-aa95-7834288abc3b(jetbrains.mps.webr.xml.xmlqsandbox)" />
-      </MyState>
-      <RunnerSettings RunnerId="Default Runner" />
-      <ConfigurationWrapper RunnerId="Default Runner" />
-      <method />
-    </configuration>
-  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
