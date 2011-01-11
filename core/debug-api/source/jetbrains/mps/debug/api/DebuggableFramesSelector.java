@@ -38,19 +38,13 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     if (location instanceof NullLocation) return false;
 
     SNode node = TraceInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
-    if (node != null) {
-      return true;
-    }
-    return false;
+    return node != null;
   }
 
   @Override
   public boolean isDebuggablePosition(String unitName, String fileName, int position) {
     SNode node = TraceInfoUtil.getNode(unitName, fileName, position);
-    if (node != null) {
-      return true;
-    }
-    return false;
+    return node != null;
   }
 
   @Override
