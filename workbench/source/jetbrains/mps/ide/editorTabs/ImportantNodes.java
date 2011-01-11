@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.ide.tabbedEditor;
+package jetbrains.mps.ide.editorTabs;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;

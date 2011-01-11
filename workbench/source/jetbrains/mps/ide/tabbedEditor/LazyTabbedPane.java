@@ -16,12 +16,9 @@
 package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.Disposable;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.nodeEditor.CellSelectionListener;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;

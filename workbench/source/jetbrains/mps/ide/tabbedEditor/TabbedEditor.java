@@ -123,15 +123,6 @@ public class TabbedEditor implements IEditor {
     component.requestFocus();
   }
 
-  public void onTabSelectionChange() {
-    final Project project = myOperationContext.getProject();
-    FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
-    VirtualFile virtualFile = manager.getCurrentFile();
-    if (virtualFile == null) return;
-
-    FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
-    manager.updateFilePresentation(virtualFile);
-  }
 
   public void tabStructureChanged() {
     //this "invoke later" is needed for the opening editor to be completely opened
