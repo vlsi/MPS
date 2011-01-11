@@ -243,7 +243,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
         invalidateMassagesCaches();
       }
     }
-    myEditor.getMessagesGutter().remove(message);
   }
 
   private void clear() {
