@@ -26,6 +26,7 @@ import jetbrains.mps.newTypesystem.state.Block;
  */
 public abstract class AbstractBlockOperation extends AbstractOperation {
   protected Block myBlock;
+  protected String myPresentation;
 
   public Block getBlock() {
     return myBlock;

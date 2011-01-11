@@ -264,7 +264,7 @@ public class State {
 
   public void solveInequalities() {
     executeOperation(new AddRemarkOperation("Solving inequalities", new Runnable() {
-      @Override
+
       public void run() {
         myInequalities.solveInequalities();
       }
@@ -276,7 +276,7 @@ public class State {
   }
 
   public SNode expand(SNode node) {
-    return myEquations.expandNode(node);
+    return myEquations.expandNode(node, false);
   }
 
   public Stack<AbstractOperation> getOperationStack() {
@@ -289,7 +289,6 @@ public class State {
 
   public void expandAll() {
     executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
-      @Override
       public void run() {
         myNodeMaps.expandAll();
       }

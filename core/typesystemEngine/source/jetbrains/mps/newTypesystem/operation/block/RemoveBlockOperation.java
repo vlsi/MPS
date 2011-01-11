@@ -31,12 +31,13 @@ public class RemoveBlockOperation extends AbstractBlockOperation {
 
   public RemoveBlockOperation(Block block) {
     myBlock = block;
+    myPresentation = "Block executed : [" + myBlock.getPresentation() + "]";
     myEquationInfo = new EquationInfo(null, " ", block.getNodeModel(), block.getNodeId());
   }
 
   @Override
   public String getPresentation() {
-    return "Block executed : [" + myBlock.getPresentation() + "]";
+    return myPresentation;
   }
 
   @Override

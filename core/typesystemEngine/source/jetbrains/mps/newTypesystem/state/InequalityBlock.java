@@ -77,7 +77,6 @@ public class InequalityBlock extends RelationBlock {
 
       final IsApplicable2Status status = inequalityReplacementRule.o2;
       myState.executeOperation(new AddRemarkOperation(subType + " is subtype of " + superType + " by replacement rule", new Runnable() {
-        @Override
         public void run() {
           ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, myState.getTypeCheckingContext(), status);
         }
@@ -86,7 +85,6 @@ public class InequalityBlock extends RelationBlock {
     }
     final SubTyping subTyping = myState.getTypeCheckingContext().getSubTyping();
     myState.executeOperation(new jetbrains.mps.newTypesystem.operation.AddRemarkOperation("checking whether " + subType + " is subtype of " + superType, new Runnable() {
-      @Override
       public void run() {
         if (!subTyping.isSubType(subType, superType, myEquationInfo, myRelationKind.isWeak(), false)) {
           myState.getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
@@ -132,5 +130,10 @@ public class InequalityBlock extends RelationBlock {
   @Override
   public String getExpandedPresentation(State state) {
     return getPresentationInternal(state.expand(myLeftNode), state.expand(myRightNode));
+  }
+
+  public void expand(State state) {
+    state.expand(myLeftNode);
+    state.expand(myRightNode);
   }
 }

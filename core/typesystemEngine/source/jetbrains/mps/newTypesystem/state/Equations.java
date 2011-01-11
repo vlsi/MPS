@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.util.Pair;
 import org.apache.commons.collections.map.UnmodifiableMap;
 
@@ -143,11 +144,11 @@ public class Equations {
     myState.executeOperation(new EquationAddedOperation(var, type, source, info));
   }
 
-  public SNode expandNode(final SNode node) {
-    return expandNode(node, new HashSet<SNode>());
+  public SNode expandNode(final SNode node, boolean finalExpansion) {
+    return expandNode(node, new HashSet<SNode>(), finalExpansion);
   }
 
-  private SNode expandNode(final SNode node, Set<SNode> variablesMet) {
+  private SNode expandNode(final SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
     //todo copy
     if (node == null) {
       return null;
@@ -161,21 +162,21 @@ public class Equations {
       return type;
     }
     if (type != node) {
-      SNode result = expandNode(type, variablesMet);
+      SNode result = expandNode(type, variablesMet, finalExpansion);
       variablesMet.remove(type);
       return result;
     } else {
       SNode result = node;
-      replaceChildren(result, variablesMet);
-      replaceReferences(result, variablesMet);
+      replaceChildren(result, variablesMet, finalExpansion);
+      replaceReferences(result, variablesMet, finalExpansion);
       return result;
     }
   }
 
-  private void replaceChildren(SNode node, Set<SNode> variablesMet) {
+  private void replaceChildren(SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
     for (SNode child : node.getChildren()) {
-      SNode newChild = expandNode(child, variablesMet);
+      SNode newChild = expandNode(child, variablesMet, finalExpansion);
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -188,12 +189,15 @@ public class Equations {
     }
   }
 
-  private void replaceReferences(SNode node, Set<SNode> variablesMet) {
+  private void replaceReferences(SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
     List<SReference> references = new ArrayList<SReference>(node.getReferences());
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (TypesUtil.isVariable(oldNode)) {
-        SNode newNode = expandNode(oldNode, variablesMet);
+        SNode newNode = expandNode(oldNode, variablesMet, finalExpansion);
+        if (finalExpansion && TypesUtil.isVariable(newNode)) {
+          newNode = convertReferentVariable(node, reference.getRole(), newNode);
+        }
         if (newNode != oldNode) {
           String role = reference.getRole();
           node.removeReference(reference);
@@ -201,6 +205,12 @@ public class Equations {
         }
       }
     }
+  }
+
+  private SNode convertReferentVariable(SNode sourceNode, String role, SNode variable) {
+    IVariableConverter_Runtime converter = myState.getTypeCheckingContext().getTypeChecker().getRulesManager().getVariableConverter(sourceNode, role, variable, false);
+    if (converter == null) return variable;
+    return converter.convert(sourceNode, role, variable, false);
   }
 
   void reportRecursiveType(SNode node) {

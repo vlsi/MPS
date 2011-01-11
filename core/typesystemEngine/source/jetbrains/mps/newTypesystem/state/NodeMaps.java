@@ -162,7 +162,7 @@ public class NodeMaps {
   public void expandAll() {
     for (SNode node : new HashSet<SNode>(myNodesToTypes.keySet())) {
       SNode var = myNodesToTypes.get(node);
-      SNode type = myState.getEquations().expandNode(var);
+      SNode type = myState.getEquations().expandNode(var, true);
       updateNodeToType(node, type, null);
     }
   }
