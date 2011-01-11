@@ -221,7 +221,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         SNode child = childEvent.getChild();
         String childRole = childEvent.getChildRole();
         // Class or Interface was added/removed 
-        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
           return true;
         }
         // method was added/removed from containing Classifier 
