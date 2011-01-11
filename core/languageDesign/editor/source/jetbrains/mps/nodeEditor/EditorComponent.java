@@ -662,7 +662,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public SNodePointer getEditedNodePointer() {
-    return new SNodePointer(myNode);
+    return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+      public SNodePointer compute() {
+        return new SNodePointer(myNode);
+      }
+    });
   }
 
   public String getMPSTooltipText(final MouseEvent event) {
