@@ -63,7 +63,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   public void showNode(SNode node, boolean select) {
     SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
-    boolean rootChange = containingRoot!=getCurrentlyEditedNode().getNode();
+    boolean rootChange = containingRoot != getCurrentlyEditedNode().getNode();
 
     if (myColorProvider != null && rootChange) {
       myColorProvider.stop(this);
@@ -73,7 +73,7 @@ public class TabbedEditor extends BaseNodeEditor {
     editor.editNode(containingRoot, getOperationContext());
 
     if (rootChange) {
-      onRootNodeChange();
+      updateTab();
     }
 
     if (myColorProvider != null && rootChange) {
@@ -85,7 +85,7 @@ public class TabbedEditor extends BaseNodeEditor {
     }
   }
 
-  private boolean onRootNodeChange() {
+  private boolean updateTab() {
     final Project project = getOperationContext().getProject();
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();

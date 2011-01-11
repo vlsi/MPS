@@ -71,15 +71,15 @@ public class EditorTab extends JButton {
         }
 
         DataContext dataContext = DataManager.getInstance().getDataContext(EditorTab.this);
-        ActionGroup group = getCreateGroup();
+        ActionGroup group = getGotoGroup();
         assert group != null : "no nodes to go, but tab is visible";
-        ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Create", group, dataContext, ActionSelectionAid.SPEEDSEARCH, false);
+        ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Go to", group, dataContext, ActionSelectionAid.SPEEDSEARCH, false);
         popup.show(new RelativePoint(EditorTab.this, new Point(0, 0)));
       }
     });
   }
 
-  private ActionGroup getCreateGroup() {
+  private ActionGroup getGotoGroup() {
     List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
     if (nodes.isEmpty()) return null;
 
