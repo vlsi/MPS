@@ -81,6 +81,9 @@ public abstract class TabsComponent extends JPanel {
     return result;
   }
 
+  public SNodePointer getBaseNode() {
+    return myBaseNode;
+  }
 
   private void updateTabs() {
     removeAll();

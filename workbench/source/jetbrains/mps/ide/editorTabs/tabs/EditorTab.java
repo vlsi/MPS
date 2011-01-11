@@ -15,23 +15,32 @@
  */
 package jetbrains.mps.ide.editorTabs.tabs;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.popup.JBPopupFactory.ActionSelectionAid;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
 public class EditorTab extends JButton {
-  private TabsComponent myTabbedEditor;
+  private TabsComponent myTabComponent;
   private EditorTabDescriptor myDescriptor;
 
-  public EditorTab(TabsComponent tabbedEditor, EditorTabDescriptor descriptor) {
-    myTabbedEditor = tabbedEditor;
+  public EditorTab(TabsComponent tabComponent, EditorTabDescriptor descriptor) {
+    myTabComponent = tabComponent;
     myDescriptor = descriptor;
     setAction(new AbstractAction(descriptor.getTitle()) {
       public void actionPerformed(ActionEvent e) {
@@ -44,7 +53,6 @@ public class EditorTab extends JButton {
         showMenu();
       }
     }, KeyStroke.getKeyStroke("alt shift " + descriptor.getShortcutChar()), JComponent.WHEN_IN_FOCUSED_WINDOW);
-
   }
 
   public EditorTabDescriptor getDescriptor() {
@@ -52,12 +60,33 @@ public class EditorTab extends JButton {
   }
 
   private void showMenu() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNode> nodes = myDescriptor.getNodes(myTabbedEditor.getBaseNode().getNode());
-        myTabbedEditor.showNode(nodes.get(0), true);
+        DataContext dataContext = DataManager.getInstance().getDataContext(EditorTab.this);
+        ActionGroup group = getCreateGroup();
+        assert group != null : "no nodes to go, but tab is visible";
+        ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Create", group, dataContext, ActionSelectionAid.SPEEDSEARCH, false);
+        popup.show(new RelativePoint(EditorTab.this, new Point(0, 0)));
       }
     });
+  }
+
+  private ActionGroup getCreateGroup() {
+    List<SNode> nodes = myDescriptor.getNodes(myTabComponent.getBaseNode().getNode());
+    if (nodes.isEmpty()) return null;
+
+    DefaultActionGroup result = new DefaultActionGroup();
+    for (final SNode node : nodes) {
+      result.add(new AnAction(node.getName(), "", IconManager.getIconFor(node)) {
+        public void actionPerformed(AnActionEvent e) {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              myTabComponent.changeNode(node);
+            }
+          });
+        }
+      });
+    }
+    return result;
   }
 }
