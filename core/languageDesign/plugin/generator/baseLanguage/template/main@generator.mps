@@ -330,10 +330,12 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="144706109457480155">
       <property name="name" nameId="tpck.1169194664001" value="reduce_SingletabbedEditorTabType" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.144706109457474501" resolveInfo="SingletabbedEditorTabType" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="144706109457489901">
       <property name="name" nameId="tpck.1169194664001" value="reduce_MultitabbedEditorTabType" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7167571922052020431">
@@ -400,7 +402,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5158570261712548291">
       <property name="name" nameId="tpck.1169194664001" value="reduce_AskStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTabs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.5703381818026462228" resolveInfo="AskStatement" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="3339131993542064572">
@@ -451,20 +453,20 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.8131292300541727132" resolveInfo="AddKeystrokeStatement" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3552608880959557687">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTabs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <property name="name" nameId="tpck.1169194664001" value="MultitabbedEditorTab" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="3552608880959558344">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTabs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <property name="name" nameId="tpck.1169194664001" value="map_AbstractEditorTab" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.1203851787677" resolveInfo="AbstractEditorTab" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3552608880959559172">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTabs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <property name="name" nameId="tpck.1169194664001" value="SingletabbedEditorTab" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3552608880959605932">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTabs" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <property name="name" nameId="tpck.1169194664001" value="EditorTabFactoryGen" />
     </node>
   </roots>
@@ -4589,18 +4591,21 @@
   <root id="1204479048161">
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3552608880959559278">
       <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.1203071663527" resolveInfo="SingletabbedEditorTab" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3552608880959559172" resolveInfo="SingletabbedEditorTab" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1561929634096410044" resolveInfo="map_TabClass" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3552608880959559279">
       <property name="keepSourceRoot" nameId="tpf8.1177959072138" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.1203780151140" resolveInfo="MultitabbedEditorTab" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3552608880959557687" resolveInfo="MultitabbedEditorTab" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1561929634096410044" resolveInfo="map_TabClass" />
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="3552608880959606011">
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3552608880959605932" resolveInfo="EditorTabFactory" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.1203851787677" resolveInfo="AbstractEditorTab" />
     </node>
@@ -4630,21 +4635,21 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="144706109457490154">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.144706109457474501" resolveInfo="SingletabbedEditorTabType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="144706109457490155">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="144706109457480155" resolveInfo="reduce_SingletabbedEditorTabType" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="144706109457490156">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="144706109457490157">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="144706109457489901" resolveInfo="reduce_MultitabbedEditorTabType" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="5158570261712548794">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.5703381818026462228" resolveInfo="AskStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="5158570261712548795">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="5158570261712548291" resolveInfo="reduce_AskStatement" />

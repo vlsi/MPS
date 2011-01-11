@@ -194,11 +194,11 @@
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="144706109457490158">
       <property name="name" nameId="tpck.1169194664001" value="Typeof_SingletabbedEditorTabType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="144706109457490164">
       <property name="name" nameId="tpck.1169194664001" value="typeof_MultitabbedEditorTabType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6586153900349327568">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ActionListStatement" />
@@ -254,7 +254,7 @@
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5158570261711487624">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AskStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="5857416866788538754">
       <property name="name" nameId="tpck.1169194664001" value="typeof_VariableNodeExpression" />

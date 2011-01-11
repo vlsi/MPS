@@ -96,7 +96,7 @@
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp4k.6938053545825350222" resolveInfo="ToolTab" />
     </node>
     <node type="tp41.DataFlowBuilderDeclaration" typeId="tp41.1206442055221" id="5158570261711860781">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="conceptDeclaration" roleId="tp41.1206442096288" targetNodeId="tp4k.5703381818026462228" resolveInfo="AskStatement" />
     </node>
   </roots>
