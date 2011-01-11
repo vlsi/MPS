@@ -732,7 +732,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="929556153838351528">
       <property name="name" nameId="tpck.1169194664001" value="InitTabBlock" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="144706109457474501">
@@ -1210,6 +1210,11 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3743831881070657672">
       <property name="name" nameId="tpck.1169194664001" value="BaseNodeBlock" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3743831881070657680">
+      <property name="name" nameId="tpck.1169194664001" value="ListenBlock" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab.Methods" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -3462,6 +3467,7 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="929556153838351532">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />
     </node>
+    <node role="deprecatedNode$attribute" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3743831881070657683" />
   </root>
   <root id="144706109457474501">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="144706109457474503">
@@ -4689,7 +4695,7 @@
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3743831881070613134">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="initBlock" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="929556153838351528" resolveInfo="InitTabBlock" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3743831881070657680" resolveInfo="ListenBlock" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3743831881070611762">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -4766,6 +4772,15 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3743831881070657678">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />
+    </node>
+  </root>
+  <root id="3743831881070657680">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3743831881070657681">
+      <property name="value" nameId="tpce.1105725733873" value="listen" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3743831881070657682">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpee.1216468774225" resolveInfo="showName" />
     </node>
   </root>
