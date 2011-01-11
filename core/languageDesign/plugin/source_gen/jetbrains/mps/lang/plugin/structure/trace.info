@@ -41,7 +41,7 @@
   <unitInfo fileName="DoUpdateBlock.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.DoUpdateBlock" />
   <unitInfo fileName="ListenBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ListenBlock" />
   <unitInfo fileName="BaseNodeBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseNodeBlock" />
-  <unitInfo fileName="IsApplicableBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" />
+  <unitInfo fileName="IsApplicableTabBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IsApplicableTabBlock" />
   <unitInfo fileName="OrderConstraints.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.OrderConstraints" />
   <unitInfo fileName="CreateNodeAspectBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.CreateNodeAspectBlock" />
   <unitInfo fileName="KeyStrokeType.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.KeyStrokeType" />

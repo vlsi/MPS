@@ -75,6 +75,7 @@ public class SplitTabbedEditors_MigrationScript extends BaseMigrationScript {
           SLinkOperations.setNewChild(bnb, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
           ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(bnb, "body", true), "statement", true)).addElement(new SplitTabbedEditors_MigrationScript.QuotationClass_w50lnh_a0a0f0n0e0a0a0b0a().createNode(helperClass, SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", null), SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OperationContext", null), method));
         }
+        SNodeOperations.deleteNode(node);
       }
 
       public boolean isShowAsIntention() {

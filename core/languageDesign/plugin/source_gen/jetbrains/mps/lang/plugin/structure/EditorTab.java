@@ -102,11 +102,11 @@ public class EditorTab extends BaseConcept implements INamedConcept, ICheckedNam
     super.setChild(EditorTab.BASE_NODE_BLOCK, node);
   }
 
-  public IsApplicableBlock getIsApplicableBlock() {
-    return (IsApplicableBlock) this.getChild(IsApplicableBlock.class, EditorTab.IS_APPLICABLE_BLOCK);
+  public IsApplicableTabBlock getIsApplicableBlock() {
+    return (IsApplicableTabBlock) this.getChild(IsApplicableTabBlock.class, EditorTab.IS_APPLICABLE_BLOCK);
   }
 
-  public void setIsApplicableBlock(IsApplicableBlock node) {
+  public void setIsApplicableBlock(IsApplicableTabBlock node) {
     super.setChild(EditorTab.IS_APPLICABLE_BLOCK, node);
   }
 
