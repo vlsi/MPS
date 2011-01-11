@@ -16,6 +16,11 @@
 package jetbrains.mps.ide.editorTabs;
 
 import com.intellij.openapi.extensions.Extensions;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.FileStatusManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.BaseNodeEditor;
 import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -57,21 +62,38 @@ public class TabbedEditor extends BaseNodeEditor {
   }
 
   public void showNode(SNode node, boolean select) {
-    if (myColorProvider != null) {
+    SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
+    boolean rootChange = containingRoot!=getCurrentlyEditedNode().getNode();
+
+    if (myColorProvider != null && rootChange) {
       myColorProvider.stop(this);
     }
 
-    SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
     EditorComponent editor = getCurrentEditorComponent();
     editor.editNode(containingRoot, getOperationContext());
 
-    if (myColorProvider != null) {
+    if (rootChange) {
+      onRootNodeChange();
+    }
+
+    if (myColorProvider != null && rootChange) {
       myColorProvider.start(this);
     }
 
     if (select) {
       editor.selectNode(node);
     }
+  }
+
+  private boolean onRootNodeChange() {
+    final Project project = getOperationContext().getProject();
+    FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
+    VirtualFile virtualFile = manager.getCurrentFile();
+    if (virtualFile == null) return true;
+
+    FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
+    manager.updateFilePresentation(virtualFile);
+    return false;
   }
 }
 
