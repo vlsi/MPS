@@ -45,7 +45,7 @@ public abstract class EditorTabDescriptor {
     return new ArrayList<SNode>();
   }
 
-  public SNode create(SNode baseNode, SNode concept) {
+  public SNode createNode(SNode baseNode, SNode concept) {
     throw new UnsupportedOperationException();
   }
 }

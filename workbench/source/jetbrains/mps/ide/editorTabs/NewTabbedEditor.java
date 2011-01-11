@@ -105,8 +105,13 @@ public class NewTabbedEditor extends BaseNodeEditor {
           sub.add(new AnAction(concept.getName(),"", IconManager.getIconForConceptFQName(NameUtil.conceptFQNameByAdapterClass(concept.getAdapter().getClass()))
           ) {
             public void actionPerformed(AnActionEvent e) {
-              d.create(myBaseNode.getNode(),concept);
-              updateTabs();
+              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                @Override
+                public void run() {
+                  d.createNode(myBaseNode.getNode(), concept);
+                  updateTabs();
+                }
+              });
             }
           });
         }
