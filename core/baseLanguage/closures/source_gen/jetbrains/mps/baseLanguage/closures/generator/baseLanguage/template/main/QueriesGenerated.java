@@ -4004,7 +4004,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1204637450606(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode de : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
+      if (_context.isDirty(de) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
         SNode imco = SNodeOperations.cast(SLinkOperations.getTarget(de, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
         List<SNode> args = SLinkOperations.getTargets(imco, "actualArgument", true);
         List<SNode> pdecls = SLinkOperations.getTargets(SLinkOperations.getTarget(imco, "baseMethodDeclaration", false), "parameter", true);
