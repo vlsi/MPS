@@ -62,6 +62,7 @@ public class VCSTabColorProvider implements TabColorProvider {
   }
 
   public void tabOpened(AbstractLazyTab tab) {
+/*
     RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabProject(tab));
     if (statusManager == null) {
       return;
@@ -72,6 +73,7 @@ public class VCSTabColorProvider implements TabColorProvider {
       return;
     }
     statusManager.addNodeFileStatusListener(listener);
+*/
   }
 
   public void tabClosed(AbstractLazyTab tab) {
