@@ -23,10 +23,11 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.BaseNodeEditor;
 import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 import java.awt.BorderLayout;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.Set;
 
 public class TabbedEditor extends BaseNodeEditor {
   private TabsComponent myTabsComponent;
-
+  private SModelListener myModelListener = new MyNameListener();
   private TabColorProvider myColorProvider = null;
 
   public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
@@ -65,24 +66,43 @@ public class TabbedEditor extends BaseNodeEditor {
     SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
     boolean rootChange = containingRoot != getCurrentlyEditedNode().getNode();
 
-    if (myColorProvider != null && rootChange) {
-      myColorProvider.stop(this);
+    if (rootChange) {
+      if (myColorProvider != null) {
+        myColorProvider.stop(this);
+      }
+
+      SModelDescriptor model = getCurrentNodeModel();
+      if (model != null) {
+        model.removeModelListener(myModelListener);
+      }
     }
 
     EditorComponent editor = getCurrentEditorComponent();
     editor.editNode(containingRoot, getOperationContext());
 
     if (rootChange) {
-      updateTab();
-    }
+      SModelDescriptor model = getCurrentNodeModel();
+      assert model!=null;
+      model.addModelListener(myModelListener);
 
-    if (myColorProvider != null && rootChange) {
-      myColorProvider.start(this);
+      if (myColorProvider != null) {
+        myColorProvider.start(this);
+      }
+
+      updateTab();
     }
 
     if (select) {
       editor.selectNode(node);
     }
+  }
+
+  private SModelDescriptor getCurrentNodeModel() {
+    SNodePointer n = getCurrentlyEditedNode();
+    if (n==null) return null;
+    SNode node = n.getNode();
+    if (node==null) return null;
+    return node.getModel().getModelDescriptor();
   }
 
   private boolean updateTab() {
@@ -94,6 +114,15 @@ public class TabbedEditor extends BaseNodeEditor {
     FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
     manager.updateFilePresentation(virtualFile);
     return false;
+  }
+
+  private class MyNameListener extends SModelAdapter {
+    public void propertyChanged(SModelPropertyEvent event) {
+      SNodePointer pointer = new SNodePointer(event.getNode());
+      if (event.getPropertyName().equals(INamedConcept.NAME) && pointer.equals(getCurrentlyEditedNode())) {
+        updateTab();
+      }
+    }
   }
 }
 
