@@ -6,8 +6,6 @@ import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.extensions.ExtensionPoint;
-import jetbrains.mps.vcs.changesmanager.VCSTabColorProvider;
-import com.intellij.openapi.extensions.Extensions;
 
 public class main_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(main_CustomApplicationPlugin.class);
@@ -19,13 +17,8 @@ public class main_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   }
 
   public void doInit() {
-    main_CustomApplicationPlugin.this.myExt = new VCSTabColorProvider();
-    main_CustomApplicationPlugin.this.myEP = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME);
-    main_CustomApplicationPlugin.this.myEP.registerExtension(main_CustomApplicationPlugin.this.myExt);
   }
 
   public void doDispose() {
-    main_CustomApplicationPlugin.this.myEP.unregisterExtension(main_CustomApplicationPlugin.this.myExt);
-    main_CustomApplicationPlugin.this.myExt = null;
   }
 }
