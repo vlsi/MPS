@@ -15,15 +15,9 @@
  */
 package jetbrains.mps.ide;
 
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import org.apache.commons.lang.ObjectUtils;
-import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.List;
@@ -41,7 +35,7 @@ public class NodeEditor extends BaseNodeEditor {
     return Collections.singletonList(getCurrentlyEditedNode());
   }
 
-  public void selectNode(SNode node) {
+  public void showNode(SNode node, boolean select) {
     getCurrentEditorComponent().selectNode(node);
   }
 }

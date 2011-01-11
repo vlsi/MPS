@@ -20,7 +20,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.ide.tabbedEditor.OldTabbedEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.SNode;
@@ -32,8 +32,8 @@ public abstract class MultiTabPropertyProvider {
       FileEditor editor = editors[0];
       if (editor instanceof MPSFileNodeEditor) {
         IEditor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
-        if (nodeEditor instanceof TabbedEditor) {
-          TabbedEditor tabbedEditor = (TabbedEditor) nodeEditor;
+        if (nodeEditor instanceof OldTabbedEditor) {
+          OldTabbedEditor tabbedEditor = (OldTabbedEditor) nodeEditor;
           EditorComponent tabEditor = tabbedEditor.getTabbedPane().getCurrentTab().getCurrentEditorComponent();
           if (tabEditor instanceof NodeEditorComponent) {
             return ((NodeEditorComponent) tabEditor).getEditedNode();

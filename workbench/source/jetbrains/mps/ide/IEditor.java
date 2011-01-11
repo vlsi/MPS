@@ -42,7 +42,7 @@ public interface IEditor{
 
   IOperationContext getOperationContext();
 
-  void selectNode(SNode node);
+  void showNode(SNode node, boolean select);
 
   void dispose();
 

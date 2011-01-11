@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs;
+package jetbrains.mps.ide.editorTabs.tabs;
 
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 
@@ -24,10 +26,10 @@ import java.awt.event.ActionEvent;
 import java.util.List;
 
 public class EditorTab extends JButton {
-  private NewTabbedEditor myTabbedEditor;
+  private TabbedEditor myTabbedEditor;
   private EditorTabDescriptor myDescriptor;
 
-  public EditorTab(NewTabbedEditor tabbedEditor, EditorTabDescriptor descriptor) {
+  public EditorTab(TabbedEditor tabbedEditor, EditorTabDescriptor descriptor) {
     myTabbedEditor = tabbedEditor;
     myDescriptor = descriptor;
     setAction(new AbstractAction(descriptor.getTitle()) {
@@ -46,7 +48,7 @@ public class EditorTab extends JButton {
       @Override
       public void run() {
         List<SNode> nodes = myDescriptor.getNodes(myTabbedEditor.getBaseNode().getNode());
-        myTabbedEditor.selectNode(nodes.get(0));
+        myTabbedEditor.showNode(nodes.get(0), true);
       }
     });
   }

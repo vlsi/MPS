@@ -104,7 +104,7 @@ public class EmbeddableEditor {
   }
 
   public void selectNode(SNode node) {
-    myFileNodeEditor.getNodeEditor().selectNode(node);
+    myFileNodeEditor.getNodeEditor().showNode(node, true);
   }
 
   public IEditor getEditor() {

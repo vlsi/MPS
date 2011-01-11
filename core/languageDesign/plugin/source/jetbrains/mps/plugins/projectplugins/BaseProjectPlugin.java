@@ -23,7 +23,7 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
-import jetbrains.mps.ide.editorTabs.NewTabbedEditor;
+import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
@@ -236,7 +236,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
         }
       }
 
-      return new NewTabbedEditor(new SNodePointer(node), tabs, context);
+      return new TabbedEditor(new SNodePointer(node), tabs, context);
     }
   }
 }

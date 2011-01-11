@@ -13,19 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.editorTabs;
+package jetbrains.mps.ide.editorTabs.tabs;
 
-import com.intellij.openapi.extensions.ExtensionPointName;
-import com.intellij.openapi.project.Project;
-
-import java.awt.Color;
-
-public interface TabColorProvider {
-  ExtensionPointName<TabColorProvider> EP_NAME = new ExtensionPointName<TabColorProvider>("com.intellij.mps.TabColorProvider");
-
-  Color getColor(Project project, ILazyTab tab);
-
-  void tabOpened(AbstractLazyTab tab);
-
-  void tabClosed(AbstractLazyTab tab);
+public interface TabListener {
+  void tabSelected();
 }
