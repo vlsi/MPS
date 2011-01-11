@@ -71,7 +71,7 @@ __switch__:
           }
         };
       }
-    })).take(10).select(new ISelector<Integer, Character>() {
+    })).take(10).<Character>select(new ISelector<Integer, Character>() {
       public Character select(Integer it) {
         return ("" + it).charAt(0);
       }
