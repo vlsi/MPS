@@ -25,7 +25,6 @@ import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.NameUtil;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -44,13 +43,13 @@ public class EditorTab extends JButton {
     myDescriptor = descriptor;
     setAction(new AbstractAction(descriptor.getTitle()) {
       public void actionPerformed(ActionEvent e) {
-        showMenu();
+        navigate();
       }
     });
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        showMenu();
+        navigate();
       }
     }, KeyStroke.getKeyStroke("alt shift " + descriptor.getShortcutChar()), JComponent.WHEN_IN_FOCUSED_WINDOW);
   }
@@ -59,9 +58,15 @@ public class EditorTab extends JButton {
     return myDescriptor;
   }
 
-  private void showMenu() {
+  private void navigate() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        List<SNode> nodes = myDescriptor.getNodes(myTabComponent.getBaseNode().getNode());
+        if (nodes.size()==1){
+          myTabComponent.changeNode(nodes.get(0));
+          return;
+        }
+
         DataContext dataContext = DataManager.getInstance().getDataContext(EditorTab.this);
         ActionGroup group = getCreateGroup();
         assert group != null : "no nodes to go, but tab is visible";
