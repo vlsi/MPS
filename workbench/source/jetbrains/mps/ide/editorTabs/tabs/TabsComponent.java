@@ -100,7 +100,7 @@ public abstract class TabsComponent extends JPanel {
     add(new AddConceptButton());
   }
 
-  private void onNodeChange(SNode node) {
+  public void onNodeChange(SNode node) {
     myLastNode = new SNodePointer(node);
     changeNode(node);
   }

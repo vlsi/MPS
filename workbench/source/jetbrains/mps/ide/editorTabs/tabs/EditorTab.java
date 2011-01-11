@@ -66,7 +66,7 @@ public class EditorTab extends JButton {
       public void run() {
         List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
         if (nodes.size()==1){
-          myTabComponent.changeNode(nodes.get(0));
+          myTabComponent.onNodeChange(nodes.get(0));
           return;
         }
 
@@ -101,7 +101,7 @@ public class EditorTab extends JButton {
     public void actionPerformed(AnActionEvent e) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          myTabComponent.changeNode(myNode);
+          myTabComponent.onNodeChange(myNode);
         }
       });
     }
