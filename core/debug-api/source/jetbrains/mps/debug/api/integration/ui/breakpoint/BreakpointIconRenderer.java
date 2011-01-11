@@ -92,7 +92,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
   }
 
   @Override
-  public Cursor getMouseOwerCursor() {
+  public Cursor getMouseOverCursor() {
     return null;
   }
 

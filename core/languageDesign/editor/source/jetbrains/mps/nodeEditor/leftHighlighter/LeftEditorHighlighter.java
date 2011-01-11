@@ -698,7 +698,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     myMouseIsInFoldingArea = false;
     EditorMessageIconRenderer newRendererUnderMouse = getIconRendererUnderMouse(e);
     if (newRendererUnderMouse != null) {
-      setCursor(newRendererUnderMouse.getMouseOwerCursor());
+      setCursor(newRendererUnderMouse.getMouseOverCursor());
     } else if (myRendererUnderMouse != null) {
       setCursor(null);
     }
@@ -802,7 +802,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     }
 
     @Override
-    public Cursor getMouseOwerCursor() {
+    public Cursor getMouseOverCursor() {
       return myNumber != -1 ? Cursor.getPredefinedCursor(Cursor.HAND_CURSOR) : null;
     }
 

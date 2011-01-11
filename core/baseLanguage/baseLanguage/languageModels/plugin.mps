@@ -13107,7 +13107,7 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3836499504550260314">
-      <property name="name" nameId="tpck.1169194664001" value="getMouseOwerCursor" />
+      <property name="name" nameId="tpck.1169194664001" value="getMouseOverCursor" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3836499504550260315" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3836499504550260316">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5p1m.~Cursor" resolveInfo="Cursor" />
