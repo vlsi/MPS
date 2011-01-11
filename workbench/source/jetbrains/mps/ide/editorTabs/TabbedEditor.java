@@ -54,7 +54,6 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private JComponent createTabsPanel() {
     JPanel panel = new JPanel(new FlowLayout());
-    panel.add()
     return panel;
   }
 

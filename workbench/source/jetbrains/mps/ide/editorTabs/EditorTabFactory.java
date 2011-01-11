@@ -13,14 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.tabbedEditor.tabs;
+package jetbrains.mps.ide.editorTabs;
 
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 public abstract class EditorTabFactory {
-  public abstract AbstractLazyTab createTab(SNode baseNode);
+  public abstract EditorTabDescriptor createTab(SNode baseNode);
 
   public abstract SNode getBaseNode(IOperationContext context, SNode aspect);
 }

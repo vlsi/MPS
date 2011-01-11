@@ -22,15 +22,14 @@ import com.intellij.util.xmlb.annotations.Tag;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.ide.tabbedEditor.tabs.EditorTabFactory;
+import jetbrains.mps.ide.editorTabs.EditorTabFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
@@ -230,15 +229,12 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     }
 
     public IEditor open(IOperationContext context, final SNode node) {
-      return new TabbedEditor(context, node) {
-        {
-          for (EditorTabFactory factory : myFactories) {
-            AbstractLazyTab tab = factory.createTab(node);
-            tab.setTabbedEditor(this);
-            addTab(tab, 'a');
-          }
-        }
-      };
+      for (EditorTabFactory factory : myFactories) {
+        EditorTabDescriptor tab = factory.createTab(node);
+        tab.setTabbedEditor(this);
+        addTab(tab, 'a');
+      }
+      return new jetbrains.mps.ide.editorTabs.TabbedEditor(node,,context) ;
     }
   }
 }
