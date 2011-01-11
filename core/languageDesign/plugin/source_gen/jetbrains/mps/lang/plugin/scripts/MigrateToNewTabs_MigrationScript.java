@@ -45,6 +45,11 @@ public class MigrateToNewTabs_MigrationScript extends BaseMigrationScript {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab")) {
           SNode oldTab = SNodeOperations.cast(node, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab");
 
+          if ((SLinkOperations.getTarget(oldTab, "newCreateBlock", true) != null)) {
+            SLinkOperations.setNewChild(tab, "createBlock", "jetbrains.mps.lang.plugin.structure.NewCreateBlock");
+            SLinkOperations.setTarget(SLinkOperations.getTarget(tab, "createBlock", true), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(oldTab, "newCreateBlock", true), "body", true), true);
+          }
+
           if ((SLinkOperations.getTarget(oldTab, "createBlock", true) != null)) {
             SLinkOperations.setNewChild(tab, "createBlock", "jetbrains.mps.lang.plugin.structure.NewCreateBlock");
             SLinkOperations.setTarget(SLinkOperations.getTarget(tab, "createBlock", true), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(oldTab, "createBlock", true), "body", true), true);
