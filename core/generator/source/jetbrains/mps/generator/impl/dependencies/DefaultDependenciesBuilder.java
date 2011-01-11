@@ -110,6 +110,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     for (SNode root : newmodel.roots()) {
       SNodeId id = root.getSNodeId();
       SNode original = oldidsToOriginal.get(id);
+      // TODO if original is null -> new root added, warning/error(strict)?
       currentToOriginalMap.put(root, original);
     }
     currentInputModel = newmodel;
@@ -182,7 +183,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       return myConditionalsBuilder;
     }
     // shouldn't happen
-    LOG.error("consistency problem in dependencies map");
+    LOG.error("consistency problem in dependencies map", new IllegalStateException());
     return null;
   }
 
