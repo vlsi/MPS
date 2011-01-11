@@ -16,6 +16,7 @@ import java.util.Map.Entry;
  * To change this template use File | Settings | File Templates.
  */
 public class NodesWriter {
+  protected static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
 
   public NodesWriter(@NotNull SModelReference modelReference) {
@@ -62,7 +63,7 @@ public class NodesWriter {
         throw new IOException("cannot store reference: " + reference.toString());
       }
       os.writeString(reference.getRole());
-      os.writeModelReference(targetModelReference != null && targetModelReference.equals(myModelReference) ? TransientModelPersistence.LOCAL : targetModelReference);
+      os.writeModelReference(targetModelReference != null && targetModelReference.equals(myModelReference) ? LOCAL : targetModelReference);
       os.writeString(reference.getResolveInfo());
     }
   }

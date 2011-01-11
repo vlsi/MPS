@@ -3,9 +3,10 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.TransientModelsComponent.TransientSwapOwner;
 import jetbrains.mps.generator.TransientModelsComponent.TransientSwapSpace;
 import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -80,8 +82,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
       File swapFile = new File (mySpaceDir, modelId);
       if (swapFile.exists() && !swapFile.delete()) { LOG.error("Couldn't delete swap file"); return false; }
 
-      TransientModelPersistence trmp = new TransientModelPersistence(model.getSModelReference());
-
       ArrayList<SNode> roots = new ArrayList<SNode>();
       for (Iterator<SNode> it = model.rootsIterator(); it.hasNext();) {
         roots.add(it.next());
@@ -90,7 +90,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
       IOException ioex = null;
       try {
         mos = new ModelOutputStream(new FileOutputStream(swapFile));
-        trmp.saveModel(roots, mos);
+        saveModel(model.getSModelReference(), roots, mos);
       } catch (IOException e) {
         ioex = e; LOG.error(e);
       }
@@ -116,11 +116,10 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
       File swapFile = new File (mySpaceDir, modelId);
       if (!swapFile.exists()) { throw new IllegalStateException("no swap file"); }
 
-      TransientModelPersistence trmp = new TransientModelPersistence(mref);
       ModelInputStream mis = null;
       try {
         mis = new ModelInputStream(new FileInputStream(swapFile));
-        return trmp.loadModel(mis, new TransientSModel(mref));
+        return loadModel(mref, mis, new TransientSModel(mref));
       } catch (IOException e) {
         LOG.error(e);
         throw new RuntimeException(e);
@@ -141,13 +140,93 @@ public abstract class FileSwapOwner implements TransientSwapOwner{
     public void clear() {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-/*
       for (File f: mySpaceDir.listFiles()) {
         f.delete();
       }
       mySpaceDir.delete();
-*/
       mySpaceDir = null;
+    }
+
+    private static final int VERSION = 42;
+
+    public TransientSModel loadModel(SModelReference modelReference, ModelInputStream is, TransientSModel model) throws IOException {
+      int version = is.readInt();
+      if (version != VERSION) {
+        return null;
+      }
+
+      model.setLoading(true);
+      List<SNode> roots = new NodesAndUserObjectsReader(modelReference).readNodes(model, is);
+      for (SNode r: roots) {
+        model.addRoot(r);
+      }
+      // Don't enable events as this will cause TextGen to fail. See MPS-11184
+  //    model.setLoading(false);
+
+      return model;
+    }
+
+    public void saveModel(SModelReference modelReference, List<SNode> roots, ModelOutputStream os) throws IOException {
+      os.writeInt(VERSION);
+      new NodesAndUserObjectsWriter(modelReference).writeNodes(roots, os);
+    }
+
+  }
+
+  private static class NodesAndUserObjectsWriter extends NodesWriter {
+
+    public NodesAndUserObjectsWriter(@NotNull SModelReference modelReference) {
+      super(modelReference);
+    }
+
+    @Override
+    protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {
+      // write user objects here
+      Object userObject = node.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE);
+      if (userObject instanceof SNode) {
+        os.writeInt(1);
+        os.writeModelReference(((SNode) userObject).getModel().getSModelReference());
+        os.writeNodeId(((SNode) userObject).getSNodeId());
+      }
+      else {
+        os.writeInt(0);
+      }
+      super.writeChildren(node, os);
+    }
+  }
+
+  private static class NodesAndUserObjectsReader extends NodesReader {
+
+    public NodesAndUserObjectsReader(@NotNull SModelReference modelReference) {
+      super(modelReference);
+    }
+
+    @Override
+    protected void readChildren(SModel model, ModelInputStream is, SNode node) throws IOException {
+      // first read user objects
+      int uoc = is.readInt();
+      if (uoc == 1) {
+        SModel tmodel = null;
+        SModelReference modelRef = is.readModelReference();
+        SNodeId nodeId = is.readNodeId();
+        if (LOCAL.equals(modelRef)) {
+          tmodel = model;
+        }
+        else {
+          SModelDescriptor mdesc = SModelRepository.getInstance().getModelDescriptor(modelRef);
+          if (mdesc != null) {
+            tmodel = mdesc.getSModel();
+          }
+        }
+        if (tmodel != null) {
+          SNode userObject = tmodel.getNodeById(nodeId);
+          node.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, userObject);
+        }
+        else {
+          throw new IOException("couldn't load user object");
+        }
+      }
+      super.readChildren(model, is, node);
     }
   }
 }

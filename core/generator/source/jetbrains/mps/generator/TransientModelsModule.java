@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.generator.TransientModelsComponent.TransientSwapSpace;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -31,6 +32,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransientModelsModule extends AbstractModule {
+  private static final Logger LOG = Logger.getLogger(TransientModelsModule.class);
+
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
 
   private final IModule myOriginalModule;
@@ -228,7 +231,7 @@ public class TransientModelsModule extends AbstractModule {
     protected ModelLoadResult initialLoad() {
       TransientSModel model;
       if (wasUnloaded) {
-        System.out.println("*** Re-loading "+getSModelReference());
+        LOG.debug("Re-loading "+getSModelReference());
 
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
         if (swap == null) { throw new IllegalStateException("no swap space"); }
@@ -244,7 +247,8 @@ public class TransientModelsModule extends AbstractModule {
 
     private boolean unloadModel() {
       if (!wasUnloaded) {
-        System.out.println("*** Un-loading "+getSModelReference());
+        LOG.debug("Un-loading "+getSModelReference());
+
         TransientSwapSpace swap = myComponent.getTransientSwapSpace();
         if (swap == null || !swap.swapOut((TransientSModel) mySModel)) { return false; }
 

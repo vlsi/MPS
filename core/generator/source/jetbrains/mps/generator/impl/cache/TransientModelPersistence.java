@@ -29,9 +29,8 @@ import java.util.List;
  */
 public class TransientModelPersistence {
 
-  protected static final int VERSION = 1;
-  protected static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
-  protected final SModelReference myModelReference;
+  private static final int VERSION = 1;
+  private final SModelReference myModelReference;
 
   public TransientModelPersistence(@NotNull SModelReference modelReference) {
     this.myModelReference = modelReference;
@@ -40,23 +39,6 @@ public class TransientModelPersistence {
   public void saveModel(List<SNode> roots, ModelOutputStream os) throws IOException {
     os.writeInt(VERSION);
     new NodesWriter(myModelReference).writeNodes(roots, os);
-  }
-
-  public TransientSModel loadModel(ModelInputStream is, TransientSModel model) throws IOException {
-    int version = is.readInt();
-    if (version != VERSION) {
-      return null;
-    }
-
-    model.setLoading(true);
-    List<SNode> roots = new NodesReader(myModelReference).readNodes(model, is);
-    for (SNode r: roots) {
-      model.addRoot(r);
-    }
-    // Don't enable events as this will cause TextGen to fail. See MPS-11184
-//    model.setLoading(false);
-
-    return model;
   }
 
   public List<SNode> loadModel(ModelInputStream is) throws IOException {

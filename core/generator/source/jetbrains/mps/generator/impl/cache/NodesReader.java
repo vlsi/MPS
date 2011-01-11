@@ -16,6 +16,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class NodesReader {
+  protected static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
 
   public NodesReader(@NotNull SModelReference modelReference) {
@@ -72,7 +73,7 @@ public class NodesReader {
 
       String role = is.readString();
       SModelReference modelRef = is.readModelReference();
-      if(modelRef != null && TransientModelPersistence.LOCAL.equals(modelRef)) {
+      if(modelRef != null && LOCAL.equals(modelRef)) {
         modelRef = myModelReference;
       }
       String resolveInfo = is.readString();
