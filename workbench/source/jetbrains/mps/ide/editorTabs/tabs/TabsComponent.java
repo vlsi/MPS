@@ -20,14 +20,17 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.JBPopupFactory.ActionSelectionAid;
 import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
+import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor.MyTabListener;
+import jetbrains.mps.ide.editorTabs.baseListening.ModelListener;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
@@ -38,14 +41,35 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-public class TabsComponent extends JPanel{
-  private TabbedEditor myTabbedEditor;
+public abstract class TabsComponent extends JPanel{
+  private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
+  private ModelListener myListener = new ModelListener() {
+    protected void onImportantRootRemoved(SNodePointer node) {
+      if (myBaseNode.equals(node)) return; //will be closed by idea
 
-  public TabsComponent(TabbedEditor tabbedEditor) {
-    myTabbedEditor = tabbedEditor;
+      if (getCurrentEditorComponent().getEditedNode() == node.getNode()) {
+        getCurrentEditorComponent().editNode(myBaseNode.getNode(), getOperationContext());
+      }
+
+      myTabsComponent.updateTabs();
+    }
+  };
+
+  private Set<EditorTabDescriptor> myTabs;
+
+  public TabsComponent(Set<EditorTabDescriptor> tabs) {
+    myTabs = tabs;
     setLayout(new FlowLayout());
+    addListeners();
+  }
 
+  public void dispose(){
+    removeListeners();
+  }
+
+  public void updateTabs() {
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         selectTab(tabNum);
@@ -61,9 +85,7 @@ public class TabsComponent extends JPanel{
       }
     });
 
-  }
 
-  public void updateTabs() {
     removeAll();
     myRealTabs.clear();
     for (EditorTabDescriptor d : myPossibleTabs) {
@@ -76,7 +98,6 @@ public class TabsComponent extends JPanel{
     add(new AddConceptButton());
   }
 
-  private List<EditorTab> myRealTabs = new ArrayList<EditorTab>();
   public List<SNodePointer> getAllEditedNodes() {
     List<SNodePointer> result = new ArrayList<SNodePointer>();
     SNode baseNode = myBaseNode.getNode();
@@ -107,7 +128,7 @@ public class TabsComponent extends JPanel{
                   String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
                   created.setProperty(SNode.PACK, mainPack);
 
-                  myTabbedEditor.aspectAdded(created);
+                  aspectAdded(created);
 
                   updateTabs();
                 }
@@ -121,17 +142,9 @@ public class TabsComponent extends JPanel{
     return result;
   }
 
-  public void addTabListener(TabListener myTabListener) {
-    myListeners.add ;
-  }
+  abstract void changeNode(SNode newNode);
 
-  public void removeTabListener(TabListener myTabListener) {
-    myListeners.remove;
-  }
-
-  public void callTabListener(TabListener myTabListener) {
-    myListeners.add  ;
-  }
+  void aspectAdded(SNode node){}
 
   private class AddConceptButton extends JButton {
     private AddConceptButton() {
@@ -146,6 +159,75 @@ public class TabsComponent extends JPanel{
           });
         }
       });
+    }
+  }
+
+
+  ///-------------events----------------
+
+  private void addListeners() {
+    myListener.startListening();
+
+    SModelRepository.getInstance().addModelRepositoryListener(myModelAddedListener);
+  }
+
+  private void removeListeners() {
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelAddedListener);
+
+    for (SModelReference modelRef : myModelAdditionListeners.keySet()) {
+      for (SModelListener listener : myModelAdditionListeners.get(modelRef)) {
+        SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
+        if (model == null) continue;
+        model.removeModelListener(listener);
+      }
+    }
+
+    myModelAdditionListeners.clear();
+
+    myListener.stopListening();
+  }
+
+  ///-------------tab insert events----------------
+
+  private SModelRepositoryListener myModelAddedListener = new ModelAddedListener();
+  protected MultiMap<SModelReference, SModelListener> myModelAdditionListeners = new MultiMap<SModelReference, SModelListener>();
+  private List<AdditionDescriptor> myAdditionDescriptors = new ArrayList<AdditionDescriptor>();
+
+  public void addNodeAdditionListener(Condition<SModelDescriptor> listenToModelCondition, SModelListener listener) {
+    myAdditionDescriptors.add(new AdditionDescriptor(listenToModelCondition, listener));
+    for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
+      if (listenToModelCondition.met(d)) {
+        listenModelForAdditions(d, listener);
+      }
+    }
+  }
+
+  private void listenModelForAdditions(SModelDescriptor descriptor, SModelListener listener) {
+    descriptor.addModelListener(listener);
+    myModelAdditionListeners.putValue(descriptor.getSModelReference(), listener);
+  }
+
+  private class ModelAddedListener extends SModelRepositoryAdapter {
+    public void modelAdded(SModelDescriptor modelDescriptor) {
+      for (AdditionDescriptor d : myAdditionDescriptors) {
+        if (d.first.met(modelDescriptor)) {
+          listenModelForAdditions(modelDescriptor, d.second);
+        }
+      }
+    }
+
+    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+      SModelReference modelRef = modelDescriptor.getSModelReference();
+      for (SModelListener listener : myModelAdditionListeners.get(modelRef)) {
+        modelDescriptor.removeModelListener(listener);
+      }
+      myModelAdditionListeners.remove(modelRef);
+    }
+  }
+
+  private class AdditionDescriptor extends Pair<Condition<SModelDescriptor>, SModelListener> {
+    public AdditionDescriptor(Condition<SModelDescriptor> first, SModelListener second) {
+      super(first, second);
     }
   }
 
