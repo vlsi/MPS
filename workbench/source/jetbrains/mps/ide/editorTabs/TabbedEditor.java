@@ -89,7 +89,7 @@ public class TabbedEditor extends BaseNodeEditor {
         myColorProvider.start(this);
       }
 
-      updateTab();
+      updateProperties();
     }
 
     if (select) {
@@ -105,7 +105,7 @@ public class TabbedEditor extends BaseNodeEditor {
     return node.getModel().getModelDescriptor();
   }
 
-  private boolean updateTab() {
+  private boolean updateProperties() {
     final Project project = getOperationContext().getProject();
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();
@@ -120,7 +120,7 @@ public class TabbedEditor extends BaseNodeEditor {
     public void propertyChanged(SModelPropertyEvent event) {
       SNodePointer pointer = new SNodePointer(event.getNode());
       if (event.getPropertyName().equals(INamedConcept.NAME) && pointer.equals(getCurrentlyEditedNode())) {
-        updateTab();
+        updateProperties();
       }
     }
   }

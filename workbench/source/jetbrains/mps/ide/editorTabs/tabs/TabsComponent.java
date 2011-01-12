@@ -20,10 +20,15 @@ import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabs.baseListening.ModelListener;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.Condition;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -62,6 +67,20 @@ public abstract class TabsComponent extends JPanel {
         nextTab();
       }
     }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      public void eventsHappenedInCommand(List<SModelEvent> events) {
+        outer:
+        for (EditorTabDescriptor d : myPossibleTabs) {
+          for (EditorTab tab : myRealTabs) {
+            if (tab.getDescriptor() == d) continue outer;
+          }
+
+          if (d.getNodes(myBaseNode.getNode()).isEmpty()) continue;
+          updateTabs();
+        }
+      }
+    });
 
     setLayout(new FlowLayout());
     addListeners();
