@@ -286,7 +286,10 @@ import jetbrains.mps.vcs.diff.oldchanges.NewNodeChange;
         NewNodeChange anc = (NewNodeChange) myChange;
         id = anc.getNodeParent();
       }
-      SNode node = myMerger.getResultModel().getNodeById(id);
+      SNode node = (id == null ?
+        null :
+        myMerger.getResultModel().getNodeById(id)
+      );
       if (node != null) {
         TreeNode tn = myResultTree.findNodeWith(node);
         myResultTree.selectNode(tn);

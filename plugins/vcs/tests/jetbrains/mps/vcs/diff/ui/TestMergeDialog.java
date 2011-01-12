@@ -132,7 +132,7 @@ public class TestMergeDialog {
           dialog.dispose();
           System.exit(0);
         }
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             IFile iFile = FileSystem.getInstance().getFileByPath(finalResultFile);
             if (!iFile.exists()) iFile.createNewFile();

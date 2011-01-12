@@ -3123,19 +3123,28 @@
               <node role="4.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247568448">
                 <link role="4.classifier:3" targetNodeId="46.~SNode" />
               </node>
-              <node role="4.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247568449">
-                <node role="4.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247568450">
-                  <node role="4.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4707157387247568451">
-                    <link role="4.variableDeclaration:3" targetNodeId="4707157387247567944" resolveInfo="myMerger" />
-                  </node>
-                  <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247568452">
-                    <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247630801" resolveInfo="getResultModel" />
+              <node role="4.initializer:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="2922592077247672357">
+                <node role="4.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2922592077247672361" />
+                <node role="4.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="2922592077247672353">
+                  <node role="4.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2922592077247672356" />
+                  <node role="4.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2922592077247672352">
+                    <link role="4.variableDeclaration:3" targetNodeId="4707157387247568415" resolveInfo="id" />
                   </node>
                 </node>
-                <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247568453">
-                  <link role="4.baseMethodDeclaration:3" targetNodeId="46.~SModel.getNodeById(jetbrains.mps.smodel.SNodeId):jetbrains.mps.smodel.SNode" />
-                  <node role="4.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4707157387247568454">
-                    <link role="4.variableDeclaration:3" targetNodeId="4707157387247568415" resolveInfo="id" />
+                <node role="4.ifFalse:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2922592077247672362">
+                  <node role="4.operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2922592077247672363">
+                    <node role="4.operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2922592077247672364">
+                      <link role="4.variableDeclaration:3" targetNodeId="4707157387247567944" resolveInfo="myMerger" />
+                    </node>
+                    <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2922592077247672365">
+                      <link role="4.baseMethodDeclaration:3" targetNodeId="54.4707157387247630801" resolveInfo="getResultModel" />
+                    </node>
+                  </node>
+                  <node role="4.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2922592077247672366">
+                    <link role="4.baseMethodDeclaration:3" targetNodeId="46.~SModel.getNodeById(jetbrains.mps.smodel.SNodeId):jetbrains.mps.smodel.SNode" resolveInfo="getNodeById" />
+                    <node role="4.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2922592077247672367">
+                      <link role="4.variableDeclaration:3" targetNodeId="4707157387247568415" resolveInfo="id" />
+                    </node>
                   </node>
                 </node>
               </node>
