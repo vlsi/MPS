@@ -29,11 +29,10 @@ import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class TabsComponent extends JPanel {
   private SNodePointer myBaseNode;
@@ -51,6 +50,7 @@ public abstract class TabsComponent extends JPanel {
       updateTabs();
     }
   };
+  private JPanel myTabPanel;
 
   public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
     myBaseNode = baseNode;
@@ -58,15 +58,23 @@ public abstract class TabsComponent extends JPanel {
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        prevTab();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            prevTab();
+          }
+        });
       }
-    }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        nextTab();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            nextTab();
+          }
+        });
       }
-    }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
@@ -82,7 +90,17 @@ public abstract class TabsComponent extends JPanel {
       }
     });
 
-    setLayout(new FlowLayout());
+    setLayout(new BorderLayout());
+    add(new JPanel(), BorderLayout.CENTER);
+
+    myTabPanel = new JPanel();
+    myTabPanel.setLayout(new FlowLayout());
+    add(myTabPanel, BorderLayout.WEST);
+
+    JPanel plusPanel = new JPanel();
+    plusPanel.add(new AddConceptButton(myBaseNode, myPossibleTabs));
+    add(plusPanel, BorderLayout.EAST);
+
     addListeners();
     updateTabs();
   }
@@ -105,7 +123,7 @@ public abstract class TabsComponent extends JPanel {
   }
 
   private void updateTabs() {
-    removeAll();
+    myTabPanel.removeAll();
     myRealTabs.clear();
     for (EditorTabDescriptor d : myPossibleTabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
@@ -117,9 +135,24 @@ public abstract class TabsComponent extends JPanel {
 
       final EditorTab tab = new EditorTab(this, d, myBaseNode);
       myRealTabs.add(tab);
-      add(tab);
     }
-    add(new AddConceptButton(myBaseNode, myPossibleTabs));
+
+    //todo comparator in language
+    Collections.sort(myRealTabs, new Comparator<EditorTab>() {
+      public int compare(EditorTab o1, EditorTab o2) {
+        List<String> list = Arrays.asList(new String[]{"Structure", "Editor", "Constraints", "Behavior", "Typesystem", "Actions", "Refactorings", "Intentions", "Find Usages", "Data Flow", "Generator", "Textgen"});
+        return list.indexOf(o1.getDescriptor().getTitle()) - list.indexOf(o2.getDescriptor().getTitle());
+      }
+    });
+
+    for (EditorTab tab : myRealTabs) {
+      myTabPanel.add(tab);
+    }
+  }
+
+  //todo
+  public void setLastNode(SNodePointer node){
+    myLastNode = node;
   }
 
   public void onNodeChange(SNode node) {
@@ -130,11 +163,31 @@ public abstract class TabsComponent extends JPanel {
   protected abstract void changeNode(SNode newNode);
 
   private void nextTab() {
-    //todo
+    for (EditorTab tab : myRealTabs) {
+      boolean thatTab = tab.getDescriptor().getNodes(myBaseNode.getNode()).contains(myLastNode.getNode());
+      if (thatTab) {
+        int index = myRealTabs.indexOf(tab);
+        if (index == myRealTabs.size() - 1) return;
+
+        myRealTabs.get(index + 1).doClick();
+
+        return;
+      }
+    }
   }
 
   private void prevTab() {
-    //todo
+    for (EditorTab tab : myRealTabs) {
+      boolean thatTab = tab.getDescriptor().getNodes(myBaseNode.getNode()).contains(myLastNode.getNode());
+      if (thatTab) {
+        int index = myRealTabs.indexOf(tab);
+        if (index == 0) return;
+
+        myRealTabs.get(index - 1).doClick();
+
+        return;
+      }
+    }
   }
 
 

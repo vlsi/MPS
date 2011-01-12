@@ -71,6 +71,7 @@ public class TabbedEditor extends BaseNodeEditor {
   public void showNode(SNode node, boolean select) {
     SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
     boolean rootChange = containingRoot != getCurrentlyEditedNode().getNode();
+    myTabsComponent.setLastNode(new SNodePointer(node));
 
     if (rootChange) {
       if (myColorProvider != null) {
