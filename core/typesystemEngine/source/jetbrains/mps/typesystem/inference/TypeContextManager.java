@@ -5,6 +5,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.TypeSystemException;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
@@ -260,6 +261,9 @@ public class TypeContextManager implements ApplicationComponent {
     if (resolve == null) {
       resolve = new Stack<Object>();
       myResolveStack.set(resolve);
+    }
+    if (resolve.size() > 20) {
+      throw new TypeSystemException("typechecking failed");
     }
     if (!resolve.isEmpty()) {
       context = generationMode ? null : getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER, false);
