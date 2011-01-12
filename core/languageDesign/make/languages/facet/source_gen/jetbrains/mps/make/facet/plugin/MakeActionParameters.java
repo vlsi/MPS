@@ -14,8 +14,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
@@ -57,18 +58,18 @@ public class MakeActionParameters {
     return sb.toString();
   }
 
-  public Iterable<MResource> collectInput(final boolean dirtyOnly) {
+  public Iterable<MResource> collectInput(boolean dirtyOnly) {
     Iterable<SModelDescriptor> smds = Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
       public Iterable<SModelDescriptor> iterable() {
         return new Iterable<SModelDescriptor>() {
           public Iterator<SModelDescriptor> iterator() {
             return new YieldingIterator<SModelDescriptor>() {
               private int __CP__ = 0;
-              private SModelDescriptor _5__yield_nk3wxj_a0a0a0a0a0a1;
-              private Iterator<SModelDescriptor> _5__yield_nk3wxj_a0a0a0a0a0a1_it;
+              private SModelDescriptor _5__yield_nk3wxj_a0a0a0a0a0a0b;
+              private Iterator<SModelDescriptor> _5__yield_nk3wxj_a0a0a0a0a0a0b_it;
               private Iterable<SModelDescriptor> _11_modelsFromModules;
-              private SModelDescriptor _12__yield_nk3wxj_d0a0a0a0a1;
-              private Iterator<SModelDescriptor> _12__yield_nk3wxj_d0a0a0a0a1_it;
+              private SModelDescriptor _12__yield_nk3wxj_d0a0a0a0a0b;
+              private Iterator<SModelDescriptor> _12__yield_nk3wxj_d0a0a0a0a0b_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -79,23 +80,23 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 5:
-                      this._5__yield_nk3wxj_a0a0a0a0a0a1_it = Sequence.fromIterable(MakeActionParameters.this.models).iterator();
+                      this._5__yield_nk3wxj_a0a0a0a0a0a0b_it = Sequence.fromIterable(MakeActionParameters.this.models).iterator();
                     case 6:
-                      if (!(this._5__yield_nk3wxj_a0a0a0a0a0a1_it.hasNext())) {
+                      if (!(this._5__yield_nk3wxj_a0a0a0a0a0a0b_it.hasNext())) {
                         this.__CP__ = 4;
                         break;
                       }
-                      this._5__yield_nk3wxj_a0a0a0a0a0a1 = this._5__yield_nk3wxj_a0a0a0a0a0a1_it.next();
+                      this._5__yield_nk3wxj_a0a0a0a0a0a0b = this._5__yield_nk3wxj_a0a0a0a0a0a0b_it.next();
                       this.__CP__ = 7;
                       break;
                     case 12:
-                      this._12__yield_nk3wxj_d0a0a0a0a1_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
+                      this._12__yield_nk3wxj_d0a0a0a0a0b_it = Sequence.fromIterable(_11_modelsFromModules).iterator();
                     case 13:
-                      if (!(this._12__yield_nk3wxj_d0a0a0a0a1_it.hasNext())) {
+                      if (!(this._12__yield_nk3wxj_d0a0a0a0a0b_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._12__yield_nk3wxj_d0a0a0a0a1 = this._12__yield_nk3wxj_d0a0a0a0a1_it.next();
+                      this._12__yield_nk3wxj_d0a0a0a0a0b = this._12__yield_nk3wxj_d0a0a0a0a0b_it.next();
                       this.__CP__ = 14;
                       break;
                     case 2:
@@ -110,7 +111,7 @@ __switch__:
                       break;
                     case 8:
                       this.__CP__ = 6;
-                      this.yield(_5__yield_nk3wxj_a0a0a0a0a0a1);
+                      this.yield(_5__yield_nk3wxj_a0a0a0a0a0a0b);
                       return true;
                     case 10:
                       this.__CP__ = 4;
@@ -118,7 +119,7 @@ __switch__:
                       return true;
                     case 15:
                       this.__CP__ = 13;
-                      this.yield(_12__yield_nk3wxj_d0a0a0a0a1);
+                      this.yield(_12__yield_nk3wxj_d0a0a0a0a0b);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -133,13 +134,6 @@ __switch__:
                             }
                           } else if (MakeActionParameters.this.cmodule != null) {
                             _11_modelsFromModules = Sequence.fromIterable(_11_modelsFromModules).concat(ListSequence.fromList(MakeActionParameters.this.cmodule.getEditableUserModels()));
-                          }
-                          if (dirtyOnly) {
-                            _11_modelsFromModules = Sequence.fromIterable(_11_modelsFromModules).where(new IWhereFilter<SModelDescriptor>() {
-                              public boolean accept(SModelDescriptor md) {
-                                return ModelGenerationStatusManager.getInstance().generationRequired(md, MakeActionParameters.this.context, false, true);
-                              }
-                            }).toListSequence();
                           }
                         }
                       });
@@ -167,11 +161,22 @@ __switch__:
           }
         };
       }
-    })).sort(new ISelector<SModelDescriptor, Comparable<?>>() {
+    })).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor md) {
+        return !(GeneratorManager.isDoNotGenerate(md));
+      }
+    }).sort(new ISelector<SModelDescriptor, Comparable<?>>() {
       public Comparable<?> select(SModelDescriptor desc) {
         return desc.getModule().getModuleFqName();
       }
     }, true);
+    if (dirtyOnly) {
+      smds = Sequence.fromIterable(smds).where(new IWhereFilter<SModelDescriptor>() {
+        public boolean accept(SModelDescriptor md) {
+          return ModelGenerationStatusManager.getInstance().generationRequired(md, MakeActionParameters.this.context, false, true);
+        }
+      }).toListSequence();
+    }
     return arrangeByModule(smds);
   }
 
