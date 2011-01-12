@@ -17,17 +17,22 @@ package jetbrains.mps.ide.editorTabs;
 
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.BaseNodeEditor;
+import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import org.apache.commons.lang.ObjectUtils;
+import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.BorderLayout;
 import java.util.List;
@@ -47,6 +52,7 @@ public class TabbedEditor extends BaseNodeEditor {
         showNode(newNode, false);
       }
     };
+
     getComponent().add(myTabsComponent, BorderLayout.SOUTH);
   }
 
@@ -82,7 +88,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
     if (rootChange) {
       SModelDescriptor model = getCurrentNodeModel();
-      assert model!=null;
+      assert model != null;
       model.addModelListener(myModelListener);
 
       if (myColorProvider != null) {
@@ -99,9 +105,9 @@ public class TabbedEditor extends BaseNodeEditor {
 
   private SModelDescriptor getCurrentNodeModel() {
     SNodePointer n = getCurrentlyEditedNode();
-    if (n==null) return null;
+    if (n == null) return null;
     SNode node = n.getNode();
-    if (node==null) return null;
+    if (node == null) return null;
     return node.getModel().getModelDescriptor();
   }
 
@@ -124,5 +130,58 @@ public class TabbedEditor extends BaseNodeEditor {
       }
     }
   }
-}
 
+  public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
+    TabbedEditorState state = new TabbedEditorState();
+    state.myCurrentNode = getCurrentlyEditedNode();
+
+    BaseEditorState superState = (BaseEditorState) super.saveState(level);
+    state.refCopyFrom(superState);
+    return state;
+  }
+
+  public void loadState(@NotNull final MPSEditorState state) {
+    super.loadState(state);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = ((TabbedEditorState) state).myCurrentNode.getNode();
+        showNode(node, false);
+      }
+    });
+  }
+
+  public static class TabbedEditorState extends BaseEditorState implements MPSEditorState {
+    private static final String NODE = "node";
+    private static final String NODE_ID = "nodeId";
+    private static final String MODEL_ID = "modelId";
+
+    private SNodePointer myCurrentNode;
+
+    public void save(Element e) {
+      super.save(e);
+      Element node = new Element(NODE);
+      node.setAttribute(NODE_ID, myCurrentNode.getNodeId().toString());
+      node.setAttribute(MODEL_ID, myCurrentNode.getModelReference().toString());
+      e.addContent(node);
+    }
+
+    public void load(Element e) {
+      super.load(e);
+      Element nodeElem = e.getChild(NODE);
+
+      String nodeId = nodeElem.getAttributeValue(NODE_ID);
+      String modelId = nodeElem.getAttributeValue(MODEL_ID);
+      myCurrentNode = new SNodePointer(modelId, nodeId);
+    }
+
+    public int hashCode() {
+      return super.hashCode() * 13 + myCurrentNode.hashCode();
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof TabbedEditorState)) return false;
+      if (!super.equals(obj)) return false;
+      return ObjectUtils.equals(myCurrentNode, ((TabbedEditorState) obj).myCurrentNode);
+    }
+  }
+}

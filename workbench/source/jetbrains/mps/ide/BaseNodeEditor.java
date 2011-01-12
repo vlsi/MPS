@@ -92,7 +92,7 @@ public abstract class BaseNodeEditor implements IEditor {
 
   @Nullable
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
-   MyFileEditorState result = new MyFileEditorState();
+   BaseEditorState result = new BaseEditorState();
     EditorContext editorContext = getEditorContext();
     if (editorContext != null) {
       boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
@@ -113,9 +113,9 @@ public abstract class BaseNodeEditor implements IEditor {
   }
 
   public void loadState(@NotNull MPSEditorState state) {
-    if (!(state instanceof MyFileEditorState)) return;
+    if (!(state instanceof BaseEditorState)) return;
 
-    MyFileEditorState s = (MyFileEditorState) state;
+    BaseEditorState s = (BaseEditorState) state;
     if (s.myMemento != null) {
       getEditorContext().setMemento(s.myMemento);
     }
@@ -127,12 +127,17 @@ public abstract class BaseNodeEditor implements IEditor {
     }
   }
 
-  public static class MyFileEditorState implements MPSEditorState {
+  public static class BaseEditorState implements MPSEditorState {
     private static final String MEMENTO = "memento";
     private static final String INSPECTOR_MEMENTO = "inspectorMemento";
 
     private Object myMemento;
     private Object myInspectorMemento;
+
+    public void refCopyFrom(BaseEditorState source){
+      this.myMemento = source.myMemento;
+      this.myInspectorMemento = source.myInspectorMemento;
+    }
 
     public void save(Element e) {
       if (myMemento != null) {
@@ -163,11 +168,11 @@ public abstract class BaseNodeEditor implements IEditor {
     }
 
     public boolean equals(Object obj) {
-      if (!(obj instanceof MyFileEditorState)) {
+      if (!(obj instanceof BaseEditorState)) {
         return false;
       }
 
-      MyFileEditorState state = (MyFileEditorState) obj;
+      BaseEditorState state = (BaseEditorState) obj;
       return ObjectUtils.equals(state.myMemento, myMemento) && ObjectUtils.equals(state.myInspectorMemento, myInspectorMemento);
     }
   }

@@ -241,6 +241,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public EditorComponent(final IOperationContext operationContext, boolean showErrorsGutter) {
     assert operationContext == null || operationContext.getModule() != null : "No module for operation context: " + operationContext;
     myOperationContext = operationContext;
+    setEditorContext(new EditorContext(this,null,operationContext));
 
     setBackground(Color.white);
 
