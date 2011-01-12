@@ -60,6 +60,18 @@ public abstract class TabsComponent extends JPanel {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
 
+    registerKeyboardAction(new AbstractAction() {
+       public void actionPerformed(ActionEvent e) {
+         //todo
+       }
+     }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+     registerKeyboardAction(new AbstractAction() {
+       public void actionPerformed(ActionEvent e) {
+         //todo
+       }
+     }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
     setLayout(new FlowLayout());
     addListeners();
     updateTabs();
