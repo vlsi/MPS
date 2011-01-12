@@ -2500,6 +2500,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.ModuleActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Generate_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MakeAllModules_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GenerateEditorPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AddGeneralPurposeDevKitToLanguageModels_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
@@ -3482,6 +3483,16 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup" file="NamespaceMakeActions_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.NewAccessoryModel_Action" file="NewAccessoryModel_Action.java">

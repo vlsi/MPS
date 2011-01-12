@@ -48,7 +48,7 @@ public class MakeActionParameters {
     } else if (this.models != null && this.models.size() > 1) {
       sb.append("Selected Models");
     } else if (module != null) {
-      sb.append(NameUtil.shortNameFromLongName(module.getClass().getName())).append(" '").append(NameUtil.compactNamespace(module.getModuleReference().getModuleFqName())).append("'");
+      sb.append(NameUtil.shortNameFromLongName(module.getClass().getName().replaceAll("\\$.*", ""))).append(" '").append(NameUtil.compactNamespace(module.getModuleReference().getModuleFqName())).append("'");
     } else if (this.modules != null && this.modules.size() > 1) {
       sb.append("Selected Modules");
     } else {

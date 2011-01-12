@@ -4,6 +4,7 @@ package jetbrains.mps.make.facet.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
@@ -38,11 +39,13 @@ public class Facet_ApplicationPlugin extends BaseApplicationPlugin {
     // groups 
     addGroup(new GlobalMake_ActionGroup());
     addGroup(new Make_ActionGroup());
+    addGroup(new NamespaceMake_ActionGroup());
     addGroup(new ProjectMake_ActionGroup());
     addGroup(new ToolbarMake_ActionGroup());
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(NamespaceMake_ActionGroup.ID, NamespaceMakeActions_ActionGroup.ID, NamespaceMakeActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(ToolbarMake_ActionGroup.ID, "MPSToolbarRunGroup", null);
     insertGroupIntoAnother(ProjectMake_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(Make_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_make);
