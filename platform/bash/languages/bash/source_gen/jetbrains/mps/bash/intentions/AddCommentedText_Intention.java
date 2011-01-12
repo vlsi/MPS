@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddCommentedText_Intention extends BaseIntention implements Intention {
   public AddCommentedText_Intention() {
@@ -50,7 +51,7 @@ public class AddCommentedText_Intention extends BaseIntention implements Intenti
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.setNewChild(node, "comment", "jetbrains.mps.bash.structure.CommentedText");
+    SNodeFactoryOperations.setNewChild(node, "comment", "jetbrains.mps.bash.structure.CommentedText");
     editorContext.select(SLinkOperations.getTarget(node, "comment", true));
   }
 

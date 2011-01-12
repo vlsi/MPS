@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -35,7 +35,7 @@ public class CreateProperVariableReferance_Intention extends BaseIntention imple
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode expansion = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.BasicParameterExpansion", null);
+    SNode expansion = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.BasicParameterExpansion", null);
     SNodeOperations.replaceWithAnother(node, expansion);
     SLinkOperations.setTarget(expansion, "variable", SLinkOperations.getTarget(node, "variable", false), false);
     editorContext.select(expansion);
