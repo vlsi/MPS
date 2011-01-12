@@ -97,11 +97,17 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
 
   @Override
   public void checkRoot(final boolean refreshTypes) {
-    if (refreshTypes) {
-      myState.clear(true);
-      ((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
-      solveAndExpand();
-    }
+   // synchronized (TYPECHECKING_LOCK) {
+      if (refreshTypes) {
+        myState.clear(true);
+        myNodeTypesComponent.computeTypes(refreshTypes);
+        //((NodeTypesComponentNew)myNodeTypesComponent).checkNode(myRootNode, true);
+        solveAndExpand();
+        myNodeTypesComponent.setCheckedTypesystem();
+      }
+   // }
+
+
   }
 
   public void solveAndExpand() {

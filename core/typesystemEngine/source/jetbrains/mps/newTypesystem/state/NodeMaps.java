@@ -141,6 +141,10 @@ public class NodeMaps {
     return myState.getRepresentative(type);
   }
 
+  public SNode getInitialType(SNode node) {
+    return myNodesToTypes.get(node);
+  }
+
   public List<String> getErrorListPresentation() {
     List<String> result = new LinkedList<String>();
     for (Map.Entry<SNode, List<IErrorReporter>> entry : myNodesToErrors.entrySet()) {
@@ -169,6 +173,10 @@ public class NodeMaps {
 
   public SNode getNode(SNode type) {
     return myTypesToNodes.get(type);
+  }
+
+  public Set<SNode> getTypeKeySet() {
+    return myNodesToTypes.keySet();
   }
 
   public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {

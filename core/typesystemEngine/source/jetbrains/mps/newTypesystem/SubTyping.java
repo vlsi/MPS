@@ -217,7 +217,10 @@ public class SubTyping {
             });
           }
         });*/
-        result.addAll(superTypes);
+        //todo freeze ?
+        if (superTypes != null) {
+          result.addAll(superTypes);
+        }
       }
     }
     return result;
