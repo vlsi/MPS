@@ -74,7 +74,7 @@
     <scopeInfo nodeId="1234279065039" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="42" startPosition="44" endLine="43" endPosition="60" />
     <scopeInfo nodeId="1234279065022" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="35" startPosition="7" endLine="38" endPosition="259" />
     <scopeInfo nodeId="1234279065037" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="41" startPosition="128" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="1234279065038" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="41" startPosition="128" endLine="44" endPosition="7">
+    <scopeInfo nodeId="1234279065038" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="41" startPosition="128" endLine="44" endPosition="7">
       <varInfo nodeId="1234279065043" varName="actual" />
     </scopeInfo>
     <scopeInfo nodeId="1234279065021" fileName="check_CallInnerFunctionOperation_NonTypesystemRule.java" startLine="34" startPosition="15" endLine="39" endPosition="7" />
@@ -107,7 +107,7 @@
     <scopeInfo nodeId="1234529496738" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="42" startPosition="44" endLine="43" endPosition="60" />
     <scopeInfo nodeId="1234529496730" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="35" startPosition="7" endLine="38" endPosition="263" />
     <scopeInfo nodeId="1234529496736" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="41" startPosition="128" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="1234529496737" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="41" startPosition="128" endLine="44" endPosition="7">
+    <scopeInfo nodeId="1234529496737" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="41" startPosition="128" endLine="44" endPosition="7">
       <varInfo nodeId="1234529496742" varName="actual" />
     </scopeInfo>
     <scopeInfo nodeId="1234529496729" fileName="check_CallPrivateFunction_NonTypesystemRule.java" startLine="34" startPosition="15" endLine="39" endPosition="7" />
