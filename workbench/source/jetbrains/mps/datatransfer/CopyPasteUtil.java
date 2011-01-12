@@ -20,6 +20,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -247,7 +248,18 @@ public class CopyPasteUtil {
   }
 
   public static void copyNodesToClipboard(List<SNode> nodes) {
-    CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(nodes));
+    StringBuilder stringBuilder = new StringBuilder();
+    int i = 1;
+    int size = nodes.size();
+    for (SNode node : nodes) {
+      stringBuilder.append(node.getDebugText());
+      if (i < size) {
+        stringBuilder.append("\n");
+      }
+      i++;
+    }
+    // IDEA copy mechanism merges copies with the same text representation
+    copyNodesAndTextToClipboard(nodes, stringBuilder.toString());
   }
 
   public static void copyNodeToClipboard(SNode node) {
