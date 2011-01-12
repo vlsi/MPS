@@ -171,7 +171,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   public EditorMessageOwner getOwner(SNode node) {
     if (node == null) return null;
-    return getNodeTypesComponent(node);
+    return this;
   }
 
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {

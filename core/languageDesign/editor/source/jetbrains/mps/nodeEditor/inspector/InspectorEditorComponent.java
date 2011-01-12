@@ -46,7 +46,6 @@ public class InspectorEditorComponent extends EditorComponent {
     } else {
       setEditorContext(new EditorContext(this, getEditedNode().getModel(), getOperationContext()));
     }
-    refreshHighlightManager();
     rebuildEditorContent();
     if (getOperationContext() != null) {
       notifyCreation();
