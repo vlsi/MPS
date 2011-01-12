@@ -15,25 +15,16 @@
  */
 package jetbrains.mps.ide.editorTabs.tabs;
 
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.ui.popup.JBPopupFactory.ActionSelectionAid;
-import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Pair;
-import com.intellij.ui.awt.RelativePoint;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabs.baseListening.ModelListener;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.FlowLayout;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,16 +52,16 @@ public abstract class TabsComponent extends JPanel {
     myPossibleTabs = possibleTabs;
 
     registerKeyboardAction(new AbstractAction() {
-       public void actionPerformed(ActionEvent e) {
-         //todo
-       }
-     }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+      public void actionPerformed(ActionEvent e) {
+        prevTab();
+      }
+    }, KeyStroke.getKeyStroke("ctrl alt shift LEFT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-     registerKeyboardAction(new AbstractAction() {
-       public void actionPerformed(ActionEvent e) {
-         //todo
-       }
-     }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        nextTab();
+      }
+    }, KeyStroke.getKeyStroke("ctrl alt shift RIGHT"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     setLayout(new FlowLayout());
     addListeners();
@@ -109,7 +100,7 @@ public abstract class TabsComponent extends JPanel {
       myRealTabs.add(tab);
       add(tab);
     }
-    add(new AddConceptButton());
+    add(new AddConceptButton(myBaseNode, myPossibleTabs));
   }
 
   public void onNodeChange(SNode node) {
@@ -119,59 +110,12 @@ public abstract class TabsComponent extends JPanel {
 
   protected abstract void changeNode(SNode newNode);
 
-  private class AddConceptButton extends JButton {
-    private AddConceptButton() {
-      setAction(new AbstractAction("+") {
-        public void actionPerformed(ActionEvent e) {
-          showMenu();
-        }
-      });
+  private void nextTab() {
+    //todo
+  }
 
-      registerKeyboardAction(new AbstractAction() {
-        public void actionPerformed(ActionEvent e) {
-          showMenu();
-        }
-      }, KeyStroke.getKeyStroke("INSERT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
-
-    }
-
-    private void showMenu() {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          DataContext dataContext = DataManager.getInstance().getDataContext(TabsComponent.this);
-          ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Create", getCreateGroup(), dataContext, ActionSelectionAid.SPEEDSEARCH, false);
-          popup.show(new RelativePoint(AddConceptButton.this, new Point(0, 0)));
-        }
-      });
-    }
-
-    private ActionGroup getCreateGroup() {
-      DefaultActionGroup result = new DefaultActionGroup();
-      for (final EditorTabDescriptor d : myPossibleTabs) {
-        List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
-        if (!concepts.isEmpty()) {
-          DefaultActionGroup sub = new DefaultActionGroup(d.getTitle(), true);
-          for (final SNode concept : concepts) {
-            sub.add(new AnAction(concept.getName(), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept))) {
-              public void actionPerformed(AnActionEvent e) {
-                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                  @Override
-                  public void run() {
-                    SNode created = d.createNode(myBaseNode.getNode(), concept);
-                    String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
-                    created.setProperty(SNode.PACK, mainPack);
-
-                    updateTabs();
-                  }
-                });
-              }
-            });
-          }
-          result.add(sub);
-        }
-      }
-      return result;
-    }
+  private void prevTab() {
+    //todo
   }
 
 
