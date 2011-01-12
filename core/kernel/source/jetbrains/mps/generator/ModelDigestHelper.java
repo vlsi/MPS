@@ -1,6 +1,5 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -58,7 +57,7 @@ public class ModelDigestHelper {
       return null;
     }
 
-    return ModelDigestUtil.calculateHashes(modelFile);
+    return ModelDigestUtil.getDigestMap(modelFile);
   }
 
   public interface DigestProvider {

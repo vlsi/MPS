@@ -1136,10 +1136,10 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7545884443035896193">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1864815924658196545">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qir2.~ModelDigestUtil" resolveInfo="ModelDigestUtil" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qir2.~ModelDigestUtil%dhash(byte[])%cjava%dlang%dString" resolveInfo="hash" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1864815924658196546">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7532731832364165049">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qspx.~ModelDigestUtil%dhash(byte[])%cjava%dlang%dString" resolveInfo="hash" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qspx.~ModelDigestUtil" resolveInfo="ModelDigestUtil" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7532731832364165050">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7545884443035896188" resolveInfo="currentBytes" />
             </node>
           </node>

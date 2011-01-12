@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v3;
 
 import jetbrains.mps.generator.ModelDigestHelper;
-import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
