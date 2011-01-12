@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,14 +48,14 @@ public class replace_whereBlock_with_closure_Intention extends BaseIntention imp
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode cl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null);
-    SNode scpd = SLinkOperations.addNewChild(cl, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
+    SNode cl = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null);
+    SNode scpd = SNodeFactoryOperations.addNewChild(cl, "parameter", "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
     SNode cp = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "whereBlock", true), "parameter", true);
     SPropertyOperations.set(scpd, "name", SPropertyOperations.getString(cp, "name"));
     SLinkOperations.setTarget(cl, "body", SNodeOperations.detachNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "whereBlock", true), "body", true)), true);
     for (SNode dsc : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(cl, "body", true), "jetbrains.mps.baseLanguage.structure.ClosureParameterReference", false, new String[]{}))) {
       if (SLinkOperations.getTarget(SNodeOperations.cast(dsc, "jetbrains.mps.baseLanguage.structure.ClosureParameterReference"), "closureParameter", false) == cp) {
-        SNode pr = SNodeOperations.replaceWithNewChild(dsc, "jetbrains.mps.baseLanguage.structure.ParameterReference");
+        SNode pr = SNodeFactoryOperations.replaceWithNewChild(dsc, "jetbrains.mps.baseLanguage.structure.ParameterReference");
         SLinkOperations.setTarget(pr, "variableDeclaration", scpd, false);
       }
     }
