@@ -57,6 +57,7 @@ public class ModelChange {
 
   //----------frozen mode---------
 
+  //todo should work in parallel mode
   private static final Set<SNode> myFrozenNodes = new HashSet<SNode>();
 
   public static <T> T freezeAndCompute(SNode node, Computable<T> computable) {
