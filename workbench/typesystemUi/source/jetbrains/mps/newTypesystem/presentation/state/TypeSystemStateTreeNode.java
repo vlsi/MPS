@@ -17,14 +17,21 @@ package jetbrains.mps.newTypesystem.presentation.state;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.Block;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.util.GoToTypeErrorRuleUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class TypeSystemStateTreeNode extends MPSTreeNode {
+  protected SNode myNode;
+  protected String myRuleModel;
+  protected String myRuleId;
+
   public TypeSystemStateTreeNode(IOperationContext operationContext) {
     super(operationContext);
   }
@@ -50,6 +57,12 @@ public class TypeSystemStateTreeNode extends MPSTreeNode {
     }
     Block block = (Block) object;
     GoToTypeErrorRuleUtil.goToRuleById(getOperationContext(), new Pair<String, String>(block.getNodeModel(), block.getNodeId()));
+  }
+
+  public void goToNode() {
+    if (myNode != null && myNode.isRegistered()) {
+      getOperationContext().getComponent(MPSEditorOpener.class).editNode(myNode, getOperationContext());
+    }
   }
  
 }
