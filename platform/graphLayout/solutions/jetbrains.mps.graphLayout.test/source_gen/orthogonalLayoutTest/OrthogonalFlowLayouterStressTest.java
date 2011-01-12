@@ -16,8 +16,8 @@ import java.io.PrintWriter;
 import visualization.GraphIO;
 import jetbrains.mps.graphLayout.graphLayout.GraphLayout;
 
-public class CurrentOrthogonalFlowLayouterStressTest {
-  public CurrentOrthogonalFlowLayouterStressTest() {
+public class OrthogonalFlowLayouterStressTest {
+  public OrthogonalFlowLayouterStressTest() {
   }
 
   public static void main(String[] args) throws Exception {
@@ -30,7 +30,8 @@ public class CurrentOrthogonalFlowLayouterStressTest {
     generator.setLabelSeed(0.5);
     generator.setNodeSizeConstraints(40, 50, 40, 50);
     generator.setLabelSizeConstraints(60, 100, 60, 100);
-    for (int iter = 0; iter < numIter; iter++) {
+    boolean failed = false;
+    for (int iter = 0; iter < numIter && !(failed); iter++) {
       System.out.println("ITERATION: " + iter);
       generator.generate();
       Graph graph = generator.getGraph();
@@ -43,10 +44,16 @@ public class CurrentOrthogonalFlowLayouterStressTest {
       layouter.setUnitLength(30);
       layouter.setAvoidLabelCrossings(true);
       double time = System.currentTimeMillis();
-      GraphLayout layout = layouter.doLayoutConnectedGraph(layoutInfo);
+      GraphLayout layout = null;
+      try {
+        layout = layouter.doLayoutConnectedGraph(layoutInfo);
+        OrthogonalLayoutChecker.checkLayout(layout);
+      } catch (Exception e) {
+        e.printStackTrace();
+        failed = true;
+      }
       double passedTime = (1.0 * System.currentTimeMillis() - time) / 1000;
       System.out.println("iteration " + iter + " has been working " + passedTime + " seconds");
-      OrthogonalLayoutChecker.checkLayout(layout);
     }
     System.out.println("END!");
   }
