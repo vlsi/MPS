@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class convertToNamed_Intention extends BaseIntention implements Intention {
   public convertToNamed_Intention() {
@@ -33,7 +33,7 @@ public class convertToNamed_Intention extends BaseIntention implements Intention
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode n = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp");
+    SNode n = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp");
     editorContext.flushEvents();
     editorContext.selectWRTFocusPolicy(n);
   }

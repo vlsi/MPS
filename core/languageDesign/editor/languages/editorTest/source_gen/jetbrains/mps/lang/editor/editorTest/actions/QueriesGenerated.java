@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -32,7 +33,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
             return result;
@@ -58,7 +59,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "right", _context.getSourceNode(), true);
             return result;

@@ -1,127 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.ConstraintsDescriptor" file="ConstraintsDescriptor.java">
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_text_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_match_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_match_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_match_ReferentConstraint" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_shortDescription_PropertyConstraint" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_shortDescription_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_text_PropertyConstraint" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_shortDescription_PropertyConstraint" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_shortDescription_PropertyConstraint" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_match_ReferentConstraint" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_match_ReferentConstraint" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_text_PropertyConstraint" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.LiteralReplacement_text_PropertyConstraint" file="LiteralReplacement_text_PropertyConstraint.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyValidator" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.MatchRegexpOperation_Constraints" file="MatchRegexpOperation_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceRegexp_match_ReferentConstraint" file="MatchVariableReferenceRegexp_match_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReferenceReplacement_match_ReferentConstraint" file="MatchVariableReferenceReplacement_match_ReferentConstraint.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.MatchVariableReference_match_ReferentConstraint" file="MatchVariableReference_match_ReferentConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.GeneratorUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferentConstraintContext" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.GeneratorUtil" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.PredefinedSymbolClassDeclaration_shortDescription_PropertyConstraint" file="PredefinedSymbolClassDeclaration_shortDescription_PropertyConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyGetter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.RegexpDeclaration_shortDescription_PropertyConstraint" file="RegexpDeclaration_shortDescription_PropertyConstraint.java">
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyGetter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.ReplaceRegexpOperation_Constraints" file="ReplaceRegexpOperation_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.ReplaceWithRegexpOperation_Constraints" file="ReplaceWithRegexpOperation_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.constraints.StringLiteralRegexp_text_PropertyConstraint" file="StringLiteralRegexp_text_PropertyConstraint.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyValidator" />
   </dependency>

@@ -15,11 +15,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
@@ -59,7 +60,7 @@ public class QueriesGenerated {
         return SLinkOperations.getTargets(ntd, "component", true);
       }
     })) {
-      SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "componentRef", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", null)), "componentDeclaration", cd, false);
+      SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "componentRef", true)).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", null)), "componentDeclaration", cd, false);
     }
   }
 
@@ -180,7 +181,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode mae = SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", null));
+          SNode mae = SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", null));
           SLinkOperations.setTarget(mae, "tuple", _context.getSourceNode(), true);
           return mae;
         }
