@@ -4,16 +4,21 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -23,7 +28,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrokenReferencesTestHelper {
+public class CheckProjectStructureHelper {
 
   private final ModelsExtractor myModelsExtractor = new ModelsExtractor();
 
@@ -33,23 +38,25 @@ public class BrokenReferencesTestHelper {
   public static abstract class Token {
   }
 
-  public BrokenReferencesTestHelper() {
+  public CheckProjectStructureHelper() {
   }
 
   public void load(final Iterable<File> files) {
     try {
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            myModelsExtractor.loadModels(files);
-          }
-        });
-      }
-    });
-    }
-    catch (Exception e) {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              myModelsExtractor.loadModels(files);
+
+              // ???
+              Testbench.reloadAll();
+            }
+          });
+        }
+      });
+    } catch (Exception e) {
       throw new RuntimeException(e);
     }
   }
@@ -57,6 +64,11 @@ public class BrokenReferencesTestHelper {
   public List<String> check(Token token, List<File> files) {
     return ((PrivToken) token).check(files);
   }
+
+  public List<String> checkGenerationStatus(Token token, List<File> files) {
+    return ((PrivToken) token).checkGenerationStatus(files);
+  }
+
 
   public void cleanUp(Token tok) {
     ((PrivToken) tok).cleanUp();
@@ -100,8 +112,6 @@ public class BrokenReferencesTestHelper {
 
   // Private
 
-  // Private
-
   private class PrivToken extends Token {
     private final MPSProject project;
 
@@ -110,23 +120,36 @@ public class BrokenReferencesTestHelper {
     }
 
     public List<String> check(Iterable<File> files) {
-      return BrokenReferencesTestHelper.this.doCheck(files, project);
+      return CheckProjectStructureHelper.this.doCheck(files, project);
+    }
+
+    public List<String> checkGenerationStatus(List<File> files) {
+      return CheckProjectStructureHelper.this.doCheckGenerationStatus(files, project);
     }
 
     public void cleanUp() {
-      BrokenReferencesTestHelper.this.doCleanUp(project);
+      CheckProjectStructureHelper.this.doCleanUp(project);
     }
   }
-
 
   private List<String> doCheck(Iterable<File> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor();
     me.loadModels(files);
 
     // ???
-    Testbench.reloadAll();
+    //Testbench.reloadAll();
 
     return checkModels(me.getModels());
+  }
+
+  private List<String> doCheckGenerationStatus(List<File> files, MPSProject project) {
+    ModelsExtractor me = new ModelsExtractor();
+    me.loadModels(files);
+
+    // ???
+    //Testbench.reloadAll();
+
+    return checkModelsGenerationStatus(me.getModels());
   }
 
   private void doCleanUp(final MPSProject project) {
@@ -137,6 +160,45 @@ public class BrokenReferencesTestHelper {
         System.gc();
       }
     });
+  }
+
+  private List<String> checkModelsGenerationStatus(final Iterable<SModelDescriptor> models) {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModelDescriptor sm : models) {
+          if (!(sm instanceof EditableSModelDescriptor) || GeneratorManager.isDoNotGenerate(sm)) continue;
+          EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+          if (esm.isPackaged()) continue;
+          if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
+
+          IModule module = sm.getModule();
+          if (module == null) {
+            errors.add("Model without a module: " + sm.getSModelReference().toString());
+            continue;
+          }
+          String genHash = ModelGenerationStatusManager.getLastGenerationHash(sm);
+          if (genHash == null) {
+            errors.add("No generated hash for " + sm.getSModelReference().toString());
+            continue;
+          }
+          IFile file = ((EditableSModelDescriptor) sm).getModelFile();
+          if (file == null) {
+            errors.add("no model file for " + sm.getSModelReference().toString());
+            continue;
+          }
+          String realHash = ModelGenerationStatusManager.getContentHash(sm);
+          if (realHash == null) {
+            errors.add("cannot gen cache for " + sm.getSModelReference().toString());
+            continue;
+          }
+          if (!realHash.equals(genHash)) {
+            errors.add("model requires generation: " + sm.getSModelReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
+          }
+        }
+      }
+    });
+    return errors;
   }
 
   private List<String> checkModels(final Iterable<SModelDescriptor> models) {
