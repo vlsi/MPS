@@ -415,6 +415,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     if (myDisposed) {
       return null;
     }
+    refreshMessagesCache();
     for (Entry<EditorCell, List<EditorMessage>> e: getMessagesCache().entrySet()) {
       if (e.getValue().contains(change)) {
         return e.getKey();
