@@ -98,7 +98,7 @@ public class BreakpointIconRenderer implements EditorMessageIconRenderer {
 
   @Override
   public AnAction getClickAction() {
-    return ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ToggleBreakpoint_Action");
+    return null;
   }
 
   @Override
