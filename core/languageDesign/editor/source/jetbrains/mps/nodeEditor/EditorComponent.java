@@ -3070,25 +3070,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     private void clearControlOver() {
       if (myLastReferenceCell != null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, false);
-            setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-            repaint();
-          }
-        });
+        myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, false);
+        setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        repaint();
       }
     }
 
     private void setControlOver() {
       if (myLastReferenceCell != null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, true);
-            setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-            repaint();
-          }
-        });
+        myLastReferenceCell.getStyle().set(StyleAttributes.CONTROL_OVERED_REFERENCE, true);
+        setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        repaint();
       }
     }
   }
