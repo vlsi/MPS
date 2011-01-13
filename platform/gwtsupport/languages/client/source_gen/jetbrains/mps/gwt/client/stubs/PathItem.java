@@ -54,7 +54,7 @@ public abstract class PathItem {
       public boolean accept(IFile f) {
         return f.isDirectory();
       }
-    }).select(new ISelector<IFile, String>() {
+    }).<String>select(new ISelector<IFile, String>() {
       public String select(IFile dir) {
         return PathItem.this.compose(pkg, dir.getName());
       }
@@ -70,7 +70,7 @@ public abstract class PathItem {
       return PathItem.EMPTY_LIST;
     }
     List<IFile> lst = fld.list(this.filter());
-    return ListSequence.fromList(lst).select(new ISelector<IFile, String>() {
+    return ListSequence.fromList(lst).<String>select(new ISelector<IFile, String>() {
       public String select(IFile f) {
         return (String) f.getName();
       }
