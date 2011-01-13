@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class NewNode {
@@ -26,8 +27,8 @@ public class NewNode {
 
   public void newNode3(SNode sample) {
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
-    SNode ifStatement1 = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", sample);
+    SNode ifStatement1 = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", sample);
     SNode ifStatement2 = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")), null);
-    SNode ifStatement3 = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")), sample);
+    SNode ifStatement3 = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")), sample);
   }
 }
