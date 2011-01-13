@@ -15,12 +15,7 @@
  */
 package jetbrains.mps.ide.editorTabs.tabs;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.ui.popup.JBPopupFactory.ActionSelectionAid;
-import com.intellij.openapi.ui.popup.ListPopup;
-import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -28,11 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
 
-import javax.swing.AbstractAction;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
-import java.awt.Point;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.Set;
@@ -60,9 +51,9 @@ class AddConceptButton extends JButton {
   private void showMenu() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        DataContext dataContext = DataManager.getInstance().getDataContext(AddConceptButton.this);
-        ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("Create", getCreateGroup(), dataContext, ActionSelectionAid.SPEEDSEARCH, false);
-        popup.show(new RelativePoint(AddConceptButton.this, new Point(0, 0)));
+        ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
+        JPopupMenu popupComponent = popup.getComponent();
+        popupComponent.show(AddConceptButton.this, 0, 0);
       }
     });
   }
