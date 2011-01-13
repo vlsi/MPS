@@ -33,6 +33,7 @@
       <genConfModule name="main" moduleRef="ypath.main" />
       <genConfModule name="sandbox" moduleRef="ypath.sandbox" />
       <genConfModule name="test" moduleRef="ypath.test" />
+      <genConfModule name="ypath" moduleRef="jetbrains.mps.ypath" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -78,7 +79,6 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>

@@ -14,8 +14,8 @@
       <solutionPath path="${project}/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
       <languagePath path="${project}/baseLanguage.mpl" />
+      <languagePath path="${mps_home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" />
       <languagePath path="${mps_home}/core/languageDesign/editor/languages/editorTest/editorTest.mpl" />
     </projectLanguages>
     <projectDevkits>
@@ -23,6 +23,7 @@
     </projectDevkits>
     <genConfs>
       <genConfModule name="baseLanguage" moduleRef="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+      <genConfModule name="editorTest" moduleRef="jetbrains.mps.lang.editor.editorTest" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
