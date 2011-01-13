@@ -187,11 +187,7 @@ public class State {
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
-    SNode output = null;
-    if (!check) {
-      output = lessThan ? subType : superType;
-    }
-    addBlock(new InequalityBlock(this, subType, superType, output, RelationKind.fromFlags(isWeak, check, false), info));
+    addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
   public void addComparable(SNode left, SNode right, boolean isWeak, EquationInfo info) {
