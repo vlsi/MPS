@@ -42,9 +42,11 @@ public class TabbedEditor extends BaseNodeEditor {
   private TabsComponent myTabsComponent;
   private SModelListener myModelListener = new MyNameListener();
   private TabColorProvider myColorProvider = null;
+  private SNodePointer myBaseNode;
 
   public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
     super(context);
+    myBaseNode = baseNode;
     myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
 
     myTabsComponent = new TabsComponent(baseNode, possibleTabs) {
@@ -145,8 +147,13 @@ public class TabbedEditor extends BaseNodeEditor {
     super.loadState(state);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = ((TabbedEditorState) state).myCurrentNode.getNode();
-        showNode(node, false);
+        if (state instanceof TabbedEditorState) {
+          SNode node = ((TabbedEditorState) state).myCurrentNode.getNode();
+          showNode(node, false);
+        } else {
+          //regular editor was shown for that node last time
+          showNode(myBaseNode.getNode(), false);
+        }
       }
     });
   }
