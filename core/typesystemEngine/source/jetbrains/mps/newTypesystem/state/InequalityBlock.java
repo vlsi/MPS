@@ -133,9 +133,4 @@ public class InequalityBlock extends RelationBlock {
   public String getExpandedPresentation(State state) {
     return getPresentationInternal(state.expand(myLeftNode), state.expand(myRightNode));
   }
-
-  public void expand(State state) {
-    myLeftNode = state.expand(myLeftNode);
-    myRightNode = state.expand(myRightNode);
-  }
 }

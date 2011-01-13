@@ -22,10 +22,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.newTypesystem.presentation.difference.TypeSystemTraceTreeNode;
-import jetbrains.mps.newTypesystem.state.Block;
-import jetbrains.mps.newTypesystem.state.BlockKind;
-import jetbrains.mps.newTypesystem.state.InequalityBlock;
-import jetbrains.mps.newTypesystem.state.NodeMaps;
+import jetbrains.mps.newTypesystem.state.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -58,10 +55,10 @@ public class TypeSystemStateTree extends MPSTree {
   @Override
   protected MPSTreeNode rebuild() {
     setRootVisible(false);
-    return createNode(myState);
+    return createNode();
   }
 
-  private TypeSystemStateTreeNode createNode(jetbrains.mps.newTypesystem.state.State state) {
+  private TypeSystemStateTreeNode createNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("State", myOperationContext);
    //todo: show info from blocks grouped by class
     result.add(createNode("Inequalities", myState.getBlocks(BlockKind.INEQUALITY), null));

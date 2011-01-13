@@ -99,7 +99,8 @@ public class Equations {
         }
       }
     }
-    return getNameRepresentative(current);
+    assert getNameRepresentative(current) == current;
+    return current;
   }
 
   private void substituteRepresentative(SNode elem, SNode current) {
