@@ -25,10 +25,11 @@ import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-class AddConceptButton extends JButton {
+abstract class AddConceptButton extends JButton {
   private SNodePointer myBaseNode;
   private Set<EditorTabDescriptor> myPossibleTabs;
 
@@ -48,6 +49,8 @@ class AddConceptButton extends JButton {
     this.myPossibleTabs = possibleTabs;
   }
 
+  protected abstract SNode getCurrentAspect();
+
   private void showMenu() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -60,16 +63,37 @@ class AddConceptButton extends JButton {
 
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
+
+    DefaultActionGroup currentGroup = null;
+    List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
+
     for (final EditorTabDescriptor d : myPossibleTabs) {
       List<SNode> concepts = d.getConcepts(myBaseNode.getNode());
       if (concepts.isEmpty()) continue;
 
-      DefaultActionGroup sub = new DefaultActionGroup(d.getTitle(), true);
+      boolean current = d.getNodes(myBaseNode.getNode()).contains(getCurrentAspect());
+
+      DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), !current);
       for (final SNode concept : concepts) {
-        sub.add(new CreateAction(concept, d));
+        group.add(new CreateAction(concept, d));
       }
-      result.add(sub);
+
+      if (current) {
+        currentGroup = group;
+      } else {
+        groups.add(group);
+      }
     }
+
+    //todo sort tabs
+    if (currentGroup != null) {
+      result.add(currentGroup);
+      result.add(new Separator());
+    }
+    for (DefaultActionGroup group : groups) {
+      result.add(group);
+    }
+
     return result;
   }
 

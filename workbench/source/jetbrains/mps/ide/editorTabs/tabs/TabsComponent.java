@@ -98,7 +98,11 @@ public abstract class TabsComponent extends JPanel {
     add(myTabPanel, BorderLayout.WEST);
 
     JPanel plusPanel = new JPanel();
-    plusPanel.add(new AddConceptButton(myBaseNode, myPossibleTabs));
+    plusPanel.add(new AddConceptButton(myBaseNode, myPossibleTabs) {
+      protected SNode getCurrentAspect() {
+        return myLastNode.getNode();
+      }
+    });
     add(plusPanel, BorderLayout.EAST);
 
     addListeners();
