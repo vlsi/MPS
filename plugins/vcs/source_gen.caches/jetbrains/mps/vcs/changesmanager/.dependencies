@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />

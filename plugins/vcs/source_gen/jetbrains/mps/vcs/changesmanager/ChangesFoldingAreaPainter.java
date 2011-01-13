@@ -53,7 +53,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   private List<ChangesFoldingAreaPainter.MessageGroup> myMessageGroups;
   private ChangesFoldingAreaPainter.MessageGroup myCurrentMessageGroup = null;
   private ChangesFoldingAreaPainter.MessageGroup myMessageGroupUnderMouse = null;
-  private ChangesFoldingAreaPainter.MyPopupMenu myPopupMenu = new ChangesFoldingAreaPainter.MyPopupMenu();
+  private ChangesFoldingAreaPainter.MyPopupMenu myPopupMenu;
 
   public ChangesFoldingAreaPainter(@NotNull EditorComponentChangesHighligher editorComponentChangesHighligher) {
     super(editorComponentChangesHighligher.getEditorComponent().getLeftEditorHighlighter());
@@ -220,7 +220,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     } else {
       event.getComponent().setCursor(null);
     }
-    if (!(myPopupMenu.isVisible())) {
+    if (myPopupMenu != null && !(myPopupMenu.isVisible())) {
       setCurrentMessageGroup(messageGroup);
     }
   }
@@ -232,7 +232,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     }
     event.getComponent().setCursor(null);
     myMessageGroupUnderMouse = null;
-    if (!(myPopupMenu.isVisible())) {
+    if (myPopupMenu != null && !(myPopupMenu.isVisible())) {
       setCurrentMessageGroup(null);
     }
   }
@@ -246,6 +246,9 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
       if (cell != null) {
         getEditorComponent().changeSelection(cell);
       }
+      if (myPopupMenu == null) {
+        myPopupMenu = new ChangesFoldingAreaPainter.MyPopupMenu();
+      }
       myPopupMenu.showIfNeeded(event);
     }
   }
@@ -256,7 +259,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   public void updateAfterTransfer(@NotNull ChangesFoldingAreaPainter.MessageGroup messageGroup) {
-    if (myPopupMenu.isVisible()) {
+    if (check_kvu3z4_a0a21(myPopupMenu)) {
       myPopupMenu.updateAfterTransfer(messageGroup);
     } else {
       setCurrentMessageGroup(messageGroup);
@@ -264,7 +267,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   }
 
   public void updateAfterRollback() {
-    myPopupMenu.setVisible(false);
+    check_kvu3z4_a0a31(myPopupMenu);
   }
 
   @NotNull
@@ -289,6 +292,21 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
     } else {
       return new ChangesFoldingAreaPainter.MessageGroup(messages);
     }
+  }
+
+  private static Boolean check_kvu3z4_a0a21(ChangesFoldingAreaPainter.MyPopupMenu p) {
+    if (null == p) {
+      return null;
+    }
+    return p.isVisible();
+  }
+
+  private static Void check_kvu3z4_a0a31(ChangesFoldingAreaPainter.MyPopupMenu p) {
+    if (null == p) {
+      return null;
+    }
+    p.setVisible(false);
+    return null;
   }
 
   private static String check_kvu3z4_a0a51(ChangesFoldingAreaPainter.MessageGroup p) {
