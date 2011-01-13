@@ -10,7 +10,7 @@ public class Fubar {
   public HashMap<Integer, Tuples._2<Integer, Integer>> a = new HashMap<Integer, Tuples._2<Integer, Integer>>();
 
   public Fubar() {
-    this.a.put(1, MultiTuple.from(42, -1));
+    this.a.put(1, MultiTuple.<Integer,Integer>from(42, -1));
   }
 
   public static void main(String[] args) {
