@@ -41,7 +41,7 @@ public class SModel {
   private SModelReference myReference;
 
   private boolean myDisposed;
-  private boolean myLoading;
+  private volatile boolean myLoading;
 
   private FastNodeFinder myFastNodeFinder;
 
@@ -227,11 +227,11 @@ public class SModel {
     return wasLoading;
   }
 
-  public synchronized boolean isLoading() {
+  public boolean isLoading() {
     return myLoading;
   }
 
-  private synchronized boolean canFireEvent() {
+  private boolean canFireEvent() {
     return !myLoading;
   }
 
