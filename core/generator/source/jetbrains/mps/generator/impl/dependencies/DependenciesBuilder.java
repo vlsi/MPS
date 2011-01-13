@@ -19,6 +19,8 @@ public interface DependenciesBuilder {
 
   void registerRoot(SNode outputRoot, SNode inputNode);
 
+  void rootReplaced(SNode oldOutputRoot, SNode newOutputRoot);
+
   SNode getOriginalForInput(SNode inputRoot);
 
   SNode getOriginalForOutput(SNode outputRoot);
@@ -50,6 +52,10 @@ public interface DependenciesBuilder {
 
     @Override
     public void registerRoot(SNode outputRoot, SNode inputNode) {
+    }
+
+    @Override
+    public void rootReplaced(SNode oldOutputRoot, SNode newOutputRoot) {
     }
 
     @Override
