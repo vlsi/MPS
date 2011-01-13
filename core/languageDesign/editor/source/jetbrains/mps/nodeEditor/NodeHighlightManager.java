@@ -61,16 +61,12 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private RebuildListener myRebuildListener;
   private Set<EditorMessageIconRenderer> myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
   private volatile boolean myRebuildIconRenderersCacheFlag = false;
-  private volatile boolean myDisposed = false;
 
   public NodeHighlightManager(@NotNull EditorComponent editor) {
     myEditor = editor;
 
     editor.addRebuildListener(myRebuildListener = new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
-        if (myDisposed) {
-          return;
-        }
         for (EditorCell cell : getMessagesCache().keySet()) {
           if (!myEditor.isValid(cell)) {
             invalidateMassagesCaches();
@@ -137,9 +133,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public List<EditorMessage> getMessages(EditorCell cell) {
-    if (myDisposed) {
-      return Collections.<EditorMessage>emptyList();
-    }
     List<EditorMessage> result = getMessagesCache().get(cell);
     if (result != null) {
       return new ArrayList<EditorMessage>(result);
@@ -218,9 +211,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void mark(EditorMessage message) {
-    if (myDisposed) {
-      return;
-    }
     for (EditorMessage msg : getMessages()) {
       if (msg.sameAs(message)) return;
     }
@@ -235,9 +225,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void unmark(EditorMessage message) {
-    if (myDisposed) {
-      return;
-    }
     synchronized (myMessagesLock) {
       if (removeMessage(message)) {
         invalidateMassagesCaches();
@@ -257,16 +244,10 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public boolean clearForOwner(EditorMessageOwner owner) {
-    if (myDisposed) {
-      return false;
-    }
     return clearForOwner(owner, true);
   }
 
   public boolean clearForOwner(EditorMessageOwner owner, boolean repaintAndRebuild) {
-    if (myDisposed) {
-      return false;
-    }
     boolean result = myEditor.getMessagesGutter().removeMessages(owner);
     synchronized (myMessagesLock) {
       if (myOwnerToMessages.containsKey(owner)) {
@@ -288,14 +269,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * and repaint associated EditorComponent
    */
   public void repaintAndRebuildEditorMessages() {
-    if (myDisposed) {
-      return;
-    }
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
-        if (myDisposed) {
-          return;
-        }
         refreshMessagesCache();
         myEditor.getExternalComponent().repaint();
         refreshLeftHighlighterMessages();
@@ -325,17 +300,11 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void mark(SNode node, Color color, String messageText, EditorMessageOwner owner) {
-    if (myDisposed) {
-      return;
-    }
     if (node == null) return;
     mark(new DefaultEditorMessage(node, color, messageText, owner));
   }
 
   public void mark(List<EditorMessage> messages) {
-    if (myDisposed) {
-      return;
-    }
     for (int i = 0; i < messages.size(); i++) {
       mark(messages.get(i));
     }
@@ -343,18 +312,12 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void markSingleMessage(EditorMessage message) {
-    if (myDisposed) {
-      return;
-    }
     mark(message);
     repaintAndRebuildEditorMessages();
   }
 
   public Set<EditorMessage> getMessages() {
     Set<EditorMessage> result = new HashSet<EditorMessage>();
-    if (myDisposed) {
-      return result;
-    }
     synchronized (myMessagesLock) {
       result.addAll(myMessages);
     }
@@ -362,9 +325,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public EditorMessage getMessageFor(SNode node) {
-    if (myDisposed) {
-      return null;
-    }
     synchronized (myMessagesLock) {
       for (EditorMessage msg : myMessages) {
         if (msg.getNode() == node) return msg;
@@ -375,9 +335,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public List<EditorMessage> getMessagesFor(SNode node) {
     List<EditorMessage> result = new ArrayList<EditorMessage>();
-    if (myDisposed) {
-      return result;
-    }
     synchronized (myMessagesLock) {
       result.addAll(myMessagesToNodes.getBySecond(node));
     }
@@ -386,9 +343,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public List<EditorMessage> getMessagesFor(SNode node, EditorMessageOwner owner) {
     List<EditorMessage> result = new ArrayList<EditorMessage>();
-    if (myDisposed) {
-      return result;
-    }
     synchronized (myMessagesLock) {
       for (EditorMessage message : myMessagesToNodes.getBySecond(node)) {
         if (message.getOwner() == owner) {
@@ -401,21 +355,11 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public void dispose() {
     assert ModelAccess.instance().isInEDT() : "dispose() should be called from EDT only";
-    myDisposed = true;
     ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
     myEditor.removeRebuildListener(myRebuildListener);
-    Set<EditorMessageIconRenderer> iconRenderers;
-    synchronized (myMessagesLock) {
-      iconRenderers = myIconRenderersCache;
-    }
-    myEditor.getLeftEditorHighlighter().removeAllIconRenderers(iconRenderers);
   }
 
   public EditorCell getCell(EditorMessage change) {
-    if (myDisposed) {
-      return null;
-    }
-    refreshMessagesCache();
     for (Entry<EditorCell, List<EditorMessage>> e: getMessagesCache().entrySet()) {
       if (e.getValue().contains(change)) {
         return e.getKey();
