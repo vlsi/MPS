@@ -27,6 +27,8 @@ import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.editorTabs.tabs.TabsComponent;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -43,10 +45,12 @@ public class TabbedEditor extends BaseNodeEditor {
   private SModelListener myModelListener = new MyNameListener();
   private TabColorProvider myColorProvider = null;
   private SNodePointer myBaseNode;
+  private IOperationContext myContext;
 
   public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
+    myContext = context;
     myColorProvider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
 
     myTabsComponent = new TabsComponent(baseNode, possibleTabs) {
@@ -89,11 +93,12 @@ public class TabbedEditor extends BaseNodeEditor {
     }
 
     EditorComponent editor = getCurrentEditorComponent();
-    editor.editNode(containingRoot, getOperationContext());
+    editor.editNode(containingRoot, new ModuleContext(containingRoot.getModel().getModelDescriptor().getModule(), myContext.getProject()));
 
     if (rootChange) {
       SModelDescriptor model = getCurrentNodeModel();
       assert model != null;
+
       model.addModelListener(myModelListener);
 
       if (myColorProvider != null) {
