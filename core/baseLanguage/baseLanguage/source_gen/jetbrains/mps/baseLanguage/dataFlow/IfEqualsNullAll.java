@@ -40,10 +40,10 @@ public class IfEqualsNullAll extends DataFlowConstructor {
     if (!(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))) {
       for (SNode var : vars) {
         {
-          Object object = SLinkOperations.getTarget(node, "condition", true);
+          Object object = SLinkOperations.getTarget(node, "ifTrue", true);
           if (((Program) o).contains(object)) {
-            boolean before = false;
-            int position = ((Program) (o)).getEnd(object);
+            boolean before = true;
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
             Instruction instruction = new nullableInstruction(var);
             instruction.setSource(node);
             ((Program) (o)).insert(instruction, position, true, before);

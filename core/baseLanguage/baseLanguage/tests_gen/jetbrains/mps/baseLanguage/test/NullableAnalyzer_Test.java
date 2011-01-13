@@ -54,6 +54,24 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testTernaryOperation", true);
   }
 
+  @Test
+  public void testContinue() throws Throwable {
+    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testContinue", true);
+  }
+
+  @Test
+  public void testIfNullNew() throws Throwable {
+    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testIfNullNew", true);
+  }
+
+  @Test
+  public void testIfNullReturnNotEmpty() throws Throwable {
+    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.runTest("jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody", "testIfNullReturnNotEmpty", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void testDot() throws Exception {
@@ -89,6 +107,21 @@ public class NullableAnalyzer_Test extends BaseTransformationTest {
     public void testTernaryOperation() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("3383816410303507497"), "jetbrains.mps.lang.test.structure.NodeOperation");
       NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("3383816410303507422"));
+    }
+
+    public void testContinue() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("8673157736019176311"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("8673157736019176263"));
+    }
+
+    public void testIfNullNew() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("8673157736019186600"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("8673157736019186552"));
+    }
+
+    public void testIfNullReturnNotEmpty() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("8673157736019186652"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("8673157736019186604"));
     }
   }
 }
