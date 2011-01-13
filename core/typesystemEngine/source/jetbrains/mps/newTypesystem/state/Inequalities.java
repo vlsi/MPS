@@ -107,6 +107,7 @@ public class Inequalities {
     ManyToManyMap<SNode, SNode> inputsToOutputs = new ManyToManyMap<SNode, SNode>();
     ManyToManyMap<SNode, InequalityBlock> nodesToBlocks = new ManyToManyMap<SNode, InequalityBlock>();
     for (InequalityBlock inequality : inequalities) {
+      inequality.expand(myState);
       SNode input = myState.getRepresentative(inequality.getInput());
       SNode output = myState.getRepresentative(inequality.getOutput());
       if (input != null) {
@@ -184,26 +185,36 @@ public class Inequalities {
     }
   }
 
-  private Set<Set<InequalityBlock>> getInequalityGroups(List<InequalityBlock> inequalities) {
-    Map<SNode, Set<InequalityBlock>> nodesToGroups = new HashMap<SNode, Set<InequalityBlock>>();
-    for (InequalityBlock inequality : inequalities) {
+  public Map<Set<SNode>, Set<InequalityBlock>> getInequalityGroups(Set<Block> inequalities) {
+    Map<SNode, Set<SNode>> components = new HashMap<SNode, Set<SNode>>();
+    Map<Set<SNode>, Set<InequalityBlock>> groupsToInequalities = new HashMap<Set<SNode>, Set<InequalityBlock>>();
+    for (Block block : inequalities) {
+      InequalityBlock inequality = (InequalityBlock) block;
       inequality.expand(myState);
       List<SNode> variables = TypesUtil.getVariables(inequality.getRightNode());
       variables.addAll(TypesUtil.getVariables(inequality.getLeftNode()));
-      if (variables.size() == 0) continue;
-      Set<InequalityBlock> group = new HashSet<InequalityBlock>();
-      group.add(inequality);
+      if (variables.size() == 0) {
+        continue;
+      }
+      Set<SNode> currentResult = new HashSet<SNode>(variables);
+
+      Set<InequalityBlock> currentInequalities = new HashSet<InequalityBlock>();
+      currentInequalities.add(inequality);
       for (SNode var : variables) {
         var = myState.getRepresentative(var);
-        Set<InequalityBlock> varGroup = nodesToGroups.get(var);
+        Set<SNode> varGroup = components.get(var);
         if (varGroup != null) {
-          group.addAll(varGroup);
-          varGroup.clear();
+          currentResult.addAll(varGroup);
         }
-        nodesToGroups.put(var, group);
+        components.put(var, currentResult);
+        Set<InequalityBlock> remove = groupsToInequalities.remove(varGroup);
+        if (remove != null) {
+          currentInequalities.addAll(remove);
+        }
       }
+      groupsToInequalities.put(currentResult, currentInequalities);
     }
-    return new HashSet<Set<InequalityBlock>>(nodesToGroups.values());
+    return groupsToInequalities;
   }
 
   public void clear() {

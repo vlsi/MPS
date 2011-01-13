@@ -35,28 +35,30 @@ import java.util.Set;
  * Time: 12:11:13 PM
  */
 public class InequalityBlock extends RelationBlock {
-  private SNode myOutput;
+  private boolean lessThen;
 
   public SNode getOutput() {
-    return myOutput;
+    if (lessThen) {
+      return myLeftNode;
+    } else {
+      return myRightNode;
+    }
   }
 
   public SNode getInput() {
     if (myRelationKind.isCheckOnly()) {
       return null;
     }
-    if (myOutput == myLeftNode) {
+    if (lessThen) {
       return myRightNode;
-    }
-    if (myOutput == myRightNode) {
+    } else {
       return myLeftNode;
     }
-    return null; 
   }
 
-  public InequalityBlock(State state, SNode left, SNode right, SNode output, RelationKind kind, EquationInfo equationInfo) {
+  public InequalityBlock(State state, SNode left, SNode right, boolean lessThen, RelationKind kind, EquationInfo equationInfo) {
     super(state, left, right, kind, equationInfo);
-    myOutput = output;
+    this.lessThen = lessThen;
   }
 
   @Override
@@ -112,9 +114,9 @@ public class InequalityBlock extends RelationBlock {
 
   private String getPresentationInternal(SNode left, SNode right) {
     String sign = myRelationKind.getRelationSign();
-    if (myLeftNode == myOutput) {
+    if (lessThen) {
       sign = " : " + sign;
-    } else if (myRightNode == myOutput) {
+    } else {
       sign = sign + " : ";
     }
     return myRelationKind.getTitle() + " : " +
@@ -133,7 +135,7 @@ public class InequalityBlock extends RelationBlock {
   }
 
   public void expand(State state) {
-    state.expand(myLeftNode);
-    state.expand(myRightNode);
+    myLeftNode = state.expand(myLeftNode);
+    myRightNode = state.expand(myRightNode);
   }
 }
