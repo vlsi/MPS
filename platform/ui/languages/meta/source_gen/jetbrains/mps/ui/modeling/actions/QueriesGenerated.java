@@ -18,6 +18,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -56,7 +57,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0d().createNode(SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0d().createNode(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null));
               }
 
               public String getMatchingText(String pattern) {
@@ -80,7 +81,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0e().createNode(_context.getSourceNode(), "PERCENT"));
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a1a0a1a4().createNode(_context.getSourceNode(), "PERCENT"));
         }
 
         public String getMatchingText(String pattern) {
@@ -96,7 +97,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0c0e().createNode(_context.getSourceNode(), "PIXEL"));
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a1a0a2a4().createNode(_context.getSourceNode(), "PIXEL"));
         }
 
         public String getMatchingText(String pattern) {
@@ -117,7 +118,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.setNewChild(_context.getSourceNode(), "spanCols", "jetbrains.mps.baseLanguage.structure.Expression");
+          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "spanCols", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }
 
@@ -139,7 +140,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.RowLayoutConstraint");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.setNewChild(_context.getSourceNode(), "spanRows", "jetbrains.mps.baseLanguage.structure.Expression");
+          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "spanRows", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
         }
 
@@ -186,8 +187,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0e {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0e() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a1a0a1a4 {
+    public QuotationClass_x583g4_a1a0a0a0a0a1a0a1a4() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
@@ -218,8 +219,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0c0e {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0c0e() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a1a0a2a4 {
+    public QuotationClass_x583g4_a1a0a0a0a0a1a0a2a4() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {

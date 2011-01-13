@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class View_wrap_with_ValidatingView_Intention extends BaseIntention implements Intention {
@@ -46,11 +46,11 @@ public class View_wrap_with_ValidatingView_Intention extends BaseIntention imple
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode vv = SConceptOperations.createNewNode("jetbrains.mps.ui.structure.ValidatingView", null);
+    SNode vv = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.ValidatingView", null);
     SLinkOperations.setTarget(vv, "view", SNodeOperations.detachNode(node), true);
-    SNode vdr = SLinkOperations.setTarget(vv, "validator", SConceptOperations.createNewNode("jetbrains.mps.ui.structure.Validator", null), true);
-    SNode vb = SLinkOperations.setTarget(vdr, "validateBlock", SConceptOperations.createNewNode("jetbrains.mps.ui.structure.ValidateBlock", null), true);
-    SLinkOperations.addChild(vb, "parameter", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null));
+    SNode vdr = SLinkOperations.setTarget(vv, "validator", SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.Validator", null), true);
+    SNode vb = SLinkOperations.setTarget(vdr, "validateBlock", SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.ValidateBlock", null), true);
+    SLinkOperations.addChild(vb, "parameter", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null));
 
   }
 

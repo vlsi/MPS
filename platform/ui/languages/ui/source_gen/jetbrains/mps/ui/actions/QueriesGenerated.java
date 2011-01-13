@@ -8,7 +8,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
@@ -41,13 +42,13 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_ValidateBlock_5224413709453691752(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode fpd = SConceptOperations.createNewNode("jetbrains.mps.ui.structure.FunctionParameterDeclaration", null);
+    SNode fpd = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.FunctionParameterDeclaration", null);
     SPropertyOperations.set(fpd, "name", "newValue");
     SLinkOperations.addChild(_context.getNewNode(), "parameter", fpd);
   }
 
   public static void nodeFactory_NodeSetup_EventHandingBlock_5224413709454317395(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode fpd = SConceptOperations.createNewNode("jetbrains.mps.ui.structure.FunctionParameterDeclaration", null);
+    SNode fpd = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.FunctionParameterDeclaration", null);
     SPropertyOperations.set(fpd, "name", "event");
     SLinkOperations.addChild(_context.getNewNode(), "parameter", fpd);
   }
@@ -194,7 +195,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode uios = SConceptOperations.createNewNode("jetbrains.mps.ui.structure.CreateUIObjectStatement", null);
+                SNode uios = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.CreateUIObjectStatement", null);
                 SLinkOperations.setTarget(uios, "uiObject", (item), false);
                 return uios;
               }
@@ -225,7 +226,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode auios = SConceptOperations.createNewNode("jetbrains.mps.ui.structure.AppendUIObjectStatement", null);
+                SNode auios = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.AppendUIObjectStatement", null);
                 SLinkOperations.setTarget(auios, "uiObject", (item), false);
                 return auios;
               }
@@ -256,7 +257,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode iuios = SConceptOperations.createNewNode("jetbrains.mps.ui.structure.InsertUIObjectStatement", null);
+                SNode iuios = SNodeFactoryOperations.createNewNode("jetbrains.mps.ui.structure.InsertUIObjectStatement", null);
                 SLinkOperations.setTarget(iuios, "uiObject", (item), false);
                 return iuios;
               }
@@ -282,7 +283,7 @@ public class QueriesGenerated {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.structure.CompartmentReferenceExpression");
       Calculable calculable = new Calculable() {
         public Object calculate() {
-          return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.ui.structure.UIObjectType"), true), "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
+          return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.ui.structure.UIObjectType"), true), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode o) {
               return SLinkOperations.getTargets(o, "compartment", true);
             }
@@ -294,7 +295,7 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0e0a0b0i().createNode(_context.getSourceNode(), (item)));
+            return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0a4a0a1a8().createNode(_context.getSourceNode(), (item)));
           }
 
           public SNode getOutputConcept() {
@@ -314,8 +315,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0e0a0b0i {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0e0a0b0i() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a0a4a0a1a8 {
+    public QuotationClass_x583g4_a1a0a0a0a0a0a4a0a1a8() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {

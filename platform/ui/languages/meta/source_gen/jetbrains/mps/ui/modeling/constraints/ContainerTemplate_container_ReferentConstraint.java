@@ -31,16 +31,16 @@ public class ContainerTemplate_container_ReferentConstraint extends BaseNodeRefe
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    Iterable<SNode> allConts = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> allConts = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode uio) {
         return SLinkOperations.getTargets(uio, "compartment", true);
       }
     });
-    Iterable<SNode> specializesConts = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> specializesConts = Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "uiObject", false))).<SNode>translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode uio) {
         return SLinkOperations.getTargets(uio, "compartment", true);
       }
-    }).select(new ISelector<SNode, SNode>() {
+    }).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode cont) {
         return SLinkOperations.getTarget(cont, "specializes", false);
       }
@@ -49,7 +49,7 @@ public class ContainerTemplate_container_ReferentConstraint extends BaseNodeRefe
         return cont != null;
       }
     });
-    Iterable<SNode> existing = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "containerTemplate", true)).select(new ISelector<SNode, SNode>() {
+    Iterable<SNode> existing = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"), "containerTemplate", true)).<SNode>select(new ISelector<SNode, SNode>() {
       public SNode select(SNode ct) {
         return SLinkOperations.getTarget(ct, "container", false);
       }
