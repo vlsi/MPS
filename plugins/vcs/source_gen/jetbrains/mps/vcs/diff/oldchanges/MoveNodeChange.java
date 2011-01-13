@@ -96,7 +96,10 @@ public class MoveNodeChange extends Change {
       return false;
     }
     node.getParent().removeChild(node);
-    SNode prevSibling = m.getNodeById(myPrevSibling);
+    SNode prevSibling = (myPrevSibling == null ?
+      null :
+      m.getNodeById(myPrevSibling)
+    );
     parent.insertChild(prevSibling, myNewRole, node);
     return true;
   }

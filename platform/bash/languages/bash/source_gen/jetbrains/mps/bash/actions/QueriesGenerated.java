@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bash.behavior.VariableNameDeclaration_Behavior;
 import jetbrains.mps.util.Calculable;
@@ -55,7 +56,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
+            SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
             SPropertyOperations.set(newNode, "word", pattern);
             return newNode;
           }
@@ -93,7 +94,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.DecimalConstant", null);
+            SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.DecimalConstant", null);
             try {
               SPropertyOperations.set(newNode, "value", "" + Integer.parseInt(pattern));
             } catch (NumberFormatException e) {
@@ -130,7 +131,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode basedIntConst = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.BasedIntegerLiteral", null);
+            SNode basedIntConst = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.BasedIntegerLiteral", null);
             try {
               int index = pattern.indexOf("#");
               SPropertyOperations.set(basedIntConst, "base", "" + (Integer.parseInt(pattern.substring(0, index))));
@@ -166,7 +167,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode hexadecimalIntConst = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.HexIntegerLiteral", null);
+            SNode hexadecimalIntConst = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.HexIntegerLiteral", null);
             try {
               SPropertyOperations.set(hexadecimalIntConst, "value", pattern.substring(2));
             } catch (NumberFormatException e) {
@@ -204,7 +205,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode assingment = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.VariableAssingment", null);
+            SNode assingment = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.VariableAssingment", null);
             SNode lvalue = null;
             String newVarName = pattern;
             if (newVarName.endsWith("=")) {
@@ -212,11 +213,11 @@ public class QueriesGenerated {
             }
             SNode name = VariableNameDeclaration_Behavior.testName_9034131902194480300(_context.getCurrentTargetNode(), newVarName);
             if ((name != null)) {
-              lvalue = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.VariableReference", null);
+              lvalue = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.VariableReference", null);
               SLinkOperations.setTarget(SNodeOperations.cast(lvalue, "jetbrains.mps.bash.structure.VariableReference"), "variable", name, false);
             }
             if ((lvalue == null)) {
-              lvalue = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.VariableNameDeclaration", null);
+              lvalue = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.VariableNameDeclaration", null);
               SPropertyOperations.set(SNodeOperations.cast(lvalue, "jetbrains.mps.bash.structure.VariableNameDeclaration"), "name", newVarName);
             }
             SLinkOperations.setTarget(assingment, "lvalue", lvalue, true);
@@ -251,8 +252,8 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode variableAssignment = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.VariableAssingment", null);
-                SNode lvalue = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.VariableReference", null);
+                SNode variableAssignment = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.VariableAssingment", null);
+                SNode lvalue = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.VariableReference", null);
                 SLinkOperations.setTarget(lvalue, "variable", (item), false);
                 SLinkOperations.setTarget(variableAssignment, "lvalue", lvalue, true);
                 return variableAssignment;
@@ -277,7 +278,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode name = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.VariableNameDeclaration", null);
+            SNode name = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.VariableNameDeclaration", null);
             SPropertyOperations.set(name, "name", pattern);
             return name;
           }
@@ -313,7 +314,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticExpansion");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.ArithmeticExpansion", null);
+          SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.ArithmeticExpansion", null);
           SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), newNode);
           return newNode;
         }
@@ -345,7 +346,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ArithmeticExpression");
               while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression")) {
@@ -382,7 +383,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ArithmeticExpression");
               while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression")) {
@@ -411,7 +412,7 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode commonCommand = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
-          SLinkOperations.setNewChild(commonCommand, "comment", "jetbrains.mps.bash.structure.CommentedText");
+          SNodeFactoryOperations.setNewChild(commonCommand, "comment", "jetbrains.mps.bash.structure.CommentedText");
           return SLinkOperations.getTarget(commonCommand, "comment", true);
         }
 
@@ -437,7 +438,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedFollowingCommandList");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode comment = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommentedFollowingCommandList", null);
+          SNode comment = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.CommentedFollowingCommandList", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), comment);
           SLinkOperations.setTarget(comment, "command", _context.getSourceNode(), true);
           return comment;
@@ -464,7 +465,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedCommandList");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode comment = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommentedCommandList", null);
+          SNode comment = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.CommentedCommandList", null);
           SNode sourceCommandList = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
           SNodeOperations.replaceWithAnother(sourceCommandList, comment);
           SLinkOperations.setTarget(comment, "commandList", sourceCommandList, true);
@@ -498,9 +499,9 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
+            SNodeFactoryOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
             SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "following", _context.getSourceNode(), true);
             return result;
           }
@@ -525,12 +526,12 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "following", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "following", true), true);
             SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", true), true);
             SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "following", result, true);
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", "jetbrains.mps.bash.structure.HeadPipeline");
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
+            SNodeFactoryOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", "jetbrains.mps.bash.structure.HeadPipeline");
+            SNodeFactoryOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
             return _context.getSourceNode();
           }
         });
@@ -554,10 +555,10 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "following", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "following", true), true);
             SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "command", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", true), true);
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
+            SNodeFactoryOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
             SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "following", result, true);
             return result;
           }
@@ -582,10 +583,10 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "following", _context.getSourceNode(), true);
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(result, "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
+            SNodeFactoryOperations.setNewChild(SLinkOperations.getTarget(result, "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
             return result;
           }
         });
@@ -609,7 +610,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ConditionalExpression");
               SNodeOperations.replaceWithAnother(source, result);
@@ -638,7 +639,7 @@ public class QueriesGenerated {
         }
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
               SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ConditionalExpression");
               SNodeOperations.replaceWithAnother(source, result);
@@ -666,14 +667,14 @@ public class QueriesGenerated {
       for (final String item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode redirectedCommand = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.RedirectedCommand", null);
+            SNode redirectedCommand = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.RedirectedCommand", null);
             SNode redirection;
             if ((item).equals(">")) {
-              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.OutputRedirection", null);
+              redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.OutputRedirection", null);
             } else if ((item).equals("&>")) {
-              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.OutputErrorRedirection", null);
+              redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.OutputErrorRedirection", null);
             } else {
-              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.InputRedirection", null);
+              redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.InputRedirection", null);
             }
             ListSequence.fromList(SLinkOperations.getTargets(redirectedCommand, "redirection", true)).addElement(redirection);
             SNode command = _context.getSourceNode();

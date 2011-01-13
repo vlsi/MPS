@@ -374,6 +374,7 @@ public class GenerationSession {
       // probably we can forget about former input model here
       toRecycle = currentInputModel;
       currentInputModel = currentInputModel_clone;
+      myDependenciesBuilder.scriptApplied(currentInputModel);
     }
 
     boolean preProcessed = false;
@@ -427,6 +428,7 @@ public class GenerationSession {
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, postMappingScripts);
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
+      myDependenciesBuilder.scriptApplied(currentModel);
     }
 
     boolean postProcessed = false;

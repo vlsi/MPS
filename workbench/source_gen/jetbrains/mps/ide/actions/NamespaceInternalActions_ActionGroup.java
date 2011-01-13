@@ -18,6 +18,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.ActionFactory;
 import org.jetbrains.annotations.Nullable;
 
 public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
@@ -56,6 +57,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
           NamespaceInternalActions_ActionGroup.this.addSeparator();
         }
       }
+      NamespaceInternalActions_ActionGroup.this.add(ActionFactory.getInstance().acquireRegisteredGroup("jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup", "jetbrains.mps.ide"));
       NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action");
       if (ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceInternalActions_ActionGroup.this.addSeparator();

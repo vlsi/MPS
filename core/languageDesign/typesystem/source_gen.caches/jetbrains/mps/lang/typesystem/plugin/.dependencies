@@ -29,7 +29,6 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action" file="GoToTypeErrorRule_Action.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />

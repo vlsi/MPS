@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.NameUtil;
@@ -155,7 +155,7 @@ public class QueriesGenerated {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode vpd = SModelOperations.createNewNode(model, "jetbrains.mps.ypath.structure.VisitParameterDeclaration", null);
+          SNode vpd = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.ypath.structure.VisitParameterDeclaration", null);
           SLinkOperations.setTarget(vpd, "type", nodeToWrap, true);
           return vpd;
         }
@@ -254,7 +254,7 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode tpaExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
+            SNode tpaExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
             SLinkOperations.setTarget(tpaExp, "expression", _context.getSourceNode(), true);
             SLinkOperations.setTarget(tpaExp, "treepathAspect", (item), false);
             return tpaExp;
@@ -302,7 +302,7 @@ public class QueriesGenerated {
           public SNode doSubstitute(String pattern) {
             SNode tnko = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence");
             SNode mko = SNodeOperations.cast(SNodeOperations.getParent(tnko), "jetbrains.mps.ypath.structure.MatchKindOperation");
-            SNode mpo = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.ypath.structure.MatchPropertyOperation", null);
+            SNode mpo = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.ypath.structure.MatchPropertyOperation", null);
             SNodeOperations.replaceWithAnother(mko, mpo);
             SLinkOperations.setTarget(SLinkOperations.getTarget(mpo, "nodeKindOccurrence", true), "nodeKind", SLinkOperations.getTarget(tnko, "nodeKind", false), false);
             SLinkOperations.setTarget(mpo, "property", (item), false);
@@ -435,10 +435,10 @@ public class QueriesGenerated {
             TraversalAxis axis = (TraversalAxis) (item).first();
             SNode feat = (SNode) (item).second();
             SNode pw = (SNode) (item).third();
-            SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SNode tpoExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
             SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
-            SNode op = SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.ypath.structure.IterateOperation", null);
-            SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
+            SNode op = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.ypath.structure.IterateOperation", null);
+            SPropertyOperations.set(SNodeFactoryOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
             if ((feat != null)) {
               SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "operation", true), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", feat, false);
               if (SPropertyOperations.getBoolean(feat, "default")) {
@@ -507,9 +507,9 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+          SNode tpoExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
           SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
-          SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.WhereOperation");
+          SNodeFactoryOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.WhereOperation");
           return tpoExp;
         }
 
@@ -543,9 +543,9 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SNode tpoExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
             SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
-            SNode mnko = SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchKindOperation");
+            SNode mnko = SNodeFactoryOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchKindOperation");
             SLinkOperations.setTarget(SLinkOperations.getTarget(mnko, "nodeKindOccurrence", true), "nodeKind", (item), false);
             return tpoExp;
           }
@@ -585,9 +585,9 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SNode tpoExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
             SLinkOperations.setTarget(tpoExp, "operand", _context.getSourceNode(), true);
-            SNode mdpo = SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation");
+            SNode mdpo = SNodeFactoryOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation");
             return tpoExp;
           }
 
@@ -693,11 +693,11 @@ public class QueriesGenerated {
             TraversalAxis axis = (TraversalAxis) (item).second();
             SNode feat = (SNode) (item).third();
             SNode pw = (SNode) (item).fourth();
-            SNode tpoExp = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            SLinkOperations.setNewChild(tpoExp, "operand", "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
+            SNode tpoExp = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SNodeFactoryOperations.setNewChild(tpoExp, "operand", "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
             SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "operand", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "expression", _context.getSourceNode(), true);
             SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "operand", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"), "treepathAspect", aspect, false);
-            SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
+            SPropertyOperations.set(SNodeFactoryOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
             if ((feat != null)) {
               SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(tpoExp, "operation", true), "jetbrains.mps.ypath.structure.IterateOperation"), "usedFeature", feat, false);
               if (SPropertyOperations.getBoolean(feat, "default")) {

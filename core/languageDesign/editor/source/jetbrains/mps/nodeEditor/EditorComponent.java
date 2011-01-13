@@ -1248,11 +1248,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myHighlightManager;
   }
 
-  protected void refreshHighlightManager() {
-    myHighlightManager.dispose();
-    myHighlightManager = new NodeHighlightManager(this);
-  }
-
   public CellActionType getActionType(KeyEvent keyEvent, EditorContext editorContext) {
     if (keyEvent.getKeyCode() == KeyEvent.VK_LEFT && noKeysDown(keyEvent)) {
       return CellActionType.LEFT;

@@ -367,8 +367,8 @@
     <scopeInfo nodeId="1210180388081" fileName="PersistentPropertyDeclaration_Editor.java" startLine="109" startPosition="111" endLine="110" endPosition="72" />
   </root>
   <root nodeId="1210180436234">
-    <nodeInfo nodeId="1210180450936" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="106" />
-    <scopeInfo nodeId="1210180446805" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="106" />
+    <nodeInfo nodeId="1210180450936" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="113" />
+    <scopeInfo nodeId="1210180446805" fileName="PersistenPropertyDeclaration_Actions.java" startLine="32" startPosition="75" endLine="33" endPosition="113" />
   </root>
   <root nodeId="1210687015722">
     <nodeInfo nodeId="1210687257456" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="PreferencePage_Editor.java" startLine="273" startPosition="30" endLine="274" endPosition="59" />

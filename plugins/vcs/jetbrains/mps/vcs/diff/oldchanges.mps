@@ -2,6 +2,7 @@
 <model modelUID="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.oldchanges)">
   <persistence version="6" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <import index="9" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="1" modelUID="r:0aa2e89a-3f2c-4ca7-bd78-489a5b116779(jetbrains.mps.vcs.diff.oldchanges)" version="-1" implicit="yes" />
   <import index="2" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" implicit="yes" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -10,7 +11,6 @@
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="7" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" implicit="yes" />
   <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" implicit="yes" />
-  <import index="9" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" implicit="yes" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.errors.messageTargets(jetbrains.mps.errors.messageTargets@java_stub)" version="-1" implicit="yes" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" implicit="yes" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" implicit="yes" />
@@ -990,14 +990,23 @@
             <node role="6.type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4707157387247556472">
               <link role="6.classifier:3" targetNodeId="9.~SNode" />
             </node>
-            <node role="6.initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4707157387247556473">
-              <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4707157387247556474">
-                <link role="6.variableDeclaration:3" targetNodeId="4707157387247556432" resolveInfo="m" />
-              </node>
-              <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4707157387247556475">
-                <link role="6.baseMethodDeclaration:3" targetNodeId="9.~SModel.getNodeById(jetbrains.mps.smodel.SNodeId):jetbrains.mps.smodel.SNode" />
-                <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="4707157387247556476">
+            <node role="6.initializer:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="2922592077247585952">
+              <node role="6.ifTrue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2922592077247585956" />
+              <node role="6.condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="2922592077247585948">
+                <node role="6.rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2922592077247585951" />
+                <node role="6.leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2922592077247585947">
                   <link role="6.variableDeclaration:3" targetNodeId="4707157387247556232" resolveInfo="myPrevSibling" />
+                </node>
+              </node>
+              <node role="6.ifFalse:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2922592077247585957">
+                <node role="6.operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2922592077247585958">
+                  <link role="6.variableDeclaration:3" targetNodeId="4707157387247556432" resolveInfo="m" />
+                </node>
+                <node role="6.operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2922592077247585959">
+                  <link role="6.baseMethodDeclaration:3" targetNodeId="9.~SModel.getNodeById(jetbrains.mps.smodel.SNodeId):jetbrains.mps.smodel.SNode" resolveInfo="getNodeById" />
+                  <node role="6.actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2922592077247585960">
+                    <link role="6.variableDeclaration:3" targetNodeId="4707157387247556232" resolveInfo="myPrevSibling" />
+                  </node>
                 </node>
               </node>
             </node>

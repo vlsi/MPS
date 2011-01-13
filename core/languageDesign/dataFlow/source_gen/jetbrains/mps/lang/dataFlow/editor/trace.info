@@ -1,3 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="EmitRetStatement_Editor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitRetStatement_Editor" />
+  <unitInfo fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable$DataFlowEditorAction_DeleteMayBeUnreachable_DELETE" />
+  <unitInfo fileName="AddPosition.java" startLine="18" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.AddPosition$AddPosition_RIGHT_TRANSFORM" />
+  <unitInfo fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable" />
+  <unitInfo fileName="AddPosition.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.AddPosition" />
+  <unitInfo fileName="BaseInstructionOperation_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.BaseInstructionOperation_Editor" />
+  <unitInfo fileName="DataFlow_StyleSheet.java" startLine="10" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlow_StyleSheet" />
+  <unitInfo fileName="LabelPosition_Editor.java" startLine="57" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor$_Inline_xi88on_a1a" />
+  <unitInfo fileName="DataFlowBuilderDeclaration_Editor.java" startLine="137" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor$_Inline_9xj3dm_a4a" />
+  <unitInfo fileName="EmitLabelStatement_Editor.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitLabelStatement_Editor" />
+  <unitInfo fileName="EmitCodeForStatement_Editor.java" startLine="16" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitCodeForStatement_Editor" />
+  <unitInfo fileName="RelativePosition_Editor.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.RelativePosition_Editor" />
+  <unitInfo fileName="BaseEmitVariableStatement_Editor.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.BaseEmitVariableStatement_Editor" />
+  <unitInfo fileName="InsertAfter_Editor.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.InsertAfter_Editor" />
+  <unitInfo fileName="InsertBefore_Editor.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.InsertBefore_Editor" />
+  <unitInfo fileName="EmitMayBeUnreachable_Editor.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitMayBeUnreachable_Editor" />
+  <unitInfo fileName="EmitNopStatement_Editor.java" startLine="18" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitNopStatement_Editor" />
+  <unitInfo fileName="GetCodeForExpression_Editor.java" startLine="19" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.GetCodeForExpression_Editor" />
+  <unitInfo fileName="LabelPosition_Editor.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.LabelPosition_Editor" />
+  <unitInfo fileName="EmitWriteStatement_Editor.java" startLine="17" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitWriteStatement_Editor" />
+  <unitInfo fileName="BaseEmitJumpStatement_Editor.java" startLine="19" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.BaseEmitJumpStatement_Editor" />
+  <unitInfo fileName="EmitTryFinallyStatement_Editor.java" startLine="18" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.EmitTryFinallyStatement_Editor" />
+  <unitInfo fileName="DataFlowBuilderDeclaration_Editor.java" startLine="22" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowBuilderDeclaration_Editor" />
+  <root nodeId="1206443680940">
+    <nodeInfo nodeId="1409563270991765830" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EmitNopStatement_Editor.java" startLine="69" startPosition="111" endLine="70" endPosition="69" />
+    <nodeInfo nodeId="8486807419020256057" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EmitNopStatement_Editor.java" startLine="73" startPosition="111" endLine="74" endPosition="69" />
+    <scopeInfo nodeId="1409563270991765829" fileName="EmitNopStatement_Editor.java" startLine="69" startPosition="111" endLine="70" endPosition="69" />
+    <scopeInfo nodeId="8486807419020193018" fileName="EmitNopStatement_Editor.java" startLine="73" startPosition="111" endLine="74" endPosition="69" />
+  </root>
+  <root nodeId="1206445207940">
+    <nodeInfo nodeId="1409563270991943877" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseEmitJumpStatement_Editor.java" startLine="99" startPosition="111" endLine="100" endPosition="69" />
+    <nodeInfo nodeId="1409563270991943886" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="BaseEmitJumpStatement_Editor.java" startLine="103" startPosition="111" endLine="104" endPosition="69" />
+    <scopeInfo nodeId="1409563270991943876" fileName="BaseEmitJumpStatement_Editor.java" startLine="99" startPosition="111" endLine="100" endPosition="69" />
+    <scopeInfo nodeId="1409563270991943885" fileName="BaseEmitJumpStatement_Editor.java" startLine="103" startPosition="111" endLine="104" endPosition="69" />
+  </root>
+  <root nodeId="1207318139353">
+    <nodeInfo nodeId="1207318182220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="29" startPosition="75" endLine="30" endPosition="103" />
+    <scopeInfo nodeId="1207318150953" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="29" startPosition="75" endLine="30" endPosition="103" />
+  </root>
+  <root nodeId="8486807419020643011">
+    <nodeInfo nodeId="8486807419020664359" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="AddPosition.java" startLine="30" startPosition="70" endLine="31" endPosition="158" />
+    <nodeInfo nodeId="8486807419020643015" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="AddPosition.java" startLine="29" startPosition="75" endLine="32" endPosition="7" />
+    <scopeInfo nodeId="8486807419020643017" fileName="AddPosition.java" startLine="30" startPosition="70" endLine="31" endPosition="158" />
+    <scopeInfo nodeId="8486807419020643014" fileName="AddPosition.java" startLine="29" startPosition="75" endLine="32" endPosition="7" />
+  </root>
+</debugInfo>
 

@@ -22,7 +22,6 @@ import com.sun.jdi.event.MethodEntryEvent;
 import com.sun.jdi.event.MethodExitEvent;
 import com.sun.jdi.request.MethodEntryRequest;
 import com.sun.jdi.request.MethodExitRequest;
-import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
@@ -101,7 +100,7 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     }
     // todo property string format should be described in one place
     String[] split = propertyString.split("#");
-    if (split.length != 2){
+    if (split.length != 2) {
       return false;
     }
     myMethodName = split[0];

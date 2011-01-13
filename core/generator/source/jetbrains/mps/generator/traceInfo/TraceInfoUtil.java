@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.traceInfo;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.util.Mapper2;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -38,15 +39,15 @@ public class TraceInfoUtil {
         continue;
       }
 
-      final Object[] result = new Object[1];
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          result[0] = nodeGetter.value(info, descriptor);
+      // todo tryRead does really fit here(?)
+      T result = ModelAccess.instance().tryRead(new Computable<T>() {
+        @Override
+        public T compute() {
+          return nodeGetter.value(info, descriptor);
         }
       });
-
-      if (result[0] != null) {
-        return (T) result[0];
+      if (result != null) {
+        return result;
       }
     }
 
@@ -103,13 +104,12 @@ public class TraceInfoUtil {
   }
 
   public static String getGeneratedFileName(SNode node) {
-    SNode snode = ((SNode) node);
-    SModel model = snode.getModel();
+    SModel model = node.getModel();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
     if (debugInfo == null) {
       return null;
     }
-    PositionInfo positionInfo = debugInfo.getPositionForNode(snode.getId());
+    PositionInfo positionInfo = debugInfo.getPositionForNode(node.getId());
     if (positionInfo == null) {
       return null;
     }

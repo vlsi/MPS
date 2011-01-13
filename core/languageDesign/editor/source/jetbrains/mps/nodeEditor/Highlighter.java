@@ -379,7 +379,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             });
           }
 
-          if (checkersToRecheck.isEmpty()) {
+          if (checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) {
             return false;
           }
           List<IEditorChecker> checkersToRecheckList = new ArrayList<IEditorChecker>(checkersToRecheck);
@@ -403,7 +403,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   /*
-   * Only carrently visible (active) editor remains in myCheckedOnceEditors forcing all Checkers
+   * Only currently visible (active) editor remains in myCheckedOnceEditors forcing all Checkers
    * to createMessages() on next visible (active) editor change
    */
   private void cleanupCheckedOnce(List<EditorComponent> allEditorComponents) {

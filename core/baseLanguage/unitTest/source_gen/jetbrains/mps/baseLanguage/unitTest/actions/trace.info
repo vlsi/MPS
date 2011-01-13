@@ -2,8 +2,8 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="16" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.actions.QueriesGenerated" />
   <root nodeId="1198167751204">
-    <nodeInfo nodeId="1198167785565" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesGenerated.java" startLine="21" startPosition="144" endLine="22" endPosition="118" />
-    <scopeInfo nodeId="1198167764448" fileName="QueriesGenerated.java" startLine="21" startPosition="144" endLine="22" endPosition="118" />
+    <nodeInfo nodeId="1198167785565" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="QueriesGenerated.java" startLine="21" startPosition="144" endLine="22" endPosition="125" />
+    <scopeInfo nodeId="1198167764448" fileName="QueriesGenerated.java" startLine="21" startPosition="144" endLine="22" endPosition="125" />
   </root>
   <root nodeId="589054057631277539">
     <nodeInfo nodeId="589054057631277619" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="QueriesGenerated.java" startLine="17" startPosition="194" endLine="18" endPosition="149" />

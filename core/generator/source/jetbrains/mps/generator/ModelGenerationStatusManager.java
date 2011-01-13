@@ -21,19 +21,19 @@ import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
@@ -45,11 +45,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
   }
 
-  private final Object LOCK = new Object();
-  private Map<SModelDescriptor, Boolean> myEmptyStatus = new HashMap<SModelDescriptor, Boolean>();
-  private Map<SModelDescriptor, Long> myEmptyStatusRetrievalTime = new HashMap<SModelDescriptor, Long>();
-
-  private Map<SModelDescriptor, String> myGeneratedFilesHashes = new HashMap<SModelDescriptor, String>();
+  private Map<SModelDescriptor, String> myGeneratedFilesHashes = new ConcurrentHashMap<SModelDescriptor, String>();
 
   private final List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
@@ -97,7 +93,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
     if (GeneratorManager.isDoNotGenerate(sm)) return false;
     if (SModelRepository.getInstance().isChanged(esm)) return true;
-    if (isEmpty(esm)) return false;
 
     Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext, fast);
     if (generationHashes == null) return defaultValue;
@@ -108,27 +103,13 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
   }
 
-  private boolean isEmpty(@NotNull SModelDescriptor sm) {
-    if (!(sm instanceof EditableSModelDescriptor)) {
-      return sm.isEmpty();
+  private String getGenerationHash(@NotNull SModelDescriptor sm) {
+    String hash = myGeneratedFilesHashes.get(sm);
+    if (hash == null) {
+      hash = getLastGenerationHash(sm);
+      myGeneratedFilesHashes.put(sm, hash != null ? hash : "");
     }
-
-    synchronized (LOCK) {
-      if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor) sm).lastChangeTime()) return myEmptyStatus.get(sm);
-
-      boolean result = sm.isEmpty();
-      myEmptyStatus.put(sm, result);
-      myEmptyStatusRetrievalTime.put(sm, System.currentTimeMillis());
-      return result;
-    }
-  }
-
-  private String getGenerationHash(SModelDescriptor sm) {
-    if (!myGeneratedFilesHashes.containsKey(sm)) {
-      String hash = calculateGeneratedHash(sm);
-      myGeneratedFilesHashes.put(sm, hash);
-    }
-    return myGeneratedFilesHashes.get(sm);
+    return hash != null && hash.length() == 0 ? null : hash;
   }
 
   public void invalidateData(List<SModelDescriptor> models) {
@@ -156,10 +137,19 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     }
   }
 
-  private String calculateGeneratedHash(SModelDescriptor sm) {
+  private String generateHashFileName(GenerationStatus status) {
+    SModelDescriptor descriptor = status.getOriginalInputModel();
+    String hash = getContentHash(descriptor);
+    if(hash == null) {
+      return null;
+    }
+    return ModelGenerationStatusManager.HASH_PREFIX + hash;
+  }
+
+  public static String getLastGenerationHash(SModelDescriptor sm) {
     IModule module = sm.getModule();
 
-    if (module == null) throw new IllegalStateException();
+    if (module == null) throw new IllegalArgumentException("no module for " + sm);
 
     IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
     IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
@@ -174,33 +164,12 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return files.get(0).getName().substring(HASH_PREFIX.length());
   }
 
-  private String generateHashFileName(GenerationStatus status) {
-    SModelDescriptor descriptor = status.getOriginalInputModel();
-    if (!(descriptor instanceof EditableSModelDescriptor)) return null;
+  public static String getContentHash(SModelDescriptor sm) {
+    if (!(sm instanceof EditableSModelDescriptor)) return null;
 
-    IFile file = ((EditableSModelDescriptor) descriptor).getModelFile();
+    IFile file = ((EditableSModelDescriptor) sm).getModelFile();
     if (file == null) return null;
 
-    byte[] content = new byte[(int) file.length()];
-
-    InputStream is = null;
-    try {
-      is = file.openInputStream();
-      ReadUtil.read(content, is);
-    } catch (IOException e) {
-      LOG.error(e);
-    } finally {
-      if (is != null) {
-        try {
-          is.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-    }
-
-    String hash = ModelDigestUtil.hash(content);
-    return ModelGenerationStatusManager.HASH_PREFIX + hash;
+    return ModelDigestUtil.hash(file);
   }
-
 }

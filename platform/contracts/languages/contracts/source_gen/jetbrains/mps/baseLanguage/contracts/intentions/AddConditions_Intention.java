@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddConditions_Intention extends BaseIntention implements Intention {
   public AddConditions_Intention() {
@@ -48,7 +48,7 @@ public class AddConditions_Intention extends BaseIntention implements Intention 
 
   public void execute(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("PreconditionLink"), true) == null)) {
-      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("PreconditionLink"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", null), true);
+      SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("PreconditionLink"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.contracts.structure.MethodConditions", null), true);
     }
   }
 

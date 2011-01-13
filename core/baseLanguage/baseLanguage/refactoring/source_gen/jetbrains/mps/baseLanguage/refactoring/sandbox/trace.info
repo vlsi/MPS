@@ -1,26 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeId="1578358025114233714">
-    <nodeInfo nodeId="1578358025114611177" fileName="Intfc.java" startLine="6" startPosition="24" endLine="7" endPosition="20" />
-    <nodeInfo nodeId="1578358025114611164" fileName="Intfc.java" startLine="8" startPosition="20" endLine="10" endPosition="5" />
-    <scopeInfo nodeId="1578358025114611167" fileName="Intfc.java" startLine="9" startPosition="18" endLine="9" endPosition="18" />
-    <scopeInfo nodeId="1578358025114611177" fileName="Intfc.java" startLine="6" startPosition="24" endLine="7" endPosition="20" />
-    <scopeInfo nodeId="1578358025114611164" fileName="Intfc.java" startLine="8" startPosition="20" endLine="10" endPosition="5" />
-    <unitInfo nodeId="1578358025114611162" fileName="Intfc.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactoring.sandbox.Intfc$Ddd" />
-    <unitInfo nodeId="1578358025114233714" fileName="Intfc.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactoring.sandbox.Intfc" />
-  </root>
-  <root nodeId="1578358025114233716">
-    <nodeInfo nodeId="1578358025114233718" fileName="FooClass.java" startLine="6" startPosition="23" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="1578358025114233721" fileName="FooClass.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
-    <scopeInfo nodeId="1578358025114233718" fileName="FooClass.java" startLine="6" startPosition="23" endLine="8" endPosition="3" />
-    <unitInfo nodeId="1578358025114233716" fileName="FooClass.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactoring.sandbox.FooClass" />
-  </root>
-  <root nodeId="2042640167016934507">
-    <nodeInfo nodeId="2042640167016934513" fileName="FooEnum.java" startLine="7" startPosition="0" endLine="8" endPosition="25" />
-    <nodeInfo nodeId="2042640167016934509" fileName="FooEnum.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="2042640167016934512" fileName="FooEnum.java" startLine="10" startPosition="13" endLine="10" endPosition="13" />
-    <scopeInfo nodeId="2042640167016934509" fileName="FooEnum.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
-    <unitInfo nodeId="2042640167016934507" fileName="FooEnum.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactoring.sandbox.FooEnum" />
-  </root>
-</debugInfo>
+<debugInfo />
 

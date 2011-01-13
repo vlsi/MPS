@@ -343,6 +343,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
+  public boolean isDirty(SNode node) {
+    RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(node);
+    if(builder != null && builder.isUnchanged()) {
+      return false;
+    }
+    return true;
+  }
+
   /*
    * Unsynchronized
    */

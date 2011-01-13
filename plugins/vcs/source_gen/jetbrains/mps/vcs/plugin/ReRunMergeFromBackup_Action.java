@@ -26,7 +26,7 @@ import jetbrains.mps.vcs.VcsMergeVersion;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vcs.VcsHelper;
-import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.vfs.IFile;
 
 public class ReRunMergeFromBackup_Action extends GeneratedAction {
