@@ -16,14 +16,17 @@
 package jetbrains.mps.workbench.actions.nodes;
 
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.typesystem.structure.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.AbstractAction;
@@ -58,7 +61,7 @@ public class GoToRulesHelper {
   }
 
   public static List<SNode> getRules(final AbstractConceptDeclaration conceptDeclaration, final boolean exactConcept) {
-    Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration.getNode());
+    Language language = getDeclaringLanguage(conceptDeclaration);
     List<SNode> rules = new ArrayList<SNode>();
     List<AbstractRule> overriding = new ArrayList<AbstractRule>();
     if (language != null && LanguageAspect.TYPESYSTEM.get(language) != null) {
@@ -90,6 +93,12 @@ public class GoToRulesHelper {
       }
     }
     return rules;
+  }
+
+  public static Language getDeclaringLanguage(AbstractConceptDeclaration concept) {
+    String languageFqName = NameUtil.namespaceFromConcept(concept);
+    if (languageFqName == null) return null;
+    return MPSModuleRepository.getInstance().getLanguage(languageFqName);
   }
 
   private static boolean isApplicable(SNode ruleNode, AbstractConceptDeclaration conceptDeclaration, boolean skipExact) {
