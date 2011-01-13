@@ -72,6 +72,9 @@ public class SNodeOperations {
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root) {
     if (node == null) return null;
     if (ancestorConceptFqName == null) {
+      if (inclusion) {
+        return node;
+      }
       if (root) {
         return node.getContainingRoot();
       }
