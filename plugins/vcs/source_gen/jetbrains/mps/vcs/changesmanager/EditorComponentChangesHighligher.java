@@ -134,7 +134,11 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
         if (change.getChangeType() == ChangeType.DELETE) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              node.value = model.value.getNodeById(((DeleteNodeChange) change).getParentId());
+              SNodeId parentId = ((DeleteNodeChange) change).getParentId();
+              node.value = (parentId == null ?
+                null :
+                model.value.getNodeById(parentId)
+              );
             }
           });
         } else {
