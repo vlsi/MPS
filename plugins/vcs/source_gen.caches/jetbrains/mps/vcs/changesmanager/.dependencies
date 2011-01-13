@@ -430,26 +430,6 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="java.lang.Thread" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider" file="VCSTabColorProvider.java">
-    <classNode dependClassName="org.apache.commons.lang.ObjectUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.tabbedEditor.AbstractLazyTab" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager" />
-    <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.ide.tabbedEditor.tabs.BaseSingletabbedTab" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.ide.tabbedEditor.ILazyTab" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.NodeFileStatusListener" />
-    <classNode extendsClassName="jetbrains.mps.ide.tabbedEditor.TabColorProvider" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.VCSUtils" file="VCSUtils.java">
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

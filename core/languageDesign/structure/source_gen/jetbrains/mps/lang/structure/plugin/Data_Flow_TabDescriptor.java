@@ -25,7 +25,6 @@ public class Data_Flow_TabDescriptor extends EditorTabDescriptor {
   }
 
   public void startListening() {
-    // <node> 
   }
 
   public SNode getBaseNode(SNode node) {

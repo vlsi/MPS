@@ -21,7 +21,6 @@ public class Textgen_TabDescriptor extends EditorTabDescriptor {
   }
 
   public void startListening() {
-    // <node> 
   }
 
   public SNode getBaseNode(SNode node) {

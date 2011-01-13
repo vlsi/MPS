@@ -22,7 +22,6 @@ public class Intentions_TabDescriptor extends EditorTabDescriptor {
   }
 
   public void startListening() {
-    // <node> 
   }
 
   public SNode getBaseNode(SNode node) {
