@@ -55,6 +55,8 @@ public class TabbedEditor extends BaseNodeEditor {
       }
     };
 
+    showNode(baseNode.getNode(), false);
+
     getComponent().add(myTabsComponent, BorderLayout.SOUTH);
   }
 
