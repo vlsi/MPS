@@ -118,8 +118,12 @@ public class SNodeOperations {
   }
 
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root) {
-    if (node == null) return null;
+    return getAncestorWhereConceptInList(node,  ancestorConceptFqNames, inclusion, root, false);
+  }
 
+  public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
+    if (node == null) return null;
+    int metaLevel = sameMetaLevel ? SModelUtil_new.getMetaLevel(node) : 0;
     if (ancestorConceptFqNames.length == 0) {
       return null;
     }
@@ -127,7 +131,9 @@ public class SNodeOperations {
     if (root) {
       SNode rootParent = node.getContainingRoot();
       if (_isInstanceOf(rootParent, ancestorConceptFqNames)) {
-        return rootParent;
+        if (!sameMetaLevel || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
+          return rootParent;
+        }
       }
       return null;
     }
@@ -141,10 +147,18 @@ public class SNodeOperations {
     }
     if (outputNode == null) return null;
 
-    if (_isInstanceOf(outputNode, ancestorConceptFqNames)) return outputNode;
+    if (_isInstanceOf(outputNode, ancestorConceptFqNames)) {
+      if (!sameMetaLevel || SModelUtil_new.getMetaLevel(outputNode) == metaLevel) {
+        return outputNode;
+      }
+    }
 
     while ((outputNode = outputNode.getParent()) != null) {
-      if (_isInstanceOf(outputNode, ancestorConceptFqNames)) return outputNode;
+      if (_isInstanceOf(outputNode, ancestorConceptFqNames)) {
+        if (!sameMetaLevel || SModelUtil_new.getMetaLevel(outputNode) == metaLevel) {
+          return outputNode;
+        }
+      }
     }
     return outputNode;
   }
