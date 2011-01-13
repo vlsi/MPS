@@ -82,7 +82,6 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final String LINE_SEPARATOR = System.getProperty("line.separator");
 
       String globalConfigPath = WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig";
       if (!(new File(globalConfigPath).exists())) {
@@ -104,7 +103,11 @@ public class InstallCustomMergeDriver_Action extends GeneratedAction {
         try {
           raf = new RandomAccessFile(globalConfigPath, "rw");
           raf.seek(raf.length());
-          raf.write((LINE_SEPARATOR + "[merge \"mps\"]" + LINE_SEPARATOR + "\tname = MPS merge driver" + LINE_SEPARATOR + "\tdriver = " + MergeDriverMain.getCommandLine() + " %O %A %B %L" + LINE_SEPARATOR).getBytes("utf-8"));
+          String stringToWrite = "\n[merge \"mps\"]\tname = MPS merge driver\n\tdriver = %s %O %A %B %L\n";
+          stringToWrite = String.format(stringToWrite, MergeDriverMain.getCommandLine());
+          stringToWrite = stringToWrite.replace("\n", System.getProperty("line.separator"));
+          stringToWrite = stringToWrite.replace("\\", "\\\\");
+          raf.write(stringToWrite.getBytes("utf-8"));
           raf.close();
         } catch (IOException e) {
           if (log.isErrorEnabled()) {
