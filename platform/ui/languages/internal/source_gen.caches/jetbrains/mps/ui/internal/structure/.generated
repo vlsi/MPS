@@ -166,6 +166,7 @@
     <file name="ContextWrapperExpression.java" />
   </source>
   <source id="4587250023234230413" name="TypeStub" hash="-60rkjmkftd0afa3ltw2p1wl4e2n4h04">
+    <dep root="4587250023234473480" />
     <dep root="8173290311767412491" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -184,7 +185,6 @@
     <file name="TypeStub.java" />
   </source>
   <source id="4587250023234473480" name="ExpressionStub" hash="1foaedfwmxo2r02fhfp0q93gp74bgnc">
-    <dep root="4587250023234230413" />
     <dep root="8173290311767412491" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
@@ -203,7 +203,7 @@
     <file name="ExpressionStub.java" />
   </source>
   <source id="4587250023234487369" name="StatementStub" hash="-9lj5ji9p9x5ozx3mnx0d8x5ye52tj3d">
-    <dep root="4587250023234230413" />
+    <dep root="4587250023234473480" />
     <dep root="8173290311767412491" />
     <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
