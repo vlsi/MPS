@@ -179,7 +179,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
             String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
             sourceNode.o1.setProperty(SModelTreeNode.PACK, fullTargetPack);
             if (SNodeOperations.isInstanceOf(sourceNode.o1, AbstractConceptDeclaration.concept)) {
-              List<SNode> allAspects = AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(sourceNode.o1, GlobalScope.getInstance());
+              List<SNode> allAspects = AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(sourceNode.o1);
               for (SNode aspect : allAspects) {
                 aspect.setProperty(SModelTreeNode.PACK, fullTargetPack);
               }

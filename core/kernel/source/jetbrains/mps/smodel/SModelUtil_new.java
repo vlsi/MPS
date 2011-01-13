@@ -235,7 +235,7 @@ public class SModelUtil_new implements ApplicationComponent {
 
   public static Language getDeclaringLanguage(AbstractConceptDeclaration concept, IScope scope) {
     if (concept == null) return null;
-    return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept), scope);
+    return SModelUtil.getDeclaringLanguage(BaseAdapter.fromAdapter(concept));
   }
 
   public static boolean isAcceptableTarget(LinkDeclaration linkDeclaration, SNode referentNode) {

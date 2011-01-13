@@ -47,11 +47,9 @@
   <import index="c6a0" modelUID="f:java_stub#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="jvm9" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="homp" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
-  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="l1x" modelUID="f:java_stub#jetbrains.mps.lang.plugin.generator.baseLanguage.template.util(jetbrains.mps.lang.plugin.generator.baseLanguage.template.util@java_stub)" version="-1" />
   <import index="6rrl" modelUID="f:java_stub#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" version="-1" />
   <import index="x1mh" modelUID="r:82f15792-6966-47aa-8004-b293ab2bcfd2(jetbrains.mps.lang.plugin.run)" version="-1" />
-  <import index="n1y2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="g3bx" modelUID="f:java_stub#jetbrains.mps.ide.common(jetbrains.mps.ide.common@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -70,6 +68,7 @@
   <import index="6n7d" modelUID="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" version="-1" implicit="yes" />
   <import index="n2nm" modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" version="-1" implicit="yes" />
   <import index="rcrn" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" implicit="yes" />
+  <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="6977813497819596721">
       <property name="name" nameId="tpck.1169194664001" value="mc_runConfigs" />
@@ -95,7 +94,7 @@
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7840798570675188777">
       <property name="name" nameId="tpck.1169194664001" value="reduce_ProcessHandlerStatement" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Configuration.Execute" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tp4k.678887849223472893" resolveInfo="ProcessHandlerStatement" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="8821770403474041105">
@@ -140,7 +139,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="297139462068449337">
       <property name="name" nameId="tpck.1169194664001" value="OldConfigurationCreator" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Create.Creator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="297139462068449351">
       <property name="name" nameId="tpck.1169194664001" value="reduce_CreateRunConfigStatement" />
@@ -357,6 +356,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7840798570675188769">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.678887849223472893" resolveInfo="ProcessHandlerStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="7840798570675188779">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="7840798570675188777" resolveInfo="reduce_ProcessHandlerStatement" />
@@ -713,6 +713,7 @@
     </node>
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="297139462068438644">
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp4k.8415911927033048374" resolveInfo="RunConfigCreator" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="297139462068449337" resolveInfo="ConfigurationCreator" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="9068086904326281919" resolveInfo="map_ConfigCreatorClass" />

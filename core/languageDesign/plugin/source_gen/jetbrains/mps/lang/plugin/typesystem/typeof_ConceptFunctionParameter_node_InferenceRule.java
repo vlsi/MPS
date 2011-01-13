@@ -20,32 +20,43 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
   public typeof_ConceptFunctionParameter_node_InferenceRule() {
   }
 
-  public void applyRule(final SNode conceptFunctionParameter_node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode captionBlockNode = SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock", false, false);
-    SNode mainConceptBlockNode = SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock", false, false);
-    if ((captionBlockNode == null) && (mainConceptBlockNode == null)) {
-      SNode tabbedEditor = SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", false, false);
-      if (tabbedEditor != null && SLinkOperations.getTarget(tabbedEditor, "mainConcept", false) != null) {
+  public void applyRule(final SNode cfp, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode captionBlockNode = SNodeOperations.getAncestor(cfp, "jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock", false, false);
+    SNode mainConceptBlockNode = SNodeOperations.getAncestor(cfp, "jetbrains.mps.lang.plugin.structure.GetBaseNodeBlock", false, false);
+    SNode mainNodeBlock = SNodeOperations.getAncestor(cfp, "jetbrains.mps.lang.plugin.structure.BaseNodeBlock", false, false);
+    if ((captionBlockNode == null) && (mainConceptBlockNode == null) && (mainNodeBlock == null)) {
+      SNode editorTab = SNodeOperations.getAncestor(cfp, "jetbrains.mps.lang.plugin.structure.AbstractEditorTab", false, false);
+      if (editorTab != null && SLinkOperations.getTarget(editorTab, "baseNodeConcept", false) != null) {
         {
-          SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
+          SNode _nodeToCheck_1029348928467 = cfp;
           BaseQuickFixProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186126285", 0, intentionProvider);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186126287", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a1a2a0().createNode(SLinkOperations.getTarget(tabbedEditor, "mainConcept", false), typeCheckingContext), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186126287", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a1a3a0().createNode(SLinkOperations.getTarget(editorTab, "baseNodeConcept", false), typeCheckingContext), _info_12389875345);
         }
       } else {
-        {
-          SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
-          BaseQuickFixProvider intentionProvider = null;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8415911927033347161", 0, intentionProvider);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8415911927033347163", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a0b0c0a().createNode(typeCheckingContext), _info_12389875345);
+        SNode tab = SNodeOperations.getAncestor(cfp, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false);
+        if (tab != null && SLinkOperations.getTarget(tab, "baseNodeConcept", false) != null) {
+          {
+            SNode _nodeToCheck_1029348928467 = cfp;
+            BaseQuickFixProvider intentionProvider = null;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1626370525303811812", 0, intentionProvider);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1626370525303811814", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a1a0b0d0a().createNode(SLinkOperations.getTarget(tab, "baseNodeConcept", false), typeCheckingContext), _info_12389875345);
+          }
+        } else {
+          {
+            SNode _nodeToCheck_1029348928467 = cfp;
+            BaseQuickFixProvider intentionProvider = null;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1626370525303811843", 0, intentionProvider);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1626370525303811845", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a0b0a1a3a0().createNode(typeCheckingContext), _info_12389875345);
+          }
         }
       }
     } else {
       {
-        SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
+        SNode _nodeToCheck_1029348928467 = cfp;
         BaseQuickFixProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186129664", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186129666", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a0c0a().createNode(typeCheckingContext), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186129666", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_jo2b2o_a0a0a0d0a().createNode(typeCheckingContext), _info_12389875345);
       }
     }
   }
@@ -65,8 +76,8 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
     return true;
   }
 
-  public static class QuotationClass_jo2b2o_a0a0a1a2a0 {
-    public QuotationClass_jo2b2o_a0a0a1a2a0() {
+  public static class QuotationClass_jo2b2o_a0a0a1a3a0 {
+    public QuotationClass_jo2b2o_a0a0a1a3a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
@@ -96,8 +107,39 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
     }
   }
 
-  public static class QuotationClass_jo2b2o_a0a0a0b0c0a {
-    public QuotationClass_jo2b2o_a0a0a0b0c0a() {
+  public static class QuotationClass_jo2b2o_a0a0a1a0b0d0a {
+    public QuotationClass_jo2b2o_a0a0a1a0b0d0a() {
+    }
+
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_jo2b2o_a0a0a0b0a1a3a0 {
+    public QuotationClass_jo2b2o_a0a0a0b0a1a3a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -125,8 +167,8 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
     }
   }
 
-  public static class QuotationClass_jo2b2o_a0a0a0c0a {
-    public QuotationClass_jo2b2o_a0a0a0c0a() {
+  public static class QuotationClass_jo2b2o_a0a0a0d0a {
+    public QuotationClass_jo2b2o_a0a0a0d0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

@@ -20,7 +20,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.ide.editorTabs.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/hierarchyView.png", "jetbrains.mps.ide"), true);
@@ -110,7 +110,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
       return null;
     }
     TabbedEditor tabbedEditor = (TabbedEditor) ((IEditor) MapSequence.fromMap(_params).get("editor"));
-    SNode editedNode = (tabbedEditor).getEditedNode();
+    SNode editedNode = tabbedEditor.getCurrentlyEditedNode().getNode();
     if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return null;
     }

@@ -26,6 +26,7 @@
   <unitInfo fileName="SingletabbedEditorTab_Behavior.java" startLine="31" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SingletabbedEditorTab_Behavior$QuotationClass_oqwaam_a0a0b" />
   <unitInfo fileName="AbstractEnhancedConceptFunction_Behavior.java" startLine="39" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.AbstractEnhancedConceptFunction_Behavior$QuotationClass_73aeno_a1a0a0b0a0i0b" />
   <unitInfo fileName="ExecuteParameterQuery_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ExecuteParameterQuery_Behavior" />
+  <unitInfo fileName="EditorTab_Behavior.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.EditorTab_Behavior" />
   <unitInfo fileName="ParametrizedExecuteProcess_Behavior.java" startLine="22" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParametrizedExecuteProcess_Behavior$QuotationClass_9hdhrc_a0a0b" />
   <unitInfo fileName="BaseToolDeclaration_Behavior.java" startLine="61" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior$QuotationClass_7ol7e8_a0a0f" />
   <unitInfo fileName="ActionDataParameterDeclaration_Behavior.java" startLine="62" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior$QuotationClass_6xp2og_a0a0a0a0b0d" />
@@ -396,6 +397,18 @@
     <nodeInfo nodeId="3636700473138841204" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="IEnhancedRunConfiguration_Behavior.java" startLine="18" startPosition="97" endLine="19" endPosition="58" />
     <scopeInfo nodeId="3636700473138841188" fileName="IEnhancedRunConfiguration_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="3636700473138841192" fileName="IEnhancedRunConfiguration_Behavior.java" startLine="18" startPosition="97" endLine="19" endPosition="58" />
+  </root>
+  <root nodeId="3743831881070611775">
+    <nodeInfo nodeId="3743831881070611779" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EditorTab_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="106" />
+    <nodeInfo nodeId="3743831881070611790" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EditorTab_Behavior.java" startLine="22" startPosition="89" endLine="23" endPosition="139" />
+    <nodeInfo nodeId="3743831881070611806" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="EditorTab_Behavior.java" startLine="26" startPosition="106" endLine="27" endPosition="94" />
+    <nodeInfo nodeId="3743831881070611825" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="EditorTab_Behavior.java" startLine="27" startPosition="94" endLine="28" endPosition="17" />
+    <scopeInfo nodeId="3743831881070611831" fileName="EditorTab_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="3743831881070611778" fileName="EditorTab_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="106" />
+    <scopeInfo nodeId="3743831881070611789" fileName="EditorTab_Behavior.java" startLine="22" startPosition="89" endLine="23" endPosition="139" />
+    <scopeInfo nodeId="3743831881070611805" fileName="EditorTab_Behavior.java" startLine="26" startPosition="106" endLine="28" endPosition="17">
+      <varInfo nodeId="3743831881070611807" varName="props" />
+    </scopeInfo>
   </root>
   <root nodeId="444169778578071391">
     <nodeInfo nodeId="444169778578090568" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ExecuteParameterQuery_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="70" />

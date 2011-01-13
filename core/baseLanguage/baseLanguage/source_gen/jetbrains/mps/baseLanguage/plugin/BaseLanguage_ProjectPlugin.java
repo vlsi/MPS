@@ -22,12 +22,13 @@ public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
     return tools;
   }
 
-  public List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
+  public List<BaseCustomProjectPlugin> initCustomParts(Project project) {
     List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
+    MPSProject mpsProject = project.getComponent(MPSProject.class);
     {
       BaseCustomProjectPlugin plugin = new BaseLanguageCustomPlugin_CustomProjectPlugin();
       ListSequence.fromList(res).addElement(plugin);
-      plugin.init(project);
+      plugin.init(mpsProject);
     }
     return res;
   }

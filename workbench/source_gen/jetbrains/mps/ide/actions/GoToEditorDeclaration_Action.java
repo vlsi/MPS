@@ -19,13 +19,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.IScope;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
+import jetbrains.mps.smodel.IScope;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.ModuleContext;
 import com.intellij.openapi.project.Project;
@@ -111,7 +111,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
       final Wrappers._T<Language> l = new Wrappers._T<Language>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          l.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), ((IScope) MapSequence.fromMap(_params).get("scope")));
+          l.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))));
         }
       });
       if (l.value == null) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Editor_ProjectPlugin.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" />
+  <unitInfo fileName="Editor_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin" />
   <unitInfo fileName="EditMenuActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditMenuActions_ActionGroup" />
   <unitInfo fileName="EditorLangPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.EditorLangPlugin_CustomProjectPlugin" />
   <unitInfo fileName="Mac_KeymapChanges.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.plugin.Mac_KeymapChanges" />

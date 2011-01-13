@@ -2562,10 +2562,6 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp1h.NodeExpression" typeId="tp1h.1215000036307" id="7754459869734029557" />
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7754459869734029565">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcn.7754459869734028917" resolveInfo="findAllAspects" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7754459869734029567">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jt7v.~GlobalScope%dgetInstance()%cjetbrains%dmps%dproject%dGlobalScope" resolveInfo="getInstance" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jt7v.~GlobalScope" resolveInfo="GlobalScope" />
-                </node>
               </node>
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tp1h.RequiredAdditionalArgumentReference" typeId="tp1h.1189694084608" id="7754459869734029553">

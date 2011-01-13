@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SNode;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
-import jetbrains.mps.workbench.action.ActionFactory;
+import com.intellij.openapi.actionSystem.ActionManager;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -130,13 +130,13 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     JButton bShowMissRef = new JButton(new AbstractAction("Show Missing References") {
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
-        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action", "jetbrains.mps.ide"));
+        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action"));
       }
     });
     JButton bShowModelUsages = new JButton(new AbstractAction("Show Model Usages") {
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
-        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action", "jetbrains.mps.lang.core"));
+        performActionInContext(new ModelPropertiesDialog.MyDataContext(), ActionManager.getInstance().getAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action"));
       }
     });
     JPanel result = new JPanel(new GridBagLayout());

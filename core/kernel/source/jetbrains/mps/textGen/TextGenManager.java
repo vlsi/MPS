@@ -158,7 +158,7 @@ public class TextGenManager {
     assert cd != null;
     SNode baseConcept = SModelUtil.getBaseConcept();
     while (cd != baseConcept) {
-      Language l = SModelUtil.getDeclaringLanguage(cd, GlobalScope.getInstance());
+      Language l = SModelUtil.getDeclaringLanguage(cd);
 
       String packageName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(cd));
       String className = cd.getName();

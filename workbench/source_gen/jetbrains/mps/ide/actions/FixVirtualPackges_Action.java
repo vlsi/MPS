@@ -67,7 +67,7 @@ public class FixVirtualPackges_Action extends GeneratedAction {
       SModel structure = language.getStructureModelDescriptor().getSModel();
       List<SNode> concepts = SModelOperations.getRoots(structure, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       for (SNode concept : concepts) {
-        List<SNode> aspects = AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(concept, language.getScope());
+        List<SNode> aspects = AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(concept);
         for (SNode aspect : aspects) {
           if (!(SNodeOperations.isInstanceOf(aspect, "jetbrains.mps.lang.core.structure.BaseConcept"))) {
             continue;

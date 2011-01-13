@@ -33,7 +33,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NonNls;
@@ -85,7 +84,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     }
 
     if (actionClass == null) return null;
-    BaseAction action = (BaseAction) ActionFactory.getInstance().acquireRegisteredAction(actionClass.getName(), "jetbrains.mps.ide");
+    BaseAction action = (BaseAction) ActionManager.getInstance().getAction(actionClass.getName());
     DefaultActionGroup group = ActionUtils.groupFromActions(action);
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }

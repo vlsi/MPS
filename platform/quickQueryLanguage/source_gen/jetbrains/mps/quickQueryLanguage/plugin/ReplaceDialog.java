@@ -22,7 +22,6 @@ import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import java.util.Collections;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
@@ -85,7 +84,7 @@ public class ReplaceDialog extends BaseDialog {
       final Wrappers._T<Language> language = new Wrappers._T<Language>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          language.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(ReplaceDialog.this.myNode), GlobalScope.getInstance());
+          language.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(ReplaceDialog.this.myNode));
         }
       });
       final GenerationResult result = this.myEditor.generate(Collections.singleton(language.value.getClassPathItem()));

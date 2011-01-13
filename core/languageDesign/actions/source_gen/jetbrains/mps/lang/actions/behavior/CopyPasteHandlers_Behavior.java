@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -42,7 +41,7 @@ public class CopyPasteHandlers_Behavior {
     SNode pastePostProcessor = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PastePostProcessor", null);
     SLinkOperations.setTarget(pastePostProcessor, "concept", baseConcept, false);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).addElement(pastePostProcessor);
-    String name = SModelUtil.getDeclaringLanguage(baseConcept, GlobalScope.getInstance()).getModuleFqName();
+    String name = SModelUtil.getDeclaringLanguage(baseConcept).getModuleFqName();
     SPropertyOperations.set(thisNode, "name", NameUtil.shortNameFromLongName(name) + "_CopyPasteHandlers");
   }
 
