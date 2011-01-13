@@ -180,11 +180,8 @@ public class Inequalities {
           myState.addEquation(node, result, info);
         }
       } else {
-
       }
-
     }
-
   }
 
   private Set<Set<InequalityBlock>> getInequalityGroups(List<InequalityBlock> inequalities) {
