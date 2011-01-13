@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.workbench.action.ActionFactory;
+import com.intellij.openapi.actionSystem.ActionManager;
 
 public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
@@ -35,6 +35,6 @@ public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage
   }
 
   public AnAction getClickAction() {
-    return ActionFactory.getInstance().acquireRegisteredAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action", "jetbrains.mps.baseLanguage");
+    return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action");
   }
 }
