@@ -168,6 +168,10 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
       if (addDependency) {
         currentTypesComponent.addDependcyOnCurrent(node);
       }
+      if (ruleModel != null && ruleId != null) {
+        currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+        //todo wrap into "if (addDependency) {}" when sure that typeof works fine
+      }
     }
     //((NodeTypesComponentNew)myNodeTypesComponent).checkIfNotChecked(node);
     return myState.typeOf(node, info);
@@ -342,7 +346,6 @@ return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
   public void dispose() {
     super.dispose();
     myState.clear(true);
-
   }
 
   @Override

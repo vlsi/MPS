@@ -32,9 +32,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.JPopupMenu;
 import java.awt.Color;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -99,10 +97,20 @@ public class TypeSystemStateTree extends MPSTree {
 
   private TypeSystemStateTreeNode createTypesNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Types", myOperationContext);
+    List<TypeTreeNode> list = new ArrayList<TypeTreeNode>();
     NodeMaps nodeMaps = myState.getNodeMaps();
     for (SNode node : nodeMaps.getTypeKeySet()) {
       SNode type = nodeMaps.getInitialType(node);
-      result.add(new TypeTreeNode(myOperationContext, node, type, myState.expand(type)));
+      list.add(new TypeTreeNode(myOperationContext, node, type, myState.expand(type)));
+    }
+    Collections.sort(list, new Comparator<TypeTreeNode>() {
+      @Override
+      public int compare(TypeTreeNode o1, TypeTreeNode o2) {
+        return o1.toString().compareTo(o2.toString());
+      }
+    });
+    for (TypeTreeNode node : list) {
+      result.add(node);
     }
     return result;
   }
