@@ -42,8 +42,6 @@
   <unitInfo fileName="check_RunConfigurationEditor_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.check_RunConfigurationEditor_NonTypesystemRule" />
   <unitInfo fileName="typeof_SmartDisposeClosureParameterDeclaration_InferenceRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_SmartDisposeClosureParameterDeclaration_InferenceRule" />
   <unitInfo fileName="typeof_Console_IsSubtype_JComponent_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_Console_IsSubtype_JComponent_SubtypingRule$QuotationClass_oa5pba_a0a0a" />
-  <unitInfo fileName="typeof_MultitabbedEditorTabType_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_MultitabbedEditorTabType_SubtypingRule$QuotationClass_aofz3z_a0a0a" />
-  <unitInfo fileName="Typeof_SingletabbedEditorTabType_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Typeof_SingletabbedEditorTabType_SubtypingRule$QuotationClass_o84fnu_a0a0a" />
   <unitInfo fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule$QuotationClass_d1kmw7_a0a0a" />
   <unitInfo fileName="Typeof_Action_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Typeof_Action_SubtypingRule$QuotationClass_mjowdo_a0a0a" />
   <unitInfo fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="41" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Typeof_ApplicationPluginType_SubtypingRule$QuotationClass_mtmcrl_a0a0a" />
@@ -86,8 +84,6 @@
   <unitInfo fileName="typeof_ActionsList_FunctionParameter_InferenceRule.java" startLine="48" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ActionsList_FunctionParameter_InferenceRule$QuotationClass_z2y16_a0a0a0" />
   <unitInfo fileName="typeof_ActionListStatement_InferenceRule.java" startLine="50" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ActionListStatement_InferenceRule$QuotationClass_aab8tt_a0a0a0" />
   <unitInfo fileName="typeof_Console_IsSubtype_JComponent_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_Console_IsSubtype_JComponent_SubtypingRule" />
-  <unitInfo fileName="typeof_MultitabbedEditorTabType_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_MultitabbedEditorTabType_SubtypingRule" />
-  <unitInfo fileName="Typeof_SingletabbedEditorTabType_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Typeof_SingletabbedEditorTabType_SubtypingRule" />
   <unitInfo fileName="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule" />
   <unitInfo fileName="Typeof_Action_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Typeof_Action_SubtypingRule" />
   <unitInfo fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.Typeof_ApplicationPluginType_SubtypingRule" />
@@ -134,7 +130,7 @@
   <unitInfo fileName="typeof_PersistentPropertyDeclaration_InferenceRule.java" startLine="22" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_PersistentPropertyDeclaration_InferenceRule" />
   <unitInfo fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="19" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ConceptFunctionParameter_node_InferenceRule" />
   <unitInfo fileName="typeof_ToolTab_InferenceRule.java" startLine="22" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.typeof_ToolTab_InferenceRule" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="310" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="10" startPosition="0" endLine="302" endPosition="0" unitName="jetbrains.mps.lang.plugin.typesystem.TypesystemDescriptor" />
   <root nodeId="1204039255253">
     <nodeInfo nodeId="1204040680751" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="23" startPosition="116" endLine="24" endPosition="139" />
     <nodeInfo nodeId="1204040866922" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_ConceptFunctionParameter_node_InferenceRule.java" startLine="24" startPosition="139" endLine="25" endPosition="136" />
@@ -378,14 +374,6 @@
     <scopeInfo nodeId="1227032366953" fileName="check_ParametersCount_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="27" endPosition="259" />
     <scopeInfo nodeId="1227032314461" fileName="check_ParametersCount_NonTypesystemRule.java" startLine="23" startPosition="249" endLine="28" endPosition="7" />
     <scopeInfo nodeId="1227032271476" fileName="check_ParametersCount_NonTypesystemRule.java" startLine="22" startPosition="121" endLine="29" endPosition="5" />
-  </root>
-  <root nodeId="144706109457490158">
-    <nodeInfo nodeId="144706109457490160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="Typeof_SingletabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="124" />
-    <scopeInfo nodeId="144706109457490159" fileName="Typeof_SingletabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="124" />
-  </root>
-  <root nodeId="144706109457490164">
-    <nodeInfo nodeId="144706109457490167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="typeof_MultitabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="123" />
-    <scopeInfo nodeId="144706109457490165" fileName="typeof_MultitabbedEditorTabType_SubtypingRule.java" startLine="22" startPosition="117" endLine="23" endPosition="123" />
   </root>
   <root nodeId="162872405267677846">
     <nodeInfo nodeId="162872405267677886" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="typeof_ConfigurationEditorDeclaration_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="91" />

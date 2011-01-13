@@ -38,7 +38,6 @@
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
-  <import index="24cd" modelUID="r:b955964c-0fc4-409f-99d6-efa65acee108(jetbrains.mps.plugins.pluginparts.tabbedEditor)" version="-1" implicit="yes" />
   <import index="tp4o" modelUID="r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)" version="-1" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <roots>
@@ -191,14 +190,6 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_PropertyRefType_isSubtype_PropertyRef" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CheckedName" />
-    </node>
-    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="144706109457490158">
-      <property name="name" nameId="tpck.1169194664001" value="Typeof_SingletabbedEditorTabType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
-    </node>
-    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="144706109457490164">
-      <property name="name" nameId="tpck.1169194664001" value="typeof_MultitabbedEditorTabType" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6586153900349327568">
       <property name="name" nameId="tpck.1169194664001" value="typeof_ActionListStatement" />
@@ -2074,36 +2065,6 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1628770029971140825">
       <property name="name" nameId="tpck.1169194664001" value="refType" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4k.1628770029971140539" resolveInfo="PropertyRefType" />
-    </node>
-  </root>
-  <root id="144706109457490158">
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="144706109457490159">
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="144706109457490160">
-        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="144706109457490161">
-          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7988267296495007648">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="24cd.504431509334724684" resolveInfo="BaseSingleTab" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="144706109457490163">
-      <property name="name" nameId="tpck.1169194664001" value="tabType" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4k.144706109457474501" resolveInfo="SingletabbedEditorTabType" />
-    </node>
-  </root>
-  <root id="144706109457490164">
-    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="144706109457490165">
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="144706109457490167">
-        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="144706109457490168">
-          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7988267296495007649">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="24cd.504431509334724271" resolveInfo="BaseMultiTab" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="144706109457490170">
-      <property name="name" nameId="tpck.1169194664001" value="tabType" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4k.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
     </node>
   </root>
   <root id="6586153900349327568">
