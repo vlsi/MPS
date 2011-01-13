@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
