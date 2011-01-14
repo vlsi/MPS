@@ -35,11 +35,12 @@ public class ControlsDemo_SWT {
     widget_z347t1_a0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             tree();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -49,11 +50,12 @@ public class ControlsDemo_SWT {
     widget_z347t1_b0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             table();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container

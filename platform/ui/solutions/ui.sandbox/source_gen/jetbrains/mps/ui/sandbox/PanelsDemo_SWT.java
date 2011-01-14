@@ -39,11 +39,12 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_a0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             verticalPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -53,11 +54,12 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_b0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             horizontalPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -67,11 +69,12 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_c0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             dockPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -81,11 +84,12 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_d0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             flowPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -95,11 +99,12 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_e0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             layoutPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -109,11 +114,12 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_f0a0a.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             gridLayoutPanel();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     //  with SWT items are not added to container
@@ -251,14 +257,15 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_b0a0a0b0b0d.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             final Button widget_vdkvtt_a0a0a0a1a0a0a1a1a3 = new Button(cmp1, SWT.PUSH);
             widget_vdkvtt_a0a0a0a1a0a0a1a1a3.setText("North");
             widget_vdkvtt_a0a0a0a1a0a0a1a1a3.setLayoutData(DockLayoutData.NORTH);
             cmp1.layout();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_vdkvtt_b0a0a0b0b0d.setLayoutData(DockLayoutData.NORTH);
@@ -268,14 +275,15 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_b0b0a0b0b0d.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             final Button widget_vdkvtt_a0a0a0a1a1a0a1a1a3 = new Button(cmp2, SWT.PUSH);
             widget_vdkvtt_a0a0a0a1a1a0a1a1a3.setText("South");
             widget_vdkvtt_a0a0a0a1a1a0a1a1a3.setLayoutData(DockLayoutData.SOUTH);
             cmp2.layout();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_vdkvtt_b0b0a0b0b0d.setLayoutData(DockLayoutData.SOUTH);
@@ -285,14 +293,15 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_b0c0a0b0b0d.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             final Button widget_vdkvtt_a0a0a0a1a2a0a1a1a3 = new Button(cmp3, SWT.PUSH);
             widget_vdkvtt_a0a0a0a1a2a0a1a1a3.setText("East");
             widget_vdkvtt_a0a0a0a1a2a0a1a1a3.setLayoutData(DockLayoutData.EAST);
             cmp3.layout();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_vdkvtt_b0c0a0b0b0d.setLayoutData(DockLayoutData.EAST);
@@ -302,14 +311,15 @@ public class PanelsDemo_SWT {
     widget_vdkvtt_b0d0a0b0b0d.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
-        new _FunctionTypes._void_P1_E0<SelectionEvent>() {
+        _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
             final Button widget_vdkvtt_a0a0a0a1a3a0a1a1a3 = new Button(cmp4, SWT.PUSH);
             widget_vdkvtt_a0a0a0a1a3a0a1a1a3.setText("West");
             widget_vdkvtt_a0a0a0a1a3a0a1a1a3.setLayoutData(DockLayoutData.WEST);
             cmp4.layout();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_vdkvtt_b0d0a0b0b0d.setLayoutData(DockLayoutData.WEST);

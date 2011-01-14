@@ -37,11 +37,12 @@ public class WindowsDemo_Swing {
     widget_ucaale_a0a0a.setActionCommand("dialog");
     widget_ucaale_a0a0a.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             dialog();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     menu.add(widget_ucaale_a0a0a);
@@ -66,11 +67,12 @@ public class WindowsDemo_Swing {
     widget_ucaale_a0a0a0b0b0b.setText("Dialog");
     widget_ucaale_a0a0a0b0b0b.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             showDialog();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_ucaale_a0a1a1a1.add(widget_ucaale_a0a0a0b0b0b);
@@ -81,11 +83,12 @@ public class WindowsDemo_Swing {
     widget_ucaale_a0a1a0b0b0b.setText("Form");
     widget_ucaale_a0a1a0b0b0b.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             showForm();
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_ucaale_b0a1a1a1.add(widget_ucaale_a0a1a0b0b0b);
@@ -108,11 +111,12 @@ public class WindowsDemo_Swing {
     widget_ucaale_a0a0a1a2.setText("FOO");
     widget_ucaale_a0a0a1a2.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             widget_ucaale_a0a0c.setVisible(false);
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     widget_ucaale_a0b0c.add(widget_ucaale_a0a0a1a2);
@@ -161,11 +165,12 @@ public class WindowsDemo_Swing {
     widget_ucaale_c0a0a1a3.setText("<-  / <->");
     widget_ucaale_c0a0a1a3.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             widget_ucaale_a0a0d.setVisible(false);
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     {
@@ -184,11 +189,12 @@ public class WindowsDemo_Swing {
     widget_ucaale_d0a0a1a3.setText(" -> / <->");
     widget_ucaale_d0a0a1a3.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             widget_ucaale_a0a0d.setVisible(false);
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     {
@@ -207,11 +213,12 @@ public class WindowsDemo_Swing {
     widget_ucaale_e0a0a1a3.setText(" -  / <->");
     widget_ucaale_e0a0a1a3.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        new _FunctionTypes._void_P1_E0<ActionEvent>() {
+        _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
             widget_ucaale_a0a0d.setVisible(false);
           }
-        }.invoke(e);
+        };
+        h.invoke(e);
       }
     });
     {
