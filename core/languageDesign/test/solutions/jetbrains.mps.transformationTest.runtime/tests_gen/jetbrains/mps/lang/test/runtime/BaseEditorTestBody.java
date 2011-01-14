@@ -128,7 +128,7 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            editor.showNode(node, true);
+            editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
             query.setInstantiate(true);
             query.setCurrentNodeOnly(true);
