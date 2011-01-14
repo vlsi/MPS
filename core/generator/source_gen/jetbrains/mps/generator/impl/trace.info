@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="894226751621690778">
+    <nodeInfo nodeId="894226751621690877" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="GeneratorUtilEx.java" startLine="13" startPosition="58" endLine="14" endPosition="242" />
+    <nodeInfo nodeId="894226751621690780" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorUtilEx#()V" fileName="GeneratorUtilEx.java" startLine="9" startPosition="30" endLine="11" endPosition="3" />
+    <nodeInfo nodeId="894226751621690784" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPatternVariableName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="GeneratorUtilEx.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="894226751621690783" fileName="GeneratorUtilEx.java" startLine="10" startPosition="28" endLine="10" endPosition="28" />
+    <scopeInfo nodeId="894226751621690787" fileName="GeneratorUtilEx.java" startLine="13" startPosition="58" endLine="14" endPosition="242" />
+    <scopeInfo nodeId="894226751621690780" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorUtilEx#()V" fileName="GeneratorUtilEx.java" startLine="9" startPosition="30" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="894226751621690784" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPatternVariableName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" fileName="GeneratorUtilEx.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="894226751621690789" varName="ref" />
+    </scopeInfo>
+    <unitInfo nodeId="894226751621690778" fileName="GeneratorUtilEx.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.generator.impl.GeneratorUtilEx" />
+  </root>
+</debugInfo>
+
