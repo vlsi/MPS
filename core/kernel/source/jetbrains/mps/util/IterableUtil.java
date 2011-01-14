@@ -21,8 +21,13 @@ import java.util.Iterator;
 import java.util.List;
 
 public class IterableUtil {
-  public  static <T> Collection<T> asCollection(Iterable<T> iter){
+  public static <T> Collection<T> asCollection(Iterable<T> iter){
     if (iter instanceof Collection) return (Collection<T>) iter;
+    return asList(iter);
+  }
+
+  public static <T> List<T> asList(Iterable<T> iter){
+    if (iter instanceof List) return (List<T>) iter;
     List<T> result = new ArrayList<T>();
     for (T o:iter){
       result.add(o);
