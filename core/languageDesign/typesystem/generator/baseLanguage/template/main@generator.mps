@@ -115,10 +115,6 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1175243271669">
       <property name="name" nameId="tpck.1169194664001" value="TypesystemDescriptor" />
     </node>
-    <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1175496118183">
-      <property name="name" nameId="tpck.1169194664001" value="Givetype_to_statement" />
-      <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpd4.1175496148685" />
-    </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1175518443988">
       <property name="name" nameId="tpck.1169194664001" value="Assert_to_statement" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpd4.1175517400280" resolveInfo="AssertStatement" />
@@ -1929,12 +1925,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1175496503595">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpd4.1175496148685" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1175496529833">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1175496118183" resolveInfo="Givetype_to_statement" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1175595201868">
@@ -6787,29 +6777,6 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1178550081541" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1193750663488">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bihx.~BaseHelginsDescriptor" resolveInfo="BaseHelginsDescriptor" />
-    </node>
-  </root>
-  <root id="1175496118183">
-    <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1224145462970">
-      <node role="expression" roleId="tpee.1068580123156" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1224145478191">
-        <node role="nodeMacro$attribute" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1224145493073">
-          <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="1224145493074">
-            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224145493075">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="1224145496495">
-                <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1224145498031">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1224145508110">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mwyq.~RuntimeException%d&lt;init&gt;(java%dlang%dString)" resolveInfo="RuntimeException" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224145510419">
-                      <property name="value" nameId="tpee.1070475926801" value="givetype is deprecated and not implemented" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="templateFragment$attribute" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="1224145486734" />
     </node>
   </root>
   <root id="1175518443988">
