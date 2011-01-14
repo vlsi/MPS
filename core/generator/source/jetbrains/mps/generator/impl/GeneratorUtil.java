@@ -25,7 +25,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;

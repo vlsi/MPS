@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 
 public class LanguageID {
   public static final String JAVA = "java";
-  public static final ModelRootManager JAVA_MANAGER = new ModelRootManager(BootstrapLanguages.BASE_LANGUAGE.getModuleId().toString(), JavaStubs.class.getName());
+  // TODO move JavaStub -> core?
+  public static final ModelRootManager JAVA_MANAGER = new ModelRootManager(BootstrapLanguages.BASE_LANGUAGE.getModuleId().toString(), "jetbrains.mps.baseLanguage.stubs.JavaStubs");
 }
