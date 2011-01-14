@@ -336,7 +336,7 @@ public class InternerTest {
 
   private long[] computeMedian (LongProducer lp) {
     List<long[]> data = new ArrayList<long[]>();
-    for (int count=8; count>0; --count) {
+    for (int count=16; count>0; --count) {
       data.add(lp.produce());
     }
 
