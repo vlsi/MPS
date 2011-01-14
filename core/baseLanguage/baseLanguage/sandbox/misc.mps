@@ -40,6 +40,9 @@
     <node type="tpee.Annotation" typeId="tpee.1188206331916" id="2030079436469694999">
       <property name="name" nameId="tpck.1169194664001" value="Foobar" />
     </node>
+    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4540477783368704704">
+      <property name="name" nameId="tpck.1169194664001" value="C" />
+    </node>
   </roots>
   <root id="3293010995237625814">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="454955939109967670">
@@ -402,6 +405,32 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2030079436469695004" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2030079436469695000" />
+  </root>
+  <root id="4540477783368704704">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4540477783368704705" />
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4540477783368704706">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4540477783368704707" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4540477783368704708" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4540477783368704709" />
+    </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4540477783368705984">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3293010995237625814" resolveInfo="B" />
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="4540477783368705985">
+      <property name="name" nameId="tpck.1169194664001" value="foo" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4540477783368705986" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4540477783368705987" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4540477783368705988">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4540477783368705990">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="4540477783368705991">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="454955939109967670" resolveInfo="foo" />
+          </node>
+        </node>
+      </node>
+      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="4540477783368705989">
+        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="mwyq.~Override" />
+      </node>
+    </node>
   </root>
 </model>
 
