@@ -134,7 +134,7 @@
   <root nodeId="1087215312703">
     <nodeInfo nodeId="1214580244841" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_Editor.java" startLine="452" startPosition="30" endLine="453" endPosition="63" />
     <nodeInfo nodeId="3557929875030454686" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_Editor.java" startLine="471" startPosition="80" endLine="472" endPosition="75" />
-    <nodeInfo nodeId="1161165897338" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptDeclaration_Editor.java" startLine="667" startPosition="111" endLine="668" endPosition="62" />
+    <nodeInfo nodeId="1161165897338" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptDeclaration_Editor.java" startLine="667" startPosition="111" endLine="668" endPosition="55" />
     <nodeInfo nodeId="1162559222378" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_Editor.java" startLine="669" startPosition="20" endLine="670" endPosition="19" />
     <nodeInfo nodeId="1161166135928" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptDeclaration_Editor.java" startLine="671" startPosition="5" endLine="672" endPosition="133" />
     <nodeInfo nodeId="1161722913887" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" fileName="ConceptDeclaration_Editor.java" startLine="673" startPosition="20" endLine="674" endPosition="19" />
@@ -154,7 +154,7 @@
     <nodeInfo nodeId="1193064081517" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" fileName="ConceptDeclaration_Editor.java" startLine="1074" startPosition="106" endLine="1075" endPosition="154" />
     <nodeInfo nodeId="1193064081525" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_Editor.java" startLine="1075" startPosition="154" endLine="1076" endPosition="64" />
     <nodeInfo nodeId="1193064081531" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="ConceptDeclaration_Editor.java" startLine="1076" startPosition="64" endLine="1077" endPosition="106" />
-    <nodeInfo nodeId="1162559216418" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_Editor.java" startLine="668" startPosition="62" endLine="671" endPosition="5" />
+    <nodeInfo nodeId="1162559216418" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_Editor.java" startLine="668" startPosition="55" endLine="671" endPosition="5" />
     <nodeInfo nodeId="1161722900535" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" fileName="ConceptDeclaration_Editor.java" startLine="672" startPosition="133" endLine="675" endPosition="5" />
     <scopeInfo nodeId="1210083703315" fileName="ConceptDeclaration_Editor.java" startLine="452" startPosition="30" endLine="453" endPosition="63" />
     <scopeInfo nodeId="1216387022152" fileName="ConceptDeclaration_Editor.java" startLine="471" startPosition="80" endLine="472" endPosition="75" />
