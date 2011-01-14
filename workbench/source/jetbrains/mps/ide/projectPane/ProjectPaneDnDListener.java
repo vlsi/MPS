@@ -100,7 +100,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
   }
 
   private String getPackagePresentation(String name) {
-    return (name == null || name.isEmpty()) ? "<i><untitled></i>" : "'<b>" + name + "</b>'";
+    return (name == null || name.isEmpty()) ? "<i>&lt;untitled&gt;</i>" : "'<b>" + name + "</b>'";
   }
 
   private String getFullTargetPack(String targetPackage, String basePack) {
