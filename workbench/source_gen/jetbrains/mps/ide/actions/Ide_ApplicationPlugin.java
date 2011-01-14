@@ -207,6 +207,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Folding_ActionGroup());
     addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerateFavorites_ActionGroup());
+    addGroup(new GenerateGeneratorPopup_ActionGroup());
     addGroup(new GenerateModelPopup_ActionGroup());
     addGroup(new GenerateModels_ActionGroup());
     addGroup(new GenerateModulePopup_ActionGroup());
@@ -280,6 +281,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Edit_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Folding_ActionGroup.ID, EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_folding);
     insertGroupIntoAnother(Generate_ActionGroup.ID, Build_ActionGroup.ID, Build_ActionGroup.LABEL_ID_aux);
+    insertGroupIntoAnother(GenerateGeneratorPopup_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generate);
     insertGroupIntoAnother(GenerateModelPopup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_generateActions);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_generateModule);
     insertGroupIntoAnother(GenerateModulePopup_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);

@@ -1683,6 +1683,14 @@
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.actions.GenerateGeneratorPopup_ActionGroup" file="GenerateGeneratorPopup_ActionGroup.java">
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GenerateTemplateQueries_Action" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.actions.GenerateIntentionAction_Action" file="GenerateIntentionAction_Action.java">
     <classNode dependClassName="jetbrains.mps.intentions.IntentionContext" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -2547,17 +2555,16 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInProject_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.SurroundWithIntentions_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.SaveModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.HighlightUsages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.LanguageNewCustomPartActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NamespaceActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.SaveModel_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GenerateGeneratorPopup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowCellInExplorer_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowParameters_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GenerateFavorites_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GenerateModule_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FindPrevious_Action" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewSubModel_Action" />
@@ -2586,7 +2593,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.FolderActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Resume_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.PasteNode_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GenerateModule_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FileActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.XWin_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ShowModelChecker_Action" />
@@ -2599,6 +2606,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.actions.SolutionRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Bookmarks_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FixVirtualPackges_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.OptimizeProjectImports_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.RemoveBootstrapLanguagesDevKitFromLanguageModels_Action" />
@@ -2618,6 +2626,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.StepOut_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Compile_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.SurroundWithIntentions_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewModelFromSource_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSProjectPaths_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup" />

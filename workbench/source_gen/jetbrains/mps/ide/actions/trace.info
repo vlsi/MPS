@@ -25,6 +25,7 @@
   <unitInfo fileName="ToolsUpgrade_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.ToolsUpgrade_ActionGroup" />
   <unitInfo fileName="GeneratorNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup" />
   <unitInfo fileName="SolutionNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionNewActions_ActionGroup" />
+  <unitInfo fileName="GenerateGeneratorPopup_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateGeneratorPopup_ActionGroup" />
   <unitInfo fileName="GenerateProjectPopup_ActionGroup.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateProjectPopup_ActionGroup" />
   <unitInfo fileName="GenerateModule_ActionGroup.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModule_ActionGroup" />
   <unitInfo fileName="Compile_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.actions.Compile_ActionGroup" />
@@ -274,7 +275,7 @@
   <unitInfo fileName="NewModelFromSource_Action.java" startLine="36" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModelFromSource_Action" />
   <unitInfo fileName="GoByCurrentReference_Action.java" startLine="35" startPosition="0" endLine="198" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action" />
   <unitInfo fileName="ModelCheckerTool_Tool.java" startLine="33" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelCheckerTool_Tool" />
-  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="339" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
+  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
   <root nodeId="1015639512126924602">
     <nodeInfo nodeId="8179751258861420936" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="needClean" fileName="DefaultMakeTask.java" startLine="18" startPosition="49" endLine="19" endPosition="28" />
     <nodeInfo nodeId="8179751258861420940" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modules" fileName="DefaultMakeTask.java" startLine="19" startPosition="28" endLine="20" endPosition="83" />
@@ -3230,6 +3231,10 @@
     <scopeInfo nodeId="2841218117793490430" fileName="GoToUsageInMappingConfig_Action.java" startLine="42" startPosition="189" endLine="43" endPosition="19" />
     <scopeInfo nodeId="2841218117793490460" fileName="GoToUsageInMappingConfig_Action.java" startLine="45" startPosition="89" endLine="46" endPosition="19" />
     <scopeInfo nodeId="2841218117793490405" fileName="GoToUsageInMappingConfig_Action.java" startLine="35" startPosition="87" endLine="48" endPosition="16" />
+  </root>
+  <root nodeId="2846633604979841250">
+    <nodeInfo nodeId="2846633604979841254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateGeneratorPopup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="156" />
+    <nodeInfo nodeId="2846633604979841258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="GenerateGeneratorPopup_ActionGroup.java" startLine="18" startPosition="156" endLine="19" endPosition="154" />
   </root>
   <root nodeId="2921528350547793592">
     <nodeInfo nodeId="2921528350547793595" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="EditorTabActions_ActionGroup.java" startLine="22" startPosition="9" endLine="23" endPosition="97" />
