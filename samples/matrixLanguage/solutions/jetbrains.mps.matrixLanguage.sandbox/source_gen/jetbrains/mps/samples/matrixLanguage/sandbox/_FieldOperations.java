@@ -5,6 +5,9 @@ package jetbrains.mps.samples.matrixLanguage.sandbox;
 import jetbrains.mps.samples.matrixLanguage.runtime.FieldOperations;
 
 public class _FieldOperations {
+  public _FieldOperations() {
+  }
+
   public static class DoubleOperations<ScalarType> implements FieldOperations<Double> {
     public DoubleOperations() {
     }
