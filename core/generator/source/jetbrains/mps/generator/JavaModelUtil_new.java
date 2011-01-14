@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.baseLanguage.BaseLanguageUtil;
+import jetbrains.mps.baseLanguage.search.BaseLanguageUtil;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
