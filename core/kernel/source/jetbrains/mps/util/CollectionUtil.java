@@ -176,4 +176,78 @@ public class CollectionUtil {
       }
     }
   }
+
+  public static <T> Iterable<T> withoutNulls(final Iterable<T> resultList) {
+    return new Iterable<T>() {
+      @Override
+      public Iterator<T> iterator() {
+        return new SkipNullIterator<T>(resultList.iterator());
+      }
+    };
+  }
+
+  private static class SkipNullIterator<Item> implements Iterator<Item> {
+    private Iterator<Item> mySourceIterator;
+    private Item myLookup = null;
+
+    public SkipNullIterator(Iterator<Item> iter) {
+      mySourceIterator = iter;
+    }
+
+    @Override
+    public boolean hasNext() {
+      if (myLookup != null) return true;
+      while (mySourceIterator.hasNext()) {
+        myLookup = mySourceIterator.next();
+        if (myLookup != null) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    @Override
+    public Item next() {
+      while (myLookup == null) {
+        myLookup = mySourceIterator.next();
+      }
+      Item result = myLookup;
+      myLookup = null;
+      return result;
+    }
+
+    @Override
+    public void remove() {
+      throw new UnsupportedOperationException();
+    }
+  }
+
+  public static void main(String[] args) {
+    Iterable<String> it1 = CollectionUtil.list("5", "6", "7", "8");
+    Iterable<String> it2 = CollectionUtil.list("5", null, "6", null, "7", "8");
+    Iterable<String> it3 = CollectionUtil.list("5", null, "6", "7", "8", null, null);
+    Iterable<String> it4 = CollectionUtil.list(new String[]{null});
+    Iterable<String> it5 = CollectionUtil.list(null, null);
+    Iterable<String> it6 = CollectionUtil.list(null, null, null);
+    Iterable<String> it7 = CollectionUtil.list();
+
+    printWithoutNulls(it1);
+    printWithoutNulls(it2);
+    printWithoutNulls(it3);
+    printWithoutNulls(it4);
+    printWithoutNulls(it5);
+    printWithoutNulls(it6);
+    printWithoutNulls(it7);
+  }
+
+  private static void printWithoutNulls(Iterable it) {
+    System.err.println();
+    System.err.print("it = (");
+    Iterable iterable = withoutNulls(it);
+    for (Object elem : iterable) {
+      System.err.print(elem);
+      System.err.print(",");
+    }
+    System.err.println(")");
+  }
 }
