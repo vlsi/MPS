@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.baseLanguage.search.BaseLanguageUtil;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -79,7 +78,7 @@ public class JavaModelUtil_new {
 //          }
 //        }
 //      }
-//      javaClass = BaseLanguageUtil.getSuperclass(javaClass);
+//      javaClass = getSuperclass(javaClass);
 //    }
 //    return null;
 //  }
@@ -127,7 +126,7 @@ public class JavaModelUtil_new {
       return null;
     }
     SModel model = modelDescriptor.getSModel();
-    SNode rootByName = SModelOperations.getRootByName(model,shortClassName);
+    SNode rootByName = SModelOperations.getRootByName(model, shortClassName);
     if (rootByName == null && reportErrors) {
       LOG.error("couldn't find root '" + shortClassName + "' in model '" + modelUID + "'");
     }
@@ -145,7 +144,7 @@ public class JavaModelUtil_new {
           return field;
         }
       }
-      classConcept = BaseLanguageUtil.getSuperclass(classConcept);
+      classConcept = getSuperclass(classConcept);
     }
     return null;
   }
@@ -162,7 +161,7 @@ public class JavaModelUtil_new {
     }
 
     if (classifier instanceof ClassConcept) {
-      StaticFieldDeclaration staticField = findStaticField(BaseLanguageUtil.getSuperclass((ClassConcept) classifier), constantName);
+      StaticFieldDeclaration staticField = findStaticField(getSuperclass((ClassConcept) classifier), constantName);
       if (staticField != null) {
         return staticField;
       }
@@ -184,6 +183,14 @@ public class JavaModelUtil_new {
           return staticField;
         }
       }
+    }
+    return null;
+  }
+
+  public static ClassConcept getSuperclass(ClassConcept subClass) {
+    ClassifierType superclass = subClass.getSuperclass();
+    if (superclass != null) {
+      return (ClassConcept) superclass.getClassifier();
     }
     return null;
   }

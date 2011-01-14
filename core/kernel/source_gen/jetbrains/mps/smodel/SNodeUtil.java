@@ -20,4 +20,8 @@ public class SNodeUtil {
   public static boolean isDefaultSubstitutable(SNode node) {
     return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_isDefaultSubstitutable_7429110134803670673", new Class[]{SNode.class}));
   }
+
+  public static int getMetaLevel(SNode node) {
+    return ((Integer) BehaviorManager.getInstance().invoke(Integer.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMetaLevel_3981318653438234726", new Class[]{SNode.class}));
+  }
 }

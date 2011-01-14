@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
@@ -33,7 +32,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NonNls;
@@ -281,6 +279,6 @@ public class SModelUtil_new implements ApplicationComponent {
   }
 
   public static int getMetaLevel(SNode node) {
-    return BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(node);
+    return SNodeUtil.getMetaLevel(node);
   }
 }
