@@ -735,7 +735,7 @@
       </node>
     </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="1488682280965852165">
-      <property name="name" nameId="tpck.1169194664001" value="myIsInContext" />
+      <property name="name" nameId="tpck.1169194664001" value="myShowContext" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1488682280965852166" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1488682280965852168" />
@@ -773,7 +773,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1488682280965841491">
-        <property name="name" nameId="tpck.1169194664001" value="isInContext" />
+        <property name="name" nameId="tpck.1169194664001" value="isShowContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1488682280965852164" />
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7757449281563189461" />
@@ -2622,7 +2622,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7757449281563189905" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7757449281563189906" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1488682280965852214">
-        <property name="name" nameId="tpck.1169194664001" value="isInContext" />
+        <property name="name" nameId="tpck.1169194664001" value="isShowContext" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1488682280965852215" />
       </node>
     </node>
@@ -4684,14 +4684,19 @@
                           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7328148232284256054">
                             <link role="concept" roleId="tp25.1138405853777" targetNodeId="8sls.6036237525966182693" resolveInfo="EvaluatorConcept" />
                           </node>
-                          <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7328148232284256055">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d8ec.~CopyUtil" resolveInfo="CopyUtil" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~CopyUtil%dcopyAndPreserveId(jetbrains%dmps%dsmodel%dSNode,boolean)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="copyAndPreserveId" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7328148232284256056">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="42971830223480707" resolveInfo="evaluator" />
+                          <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4939493351788279607">
+                            <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4939493351788279610">
+                              <link role="concept" roleId="tp25.1138405853777" targetNodeId="8sls.6036237525966182693" resolveInfo="EvaluatorConcept" />
                             </node>
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7328148232284256057">
-                              <property name="value" nameId="tpee.1068580123138" value="true" />
+                            <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7328148232284256055">
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="d8ec.~CopyUtil" resolveInfo="CopyUtil" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d8ec.~CopyUtil%dcopyAndPreserveId(jetbrains%dmps%dsmodel%dSNode,boolean)%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="copyAndPreserveId" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7328148232284256056">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="42971830223480707" resolveInfo="evaluator" />
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7328148232284256057">
+                                <property name="value" nameId="tpee.1068580123138" value="true" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -4777,7 +4782,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1488682280965852236">
-        <property name="name" nameId="tpck.1169194664001" value="isInContext" />
+        <property name="name" nameId="tpck.1169194664001" value="isShowConetxt" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1488682280965852237" />
       </node>

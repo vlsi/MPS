@@ -18,7 +18,7 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String IS_IN_CONTEXT = "isInContext";
+  public static final String IS_SHOW_CONTEXT = "isShowContext";
   public static final String THIS_TYPE = "thisType";
   public static final String STATIC_CONTEXT_TYPE = "staticContextType";
   public static final String EVALUATED_STATEMENT = "evaluatedStatement";
@@ -52,12 +52,12 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike {
     this.setProperty(EvaluatorConcept.VIRTUAL_PACKAGE, value);
   }
 
-  public boolean getIsInContext() {
-    return this.getBooleanProperty(EvaluatorConcept.IS_IN_CONTEXT);
+  public boolean getIsShowContext() {
+    return this.getBooleanProperty(EvaluatorConcept.IS_SHOW_CONTEXT);
   }
 
-  public void setIsInContext(boolean value) {
-    this.setBooleanProperty(EvaluatorConcept.IS_IN_CONTEXT, value);
+  public void setIsShowContext(boolean value) {
+    this.setBooleanProperty(EvaluatorConcept.IS_SHOW_CONTEXT, value);
   }
 
   public ClassifierType getThisType() {

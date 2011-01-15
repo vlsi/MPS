@@ -72,9 +72,9 @@ public abstract class AbstractEvaluationModel {
   protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
   protected final EvaluationContext myEvaluationContext;
-  private final boolean myIsInContext;
+  private final boolean myShowContext;
 
-  public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule, EvaluationContext context, boolean isInContext) {
+  public AbstractEvaluationModel(Project project, @NotNull DebugSession session, @NotNull EvaluationAuxModule auxModule, EvaluationContext context, boolean isShowContext) {
     myUiState = session.getUiState();
     myDebugSession = session;
     if (context.getLocationNode() != null) {
@@ -93,7 +93,7 @@ public abstract class AbstractEvaluationModel {
     });
     myAuxModel = modelDescriptor.value;
     myEvaluationContext = context;
-    myIsInContext = isInContext;
+    myShowContext = isShowContext;
   }
 
   protected SModel getLocationModel() {
@@ -140,7 +140,7 @@ public abstract class AbstractEvaluationModel {
 
   protected SNode createEvaluator(SModelDescriptor model) {
     SNode evaluatorConcept = (SNode) new SNode(model.getSModel(), INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.debug.evaluation.structure.EvaluatorConcept")));
-    SPropertyOperations.set(evaluatorConcept, "isInContext", "" + (myIsInContext));
+    SPropertyOperations.set(evaluatorConcept, "isShowContext", "" + (myShowContext));
     return evaluatorConcept;
   }
 
@@ -283,7 +283,7 @@ public abstract class AbstractEvaluationModel {
     }
   }
 
-  public abstract AbstractEvaluationModel copy(boolean isInContext);
+  public abstract AbstractEvaluationModel copy(boolean isShowContext);
 
   protected IModule getLocationModule() {
     return getLocationModel().getModelDescriptor().getModule();

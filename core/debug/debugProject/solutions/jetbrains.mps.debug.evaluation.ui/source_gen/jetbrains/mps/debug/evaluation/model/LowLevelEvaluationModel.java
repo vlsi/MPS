@@ -238,14 +238,14 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     }
   }
 
-  public LowLevelEvaluationModel copy(final boolean isInContext) {
+  public LowLevelEvaluationModel copy(final boolean isShowConetxt) {
     LowLevelEvaluationModel evaluationModel;
     final SNode evaluator = myEvaluator;
-    evaluationModel = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isInContext) {
+    evaluationModel = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isShowConetxt) {
       @Override
       protected SNode createEvaluator(SModelDescriptor model) {
-        SNode newEvaluator = CopyUtil.copyAndPreserveId(evaluator, true);
-        SPropertyOperations.set(newEvaluator, "isInContext", "" + (isInContext));
+        SNode newEvaluator = (SNode) CopyUtil.copyAndPreserveId(evaluator, true);
+        SPropertyOperations.set(newEvaluator, "isShowContext", "" + (isShowConetxt));
         model.getSModel().addRoot(newEvaluator);
         SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
         return newEvaluator;

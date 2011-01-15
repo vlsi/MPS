@@ -69,7 +69,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   public void showEvaluationDialog(IOperationContext context) {
     JavaUiState state = myDebugSession.getUiState();
     if (state.isPausedOnBreakpoint()) {
-      AbstractEvaluationModel model = createEvaluationLogic();
+      AbstractEvaluationModel model = createLowLevelEvaluationModel(false);
       EvaluationDialog evaluationDialog = new EvaluationDialog(context, this, model);
       evaluationDialog.showDialog();
     }
@@ -92,13 +92,13 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void addWatch(AbstractEvaluationModel evaluationModel) {
-    AbstractEvaluationModel copy = evaluationModel.copy(false);
+    AbstractEvaluationModel copy = evaluationModel.copy(true);
     myWatches.add(copy);
     fireWatchAdded(copy);
   }
 
   public void createWatch() {
-    final AbstractEvaluationModel model = createLowLevelEvaluationModel(false);
+    final AbstractEvaluationModel model = createLowLevelEvaluationModel(true);
     EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(myDebugSession.getProject()), this, model, new _void_P0_E0() {
       @Override
       public void invoke() {
@@ -121,16 +121,8 @@ public class EvaluationProvider implements IEvaluationProvider {
     return myAuxModule;
   }
 
-  public AbstractEvaluationModel createEvaluationLogic() {
-    return createLowLevelEvaluationModel(true);
-  }
-
-  AbstractEvaluationModel createHighLevelEvaluationModel() {
-    return new HighLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), true);
-  }
-
-  AbstractEvaluationModel createLowLevelEvaluationModel(boolean isInContext) {
-    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), isInContext);
+  AbstractEvaluationModel createLowLevelEvaluationModel(boolean isShowContext) {
+    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), isShowContext);
   }
 
   public List<AbstractEvaluationModel> getWatches() {

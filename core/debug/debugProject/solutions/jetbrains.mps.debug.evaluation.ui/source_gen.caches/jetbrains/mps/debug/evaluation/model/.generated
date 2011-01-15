@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9ltprvfjptia62qhjjuby21175n2m5a">
+<dependencies version="2" modelHash="6xh52znmw6ya4uz0d9la50v3zp3kphv">
   <dep model="f:java_stub#com.intellij.openapi.progress.util(com.intellij.openapi.progress.util@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" />
   <dep model="f:java_stub#com.sun.jdi(com.sun.jdi@java_stub)" />
@@ -23,7 +23,6 @@
   <dep model="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="e6sqtnf4qmh9d3u802cfhq96u2itzan" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-d210pk8xi3k369xbgop6hfgbxsjqja5" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="cg332hy7dys81w3iptya0x7v60nqsgh" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-bsqcw4kcs4b3bf1x5nylwas22k5l6" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="kha5xfpjuavu6lsmipq4e0k5o0lm4b" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-b8dqrau4infogeue6163jb8xxvbejk2" />
@@ -42,7 +41,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="222hfoec4eclho8dndo8bvi3jfygysm" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-3zm2fh55oana6cj2rz9a0jwguuq016v" />
   <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="bzmnd3eczbe8m92xf7nfpmnan142v73" />
-  <dep model="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debug.evaluation.structure)" hash="8tizs9prqbdle7k0qi0o5mg7yo9u1ij" />
+  <dep model="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debug.evaluation.structure)" hash="8mz5gmlef4sy1hj8aoc7wld3e2o1wej" />
   <dep model="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" hash="-67spkn5unytfvn638rutraw7z6lgfp2" />
   <dep model="r:9e14a2a5-2074-4212-bc2f-81b31dc2b4fd(jetbrains.mps.lang.plugin.generator.baseLanguage.template.runconfigs@generator)" hash="9qkn9oldr2m3ykrwg7pia99fxot4win" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ajvf5lxae1xhsojrbc5w19vapmo22hn" />
@@ -67,7 +66,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EvaluationContext.java" />
   </source>
-  <source id="7757449281563189239" name="AbstractEvaluationModel" hash="akg2qt2mcs7bcxjyy3fniyda13thi56">
+  <source id="7757449281563189239" name="AbstractEvaluationModel" hash="atnkzxfd2cy3940cmg5xgztwlev7ude">
     <dep root="7757449281563189172" />
     <dep model="f:java_stub#com.intellij.openapi.progress.util(com.intellij.openapi.progress.util@java_stub)" />
     <dep model="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" />
@@ -83,7 +82,6 @@
     <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -134,7 +132,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="HighLevelEvaluationModel.java" />
   </source>
-  <source id="7757449281563190134" name="LowLevelEvaluationModel" hash="-9rm6jqyjxi1ktedkdxity9sjknk47bg">
+  <source id="7757449281563190134" name="LowLevelEvaluationModel" hash="-ah5izc9ro3ytx8irs9la3wbsv1fevaz">
     <dep root="7757449281563189172" />
     <dep root="7757449281563189239" />
     <dep model="f:java_stub#java.io(java.io@java_stub)" />
