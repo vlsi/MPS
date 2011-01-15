@@ -17,49 +17,38 @@ package jetbrains.mps.ide.editorTabs.tabs;
 
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.tabs.icons.Icons;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
+import javax.swing.JComponent;
+import javax.swing.JPopupMenu;
+import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-abstract class AddConceptButton extends JButton {
+abstract class AddConceptTab {
   private SNodePointer myBaseNode;
   private Set<EditorTabDescriptor> myPossibleTabs;
 
-  AddConceptButton(final SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
-    setAction(new AbstractAction("+") {
-      public void actionPerformed(ActionEvent e) {
-        showMenu();
-      }
-    });
-
-    registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        showMenu();
-      }
-    }, KeyStroke.getKeyStroke("INSERT"), JComponent.WHEN_IN_FOCUSED_WINDOW);
+  AddConceptTab(final SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
     this.myBaseNode = baseNode;
     this.myPossibleTabs = possibleTabs;
   }
 
-  protected abstract SNode getCurrentAspect();
-
-  private void showMenu() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
-        JPopupMenu popupComponent = popup.getComponent();
-        popupComponent.show(AddConceptButton.this, 0, 0);
-      }
-    });
+  public AnAction getAction(JComponent shortcutComponent) {
+    AnAction action = new MyAddAction();
+    KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("INSERT"), null);
+    action.registerCustomShortcutSet(new CustomShortcutSet(shortcut), SwingUtilities.getRootPane(shortcutComponent));
+    return action;
   }
+
+  protected abstract SNode getCurrentAspect();
 
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
@@ -113,6 +102,28 @@ abstract class AddConceptButton extends JButton {
           SNode created = myD.createNode(myBaseNode.getNode(), myConcept);
           String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
           created.setProperty(SNode.PACK, mainPack);
+        }
+      });
+    }
+  }
+
+  private class MyAddAction extends AnAction {
+    public static final String ID = "com.intellij.mps.AddAspect";
+
+    public MyAddAction() {
+      super("", "", Icons.ADD_ICON);
+    }
+
+    public boolean displayTextInToolbar() {
+      return true;
+    }
+
+    public void actionPerformed(final AnActionEvent e) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
+          JPopupMenu popupComponent = popup.getComponent();
+          popupComponent.show(e.getInputEvent().getComponent(), 0, 0);
         }
       });
     }

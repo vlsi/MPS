@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.editorTabs.tabs;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.Pair;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
@@ -24,6 +26,7 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
@@ -51,6 +54,7 @@ public abstract class TabsComponent extends JPanel {
     }
   };
   private JPanel myTabPanel;
+  private JComponent myToolbar = null;
 
   public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
     myBaseNode = baseNode;
@@ -98,11 +102,17 @@ public abstract class TabsComponent extends JPanel {
     add(myTabPanel, BorderLayout.WEST);
 
     JPanel plusPanel = new JPanel();
-    plusPanel.add(new AddConceptButton(myBaseNode, myPossibleTabs) {
+    AddConceptTab button = new AddConceptTab(myBaseNode, myPossibleTabs) {
       protected SNode getCurrentAspect() {
         return myLastNode.getNode();
       }
-    });
+    };
+
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(button.getAction(this));
+    JComponent tab = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
+
+    plusPanel.add(tab);
     add(plusPanel, BorderLayout.EAST);
 
     addListeners();
@@ -149,13 +159,16 @@ public abstract class TabsComponent extends JPanel {
       }
     });
 
+    DefaultActionGroup group = new DefaultActionGroup();
     for (EditorTab tab : myRealTabs) {
-      myTabPanel.add(tab);
+      group.add(tab.getAction(this));
     }
+    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
+    myTabPanel.add(myToolbar);
   }
 
   //todo
-  public void setLastNode(SNodePointer node){
+  public void setLastNode(SNodePointer node) {
     myLastNode = node;
   }
 
@@ -173,7 +186,7 @@ public abstract class TabsComponent extends JPanel {
         int index = myRealTabs.indexOf(tab);
         if (index == myRealTabs.size() - 1) return;
 
-        myRealTabs.get(index + 1).doClick();
+        performTabAction(index + 1);
 
         return;
       }
@@ -187,13 +200,19 @@ public abstract class TabsComponent extends JPanel {
         int index = myRealTabs.indexOf(tab);
         if (index == 0) return;
 
-        myRealTabs.get(index - 1).doClick();
+        performTabAction(index - 1);
 
         return;
       }
     }
   }
 
+  private void performTabAction(int index) {
+    DataContext context = DataManager.getInstance().getDataContext(this);
+    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
+    event.getInputEvent().setSource(myToolbar.getComponent(index));
+    myRealTabs.get(index).getAction(this).actionPerformed(event);
+  }
 
   ///-------------events----------------
 
