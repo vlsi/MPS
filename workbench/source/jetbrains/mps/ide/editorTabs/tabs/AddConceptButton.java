@@ -108,10 +108,8 @@ abstract class AddConceptTab {
   }
 
   private class MyAddAction extends AnAction {
-    public static final String ID = "com.intellij.mps.AddAspect";
-
     public MyAddAction() {
-      super("", "", Icons.ADD_ICON);
+      super("Add", "", Icons.ADD_ICON);
     }
 
     public boolean displayTextInToolbar() {

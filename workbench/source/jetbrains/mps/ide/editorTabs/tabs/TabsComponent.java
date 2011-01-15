@@ -33,7 +33,6 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
@@ -53,7 +52,6 @@ public abstract class TabsComponent extends JPanel {
       updateTabs();
     }
   };
-  private JPanel myTabPanel;
   private JComponent myToolbar = null;
 
   public TabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs) {
@@ -97,11 +95,6 @@ public abstract class TabsComponent extends JPanel {
     setLayout(new BorderLayout());
     add(new JPanel(), BorderLayout.CENTER);
 
-    myTabPanel = new JPanel();
-    myTabPanel.setLayout(new FlowLayout());
-    add(myTabPanel, BorderLayout.WEST);
-
-    JPanel plusPanel = new JPanel();
     AddConceptTab button = new AddConceptTab(myBaseNode, myPossibleTabs) {
       protected SNode getCurrentAspect() {
         return myLastNode.getNode();
@@ -111,9 +104,7 @@ public abstract class TabsComponent extends JPanel {
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(button.getAction(this));
     JComponent tab = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
-
-    plusPanel.add(tab);
-    add(plusPanel, BorderLayout.EAST);
+    add(tab, BorderLayout.EAST);
 
     addListeners();
     updateTabs();
@@ -137,7 +128,6 @@ public abstract class TabsComponent extends JPanel {
   }
 
   private void updateTabs() {
-    myTabPanel.removeAll();
     myRealTabs.clear();
     for (EditorTabDescriptor d : myPossibleTabs) {
       List<SNode> nodes = d.getNodes(myBaseNode.getNode());
@@ -163,8 +153,11 @@ public abstract class TabsComponent extends JPanel {
     for (EditorTab tab : myRealTabs) {
       group.add(tab.getAction(this));
     }
+    if (myToolbar != null) {
+      remove(myToolbar);
+    }
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
-    myTabPanel.add(myToolbar);
+    add(myToolbar, BorderLayout.WEST);
   }
 
   //todo
