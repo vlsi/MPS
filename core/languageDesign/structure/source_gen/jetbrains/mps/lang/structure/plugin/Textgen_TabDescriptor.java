@@ -49,6 +49,10 @@ public class Textgen_TabDescriptor extends EditorTabDescriptor {
     );
   }
 
+  public List<SNode> getConcepts(final SNode node) {
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
+  }
+
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TEXT_GEN, node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"));
   }

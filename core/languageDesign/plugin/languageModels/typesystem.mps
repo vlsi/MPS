@@ -333,6 +333,10 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_KeystrokeCreator" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Action" />
     </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="2450897840534903557">
+      <property name="name" nameId="tpck.1169194664001" value="check_OrderConstraints" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorTab" />
+    </node>
   </roots>
   <root id="1204039255253">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1204039255254">
@@ -3849,6 +3853,13 @@
       <property name="name" nameId="tpck.1169194664001" value="stmt" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4k.8131292300541727132" resolveInfo="KeystrokeCreator" />
     </node>
+  </root>
+  <root id="2450897840534903557">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2450897840534903558">
+      <property name="name" nameId="tpck.1169194664001" value="c" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp4k.2450897840534683973" resolveInfo="OrderConstraints" />
+    </node>
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="2450897840534916120" />
   </root>
 </model>
 
