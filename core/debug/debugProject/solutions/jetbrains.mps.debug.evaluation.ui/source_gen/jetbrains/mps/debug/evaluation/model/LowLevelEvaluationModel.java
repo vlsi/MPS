@@ -100,7 +100,6 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       String unitPackage = unitFqName.substring(0, lastDot);
       importStubForFqName(unitPackage);
     }
-    final String normalizedUnitFqName = unitFqName.replace('$', '.');
     List<SNode> classifiers = myScope.getNodes(new Condition<SNode>() {
       public boolean met(@NotNull SNode node) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
@@ -111,7 +110,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         if (StringUtils.isEmpty(nodesUnitName)) {
           return false;
         }
-        return nodesUnitName.equals(normalizedUnitFqName);
+        return nodesUnitName.equals(unitFqName);
       }
     });
     if (classifiers.isEmpty()) {
