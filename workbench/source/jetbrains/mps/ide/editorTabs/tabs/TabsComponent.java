@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.annotations.NonNls;
 
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
@@ -36,7 +37,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
-public abstract class TabsComponent extends JPanel {
+public abstract class TabsComponent extends JPanel{
   private SNodePointer myBaseNode;
   private SNodePointer myLastNode = null;
   private Set<EditorTabDescriptor> myPossibleTabs;
@@ -200,10 +201,16 @@ public abstract class TabsComponent extends JPanel {
     }
   }
 
-  private void performTabAction(int index) {
-    DataContext context = DataManager.getInstance().getDataContext(this);
-    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
-    event.getInputEvent().setSource(myToolbar.getComponent(index));
+  private void performTabAction(final int index) {
+    final DataContext context = DataManager.getInstance().getDataContext(this);
+    DataContext changedContext = new DataContext() {
+      public Object getData(@NonNls String dataId) {
+        if (dataId.equals(EditorTab.COMPONENT_KEY.getName())) return myToolbar.getComponent(index);
+        return context.getData(dataId);
+      }
+    };
+    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, changedContext);
+
     myRealTabs.get(index).getAction(this).actionPerformed(event);
   }
 

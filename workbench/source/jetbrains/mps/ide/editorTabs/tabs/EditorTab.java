@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.editorTabs.tabs;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.JBPopupFactory.ActionSelectionAid;
@@ -34,6 +33,8 @@ import java.awt.Point;
 import java.util.List;
 
 public class EditorTab {
+  public static DataKey<Component> COMPONENT_KEY = DataKey.create("Component");
+
   private TabsComponent myTabComponent;
   private EditorTabDescriptor myDescriptor;
   private SNodePointer myBaseNode;
@@ -49,7 +50,7 @@ public class EditorTab {
   }
 
   public AnAction getAction(JComponent shortcutComponent) {
-    AnAction action =  new SelectTabAction();
+    AnAction action = new SelectTabAction();
 
     KeyStroke keystroke = KeyStroke.getKeyStroke("alt shift " + myDescriptor.getShortcutChar());
     KeyboardShortcut shortcut = new KeyboardShortcut(keystroke, null);
@@ -104,7 +105,11 @@ public class EditorTab {
             return;
           }
 
-          Component component = e.getInputEvent().getComponent();
+          Component component = e.getInputEvent() == null ? null : e.getInputEvent().getComponent();
+          if (component == null) {
+            component = COMPONENT_KEY.getData(e.getDataContext());
+          }
+
           ActionGroup group = getGotoGroup();
           assert group != null : "no nodes to go, but tab is visible";
           ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("", group, e.getDataContext(), ActionSelectionAid.SPEEDSEARCH, false);
