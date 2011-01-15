@@ -112,8 +112,8 @@ public class EditorTab {
 
           ActionGroup group = getGotoGroup();
           assert group != null : "no nodes to go, but tab is visible";
-          ListPopup popup = JBPopupFactory.getInstance().createActionGroupPopup("", group, e.getDataContext(), ActionSelectionAid.SPEEDSEARCH, false);
-          popup.show(new RelativePoint(component, new Point(0, 0)));
+          ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
+          popup.getComponent().show(component,0, 0);
         }
       });
     }
