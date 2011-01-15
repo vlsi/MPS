@@ -98,7 +98,6 @@
     <classNode extendsClassName="jetbrains.mps.debug.evaluation.model.AbstractEvaluationModel" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.model.LowLevelEvaluationModel" file="LowLevelEvaluationModel.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -119,7 +118,6 @@
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.reloading.FileClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.model._Adapters" />
     <classNode dependClassName="jetbrains.mps.reloading.EachClassPathItemVisitor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -199,11 +197,6 @@
     <classNode dependClassName="com.sun.jdi.FloatType" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.debug.evaluation.model.EvaluationContext" />
-  </dependency>
-  <dependency className="jetbrains.mps.debug.evaluation.model._Adapters" file="_Adapters.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
 </dependenciesRoot>
 

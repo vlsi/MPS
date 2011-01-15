@@ -44,7 +44,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.InvalidStackFrameException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelOperations;
 
@@ -241,22 +240,19 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   public LowLevelEvaluationModel copy(final boolean isInContext) {
-    final Wrappers._T<LowLevelEvaluationModel> evaluationModel = new Wrappers._T<LowLevelEvaluationModel>();
+    LowLevelEvaluationModel evaluationModel;
     final SNode evaluator = myEvaluator;
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<LowLevelEvaluationModel>() {
-      public LowLevelEvaluationModel invoke() {
-        return evaluationModel.value = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isInContext) {
-          @Override
-          protected SNode createEvaluator(SModelDescriptor model) {
-            SNode newEvaluator = CopyUtil.copyAndPreserveId(evaluator, true);
-            SPropertyOperations.set(newEvaluator, "isInContext", "" + (isInContext));
-            model.getSModel().addRoot(newEvaluator);
-            SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
-            return newEvaluator;
-          }
-        };
+    evaluationModel = new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, myAuxModule, isInContext) {
+      @Override
+      protected SNode createEvaluator(SModelDescriptor model) {
+        SNode newEvaluator = CopyUtil.copyAndPreserveId(evaluator, true);
+        SPropertyOperations.set(newEvaluator, "isInContext", "" + (isInContext));
+        model.getSModel().addRoot(newEvaluator);
+        SModelOperations.validateLanguagesAndImports(model.getSModel(), false, true);
+        return newEvaluator;
       }
-    }));
-    return evaluationModel.value;
+    };
+
+    return evaluationModel;
   }
 }
