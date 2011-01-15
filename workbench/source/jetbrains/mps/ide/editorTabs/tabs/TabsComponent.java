@@ -94,7 +94,6 @@ public abstract class TabsComponent extends JPanel{
     });
 
     setLayout(new BorderLayout());
-    add(new JPanel(), BorderLayout.CENTER);
 
     AddConceptTab button = new AddConceptTab(myBaseNode, myPossibleTabs) {
       protected SNode getCurrentAspect() {
@@ -157,8 +156,10 @@ public abstract class TabsComponent extends JPanel{
     if (myToolbar != null) {
       remove(myToolbar);
     }
-    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
-    add(myToolbar, BorderLayout.WEST);
+    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true);
+    actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
+    myToolbar = actionToolbar.getComponent();
+    add(myToolbar, BorderLayout.CENTER);
   }
 
   //todo
