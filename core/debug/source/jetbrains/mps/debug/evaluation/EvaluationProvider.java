@@ -98,7 +98,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void createWatch() {
-    final AbstractEvaluationModel model = createLowLevelEvaluationModel();
+    final AbstractEvaluationModel model = createLowLevelEvaluationModel(false);
     EditWatchDialog editWatchDialog = new EditWatchDialog(ProjectOperationContext.get(myDebugSession.getProject()), this, model, new _void_P0_E0() {
       @Override
       public void invoke() {
@@ -122,15 +122,15 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public AbstractEvaluationModel createEvaluationLogic() {
-    return createLowLevelEvaluationModel();
+    return createLowLevelEvaluationModel(true);
   }
 
   AbstractEvaluationModel createHighLevelEvaluationModel() {
     return new HighLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), true);
   }
 
-  AbstractEvaluationModel createLowLevelEvaluationModel() {
-    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), true);
+  AbstractEvaluationModel createLowLevelEvaluationModel(boolean isInContext) {
+    return new LowLevelEvaluationModel(myDebugSession.getProject(), myDebugSession, getAuxModule(), isInContext);
   }
 
   public List<AbstractEvaluationModel> getWatches() {
