@@ -99,6 +99,10 @@ public abstract class TabsComponent extends JPanel{
       protected SNode getCurrentAspect() {
         return myLastNode.getNode();
       }
+
+      protected void aspectCreated(SNode aspect) {
+        onNodeChange(aspect);
+      }
     };
 
     DefaultActionGroup group = new DefaultActionGroup();

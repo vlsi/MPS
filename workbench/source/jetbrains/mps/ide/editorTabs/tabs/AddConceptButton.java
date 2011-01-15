@@ -50,6 +50,8 @@ abstract class AddConceptTab {
 
   protected abstract SNode getCurrentAspect();
 
+  protected abstract void aspectCreated(SNode aspect);
+
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
@@ -102,6 +104,7 @@ abstract class AddConceptTab {
           SNode created = myD.createNode(myBaseNode.getNode(), myConcept);
           String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
           created.setProperty(SNode.PACK, mainPack);
+          aspectCreated(created);
         }
       });
     }
