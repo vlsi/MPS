@@ -240,25 +240,26 @@
     <unitInfo nodeId="7020394447413472663" fileName="UncaughtException.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.UncaughtException" />
   </root>
   <root nodeId="7328148232284234498">
-    <nodeInfo nodeId="7328148232284238036" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InnerClassTest.java" startLine="10" startPosition="42" endLine="11" endPosition="47" />
-    <nodeInfo nodeId="7328148232284235452" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" fileName="InnerClassTest.java" startLine="14" startPosition="36" endLine="15" endPosition="30" />
-    <nodeInfo nodeId="7328148232284234516" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InnerClassTest.java" startLine="20" startPosition="26" endLine="21" endPosition="45" />
-    <nodeInfo nodeId="7328148232284234500" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InnerClassTest#()V" fileName="InnerClassTest.java" startLine="6" startPosition="29" endLine="8" endPosition="3" />
-    <nodeInfo nodeId="7328148232284234508" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyInnerClass#()V" fileName="InnerClassTest.java" startLine="16" startPosition="0" endLine="18" endPosition="5" />
-    <nodeInfo nodeId="7328148232284238029" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" fileName="InnerClassTest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
-    <nodeInfo nodeId="7328148232284234512" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSmth#()V" fileName="InnerClassTest.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="7328148232284234503" fileName="InnerClassTest.java" startLine="7" startPosition="27" endLine="7" endPosition="27" />
-    <scopeInfo nodeId="7328148232284234511" fileName="InnerClassTest.java" startLine="17" startPosition="27" endLine="17" endPosition="27" />
-    <scopeInfo nodeId="7328148232284238035" fileName="InnerClassTest.java" startLine="10" startPosition="42" endLine="11" endPosition="47" />
-    <scopeInfo nodeId="7328148232284234515" fileName="InnerClassTest.java" startLine="20" startPosition="26" endLine="21" endPosition="45" />
-    <scopeInfo nodeId="7328148232284234500" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InnerClassTest#()V" fileName="InnerClassTest.java" startLine="6" startPosition="29" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="7328148232284234508" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyInnerClass#()V" fileName="InnerClassTest.java" startLine="16" startPosition="0" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="7328148232284238029" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" fileName="InnerClassTest.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="6632904793135337339" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InnerClassTest.java" startLine="7" startPosition="27" endLine="8" endPosition="47" />
+    <nodeInfo nodeId="6632904793135337344" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InnerClassTest.java" startLine="11" startPosition="42" endLine="12" endPosition="25" />
+    <nodeInfo nodeId="7328148232284235452" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" fileName="InnerClassTest.java" startLine="15" startPosition="29" endLine="16" endPosition="30" />
+    <nodeInfo nodeId="7328148232284234516" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" fileName="InnerClassTest.java" startLine="21" startPosition="26" endLine="22" endPosition="45" />
+    <nodeInfo nodeId="7328148232284234508" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyInnerClass#()V" fileName="InnerClassTest.java" startLine="17" startPosition="0" endLine="19" endPosition="5" />
+    <nodeInfo nodeId="7328148232284234500" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InnerClassTest#()V" fileName="InnerClassTest.java" startLine="6" startPosition="29" endLine="9" endPosition="3" />
+    <nodeInfo nodeId="7328148232284238029" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" fileName="InnerClassTest.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
+    <nodeInfo nodeId="7328148232284234512" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSmth#()V" fileName="InnerClassTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7328148232284234511" fileName="InnerClassTest.java" startLine="18" startPosition="27" endLine="18" endPosition="27" />
+    <scopeInfo nodeId="7328148232284234503" fileName="InnerClassTest.java" startLine="7" startPosition="27" endLine="8" endPosition="47" />
+    <scopeInfo nodeId="7328148232284238035" fileName="InnerClassTest.java" startLine="11" startPosition="42" endLine="12" endPosition="25" />
+    <scopeInfo nodeId="7328148232284234515" fileName="InnerClassTest.java" startLine="21" startPosition="26" endLine="22" endPosition="45" />
+    <scopeInfo nodeId="7328148232284234508" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyInnerClass#()V" fileName="InnerClassTest.java" startLine="17" startPosition="0" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="7328148232284234500" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InnerClassTest#()V" fileName="InnerClassTest.java" startLine="6" startPosition="29" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="7328148232284238029" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" fileName="InnerClassTest.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="7328148232284238030" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="7328148232284234512" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSmth#()V" fileName="InnerClassTest.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <unitInfo nodeId="7328148232284234506" fileName="InnerClassTest.java" startLine="14" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.InnerClassTest$MyInnerClass" />
-    <unitInfo nodeId="7328148232284234498" fileName="InnerClassTest.java" startLine="6" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.InnerClassTest" />
+    <scopeInfo nodeId="7328148232284234512" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSmth#()V" fileName="InnerClassTest.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="7328148232284234506" fileName="InnerClassTest.java" startLine="15" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.InnerClassTest$MyInnerClass" />
+    <unitInfo nodeId="7328148232284234498" fileName="InnerClassTest.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.InnerClassTest" />
   </root>
 </debugInfo>
 
