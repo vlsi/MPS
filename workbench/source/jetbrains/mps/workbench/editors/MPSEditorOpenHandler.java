@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 public interface MPSEditorOpenHandler {
+  //todo split into base node getter & TabbedEditorHandler
   SNode getBaseNode(IOperationContext context, SNode node);
 
   boolean canOpen(IOperationContext context, SNode node);
