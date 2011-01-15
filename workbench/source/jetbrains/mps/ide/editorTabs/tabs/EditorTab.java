@@ -74,7 +74,7 @@ public class EditorTab {
     private final SNode myNode;
 
     public NavigateNodeAction(SNode node) {
-      super(node.getName(), "", IconManager.getIconFor(node));
+      super(node.getName() != null ? node.getName() : "<no name>", "", IconManager.getIconFor(node));
       myNode = node;
     }
 
